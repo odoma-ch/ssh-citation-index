@@ -175,4 +175,6 @@ cython_debug/
 
 EXgoldstandard/
 GeoCite/
+!EXgoldstandard/Goldstandard_EXparser/*.json
+!EXgoldstandard/Goldstandard_EXparser/*.csv
 .DS_Store
