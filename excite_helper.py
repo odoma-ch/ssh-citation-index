@@ -4,11 +4,34 @@ import shutil
 import json
 from pathlib import Path
 from typing import List, Dict, Tuple
+import PyPDF2
+import fitz  # PyMuPDF as fallback
+
+def get_pdf_page_count(pdf_path):
+    """
+    Get the number of pages in a PDF file.
+    Uses PyPDF2 first, falls back to PyMuPDF if that fails.
+    """
+    try:
+        # Try PyPDF2 first
+        with open(pdf_path, 'rb') as file:
+            pdf_reader = PyPDF2.PdfReader(file)
+            return len(pdf_reader.pages)
+    except Exception as e1:
+        try:
+            # Fallback to PyMuPDF
+            doc = fitz.open(pdf_path)
+            page_count = doc.page_count
+            doc.close()
+            return page_count
+        except Exception as e2:
+            print(f"Error reading PDF {pdf_path}: PyPDF2 error: {e1}, PyMuPDF error: {e2}")
+            return None
 
 def process_papers_folders():
     """
     Process all German and English papers folders to:
-    1. Create a DataFrame with PDF file information (filename, class, language, file_path)
+    1. Create a DataFrame with PDF file information (filename, class, language, file_path, page_count)
     2. Extract all references from CSV/TXT files as {file_id: xxx, references: [list of str]}
     3. Consolidate PDFs into single folder with original names
     """
@@ -71,12 +94,17 @@ def process_papers_folders():
                         
                     file_id = pdf_file.stem  # filename without extension
                     
+                    # Get page count
+                    # print(f"  Processing {pdf_file.name}...")
+                    page_count = get_pdf_page_count(pdf_file)
+                    
                     pdf_data.append({
                         "file_id": file_id,
                         "filename": pdf_file.name,
                         "class": class_num,
                         "lang": lang,
-                        "file_path": str(pdf_file)
+                        "file_path": str(pdf_file),
+                        "page_count": page_count
                     })
                     
                     # Copy to consolidated folder with original name
@@ -140,6 +168,17 @@ def process_papers_folders():
         summary = pdf_df.groupby(['lang', 'class']).size().reset_index(name='count')
         print(summary.to_string(index=False))
     
+    # Print page count statistics
+    if not pdf_df.empty and 'page_count' in pdf_df.columns:
+        valid_pages = pdf_df[pdf_df['page_count'].notna()]
+        if not valid_pages.empty:
+            print(f"\nPage count statistics:")
+            print(f"  Mean pages: {valid_pages['page_count'].mean():.1f}")
+            print(f"  Median pages: {valid_pages['page_count'].median():.1f}")
+            print(f"  Min pages: {valid_pages['page_count'].min()}")
+            print(f"  Max pages: {valid_pages['page_count'].max()}")
+            print(f"  PDFs with page count errors: {len(pdf_df) - len(valid_pages)}")
+    
     print(f"\nFiles saved:")
     print(f"- {base_path}/pdf_files_info.csv")
     print(f"- {base_path}/all_references.json")
@@ -169,10 +208,7 @@ def get_sample_data(pdf_df, references_data, n_samples=5):
 
 if __name__ == "__main__":
     # Process all folders
-    # pdf_df, references_data = process_papers_folders()
-
-    pdf_df = pd.read_csv("EXgoldstandard/Goldstandard_EXparser/pdf_files_info.csv")
-    references_data = json.load(open("EXgoldstandard/Goldstandard_EXparser/all_references.json", "r", encoding="utf-8"))
+    pdf_df, references_data = process_papers_folders()
     
     # Show sample data
-    get_sample_data(pdf_df, references_data)
+    get_sample_data(pdf_df, references_data) 
