@@ -1,14 +1,37 @@
 """References collection class for citation processing."""
 
 from pathlib import Path
-from typing import Dict, List, Optional, TYPE_CHECKING
+from typing import Dict, List, Optional, TYPE_CHECKING, Annotated
+from pydantic import BaseModel, Field, ConfigDict
 
 if TYPE_CHECKING:
     from .reference import Reference
 
 
-class References(list):
+class References(BaseModel):
     """A collection of Reference objects with serialization capabilities."""
+    
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+    
+    references: List["Reference"] = Field(
+        default_factory=list,
+        description="List of Reference objects"
+    )
+
+    def __iter__(self):
+        return iter(self.references)
+
+    def __len__(self):
+        return len(self.references)
+
+    def __getitem__(self, index):
+        return self.references[index]
+
+    def append(self, item: "Reference"):
+        self.references.append(item)
+
+    def extend(self, items: List["Reference"]):
+        self.references.extend(items)
 
     def to_xml(
         self,
@@ -44,7 +67,7 @@ class References(list):
         from ..parsers.tei_bibl_parser import TeiBiblParser
 
         return TeiBiblParser(namespaces=namespaces).to_xml(
-            references=self, file_path=file_path, pretty_print=pretty_print
+            references=self.references, file_path=file_path, pretty_print=pretty_print
         )
 
     @classmethod
@@ -86,7 +109,7 @@ class References(list):
             file_path=file_path, xml_str=xml_str
         )
 
-        return cls([ref for refs in list_of_list_of_references for ref in refs])
+        return cls(references=[ref for refs in list_of_list_of_references for ref in refs])
 
     @classmethod
     def from_excite_xml(cls, file_path: str) -> "References":
@@ -109,4 +132,14 @@ class References(list):
             # which would need to be implemented if this functionality is needed
             references.append(Reference.from_excite_xml(line))
 
-        return cls(references) 
+        return cls(references=references)
+
+
+# Update forward references after all models are defined
+from .reference import Reference
+References.model_rebuild() 
+
+if __name__ == "__main__":
+    filepath = '../../EXgoldstandard/Goldstandard_EXparser/all_xml/1181.xml'
+    references = References.from_excite_xml(filepath)
+    print(references)

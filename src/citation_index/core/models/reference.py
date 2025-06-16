@@ -205,3 +205,96 @@ class Reference(BaseModel):
             self.analytic_title = None
 
         return self 
+
+    @classmethod
+    def from_excite_xml(cls, xml_str: str) -> "Reference":
+        """Create a Reference from an EXCITE XML string.
+
+        The EXCITE XML format looks like this:
+        ```xml
+        <author><surname>Adams</surname>, <given-names>J. S.</given-names></author> (<year>1965</year>). <title>Inequity in social exchange</title>. In <editor>L. Berkowitz</editor> (Ed.), <source>Advances in experimental social psychology</source> (pp. <fpage>267</fpage> - <lpage>99</lpage>). <other>New York</other>: <publisher>Academic Press</publisher>.
+        ```
+
+        Args:
+            xml_str: The EXCITE XML string to parse.
+
+        Returns:
+            A Reference instance.
+        """
+        from lxml import etree
+
+        # Wrap the XML fragment in a root element to make it valid XML
+        wrapped_xml = f"<root>{xml_str}</root>"
+
+        # Parse the XML string
+        try:
+            root = etree.fromstring(wrapped_xml)
+        except etree.XMLSyntaxError:
+            # If the XML is not well-formed, try to fix common issues
+            wrapped_xml = wrapped_xml.replace("&", "&amp;")  # Fix unescaped ampersands
+            try:
+                root = etree.fromstring(wrapped_xml)
+            except etree.XMLSyntaxError as e:
+                # If still not well-formed, try to clean up the XML
+                import re
+                # Remove any non-XML content between tags
+                cleaned_xml = re.sub(r'>\s*([^<]+?)\s*<', '><', wrapped_xml)
+                # Remove any remaining non-XML content
+                cleaned_xml = re.sub(r'[^<]*<', '<', cleaned_xml)
+                cleaned_xml = re.sub(r'>[^>]*', '>', cleaned_xml)
+                root = etree.fromstring(cleaned_xml)
+
+        # Extract authors
+        authors = []
+        for author in root.findall(".//author"):
+            surname = author.find("surname")
+            given_names = author.find("given-names")
+            if surname is not None or given_names is not None:
+                from .person import Person
+                authors.append(Person(
+                    surname=surname.text if surname is not None else None,
+                    first_name=given_names.text if given_names is not None else None
+                ))
+
+        # Extract editors
+        editors = []
+        for editor in root.findall(".//editor"):
+            surname = editor.find("surname")
+            given_names = editor.find("given-names")
+            if surname is not None or given_names is not None:
+                from .person import Person
+                editors.append(Person(
+                    surname=surname.text if surname is not None else None,
+                    first_name=given_names.text if given_names is not None else None
+                ))
+
+        # Extract other fields
+        title = root.find(".//title")
+        source = root.find(".//source")
+        year = root.find(".//year")
+        volume = root.find(".//volume")
+        issue = root.find(".//issue")
+        fpage = root.find(".//fpage")
+        lpage = root.find(".//lpage")
+        publisher = root.find(".//publisher")
+        other = root.find(".//other")
+
+        # Create pages string if both fpage and lpage exist
+        pages = None
+        if fpage is not None and lpage is not None:
+            pages = f"{fpage.text}-{lpage.text}"
+        elif fpage is not None:
+            pages = fpage.text
+
+        return cls(
+            authors=authors if authors else None,
+            editors=editors if editors else None,
+            analytic_title=title.text if title is not None else None,
+            journal_title=source.text if source is not None else None,
+            publication_date=year.text if year is not None else None,
+            volume=volume.text if volume is not None else None,
+            issue=issue.text if issue is not None else None,
+            pages=pages,
+            publisher=publisher.text if publisher is not None else None,
+            publication_place=other.text if other is not None else None
+        ) 

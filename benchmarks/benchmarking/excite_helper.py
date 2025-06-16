@@ -34,6 +34,7 @@ def process_papers_folders():
     1. Create a DataFrame with PDF file information (filename, class, language, file_path, page_count)
     2. Extract all references from CSV/TXT files as {file_id: xxx, references: [list of str]}
     3. Consolidate PDFs into single folder with original names
+    4. Consolidate XML files from EXRefSegmentation into a single folder
     """
     
     # Base path
@@ -61,9 +62,11 @@ def process_papers_folders():
         }
     }
     
-    # Create consolidated folder for PDFs under Goldstandard_EXparser
+    # Create consolidated folders
     consolidated_pdfs_path = base_path / "all_pdfs"
+    consolidated_xml_path = base_path / "all_xml"
     consolidated_pdfs_path.mkdir(exist_ok=True)
+    consolidated_xml_path.mkdir(exist_ok=True)
     
     # Process each main folder (German/English)
     for main_folder, config in folder_mappings.items():
@@ -144,6 +147,20 @@ def process_papers_folders():
                         
                     except Exception as e:
                         print(f"Error processing {ref_file}: {e}")
+            
+            # Process XML files from EXRefSegmentation
+            xml_path = subfolder_path / "5-References_segmented_by_EXRefSegmentation"
+            if xml_path.exists():
+                for xml_file in xml_path.glob("*.xml"):
+                    # Skip system files
+                    if xml_file.name.startswith('.') or xml_file.name == "Thumbs.db":
+                        continue
+                    
+                    # Copy to consolidated folder with original name
+                    try:
+                        shutil.copy2(xml_file, consolidated_xml_path / xml_file.name)
+                    except Exception as e:
+                        print(f"Error copying {xml_file}: {e}")
     
     # Create DataFrame for PDFs
     pdf_df = pd.DataFrame(pdf_data)
@@ -183,6 +200,7 @@ def process_papers_folders():
     print(f"- {base_path}/pdf_files_info.csv")
     print(f"- {base_path}/all_references.json")
     print(f"- {base_path}/all_pdfs/")
+    print(f"- {base_path}/all_xml/")
     
     return pdf_df, references_data
 
