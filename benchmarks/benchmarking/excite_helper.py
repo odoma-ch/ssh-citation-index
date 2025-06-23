@@ -224,9 +224,98 @@ def get_sample_data(pdf_df, references_data, n_samples=5):
                 print(f"    ... and {len(ref_data['references']) - 3} more")
             print()
 
+def evaluate_whole_dataset(pred_pkl_path, xml_dir, mode='exact',fuzzy_threshold=90,focus_fields=None):
+    """
+    Evaluate the whole dataset using predictions from a pickle file and ground truth from XML files.
+    Args:
+        pred_pkl_path: Path to the pickle file with predictions (list of dicts with 'id' and 'references').
+        xml_dir: Directory containing ground truth XML files (named <file_id>.xml).
+    Returns:
+        metrics: dict with overall evaluation metrics.
+        per_doc_df: DataFrame with per-document metrics.
+    """
+    import pickle
+    import os
+    import pandas as pd
+    from citation_index.core.models import References
+    from citation_index.evaluation.ref_metrics import RefEvaluator
+
+    # Load predictions
+    with open(pred_pkl_path, 'rb') as f:
+        pred_list = pickle.load(f)
+
+    # Build a dict for fast lookup
+    pred_dict = {str(item['id']): item['references']['references'] for item in pred_list}
+
+    # For each file in xml_dir, load ground truth and prediction
+    gt_refs_list = []
+    pred_refs_list = []
+    file_ids = []
+    missing_preds = 0
+    missing_gts = 0
+    per_doc_metrics = []
+    evaluator = RefEvaluator(mode=mode, fuzzy_threshold=fuzzy_threshold)
+
+    for fname in os.listdir(xml_dir):
+        if not fname.endswith('.xml'):
+            continue
+        file_id = fname[:-4]
+        gt_path = os.path.join(xml_dir, fname)
+        try:
+            gt_refs = References.from_excite_xml(gt_path)
+        except Exception as e:
+            print(f"Error loading GT for {file_id}: {e}")
+            missing_gts += 1
+            continue
+        # Find prediction
+        pred_refs_raw = pred_dict.get(file_id)
+        if pred_refs_raw is None:
+            print(f"No prediction for {file_id}")
+            missing_preds += 1
+            pred_refs = References(references=[])
+        else:
+            # Convert list of dicts to References object
+            reference_dicts = []
+            for ref in pred_refs_raw:
+                ref_data = ref["reference"].copy()
+                if "title" in ref_data:
+                    ref_data["analytic_title"] = ref_data.pop("title")
+                reference_dicts.append(ref_data)
+            pred_refs = References.from_dict(reference_dicts)
+        gt_refs_list.append(gt_refs)
+        pred_refs_list.append(pred_refs)
+        file_ids.append(file_id)
+
+        # --- Per-document metrics ---
+        metrics = evaluator.evaluate([pred_refs], [gt_refs], focus_fields=focus_fields)
+        # Flatten the metrics dict for this doc
+        flat_metrics = {k: v for k, v in metrics.items() if isinstance(v, (int, float))}
+        flat_metrics['file_id'] = file_id
+        per_doc_metrics.append(flat_metrics)
+
+    print(f"Total files: {len(gt_refs_list)}")
+    print(f"Missing predictions: {missing_preds}")
+    print(f"Missing GTs: {missing_gts}")
+
+    # Overall metrics
+    overall_metrics = evaluator.evaluate(pred_refs_list, gt_refs_list, focus_fields=focus_fields)
+    print("Reference eval (exact):", overall_metrics)
+
+    # Per-document DataFrame
+    per_doc_df = pd.DataFrame(per_doc_metrics)
+    print(per_doc_df.head())
+
+    return overall_metrics, per_doc_df
+
 if __name__ == "__main__":
     # Process all folders
-    pdf_df, references_data = process_papers_folders()
+    # pdf_df, references_data = process_papers_folders()
     
     # Show sample data
-    get_sample_data(pdf_df, references_data) 
+    # get_sample_data(pdf_df, references_data)
+    
+    # Example usage:
+    pred_pkl_path = "benchmarks/benchmarking/references_ref_extparsing_deepseek_pymupdf.pkl"
+    xml_dir = "EXgoldstandard/Goldstandard_EXparser/all_xml"
+    overall_metrics, per_doc_df = evaluate_whole_dataset(pred_pkl_path, xml_dir)
+    per_doc_df.to_csv("per_document_metrics.csv", index=False) 

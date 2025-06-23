@@ -1,6 +1,6 @@
 """Reference data model for citation processing."""
 
-from typing import Annotated, List, Optional
+from typing import Annotated, List, Optional, Dict
 from pydantic import AfterValidator, BaseModel, BeforeValidator, Field, model_validator
 
 from .person import Person
@@ -205,44 +205,26 @@ class Reference(BaseModel):
             self.analytic_title = None
 
         return self 
+    
+    @classmethod
+    def from_dict(cls, data: Dict) -> "Reference":
+        """Create Reference from a dictionary."""
+        return cls(**data)
 
     @classmethod
     def from_excite_xml(cls, xml_str: str) -> "Reference":
-        """Create a Reference from an EXCITE XML string.
-
-        The EXCITE XML format looks like this:
-        ```xml
-        <author><surname>Adams</surname>, <given-names>J. S.</given-names></author> (<year>1965</year>). <title>Inequity in social exchange</title>. In <editor>L. Berkowitz</editor> (Ed.), <source>Advances in experimental social psychology</source> (pp. <fpage>267</fpage> - <lpage>99</lpage>). <other>New York</other>: <publisher>Academic Press</publisher>.
-        ```
-
-        Args:
-            xml_str: The EXCITE XML string to parse.
-
-        Returns:
-            A Reference instance.
-        """
+        """Create a Reference from an EXCITE XML string (which may be a fragment with text between tags)."""
         from lxml import etree
 
-        # Wrap the XML fragment in a root element to make it valid XML
+        # Wrap in a root element to make it parseable
         wrapped_xml = f"<root>{xml_str}</root>"
 
-        # Parse the XML string
+        # Use recover=True to handle non-XML text between tags
+        parser = etree.XMLParser(recover=True)
         try:
-            root = etree.fromstring(wrapped_xml)
-        except etree.XMLSyntaxError:
-            # If the XML is not well-formed, try to fix common issues
-            wrapped_xml = wrapped_xml.replace("&", "&amp;")  # Fix unescaped ampersands
-            try:
-                root = etree.fromstring(wrapped_xml)
-            except etree.XMLSyntaxError as e:
-                # If still not well-formed, try to clean up the XML
-                import re
-                # Remove any non-XML content between tags
-                cleaned_xml = re.sub(r'>\s*([^<]+?)\s*<', '><', wrapped_xml)
-                # Remove any remaining non-XML content
-                cleaned_xml = re.sub(r'[^<]*<', '<', cleaned_xml)
-                cleaned_xml = re.sub(r'>[^>]*', '>', cleaned_xml)
-                root = etree.fromstring(cleaned_xml)
+            root = etree.fromstring(wrapped_xml.encode("utf-8"), parser=parser)
+        except Exception as e:
+            raise ValueError(f"Could not parse EXCITE XML fragment: {e}")
 
         # Extract authors
         authors = []
@@ -256,7 +238,7 @@ class Reference(BaseModel):
                     first_name=given_names.text if given_names is not None else None
                 ))
 
-        # Extract editors
+        # Extract editors (person or organization)
         editors = []
         for editor in root.findall(".//editor"):
             surname = editor.find("surname")
@@ -267,6 +249,9 @@ class Reference(BaseModel):
                     surname=surname.text if surname is not None else None,
                     first_name=given_names.text if given_names is not None else None
                 ))
+            elif editor.text:
+                from .organization import Organization
+                editors.append(Organization(name=editor.text.strip()))
 
         # Extract other fields
         title = root.find(".//title")
@@ -286,10 +271,24 @@ class Reference(BaseModel):
         elif fpage is not None:
             pages = fpage.text
 
+        # Decide where to put the title: monographic_title or analytic_title
+        # If there are no authors and no editors, treat <title> as monographic_title
+        if title is not None:
+            if not authors and not editors:
+                monographic_title = title.text
+                analytic_title = None
+            else:
+                monographic_title = None
+                analytic_title = title.text
+        else:
+            monographic_title = None
+            analytic_title = None
+
         return cls(
             authors=authors if authors else None,
             editors=editors if editors else None,
-            analytic_title=title.text if title is not None else None,
+            analytic_title=analytic_title,
+            monographic_title=monographic_title,
             journal_title=source.text if source is not None else None,
             publication_date=year.text if year is not None else None,
             volume=volume.text if volume is not None else None,

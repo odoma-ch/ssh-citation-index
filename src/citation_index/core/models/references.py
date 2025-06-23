@@ -4,8 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, TYPE_CHECKING, Annotated
 from pydantic import BaseModel, Field, ConfigDict
 
-if TYPE_CHECKING:
-    from .reference import Reference
+from citation_index.core.models.reference import Reference
 
 
 class References(BaseModel):
@@ -69,6 +68,10 @@ class References(BaseModel):
         return TeiBiblParser(namespaces=namespaces).to_xml(
             references=self.references, file_path=file_path, pretty_print=pretty_print
         )
+    @classmethod
+    def from_dict(cls, data: Dict) -> "References":
+        """Create References from a dictionary."""
+        return cls(references=[Reference.from_dict(item) for item in data])
 
     @classmethod
     def from_xml(
@@ -113,15 +116,15 @@ class References(BaseModel):
 
     @classmethod
     def from_excite_xml(cls, file_path: str) -> "References":
-        """Create References from an EXCITE .txt file.
+        """Create References from an EXCITE .xml file.
 
         Args:
-            file_path: The file path to the EXCITE .txt file.
+            file_path: The file path to the EXCITE .xml file.
 
         Returns:
             An instance of this class, that is a list of `Reference`.
         """
-        from .reference import Reference
+        # from citation_index.core.models.reference import Reference
         
         with open(file_path, "r") as file:
             lines = file.readlines()
@@ -136,10 +139,10 @@ class References(BaseModel):
 
 
 # Update forward references after all models are defined
-from .reference import Reference
+from citation_index.core.models.reference import Reference
 References.model_rebuild() 
 
 if __name__ == "__main__":
-    filepath = '../../EXgoldstandard/Goldstandard_EXparser/all_xml/1181.xml'
+    filepath = '/Users/alex/docs/code/Odoma/citation_index/EXgoldstandard/Goldstandard_EXparser/all_xml/36025.xml'
     references = References.from_excite_xml(filepath)
     print(references)
