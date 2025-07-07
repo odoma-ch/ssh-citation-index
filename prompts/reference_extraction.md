@@ -21,6 +21,6 @@ Jones, M. (2019). Deep learning fundamentals. MIT Press.
 Davis, R., & Lee, S. (2021). Neural networks and their applications. Nature Machine Intelligence, 3(2), 112-125.
 <end>
 
-## Input
-### Input Text:
-<<<{INPUT_TEXT}>>>
+<input_text>
+{{INPUT_TEXT}}
+</input_text>

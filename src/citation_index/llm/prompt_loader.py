@@ -25,13 +25,19 @@ class PromptLoader:
         with open(prompt, "r") as f:
             return f.read()
         
+    @classmethod
+    def build_prompt(cls, prompt: str, examples: str, input_text: str, json_schema: str = None) -> str:
+        return
+    
+
+        
 
 class ReferenceExtractionPrompt(PromptLoader):
     """Prompt for reference extraction."""
 
     def __init__(self, prompt: str = "prompts/reference_extraction.md", examples: str = "", input_text: str = ""):
         super().__init__(prompt, examples, input_text)
-        self.prompt = self.prompt.format(INPUT_TEXT=self.input_text)
+        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
 
 
 class ReferenceParsingPrompt(PromptLoader):
@@ -40,7 +46,8 @@ class ReferenceParsingPrompt(PromptLoader):
     def __init__(self, prompt: str = "prompts/reference_parsing.md", examples: str = "", input_text: str = ""):
         super().__init__(prompt, examples, input_text)
         json_schema = self.load_json_schema()
-        self.prompt = self.prompt.format(JSON_SCHEMA_FOR_REFERENCES_WRAPPER=json_schema, INPUT_TEXT=self.input_text)
+        self.prompt = self.prompt.replace("{{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}}", json_schema)
+        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
 
     def load_json_schema(self) -> str:
         """Load the JSON schema from the file."""
@@ -49,11 +56,12 @@ class ReferenceParsingPrompt(PromptLoader):
 class ReferenceExtractionAndParsingPrompt(PromptLoader):
     """Prompt for reference extraction and parsing."""
 
-    def __init__(self, prompt: str = "prompts/reference_extraction_and_parsing.md", examples: str = "", input_text: str = ""):
+    def __init__(self, prompt: str = "prompts/reference_extraction_and_parsing.md", examples: str = "", input_text: str = "",include_json_schema: bool = True):
         super().__init__(prompt, examples, input_text)
-        # json_schema = self.load_json_schema()
-        # escaped_schema = json_schema.replace("{", "{{").replace("}", "}}")
-        self.prompt = self.prompt.format(INPUT_TEXT=self.input_text)
+        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
+        if include_json_schema:
+            json_schema = self.load_json_schema()
+            self.prompt = self.prompt.replace("{{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}}", json_schema)
 
     def load_json_schema(self) -> str:
         """Load the JSON schema from the file."""

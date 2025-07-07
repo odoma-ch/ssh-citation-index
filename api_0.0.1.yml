@@ -1,0 +1,917 @@
+openapi: 3.0.3
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/odoma/test/1.0.0
+info:
+  version: 1.0.0
+  title: Citation Index API
+  description: |
+    A comprehensive API for extracting and analyzing citations, references, and various mentions from academic PDFs.
+    Supports both full pipeline processing and individual task execution.
+ 
+
+paths:
+  # Full Pipeline Endpoint
+  /process/full-pipeline:
+    post:
+      summary: Execute full citation analysis pipeline
+      description: |
+        Processes a PDF through all available analysis tasks and returns comprehensive results.
+        This is an asynchronous operation that returns a job ID for status tracking.
+      tags:
+        - Full Pipeline
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FullPipelineRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FullPipelineRequestJSON'
+      responses:
+        '202':
+          description: Processing started successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+  # Individual Task Endpoints
+  /extract/text:
+    post:
+      summary: extract text with respect to the structures and images
+      tags:
+        - Text Exraction
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+  /extract/references:
+    post:
+      summary: Extract references text from PDF
+      description: Extract machine readable text from PDF
+      tags:
+        - Reference Processing
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+  
+  /parse/references:
+    post:
+      summary: Parse reference strings into structured data
+      description: Parses an array of reference strings into structured reference objects.
+      tags:
+        - Reference Processing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceParsingRequest'
+      responses:
+        '200':
+          description: Parsed references
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceParsingResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /disambiguate/references:
+    post:
+      summary: Disambiguate references
+      description: Disambiguates references by linking to external identifiers (e.g., DOI).
+      tags:
+        - Reference Processing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceDisambiguationRequest'
+      responses:
+        '200':
+          description: Disambiguated references
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceDisambiguationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /process/references:
+    post:
+      summary: Full reference extraction, parsing, and disambiguation pipeline
+      description: Runs extraction, parsing, and disambiguation on a PDF in one step.
+      tags:
+        - Reference Processing
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+
+  /extract/metadata:
+    post:
+      summary: Extract keywords, topics, lang etc
+      description: Extract metadata such as keywords, topics, languages and so on
+      tags:
+        - Metadata Extraction
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+
+
+
+  /extract/citation-analysis:
+    post:
+      summary: Citation context extraction and intent classification
+      description: |
+        Extract citation contexts and classify intent, returning a labeled XML version of the PDF.
+        Combines context extraction with intent classification based on University of Bologna taxonomy.
+      tags:
+        - Citation Analysis
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+
+  /extract/entities:
+    post:
+      summary: Extract all entity mentions
+      description: |
+        Extract software, dataset, funding, and entity mentions from footnotes, sentences, and reference lists.
+        Returns comprehensive mention analysis in a single response.
+      tags:
+        - Entity Extraction
+      requestBody:
+        $ref: '#/components/requestBodies/PDFInput'
+      responses:
+        '202':
+          description: Processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+
+  # Job Management Endpoints
+  /jobs/{jobId}:
+    get:
+      summary: Get job results
+      description: Retrieve the results of a processing job
+      tags:
+        - Job Management
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: format
+          in: query
+          description: Output format
+          schema:
+            type: string
+            enum: [json, tei]
+            default: json
+      responses:
+        '200':
+          description: Job completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResult'
+            application/xml:
+              schema:
+                type: string
+                description: TEI XML format result or labeled XML with citation analysis
+        '202':
+          description: Job still processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /jobs/{jobId}/status:
+    get:
+      summary: Get job status
+      description: Check the status of a processing job
+      tags:
+        - Job Management
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Job status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+  # securitySchemes:
+  #   ApiKeyAuth:
+  #     type: apiKey
+  #     in: header
+  #     name: X-API-Key
+
+  requestBodies:
+    PDFInput:
+      required: true
+      content:
+        multipart/form-data:
+          schema:
+            $ref: '#/components/schemas/PDFUploadRequest'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PDFURLRequest'
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    PayloadTooLarge:
+      description: Payload too large
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    # Request Schemas
+    FullPipelineRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          description: PDF file to process
+        options:
+          $ref: '#/components/schemas/ProcessingOptions'
+      required:
+        - file
+
+    FullPipelineRequestJSON:
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/InputSource'
+        options:
+          $ref: '#/components/schemas/ProcessingOptions'
+      required:
+        - input
+
+    PDFUploadRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          description: PDF file to process
+        options:
+          $ref: '#/components/schemas/ProcessingOptions'
+      required:
+        - file
+
+    PDFURLRequest:
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/InputSource'
+        options:
+          $ref: '#/components/schemas/ProcessingOptions'
+      required:
+        - input
+
+    InputSource:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [url, base64, storage]
+          description: Type of input source
+        source:
+          type: string
+          description: URL, base64 content, or storage reference
+        metadata:
+          type: object
+          properties:
+            filename:
+              type: string
+            title:
+              type: string
+            authors:
+              type: array
+              items:
+                type: string
+      required:
+        - type
+        - source
+
+    ProcessingOptions:
+      type: object
+      properties:
+        output_format:
+          type: string
+          enum: [json, tei]
+          default: json
+        include_confidence:
+          type: boolean
+          default: true
+        language:
+          type: string
+          description: Expected document language (ISO 639-1)
+        taxonomy:
+          type: string
+          description: Taxonomy to use for classification tasks
+      additionalProperties: false
+
+    # Response Schemas
+    JobResponse:
+      type: object
+      properties:
+        job_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [queued, processing]
+        created_at:
+          type: string
+          format: date-time
+        estimated_completion:
+          type: string
+          format: date-time
+      required:
+        - job_id
+        - status
+        - created_at
+
+    JobStatus:
+      type: object
+      properties:
+        job_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [queued, processing, completed, failed]
+        created_at:
+          type: string
+          format: date-time
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        progress:
+          type: number
+          minimum: 0
+          maximum: 100
+        message:
+          type: string
+      required:
+        - job_id
+        - status
+        - created_at
+
+    JobResult:
+      type: object
+      properties:
+        job_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [completed]
+        created_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        input_metadata:
+          type: object
+        results:
+          $ref: '#/components/schemas/ProcessingResults'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingError'
+      required:
+        - job_id
+        - status
+        - results
+
+    ProcessingResults:
+      type: object
+      properties:
+        document_info:
+          $ref: '#/components/schemas/DocumentInfo'
+        references:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+        keywords:
+          $ref: '#/components/schemas/Keywords'
+        language_detection:
+          $ref: '#/components/schemas/LanguageDetection'
+        citation_analysis:
+          $ref: '#/components/schemas/CitationAnalysis'
+        mentions:
+          $ref: '#/components/schemas/MentionExtractions'
+        statistics:
+          $ref: '#/components/schemas/Statistics'
+
+    DocumentInfo:
+      type: object
+      properties:
+        title:
+          type: string
+        authors:
+          type: array
+          items:
+            type: string
+        abstract:
+          type: string
+        doi:
+          type: string
+        pages:
+          type: integer
+        publication_year:
+          type: integer
+        journal:
+          type: string
+
+    Reference:
+      type: object
+      properties:
+        id:
+          type: string
+        raw_text:
+          type: string
+        parsed:
+          type: object
+          properties:
+            authors:
+              type: array
+              items:
+                type: string
+            title:
+              type: string
+            journal:
+              type: string
+            year:
+              type: integer
+            volume:
+              type: string
+            pages:
+              type: string
+            doi:
+              type: string
+            url:
+              type: string
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    Citation:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        reference_id:
+          type: string
+        page:
+          type: integer
+        position:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    Keywords:
+      type: object
+      properties:
+        extracted_keywords:
+          type: array
+          items:
+            type: object
+            properties:
+              keyword:
+                type: string
+              confidence:
+                type: number
+                minimum: 0
+                maximum: 1
+        classifications:
+          type: array
+          items:
+            type: object
+            properties:
+              taxonomy:
+                type: string
+              category:
+                type: string
+              confidence:
+                type: number
+                minimum: 0
+                maximum: 1
+
+    LanguageDetection:
+      type: object
+      properties:
+        detected_languages:
+          type: array
+          items:
+            type: object
+            properties:
+              language:
+                type: string
+                description: ISO 639-1 language code
+              confidence:
+                type: number
+                minimum: 0
+                maximum: 1
+        primary_language:
+          type: string
+    CitationContext:
+      type: object
+      properties:
+        citation_id:
+          type: string
+        before_text:
+          type: string
+        after_text:
+          type: string
+        full_sentence:
+          type: string
+        page:
+          type: integer
+        position:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+
+    CitationAnalysis:
+      type: object
+      properties:
+        labeled_xml:
+          type: string
+          description: XML version of PDF with labeled citations and contexts
+        contexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/CitationContext'
+        intent_classifications:
+          type: array
+          items:
+            type: object
+            properties:
+              citation_id:
+                type: string
+              intent:
+                type: string
+              confidence:
+                type: number
+                minimum: 0
+                maximum: 1
+              taxonomy:
+                type: string
+                default: "University of Bologna"
+
+    MentionExtractions:
+      type: object
+      properties:
+        software:
+          type: array
+          items:
+            $ref: '#/components/schemas/SoftwareMention'
+        datasets:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetMention'
+        funding:
+          type: array
+          items:
+            $ref: '#/components/schemas/FundingStatement'
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityMention'
+        summary:
+          type: object
+          properties:
+            total_mentions:
+              type: integer
+            software_count:
+              type: integer
+            dataset_count:
+              type: integer
+            funding_count:
+              type: integer
+            entity_count:
+              type: integer
+
+    SoftwareMention:
+      type: object
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        url:
+          type: string
+        context:
+          type: string
+        location:
+          type: object
+          properties:
+            section:
+              type: string
+            page:
+              type: integer
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    DatasetMention:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+        doi:
+          type: string
+        context:
+          type: string
+        location:
+          type: object
+          properties:
+            section:
+              type: string
+            page:
+              type: integer
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    FundingStatement:
+      type: object
+      properties:
+        agency:
+          type: string
+        grant_number:
+          type: string
+        amount:
+          type: string
+        currency:
+          type: string
+        context:
+          type: string
+        location:
+          type: object
+          properties:
+            section:
+              type: string
+            page:
+              type: integer
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    EntityMention:
+      type: object
+      properties:
+        entity:
+          type: string
+        type:
+          type: string
+          enum: [organization, person, location, product, other]
+        context:
+          type: string
+        location:
+          type: object
+          properties:
+            section:
+              type: string
+            page:
+              type: integer
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    Statistics:
+      type: object
+      properties:
+        total_references:
+          type: integer
+        total_citations:
+          type: integer
+        unique_references:
+          type: integer
+        mentions_count:
+          type: integer
+        citation_contexts_count:
+          type: integer
+        processing_time_seconds:
+          type: number
+
+    ProcessingError:
+      type: object
+      properties:
+        task:
+          type: string
+        error_code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+
+    Error:
+      type: object
+      properties:
+        error_code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+      required:
+        - error_code
+        - message
+
+    ReferenceParsingRequest:
+      type: object
+      properties:
+        references:
+          type: array
+          items:
+            type: string
+          description: List of reference strings to parse
+      required:
+        - references
+
+    ReferenceParsingResponse:
+      type: object
+      properties:
+        parsed_references:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+          description: List of parsed reference objects
+
+    ReferenceDisambiguationRequest:
+      type: object
+      properties:
+        references:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+          description: List of references (raw or parsed) to disambiguate
+      required:
+        - references
+
+    ReferenceDisambiguationResponse:
+      type: object
+      properties:
+        disambiguated_references:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+          description: List of disambiguated reference objects
+
+tags:
+  - name: Full Pipeline
+    description: Complete citation analysis pipeline
+  - name: Text Exraction
+    description: extract text from PDFs with or without LLM
+  - name: Reference Processing
+    description: Reference extraction and parsing
+  - name: Metadata Extraction
+    description: Keyword extraction, topic classification, Language detection and translation
+  - name: Citation Analysis
+    description: Citation context extraction and intent classification (returns labeled XML)
+  - name: Entity Extraction
+    description: Unified extraction of software, dataset, funding, and entity mentions
+  - name: Job Management
+    description: Job status and result retrieval

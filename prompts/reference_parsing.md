@@ -10,4 +10,6 @@ IMPORTANT: Your response must be wrapped with <start> and <end> tags. If your re
 
 Only output the JSON string wrapped in the start and end tags, nothing else. Print it pretty. Don't use markdown.
 
-TEXT: <<<{INPUT_TEXT}>>>
+<input_text>
+{{INPUT_TEXT}}
+</input_text>

@@ -143,6 +143,6 @@ from citation_index.core.models.reference import Reference
 References.model_rebuild() 
 
 if __name__ == "__main__":
-    filepath = '/Users/alex/docs/code/Odoma/citation_index/EXgoldstandard/Goldstandard_EXparser/all_xml/36025.xml'
+    filepath = '/Users/alex/docs/code/Odoma/citation_index/EXgoldstandard/Goldstandard_EXparser/all_xml/1181.xml'
     references = References.from_excite_xml(filepath)
     print(references)

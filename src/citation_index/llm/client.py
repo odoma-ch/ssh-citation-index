@@ -41,20 +41,25 @@ class LLMClient:
         else:
             self.client = openai.OpenAI(base_url=endpoint)
     
-    def call(self, prompt: str, model: str = None, temperature: float = 0.0, max_tokens: int = 8192) -> str:
+    def call(self, prompt: str, model: str = None, temperature: float = 0.0, max_tokens: int = 8192, json_schema: str = None) -> str:
         """Call the LLM API."""
         if model is None:
             model = self.model
+        if json_schema:
+            response_format = json_schema
+        else:
+            response_format = None
         response = self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             temperature=temperature,
-            max_tokens=max_tokens)
+            max_tokens=max_tokens,
+            response_format=response_format)
         return response.choices[0].message.content
     
     def call_with_continuation(self, prompt: str, start_tag: str = "```json", end_tag: str = "```", 
                              model: str = None, temperature: float = 0.0, max_tokens: int = 8192,
-                             max_continuations: int = 5) -> str:
+                             max_continuations: int = 5, json_schema: str = None) -> str:
         """Call the LLM API with automatic continuation if response is incomplete.
         
         Args:
@@ -65,7 +70,7 @@ class LLMClient:
             temperature: Temperature for generation
             max_tokens: Maximum tokens per response
             max_continuations: Maximum number of continuation attempts
-            
+            json_schema: JSON schema for the response
         Returns:
             Complete response string
         """
@@ -80,6 +85,11 @@ class LLMClient:
         messages = [{"role": "user", "content": prompt}]
         full_response = ""
         continuation_count = 0
+
+        if json_schema:
+            response_format = json_schema
+        else:
+            response_format = None
         
         while continuation_count < max_continuations:
             # Make the API call
@@ -90,7 +100,8 @@ class LLMClient:
                 model=model,
                 messages=messages,
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
+                response_format=response_format
             )
             
             current_response = response.choices[0].message.content
