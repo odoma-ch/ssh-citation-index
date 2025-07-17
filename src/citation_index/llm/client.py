@@ -4,9 +4,11 @@ LLM client utilities
 
 import re
 import json
-import openai
+# import openai
+from langfuse.openai import openai
 import aiohttp
 import concurrent.futures
+import logging
 from typing import Dict, List, Tuple, Optional
 from .prompt_loader import PromptLoader
 
@@ -25,15 +27,6 @@ class LLMClient:
         self.endpoint = endpoint
         self.model = model
         self.api_key = api_key
-    
-    
-        # if prompt is None:
-        #     self.prompt = None
-        # elif prompt.endswith('.md'):
-        #     with open(prompt, 'r') as f:
-        #         self.prompt = f.read()
-        # else:
-        #     self.prompt = prompt
         
         # Initialize OpenAI client
         if api_key:
@@ -41,14 +34,27 @@ class LLMClient:
         else:
             self.client = openai.OpenAI(base_url=endpoint)
     
-    def call(self, prompt: str, model: str = None, temperature: float = 0.0, max_tokens: int = 8192, json_schema: str = None) -> str:
+    def call(self, prompt: str, model: str = None, temperature: float = 0.0, max_tokens: int = None, json_schema: str = None, json_output: bool = False) -> str:
         """Call the LLM API."""
-        if model is None:
-            model = self.model
-        if json_schema:
-            response_format = json_schema
-        else:
-            response_format = None
+        model = model if model else self.model
+        
+        response_format = None
+        is_deepseek = "api.deepseek.com" in self.endpoint
+
+        if is_deepseek and (json_schema or json_output):
+            response_format = {"type": "json_object"}
+            max_tokens = 8000
+        elif json_schema:
+            response_format = {
+               "type": "json_schema",
+               "json_schema": json_schema
+            }
+        elif json_output:
+            response_format = {
+                "type": "json_object"
+            }
+        
+            
         response = self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
@@ -59,7 +65,7 @@ class LLMClient:
     
     def call_with_continuation(self, prompt: str, start_tag: str = "```json", end_tag: str = "```", 
                              model: str = None, temperature: float = 0.0, max_tokens: int = 8192,
-                             max_continuations: int = 5, json_schema: str = None) -> str:
+                             max_continuations: int = 5, json_schema: str = None, json_output: bool = False) -> str:
         """Call the LLM API with automatic continuation if response is incomplete.
         
         Args:
@@ -74,9 +80,21 @@ class LLMClient:
         Returns:
             Complete response string
         """
-        if model is None:
-            model = self.model
-            
+        model = model if model else self.model
+        
+        response_format = None
+        is_deepseek = "api.deepseek.com" in self.endpoint
+
+        if is_deepseek and (json_schema or json_output):
+            response_format = {"type": "json_object"}
+        elif json_schema:
+            response_format = {
+               "type": "json_schema",
+               "json_schema": json_schema
+            }
+        elif json_output:
+            response_format = {"type": "json_object"}
+        
         # Convert single tags to lists for consistent handling
         start_tags = [start_tag] if isinstance(start_tag, str) else start_tag
         end_tags = [end_tag] if isinstance(end_tag, str) else end_tag
@@ -85,16 +103,11 @@ class LLMClient:
         messages = [{"role": "user", "content": prompt}]
         full_response = ""
         continuation_count = 0
-
-        if json_schema:
-            response_format = json_schema
-        else:
-            response_format = None
         
         while continuation_count < max_continuations:
             # Make the API call
             call_number = continuation_count + 1
-            print(f"API call #{call_number}...")
+            logging.info(f"API call #{call_number}...")
             
             response = self.client.chat.completions.create(
                 model=model,
@@ -112,13 +125,13 @@ class LLMClient:
             if response_complete:
                 # Response is complete
                 messages.append({"role": "assistant", "content": full_response})
-                print(f"Response completed in {call_number} call(s)")
+                logging.info(f"Response completed in {call_number} call(s)")
                 break
             else:
                 # Response is incomplete, continue the conversation
                 continuation_count += 1
                 if continuation_count >= max_continuations:
-                    print(f"Warning: Reached maximum continuations ({max_continuations}). Response may be incomplete.")
+                    logging.warning(f"Reached maximum continuations ({max_continuations}). Response may be incomplete.")
                     break
                 
                 # Add the current response to conversation history
@@ -131,29 +144,33 @@ class LLMClient:
         
         return messages, full_response
     
-    def call_with_json_continuation(self, prompt: str, model: str = None, temperature: float = 0.0, 
-                                  max_tokens: int = 8192, max_continuations: int = 5) -> str:
-        """Call the LLM API with automatic continuation specifically for JSON responses.
+
+
+class DeepSeekClient(LLMClient):
+    """Client for interacting with DeepSeek API"""
+    
+    def __init__(self, api_key: str):
+        super().__init__(endpoint="https://api.deepseek.com/v1", model="deepseek-chat", api_key=api_key)
         
-        Args:
-            prompt: The initial prompt to send
-            model: Model name to use (uses self.model if None)
-            temperature: Temperature for generation
-            max_tokens: Maximum tokens per response
-            max_continuations: Maximum number of continuation attempts
-            
-        Returns:
-            Complete JSON response string
-        """
-        return self.call_with_continuation(
-            prompt=prompt,
-            start_tag="```json",
-            end_tag="```",
+
+class VLLMClient(LLMClient):
+    """Client for interacting with VLLM API"""
+    
+    def call_with_parsed_structured_output(self, prompt: str, model: str = None, temperature: float = 0.5, json_class: object = None) -> str:
+        """Call the LLM API with structured output."""
+        model = model if model else self.model
+        if json_class is None:
+            raise ValueError("a pydantic model is required")
+        response_format = json_class
+        response = self.client.beta.chat.completions.parse(
             model=model,
+            messages=[{"role": "user", "content": prompt}],
             temperature=temperature,
-            max_tokens=max_tokens,
-            max_continuations=max_continuations
+            response_format=response_format
         )
+        return response.choices[0].message.parsed
+
+
     
 
     

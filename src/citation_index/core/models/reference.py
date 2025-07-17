@@ -24,6 +24,7 @@ class Reference(BaseModel):
     ] = Field(
         None,
         description="This title applies to an analytic item, such as an article, poem, or other work published as part of a larger item.",
+        exclude=True,
     )
     
     monographic_title: Optional[
@@ -36,7 +37,15 @@ class Reference(BaseModel):
     ] = Field(
         None,
         description="This title applies to a monograph such as a book or other item considered to be a distinct publication, including single volumes of multi-volume works.",
+        exclude=True,
     )
+
+    full_title: Annotated[
+        str,
+        BeforeValidator(to_str),
+        AfterValidator(empty_to_none),
+        AfterValidator(normalize),
+    ] = Field(description="The full title of the reference. This should be the same as the monographic_title or analytic_title, or a combination of the two. ")
     
     journal_title: Optional[
         Annotated[
@@ -51,14 +60,14 @@ class Reference(BaseModel):
     )
     
     authors: Optional[
-        Annotated[
-            List[Person | Organization],
-            BeforeValidator(to_list),
-            AfterValidator(remove_empty_models),
-            AfterValidator(empty_to_none),
-        ]
-    ] = Field(
-        None,
+            Annotated[
+                List[Person | Organization],
+                BeforeValidator(to_list),
+                AfterValidator(remove_empty_models),
+                AfterValidator(empty_to_none),
+            ]
+        ] = Field(
+        default=None,
         description="Contains the name or names of the authors, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority.",
     )
     
@@ -70,7 +79,7 @@ class Reference(BaseModel):
             AfterValidator(empty_to_none),
         ]
     ] = Field(
-        None,
+        default=None,
         description="Contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, etc.",
     )
     
@@ -191,6 +200,15 @@ class Reference(BaseModel):
     )
 
     @model_validator(mode="after")
+    def _set_full_title(self) -> "Reference":
+        if self.full_title is None:
+            if self.monographic_title is not None:
+                self.full_title = self.monographic_title
+            elif self.analytic_title is not None:
+                self.full_title = self.analytic_title
+        return self
+
+    @model_validator(mode="after")
     def _avoid_empty_monograph_title(self) -> "Reference":
         """TEI biblStructs require a monograph title.
 
@@ -215,6 +233,7 @@ class Reference(BaseModel):
     def from_excite_xml(cls, xml_str: str) -> "Reference":
         """Create a Reference from an EXCITE XML string (which may be a fragment with text between tags)."""
         from lxml import etree
+        import re
 
         # Wrap in a root element to make it parseable
         wrapped_xml = f"<root>{xml_str}</root>"
@@ -231,30 +250,56 @@ class Reference(BaseModel):
         for author in root.findall(".//author"):
             surname = author.find("surname")
             given_names = author.find("given-names")
-            if surname is not None or given_names is not None:
+            surname_text = surname.text.strip() if surname is not None and surname.text else None
+            given_names_text = given_names.text.strip() if given_names is not None and given_names.text else None
+            if surname_text or given_names_text:
                 from .person import Person
-                authors.append(Person(
-                    surname=surname.text if surname is not None else None,
-                    first_name=given_names.text if given_names is not None else None
-                ))
+                person = Person(
+                    surname=surname_text,
+                    first_name=given_names_text
+                )
+                # Only append if at least one field is not None/empty
+                if person.surname or person.first_name:
+                    authors.append(person)
+        # Remove any None or empty authors (extra safety)
+        authors = [a for a in authors if a is not None and (getattr(a, "surname", None) or getattr(a, "first_name", None))]
 
         # Extract editors (person or organization)
         editors = []
         for editor in root.findall(".//editor"):
             surname = editor.find("surname")
             given_names = editor.find("given-names")
-            if surname is not None or given_names is not None:
+            surname_text = surname.text.strip() if surname is not None and surname.text else None
+            given_names_text = given_names.text.strip() if given_names is not None and given_names.text else None
+            if surname_text or given_names_text:
                 from .person import Person
-                editors.append(Person(
-                    surname=surname.text if surname is not None else None,
-                    first_name=given_names.text if given_names is not None else None
-                ))
-            elif editor.text:
+                person = Person(
+                    surname=surname_text,
+                    first_name=given_names_text
+                )
+                if person.surname or person.first_name:
+                    editors.append(person)
+            elif editor.text and editor.text.strip():
                 from .organization import Organization
-                editors.append(Organization(name=editor.text.strip()))
+                org = Organization(name=editor.text.strip())
+                if org.name:
+                    editors.append(org)
+        # Remove any None or empty editors
+        editors = [e for e in editors if e is not None and (getattr(e, "surname", None) or getattr(e, "first_name", None) or getattr(e, "name", None))]
 
         # Extract other fields
         title = root.find(".//title")
+        full_title = None
+        if title is not None and title.text and title.text.strip():
+            full_title = title.text.strip()
+        else:
+            # Fallback: try to extract <title>...</title> manually from the string
+            m = re.search(r"<title>(.*?)</title>", xml_str)
+            if m:
+                full_title = m.group(1).strip()
+        if not full_title:
+            full_title = "Unknown Title"
+        
         source = root.find(".//source")
         year = root.find(".//year")
         volume = root.find(".//volume")
@@ -270,25 +315,11 @@ class Reference(BaseModel):
             pages = f"{fpage.text}-{lpage.text}"
         elif fpage is not None:
             pages = fpage.text
-
-        # Decide where to put the title: monographic_title or analytic_title
-        # If there are no authors and no editors, treat <title> as monographic_title
-        if title is not None:
-            if not authors and not editors:
-                monographic_title = title.text
-                analytic_title = None
-            else:
-                monographic_title = None
-                analytic_title = title.text
-        else:
-            monographic_title = None
-            analytic_title = None
-
+        # print(f"DEBUG: full_title = {full_title} | authors = {authors} | editors = {editors}")
         return cls(
             authors=authors if authors else None,
             editors=editors if editors else None,
-            analytic_title=analytic_title,
-            monographic_title=monographic_title,
+            full_title=full_title,
             journal_title=source.text if source is not None else None,
             publication_date=year.text if year is not None else None,
             volume=volume.text if volume is not None else None,
@@ -297,3 +328,28 @@ class Reference(BaseModel):
             publisher=publisher.text if publisher is not None else None,
             publication_place=other.text if other is not None else None
         ) 
+
+    @classmethod
+    def schema_without_excluded(cls):
+        """Generates a JSON schema for the model, excluding fields marked with `exclude=True`."""
+        schema = cls.model_json_schema()
+        excluded_fields = {
+            field_name
+            for field_name, field_info in cls.model_fields.items()
+            if field_info.exclude
+        }
+
+        if 'properties' in schema:
+            for field in excluded_fields:
+                schema['properties'].pop(field, None)
+        
+        if 'required' in schema:
+            schema['required'] = [
+                req for req in schema['required'] if req not in excluded_fields
+            ]
+            if not schema['required']:
+                schema.pop('required')
+        
+        schema['name'] = cls.__name__
+                
+        return schema 

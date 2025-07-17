@@ -38,7 +38,8 @@ def process_papers_folders():
     """
     
     # Base path
-    base_path = Path("EXgoldstandard/Goldstandard_EXparser")
+    goldstandard_path = Path("EXgoldstandard/Goldstandard_EXparser")
+    output_path = Path("benchmarks/excite")
     
     # Initialize lists to store data
     pdf_data = []
@@ -63,15 +64,15 @@ def process_papers_folders():
     }
     
     # Create consolidated folders
-    consolidated_pdfs_path = base_path / "all_pdfs"
-    consolidated_xml_path = base_path / "all_xml"
+    consolidated_pdfs_path = output_path / "all_pdfs"
+    consolidated_xml_path = output_path / "all_xml"
     consolidated_pdfs_path.mkdir(exist_ok=True)
     consolidated_xml_path.mkdir(exist_ok=True)
     
     # Process each main folder (German/English)
     for main_folder, config in folder_mappings.items():
         lang = config["lang"]
-        main_folder_path = base_path / main_folder
+        main_folder_path = goldstandard_path / main_folder
         
         if not main_folder_path.exists():
             print(f"Warning: {main_folder_path} does not exist")
@@ -169,10 +170,10 @@ def process_papers_folders():
     total_references = sum(len(data["references"]) for data in references_data.values())
     
     # Save results under Goldstandard_EXparser
-    pdf_df.to_csv(base_path / "pdf_files_info.csv", index=False)
+    pdf_df.to_csv(output_path / "pdf_files_info.csv", index=False)
     
     # Save references as JSON
-    with open(base_path / "all_references.json", "w", encoding="utf-8") as f:
+    with open(output_path / "all_references.json", "w", encoding="utf-8") as f:
         json.dump(references_data, f, indent=2, ensure_ascii=False)
     
     # Print summary
@@ -197,10 +198,10 @@ def process_papers_folders():
             print(f"  PDFs with page count errors: {len(pdf_df) - len(valid_pages)}")
     
     print(f"\nFiles saved:")
-    print(f"- {base_path}/pdf_files_info.csv")
-    print(f"- {base_path}/all_references.json")
-    print(f"- {base_path}/all_pdfs/")
-    print(f"- {base_path}/all_xml/")
+    print(f"- {output_path}/pdf_files_info.csv")
+    print(f"- {output_path}/all_references.json")
+    print(f"- {output_path}/all_pdfs/")
+    print(f"- {output_path}/all_xml/")
     
     return pdf_df, references_data
 
@@ -261,6 +262,7 @@ def evaluate_whole_dataset(pred_pkl_path, xml_dir, mode='exact',fuzzy_threshold=
             continue
         file_id = fname[:-4]
         gt_path = os.path.join(xml_dir, fname)
+        print(f"Processing {file_id}")
         try:
             gt_refs = References.from_excite_xml(gt_path)
         except Exception as e:
@@ -279,7 +281,7 @@ def evaluate_whole_dataset(pred_pkl_path, xml_dir, mode='exact',fuzzy_threshold=
             for ref in pred_refs_raw:
                 ref_data = ref["reference"].copy()
                 if "title" in ref_data:
-                    ref_data["analytic_title"] = ref_data.pop("title")
+                    ref_data["full_title"] = ref_data.pop("title")
                 reference_dicts.append(ref_data)
             pred_refs = References.from_dict(reference_dicts)
         gt_refs_list.append(gt_refs)
@@ -318,6 +320,31 @@ if __name__ == "__main__":
     
     # Example usage:
     pred_pkl_path = "benchmarks/benchmarking/references_ref_extparsing_deepseek_pymupdf.pkl"
-    xml_dir = "EXgoldstandard/Goldstandard_EXparser/all_xml"
+    xml_dir = "benchmarks/excite/all_xml"
     overall_metrics, per_doc_df = evaluate_whole_dataset(pred_pkl_path, xml_dir)
-    per_doc_df.to_csv("per_document_metrics.csv", index=False) 
+    per_doc_df.to_csv("per_document_metrics.csv", index=False)
+
+
+def load_excite_data() -> Tuple[pd.DataFrame, Dict]:
+    """
+    Load the EXCITE dataset information.
+    
+    Returns:
+        Tuple containing:
+        - pdf_df: DataFrame with PDF file information
+        - references_data: Dictionary with ground truth references
+    """
+    base_path = Path("benchmarks/excite")
+    pdf_info_path = base_path / "pdf_files_info.csv"
+    references_path = base_path / "all_references.json"
+
+    if not pdf_info_path.exists() or not references_path.exists():
+        print("Data files not found. Running pre-processing step...")
+        process_papers_folders()
+
+    pdf_df = pd.read_csv(pdf_info_path)
+    with open(references_path, "r", encoding="utf-8") as f:
+        references_data = json.load(f)
+
+    print(f"Loaded {len(pdf_df)} PDF records and {len(references_data)} papers with references.")
+    return pdf_df, references_data

@@ -173,15 +173,10 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-EXgoldstandard/Goldstandard_EXmatcher
-EXgoldstandard/Goldstandard_EXparser/1-German_papers
-EXgoldstandard/Goldstandard_EXparser/2-English_papers 
-EXgoldstandard/Goldstandard_EXparser/3-Guidelinefiles
-EXgoldstandard/Goldstandard_EXparser/all_pdfs
-EXgoldstandard/Goldstandard_EXparser/all_xml
+EXgoldstandard/
 GeoCite/
 .DS_Store
-EXgoldstandard/README.md
-EXgoldstandard/Goldstandard_EXparser/README.md
-
 CEXgoldstandard/
+.vscode/
+benchmarks/excite/all_markdown/
+benchmarks/excite/outputs/

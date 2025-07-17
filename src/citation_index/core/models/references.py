@@ -71,7 +71,13 @@ class References(BaseModel):
     @classmethod
     def from_dict(cls, data: Dict) -> "References":
         """Create References from a dictionary."""
-        return cls(references=[Reference.from_dict(item) for item in data])
+        references = []
+        for item in data:
+            if 'reference' in item:
+                references.append(Reference.from_dict(item['reference']))
+            else:
+                references.append(Reference.from_dict(item))
+        return cls(references=references) 
 
     @classmethod
     def from_xml(
@@ -136,6 +142,47 @@ class References(BaseModel):
             references.append(Reference.from_excite_xml(line))
 
         return cls(references=references)
+
+    @classmethod
+    def schema_without_excluded(cls):
+        """
+        Generates a JSON schema for the model, where the nested Reference objects
+        do not contain fields marked with `exclude=True`.
+        """
+        from citation_index.core.models.reference import Reference
+        
+        schema = super().model_json_schema()
+        
+        # Pydantic may use a $ref or inline the schema for nested models.
+        items_schema = schema.get("properties", {}).get("references", {}).get("items")
+        
+        if not items_schema:
+            return schema # Should not happen, but good to be safe.
+            
+        if "$ref" in items_schema:
+            # Case 1: The schema uses a reference (e.g. in '#/$defs/Reference').
+            ref_path = items_schema["$ref"]
+            ref_name = ref_path.split("/")[-1]
+            if "$defs" in schema and ref_name in schema["$defs"]:
+                schema["$defs"][ref_name] = Reference.schema_without_excluded()
+        else:
+            # Case 2: The schema is inlined.
+            schema["properties"]["references"]["items"] = Reference.schema_without_excluded()
+            
+        # The schema we get from pydantic is 99% of the way there, but the last mile requires a bit of work.
+        # First, we'll remove the `exclude` and `description` fields from the schema.
+        # Then, we'll add a `name` field to the schema, which is required by the API.
+        if "properties" in schema:
+            for prop in ["exclude", "description"]:
+                if prop in schema["properties"]:
+                    del schema["properties"][prop]
+        if "required" in schema:
+            schema["required"] = [
+                req for req in schema["required"] if req not in ["exclude"]
+            ]
+        # Then we add the name
+        schema["name"] = cls.__name__
+        return schema
 
 
 # Update forward references after all models are defined

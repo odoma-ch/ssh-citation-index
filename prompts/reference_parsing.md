@@ -1,15 +1,86 @@
-You are an expert in scholarly references and citations. You help the user to extract citation data from scientific works.
+You are an expert in scholarly references and citations. Your task is to parse full reference entries from reference stings and format them in a specific JSON structure. Here's the text you need to analyze:
 
-For a given reference, parse the reference and output the reference in JSON format with following schema:
 
-IMPORTANT: Your response must be wrapped with <start> and <end> tags. If your response is cut off due to length limits, the system will automatically continue the conversation until the <end> tag is found.
+### Your Task
 
+Given the provided text, parse all full reference entries and format them according to the following JSON schema:
+
+```json
+{
+    "references": [
+        {
+            "reference": {
+                "authors": [
+                    {
+                        "first_name": "Author's given name (e.g., 'John')",
+                        "middle_name": "Author's middle name(s), or empty if not provided (e.g., 'A.')",
+                        "surname": "Author's family name (e.g., 'Doe')"
+                    }
+                    // More authors as listed
+                ],
+                "full_title": "Title of the referenced work (e.g., 'Deep Learning for NLP')",
+                "journal_title": "Name of the journal or publication (e.g., 'Nature')",
+                "volume": "Volume number (e.g., '12')",
+                "issue": "Issue number (e.g., '3')",
+                "pages": "Page range (e.g., '123-130')",
+                "publication_date": "Year or full date of publication (e.g., '2021' or '2021-05-10')",
+                "publisher": "Publisher's name (e.g., 'Springer')"
+            }
+        }
+        // More references if applicable
+    ]
+}
+```
+
+#### Guidelines:
+1. If a field is missing in a reference, use an empty string or empty list as appropriate.
+2. For authors, include as many as are listed, and structure each as:
+   - "first_name": string
+   - "middle_name": string (empty if not present)
+   - "surname": string
+3. Ensure the output is valid JSON, with no trailing commas.
+4. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
+
+### Example
+
+#### Input Text:
+
+1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.  
+2. United Nations. (2018). World Urbanization Prospects. UN Publications.
+
+#### Expected Output:
 <start>
-{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}
+{
+    "references": [
+        {
+            "reference": {
+                "authors": [
+                    {"first_name": "J.", "middle_name": "", "surname": "Smith"},
+                    {"first_name": "A.", "middle_name": "", "surname": "Brown"},
+                    {"first_name": "C.", "middle_name": "", "surname": "Wilson"}
+                ],
+                "full_title": "Machine learning approaches in natural language processing",
+                "journal_title": "Journal of AI Research",
+                "volume": "15",
+                "issue": "3",
+                "pages": "245-267",
+                "publication_date": "2020"
+            }
+        },
+        {
+            "reference": {
+                "organization": "United Nations",
+                "full_title": "World Urbanization Prospects",
+                "journal_title": "UN Publications",
+                "volume": "",
+                "issue": "",
+                "pages": "",
+                "publication_date": "2018"
+            }
+        }
+    ]
+}
 <end>
 
-Only output the JSON string wrapped in the start and end tags, nothing else. Print it pretty. Don't use markdown.
-
-<input_text>
+### Input Text:
 {{INPUT_TEXT}}
-</input_text>
