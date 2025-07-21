@@ -13,10 +13,17 @@ class RefEvaluator:
         mode: 'exact' for strict equality, 'fuzzy' for fuzzy string matching.
         fuzzy_threshold: Minimum similarity (0-100) for fuzzy match (only used if mode='fuzzy').
     """
-    def __init__(self, mode: str = 'exact', fuzzy_threshold: int = 90):
-        if mode not in ('exact', 'fuzzy'):
-            raise ValueError("mode must be 'exact' or 'fuzzy'")
+    def __init__(self, mode: str = 'exact', fuzzy_threshold: float = 90):
+        # Accept three evaluation modes:
+        # 1. 'exact'       – strict equality
+        # 2. 'fuzzy'       – boolean match based on fuzzy_threshold
+        # 3. 'soft_fuzzy'  – use raw fuzzy similarity (0‒1) as the match weight
+        if mode not in ('exact', 'fuzzy', 'soft_fuzzy'):
+            raise ValueError("mode must be 'exact', 'fuzzy', or 'soft_fuzzy'")
         self.mode = mode
+        # Allow users to specify threshold either in [0,1] or [0,100].
+        if mode == 'fuzzy' and 0 < fuzzy_threshold <= 1:
+            fuzzy_threshold *= 100  # convert proportion -> percentage expected by RapidFuzz ratio
         self.fuzzy_threshold = fuzzy_threshold
 
     def evaluate(
@@ -56,12 +63,14 @@ class RefEvaluator:
         # Per-class F1
         per_class_f1 = {field: self._prf(v['matches'], v['predictions'], v['labels'])['f1'] for field, v in field_stats.items()}
 
+        # Round results to 4 decimal places for readability and consistency
+        rounded_per_class = {field: round(f, 4) for field, f in per_class_f1.items()}
         return {
-            'precision': micro['precision'],
-            'recall': micro['recall'],
-            'micro_f1': micro['f1'],
-            'macro_f1': float(np.mean(macro_f1s)),
-            'per_class_f1': per_class_f1,
+            'precision': round(micro['precision'], 4),
+            'recall': round(micro['recall'], 4),
+            'micro_f1': round(micro['f1'], 4),
+            'macro_f1': round(float(np.mean(macro_f1s)), 4),
+            'per_class_f1': rounded_per_class,
         }
 
     def _evaluate_single(self, preds: List[Reference], labels: List[Reference], focus_fields: Optional[List[str]] = None):
@@ -147,7 +156,12 @@ class RefEvaluator:
                     sim_matrix[i, j] = self._is_match(p, l)
             from scipy.optimize import linear_sum_assignment
             row_ind, col_ind = linear_sum_assignment(-sim_matrix)
-            matches = int(sum(sim_matrix[i, j] for i, j in zip(row_ind, col_ind)))
+            match_sum = sum(sim_matrix[i, j] for i, j in zip(row_ind, col_ind))
+            # In soft_fuzzy mode we keep the fractional similarity; otherwise we cast to int.
+            if self.mode == 'soft_fuzzy':
+                matches = float(match_sum)
+            else:
+                matches = int(match_sum)
             return matches, n_pred, n_label
         if isinstance(pred, list):
             return 0, len(pred), 0
@@ -157,15 +171,26 @@ class RefEvaluator:
             return 0, 0, 1
         if label is None:
             return 0, 1, 0
-        return (int(self._is_match(pred, label)), 1, 1)
+        # Convert the similarity / match value appropriately for the chosen mode
+        match_val = self._is_match(pred, label)
+        if self.mode == 'soft_fuzzy':
+            matches = float(match_val)
+        else:
+            matches = int(match_val)
+        return (matches, 1, 1)
 
     def _is_match(self, a, b):
+        """Return match indicator or similarity score depending on mode."""
         if a is None or b is None:
-            return False
+            return 0.0 if self.mode == 'soft_fuzzy' else False
+
         if self.mode == 'exact':
             return a == b
         elif self.mode == 'fuzzy':
             return ratio(str(a), str(b)) >= self.fuzzy_threshold
+        elif self.mode == 'soft_fuzzy':
+            # Scale RapidFuzz ratio (0‒100) to 0‒1 float for weighted matching
+            return ratio(str(a), str(b)) / 100.0
         else:
             raise ValueError(f"Unknown mode: {self.mode}")
 
@@ -203,7 +228,7 @@ class RefEvaluator:
 def string_reference_eval(
     references_data: List[str],
     response_list: List[str],
-    similarity_mode: str = 'levenshtein',
+    similarity_mode: str = 'fuzzy',
     similarity_threshold: float = 0.8
 ) -> Dict[str, float]:
     """
@@ -275,9 +300,14 @@ if __name__ == "__main__":
 
     # Reference-based test
     from citation_index.core.models import Reference
-    gt_refs = [Reference(analytic_title="A"), Reference(analytic_title="B")]
-    pred_refs = [Reference(analytic_title="A"), Reference(analytic_title="C")]
+    gt_refs = [Reference(full_title="NLP approaches in natural language processing"), Reference(full_title="Deep learning fundamentals")]
+    pred_refs = [Reference(full_title="NLP approaches in natural language processing"), Reference(full_title="Machine learning fundamentals")]
     evaluator = RefEvaluator(mode='exact')
     print("Reference eval (exact):", evaluator.evaluate(pred_refs, gt_refs))
-    evaluator_fuzzy = RefEvaluator(mode='fuzzy', fuzzy_threshold=80)
-    print("Reference eval (fuzzy):", evaluator_fuzzy.evaluate(pred_refs, gt_refs))
+    evaluator_fuzzy = RefEvaluator(mode='fuzzy', fuzzy_threshold=70)
+    print("Reference eval (fuzzy 70%):", evaluator_fuzzy.evaluate(pred_refs, gt_refs))
+    evaluator_fuzzy = RefEvaluator(mode='fuzzy', fuzzy_threshold=0.95)
+    print("Reference eval (fuzzy 95%):", evaluator_fuzzy.evaluate(pred_refs, gt_refs))
+    # Soft-fuzzy evaluation (uses raw similarity instead of thresholding)
+    evaluator_soft = RefEvaluator(mode='soft_fuzzy')
+    print("Reference eval (soft_fuzzy):", evaluator_soft.evaluate(pred_refs, gt_refs))

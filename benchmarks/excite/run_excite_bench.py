@@ -35,6 +35,9 @@ class BenchmarkRunner:
         self.metrics = []
         # Will store the duration (in seconds) of the LLM call phase (Step 2)
         self.llm_duration = 0.0
+        # Counters for error tracking
+        self.parse_errors = 0  # JSON or format errors while reading model output
+        self.eval_errors = 0   # Any failure during evaluation phase
         tqdm.write(f"Results will be saved to: {self.output_dir}")
 
     def run(self):
@@ -43,6 +46,9 @@ class BenchmarkRunner:
         logging.debug(json.dumps(vars(self.args), indent=2))
         
         pdf_df, references_data = load_excite_data()
+
+        # Keep a copy for later per-class summaries
+        self.pdf_df = pdf_df
         
         extractor = ExtractorFactory.create(self.args.extractor)
         llm_client = LLMClient(
@@ -164,6 +170,7 @@ class BenchmarkRunner:
                     self._evaluate_structured_task(response_data)
             except Exception as e:
                 logging.error(f"Error evaluating response for document {response_data['file_id']}: {e}", exc_info=True)
+                self.eval_errors += 1
 
         self._save_results()
         self._summarize_results()
@@ -232,9 +239,35 @@ class BenchmarkRunner:
             llm_response_str = llm_response_str.strip()
 
             json_match = json.loads(llm_response_str)
-            pred_references = References.from_dict(json_match['references'])
+
+            # Flexible handling: the LLM may return a list of references directly
+            # or a dict without the expected top-level key.
+            refs_raw = None
+
+            if isinstance(json_match, list):
+                # Already a list of reference dicts
+                refs_raw = json_match
+            elif isinstance(json_match, dict):
+                # Try common keys
+                for key in ("references", "parsed_references", "refs"):
+                    if key in json_match:
+                        refs_raw = json_match[key]
+                        break
+                # Fallback: maybe the whole dict is actually a single reference
+                if refs_raw is None and all(k in json_match for k in ("title", "full_title", "authors")):
+                    refs_raw = [json_match]
+
+            if refs_raw:
+                pred_references = References.from_dict(refs_raw)
+            else:
+                logging.warning(
+                    f"No reference list found in JSON for {file_id}; treating as empty prediction."
+                )
+                self.parse_errors += 1
+                pred_references = References(references=[])
         except (json.JSONDecodeError, KeyError) as e:
             logging.error(f"Error parsing JSON for {file_id}: {e}", exc_info=True)
+            self.parse_errors += 1
             pred_references = References(references=[])
 
         self.results.append({"id": file_id, "references": json_match})
@@ -242,8 +275,12 @@ class BenchmarkRunner:
         gt_references_xml_path = f"benchmarks/excite/all_xml/{file_id}.xml"
         if os.path.exists(gt_references_xml_path):
             gt_struct_references = References.from_excite_xml(gt_references_xml_path)
-            evaluator = RefEvaluator(mode='fuzzy')
-            metric = evaluator.evaluate([pred_references], [gt_struct_references])
+            evaluator = RefEvaluator(mode=self.args.mode, fuzzy_threshold=self.args.fuzzy_threshold)
+            metric = evaluator.evaluate(
+                [pred_references],
+                [gt_struct_references],
+                focus_fields=self.args.focus_fields,
+            )
             metric["file_id"] = file_id
             self.metrics.append(metric)
         else:
@@ -251,6 +288,12 @@ class BenchmarkRunner:
 
     def _save_results(self):
         """Save the raw results and metrics to files."""
+
+        # Respect --skip_save flag
+        if getattr(self.args, "skip_save", False):
+            tqdm.write("Skipping saving results & metrics (--skip_save enabled).")
+            return
+
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
         run_name = f"{self.args.task}_{model_name_slug}_{self.args.extractor}_{timestamp}"
@@ -276,6 +319,10 @@ class BenchmarkRunner:
             return
 
         metrics_df = pd.DataFrame(self.metrics)
+        # Ensure file_id is str for merging
+        metrics_df["file_id"] = metrics_df["file_id"].astype(str)
+        if hasattr(self, "pdf_df"):
+            self.pdf_df["file_id"] = self.pdf_df["file_id"].astype(str)
         tqdm.write("\n--- Benchmark Summary ---")
         if self.args.task == "extraction":
             summary = metrics_df[['precision', 'recall', 'f1_score', 'avg_similarity']].mean().to_dict()
@@ -284,6 +331,41 @@ class BenchmarkRunner:
         
         tqdm.write(json.dumps(summary, indent=2))
         tqdm.write("-------------------------\n")
+
+        # ----------------------------------------------------------
+        # Error statistics
+        # ----------------------------------------------------------
+        tqdm.write("Error statistics:")
+        tqdm.write(f"  Parsing errors:   {self.parse_errors}")
+        tqdm.write(f"  Evaluation errors: {self.eval_errors}")
+
+        # ----------------------------------------------------------
+        # Optional per-class / language breakdown
+        # ----------------------------------------------------------
+        if self.args.per_class and hasattr(self, "pdf_df"):
+            joined = metrics_df.merge(
+                self.pdf_df[["file_id", "class", "lang"]], on="file_id", how="left"
+            )
+
+            metric_cols = (
+                ["precision", "recall", "f1_score", "avg_similarity"]
+                if self.args.task == "extraction"
+                else ["precision", "recall", "micro_f1", "macro_f1"]
+            )
+
+            grouped = (
+                joined.groupby(["class", "lang"], dropna=True)[metric_cols]
+                .mean()
+                .reset_index()
+            )
+
+            tqdm.write("Per-class / language metrics:")
+            for _, row in grouped.iterrows():
+                cls, lang = int(row["class"]), row["lang"]
+                metrics_str = ", ".join(
+                    f"{col}: {row[col]:.4f}" for col in metric_cols if col in row
+                )
+                tqdm.write(f"  class {cls}, lang {lang}: {metrics_str}")
 
 
 def main():
@@ -306,6 +388,16 @@ def main():
     # Extractor Configuration
     parser.add_argument("--extractor", type=str, default="pymupdf", choices=["pymupdf", "marker", "mineru"], help="The PDF text extractor to use.")
 
+    # Evaluation Configuration
+    parser.add_argument("--fuzzy_threshold", type=float, default=90, help="Fuzzy threshold for reference parsing. If ≤1, treated as proportion (e.g., 0.95 → 95).")
+    parser.add_argument("--mode", type=str, default="exact", choices=["exact", "fuzzy", "soft_fuzzy"], help="Mode for reference parsing.")
+    parser.add_argument(
+        "--focus_fields",
+        type=str,
+        default="authors,full_title,publication_date",
+        help="Comma-separated list of fields to evaluate (default: authors,full_title,publication_date).",
+    )
+
     # I/O and Execution Configuration
     parser.add_argument("--output_path", type=str, default="benchmarks/excite/outputs", help="Directory to save the evaluation results.")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of documents to process for a quick test run.")
@@ -313,7 +405,32 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging for debugging.")
     parser.add_argument("--responses_path", type=str, default=None, help="Path to a pre-saved pickle file containing LLM responses to load for evaluation-only runs.")
 
+    # Output Configuration
+    parser.add_argument(
+        "--per_class",
+        action="store_true",
+        help=(
+            "If set, additionally display evaluation metrics broken down by document "
+            "class (1, 2, 3) and language (de/en)."
+        ),
+    )
+
+    # Persistence Configuration
+    parser.add_argument(
+        "--skip_save",
+        action="store_true",
+        help="If set, do NOT write raw results or metrics to disk.",
+    )
+
     args = parser.parse_args()
+
+    # Parse and normalize focus_fields -> List[str] or None
+    if args.focus_fields:
+        if isinstance(args.focus_fields, str):
+            args.focus_fields = [f.strip() for f in args.focus_fields.split(",") if f.strip()]
+        elif not isinstance(args.focus_fields, list):
+            # Unexpected type; fallback to None
+            args.focus_fields = None
 
     # Configure logging
     log_level = logging.DEBUG if args.verbose else tqdm.write
