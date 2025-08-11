@@ -1,0 +1,1128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">VR Facial Animation via Multiview Image Translation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Association for Computing Machinery</publisher>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Shih-En</forename><surname>Wei</surname></persName>
+							<email>shih-en.wei@fb.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jason</forename><surname>Saragih</surname></persName>
+							<email>jason.saragih@fb.
+com</email>
+<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tomas</forename><surname>Simon</surname></persName>
+							<email>tomas.simon@fb.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Adam</forename><forename type="middle">W</forename><surname>Harley</surname></persName>
+							<email>aharley@cmu.edu</email>
+							<affiliation key="aff1">
+								<orgName type="institution">Carnegie Mellon University</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Stephen</forename><surname>Lombardi</surname></persName>
+							<email>stephen.lombardi@fb.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michal</forename><surname>Perdoch</surname></persName>
+							<email>michal.perdoch@oculus.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Alexander</forename><surname>Hypes</surname></persName>
+							<email>alexander.hypes@oculus.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dawei</forename><surname>Wang</surname></persName>
+							<email>dawei.wang@oculus.
+com</email>
+<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hernan</forename><surname>Badino</surname></persName>
+							<email>hernan.badino@oculus.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yaser</forename><surname>Sheikh</surname></persName>
+							<email>yasers@fb.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Facebook Reality Labs</orgName>
+								<address>	<settlement>Pittsburgh</settlement>
+								<state>Pennsylvania</state>
+								<country>USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">VR Facial Animation via Multiview Image Translation</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">ACM Transactions on Graphics (TOG)</title>
+						<title level="j" type="abbrev">ACM Trans. Graph.</title>
+						<idno type="ISSN">0730-0301</idno>
+						<imprint>
+							<publisher>Association for Computing Machinery</publisher>
+							<biblScope unit="volume">38</biblScope>
+							<biblScope unit="issue">4</biblScope>
+							<date type="published" when="2019-07"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2EFEBE7F29A8A1408ABE611289319D3C</idno>
+					<idno type="DOI">10.1145/3306346.3323030</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Human-centered computing → Virtual reality</term>
+					<term>• Computing methodologies → Computer vision</term>
+					<term>Unsupervised learning</term>
+					<term>Animation</term> 
+					<term>Face Tracking</term> 
+					<term>Unsupervised Image Style Transfer</term>
+					<term>Differentiable Rendering</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A key promise of Virtual Reality (VR) is the possibility of remote social interaction that is more immersive than any prior telecommunication media. However, existing social VR experiences are mediated by inauthentic digital representations of the user (i.e., stylized avatars). These stylized representations have limited the adoption of social VR applications in precisely those cases where immersion is most necessary (e.g., professional interactions and intimate conversations). In this work, we present a bidirectional system that can animate avatar heads of both users' full likeness using consumer-friendly headset mounted cameras (HMC). There are two main challenges in doing this: unaccommodating camera views and the image-to-avatar domain gap. We address both challenges by leveraging constraints imposed by multiview geometry to establish precise image-to-avatar correspondence, which are then used to learn an end-to-end model for real-time tracking. We present designs for a training HMC, aimed at data-collection and model building, and a tracking HMC for use during interactions in VR. Correspondence between the avatar and the HMC-acquired images are automatically found through self-supervised multiview image translation, which does not require manual annotation or one-to-one correspondence between domains. We evaluate the system on a variety of users and demonstrate significant improvements over prior work.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">INTRODUCTION</head><p>Virtual Reality (VR) has seen increased ubiquity in recent years. This has opened up the possibility for remote collaboration and interaction that is more engaging and immersive than achievable through other media. Concurrently, there has been great progress in generating accurate digital doubles and avatars. Driven by the gaming and movie industries, a number of compelling demonstrations of state of the art systems have recently attracted interest in the community <ref type="bibr" target="#b7">[Epic Games 2017;</ref><ref type="bibr" target="#b13">Hellblade 2018;</ref><ref type="bibr" target="#b20">Magic Leap 2018;</ref><ref type="bibr" target="#b26">Seymour et al. 2017;</ref><ref type="bibr" target="#b30">Unreal Engine 4 2018]</ref>. These systems show highly photo-realistic avatars driven and rendered in real-time. Although impressive results are achieved, they are all designed for one-way interactions, where the actor is equipped with sensors optimally placed to capture facial expression. Unfortunately, these sensor placements are not compatible with existing VR-headset designs, which largely occlude the face. Thus, these systems are better suited to live performances than interaction.</p><p>If we consider instead works that are aimed at bidirectional communication in VR, we discover that existing systems mostly use non-photorealistic/stylized avatars <ref type="bibr" target="#b2">[BinaryVR 2019;</ref><ref type="bibr" target="#b18">Li et al. 2015;</ref><ref type="bibr" target="#b24">Olszewski et al. 2016]</ref>. These representations tend to have a more limited range of expressivity, which renders errors from facial expression tracking less perceptible than with photo-real avatars. In this work, we argue that this is no coincidence, and that precise face tracking from consumer-friendly headset-mounted camera configurations is significantly harder than in conventional settings. There are two main reasons for this. First, instead of capturing a complete and unobscured view of the face, headset-mounted camera placements tend to provide only partial and non-overlapping views of the face at extreme and oblique views. Minimizing reconstruction errors in these viewpoints often does not translate to correct results when viewed frontally. Secondly, these cameras often operate in the infrared (IR) spectrum, which is not directly comparable to the avatar's RGB appearance and makes analysis-by-synthesis techniques less effective. To partially alleviate these difficulties, existing systems are designed to work using structurally and mechanically sub-optimal sensor designs that are more accommodating to the computer-vision tracking problem. Despite this, their performance is still only suitable for stylized avatar representations.</p><p>Although the difficult sensor configurations of headset-mounted cameras (HMC) can prove challenging for classical face alignment approaches like <ref type="bibr" target="#b25">[Saragih et al. 2009;</ref><ref type="bibr" target="#b33">Xiong and la Torre 2013]</ref>, in this work we show that end-to-end deep neural networks are capable of learning the complex mapping from sensor measurements to avatar parameters, given the availability of sufficient high-precision training examples relating the two domains. We demonstrate compelling results where fully expressive and accurate performances can be tracked in real time, at a precision matching the representation capacity of modern photo-realistic avatars. The challenge, then, is how to acquire the correspondences required to pose the problem as supervised learning.</p><p>Our solution for acquiring correspondence is to leverage multiview geometry in addressing both the problem of oblique viewpoints as well as the sensor-avatar domain gap. Specifically, we propose the use of a training HMC design that shares a sensor configuration with a consumer-friendly design (the tracking HMC), but has additional cameras to support better coverage and viewing angles while minimally disturbing the quality of data acquired from the shared cameras. With these additional viewpoints, classical analysis-by-synthesis constraints become more meaningful, and results generalize better to common vantage points (i.e., frontal view of the face). These additional views also provide more signal to improve the fidelity at which we can perform domain translation to address the sensor-avatar domain gap. With data collected from these cameras along with a pre-trained personalized avatar, our system learns to discover correspondences through self-supervision, without requiring any manual input or semantically defined labels. The results are highly precise estimates of the avatar's parameters that match the user's performance, which are suitable for learning an end-to-end mapping relating them to the tracking HMC.</p><p>In the following, we discuss prior work in §2, and present our method for finding image-to-avatar correspondence in §3, including hardware design, image style transfer and the core optimization problem. Real-time facial animation is then covered in §4. We present results of our approach in §5, and conclude in §6 with a discussion and directions of future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">RELATED WORK</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Face Tracking in VR</head><p>Tracking faces in VR is a unique and challenging problem because the object we want to track is largely occluded by the VR headset. In the literature, solutions vary in how hardware designs are used to circumvent sensing challenges, as well as in methods to bridge the domain gap between sensor data and the face representation in order to find their correspondence. Specifically, sensors used to build the face model and later drive it are typically comprised of different sets of camera configurations. Modeling sensors (i.e., cameras for building a shape and appearance model of the face) are typically multiview, high-fidelity RGB cameras with an unobstructed view of the face <ref type="bibr" target="#b1">[Beeler et al. 2011;</ref><ref type="bibr" target="#b6">Dimensional Imaging 2016;</ref><ref type="bibr" target="#b9">Fyffe et al. 2014;</ref><ref type="bibr" target="#b19">Lombardi et al. 2018]</ref>. Tracking sensors (i.e., cameras for driving the face model to match a user's expressions) are typically mounted on the HMD, resulting in a patch-work of oblique and partially overlapping views of different facial parts with narrow depth of field, and typically operate in the infra-red (IR) spectrum <ref type="bibr" target="#b18">[Li et al. 2015;</ref><ref type="bibr" target="#b24">Olszewski et al. 2016]</ref>. Moreover, since the HMDs obscure the face, and modeling sensors require an unobscured view, data from modeling and tracking sensors can not be captured concurrently.</p><p>As the eyebox in a VR headset is enclosed, the face is typically divided into an occluded upper face and a visible lower face. As such, some works use specialized strategies to obtain the facial state for each part separately, followed by a compositing step to get the full face state in realtime. In <ref type="bibr" target="#b18">[Li et al. 2015]</ref> and <ref type="bibr" target="#b29">[Thies et al. 2018]</ref>, an RGBD sensor is used, which allows direct registration of the lower face with the model's geometry. To have a better viewpoint, <ref type="bibr" target="#b18">Li et al. [2015]</ref> attach the sensor with a protruding mount, placing it slightly below the mouth. Similar to <ref type="bibr" target="#b2">[BinaryVR 2019]</ref>, this frontal viewpoint is optimal for modeling lower mouth expressions, but is not ideal from a hardware design standpoint. In <ref type="bibr" target="#b29">[Thies et al. 2018]</ref>, the sensor is placed in the environment which limits the range of a user's head pose. For the upper face, <ref type="bibr" target="#b18">Li et al. [2015]</ref> use strain gauges to sense voltage changes that accompany facial expressions. By building a skeleton headset without a display unit that otherwise occludes the upper face, they can acquire face model parameters corresponding to strain gauge measurements through depth registration. They use this to train a real-time upper face blendshape regressor. However, this input signal has low SNR, exhibits drift, and contains only limited information about facial expressions. In comparison, <ref type="bibr" target="#b29">Thies et al. [2018]</ref> use infrared (IR) cameras pointing at the eye region to avoid interfering with VR usage. They use a calibration process where subjects are instructed to gaze at known positions to obtain correspondence for training. Although effective in estimating gaze direction and eyelid blinks, it does not capture other upper-face expressions such as eyebrow motion and the temporal pattern of wrinkles in the forehead, nose and areas surrounding the eyes.</p><p>If the parametric facial model exhibits appearance statistics matching those from the sensors used to drive the model, then "analysisby-synthesis" or "vision as inverse graphics" approaches <ref type="bibr" target="#b34">[Kulkarni et al. 2015;</ref><ref type="bibr" target="#b23">Nair et al. 2008;</ref><ref type="bibr" target="#b34">Yildirim et al. 2015]</ref> can be used to find correspondences. Here, the challenge is to find the parameters of the models that, when rendered from the corresponding camera view, match the images obtained from the driving sensors. This is typically achieved though variants of the gradient-descent algorithm <ref type="bibr" target="#b3">[Blanz and Vetter 1999;</ref><ref type="bibr" target="#b5">Cootes et al. 1998;</ref><ref type="bibr" target="#b28">Thies et al. 2016]</ref>. Unfortunately, for VR applications, the domain gap between imaging sensors and modeling sensors makes it unlikely that minimizing the difference between the rendered model and the sensor's image will result in an expression matching that of the user. Although explicit landmark detectors can be used to define sparse geometric correspondence between the model and tracking images <ref type="bibr" target="#b4">[Cao et al. 2014]</ref>, landmarks alone lack expressiveness, and the oblique viewpoints from HMD mounted cameras make reprojection errors less effective.</p><p>Other approaches correspond sensor data and face parameters using non-visual information such as manual semantic annotations of facial expressions and audio signals. For example, in <ref type="bibr" target="#b24">[Olszewski et al. 2016]</ref>, to model the entire face using a single RGB sensor for the lower face and IR cameras for the eyes, the subjects were instructed to performed a predefined set of expressions and sentences that were used as correspondence with a blendshape model face animation of the same content. To generate more correspondence for training a neural network with a small temporal window, dynamic time warping of the audio signal was used to align the sentences with the animation. Although the approach demonstrated realistic results, the animation tends to exhibit tokenized expressions which look plausible but are not faithful reconstructions of the user's facial motion. This approach is also limited by the granularity at which facial expressions can be expressed, as well as their repeatability.</p><p>Unpaired learning-based methods have also been investigated. In <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>, synthetic renderings of the avatar are used together with real tracking sensor images to build a domainconditioned variational autoencoder (VAE) while simultaneously learning a mapping from the latent space to face model parameters, using correspondences from the rendered domain exclusively. In that work, correspondences are found by leveraging parsimony in the VAE network, and the model is never trained directly for the target setting (i.e., input is headset images, output is avatar parameters). Although compelling results were demonstrated for speech sequences, its performance deteriorates with expressive content.</p><p>While our method also leverages unpaired learning methods, differently, we explicitly transfer multiview IR images to avatar-like rendered images with Generative Adversarial Networks (GANs), which can generate high quality modality-transferred images while better preserving facial expression. We also leverage the additional views provided by the training HMC, and infer more precise correspondences through differentiable rendering.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Image Style Transfer</head><p>Image style transfer is the task of transforming one image to match the appearance of another while retaining its semantic and structural content <ref type="bibr" target="#b10">[Gatys et al. 2016]</ref>. Recent works <ref type="bibr" target="#b14">[Isola et al. 2017]</ref> have tackled this task using GANs <ref type="bibr" target="#b11">[Goodfellow et al. 2014]</ref>, which can generate images with high realism. CycleGAN <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref> introduced the concept of cycle-consistency which improves on the mode-collapse problem with GANs. Although architectural choices, such as the U-net architecture, in CycleGAN encourages structural consistency during transfer, it can still suffer from semantic drift, especially when the distributions between the domains are not balanced. In <ref type="bibr" target="#b8">[Fu et al. 2018]</ref>, a geometric loss was added to encourage the preservation of spatial structure, and in <ref type="bibr" target="#b22">[Mueller et al. 2018]</ref>, a silhouette matching term was used instead. To further encourage the preservation of semantic information during transfer, <ref type="bibr" target="#b0">[Bansal et al. 2018]</ref> extend the idea of cycle-consistency by utilizing temporal structures of data. Instead of adding additional terms, in <ref type="bibr" target="#b12">[Harley et al. 2019]</ref>, an "uncooperative" optimization strategy is employed instead to prevent semantic drift caused by the forward and backwards transformations colluding to complement errors produced by each other. In our method, the preservation of facial expression is particularly important, because we rely on generated (fake) images as supervision for optimizing face parameters. Besides matching distribution carefully and the use of uncooperative optimization, we present cross-view cycle consistency to further enforce semantic preservation, utilizing synchronized multiview data from our designed HMC.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Differentiable rendering</head><p>In analysis-by-synthesis approaches <ref type="bibr" target="#b27">[Tewari et al. 2017;</ref><ref type="bibr" target="#b29">Thies et al. 2018]</ref>, differentiable rendering a textured mesh is necessary to allow the error signal to flow from pixel errors to parameters of the graphics engine in a system trained end-to-end. However, it involves a discrete rasterization step to assign triangles to every pixel, which has a non-differentiable property causing the gradients from pixel errors hard to be propagated to mesh geometry. <ref type="bibr" target="#b27">Tewari et al. [2017]</ref> circumvent this issue by formulating the loss over the vertices instead of the image pixels. <ref type="bibr" target="#b15">Kato et al. [2018]</ref> address the problem by approximating gradients according to the geometric relationship between a triangle and a pixel. In our application, this problem manifests as failures in matching face silhouettes, and we address it through a formulation whereby gradients of background pixels that are not covered by any rasterized triangle can still be backpropagated to affect mesh geometry.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">ESTABLISHING CORRESPONDENCE</head><p>In recent years, end-to-end regression from images has proven effective for high-quality and real-time facial motion estimation <ref type="bibr" target="#b17">[Laine et al. 2017;</ref><ref type="bibr" target="#b27">Tewari et al. 2017]</ref>. These works leverage the representation capacity of deep neural networks to model the complex mapping between raw image pixels and the parameters of a parametric face model. With input-output pairs, the problem can be posed within a supervised learning framework, where a precise mapping that generalizes well can be found (see §4). The main challenge, therefore, is to acquire a high quality training set: a sufficient number of precise correspondence between input HMC images and avatar parameters spanning diverse facial expressions. This is particularly challenging for VR applications, where existing methods have significant limitations as described in §2.1.</p><p>In this work, we establish high-quality correspondence using domain-transferred multi-view analysis-by-synthesis. We describe our training-and tracking-HMC designs in §3.1. Our approach for multiview consistent correspondence estimation is then described in §3.2, with a detailed treatment of domain transfer in §3.3, and background-aware differentiable rendering in §3.4.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Data Capture</head><p>Consumer-grade VR headset designs need to be structurally and mechanically robust, ergonomic, and aesthetically pleasing. HMC designs that fit this criteria typically have partial and oblique views of the face which are challenging to use with image-space reconstruction losses typically employed in registration algorithms. Fig. <ref type="figure" target="#fig_1">2(e)</ref> illustrates this problem. For this reason, most published <ref type="bibr" target="#b18">[Li et al. 2015;</ref><ref type="bibr" target="#b24">Olszewski et al. 2016]</ref> and commercial <ref type="bibr" target="#b2">[BinaryVR 2019]</ref> VR face tracking systems are designed to operate with more accommodating designs, at the expense of size, weight, and cost considerations. The core idea of our work is that the challenging images acquired from optimal camera mounting configurations do, in fact, contain sufficient information for precise expression estimation, as long as there are sufficient number of high-quality samples relating those images to the face model's expression space. In support of this idea, we built two versions of the same headset; one with a consumer-friendly design with a minimally intrusive camera configuration (i.e., the tracking HMC), and another with an augmented camera set with more accommodating viewpoints to support correspondence finding (i.e., the training HMC). Shown in Fig. <ref type="figure" target="#fig_1">2</ref>, the training HMC is used to collect data and build a mapping between the minimal headset camera configuration and the user's facial expressions. Specifically, the minimal set consists of 3 IR VGA cameras for the mouth, lefteye and right-eye, respectively. The training HMC has 6 additional cameras: an additional view of each eye, and 4 additional views of the mouth, strategically placed lower to capture lip-touching and vertical mouth motion, and on either side to capture lip protrusion. All cameras are synchronized and capture at 90Hz. They were geometrically calibrated using a custom 3D printed calibration pattern that ensures that parts of the pattern are within the depth of field of each camera, as shown in Fig. <ref type="figure" target="#fig_1">2(d)</ref>.</p><p>To build the dataset, we captured each subject twice using the same stimuli; once using the training HMC, and again using the tracking HMC. The content included 73 expressions, 50 sentences, a range of motion, a range of gaze directions and 10 minutes of free conversation. This set was designed to cover the range of natural expressions. Collecting the same content in both devices ensures a roughly balanced distribution of facial expressions between the two domains, which is important for unpaired domain transfer algorithms to work well (see §3.3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Overall Algorithm</head><p>We illustrate our overall algorithm to establish correspondences in Fig. <ref type="figure" target="fig_2">3</ref>. It assumes the availability of a pre-trained personalized parametric face model. For the experiments in this paper, we use the deep appearance model <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref> which generates geometry and view-conditioned texture from an l-dimensional latent code z ∈ R l and a 6-DOF rigid transform v ∈ R 6 from the avatar's reference frame to the headset (represented by a reference camera) using a deep deconvolutional neural network D:</p><formula xml:id="formula_0">M,T ← D(z, v).<label>(1)</label></formula><p>Here, M ∈ R n×3 is the facial shape comprising n-vertices, and T ∈ R w ×h is the generated texture. A rendered image R can be generated from this shape and texture through rasterization:</p><formula xml:id="formula_1">R ← R(M,T , A(v)),<label>(2)</label></formula><p>where A denotes the camera's projection function.</p><p>Given multiview images H = {H i } i ∈ C acquired from a set of headset cameras C, our goal is to estimate the user's facial expression as seen in these views. We solve this by estimating the latent parameters z and headset's pose v that best aligns the rendered face model to the acquired images. However, instead of performing this task separately for each frame in a recording, similar to <ref type="bibr" target="#b27">Tewari et al. [2017]</ref>, we simultaneously estimate these attributes over the entire dataset comprising thousands of multiview frames. Specifically, we estimate the parameters θ of a predictor E θ that extracts {z t , v t }, the latent code and headset's pose for frame t ∈ T , by jointly considering data from all cameras at that time instant:</p><formula xml:id="formula_2">z t , v t ← E θ (H t ), ∀t ∈ T .<label>(3)</label></formula><p>Note that the same predictor is used for all frames in the dataset. Analogous to non-rigid structure from motion <ref type="bibr" target="#b32">[Xiao et al. 2006]</ref>, this has the benefit that regularity in facial expression across time can further constrain the optimization process, making the estimation proces more resistant to terminating in poor local minima.</p><p>Due to the domain-gap between the rendered image R and the camera images H , they are not directly comparable. To address this, we also learn the parameters ϕ of a view-dependent domain transfer network:</p><formula xml:id="formula_3">Ri = F ϕ (H i ; i), ∀i ∈ C.<label>(4)</label></formula><p>In its simplest form, this function is comprised of independent networks for each camera i. With this, we can formulate the analysisby-synthesis reconstruction loss:</p><formula xml:id="formula_4">L(θ, ϕ) = t ∈ T i ∈ C Rt i -R t i 1 + λδ (z t ) ,<label>(5)</label></formula><p>where R t i is the rendered face model from Eq. (<ref type="formula" target="#formula_1">2</ref>), rasterized using the known projection function A i whose parameters are obtained from the calibrated camera i, as mentioned in § 3.1. Here, δ is a regularization term over the latent codes z, and λ weights its contribution against the L 1 -norm reconstruction of the domain-transferred image.</p><p>Although at first glance this formulation appears to be reasonable, with high capacity encoder E θ and domain-transfer F ϕ functions, there is a space of solutions where one network can compensate for the semantic error incurred by the other, leading to low reconstruction errors but incorrect estimation of expression z and headset pose v. Without additional constraints, we observe that this phenomenon often occurs in practice, which we refer to as collaborative self-supervision. When the domain gap comprises primarily of appearance differences, we conjecture that collaborative self-supervision tends to be more prominent in architectures that do not retain spatial structure. This is the case in our system, where the latent code z is a vectorized encoding of the image. This problem has been observed in the style-transfer community, where a common solution is to use fully convolutional architectures with skip connections <ref type="bibr" target="#b14">[Isola et al. 2017;</ref><ref type="bibr" target="#b35">Zhu et al. 2017]</ref>. As spatial structure is propagated through the entire network, it is easier to retain structure, and thus, it tends to remain unchanged when differences in style can be well explained by appearance alone.</p><p>Motivated by the compelling results achieved by methods such as <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref>, we decouple Eq. (<ref type="formula" target="#formula_4">5</ref>) into two stages. First, we learn the domain transfer F ϕ that converts headset images H i into fake rendered images R i without changing the apparent expression (i.e., semantics). In the second stage, we fix F ϕ and optimize Eq. ( <ref type="formula" target="#formula_4">5</ref>) with respect to E θ .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Expression-Preserving Domain Transfer</head><p>Our expression-preserving transfer is based on unpaired image translation networks <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref>. This architecture learns a bidirectional domain mapping (F ϕ and G ψ ) by enforcing cyclic consistency between the domains and an adversarial loss for each of the two. To achieve preservation of expression, we need to eliminate the tendency of generators to modify spatial structure on the images. With a fully convolutional architecture where random initialization already leads to retained image structures, this tendency mainly comes from the pressure to prevent opposing discriminators from spotting fake images from their spatial structure. In other words, if the distribution of spatial structure, which in our case is jointly determined by headset positions v and facial expressions z, is balanced, the generators then have no pressure to begin modifying them. In the following, we begin by describing how we balance the distribution when preparing real datasets before training, followed by the learning problem itself.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.1">Matching Distribution of Image Spatial Structure.</head><p>While we don't have control over the underlying expression z t and headset position v t in captured headset data {H t i } t ∈ T , we can generate a set of rendered images {R s i } s ∈S with the desired statistics if we have an estimate P(z, v) of the joint distribution P(z, v). However, since estimating individual z t and v t for headset data is our original problem, we need to find a proxy to approximate P ≈ P.</p><p>Fig. <ref type="figure" target="#fig_3">4</ref> summarizes our strategy. Here, we assume independent distribution between z and v, or P(z, v) = P(z) P(v), and estimate P(z) and P(v) individually. For P(z), we rely on the data capture process, where the subject is captured twice with the same stimuli as mentioned in § 3.1. Even though this does not lead to a frame-to-frame mapping between the captures, we can assume the distribution of facial expression is comparable. Therefore, we can use the set of expression codes from the modeling capture as approximate samples from P(z).</p><p>For the distribution over headset pose P(v), we resort to fitting the face model's 3D geometry to detected landmarks on headset images by collecting 2D landmark annotations and training landmark detectors <ref type="bibr" target="#b31">[Wei et al. 2016]</ref>. Although landmark fitting alone   does not produce precise enough estimates of expression (because landmarks are not able to describe complete and subtle facial expressions), it can often give reasonable estimates for v owing to its low dimensionality and limited range of variation. One of the challenges in fitting a 3D mesh to 2D detections is defining correspondence between mesh vertices and detected landmarks. Typically, the landmark set for which annotations are available does not match exactly to any vertex in a particular mesh topology. Manually assigning a single vertex to each landmark can lead to suboptimal fitting results for coarse mesh topologies. To address this problem, while fitting individual meshes, we simultaneously solve for each landmark's mesh correspondence (used across all frames) in the texture's uvspace {u j ∈ R 2 } m j=1 , where m is the number of available landmarks. To project each landmark j on rendered images of every view, we calculate a row vector of the barycentric-coordinates b j ∈ R 1×3 of the current u j in its enclosing triangle, with vertices indexed by a j ∈ N 3 , and then linearly interpolate projections of the enclosing triangle's 3D vertices, M a j ∈ R 3×3 , where M is the mesh from Eq. (<ref type="formula" target="#formula_0">1</ref>). Specifically, we solve the following optimization problem:</p><formula xml:id="formula_5">min u j ,v t ,z t t ∈T i ∈ C m j=1 w t i j p i j H t i -b j P(M t a j , A i v t ) 2 ,<label>(6)</label></formula><p>where p i j ∈ R 2 is the 2D detection of landmark j in HMC camera i, P is a camera projection generating 2D points in R 3×2 , and w t i j is the landmark's detection confidence in [0, 1]. Note that for a landmark j not observable by view i, w t i j is zero. In practice, we initialize the u j 's to a predefined set of vertices in the template mesh to prevent divergence. We also avoid using landmarks in regions where the avatar doesn't have mesh vertices, such as the pupils and the mouth interior. Fig. <ref type="figure" target="#fig_3">5</ref> shows an example of the u j 's at convergence.</p><p>By solving Eq. ( <ref type="formula" target="#formula_5">6</ref>), we obtain a set of HMC pose {v t } t ∈T from each frame H t . We can now render the required dataset {R s i } s ∈S by randomly sampling a HMC pose |S| times from {v t } t ∈T , and an expression code also |S| times from the set of encoded values of the face modeling capture <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>, independently. Together with {H t i }, we now have training data for unpaired style transfer. We discard the estimated z t solved by Eq. ( <ref type="formula" target="#formula_5">6</ref>) since they tend to be inaccurate when relying solely on landmarks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.2">Multiview Image Style Translation.</head><p>Given images from the two domains {H t i } and {R s i }, one can utilize a method such as <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref> to learn the view-specific mappings F ϕ,i and G ψ ,i that translate images back and forth between the domains. Since we are careful to encourage a balanced distribution P(z, v) between the domains, this straight-forward approach already produces reasonable results. The main failure cases occur due to limited rendering fidelity of the parametric face model. This is most noticeable in the eye images, where eyelashes and glints are almost completely absent due to poor generalization of the view-conditioned rendering method of <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref> to very close viewpoints. Specifically, the style transferred image often exhibits a modified gaze direction compared to the source. In addition, this modification is often inconsistent across different camera views. This last effect is also observed for the rest of the face, though not to the same extent as that for the eyes. When solving for (z, v) using constraints from all camera views in Eq. ( <ref type="formula" target="#formula_4">5</ref>), these inconsistent and independent errors have an averaging effect, which manifests as dampened facial expressions.</p><p>To overcome this problem, we propose a method that exploits the spatial relationship between cameras during image style translation. Inspired by <ref type="bibr" target="#b0">[Bansal et al. 2018]</ref>, where additional cyclic-consistency constraints are obtained through temporal prediction, we enforce cyclic-consistency through cross-view prediction. Specifically, for a pairs of views, denoted 0 and 1 for simplicity, we train "spatialpredictors" P 0 and P 1 to transform images in view 0 to view 1 and vice versa. These pairs are chosen in such a way that they observe similar parts of the face to ensure that their contents are mutually predictable, for example the stereo eye-camera pair, or lower-face cameras on the same side. Together with the standard terms of CycleGAN <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref>, our loss function takes the form:</p><formula xml:id="formula_6">L = L C + λ G L G + λ P L P + λ V L V ,<label>(7)</label></formula><p>where L C = L CH +L CR is the cycle-consistency loss for each domain and for each view,</p><formula xml:id="formula_7">L CH = i ∈ {0,1} t G ψ • F ϕ H t i -H t i 1 ,<label>(8)</label></formula><p>L G = L GH + L GR is the GAN-loss (for both the generator and discriminator) for each domain and for each view,</p><formula xml:id="formula_8">L GH = i ∈ {0,1} t log D H H t i + log 1 -D R • F ϕ H t i ,<label>(9)</label></formula><p>L P is the loss for the view predictor,</p><formula xml:id="formula_9">L P = i ∈ {0,1} t P i (H t i ) -H t 1-i + s P i (R s i ) -R s 1-i 1 ,<label>(10)</label></formula><p>and finally the cross-view cycle consistency L V = L V</p><formula xml:id="formula_10">H + L V R , L V H = i ∈ {0,1} t P i • F ϕ H t i -F ϕ H t 1-i 1<label>(11)</label></formula><p>where L CR , L GR , and L V R are defined symmetrically, and D H and D R are discriminators in both domains, respectively. Note that while we do not have paired H t i and R s i , we do have paired H t i and H t 1-i , as does R s i . An illustration of these components is shown in Fig. <ref type="figure" target="#fig_5">6</ref>. Different than <ref type="bibr" target="#b0">[Bansal et al. 2018]</ref>, in our formulation, we share P 0 and P 1 across domains, since the relative structural difference between the views should be the same in both domains.</p><p>Our problem takes the form of a minimax optimization problem:</p><formula xml:id="formula_11">min P 0 ,P 1 ,F ϕ ,G ψ max D H ,D R L P 0 , P , F ϕ , G ψ , D H , D R ,<label>(12)</label></formula><p>which we repeat for every pair of views. Compared to standard Cy-cleGAN, our problem involves additional P i modules. If we simply alternately train parameters in {P 0 , P , F ϕ , G ψ } and parameters in {D H , D R } like <ref type="bibr" target="#b0">[Bansal et al. 2018]</ref>, we find that collusion between P and F ϕ (or G ψ ) can minimize the loss function without preserving expression across the domains; effectively learning different behaviors on real and face data to compensate errors made by each other. As a result, the semantics that we want to keep unchanged get lost during the style transformation. To address this problem, we apply "uncooperative training", recently proposed by <ref type="bibr" target="#b12">Harley et al. [2019]</ref>, which prevents this "cheating" by breaking the optimization into more steps. At each step, the loss function is readjusted so that only terms that operate on real data remain, and only modules that take real data as input are updated. An outline of the algorithm is presented in Algorithm 1. In this way, modules have no chance to learn to compensate for errors made by previous modules. As a result, expressions are better preserved through domain transfer and the cross-view predictions ensure multiview consistency.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Background-aware Differentiable Rendering</head><p>A core component of our system is a differentiable renderer R for the parametric face model. It is used to generate synthetic samples for the domain transfer described above, but also for evaluating the reconstruction accuracy given the estimated expression and pose parameters q = (z, v) in Eq. ( <ref type="formula" target="#formula_4">5</ref>). Our rendering function blends a rasterization of the face model's shape and background, so that the pixel color C(p) at image position p is defined as:</p><formula xml:id="formula_12">C(p) = W (p) C t (p) + (1 -W (p)) C b<label>(13)</label></formula><p>where C t (p) is the rasterized color from texture at position p, and C b is a constant background color. If we simply define W as a binary mask of the rasterization's pixel coverage, where W (p) = 1 if p is within a triangle and otherwise W (p) = 0, then dW (p) dq would be zero for all p because of the discreteness of rasterization. In this case, for a foreground pixel (i.e., W (p) = 1) the gradient of C(p) still can be calculated from dC t (p) dq , by parameterizing the coordinates in the texture (from which the pixel color is sampled) by the barycentric coordinates of that pixel in its currently enclosing triangle. Although this way of formulating the rendering function and its derivative can already produce good results, in practice, in the presence of multiview constraints, it exhibits failure cases that result from zero gradients from W (p). Specifically, if p is rendered as background (i.e., W (p) = 0) but the target for that pixel is a foreground value, there are no gradients propagated to the parameters q. Similarly, a foreground pixel at the boundary of the rasterization has no pressure to expand. In practice, this can lead to terminating in poor local minima with large reconstruction errors. For example, in a puffedcheek expression, where the target image's foreground image tends to occupy larger area of the image, the estimated expression often fails to match the contour of the cheek well (see Fig. <ref type="figure" target="#fig_6">7</ref>).</p><p>Intuitively, the force expanding the foreground area should come from a soft blending around the boundary between foreground and background. Therefore, instead of a binary assignment of pixels around the boundary to either a color sampled from the texture map or the background color, we employ soft blending similar to anti-aliasing. It is important to parameterize the blending weight as a function of the face model's projected geometry so that reconstruction errors along the rasterization's boundary can be backpropagated to the parameters q. To this end, we use a decaying blend-function away from the boundary:</p><formula xml:id="formula_13">W (p) = exp - d 2 p σ 2 ,<label>(14)</label></formula><p>where d p is the perpendicular 2D distance from a background pixel p to its closest edge of any projected triangle for pixels outside the rasterization coverage, and σ controls the rate of decay. The value of C t used in Eq. ( <ref type="formula" target="#formula_12">13</ref>) for W (p) is set to the color in the texture of the triangle at the closest edge. For pixels within the coverage, d p = 0. In practice, we set σ = 1 and evaluate W only for pixels within enclosing rectangles of each projected triangle for efficiency. With this background-aware rendering, even though only a small portion of background pixels contribute gradients to expand or contract the boundary at each iteration, it is enough to prevent optimization from terminating in poor local minima.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Implementation Details</head><p>For the style transformation described in §3.3, we use (256 × 256)sized images for both domains, and adapt the architecture design from <ref type="bibr" target="#b35">[Zhu et al. 2017]</ref>. For F ϕ , G ψ , and P i , we use a ResNet with 4× downsampling followed by 3 ResNet modules and another 4× upsampling. For discriminators D H and D R , we apply spectral normalization <ref type="bibr" target="#b21">[Miyato et al. 2018]</ref> for better quality of generated images and more stable training. For E θ in the overall training described in 3.2, we build separate convolutional networks to convert individual H t i to |C| vectors, which are concatenated and then converted into both z t and v t using separate MLPs. For the prior δ (z t ) in Eq.( <ref type="formula" target="#formula_4">5</ref>), we use an L 2 -loss δ (z t ) = z t 2 2 because the latent space associated with D is learned with a KL divergence against a standard normal distribution <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">REALTIME FACE ANIMATION</head><p>After minimizing the loss in Eq. ( <ref type="formula" target="#formula_4">5</ref>), we can apply a converged E θ to all H t to obtain per-frame correspondences {(H t , z t )} t ∈T . We can now drop all the auxiliary views in H t and only retain the views available in a tracking HMC H t = {H t i } i ∈ C ′ where |C ′ | = 3. This forms the training data {( H t , z t )} t ∈ T for training the regressor that will be used during realtime animation.</p><p>Rather than simply minimizing L 2 -loss in the latent space of z t , we find it is important to measure loss in a way that encourages the network to spend capacity on the most visually sensitive parts, such as subtle lip shape and gaze direction. We additionally minimize the error in geometry and texture map particularly in eye and mouth regions, because the avatar does not have detailed geometry and relies on view-dependent texture to be photorealistic in these regions. Specifically, we build regressor Ẽ θ to convert H t to target z t :</p><formula xml:id="formula_14">min θ t z t -zt 2 + λ 1 M t -Mt 2 + λ 2 κ(T t 0 ) -κ( T t 0 ) 2 ,<label>(15)</label></formula><p>where</p><formula xml:id="formula_15">zt = Ẽ θ ( H t ) <label>(16)</label></formula><formula xml:id="formula_16">Mt , T t 0 ← D( zt , v 0 ) <label>(17)</label></formula><formula xml:id="formula_17">M t ,T t 0 ← D(z t , v 0 ),<label>(18)</label></formula><p>where κ is a crop on texture maps focusing on eye and mouth area, and v 0 is a fixed frontal view of the avatar.</p><p>The architectural design of Ẽ θ should allow good fitting to the target z t , be robust against real-world variations such as surrounding illumination and headset wearing positions, and at the same time, achieve realtime inference speed. These requirements are different from E θ , whose function is solely to minimize Eq. ( <ref type="formula" target="#formula_4">5</ref>), or to overfit. Therefore, we use smaller input images (192 × 192) and a smaller number of convolutional filters and layers for Ẽ θ , compared to E θ . The architectural design is similar: we build 3 separated branches of convolutional networks to convert H t i to 3 1D vectors, because the input images are observing different parts of the face and hence don't share spatial structure. Finally, these 1D vectors are concatenated and converted to zt through an MLP. During training, we augment input images with a random small angle homography to simulate camera rotation to account for manufacturing variance in camera mounts, as well as directional image intensity histogram perturbation to account for lighting variation. Our architecture design balances speed with almost no obvious quality drop (from 9-view input to 3-view input) on both training data and validation data, at an inference speed of 73 fps on a NVIDIA Titan 1080Ti.</p><p>Given that Ẽ and D can both be evaluated in realtime <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>, we can build a two-way social VR system, where both users can see high-fidelity animation of each other's personalized avatar while wearing an HMC. On each side, the computing node runs Ẽ of the user on one GPU and sends encoded z t over the network. At the same time, the node receives z t from the other side, runs the decoder D of the other person, and renders stereo images (for left and right eye) of the other user's avatar on a second GPU.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">RESULTS AND EXPERIMENTS</head><p>We first show qualitative results of both the found correspondences using the training HMC ( § 3), and realtime prediction using the tracking HMC ( §4). Then we characterize the importance of various components in our system design, including multiview style transfer, distribution matching, cross-view consistency, and background-aware differentiable rendering, in an ablation study. Finally, we compare our animation results with <ref type="bibr" target="#b24">[Olszewski et al. 2016]</ref> and <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>. For more results, such as speech and dynamics which are better shown as consecutive frames with audio, please refer to our supplementary video. Our method achieves natural speech dynamics with only frame-by-frame inference without temporal constraints.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Qualitative Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.1">Established Correspondence.</head><p>Fig. <ref type="figure" target="#fig_7">8</ref> shows three examples of corresponding HMC images and rendered avatars for three different subjects. In the last row of each example, we show the alignment between HMC images and the rendered avatar for every view of the training HMC, where good alignment demonstrates the highfidelity of the obtained correspondence. We present more results in Fig. <ref type="figure" target="#fig_8">9</ref>, showing that our method robustly produces high-fidelity results for a large range of facial expressions, including extreme expressions with occluded face parts, such as biting lips, puffed cheeks, wrinkles on the forehead and nose, and tightly closed eyes. Note that the inside of the eyes and mouth are not modeled with detailed geometry <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>, so the mapping for nuanced expressions, like gaze directions and visibility of teeth and shape of tongue, rely completely on minimizing the pixel loss of the rendered avatar against style transferred images.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.2">Realtime Animation.</head><p>Fig. <ref type="figure" target="#fig_9">10</ref> shows example outputs from a trained regressor Ẽ that runs in realtime. We captured each subject with a training HMC in 4 different environments, with different lighting and different HMC placement relative to the head (the subjects had to take off and put on the HMC between captures). We use our method described in §3 to generate "ground-truth" correspondences for all data, but only train Ẽ on 3 of the captures and use the remaining capture as the testing set. For most of the facial expressions, the regressor using only the 3 tracking views perform very well and matches the established correspondence using the 9 training views, indicating that the 3 tracking views contain sufficient information despite obliqueness. For a few cases highlighted in the red boxes, the tracking views have poor coverage of the mouth interior (illustrated in Fig. <ref type="figure" target="#fig_1">2(e)</ref>) and gaze direction because the eyelids are almost closed (the additional eye cameras in the training HMC are lower), resulting in slightly different results. While the use of region-focused texture and geometry terms in Eq. ( <ref type="formula" target="#formula_14">15</ref>) already helps concentrate the capacity of the network on perceptually important parts, the error for extreme gaze directions is still observable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Ablation Study</head><p>We first validate the importance of having the additional camera views of the training HMC, style transfer, and distribution matching for finding correspondences. We then compare independent perview style transfer with our cross-view cycle consistency. We also   show evidence that background-aware rendering leads to better convergence. Finally, we discuss the effects of using different loss functions in the optimization Eq. ( <ref type="formula" target="#formula_4">5</ref>) and Eq. ( <ref type="formula" target="#formula_14">15</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.1">Effect of in-domain pixel matching, additional viewpoints, and distribution matching.</head><p>To show the importance of using multiview style transfer in Eq. ( <ref type="formula" target="#formula_4">5</ref>), we compare our results with (a) only using domain-invariant features: minimizing 2D distance between detected landmarks and projected landmarks of the avatar on all 9 views, plus matching image gradients (edges) (b) only using 3 tracking views: training independent per-view style transfer and solving Eq. 5 with only the tracking views, and (c) not matching the distribution of HMC pose: simply using a mean pose to render {R s i } for style transfer, instead of solving Eq. ( <ref type="formula" target="#formula_5">6</ref>) to collect a set of HMC poses to sample from.  In Fig. <ref type="figure" target="#fig_10">11</ref>, we show 8 expressions to compare. Results that only use landmark and edge constraints can roughly match the shape of mouth, but completely fail to match parts such as teeth, tongue, and gaze direction, as landmarks cannot describe these details on a photorealistic avatar. Matching image gradients does not improve the results because the domain gap between HMC images and rendered avatars is too large for naive edge matching to be useful. Using only 3 tracking views with view-independent style transfer and Eq. ( <ref type="formula" target="#formula_4">5</ref>) already generates much better results than 9-view results in (a), showing the importance of bridging the domain gap. But because of the obliqueness of viewpoints, it sometimes fails to generate precise results when compared to using the full 9 views, such as estimating the amount of mouth openness (1 st , 5 th expressions), mouth interior (6 th ), and lip shape (7 th ). Finally, the results from (c) are in general worse than the full method, showing the importance of matching distribution of spatial structure. The quality of style transferred results degrades, leading to uncanny faces (1 st , 4 th , 8 th ) and semantics are sometimes modified such as gaze (3 rd ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.2">Effect of view-consistent image style transfer.</head><p>When training style transformers F ϕ and G ψ for all 9 views, we found that training them independently for each view already gives good results despite artifacts on the fake rendered image such as checkerboard patterns. By jointly considering multiview and a robust L 1 loss in Eq.( <ref type="formula" target="#formula_4">5</ref>), these uncorrelated artifacts are often averaged out. However, other artifacts such as wrong color of mouth interior or changes in gaze direction, do impact the final result, as illustrated in Fig. <ref type="figure" target="#fig_11">12</ref>. To show the effect of the cross-view training described in §3.3, we group 9 camera views into 4 pairs and run Algorithm 1 for each pair (and still train the remaining 1 view individually). The resulting style transferred images have fewer artifacts on the face in general. We highlight the cases where the per-view CycleGAN baseline fails to capture visibility of the tongue and a consistent gaze direction. Using the cross-view consistency loss in our method, in contrast, gives consistent images across views and therefore the final optimized avatar better matches the inputs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.3">Effect of background-aware differentiable rendering.</head><p>We compare our background-aware differentiable rendering with a baseline where background pixels are simply assigned a constant color and therefore have no path to back-propagate gradients from errors in pixel color to mesh geometry. In particular, we show the image loss curve during convergence in Fig. <ref type="figure" target="#fig_12">13</ref> to a target puffed cheek. Even though there are constraints from 9 views, which already greatly alleviates the background problem, the baseline still plateaus at a higher loss, and the cheek does not fully expand to match the inputs. In contrast, our method allows gradients from the image loss to affect the geometry through Eq. <ref type="formula" target="#formula_12">13</ref>and therefore shows lower loss and better face alignment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.4">Is image loss alone enough to make Eq. (5) converge?</head><p>While style transferred images provide supervision with great details, it is a common observation that the convergence basin when using a differentiable renderer can be small and therefore requires careful initialization. However, we found that the convergence basin of our method is large enough that no sample-specific initialization is required. In Fig. <ref type="figure" target="#fig_13">14</ref>, we compare two training schemes with the same initialization for θ : (1) use landmark constraints (L 2 -loss of 2D distances on images) for the first 2000 iterations to bring the geometry into roughly the correct position, and then remove it to leave only the image loss to fine-tune the result, and (2) only use an image loss, as presented in our method. The results show that these two schemes achieve the same level of image loss at convergence, showing that the convergence basin of ( <ref type="formula" target="#formula_1">2</ref>) is good enough to avoid getting stuck in local minima. Fig. <ref type="figure" target="#fig_13">14</ref> also shows minimizing a landmark loss can lead to gradients that contradict the image loss (red solid curve goes up after iteration 2000). This is because of the imprecision of landmark detections in HMC images and uv-coordinate estimation on the avatar's texture map. While the landmark loss can be used to find good headset positions, for facial expression, which requires high precision, it can only provide a relatively rough signal that ultimately becomes unnecessary given the good convergence basin from the background-aware renderer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.5">Why do we need geometry and texture terms in Eq. (15)?</head><p>To fit established correspondences in § 4, we did not simply apply loss on the predicted z t but also geometry M and texture T . Ideally, minimizing differences in z t should also lead to reduced differences in the appearance of the avatar. However, Fig. <ref type="figure" target="#fig_14">15</ref> shows that if we don't add geometry and texture terms, while the geometry error is still well minimized, the texture suffers from much higher error, which leads to mismatched expressions such as changes in gaze direction or mouth interior (i.e., regions that do not have detailed geometry). It is also interesting to see that the decrease of distance in z t latent space becomes much slower if we add these terms, showing that z t and appearance (at least in texture space) are not strongly coupled through the decoder,</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Comparison with prior art</head><p>We compare our animation results with our reimplementations of <ref type="bibr" target="#b24">[Olszewski et al. 2016]</ref> and <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref>. To compare with <ref type="bibr" target="#b24">[Olszewski et al. 2016]</ref>, we select a short temporal window of HMC images labeled as a certain peak expression, and map them to the encoded z t of the corresponding expression captured with the modeling sensors during avatar building. We also performed dynamic time warping to determine correspondence labels for speech data. Fig. <ref type="figure" target="#fig_15">16</ref> (left) clearly shows the limitations. It not only suffers from inconsistency due to subjects not repeating the same expression twice, but also cannot generalize well to unlabeled expressions, such as those in a range of motion clip (a short period of free-form facial movements) or in transitions from peak expressions to neutral. Moreover, even though speech data is densely labeled through dynamic time warping based on audio, the expression, especially in the upper face, can be quite different across captures. <ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref> only demonstrated their animation results on speech data. When applied to extreme expressions, it often generates far worse results as show in Fig. <ref type="figure" target="#fig_15">16</ref> (right). However, their method only uses 3 views and does not measure headset position. For a better comparison, we augment their algorithm with our 9view training HMC, as well as additionally matching the distribution of headset poses. We find that both of these design choices improve their results, showing their benefit even on other approaches. Additionally, our method still captures subtleties much more precisely, such as the tongue sticking out, lip shapes, visibility of the teeth, and the amount of mouth openness. We argue that since their method involves converting images from both domains to 1D vectors in a VAE, it is hard to ensure pixel-level alignments as well as our method, which compares the images directly.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">DISCUSSION</head><p>In this work, we present a system that enables high-fidelity bidirectional communication in VR using photorealistic avatars. By leveraging a training headset with augmented cameras, we formulate a self-supervised learning problem that can generate sensor-to-avatar correspondences. These correspondences are then used to train a deep network that directly produces highly precise face parameters in realtime from images captured by a tracking headset with a minimal sensor design.</p><p>Although the application of this work has focused on VR headset designs, the same difficulties identified in this work apply also to ARheadsets, where camera viewpoint difficulties are exacerbated due to stricter requirements on minimal headset design. One direction of future work is to investigate the applicability of our method to these more extreme cases.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. We present a VR realtime facial animation system with headset mounted cameras (HMC) which augment a standard head mounted display (HMD). Our method establishes precise correspondence between 9 camera images from a training HMC and the parameters of a photorealistic avatar. Finally, we use a common subset of 3 cameras on a tracking HMC to animate the avatar in realtime.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Headset mounted cameras (HMC); (a) Training HMC, with standard cameras (circled in red) and additional cameras (circled in blue). It is used for collecting data to help establish better correspondence between HMC images and avatar parameters. (b) Tracking HMC, used for realtime face animation, with minimal camera configuration. (c) Example of captured images, with colored frames indicating standard views (red) and additional views (blue). (d) Multi-plane calibration pattern used to geometrically calibrate all cameras in the training and tracking HMCs. (e) An illustration of the challenges of ergonomic camera placement (blue), where large motions such as mouth opening project to small changes in the captured image, in comparison to more accommodating camera placements (orange).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Overall optimization for establishing correspondence. We train a network E θ to jointly estimate avatar parameters z and headset position v from 9-view images H i from a training HMC. These estimated values are later used by D and R to render multiview images of the avatar R i . In order to apply an L 1 reconstruction loss, we bridge the domain gap between HMC images and rendered images by also training an image style transformer F ϕ (along with G ψ ) to convert H i to the rendered domain Ri , with preserved semantics. Colored modules (E θ and F ϕ ) have trainable parameters, while parameters of D are frozen and R is parameter free. On the right, the found correspondences between H and z can be used as pairs of 3-view images for a tracking HMC (shown in pink-boxes) and avatar parameters for later regression (see §4).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig.4. Matching the distribution of spatial structures in images across domains is important for training expression-preserving image style transfer networks F ϕ and G ψ . We use landmark detection to estimate a distribution over headset pose, and use the same expression stimuli during data capture (for both avatar building and HMC capture) to ensure the distribution of expressions is comparable.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Landmarks on the texture map of the avatar (left) and HMC images (right). Colors of landmarks indicate the point-to-point correspondence across domains. We detect landmarks on all 9 views (only 3 views are shown) from detectors trained from manual annotations. The uv-coordinates of these landmarks are then jointly solved with z t and v t across multiple frames. Note that we do not minimize projected distance of landmarks in Eq. (5) to find image-to-avatar correspondence.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Cross-view cycle consistency in multiview image style translation. In additional to original cycle consistency within each domain, we further constrain style transformers given paired multiview data in each domain, to encourage preserving spatial structure of the face images. Only one loss term (out of all 4 directions) is shown here.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Background-aware differentiable rendering. (a) Input HMC image with a puffed cheek (b) Style transferred result (target image) (c) Current rendered avatar (d) Overlaying (b) and (c). Many pixels in the red box are currently rendered as background pixels, but should be in foreground. (e) A closer look at pixels around the face contour. For a background pixel p within a bounding box of any projected triangle (dashed rectangle), its color is blended from color C t at the closest point on the closest edge p 1 p 2 and background color C b , with a weighting related to distance d p . The red arrows indicate that the gradient generated from dark gray pixels can be back-propagated to geometry of the face.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig.8. Qualitative results of established correspondence using the training HMC. For each subject, the first row shows input images from the training HMC and detected landmarks. The second row shows the avatar rendered with found corresponding facial expressions and headset position (coupled with camera calibration at each view), with projected landmarks whose uv-coordinates are optimized by Eq. (6). The leftmost image is rendered from a fixed frontal view. The last row overlays the previous two, where good alignment shows high fidelity correspondence.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig.9. More examples of established correspondence. Each subfigure shows 8 facial expressions for each identity. The 9 grayscale images, with 3 tracking views (large images) and 6 additional training views (small images), are input HMC images, and in color on the right is the rendered 3D avatar. Our method can find high quality mappings even for subtle expressions on the upper face, where the camera angle is oblique and close to the subject. Our method can also capture subtle differences in tongues, teeth, and eyes where the avatar does not have detailed geometry.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 10 .</head><label>10</label><figDesc>Fig.10. Predictions on held out data for a tracking HMC. In each subfigure, the target image is "ground-truth" from our established correspondences, and the prediction image is the output from Ẽ. While most of the time we can map from only 3-view inputs to targets successfully, there are some failure cases highlighted in the red boxes, where the nuances are hard to observe without the additional cameras on the training HMC.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 11 .</head><label>11</label><figDesc>Fig. 11. Ablation on system design. We compare our method with simpler settings such as (a) without style transformation, only using landmarks and edge matching, (b) without additional cameras, only using 3 tracking views, and (c) without matching distribution of headset positions, only using mean headset pose to render data for style transfer. These settings failed to obtain good correspondences in different characteristics.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 12 .</head><label>12</label><figDesc>Fig.12. Comparison between per-view style transfer and cross-view style transfer. In each subfigure, we show the results of style transferred multiview images and optimized result from Eq. (5) using these target images respectively. The cross-view style transferred images have better quality and better preserve semantics. Here we show the visibility of tongue and gaze direction are better mapped to input with cross-view style transfer.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Fig. 13 .</head><label>13</label><figDesc>Fig. 13. Effect of background-aware rendering. We compare the image loss curves of a baseline (background pixels contribute no gradient) with our method, with a target "puffed cheeks" on all 9 views (only 1 is shown). While the baseline gets stuck at a higher loss, our method fully expands the cheek.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Fig. 14 .</head><label>14</label><figDesc>Fig. 14. Evaluating landmark loss as initialization. We compare two training schemes for Eq. (5): (1) use both landmark loss and image loss during the first 2000 iterations, and only use image loss after that, in red curves, and (2) only use image loss, in blue curves. The result shows the convergence basin is large enough that landmark initialization is not necessary. We also observe the contradiction between the two losses, as the red landmark loss curve goes back to a similar level as blue after iteration 2000. The learning rate is decreased by 10× at iteration 3500 and 7000 and hence the loss drop in both methods.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Fig. 15 .</head><label>15</label><figDesc>Fig.15. Effect of geometry and texture terms in Eq. (15). We compare errors in the latent space of z, geometry, and texture when training with and without additional geometry and texture terms. The curves show the significant tradeoff between distributing network capacity to match the latent space loss or texture loss, showing the necessity of non-zero λ 1 and λ 2 . The loss values are normalized so only relative values are meaningful.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Fig. 16 .</head><label>16</label><figDesc>Fig. 16.Comparison with prior arts. On the left, we compare our results with<ref type="bibr" target="#b24">[Olszewski et al. 2016]</ref>, which suffers from the subject's inconsistency in peak expressions and poor generalization to data they cannot acquire semantic labels. On the right, we compare with<ref type="bibr" target="#b19">[Lombardi et al. 2018]</ref> and also with their method augmented with our design, including more input views ("w/ training HMC"), and matching distribution of headset position ("w/ headset pose"). Their results improve when augmented with our designs, but our methods still significantly better capture nuances on the face.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_0"><head>ALGORITHM 1: Uncooperative training for multiview image style translation</head></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="conference" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>Aayush</forename><surname>Bansal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Shugao</forename><surname>Ma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Deva</forename><surname>Ramanan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yaser</forename><surname>Sheikh</surname></persName>
+					</author>
+					<title level="a">Recycle-GAN: Unsupervised Video Retargeting</title>
+				</analytic>
+				<monogr>
+					<title level="m">EEE European Conference on Computer Vision (ECCV)</title>
+					<imprint>
+						
+						<date when="2018">2018</date>
+						
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>Thabo</forename><surname>Beeler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Fabian</forename><surname>Hahn</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Derek</forename><surname>Bradley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Bernd</forename><surname>Bickel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Paul</forename><surname>Beardsley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Craig</forename><surname>Gotsman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Robert</forename><forename type="middle">W</forename><surname>Sumner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Markus</forename><surname>Gross</surname></persName>
+					</author>
+					<title level="a">High-quality passive facial performance capture using anchor frames</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page">10 pages</biblScope>
+						<date when="July 2011">July 2011</date>
+					</imprint>
+				</monogr>
+				<note>Article 75</note>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b2">
+				<monogr>
+					<author>
+						Binaryvr
+					</author>
+					<ref src="https://www.binaryvr.com/vr">https://www.binaryvr.com/vr</ref>
+					<title level="m">Real-time Facial Tracking</title>
+					<imprint>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>Volker</forename><surname>Blanz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Thomas</forename><surname>Vetter</surname></persName>
+					</author>
+					<title level="a">A morphable model for the synthesis of 3D faces</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the 26th Annual Conference on Computer Graphics and Interactive Techniques</title>
+					<imprint>
+						<date when="1999">1999</date>
+						<biblScope unit="page" from="187" to="194"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>Chen</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Qiming</forename><surname>Hou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kun</forename><surname>Zhou</surname></persName>
+					</author>
+					<title level="a">Displaced dynamic expression regression for real-time facial tracking and animation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="43:1" to="43:10"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Timothy</forename><forename type="middle">F</forename><surname>Cootes</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Edwards</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Taylor</surname></persName>
+					</author>
+					<title level="a">Active appearance models</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE European Conference on Computer Vision (ECCV)</title>
+					<imprint>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b6">
+				<monogr>
+					<author>
+						Dimensional Imaging
+					</author>
+					<title level="m">DI4D PRO System</title>
+					<ref src="http://www.di4d.com/systems/di4d-pro-system/">http://www.di4d.com/systems/di4d-pro-system/</ref>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b7">
+				<monogr>
+					
+					<author>
+						Epic Games
+					</author>
+					<title level="m">Epic Games</title>
+					<ref src="https://www.epicgames.com">https://www.epicgames.com</ref>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>Huan</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mingming</forename><surname>Gong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Chaohui</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kayhan</forename><surname>Batmanghelich</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kun</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Dacheng</forename><surname>Tao</surname></persName>
+					</author>
+					<title level="a">Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping</title>
+				</analytic>
+				<monogr>
+					<title level="j">arXiv preprint</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="volume">arXiv:1706.00826</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Graham</forename><surname>Fyffe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Andrew</forename><surname>Jones</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Oleg</forename><surname>Alexander</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ryosuke</forename><surname>Ichikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Paul</forename><surname>Debevec</surname></persName>
+					</author>
+					<title level="a">Driving High-Resolution Facial Scans with Video Performance Capture</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="8:1" to="8:14"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+				<note>Article 8</note>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Leon</forename><forename type="middle">A</forename><surname>Gatys</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Alexander</forename><forename type="middle">S</forename><surname>Ecker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Matthias</forename><surname>Bethge</surname></persName>
+					</author>
+					<title level="a">Image Style Transfer Using Convolutional Neural Networks</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ian</forename><surname>Goodfellow</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jean</forename><surname>Pouget-Abadie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mehdi</forename><surname>Mirza</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Bing</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>David</forename><surname>Warde-Farley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Sherjil</forename><surname>Ozair</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Aaron</forename><surname>Courville</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yoshua</forename><surname>Bengio</surname></persName>
+					</author>
+					<title level="a">Generative adversarial Nets</title>
+				</analytic>
+				<monogr>
+					<title level="m">Advances in Neural Information Processing Systems (NIPS).</title>
+					<imprint>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Adam</forename><forename type="middle">W</forename><surname>Harley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Shih-En</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jason</forename><surname>Saragih</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Katerina</forename><surname>Fragkiadaki</surname></persName>
+					</author>
+					<title level="a">Image Disentanglement and Uncooperative Re-Entanglement for High-Fidelity Image-to-Image Translation</title>
+				</analytic>
+				<monogr>
+					<title level="j">arXiv preprint</title>
+					<biblScope unit="volume">arXiv:1901.03628</biblScope>
+					<imprint>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b13">
+				<monogr>
+					
+					<author>
+						Hellblade
+					</author>
+					<title level="a">Hellblade</title>
+					<ref src="https://www.hellblade.com/">https://www.hellblade.com/</ref>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>Phillip</forename><surname>Isola</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jun-Yan</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tinghui</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Alexei</forename><forename type="middle">A</forename><surname>Efros</surname></persName>
+					</author>
+					<title level="a">Image-to-Image Translation with Conditional Adversarial Networks</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>Hiroharu</forename><surname>Kato</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yoshitaka</forename><surname>Ushiku</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tatsuya</forename><surname>Harada</surname></persName>
+					</author>
+					<title level="a">Neural 3D Mesh Renderer</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Tejas</forename><forename type="middle">D</forename><surname>Tejas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">William</forename><forename type="middle">F</forename><surname>Whitney</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Pushmeet</forename><surname>Kohli</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Josh</forename><surname>Tenenbaum</surname></persName>
+					</author>
+					<title level="a">Deep Convolutional Inverse Graphics Network</title>
+				</analytic>
+				<monogr>
+					<title level="m">Advances in Neural Information Processing Systems (NIPS)</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="2539" to="2547"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>Samuli</forename><surname>Laine</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tero</forename><surname>Karras</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Timo</forename><surname>Aila</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Antti</forename><surname>Herva</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Shunsuke</forename><surname>Saito</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ronald</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Hao</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jaakko</forename><surname>Lehtinen</surname></persName>
+					</author>
+					<title level="a">Production-level facial performance capture using deep convolutional neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the ACM SIGGRAPH / Eurographics Symposium on Computer Animation</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="page">10 pages</biblScope>
+					</imprint>
+				</monogr>
+				<note>Article 10</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>Hao</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Laura</forename><surname>Trutoiu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kyle</forename><surname>Olszewski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Lingyu</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tristan</forename><surname>Trutna</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Pei-Lun</forename><surname>Hsieh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Aaron</forename><surname>Nicholls</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Chongyang</forename><surname>Ma</surname></persName>
+					</author>
+					<title level="a">Facial performance sensing head-mounted display</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="47:1" to="47:9"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+				<note>Article 47</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>Stephen</forename><surname>Lombardi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jason</forename><surname>Saragih</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tomas</forename><surname>Simon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yaser</forename><surname>Sheikh</surname></persName>
+					</author>
+					<title level="a">Deep appearance models for face rendering</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1" to="13"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>Article 68</note>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b20">
+				<monogr>
+					
+					<author>
+						Magic Leap
+					</author>
+					<title level="a">Magic Leap</title>
+					<ref src="https://www.magicleap.com/">https://www.magicleap.com/</ref>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>Takeru</forename><surname>Miyato</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Toshiki</forename><surname>Kataoka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Masanori</forename><surname>Koyama</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yuichi</forename><surname>Yoshida</surname></persName>
+					</author>
+					<title level="a">Spectral Normalization for Generative Adversarial Networks</title>
+				</analytic>
+				<monogr>
+					<title level="m">International Conference on Learning Representations (ICLR)</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>Franziska</forename><surname>Mueller</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Florian</forename><surname>Bernard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Oleksandr</forename><surname>Sotnychenko</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Dushyant</forename><surname>Mehta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Srinath</forename><surname>Sridhar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Dan</forename><surname>Casas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Christian</forename><surname>Theobalt</surname></persName>
+					</author>
+					<title level="a">GANerated Hands for Real-time 3D Hand Tracking from Monocular RGB</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>Vinod</forename><surname>Nair</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Josh</forename><surname>Susskind</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Geoffrey</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+					</author>
+					<title level="a">Analysis-by-Synthesis by Learning to Invert Generative Black Boxes</title>
+				</analytic>
+				<monogr>
+					<title level="m">AProceedings of the 18th International Conference on Artificial Neural Networks (ICANN), Part I</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<biblScope unit="page" from="971" to="981"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>Kyle</forename><surname>Olszewski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Joseph</forename><forename type="middle">J</forename><surname>Lim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Shunsuke</forename><surname>Saito</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Hao</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">High-fidelity facial and speech animation for VR HMDs</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page">14 pages</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+				<note>Article 221</note>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Jason</forename><forename type="middle">M</forename><surname>Saragih</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Simon</forename><surname>Lucey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Jeffrey</forename><forename type="middle">F</forename><surname>Cohn</surname></persName>
+					</author>
+					<title level="a">Face alignment through subspace constrained mean-shifts</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE International Conference on Computer Vision (ICCV)</title>
+					<imprint>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>Mike</forename><surname>Seymour</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Chris</forename><surname>Evans</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kim</forename><surname>Libreri</surname></persName>
+					</author>
+					<title level="a">Meet Mike: Epic Avatars</title>
+				</analytic>
+				<monogr>
+					<title level="m">ACM SIGGRAPH 2017 VR Village</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="page">2 pages</biblScope>
+					</imprint>
+				</monogr>
+				<note>Article 12</note>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ayush</forename><surname>Tewari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Michael</forename><surname>Zollhofer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Hyeongwoo</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Pablo</forename><surname>Garrido</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Florian</forename><surname>Bernard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Patrick</forename><surname>Perez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Christian</forename><surname>Theobalt</surname></persName>
+					</author>
+					<title level="a">MoFA: Model-Based Deep Convolutional Face Autoencoder for Unsupervised Monocular Reconstruction</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE International Conference on Computer Vision (ICCV)</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>Justus</forename><surname>Thies</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Michael</forename><surname>Zollhofer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Marc</forename><surname>Stamminger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Christian</forename><surname>Theobalt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Matthias</forename><surname>Niessner</surname></persName>
+					</author>
+					<title level="a">Face2Face: Real-Time Face Capture and Reenactment of RGB Videos</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>Justus</forename><surname>Thies</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Michael</forename><surname>Zollhofer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Marc</forename><surname>Stamminger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Christian</forename><surname>Theobalt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Matthias</forename><surname>Niessner</surname></persName>
+					</author>
+					<title level="a">FaceVR: Real-Time Gaze-Aware Facial Reenactment in Virtual Reality</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Transactions on Graphics (TOG)</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="25:1" to="25:15"/>
+					</imprint>
+				</monogr>
+				<note>Article 25</note>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b30">
+				<monogr>
+					
+					<author>
+						Unreal Engine 4
+					</author>
+					
+					<title level="a">Unreal Engine 4</title>
+					<ref src="https://www.unrealengine.com/">https://www.unrealengine.com/</ref>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>Shih-En</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Varun</forename><surname>Ramakrishna</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Takeo</forename><surname>Kanade</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yaser</forename><surname>Sheikh</surname></persName>
+					</author>
+					<title level="a">Convolutional Pose Machines</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jing</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jinxiang</forename><surname>Chai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Takeo</forename><surname>Kanade</surname></persName>
+					</author>
+					<title level="a">A Closed-Form Solution to Non-Rigid Shape and Motion Recovery</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Computer Vision (IJCV)</title>
+					<imprint>
+						<date when="2006">2006</date>
+						<biblScope unit="volume">67</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="233" to="246"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>Xuehan</forename><surname>Xiong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Fernando</forename><surname>De la Torre</surname></persName>
+					</author>
+					<title level="a">Supervised Descent Method and Its Applications to Face Alignment</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+					<imprint>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ilker</forename><surname>Yildirim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Winrich</forename><surname>Freiwald</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tejas</forename><surname>Kulkarni</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Joshua</forename><forename type="middle">B</forename><surname>Tenenbaum</surname></persName>
+					</author>
+					<title level="a">Efficient Analysis-by-synthesis in Vision: A Computational Framework, Behavioral Tests, and Comparison with Neural Representations</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of 37th Annual Conference of the Cognitive Science Society</title>
+					<imprint>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jun-Yan</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Taesung</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Phillip</forename><surname>Isola</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Alexei</forename><forename type="middle">A</forename><surname>Efros</surname></persName>
+					</author>
+					<title level="a">Unpaired Image- to-Image Translation using Cycle-Consistent Adversarial Networks</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE International Conference on Computer Vision (ICCV)</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

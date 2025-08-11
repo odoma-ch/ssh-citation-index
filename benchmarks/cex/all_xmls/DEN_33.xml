@@ -1,0 +1,1349 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The accuracy of computer‐guided implant surgery with tooth‐supported, digitally designed drill guides based on CBCT and intraoral scanning. A prospective cohort study</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-09-09">2019-09-09</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Wiebe</forename><surname>Derksen</surname></persName>
+							<email>w.derksen@acta.nl</email>
+							<idno type="ORCID">0000-0002-1612-6068</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Section of Oral Implantology and Prosthetic Dentistry</orgName>
+								<orgName type="institution">Academic Centre for Dentistry Amsterdam (ACTA)</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Daniel</forename><surname>Wismeijer</surname></persName>
+							<idno type="ORCID">0000-0001-6736-1941</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Section of Oral Implantology and Prosthetic Dentistry</orgName>
+								<orgName type="institution">Academic Centre for Dentistry Amsterdam (ACTA)</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tabea</forename><surname>Flügge</surname></persName>
+							<idno type="ORCID">0000-0002-1288-8452</idno>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Oral and Maxillofacial Surgery</orgName>
+								<orgName type="department" key="dep2">Faculty of Medicine and Medical Center</orgName>
+								<orgName type="institution">University of Freiburg</orgName>
+								<address>
+									<settlement>Freiburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bassam</forename><surname>Hassan</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Ali</forename><surname>Tahmaseb</surname></persName>
+							<idno type="ORCID">0000-0002-3796-2233</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Section of Oral Implantology and Prosthetic Dentistry</orgName>
+								<orgName type="institution">Academic Centre for Dentistry Amsterdam (ACTA)</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+
+						<title level="a" type="main">The accuracy of computer‐guided implant surgery with tooth‐supported, digitally designed drill guides based on CBCT and intraoral scanning. A prospective cohort study</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Clinical Oral Implants Research</title>
+						<title level="j" type="abbrev">Clinical Oral Implants Res</title>
+						<idno type="ISSN">0905-7161</idno>
+						<idno type="eISSN">1600-0501</idno>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<biblScope unit="volume">30</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="1005" to="1015"/>
+							<date type="published" when="2019-09-09"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8699E16AAEC5710D222BEF61FB949807</idno>
+					<idno type="DOI">10.1111/clr.13514</idno>
+					<note type="submission">Received: 19 February 2018 | Revised: 31 March 2019 | Accepted: 31 March 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>CAD/CAM</term>
+					<term>clinical research</term>
+					<term>clinical trials</term>
+					<term>computer-aided implant surgery (CAIS)</term>
+					<term>computerassisted</term>
+					<term>CT Imaging</term>
+					<term>digital impression</term>
+					<term>digital workflow</term>
+					<term>guided surgery</term>
+					<term>implant</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Objectives:</head><p>The purpose of this prospective cohort study was to evaluate computerguided implant surgery with tooth-supported drill guides based on CBCT scans and intraoral scanning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and methods:</head><p>For partially edentulous patients, a prosthetic and surgical planning was completed in the guided surgery software (coDiagnostiX) and drill guides were 3D-printed accordingly. Three months after implant placement, an intraoral scan of the implant's position was used to evaluate the accuracy of placement using the coDiagnostiX treatment evaluation tool. Deviations were reported in degrees and in distance at implant's entry point and apex. Several risk factors, which might influence the accuracy, were evaluated separately: treated jaw, flap design, prior augmentations, amount of unrestored teeth, crowding, location of implants, cortical interference, and implant's length and diameter.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results:</head><p>A total of 66 patients received 145 Straumann tissue level implants that were eligible for accuracy analysis. The mean angular deviation was 2.72° ± 1.42. The mean three-dimensional deviation at the implant's entry point was 0.75 mm ± 0.34.</p><p>At implant's apex, the mean was 1.06 mm ± 0.44. The amount of unrestored teeth (p = .002 &amp; p = .003), the implant's location (p &lt; .001), the implant's length (p = .004), and cortical interference (p = .033) had a significant influence on the accuracy of placement. Implant survival was 99.3% (n = 1 failed implant) at 12 and 24 months.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions:</head><p>Guided surgery with tooth-supported drill guides made in a digital workflow is a feasible treatment option. However, deviations do occur and the implant's length, location, cortical interference and the amount of unrestored teeth have a significant influence on the accuracy.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">| INTRODUCTION</head><p>The correct three-dimensional placement of a dental implant is one of the most important prerequisites for successful implant therapy <ref type="bibr" target="#b23">(Tahmaseb, Wismeijer, Coucke, &amp; Derksen, 2014)</ref>. Neglecting prosthetic demands as a primary outcome could lead to unfavorable design of the prosthesis, poor esthetics, suboptimal biomechanics, and inadequate dental hygiene <ref type="bibr" target="#b0">(Beretta, Poli, &amp; Maiorana, 2014)</ref>.</p><p>The introduction of cone beam computer tomography (CBCT) in the dental field made it possible to pre-operatively combine a prosthetic design with anatomical information of the underlying bone.</p><p>Traditionally, this is accomplished by creating a scanning template based on a pre-operative wax-up on a diagnostic cast that would either include radiopaque teeth (using barium sulfate) or other fiducial markers <ref type="bibr" target="#b3">(Cassetta, Giansanti, Mambro, Calasso, &amp; Barbato, 2011)</ref>.</p><p>However, the radiographic examination with these templates involved several procedures adding to the total cost of treatment and required a precise fit of the template and scan prosthesis <ref type="bibr" target="#b11">(Flugge, Nelson, Schmelzeisen, &amp; Metzger, 2013)</ref>.</p><p>The introduction of optical scanners made it possible to design and produce surgical templates directly from a dataset <ref type="bibr" target="#b15">(Jones, 2013;</ref><ref type="bibr" target="#b21">Reich, Kern, &amp; Ritter, 2014)</ref>. These techniques require matching of a surface scan-by means of an intraoral scan or optical scan of a dental cast-and a CBCT scan <ref type="bibr" target="#b19">(Noh, Nabha, Cho, &amp; Hwang, 2011)</ref>. Employing this application in the digital workflow eliminates the analogue pre-operative waxing since a virtual wax-up can be created. In addition to the possible cost reduction, it excludes the necessity of second CBCT scan with a patient wearing a radiographic template. This means that preexisting CBCT datasets can also be used for digital surgical planning <ref type="bibr" target="#b21">(Reich et al., 2014)</ref>.</p><p>Matching surface scans and CBCT data without additional measures is only possible in partially edentulous patients with at least some sound tooth structure, since it requires the presence of teeth visible in both scans to perform matching. Additionally, metal (or oxide) artifacts could deteriorate the visibility of crucial structures and negatively influence image contrast <ref type="bibr" target="#b20">(Parsa, Ibrahim, Hassan, Syriopoulos, &amp; Stelt, 2014)</ref>.</p><p>In contrast to digitizing a dental cast, high accuracy Intraoral Optical Scanning (IOS) is now available. Compared with conventional impressions, IOS has certain benefits that include improved clinical efficiency <ref type="bibr" target="#b14">(Joda, Ferrari, Gallucci, Wittneben, &amp; Brägger, 2017)</ref> and immediate incorporation into the guided surgery software.</p><p>To date, many authors have reported on the clinical accuracy of guided surgery. In a recent systematic review, <ref type="bibr" target="#b23">Tahmaseb et al.</ref> reported an average deviation for partially edentulous tooth-supported drill guides of 0.84 mm at the implant's entry point, 1.15 mm at the implant's apex, and 3.28° for the implant's angulation.</p><p>However, most of these studies were based on combined digital and conventional workflows, that is, combining conventional laboratory steps with digital planning. It is expected that the application of a fully digital workflow in contrast to these earlier methods could have an influence on the accuracy.</p><p>The primary outcome of the current prospective single cohort study is to evaluate the accuracy of computer-guided implant surgery with tooth-supported, digitally designed drill guides based on CBCT and IOS. Secondary outcomes are to evaluate risk factors influencing this accuracy and to report on surgical complications and the implant survival rates at 12 and 24 months. The risk factors possibly influencing guided accuracy and evaluated as secondary outcomes are summarized in Table <ref type="table" target="#tab_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">| MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">| Patient selection</head><p>For the purpose of this prospective cohort study, patients were recruited at the oral implantology department at ACTA, Academic Center for Dentistry Amsterdam between June 2013 and October 2014 and were treated by the same clinician (WD).</p><p>The study protocol was approved by the regional ethical committee of VU Medical Center, Amsterdam, the Netherlands (No. 2013-152NL43489.029.13). Patients provided written informed consents with permission to use their data for scientific purposes.</p><p>Patients were screened based on clinical and (panoramic) radiographic examination prior to inclusion and had to fulfill the following criteria: (a) partially edentulous adults with at least six teeth remaining, (b) an expected sufficient bone volume to perform implant insertion with at least a 3.3-mm implant without simultaneous bone augmentation, (c) extractions performed at least 3 months earlier; only type 3 &amp; 4 implant placement <ref type="bibr" target="#b4">(Chen &amp; Buser, 2009)</ref> (d) potential earlier sinus grafting was performed at least 6 months prior to implant placement, and (e) stable medical condition to undergo implant surgery (ASA 1 or 2), smokers were not excluded. Exclusion criteria were as follows: (a) implants required to replace incisors (due to expected simultaneous ridge augmentation and different restorative preferences) and (b) physical or psychological disorders generally prohibiting implant therapy.</p><p>After initial screening, patients underwent a CBCT examination to verify whether sufficient bone volume for implant placement without simultaneous contour augmentation was indeed present.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| Data acquisition</head><p>CBCT scans with standardized settings were acquired with the 3D Accuitomo 170 (Morita) (90 kVp, 5 mA, 18 s, 360° rotation, 250 µm isotropic voxel size, slice interval distance 250 µm, FOV 8 × 9 × 8 cm) with the teeth separated with a cotton roll. This was followed by an IOS obtained of the patient's dentition with a scanner (True Definition Scanner, 3M) suitable for full arch digital impressions <ref type="bibr" target="#b8">(Ender, Attin, &amp; Mehl, 2016;</ref><ref type="bibr" target="#b10">Flugge, Derksen, et al., 2016;</ref><ref type="bibr" target="#b27">Vandeweghe, Vervack, Dierens, &amp; Bruyn, 2016)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">| 3D Planning procedure</head><p>Three-dimensional radiographic data available in DICOM format and intraoral scans available in STL format were imported into the guided surgery software (coDiagnostiX; Dental Wings). Neither radiographic nor intraoral scanning data were processed before import. One experienced dentist performed all segmentations and matching procedures. The first step was to segment CBCT data to create a virtual 3D model showing only hard tissue (teeth and bone). For the matching (superimposition) procedure, only teeth without obvious image artifacts due to metal artifacts were selected and cut out to create a "clean" virtual 3D model. Subsequently, the STL files obtained with the IOS were matched to the CBCT-derived virtual 3D model by selecting at least three corresponding surface areas. These spherical landmarks were placed merely on the coronal part of the teeth and-if possible-spread out as much as possible in anterior and posterior regions to assure non-linear matching <ref type="bibr" target="#b9">(Flugge, Att, Metzger, &amp; Nelson, 2016)</ref>. Landmarks were placed on buccal and lingual surfaces if achievable (Figure <ref type="figure" target="#fig_2">3</ref>). After matching of the 3D surfaces of the CBCT and the IOS by means of an iterative closest point (ICP) algorithm, the intraoral scan of the opposing arch was imported and brought to the same correct geometric position using the "copy alignment" function.</p><p>After finishing the matching procedure, a "digital patient" is created exhibiting teeth, gums, and underlying bone and a prosthetic and surgical planning was made. First, artificial teeth were selected from the available library (VITA). These were changed in shape and position until a satisfactory prosthetic outcome was realized. Subsequently, the implants were placed in the prosthetically ideal position followed by verifying the correct placement within the available bone. A safety distance of 2.0 mm to the inferior alveolar nerve was recognized. After finalizing the planning procedure, the drill guides were fabricated from photopolymer Med 610 using a 3D printer (Stratasys Eden 260 V). After printing, Ø 5 mm T-sleeves (Institut Straumann AG) were positioned into the drill guides.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">| Surgical protocol</head><p>All patients received prophylactic antibiotic therapy: 3,000 mg amoxicillin (or 600 mg clindamycin if allergic) 1 hr prior to surgery and rinsed with chlorhexidine mouthwash 0.2% two days (twice a day) before surgery and immediately before the intervention.</p><p>Surgery was applied under local anesthetics. Before proceeding with the surgical treatment, adequate seating of the tooth-supported surgical drill guides was confirmed. Since the drill guides were only tooth-supported, flapless or open-flap implant placement was possible. This decision was made based on the available keratinized tissue around the implant's future location. A minimum zone of 3 mm buccal and lingual form the center point of the future implant was the cutoff point for flapless placement. The manufacture's recommended guided surgery drill sequence was used. For every five patients, new drills were used to ensure sharpness of the surgical instruments <ref type="bibr" target="#b7">(dos Santos et al., 2014)</ref>. Cooling with saline was performed utilizing a contra-angle external cooling hand piece (W&amp;H), and no specific extra cooling underneath the drill guide was utilized.</p><p>After employing the last drill, the osteotomies were rinsed with saline to remove any debris, followed by pre-tapping of the implant beds. Without removing the drill guide, an implant with specially designed guided surgery mounts was inserted through the guiding sleeves. The depth of placement was determined by visual verification of specific lines on these mounts. If multiple implants were placed in the same quadrant, the osteotomies and implant insertion of the mesial implant were always performed first, such that during the placement of the more distally positioned implants, the drill guide would already be stabilized by the mesial implant.</p><p>All implants in this study were tissue level implants with a 1.8-mm machined collar (SP/TE, RN, SLActive, Institut Straumann AG). Diameters ranged from 3.3 to 4.8 mm, and lengths 8, 10, and 12 mm were applied. The 3.3-mm implants were made of a titanium-zirconium alloy (Roxolid ® ). All implants were placed as 1-stage implants with supra-mucosal healing. In case of open-flap surgery, non-resorbable polypropylene 6-0 (Hufriedy) sutures were used.</p><p>Patients were instructed to use 0.2% chlorhexidine mouthwash twice a day for 2 weeks, to have a soft diet for 1 month, and to avoid brushing and trauma on the surgical sites. Patients were also provided with paracetamol 1,000 mg to be taken 2-4 times a day in case of pain. Patients were recalled after 14 days for suture removal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">| Prosthetic reconstruction</head><p>To prevent additional risk factors, a conventional loading protocol was applied <ref type="bibr" target="#b22">(Schrott, Riggi-Heiniger, Maruo, &amp; Gallucci, 2014)</ref>. Final implant impressions were obtained 3 months after implant insertion followed by placement of the screw-retained monolithic zirconia (3M Lava Plus) restorations on titanium-base abutments (Variobase for crown &amp; Variobase for bridge, Institut Straumann AG) 4 weeks later.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6">| Follow-up</head><p>All patients were recalled at 12 and 24 months after placement of restorations and clinical examination of the restoration and surrounding tissues were performed. Since implants were inserted 4 months before prosthetic loading, the exact date of failure in case implant loss was compared with the date of implant placement to determine whether the failure was in the first or second year.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.7">| Accuracy evaluation</head><p>Digital impressions of the implants were performed using the True Definition Scanner and RN Mono Scanbodies (Institut Straumann AG) connected to the implants. The open-source STL files obtained from the IOS were imported into the coDiagnostiX software. The software contains a Treatment Evaluation Tool, which was used to evaluate the accuracy of the surgical procedure. After applying a similar matching procedure as described above, the post-operative intraoral scan containing the actual implant location was matched to the existing CBCT data in the software. The software consequently generated a projection of planned versus the actual implant's position (Figure <ref type="figure" target="#fig_3">4</ref>). Also, a quantitative analysis of the extent of deviation in all directions is specified. This protocol provides an alternative for a post-operative CBCT scan and consequently limits the exposure to radiation. For the accuracy evaluation in this study, three outcomes were used: the three-dimensional distance deviation at the implant's apex and entry point in millimeters and the angular deviation of the implant in degrees. The separately evaluated risk factors with arbitrary parameters (such as the extent of crowding and the presence or absence of cortical interference) were assessed by two independent observers; any conflict was resolved by discussion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.8">| Statistical analysis</head><p>Since the primary outcome variables only include descriptive statistics, no specific sample size calculation was performed for the current surgical part of this prospective clinical trial. All data analyses were carried out according to a pre-established analysis plan.</p><p>Two calibrated assessors performed the accuracy evaluation using the treatment evaluation tool. Both assessors performed evaluation of a 25% random selection of all measures twice to establish intra-observer agreement. Cronbach's alpha reliability coefficient was calculated for inter-and intra-observer agreements. The final published accuracy data comprise of the average between the first measurements of both assessors. For the apical, entry point, and angular deviations, the intra-observer Cronbach's alpha scores ranged from 0.930 to 0.972. The inter-observer scores ranged from 0.939 to 0.958.</p><p>The data were analyzed using SPSS for Windows Release 24 (SPSS). The level of significance was set at α = .05. Implant survival rate was calculated through dividing the amount of implants in situ at time of the recall intervals by the total number of implants that were installed with the described guided surgery protocol. Accuracy data were analyzed at implant level and the mean, standard deviation (±), and confidence interval were reported. The first five mentioned risk factors (Table <ref type="table" target="#tab_0">1</ref>) were evaluated with univariate analyses since the groups in these risk factors are not likely to structurally coincide with the other evaluated risk factors. For the univariate analysis of risk factors with two variables, a two-tailed independent t test was used. For the univariate analysis with three or more variables, a one-way ANOVA was used with a post hoc Bonferroni analysis to identify which factor(s) were significant. The risk factors Jaw, Location, Cortical interference, and Length of the implants are often related-especially for the most posteriorly placed implants in the mandible-and were therefore evaluated with a multivariate analysis. A multiple linear regression analysis was performed for this purpose. The factors were qualitative variables; therefore, dummy variables were used for risk factors with more than two groups to perform this regression analysis. Since several patients received multiple implants, all statistical tests were repeated for one randomly selected implant per patient to evaluate whether patient factors did not have a too large influence on the results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">| RESULTS</head><p>After screening, 68 patients were initially recruited. After performing the CBCT scan, two additional patients were excluded because of insufficient bone width and the need for horizontal bone augmentation. Subsequently, 66 patients were included in this study (30 men and 36 women). At the time of implant insertion, the patients ranged in age from 20 to 73 years (mean age:52.4 years). Overall 149 implants were placed. Two complications occurred during surgery. In one patient with severely limited mouth opening, placing the distally positioned implant (location 37) using the drill guide was not possible. The guided placement of the patient's other implant (location 35) was uneventful. One other patient presented with a buccal dehiscence at both osteotomies after final instrumentation, and it was decided to perform a simultaneous bone augmentation procedure and manually place two implants with a bone level design in order to achieve primary closure. During the same surgical procedure, three other implants were placed successfully in the patient's opposing arch and therefore the patient was not excluded from the study. Most implants osseointegrated uneventfully. However, one implant was mobile 6 weeks after placement and was removed. Since this early failure was before the digital impression, this implant could not be included in the accuracy analysis. No other surgical complications such as template fracture or misfit of the drill guides were reported. With the exclusion of these four implants, 145 implants were eligible for accuracy evaluation. All patients were treated according to the protocol, and no patient dropped-out up to date.</p><p>Of these 145 implants, 79 implants were placed in the mandible and 66 in the maxilla. In total, 25 of these implants were placed in earlier augmented sinuses. In total, 34 were placed in a flapless procedure (23.4%). Although distinct case selection for these flapless procedures was followed, 9 implants had a dissatisfactory zone of keratinized tissue (&lt;2 mm)<ref type="bibr" target="#b30">(Wennstrom, Bengazi, &amp; Lekholm, 1994)</ref> with 3 implants having a complete lack of keratinized tissue on the buccal side after prosthetic reconstruction. In contrast, only two implants of the 111 implants placed with flap elevation had a dissatisfactory zone of keratinized tissue.</p><p>Overall one mandibular implant (4.1 × 8 mm) of the 146 guidedplaced implants was lost in the first year (early failure-as mentioned above-in a smoking patient) providing a survival rate at 12 months of 99.3%. No implant was lost in the second year, providing a survival rate of 99.3% at 24 months. All restorations on the implants included in the current study were successfully restored screw-retained with straight occlusal screw access.</p><p>The mean angular deviation of the 145 implants was 2.72° ± 1.42(range: 0.15-6.65°). The mean three-dimensional deviation at the implant's entry point was 0.75 mm ± 0.34 (range: 0.13-1.95 mm). At implant's apex, the mean was 1.06 mm ± 0.44 (range: 0.25-2.40 mm).Since the software also generates the direction of misplacement, the maximal apical deviation (implant placed to deep) was specifically reviewed. The maximal apical deviation measured at the implant's apex was 0.72 mm.</p><p>In the statistical analysis of individual risk factors for guided implant placement accuracy, some significant differences were found. The implanted jaw, the flap design, previous augmentation, crowding, and implant diameter had no significant influence. In the univariate analysis, there was a significant difference at the implant's entry point and apex between the (5-6) and (7+) unrestored teeth groups: 0.95 mm versus 0.68 mm (p = .002) and 1.35 mm versus 1.01 mm (p = .003), respectively. In the multivariate analysis, the R square of the multiple linear regression analysis was 0.146.The implants placed distally to an edentulous site in a free-ending situation (distal implant in a 3-unit bridge indication) showed significantly higher deviations at entry point (β = 0.484, p &lt; .001) and apex (β = 0.341, p &lt; .001) if compared with other implant locations.Cortical interference only played a significant (β = 0.180, p = .033) role in angular deviations leading to 3.34° average deviation for implants interfering bodily or apically with the cortical plate in contrast to 2.53° for implants positioned within the trabecular space. Other than generally expected of longer implants, the 12mm implants performed significantly (β = -0.243, p = .004) more accurate in angular deviations than the shorter implant lengths.All risk factors and subsequent mean results were summarized in Tables <ref type="table" target="tab_1">2</ref> and <ref type="table" target="tab_2">3</ref>. Evaluation of one randomly selected implant per patient presented similar significant differences per risk factor with one exception for the location of the implants, in which the apical deviation did not reach statistical significance (p = .118).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| DISCUSSION</head><p>The aim of this prospective cohort study was to evaluate the accuracy of the application of computer-guided implant surgery with tooth-supported, digitally designed drill guides based on CBCT and IOS. The described surgical technique was applied successfully in 146 of the 149 initially included implants. The application of scan template-free guided surgery therefore seems to be successfully applicable if certain requirements are met.</p><p>The individually analyzed risk factors show that several-preoperatively distinctive-factors affect the accuracy of guided surgery. An accuracy advantage of having more than 7 unrestored teeth to perform matching of CBCT to a surface scan was revealed. Additionally, it appeared that longer implants, without cortical interference and with support of a directly neighboring tooth or implant to stabilize the drill guide demonstrated more accurate guided implant placement. There are also system-dependent variables that could not be evaluated in this particular study since only one system was used. Implant design could be of influence when evaluating cortical interference for example. In this particular study, implants with a tissue level shoulder and round apical design were used, which could possibly be pushed away by the crestal bone or the cortical wall, in contrast to implants with a more aggressive apical thread (and/or bone level) design that might engage the harder cortical bone <ref type="bibr" target="#b13">(Herekar, Patil, Mulani, Sethi, &amp; Padhye, 2014)</ref>. Other studies have moreover shown that drills and sleeves have a certain freedom in movement, which could easily lead to lateral deviations of the implants <ref type="bibr" target="#b16">(Koop, Vercruyssen, Vermeulen, &amp; Quirynen, 2013;</ref><ref type="bibr" target="#b25">Van Assche &amp; Quirynen, 2010)</ref>. Also the malpositioning of the dill guide as such could lead to a misplacement of all implants. This is however more likely to happen for mucosa- supported drill guides <ref type="bibr" target="#b2">(Cassetta, Mambro, Giansanti, Stefanelli, &amp; Barbato, 2014)</ref>. Thus, many factors seem to influence the outcome of the surgical procedure. If the accuracy data of the current study are compared with distances of the matching error—as reported in a study where the same patient's CBCT data were used—it can be concluded that the matching error (0.2 mm on average for an experienced user) is probably of little influence to the guided accuracy if compared with all surgical and technical factors <ref type="bibr" target="#b10">(Flugge, Derksen, et al., 2016)</ref>. Nevertheless, it is emphasized by the authors that the individual performance of the user can be of influence on the accuracy of matching with an (ICP) algorithm and therefore extensive training it advised. Matching errors are smallest if buccal and lingual surfaces of the CBCT scans and the optical scans are used <ref type="bibr" target="#b19">(Noh et al., 2011)</ref>. Therefore, it is the author's opinion to separate the dentition of the upper and the lower jaw during any CBCT scan. Consequently, such CBCT scans can later always be used for computer-guided surgery.</p><p>The maximum deviation between planned and actual implant position in apical direction was 0.72 mm. Since a too deeply placed implant is the largest risk on irreversible damage to the inferior alveolar nerve in the mandible, this number suggests that vertical safety distance of 1.5 mm should be sufficient if this protocol is followed and all other requirements for predictable guided surgery are met.</p><p>Successful dental implant surgery is not only related to the position of the implant in the bone but also to its surrounding soft tissues.</p><p>Raising a (small) flap in cases of limited keratinized tissue width seems to be beneficial for the preservation of surrounding bone <ref type="bibr" target="#b18">(Malo, Rigolizzo, Nobre, Lopes, &amp; Agliardi, 2013)</ref>. Flapless guided surgery should only be applied if sufficient keratinized tissue is available. Contrary, non-guided freehand flapless surgery increases the risk of implant malpositioning and subsequent dehiscences or apical bone perforations <ref type="bibr" target="#b1">(Brodala, 2009;</ref><ref type="bibr" target="#b26">Van de Velde, Glor, &amp; Bruyn, 2008)</ref>. This suggests that if flapless surgery is desired, additional computer guidance during preparation of the implant bed and during implant placement is beneficial <ref type="bibr" target="#b6">(D'Haese, Vervaeke, Verbanck, &amp; Bruyn, 2013)</ref>. In order to preserve the maximum amount of keratinized tissue, flapless implant placement can-as performed in the current study-be performed without the use of a soft tissue punch <ref type="bibr" target="#b6">(D'Haese et al., 2013)</ref>.</p><p>In the current study, post-operative intraoral scanning was used instead of a post-operative CBCT scan. This non-invasive treatment evaluation tool eliminates the need for a post-operative CBCT scan, thereby reducing the total patient radiation exposure. This can be considered an improvement to prior studies in which not only two diagnostic-but also a post-operative CBCT-scans were made <ref type="bibr" target="#b0">(Beretta et al., 2014)</ref>. However, this method cannot specifically validate whether an implant is placed within the bone; it only demonstrates the difference between the planned and the actual position.</p><p>For this particular study, three patients (treated with six implants) underwent a second CBCT for other reasons in a later stage and a post-operative CBCT accuracy analysis of these implants was therefore possible. The results were comparable to the surface scan treatment analysis with a maximum reported difference in deviation of 0.20 mm. While these six implants cannot statistically prove this method is comparable to the more commonly used post-operative CBCT, they do provide an indication that the two analysis techniques appear to be similar in outcome. More studies comparing these two treatment evaluations are necessary to confirm this hypothesis.</p><p>The application of a guided surgery procedure as described facilitates the ability of transferring pre-operative planning to the surgical field <ref type="bibr" target="#b29">(Vercruyssen, Jacobs, Assche, &amp;amp; Steenberghe, 2008)</ref>. The current study demonstrated this by the fact that all implants placed in this study could be restored screw-retained with straight occlusal screw access. Additionally, the patient benefits from less morbidity due a less invasive surgical wounds and shorter surgical time <ref type="bibr" target="#b24">(Testori et al., 2014;</ref><ref type="bibr" target="#b28">Vercruyssen, Laat, Coucke, &amp; Quirynen, 2014)</ref>. In contrast, this surgical time benefit is opposed by the complexity of the time-consuming pre-operative guided surgery planning <ref type="bibr" target="#b17">(Lal, Eisig, Fine, &amp; Papaspyridakos, 2013)</ref>. Future studies evaluating cost-benefit ratio are needed to further investigate this.</p><p>The crowding did not influence the accuracy; however, in moderate and severe crowding cases, seating of the drill guides sometimes consumed more time.</p><p>Next to the prosthetic outcome, a key factor in treatment evaluation is the overall survival of implants. Despite the potential increased heat generated associated with guided drilling protocols <ref type="bibr" target="#b12">(Frosch, Mukaddam, Filippi, Zitzmann, &amp; Kuhl, 2019)</ref>, the current study demonstrated promising survival rates on a short term. These survival rates could be attributed to ideal prosthetic placement with benefits for proper oral hygiene and well-planned inter-implant distances. It could however also be attributed to the case selection; only posteriorly placed implant without simultaneous bone augmentation. Or even to the particular (tissue level) type of implants used in this study, which has been proven to show high survival rates <ref type="bibr" target="#b5">(Derks et al., 2015)</ref>. The authors declare that they have no conflicts of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">| CONCLUSIONS</head><p>Computer-guided implant surgery with tooth-supported, digitally designed drill guides based on CBCT scans and intraoral scanning appears to be a feasible surgical treatment option. The followed protocol resulted in promising survival percentages on the short term. However, just as other guided surgery techniques, this system also demonstrates deviations. Further improvement of these systems leading to higher accuracy of placement is recommended.The inaccuracy of guided surgery systems seems to be multifactorial, and knowledge about these factors is important to achieve predictable outcomes. The current study showed significantly higher deviations at the implants apices and entry points in cases with 5-6 unrestored teeth if compared to cases with 7 or more unrestored teeth. Longer implants (12 mm) and implants which did not had cortical interference showed less angular deviations. Implants that were lacking a directly neighboring tooth or implant to support the drill guide showed larger deviations at the implants apices and entry points. Due to the described inaccuracies, caution needs to be taken in cases with limited bone or challenging anatomical circumstances.</p></div>
+			<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>F I G U R E 1</head><label>1</label><figDesc>Different possibilities for location of analyzed implant</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>F I G U R E 2</head><label>2</label><figDesc>Planned implant (blue) interfering with the cortical wall (left) or within the trabecular space (right)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>F I G U R E 3</head><label>3</label><figDesc>Alignment with 3D reconstruction of CBCT Scan (left) and IOS Right. Spherical landmarks are placed on corresponding teeth</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>F I G U R E 4</head><label>4</label><figDesc>Difference between planned implant (blue) and actual position (red)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>T A B L E 1</head><label>1</label><figDesc>Evaluated risk factors possibly influencing guided accuracy</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>T A B L E 2</head><label>2</label><figDesc>Results univariate analysis per risk factor</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>T A B L E 3</head><label>3</label><figDesc>Results multivariate analysis per risk factor</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>For this study, an <rs type="institution">ITI</rs> clinical research grant was accepted. Implant materials were supplied by <rs type="person">Straumann AG</rs>.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ORCID</head><p>Wiebe Derksen <ref type="url" target="https://orcid.org/0000-0002-1612-6068">https://orcid.org/0000-0002-1612-6068</ref></p><p>Daniel Wismeijer <ref type="url" target="https://orcid.org/0000-0001-6736-1941">https://orcid.org/0000-0001-6736-1941</ref> Tabea Flügge <ref type="url" target="https://orcid.org/0000-0002-1288-8452">https://orcid.org/0000-0002-1288-8452</ref> </p><p>Ali Tahmaseb <ref type="url" target="https://orcid.org/0000-0002-3796-2233">https://orcid.org/0000-0002-3796-2233</ref></p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Beretta</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Poli</surname>
+					<forename type="first">P</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maiorana</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Accuracy of computer‐ aided template‐guided oral implant placement: A prospective clinical study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Periodontal &amp; Implant Science</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="184" to="193"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brodala</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Flapless surgery and its effect on dental implant outcomes</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="118" to="125"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cassetta</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Di Mambro</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Giansanti</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stefanelli</surname>
+					<forename type="first">L</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barbato</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">How does an error in positioning the template affect the accuracy of implants inserted using a single fixed mucosa‐supported stereolithographic surgical guide?</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Surgery</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="85" to="92"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cassetta</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Giansanti</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Di Mambro</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Calasso</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barbato</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Accuracy of two stereolithographic surgical templates: A retrospective study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Implant Dentistry and Related Research</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="448" to="459"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">S</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Buser</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Clinical and esthetic outcomes of implants placed in postextraction sites</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="186" to="217"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Derks</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hakansson</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wennstrom</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tomasi</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Larsson</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Berglundh</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Effectiveness of implant therapy analyzed in a Swedish population: Early and late implant loss</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Dental Research</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">94</biblScope>
+				<biblScope unit="page" from="44S" to="51S"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>D'Haese</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vervaeke</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Verbanck</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Bruyn</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Clinical and radiographic outcome of implants placed using stereolithographic guided surgery: A prospective monocenter study</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="205" to="215"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>dos Santos</surname>
+					<forename type="first">P</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Queiroz</surname>
+					<forename type="first">T</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Margonar</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>de Souza Carvalho</surname>
+					<forename type="first">A</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Betoni</surname>
+					<forename>W</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rezende</surname>
+					<forename type="first">R</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename type="first">I</forename><forename type="middle">R</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<title level="a">Evaluation of bone heating, drill deformation, and drill roughness after implant os‐ teotomy: Guided surgery and classic drilling procedure</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="51" to="58"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ender</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Attin</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mehl</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">In vivo precision of conventional and digital methods of obtaining complete‐arch dental impressions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Prosthetic Dentistry</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">115</biblScope>
+				<biblScope unit="page" from="313" to="320"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Flugge</surname>
+					<forename type="first">T</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Att</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Metzger</surname>
+					<forename type="first">M</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nelson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Precision of dental implant digitization using intraoral scanners</title>
+		</analytic>
+		<monogr>
+			<title level="j">The International Journal of Prosthodontics</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="277" to="283"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Flugge</surname>
+					<forename type="first">T</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Derksen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Te Poel</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hassan</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nelson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wismeijer</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Registration of cone beam computed tomography data and intraoral surface scans – A prerequisite for guided implant surgery with CAD/CAM drilling guides</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="1113" to="1118"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Flugge</surname>
+					<forename type="first">T</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nelson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schmelzeisen</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Metzger</surname>
+					<forename type="first">M</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Three‐dimensional plotting and printing of an implant drilling guide: Simplifying guided implant surgery</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Oral and Maxillofacial Surgery</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="1340" to="1346"/>
+			</imprint>
+		</monogr>
+		</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Frosch</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mukaddam</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Filippi</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zitzmann</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kuhl</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Comparison of heat generation between guided and conventional implant surgery for single and sequential drilling protocols‐an in vitro study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="121" to="130"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Herekar</surname>
+					<forename type="first">M</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Patil</surname>
+					<forename type="first">V</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mulani</surname>
+					<forename type="first">S</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sethi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Padhye</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<title level="a">The influence of thread geometry on biomechanical load transfer to bone: A finite element analysis comparing two implant thread designs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Dental Research Journal</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="489" to="494"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Joda</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferrari</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gallucci</surname>
+					<forename type="first">G</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wittneben</surname>
+					<forename type="first">J</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brägger</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="a">Digital technology in fixed implant prosthodontics</title>
+		</analytic>
+		<monogr>
+			<title level="j">Periodontology 2000</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">73</biblScope>
+				<biblScope unit="page" from="178" to="192"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename type="first">P</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Accurate implant placement. Digital scanning and use of tooth‐guided, tooth‐supported surgical guides</title>
+		</analytic>
+		<monogr>
+			<title level="j">Dentistry Today</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">32</biblScope>
+				<biblScope unit="page">124</biblScope>
+				<biblScope unit="page">126</biblScope>
+				<biblScope unit="page">128</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Koop</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vercruyssen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vermeulen</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Quirynen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Tolerance within the sleeve inserts of different surgical guides for guided implant surgery</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="630" to="634"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lal</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisig</surname>
+					<forename type="first">S</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fine</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Papaspyridakos</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Prosthetic outcomes and survival rates of implants placed with guided flapless surgery using stereolithographic templates: A retrospective study</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Periodontics and Restorative Dentistry</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">33</biblScope>
+				<biblScope unit="page" from="661" to="667"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Malo</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rigolizzo</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nobre</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lopes</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Agliardi</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Clinical outcomes in the presence and absence of keratinized mucosa in mandibular guided implant surgeries: A pilot study with a proposal for the modification of the technique</title>
+		</analytic>
+		<monogr>
+			<title level="j">Quintessence International</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="149" to="157"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Noh</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nabha</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cho</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hwang</surname>
+					<forename type="first">H</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Registration accuracy in the integration of laser‐scanned dental images into maxillofa‐ cial cone‐beam computed tomography images</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Orthodontics and Dentofacial Orthopedics</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="585" to="591"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Parsa</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ibrahim</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hassan</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Syriopoulos</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van der Stelt</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Assessment of metal artefact reduction around dental titanium implants in cone beam ct</title>
+		</analytic>
+		<monogr>
+			<title level="j">Dentomaxillofacial Radiology</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="20140019" to="20140019"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Reich</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kern</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ritter</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Options in virtual 3d, optical‐impression‐based planning of dental implants</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Computerized Dentistry</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="101" to="113"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schrott</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Riggi‐Heiniger</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maruo</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gallucci</surname>
+					<forename type="first">G</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">Implant loading protocols for partially edentulous patients with extended edentulous sites–A systematic review and meta‐analysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="239" to="255"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tahmaseb</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wismeijer</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Coucke</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Derksen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Computer technology applications in surgical implant dentistry: A systematic review</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Oral and Maxillofacial Implants</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="25" to="42"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Testori</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Robiony</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parenti</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luongo</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rosenfeld</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ganz</surname>
+					<forename type="first">S</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Del Fabbro</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluation of accuracy and precision of a new guided surgery system: A multicenter clinical study</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Periodontics &amp; Restorative Dentistry</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="s59" to="69"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Van Assche</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Quirynen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Tolerance within a surgical guide</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="455" to="458"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Van de Velde</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glor</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Bruyn</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">A model study on flapless implant placement by clinicians with a different experience level in implant surgery</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="66" to="72"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vandeweghe</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vervack</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dierens</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Bruyn</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Accuracy of digital impressions of multiple dental implants: An in vitro study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="648" to="653"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vercruyssen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Laat</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Coucke</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Quirynen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">An RCT comparing patient‐centred outcome variables of guided surgery (bone or mucosa supported) with conventional implant placement</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Clinical Periodontology</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">41</biblScope>
+				<biblScope unit="page" from="724" to="732"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vercruyssen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jacobs</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Assche</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Steenberghe</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">The use of CT scan based planning for oral rehabilitation by means of implants and its transfer to the surgical field: A critical review on accuracy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Oral Rehabilitation</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">35</biblScope>
+				<biblScope unit="page" from="454" to="474"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wennstrom</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bengazi</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lekholm</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="a">The influence of the masticatory mucosa on the peri‐implant soft tissue condition</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clinical Oral Implants Research</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="1" to="8"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

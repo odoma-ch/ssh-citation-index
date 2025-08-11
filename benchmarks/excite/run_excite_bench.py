@@ -11,14 +11,16 @@ import time
 import re  # Added for regex operations when cleaning model responses
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm.contrib.logging import logging_redirect_tqdm
+from typing import List
 
 from citation_index.core.extractors import ExtractorFactory
 from citation_index.llm.client import LLMClient
-from citation_index.llm.prompt_loader import (
-    ReferenceExtractionPrompt,
-    ReferenceExtractionAndParsingPrompt,
-    ReferenceParsingPrompt,
+from citation_index.pipelines.reference_extraction import (
+    extract_text_references, extract_text_references_section_detect, extract_text_references_by_page
 )
+from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step
+from citation_index.pipelines.reference_parsing import parse_reference_strings
+from citation_index.pipelines.text_extraction import split_pages, extract_text
 from citation_index.evaluation.ref_metrics import string_reference_eval, RefEvaluator
 from excite_helper import load_excite_data
 from citation_index.core.models import References
@@ -119,12 +121,14 @@ class BenchmarkRunner:
                     logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
 
             # 2. Concurrently call LLM for all tasks
-            tqdm.write(f"Submitting {len(llm_tasks)} tasks to LLM with {self.args.max_workers} workers.")
+            # For method 3, use max_workers=1 since it handles parallelization internally
+            effective_max_workers = 1 if getattr(self.args, 'method', 1) == 3 else self.args.max_workers
+            tqdm.write(f"Submitting {len(llm_tasks)} tasks to LLM with {effective_max_workers} workers (method {getattr(self.args, 'method', 1)}).")
             # Start timer – we only want to measure the duration of the actual
             # LLM requests (Step 2).
             start_llm_timer = time.time()
             llm_responses = []
-            with ThreadPoolExecutor(max_workers=self.args.max_workers) as executor:
+            with ThreadPoolExecutor(max_workers=effective_max_workers) as executor:
                 future_to_task = {
                     executor.submit(self._execute_llm_call, llm_client, task): task
                     for task in llm_tasks
@@ -152,7 +156,8 @@ class BenchmarkRunner:
                 # re-issuing expensive model calls.
                 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                 model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
-                run_name = f"{self.args.task}_{model_name_slug}_{self.args.extractor}_{timestamp}"
+                method = getattr(self.args, 'method', 1)
+                run_name = f"{self.args.task}_m{method}_{model_name_slug}_{self.args.extractor}_{timestamp}"
                 responses_path = self.output_dir / f"{run_name}_responses.pkl"
                 with open(responses_path, "wb") as f:
                     pickle.dump(llm_responses, f)
@@ -176,34 +181,84 @@ class BenchmarkRunner:
         self._summarize_results()
 
     def _execute_llm_call(self, llm_client, task_info):
-        """Prepare prompt and execute a single LLM call."""
+        """Execute a single LLM task using pipeline functions."""
         file_id = task_info["file_id"]
         input_text = task_info["input_text"]
         prompt_path = Path("prompts") / self.args.prompt_name
-        logging.debug(f"Executing LLM call for file_id: {file_id} with task: {self.args.task}")
-        
+        method = getattr(self.args, 'method', 1)
+        logging.debug(f"Executing LLM call for file_id: {file_id} with task: {self.args.task}, method: {method}")
+
         if self.args.task == "extraction":
-            prompt = ReferenceExtractionPrompt(prompt=str(prompt_path), input_text=input_text).prompt
-            return llm_client.call(prompt, json_output=False)
-        
+            lines = self._execute_extraction_method(
+                input_text=input_text,
+                llm_client=llm_client,
+                prompt_path=str(prompt_path),
+                file_id=file_id,
+            )
+            return "\n".join(lines)
+
         elif self.args.task == "extraction_and_parsing":
             include_schema = "pydantic" in self.args.prompt_name
-            prompt_obj = ReferenceExtractionAndParsingPrompt(
-                prompt=str(prompt_path),
-                input_text=input_text,
-                include_json_schema=include_schema
+            refs = run_pdf_one_step(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                prompt_name=str(prompt_path),
+                include_schema=include_schema,
             )
-            return llm_client.call(prompt_obj.prompt, json_output=True, json_schema=prompt_obj.json_schema)
+            return json.dumps(refs.model_dump())
 
         elif self.args.task == "parsing":
             include_schema = "pydantic" in self.args.prompt_name
-            prompt_obj = ReferenceParsingPrompt(
-                prompt=str(prompt_path),
-                input_text=input_text,
-                include_json_schema=include_schema
+            reference_lines = [ln for ln in str(input_text).splitlines() if ln.strip()]
+            refs = parse_reference_strings(
+                reference_lines=reference_lines,
+                llm_client=llm_client,
+                prompt_name=str(prompt_path),
+                include_schema=include_schema,
             )
-            return llm_client.call(prompt_obj.prompt, json_output=True, json_schema=prompt_obj.json_schema)
+            return json.dumps(refs.model_dump())
+
         return None
+
+    def _execute_extraction_method(
+        self, input_text: str, llm_client, prompt_path: str, file_id: str
+    ) -> List[str]:
+        """Execute the appropriate extraction method based on self.args.method."""
+        method = getattr(self.args, 'method', 1)  # Default to method 1 for backwards compatibility
+        
+        if method == 1:
+            # Method 1: Standard LLM-based extraction on full text
+            return extract_text_references(
+                text=input_text,
+                llm_client=llm_client,
+                prompt_name=prompt_path,
+            )
+        
+        elif method == 2:
+            # Method 2: Section detection without LLM (non-LLM method)
+            return extract_text_references_section_detect(
+                text_or_pdf=input_text,
+                extractor=None,
+            )
+        
+        elif method == 3:
+            # Method 3: Page-wise extraction with LLM
+            # Calculate optimal max_workers: min(benchmark max_workers, number of pages)
+            pages = split_pages(input_text, extractor_type=self.args.extractor)
+            optimal_workers = min(self.args.max_workers, len(pages))
+            logging.debug(f"Method 3 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
+            
+            return extract_text_references_by_page(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                prompt_name=prompt_path,
+                max_workers=optimal_workers,
+            )
+        
+        else:
+            raise ValueError(f"Unsupported extraction method: {method}. Must be 1, 2, or 3.")
 
     def _evaluate_extraction_task(self, response_data):
         """Evaluate a plain text extraction response."""
@@ -296,7 +351,8 @@ class BenchmarkRunner:
 
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
-        run_name = f"{self.args.task}_{model_name_slug}_{self.args.extractor}_{timestamp}"
+        method = getattr(self.args, 'method', 1)
+        run_name = f"{self.args.task}_m{method}_{model_name_slug}_{self.args.extractor}_{timestamp}"
         
         results_path = self.output_dir / f"{run_name}_results.pkl"
         with open(results_path, "wb") as f:
@@ -313,59 +369,112 @@ class BenchmarkRunner:
         tqdm.write(f"Saved metrics to {metrics_path}")
 
     def _summarize_results(self):
-        """Print a summary of the benchmark metrics."""
+        """Print a summary of the benchmark metrics and optionally save to file."""
         if not self.metrics:
             logging.warning("No metrics were generated.")
             return
 
         metrics_df = pd.DataFrame(self.metrics)
-        # Ensure file_id is str for merging
         metrics_df["file_id"] = metrics_df["file_id"].astype(str)
         if hasattr(self, "pdf_df"):
             self.pdf_df["file_id"] = self.pdf_df["file_id"].astype(str)
-        tqdm.write("\n--- Benchmark Summary ---")
+
+        output_lines = []
+        output_lines.append("\n--- EXCITE Benchmark Summary ---")
         if self.args.task == "extraction":
             summary = metrics_df[['precision', 'recall', 'f1_score', 'avg_similarity']].mean().to_dict()
-        else: # extraction_and_parsing
+        else:
             summary = metrics_df[['precision', 'recall', 'micro_f1', 'macro_f1']].mean().to_dict()
-        
-        tqdm.write(json.dumps(summary, indent=2))
+        summary_json = json.dumps(summary, indent=2)
+        output_lines.append(summary_json)
+        output_lines.append("-------------------------\n")
+
+        tqdm.write("\n--- EXCITE Benchmark Summary ---")
+        tqdm.write(summary_json)
         tqdm.write("-------------------------\n")
 
-        # ----------------------------------------------------------
-        # Error statistics
-        # ----------------------------------------------------------
-        tqdm.write("Error statistics:")
-        tqdm.write(f"  Parsing errors:   {self.parse_errors}")
-        tqdm.write(f"  Evaluation errors: {self.eval_errors}")
+        if (self.args.task in ["extraction_and_parsing", "parsing"] and \
+            self.args.focus_fields and 'per_class_f1' in metrics_df.columns):
+            all_per_class_f1 = []
+            for _, row in metrics_df.iterrows():
+                if isinstance(row['per_class_f1'], dict):
+                    all_per_class_f1.append(row['per_class_f1'])
+            if all_per_class_f1:
+                field_f1_scores = {}
+                for field in self.args.focus_fields:
+                    field_scores = [doc_f1.get(field, 0.0) for doc_f1 in all_per_class_f1 if field in doc_f1]
+                    field_f1_scores[field] = sum(field_scores) / len(field_scores) if field_scores else 0.0
+                output_lines.append("Focused field F1 scores:")
+                tqdm.write("Focused field F1 scores:")
+                for field, f1_score in field_f1_scores.items():
+                    line = f"  {field}: {f1_score:.4f}"
+                    output_lines.append(line)
+                    tqdm.write(line)
+                output_lines.append("-------------------------\n")
+                tqdm.write("-------------------------\n")
 
-        # ----------------------------------------------------------
-        # Optional per-class / language breakdown
-        # ----------------------------------------------------------
+        output_lines.append("Error statistics:")
+        tqdm.write("Error statistics:")
+        error_stats_line1 = f"  Parsing errors:   {self.parse_errors}"
+        error_stats_line2 = f"  Evaluation errors: {self.eval_errors}"
+        output_lines.append(error_stats_line1)
+        output_lines.append(error_stats_line2)
+        tqdm.write(error_stats_line1)
+        tqdm.write(error_stats_line2)
+
         if self.args.per_class and hasattr(self, "pdf_df"):
             joined = metrics_df.merge(
                 self.pdf_df[["file_id", "class", "lang"]], on="file_id", how="left"
             )
-
             metric_cols = (
                 ["precision", "recall", "f1_score", "avg_similarity"]
                 if self.args.task == "extraction"
                 else ["precision", "recall", "micro_f1", "macro_f1"]
             )
-
             grouped = (
                 joined.groupby(["class", "lang"], dropna=True)[metric_cols]
                 .mean()
                 .reset_index()
             )
-
+            output_lines.append("Per-class / language metrics:")
             tqdm.write("Per-class / language metrics:")
             for _, row in grouped.iterrows():
                 cls, lang = int(row["class"]), row["lang"]
                 metrics_str = ", ".join(
                     f"{col}: {row[col]:.4f}" for col in metric_cols if col in row
                 )
-                tqdm.write(f"  class {cls}, lang {lang}: {metrics_str}")
+                line = f"  class {cls}, lang {lang}: {metrics_str}"
+                output_lines.append(line)
+                tqdm.write(line)
+
+        if self.args.save_scores:
+            try:
+                scores_path = Path(self.args.save_scores)
+                scores_path.parent.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                run_info = [
+                    f"\n{'='*80}",
+                    f"EXCITE Benchmark Run - {timestamp}",
+                    f"{'='*80}",
+                    f"Task: {self.args.task}",
+                    f"Method: {getattr(self.args, 'method', 1)}",
+                    f"Model: {self.args.model_name}",
+                    f"Extractor: {self.args.extractor}",
+                    f"Prompt: {self.args.prompt_name}",
+                    f"Mode: {self.args.mode}",
+                    f"Fuzzy Threshold: {self.args.fuzzy_threshold}",
+                    f"Focus Fields: {', '.join(self.args.focus_fields) if self.args.focus_fields else 'None'}",
+                    f"Documents Processed: {len(self.metrics)}",
+                    f"LLM Duration: {self.llm_duration:.2f}s" if self.llm_duration else "LLM Duration: N/A (loaded from file)",
+                    f"{'='*80}\n"
+                ]
+                mode = 'a' if scores_path.exists() else 'w'
+                with open(scores_path, mode, encoding='utf-8') as f:
+                    f.write('\n'.join(run_info + output_lines))
+                tqdm.write(f"Benchmark scores summary appended to: {scores_path}")
+            except Exception as e:
+                logging.error(f"Failed to save scores to {self.args.save_scores}: {e}")
+                tqdm.write(f"Warning: Failed to save scores to {self.args.save_scores}: {e}")
 
 
 def main():
@@ -376,6 +485,16 @@ def main():
 
     # Task Configuration
     parser.add_argument("--task", type=str, required=True, choices=["extraction", "extraction_and_parsing", "parsing"], help="The evaluation task to run.")
+    parser.add_argument(
+        "--method", 
+        type=int, 
+        default=1, 
+        choices=[1, 2, 3], 
+        help="Reference extraction method (only applies to extraction task): "
+             "1=Standard LLM-based extraction on full text (default), "
+             "2=Section detection without LLM, "
+             "3=Page-wise extraction with LLM."
+    )
 
     # LLM Configuration
     parser.add_argument("--model_name", type=str, default="google/gemma-3-27b-it", help="Name of the LLM model to use.")
@@ -386,11 +505,11 @@ def main():
     parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")
 
     # Extractor Configuration
-    parser.add_argument("--extractor", type=str, default="pymupdf", choices=["pymupdf", "marker", "mineru"], help="The PDF text extractor to use.")
+    parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru"], help="The PDF text extractor to use.")
 
     # Evaluation Configuration
     parser.add_argument("--fuzzy_threshold", type=float, default=90, help="Fuzzy threshold for reference parsing. If ≤1, treated as proportion (e.g., 0.95 → 95).")
-    parser.add_argument("--mode", type=str, default="exact", choices=["exact", "fuzzy", "soft_fuzzy"], help="Mode for reference parsing.")
+    parser.add_argument("--mode", type=str, default="soft_fuzzy", choices=["exact", "fuzzy", "soft_fuzzy"], help="Mode for reference parsing.")
     parser.add_argument(
         "--focus_fields",
         type=str,
@@ -420,6 +539,12 @@ def main():
         "--skip_save",
         action="store_true",
         help="If set, do NOT write raw results or metrics to disk.",
+    )
+    parser.add_argument(
+        "--save_scores",
+        type=str,
+        default=None,
+        help="Path to save the final benchmark scores summary. If provided, the summary will be saved to this file in addition to being printed.",
     )
 
     args = parser.parse_args()

@@ -1,0 +1,1489 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Sleeping beauties in materials science: unlocking the value of xylarium specimens in the search for timbers of the future</title>
+				<funder ref="#_yNZVhHY #_STMyKfk">
+					<orgName type="full">UGent-BOF</orgName>
+				</funder>
+				<funder ref="#_Wv8DqYY">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_cspCdVe #_ZyK5pWc">
+					<orgName type="full">Special Research Fund</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-05-30">May 30, 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Victor</forename><surname>Deklerck</surname></persName>
+							<email>victor.deklerck@ugent.be.</email>
+							<idno type="ORCID">0000-0002-8961-0176</idno>
+							<affiliation key="aff0">
+								<orgName type="group">UGent-Woodlab</orgName>
+								<orgName type="department" key="dep1">Department of Environment</orgName>
+								<orgName type="department" key="dep2">Faculty of Bioscience Engineering</orgName>
+								<orgName type="laboratory">Laboratory of Wood Technology</orgName>
+								<orgName type="institution">Ghent University</orgName>
+								<address>
+									<addrLine>Coupure Links 653</addrLine>
+									<postCode>B-9000</postCode>
+									<settlement>Ghent</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Service of Wood Biology</orgName>
+								<orgName type="institution">Royal Museum for Central Africa (RMCA)</orgName>
+								<address>
+									<addrLine>Leuvensesteenweg 13</addrLine>
+									<postCode>3080</postCode>
+									<settlement>Tervuren</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tom</forename><surname>De Mil</surname></persName>
+							<idno type="ORCID">0000-0001-6207-9613</idno>
+							<affiliation key="aff0">
+								<orgName type="group">UGent-Woodlab</orgName>
+								<orgName type="department" key="dep1">Department of Environment</orgName>
+								<orgName type="department" key="dep2">Faculty of Bioscience Engineering</orgName>
+								<orgName type="laboratory">Laboratory of Wood Technology</orgName>
+								<orgName type="institution">Ghent University</orgName>
+								<address>
+									<addrLine>Coupure Links 653</addrLine>
+									<postCode>B-9000</postCode>
+									<settlement>Ghent</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Service of Wood Biology</orgName>
+								<orgName type="institution">Royal Museum for Central Africa (RMCA)</orgName>
+								<address>
+									<addrLine>Leuvensesteenweg 13</addrLine>
+									<postCode>3080</postCode>
+									<settlement>Tervuren</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Patrick</forename><surname>Kondjo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="group">UGent-Woodlab</orgName>
+								<orgName type="department" key="dep1">Department of Environment</orgName>
+								<orgName type="department" key="dep2">Faculty of Bioscience Engineering</orgName>
+								<orgName type="laboratory">Laboratory of Wood Technology</orgName>
+								<orgName type="institution">Ghent University</orgName>
+								<address>
+									<addrLine>Coupure Links 653</addrLine>
+									<postCode>B-9000</postCode>
+									<settlement>Ghent</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Service of Wood Biology</orgName>
+								<orgName type="institution">Royal Museum for Central Africa (RMCA)</orgName>
+								<address>
+									<addrLine>Leuvensesteenweg 13</addrLine>
+									<postCode>3080</postCode>
+									<settlement>Tervuren</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hans</forename><surname>Beeckman</surname></persName>
+							<idno type="ORCID">0000-0001-8954-6277</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Service of Wood Biology</orgName>
+								<orgName type="institution">Royal Museum for Central Africa (RMCA)</orgName>
+								<address>
+									<addrLine>Leuvensesteenweg 13</addrLine>
+									<postCode>3080</postCode>
+									<settlement>Tervuren</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Joris</forename><surname>Van Acker</surname></persName>
+							<idno type="ORCID">0000-0002-8961-0176</idno>
+							<affiliation key="aff0">
+								<orgName type="group">UGent-Woodlab</orgName>
+								<orgName type="department" key="dep1">Department of Environment</orgName>
+								<orgName type="department" key="dep2">Faculty of Bioscience Engineering</orgName>
+								<orgName type="laboratory">Laboratory of Wood Technology</orgName>
+								<orgName type="institution">Ghent University</orgName>
+								<address>
+									<addrLine>Coupure Links 653</addrLine>
+									<postCode>B-9000</postCode>
+									<settlement>Ghent</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jan</forename><surname>Van Den Bulcke</surname></persName>
+							<idno type="ORCID">0000-0003-2939-5408</idno>
+							<affiliation key="aff0">
+								<orgName type="group">UGent-Woodlab</orgName>
+								<orgName type="department" key="dep1">Department of Environment</orgName>
+								<orgName type="department" key="dep2">Faculty of Bioscience Engineering</orgName>
+								<orgName type="laboratory">Laboratory of Wood Technology</orgName>
+								<orgName type="institution">Ghent University</orgName>
+								<address>
+									<addrLine>Coupure Links 653</addrLine>
+									<postCode>B-9000</postCode>
+									<settlement>Ghent</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						
+						<title level="a" type="main">Sleeping beauties in materials science: unlocking the value of xylarium specimens in the search for timbers of the future</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Holzforschung</title>
+						<imprint>
+							<biblScope unit="volume">73</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="889" to="897"/>
+							<date type="published" when="2019-05-30">May 30, 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">4D4A2C0B8C3C16E937124AB062E850DB</idno>
+					<idno type="DOI">10.1515/hf-2018-0269</idno>
+					<note type="submission">Received November 23, 2018; accepted April 4, 2019; previously</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>dimensional stability</term>
+					<term>fit for purpose</term>
+					<term>joinery</term>
+					<term>tropical timber</term>
+					<term>wood anatomy</term>
+					<term>wood density</term>
+					<term>xylarium</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Wood ranks among the most valued resources in construction, for joinery and furniture. Rather than increasing the pressure on a limited number of species, we need to move towards a fit for purpose approach where the basis for selection of a material is a solid knowledge of its relevant properties. Therefore, knowledge about wood technological characteristics of a vast range of wood species is needed. Here, we exploit the potential of xylarium samples by mapping wood density and dimensional stability, using digital image correlation (DIC) on non-standardised samples, of 53 different tropical wood species from the Congo Basin. Furthermore, we attempt to link the results with quantitative anatomical features of the different species tested. DIC proved successful compared to standard calliper measurements on reference samples (R 2 -radial = 0.94, R 2 -tangential = 0.96). Vessel properties play a larger role towards explaining dimensional stability compared to wood density. Fibre wall thickness is positively related to wood density and volumetric swelling. We are able to differentiate between species and sample groups with similar behaviour, partially explained by their anatomical structure. Selecting species based on the required properties for the targeted end use as such can unlock the potential of currently unknown species.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Wood is the most common material in living nature <ref type="bibr" target="#b3">(Beeckman 2016)</ref>, is one of the most valued resources for furniture, interior or exterior joinery or constructions and is often regarded as a renewable resource <ref type="bibr" target="#b10">(FAO 2011)</ref>. Some tropical timber species are precious and valued highly due to several appealing properties such as colour, technological quality (for example, high dimensional stability) and high natural durability. <ref type="bibr" target="#b16">The International Tropical Timber Organization (ITTO) (2016)</ref> estimated the world production of tropical logs in 2016 to be in the order of 286 million m 3 , and for tropical sawnwood 44.2 million m 3 . However, the ITTO stated in their report in 2011 that 90% of tropical forests are managed poorly or not at all <ref type="bibr" target="#b5">(Blaser et al. 2011)</ref>. Selective logging is one of the main harvesting techniques in the tropics and can severely affect the forest, potentially causing collateral damage to the forest stands <ref type="bibr" target="#b40">(Shearman et al. 2012)</ref>. <ref type="bibr" target="#b37">Ruiz Perez et al. (2005)</ref> mentioned several studies from the Congo Basin in which the damage to the remaining stands due to selective logging was addressed. The direct damage affects 7-20% when 0.8-4 trees are harvested per hectare <ref type="bibr" target="#b37">(Ruiz Perez et al. 2005)</ref>; however, continued selective logging of the same valuable timber species can lead to exhaustion and diminish the future stock <ref type="bibr" target="#b0">(Alder 1989;</ref><ref type="bibr" target="#b33">Poorter et al. 1996)</ref>. Measures are taken to protect endangered species, for example, the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) prohibits trade of highly endangered species as listed in Appendix I and assures durable production of a selection of other species listed in Appendix II. Nonetheless, there is a legitimate global demand for commercial timbers in general and tropical timbers specifically. Rather than focussing on the use of a limited number of tropical species, we need to move towards a "fit for purpose" approach. The basis of selection is therefore not the wood species itself, but the required properties for the targeted end use. This concept has been an important part of timber characterisation and optimisation of timber structures (for examples see <ref type="bibr" target="#b22">Lindegaard and Morsing 2003;</ref><ref type="bibr" target="#b46">Van Acker et al. 2011;</ref><ref type="bibr" target="#b27">Moore 2012;</ref><ref type="bibr" target="#b21">Li et al. 2015)</ref>. For this reason, new potential commercial timber species should be characterized in terms of wood technological and biological characteristics. One of the main wood technological criteria is dimensional stability or the resistance against dimensional changes (volumetric, shrinkage and swelling) due to changing moisture content. Species with low dimensional stability can suffer from defects such as warping, checking and splitting during drying or in use. As such, dimensional stability is a major determinant of whether a wood species can have a commercial use <ref type="bibr" target="#b6">(Bossu et al. 2016)</ref>. Large scientific wood collections (xylaria) enable screening of many different tropical wood species without the need for extensive sampling campaigns. Xylaria can be considered as sleeping beauties in terms of wood technological output. The importance of their plant/leaf counterpart, herbaria, has already been shown in several studies as digitisation of herbaria specimens has the potential to produce data to facilitate the study of the natural world <ref type="bibr" target="#b12">(Goodwin et al. 2015)</ref>. Digitised data on wood collections and the potential thereof are far less investigated. The Royal Museum for Central Africa in Tervuren, Belgium, for instance, houses one of the largest wood collections in the world and the largest wood collection of African species (<ref type="url" target="http://xylarium.africamuseum.be">http://xylarium.africamuseum.be</ref>). This xylarium contains over 80 000 wood specimens covering more than 13 000 species. The main focus is on specimens from Central Africa but wood specimens from other geographical regions are also present. These xylarium specimens have a non-standardised, even random format (disks, branches, book-shaped) and cannot be used as such according to standard wood technological test protocols. When focussing on the dimensional stability, mainly rectangular specimens are considered suitable. The orthotropic nature of wood requires measurements in the radial (perpendicular to the growth rings) and tangential (parallel to the growth rings) directions and often, 5.0 × 5.0 × 0.5 cm (radial "Rd", tangential "Tg" and transversal "Tv") samples (hereafter called standardised) are used to correctly measure the tangential and radial shrinkage/swelling. These measurements are conventionally done with a calliper, and thus it is a requirement that the samples are cut displaying the correct tangential and radial dimensions. In most cases it is not possible, neither desirable, to prepare such test samples from wood collection specimens. Hence, the focus of this work was to assess the potential of twodimensional (2D) digital image correlation (DIC) to obtain measurements of dimensional stability. DIC has been used for long to determine, for example, strain and displacement fields to determine the deformations due to compression of foam <ref type="bibr" target="#b30">(Pan et al. 2012)</ref>, deformation patterns in 2D granular materials <ref type="bibr" target="#b13">(Hall et al. 2010)</ref> and to determine shrinkage in Pinus banksiana (jack pine, <ref type="bibr" target="#b32">Peng et al. 2012)</ref>. We used Ncorr <ref type="bibr" target="#b4">(Blaber et al. 2015)</ref>, a freely available toolbox written in MATLAB (Mathworks, Natick, MA, USA) which has been used successfully, for example, in solid mechanics <ref type="bibr" target="#b14">(Harilal and Ramji 2014)</ref>. Next, we determined the wood density following the Archimedes principle and we quantified the anatomical features using ImageJ software <ref type="bibr" target="#b38">( Schneider et al. 2012)</ref> on scans of anatomical slices of the same samples to link to dimensional stability, wood density and anatomy. As such, we aimed to determine the technological value of wood species and wood samples individually and explain the differences using wood anatomy. Our study comprises following questions: (1) Is DIC able to accurately determine swelling/shrinkage values on non-standardised samples?; (2) Can wood density be used as a proxy for dimensional stability?; (3) What anatomical features determine dimensional stability and wood density or the combination thereof?; and (4) Can we determine sample groups based on wood technological characteristics, supporting a fit for purpose approach?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and methods</head><p>Sample preparation and scanning: Specimens, mainly book-shaped (Supplementary Figure <ref type="figure" target="#fig_0">1</ref>), were selected from the Tervuren xylarium in the Royal Museum for Central Africa. Special care was taken to focus on heartwood specimens only. For each specimen, the transversal plane was sanded and a slice of 0.5 cm was cut off. In total, 421 samples from 53 species were prepared this way (Supplementary Table <ref type="table" target="#tab_0">1</ref>). We also included 89 reference samples from 10 wood species, further referred to as standardised samples, measuring 5.0 × 5.0 × 0.5 cm (Rd, Tg, Tv) (Supplementary Table <ref type="table" target="#tab_1">2</ref>). These 10 species represent a range in dimensional stability behaviour, wood density and wood anatomical structure. On these standardised samples, dimensional stability was determined by both calliper (Absolute Digimatic Calliper, 0.01 mm, Mitutoyo Corporation, Kawasaki, Japan) measurements and DIC (see further) to validate the DIC approach. Supplementary Figure <ref type="figure" target="#fig_0">1</ref> illustrates both a standardised sample and a sample prepared from a xylarium specimen. The samples were conditioned at 60% relative humidity (RH) and 20°C in a WK111 180 climate test chamber (Weiss Technik, Hamburg, Germany). After 2 months, when the samples were in equilibrium, the sanded surfaces were scanned using a flatbed scanner (SilverFast SE Plus 8, LaserSoft Imaging AG, Kiel, Germany) at 2400 dpi and stored as 48-bit colour images. Samples were then conditioned at 90% RH and 20°C and, when equilibrium was achieved, the samples were scanned again.</p><p>Digital image correlation: All images were preprocessed in ImageJ software <ref type="bibr" target="#b38">(Schneider et al. 2012)</ref> to ensure that images at 60% RH and 90% RH are correctly aligned. The DIC algorithm used in Ncorr is based on Pan's reliability-guided (RG)-DIC framework <ref type="bibr" target="#b29">(Pan et al. 2009;</ref><ref type="bibr" target="#b4">Blaber et al. 2015)</ref>. The dimensional changes are calculated based on registered pixel displacements between two images, in both x and y directions (Figure <ref type="figure" target="#fig_0">1</ref>). To obtain radial and tangential measurements, the displacement, respectively, perpendicular and parallel to the growth rings should be calculated. A MATLAB interface was written that allows to manually indicate the tangential and radial direction on a set of images (yellow lines in Figure <ref type="figure" target="#fig_0">1</ref>). For each sample, 10 tangential and 10 radial directions are indicated and the average displacement and standard deviation per sample and species were calculated.</p><p>Wood density: Wood density (here defined as oven-dry weight/ oven-dry volume) was determined for every specimen. The specimens were oven dried at 103°C for 48 h and weighed (depending on the size of the sample: Scaltec spb53, 0.01 g, Kern 572, 0.1 g, Germany). The volume of the specimens was determined based on the Archimedes principle, the proposed method for wood density estimates using xylarium specimens according to <ref type="bibr" target="#b24">Maniatis et al. (2011)</ref>.</p><p>Wood anatomy: Anatomical cross-sections of 58 samples (see Supplementary Table <ref type="table" target="#tab_0">1</ref>) were digitized at 10 × magnification using Stream Image Analysis Software (StreamMotion, Olympus, Tokyo, Japan) with a scanning stage (Märzhäuser Wetzlar, Wetzlar, Germany) and a UC30 camera (Olympus, Tokyo, Japan) mounted on a light microscope (BX60, Olympus, Tokyo, Japan). In these samples the number of vessels per mm 2 (vessel density) and vessel lumen area per mm 2 (vessel fraction) were measured, for 28-120 vessels, following the International Association of Wood Anatomists (IAWA) guidelines <ref type="bibr" target="#b47">(Wheeler et al. 1989</ref>) and depending on the number of vessels in the cross-section. In 24 samples (selected based on cross-section quality and visibility of anatomical features, see Supplementary Table <ref type="table" target="#tab_0">1</ref>), the percentage of vessel lumen, vessel walls, rays, axial parenchyma and fibres were also determined (Supplementary Figure <ref type="figure" target="#fig_1">2</ref>), based on manual delineation using the polygon selection tool in ImageJ <ref type="bibr" target="#b38">(Schneider et al. 2012)</ref>. In these 24 samples, the double fibre wall thickness was determined as well using scanning electron microscope (SEM) scans (jsm-6480 lv SEM, JEOL, Tokyo, Japan).</p><p>Analysis: A linear model between volumetric swelling (tangential + radial swelling) and wood density was constructed and Spearman correlation was calculated. Samples were clustered based on wood density and dimensional stability values using K-means clustering with normalized data. The number of clusters was determined using the average silhouette method, the Calinski Harabasz index <ref type="bibr" target="#b7">(Calinski and Harabasz 1974)</ref> and the elbow method combined with the maximum value of the third derivative of the fitted spline. Spearman correlation between vessel characteristics and wood density and dimensional stability was calculated. Principal component analysis (PCA, mean centred) was performed to determine the contribution of each anatomical feature to wood density and to the average tangential and radial swelling. Furthermore, fibre wall thickness was correlated with volumetric swelling by using a linear model and Spearman correlation. All analysis were run and plots were made in RStudio (RStudio Team, Boston, MA, USA) using built-in R functions and the packages cluster <ref type="bibr" target="#b23">(Maechler et al. 2018)</ref>, ClusterR <ref type="bibr" target="#b28">(Mouselimis 2018)</ref>, fpc <ref type="bibr" target="#b15">(Henning 2018)</ref>, lmodel2 <ref type="bibr" target="#b19">(Legendre 2018)</ref> and ggplot2 <ref type="bibr" target="#b48">(Wickham 2009)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results and discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Using DIC to determine dimensional stability</head><p>The high correlation between the calliper measurements and the DIC method for the reference samples (Figure <ref type="figure" target="#fig_1">2</ref>) justifies the latter as a valid technique for dimensional stability measurements. The R 2 and slope of the type II regression are 0.94 and 0.98 for the radial direction and 0.96 and 0.99 for the tangential direction, respectively. Slight deviations were noted, mostly related to the conventional approach of measuring. When preparing standard samples, it is often difficult to align perfectly with the tangential and radial directions, leading to a small offset using a calliper. Furthermore, small differences in measuring position with the calliper can lead to additional error. Several studies in the literature also report on dimensional stability measurements, but this is the first study to explore the potential of xylarium specimens in this respect. <ref type="bibr" target="#b25">Mantanis et al. (1994)</ref> used linear variable displacement transformers on 25 × 25 × 5 mm pieces of several North American species. <ref type="bibr" target="#b41">Shukla and Kamdem (2010)</ref> determined the swelling of nine tropical hardwoods from Cameroon by monitoring the swelling of wood samples (22 × 25 × 77 mm) immersed in water for 48 h using linear voltage displacement transducers. In both studies, samples with correct tangential and radial directions were used, while the technique proposed in this study eliminates such sample requirement. Other, more advanced techniques have been used as well to study swelling or shrinkage on a more local and even microscopic scale. For example, high-resolution phase-contrast X-ray tomography has been used to determine the sorption and swelling behaviour of heterogeneous spruce wood <ref type="bibr" target="#b31">(Patera et al. 2018)</ref>. The shrinkage of oak was predicted using a model based on anatomical patterns and X-ray imaging <ref type="bibr" target="#b1">(Badel and Perré 2001)</ref>. However, those studies do not cover the scale we are interested in to determine average swelling and shrinkage on the entire sample and do not cover the wide range of tropical species included here. Moreover, these studies also rely on advanced and often expensive techniques, contrary to the easy and low cost flatbed approach proposed here. Given that so far we have only focussed on 53 species, this method now allows to study more species and specimens from the xylarium without the need for additional sampling, as such giving an additional value to more than a century of collecting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The relationship between wood density and dimensional stability</head><p>The relationship between wood density and dimensional stability has been previously described. <ref type="bibr" target="#b43">Stamm (1964)</ref> [as cited by <ref type="bibr" target="#b25">Mantanis et al. (1994)</ref>] reports a clear correlation of shrinkage and swelling with specific gravity [cfr. IAWA list of microscopic features for hardwood identification: basic specific gravity = oven-dry weight/weight of water displaced by wood when fully swollen, <ref type="bibr" target="#b47">Wheeler et al. (1989)</ref>]. <ref type="bibr" target="#b25">Mantanis et al. (1994)</ref> found a linear correlation and <ref type="bibr" target="#b41">Shukla and Kamdem (2010)</ref> also found a weak correlation (0.54, 0.56 and 0.44 for volumetric, radial and tangential swelling, respectively) between swelling and wood density for nine hardwoods from Cameroon. Density has been correlated with shrinkage [see also <ref type="bibr" target="#b44">Suchsland (2004)</ref>], but this correlation is a representation of a general trend for defect-free wood of different species and is not particularly strong <ref type="bibr" target="#b20">(Leonardon et al. 2010)</ref>. In most cases, the limited number of samples and species diversity hampers a general conclusion. Here, 421 samples covering 53 species were used to determine the volumetric swelling and wood density. Figure <ref type="figure" target="#fig_2">3</ref> illustrates the relation between average density and volumetric swelling for every species (421 samples, 53 species). The linear model is weak (R 2 adjusted = 0.12), but with a significant slope (P ≤ 0.01) indicating that changes in wood density are associated with changes in volumetric swelling. The Spearman correlation is significant at the 95% level (r -Spearman = 0.34, P ≤ 0.05) confirming this relationship, yet it is rather small. The polygons (I, II, III, IV and V) are the result of the K-means clustering of the individual samples and show the sample groups. Among the different available methods for determining the optimal number of clusters, we opted for the elbow method in combination with the derivative of the fitted spline. For 13 species all samples belonged to the same cluster, for 16 species the samples were present in two groups, for 22 species in three groups and for two species in four groups, indicating variability within a species when considering the combination of volumetric swelling and wood density (Supplementary Table <ref type="table" target="#tab_0">1</ref>). Interesting timber species are dense yet stable (low volumetric swelling), which is the case for group I (Figure <ref type="figure" target="#fig_2">3</ref>). These species classify as paradoxical, in terms of the combination of both dimensional stability and wood density. Group I includes the well-known and highly valued Afzelia species (Af spp., for averages and variability in wood density and volumetric swelling, see Supplementary Table <ref type="table" target="#tab_0">1</ref>), Millettia stuhlmannii (Mi st, 788 ± 88 kg m -3 and 2.3 ± 0.8%), Pterocarpus tinctorius (Pt ti, 808 ± 83 kg m -3 and 2.5 ± 1.3%), Pterocarpus angolensis (Pt an, 636 ± 75 kg m -3 and 2.4 ± 1.0%) and Pterocarpus soyauxii (666 ± 80 kg m -3 and 2.4 ± 0.4%). Group II is characterised by a high wood density and high volumetric swelling and includes Irvingia grandifolia (Ir gr, 1007 ± 49 kg m -3 and 5.5 ± 0.4%), Klainedoxa gabonensis (Kl ga, 1056 ± 45 kg m -3 and 5.4 ± 0.4%) and Lophira alata (Lo al, 1024 ± 43 kg m -3 and 5.2 ± 0.3%). Group III, including species such as Antiaris toxicaria (An to, 443 ± 54 kg m -3 and 3.4 ± 0.4%) and Canarium schweinfurthii (Ca sc, 483 ± 119 kg m -3 and 3.3 ± 0.5%), contains species with a low wood density and rather high volumetric swelling. Groups II and III are therefore less interesting for high-end applications. Either the wood density is too low and mechanical strength (related to density) is most probably insufficient, and/or volumetric swelling is too high for the wood to have any feasible use. Group III can also be considered as paradoxical, yet opposite to what is required. Group IV contains species with medium wood density and medium swelling such as Nauclea diderrichii (Na di, 716 ± 57 kg m -3 and 4.1 ± 0.5%) and Baillonella toxisperma (Ba to, 707 ± 61 kg m -3 and 3.7 ± 0.6%). Finally, species with medium wood density but high swelling are found in group V. Examples are Petersianthus macrocarpus (Pet mac, 802 ± 44 kg m -3 and 5.3 ± 0.6%), Ongokea gore (On go, 810 ± 59 kg m -3 and 5.1 ± 0.9%) and Amphimas pterocarpoides (Am pt, 815 ± 70 kg m -3 and 5.1 ± 0.6%). Multiple species groups in terms of volumetric swelling for the same range of wood density can be noted (polygons I, IV and V). Here, wood density cannot explain the differences in volumetric swelling and we need to take a closer look at the wood anatomy of the species, considering that the wood anatomical variation most probably does not support a straightforward relation (see further).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Wood anatomy to explain differences in wood density and dimensional stability</head><p><ref type="bibr" target="#b2">Badel and Perré (2007)</ref> mentioned that shrinkage and swelling experiments are time consuming. Being able to predict a wood species' shrinkage/swelling behaviour via either modelling using anatomical patterns or by quantification of the different anatomical features would be clearly time-saving. Several theoretical models have already been constructed [see <ref type="bibr" target="#b2">Badel and Perré (2007)</ref>] but are not further explored in this study due to their complexity in combination with the high number of species that we want to screen. However, wood anatomy can still be a powerful proxy to explain the differences in wood density and dimensional stability. The relationship between wood density and anatomical features has been thoroughly investigated; however, the relationship between dimensional stability and anatomical features needs to be further explored [see also <ref type="bibr" target="#b20">Leonardon et al. (2010)</ref>].</p><p><ref type="bibr" target="#b49">Zanne et al. (2010)</ref> summarized, based on several studies <ref type="bibr" target="#b36">(Preston et al. 2006;</ref><ref type="bibr" target="#b35">Pratt et al. 2007;</ref><ref type="bibr" target="#b26">Martínez-cabrera et al. 2009;</ref><ref type="bibr" target="#b34">Poorter et al. 2010)</ref>, that the negative relationship between wood density and vessel fraction is either weak or not found at all (see also <ref type="bibr" target="#b8">De Mil et al. 2018)</ref>. The results in this study confirm this trend, as there is no significant correlation (r -Spearman = 0.15, P &gt; 0.05) between wood density and vessel fraction, although the PCA (Supplementary Figure <ref type="figure" target="#fig_3">4</ref>) shows that vessel lumen percentage tends to be negatively related to the wood density. The proportions of variance are 38% and 22% (cumulative = 60%) for the first and second axis, respectively, and 15% and 11% for the third and fourth axis, respectively. The Spearman correlation between vessel lumen area per mm 2 and radial and tangential swelling is 0.26 (P &gt; 0.05) and 0.37 (P ≤ 0.01), respectively. It appears that vessel lumen area per mm 2 plays a larger role towards explaining dimensional stability compared to wood density. <ref type="bibr" target="#b9">Fan et al. (2012)</ref> focussed on 40 Asian tropical trees (one sample per tree trunk taken using a chisel) and concluded that a significant correlation between wood density and both vessel diameter and vessel density exists, but not for wood density and vessel fraction, in their study defined as the ratio of total vessel lumen area to xylem area. In this study, the Spearman correlation for vessel density with radial and tangential swelling is significant (0.35, P ≤ 0.01, and 0.36, P ≤ 0.01, respectively) and insignificant with wood density (0.16, P &gt; 0.05). The same conclusion for wood density and vessel fraction as <ref type="bibr" target="#b9">Fan et al. (2012)</ref> is found here, but not the significant correlation between wood density and vessel density. Again, vessel density seems to play a more significant role related to dimensional stability than to wood density. The amount of swellable material might be limited in the presence of numerous and large vessels, as more vessels mean less cell wall and thus less swellable material. This could explain the link between dimensional stability and vessel fraction and vessel density.</p><p><ref type="bibr" target="#b11">Fortunel et al. (2014)</ref> concluded that for branches and roots of Amazonian rainforest tree species, mainly fibre traits determine wood specific gravity, independent of vessel traits. They further noted that the increase in wood specific gravity was mainly affected by a decreasing vessel lumen fraction and increasing fibre and fibre wall fractions. A similar result was also reported by <ref type="bibr" target="#b35">Pratt et al. (2007)</ref> for both stems and roots. <ref type="bibr" target="#b17">Jacobsen et al. (2007)</ref> concluded that xylem density at the stem level was correlated with an increase in fraction of fibre wall area per transverse xylem area. The relationship between wood density and fibre wall thickness was also stated in previous studies <ref type="bibr" target="#b45">(Swenson and Enquist 2007)</ref>. Again, little data is found in the literature concerning the impact of fibres on dimensional stability. At the fibre scale, wood swelling is the result of thickening of the wood cell wall. However, other factors like the orientation of the microfibrils or composition of the cell wall [for a thorough discussion on the effect of the microstructure of the cell wall, see <ref type="bibr" target="#b39">Schulgasser and Witztum (2015)</ref>] can impact swelling as well. At the individual sample scale fibre organisation can be of importance too, but was not studied here. The relationship between volumetric swelling and fibre wall thickness (μm) is plotted in Figure <ref type="figure" target="#fig_3">4</ref>. A weak linear trend can be seen (R 2 adjusted = 0.23); however, both slope and intercept are significant, the Spearman correlation is significant at the 99% level (r -Spearman = 0.58, P ≤ 0.01). Supplementary Figure <ref type="figure" target="#fig_4">5</ref> shows the relationship between volumetric swelling and wood density with fibre wall thickness (μm) added as a categorical variable. Generally speaking, samples with a higher/lower fibre wall thickness have a higher/lower wood density and higher/ lower volumetric swelling, respectively. This was also confirmed by the PCA: fibre wall thickness is positively related to wood density, tangential and radial swelling. Ir gr, Kl ga and Lo al have a high fibre wall thickness and high volumetric swelling and wood density. Prioria balsamifera (Pr ba) has a low fibre wall thickness resulting in a low volumetric swelling and wood density. Fibre wall thickness for Pericopsis elata (Pe el) is quite variable, resulting in a range of volumetric swelling and wood density values for the different samples with the high fibre wall thickness leading to higher volumetric swelling and wood density. Interestingly, there are clear exceptions to this rule. For example, Afzelia parviflora (Af pa) has a low fibre wall thickness, low volumetric swelling but a high wood density. Also, the Gilbertiodendron mildbraedii sample included in this study has a rather low fibre wall thickness yet a high wood density, higher than the samples of Piptadeniastrum africanum or Amphimas pterocarpoides, while these have a higher fibre wall thickness. One possible reason might be the high fibre percentage in G. mildbraedii (64.5%) compared to P. africanum (52.1%) or A. pterocarpoides (50.5%). It is also interesting to note the role of the number and size of vessels for these species. Even if a species has a low fibre wall thickness, it might still have a high density due to only having a small number of (small) vessels (see also Supplementary Figure <ref type="figure" target="#fig_3">4</ref>). <ref type="bibr" target="#b49">Zanne et al. (2010)</ref> nonetheless concluded that not the amount of lumen determines the wood density but rather the non-lumen tissue density (fibres, etc.). There are also exceptions concerning fibre wall thickness and volumetric swelling (Figure <ref type="figure" target="#fig_3">4</ref>). The Erythrophleum suaveolens (Er su) sample has a higher fibre wall thickness compared to Ca sc and Albizia gummifera (Al gu) but a lower volumetric swelling.</p><p>Figure <ref type="figure" target="#fig_2">3</ref> shows three groups (I, IV, V) that have a different swelling behaviour for the same wood density range. A closer look at the wood anatomy of the different species in these groups can explain some of the differences. Supplementary Figure <ref type="figure" target="#fig_5">6</ref> shows four anatomical sections and their coloured counterpart, as well as the measured anatomical proportions from four species: Am pt (Group V), Millettia laurentii (Group IV), Pe el (Group IV) and Afzelia pachyloba (Group I). There is substantial variation in anatomical percentages between the different examples (Supplementary Table <ref type="table" target="#tab_2">3</ref>). Pe el does have the highest fibre percentage (58.1%) compared to the other species (Am pt -50.5%, Mi la -49.9%, Af pa -52.9%); however Am pt has the highest fibre wall thickness (μm) (6.25 μm to 5.34 μm of Pe el). This might lead to a relatively high wood density and high volumetric swelling of Am pt. Mi la has a high wood density mainly due to its lack of vessel lumen percentage or vessel fraction. This is also the case for Af pa; however, Af pa has a very low fibre wall thickness, leading to a lower wood density (kg/m 3 ) and lower volumetric swelling compared to Mi la. Supplementary Figure <ref type="figure" target="#fig_3">4</ref> shows that rays are positively related to wood density and volumetric swelling. In this example, Af pa has the highest ray percentage but lowest wood density; however, there are only minor differences with the other species considering ray percentage. Am pt has the highest axial parenchyma percentage (23.5%), although the amount in Mi la (22.6%) is high as well. Pe el has the lowest percentage (12.1%) and Af pa has a reasonably high amount as well (20.0%). It is clear from the cross-sections that Af pa has lozenge-aliform axial parenchyma compared to the more banded axial parenchyma in Am pt and Mi la, and Pe el has aliform axial parenchyma. Little is known about the effect of parenchyma type on wood density or the swelling behaviour. We might suspect that because of the banded direction (tangential) fibres can swell more in the tangential direction, which is similar for Am pt. However, the tangential swelling in Pe el is rather high as well, but the parenchyma here is a combination of banded and aliform. Other factors might play an additional role, for example, extractives might be important in explaining the dimensional stability behaviour of certain species <ref type="bibr" target="#b6">(Bossu et al. 2016)</ref>, or there might be restraints in swelling due to the rays <ref type="bibr" target="#b42">(Skaar 1988;</ref><ref type="bibr" target="#b31">Patera et al. 2018)</ref>. It is clear that a single straightforward anatomical explanation does not exist (see also <ref type="bibr" target="#b8">De Mil et al., 2018)</ref>, but dimensional stability is the result of an intricate combination of the anatomical structure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Moving towards a fit for purpose approach</head><p>Figure <ref type="figure" target="#fig_2">3</ref> illustrates that multiple specimens and species have similar characteristics in terms of dimensional stability and wood density. This would suggest moving from a single species selection to a mix of timber species for the same purpose. Group I is the group with the highest potential for high-end applications, such as Afzelia and Pterocarpus, which are highly valued as timber species for joinery and furniture <ref type="bibr" target="#b18">(Klaassen 2018)</ref>. As such, a mix of species from Group I can be used for the same high-end applications. Species for heavy construction (for example, Lo al) are found in group II, characterized by a high wood density. However, this means that the volumetric swelling is rather high (Figure <ref type="figure" target="#fig_2">3</ref>), leading to potential problems. On the contrary, group III contains species (for example, Ca sc or Pr ba) with a combination of low wood density and medium swelling, which is unwanted in most applications. Apart from average values, taking into account variation is also needed, which is illustrated by the Carapa procera (Ca pr) species, of which the average is located in Group V but specimens are distributed over four different groups. The DIC approach presented in this study thus allows for a screening of non-standardised specimens and will improve knowledge on lesser-known species. These species can be added to the current clusters of Figure <ref type="figure" target="#fig_2">3</ref> and as such their application potential can be indicated. Being able to mix timber species and the possible withinspecies variation could ultimately lead towards a fit for purpose specimen approach.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>DIC is a promising method to determine the dimensional stability of non-standardised samples, for example, from xylarium specimens. This allows for a screening of a large number of specimens, such as shown here on the collection from the Tervuren xylarium (Belgium). A weak but significant correlation was found between dimensional stability and wood density. Several sample groups can be found when clustering on dimensional stability and wood density. Most species follow the general trend of high/low fibre wall thickness related to high/low wood density and high/low volumetric swelling, respectively; however there are clear exceptions. An intricate combination of anatomical characteristics affects swelling as a large range of volumetric swelling is found for a quite small range of wood density. Samples from the Afzelia and Pterocarpus species appear to have the optimal combination of high wood density with a high dimensional stability. Samples from the same species appear in different groups suggesting it is better to move from a single species approach for a specific purpose towards a mix of species for high-end applications, ultimately aiming at a fit for purpose specimen approach.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Representation of the tangential and radial direction for the displacement measures. Left (60% RH, 20°C): scan of the crosscut section at 60% RH, right (90% RH, 20°C): scan of the crosscut section at 90% RH. On the left image, P 60 (x, y) indicates the position of a pixel. On the right image, P 60 (x, y) indicates the old position of that pixel and P 90 (x, y) shows the new position of that same pixel. Notice the displacement of the pixel due to swelling (P 60 (x, y) to P 90 (x, y) on the right image). The tangential and radial swelling was determined using the displacement of pixel groups in the x and y directions.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Comparison between the swelling (%, 60-90 RH, 20°C) determined by calliper measurements and the DIC-based measurements for every reference sample in the radial and tangential directions. Type II regression (MA -major axis): radial -intercept = 0.0374 and slope = 0.98, p-perm (one-tailed, 100 permutations) = 0.0099**. L type II regression (MA -major axis): tangential -intercept = 0.0299 and slope = 0.99, p-perm (one-tailed, 100 permutations) = 0.0099**. Significance levels: ns, P &gt; 0.05, *P ≤ 0.05, **P ≤ 0.01, ***P ≤ 0.001.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Relation between wood density (kg m -3 ) and volumetric swelling (%, 60-90 RH, 20°C) per species. Linear model: P-value = 0.00737**, intercept P-value = 0.06048 and slope P-value = 0.00737**. Spearman correlation coefficient = r -Spearman. Significance levels: ns, P &gt; 0.05, *P ≤ 0.05, **P ≤ 0.01, ***P ≤ 0.001. Polygons indicate the results of the K-means clustering of the individual samples. Number of clusters was determined using the elbow method combined with the maximum value of the third derivative of the fitted spline.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Volumetric swelling (%, 60-90 RH, 20°C) and fibre wall thickness (μm). Note that for some species there are multiple samples. Linear model: P-value = 0.00156**, intercept P-value = 7.34e-05*** and slope P-value = 0.00156**. Spearman correlation coefficient = r -Spearman. Significance levels: ns, P &gt; 0.05, *P ≤ 0.05, **P ≤ 0.01, ***P ≤ 0.001.</figDesc><graphic type="bitmap"/></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements:</head><p>The authors would like to thank <rs type="person">Daniel Wallenus</rs> and <rs type="person">Annelore Nackaerts</rs> (<rs type="affiliation">Royal Museum for Central Africa</rs>) for their help with retrieving the specimens from the xylarium, <rs type="person">Kevin Lievens</rs> for his help in preparing the anatomical slices (<rs type="affiliation">Royal Museum for Central Africa</rs>), <rs type="person">Stijn Willen</rs> (<rs type="affiliation">UGent-Woodlab</rs>) for his help with the sample preparation and <rs type="person">Justin Blaber</rs> and <rs type="person">Antonia Antoniou</rs> (<rs type="affiliation">Georgia Institute of Technology</rs>) for their help in exploring the Ncorr software.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Research funding:</head><p>This research was conducted under the <rs type="projectName">Belspo HerbaXylaRedd</rs> (<rs type="grantNumber">BR/143/A3/HERBAXYLAREDD</rs>) project; <rs type="projectName">Patrick Kondjo</rs> was funded by <rs type="funder">UGent-BOF</rs> (Funder Id: <ref type="url" target="http://dx.doi.org/10.13039/501100007229">http://dx.doi.org/10.13039/501100007229</ref>, <rs type="funder">Special Research Fund</rs>, grant no. <rs type="grantNumber">01W01312</rs>); and <rs type="person">Tom De Mil</rs> was also partly funded by <rs type="funder">UGent-BOF</rs> (Funder Id: <ref type="url" target="http://dx.doi.org/10.13039/501100007229">http://dx.doi. org/10.13039/501100007229</ref>, <rs type="funder">Special Research Fund</rs>, grant no. <rs type="grantNumber">BOF. DOC.2014.0037.01</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_Wv8DqYY">
+					<idno type="grant-number">BR/143/A3/HERBAXYLAREDD</idno>
+					<orgName type="project" subtype="full">Belspo HerbaXylaRedd</orgName>
+				</org>
+				<org type="funded-project" xml:id="_yNZVhHY">
+					<idno type="grant-number">10.13039/501100007229</idno>
+					<orgName type="project" subtype="full">Patrick Kondjo</orgName>
+				</org>
+				<org type="funding" xml:id="_cspCdVe">
+					<idno type="grant-number">01W01312</idno>
+				</org>
+				<org type="funding" xml:id="_STMyKfk">
+					<idno type="grant-number">10.13039/501100007229</idno>
+				</org>
+				<org type="funding" xml:id="_ZyK5pWc">
+					<idno type="grant-number">BOF. DOC.2014.0037.01</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions:</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplementary Material:</head><p>The online version of this article offers supplementary material (<ref type="url" target="https://doi.org/10.1515/hf-2018-0269">https://doi.org/10.1515/hf-2018-0269</ref>).</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="book" xml:id="b0">
+				<monogr>
+					
+					<author>
+						<persName><forename>D</forename><surname>Alder</surname></persName>
+					</author>
+					<title level="m">Ghafosim: A Projection System for Natural Forest Growth and Yield in Ghana</title>
+					<imprint>
+						<date when="1989">1989</date>
+						<publisher>Manas Systems Ltd</publisher>
+						<biblScope unit="page">114</biblScope>
+						<pubPlace>Oxford</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Badel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Perré</surname></persName>
+					</author>
+					<title level="a">Using a digital X-ray imaging device to measure the swelling coefficients of a group of wood cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">NDT &amp; E Int</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="page" from="345" to="353"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Badel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Perré</surname></persName>
+					</author>
+					<title level="a">The shrinkage of oak predicted from its anatomical pattern: validation of a cognitive model</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trees</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="111" to="120"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Beeckman</surname></persName>
+					</author>
+					<title level="a">Wood anatomy and trait-based ecology</title>
+				</analytic>
+				<monogr>
+					<title level="j">IAWA J</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="127" to="151"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Blaber</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Adair</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Antoniou</surname></persName>
+					</author>
+					<title level="a">Ncorr: Open-Source 2D Digital Image Correlation MATLAB Software</title>
+				</analytic>
+				<monogr>
+					<title level="j">Exp. Mech.</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="1105" to="1122"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b5">
+				<monogr>
+					
+					<author>
+						<persName><forename>J</forename><surname>Blaser</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Sarre</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Poore</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Johnson</surname></persName>
+					</author>
+					<title level="m">Status of tropical forest management</title>
+					<imprint>
+						<publisher>International Tropical Timber Organization</publisher>
+						<date when="2011">2011</date>
+						<pubPlace>Yokohama, Japan</pubPlace>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="m">ITTO Technical Series No 38</title>
+					
+				</series>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Bossu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Beauchêne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Estevez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Duplais</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Clair</surname></persName>
+					</author>
+					<title level="a">New Insights on Wood Dimensional Stability Influenced by Secondary Metabolites: The Case of a Fast-Growing Tropical Species</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS ONE</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page">17</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Calinski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Harabasz</surname></persName>
+					</author>
+					<title level="a">A dendrite method for cluster analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Commun. Stat.</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="1" to="27"/>
+						<date when="1974">1974</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>De Mil</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Tarelkin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hahn</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Hubau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Deklerck</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Debeir</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Acker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>De Cannière</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Beeckman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Den Bulcke</surname></persName>
+					</author>
+					<title level="a">Wood Density Profiles and Their Corresponding Tissue Fractions in Tropical Angiosperm Trees</title>
+				</analytic>
+				<monogr>
+					<title level="j">Forests</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page">763</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Fan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Hao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><forename type="last">F</forename><surname>Slik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Cao</surname></persName>
+					</author>
+					<title level="a">Hydraulic conductivity traits predict growth rates and adult stature of 40 Asian tropical tree species better than wood density</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Ecology</title>
+					<imprint>
+						<biblScope unit="volume">100</biblScope>
+						<biblScope unit="page" from="732" to="741"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b10">
+				<monogr>
+					<author>
+						FAO
+					</author>
+					<title level="m">Food and Agriculture Organization of the United Nations</title>
+					<imprint>
+						<date when="2011">2011</date>
+						<publisher>State of the World's Forests</publisher>
+						<pubPlace>Rome</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Fortunel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ruelle</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Beauchêne</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">V</forename><forename type="last">A</forename><surname>Fine</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Baraloto</surname></persName>
+					</author>
+					<title level="a">Wood specific gravity and anatomy of branches and roots in 113 Amazonian rainforest tree species across environmental gradients</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Phytol.</title>
+					<imprint>
+						<biblScope unit="volume">202</biblScope>
+						<biblScope unit="page" from="79" to="94"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">A</forename><surname>Goodwin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Harris</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Filer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><forename type="last">I</forename><surname>Wood</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Scotland</surname></persName>
+					</author>
+					<title level="a">Widespread mistaken identity in tropical plant collections</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="R1066" to="R1067"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Hall</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Muir Wood</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Ibraim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Viggiani</surname></persName>
+					</author>
+					<title level="a">Localised deformation patterning in 2D granular materials revealed by digital image correlation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Granul. Matter</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Harilal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Ramji</surname></persName>
+					</author>
+					<title level="a">Adaptation of open source 2D DIC software Ncorr for solid mechanics applications</title>
+				</analytic>
+				<monogr>
+					<title level="m">9th International Symposium on Advanced Science and Technology in Experimental Mechanics</title>
+					<imprint>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b15">
+				<monogr>
+					
+					<author>
+						<persName><forename>C</forename><surname>Henning</surname></persName>
+					</author>
+					<title level="m">Package “fpc”</title>
+				
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+					<ref src="https://cran.r-project.org/web/packages/fpc/index.html">https://cran.r-project.org/web/packages/fpc/index.html</ref>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b16">
+				<monogr>
+					<author>ITTO</author>
+					<title level="m">Biennial Review and Assessment of the World Timber Situation</title>
+					<imprint>
+						<pubPlace>Yokohama, Japan</pubPlace>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Anna</forename><forename type="middle">L</forename><surname>Jacobsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Lize</forename><surname>Agenbag</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Karen</forename><forename type="middle">J</forename><surname>Esler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">Brandon</forename><surname>Pratt</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Frank</forename><forename type="middle">W</forename><surname>Ewers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Stephen</forename><forename type="middle">D</forename><surname>Davis</surname></persName>
+					</author>
+					<title level="a">Xylem density, biomechanics and anatomical traits correlate with water stress in 17 evergreen shrub species of the Mediterranean-type climate region of South Africa</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Ecol.</title>
+					<imprint>
+						<biblScope unit="volume">95</biblScope>
+						<biblScope unit="page" from="171" to="183"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b18">
+				<analytic>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="middle">W</forename><surname>Klaassen</surname></persName>
+					</author>
+					<title level="a">Houtvademecum</title>
+				</analytic>
+				<monogr>
+					<title level="m">11th ed. Vakbladen.com &amp; Smartwave, Zwolle</title>
+					
+					<editor>
+						<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Klaassen</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>M</forename><surname>Zuijdwijk</surname></persName>
+					</editor>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="page">832</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b19">
+				<monogr>
+					
+					<author>
+						<persName><forename>P</forename><surname>Legendre</surname></persName>
+					</author>
+					<title level="m">Package “lmodel2”</title>
+					<ref src="https://cran.r-project.org/web/packages/lmodel2/index.html">https://cran.r-project.org/web/packages/lmodel2/index.html</ref>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Leonardon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Altaner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Vihermaa</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Jarvis</surname></persName>
+					</author>
+					<title level="a">Wood shrinkage: influence of anatomy, cell wall architecture, chemical composition and cambial age</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur. J. Wood Prod.</title>
+					<imprint>
+						<biblScope unit="volume">68</biblScope>
+						<biblScope unit="page" from="87" to="94"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Den Bulcke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>De Windt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Dhaene</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Acker</surname></persName>
+					</author>
+					<title level="a">Non-destructive monitoring of structure and moisture dynamics of plywood exposed outdoors to improve service life prediction and fit-for-purpose design</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings IRG Annual Meeting</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<publisher> International Research Group on Wood Protection</publisher>
+						<pubPlace>Viña del Mar, Chile</pubPlace>
+					</imprint>
+					<respStmt>
+						<orgName>International Research Group on Wood Protection</orgName>
+					</respStmt>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Lindegaard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Morsing</surname></persName>
+					</author>
+					<title level="a">Natural durability of European wood species for exterior use above ground</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings IRG Annual Meeting</title>
+					<imprint>
+						<publisher>International Research Group on Wood Protection</publisher>
+						<pubPlace>Brisbane, Australia</pubPlace>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b23">
+				<monogr>
+					
+					<author>
+						<persName><forename>M</forename><surname>Maechler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Rousseeuw</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Struyf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Hubert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Hornik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Studer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Roudier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Gonzalez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kozlowski</surname></persName>
+					</author>
+					<title level="m">Package “cluster” for RStudio. Repository Cran</title>
+					
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+					<ref src="http://cran.r-project.org/web/packages/cluster/index.html">http://cran.r-project.org/web/packages/cluster/index.html</ref>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Maniatis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Saint André</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Temmerman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Malhi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Beeckman</surname></persName>
+					</author>
+					<title level="a">The potential of using xylarium wood samples for wood density calculations: a comparison of approaches for volume measurement</title>
+				</analytic>
+				<monogr>
+					<title level="j">iForest</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="150" to="159"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">I</forename><surname>Mantanis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Young</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Rowell</surname></persName>
+					</author>
+					<title level="a">Swelling of wood</title>
+				</analytic>
+				<monogr>
+					<title level="j">Wood Sci.Technol.</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="119" to="134"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">I</forename><surname>Martínez‐cabrera</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Jones</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Espino</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Schenk</surname></persName>
+					</author>
+					<title level="a">Wood anatomy and wood density in shrubs: Responses to varying aridity along transcontinental transects</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. J. Bot.</title>
+					<imprint>
+						<biblScope unit="volume">96</biblScope>
+						<biblScope unit="page" from="1388" to="1398"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Moore</surname></persName>
+					</author>
+					<title level="a">rofessional papers growing fit-for-purpose structural timber, what is the target and how do we get there?</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Zeal. J. For.</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="page" from="17" to="24"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b28">
+				<monogr>
+					
+					<author>
+						<persName><forename>L</forename><surname>Mouselimis</surname></persName>
+					</author>
+					<title level="m">Package “ClusterR” for RStudio. Repository Cran</title>
+					
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+					<ref src="https://doi.org/10.18637/jss.v001.i04">https://doi.org/10.18637/jss.v001.i04</ref>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Pan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Qian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Xie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Asundi</surname></persName>
+					</author>
+					<title level="a">Two-dimensional digital image correlation for in-plane displacement and strain measurement: a review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Meas. Sci. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page">062001</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Pan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Dafang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Yong</surname></persName>
+					</author>
+					<title level="a">Incremental calculation for large deformation measurement using reliability-guided digital image correlation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Opt. Laser Eng.</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="586" to="592"/>
+						<date when="201">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Patera</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Den Bulcke</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">N</forename><surname>Boone</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Derome</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Carmeliet</surname></persName>
+					</author>
+					<title level="a">Swelling interactions of earlywood and latewood across a growth ring: global and local deformations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Wood Sci. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">52</biblScope>
+						<biblScope unit="page" from="91" to="114"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y-C</forename><surname>Ho</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W-C</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Chui</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Gong</surname></persName>
+					</author>
+					<title level="a">Measurement of wood shrinkage in jack pine using three dimensional digital image correlation (DIC)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Holzforschung</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="639" to="643"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Poorter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Bongers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Van Rompaey</surname></persName>
+					</author>
+					<title level="a">Regeneration of canopy tree species at five sites in West African moist forest</title>
+				</analytic>
+				<monogr>
+					<title level="j">For. Ecol. Manage.</title>
+					<imprint>
+						<biblScope unit="volume">84</biblScope>
+						<biblScope unit="page" from="61" to="69"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Poorter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Mcdonald</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Alarcón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Fichtler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Peña‐claros</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Sterck</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Villegas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Sass‐klaassen</surname></persName>
+					</author>
+					<title level="a">The importance of wood traits and hydraulic conductance for the performance and life history strategies of 42 rainforest tree species</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Phytol.</title>
+					<imprint>
+						<biblScope unit="volume">185</biblScope>
+						<biblScope unit="page" from="481" to="492"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Pratt</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Jacobsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">W</forename><surname>Ewers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Davis</surname></persName>
+					</author>
+					<title level="a">Relationships among xylem transport, biomechanics and storage in stems and roots of nine Rhamnaceae species of the California chaparral</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Phytol.</title>
+					<imprint>
+						<biblScope unit="volume">174</biblScope>
+						<biblScope unit="page" from="787" to="798"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Preston</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">K</forename><surname>Cornwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Denoyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">K</forename><surname>Cornwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Denoyer</surname></persName>
+					</author>
+					<title level="a">Wood density and vessel traits as distinct correlates of ecological strategy in 51 California coast range angiosperms</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Phytol.</title>
+					<imprint>
+						<biblScope unit="volume">170</biblScope>
+						<biblScope unit="page" from="807" to="818"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Ruiz Perez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Ezzine De Blas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Nasi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Sayer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Sassen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Angoué</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Gami</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Ndoye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Ngono</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-C</forename><surname>Nguinguiri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Nzala</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Toirambe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yalibanda</surname></persName>
+					</author>
+					<title level="a">Logging in the Congo Basin: A multi-country characterization of timber companies</title>
+				</analytic>
+				<monogr>
+					<title level="j">Forest Ecol. Manag.</title>
+					<imprint>
+						<biblScope unit="volume">214</biblScope>
+						<biblScope unit="page" from="221" to="236"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Schneider</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Rasband</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Eliceiri</surname></persName>
+					</author>
+					<title level="a">NIH Image to ImageJ: 25 years of image analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Methods</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="671" to="675"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Schulgasser</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Witztum</surname></persName>
+					</author>
+					<title level="a">How the relationship between density and shrinkage of wood depends on its microstructure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Wood Sci. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">49</biblScope>
+						<biblScope unit="page" from="389" to="401"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Shearman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bryan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Laurance</surname></persName>
+					</author>
+					<title level="a">Are we approaching ‘peak timber’ in the tropics?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biol. Conserv. </title>
+					<imprint>
+						<biblScope unit="volume">151</biblScope>
+						<biblScope unit="page" from="17" to="21"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Shukla</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Kamdem</surname></persName>
+					</author>
+					<title level="a">Dimensional stability of nine tropical hardwoods from Cameroon</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Trop. For. Sci</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="389" to="396"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b42">
+				<monogr>
+					
+					<author>
+						<persName><forename>C</forename><surname>Skaar</surname></persName>
+					</author>
+					<title level="m">Wood-Water Relations</title>
+					<imprint>
+						<date when="1988">1988</date>
+						<publisher>Springer</publisher>
+						<pubPlace>Berlin</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b43">
+				<monogr>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Stamm</surname></persName>
+					</author>
+					<title level="m">Wood and Cellulose Science</title>
+					<imprint>
+						<date when="1964">1964</date>
+						<publisher>The Ronald Press Company</publisher>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b44">
+				<monogr>
+					
+					<author>
+						<persName><forename>O</forename><surname>Suchsland</surname></persName>
+					</author>
+					<title level="m">The Swelling and Shrinking of Wood: A Practical Technology Primer</title>
+					<imprint>
+						<date when="2004">2004</date>
+						<publisher>Forest Products Society</publisher>
+						<pubPlace>Madison, WI</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">G</forename><surname>Swenson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">J</forename><forename type="last">E</forename><surname>Enquist</surname></persName>
+					</author>
+					<title level="a">Ecological and evolutionary determinants of a key plant functional trait: wood density and its community-wide variation across latitude and elevation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="451" to="459"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Van Acker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Michon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Van Den Bulcke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>De Windt</surname></persName>
+					</author>
+					<title level="a">Limited variability in biological durability of thermally modified timber using vacuum based technology</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings IRG Annual Meeting</title>
+					<imprint>
+						<publisher>International Research Group on Wood Protection</publisher>
+						<pubPlace>Queenstown, New Zealand</pubPlace>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Wheeler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Baas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Gasson</surname></persName>
+					</author>
+					<title level="a">IAWA list of microscopic features for hardwood identification</title>
+				</analytic>
+				<monogr>
+					<title level="j">IAWA Bull</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="219" to="332"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b48">
+				<monogr>
+					
+					<author>
+						<persName><forename>Hadley</forename><surname>Wickham</surname></persName>
+					</author>
+					<title level="m"> ggplot2: Elegant Graphics for Data Analysis.</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<publisher>Springer-Verlag</publisher>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Zanne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Westoby</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Falster</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Ackerly</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Loarie</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">E</forename><forename type="last">J</forename><surname>Arnold</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Coomes</surname></persName>
+					</author>
+					<title level="a">Angiosperm wood structure: Global patterns in vessel anatomy and their relation to wood density and potential conductivity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. J. Bot.</title>
+					<imprint>
+						<biblScope unit="volume">97</biblScope>
+						<biblScope unit="page" from="207" to="215"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

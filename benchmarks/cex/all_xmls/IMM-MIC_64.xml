@@ -1,0 +1,1271 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Reconciling DNA replication and transcription in a hyphal organism: visualizing transcription complexes in live Streptomyces coelicolor</title>
+				<funder>
+					<orgName type="full">Scottish University Life Science Alliance</orgName>
+					<orgName type="abbreviated">SULSA</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-08-20">20 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Leena</forename><surname>Kerr</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Energy, Geoscience, Infrastructure and Society</orgName>
+								<orgName type="institution">Heriot-Watt University</orgName>
+								<address>
+									<settlement>Riccarton</settlement>
+								<settlement>Edinburgh</settlement>
+								<country>UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Strathclyde Institute of Pharmacy and Biomedical Sciences</orgName>
+								<orgName type="institution">University of Strathclyde</orgName>
+								<address>
+									<settlement>Glasgow</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Paul</forename><forename type="middle">A</forename><surname>Hoskisson</surname></persName>
+							<email>paul.hoskisson@strath.ac.uk</email>
+							<affiliation key="aff1">
+								<orgName type="department">Strathclyde Institute of Pharmacy and Biomedical Sciences</orgName>
+								<orgName type="institution">University of Strathclyde</orgName>
+								<address>
+									<settlement>Glasgow</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Reconciling DNA replication and transcription in a hyphal organism: visualizing transcription complexes in live Streptomyces coelicolor</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Microbiology</title>
+						<imprint>
+							<biblScope unit="volume">165</biblScope>
+							<biblScope unit="page" from="1086" to="1094"/>
+							<date type="published" when="2019-08-20">20 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">51F9C89DAE31DEB7054E42B089FB14D6</idno>
+					<idno type="DOI">10.1099/mic.0.000834</idno>
+					<note type="submission">Received 02 April 2019; Accepted 26 June 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Streptomyces</term>
+					<term>RNA polymerase dynamics</term>
+					<term>Transcription</term>
+					<term>Translation</term>
+					<term>DNA replication</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Reconciling transcription and DNA replication in the growing hyphae of the filamentous bacterium Streptomyces presents several physical constraints on growth due to their apically extending and branching, multigenomic cells and chromosome replication being independent of cell division. Using a GFP translational fusion to the β′-subunit of RNA polymerase (rpoC-egfp), in its native chromosomal location, we observed growing Streptomyces hyphae using time-lapse microscopy throughout the lifecycle and under different growth conditions. The RpoC-eGFP fusion co-localized with DNA around 1.8 µm behind the extending tip, whereas replisomes localize around 4-5 µm behind the tip, indicating that at the growing tip, transcription and chromosome replication are to some degree spatially separated. Dual-labelled RpoC-egfp/DnaN-mCherry strains also indicate that there is limited co-localization of transcription and chromosome replication at the extending hyphal tip. This likely facilitates the use of the same DNA molecule for active transcription and chromosome replication in growing cells, independent of cell division. This represents a novel, but hitherto unknown mechanism for reconciling two fundamental processes that utilize the same macromolecular template that allows for rapid growth without compromising chromosome replication in filamentous bacteria and may have implications for evolution of filamentous growth in micro-organisms, where uncoupling of DNA replication from cell division is required.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>The processes of transcription and chromosome replication occupy the same cellular template and understanding how conflicts between transcription and replication are reconciled is fundamental to understanding the complexities of bacterial growth and dynamics bacterial nucleoid <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. In eukaryotes this problem is solved by segregating growth and replication into separate stages within the cell cycle. In bacteria, this is not the case and spatial organization of the nucloids is dependent on the growth habits and morphology of the specific bacterium <ref type="bibr" target="#b2">[3]</ref>. Bacterial RNA polymerase (RNAP) is highly sensitive to environmental cues and is subject to significant compaction and expansion forces due to the action of DNA-binding proteins, DNA supercoiling, macromolecular crowding, interaction with cytoskeletal proteins and transertion <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref> impacting on other cell processes such as DNA replication.</p><p>Streptomyces are filamentous saprophytic bacteria that have a complex lifecycle, where a single unigenomic spore gives rise to a multi-compartment, multi-genomic vegetative hyphal mass that can forage for nutrients through tip extension. In response to nutrient limitation or stress, specialized multigenomic aerial hyphae are raised into the air that form septa, resulting in the formation of a unigenomic compartment, which completes development into a mature spore <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b6">7]</ref>. This hyphal growth habit is remarkably similar to that of the filamentous fungi and represents an excellent example of how two groups of organisms have adapted to life in soil through convergent evolution. Several aspects of Streptomyces biology challenge our understanding of bacterial nucleoid structure/function and cell division, its links to chromosome replication and segregation and how this is reconciled with transcriptional activity. The large (8-10 Mbp) linear chromosome found in Streptomyces, appears to be largely uncondensed during vegetative growth <ref type="bibr" target="#b7">[8]</ref> but is highly ordered in terms of its structure and transcriptional activity <ref type="bibr" target="#b8">[9]</ref> and unlike the majority of bacteria it can be replicated independently of cell division <ref type="bibr" target="#b9">[10]</ref>. Streptomyces are unusual amongst bacteria as many of the genes required for cell division are dispensable for vegetative growth such as ftsZ, ftsQ and mreB, contrary to that observed in unicellular bacteria <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref>. The temporal and spatial location and activity of key cellular proteins and nucleoids in Streptomyces is likely to have significant implications for our understanding of growth and development in hyphally growing bacteria. It is known that chromosome replication does not occur at the apex of hyphal tips in Streptomyces <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b13">14]</ref> yet it is asynchronous and non-uniform along extending hyphae <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b7">8]</ref>. What is less well understood is whether there is any hierarchical organization of transcription in growing Streptomyces hyphae. In unicellular bacteria transcriptional foci or patches occur in discrete locations in rapidly growing cells and are associated with the rRNA operons in bacterial chromosomes <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>. Recently, we have begun to understand the evolutionary mechanisms that minimize these conflicts in unicellular bacteria such as chromosome organization, avoidance of co-occupancy and recycling of stalled replisomes/RNAP holoenzyme on DNA <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. In Streptomyces however, the hyphal lifestyle represents a fundamental evolutionary problem, that is, to reconcile the issues of chromosome replication and transcription in tandem with the structural complications of the presence of linear chromosomes, branching and chromosome partitioning <ref type="bibr" target="#b2">[3]</ref> and that chromosome replication is independent of cell division. To attempt to understand this problem we made a translational fusion of rpoC with egfp in its native chromosomal location and studied the dynamics of transcription throughout the lifecycle of Streptomyces using time-lapse microscopy in live cells.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHodS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bacterial strains, plasmids, growth conditions and conjugal transfer from Escherichia coli to Streptomyces</head><p>The S. coelicolor strains and cosmids used in this study are summarized in Table <ref type="table" target="#tab_0">1</ref>. All strains were grown on mannitol and soya flour (MS) agar <ref type="bibr" target="#b18">[19]</ref>, solid nutrient agar <ref type="bibr" target="#b19">[20]</ref> or minimal medium with mannitol <ref type="bibr" target="#b20">[21]</ref>. Conjugation from the E. coli strain ET12567 (dam -dcm -hsdS) containing the driver plasmid pUZ8002, was used to bypass the methyl-specific restriction system of S. coelicolor <ref type="bibr" target="#b20">[21]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Construction of the RpoC-eGFP fusion strains</head><p>The rpoC-egfp fusion was created using ReDirect technology <ref type="bibr" target="#b23">[24]</ref> in its native chromosomal location. The egfp-aac(3) IV-oriT cassette was amplified using oligonucleotides containing 39 nucleotide homologous extensions to chromosomal sequence of the 3′ end of rpoC (SCO4655) and its adjacent flanking region (for -5′-CCGC TGGA GGAC TACG ACTA CGGT CCGT ACAA CCAG TACC TGCC GGGC CCGG GCTG CCGG GCCC GGAG GTGA GCAA GGGC GAGGAGCT-3′ and Rev -5′-CTCG GGGT GACC GCCC TTCG GTCG TATC AAGC TGCC CGCT TCCG GGGA TCCG TCGACC-3′) as used by Ruban-Osmialowska et al. <ref type="bibr" target="#b7">[8]</ref>, in cosmid D40A, creating cosmid pLN301 (rpoC-egfp). The cosmid, pLN301 was moved in to the non-methylating E. coli strain ET12567/pUZ8002 to facilitate conjugation in to S. coelicolor, creating strain sLN301 (M145; rpoC-egfp) and was confirmed by sequencing and Southern hybridization (data not shown). Cosmid pLN301 was also moved into the relA deletion strain M570 (hyg resistant) and mutant strains were selected on hygromycin and apramycin resistance, kanamycin sensitivity, creating sLN401. In addition pLN301 was conjugated in to DJ542, an unmarked dnaN-mCherry fusion. Strains were confirmed by sequencing and Southern hybridization (data not shown).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Microscopy</head><p>Using fluorescent microscopy and a previously established time-lapse fluorescent microscopy procedure <ref type="bibr" target="#b24">[25]</ref> we monitored RpoC-eGFP as a reporter of RNAP spatial and temporal dynamics under a range of conditions (see Results). Antibiotic concentrations were as previously published (32 µg ml -1 for rifampicin <ref type="bibr" target="#b25">[26]</ref>; and 13 µg ml -1 for chloramphenicol <ref type="bibr" target="#b26">[27]</ref>. Nucleic acid staining was achieved using SYTO42 (10 µM final concentration; Life Technologies) and membranes were stained using FM4-64 (2 µM final concentration; Life Technologies) according to the manufacturer's instructions. Images were captured using a Nikon TE2000S inverted fluorescence microscopy. Exposure times were 20 ms for phase-contrast and 100 ms for fluorescence imaging, with the following filter settings -FITC filter (Ex 492/18; Em 520/20) for eGFP; DAPI filter (Ex 403/12; Em 455/10) for SYTO42; and TRITC filter (Ex 572/23; Em 600/20) for mCherry and FM4-64. Images were analysed using IPLab scientific imaging software version 3.7 (Scanalytics, Rockville, USA). Statistical analysis was performed using Microsoft Office Excel software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS AND DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RpoC-eGFP patches show dynamic localization throughout the lifecycle of Streptomyces coelicolor</head><p>To determine the location and dynamics of RNAP during the complex lifecycle of S. coelicolor we constructed a fusion of eGFP to the β′-subunit of RNAP core enzyme (SCO4655) <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b27">28]</ref>. The rpoC-egfp fusion strain (sLN301) was found to sporulate normally and to grow at the same apical extension rate as the wild-type strain, enabling us to conclude that the fusion protein was functional (Fig. <ref type="figure" target="#fig_0">1</ref>). We observed the location of RNAP throughout the lifecycle of S. coelicolor (Fig. <ref type="figure" target="#fig_0">1</ref>) by monitoring RpoC-eGFP localization in combination with fluorescence stains for nucleic acids (SYTO42) and cell membranes (FM4-64).</p><p>RNAP was distributed throughout the apically extending germ tubes of sLN301 (rpoC-egfp) and co-localized with nucleic acids stained with SYTO42 (Fig. <ref type="figure" target="#fig_0">1a-d</ref>). Localization of RNAP and nucleic acids was found to be in close proximity to the extending hyphal tip (&lt;1 µm). As the extending hyphae mature, the distance between RNAP and the apically extending tip increases. These branching vegetative hyphae exhibit nucleic acid (nucleoid) patches that co-localize with RNAP in discrete areas within the hyphae (Fig. <ref type="figure" target="#fig_0">1. e-h</ref>; see below also). Moreover, the distance from the tip to the first RNAP patch appears to be around 2 µm throughout the vegetative mycelium (1.8±0.3 µm; n=29), suggesting that transcription is spatially constrained at the extending tip as observed in other hyphae. We also observed areas of intense membrane staining, which are reminiscent of the crossmembranes observed previously in Streptomyces <ref type="bibr" target="#b28">[29]</ref>.</p><p>Examining the distribution RNAP during the growth of aerial hyphae indicated that RNAP and nucleic acids were distributed throughout the extending aerial hyphae without showing the discrete pattern behind the extending tip observed in vegetative hyphae (Fig. <ref type="figure" target="#fig_0">1, i-l</ref>). This may represent the requirement for complete distribution of transcriptional activity throughout the aerial hyphae for the maturation of spore chains. Examination of mature spore chains shows that RNAP co-localized with the condensed and segregated nucleoids within the septated spore chains (Fig. <ref type="figure" target="#fig_0">1, m-p</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RnAP tracks behind the extending hyphal tip</head><p>To characterize the dynamics of RNAP in extending hyphae time-lapse images of S. coelicolor sLN301 (rpoC-egfp) were generated as phase-contrast images merged with GFP images (FITC filter) every 30 min during growth on minimal medium plus mannitol as a carbon source. RpoC-eGFP was observed in discrete patches and tracked behind the extending hyphal tip (Fig. <ref type="figure" target="#fig_1">2a</ref>) at a mean distance of either 2.0 µm (±0.4 µm;  n=14) or 1.7 µm (±0.2 µm; n=15) when grown on minimal medium with mannitol or nutrient agar, respectively. The dimensions of the patches being 2.5 µm (+/-1.6 µm; n=116). No difference was observed in the average patch length between the two different media. The emerging branches on the vegetative hyphae also showed the same distribution pattern of RpoC-eGFP patches as the extending primary hyphae. There appears to be some variation in the intensity of the RNAP-eGFP patches within the hyphae, although no obvious pattern could be determined, it may be that this variation is due to the differences in expression levels of various regions in the genome, such as the rRNA operons, which has been shown in a range of organisms including Streptomyces <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>,<ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b29">30]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RnAP patches and replisomes do not consistently co-localize</head><p>Examining vegetative hyphae by phase contrast, RNAP-eGFP (FITC filter) and fluorescent staining of nucleic acids (SYTO42) and membranes (FM4-64) it can be seen that RNAP patches clearly co-localize with DNA (Fig. <ref type="figure" target="#fig_1">2b</ref>). However, nucleic acids stained by SYTO 42 extends to the hyphal tip, whereas RNAP-eGFP was never observed at the tip of extending hyphae. When compared to the patches for replisomes, measured by Wolanski et al. <ref type="bibr" target="#b13">[14]</ref>, at 5.3 µm (±2.0 µm) behind the hyphal tip, the RNAP-eGFP patches were found located at a mean of 1.8 µm behind the extending tip suggesting there is a spatial separation of transcription and DNA replication at the hyphal tip. These data, obtained from single tagged strains, suggest that one or more chromosomes are actively transcribing at the extending tip, yet active replication occurs behind this. To further examine this spatial separation hypothesis, a double fluorescent strain dnaN-mCherry/rpoC-egfp (sLN501) was constructed. In sLN501 (dnaN-mCherry/rpoC-egfp) RNAP patches were observed to lag behind the tip, as previously observed and DnaN-mCherry tagged replication factories were located distal to these. Discrete RpoC-eGFP patches, un-associated with DnaN-mCherry were observed proximal to the extending tip (Fig. <ref type="figure" target="#fig_1">2c</ref>), further supporting our hypothesis of a degree of spatial separation of transcription and DNA replication at the apical tip of extending Streptomyces hyphae. A detailed analysis on hyphal tips grown on minimal medium supplemented with mannitol, showed that the tip-proximal RpoC-eGFP and DnaN-mCherry did not co-localized in 42 % of the tips examined (n=85).</p><p>These data suggest there is a hierarchy of chromosome occupancy at the tip of extending hyphae that is summarized in our model (Fig. <ref type="figure" target="#fig_2">3</ref>). Whilst the molecular mechanism underpinning this spatial constraint is currently unknown, it is thought that avoiding co-occupancy of the DNA template occurs, at least to some extent, in eukaryotes <ref type="bibr" target="#b30">[31]</ref>. The unusual combination of linear chromosomes and apical growth in Streptomyces, coupled with DNA replication being independent of cell division and chromosome segregation, suggests that this mechanism may have evolved to allow active transcription at the actively growing tips, independent of DNA replication and cell division. This is consistent with the replisome trafficking data of Wolanski et al. <ref type="bibr" target="#b13">[14]</ref>, and intriguingly could involve the pleiotrophic regulator AdpA, which has recently been shown to control chromosome replication through competition with DnaA at oriC <ref type="bibr" target="#b31">[32]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RnAP shows relA-dependant pausing during nitrogen starvation</head><p>To investigate how environmental cues may affect RNAP dynamics in S. coelicolor we examined the effect of the stringent response on RNAP localization. The highly phosphorylated guanosine nucleotide ppGpp is known to mediate growth-rate-dependent gene expression in bacteria through direct interaction with RNAP during the stringent response <ref type="bibr" target="#b32">[33,</ref><ref type="bibr" target="#b33">34]</ref>. In Streptomyces, ppGpp is synthesized by RelA, and has previously been shown to influence control over antibiotic production and morphological development in response to nutrient limitation <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b35">36]</ref>, however, what is not known is how RelA influences the dynamics of RNAP within Streptomyces cells in response to nutrient downshift. To test this, we grew S. coelicolor sLN301 (wild-type rpoC-egfp) and sLN401 (ΔrelA rpoC-egfp) on cellophane discs placed upon on solid nutrient agar (rich medium, amino acid/peptide-based nitrogen source). Once cells were growing exponentially, cellophane squares were removed and applied to minimal medium containing sodium nitrate as the sole nitrogen source (30 mM) <ref type="bibr" target="#b36">[37]</ref>; to induce nitrogen-starvation and the stringent response. Following nitrogen downshift, the dynamics of RNAP patches was followed (Fig. <ref type="figure" target="#fig_3">4</ref>), in strain sLN301 (wildtype rpoC-egfp) cell growth paused and RpoC-eGFP patches remained static, presumably during the stringent response and the synthesis of ppGpp by RelA. After 60 mins mycelial growth resumed, but from new branch points in the mycelium and following 120 mins, apical growth was within the normal distribution range of RpoC-eGFP patches. The resumption of   growth via branching is intriguing and may involve the serine/ threonine protein kinase, AfsK. It is known that branching is affected by environmental conditions <ref type="bibr" target="#b37">[38]</ref> and that AfsK plays a role in the onset of secondary metabolism and sporulation, both nutrient-dependent processes <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref>. It has been shown that AfsK co-localizes and directly regulates DivIVA in Streptomyces <ref type="bibr" target="#b40">[41,</ref><ref type="bibr" target="#b41">42]</ref>. Induction of AfsK results in branching and it is believed that phosphorylation of DivIVA results in disassembly of the apical polarisome and the assembly of new growth patches at branch points. Interestingly, this could be a possible mechanism of altering growth habit in response to nutrient limitation, increasing the nutrient foraging ability of bacterial colonies. Repeating the experiment with sLN401 (ΔrelA rpoC-egfp) resulted in no cessation of growth and no increased branching following nitrogen-downshift. Intriguingly, this suggests a role for the stringent response in reprogramming the growth habit (apical growth and branching) of Streptomyces in response to nitrogen-downshift, however neither AfsK or DivIVA were identified as direct targets in a microarray study of a ΔrelA mutant and a ppGpp inducible strain <ref type="bibr" target="#b42">[43]</ref>, suggesting there is an as yet unknown mechanism integrating these signals. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disruption of transcription or translation results in altered RnAP dynamics in hyphae</head><p>To further understand the dynamics of RNAP in live S. coelicolor hyphae, we used antibiotic rifampicin to inhibit transcription and chloramphenicol to inhibit translation. S. coelicolor sLN301 (wild-type rpoC-egfp) was grown in the absence of each antibiotic on cellophane, once cells were growing exponentially, cellophane squares were removed and applied to the same medium containing ca 50 % of the MIC of each antibiotic (Fig. <ref type="figure" target="#fig_4">5</ref>). Treatment of S. coelicolor sLN301 (wild-type rpoC-egfp) with rifampicin resulted in no cessation of the apical extension rate of hyphae, however RpoC-eGFP patches became dispersed, consistent with disassociation of RNAP from the nucleoid (Fig. <ref type="figure" target="#fig_4">5</ref>); resulting in an overall increase in the size of fluorescent patches from 2.5 µm (±1.5 µm; n=54) in untreated to 4.3 µm (±3.0 µm; n=30). After 2 h rifampicin treatment, the distance from the hyphal tip to tip-proximal RpoC-eGFP decreased from 2.0 µm (±0.4 µm; n=14) in untreated to 1.0 µm (±0.4; n=17). Rifampicin inhibits initiation and re-initiation of transcription through targeting β-subunit of RNAP core enzyme and this dispersal of RNAP patches following rifampicin treatment has also been observed in E. coli <ref type="bibr" target="#b16">[17]</ref>. Treatment of sLN301 (wild-type rpoC-egfp) with chloramphenicol resulted in a cessation of apical extension over a 120 min period and condensation of the RpoC-eGFP patches (Fig. <ref type="figure" target="#fig_4">5</ref>), which is consistent with observations in other organisms <ref type="bibr" target="#b43">[44]</ref>. The RpoC-eGFP patches also move away from the apical tip following treatment 2.0 µm (±0.4 µm; n=14) in untreated to 4.5 µm (±2.5 µm; n=15). Moreover, it has also been shown that active transcription is required for such compaction <ref type="bibr" target="#b16">[17]</ref> suggesting that the compaction observed in S. coelicolor indicates that transcriptional activity is occurring in these patches and that active transcription is not occurring at the tip as shown above (Fig. <ref type="figure" target="#fig_0">1</ref>). The coupling of transcription and translation in bacteria has potentially profound effects on the structure of the nucleoid <ref type="bibr" target="#b16">[17]</ref>, the two antibiotics used in this study both inhibit translation, but in different ways; chloramphenicol directly inhibits translation, but does not prevent transcription, yet rifampicin inhibits transcription and due to the coupling of these processes in bacteria it also inhibits translation <ref type="bibr" target="#b16">[17]</ref>. It has also been shown that transcriptional activity is adjusted in bacteria to meet the translational needs of cells under various growth conditions <ref type="bibr" target="#b44">[45]</ref> suggesting that mechanisms to reconcile potentially conflicting key cellular processes such as transcription, translation and DNA replication can help reduce the extreme effects such a process can have on growth and nucleoid structure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Summary</head><p>The tip growth habit of Streptomyces challenges our understanding of how transcription and replisome occupancy of the same template in bacteria can occur. One way to resolve this is to spatially separate the two processes. Intriguingly, eukaryotic organisms temporally separate key cellular processes such as growth and replication. The data presented here suggest that the tip of the actively growing Streptomyces hyphae spatially separates DNA replication and transcription. In these rapidly extending areas of the mycelium, transcription and replication on the same template may lead to collisions, and separating these transcribing nucleoids from replicating nucleoids offers an attractive means to achieving this. Whilst the mechanism of this spatial separation is currently unknown, spatial or temporal separations of conflicting processes is an attractive mechanism to maximize apical growth with minimal conflict between transcription and DNA replication. This may be especially important for soil organisms such as Streptomyces or fungi that, through convergent evolution, exhibit similar apical growth habits in a resource-limited ecological niche.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. RpoC-eGFP patches show dynamic localization throughout the lifecycle of S. coelicolor. Representative images of a germinating spore in phase contrast on minimal medium with mannitol (a), germinating spore stained with SYTO 42 (DNA staining; b), RpoC-eGFP localization in a germinating spore (c), germinating spore stained with FM4-64 (membrane stain; d). Representative images of vegetative hyphae in phase contrast (e), vegetative hyphae stained with SYTO 42 (DNA staining; f), RpoC-eGFP localization in a vegetative hypha (g), vegetative hyphae stained with FM4-64 (membrane stain; h), Representative images of aerial hyphae in phase contrast (i), aerial hyphae stained with SYTO 42 (DNA staining; j), RpoC-eGFP localization in an aerial hypha (k), aerial hypha stained with FM4-64 (membrane stain; l). Representative images of a spore chain in phase contrast (m), a spore chain stained with SYTO 42 (DNA staining; n), RpoC-eGFP localization in a spore chain (o), a spore chain stained with FM4-64 (membrane stain; p).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. RpoC-eGFP patches track behind the extending hyphal tip. (a) Time-lapse images of growing S. coelicolor hyphae (LN301; rpoCegfp) showing the absence of RNAP-eGFP patches at the tip of extending vegetative hyphae on nutrient agar See also Supplementary Video 1 (available in the online version of this article): http://dx.doi.org/10.6084/m9.figshare.1181785. (b) RpoC-eGFP patches colocalize with DNA, but not at the hyphal tip. Representative images of a vegetative hypha in phase contrast, stained with SYTO 42 (DNA staining), RNAP-eGFP, FM4-64 (membrane stain) and a multiprobe image (RNAP-eGFP in green and FM4-64 in red). (c) The majority of RpoC-eGFP patches do not co-localize with DnaN-mCherry at the hyphal tip, but do co-localize behind the tip. Representative images of a vegetative hypha in phase contrast (a), DnaN-mCherry (b), RNAP-eGFP (c) and a multiprobe image (d) of RNAP-eGFP (green) and DnaN-mCherry (red).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Schematic representation of a hyphal tip (polarisome), indicating the locations of chromosomes (blue lines), transcription (green spots; this work) and replisome location (red spots)[14-18]suggesting there is a spatial separation of transcription and chromosome replication at the hyphal tip.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig.4. RpoC-eGFP patches in wild-type S. coeliocolor exhibit pauses following nitrogen-downshift when compared to a ΔrelA mutant. Time-lapse images of growing S. coelicolor hyphae (sLN301; rpoC-egfp) in nitrogen-rich (nutrient agar) medium over 180 min. See also Supplementary Video 2: http://dx.doi.org/10.6084/m9.figshare.1181781. Time-lapse images of growing S. coelicolor hyphae (sLN301; rpoC-egfp) following nitrogen downshift over 180 min. See also Supplementary Video 3: http://dx.doi.org/10.6084/m9.figshare.1181780. Time-lapse images of growing M570 S. coelicolor hyphae (ΔrelA; rpoC-egfp) following nitrogen-downshift over 180 min. See also Supplementary Video 4: http://dx.doi.org/10.6084/m9.figshare.1181782.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig.5. RpoC-eGFP patches exhibit altered dynamics following inhibition of either transcription or translation. Time-lapse images of growing S. coelicolor hyphae (sLN301; rpoC-egfp) without any antibiotic treatment on nutrient agar. Time-lapse images of growing S. coelicolor hyphae (sLN301; rpoC-egfp) following treatment with chloramphenicol (Cm; 13 mg ml -1 ). See also Supplementary Video 5: http://dx.doi.org/10.6084/m9.figshare.1181783. Time-lapse images of growing S. coelicolor hyphae (sLN301; rpoC-egfp) following treatment with rifampicin (rif; 32 mg ml -1 ). Arrows are to indicate areas that change upon treatment. See also Supplementary Video 6: http://dx.doi.org/10.6084/m9.figshare.1181784.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Strains and plasmids used in this study</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>We would like to thank <rs type="person">Dr Dagmara Jakimowicz</rs>, <rs type="affiliation">University of Wroclaw, Poland</rs> for the gift of the dnaN-mCherry strain and helpful comments on the manuscript. We would also like to thank <rs type="person">Professor Mervyn Bibb FRS</rs> and <rs type="person">Dr Andrew Hesketh</rs> of the <rs type="affiliation">John Innes Centre</rs> for the gift of the relA mutant. We would like to thank <rs type="person">Dr Paul R Herron</rs>, <rs type="affiliation">University of Strathclyde</rs>, for microscopy assistance and discussions.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Funding information</head><p>This work was funded through a PhD studentship from the <rs type="funder">Scottish University Life Science Alliance (SULSA)</rs>.</p></div>
+			</div>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>Conceptualization: P. A. H.</p><p>Data curation: L. N. and P. A. H.</p><p>Formal analysis: L. N. and P. A. H.</p><p>Funding acquisition: P. A. H.</p><p>Methodology: L. N. and P. A. H.</p><p>Project administration: P. A. H.</p><p>Supervision: P. A. H.</p><p>Visualization: L. N.</p><p>Writing – original draft: L. N. and P. A. H.</p><p>Writing – review and editing: L.N. and P.A.H.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>The authors declare that there are no conflicts of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethical statement</head><p>No ethical approval was required.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Merrikh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Grossman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Replication-transcription conflicts in bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="449" to="458"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Mcglynn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Savery</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Dillingham</surname></persName>
+					</author>
+					<title level="a">The conflict between DNA replication and transcription</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="page" from="12" to="20"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Kois-Ostrowska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Strzałka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Lipietta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Tilley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zakrzewska-Czerwińska</surname></persName>
+					</author>
+					<title level="a">Unique function of the bacterial chromosome segregation machinery in apically growing Streptomycestargeting the chromosome to new hyphal tubes and its anchorage at the tips</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS Genet</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page">e1006488</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Woldringh</surname></persName>
+					</author>
+					<title level="a">The role of co-transcriptional translation and protein translocation (transertion) in bacterial chromosome segregation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="17" to="29"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Cabrera</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Cagliero</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Quan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Squires</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Jin</surname></persName>
+					</author>
+					<title level="a">Active transcription of rRNA operons condenses the nucleoid in Escherichia coli: examining the effect of transcription on nucleoid structure in the absence of transertion</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">191</biblScope>
+						<biblScope unit="page" from="4180" to="4185"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Flärdh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Buttner</surname></persName>
+					</author>
+					<title level="a">Streptomyces morphogenetics: dissecting differentiation in a filamentous bacterium</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="36" to="49"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Hoskisson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Rigali</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Fowler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Findlay</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Buttner</surname></persName>
+					</author>
+					<title level="a">DevA, a GntR-like transcriptional regulator required for development in Streptomyces coelicolor</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">188</biblScope>
+						<biblScope unit="page" from="5014" to="5023"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Ruban-Ośmiałowska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Jakimowicz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Smulczyk-Krawczyszyn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Chater</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zakrzewska-Czerwińska</surname></persName>
+					</author>
+					<title level="a">Replisome localization in vegetative and aerial hyphae of Streptomyces coelicolor</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">188</biblScope>
+						<biblScope unit="page" from="7311" to="7316"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>McArthur</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Bibb</surname></persName>
+					</author>
+					<title level="a">In vivo DNase I sensitivity of the Streptomyces coelicolor chromosome correlates with gene expression: implications for bacterial chromosome structure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nucleic Acids Res</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="page" from="5395" to="5401"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>McCormick</surname></persName>
+					</author>
+					<title level="a">Cell division is dispensable but not irrelevant in Streptomyces</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Opin Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="689" to="698"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b10">
+				<monogr>
+					<title level="m">Cell division gene ftsQ is required for efficient sporulation but not growth and viability in Streptomyces coelicolor A3(2)</title>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Mccormickjr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Mccormickjr</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Losickr</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Losickr</surname></persName>
+					</author>
+					<imprint>
+						<date when="1996">1996</date>
+						<biblScope unit="volume">178</biblScope>
+						<biblScope unit="page" from="5295" to="5301"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Mazza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">E</forename><surname>Noens</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Schirner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Grantcharova</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Mommaas</surname></persName>
+					</author>
+					<title level="a">MreB of Streptomyces coelicolor is not essential for vegetative growth but is required for the integrity of aerial hyphae and spores</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="page" from="838" to="852"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Losick</surname></persName>
+					</author>
+					<title level="a">Cytological evidence for association of the ends of the linear chromosome in Streptomyces coelicolor</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">183</biblScope>
+						<biblScope unit="page" from="5180" to="5186"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Wolánski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Wali</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Tilley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Jakimowicz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zakrzewska-Czerwinska</surname></persName>
+					</author>
+					<title level="a">Replisome trafficking in growing vegetative hyphae of Streptomyces coelicolor A3(2)</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacterio</title>
+					<imprint>
+						<biblScope unit="volume">193</biblScope>
+						<biblScope unit="page" from="1273" to="1275"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Lewis</surname></persName>
+					</author>
+					<title level="a">Bacterial subcellular architecture: recent advances and future prospects</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="1135" to="1150"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Lewis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Doherty</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Clarke</surname></persName>
+					</author>
+					<title level="a">Transcription factor dynamics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">154</biblScope>
+						<biblScope unit="page" from="1837" to="1844"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Cabrera</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Jin</surname></persName>
+					</author>
+					<title level="a">The distribution of RNA polymerase in Escherichia coli is dynamic and sensitive to environmental cues</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="1493" to="1505"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Migocki</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Lewis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Wake</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Harry</surname></persName>
+					</author>
+					<title level="a">The midcell replication factory in Bacillus subtilis is highly mobile: implications for coordinating chromosome replication with other cell cycle events</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="452" to="463"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Hobbsg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Frazer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Gardner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cullum</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Oliver</surname></persName>
+					</author>
+					<title level="a">Dispersed growth of Streptomyces in liquid culture</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied Microbiology and Biotechnology</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Hoskisson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Hobbs</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Sharples</surname></persName>
+					</author>
+					<title level="a">Response of Micromonospora echinospora (NCIMB 12744) spores to heat treatment with evidence of a heat activation phenomenon</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lett Appl Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="114" to="117"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b20">
+				<monogr>
+					<author>
+						<persName><forename>T</forename><surname>Kieser</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bibb</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Buttner</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Chater</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Hopwood</surname></persName>
+					</author>
+					<title level="m">Practical Streptomyces genetics. John Innes Foundation</title>
+					<imprint>
+						<date when="2000">2000</date>
+						<publisher>John Innes Foundation</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Chakraburtty</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Bibb</surname></persName>
+					</author>
+					<title level="a">The ppGpp synthetase gene (relA) of Streptomyces coelicolor A3(2) plays a conditional role in antibiotic production and morphological differentiation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">179</biblScope>
+						<biblScope unit="page" from="5854" to="5861"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Redenbach</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Kieser</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Denapaite</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Eichner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cullum</surname></persName>
+					</author>
+					<title level="a">A set of ordered cosmids and a detailed genetic and physical map for the 8 Mb Streptomyces coelicolor A3(2) chromosome</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="77" to="96"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Gust</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Challis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Fowler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kieser</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Chater</surname></persName>
+					</author>
+					<title level="a">PCR-targeted Streptomyces gene replacement identifies a protein domain needed for biosynthesis of the sesquiterpene soil odor geosmin</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc Natl Acad Sci U S A</title>
+					<imprint>
+						<biblScope unit="volume">100</biblScope>
+						<biblScope unit="page" from="1541" to="1546"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Jyothikumar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Tilley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Wali</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Herron</surname></persName>
+					</author>
+					<title level="a">Time-lapse microscopy of Streptomyces coelicolor growth and sporulation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Environ Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">74</biblScope>
+						<biblScope unit="page" from="6774" to="6781"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>H-L</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Characterization of heterogeneous LSU rRNA profiles in Streptomyces coelicolor under different growth stages and conditions</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiology Letters</title>
+					<imprint>
+						<biblScope unit="volume">275</biblScope>
+						<biblScope unit="page" from="146" to="152"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">V</forename><surname>Shaw</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Hopwood</surname></persName>
+					</author>
+					<title level="a">Chloramphenicol acetylation in Streptomyces</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Gen Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="159" to="166"/>
+						<date when="1976">1976</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					<title level="a">Complete genome sequence of the model actinomycete Streptomyces coelicolor A3(2)</title>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Bentley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Chater</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Cerdeño-Tárraga</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Challis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Thomson</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">417</biblScope>
+						<biblScope unit="page" from="141" to="147"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Celler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Koning</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Willemse</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Koster</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>van Wezel</surname></persName>
+					</author>
+					<title level="a">Crossmembranes orchestrate compartmentalization and morphogenesis in Streptomyces</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature Communications</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="1" to="8"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Shin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Go</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Roh</surname></persName>
+					</author>
+					<title level="a">Heterogeneous rRNA molecules encoded by Streptomyces coelicolor M145 genome are all expressed and assembled into ribosomes</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Microbiol Biotechnol</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="1708" to="1711"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Sutherland</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Bickmore</surname></persName>
+					</author>
+					<title level="a">Transcription factories: gene expression in unions?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Genet</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="457" to="466"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Wolański</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Jakimowicz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zakrzewska-Czerwińska</surname></persName>
+					</author>
+					<title level="a">Adpa, key regulator for morphological differentiation regulates bacterial chromosome replication</title>
+				</analytic>
+				<monogr>
+					<title level="j">Open Biol</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page">120097</biblScope>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Vrentas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Gaal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Berkmen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Rutherford</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Haugen</surname></persName>
+					</author>
+					<title level="a">Still looking for the magic spot: the crystallographically defined binding site for ppGpp on RNA polymerase is unlikely to be responsible for rRNA transcription regulation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mol Biol</title>
+					<imprint>
+						<biblScope unit="volume">377</biblScope>
+						<biblScope unit="page" from="551" to="564"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">D</forename><surname>Dalebroux</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Swanson</surname></persName>
+					</author>
+					<title level="a">ppGpp: magic beyond RNA polymerase</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="203" to="212"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Hesketh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Bibb</surname></persName>
+					</author>
+					<title level="a">Induction of ppGpp synthesis in Streptomyces coelicolor A3(2) grown under conditions of nutritional sufficiency elicits actII-ORF4 transcription and actinorhodin biosynthesis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="136" to="144"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Hesketh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Bibb</surname></persName>
+					</author>
+					<title level="a">Functional analysis of relA and rshA, two relA/spoT homologues of Streptomyces coelicolor A3(2)</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">183</biblScope>
+						<biblScope unit="page" from="3488" to="3498"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Karandikar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Sharples</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Hobbs</surname></persName>
+					</author>
+					<title level="a">Differentiation of Streptomyces coelicolor A3(2) under nitrate-limited conditions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">143</biblScope>
+						<biblScope unit="page" from="3581" to="3590"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Nieminen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Webb</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><forename type="last">M</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Hoskisson</surname></persName>
+					</author>
+					<title level="a">A flexible mathematical model platform for studying branching networks: experimentally validated using the model actinomycete, Streptomyces coelicolor</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS One</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">e54316</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Ueda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Umeyama</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Beppu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Horinouchi</surname></persName>
+					</author>
+					<title level="a">The aerial mycelium-defective phenotype of Streptomyces griseus resulting from A-factor deficiency is suppressed by a Ser/Thr kinase of S. coeli- color A3(2)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Gene</title>
+					<imprint>
+						<biblScope unit="volume">161</biblScope>
+						<biblScope unit="page" from="91" to="95"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Umeyama</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Ueda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Horinouchi</surname></persName>
+					</author>
+					<title level="a">An AfsK/AfsR system involved in the response of aerial mycelium formation to glucose in Streptomyces griseus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">145</biblScope>
+						<biblScope unit="page" from="2281" to="2292"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Hempel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cantlay</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Molle</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S-B</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Naldrett</surname></persName>
+					</author>
+					<title level="a">The Ser/Thr protein kinase AfsK regulates polar growth and hyphal branching in the filamentous bacteria Streptomyces</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc Natl Acad Sci U S A</title>
+					<imprint>
+						<biblScope unit="volume">109</biblScope>
+						<biblScope unit="page" from="E2371" to="E2379"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Flärdh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Richards</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Hempel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Howard</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Buttner</surname></persName>
+					</author>
+					<title level="a">Regulation of apical growth and hyphal branching in Streptomyces</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Opin Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="737" to="743"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Hesketh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ryding</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Bibb</surname></persName>
+					</author>
+					<title level="a">The global role of ppGpp synthesis in morphological differentiation and antibiotic production in Streptomyces coelicolor A3(2)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genome Biol</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">R161</biblScope>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Van Helvoort</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kool</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Woldringh</surname></persName>
+					</author>
+					<title level="a">Chloramphenicol causes fusion of separated nucleoids in Escherichia coli K-12 cells and filaments</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">178</biblScope>
+						<biblScope unit="page" from="4289" to="4293"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Proshkin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Rahmouni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Mironov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Nudler</surname></persName>
+					</author>
+					<title level="a">Cooperation between translating ribosomes and RNA polymerase in transcription elongation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science</title>
+					<imprint>
+						<biblScope unit="volume">328</biblScope>
+						<biblScope unit="page" from="504" to="508"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

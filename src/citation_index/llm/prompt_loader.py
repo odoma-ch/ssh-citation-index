@@ -26,8 +26,28 @@ class PromptLoader:
             return f.read()
         
     @classmethod
-    def build_prompt(cls, prompt: str, examples: str, input_text: str, json_schema: str = None) -> str:
-        return
+    def build_prompt(
+        cls,
+        prompt: str,
+        examples: str,
+        input_text: str,
+        json_schema: dict | None = None,
+    ) -> str:
+        """Read prompt (path or raw), inject input text and optional schema."""
+        if prompt.endswith(".md"):
+            content = cls.load_markdown_prompt(cls, prompt)
+        else:
+            content = prompt
+        if examples:
+            content = content.replace("{{EXAMPLES}}", examples)
+        content = content.replace("{{INPUT_TEXT}}", input_text)
+        if json_schema is not None:
+            import json
+            content = content.replace(
+                "{{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}}",
+                json.dumps(json_schema, indent=2),
+            )
+        return content
     
 
         
@@ -37,7 +57,7 @@ class ReferenceExtractionPrompt(PromptLoader):
 
     def __init__(self, prompt: str = "prompts/reference_extraction.md", examples: str = "", input_text: str = ""):
         super().__init__(prompt, examples, input_text)
-        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
+        self.prompt = self.build_prompt(prompt, examples, input_text, json_schema=None)
 
 
 class ReferenceParsingPrompt(PromptLoader):
@@ -45,11 +65,10 @@ class ReferenceParsingPrompt(PromptLoader):
 
     def __init__(self, prompt: str = "prompts/reference_parsing.md", examples: str = "", input_text: str = "", include_json_schema: bool = True):
         super().__init__(prompt, examples, input_text)
-        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
         self.json_schema = None
         if include_json_schema:
             self.json_schema = self.load_json_schema()
-            self.prompt = self.prompt.replace("{{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}}", json.dumps(self.json_schema, indent=2))
+        self.prompt = self.build_prompt(prompt, examples, input_text, json_schema=self.json_schema)
 
     def load_json_schema(self) -> str:
         """Load the JSON schema from the file."""
@@ -60,11 +79,10 @@ class ReferenceExtractionAndParsingPrompt(PromptLoader):
 
     def __init__(self, prompt: str = "prompts/reference_extraction_and_parsing_pydantic.md", examples: str = "", input_text: str = "",include_json_schema: bool = True):
         super().__init__(prompt, examples, input_text)
-        self.prompt = self.prompt.replace("{{INPUT_TEXT}}", self.input_text)
         self.json_schema = None
         if include_json_schema:
             self.json_schema = self.load_json_schema()
-            self.prompt = self.prompt.replace("{{JSON_SCHEMA_FOR_REFERENCES_WRAPPER}}", json.dumps(self.json_schema, indent=2))
+        self.prompt = self.build_prompt(prompt, examples, input_text, json_schema=self.json_schema)
             
 
     def load_json_schema(self) -> str:

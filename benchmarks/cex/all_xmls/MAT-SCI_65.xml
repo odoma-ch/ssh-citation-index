@@ -1,0 +1,1349 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Adsorption behavior of thiadiazole derivatives as anticorrosion additives on copper oxide surface: Computational and experimental studies</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-06-27">27 June 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Sang</forename><surname>Xiong</surname></persName>
+							<email>xiongsang@njit.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Nanjing Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Advanced structural Materials and Application Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dong</forename><surname>Liang</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">College of Materials Engineering</orgName>
+								<orgName type="institution">Jinling Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhixin</forename><surname>Ba</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Nanjing Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Advanced structural Materials and Application Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhen</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Nanjing Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Advanced structural Materials and Application Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Shuai</forename><surname>Luo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Nanjing Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Nanjing Institute of Technology</orgName>
+								<address>
+									<addrLine>Jiang Su 211167</addrLine>
+									<settlement>Nanjing</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Adsorption behavior of thiadiazole derivatives as anticorrosion additives on copper oxide surface: Computational and experimental studies</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Applied Surface Science</title>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">492</biblScope>
+							<date type="published" when="2019-06-27">27 June 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5569E0EF40C9F7DA4F81B2A8B790BDFA</idno>
+					<idno type="DOI">10.1016/j.apsusc.2019.06.253</idno>
+					<note type="submission">Received 21 March 2019; Received in revised form 18 June 2019; Accepted 26 June 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>First-principles calculations DFT EIS Surface characterization</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Adsorption behavior of thiadiazole derivatives, 2,5-bis(ethyldisulfanyl)-1,3,4-thiadiazole (DTA), dimercapto-1,3,4-thiadiazole (DMDT) as anticorrosion additives at copper oxide surface were studied by first-principles calculations, weight loss, electrochemical and surface characterization techniques. The adsorption energies calculated by density functional theory (DFT) were less than 0.3 eV, DTA and DMDT physically adsorbed on the copper surface and cannot replace the oxygen atom at the top site of the CueO slab models. The predicted physically interaction of the corrosion inhibitor on the copper surface, which was basically consistent with the results of XPS analysis and surface microtopography. It was shown that in the presence of DTA and DMDT adsorbed on copper surface depress the reaction rate of anodic dissolution and cathodic hydrogen evolution and obey Langmuir isotherm. Surface findings indicated the inhibitor film formed at copper surface can block corrosion and improve hydrophobicity.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Lubricant is widely used in all kinds of metal forming, lubricants are composed of base oil and additives <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. Sometimes, anti-corrosion additives are added to lubricants and the additives adsorbed to the metal surface by physical, chemical or mixed adsorption to reduce the corrosion rate of the metal <ref type="bibr" target="#b2">[3]</ref>. Copper has been widely used in various electrical industries because of its excellent thermal conductivity, electrical conductivity and machinability <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>. Copper is more easily oxidized than other metals in the process of storage, and such phenomenon cannot be effectively prevented at present <ref type="bibr" target="#b5">[6]</ref>. Addition of the anticorrosion additive can reduce the corrosion rate of copper and also formed a protection film at copper surface and the roughness of a copper surface become lower <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref>. The relate researches have been investigated by experimental and lots of morphology characterization <ref type="bibr" target="#b9">[10]</ref>. The adsorption mode depends on the interaction between the anticorrosion additive structure and the metal surface <ref type="bibr" target="#b5">[6]</ref>. The structure of the additive affects the reactivity, polarity and charge density <ref type="bibr" target="#b10">[11]</ref>. Therefore, the physical parameters of the anticorrosion additives may not predict the interaction of the anticorrosion additive and the metal surface, not to mention the surface of the oxidized metal. The surface interaction between anticorrosion additive and oxide metals is rarely reported. A predictive model of anti-corrosion additives at copper oxide surface should be built to investigate the inhibition mechanism.</p><p>Adsorption energy of molecules on metal surface can be predicted accurately by first principle calculations and a model of single gas molecule at metal surface was simulated by density functional theory (DFT) <ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. The results revealed the anti-corrosion property of organic molecule, such as DTA forms strong SeCu bonds with copper substrate and the chemisorption energy is -3.5 eV <ref type="bibr" target="#b14">[15]</ref>. There are many studies on the interaction between metals and anti-corrosion molecules, but the research of anti-corrosion molecule at copper oxide is still remains empty <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b16">17]</ref>. Hence, it is possible to investigate the interaction between metal oxide surface and anti-corrosion molecules by adsorption simulations.</p><p>In the paper, (2,5-bis(ethyldisulfanyl)-1,3,4-thiadiazole (DTA) and dimercapto-1,3,4-thiadiazole (DMDT)) as anticorrosion additives were used. Optimized adsorption models of two anti-corrosion molecules at CueO slab is established by DFT. Experimental techniques, including SEM, OCLM and XPS, were used to analyze the copper surface with and without anti-corrosion molecules to compare the experiments results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Computational and experimental techniques details</head><p>The molecular structure is optimized and the adsorption energies are calculated by Vienna Ab initio Simulation Package (VASP) <ref type="bibr" target="#b18">[19]</ref> with Generalized Gradient Approximation (GGA) <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b17">18]</ref> and the details of computational has been reported in the previous studies <ref type="bibr" target="#b14">[15]</ref>. The clean 6× 4 CueO slab model with ﬁve Cu atomic layers was built and the size of the simulation cell is 15.374 × 14.484 × 35.125 Å with 92 Cu atoms, 16 O atoms and, the vacuum thickness is 30 Å, the side view and top view of the slab model was shown in Fig. <ref type="figure" target="#fig_0">1(a) and (b)</ref>. The adsorption energy of molecule adsorbed on CueO slab models Eads is calculated as follows,</p><formula xml:id="formula_0">Eads = ECu − O + Molecule − ECu − O − EMolecule<label>(1)</label></formula><p>where E Cu-O+molecule , is the total energy of the optimized slab with molecule adsorbed on CueO slab surface, E Cu-O and E molecule are the total energy of the clean CueO slab surface and the single molecule, respectively. E ads is a negative value indicates the adsorption is more stable than the clean CueO slab surface. The most stable configuration with the minimum energy is used as the initial configuration on the five-layered full CueO slab model. 0.05 wt% (% by weight) DMDT (C 2 H 3 N 2 S 2 ) and DTA (C 6 H 10 N 2 S 5 ) as anticorrosion additives were added to PAO base oil. The copper oxide coupons immersed in the solutions containing various concentrations (0.1-0.5 mM) of the studied two anticorrosion additives at 298 ± 5 K for 10 days by weight loss tests. An epoxy-encapsulated copper oxide electrode with the exposed area of 1.0 cm 2 was employed as working electrode. Potentiodynamic polarization curves and electrochemical impedance spectroscopy (EIS) tests were conducted using the three-electrode system where the counter electrode was a platinum electrode and a saturated calomel electrode (SCE) was used as reference. EIS tests were conducted at open-circuit potential in the range of 0.01 Hz to 50 kHz. A German model EVO 18 SEM with EDS and olympus confocal laser microscope (OCLM) with surface roughness were applied to observe the microstructure and detect the elemental of CueO slab surface with and without anticorrosion additives. The element analysis of the metal surfaces was performed by X-ray photoelectron spectrometer (XPS). For each test condition, duplicate experiments were performed at least three times under room temperature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results and discussion</head><p>Fig. <ref type="figure" target="#fig_0">1(a) and(b)</ref> show the side view and top view of the CueO slab model. Fig. <ref type="figure" target="#fig_0">1(c)</ref> shows the relaxed anticorrosion additive molecular structures and the typical structures of DMDT and DTA. The calculated bond lengths of anticorrosion molecules according to VASP are listed in Table <ref type="table" target="#tab_0">1</ref>, and other methods predicted values for comparation such as the Cambridge structural database <ref type="bibr" target="#b18">[19]</ref> and Dmol3 calculations by the Materials Studio 7.0 with B3LYP/GGA/PW91. The results show that the structure of the additive provided by this method is reasonable, this method provides a reasonable additional structure and it can provide reliable basis for subsequent calculation of adsorption performance.</p><p>Single DMDT and DTA molecule adsorbed on CueO slab surface were studied and the side view of the initial configurations of DMDT and DTA adsorbed on CueO slab surfaces are shown in Fig. <ref type="figure" target="#fig_1">2(a) and (d)</ref>. Fig. <ref type="figure" target="#fig_1">2(b) and (e)</ref> present the side view of the stable configurations of DMDT and DTA adsorbed on CueO slab surface with detail bond distances, and the top views of the configurations given in Fig. <ref type="figure" target="#fig_1">2(c) and (f)</ref>. The calculated adsorption energies are -0.226 eV and -0.276 eV (listed in Table <ref type="table" target="#tab_1">2</ref>) for DMDT and DTA, respectively, indicating both of DMDT and DTA molecules physically absorbed to the CueO slab surface. Cu1-S1 bond length of DMDT and DTA on the CueO slab are 2.591 Å and 2.849 Å, which are greater than the length of the covalent  bond. The obtained adsorption energies below 0.3 eV, which indicates DTA and DMDT physically adsorbed on the copper surface and cannot replace the oxygen atom at the top site CueO slab models.</p><p>To validate the DFT predicted physically adsorbed on the copper surface, weight loss measurements, potentiodynamic polarization curves, EIS, surface characterization techniques, high-resolution XPS spectra of the CueO slab surface with and without anticorrosion additives were further to conducted and analyzed. As can be seen from Table <ref type="table" target="#tab_2">3</ref>, with the increase in the concentration of the two anticorrosive additives, the corrosion rate decreases, while the inhibition efficiency increases significantly, indicating that the two compounds above 0.3 mM have a good inhibition ability. At the same concentration, the inhibitive efficiency of DTA is higher than that of DMDT, which implies the maximum inhibition efficiency reaches 93.47% with DTA at 0.5 mM.</p><p>Potentiodynamic polarization curves and EIS data of the CueO electrode recorded in solutions containing 0.5 mM DMDT and DTA are shown in Fig. <ref type="figure" target="#fig_2">3</ref>. For the blank sample in Fig. <ref type="figure" target="#fig_2">3(a)</ref>, the corrosion product on the surface of copper layer (cuprous oxide, copper oxide) effectively impedes the diffusion of dissolved oxygen to the surface of copper, which is conducive to slowing down the occurrence of corrosion. With the addition of DMDT or DTA, the curve shifts towards the direction of low current density, indicating that the corrosion rate of copper has been effectively reduced. Compared to blank, the corrosion potential of DMDT or DTA-covered copper electrode moves in the positive direction, which indicates that both of DMDT and DTA mainly function by suppressing the anodic dissolution of copper. It can be deduced that the cathodic reaction is mainly inhibited during the corrosion process, thus protecting the copper from corrosion, and both DMDT and DTA are a mixed-type anticorrosion additive and adsorbing on the copper surface to hinder both anodic and cathodic reaction <ref type="bibr" target="#b19">[20]</ref>.</p><p>The corrosion potential (E corr ) and corrosion current density (i corr ) are obtained by extrapolation method of i-E curves. The key electrochemical parameters, including E corr , i corr , anodic and cathodic Tafel slope (β a , β c ), and inhibition efficiency (η) are listed in Table <ref type="table" target="#tab_3">4</ref>. The values of η are calculated as follow:</p><formula xml:id="formula_1">= - × η i i i 100 corr corr corr ,0 ,0<label>(2)</label></formula><p>where i corr,0 and i corr represent uninhibited and inhibited current densities of the specimen, respectively. Fig. <ref type="figure" target="#fig_2">3(b)</ref> illustrates the corresponding EIS of copper oxide surface without anticorrosion additive. It is a line in the low-frequency region followed by an imperfect semicircle in the high-frequency region. Warburg impedance (W) is ascribe to the low-frequency straight line impedance, mainly through the diffusion of dissolved oxygen over copper oxide substrate <ref type="bibr" target="#b20">[21]</ref>. However, Warburg impedance disappears when using the DMD or DTA. There are some convex arcs of the EIS curves can be observed, which indicates that the diffusion process is strongly retarded by these compounds and charge transfer plays a prominent role in the corrosion process <ref type="bibr" target="#b19">[20]</ref>. From Fig. <ref type="figure" target="#fig_2">3(b)</ref>, with the addition of inhibitor, the size of the semicircle increased dramatically, which indicates that the inhibitors have excellent inhibitive ability. The bigger of the diameter r of the semicircle is and the better of inhibitive ability of the anticorrosion additive is, indicating the inhibition capability of DTA is a little better than DMDT.  The impedance spectra involving Warburg impedance are fitted using in terms of the equivalent circuit presented in Fig. <ref type="figure" target="#fig_3">4a</ref>. The other spectra are analyzed the equivalent circuit shown in Fig. <ref type="figure" target="#fig_3">4b</ref>. The electrochemical parameters obtained from the equivalent circuits are listed in Table <ref type="table" target="#tab_4">5</ref>. The values of η of these compounds for the copper oxide specimen immersed in the solutions are calculated from the polarization resistance R p (R p = R f + R ct ) according to the following formula,</p><formula xml:id="formula_2">= - × η R R R 100 p p p ,0<label>(3)</label></formula><p>where R p and R p,0 are the sum of film resistance and charge transfer resistance of the CueO substrate electrode with and without studied inhibitors, respectively. From Table <ref type="table" target="#tab_4">5</ref>, it can be seen that the values of the inhibition efficiency reach 92.95% for DMDT and 94.17% for DTA. the addition of DMDT and DTA, from which it can be inferred that inhibitor adsorption films are formed on the metal surface and thus inhibit the process of charge transfer and reveals that these inhibitors display effective protection from CueO substrate corrosion.</p><p>The adsorption mechanism of the anticorrosive additive at the interface of copper oxide is usually studied by Langmuir, Frumkin and Temkin isotherms, which are consistent with the impedance test results of the anticorrosive additive <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b22">23]</ref>.</p><formula xml:id="formula_3">- = θ θ K C 1 (Langmuir isotherm) ads<label>(4)</label></formula><formula xml:id="formula_4">- = θ θ θ K C 1 exp(2a ) (Frumkin isotherm) ads<label>(5)</label></formula><formula xml:id="formula_5">- = θ K C exp( 2a ) (Temkin isotherm) ads<label>(6)</label></formula><p>where θ is the degree of the coverage, C is the concentration, K ads is a constant. It was found that Langmuir isotherm is the best-fit model, all the linear regression coefficients (R 2 ) are pretty close to 1, which implies the adsorption process of DMDT and DTA on CueO surface follows to Langmuir isotherm. From Fig. <ref type="figure" target="#fig_4">5</ref>, the value of 1/K ads is the intercept of the curve of C and C/θ. The free energy of adsorption (ΔG ads <ref type="formula">0</ref>) can be calculated as follows <ref type="bibr" target="#b23">[24]</ref>,</p><formula xml:id="formula_6">⎜ ⎟ = ⎛ ⎝ - ⎞ ⎠ K G RT 1 55.5 exp Δ ads ads 0<label>(7)</label></formula><p>where, T is the temperature (K) and R is 8.314 J•mol -1 •K -1 .</p><p>ΔG ads 0 and K ads are calculated and listed in Fig. <ref type="figure" target="#fig_4">5</ref>. A low value of ΔG ads 0 and high value of K ads suggest that the anticorrosion additives could be tightly adsorbed on the metal surface <ref type="bibr" target="#b24">[25]</ref>. The order of all the calculated values of K ads and ΔG ads 0 are follows: K ads (DMDT, 45.51 × 10 3 L/mol) &gt; K ads (DTA, 43.85 × 10 3 L/mol), ΔG ads 0 (DTA, -19.32 KJ/mol) &gt; ΔG ads 0 (DMDT, -19.41 KJ/mol), which indicate that both DMDT and DTA possess weaker adsorption affinity onto the copper oxide surface. Besides, the negative values of ΔG ads 0 show that the adsorption is a spontaneous <ref type="bibr" target="#b25">[26]</ref>. In this part, the values of ΔG ads 0 obtained around -19.3 KJ/mol (below -20 kJ/mol) and considered as physisorption. The inhibition of organic molecules adsorbed on the charged copper oxide surface is mainly the electrostatic interaction, which was deemed to be the leading driving force. Fig. <ref type="figure" target="#fig_5">6</ref> presents the contact angles of water droplets onto the metal oxide (CueO) surface without the anticorrosion additive and with the DMDT, and DTA molecule. Without inhibitors in the solution, the contact angle of water drop onto copper oxide surface is small (76.6°), which is suggested the surface of the corroded copper with a strong affinity for water. This may be due to the presence of hydrophilic corrosion products on the uninhibited copper substrate, which results in the spreading of water droplets. Fig. <ref type="figure" target="#fig_5">6b and c</ref> illustrate the contact angles of water droplets onto the inhibited coppers with DMDT and DTA are higher (above 90°) than that of the uninhibited metal substrate. When a water droplet falls on the metal surface, DMDT and DTA contain dimercapto, azole and disulfide groups in their molecular structure, which have strong adsorption ability on the metal surface, then the surface has become hydrophobic, which influence the adsorption of water molecules <ref type="bibr" target="#b26">[27]</ref>. Thus, the affinity of water droplets to inhibited copper matrix is lower than that of the uninhibited matrix.</p><p>XPS has been used to confirm the composition of the oxidation formed on copper surface and verify the anticorrosion additives action. Fig. <ref type="figure" target="#fig_2">3</ref>. Potentiodynamic polarization curves (a) and EIS data (b) of the CueO electrode recorded in solutions containing 0.5 mM DMDT and DTA.</p><p>As shown in Fig. <ref type="figure" target="#fig_6">7</ref>, the Cu 2p1/2 peaks could be deconvoluted into three main peaks: metallic Cu, Cu 2 O and CuO at a binding energy of 952.6 eV, 952.5 eV and 953.7 eV <ref type="bibr" target="#b27">[28]</ref>, respectively. While, the Cu 2p3/2 peaks could be deconvoluted into four main peaks: the copper organic complex peak comes from the chemical reactions and the other three peaks correspond to Cu, CuO, and Cu 2 O <ref type="bibr" target="#b28">[29]</ref>. The O 1s peaks could also be deconvoluted into Cu 2 O and CuO <ref type="bibr" target="#b29">[30]</ref> at the binding energy of 531.2 eV and 530.0 eV, respectively. In such situations, with the addition of DMDT and DTA, there still exist Cu, CuO and Cu 2 O from the Cu 2p and O1s spectrum. But the O 1 s peak is dramatically reduced when both DMDT and DTA were used. Besides, the surface detected the CeS and C]S bonds at a binding energy of 163.2 eV, 167.1 eV from S 2p spectra. The XPS analysis indicating DTA and DMDT physically adsorbed on the copper surface and cannot replace the oxygen atom of CueO bond.</p><p>Surface morphologies and the correspond energy spectrum of the CueO surface with and without anticorrosion additives are shown in Fig. <ref type="figure" target="#fig_7">8</ref>. When the solution was absence of anticorrosion additive, there will be irregular corrosion pits where the copper become copper oxide and explained the fundamental cause of copper corrosion. With the addition of DMDT and DTA, the molecules adsorbed on the surface via physical action decrease the corrosion and block the further oxide.</p><p>Fig. <ref type="figure" target="#fig_8">9</ref> shows the three-dimensional (3D) OCLM images and corresponding height profile graphs of metal surfaces. The relevant average roughness (R a ) of the unprotected copper oxide specimen is 0.064 μm and peaks and valleys of the high profile curve fluctuate are noticeable. Addition of the studied anticorrosion additive, the associated height curve shows a fairly slight fluctuation, which are within 0.011 μm for DMDT and DTA. In addition, the corresponding values of R a with these anticorrosion additives are reduced to 0.011 μm for DMDT and 0.009 μm DTA. These images and parameters indicate that the inhibition capability of the studied anticorrosion additive DTA is a little   Fig. <ref type="figure" target="#fig_4">5</ref>. Langmuir isotherms and the parameters (ΔG ads 0 and K ads ) of anticorrosion molecules (a) DMDT and (b) DTA on copper oxide surface.</p><p>better than DMDT, which is consistent with the rank of inhibitory efficiency obtained from electrochemical measurements. The results of SEM and electrochemical test show that a dense and orderly protective barrier can be formed on the surface of copper with the two anticorrosion additives, thus effectively inhibiting the corrosion of copper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>The adsorption of thiadiazole derivatives 2,5-bis(ethyldisulfanyl)-1,3,4-thiadiazole (DTA), dimercapto -1,3,4-thiadiazole (DMDT) as anticorrosion additives onto copper oxide substrate by first-principles calculations, weight loss, electrochemical and surface characterization techniques. According to DFT, the calculated adsorption energies below 0.3 eV, DTA and DMDT physically adsorbed on the copper surface and cannot replace the oxygen atom at the top site of CueO slab models. The predicted physically interaction of the Cu surface reasonably agreed with XPS analysis and surface microtopography. It was shown that in the presence of DTA and DMDT adsorbed on copper surface depress both copper dissolution rate at anodic and reaction rate of hydrogen evolution at cathodic and obeys Langmuir isotherm. The results of surface technology studies show that a protective inhibitor film formed on the copper substrate can block corrosion and improve hydrophobicity.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Model system (a) Side view and (b) top view of the CueO slab model; (c) the anticorrosion additive molecular structure and (d) the relaxed DMDT and DTA.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Configurations of single DMDT and DTA adsorbed on CueO slab models with detail bond distances (the unit is Å). For DMDT, (a) the side view of the initial configuration, (b) side view and (c) top view of the optimized configurations, for DTA, (d) side view of the initial configuration, (e) side view and (f) top view of the optimized configurations.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Potentiodynamic polarization curves (a) and EIS data (b) of the CueO electrode recorded in solutions containing 0.5 mM DMDT and DTA.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig.4. Electrochemical equivalent circuits. (a) the impedance spectra involving Warburg impedance (Blank), (b) another spectra with the addition of anticorrosion additive. Rs is the solution resistance, Rf is the resistance of the protective inhibitor film formed on metal surface, Rct represents the charge transfer resistance, and W is the Warburg impedance. CPEf and CPEdl are constant phase angle elements, reflecting double layer capacitance (Cdl) and film capacitance (Cf), respectively.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig.5. Langmuir isotherms and the parameters (ΔGads0 and Kads) of anticorrosion molecules (a) DMDT and (b) DTA on copper oxide surface.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. The contact angles of water drop onto the metal oxide (CueO) surface without the anticorrosion additive (a) and with the DMDT (b), and DTA(c) molecule.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Comparison of the XPS spectra of the copper oxide (CueO) surfaces, with DMDT, and with DTA. (a) Cu 2p, (b)O 1s, and (c) S 2p.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. The SEM images and the correspond energy spectrum of the CueO surface (a and d), DMDT (b and e), and DTA (c and f).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. Three-dimensional OCLM images (left size) and roughness (right side) of (a) copper oxide surface, inhibited by 0.5 mM (b) DMDT, and (c) DTA.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Bond-length of DMDT and DTA according to the computational methods.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>The adsorption energies and Cu1-S1 bond length of molecules on CueO slab.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Calculated corrosion rate (ν, mg•m -2 •h -1 ) and inhibition efficiency (η) as a function of the concentrations of DMDT and DTA.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Potentiodynamic polarization parameters for copper oxide specimens immersed in the solutions without and with the studied inhibitors at 298 K.</figDesc><note><p>a SD, standard deviation of 5 independent measurements.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Impedance parameters of copper oxide specimens immersed in the solutions without and with the studied inhibitors at 298 K.</figDesc><note><p>a SD, standard deviation of 5 independent measurements.</p></note></figure>
+		</body>
+		<back>
+		<div type="acknowledgement">
+		<div><head>Acknowledgements</head><p>The authors gratefully acknowledge the financial assistance provided by National Natural Science Foundation of China (No. 51804166), Natural Science Foundation of Jiangsu Province (No. BK20181026), Natural Science Research Program of Junior High School of Jiangsu Province (No.18KJB130003), Scientific Foundation of Nanjing Institute of Technology (No. YKJ201706), and Outstanding Scientiﬁc and Technological Innovation Team in Colleges and Universities of Jiangsu Province. Thanks are also extended to all individuals associated with the project.</p></div>
+		</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="book" xml:id="b0">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Dresel</surname>
+					<forename type="first">T</forename><forename type="middle">M</forename><forename type="middle">A</forename><forename type="last">W</forename>
+				</persName>
+			</author>
+			<title level="m">Lubricants and Lubrication</title>
+			<imprint>
+				<publisher>John Wiley &amp; Sons Inc Press</publisher>
+				<pubPlace>New York, U.S.A</pubPlace>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="book" xml:id="b1">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Byers</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="m">Metalworking Fluids</title>
+			<imprint>
+				<publisher>CRC Press</publisher>
+				<pubPlace>New York, U.S.A</pubPlace>
+				<date when="2006">2006</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mousavi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baghgoli</surname>
+					<forename>t</forename>
+				</persName>
+			</author>
+			<title level="a">Application of interaction energy in quantitative structure-inhibition relationship study of some benzenethiol derivatives on copper corrosion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="170" to="176"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vvedenskii</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grushevskaya</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ganzha</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eliseev</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Copper oxides: kinetics of formation and semiconducting properties. Part I. Polycrystalline copper and copper-gold alloys</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Solid State Electrochem</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="2755" to="2770"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miller</surname>
+					<forename type="first">B</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Furlong</surname>
+					<forename type="first">O</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tysoe</surname>
+					<forename type="first">W</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">The desorption and reaction of 1-alkenes and 1-alkynes on Cu(111) and copper foils</title>
+		</analytic>
+		<monogr>
+			<title level="j">Surf. Sci.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">616</biblScope>
+				<biblScope unit="page" from="143" to="148"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shukla</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rao</surname>
+					<forename type="first">T</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Effect of calcium on Staphylococcus aureus biofilm architecture: a confocal laser scanning microscopic study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Colloids Surf. B Biointerfaces</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">103</biblScope>
+				<biblScope unit="page" from="448" to="454"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mert</surname>
+					<forename type="first">B</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mert</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kardaş</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yazıcı</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Experimental and theoretical investigation of 3-amino-1,2,4-triazole-5-thiol as a corrosion inhibitor for carbon steel in HCl medium</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unit="page" from="4265" to="4272"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Döner</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Solmaz</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Özcan</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kardaş</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Experimental and theoretical studies of thiazoles as corrosion inhibitors for mild steel in sulphuric acid solution</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unit="page" from="2902" to="2913"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jevremović</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Singer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nešić</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mišković-Stanković</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Inhibition properties of self-assembled corrosion inhibitor tall oil diethylenetriamine imidazoline for mild steel corrosion in chloride solution saturated with carbon dioxide</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">77</biblScope>
+				<biblScope unit="page" from="265" to="272"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Merdan</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kunath</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fischer</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kopecek</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kissel</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Intracellular processing of poly (ethylene imine)/ribozyme complexes can be observed in living cells by using confocal laser scanning microscopy and inhibitor experiments</title>
+		</analytic>
+		<monogr>
+			<title level="j">Pharm. Res.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="140" to="146"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Karthigeyan</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Siddhanta</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kishore</surname>
+					<forename type="first">A</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perumal</surname>
+					<forename type="first">S</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ågren</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sudevan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhat</surname>
+					<forename type="first">A</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Balasubramanyam</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Subbegowda</surname>
+					<forename type="first">R</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kundu</surname>
+					<forename type="first">T</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">SERS and MD simulation studies of a kinase inhibitor demonstrate the emergence of a potential drug discovery tool</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">111</biblScope>
+				<biblScope unit="page" from="10416" to="10421"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kokalj</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peljhan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Finšgar</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Milošev</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">What determines the inhibition effectiveness of ATA, BTAH, and BTAOH corrosion inhibitors on copper?</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">132</biblScope>
+				<biblScope unit="page" from="16657" to="16668"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tafreshi</surname>
+					<forename type="first">S</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roldan</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dzade</surname>
+					<forename type="first">N</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Leeuw</surname>
+					<forename type="first">N</forename><forename type="middle">H</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<title level="a">Adsorption of hydrazine on the perfect and defective copper (111) surface: a dispersion-corrected DFT study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Surf. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">622</biblScope>
+				<biblScope unit="page" from="1" to="8"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gleason</surname>
+					<forename type="first">N</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Greathouse</surname>
+					<forename type="first">D</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grant</surname>
+					<forename type="first">C</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Opella</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koeppe</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Scale alpha and beta of quantitative convergence and chemical reactivity analysis in dual choli- nesterase/monoamine oxidase inhibitors for the alzheimer disease treatment using density functional theory (DFT)</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Theor. Chem.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">2013</biblScope>
+				<biblScope unit="page" from="1" to="13"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xiong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Integrated computation and experimental investigation on the adsorption mechanisms of anti-wear and anti-corrosion additives on copper [J]</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Phys. Chem. C</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">121</biblScope>
+				<biblScope unit="page" from="21995" to="22003"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kürti</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rajczy</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kertesz</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hafner</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kresse</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Performance of the Vienna ab initio simulation package (VASP) in chemical applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Mol. Struct.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">624</biblScope>
+				<biblScope unit="page" from="37" to="45"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Perdew</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Burke</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ernzerhof</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Generalized gradient approximation made simple</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. Lett.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">77</biblScope>
+				<biblScope unit="page" from="3865" to="3868"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Blöchl</surname>
+					<forename type="first">P</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Projector augmented-wave method</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. B Condens. Matter</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">50</biblScope>
+				<biblScope unit="page" from="17953" to="17979"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hu</surname>
+					<forename type="first">Z</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename type="first">B</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fan</surname>
+					<forename type="first">W</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ignatiev</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Structure analysis of the Cu(110)-(1×2) surface reconstruction induced by alkali-metal adsorption</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. B Condens. Matter</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">41</biblScope>
+				<biblScope unit="page" from="41" to="45"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yuan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pehkonen</surname>
+					<forename type="first">S</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ting</surname>
+					<forename type="first">Y</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Neoh</surname>
+					<forename type="first">K</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kang</surname>
+					<forename type="first">E</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">Poly(1-vinylimidazole) formation on copper surfaces via surface-initiated graft polymerization for corrosion protection</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="1958" to="1968"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zarrouk</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hammouti</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dafali</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bentiss</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Inhibitive properties and adsorption of purpled as a corrosion inhibitor for copper in nitric acid medium</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ind. Eng. Chem. Res.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="page" from="2560" to="2568"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>C-C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guo</surname>
+					<forename>X-Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shen</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>H-F</forename>
+				</persName>
+			</author>
+			<title level="a">Adsorption and corrosion inhibition of phytic acid calcium on the copper surface in 3 wt% NaCl solution</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">83</biblScope>
+				<biblScope unit="page" from="147" to="154"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Obot</surname>
+					<forename type="first">I</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Umoren</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gasem</surname>
+					<forename type="first">Z</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suleiman</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>El Ali</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Theoretical prediction and electrochemical evaluation of vinylimidazole and allylimidazole as corrosion inhibitors for mild steel in 1 M HCl</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Ind. Eng. Chem.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="1328" to="1339"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Döner</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yüce</surname>
+					<forename type="first">A</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kardas</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Inhibition effect of rhodanine-N-acetic acid on copper corrosion in acidic media</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ind. Eng. Chem. Res.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="9709" to="9718"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Corrosion control of copper in 3.5 wt.% NaCl solution by domperidone: experimental and theoretical study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">85</biblScope>
+				<biblScope unit="page" from="77" to="86"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename type="first">X</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lei</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename type="first">J</forename><forename type="middle">X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename type="first">S</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename type="first">F</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Adsorption and corrosion inhibition of Osmanthus fragran leaves extract on carbon steel</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">63</biblScope>
+				<biblScope unit="page" from="82" to="90"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lawrence</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Wettability characteristics of carbon steel modified with CO2, Nd:YAG, excimer and high power diode lasers</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Surf. Sci.</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">154-155</biblScope>
+				<biblScope unit="page" from="664" to="669"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ni</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kong</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qiao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kong</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shan</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">Space-confined synthesis of multilayer Cu-N-doped graphene nanosheets for efficient oxygen electroreduction</title>
+		</analytic>
+		<monogr>
+			<title level="j">Dalton Trans.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">46</biblScope>
+				<biblScope unit="page" from="8586" to="8592"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bulushev</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chuvilin</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sobolev</surname>
+					<forename type="first">V</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stolyarova</surname>
+					<forename type="first">S</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shubin</surname>
+					<forename type="first">Y</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Asanov</surname>
+					<forename type="first">I</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ishchenko</surname>
+					<forename type="first">A</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Magnani</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ricco</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okotrub</surname>
+					<forename type="first">A</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<title level="a">Copper on carbon materials: stabilization by nitrogen doping</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Mater. Chem. A</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="10574" to="10583"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Biesinger</surname>
+					<forename type="first">M</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lau</surname>
+					<forename type="first">L</forename><forename type="middle">W</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gerson</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smart</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename><forename type="last">C</forename>
+				</persName>
+			</author>
+			<title level="a">Resolving surface chemical states in XPS analysis of first row transition metals, oxides and hydroxides: Sc, Ti, V, Cu and Zn</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Surf. Sci.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">257</biblScope>
+				<biblScope unit="page" from="887" to="898"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

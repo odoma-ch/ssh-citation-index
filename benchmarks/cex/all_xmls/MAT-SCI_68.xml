@@ -1,0 +1,1831 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Toward durable and robust superhydrophobic cotton fabric through hydrothermal growth of ZnO for oil/water separation</title>
+				<funder ref="#_Nf9EWau">
+					<orgName type="full">Opening Project of Beijing Key Laboratory of Quality Evaluation Technology for Hygiene and Safety of Plastics (Beijing Technology and Business University)</orgName>
+				</funder>
+				<funder ref="#_N6kcDVa">
+					<orgName type="full">Fundamental Research Funds for the Central Universities</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-07-22">22 July 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Meng</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Chongqing Key Laboratory of Soft-Matter Material Chemistry and Function Manufacturing</orgName>
+								<orgName type="department" key="dep2">School of Chemistry and Chemical Engineering</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Min</forename><surname>Peng</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Chongqing Key Laboratory of Soft-Matter Material Chemistry and Function Manufacturing</orgName>
+								<orgName type="department" key="dep2">School of Chemistry and Chemical Engineering</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yun-Xuan</forename><surname>Weng</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Beijing Key Laboratory of Quality Evaluation Technology for Hygiene and Safety of Plastics</orgName>
+								<orgName type="institution">Beijing Technology and Business University</orgName>
+								<address>
+									<postCode>100048</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yi-Dong</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Chongqing Key Laboratory of Soft-Matter Material Chemistry and Function Manufacturing</orgName>
+								<orgName type="department" key="dep2">School of Chemistry and Chemical Engineering</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Jian-Bing</forename><surname>Zeng</surname></persName>
+							<email>jbzeng@swu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Chongqing Key Laboratory of Soft-Matter Material Chemistry and Function Manufacturing</orgName>
+								<orgName type="department" key="dep2">School of Chemistry and Chemical Engineering</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						
+						<title level="a" type="main">Toward durable and robust superhydrophobic cotton fabric through hydrothermal growth of ZnO for oil/water separation</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Cellulose</title>
+						<imprint>
+							<biblScope unit="volume">26</biblScope>
+							<biblScope unit="page" from="8121" to="8133"/>
+							<date type="published" when="2019-07-22">22 July 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8F79F7A717332B552FA3B59DA16A6690</idno>
+					<idno type="DOI">10.1007/s10570-019-02635-2</idno>
+					<note type="submission">Received: 31 May 2019 / Accepted: 16 July 2019 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Superhydrophobic cotton fabric</term>
+					<term>ZnO</term>
+					<term>Hydrothermal reaction</term>
+					<term>Durability</term>
+					<term>Oil/water separation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this study, an eco-friendly superhydrophobic cotton fabric (CF) with water contact angle of 155°was fabricated via a facile two-step approach: imparting surface roughness through hydrothermal growth of ZnO particles, and using stearic acid to create a low-energy surface. ZnO prepared by hydrothermal reaction was in a rod-like shape and had nano-or micro-scale sizes. It was located on the surface in loose aggregates. After modification with stearic acid, the aggregate structure of ZnO particles was changed from loose packing to compact packing. The superhydrophobic CF could be wetted by oil but could not be wetted by water, showing excellent oil/ water separation performance. The superhydrophobic CF was able to absorb oils selectively from their mixtures with water and could be used as a filtering membrane to separate oil/water mixtures directly with separation efficiency and oil flux of 96-99% and 2000-9000 L m -2 h -1 , respectively, depending on the intrinsic property of the oils. In addition, the superhydrophobic CF showed excellent mechanical robustness and environmental durability with water contact angle almost remaining unchanged after exposure to sandpaper abrasion, ultrasonication, boiling water treatment and organic solvents erosion. With excellent robustness and durability, the superhydrophobic CF exhibits great potential in oil/water separation even under some harsh conditions.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Oily wastewater from some areas such as textiles, petrochemicals, metal/steel industrials, as well as oil spill accidents has been seriously threatening our living environment <ref type="bibr" target="#b17">(Gupta et al. 2017;</ref><ref type="bibr" target="#b25">Li et al. 2018a;</ref><ref type="bibr" target="#b35">Wang et al. 2015;</ref><ref type="bibr" target="#b41">Xu et al. 2015;</ref><ref type="bibr" target="#b47">Zhou et al. 2013)</ref>. It is urgent to design and fabricate functional materials for oil/water separation <ref type="bibr" target="#b3">(Caol et al. 2018;</ref><ref type="bibr" target="#b10">Dai et al. 2019;</ref><ref type="bibr" target="#b13">Gao et al. 2018;</ref><ref type="bibr" target="#b14">Ghobashy and Elhady 2017;</ref><ref type="bibr" target="#b20">Kang et al. 2018;</ref><ref type="bibr" target="#b30">Samadi et al. 2017;</ref><ref type="bibr" target="#b34">Sun et al. 2018;</ref><ref type="bibr" target="#b38">Wang et al. 2017c;</ref><ref type="bibr" target="#b46">Zhao et al. 2019)</ref>. Superhydrophobic materials are one kind of the most promising oil/ water separation materials as they can selectively absorb or directly separate oil from water, due to their different wettability toward oil and water <ref type="bibr" target="#b9">(Chu et al. 2015;</ref><ref type="bibr" target="#b28">Ma et al. 2016;</ref><ref type="bibr" target="#b39">Wu et al. 2018;</ref><ref type="bibr" target="#b40">Xu and Wang 2018;</ref><ref type="bibr" target="#b44">Xue et al. 2014;</ref><ref type="bibr" target="#b36">Wang et al. 2017a,</ref><ref type="bibr" target="#b37">Wang et al. 2017b)</ref>. Inspired by natural superhydrophobic surfaces such as lotus effect, artificial superhydrophobic surfaces could be fabricated by rough surface structure creation followed by low surface energy modification <ref type="bibr" target="#b2">(Bhushan and Jung 2011;</ref><ref type="bibr" target="#b12">Feng et al. 2002;</ref><ref type="bibr" target="#b42">Xu et al. 2017)</ref>. Most of the reported superhydrophobic materials for oil/ water separation were prepared from non-renewable feedstocks and could not biodegrade after service, which would not only result in secondary environmental pollution but also lead to rapid consumption of precious non-renewable resources <ref type="bibr" target="#b5">(Cheng et al. 2017</ref><ref type="bibr" target="#b6">(Cheng et al. , 2018a;</ref><ref type="bibr" target="#b15">Gu et al. 2017)</ref>. Such principles for superhydrophobic materials design were not in accordance with the concept of sustainable development. Therefore, some biobased and biodegradable superhydrophobic materials have been designed and fabricated for oil/water separation recently <ref type="bibr" target="#b11">(Dong et al. 2019;</ref><ref type="bibr" target="#b27">Liu and Yuan 2018;</ref><ref type="bibr" target="#b29">Phanthong et al. 2018;</ref><ref type="bibr" target="#b32">Shi et al. 2018;</ref><ref type="bibr" target="#b43">Xue et al. 2013)</ref>.</p><p>Cotton fabric (CF) shows great potential in ecofriendly superhydrophobic material design, due to its various advantages such as renewability, biodegradability, good permeability, low cost, high flexibility and easily scalable fabrication <ref type="bibr" target="#b4">(Chen et al. 2017;</ref><ref type="bibr" target="#b23">Li et al. 2015)</ref>. However, pristine CF could not be used to separate oil/water mixture because it is both hydrophilic and oleophilic. Thus, superhydrophobic coatings have been fabricated on CF through various methods such as dip coating, spray coating and chemical grafting <ref type="bibr" target="#b7">(Cheng et al. 2018b;</ref><ref type="bibr" target="#b26">Li et al. 2018b;</ref><ref type="bibr" target="#b31">Sasaki et al. 2016;</ref><ref type="bibr" target="#b33">Singh and Singh 2017;</ref><ref type="bibr" target="#b45">Xue et al. 2019)</ref>. However, most of these superhydrophobic coatings were composed of non-renewable and nondegradable chemicals or even expensive and toxic fluorine-containing reagents, which negatively affect the sustainability. In addition, most of the fabricated superhydrophobic coatings showed poor mechanical robustness and environmental durability. The application of those superhydrophobic CFs was therefore restricted because they would lose superhydrophobicity under some harsh conditions such as exposure to mechanical abrasion, corrosive substances or organic solvents <ref type="bibr" target="#b8">(Cheng et al. 2019)</ref>. These conditions were usually inevitable for practical oil/water separation due to the complex compositions of oil/water mixtures from different origins.</p><p>Therefore, more recent endeavors have been devoted to design robust and stable superhydrophobic CFs for efficient and durable oil/water separation <ref type="bibr" target="#b8">(Cheng et al. 2019;</ref><ref type="bibr" target="#b16">Guo et al. 2017;</ref><ref type="bibr" target="#b18">Hu et al. 2018;</ref><ref type="bibr" target="#b19">Huang et al. 2015;</ref><ref type="bibr" target="#b22">Lahiri et al. 2019;</ref><ref type="bibr" target="#b36">Wang et al. 2017a,</ref><ref type="bibr" target="#b37">Wang et al. 2017b,</ref><ref type="bibr" target="#b38">Wang et al. 2017c;</ref><ref type="bibr" target="#b47">Zhou et al. 2013;</ref><ref type="bibr" target="#b49">Zou et al. 2013)</ref>. For example, <ref type="bibr" target="#b47">Zhou et al. (2013)</ref> reported a polyaniline and fluorinated alkyl silane modified CF, which showed excellent mechanical robustness and environmental durability with oil/water separation efficiency of 97.8%. <ref type="bibr" target="#b49">Zou et al. (2013)</ref> reported a highly durable and robust superhydrophobic CF by modifying the surface of cotton fabric with diblock copolymer of poly(glycidyl methacrylate) (PGMA) and poly(2,2,2trifluoroethyl methacrylate) (PTFEMA), which were synthesized via sequential atom transfer radical polymerization. <ref type="bibr" target="#b19">Huang et al. (2015)</ref> reported a robust superhydrophobic CF by hydrothermal growth of TiO 2 on the surface of CF and subsequent modification with fluoroalkylsilane. <ref type="bibr" target="#b16">Guo et al. (2017)</ref> reported a robust and boiling-water resistant superhydrophobic PDA@SiO 2 coated CF via copolymerization reaction and trimethyl silyl modification. <ref type="bibr" target="#b18">Hu et al. (2018)</ref> reported a highly durable and robust superhydrophobic CF through surface grafting of glycidyl methacrylate and subsequent chemical modification with silanes. <ref type="bibr" target="#b8">Cheng et al. (2019)</ref> reported an inorganic nanoparticle-free, durable and robust superhydrophobic CF through hydrothermal deposition of polydivinylbenzene (PDVB). <ref type="bibr" target="#b22">Lahiri et al. (2019)</ref> reported a robust fluorine-free CF by deposition of H 3 BO 3incorporated SiO 2 -alkyl-silane coatings followed by polydimethylsiloxane modification. Although robust and durable superhydrophobic CFs have been successfully fabricated, non-renewable chemicals or even expensive and toxic fluorine-containing reagents were still not avoided during fabrication of these materials, which would also associate with resource and environment problems. Therefore, more sustainable and environmentally friendlier superhydrophobic CFs with excellent mechanical robustness and environmental durability are still highly desirable for efficient, durable and eco-friendly oil/water separation.</p><p>In this study, we report a sustainable, durable, robust and eco-friendly superhydrophobic CF through a facile method of hydrothermal growth of ZnO particles on CF and subsequent modification with stearic acid (SA). All materials for the superhydrophobic CF including cotton fabric, SA and ZnO are inexpensive, nontoxic and biodegradable <ref type="bibr" target="#b1">(Bhadani et al. 2017;</ref><ref type="bibr" target="#b5">Cheng et al. 2017;</ref><ref type="bibr" target="#b21">Kielbik et al. 2017)</ref>. The superhydrophobic CF with excellent mechanical robustness, environmental durability and oil/water separation efficiency can be used as an eco-friendly alternative to the counterparts prepared from nonrenewable, non-degradable or even toxic raw materials in oil/water separation under some rigorous conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials</head><p>Zn(NO 3 ) 2 Á6H 2 O (C 99.0%), Hexamethylenetetramine (C 99.0%) and stearic acid (C 99.0%) were obtained from Micxy Chemical Co., Ltd (Chengdu, China). Absolute alcohol, chloroform, toluene, petroleum ether, n-heptane and decane were obtained from Chuandong chemical plant (Chongqing, China). Cotton fabric (CF) was bought from a local store (Chongqing, China).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fabrication of superhydrophobic cotton fabric</head><p>Superhydrophobic cotton fabric was prepared through a two-step procedure, as schematic illustrated in Fig. <ref type="figure" target="#fig_0">1</ref>. Detailedly, aqueous solution of Zn(NO 3 ) 2- 6H 2 O and hexamethylenetetramine with concentration of 0.1 M was prepared, respectively, and cotton fabric was treated with ultrasonication in alcohol for 30 min to remove impurities before use. 40 mL zinc nitrate aqueous solution and 40 mL hexamethylenetetramine aqueous solution were mixed in a 250 mL beaker. Cotton fabric was added into the mixed solution and stirred for 20 min. Then, they were transferred into a 100 mL autoclave. The autoclave was placed in a 90 °C oven for 6 h to perform the hydrothermal growth of ZnO on the surface of cotton fabric. ZnO coated cotton fabric was taken out of the autoclave after cooling to room temperature and was washed with deionized water for 3 times. After drying at 80 °C for 6 h, the ZnO coated cotton fabric was immersed in 0.1 mol/L stearic acid ethanol solution for 6 h and was then taken out of the solution and washed with alcohol for 3 times. Superhydrophobic cotton fabric was finally obtained after drying at 80 °C for an hour and 150 °C for another hour.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Characterization</head><p>The surface morphology was characterized by a field emission scanning electron microscope (FESEM, JSM-7800F) at an accelerating voltage of 2 kV. The samples were sprayed with a layer of gold before observation. The surface elemental composition and mapping was studied by scanning electron microscope with energy dispersive X-ray spectrometry (EDS). Fourier transform infrared (FT-IR) spectra under reflective mode were recorded on an RF-5301PC spectrophotometer ranging from 4000 to 500 cm -1 with the resolution and scanning time of 4 cm -1 and 32 times, respectively. Water contact angle (WCA) was measured by OSA100S-T with 5 lL of deionized water droplet at ambient temperature. Five measurements were performed for each sample, and the averaged results were reported. The sample was adhered to a flat transparent microscope slide prior to measurement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Oil/water separation</head><p>100 mL oil/water mixture containing 30 mL water and 70 mL oil was used for separation measurement. For better observation, the oil was colored by Sudan red I. The superhydrophobic SA/ZnO/CF was used as a filtering membrane located between two glass devices during oil/water separation. When the oil/ water mixtures were poured into the separation system, separation occurred with water remaining in the above container and oil penetrating the fabric and falling into the lower receipting container. Several oily chemicals such as decane, petroleum ether, toluene, chloroform and n-hextane were selected as the oil phases. The separation efficiency (SE) of the superhydrophobic cotton fabric to the mixtures of water with various oils was calculated by</p><formula xml:id="formula_0">SE ¼ W b W a Â 100%<label>(1)</label></formula><p>where W a is the weight of oil before separation and W b is the weight of collected oil after separation. The oil flux (F) through the superhydrophobic cotton fabric was calculated by:</p><formula xml:id="formula_1">F ¼ V St<label>(2)</label></formula><p>where V represents the volume of the collected oil, S represents the surface area of the superhydrophobic cotton fabric, and t is the time required for the oil to flow through the superhydrophobic cotton fabric.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mechanical robustness and environmental durability measurement</head><p>Sandpaper abrasion experiment was performed by placing the superhydrophobic CF on the sandpaper and moving it for 10 cm along the ruler under a 200 g weight, and this procedure was regarded as one abrasion time. The WCA was measured after every ten abrasion times. For ultrasound resistance test, the superhydrophobic CF was immersed in ethanol and treated with ultrasound for an hour. The WCA was measured after every 10 min. Solvent resistance was studied by immersing the superhydrophobic CF in toluene, acetone, chloroform and DMF for 7 days, the WCA of the treated sample was measured after every day. And the sample was taken out of the solvent, rinsed with ethanol and dried before WCA measurement. Boiling water resistance of the superhydrophobic CF was tested by immersion in boiling water for an hour. The WCA of the treated sample were measured after every 10 min.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results and discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Surface morphology, elemental composition and wettability</head><p>The surface morphology and wettability of pristine cotton fabric (CF), ZnO coated CF (ZnO/CF) and stearic acid modified ZnO/CF (SA/ZnO/CF) were comparatively investigated. As shown in Fig. <ref type="figure" target="#fig_1">2</ref>, pristine CF showed a smooth surface with some wrinkled cracks (Fig. <ref type="figure" target="#fig_1">2a</ref>), which would be helpful for the adhesion and growth of ZnO particles. Due to the hydrophilic nature of the cellulosic fibers of CF, water droplet wetted the surface immediately when contacting with the surface. Therefore, the WCA of pristine CF was measured as 0°.</p><p>After coated with ZnO through in situ hydrothermal growth, the surface of ZnO/CF was much rougher with ZnO particles on the surface loosely (Fig. <ref type="figure" target="#fig_1">2b</ref>). The WCA was also about 0°, due to the hydrophilic nature of ZnO particles. The high magnification SEM image of ZnO/CF (Fig. <ref type="figure" target="#fig_1">2c</ref>) indicated that rod-like ZnO particles were formed through the hydrothermal method. ZnO rods from nano-to micro-size were formed on the surface of the CF. The heterogeneity in the size of ZnO particles was attributed to the presence of cracks on the surface of cellulosic fibers, which led to a heterogeneous nuclei formation and growth <ref type="bibr" target="#b0">(Aladpoosh and Montazer 2015)</ref>. In fact, the micro/nanoscale hierarchical structures were useful for fabricating super-wetting materials. After treating with SA alcohol solution, loose structure of ZnO aggregates collapsed. Instead, compacted particle aggregates occurred on the surface of SA/ZnO/CF (Fig. <ref type="figure" target="#fig_1">2d</ref>), possibly indicating that ZnO particles were successfully modified with SA. Consequently, superhydrophobicity was achieved for the surface of SA/ ZnO/CF with a WCA of 155 ± 3°.</p><p>The elemental composition for the surface of pristine CF, ZnO/CF and SA/ZnO/CF was characterized by EDS, as shown in Fig. <ref type="figure" target="#fig_2">3a-c</ref>. The surface elements of pristine CF were composed of about 61.6% C element and 38.4% O element. After growing with ZnO through in situ hydrothermal method, the new Zn element was observed with content of 20.9%. Meanwhile, the percentages of both C and O elements were decreased with the value of 46.1 and 33.0%, respectively. While, the ratio of C element to O element decreased from * 1.6 for pristine CF to * 1.4 for ZnO/CF, which indicated that the decrease in the percentage of C element was more prominent than that of O element, due to the fact that additional O element was introduced with ZnO during hydrothermal synthesis. After modification with SA, the percentages of both Zn and O elements decreased obviously to 6.5 and 22.4%, respectively. While the percentage of C element increased significantly to 71.1%. The ratio of C element to O element increased drastically to * 3.2 for the surface of SA treated ZnO/ CF. Such a change in surface element composition indicated that SA was successfully introduced onto the surface of ZnO/CF, since the content of C element overwhelm that of O element for the long carbon chained SA. The surface element distribution of ZnO/ CF and SA/ZnO/CF was further investigated by EDS elemental mapping as shown in Fig. <ref type="figure" target="#fig_2">3d, e</ref>, respectively. Obviously, all the elements distributed on the surfaces of the both samples uniformly, indicating that both the growth of ZnO on the surface of CF and the modification of ZnO/CF with SA occurred successfully.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fourier transform infrared (FT-IR)</head><p>Figure <ref type="figure" target="#fig_3">4</ref> shows the FT-IR spectra of the pristine CF, ZnO/CF and SA/ZnO/CF. The characteristic peaks of pristine CF appeared at around 3333, 2897, 1426, 1364 and 1026 cm -1 , attributing to O-H stretching, C-H stretching, C-H wagging, C-H bending and C-O stretching, respectively <ref type="bibr" target="#b0">(Aladpoosh et al. 2015)</ref>. The FT-IR spectrum of the ZnO/CF showed little difference with that of pristine CF. In the case of SA/ZnO/ CF, double strong adsorption peaks at 2916 and 2848 cm -1 emerged, which was ascribed to the C-H stretching of -CH 2 due to the presence of SA. Besides, new absorption peaks appeared at 1536 and 1398 cm -1 , which were arisen from the asymmetric and symmetric stretches of -COO-group <ref type="bibr" target="#b0">(Aladpoosh et al. 2015)</ref>. The results indicate that SA has been attached on the surface of ZnO/CF suscessfully.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Oil/water separation</head><p>It is well known that pristine CF is amphipathic thus could be wetted by either water and oil. Figure <ref type="figure" target="#fig_4">5a</ref> shows that both oil (decane dyed by Sudan red I) and water (dyed by methyl blue) droplets could infiltrate the surface of pristine CF completely. The oil droplets could rapidly infiltrate the surface of SA/ZnO/CF, while the water droplets do not exhibit this performance due to the superhydrophobicity of SA/ZnO/CF as shown in Fig. <ref type="figure" target="#fig_4">5b</ref>. This selective wettability make the SA/ZnO/CF suitable for oil/water separation. The oil/water separation capacity of SA/ZnO/CF was firstly evaluated by using it as an absorbent to capture oil from oil/water mixture. Two oils with density lower (toluene) or higher (chloroform) than water were used as representative oils. As shown in Fig. <ref type="figure" target="#fig_4">5c</ref>, toluene (dyed with Sudan red I) floating above water was absorbed immediately and completely when it was contacted with a piece of the superhydrophobic SA/ZnO/CF. In the case of chloroform, it was also selectively absorbed by the superhydrophobic SA/ ZnO/CF although it was under water, as shown in Fig. <ref type="figure" target="#fig_4">5d</ref>. The results indicated that the prepared superhydrophobic SA/ZnO/CF has a good oil absorption capacity and should be applicable for oil/water separation.</p><p>The oil/water separation performance of the superhydrophobic SA/ZnO/CF was further investigated by using it as a filter membrane between two glass apparatuses to separate oil/water mixtures. For better observation, oils were dyed with Sudan red I. Water mixtures with either denser or less dense oils could be separated with the same apparatus, as shown in Fig. <ref type="figure" target="#fig_4">5</ref>. When the oil has lower density than water, their mixtures could be separated with an aslant placed apparatus (Fig. <ref type="figure" target="#fig_5">6a</ref>). If the oil is denser than water, their mixtures could be separated with a vertically placed apparatus (Fig. <ref type="figure" target="#fig_5">6b</ref>). Obviously, only red oils can wet and penetrate through the superhydrophobic fabric, thus the red oils fell into the under container. Water could not wet the superhydrophobic fabric thus remained in the upper container. These phenomena  again suggested that the prepared SA/ZnO/CF was to separate oil/water mixtures efficiently. The separation effciency and oil flux of the prepared superhydrophobic SA/ZnO/CF were investigated to study the oil/water separation performance quantitatively. Several organic solvents such as chloroform, toluene, petroleum ether, hexane, and decane were chosen as the representative oils. As Fig. <ref type="figure" target="#fig_6">7a</ref> shows, the separation effciency of the superhydrophobic SA/ZnO/CF towards the different oil/water mixtures was in the range of 96-99%, which was comparable to other superhydrophobic cotton fabrics, such as PA-Fe III @PDMS-coated cotton fabric <ref type="bibr" target="#b48">(Zhou et al. 2017)</ref>, polystyrene grafted cotton fabric <ref type="bibr" target="#b24">(Li et al. 2017)</ref>, HDTS/CNC/CESO coated cotton fabric <ref type="bibr" target="#b6">(Cheng et al. 2018a)</ref> and PDVB coated cotton fabric <ref type="bibr" target="#b8">(Cheng et al. 2019)</ref>. The separation efficiency could not attain 100%, which is because that some oil was maintained in the superhydrophobic SA/ZnO/CF, due to its absorption capacity toward oils.</p><p>The flux of the superhydrophobic SA/ZnO/CF toward different oils varied in the range of 2000-9000 L m -2 h -1 , depending on the mobility or viscosity of the oils. The superhydrophobic SA/ ZnO/CF showed excellent reusability with unchanged separation effciency after using for 10 circles for oil/ water separation with toluene/water as the typical oil/ water mixture, as shown in Fig. <ref type="figure" target="#fig_6">7b</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mechanical robustness and environmental durability</head><p>The micro/nanoscale hierarchical structures of superhydrophobic surfaces may be destroyed during practical application under some harsh conditions such as mechanical abrasion, high temperature, and organic solvent erosion. The superhydrophobicity would disappear once the micro/nanoscale hierarchical structures were destroyed. Therefore, superhydrophobic surfaces with excellent mechanical robustness and environmental durability are highly desired for longterm application. The stability of the prepared superhydrophobic SA/ZnO/CF under various conditions was studied to evaluate its mechanical robustness and environmental durability. The mechanical robustness of the superhydrophobic SA/ZnO/CF was characterized by abrasion and ultrasonic treatment. The sandpaper abrasion was demonstrated in Fig. <ref type="figure" target="#fig_7">8a</ref>. The WCA of the surface after moving SA/ZnO/CF on sandpaper under 200 g loading was measured to evaluate the mechanical abrasion resistance of the sample. Figure <ref type="figure" target="#fig_7">8b</ref> shows the variation of WCA versus sandpaper abrasion cycle for the superhydrophobic SA/ZnO/CF. Obviously, the surface WCA almost kept unchanged with the value higher than 150°even after abrasion for 50 times. Figure <ref type="figure" target="#fig_7">8c</ref> shows the variation of WCA versus ultrasonication time for the superhydrophobic SA/ZnO/CF. It is interesting that the superhydrophobicity of the sample was very stable with WCA higher than 150°even after ultrasonication for 60 min. Both the sandpaper abrasion and ultrasonication measurements indicated that the superhydrophobic SA/ZnO/CF possessed excellent mechanical robustness, which should be attributed to the strong adhesion between ZnO particles and CF surface of the superhydrophobic CF prepared via in situ hydrothermal synthesis.</p><p>The environmental durability of the prepared SA/ ZnO/CF was characterized by boiling water immersion and organic solvent resistance measurements. Figure <ref type="figure" target="#fig_7">8d</ref> shows the variation of WCA of SA/ZnO/CF versus immersion time in boiling water. Obviously, the superhydrophobic SA/ZnO/CF exhibited excellent stability when exposure to boiling water with the WCA almost unchanged even after boiling for 60 min.</p><p>The organic solvent resistance of the superhydrophobic SA/ZnO/CF was investigated by measuring the water contact angle after immersion in organic solvents for several days. Figure <ref type="figure" target="#fig_8">9</ref> shows the variation of WCA versus immersion time in various organic solvents. Four organic solvents with different polarities were used, including DMF, acetone, toluene and chloroform. Obviously, the superhydrophobicity remained after immersion in all the solvents for at least 7 days with the WCA greater than 150°regardless of the type of solvents, which indicated that the superhydrophobic SA/ZnO/CF was very stable in the presence of various organic solvents.</p><p>The above results indicate that the superhydrophobic SA/ZnO/CF exhibited excellent mechanical robustness and environmental durability, due to the outstanding stability of hydrothermally synthesized micro/nanoscale hierarchical structures toward various extreme conditions as well as the strong adhesion between CF substrate and SA modified ZnO particles. With excellent mechanical robustness and environmental durability, the superhydrophobic SA/ZnO/CF could be used for durable and long-term application in oil/water separation even under some extreme conditions. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>In summary, an eco-friendly superhydrophobic cotton fabric with water contact angle of 155°was successfully prepared via a facile two-step approach of constructing rough surface via hydrothermal growth of ZnO nano/micro-particles followed by low energy modification with stearic acid. The superhydrophobic cotton fabric showed excellent oil/water separation performance. It could be used as an absorbent material to selectively absorb oils from their mixtures with water no matter the oils were above or under water. Furthermore, it could also be used as a filtering membrane to separate oil/water mixtures directly with separation efficiency of higher than 96% and flux in the range of 2000-9000 L m -2 h -1 , depending on the intrinsic property of oils. The superhydrophobic CF showed stable recyclability with separation efficiency keeping unchanged after reusing for several times. In addition, the superhydrophobic CF showed excellent mechanical robustness without losing superhydrophobicity after sandpaper abrasion for 50 times and ultrasonication in ethanol for 60 min, and it also exhibited excellent environmental durability with superhydrophobicity remaining unchanged after immersion in boiling water for 60 min or exposure to organic solvent erosion for 7 days. The superhydrophobic CF with excellent oil/water separation performance, mechanical robustness and environmental durability could be used as an eco-friendly alternative to traditional non-degradable or even toxic superhydrophobic materials for durable and long-term oil/water separation.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Schematic illustration for the fabrication of superhydrophobic cotton fabric</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 SEM images and water contact angle (WCA) of pristine CF (a), ZnO/CF (b, c), SA/ZnO/CF (d)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 EDS curves of pristine CF (a), ZnO/CF (b), SA/ZnO/CF (c) and the corresponding EDS elemental mapping images of ZnO/CF (d) and SA/ZnO/CF (e)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 The FT-IR spectra of the pristine CF, ZnO/CF and SA/ ZnO/CF</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Photograph of the oil droplet (dyed with Sudan red I) and water droplet (dyed with dispersed blue) on the surface of pristine CF (a) and the superhydrophobic SA/ZnO/CF (b); Photographs of absorbing oils (dyed with Sudan red I) from water: toluene (c) and chloroform (d). (Color figure online)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Photographs for separation of water mixtures with toluene (dyed with Sudan red I) (a) and water mixtures with chloroform (dyed with Sudan red I) (b) with the superhydrophobic SA/ZnO/CF as a filtering membrane. (Color figure online)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7</head><label>7</label><figDesc>Fig.7a Separation efficiency of the superhydrophobic SA/ ZnO/CF toward different oil/water mixtures and flux of different oils penetrating through the superhydrophobic SA/ZnO/CF and b separation efficiency of the superhydrophobic SA/ZnO/CF toward different toluene/water mixture for 10 times</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8 Photographs showing the process of sandpaper abrasion test (a), variation of WCA versus sandpaper abrasion cycle (b), variation of WCA with ultrasonication time (c) in ethanol and variation of WCA with boiling time (d) in water</figDesc><graphic type="bitmap"/></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgments This work was supported by the <rs type="funder">Opening Project of Beijing Key Laboratory of Quality Evaluation Technology for Hygiene and Safety of Plastics (Beijing Technology and Business University)</rs> (Grant No. <rs type="grantNumber">QETHSP2019001</rs>) and the <rs type="funder">Fundamental Research Funds for the Central Universities</rs> (<rs type="grantNumber">XDJK2017A016</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Nf9EWau">
+					<idno type="grant-number">QETHSP2019001</idno>
+				</org>
+				<org type="funding" xml:id="_N6kcDVa">
+					<idno type="grant-number">XDJK2017A016</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Aladpoosh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Montazer</surname></persName>
+					</author>
+					<title level="a">The role of cellulosic chains of cotton in biosynthesis of ZnO nanorods producing multifunctional properties: Mechanism, characterizations and features</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr Polym</title>
+					<imprint>
+						<biblScope unit="volume">126</biblScope>
+						<biblScope unit="page" from="122" to="129"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Bhadani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Iwabata</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Sakai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Koura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Sakai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Abe</surname></persName>
+					</author>
+					<title level="a">Sustainable oleic and stearic acid based biodegradable surfactants</title>
+				</analytic>
+				<monogr>
+					<title level="j">RSC Adv</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="10433" to="10442"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Bhushan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Jung</surname></persName>
+					</author>
+					<title level="a">Natural and biomimetic artificial surfaces for superhydrophobicity, self-cleaning, low adhesion, and drag reduction</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prog Mater Sci</title>
+					<imprint>
+						<biblScope unit="volume">56</biblScope>
+						<biblScope unit="page" from="1" to="108"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Caol</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">D</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Q</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Dai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Shen</surname></persName>
+					</author>
+					<title level="a">Lightweight, mechanical robust foam with a herringbone-like porous structure for oil/water separation and filtering</title>
+				</analytic>
+				<monogr>
+					<title level="j">Polym Test</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="page" from="86" to="93"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rana</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Ma</surname></persName>
+					</author>
+					<title level="a">Acid and temperature dual-responsive cotton fabrics with polymer coating</title>
+				</analytic>
+				<monogr>
+					<title level="j">Compos Commun</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="10" to="15"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">P</forename><surname>An</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Zeng</surname></persName>
+					</author>
+					<title level="a">Sustainable and Biodegradable Superhydrophobic Coating from Epoxidized Soybean Oil and ZnO Nanoparticles on Cellulosic Substrates for Efficient Oil/Water Separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page" from="11440" to="11450"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Guan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Zeng</surname></persName>
+					</author>
+					<title level="a">Cellulose nanocrystal coated cotton fabric with superhydrophobicity for efficient oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr Polym</title>
+					<imprint>
+						<biblScope unit="volume">199</biblScope>
+						<biblScope unit="page" from="390" to="396"/>
+						<date when="2018">2018a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Du</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Zeng</surname></persName>
+					</author>
+					<title level="a">Biobased super-hydrophobic coating on cotton fabric fabricated by spray-coating for efficient oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Polym Test</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="41" to="47"/>
+						<date when="2018b">2018b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Guan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jiang</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Zeng</surname></persName>
+					</author>
+					<title level="a">Robust and durable superhydrophobic cotton fabrics via a one-step solvothermal method for efficient oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cellulose</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="page" from="2861" to="2872"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Chu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Stefan</forename><surname>Seeger</surname></persName>
+					</author>
+					<title level="a">Oil/Water Separation with Selective Superantiwetting/Superwetting Surface Materials</title>
+				</analytic>
+				<monogr>
+					<title level="j">Angew Chem Int Ed</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="2328" to="2338"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Dai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">F</forename><surname>Tian</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Q</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">K</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Zhuang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">Z</forename><surname>Xie</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Fan</surname></persName>
+					</author>
+					<title level="a">TiO2-alginate composite aerogels as novel oil/water separation and wastewater remediation filters</title>
+				</analytic>
+				<monogr>
+					<title level="j">Compos Part B-Eng</title>
+					<imprint>
+						<biblScope unit="volume">160</biblScope>
+						<biblScope unit="page" from="480" to="487"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">L</forename><surname>Dong</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Gao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">X</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">K</forename><surname>Lai</surname></persName>
+					</author>
+					<title level="a">A self-roughened and biodegradable superhydrophobic coating with UV shielding, solar-induced self-healing and versatile oil–water separation ability</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="2122" to="2128"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">Q</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Zhu</surname></persName>
+					</author>
+					<title level="a">Super-Hydrophobic Surfaces: From Natural to Artificial</title>
+				</analytic>
+				<monogr>
+					<title level="j">Adv Mater</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="1857" to="1860"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">N</forename><surname>Gao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Gan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Amer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Rosenau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Lu</surname></persName>
+					</author>
+					<title level="a">Mussel Adhesive-Inspired Design of Superhydrophobic Nanofibrillated Cellulose Aerogels for Oil/Water Separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="9047" to="9055"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Ghobashy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Elhady</surname></persName>
+					</author>
+					<title level="a">Radiation crosslinked magnetized wax (PE/Fe3O4) nano composite for selective oil adsorption</title>
+				</analytic>
+				<monogr>
+					<title level="j">Compos Commun</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="18" to="22"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Gu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">W</forename><surname>Dai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Functionalization of Biodegradable PLA Nonwoven Fabric as Superoleophilic and Superhydrophobic Material for Efficient Oil Absorption and Oil/Water Separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Appl Mater Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="5968" to="5973"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>Wen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">B</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Guo</surname></persName>
+					</author>
+					<title level="a">Simple one-pot approach toward robust and boiling-water resistant superhydrophobic cotton fabric and the application in oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="21866" to="21874"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Gupta</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Dunderdale</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>England</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Hozumi</surname></persName>
+					</author>
+					<title level="a">Oil/water separation techniques: a review of recent progresses and future directions</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="16025" to="16058"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">H</forename><surname>Gao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Z</forename><surname>Wu</surname></persName>
+					</author>
+					<title level="a">Highly durable and robust superhydrophobic/superoleophilic cotton fabric with welldesigned roughness for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Fiber Polym</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="1522" to="1531"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Ge</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">N</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Xing</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Q</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Al-Deyab</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">K</forename><surname>Lai</surname></persName>
+					</author>
+					<title level="a">Robust superhydrophobic TiO2@fabrics for UV shielding, self-cleaning and oil–water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="2825" to="2832"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">X</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Full-biobased nanofiber membranes toward decontamination of wastewater containing multiple pollutants</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="11783" to="11792"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Kielbik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kaszewski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Rosowska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Wolska</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Witkowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gralak</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Gajewski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Godlewski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Godlewski</surname></persName>
+					</author>
+					<title level="a">Biodegradation of the ZnO: Eu nanoparticles in the tissues of adult mouse after alimentary application</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nanomed-Nanotechnol</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="843" to="852"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Lahiri</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Robust fluorinefree and self-healing superhydrophobic coatings by H 3 BO 3 incorporation with SiO 2 -Alkyl-Silane@PDMS on cotton fabric</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Appl Mater Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="10262" to="10275"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Yan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Zha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">T</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">Q</forename><surname>Lei</surname></persName>
+					</author>
+					<title level="a">One-step fabrication of robust fabrics with both-faced superhydrophobicity for the separation and capture of oil from water</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys Chem Chem Phys</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page">11112</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Cai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">N</forename><surname>Bai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Xu</surname></persName>
+					</author>
+					<title level="a">Intelligent self-healing superhydrophobic modification of cotton fabrics via surface-initiated ARGET ATRP of styrene</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem Eng J</title>
+					<imprint>
+						<biblScope unit="volume">323</biblScope>
+						<biblScope unit="page" from="134" to="142"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Q</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">Q</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Z</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">T</forename><surname>Lu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">The poly(vinyl alcohol-co-ethylene) nanofiber/silica coated composite membranes for oil/ water and oil-in-water emulsion separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Compos Commun</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="69" to="73"/>
+						<date when="2018a">2018a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">Z</forename><surname>Yin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Cai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Q</forename><surname>Tan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">X</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Fabrication of superhydrophobic and superoleophilic polybenzoxazinebased cotton fabric for oil-water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cellulose</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="6691" to="6704"/>
+						<date when="2018b">2018b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">Z</forename><surname>Yuan</surname></persName>
+					</author>
+					<title level="a">A hierarchical functionalized biodegradable PLA electrospun nanofibrous membrane with superhydrophobicity and antibacterial properties for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">New J Chem</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="17615" to="17624"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">L</forename><surname>Ma</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Fane</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Recent development of advanced materials with special wettability for selective oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Small</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="2186" to="2202"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Phanthong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Reubroycharoen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kongparakul</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Samart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">D</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">G</forename><surname>Hao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Abudula</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Q</forename><surname>Guan</surname></persName>
+					</author>
+					<title level="a">Fabrication and evaluation of nanocellulose sponge for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr Polym</title>
+					<imprint>
+						<biblScope unit="volume">190</biblScope>
+						<biblScope unit="page" from="184" to="189"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Samadi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Yazd</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Abdoli</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Jafari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Aliabadi</surname></persName>
+					</author>
+					<title level="a">Fabrication of novel chitosan/PAN/magnetic ZSM-5 zeolite coated sponges for absorption of oil from water surfaces</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Biol Macromol</title>
+					<imprint>
+						<biblScope unit="volume">105</biblScope>
+						<biblScope unit="page" from="370" to="376"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Sasaki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Tenjimbayashi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Manabe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Shiratori</surname></persName>
+					</author>
+					<title level="a">Asymmetric superhydrophobic/superhydrophilic cotton fabrics designed by spraying polymer and nanoparticles</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Appl Mater Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="651" to="659"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Shi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Gu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Biodegradable PLA nonwoven fabric with controllable wettability for efficient water purification and photocatalysis degradation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="2445" to="2452"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Singh</surname></persName>
+					</author>
+					<title level="a">Fabrication of durable superhydrophobic coatings on cotton fabrics with photocatalytic activity by fluorine-free chemical modification for dualfunctional water purification</title>
+				</analytic>
+				<monogr>
+					<title level="j">New J Chem</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="4618" to="4628"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Dai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">K</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Q</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">H</forename><surname>Guo</surname></persName>
+					</author>
+					<title level="a">Superhydrophobic shishkebab membrane with self-cleaning and oil/water separation properties</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="9866" to="9875"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Liang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Biomimetic superlyophobic and super-lyophilic materials applied for oil/ water separation: a new strategy beyond nature</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem Soc Rev</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="336" to="361"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">L</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Liang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">H</forename><surname>Geng</surname></persName>
+					</author>
+					<title level="a">Hydrothermal fabrication of robustly superhydrophobic cotton fibers for efficient separation of oil/water mixtures and oil-in-water emulsions</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Ind Eng Chem</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="174" to="183"/>
+						<date when="2017a">2017a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">Q</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Highly efficient separation of oil layer in water and capture of oil droplets in oil-in-water emulsions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ind Crop Prod</title>
+					<imprint>
+						<biblScope unit="volume">108</biblScope>
+						<biblScope unit="page" from="303" to="311"/>
+						<date when="2017b">2017b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Lian</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Q</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Dai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">H</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Shen</surname></persName>
+					</author>
+					<title level="a">Continuous fabrication of polymer microfiber bundles with interconnected microchannels for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Mater Today</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="77" to="81"/>
+						<date when="2017c">2017c</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">X</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Reusable and recyclable superhydrophilic electrospun nanofibrous membranes with in situ co-cross-linked polymer-chitin nanowhisker network for robust oil-in-water emulsion separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Sustain Chem Eng</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="1753" to="1762"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Novel dual superlyophobic materials in water-oil systems: under oil magneto-fluid transportation and oil-water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="2935" to="2941"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">X</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">G</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Lin</surname></persName>
+					</author>
+					<title level="a">A superamphiphobic coating with an ammonia-triggered transition to superhydrophilic and superoleophobic for oil-water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Angew Chem Int Ed</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="4527" to="4530"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">L</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Surface modification with hierarchical CuO arrays toward a flexible, durable superhydrophobic and self-cleaning material</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem Eng J</title>
+					<imprint>
+						<biblScope unit="volume">313</biblScope>
+						<biblScope unit="page" from="1328" to="1334"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">X</forename><surname>Xue</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">X</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">N</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Tao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wei</surname></persName>
+					</author>
+					<title level="a">Superoleophilic and superhydrophobic biodegradable material with porous structures for oil absorption and oil-water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">RSC Adv</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="23432" to="23437"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">X</forename><surname>Xue</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Jiang</surname></persName>
+					</author>
+					<title level="a">Special wettable materials for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page" from="2445" to="2460"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Xue</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Q</forename><surname>Fan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">F</forename><surname>An</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Jia</surname></persName>
+					</author>
+					<title level="a">Fabrication of superhydrophobic cotton fabrics by grafting of POSSbased polymers on fibers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Surf Sci</title>
+					<imprint>
+						<biblScope unit="volume">465</biblScope>
+						<biblScope unit="page" from="241" to="248"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>X</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Luo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Tan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhou</surname></persName>
+					</author>
+					<title level="a">Hydrophobically modified chitin/halloysite nanotubes composite sponges for high efficiency oil-water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Biol Macromol</title>
+					<imprint>
+						<biblScope unit="volume">132</biblScope>
+						<biblScope unit="page" from="406" to="415"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">Z</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">T</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Men</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Ge</surname></persName>
+					</author>
+					<title level="a">Robust and durable superhydrophobic cotton fabrics for oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Appl Mater Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="7208" to="7214"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">D</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Hou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">F</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cheng</surname></persName>
+					</author>
+					<title level="a">Nature-inspired strategy toward superhydrophobic fabrics for versatile oil/water separation</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACS Appl Mater Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="9184" to="9194"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Zou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Tu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Miao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Luo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Hou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Hu</surname></persName>
+					</author>
+					<title level="a">Simple approach towards fabrication of highly durable and robust superhydrophobic cotton fabric from functional diblock copolymer</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mater Chem A</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="page" from="11246" to="11260"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

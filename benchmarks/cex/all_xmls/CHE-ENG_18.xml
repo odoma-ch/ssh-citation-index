@@ -1,0 +1,2188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Chiral salen Cr(III) complexes encapsulated in thermo-responsive polymer nanoreactors for asymmetric epoxidation of alkenes in water †</title>
+				<funder>
+					<orgName type="full">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+				</funder>
+				<funder ref="#_yQfdVuj">
+					<orgName type="full">Natural Science Foundation of Hunan</orgName>
+				</funder>
+				<funder ref="#_qmXZ6ey #_Rtxs7pp">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Royal Society of Chemistry</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-09-04">04 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Weiying</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+									<settlement>Changsha</settlement>
+									<postcode>410081</postcode>
+									<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Chaoping</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+								<settlement>Changsha</settlement>
+<postcode>410081</postcode>
+<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yibing</forename><surname>Pi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+								<settlement>Changsha</settlement>
+<postcode>410081</postcode>
+<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jiajun</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+								<settlement>Changsha</settlement>
+<postcode>410081</postcode>
+<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rong</forename><surname>Tan</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+								<settlement>Changsha</settlement>
+<postcode>410081</postcode>
+<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Donghong</forename><surname>Yin</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">National &amp; Local Joint Engineering Laboratory for New Petro-chemical Materials and Fine Utilization of Resources</orgName>
+								<orgName type="laboratory">Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research</orgName>
+								<orgName type="laboratory" subtype="provincial">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</orgName>
+								<orgName type="institution">Hunan Normal University</orgName>
+								<address>
+								<settlement>Changsha</settlement>
+<postcode>410081</postcode>
+<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						
+						<title level="a" type="main">Chiral salen Cr(III) complexes encapsulated in thermo-responsive polymer nanoreactors for asymmetric epoxidation of alkenes in water †</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">2044-4753</idno>
+						<title level="j" type="main">Catalysis Science &amp; Technology</title>
+						<title level="j" type="abbr">Catal. Sci. Technol.</title>
+						<imprint>
+							<biblScope unit="volume">9</biblScope>
+							<biblScope unit="issue">20</biblScope>
+							<biblScope unit="page" from="5626" to="5635"/>
+							<date type="published" when="2019-09-04">04 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">D0E52284E93BCC871D3AD115FDFD126A</idno>
+					<idno type="DOI">10.1039/c9cy01398a</idno>
+					<note type="submission">Received 15th July 2019, Accepted 3rd September 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Chiral salen Cr(III) (Cr(salen)) complexes were encapsulated in thermo-responsive polymer nanoreactors through folding an amphiphilic random copolymer of poly(N-isopropylacrylamide-co-IL/Cr(salen))</p><p>(poly(NIPAAM-co-IL/Cr(salen)) around Cr(salen) in water. The resulting catalytic nanoreactors exhibited several advantages over the traditional Cr(salen) system for asymmetric epoxidation of alkenes in water. First, they were dispersed in water, behaving as a quasi-homogeneous catalyst for the aqueous asymmetric epoxidation. Second, they effectively sequestered substrates from the surrounding environment, creating a highly concentrated environment for efficient catalysis. Third, water was excluded from the nanoreactor, minimizing the undesired hydrolysis of epoxides. As a result, the compartmentalized catalysts mediated aqueous asymmetric epoxidation with unprecedented yields (92-95%) and enantioselectivities (ee, 92-99%), whereas the traditional Cr(salen) catalyst was far less efficient (4-12% yield and 29-44% ee). Moreover, the catalytic nanoreactor could be facilely recovered for reuse by thermo-controlled separation. This work highlighted the potential of using folded polymers as a platform for developing highly efficient catalytic nanoreactors for a number of important organic transformations in water.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Asymmetric epoxidation of unfunctionalized alkenes is of great importance in organic synthesis, since the obtained enantiopure epoxides are valuable chiral building blocks for the synthesis of fine chemicals. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b1">2</ref> Various catalysts, especially chiral metallosalen complexes, have been developed for this transformation. <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> For example, Jacobsen and Katsuki pioneered the catalytic asymmetric epoxidation of unfunctionalized alkenes based on chiral salen Mn(III) complexes. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b3">4</ref> Although highly efficient, the Mn(salen) systems often exhibit low ee values due to free C-C bond rotation around the C-O bond in the radical intermediate. Gilheany et al. realized highly enantioselective epoxidation of unfunctionalized alkenes by using chiral salen Cr(III) complexes as catalysts in acetonitrile. <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b10">11</ref> Different from Mn(salen) systems, the Cr(salen) catalyzed asymmetric epoxidation via a ring-type metallaoxetane intermediate, which limited the epimerization of chiral epoxides (free rotation about the C-C bond before C-O ring closing), and thus enhanced the enantioselectivity. <ref type="bibr" target="#b10">11</ref> Unfortunately, industrial application was also limited to the use of acetonitrile as a solvent which often results in environmental problems. Chemical conversion in water is of growing interest to chemists because water is inexpensive, safe and environmentally benign, <ref type="bibr" target="#b11">12</ref> while to the best of our knowledge, few reports have focused on efficiently performing the Cr(salen)-catalyzed asymmetric epoxidation in water because of the insolubility of the substrate and the catalyst. Furthermore, hydrolysis of the produced epoxides in the presence of Cr(salen) was inevitable in aqueous systems, <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b12">13</ref> which diminished the selectivity to chiral epoxides. The problems should be solved by trapping the chiral salen Cr(III) complex in the compartmentalized hydrophobic cavity which was protected by a hydrophilic shell. The catalytic compartment may behave as a catalytic nanoreactor, concentrating reagents from the surrounding environment through hydrophobic affinity for efficient catalysis, while the hydrophilic shell made the catalytic nanoreactor compatible in water. <ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15</ref> Furthermore, water should be readily excreted off the catalytic, hydrophobic cavity, which minimized the undesired Cr(salen)-catalyzed hydrolysis of epoxides.</p><p>Folding an amphiphilic random copolymer around the catalytic site provided a feasible approach to construct the structured inner compartment with a catalytic, hydrophobic core surrounded by a hydrophilic shell. <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref> Intramolecular hydrophobic interaction is one of the most important driven forces to trigger the self-folding of amphiphilic random copolymers into a well-defined compartmentalized architecture in water. We thus decided to incorporate the chiral salen Cr(III) complex as the hydrophobic block of an amphiphilic random copolymer. The incorporated Cr(salen) complexes do not only impart the desired catalytic function to the polymeric architecture but additionally operate as structure-forming elements, inducing the single-chain folding of the amphiphilic random copolymer precursor in water. The polymeric backbone can thus form polymeric pockets around the catalytic Cr(salen) centers, resulting in the structured inner compartment with a hydrophobic Cr(salen) core surrounded by a hydrophilic shell. The catalytic compartment may act as the catalytic nanoreactor to accommodate the asymmetric epoxidation of alkenes in water. However, the bulky polymer matrix inevitably increased local steric hindrance around Cr(salen), which prevented all complexes from adopting their preferred "stepped" conformation (Chart <ref type="figure" target="fig_0">1</ref>) in the confined space. <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b22">23</ref> An imidazolium-based ionic liquid (IL) was thus introduced between Cr(salen) and the polymer backbone. In addition to ensuring the necessary conformational freedom of Cr(salen), such an IL moiety encapsulated in the compartment along with Cr(salen) also stabilized the formed metallosalen active intermediates, thereby further enhancing the catalytic efficiency of the chiral salen Cr(III) catalyst. Unfortunately, the watersoluble compartment is often difficult to recover from water for reuse. If the compartment is thermo-responsive, being able to undergo a hydrophilic-to-hydrophobic switch at its lower critical solution temperature (LCST), <ref type="bibr" target="#b23">24</ref> facile recovery of the catalytic nanoreactor could be realized.</p><p>Herein, NIPAAm, which underwent hydrophilic-tohydrophobic switching at its LCST, <ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b25">26</ref> was employed as the switching block to copolymerize with vinyl-modified IL/ Cr(salen) via reversible addition-fragmentation chain transfer polymerization (RAFT). <ref type="bibr" target="#b26">27</ref> The resulting thermo-responsive random copolymers of poly(NIPAAm-co-IL/Cr(salen)) exhibited LCST behaviors and underwent thermo-switchable single-chain folding in water. At room temperature, they were amphiphilic and folded around the Cr(salen) units in water through intramolecular hydrophobic interactions, forming water-soluble single-chain polymeric nanoparticles (SCPNs) with an ILmodified hydrophobic Cr(salen) interior and a hydrophilic NIPAAm shell. The SCPNs provided a hydrophobic compartmentalization to encapsulate Cr(salen) species and concentrate reactants in water, dramatically accelerating the aqueous asymmetric epoxidation of alkene in water. Unprecedented yields (92-95%) to corresponding (R,R)-epoxides with excellent ee values (92-99%) were observed for a wide range of alkenes, whereas the neat complex was far less efficient (4-12% yield and 29-44% ee value). The catalytic efficiency, especially selectivity, represented the best results so far in asymmetric epoxidation based on metallosalen systems. Upon heating above their corresponding LCST, the catalytic nanoreactor became hydrophobic and could be facilely recovered from the aqueous system for steady reuse.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and reagents</head><p>Racemic cyclohexanediamine and L-(+) tartaric acid were purchased from MACKLIN. Vinylimidazole and chromium dichloride were obtained from Alfa Aesar. AIBN and NIPAAm were purchased from Aldrich. β-Methylstyrene, 1,2-dihydronaphthalene, trans-stilbene, styrene, indene and 1,3-cyclohexadiene were bought from J&amp;K. Other commercially available chemicals were purchased from local suppliers. 3-tert-Butyl-5-chloromethyl-2hydroxybenzaldehyde and the chiral salen ligand of (R,R′)-N-(3,5-di-tert-butylsalicylidene)-N′-[3-tert-butyl-5-vinyl]-1,2-cyclohexanediamine (CL) were synthesized as described earlier. <ref type="bibr" target="#b27">28</ref> (R, R')-N-(3,5-Di-tert-butylsalicylidene)-1,2-cyclo-hexanediamine hydrochloride was synthesized according to a reported procedure. <ref type="bibr" target="#b28">29</ref> The traditional chiral ((R,R′)-salen)Cr III Cl complex (denoted as neat-C, as shown in Chart <ref type="figure" target="fig_0">1</ref>) was synthesized according to previous literature. <ref type="bibr" target="#b9">10</ref></p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>FT-IR spectra were obtained as potassium bromide pellets with a resolution of 4 cm -1 and 64 scans in the range 400-4000 cm -1 using an AVATAR 370 Thermo Nicolet spectrophotometer. NMR spectra of products were recorded on a BRUKER AVANCE-500 spectrometer with TMS as an internal standard. TEM images were obtained on a Tecnai F20 microscope at an accelerating voltage of 200 kV. Samples were prepared by depositing the aqueous solution (0.5 mg mL -1 ) onto an ultrathin carbon-coated copper grid, followed by removal of excess solution by blotting the grid with filter paper. The samples were dried for 72 h at room temperature in desiccators and were negatively stained by phosphotungstic acid. The molecular weight and molecular-weight distribution of the copolymers were obtained by gel permeation chromatography (GPC). Analyses were performed on an Alltech Instrument (Alltech, America) using THF as the solvent eluting at a flow of 1 mL min -1 through a Jordi GPC 10000 A column (300 mm × 7.8 mm) equipped with an Alltech ELSD 800 detector. The system was calibrated with standard polystyrene. The detection temperature is 40 °C and the column temperature is 30 °C. DLS was performed using a ZS90 laser particle size analyzer (Malvern, UK). The aqueous solution of samples (0.5 M) was filtered through a 0.45 μm disposable polyamide membrane to free it from dust particles before measurement. The chromium contents in the catalysts were determined by inductively coupled plasma mass spectrometry (ICP-MS) on a NexION 300X analyzer (Perkin-Elmer Corp.). Elemental analyses of C, H and N were carried out on a Vario EL III Elemental analyser made in Germany. The optical rotation of samples was measured in dichloromethane on a WZZ-2A Automatic Polarimeter. The LCST of copolymers in water was determined by measuring the transmittance of the corresponding aqueous solution (0.5 M) using a UV-visible photometer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preparation of poly(NIPAAm-co-IL/Cr(salen)) (denoted as PN x (IL-C) y , x = 60, y = 8; x = 80, y = 5; x = 84, y = 3; x = 90, y = 2, where x and y represent the numbers of NIPAAm and IL/ Cr(salen) units, respectively)</head><p>The synthesis of PN x (IL-C) y (x = 60, y = 8; x = 80, y = 5; x = 84, y = 3; x = 90, y = 2) is outlined in Scheme <ref type="figure" target="fig_1">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Synthesis of IL-modified salicylaldehyde (A).</head><p>Vinyl imidazole (5.0 mmol, 0.47 g) in toluene (25 mL) was mixed with 3-tert-butyl-5-chloromethyl-2-hydroxy-benzaldehyde (5.0 mmol, 1.13 g) in toluene (25 mL) under an argon atmosphere. The mixture was refluxed for 48 h and then concentrated in vacuum. The crude product was washed with ethyl acetate (15 × 3 mL) to remove the unreacted 1-vinyl imidazole and 3-tertbutyl-5-chloromethyl-2-hydroxy-benzaldehyde. After being dried in vacuo, compound A was obtained as a yellow oily liquid (1.45 g, yield: 90%). Calc. for (C17H24N2O2Cl): C: 61.83, H: 7.46, N: 9.01%. Found: C: 61.85, H: 7.47, N: 9.00%. FT-IR (KBr):  = 3030, 2954, 2797, 1651, 1542, 1364, 1189, 1068, 959, 844, 620, 598 cm−1. 1H NMR (500 MHz, CDCl3): δ = 9.87 (s, 1 H, CHO), 7.80–7.58 (s, 2 H, ArH), 5.93 (m, 1 H, CH2CH), 5.71 (s, 2 H, N–CH2–N), 5.36 (m, 2 H, CH2CH), 5.19 (s, 1 H, Ar–OH), 4.45 (s, 2 H, Ar–CH2–N), 3.57 (m, 4 H, N–CH2–CH2–N), 1.24 ppm (m, 9 H, CH3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Synthesis of IL/Cr(salen).</head> <p>The obtained A (5 mmol, 1.5 g) dissolved in ethanol (25 mL) was added dropwise to a solution of (R,R')-N-(3,5-di-tert-butylsalicylidene)-1,2-cyclo-hexanediamine hydrochloride (5 mmol, 1.8 g) in ethanol (25 mL) followed by the addition of triethylamine (9 mmol, 1.3 mL). The mixture was stirred at room temperature for 4 h. After the removal of the solvent in vacuo, the residue was dissolved in tetrahydrofuran (25 mL). A solution of CrCl 2 (5 mmol, 0.61 g) in tetrahydrofuran (25 mL) was added dropwise. The mixture was stirred for 24 h at room temperature under an argon atmosphere and then was further oxidized under air for 24 h. The solution was poured into dichloromethane (25 mL). The mixture was washed with a saturated aqueous solution of NH 4 Cl (15 × 3 mL) and a saturated aqueous solution of NaCl (15 × 3 mL) to remove the unreacted CrCl 2 . The organic layer was dried over anhydrous Na 2 SO 4 and concentrated. After being dried in vacuo, IL/Cr(salen) was obtained as a brown solid (3.13 g, yield: 87%). Calc. for (C38H54N4O2CrCl2): C: 63.23, H: 7.54, N: 7.76%. Found: C: 63.24, H: 7.53, N: 7.78%. FT-IR (KBr):  = 3441, 2924, 2856, 1622, 1531, 1461, 1319, 1254, 1167, 1136, 1093, 1032, 920, 843, 812, 790, 627, 624, 551 cm−1.</p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Synthesis of PN x (IL-C) y.</head> <p>A certain feed molar ratio of IL/ Cr(salen) and NIPAAm (10 mmol of NIPAAm and 1.43 mmol of IL/Cr(salen) for PN 60 (IL-C) 8 , 10 mmol of NIPAAm and 0.67 mmol of IL/Cr(salen) for PN 80 (IL-C) 5 , 10 mmol of NIPAAm and 0.4 mmol of IL/Cr(salen) for PN 84 (IL-C) 3 , 10 mmol of NIPAAm and 0.29 mmol of IL/Cr(salen) for PN 90 (IL-C) 2 ) were dissolved in anhydrous methanol (15 mL) in a Schlenk tube. 2-Aminoethanethiol hydrochloride (DABE, 1 mmol, 0.196 g) was used as the chain transfer reagent for this copolymerization. N,N′-Azobis(isobutyronitrile) (AIBN, 0.5 mmol, 0.082 g) as the radical initiator was then added into the solutions. After being degassed by bubbling with argon, the reaction was carried out at 60 °C for 24 h under an argon atmosphere. The solution was cooled with liquid nitrogen to stop the reaction and then was concentrated in vacuo. The crude products were dissolved in tetrahydrofuran (5 mL) and subsequently precipitated three times in 100 mL of diethyl ether. After being dried in vacuo, the copolymers were obtained as a yellowishbrown powder, which were denoted as PN x (IL-C) y (x and y represent the number of NIPAAm and IL/Cr(salen) units, respectively, which were calculated from their M n and the corresponding chromium contents). PN 60 (IL-C)8 (1.76 g, yield: 75%): FT-IR (KBr):  = 3411, 3274, 3057, 2966, 2940, 2868, 1630, 1538, 1453, 1375, 1361, 1244, 1165, 1126, 1087, 1021, 910, 835, 806, 785, 628, 621, 549 cm−1. GPC (THF): Mn = 12 782, Mw = 15 678, PDI (Mw/Mn) = 1.23. αD 25 = −13.4 (C = 0.005 g mL−1, CH2Cl2). Chromium content: 0.64 mmol g−1. PN80(IL-C)5 (1.53 g, yield: 85%): FT-IR (KBr):  = 3425, 3287, 3064, 2966, 2926, 2875, 1643, 1538, 1453, 1394, 1348, 1237, 1152, 1119, 1080, 1041, 929, 831, 804, 765, 648, 621, 556 cm−1. GPC (THF): Mn = 12 317, Mw = 13 480, PDI (Mw/Mn) = 1.09. αD 25 = −14.5 (C = 0.005 g mL , CH2Cl2). Chromium content: 0.39 mmol g . PN84(IL-C)3 (1.36 g, yield: 84%): FT-IR (KBr):  = 3429, 3294, 3075, 2979, 2933, 2881, 1643, 1538, 1453, 1375, 1322, 1263, 1165, 1126, 1093, 1053, 929, 835, 811, 772, 654, 620, 567 cm−1. GPC (THF): Mn = 12 113, Mw =
+12 759, PDI (Mw/Mn) = 1.05. αD 25 = −14.7 (C = 0.005 g mL , CH2Cl2). Chromium content: 0.25 mmol.g . PN90(IL-C)2 (1.27 g, yield: 82%): FT-IR (KBr):  = 3425, 3306, 3071, 2972, 2933, 2875, 1649, 1531, 1453, 1394, 1354, 1244, 1158, 1119, 1099, 1027, 922, 844, 818, 779, 634, 621, 562 cm−1. GPC (THF): Mn = 11 926, Mw = 12 518, PDI (Mw/Mn) = 1.05. αD 25 = −12.6 (C = 0.005 g mL−1, CH2Cl2). Chromium content: 0.17 mmol g−1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preparation of PN 84 C 3</head><p>To evaluate the function of the IL linker, a random copolymer analog of the IL-free counterpart of PN 84 C 3 in which the Cr(salen) unit was directly anchored on the polymer backbone, was prepared as a control catalyst. The preparation procedure was similar to that of PN 84 (IL-C) 3 , except for using vinyl-Cr(salen) instead of IL/Cr(salen) to copolymerize with NIPAAm, as shown in Scheme <ref type="figure" target="fig_2">2</ref>. PN 84 C 3 was obtained as a yellowish-brown powder (where the repeating number of NIPAAm units was 84, and the repeating number of Cr(salen) units was 3, as calculated from its M n and chromium content (1.27 g, yield: 81%). FT-IR (KBr):  = 3429, 3294, 3075, 2960, 2940, 2861, 1641, 1525, 1460, 1375, 1329, 1237, 1172, 1132, 1060, 968, 922, 877, 842, 792, 707, 667, 567 cm−1. GPC (THF): Mn = 12 887, Mw = 14 858, PDI (Mw/Mn) = 1.15. αD 25 = −11.5 (C = 0.005 g mL−1, CH2Cl2). Chromium content: 0.31 mmol g−1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>General procedure for asymmetric epoxidation of alkenes in water</head><p>The selected catalyst (0.5 mol% of substrate based on the chromium content) and PhI(OAc) 2 (0.625 mmol, 0.20 g) were stirred in water (1.0 mL) for 30 min at 25 °C. The solution was initially dark green, and then became orange-yellow. Unfunctionalized alkene (0.25 mmol) was then added. The resulting mixture was stirred at room temperature until the reaction was judged to be complete based on TLC analysis. The reaction mixture was then heated to above 54 °C and held at this temperature for 5 min to make the catalyst completely precipitate from the aqueous system. The separated catalyst was washed with n-hexane (3 × 5.0 mL) and dried at room temperature in vacuum. The reaction solution was extracted with dichloromethane (3 × 0.5 mL). Notably, this extraction process was expected in large-scale industrial processes, in which the oily product phase could be directly separated from water. The combined organic phase was dried with anhydrous Na 2 SO 4 . After the evaporation of the solvent, the residue was further purified by column chromatography on silica gel (Acros, 40-60 μm, 60 Å, eluent: petroleum ether/ ethyl acetate = 5/1 (v/v)) to afford the pure chiral epoxides. All products were identified by 1 H NMR spectroscopy. Conversions and ee values of corresponding chiral epoxides were determined using a 6890 N gas chromatograph (Agilent Co.) equipped with a capillary column (HP19091G-B213, 30 m × 0.32 mm × 0.25 μm) and a FID detector using n-decane as an internal standard. Detailed NMR spectroscopy and GC analysis for corresponding chiral epoxides are available in the ESI. †</p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>β-Methylstyrene epoxide.</head><p>Yield: 92%; ee value: 94%, determined by GC using nitrogen as the carrier gas at a gas flow rate of 30 mL min -1 , an injector temperature and a detector temperature of 250 °C, and a column temperature of 100 °C. Major enantiomer: t R,R = 13.4 min, minor enantiomer t S,S = 12.8 min. 1 H NMR (500 MHz, CDCl3): δ = 7.2 (s, 5 H, ArH), 5.3 (m, 1 H, Ar–CH), 4.1 (m, 1 H, CH–CH–CH3), 2.3 ppm (m, 3 H, CH–CH3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>trans-Stilbene epoxide.</head> <p>Yield: 93%; ee value: 92%, determined by GC using nitrogen as the carrier gas at a gas flow rate of 30 mL min -1 , an injector temperature and a detector temperature of 250 °C, and a column temperature of 100 °C. Major enantiomer: t R,R = 26.1 min, minor enantiomer t S,S = 25.0 min. 1 H NMR (500 MHz, CDCl 3 ): δ = 7.3 (m, 10 H, ArH), 3.9 ppm (s, 2 H, Ar-CH-CH-Ar).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Styrene epoxide.</head><p>Yield: 93%; ee value: 99%, determined by GC using nitrogen as the carrier gas at a gas flow rate of 30 mL min -1 , an injector temperature and a detector temperature of 250 °C, and a column temperature of 100 °C. Major enantiomer: t R,R = 8.2 min, minor enantiomer: t S,S = 7.9 min. 1 H NMR (500 MHz, CDCl 3 ): δ = 7.3 (m, 5 H, ArH), 3.9 (m, 1 H, Ar–CH), 3.1 (m, 1 H, CH–CH2), 2.8 ppm (m, 1 H, CH–CH2).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Indene epoxide.</head><p>Yield: 94%; ee value: 94%, determined by GC using nitrogen as the carrier gas at a gas flow rate of 30 mL min -1 , an injector temperature and a detector temperature of 250 °C. The column temperature was programmed from 80 to 180 °C at a rate of 5 °C min -1 . Major enantiomer: t R,R = 12.9 min, minor enantiomer: t S,S = 12.2 min. 1 H NMR (500 MHz, CDCl 3 ): δ = 7.2 (m, 4 H, ArH), 4.0 (m, 2 H, Ar-CH-CH-CH 2 ), 2.3 ppm (m, 2 H, Ar-CH 2 ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1,2-Dihydronaphthalene epoxide.</head><p>Yield: 95%; ee value: 93%, determined by GC using nitrogen as the carrier gas at a gas flow rate of 30 mL min -1 , an injector temperature and a detector temperature of 250 °C. The column temperature was programmed from 80 to 180 °C at a rate of 5 °C min -1 . Major enantiomer: t R,R = 24.3 min, minor enantiomer: t S,S = 23.4 min. 1 H NMR (500 MHz, CDCl3): δ = 7.1 (m, 4 H, ArH), 4.1 (m, 1 H, Ar–CH–CH), 3.7 (m, 1 H, CH–CH–CH2), 2.8 (m, 2 H, Ar–CH2), 2.3 ppm (m, 2 H, CH2–CH2–CH).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Asymmetric epoxidation of β-methylstyrene for kinetic measurement</head><p>The catalyst (0.5 mol% of substrate based on chromium content) and PhI(OAc) 2 (0.625 mmol, 0.20 g) were stirred in water (1 mL) for 30 min at 25 °C. β-Methylstyrene (0.25 mmol, 0.03 g) was then added. Aliquots were taken from the reaction mixture every 5 min. The reaction solution was extracted with CH 2 Cl 2 (3 × 0.5 mL). The combined organic phase was dried with anhydrous Na 2 SO 4 . The products were purified by silica gel column chromatography (petroleum ether/ethyl acetate = 5/1 (v/v)) and analyzed by GC. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results and discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preparation of catalysts</head><p>In nature, enzymes carry out highly enantioselective reactions in aqueous bioenvironments within small hydrophobic pockets. <ref type="bibr" target="#b29">30</ref> Numerous synthetic systems have been designed to mimic the natural ones, from single-molecule catalytic species <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref> to compartment-forming ones, <ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b34">35</ref> in which catalytic functionalities have been introduced to yield highly efficient nanoreactors. An enhancement in catalytic activity is often observed in these systems as a result of the concentrated organic substrates within the hydrophobic cavity. The fascinating features inspired us to encapsulate the chiral salen Cr(III) complex in a compartmentalized hydrophobic cavity to yield a catalytic nanoreactor for confined catalysis of asymmetric epoxidation of alkenes in water. Folding a Cr(salen)containing amphiphilic random copolymer around the catalytic Cr(salen) site provided a feasible approach to construct the structured inner compartment with a hydrophobic Cr(salen) core surrounded by a hydrophilic shell. <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref> We thus decided to copolymerize the hydrophobic Cr(salen) monomer with NIPAAm to prepare the Cr(salen)-containing amphiphilic random copolymer for this fabrication. The hydrophobic Cr(salen) moiety not only imparted the desired catalytic function to the polymeric architecture but also operated as a structure-forming element for the single-chain folding. Thermo-sensitive PNIPAAm was used as the switching block to control the self-folding behavior of the copolymers in water and ensured the recovery of the catalytic nanoreactors in a temperature-controllable way.</p><p>PN x (IL-C) y copolymers were synthesized according to the process illustrated in Scheme <ref type="figure" target="fig_1">1</ref>. Vinylimidazole IL-modified salicylaldehyde (compound A) was synthesized through N-alkylation of vinylimidazole with the benzyl chloride group in 3-tert-butyl-5-chloromethyl-2-hydroxybenzaldehyde. Condensation of compound A with (R,R′)-N-(3,5-di-tert-butylsalicylidene)-1,2-cyclo-hexanediamine hydrochloride together with the following CrCl 2 treatment gave a vinylimidazolium IL-modified chiral salen Cr(III) complex (IL/Cr(salen)). The IL/Cr(salen), featuring a vinylimidazolium IL on the 5′-position of the chiral salen Cr(III) complex, was copolymerized with NIPAAm through RAFT by using AIBN as the radical initiator and DABE as the chain transfer agent, providing thermo-responsive, random copolymers of PN x (IL-C) y . The x and y represent the repeating unit numbers of NIPAAm and IL/Cr(salen), respectively, which could be conveniently controlled by adjusting the feed ratios of the monomers during the copolymerization.</p><p>For comparison, an IL-free counterpart of PN 84 C 3 , where multiple chiral salen Cr(III) complexes were directly appended on the polymer backbone, was prepared as a control catalyst. (R,R′)-N-(3,5-Di-tert-butylsalicylidene)-N′-[3-tert-butyl-5-vinyl]-1,2-cyclohexanediamine (CL) was treated with CrCl 2 , giving vinyl-Cr(salen). Copolymerization of the hydrophobic vinyl-Cr(salen) monomer with thermo-sensitive NIPAAm through RAFT provided the thermo-responsive, random copolymer of PN 84 C 3 , as shown in Scheme <ref type="figure" target="fig_2">2</ref>.</p><p>The number-average molecular weight (M n ) and weightaverage molecular weight (M w ) of the obtained copolymers were determined by GPC (Table <ref type="table" target="#tab_0">1</ref>). Low polydispersity index (PDI) values that ranged from 1.05 to 1.50 suggested good control of the molecular weight distribution. The polymerization degree of copolymers was calculated from their M n and the corresponding chromium content determined by ICP-MS (Table <ref type="table" target="#tab_0">1</ref>).</p><p>As expected, the thermo-responsive PNIPAAm block endowed the PN x (IL-C) y with switchable temperature-dependent water solubility. The copolymers were soluble in water at room temperature, giving clear aqueous solutions (Fig. <ref type="figure" target="#fig_3">1c-f</ref>), although neat-C was practically water-insoluble (Fig. <ref type="figure" target="#fig_3">1a</ref>). As the local temperature was increased, the aqueous solutions became turbid, as shown by the typical PN 84 (IL-C) 3 (Fig. <ref type="figure" target="#fig_3">1e′</ref>). This suggested a transformation from the amphiphilic to the hydrophobic state at this temperature range. Indeed, the PN x (IL-C) y copolymers were finally completely precipitated out of water, as shown by the typical PN 84 (IL-C) 3 (Fig. <ref type="figure" target="#fig_3">1e″</ref>). The IL moiety did not affect the water solubility of PN x (IL-C) y since PN 84 C 3 also dissolved in water (Fig. <ref type="figure" target="#fig_3">1b</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Characterization of samples</head><p>LCST. UV-vis spectroscopy was used to further determine the LCST of the corresponding PN x (IL-C) y copolymers (Fig. <ref type="figure" target="#fig_4">2</ref>). PN 60 (IL-C) 8 was well soluble in water, giving clear aqueous solution at temperatures below 45 °C (Fig. <ref type="figure" target="#fig_4">2A</ref>). When the local temperature was raised to 45 °C, the aqueous solution became turbid, and transmittance decreased dramatically (Fig. <ref type="figure" target="#fig_4">2A</ref>). This suggested the hydrophobic state of PN 60 (IL-C) 8 at this temperature range. Therefore, the LCST of PN 60 (IL-C) 8 was determined as ca. 45 °C. Varying the molar ratios of NIPAAm to IL/Cr(salen) changed the hydrophilic-lipophilic balance of PN x (IL-C) y and hence tuned the LCST. Their LCST increased with decreasing the content of hydrophobic IL/ Cr(salen) block accordingly. PN 80 (IL-C) 5 , PN 84 (IL-C) 3 and PN 90 (IL-C) 2 exhibited LCSTs of about 48, 50 and 54 °C, respectively (Fig. <ref type="figure" target="#fig_4">2A</ref>). PN 84 C 3 exhibited an LCST (ca. 29 °C) much lower than those of PN x (IL-C) y probably due to the absence of the highly polar IL moiety (Fig. <ref type="figure" target="#fig_4">2A</ref>). <ref type="bibr" target="#b39">40</ref> Notably, the LCSTs for all copolymers were higher than room temperature (25 °C), suggesting that all copolymers were amphiphilic at room temperature. It was desirable for folding these copolymers in water to create catalytic nanoreactors. When the temperature was heated to above their corresponding LCSTs, the PN x (IL-C) y copolymers became hydrophobic and were finally precipitated out of water. The water solubility switch could be reversibly repeated several times by controlling the local temperature, as shown by the typical PN 84 (IL-C) 3 (Fig. <ref type="figure" target="#fig_4">2B</ref>).</p><p>TEM. TEM confirmed the self-folding behavior of PN x (IL-C) y in water at room temperature, as shown in Fig. <ref type="figure" target="#fig_5">3</ref>. As expected, PN x (IL-C) y coiled into uniform, spherical nanoparticles with an average size of ca. 6.0 nm in water at room temperature (Fig. <ref type="figure" target="#fig_5">3a-d</ref>). The ultrasmall size suggested a single-chain folded conformation of PN x (IL-C) y in solution. <ref type="bibr" target="#b21">22</ref> Logically, the hydrophobic Cr(salen) pendants on PN x (IL-C) y avoided coming into contact with water, triggering the selffolding of PN x (IL-C) y around Cr(salen) into SCPNs with a hydrophobic Cr(salen) core surrounded by a PNIPAAm shell, <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b40">41</ref> as shown in Scheme <ref type="figure" target="fig_1">1</ref>. The imidazolium IL moiety in PN x (IL-C) y did not significantly affect their single-chain folding behavior, since PN 84 (IL-C) 3 -based SCPN gave a similar morphology to the SCPN based on PN 84 C 3 (Fig. <ref type="figure" target="#fig_5">3c</ref> vs. <ref type="figure" target="#fig_5">e</ref>).</p><p>Therefore, the self-folding process of PN x (IL-C) y was only triggered by the Cr(salen) group, independent of the IL linker. High dispersion of the SCPNs in water confirmed the presence of the hydrophilic PNIPAAm shell at room temperature (Fig. <ref type="figure" target="#fig_5">3a-d</ref>). This made the catalytic nanoreactor a quasihomogeneous catalyst for the aqueous asymmetric epoxidation and therefore high catalytic efficiency was expected. Notably, the SCPNs tended to gather together in water when the local temperature was raised to their LCST, as shown by the typical PN 84 (IL-C) 3 (Fig. <ref type="figure" target="#fig_5">3c′</ref> vs. <ref type="figure" target="#fig_5">c</ref>). Thermo-controlled switching of the NIPAAm corona from the hydrophilic to the hydrophobic state should be responsible for the aggregation of PN x (IL-C) y at the higher temperature. Actually, PN x (IL-C) y could be finally converted into the double-hydrophobic random copolymers and precipitated from water upon heating. The thermo-switchable solubility allowed for efficient catalysis coupled with facile recovery of PN x (IL-C) y in aqueous systems in a thermo-controllable way.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Dynamic light scattering (DLS)</head><p>DLS was employed to further determine the hydrodynamic diameter (D h ) of PN x (IL-C) y -based SCPNs. Obviously, all of the copolymers showed a single modal DLS intensity distribution, typically shown in Fig. <ref type="figure" target="#fig_6">4</ref>. This indicated the homogeneous distribution and uniform sizes of the corresponding SCPNs. <ref type="bibr" target="#b41">42</ref> The D h of PN x (IL-C) y -based SCPNs was ultra-small, as determined by DLS. PN 90 (IL-C) 2 , PN 84 (IL-C) 3 , PN 80 (IL-C) 5 , and PN 60 (IL-C) 8 gave a D h of only ca. 18.2, 10.1, 6.5, and 5.7 nm, respectively. The diameter values were consistent with that adopting a single-chain folded conformation in solution. Notably, the size of SCPNs gradually decreased with increasing content of the hydrophobic Cr(salen) block in the copolymer. Reduced sizes were mainly due to the enhanced intramolecular hydrophobic interaction arising from increased Cr(salen), which made the SCPNs more compact. These observations provided further evidence for the self-folding of PN x (IL-C) y around the catalytic Cr(salen) sites, rather than aggregation of multiple polymer chains As a result, the polymeric backbone formed polymeric pockets around the catalytic Cr(salen) centers, resulting in the structured inner compartment with a hydrophobic Cr(salen) core surrounded by a hydrophilic shell.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Catalytic performances</head><p>The PN x (IL-C) y -based SCPNs provided hydrophobic, catalytic compartments to accommodate asymmetric epoxidation of alkenes in water (Table <ref type="table" target="#tab_1">2</ref>). Only 0.5 mol% PN x (IL-C) y was suf-ficient to afford a high yield (68-92%) of β-methyl styrene epoxide with remarkable enantioselectivity (92-94%) within 60 min (Table <ref type="table" target="#tab_1">2</ref>, entries 1-4). In contrast, an extremely low yield (25%) with a disappointing ee value (46%) was obtained when the catalytic monomer of IL/Cr(salen) was used as the catalyst (Table <ref type="table" target="#tab_1">2</ref>, entry 6). In particular, many undesired byproducts including the diol and benzyl methyl ketone were observed over the neat system due to inevitable hydrolysis and rearrangement of the epoxide catalyzed by the Cr(salen) complex. <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b12">13</ref> Furthermore, neat-C was even less active and selective than the IL/Cr(salen) (Table <ref type="table" target="#tab_1">2</ref>, entry 7 vs. 6), giving only 12% yield of β-methyl styrene epoxide with 29% ee value. These results confirmed the importance of the PN x (IL-C) y -based hydrophobic compartment for the aqueous catalysis. Actually, the hydrophobic pocket endowed PN x (IL-C) y with salient features as follows: (1) effectively sequestering substrates from the surrounding water: this resulted in a high local concentration of substrates around the catalytic sites for efficient catalysis; <ref type="bibr" target="#b14">15</ref> (2) hydrophobic shielding of Cr(salen) from the aqueous environment: this prevented the rearrangement of the ring-type metallaoxetane intermediate to ring-opened cationic intermediate in water (Scheme <ref type="figure" target="fig_7">3</ref>), <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b26">27</ref> which enhanced the ee values; (3) excluding water from the hydrophobic pocket: this minimized the undesired hydrolysis of epoxide and further maximized the selectivity to chiral epoxide. <ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15</ref> To further confirm the importance of  compartmentalization, we carried out the reaction with PN 84 (IL-C) 3 in acetonitrile, a solvent in which PN 84 (IL-C) 3 failed to self-fold. Apparently, the PN 84 (IL-C) 3 was far less active (conversion of 75%) and enantioselective (89%) under identical conditions (Table <ref type="table" target="#tab_1">2</ref>, entry 8). This result was consistent with our hypothesis that the high local concentration of substrates around catalytic sites was crucial for this system to be active, and this is only achieved in the folded state of PN x (IL-C) y and in the presence of catalytic compartments.</p><p>Since the asymmetric epoxidation occurred in the Cr(salen)containing hydrophobic pocket, different sizes of the nanoreactors as well as different Cr(salen) numbers within the catalytic pocket affected the catalytic efficiency. PN 84 (IL-C) 3 with a D h of 10.1 nm exhibited the highest catalytic efficacy for this aqueous transformation. Almost quantitative conversion (99%) of β-methyl styrene with 94% ee value was achieved when PN 84 (IL-C) 3 was used as a catalyst (Table <ref type="table" target="#tab_1">2</ref>, entry 3). Fewer Cr(salen) units per polymer chain (PN 90 (IL-C) 2 ) were undesirable for the aqueous reaction due to the lower local concentration of Cr(salen) sites in the catalytic pocket, although the larger sized compartment (D h of 18.2 nm) favored the substrate diffusion (Table <ref type="table" target="#tab_1">2</ref>, entry 4), while too dense packing of Cr(salen) in PN x (IL-C) y , such as PN 80 (IL-C) 5 (D h of 6.5 nm) and PN 60 (IL-C) 8 (D h of 5.7 nm), not only limited the diffusion of substrate into the catalytic pocket but also restricted all Cr(salen) from adopting their preferred "stepped" conformation <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b22">23</ref> in SCPNs, which also resulted in a decline in activity (Table <ref type="table" target="#tab_1">2</ref>, entries 1 and 2).</p><p>Apart from the compartmental structures, the catalytic efficiency of PN x (IL-C) y also benefited from the local catalyst microenvironment created by the IL spacer, since the IL moiety was encapsulated in the catalytic compartment along with Cr(salen) units. Indeed, PN 84 (IL-C) 3 was more efficient than the IL-free counterpart of PN 84 C 3 (Table <ref type="table" target="#tab_1">2</ref>, entry 3 vs. 5), although the number of Cr(salen) units in PN 84 (IL-C) 3 was identical with that in PN 84 C 3 . In fact, the IL linker played multiple roles in enhancing the catalytic performance. It located the bulky complexes away from the polymer backbone, enabling all active sites to adapt their preferential "stepped" conformation for epoxidation, and it created a compatible IL environment in the hydrophobic pocket, making active catalytic centers more accessible to reagents. <ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b45">[46]</ref> In addition, the proximity of the IL unit to the active site may stabilize the active OCr V (salen) intermediate <ref type="bibr" target="#b43">44</ref> and lower the activation energy for the addition of alkene to the OCr V (salen) model in the asymmetric epoxidation, <ref type="bibr" target="#b46">47</ref> thus increasing the catalytic efficiency.</p><p>Kinetics was used to further evaluate the advantage of the hydrophobic catalytic compartment in overall aqueous catalysis as well as the positive effects of the imidazolium-based IL moiety on the catalytic efficiency. The kinetic curves and corresponding rate curves of asymmetric epoxidation of β-methylstyrene over the designed Cr(salen) catalysts are shown in Fig. <ref type="figure" target="#fig_8">5</ref>. Obviously, PN 84 (IL-C) 3 was more efficient in water than in acetonitrile (Fig. <ref type="figure" target="#fig_8">5a</ref> vs. <ref type="figure" target="#fig_8">c</ref>). In fact, acetonitrile was a good solvent for both blocks of the amphiphilic copolymer, hence self-folding of PN 84 (IL-C) 3 into compartmental SCPNs did not occur. PN 84 (IL-C) 3 was just a conventional "polymer supported" catalyst in the asymmetric epoxidation of β-methylstyrene in acetonitrile. The lower local concentration of substrates and catalytic species in the organic system was insufficient for efficient catalysis. The results were consistent with our hypothesis that the PN 84 (IL-C) 3based catalytic compartment create a highly concentrated cavity for efficient asymmetric epoxidation of β-methylstyrene in water catalysis. The gradient increase in conversion of β-methylstyrene, together with the parabolic profile of rate constants (k obs ), demonstrated the "concentration effect" of PN 84 (IL-C) 3 -based SCPN in the aqueous asymmetric epoxidation. <ref type="bibr" target="#b47">48</ref> In particular, the observed k obs initially rose rapidly due to the dramatically increasing concentration of the substrate in the hydrophobic compartments, went through a maximum, and then drastically decreased due to a dilution effect (Fig. <ref type="figure" target="#fig_8">5a</ref>). Furthermore, we noticed that the k obs values of PN 84 (IL-C) 3 in water were initially lower than those in acetonitrile (Fig. <ref type="figure" target="#fig_8">5a</ref> vs. <ref type="figure" target="#fig_8">c</ref>). The lower initial reaction rate might be probably due to the fact that the compartmentalized structure of SCPNs somewhat hindered the permeation of substrates into the catalytic, hydrophobic pocket. For this reason, it was not surprising that the water-insoluble neat-C gave the lowest k obs in water due to poor accessibility to the substrate (Fig. <ref type="figure" target="#fig_8">5d</ref>). The observations provided further evidence for the confined catalysis of asymmetric epoxidation in the catalytic  compartment. Moreover, despite the confined catalysis, the k obs over PN 84 C 3 was lower than that over PN 84 (IL-C) 3 in the aqueous epoxidation (Fig. <ref type="figure" target="#fig_8">5b</ref> vs. <ref type="figure" target="#fig_8">a</ref>). The observations did agree with the beneficial effect of the imidazolium-based IL on the overall reaction mechanism. Benefiting from the IL-modified compartmental structure, PN 84 (IL-C) 3 also exhibited the highest catalytic efficiency for a wide range of unfunctionalized alkenes in water, such as trans-stilbene (Table <ref type="table" target="#tab_1">2</ref>, entry 9 vs. entries 10-12), styrene (25-27). Almost quantitative yields of the corresponding chiral epoxides (92-95%) were obtained over an extremely low amount of PN 84 (IL-C) 3 (0.5 mol%) within 60 min in water (Table <ref type="table" target="#tab_1">2</ref>, entries 9, 14, 19, and 24). In particular, in the case of indene, the yield of chiral indene epoxide over PN 84 (IL-C) 3 increased even up to 24 times as compared with that of neat-C (Table <ref type="table" target="#tab_1">2</ref>, entry 19 vs. 22). Apart from ensuring high efficiency, the hydrophobic, catalytic pocket also made asymmetric epoxidation highly enantioselective, as it limited the further hydrolysis and epimerization of corresponding chiral epoxides. <ref type="bibr" target="#b26">27</ref> Unprecedented chiral induction (92-99%) was indeed obtained for all the alkenes over the PN 84 (IL-C) 3based SCPN system. The ee values presented the best results so far in the metallosalen system. <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref> Moreover, we noticed that the PN 84 (IL-C) 3 in aqueous systems was much more active and selective than in organic systems due to the high local concentration of substrates in the catalytic pocket (Table <ref type="table" target="#tab_1">2</ref>  After the reactions, the water-soluble nanoreactors turned hydrophobic upon heating to above their corresponding LCST of PN x (IL-C) y . As a result, they could be facilely recovered from the aqueous system for reuse by thermo-controlled separation. The recovered PN x (IL-C) y could be redissolved in water after cooling the aqueous systems to room temperature. Fig. <ref type="figure" target="fig_9">6</ref> shows the reusability of PN x (IL-C) y in asymmetric epoxidation of β-methyl styrene in water. To our delight, the catalysts could be reused at least seven times without significant loss in activity and selectivity. This demonstrated the excellent stability and reusability of PN x (IL-C) y in the aqueous asymmetric epoxidation. Evidence of the stability of PN x (IL-C) y was provided by ICP-MS measurement of chromium content in fresh PN x (IL-C) y and that reused seven times. The chromium contents in the recovered catalysts (0.622, 0.386, 0.252, and 0.175 mmol g -1 for PN 60 (IL-C) 8 , PN 80 (IL-C) 5 , PN 84 (IL-C) 3 , and PN 90 (IL-C) 2 , respectively) were almost identical to that of the corresponding fresh one (Table <ref type="table" target="#tab_0">1</ref>). Furthermore, less than 1.0 ppb chromium species (determined by ICP) was detected in the reaction medium, confirming the negligible leaching loss of chromium species during oxidation. The excellent stability of catalysts should arise from the shielding of the chiral salen Cr(III) complex in a hydrophobic compartment, which prevented or at least limited the leaching of chromium species to aqueous solution. <ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15</ref> Moreover, the imidazolium-based IL linker should also have a pos-itive effect on stabilizing the OCr V (salen) intermediate, which prevented the catalyst degradation. <ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b44">45</ref> The reuse of such Cr(salen) catalysts not only eliminated contamination of the chiral epoxides by trace amounts of heavy metals but also reduced processing and waste disposal costs in large-scale production.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>Thermo-responsive catalytic nanoreactors for asymmetric epoxidation of alkenes in water have been constructed by folding an amphiphilic random copolymer around catalytic Cr(salen) species. The catalytic compartments were composed of the hydrophobic IL/Cr(salen) core and the thermoresponsive PNIPAAm shell. The hydrophobic IL/Cr(salen) core provided a catalytic, hydrophobic pocket in water to concentrate reagents for efficient catalysis and exclude water to minimize the undesired hydrolysis of epoxides with Cr(salen). In addition, the thermo-responsive PNIPAAm shell endowed the catalytic nanoreactor with reversible thermal driven watersolubility switching. As a result, the catalytic nanoreactor could be easy dispersed in water similar to a quasihomogeneous catalyst under reaction conditions and be facilely recovered for efficient reuse by thermo-controlled separation. The fascinating features made the thermo-sensitive catalytic nanoreactors highly promising for various asymmetric organic reactions in water.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Chart 1</head><label>1</label><figDesc>Chart 1 The structure and “stepped” conformation of neat-C.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Scheme 1</head><label>1</label><figDesc>Schematic representation of the synthesis and self-folding of PNx(IL-C)y (x = 60, y = 8; x = 80, y = 5; x = 84, y = 3; x = 90, y = 2).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Scheme 2</head><label>2</label><figDesc>Scheme 2 Synthesis of PN 84 C 3 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Photographs of neat-C (a), PN 84 C 3 (b), PN 60 (IL-C) 8 (c), PN 80 (IL-C) 5 (d), PN 84 (IL-C) 3 (e) and PN 90 (IL-C) 2 (f) at 25 °C and PN 84 (IL-C) 3 in water at 50 °C (e′) and 54 °C (e″).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Transmittance curves of the PN x (IL-C) y and PN 84 C 3 aqueous solutions (concentration: 0.5 M, (A)), and optical transmittance at 450 nm of PN 84 (IL-C) 3 solution observed upon several cycles under heating at 50 °C and then cooling to 25 °C (B). The insets show the photographs of PN 60 (IL-C) 8 at 25 °C and at 45 °C.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 TEM micrographs of self-folded PN 60 (IL-C) 8 (a), PN 80 (IL-C) 5 (b), PN 84 (IL-C) 3 (c), PN 90 (IL-C) 2 (d), and PN 84 C 3 (e) in water at room temperature, and self-folded PN 84 (IL-C) 3 in water at 50 °C (c′) stained with phosphotungstic acid.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 4</head><label>4</label><figDesc>Fig.4Size distribution of folded PN 60 (IL-C) 8 , PN 80 (IL-C) 5 , PN 84 (IL-C) 3 and PN 90 (IL-C) 2 in water at a concentration of 0.5 M at room temperature.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Scheme 3</head><label>3</label><figDesc>Scheme 3 Cr(salen)-mediated asymmetric epoxidation of β-methyl styrene through a metallaoxetane intermediate.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Fitted kinetic curves (A) and rate curves (B) of asymmetric epoxidation of β-methylstyrene over PN 84 (IL-C) 3 (a), PN 84 C 3 (b) and neat-C (d) in water and over PN 84 (IL-C) 3 in acetonitrile (c).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Reuse of PN60(IL-C)8 (A), PN80(IL-C)5 (B), PN84(IL-C)3 (C) and PN90(IL-C)2 (D) in asymmetric epoxidation of β-methylstyrene in water.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>The compositions of synthesized copolymers a</figDesc><note><p>a Determined by ICP-MS. b Determined by GPC. c PDI was calculated by M w /M n .</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Results of asymmetric epoxidation of unfunctionalized alkenes over different chiral salen Cr(III) catalysts a</figDesc><note><p>a Catalyst (0.5 mol% of substrate, based on chromium content), substrate (0.25 mmol), PhIĲOAc)2 (0.625 mmol), solvent (1 mL), 25 °C, 60 min.</p>
+<p>b Determined by GC. c Isolated yield after column chromatography.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>This work was supported by the <rs type="funder">National Natural Science Foundation of China</rs> (<rs type="grantNumber">21676078</rs>, <rs type="grantNumber">21476069</rs>), the <rs type="funder">Natural Science Foundation of Hunan</rs> <rs type="grantName">Province for Distinguished Young Scholar</rs> (<rs type="grantNumber">2016JJ1013</rs>) and the <rs type="funder">Key Laboratory of the Assembly and Application of Organic Functional Molecules of Hunan Province</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_qmXZ6ey">
+					<idno type="grant-number">21676078</idno>
+				</org>
+				<org type="funding" xml:id="_Rtxs7pp">
+					<idno type="grant-number">21476069</idno>
+				</org>
+				<org type="funding" xml:id="_yQfdVuj">
+					<idno type="grant-number">2016JJ1013</idno>
+					<orgName type="grant-name">Province for Distinguished Young Scholar</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>There are no conflicts to declare.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>De Faveri</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ilyashenko</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Watkinson</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Soc. Rev.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="1722" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cornwall</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Rev.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="8199" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Loebach</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jacobsen</surname>
+					<forename type="first">E</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">112</biblScope>
+				<biblScope unit="page" from="2801" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Irie</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Noda</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ito</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsumoto</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Katsuki</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Tetrahedron Lett.</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="7345" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bryliakov</surname>
+					<forename type="first">K</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Talsi</surname>
+					<forename type="first">E</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Inorg. Chem.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="7258" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kureshy</surname>
+					<forename type="first">R</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Prathap</surname>
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roy</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maity</surname>
+					<forename type="first">N</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Khan</surname>
+					<forename type="first">N</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Abdi</surname>
+					<forename type="first">S</forename><forename type="middle">H</forename><forename type="last">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bajaj</surname>
+					<forename type="first">H</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Synth. Catal.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">352</biblScope>
+				<biblScope unit="page" from="3053" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nishikawa</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamamoto</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">133</biblScope>
+				<biblScope unit="page" from="8432" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bhadra</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Akakura</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamamoto</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">137</biblScope>
+				<biblScope unit="page" from="15612" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Saracini</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fukuzumi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nam</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2016">201</date>
+				<biblScope unit="volume">138</biblScope>
+				<biblScope unit="page" from="15857" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ryan</surname>
+					<forename type="first">K</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bousquet</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gilheany</surname>
+					<forename type="first">D</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Tetrahedron Lett.</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="3613" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>McGarrigle</surname>
+					<forename type="first">E</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gilheany</surname>
+					<forename type="first">D</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Rev.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="1563" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chanda</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fokin</surname>
+					<forename type="first">V</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Rev.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">109</biblScope>
+				<biblScope unit="page" from="725" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Paparatto</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gregorioa</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Tetrahedron Lett.</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="1471" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>O'Reilly</surname>
+					<forename type="first">R</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Curr. Opin. Biotechnol.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="639" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rothfuss</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knöfel</surname>
+					<forename type="first">N</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roesky</surname>
+					<forename type="first">P</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barner-Kowollik</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="5875" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Huerta</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stals</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meijer</surname>
+					<forename type="first">E</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmans</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Angew. Chem., Int. Ed.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="2906" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hosono</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kushner</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chung</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmans</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guan</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meijer</surname>
+					<forename type="first">E</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">137</biblScope>
+				<biblScope unit="page" from="6880" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Matsumoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Terashima</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsumoto</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takenaka</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sawamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">139</biblScope>
+				<biblScope unit="page" from="7164" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Frisch</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Menzel</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bloesser</surname>
+					<forename type="first">F</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marschner</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mundsinger</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kowollik</surname>
+					<forename type="first">C</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="9551" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename type="first">E</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferguson</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zimmerman</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="13695" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pujals</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stals</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paulöhrl</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Presolski</surname>
+					<forename type="first">S</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meijer</surname>
+					<forename type="first">E</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Albertazzi</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmans</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="3423" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Commun.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="9430" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Katsuki</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Synth. Catal.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">344</biblScope>
+				<biblScope unit="page" from="131" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Mater.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="2849" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qing</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Mater.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="57" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Buchecker</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schmid</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grillo</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Prévost</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Drechsler</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diat</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pfitzner</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bauduin</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">141</biblScope>
+				<biblScope unit="page" from="6890" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Moad</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Polym. Chem.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="177" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gu</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ji</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lou</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Tetrahedron</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">65</biblScope>
+				<biblScope unit="page" from="305" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lou</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ding</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peng</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dong</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Catal.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">249</biblScope>
+				<biblScope unit="page" from="102" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Machajewski</surname>
+					<forename type="first">T</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wong</surname>
+					<forename type="first">C</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Angew. Chem., Int. Ed.</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="1352" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lam</surname>
+					<forename>Y-H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kheirabadi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Houk</surname>
+					<forename type="first">K</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schafmeister</surname>
+					<forename type="first">C</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Org. Chem.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">77</biblScope>
+				<biblScope unit="page" from="4784" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mlynarski</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bas</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Soc. Rev.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="577" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gröger</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hummel</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Curr. Opin. Chem. Biol.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="171" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Helms</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guillaudeu</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xie</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McMurdo</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hawker</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fréchet</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Angew. Chem., Int. Ed.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="6384" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Helms</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fréchet</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Synth. Catal.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">348</biblScope>
+				<biblScope unit="page" from="1125" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Huerta</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stals</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meijer</surname>
+					<forename type="first">E</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmans</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Angew. Chem., Int. Ed.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="2906" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Terashima</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sugita</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fukae</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sawamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Macromolecules</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="589" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hirai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Terashima</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takenaka</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sawamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Macromolecules</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="5084" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shibata</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsumoto</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hirai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takenaka</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sawamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Terashima</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Macromolecules</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="3738" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Qiao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Theyssen</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hou</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Rev.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">117</biblScope>
+				<biblScope unit="page" from="6881" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pauloehrl</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Presolski</surname>
+					<forename type="first">S</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Albertazzi</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmans</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meijer</surname>
+					<forename type="first">E</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">137</biblScope>
+				<biblScope unit="page" from="13096" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jin</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yao</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Colloids Surf.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">123</biblScope>
+				<biblScope unit="page" from="852" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Green Energy Environ.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="419" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Karimi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tavakolian</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname type="first">Mansouri</surname><surname type="middle">Akbari</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">ChemCatChem</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="3173" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Commun.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">55</biblScope>
+				<biblScope unit="page" from="592" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>x</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hou</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ettelaie</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">141</biblScope>
+				<biblScope unit="page" from="5220" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brandt</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Norrby</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Daly</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gilheany</surname>
+					<forename type="first">D</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. – Eur. J.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="4299" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schoonen</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Hest</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Mater.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="1109" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zou</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zheng</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. – Eur. J.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="7830" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zheng</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Catal. Sci. Technol.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="2092" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luo</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+		</analytic>
+		<monogr>
+			<title level="j">Catal. Sci. Technol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="488" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

@@ -62,6 +62,24 @@ class LLMClient:
             max_tokens=max_tokens,
             response_format=response_format)
         return response.choices[0].message.content
+
+    def call_structured(
+        self,
+        prompt: str,
+        json_schema: dict | None = None,
+        model: str | None = None,
+        temperature: float = 0.0,
+        max_tokens: int | None = None,
+    ) -> str:
+        """Thin wrapper to request structured JSON output when schema is provided."""
+        return self.call(
+            prompt,
+            model=model,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            json_schema=json_schema,
+            json_output=bool(json_schema),
+        )
     
     def call_with_continuation(self, prompt: str, start_tag: str = "```json", end_tag: str = "```", 
                              model: str = None, temperature: float = 0.0, max_tokens: int = 8192,

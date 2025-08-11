@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">ARCE: Towards Code Pointer Integrity on Embedded Processors Using Architecture-Assisted Run-Time Metadata Management</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>IEEE</publisher>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jinli</forename><surname>Rao</surname></persName>
+							<idno type="ORCID">0000-0001-7663-2184</idno>
+							<email>ary.xsnow@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="school">School of Optical and Electronic Information</orgName>
+								<orgName type="institution">Huazhong University of Science and Technology</orgName>
+								<address>
+									<settlement>Wuhan</settlement>
+									<postCode>430074</postCode>
+										<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tianyong</forename><surname>Ao</surname></persName>
+							<email>tyaohust@gmail.com</email>
+							<affiliation key="aff1">
+								<orgName type="school">School of Physics and Electronics</orgName>
+								<orgName type="institution">Henan University</orgName>
+								<address>
+									<settlement>Kaifeng</settlement>
+									<postCode>475001</postCode>
+										<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kui</forename><surname>Dai</surname></persName>
+							<email>josh_maxview@126.com</email>
+							<affiliation key="aff2">
+								<orgName type="institution" key="institution1">Institute of National Network Security and Information</orgName>
+								<orgName type="institution" key="institution2">Peking University</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<postCode>100871</postCode>
+										<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xuecheng</forename><surname>Zou</surname></persName>
+							<email>estxczou@hust.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="school">School of Optical and Electronic Information</orgName>
+								<orgName type="institution">Huazhong University of Science and Technology</orgName>
+								<address>
+									<settlement>Wuhan</settlement>
+									<postCode>430074</postCode>
+										<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">ARCE: Towards Code Pointer Integrity on Embedded Processors Using Architecture-Assisted Run-Time Metadata Management</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">IEEE COMPUTER ARCHITECTURE LETTERS</title>
+						<imprint>
+							<publisher>IEEE</publisher>
+							<biblScope unit="volume">18</biblScope>
+							<biblScope unit="issue">2</biblScope>
+							<biblScope unit="page" from="115" to="118"/>
+							<date type="published" when="2019-08-19">19 Aug. 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">30690AC3B2C17A648BE206D59429AEB2</idno>
+					<idno type="DOI">10.1109/LCA.2019.2935445</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Code pointer integrity</term>
+					<term>security</term>
+					<term>multi-level metadata</term>
+					<term>instruction set extensions</term>
+					<term>embedded processors</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Code Pointer Integrity (CPI) is an efficient control flow protection technique focusing on sensitive code pointers with a formal proof of security, but it relies on software lookup tables or Memory Management Unit (MMU) based address translation and instruction-level memory isolation which are impractical for resource-constrained embedded processors. This paper enables Architecture-assisted Run-time CPI on Embedded Processors (ARCE) with 2-level metadata to balance security, performance and resource overhead. The first level 2-bit property metadata colors data into different domains and the second level boundary metadata holds structure constraints for indirect code pointers only. With memory and instruction extensions, metadata shares the address space with program data and is propagated at runtime to maintain a precise set of sensitive code pointers. It lazily validates the content and boundary of sensitive pointers at dereference stage to eliminate false alarms. We implemented ARCE based on a shallow 3-stage pipeline processor Z-scale and validated its security effectiveness with code pointer attack vectors in RIPE. It introduces less than 1 percent performance overhead for benchmarks in C with 7.33 percent logic and 6.25 percent memory overhead. ARCE eliminates address space waste and dependency on advanced hardware which makes CPI practical even for systems with bare metal applications.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">INTRODUCTION</head><p>MEMORY unsafe languages, notably C and C++, are widely adopted by embedded software development to achieve high performance, small memory footprint, and low-level hardware controllability. Their capabilities of explicit data layout and life cycle management, direct access to underlying hardware are key advantages for developing performance and resource critical applications. Unfortunately, they are weakly typed and don't apply any structure boundary checking for memory accesses. These natively facilitate attackers manipulating memory contents with data pointer abuse to seek control flow hijacking of a program.</p><p>Numerous defense mechanisms are proposed in past decades to tackle this security concern while trying to preserve the advantages, especially performance. One typical class of protections detects misbehaviors of a program after attacks being injected against pre-defined rules. The rules are either general security policies like None-Executable(NX) data memory or program specific policies like Control Flow Integrity(CFI). They are practical to mitigate certain threats with tailored security rules, but it's impractical to generate a complete set of security rules through static analysis.</p><p>Moreover, the added checkpoints in the instrumented program slow down the overall program performance significantly <ref type="bibr" target="#b10">[11]</ref>. The other class of protections focuses on preventing attacks at the entry point by regulating pointer usages. They maintain per-pointer metadata to secure memory accesses. The metadata is propagated along with each pointer operation and protected by OS based on advanced hardware functions like MMU targeting modern processors for desktops and servers <ref type="bibr" target="#b1">[2]</ref>.</p><p>A recently proposed technique named CPI <ref type="bibr" target="#b3">[4]</ref> focuses on protection against control flow hijacking with a formal security proof. By narrowing down protected targets to sensitive code pointers only, security is well balanced with performance overhead. Explicit code pointers are identified through static compiler analysis and dynamically cast code pointers are covered with over-approximation. Each code pointer has a copy in a regular storage and an enhanced version with spatial and temporary metadata in a safe storage for software compatibility. An additional mapping scheme translates the address of original code pointer to the enhanced version either through hardware-based virtual memory mapping or software-based lookup tables. All sensitive data in the safe storage is protected based on instruction level isolation through hardware segment pointers or Software Fault Isolation(SFI). But over-approximation analysis, duplicated storage spaces, expensive regular to safe storage mapping scheme and complex memory protection mechanism hinder its deployment in resource-constrained embedded processors.</p><p>This paper attempts to fill the gap with novel architecture enhancements including multi-level metadata for data domain coloring and isolation, architecture-assisted run-time metadata management and lazy evaluation of security rules.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">ARCE DESIGN</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Attack Model</head><p>Attackers' goal is to perform arbitrary code execution through memory error exploitations with assumptions:</p><p>Hardware is trusted and attackers can't perform physical attacks. The memory layout and contents are visible to attackers. ARCE has no dependency on memory content and address randomization techniques. Memory errors are presented in the program for attackers' exploitations. Attackers can arbitrarily modify data memory with memory errors, but not code memory. This ensures that the security mechanism is valid at runtime.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Memory Extensions</head><p>A program's data is categorized into different data domains based on security requirements. A Direct Code Pointer(DC) is a pointer to code memory like a function pointer or return address. It may eventually go to the Program Counter(PC) and change the control flow. And an Indirect Code Pointer(IC) is a pointer to a DC or another IC which can be used to access the final DC. For a special case of a universal pointer (void *) which can be dynamically cast to a data or code pointer, ARCE treats it as an IC with the strongest security policy. Both DC and IC are called Sensitive Pointers(SP). CPI focuses on protecting a SP's content and structure constraints to eliminate control flow diversion. The other non-SP data are called Normal Data(ND).</p><p>ARCE stores SPs within the same address space of ND to avoid address space waste and complex address mapping schemes based on a 2-level metadata system. It takes a first level 2-bit Property Metadata(PM) associated with a data chunk of a pointer's size for data domain coloring and isolation. And it intercepts an indirect code pointer with a re-wrote IC mapped to the start address of a second level Boundary Metadata(BM) in a tuple of ðbase; index; sizeÞ for later boundary validations. With the observation that an SP generally addresses a limited size function table, ARCE constrains index and size to half machine word to further reduce memory space and access latency.</p><p>To support metadata management at runtime, ARCE extends the existing register file and memory with an additional PM field for each machine word. It equips a dedicated register file for BM to release register allocation pressure in the compiler. Fig. <ref type="figure" target="#fig_0">1</ref> shows the memory extensions and a typical data allocation of a program. In implementation, BM is stored with ND, and PM is packed into memory words for compatibility with the existing memory subsystem.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Instruction Set Extensions</head><p>ARCE Instruction Set Extensions(ISE) include new instructions for explicit metadata management from software and metadata awareness enhancements of existing instructions. Table <ref type="table" target="#tab_0">1</ref> shows the complete list of ISEs. As the basis of CPI, data isolation is implemented based on PM at the instruction level by eliminating property promotions across data domains without explicit metadata management.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Lazy Security Rules</head><p>ARCE validates the effectiveness of a target SP based on its associated PM and BM with the following security rules: 1) Rule 1: A SP's content is valid only when the associated PM matches its domain definition. For example, a valid function pointer or return address should have DC property. 2) Rule 2: A SP's boundary is valid only when its BM data has valid content as defined in rule 1 and valid boundary with index size. ARCE lazily performs the evaluation of above security rules at the dereference stage of a SP. It effectively avoids the false positive effect caused by the intermediate BM' which is generated as B 0 :index ¼ B:index þ stepA À stepB, B:index þ stepA &gt; B:size while B:index þ stepA À stepB &lt; B:size. Rule 1 is normally enforced by pipeline control logic at commit stage where the instruction gets effective to change control flow, and rule 2 is enforced by Load Store Unit(LSU) for SP accesses from/to data memories.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">Software Instrumentations</head><p>Though metadata gets updated automatically by hardware at runtime, ARCE requires a minimal set of work from software to correctly initialize them during data object allocations and clean them up when data objects get deallocated. This paper defined a compact set of metadata management APIs as listed in Table <ref type="table" target="#tab_1">2</ref> to facilitate ARCE deployment. For SPs on stack, the compiler allocates metadata and adds initialization/cleanup to the function prologue and epilogue. And for global or static SPs, the metadata setup sequences are in the prologue and epilogue of the mainðÞ. As for SPs manually allocated on heap, enhanced memory management functions (malloc=free) setup the metadata based on underlying data object definitions. To accelerate the migration of legacy code, we also developed an analysis tool 1 based on CIL <ref type="bibr" target="#b6">[7]</ref> to scan source code and identify all sensitive pointers which need instrumentations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">IMPLEMENTATION AND EVALUATION</head><p>This paper implemented proposed architecture enhancements based on a shallow 3-stage RISC-V processor model named Z-scale shipped with Synopsys ASIP Designer <ref type="bibr" target="#b9">[10]</ref>. It follows the standard ASIP design flow with full compiler support for the ISEs. Fig. <ref type="figure" target="#fig_1">2</ref> illustrates the storage and datapath extensions. Both the reference design and ARCE implementations are mapped to a HAPS-70 prototyping platform for evaluations.</p><p>We take all attack vectors applicable to the Z-scale in RIPE <ref type="bibr" target="#b11">[12]</ref> to verify the security effectiveness including attacks to direct code pointers and indirect code pointers. All vectors succeed on the reference Z-scale while effectively get detected on ARCE either by PM checking of corrupted DC in direct attacks or BM checking of invalid indexes for SP dereferences in indirect attacks. It shows ARCE can prevent both code injection and reuse attacks. Since C++ instrumentation requires compiler updates which aren't possible with the closed source compiler in ASIP designer, we only run C benchmarks in MiBench with different number of S-entries to seek the balance between performance and hardware overhead. Fig. <ref type="figure" target="#fig_2">3</ref> shows the normalized performance overhead and Table <ref type="table" target="#tab_2">3</ref> shows the resource overhead on HAPS-70 targeting 100 MHz.</p><p>Though bitcount has tables of counting functions and qsort has function pointers for the configurable comparison algorithm, their overhead are only from dozens to hundreds of cycles and 2 S-entries are sufficient for metadata management. jpeg applies the object oriented programming style to implement abstract methods through SPs. 2 S-entries are not sufficient for multiple IC dereferences and require frequent S spilling from/to memories. With 4 S-entries, spillings are optimized, but 8 S-entries don't have further benefits. For other benchmarks without SPs, ARCE dosen't impact the performance. Meanwhile, ARCE-SE2(ARCE with 2 S entries) introduces 5.73 percent logic overhead mainly from the adder in modi=cnvt instructions and extended S-entries, while ARCE-SE4 and ARCE-SE8 increase S size and the complexity of the addressing logic with 7.33 and 11.06 percent overhead respectively. All ARCE implementations have additional 6.25 percent memory overhead as metadata storage. Based on the above results, ARCS-SE4 is the best balanced and optimized option for CPI on embedded processors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">RELATED WORK</head><p>A wide range of dedicated architecture enhancements have been proposed to achieve data and control flow security with low overhead. Ref. <ref type="bibr" target="#b5">[6]</ref> and <ref type="bibr" target="#b7">[8]</ref> try to prevent memory error based attacks by regulating all pointer relevant operations through an additional set of metadata processing. They rely on virtual memory management in OS based on MMU to protect the metadata which targets modern processors only. Tag architectures use additional tag bits to taint data property for security policy enforcement. Ref. <ref type="bibr" target="#b0">[1]</ref> uses a 2-bits tag to the apply fine grain permission control of data accesses. Ref. <ref type="bibr" target="#b8">[9]</ref> focuses on sensitive data isolation with an additional 1-bit tag to each memory word. And the recently proposed <ref type="bibr" target="#b4">[5]</ref> reuses the unused bits in a 64-bit pointer to store per-pointer encrypted information for Code Pointer Separation <ref type="bibr" target="#b3">[4]</ref>. With single level metadata, they can prevent code pointer corruptions caused by memory access crossing different data domains, but are still vulnerable to attacks through manipulating the pointer to code pointers. Ref. <ref type="bibr" target="#b2">[3]</ref> extends each memory word with configurable tag-bits for programmable security policies. To enforce the sophisticated CPI, it requires pointer-sized metadata to specify further security data for each memory word. Its resource and performance overhead is not acceptable for embedded processors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">CONCLUSION AND FUTURE WORK</head><p>In this work, we proposed an efficient architecture named ARCE for applying CPI against control flow hijacking on embedded processors. This is the first known attempt to fill the gap between the heavy conventional CPI proposal with resource and performance sensitive embedded processors. With a 2-level metadata system, it carefully balances the performance of data isolation based on the first level thin property metadata and security based on the second level fat boundary metadata. ARCE designs a minimal set of dedicated memory extensions and ISEs to minimize performance and resource overhead with a compact set of metadata management APIs for compilers. And it lazily evaluates the security rules at sensitive pointer dereference stage to avoid false alarms on intermediate results. To further facilitate the migration of legacy code with ARCE architecture, we also developed a source analysis tool based on CIL to help identify all potential sensitive pointers for instrumentations. We implemented ARCE on a shallow 3-stage RISC-V processor model named Z-scale with Synopsys ASIP designer and validated its security effectiveness on HAPS-70. Further performance evaluation results show that it can effectively detect all known control flow hijacking caused by sensitive code pointer exploitations in the RIPE testbed. And it only introduces less than 1 percent performance overhead for C benchmarks, 7.33 percent logic and 6.25 percent memory overhead. ARCE has instruction-level support for data isolation and metadata management which doesn’t depend on advanced hardware functions like MMU and avoid unnecessary address space waste. These significantly lower the bar of applying CPI on embedded processors. For the future work, one possible hardware optimization is to share fields between R and S register files, and other software improvements are to use the compiler for automatic instrumentations and complete C++ support to improve the efficiency of embedded application development on ARCE architecture</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. ARCE memory extensions.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Z-scale processor architecture with ARCE extensions.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Z-scale processor architecture with ARCE extensions.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 ARCE</head><label>1</label><figDesc>TABLE 1 ARCE Instruction Set Extensions</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2 ARCE</head><label>2</label><figDesc>TABLE 2 ARCE Metadata Management API</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 3 Resource</head><label>3</label><figDesc>TABLE 3 Resource Evaluation of ARCE Implementations</figDesc></figure>
+		</body>
+		<back>
+			
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="technical-report" xml:id="b0">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Bradbury</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferris</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mullins</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Tagged memory and minion cores in the lowRISC SoC</title>
+			<imprint>
+				<year>2014</year>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>de Clercq</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Verbauwhede</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">A survey of hardware-based control flow integrity (CFI)</title>
+		</analytic>
+		<monogr>
+			<title level="j">CoRR</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dhawan</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hritcu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rubin</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vasilakis</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chiricescu</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knight</surname>
+					<forename type="first">T</forename><forename type="middle">F</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pierce</surname>
+					<forename type="first">B</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DeHon</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Architectural support for software-defined metadata processing</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. 20th Int. Conf. Archit. Support Program. Languages Operating Syst</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="page" from="487" to="502"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kuznetsov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Szekeres</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Payer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Candea</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sekar</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Code-pointer integrity</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. 11th USENIX Symp. Operating Syst. Des. Implementation</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="page" from="147" to="163"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liljestrand</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nyman</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perez</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ekberg</surname>
+					<forename>J-E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Asokan</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">PAC it up: Towards pointer integrity using ARM pointer authentication</title>
+		</analytic>
+		<monogr>
+			<title level="j">CoRR</title>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nagarakatte</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martin</surname>
+					<forename type="first">M</forename><forename type="middle">M</forename><forename type="last">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zdancewic</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">WatchdogLite: Hardware-accelerated compiler-based pointer checking</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. Annu. IEEE/ACM Int. Symp. Code Generation Optimization</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="page" from="175" to="184"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Necula</surname>
+					<forename type="first">G</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McPeak</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rahul</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weimer</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">CIL: Intermediate language and tools for analysis and transformation of C programs</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. Int. Conf. Compiler Construction</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="page" from="213" to="228"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Oleksenko</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kuvaiskii</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhatotia</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Felber</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fetzer</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Intel MPX explained: An empirical study of Intel MPX and software-based bounds checking approaches</title>
+		</analytic>
+		<monogr>
+			<title level="j">CoRR</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moon</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Alam</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yun</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paek</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">HDFI: Hardware-assisted data-flow isolation</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. IEEE Symp. Secur. Privacy</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="page" from="1" to="17"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b9">
+		<monogr>
+			<author>Synopsys</author>
+			<title level="m">ASIP designer</title>
+			<ref target="https://www.synopsys.com/dw/ipdir.php?ds=asip-designer">https://www.synopsys.com/dw/ipdir.php?ds=asip-designer</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Szekeres</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Payer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wei</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">SoK: Eternal war in memory</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. IEEE Symp. Secur. Privacy</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="page" from="48" to="62"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wilander</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nikiforakis</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Younan</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kamkar</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Joosen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">RIPE: Runtime intrusion prevention evaluator</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. 27th Annu. Comput. Secur. Appl. Conf.</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

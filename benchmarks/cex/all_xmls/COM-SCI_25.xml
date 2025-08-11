@@ -1,0 +1,1177 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Analog signal processing solution for machine vision applications</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2017-02-06">6 February 2017</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Nihar</forename><surname>Athreyas</surname></persName>
+							<email>nathreya@umass.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">University of Massachusetts</orgName>
+								<address>
+									<settlement>Amherst</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dev</forename><surname>Gupta</surname></persName>
+							<email>jgupta@sperodevices.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">University of Massachusetts</orgName>
+								<address>
+									<settlement>Amherst</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jai</forename><surname>Gupta</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Spero Devices Inc</orgName>
+								<address>
+									<addrLine>43 Nagog Park</addrLine>
+									<settlement>Acton</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Analog signal processing solution for machine vision applications</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Real-Time Image Processing</title>
+						<title level="j" type="abbrev">J of Real-Time Image Proc</title>
+						<idno type="ISSN">1861-8200</idno>
+						<idno type="eISSN">1861-8219</idno>
+						<imprint>
+							<publisher>Springer</publisher>
+							<biblScope unit="volume">16</biblScope>
+							<biblScope unit="issue">5</biblScope>
+							<biblScope unit="page" from="1607" to="1628"/>
+							<date type="published" when="2017-02-06">6 February 2017</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">584DD446296BA8A3025CE8BC331942D9</idno>
+					<idno type="DOI">10.1007/s11554-017-0669-4</idno>
+					<note type="submission">Received: 18 June 2016 / Accepted: 17 January 2017 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Analog signal processing</term>
+					<term>Analog processor</term>
+					<term>Parallel architecture</term>
+					<term>Prototype design</term>
+					<term>Off-the-shelf components</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The field of machine vision is continuously evolving. There are new products coming into the market that have very severe size, weight and power constraints and handle very high computational loads simultaneously. Existing architectures and digital image processing solutions will not be able to meet these ever-increasing demands. There is a need to develop novel architectures and image processing solutions to address these requirements. The major contribution of this work is to show that analog signal processing is a solution to this problem. The analog processor will be used as an augmentation device which works in parallel with the digital processor, making the system faster and more efficient. We have developed a prototype of an analog processing board using commercially available off-the-shelf components and demonstrated that a prototype development has several advantages over a direct integrated circuit design. We focus on providing experimental results that demonstrate functionality of the analog processing board and show that the performance of the prototype board for low-level and mid-level image processing tasks is equivalent to a digital implementation. To demonstrate improvement in speed and power consumption over other systems, we propose an integrated circuit design of the analog processor and show that such an analog processor would be 1009 faster than existing FPGAs and 59 faster than state-of-the-art GPUs. We also compare the performance of the proposed integrated circuit design against other analog processors reported in the literature. We report a case study in which we use the processor for an object detection and recognition application and show that the processor has excellent performance.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Computer vision was a research technology for a long time, but over the last few years it has gone through a huge change and is being widely deployed. The growth is fueled by applications in the consumer, automotive, medical and industrial markets. Also contributing to the growth are the emerging applications in wearables, drones, Internet of things, etc. Cameras will be an integral part of all these devices.</p><p>Long-standing and important problems in the field of computer vision such as object detection and recognition, and depth estimation are becoming mainstream now and are frequently used in machine vision applications. A common thread in the emerging applications being considered is the requirement of real-time processing to be performed in severely constrained environment of size, weight and power (SWaP). Also, real-time machine vision applications involve collecting and processing huge amounts of data which will lead to communication bottlenecks between the processor and memory. Due to the high computational requirement, these applications are being implemented on specialized digital hardware components. These digital hardware accelerators have high compute capability, but it comes at a price of high power consumption and large size. For example, achieving realtime object detection on a state-of-the-art GPU such as Tegra X1 from Nvidia would require a power consumption of 3.5 Watts <ref type="bibr" target="#b36">[37]</ref>. This shows that the current imaging architectures and digital image processing solutions will not work in all situations because they will not be able to handle the high computational loads and meet the SWaP requirements simultaneously.</p><p>Since the digital processing approach fails to achieve the required results, a promising alternative is to use analog signal processing. While analog signal processing generally cannot achieve the same level of accuracy as digital processing, it has the advantages of higher speed, smaller area and lower power consumption. As a result, analog processors can be built that can perform massive parallel processing. This will result in significant speedup of computation when compared to a digital system.</p><p>Most of the machine vision algorithms involve performing low-level and mid-level image processing tasks such as image enhancement, filtering, segmentation and classification of objects. The accuracy achieved by analog processing is often sufficient for these image processing tasks. Another common feature in these algorithms is the requirement for parallel processing. For example, most of the low-level and mid-level image processing tasks can be implemented through convolution of pixel intensities with filter kernel values. In these cases, each image pixel can be processed independently and in parallel. Hence, analog processing is a suitable candidate for these tasks.</p><p>There have been successful attempts to develop analog vision chips that are faster than digital systems using a variety of technologies ranging from CMOS devices <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b29">30,</ref><ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b50">51]</ref>, to the more recently developed spintronic-based nanodevices <ref type="bibr" target="#b44">[45]</ref>. Neuromorphic computing has gained a lot of popularity in the recent years as a possible solution method for some of the machine vision algorithms <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b17">18,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b45">46]</ref>. Some of the vision chips described in these research papers were designed as application-specific integrated circuits while other papers show simulation results. The design of application-specific integrated circuits is a long and an expensive process. Simulation results are a good indicator of performance but cannot always indicate actual circuit performance due to many constraints, and the results also depend on how well the circuit models have been defined.</p><p>In this work, we have taken a different approach. We have built a prototype of an analog processing board using commercial off-the-shelf (COTS) components. The advantages of developing such a prototype board include flexibility, cost savings, decreased time-to-market and lower risk than a direct custom integrated circuit design. It is also better than simulating with circuit models alone. It will help us understand analog processing techniques required for machine vision applications and create better circuit architectures for an integrated circuit design. The board has three analog channels which can be used to perform various operations such as convolutions and correlations in the analog domain. In this paper, we focus on providing experimental results that demonstrate the functionality of the analog processing board. We also propose the development of an integrated circuit design called the analog space-time convolution processor (ASTCP) based on a similar architecture and compare the performance of the proposed analog hardware accelerator against existing digital accelerators and other analog processors reported in the literature. Finally, we report a case study where we use the processor for an object detection and recognition application and show that the processor has excellent performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Background</head><p>The availability of various digital hardware in the market such as general-purpose graphics processing units (GPGPUs), field-programmable gate arrays (FPGAs) and application-specific integrated circuits (ASICs) has led to the implementation of digital hardware accelerators for machine vision applications <ref type="bibr" target="#b37">[38]</ref>. While the performance of these digital hardware accelerators is impressive, their biggest drawback is the power consumption and large size. The alternative is to use analog hardware accelerators in conjunction with digital accelerators.</p><p>The feasibility of analog computation for image processing applications was demonstrated as early as 1989 by Papananos <ref type="bibr" target="#b39">[40]</ref>. He implemented a weighted averaging algorithm, which is a series of multiply-and-accumulate operations on images using analog circuitry. Since then, there have been various attempts to develop analog image processing chips. Wyatt et al. initiated the MIT vision chip project where the aim was to develop a single chip with the sensor and processing circuitry integrated to perform early vision tasks <ref type="bibr" target="#b52">[53]</ref>. This was followed by considerable research on implementing integrated image sensors with analog image processing capabilities built into them <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b57">58]</ref>. Some of these early vision chips did not have programmability built into them and they had to be used only for specific image processing tasks. The advent of cellular neural network (CNN)-based image processing architectures gave way to a slew of new programmable vision chips <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b49">50]</ref>. However, these CNN-based vision chips are not easy to program and the performance of these processors is very susceptible to process and environment variation.</p><p>Neuromorphic computing, a concept developed during the 1980s, has become a very popular tool for solving problems in machine vision applications, especially motion estimation. Neuromorphic computing uses digital, analog and mixedsignal circuits to mimic the neurobiological architectures in the nervous system. In <ref type="bibr" target="#b9">[10]</ref>, the authors present such a neuromorphic chip and demonstrate decision making and bistable perception. In <ref type="bibr" target="#b5">[6]</ref>, the authors present a neuromorphic optical flow-based reconfigurable hardware with properties of cortical motion pathway. The architecture is designed and tested on an Altera FPGA. In <ref type="bibr" target="#b6">[7]</ref>, the same authors present the implementation of the neuromorphic architecture on a Virtex FPGA. Many attempts have been made in the literature to mimic the biological vision system to process images. In <ref type="bibr" target="#b30">[31]</ref>, the author presents a neuromorphic motion estimation model of the vision system in a fly which has a one-dimensional array of motion detectors, whose outputs are aggregated using a nonlinear function. In <ref type="bibr" target="#b56">[57]</ref> and <ref type="bibr" target="#b45">[46]</ref>, the authors develop a mixed-signal neuromorphic chip to replicate the response of cells in the visual cortex and calculate a disparity map for natural scenes in real time. These systems required the use of FPGAs. While the performance of these architectures is good, the biggest drawback of implementing these architectures on an FPGA is the high power consumption and large size. There have been various analog focal plane array implementations for optical flow-based motion estimation. These compute the flow at a per-pixel level. As an example, the authors in <ref type="bibr" target="#b46">[47]</ref> present such a design. One of the drawbacks of such an implementation is the high complexity of the circuit design at a pixel level and the low fill factor of the pixels in the image sensor. In <ref type="bibr" target="#b17">[18]</ref>, the authors present a mixed-signal neuromorphic chip for address event-based image processing, and in <ref type="bibr" target="#b20">[21]</ref>, the authors present a multi-chip neuromorphic system where address event representation (AER) is used for inter-chip communication. Here the neuromorphic chips operate on data represented in the AER format and not on a frame-based format. This requires the use of dynamic CMOS image sensors with pixels that respond to events. Some of the drawbacks of these sensors are that they are highly susceptible to transistor mismatch, and they have a large pixel size and very low fill factors. With the end of CMOS scaling approaching soon, technologies beyond CMOS are already being considered and memristors are one of the most promising of these technologies. In <ref type="bibr" target="#b55">[56]</ref>, the authors present a neuromorphic chip based on CMOS-memristor technology. While they show that the functionality of the memristorbased neuromorphic chip for pattern recognition is good, the memristor technology needs to achieve a low-resistance state of the order of megaohms (MX) to implement a practical low-power brain-inspired computing chip. Some other challenges with a memristor-based computing chip are handling the sneak path current issues and device variability.</p><p>There have been various other implementations of analog processors for vision-based systems, but none of them, to our knowledge, have implemented an analog prototype board using COTS components for machine vision and image processing applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Reasons for developing the analog processing board prototype</head><p>Field-programmable gate arrays have transitioned from simple glue logic to reprogrammable silicon chips that can replace digital application-specific integrated circuits. Developing an analog version of an FPGA that can perform all analog circuit functions is a challenging task. The major reason for this being that not all complex analog circuit functions can be represented as a combination of simpler analog circuits. There have been implementations of reconfigurable analog chips which are called field-programmable analog arrays (FPAAs) <ref type="bibr" target="#b18">[19,</ref><ref type="bibr" target="#b42">43]</ref>. The advantage of FPAAs is that they remove the fabrication step from the iterative process and hence dramatically reduce the time for the design cycle. However, the FPAAs have their own drawbacks. A design implemented on an FPAA will have higher parasitics as well as increased die area. As a result, the design possesses inefficiencies such as low bandwidth and increased power consumption. But, since the design of analog integrated circuits take time, the FPAAs can be a good trade-off.</p><p>The requirement in this research work, however, is slightly different. In this work, we are not trying to build a reconfigurable analog chip. The aim here was to build a rapid prototype of an analog processor using COTS components for the specific application of machine vision and image processing. Most machine vision and image processing algorithms make extensive use of computationally intensive, time-consuming and iterative mathematical operations such as convolutions and correlations which can be implemented easily in the analog domain. Also, using COTS components has a lot of advantages. They are an excellent tool to demonstrate functionality. There are significant savings in terms of time and cost, as designing and testing custom parts is generally very time-consuming and expensive. The off-the-shelf components are generally readily available which again saves time. They are also easy to modify to fit to custom design requirements and they offer a lot of flexibility in case design changes or revisions have to be made.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Image processing in the analog domain</head><p>Most of the machine vision algorithms perform low-level and mid-level image processing tasks which involve spatial filtering of images. Here a spatial filter mask or kernel performs a predefined operation on a neighborhood of pixel intensity values to create a new pixel intensity value with the coordinates equal to the coordinates of the center of the neighborhood. For linear spatial filtering the response is given by a sum of products of the filter coefficients and the corresponding image pixels in the area spanned by the filter mask <ref type="bibr" target="#b16">[17]</ref>. In general, linear spatial filtering of an image i of size M 9 N with a filter kernel k of size m 9 n is given by:</p><formula xml:id="formula_0">g x; y ð Þ ¼ X a s¼Àa X b t¼Àb k s; t ð Þi x þ s; y þ t ð Þ ð<label>1Þ</label></formula><p>where m = 2a ? 1 and n = 2b ? 1</p><p>To generate a complete filtered image Eq. (<ref type="formula" target="#formula_0">1</ref>) is applied for x ¼ 0; 1; . . .M À 1 and y ¼ 0; 1; . . .N À 1.</p><p>Spatial filtering of images can be performed using either of the two basic mathematical operations: correlation or convolution. In correlation, the filter mask is moved over the entire image and at each location the sum of products is computed. The mechanics of convolution are the same but the filter is first rotated 180°. Using convolution or correlation to perform spatial filtering of images is a matter of preference <ref type="bibr" target="#b16">[17]</ref>. Grayscale images can be processed directly using these techniques. Full color image processing techniques are used widely in a broad range of applications. Two kinds of color image processing techniques are generally used. In the first technique, each individual component of the color image is processed and then a composite image is formed, and in the second technique, all color components are dealt with simultaneously.</p><p>The spatial filtering of images can be considered as a 2D filtering operation as shown in Eq. (<ref type="formula" target="#formula_0">1</ref>), i.e., the multiplication operation is followed by two summation operations. When the 2D spatial filtering is implemented in the analog domain, one of the methods of implementing it is to perform continuous filtering operation in one dimension and discrete operation in the other dimension. Even though the second dimension is discrete, the operation is still performed in the analog domain. The 2D analog image filtering operation is given by the equation:</p><formula xml:id="formula_1">g x; y ð Þ ¼ X a s¼Àa Z b t¼Àb k s; t ð Þi x þ s; y þ t ð Þ dt<label>ð2Þ</label></formula><p>The discreteness in the second dimension is achieved by multiple analog channels where each analog channel performs a continuous time operation in the analog domain. The number of analog channels depends on the size of the filter kernel. Each row of the image intensity value and the filter kernel value is converted into an analog signal and processed independently by each analog channel, i.e., these values are multiplied and then integrated. This accomplishes the computation in the first dimension. The outputs of each of these analog channels are summed in the analog domain and this accomplishes computation in the second dimension. Another important point to be considered while performing convolution or correlation is that of shifting the kernel values. The shifts in the kernel values are handled in the data readout for the analog prototype board. This is done by rearranging the image intensity values in a specific order in memory so that they represent a shift when they are read out.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Hardware architecture</head><p>The analog processing board prototype has been developed using a variety of COTS components. The functionality of the prototype board is to implement mathematical operations such as convolution and correlation. The number of analog channels that are required depends on the size of the filter kernel being used. In this work, we have considered three analog channels. This means that the prototype can be used to demonstrate spatial filtering of images with kernels of size 3 9 3, which is the minimum filter kernel size used. For a general case with an N 9 N filter kernel, the processing board can have N channels.</p><p>Figure <ref type="figure" target="#fig_0">1</ref> shows the high-level block diagram of the analog processing board prototype with three channels. Consider a 3 9 3 image and a 3 9 3 kernel. The first row of the image and kernel is input into the first multiplier section (Input 1 and Kernel 1), second row into the second multiplier section (Input 2 and Kernel 2) and the third row into the third multiplier section (Input 3 and Kernel 3) as shown in the figure. The kernel and image values are multiplied in the multiplier section and the outputs (and their copies) represented by A1(B1), A2(B2) and A3(B3) are sent to the integrator section where they are integrated. This completes the first dimension of computation as shown in Eq. ( <ref type="formula" target="#formula_1">2</ref>). To complete the image filtering operation, the integrator outputs must be summed as shown in Eq. ( <ref type="formula" target="#formula_1">2</ref>). This is accomplished through a voltage summer as shown in Fig. <ref type="figure" target="#fig_0">1</ref>. The output of the voltage summer is a filtered pixel. There are two integrator sections as can be seen from the figure. This is for an interleaved operation which is explained in greater detail in Sect. 4.3.</p><p>The architecture of the prototype board can be divided into two major sections: the multiplier section and the integrator section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">The multiplier section</head><p>The multiplier section of the prototype board is responsible for receiving analog inputs, performing signal conditioning and multiplication. The analog prototype board has three channels each with its own multiplier section. These three channels can be used to perform spatial filtering using a 3 9 3 kernel or they can also be used for any other threechannel image processing task. The block diagram of the multiplier section of one channel is shown in Fig. <ref type="figure" target="#fig_1">2</ref>. The components have been numbered to identify them. An image processing algorithm using an N 9 N filter kernel would have N such multiplier sections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1">SMA connectors</head><p>The analog values of the input image intensities and the filter kernels are input through standard SMA female connectors ('Amphenol 132417') which are indicated by components 1 and 2 in the figure from an external source. There are two SMA input connectors for each multiplier section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.2">Low-pass filters</head><p>The analog image input intensities and filter kernel values can then be passed through a low-pass filter. This is indicated by components 3 and 4 in the figure. The low-pass filter selected here is RLP-70? which is a component from Minicircuit. This is a passive low-pass filter with a passband from DC to 70 MHz with an insertion loss of less than 2 dB. This implies that the highest frequency of operation of the prototype board can go up to 70 MHz. The low-pass filter will be used to remove any high-frequency noise and out-of-band signals on the analog intensity or filter kernel signals. A jumper around the low-pass filter can be used if the filter must be bypassed. If the frequency of operation of the analog board must be increased to 'f' MHz, the pixels and kernel values will be read out at this frequency. This would mean the pass band of the low-pass filter selected should be from DC to 'f' MHz. The connections for the low-pass filter are obtained from the manufacturer's datasheet <ref type="bibr" target="#b32">[33]</ref>. The filter has one input and one output and all other pins are grounded.</p><p>The important circuit parameter here is the passband frequency. If the passband frequency is low, then the required signals may not go through, and if the passband frequency is too high, then this will result in unwanted signals going through which may contribute to the noise at the output.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.3">Single-ended to differential amplifier</head><p>The multiplier that has been selected for the prototype board expects a differential input. The two analog input signals are single-ended. Hence, we need a single-ended to differential converter (components 5 and 6). The singleended to differential converter has been designed using an op-amp. The op-amp selected for this operation is LMH6552 from Texas Instruments. This is a fully differential amplifier with a 3 dB bandwidth of 1.5 GHz. Figure <ref type="figure" target="#fig_2">3</ref> shows the circuit diagram of a single-ended to differential amplifier built using a fully differential opamp. The design equations for the single-ended to a differential op-amp are given below <ref type="bibr" target="#b48">[49]</ref>:</p><formula xml:id="formula_2">A v ¼ 2 1 À b 1 ð Þ b 1 þ b 2 b 1 ¼ R G R G þ R F b 2 ¼ R G þ R M R G þ R M þ R F<label>ð3Þ</label></formula><formula xml:id="formula_3">R IN ¼ 2R G þ R M 1 À b 2 ð Þ 1 þ b 2<label>ð4Þ</label></formula><p>Here A v is the required voltage gain of the single-ended to differential amplifier, R S is the source resistance and R IN is the input impedance of the amplifier. The design requirement is that R T ||R IN = R S and R M = R T ||R S . The source resistance is generally 50 X. R F is the feedback resistance of the amplifier and the values of both feedback resistors are kept the same. The resistors connected to the inverting and the non-inverting input terminals R G are also kept the same. This means that the ratio of R F /R G sets the gain of the amplifier output. From the manufacturer's datasheet <ref type="bibr" target="#b48">[49]</ref>, we obtain information that for optimum operation of the design, the value of the feedback resistor must be between 270 and 390 X. Once this value is fixed, we can calculate the value of R G depending on the gain requirement. This will allow us to then calculate b 1 and b 2 from which we can calculate R M .</p><p>Solving these design equations using the above method gives the values of the all the required resistors. The resistance values obtained for this design are as follows: R s = 50 X, R T = 59 X, R G = 255 X, R M = 27 X and R F = 275 X.</p><p>The important parameters for this component are the resistor values. These resistor values set the gain at the output of the amplifier and should be as close as possible to the theoretical values calculated from Eqs. (<ref type="formula" target="#formula_2">3</ref>) and <ref type="formula" target="#formula_3">4</ref>). Hence, we have used resistors with 0.1% tolerance. If these resistor values deviate more than this, the gain of the single-ended to differential amplifier will vary and this will result in incorrect values at the input of the multiplier.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.4">Analog multiplier</head><p>The analog multiplier (component 7) is one of the most critical components in the design of the prototype board. The multiplier is used to multiply the analog image intensity values with filter kernel values. This is the first step of the convolution process. Since the filter kernel values can be both positive and negative we needed an analog four quadrant multiplier. The input dynamic range was set to be 1 V. We also wanted a multiplier with a very low-noise figure so that the performance would not be affected by noise. The multiplier that had specifications closest to this was Analog Devices', ADL5391. This is a fully differential analog multiplier that has a multiplication bandwidth from DC-2 GHz and an input dynamic range of ?2 V to -2 V. The transfer function of the multiplier is given by:</p><formula xml:id="formula_4">V W ¼ a V X :V Y ð Þ 1V þ V Z<label>ð5Þ</label></formula><p>where V X and V Y are the input analog voltages to the multiplier, a is the multiplier gain and is set to 1 and V Z is the summing voltage input which is set to 0 in the prototype board design. The output of the ADL5391 is also differential. The performance of the multiplier was critical to the performance of the analog prototype board. Hence, the ADL5391 multiplier functionality was first verified against the results provided in the datasheet using an evaluation board. The connections for the multiplier are obtained from the manufacturer's datasheet <ref type="bibr" target="#b4">[5]</ref>. For a general design with N analog channels, N such multipliers can be used.</p><p>The important parameters that must be set for the multiplier are the gain and summing voltage. The gain a is always set to 1. The summing input V Z must be set to 0. It is important to ensure that the gain of the multiplier is fixed and known. If the gain of the multiplier deviates and becomes unknown, the multiplier outputs will be erroneous.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.5">Variable-gain amplifier (VGA)</head><p>The output of the multiplier is passed through a VGA (component 8). The VGA allows the gain of the multiplied output to be changed, i.e., amplified or attenuated. Even though the previous components have been set to have no gain, there may be minor variations in these components that make the gain at the multiplier output nonzero. The gain setting of the VGA here was tuned such that the output of the VGA had no gain with respect to the input at the SMA connectors. The VGA selected for this purpose is AD8336 from Analog Devices. The connections for this component were obtained from the manufacturer's datasheet <ref type="bibr" target="#b2">[3]</ref>. It is a low-noise, single-ended general-purpose VGA with an absolute gain variation of -26 dB to 34 dB and a bandwidth of 80 MHz. The gain variation of the VGA chosen in this design will be sufficient for most of the applications and other general designs. However, if the frequency of operation of the prototype board must be increased, a VGA with a higher bandwidth capability must be chosen.</p><p>The parameter that is controlled for the VGA is the voltage applied to set the gain. It is a variable DC voltage that can be applied to the gain control pin through a potentiometer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.6">Test points</head><p>The aim of developing a prototype board was to verify the functionality of the board and the components. Hence, test points have been placed at the input and output of all the components. This is indicated by red dots in Fig. <ref type="figure" target="#fig_1">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">The integrator section</head><p>The integrator section of the analog prototype board performs integration of the multiplied signals which accomplishes the 1D convolution or correlation. It is also responsible for the computation in the second dimension. This is accomplished by adding the 1D outputs from all the three channels using a summing circuit. Figure <ref type="figure" target="#fig_3">4</ref> shows the block diagram of the integrator section. The components have been numbered to identify them. In the figure, A1, A2 and A3 are the analog outputs from the three channels of the multiplier section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1">Unity gain buffer</head><p>The outputs of the VGA from each analog channel are input into to a unity gain buffer indicated by components 9, 10 and 11. This ensures that the VGA output sees a highimpedance stage. The unity gain buffer amplifier was designed using an op-amp. The component selected for this is ADA4817, an op-amp from Analog Devices. This is a low-noise, unity gain, stable, high-speed voltage feedback amplifiers with FET input stages. The unity gain buffer is a simple non-inverting amplifier with a voltage gain, A V of 1. This is designed by making the feedback resistor small and the resistor connected to the inverting input very large. We use the manufacturer's datasheet for reference design <ref type="bibr" target="#b3">[4]</ref> The same unity gain buffer can be used for any general design with N analog channels.</p><p>The parameters for the unity gain buffer are the values of the feedback resistor and the resistor connected to the inverting input terminal. These values need not be very accurate. It must be ensured that the ratio of the feedback resistor value to the resistor connected to the inverting input terminal is very small. If these values are off, the gain will not be unity which will result in errors at the output.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.2">Integrator</head><p>The basic op-amp-based integrator circuit consists of an op-amp with a capacitor between the output and the inverting terminal and a resistor at the inverting input terminal as shown in Fig. <ref type="figure" target="#fig_4">5</ref>. The integrator requires an opamp that has high slew rate and very low input bias currents. The op-amp that was selected was ADA4817 from Analog Devices.</p><p>The output voltage of the integrator is given by V out ¼ À R t 0 V in R 1 C f dt R 1 is the resistor connected to the non-inverting input terminal of the op-amp. And its value is fixed. C f is the feedback capacitor connecting the output terminal to the inverting terminal of the op-amp. The value of C f depends on the frequency of the input signal and can be calculated as C f ¼ 1 2pR 1 f b where f b is the frequency of the input signal. This ensures that the gain of the integrator is unity. The integrators accomplish 1D convolution or correlation of the image intensity values with the filter kernels.</p><p>The parameters for the integrator design are the resistor and feedback capacitor values. The resistor value is generally fixed and should have a low tolerance. Here we use resistors with 0.1% tolerance. The capacitor value should also be accurate as this determines the integration frequency. The combination of resistor and capacitor also sets the gain of the integrator. If the values of the resistor and capacitor deviate, the gain of the integrated output will not be unity and the integration frequency will also vary, which will cause errors in convolution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.3">Reset switches</head><p>The integrator is an analog continuous time circuit that integrates the input voltage till the output voltage reaches saturation. The prototype board is being used to perform spatial filtering of images using 3 9 3 kernels. Hence, the output of the integrator must be sampled after every 3 pixels, and then, a new integration cycle should begin. This is accomplished by using an RF switch in the feedback loop indicated by components 15, 16 and 17 in parallel with the feedback capacitor C f of the integrator. This switch is used to discharge the capacitor after three pixels have been integrated. A clock distribution chip on the prototype board is responsible for turning the switch on and off. The switch selected for this is ADG601/602 from Analog Devices. The connections for this component are obtained from the manufacturer's datasheet <ref type="bibr" target="#b1">[2]</ref>. For a general design, if the readout frequency of the image intensity and kernel values is 'f' MHz and the size of the kernel is N 9 N then the frequency at which the feedback capacitor C f of the integrator is cleared must be f/N MHz.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.4">Voltage summer</head><p>The 1D convolved outputs from the three integrators must be summed to perform the 2D convolution. This is accomplished using an op-amp-based three-input inverting voltage summer circuit (component 24). We use the same op-amp, the ADA4817 for the voltage summing circuit. We use the manufacturer's datasheet for the reference design <ref type="bibr" target="#b3">[4]</ref>. For a general design that has N analog channels, an N-input voltage summing amplifier can be designed. When N becomes very large it is better to have a bank of voltage summers with lesser inputs.</p><p>The important parameter for the voltage summer is the resistor values connected to the inverting and noninverting terminals of the op-amp. The resistors connected to the inverting terminal must be of the same value and must have very low tolerance (0.01%). The ratio of the feedback resistor and the resistor connected to the non-inverting terminal sets the gain of the summer. The ratio should be very small to get unity gain. If the resistance values are not accurate, the result of the summing operation will be in error causing an error in the 2D convolution operation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Interleaved architecture</head><p>The prototype board has 3 analog channels, and each channel has its own multiplier section and integrator  section. This architecture can be used to perform spatial filtering using a 3 9 3 kernel. However, the integrator must be reset after every third pixel and for this the feedback capacitor should be discharged completely. This process is not instantaneous and may take one or more clock cycles. This implies that the input data cannot be processed until the integrator has been completely reset. To circumvent this problem and maintain a continuous output, a second integrator section is used as shown in Fig. <ref type="figure" target="#fig_5">6</ref>. The timing diagram for the interleaved operation is shown in Fig. <ref type="figure" target="#fig_6">7</ref>. There are two clocks that are used which are inverted versions of each other. During the first three clock periods t0, t1 and t2, Clock 1 (Clk1) is high. This closes the switches 12, 13, 14, 21, 22 and 23 of the first integrator section shown in Fig. <ref type="figure" target="#fig_1">2</ref>: High-level block diagram of the analog processing board prototype is shown in Fig. <ref type="figure" target="#fig_3">4</ref>. The outputs from the three multiplier sections denoted as A1, A2 and A3 are passed to the first integrator section. At the same time, Clock 2 (Clk2) being the inverted version of Clock 1 keeps the switches in the second integrator section open, and hence, no signal is passed here. At the end of t2, the integrators in the first section have finished integrating and must be reset. These switches are controlled by Clk1. During reset, Clk1 goes low and Clk1 goes high which opens the switches 12, 13, 14, 21, 22 and 23 and closes the switches 15, 16 and 17. This resets the integrators in Sect. 1. At the same time Clk2 goes high for the next three clock periods t3, t4 and t5. This closes the switches 12, 13, 14, 21, 22 and 23 of the second integrator section shown in Fig. <ref type="figure" target="#fig_5">6</ref> and passes the signals from the three multiplier sections denoted as B1, B2 and B3 into the second integrator section. Now the second integrator section performs the integration operation. This process is continuously repeated. The interleaved architecture enables us to obtain a continuous output and one image pixel is filtered out every three clock periods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Simulation of analog prototype board</head><p>Before developing the prototype board, it is important to test the functionality of the board and its major components through simulation. The simulation tool used in this work is advanced design system (ADS). Most of the components selected for the design of the prototype have SPICE models available, and this was used in the simulation. There are some components for which the SPICE models were not available. For these components, a behavioral model was created and this was used in simulation. The first step in the simulation was to verify the performance of each component individually. These results were then compared to the results in the datasheets of the components. Once satisfactory results were obtained, the simulation was then carried out for one channel of the analog prototype board.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Schematic for simulation of one analog channel</head><p>Figure <ref type="figure" target="#fig_7">8</ref> shows the schematic of the multiplier section of one channel of the analog prototype board. In this schematic, the low-pass filter has been bypassed and the analog signals are directly sent to the single-ended to differential converter. The single-ended to differential converter has been designed using the SPICE model for LMH6552. The resistor values are obtained using the design equations as shown in Sect. 4.1.3. The differential outputs of the singleended to differential converter are the inputs to the multiplier. The multiplier ADL5391 does not have a SPICE model associated with it. To simulate the performance of the multiplier, a behavioral model based on the transfer function of the multiplier shown in Sect. 4.1.4 was developed in ADS using standard components. We also use a behavioral model for the variable-gain amplifier (VGA). This is just an amplifier whose gain can be controlled with the application of an external voltage. The output of the VGA is DC blocked using a capacitor. This ensures that the integrator does not saturate because of DC voltages.</p><p>Figure <ref type="figure" target="#fig_8">9</ref> shows the schematic of the integrator section. The output of the VGA goes to the input of a unity gain buffer. The buffer is designed with an op-amp, ADA4817 for which a SPICE model is available. The output of the buffer is fed into the integrator. The integrator has been designed for integrating signals at a frequency of 1 MHz using the design equations in Sect. 4.2.2. From these equations, we can calculate the value of feedback capacitance of the integrator to be 1 nF.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Simulation procedure and results</head><p>The analog prototype board has been designed to perform image filtering operations. To demonstrate the performance of the prototype board, we choose two important and frequently used image processing algorithms. The first one is a RGB to YUV color transformation which is a color image processing algorithm, and the second is an edge detection algorithm which can operate on grayscale images. The performance of the analog prototype board is compared to the performance of a digital system by implementing the same algorithms in MATLAB.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.1">Simulation procedure</head><p>To perform analog image processing, the digital image intensity values and kernel values are converted into analog voltage representations in MATLAB. The input images have 8-bit intensities, so the image intensities can have a maximum value of 255 and a minimum value of 0. The dynamic range of the analog voltage representation varies from 1 to 0.028 V, i.e., an intensity value of 255 is represented as 1 V and an intensity value of 0 is represented as 0.028 V in the analog domain. This gives a voltage step of 3.81 mV for each intensity value. These voltage values are user defined. Any other voltage range will work. However, the voltage ratings of all the components on the prototype board must be considered before deciding the dynamic range. The kernel values are directly converted into analog voltages, i.e., the analog voltage value is the same as the digital value. The analog image and kernel values are input into the analog channel which performs the convolution operation. The output of the integrator is sampled and stored. The second dimension of summation is also done in the analog domain by a voltage summer with the stored integrator values as inputs. The output of the summer is sampled and stored. These analog voltages are converted to 8-bit digital values using MATLAB and the resultant outputs are displayed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.2">Performance metrics</head><p>The results of image enhancement or processing can be very subjective, and hence, it is necessary to establish quantitative measures to compare the performance of image processing techniques. Peak signal-to-noise ratio (PSNR) is one such metric that is used frequently to   measure the quality of output images. PSNR is defined as the ratio of the maximum possible value (power) of the signal to the power of noise that distorts the signal.</p><formula xml:id="formula_5">PSNR ¼ 10log MAX 2 I MSE<label>ð6Þ</label></formula><p>where MAX I is the maximum possible pixel value for the image and MSE is the mean square error. MSE allows us to compare the true pixel value of the original image to the degraded image <ref type="bibr" target="#b51">[52]</ref>. The higher the value of PSNR, the better is the performance. Here we can consider the MATLAB outputs as the true value images and compare the performance of analog image processing by measuring the PSNR.</p><p>Another quantity that is used for measuring the similarity between two images X and Y is the structural similarity index (SSIM). SSIM is a perception-based model that considers image degradation as a perceived change in structural information while incorporating perceptual phenomena. Structural information is the idea that pixels have a strong interdependence especially when they are spatially close. It is computed as:</p><formula xml:id="formula_6">SSIM X; Y ð Þ ¼ 2l x l y þ c 1 À Á 2r xy þ c 2 À Á l 2 x þ l 2 y þ c 1 r 2 x þ r 2 y þ c 2<label>ð7Þ</label></formula><p>In this equation, l x and l y are the average of X and Y. r x 2 and r y 2 are variances of X and Y. r xy is the covariance of X and Y. C 1 = (j 1 L) 2 and C 2 = (j 2 L) 2 , where L is the dynamic range of pixel values and j 1 = 0.01, j 2 = 0.03 <ref type="bibr" target="#b13">[14]</ref>. The value of SSIM always ranges between -1 and 1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.3">RGB to YUV color transformation</head><p>YUV is a color space that is used as a part of an image pipeline. It encodes a color image by taking human perception into account. This allows for reduced bandwidths for chrominance components, thereby enabling transmission errors or compression artifacts to be more efficiently masked than a direct RGB transmission. The color transformation from RGB to YUV can be performed using the equations below. Here Y is the luminance component, and U and V are the chrominance components <ref type="bibr" target="#b12">[13]</ref>.</p><formula xml:id="formula_7">Y ¼ 0:299R þ 0:587G þ 0:114B U ¼ À0:147R À 0:289G þ 0:436B V ¼ 0:615R À 0:515G À 0:1B</formula><p>Figure <ref type="figure" target="#fig_9">10</ref> shows a 64 9 64 pixel 8-bit input color image and its corresponding red, green and blue components. The digital image intensity values and kernel values are converted into analog voltage representations. For RGB to YUV conversion each individual color component image can be processed independently and then added together to get a color transformation.</p><p>Figure <ref type="figure" target="#fig_10">11a-c</ref> shows the results of performing a RGB to YUV conversion on 64 9 64 Lena image in the analog domain. When an image is processed or enhanced for visual interpretation, the viewer is the ultimate judge of the performance. Hence, it is important to compare the images qualitatively. The YUV outputs from the analog processor simulations are compared to the YUV outputs from MATLAB which are shown in Fig. <ref type="figure" target="#fig_10">11d-f</ref>.</p><p>The PSNR for the analog Y component is 53.71 dB, analog U component is 55.26 dB and analog V component is 50.9 dB. These PSNRs were measured by taking the MATLAB simulated outputs as true images. The PSNR value of the output image of a standard image compression algorithm such as Joint Photographic Experts Group 2000 (JPEG2000) can range from 30 to 50 dB <ref type="bibr" target="#b11">[12]</ref>, and the quality of this compressed image is accepted worldwide. In comparison, the PSNRs for all the three outputs are above 50 dB, and hence, we can conclude that the performance of the analog prototype is good.</p><p>The SSIM values were calculated between the analog and digital values for each of the Y, U and V channels and were found to be 0.9983, 0.9783 and 0.9782, respectively. These high values of the SSIM show that the outputs of the analog image processing operation are very close to digital processing results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.4">Edge detection using Prewitt kernels</head><p>Edge detection operation identifies points in an image at which the brightness changes sharply or has discontinuities. The points at which there are discontinuities are typically organized into curved line segments called edges. Edge detection is a very fundamental tool in machine vision algorithms particularly in object detection and feature extraction.</p><p>A Prewitt kernel is used as the operator for finding edges here. It is a discrete differentiation operator computing the approximation to the gradient of the image intensity function. Prewitt operator gives the rate of change in a particular direction and also information on how the edge is likely to be oriented <ref type="bibr" target="#b16">[17]</ref>. The kernels used for edge detection are given by,</p><formula xml:id="formula_8">K x ¼ À1 0 1 À1 0 1 À1 0 1 2 4 3 5 and K y ¼ À1 À1 À1 0 0 0 1 1 1</formula><note type="other">2 4 3 5</note><p>Convolving the image with these kernels gives the edges in the X-and Y-directions, respectively. Figure <ref type="figure" target="#fig_11">12a</ref> shows the 64 9 64 pixel grayscale image input. The image intensity values and kernel values are converted into analog voltage representations and are input to the analog channel in ADS. Figure <ref type="figure" target="#fig_11">12b,</ref><ref type="figure" target="#fig_11">c</ref> shows the analog output obtained from ADS for horizontal and vertical edge detection using the Prewitt kernel. Figure <ref type="figure" target="#fig_11">12d,</ref><ref type="figure" target="#fig_11">e</ref> shows the output obtained from MATLAB for horizontal and vertical edge detection using the Prewitt kernel. As can be seen from the figure, the performance of analog image processing is very close to that of digital processing.</p><p>The PSNR was measured for both horizontal and vertical edge detection in the analog domain by taking MATLAB outputs as true images and it was found to be 50.7 dB and 50.56 dB, respectively, which are better than PSNRs of the JPEG2000 compression standards. The SSIM values for horizontal and vertical edge detection in the analog domain are 0.9782 and 0.9676, respectively. These results show that the performance of the analog processing board is equivalent to a digital implementation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Design and test of the analog processing board prototype</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Design of the analog processing board prototype</head><p>The analog processing board prototype is designed on a printed circuit board (PCB). The PCB schematic design of the analog processing board prototype was done in ADS.  The components used on the analog prototype have different power supply requirements. To address this, a single power supply is used along with buck converters (step-down converters) and voltage regulators. Clock distribution chips are used to control the switches responsible for the interleaving operation and clearing the integrators.</p><p>Figure <ref type="figure" target="#fig_12">13</ref> shows the layout of the analog processing board with three multiplier sections and two three-channel integrator sections along with the support circuitry. The analog processing board is built on a 6 layer FR4 board which is 93mils thick. The dimension of the board is 10.5 00 by 14 00 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Experimental results</head><p>Figure <ref type="figure" target="#fig_13">14</ref> shows a fully populated analog processing board which was used for testing purposes, and Fig. <ref type="figure" target="#fig_14">15</ref> shows the block diagram of the test setup used for testing the analog processing board. MATLAB is used to convert digital image and kernel values into analog voltage representations. The analog voltage representations are converted into analog signals using an arbitrary function generator. The analog signal inputs are processed using the analog processing board. The processed outputs of the board are displayed as waveforms on the oscilloscope. The scope output voltages are sampled and stored. MATLAB is used to convert these voltages back to image intensity values. Figure <ref type="figure" target="#fig_15">16</ref> shows that actual test setup used for measurements.</p><p>As mentioned before, two image processing algorithms are used to test the performance of the analog processing board prototype. One is RGB to YUV color transformation, and the other is edge detection. As shown in Sect. 5.2, through simulation in ADS, we were able demonstrate that the analog processing board prototype can achieve good performance and this was shown on complex image inputs. For actual measurements, due to limitations of the test equipment and setup, we use images that are less complex to demonstrate the functionality of the analog processing board prototype. However, we still use the same performance metrics to evaluate the measured results and compare it to digital simulations in MATLAB.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.1">RGB to YUV color transformation</head><p>Figure <ref type="figure" target="#fig_16">17a</ref> shows the input RGB image and its components used to perform RGB to YUV color transformation on the prototype board. Figure <ref type="figure" target="#fig_16">17b</ref> shows the expected digital output for a RGB to YUV color transformation generated in MATLAB. Figure <ref type="figure" target="#fig_16">17c</ref> shows the YUV image generated from measured outputs of the analog prototype board.</p><p>The PSNR for the analog, measured Y component is 54.64 dB, measured U component is 57.89 dB and measured V component is 58.16 dB. These are high PSNRs when compared to a JPEG2000 image compression algorithm and they indicate a good performance of the analog processing board prototype and show that noise and analog computation errors can be tolerated in image processing applications.</p><p>The SSIM values were calculated between the images generated from measured voltage values and MATLAB generated digital images for each of the Y, U and V components and were found to be 1, 0.9999 and 1, respectively. We obtain very high values of the SSIM which shows that the measured results from the analog board are very close to the MATLAB generated digital outputs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.2">Edge detection using Prewitt kernel</head><p>Figure <ref type="figure" target="#fig_17">18a</ref> shows the input binary image used to verify the performance of the analog processing board for edge detection using a Prewitt kernel. Figure <ref type="figure" target="#fig_17">18b</ref> shows the image generated from measured voltage values for horizontal edge detection using a Prewitt kernel. Figure <ref type="figure" target="#fig_17">18c</ref> shows the image generated from measured voltage values for vertical edge detection using Prewitt kernel.</p><p>The input image is binary, i.e., it has only two intensity values, 0 or 1. These image intensities are represented in the analog domain as 28 mV and 1 V. The processed output image is also binary and will be represented by these two voltage levels which are then converted to image intensity values. Since the input and output images are binary, the outputs of the analog processing board are the same as that of a digital system (MATLAB generated   output). This was verified by measuring the PSNR and SSIM values which were found to be infinity and one, respectively. This shows that the performance of the analog processing board prototype is extremely good for binary images.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.3">Signal-to-noise ratio measurements and accuracy of the analog processor</head><p>One of the drawbacks of analog circuits is that they add noise and this may affect the performance of the system. Hence, it becomes very important to measure the amount of noise added by the system. This can be done by measuring the input SNR and the output SNR. The noise figure in dB can then be calculated as the difference of the two SNRs. Figure <ref type="figure" target="#fig_18">19</ref> shows the test setup used to measure the SNR at various test points. Analog signals are input through an arbitrary function generator. We use a portable spectrum analyzer connected to a laptop to measure the signal and noise levels at each test point. From the measurements, it was found that the noise figure of the system is 25.1 dB. The measured SNR for a test image was 53.5 dB which agrees with the simulation results.</p><p>Friis's equation is used to measure the cascaded noise figure of a system and is given as:</p><formula xml:id="formula_9">F ¼ F 1 þ F 2 À 1 G 1 þ F 3 À 1 G 1 G 2 þ Á Á Á<label>ð7Þ</label></formula><p>where F is the noise factor. According to Eq. (<ref type="formula">8</ref>), the noise figure of a system is dominated by the components that appear before a gain stage. The components that appear before a gain stage in our system are the single-ended to differential amplifier and the analog multiplier. This means to further improve the performance of the board, the singleended to differential amplifier stage and the analog multiplier must be designed with very low noise. As an example, we designed an analog multiplier in 65 nm CMOS technology and simulated the noise performance of the multiplier. If the COTS multiplier is replaced by the new multiplier that was designed, the results show that the noise figure improves from 25.1 to 9.3 dB. This is a 15.8 dB improvement in output SNR.   For an analog system, the output SNR translates to the bit accuracy that can be achieved, once the analog signal has been digitized. For an N-bit analog-to-digital converter the SNR is given as 6.02 N ? 1.76 dB. For an 8-bit system the required SNR is 49.92 dB. Both simulations and measured data show that the analog prototype board can achieve an output SNR of more than 50 dB which translates to 8 bits of accuracy. This accuracy is lower than what the FPGAs and GPGPUs can offer, which is single or double precision floating point. However, 8 bits of accuracy is sufficient for most low-level and mid-level image processing applications. Also, the current industry trend is toward the development of custom hardware tensor processing units (TPUs) to replace GPUs for emerging highperformance computing applications, particularly deep learning. For example, Google announced an 8-bit fixedpoint TPU for deep learning and Intel is developing a TPU with 16-bit fixed-point architecture for deep learning applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3">Proposed integrated circuit design of analog processor board</head><p>The analog processor prototype was implemented using COTS components. The aim here was to demonstrate the functionality of the analog processor and this was successfully demonstrated through experimental results. The use of COTS components has several advantages as mentioned before. However, it does not show speed and power improvement over existing digital systems and other analog processors proposed in the literature. This can only be demonstrated through an integrated circuit implementation of the analog processor which we call the analog spacetime convolution processor (ASTCP). This will be part of our future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3.1">Performance of the integrated analog processor (ASTCP)</head><p>In this paper, we make estimations of speed improvement, power consumption and area of the analog processor based on some of the integrated circuit components that we have previously designed and fabricated or based on integrated circuit components that are available in the literature. Table <ref type="table" target="#tab_0">1</ref> gives the list of major components, their power consumption values and the area occupied by each device. The frequency of operation of the analog circuit components was assumed to be 500 MHz.</p><p>Figure <ref type="figure" target="#fig_19">20a</ref> shows the performance comparison of the ASTCP against the performance of FPGA (Xilinx Artix) <ref type="bibr" target="#b54">[55]</ref>, GPU (Nvidia's Pascal architecture) <ref type="bibr" target="#b35">[36]</ref> and a state-of-the-art digital ASIC (Movidius Myriad 2) <ref type="bibr" target="#b33">[34]</ref>. The performance comparison metric used is giga-operations per second per watt (GOPS/W). As can be seen from the figure, the performance of the analog processor when implemented as an integrated design is 1009 better than FPGAs, 59 and 49 better than state-of-the-art GPU and digital ASIC, respectively.</p><p>Figure <ref type="figure" target="#fig_19">20b</ref> shows the speed comparison for the same devices. Here the operation being considered is a simple image filtering on a 5-megapixel image using 2 different filter kernel sizes, 3 9 3 and 5 9 5. As can be seen, the analog processor can achieve extremely high frame rates which can be very critical for more complex machine vision applications such as object detection and recognition.</p><p>Table <ref type="table" target="#tab_1">2</ref> shows the performance comparison of the analog space-time convolution processor (ASTCP) against other analog processing-based hardware implementations for machine vision applications. Most of these implementations are CMOS based, but in <ref type="bibr" target="#b44">[45]</ref> the authors have built a processor by using a combination of CMOS-and spintronic-based devices. Each processor can handle a different frame size and frame rate and compare the performance we consider a figure of merit (FOM1). As can be seen from the table, the ASTCP presented in this work has the best FOM.</p><p>A good processor design should always achieve an optimum cost-performance trade-off at a particular target performance. There are two parts to the cost of a chip. The first one is a fixed cost also known as the non-recurring engineering (NRE) cost which accounts for the chip design, verification and mask generation. The second one is the recurring cost which is proportional to product volume and it includes the chip area, packaging and test. The NRE cost always keeps increasing and multiple design runs of a chip adds to this cost. In this paper, we have addressed this issue by first designing a prototype board using COTS components. Once the design has been finalized, we can move into an integrated chip design phase, which will now be cheaper.</p><p>The recurring cost can be reduced by having a smaller chip area. The digital hardware accelerators generally occupy more silicon area than application-specific analog integrated circuits. This is because of the larger number of transistors required for a digital circuit to perform the same operation as compared to an analog circuit. For example, the Xilinx Artix FPGA can have an area ranging from 100 to 1225 mm 2 <ref type="bibr" target="#b53">[54]</ref>. The NVIDIA GPUs have an area of 600 mm 2 <ref type="bibr" target="#b35">[36]</ref> and the Movidius Myriad 2 has an area of 42.25 mm 2 <ref type="bibr" target="#b34">[35]</ref>.These chip areas are very high compared to the proposed ASTCP chip which can be under 1 mm 2 (area increased to include pads and voltage supplies), and hence, the analog processor has a better performance per cost when compared to the digital hardware accelerators.</p><p>In Table <ref type="table" target="#tab_1">2</ref>, we also compare the chip area of various analog processors that have been reported in the literature. Since the analog processors reported handle different frame sizes and have been fabricated in different technology nodes, we use a figure of merit (FOM2) to compare performance. As can be seen from the table, the ASTCP has the lowest chip area and the highest FOM. Hence, it has the best performance per cost.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3.2">Reliability and sensitivity of analog processor</head><p>The reliability of analog integrated circuits as compared to digital circuits is a concern. There are two major factors that affect the reliability of these devices. The first one is the sensitivity of analog circuits to variations in process, voltage and temperature (PVT) and the second is the degradation due to aging mechanisms such as bias temperature instability and hot carrier injection.</p><p>These effects have been studied extensively in the literature and various methods have been devised to overcome them and perform a reliable analog and mixed integrated circuit design. In <ref type="bibr" target="#b38">[39]</ref>, the authors discuss using an efficient method for sizing of analog circuits for reliability and they also study the trade-off between circuit lifetime and price for layout area. In <ref type="bibr" target="#b47">[48]</ref>, the author proposes an adaptive gate-source biasing scheme to improve the reliability of analog circuits. One of the techniques generally used to maintain an acceptable performance across all process corners and throughout the temperature range is to use compensation circuits. As an example, the performance of the integrator may drift due to temperature variation. compensation circuit continuously measures the frequency response of the integrator and ensures that it always maintains a slope of 20 dB/decade in the desired frequency range. If this varies due to temperature or voltage variations, the compensation circuit will adjust the bias of the integrator circuit and correct it. Methods like this will be investigated and used as part of the future work in designing the integrated circuit for the processor.</p><p>Noise in analog circuits can be very sensitive to temperature and process variations. Various techniques can be used to reduce the effect of noise and make the analog circuits less sensitive to noise. One method that can be used to reduce noise is using differential circuits. This provides a very good common-mode noise rejection and helps decrease the sensitivity of circuits to power and ground noise. Other techniques such as limiting the circuit bandwidth, limiting external analog signals, providing signal separation and shielding can reduce the effect of noise in analog circuits. Another very effective technique used to reduce the noise figure of the signal chain is to have a lownoise amplifier at the front end of the processor.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3.3">A case study: AlexNet architecture</head><p>Convolutional neural networks (ConvNets) are a class of artificial neural networks that use massive network of neurons and synapses to extract local features from images. ConvNets are generally used for object detection and recognition applications. The main principle of a ConvNet is to extract features from feature maps of higher resolution and then combine these features into feature maps of lower resolution. A general ConvNet follows two steps: (1) a feature extraction step and (2) classification step.</p><p>The feature extraction step consists of the following functions:</p><p>1. Convolution between an image of the previous layer and the corresponding set of weights, which produces an intermediate result for the feature map of the current layer. In this step, features such as edges, corners and crossings are extracted from input feature maps.</p><p>2. The next step is subsampling, which is done to achieve spatial invariance by reducing the resolution of feature maps. In this step, a bias value is also added to the output maps.</p><p>3. In the next step, the output is passed through a nonlinear activation function. This is applied to each pixel in the feature map.</p><p>To evaluate the performance of the analog space-time convolution processor we conduct a case study on AlexNet architecture <ref type="bibr" target="#b27">[28]</ref>. It is a deep convolutional neural network model that was used to classify images into 1000 different classes. Figure <ref type="figure" target="#fig_20">21</ref> shows the architecture of AlexNet and Table <ref type="table" target="#tab_2">3</ref> gives information about each of the five convolutional layers of the network. Layer 1 of the network has a 224 9 224 pixel image input with 3 channels. It is operated on by 3 kernels of size 11 9 11 which perform convolution. The outputs are subsampled and passed through a nonlinear activation function. The resultant outputs are 55 9 55 pixel feature maps with 96 channels and it acts as the input to layer 2 of the network, where it is operated on by 96 kernels of size 5 9 5 which perform convolution. The outputs are again subsampled and passed through nonlinear activation function. The output of layer 2 is the input to layer 3 and this process is continued in the other three layers of AlexNet as shown in Fig. <ref type="figure" target="#fig_20">21</ref>, Table <ref type="table" target="#tab_2">3</ref>. The output of the fifth layer is sent to a classifier where the image is classified into one of the 1000 possible categories. These applications are time-consuming with high computational load. It is estimated that the 90% of the computation time in each layer a convolutional neural network is spent on the first step which involves convolution of an image of the previous layer with a set of weights which produces an intermediate result for the current layer. Based on this assumption, we calculated the total number of computations required in performing convolutions in the five layers of the AlexNet architecture and it was found to be 4.9 giga-operations. From these data, a performance comparison between the ASTCP and various other digital processors in the market was made.</p><p>Figure <ref type="figure" target="#fig_21">22a</ref> shows the performance of various processors in GOPS/W <ref type="bibr" target="#b10">[11]</ref>. The ASTCP processor is 8x faster than the closest convolutional neural network processor. Figure <ref type="figure" target="#fig_21">22b</ref> shows the time required in milliseconds to process one 224 9 224 frame through the 5 layers of AlexNet architecture in each of the processors mentioned. An interesting point to note is that for real-time operation the frame must be processed under 33.33 ms. None of the processors apart from our analog processor (ASTCP) can achieve the real-time requirement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusion</head><p>In this work, we developed a prototype of an analog processing board for machine vision and image processing applications. The analog processing board design was first simulated in ADS. Two frequently used image processing algorithms, RGB to YUV color transformation and edge detection, were used as benchmarks to compare the performance of the analog board against MATLAB implementation of these algorithms. Two performance metrics, PSNR and SSIM, were used for performance comparison and it was shown that the performance of the analog processing board is equivalent to a digital implementation. A PCB design of the analog processing board prototype was implemented and it was shown that such a design has many advantages over a direct integrated circuit design. The same benchmarking algorithms and performance metrics were used to measure the performance of the prototype board. The measured results indicate that the performance of the prototype is very close to simulated results in MATLAB. To perform speed and power consumption comparison, an integrated circuit design of the analog processor was proposed. Power consumption estimations were performed using previously designed and fabricated components or components taken from the literature. It was shown that such an analog processor has a performance improvement of more than 1009 over existing FPGAs and 5x improvement over state-of-the-art GPUs. The performance of the proposed integrated circuit design was also compared to other analog processors designed for machine vision applications reported in the literature. A case study for a ConvNet implementation for object detection and recognition was performed and it was shown that ASTCP has 89 performance improvement over state-of-the-art digital processor. It was also shown that it is the only processor that can achieve real-time performance. As part of future work, we seek to investigate an analog processor composed of a combination of CMOS and emerging nanotechnology devices to further improve the performance.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 High-level block diagram of the analog processing board prototype</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Block diagram of one channel of the multiplier section of the analog prototype board</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Circuit diagram of a single-ended to differential amplifier using a fully differential op-amp</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 Block diagram of the first integrator section</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Circuit diagram of the op-amp integrator</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Block diagram of the second integrator section</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7</head><label>7</label><figDesc>Fig. 7 Timing diagram for interleaved operation</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8 Functional schematic of the multiplier section</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9 Functional schematic of the integrator section</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 10</head><label>10</label><figDesc>Fig. 10 a Original Lena image. b Red component of Lena image (input), c green component of Lena image (input). d Blue component of Lena image (input)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 11</head><label>11</label><figDesc>Fig. 11 a-c Show the results of analog RGB to YUV conversion in ADS. d-f Show the results of RGB to YUV conversion performed in MATLAB</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 12</head><label>12</label><figDesc>Fig. 12 a 64 9 64 pixel grayscale input image. b Analog output of edge detection in X-direction. c Analog output of edge detection in Ydirection. d Digital output of edge detection in X-direction. e Digital output of edge detection in Y-direction</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Fig. 13</head><label>13</label><figDesc>Fig. 13 Layout of the analog processing board prototype</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Fig. 14</head><label>14</label><figDesc>Fig. 14 Fully populated analog processing board used for testing</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Fig. 15</head><label>15</label><figDesc>Fig. 15 Block diagram of the test setup for the analog processing board prototype</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Fig. 16</head><label>16</label><figDesc>Fig. 16 Test setup for testing the analog processing board prototype</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Fig. 17</head><label>17</label><figDesc>Fig. 17 a Input RGB image with red, green and blue components. b Expected YUV output and its components generated in MATLAB. c Measured YUV outputs and components from the analog board</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Fig. 18</head><label>18</label><figDesc>Fig. 18 a Input binary image. b Measured results of horizontal edge detection using Prewitt kernel. c Measured results of vertical edge detection using Prewitt kernel</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>Fig. 19</head><label>19</label><figDesc>Fig. 19Test setup for measuring signal-to-noise ratio at various test points</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19"><head>Fig. 20</head><label>20</label><figDesc>Fig. 20 a Performance comparison of different devices in GOPS/W. b Performance comparison of various devices in frames per second for filtering a 5MP image with two kernels of sizes 3 9 3 and 5 9 5</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20"><head>Fig. 21</head><label>21</label><figDesc>Fig. 21 Architecture of the five-layer AlexNet<ref type="bibr" target="#b37">[38]</ref> </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21"><head>Fig. 22</head><label>22</label><figDesc>Fig. 22 a Performance of various processor in GOPS/W. b Time required in ms for processing one frame (224 9 224) in an AlexNet architecture</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Power consumption of all the core components in one channel of the analog processor</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Comparison of the proposed work with other designs reported in the literature</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Information about the five convolutional layers of AlexNet <ref type="bibr" target="#b37">[38]</ref></figDesc><table/></figure>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Nihar Athreyas received his Bachelor of Engineering in Electronics and Communication</head><p>Engineering from VTU Belgaum, India, in 2010 and Master of Science in Electrical and Computer Engineering from University of Massachusetts, Amherst, MA, in 2013. He is currently pursuing his doctoral degree under the supervision of Dr. Dev Gupta and Dr. Joshua Yang at University of Massachusetts, Amherst, MA. He was an intern at Newlans, Inc., at Acton, for a year where he worked on application of analog signal processing techniques in stereo imaging. He is also a founding member of Spero Devices, Inc, where he works part-time. His current research interests include CMOS analog design and applications of analog signal processing, nanotechnology and high-performance computing.</p><p>Dev V. Gupta received his Ph.D. in 1977 from the University of Massachusetts, Amherst. He held various engineering positions at the Bell Laboratoin Andover, MA, from 1977 to 1985. He was the General Manager at Integrated Network Corporation, a manufacturer of DSL access products, from 1985 to 1995. Dr. Gupta founded two companies, Dagaz Technologies and Maxcomm, which were acquired by Cisco Systems in 1997 and 1999, respectively. These companies developed and manufactured telephone exchange and voice and data equipment for DSL. He was Cisco's VP of Architecture in the access business unit between founding Dagaz Technologies and Maxcomm. In 2000, he founded Narad Networks which manufactured gigabit Ethernet networking equipment for the cable industry. Narad Networks (renamed PhyFlex) was acquired by Cienna in 2007. Newlans was founded in 2003. He is a Charter Member of the Atlantic chapter of the Indus Entrepreneurs (TIE), an organization which promotes entrepreneurship. The World Economic Forum named him a 'Tech Pioneer' for the years 2001 and 2002. He is a Trustee of the University of Massachusetts, Amherst, and a board member of the UMass Foundation. He is an Adjunct Professor at the University of Massachusetts where he created the Gupta Chair in the Department of Electrical and Computer Engineering. He has over thirty patents in communications, networking, circuit design and signal processing. Jai Gupta is the co-founder and CTO of Spero Devices, Inc. Previously he was the Chief Architect of Newlans, Inc. and was responsible for commercialization efforts of Newlans' analog integrated circuits and wideband signal processing technology. His primary role was system architecture design and program management. He has previously held research positions at the National Institute of Standards and Technology and Huntington Medical Research Institute, worked as a systems engineer at metropolitan ad hoc networking startup Windspeed Access and held internship positions at broadband cable startup Narad Networks as well as Cisco Systems. Jai recently completed the Executive MBA degree at Duke University's Fuqua School of Business with a concentration in Entrepreneurship and Innovation. He previously obtained the MSEE degree in Electrical Engineering Systems from the University of Southern California's Viterbi School of Engineering and the BSEE degree from the University of Pennsylvania's Moore School of Electrical Engineering.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Alma Delic</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Programmable state-variable filter with wide frequency and Q tuning range</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Electron. Electr. Eng.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="issue">3</biblScope>
+				<biblScope unit="page" from="207" to="211"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="data-sheet" xml:id="b1">
+		<monogr>
+			<title level="m">ADG601/602 SPST switches</title>
+			<imprint>
+				<publisher>Analog Devices</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b2">
+		<monogr>
+			<title level="m">AD8336 wide bandwidth, DC-coupled VGA</title>
+			<imprint>
+				<publisher>Analog Devices</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b3">
+		<monogr>
+			<title level="m">AD4817-1 low-noise, 1 GHz, FastFET Op Amps</title>
+			<imprint>
+				<publisher>Analog Devices</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b4">
+		<monogr>
+			<title level="m">ADL5391 DC to 2 GHz, multiplier</title>
+			<imprint>
+				<publisher>Analog Devices</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Botella</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Bio-inspiredrobustopticalflowprocessorsystem for VLSI implementation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Electron. Lett.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="issue">25</biblScope>
+				<biblScope unit="page" from="1304" to="1305"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Botella</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Robust bioinspired architecture for optical-flow computation</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. VLSI Syst</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="issue">4</biblScope>
+				<biblScope unit="page" from="616" to="629"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Carmona</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">A 0.5 lm CMOS CNN analog random access memory chip for massive image processing</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International workshop on CNN and their Applications</title>
+			<imprint>
+				<date when="1998">1998</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Soell</surname>
+					<forename>Christopher</forename>
+				</persName>
+			</author>
+			<title level="a">A CMOS image sensor with analog preprocessing capability suitable for smart camera applications</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE ISPACS</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Corradi</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Decision making and perceptual bistability in spike-based neuromorphic VLSI systems</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International Symposium on Circuits and Systems (ISCAS)</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b10">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Culurciello</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="m">Enabling machines to perceive the world</title>
+			<imprint>
+				<publisher>Teradeep Inc.</publisher>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>De Simone</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">A comparative study of color image compression standards using perceptually driven quality metrics</title>
+		</analytic>
+		<monogr>
+			<title level="j">SPIE, Optical Engineering Applications</title>
+			<imprint>
+				<date when="2008">2008</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b12">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Devereux</surname>
+					<forename type="first">V</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="m">Limiting of YUV digital video signals</title>
+			<imprint>
+				<date when="1987">1987</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dosselmann</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename type="first">X</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">A comprehensive assessment of the structural similarity index</title>
+		</analytic>
+		<monogr>
+			<title level="j">SIViP</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unite="issue">1</biblScope>
+				<biblScope unit="page" from="81" to="91"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dudek</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">A general-purpose processor-per-pixel analog SIMD vision chip</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Circuits Syst.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unite="issue">1</biblScope>
+				<biblScope unit="page" from="13" to="20"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Espejo</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">A 0.8 lm CMOS programmable analog-array- processing vision chip with local logic and image-memory</title>
+		</analytic>
+		<monogr>
+			<title level="m">European IEEE Solid-State Circuits Conference</title>
+			<imprint>
+				<date when="1996">1996</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b16">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Gonzalez</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Woods</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="m">Digital Image Processing</title>
+			<imprint>
+				<publisher>Prentice Hall</publisher>
+				<pubPlace>Upper Saddle River</pubPlace>
+				<date when="2002">2002</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gotarredona</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">A neuromorphic cortical-layer microchip for spike-based event processing vision systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Circuits Syst. I Regul. Pap.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unite="issue">12</biblScope>
+				<biblScope unit="page" from="2548" to="2566"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b18">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Hall</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="m">Field-programmable analog arrays: a floating-gate approach</title>
+			<imprint>
+				<publisher>Georgia Institute of Technology</publisher>
+				<date when="2004">2004</date>
+			</imprint>
+			<note>Ph.D. Dissertation</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Harpe</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">A 7-to-10 bit 0-to-4 MS/s flexible SAR ADC with 6.5-to-16fJ/conversion step</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE J. Solid-State Circuits</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="page" from="472" to="474"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Indiveri</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">A reconfigurable neuromorphic VLSI multichip system applied to visual motion computation</title>
+		</analytic>
+		<monogr>
+			<title level="m">Micro-electronics for Neural, Fuzzy and Bio-Inspired Systems</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="page" from="37" to="44"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jendernalik</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Analog CMOS processor for early vision processing with highly reduced power consumption</title>
+		</analytic>
+		<monogr>
+			<title level="m">20th European Conference on Circuit Theory and Design</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jendernalik</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">CMOS realization of analogue processor for early vision processing</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bull. Pol. Acad. Sci.: Tech. Sci.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">59</biblScope>
+				<biblScope unite="issue">2</biblScope>
+				<biblScope unit="page" from="141" to="147"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>J-H</forename>
+				</persName>
+			</author>
+			<title level="a">A low power analog CMOS vision chip for edge detection using electronic switches</title>
+		</analytic>
+		<monogr>
+			<title level="j">ETRI J.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">27</biblScope>
+				<biblScope unit="page" from="539" to="544"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kinget</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">A programmable analog cellular neural network CMOS chip for high speed image processing</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE J. Solid-State Circuits</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unite="issue">3</biblScope>
+				<biblScope unit="page" from="235" to="243"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Klein</surname>
+					<forename>J-O</forename>
+				</persName>
+			</author>
+			<title level="a">Low power image processing: analog versus digital comparison</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International Workshop on Computer Architecture for Machine Perception</title>
+			<imprint>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kong</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">A 160x120 edge detection vision chip for neuromorphic systems using logarithmic active pixel sensor with low power dissipation</title>
+		</analytic>
+		<monogr>
+			<title level="m">ICONIP</title>
+			<imprint>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Krizhevsky</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">ImageNet classification with deep convolutional neural networks</title>
+		</analytic>
+		<monogr>
+			<title level="m">Advances in Neural Information Processing Systems</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="page" from="1097" to="1105"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename type="first">W</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">A 12-bit 40 nm DAC achieving SFDR[70 dB at 1.6 GSPS and IMD \-61 dB at 2.8 GSPS with DEMDRZ technique</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Journal of Solid-State Circuits</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="page" from="708" to="717"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="conference" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Linan</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">A 0.5 lm CMOS 106 transistors analog programmable array processor for real-time image processing</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE Solid-State Circuits Conference</title>
+			<imprint>
+				<date when="1999">1999</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>S-C</forename>
+				</persName>
+			</author>
+			<title level="a">A neuromorphic aVLSI model of global motion processing in the fly</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Circuits Syst. II: Analog Digit. Signal Process</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unite="issue">12</biblScope>
+				<biblScope unit="page" from="1458" to="1467"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miao</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">A programmable SIMD vision chip for real-time vision applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE J. Solid-State Circuits</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unite="issue">6</biblScope>
+				<biblScope unit="page" from="1470" to="1479"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b32">
+		<monogr>
+			<title level="m">RLP-70+ low pass filter</title>
+			<imprint>
+				<publisher>Minicircuit</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b33">
+		<monogr>
+			<author>Movidius</author>
+			<title level="m">Software programmable media processor</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b34">
+		<monogr>
+			<title level="m">Myriad 2 MA2959 vision processor VPU product brief</title>
+			<imprint>
+				<publisher>Movidius</publisher>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b35">
+		<analytic>
+			<author>Nvidia</author>
+			<title level="a">NVIDIA Tesla P100</title>
+		</analytic>
+		<monogr>
+			<title level="m">Nvidia whitepaper</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b36">
+		<analytic>
+			<author>Nvidia</author>
+			<title level="a">GPU-based deep learning inference: a performance and power analysis</title>
+		</analytic>
+		<monogr>
+			<title level="m">Nvidia whitepaper</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ovtcharov</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Accelerating deep convolutional neural networks using specialized hardware</title>
+		</analytic>
+		<monogr>
+			<title level="m">Microsoft Research</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Graeb</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Reliability optimization of analog integrated circuits considering the tradeoff between lifetime and area</title>
+		</analytic>
+		<monogr>
+			<title level="j">ICMAT, Elsevier</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="1559" to="1564"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Papananos</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">Feasibility of analogue computation for image processing application</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Proc.- Circuits, Devices Sys.</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">136</biblScope>
+				<biblScope unite="issue">1</biblScope>
+				<biblScope unit="page" from="9" to="13"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Parvizi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">An ultra-low-power wideband inductorless CMOS LNA with tunable active shunt-feedback</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Microw. Theory Tech.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">64</biblScope>
+				<biblScope unite="issue">6</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Potluri</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">CNN based high performance computing for real-time image processing on GPU</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE Proceedings of the Joint INDS and ISTET</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="page" from="1" to="7"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schlottmann</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Vector matrix multiplier on field programmable analog array</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International Conference on Acoustics, Speech and Signal Processing</title>
+			<imprint>
+				<date when="2010">2010</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shameli</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A Novel ultra-low power low noise amplifier using differential inductor feedback</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE European Solid- State Conference</title>
+			<imprint>
+				<date when="2006">2006</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sharad</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Ultra-low energy analog image processing using spin based neurons</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE/ACM International Symposium on Nanoscale Architectures</title>
+			<imprint>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shimonomura</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Neuromorphic binocular vision system for real-time disparity estimation</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International Confer- ence on Robotics and Automation</title>
+			<imprint>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stocker</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Analog VLSI focal-plane array with dynamic connections for the estimation of piecewise-smooth optical flow</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Circuits Syst. I Regul. Pap.</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unite="issue">5</biblScope>
+				<biblScope unit="page" from="963" to="973"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b47">
+		<monogr>
+			
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="m">Study of design for reliability of RF and analog integrated circuits</title>
+			<imprint>
+				<publisher>University of Central Florida</publisher>
+				<date when="2012">2012</date>
+			</imprint>
+			<note>Ph.D. Dissertation</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b48">
+		<monogr>
+			<title level="m">LMH6552 1.5 GHz fully differential ampli- fier</title>
+			<imprint>
+				<publisher>Texas Instruments</publisher>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Valle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">An analog VLSI neural network for real-time image processing in industrial applications</title>
+		</analytic>
+		<monogr>
+			<title level="m">Seventh IEEE ASIC conference</title>
+			<imprint>
+				<date when="1994">1994</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vornicu</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Image processing using a CMOS analog parallel architecture</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE Proceedings on CAS</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unite="volume">2</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b51">
+		<monogr>
+			
+			<author>
+				<persName>
+					<surname>Winkler</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="m">Digital Video Quality: Vision Models and Metrics</title>
+			<imprint>
+				<publisher>Wiley</publisher>
+				<pubPlace>West Sussex</pubPlace>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wyatt</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">The MIT Vision chip project: analog VLSI systems for fast image acquisition and early vision processing</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE International Conference on Robotics and Automation</title>
+			<imprint>
+				<date when="1991">1991</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b53">
+		<monogr>
+			<author>Xilinx</author>
+			<title level="m">7 Series FPGAs overview</title>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="data-sheet" xml:id="b54">
+		<monogr>
+			<author>Xilinx</author>
+			<title level="m">Artix-7 FPGAs data sheet: DC and AC switching characteristics</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xinyu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Homogeneous spiking neuromorphic system for real-world pattern recognition</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE J. Emerg. Sel.Top. Circuits Syst.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="254" to="266"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yagi</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shimonomura</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Silicon primary visual cortex designed with a mixed analog-digital architecture</title>
+		</analytic>
+		<monogr>
+			<title level="m">International Joint Conference on Neural Networks</title>
+			<imprint>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="conference" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">A 0.5 V 34.4uW 14.28kfps 105 dB smart image sensor with array level analog signal processing</title>
+		</analytic>
+		<monogr>
+			<title level="m">IEEE Solid-State Circuits Conference</title>
+			<imprint>
+				<date when="2013-09">Nov. 2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

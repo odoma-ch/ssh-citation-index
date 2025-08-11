@@ -1,0 +1,1358 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Identifying efficient solutions via simulation: myopic multi-objective budget allocation for the bi-objective case</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-08-23">23 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Juergen</forename><surname>Branke</surname></persName>
+							<email>juergen.branke@wbs.ac.uk</email>
+							<idno type="ORCID">0000-0002-4343-5878</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Warwick Business School</orgName>
+								<orgName type="institution">University of Warwick</orgName>
+								<address>
+									<settlement>Coventry</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wen</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Warwick Business School</orgName>
+								<orgName type="institution">University of Warwick</orgName>
+								<address>
+									<settlement>Coventry</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Identifying efficient solutions via simulation: myopic multi-objective budget allocation for the bi-objective case</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">OR Spectrum</title>
+						<idno type="ISSN">0171-6468</idno>
+						<idno type="eISSN">1436-6304</idno>
+						<imprint>
+							<publisher>Springer</publisher>
+							<biblScope unit="volume">41</biblScope>
+							<biblScope unit="page" from="831" to="865"/>
+							<date type="published" when="2019-08-23">23 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ABD7F112905A2A3607B483851C97A3BC</idno>
+					<idno type="DOI">10.1007/s00291-019-00561-0</idno>
+					<note type="submission">Received: 10 July 2018 / Accepted: 1 August 2019 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Multi-objective</term>
+					<term>Myopic</term>
+					<term>Ranking and selection</term>
+					<term>Simulation optimisation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Simulation optimisation offers great opportunities in the design and optimisation of complex systems. In the presence of multiple objectives, there is usually no single solution that performs best on all objectives. Instead, there are several Pareto-optimal (efficient) solutions with different trade-offs which cannot be improved in any objective without sacrificing performance in another objective. For the case where alternatives are evaluated on multiple stochastic criteria, and the performance of an alternative can only be estimated via simulation, we consider the problem of efficiently identifying the Pareto-optimal designs out of a (small) given set of alternatives. We present a simple myopic budget allocation algorithm for multi-objective problems and propose several variants for different settings. In particular, this myopic method only allocates one simulation sample to one alternative in each iteration. This paper shows how the algorithm works in bi-objective problems under different settings. Empirical tests show that our algorithm can significantly reduce the necessary simulation budget.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Simulation optimisation aims to efficiently identify the best possible alternative, where best is defined as best expected performance. Since an alternative's true performance is unknown and can only be evaluated by stochastic simulation, it is usually necessary to average over several simulation runs in order to obtain accurate performance estimates. Ranking and Selection (R&amp;S) methods aim to allocate simulation samples more efficiently, and this research area has received substantial interest in recent years <ref type="bibr" target="#b10">(Chau et al. 2014)</ref>.</p><p>However, many real-world simulation optimisation problems require the consideration of multiple conflicting objectives. In this case, there is usually no single solution that performs best in all objectives, but a set of Pareto-optimal solutions with different trade-offs. A solution is called Pareto-optimal or efficient if there is no other solution that performs better in all objectives. For instance, different staffing levels at a call centre will incur different costs and different customer waiting times, and a solution is Pareto optimal, if there is no better solution that has lower cost as well as lower customer waiting times. In the presence of multiple stochastic criteria, the R&amp;S problem becomes a multi-objective ranking and selection (MORS) problem where the goal is to identify the set of Pareto-optimal solutions.</p><p>Although plenty of research has been published on single-objective R&amp;S, there is little research on MORS. In this paper, we summarise and extend our work on the simple, yet powerful Myopic Multi-Objective Budget Allocation (M-MOBA) framework originally introduced in <ref type="bibr" target="#b7">Branke and Zhang (2015)</ref>, <ref type="bibr" target="#b8">Branke et al. (2016)</ref>. M-MOBA is myopic and only allocates simulation samples to one alternative in each iteration. It is therefore easy to compute and avoid some of the approximations necessary for other methods. We show how this framework can be adapted to different bi-objective problem settings.</p><p>Besides summarising our previous work on this topic, this paper makes the following novel contributions:</p><p>1. In addition to the original M-MOBA method which uses probability of correct selection as performance criterion, and the variant using hypervolume change originally proposed in <ref type="bibr" target="#b8">Branke et al. (2016)</ref>, we introduce a new variant that can take into account an indifference zone.</p><p>2. We propose a variant that allows different objectives to be sampled independently and demonstrate empirically that this can substantially improve efficiency. This may be relevant in problems where the different criteria are determined by different simulation tools.</p><p>3. We provide a more thorough empirical evaluation of our approach.</p><p>4. We provide a comprehensive review on the existing literature on MORS.</p><p>Our paper is organised as follows. Section 2 reviews the relevant literature of ranking and selection. Section 3 formalises the problem and describes the assumptions. Section 4 describes the proposed M-MOBA procedure and its variants. The results of the empirical evaluation can be found in Sect. 5. The paper concludes in Sect. 6 with a summary and some suggestions for future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Literature review</head><p>Section 2.1 introduces the major single-objective R&amp;S methods, whereas Sect. 2.2 reviews the main methods to MORS problems. There are other related techniques that we do not cover here due to space limitations, such as the multi-armed bandit literature which aims mostly at maximising cumulative reward <ref type="bibr" target="#b24">(Gittins and Glazebrook 2011)</ref>, or the case of correlated beliefs where information about one alternative also tells us something about other, "similar" alternatives (e.g. <ref type="bibr" target="#b42">Shahriari et al. 2016)</ref>. For a good overview on multi-objective simulation optimisation, see also <ref type="bibr" target="#b28">(Hunter et al. 2019)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Overview of ranking and selection</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.1">Performance measures</head><p>The literature considers a variety of goals in R&amp;S. The simplest goal is to maximise the probability of correct selection (PCS). For a minimisation problem, the true PCS is defined mathematically as</p><formula xml:id="formula_0">PCS = P(μ x s ≤ μ x * ),</formula><p>where μ x * is the mean performance of the true best solution x * and μ x s is the mean performance of the selected solution x s .</p><p>In the experiments, we report on the estimated PCS. For Q replications of an experiment, the PCS can be estimated as</p><formula xml:id="formula_1">P(CS) = Q c Q ,</formula><p>where Q c is the number of replications for which the method correctly identified the best alternative.</p><p>If two alternatives have almost identical performance, even a large number of samples may not be able to correctly identify the better one, and anyway the decision maker (DM) might not care about very small differences. So it seems natural to introduce an indifference zone, the smallest difference δ that deserves to be discerned. Then, the goal is to maximise the Probability of Good Selection (PGS), which is the probability that the selected alternative is not worse by more than δ compared to the true best. For a minimisation problem,</p><formula xml:id="formula_2">PGS = P(μ x s ≤ μ x * + δ),</formula><p>where μ x * is the mean performance of true best solution x * and μ x s is the mean performance of the selected solution x s . The estimated PGS can be defined similar to the estimated PCS.</p><p>Another commonly used goal is to minimise the expected opportunity cost (EOC), defined as the true difference in performance between the true best and the selected system. Expected opportunity cost (EOC) is of practical concern in business, engineering and other applications, where design performance represents economic value and is particularly useful for risk-neutral decision makers <ref type="bibr" target="#b14">(Chick and Wu 2005)</ref>. While PCS only cares about whether a solution is correct, opportunity cost intuitively describes how far away the selected alternative is from the true best system <ref type="bibr" target="#b31">(Lee et al. 2007)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.2">Major R&amp;S methods</head><p>Sampling each alternative an equal number of times is inefficient since it will waste a lot of simulation runs on the obviously inferior alternatives. The state-of-the-art R&amp;S procedures allocate the sampling budget sequentially, based on observations made so far. There are two categories of statistical models for R&amp;S, frequentist and Bayesian. Frequentist models construct estimates based purely on the observed simulation output. This view generally assumes that there are some unknown, but fixed underlying parameters for a population. In contrast, the Bayesian approach assumes prior knowledge about the performance of each alternative and regards the unknown performance as a random variable whose distribution encodes our own uncertainty about the exact value <ref type="bibr" target="#b10">(Chau et al. 2014)</ref>. The five main basic approaches to R&amp;S are summarised in Table <ref type="table" target="#tab_0">1</ref>.</p><p>-The indifference-zone methods such as KN ++ <ref type="bibr" target="#b30">(Kim and Nelson 2006)</ref> which aim at identifying an alternative that is not worse by more than δ compared to the true best. KN ++ maintains a set of possibly best solutions and drops solutions from this set when it detects clear evidence that an alternative is unlikely to be best. The procedure iterates until only one solution remains.</p><p>-The expected value of information (EVI) procedure <ref type="bibr" target="#b13">(Chick and Inoue 2001)</ref> which maximises the expected value of information in the next samples.</p><p>-The small-sample EVI procedures that include the Knowledge Gradient (KG) method <ref type="bibr" target="#b20">(Frazier et al. 2008)</ref> and the myopic method proposed in <ref type="bibr" target="#b15">Chick et al. (2010)</ref>. In each iteration, these methods only allocate samples to one alternative.</p><p>-The optimal computing budget allocation (OCBA) <ref type="bibr" target="#b11">(Chen 1996)</ref> approach which, different from the small-sample EVI procedures, is an asymptotic approach. For a comprehensive introduction of OCBA method, see <ref type="bibr" target="#b22">Fu et al. (2007</ref><ref type="bibr" target="#b23">Fu et al. ( , 2008) )</ref> and <ref type="bibr" target="#b12">Chen and Lee (2010)</ref>.</p><p>-The racing method such as F-race that is based on the nonparametric Friedman's two-way analysis of variance by ranks <ref type="bibr" target="#b3">(Birattari et al. 2010)</ref>. Similar to KN ++ , racing methods drop alternatives from sampling that are unlikely to be the best based on the observations so far, until only one alternative remains. However, racing methods have no performance guarantee.</p><p>As summarised by <ref type="bibr" target="#b10">Chau et al. (2014)</ref>, the indifference-zone method is generally from a frequentist view although <ref type="bibr" target="#b19">(Frazier 2014)</ref> proposed a Bayesian-inspired method to correct the indifference-zone method's tendency to over-deliver, i.e. produce better performance than what is actually required at the expense of many more samples. EVI is a Bayesian statistical model-based approach, and OCBA can be adapted to both frequentist and Bayesian models <ref type="bibr" target="#b12">(Chen and Lee 2010)</ref>. A comparison of the performance of indifference-zone, EVI and OCBA methods can be found in <ref type="bibr" target="#b4">Branke et al. (2007)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Overview of multi-objective ranking and selection</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.1">MORS performance measures</head><p>In the presence of multiple, conflicting objectives, it is difficult to decide which alternative is best. For a minimisation problem, a solution y is called dominated by another solution x (denoted by x ≺ y), if μ x,h μ y,h for all objectives and μ x,h &lt; μ y,h for at least one. A design not dominated by any other design is called Pareto optimal, and the objective in Multi-Objective Ranking and Selection (MORS) is usually to find the set of Pareto-optimal solutions. The image of the Pareto-optimal set in objective space is often called the Pareto front.</p><p>Similar to the single-objective R&amp;S problem, one of the most widely used goals is PCS, which is defined as correctly identifying the entire set, and only this set, of Pareto-optimal solutions (see also Sect. 2.2.2 for details). It is not entirely obvious how to define an indifference zone for multiple objectives, but one attempt has been made in <ref type="bibr" target="#b43">Teng et al. (2010)</ref> which for a minimisation problem defines a solution x to be non-dominated if y|μ y,h ≤ μ x,h + δ h ∀h ∧ ∃h : μ y,h &lt; μ x,h + δ h and PGS is then the probability to identify all the solutions that are non-dominated according to this definition. In Sect. 4.2, we will discuss the drawbacks of this definition and propose an alternative. <ref type="bibr" target="#b31">Lee et al. (2007)</ref> define the opportunity cost (OC) in a multiobjective setting as follows. For a truly dominated solution that is wrongly classified as non-dominated, the OC is defined as the minimum amount this solution would need to improve in each objective for it to become non-dominated. Correspondingly, for a truly non-dominated solution that is classified as dominated, the OC is the minimum amount this solution would need to deteriorate in each objective to become dominated.</p><p>Outside R&amp;S such as in multi-objective optimisation or multi-objective reinforcement learning, hypervolume is often used as performance measure. Hypervolume is the area dominated by a set of solutions and bounded by a user-defined reference point. <ref type="bibr" target="#b48">Zitzler and Thiele (1999)</ref> present hypervolume as the only quality indicator known to be fully compliant to Pareto dominance, i.e. whenever a set A dominates another set B (every solution in B is dominated by at least one solution in A), then the measure yields a strictly better quality value for the former <ref type="bibr" target="#b49">(Zitzler et al. 2003)</ref>. For a comprehensive literature review of the hypervolume measurement, see <ref type="bibr" target="#b1">Bader and Zitzler (2011)</ref>. We have proposed to use hypervolume difference in the context of R&amp;S <ref type="bibr" target="#b8">(Branke et al. 2016)</ref>, which will be discussed in more detail in Sect. 4.3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.2">MORS methods</head><p>Compared with single-objective R&amp;S, the literature on MORS is relatively limited. One of the most widely used approaches is converting performance over multiple objectives into a scalar measure using costs or multiple attribute utility theory (MAUT) <ref type="bibr" target="#b29">(Keeney and Raiffa 1993)</ref>. By combining with an indifference-zone R&amp;S method, <ref type="bibr" target="#b37">(Morrice et al. 1998)</ref> provide a MAUT approach to MORS. <ref type="bibr" target="#b9">Butler et al. (2001)</ref> show applications for the procedure and conducts sensitivity analysis for the weights via Monte Carlo simulation. <ref type="bibr" target="#b36">Morrice and Butler (2006)</ref> have also extended the approach to model constraints using value functions. Although <ref type="bibr" target="#b9">Butler et al. (2001)</ref> use a mechanism to assess the relative importance of each criterion, an accurate model of the DM's preferences is difficult to construct in practice.</p><p>Instead of using a single utility function, <ref type="bibr" target="#b6">Branke and Gamer (2007)</ref> use a distribution of linear utility functions, and aims to minimise the expected opportunity cost over this distribution of weights using a variant of OCBA <ref type="bibr" target="#b25">(He et al. 2007)</ref>. <ref type="bibr" target="#b21">Frazier and Kazachkov (2011)</ref> develop a similar procedure based on the KG policy. <ref type="bibr" target="#b35">Mattila and Virtanen (2015)</ref> question the interpretation of the probability distributions assumed in <ref type="bibr" target="#b6">Branke and Gamer (2007)</ref> and <ref type="bibr" target="#b21">Frazier and Kazachkov (2011)</ref> and instead propose methods that only rely on constraints for the weights which can be more easily derived from DM preference statements. They propose two MORS approaches. The first is based on OCBA <ref type="bibr" target="#b11">(Chen 1996)</ref> which aims at identifying solutions that are absolutely non-dominated, i.e. solutions which, if they are evaluated with their least favourable weight combination, are better than all other solutions evaluated with their most favourable weight combination. The other one is based on multi-objective optimal computing budget allocation (MOCBA) <ref type="bibr" target="#b33">(Lee et al. 2010b)</ref> introduced below and aims at identifying solutions that are pairwise non-dominated with respect to all feasible weight combinations.</p><p>Most MORS procedures are only considering Pareto dominance and aim at maximising the probability of exactly identifying the set of Pareto-optimal solutions. Examples include the MOCBA proposed in <ref type="bibr" target="#b33">Lee et al. (2010b)</ref>, which is a multiobjective version of the OCBA algorithm. MOCBA has also been extended to allow for other measures of selection quality such as EOC <ref type="bibr" target="#b31">(Lee et al. 2007</ref><ref type="bibr" target="#b32">(Lee et al. , 2010a))</ref>, and PGS <ref type="bibr" target="#b43">(Teng et al. 2010)</ref>. <ref type="bibr" target="#b26">Hunter and Feldman (2015)</ref>, <ref type="bibr" target="#b18">Feldman et al. (2015)</ref> and <ref type="bibr" target="#b17">Feldman and Hunter (2018)</ref> allocate samples to maximise the rate of decay of the probability that a misclassification event occurs. It is asymptotically optimal, and can take into account correlation between objectives. The myopic M-MOBA <ref type="bibr" target="#b7">(Branke and Zhang 2015)</ref> has been derived from the Small EVI paradigm <ref type="bibr" target="#b15">(Chick et al. 2010)</ref>, and assumes only a single alternative is sampled at each stage.</p><p>There are few approaches based on racing. <ref type="bibr" target="#b46">Zhang et al. (2013)</ref> present a multiobjective S-Race algorithm which attempts to eliminate alternatives as soon as there is sufficient statistical evidence of them being dominated (worse in all objectives compared to another solution). However, S-Race has limitations including type II errors not being strictly controlled, unnecessary computational cost on comparing non-dominated models and the sign test employed not being an optimal test procedure. <ref type="bibr" target="#b47">Zhang et al. (2015</ref><ref type="bibr" target="#b45">Zhang et al. ( , 2017) )</ref> overcome these limitations by introducing a multi-objective racing algorithm based on the Sequential Probability Ratio Test (SPRT) with an indifference zone. The approach uses pairwise tests and makes no assumptions about the sample distributions. The approach in <ref type="bibr" target="#b44">Wan and Wang (2017)</ref> uses a generalised sequential probability ratio test (GSPRT) that allows to test composite hypotheses and is able to guarantee a user-specified PCS.</p><p>Finally, another possibility of solving MORS is to regard one performance measure as primary objective and the rest as stochastic constraints. The general aim is then to efficiently identify the system having the best objective function value from among those systems whose constraint values are above a specified threshold <ref type="bibr" target="#b27">(Hunter and Pasupathy 2013)</ref>. Research in this category includes <ref type="bibr" target="#b0">(Andradottir and Kim 2010)</ref>, in which they provide indifference-zone frameworks with statistical performance guarantee consisting of two phases: identification and removal of infeasible systems, and removal of systems whose primary performance measure is dominated by that of other feasible systems. These phases can be executed sequentially or simultaneously. <ref type="bibr" target="#b38">Park and Kim (2011)</ref> propose a penalty function with memory which determines a penalty value for a solution based on the history of feasibility checks on the solution and converts the problem into a series of new optimisation problems without stochastic constraints. <ref type="bibr" target="#b27">Hunter and Pasupathy (2013)</ref> present the first complete characterisation of the optimal sampling plan relying on the large deviation framework, a consistent estimator for the optimal allocation and a corresponding sequential algorithm. <ref type="bibr" target="#b40">Pujowidianto et al. (2012)</ref> and <ref type="bibr" target="#b39">Pasupathy et al. (2014)</ref> focus on asymptotic theory in the context of stochastically constrained simulation optimisation problems on large finite (many thousands) sets of alternatives and provide a sampling framework called SCORE (Sampling Criteria for Optimisation using Rate Estimators) that approximates the optimal simulation budget allocation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Assumptions and problem formulation</head><p>We consider the problem of efficiently identifying the Pareto optimal designs out of a given set of alternatives, for the case where alternatives are evaluated on multiple stochastic criteria. Throughout this paper, we assume the performance of each design in each objective follows a normal distribution and the samples in the two objectives are independent. The problem of MORS can be formulated as follows.</p><p>Given H objectives and a set of m designs with the true unknown performance of each design i in objective h being denoted by μ i,h . The performance of each design in each objective needs to be estimated via sampling. Vectors are written in boldface, e.g. X i = (X ihn ) is a matrix that contains the simulation output for design i, objective h and simulation replication n. Let furthermore μ i,h and σ 2 i,h be the unknown (true) mean and variance of alternative i, which can only be estimated using the simulation outputs X ihn . We assume that</p><formula xml:id="formula_3">{X ihn : n = 1, 2, . . .} iid ∼ N (μ i,h , σ 2 i,h ), for i = 1, 2, . . . , m and h = 1, 2, . . . H .</formula><p>Let n i be the number of samples taken for alternative i so far, xi,h the sample mean and σ 2 i,h the sample variance. Then, we will get an observed Pareto set based on the N = i n i simulations so far. As n i increases, xi,h and σ 2 i,h will be updated and the observed Pareto front may change accordingly. If alternative i is to receive another τ i sample, let Y i = (Y ihn ) denote the data to be collected in the next stage of sampling, y i = (y ihn ) be the realisation of Y i and ȳi,h the average of the new samples in objective h, then the new overall sample mean in each objective can be calculated as</p><formula xml:id="formula_4">zi,h = n i xi,h + τ i ȳi,h n i + τ i .<label>(1)</label></formula><p>Before the new samples are observed, the sample average that will arise after sampling, denoted as Z i,h , is a random variable, and we can use the predictive distribution for the new samples <ref type="bibr" target="#b16">(DeGroot 2005)</ref> and get</p><formula xml:id="formula_5">Z i,h ∼St( xi,h , n i * (n i + τ i )/(τ i * σ 2 i,h ), n i -1)</formula><p>where St(μ, κ, ν) denotes the student distribution with mean μ, precision κ and ν degrees of freedom.</p><p>As discussed in Sect. 2.2.1, there are different performance criteria in MORS. For the example of PCS, a correct selection occurs when the selected set of alternatives, S(Y), is the true Pareto set P, i.e.</p><formula xml:id="formula_6">PC S = P(S(Y) = P)</formula><p>Then, given a total simulation budget N t , the MORS problem is to determine the optimal allocation of the N t samples to the designs such that PCS is maximised</p><formula xml:id="formula_7">maximise n i PC S subject to m i=1 n i ≤ N t .</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">M-MOBA procedure</head><p>Based on the small-sample EVI procedure derived in <ref type="bibr" target="#b15">Chick et al. (2010)</ref> and <ref type="bibr" target="#b20">Frazier et al. (2008)</ref>, we proposed a simple, but efficient myopic multi-objective budget allocation (M-MOBA) algorithm for MORS problems <ref type="bibr" target="#b7">(Branke and Zhang 2015)</ref>. By being myopic and only allocating a few additional samples to one alternative, smallsample procedures can avoid various asymptotic approximations. More specifically, in each iteration of sample allocation, we only allocate samples to the alternative that is expected to provide the maximum value of information.</p><p>In the following sections, we will present first the original M-MOBA procedure based on the PCS criterion, and then explain how the idea may be extended to incorporate an indifference zone, to work with hypervolume as performance criterion, as well as a variant that allows sampling the different objectives independently.</p><p>Throughout this paper, the allocation rules are explained by assuming that there are two objectives for each alternative so that the Pareto set and the dominance relationship can be visualised in a two-dimensional coordinate system. Extending the basic ideas to more than two objectives should be possible but is left for future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">M-MOBA PCS procedure</head><p>We will first consider the problem with PCS measurement. M-MOBA, in each iteration, will only allocate one sample to one alternative-the alternative that has the highest probability of changing the observed Pareto set. This algorithm has first been proposed in <ref type="bibr" target="#b7">Branke and Zhang (2015)</ref> and serves as basis of all other extended versions we will present later.</p><p>Assume that after an initial n 0 samples for each alternative, the current Pareto set consists of a set of alternatives a i , i = 1, 2, . . . , k 1 . We will consider each alternative a c in turn and estimate the expected value of information, i.e. the probability that the Pareto set will change if one additional sample is allocated to a c . If the particular alternative under consideration is removed, some previously dominated alternatives may become Pareto optimal, denoted by b j , with j = 1, 2, . . . , k 2 . We further denote the newly formed Pareto set when the particular alternative under consideration is removed as p r , with r = 1, 2, . . . , k 3 . For each alternative a i , there are three possible situations and each of them will be explained as follows.</p><p>The first situation is depicted in Fig. <ref type="figure" target="#fig_0">1</ref>, where a c is on the observed Pareto set composed of points a 1 , a c , a 2 , a 3 and indicated by the dashed line. Alternatives a 1 and b 1 are the nearest neighbours of a c in the direction of objective f 1 , and alternatives b 3 and a 2 are the nearest neighbours of a c in the direction of objective f 2 . We want to calculate the probability that the current Pareto set will change if we allocate τ additional simulation samples to a c . If we only allocate samples to a c , all other alternatives can be considered deterministic in the immediate one-step look-ahead. Then, the Pareto set changes if and only if the new mean estimate for alternative a c after sampling 1. dominates one of the previously non-dominated solutions (a 1 , a 2 , a 3 in Fig. <ref type="figure" target="#fig_1">2</ref>)</p><p>2. becomes dominated itself, or</p><p>3. exposes a previously dominated solution (b 1 , b 2 , b 3 in Fig. <ref type="figure" target="#fig_1">2</ref>).</p><p>In the example in Fig. <ref type="figure" target="#fig_1">2</ref>, a change happens if the new mean estimate falls outside the shaded area.</p><p>Since we assume that the samples in the two objectives are independent, we can calculate the probability for a c to remain in the shaded area separately for each objective, and multiply them to get the probability P that the new mean estimate for a c remains in the shaded area, and 1 -P is the probability that with one additional sample, a c will move out of the area and hence a new observed Pareto front will be obtained. Let us denote the two objective values of nearest neighbours of a c as (l 1 , u 1 ) and (l 2 , u 2 ), i.e.</p><formula xml:id="formula_8">l 1 = max{ x p r ,1 &lt; xa c ,1 |r = 1, 2, . . . , k 3 } l 2 = max{ x p r ,2 &lt; xa c ,2 |r = 1, 2, . . . , k 3 } u 1 = min{ x p r ,1 &gt; xa c ,1 |r = 1, 2, . . . , k 3 } u 2 = min{ x p r ,2 &gt; xa c ,2 |r = 1, 2, . . . , k 3 }</formula><p>then the probability P is</p><formula xml:id="formula_9">u 2 l 2 u 1 l 1 φ a c,1 (x) • φ a c,2 (y)dxdy<label>(2)</label></formula><p>where φ a c,h is the predictive probability distribution of the new location of a c in dimension h.</p><p>If a c does not expose any new solutions if it is removed, then the Pareto set will only change if the new estimated mean will become dominated, or dominates a previously non-dominated alternative. Figure <ref type="figure" target="#fig_2">3</ref> shows an example, with the area in which a c may fall without causing a change highlighted.</p><p>Assume there are k Pareto-optimal alternatives after a c has been removed and they are sorted from small to large based on f 1 , with an additional virtual 0th solution at (-∞, ∞) and a virtual (k + 1)th solution at (∞, -∞), then the probability P can be calculated as  </p><formula xml:id="formula_10">k i=0 a i,2 a i+1,2 a i+1,1 a i,1 φ a c,1 (x) • φ a c,2 (y)dxdy,<label>(3)</label></formula><p>where alternative i with objective values (a i,1 , a i,2 ) is Pareto optimal if a c is removed.</p><p>When a c is not in the Pareto set, a change happens if and only if a c becomes non-dominated. An example is shown in Fig. <ref type="figure" target="#fig_3">4</ref>.</p><p>In this scenario, the shaded area is defined by all current Pareto optimal alternatives. Similar to the above scenario, if there are k Pareto-optimal alternatives, the probability P can be computed as</p><formula xml:id="formula_11">k i=1 ∞ a i,2 a i+1,1 a i,1 φ a c,1 (x) • φ a c,2 (y)dxdy<label>(4)</label></formula><p>where alternative i is Pareto optimal and a k+1,1 = ∞.</p><p>Based on the above analysis, we can formulate the small-sample multi-objective budget allocation procedure as summarised in Algorithm 1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">M-MOBA indifference-zone procedure</head><p>In practice, some systems may have very similar objective values and a DM might not be too concerned with small differences between these systems, hence we should treat these designs as equally acceptable <ref type="bibr" target="#b43">(Teng et al. 2010)</ref>. Furthermore, if the difference is very small, even a large number of samples would not allow us to decide with confidence which system is better. As discussed in  Sect. 2.2.1, one way to deal with this is to introduce an indifference zone, and use the probability of good selection as performance criterion. However, it is not obvious how to define an indifference zone in the case of multiple objectives. In the following, we introduce a new concept of indifference zone and good selection, and develop a corresponding M-MOBA indifference zone (M-MOBA IZ) algorithm. <ref type="bibr" target="#b43">Teng et al. (2010)</ref> have proposed an indifference-zone concept for multi-objective problems as follows. A DM is indifferent between system j and system i in objective h, denoted by μ j,h μ i,h if and only if |δ i jh | ≤ δ h , where δ i jh = μ j,h -μ i,h and δ h is the indifference zone of the hth objective. Based on this definition, any solution located within the indifference-zone area of solution m is indifferent to m and so the dominance relationship can be visualised as shown in Fig. <ref type="figure" target="#fig_4">5</ref>. PGS has been defined as the probability that exactly all the solutions that are not dominated by any other solution have been identified correctly. However, with this definition small differences can still switch a solution between being in the desired set or not. For example, in the scenario shown in Fig. <ref type="figure" target="#fig_4">5</ref>, if solution n is observed as n , it will be incomparable to m, while if it is observed as n it will dominate m. Thus, an algorithm optimising under this definition is likely to spend a lot of simulation samples to distinguish the domination relationship between m and n, even if such a small difference may not be relevant to the DM.</p><p>This is why in the following, we will introduce an alternative definition of indifference zone for multi-objective problems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1">New definition of indifference zone and good selection</head><p>The key idea of our new indifference-zone definition is to extend the number of categories. Instead of a system being either dominated or non-dominated, we introduce the categories of "indifference-zone dominated", "borderline non-dominated", "borderline dominated" and "indifference-zone non-dominated" as illustrated by Fig. <ref type="figure" target="#fig_5">6</ref>. A system is</p><p>indifference-zone dominated if there is another solution that is at least δ h better in each objective h,</p><p>borderline dominated, if it would become non-dominated by improving each objective h by δ h ,</p><p>borderline non-dominated, if it is non-dominated, but would become dominated by worsening each objective h by δ h ,</p><p>indifference-zone non-dominated if it remains non-dominated even if each objective h is worsened by δ h .</p><p>More formally,</p><p>-solution i indifference zone dominates solution j, denoted by i ≺ I Z j, if μ i,h &lt; μ j,h -δ h , ∀h = 1, 2, . . . , H ,</p><p>-solution i borderline dominates solution j, denoted by i I Z j, if μ i,h &lt; μ j,h , ∀h = 1, 2, . . . , H and ∃h ∈ {1, 2, . . . , H }, |δ i jh | δ h .</p><p>Therefore, a solution j is categorised as</p><p>indifference-zone dominated if ∃i ∈ {1, 2, . . . , m}, i ≺ I Z j,</p><p>borderline dominated if i ∈ {1, 2, . . . , m}, i ≺ I Z j and ∃i ∈ {1, 2, . . . , m}, i I Z j,</p><p>borderline non-dominated if i ∈ {1, 2, . . . , m}, i ≺ I Z j, i ∈ {1, 2, . . . , n}, i I Z j and ∃i ∈ {1, 2, . . . , m}, h ∈ {1, 2, . . . , H }μ i,h &gt; μ j,h -δ h ,</p><p>indifference-zone non-dominated if i ∈ {1, 2, . . . , m}, i ≺ I Z j or i I Z j and i ∈ {1, 2, . . . , m}, h ∈ {1, 2, . . . , H }μ i,h &gt; μ j,h -δ h .</p><p>For example, in Fig. <ref type="figure" target="#fig_6">7</ref>, we have a set of indifference-zone non-dominated solutions a, b, c, which are still Pareto optimal if both objectives increase by a small amount δ (a , b , c are still Pareto non-dominated). By contrast, d will be dominated by e if its objective values increase by δ and vice versa, and thus, d and e are borderline non-dominated. Similarly, solutions f and h are indifference-zone dominated as they  would still be Pareto dominated even if both objectives are improved by δ, while g is borderline dominated as it would become non-dominated decreasing its objective values by δ.</p><p>Based on the above definitions, we propose a definition of "good selection". If c i is the "true" category of alternative i, we still count the solution as correctly classified if based on the observed objective values, the category is "similar" to the true category, as defined in Table <ref type="table" target="#tab_1">2</ref>. For example, we accept if a borderline dominated solution is classified as borderline non-dominated or as dominated, but we do not accept if it is classified as indifference-zone non-dominated. This solves the issue of classifying n in Fig. <ref type="figure" target="#fig_4">5</ref>, as there is a tolerance for classification in adjacent categories.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.2">M-MOBA IZ procedure</head><p>We use the above definition of PGS to design an M-MOBA procedure that can work with indifference zones (M-MOBA IZ). Similar to the original M-MOBA, we will calculate the probability that a solution, if re-sampled, will change its category by more than one grade. Similar to the M-MOBA PCS procedure, we discuss the calculation of the probability based on the current domination situation of each alternative.</p><p>For a solution that is indifference-zone dominated or borderline dominated:</p><p>-For a solution that is indifference-zone dominated, the area that a c needs to move out to change the selected set is exemplified in Fig. <ref type="figure" target="#fig_3">4</ref>, and the probability P can be calculated with Eq. ( <ref type="formula" target="#formula_11">4</ref>). -For a solution that is borderline dominated, if all other solutions on the observed Pareto front are indifference-zone non-dominated, an example for the area that a c needs to move out is shown in Fig. <ref type="figure" target="#fig_7">8</ref>, i.e. the original area plus the striped area that allows a c to become borderline non-dominated.</p><p>-For a solution that is borderline dominated, if a solution on the observed Pareto front is borderline non-dominated, the area that a c needs to leave is the area discussed above plus the small rectangle around the borderline non-dominated solution. For example, if solution a 2 shown in Fig. <ref type="figure" target="#fig_8">9</ref> is borderline non-dominated (with respect to a c ), the area with indifference zone for a c is the shaded part.</p><p>For a solution that is on the observed Pareto front and no new solutions become indifference-zone non-dominated or borderline non-dominated when this solution is removed:</p><p>-For an indifference-zone non-dominated solution, if all solutions on the observed Pareto front are indifference-zone non-dominated, the area that a c needs to move out of is exemplified in Fig. <ref type="figure" target="#fig_2">3</ref> and the probability P can be calculated with Eq. ( <ref type="formula" target="#formula_10">3</ref>).</p><p>-For an indifference-zone non-dominated solution, if a solution on the observed Pareto front is borderline non-dominated, the area that a c needs to move out is the area in Fig. <ref type="figure" target="#fig_2">3</ref> plus the stripe areas around the borderline non-dominated solution. Furthermore, if two borderline non-dominated solutions are neighbours on the Pareto front, the small square area between the two stripe areas also needs to be added. For example, in Fig. <ref type="figure" target="#fig_9">10</ref>, a 1 and a 2 are both borderline non-dominated (due to a 4 and a 5 , respectively), the area a c that needs to leave in order to bring a change is the shaded part shown in Fig. <ref type="figure" target="#fig_9">10</ref>.</p><p>-For a borderline non-dominated solution, if all other solutions on the observed Pareto front are indifference-zone non-dominated, the shaded area that a c needs to move out is shown in Fig, <ref type="figure" target="#fig_10">11</ref>, which is the original shaded area from Fig. <ref type="figure" target="#fig_2">3</ref> plus a stripe area on the upper right side.</p><p>-For a borderline non-dominated solution, if a solution on the observed Pareto front is borderline non-dominated, the shaded area that a c needs to leave is the area discussed in Fig. <ref type="figure" target="#fig_9">10</ref> plus the stripe area on the upper right side. For example, similar to the situation in Fig. <ref type="figure" target="#fig_9">10</ref> where a 1 and a 2 are both borderline non-dominated, the area that a c needs to leave in order to bring a change is the shaded part shown in Fig. <ref type="figure" target="#fig_11">12</ref>.</p><p>For a solution that is on the observed Pareto front and new solutions become indifference-zone non-dominated or borderline non-dominated when this solution is removed:</p><p>-If the new Pareto-optimal solutions after the solution under consideration is removed are all indifference-zone non-dominated, we only need to check solutions that define the shaded area shown in Fig. <ref type="figure" target="#fig_1">2</ref>. If some solutions that define the left and down sides of the shaded area are borderline non-dominated, the shaded  area can be extended accordingly. For example, in Fig. <ref type="figure" target="#fig_12">13</ref>, since a 2 is borderline non-dominated, the area that a c needs to leave is as the figure shows.</p><p>-If the new Pareto-optimal solution after the solution under consideration is removed is borderline non-dominated, the situation is so complex that we have not found a good method to summarise. For this situation, we use a brute-force method that divides the whole plane into different cells based on each solution's objective values and the indifference zone in each objective accordingly, and checks for each cell whether it would change the current Pareto front in case the currently considered solution were to fall into this cell. For example, if we have four solutions in total as in Fig. <ref type="figure" target="#fig_13">14</ref>, the number of cells that need to be considered is (4 * 3) 2 = 144. Please note that for the sake of clear demonstration, the domination relationship in this figure does not exactly conform to the situation that new Pareto-optimal solution after the solution under consideration is removed is borderline non-dominated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">M-MOBA hypervolume procedure</head><p>Although PCS is useful to identify the true Pareto-optimal set, there are some disadvantages. Consider the scenario shown in Fig. <ref type="figure" target="#fig_14">15</ref>, with the true value of a set of Pareto optimal solutions a, b, c and d are depicted, alongside an iso-utility curve corresponding to a specific DM. Solution b will be correctly identified as the most preferred solution for this DM. However, if solution c would be observed as c , the domination relationships among all solutions remain the same, and thus, this deviation from the true mean would not impact the PCS measure. The DM, however, would now falsely select c as best solution, and suffer a loss in utility. Another disadvantage of PCS is illustrated in Fig. <ref type="figure" target="#fig_15">16</ref>. Intuitively, solutions a and c are much more likely to be picked  by a DM than solution b, since they are much better than b in one objective but just a little worse in the other objective. So, misclassifying b is probably not as bad as misclassifying a and c, but PCS does not make this distinction.</p><p>Given these drawbacks of the PCS measure for multi-objective problems, we propose hypervolume difference (HVD) as an alternative measure.</p><p>Let Λ denote the Lebesgue measure, then the hypervolume (HV) is defined as</p><formula xml:id="formula_12">H V (B, R) := Λ ⎛ ⎝ y∈B {y | y ≺ y ≺ R} ⎞ ⎠ , B ⊆ R m<label>(5)</label></formula><p>where B is a set of solutions and R ∈ R m denotes a reference point that is usually user defined and chosen such that it is dominated by all other solutions. Figure <ref type="figure" target="#fig_16">17</ref> shows a set of five alternatives in 2-objective space. Three of the solutions are Paretooptimal, and the HV is the shaded area, defined by the Pareto-optimal solutions and the reference point R. The dominated solutions do not contribute to the HV. HV is a standard metric to judge the performance in multi-objective optimisation. It rewards solutions close to the true Pareto front, as well as a good spread of solutions along the true Pareto front <ref type="bibr" target="#b2">(Beume et al. 2007)</ref>.</p><p>But for the case of ranking and selection where evaluations are stochastic, we need a metric that penalises over-estimation as well as under-estimation of objective values, and thus propose the hypervolume difference (HVD). Given two sets of Pareto-optimal solutions A and B,</p><formula xml:id="formula_13">H V D(A, B, R) :=H V (A, R) + H V (B, R) -2 * (I H V (A, B, R), where I H V (A, B, R) =Λ{y ≺ R | ∃(y ∈ A, z ∈ B) : (y ≺ y ) ∧ (z ≺ y )}<label>(6)</label></formula><p>Figure <ref type="figure" target="#fig_17">18</ref> provides an example for the proposed HVD.</p><p>HVD is able to overcome the drawbacks of PCS-based metrics discussed above. For the scenario shown in Fig. <ref type="figure" target="#fig_14">15</ref>, HVD will penalise deviations from the true fitness values of Pareto-optimal solutions, even if all dominance relations are correct, see Fig. <ref type="figure" target="#fig_18">19</ref>. And for the scenario shown in Fig. <ref type="figure" target="#fig_15">16</ref>, while PCS fails to reflect the higher importance of a and c, hypervolume does pay more attention to these solutions. This is illustrated in Fig. <ref type="figure" target="#fig_19">20</ref>: If distorting solutions a and b by the same distance and direction, the HVD between the new and old Pareto front made by a distortion to a is larger than by the same distortion to b.</p><p>As additional advantage, it should be noted that HVD also allows straightforward incorporation of partial user preferences. If a DM already has a rough idea of the region in which the desired solutions are likely to be, the reference point can be set to reflect this preference by setting it to the maximum acceptable value in each objective. For example, if the reference point is defined as R shown in Fig. <ref type="figure" target="#fig_20">21</ref>, solutions a and d will have little influence on HVD, even if their values are disturbed, and thus, ranking and selection will focus its sampling effort on the more relevant solutions b and c.</p><p>Following the general M-MOBA framework, we will sample where we expect the sample will lead to the biggest change in HV, i.e. where the expected HVD between the Pareto fronts before and after sampling is maximal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.1">Mathematical calculation of the expected HV change</head><p>Calculating the expected HV change requires to break down the calculation into different cells, but for each cell, we can find a closed form expression. Then, these expected changes can be added up to result in the overall expected HV change. In the following, we will explain the computation for one particular cell, with other cells computed analogously. Some examples for how a move of one solution will influence the HVD can be found in <ref type="bibr" target="#b8">Branke et al. (2016)</ref>.</p><p>Consider Fig. <ref type="figure" target="#fig_21">22</ref>, where all solutions on the current Pareto front are labelled a 1 , . . . , a k , with coordinates a i,h for alternative i and objective h, and the solutions are sorted in increasing order of objective 1. For technical reasons, let us define a 0,1 = -∞, a 0,2 = a r ,2 , a k+1,1 = a r ,1 , a k+1,2 = -∞. We consider another sample for design a c , and the calculation for one particular cell that is outlined in bold and defined by upper right corner u with coordinates (u 1 , u 2 ) and lower left corner l with coordinates (l 1 , l 2 ). Let us assume that these two corners are defined by the Pareto-optimal solutions a p and a q , by u = (a p+1,1 , a q-1,2 ) and l = (a p,1 , a q,2 ).</p><p>Then, the contribution of the cell to the expectation of the HV change when sampling design a c is </p><formula xml:id="formula_14">u 2 l 2 u 1 l 1 ⎡ ⎣ (a p+1,1 -x)(a p,2 -y) + p&lt;i&lt;q (a i+1,1 -a i,1 )(a i,2 -y)] • φ c,1 (x) • φ c,2 (y)dxdy <label>(7)</label></formula><p>where φ c,h is the predictive probability distribution of the new location of x c in dimension h.</p><p>For efficient computation, we derive a closed form for calculating the expected HV change in one cell. Let φ(x; μ, κ, ν) denote the distribution of μ + 1 √ κ T ν , where T ν is a random variable with standard t distribution with ν degrees of freedom, i.e. the t distribution we estimate for the new location of an alternative's mean values after having taken another sample, with mean μ, precision κ and ν degrees of freedom. The cumulative density function is then</p><formula xml:id="formula_15">(x; μ, κ, ν) = t ( √ κ(x -μ); ν)<label>(8)</label></formula><p>with t (x; ν) the cumulative standard t-distribution, and the probability density function is</p><formula xml:id="formula_16">φ(x; μ, κ, ν)= √ κ • φ t ( √ κ(x-μ); ν)= κ νπ Γ ( ν+1 2 ) Γ ( ν 2 ) • 1+ κ(x-μ) 2 ν -ν+1 2<label>(9)</label></formula><p>with φ t (x; ν) the standard t-distribution. The HV change, due to the point we are considering moving to a new position (x, y), is always a function in the form ax y + bx+cy+d. The constant coefficients a, b, c, d are different in different areas, and some of the coefficients could be 0 sometimes. The contribution of the area [l 1 , u 1 ]×[l 2 , u 2 ] (e.g. the small cell highlighted in Fig. <ref type="figure" target="#fig_21">22</ref>) to the expectation of the HV change is</p><formula xml:id="formula_17">u 1 l 1 u 2 l 2 (ax y + bx + cy + d) • φ i,1 (x) • φ i,2 (y)dxdy = a u 1 l 1 xφ i,1 (x)dx u 2 l 2 yφ i,2 (y)dy + b • i,2 (y)| u 2 l 2 • u 1 l 1 xφ i,1 (x)dx + c • i,1 (x)| u 1 l 1 • u 2 l 2 yφ i,2 (y)dy + d • i,1 (x)| u 1 l 1 • i,2 (y)| u 2 l 2 ,<label>(10)</label></formula><p>where φ i,h (x) = φ(x; μ i,h , κ i,h , ν i ), i,h (x) = (x; μ i,h , κ i,h , ν i ), μ ih = xi,h , κ i,h = n i (n i + τ i )/τ i σ 2 i,h and ν i = n i -1. On the right-hand side of Eq. ( <ref type="formula" target="#formula_17">10</ref>), the most critical part is solving the integrals, and it can be done by calculating the corresponding indefinite integral, which is</p><formula xml:id="formula_18">xφ(x; μ, κ, ν)dx = (x -μ)φ(x; μ, κ, ν)dx + μ (x; μ, κ, ν)dx = ψ(x; μ, κ, ν) + μ (x; μ, κ, ν)<label>(11)</label></formula><p>with</p><formula xml:id="formula_19">ψ(x; μ, κ, ν) := (x -μ)φ(x; μ, κ, ν)dx = ν κπ • Γ ( ν+1 2 ) (1 -ν)Γ ( ν 2 ) 1 + κ(x -μ) 2 ν 1-ν 2 = ν + κ(x -μ) 2 (1 -ν) √ κ φ(x; μ, κ, ν).<label>(12)</label></formula><p>In the rest of this section, for convenience, we will denote ψ(x; μ ih , κ ih , ν i ) as ψ ih (x). Using the above results and gathering the terms with same integrals, Eq. ( <ref type="formula" target="#formula_17">10</ref>) can be rewritten as</p><formula xml:id="formula_20">u 1 l 1 u 2 l 2 (ax y + bx + cy + d) • φ i,1 (x) • φ i,2 (y)dxdy = a i,1 (x)| u 1 l 1 i,2 (y)| u 2 l 2 + (b + aμ i,2 ) i,1 (x)| u 1 l 1 i,2 (y)| u 2 l 2 + (c + aμ i,1 ) i,1 (x)| u 1 l 1 i,2 (y)| u 2 l 2 + (aμ i,1 μ i,2 + bμ i,1 + cμ i,2 + d) i,1 (x)| u 1 l 1 i,2 (y)| u 2 l 2 ,<label>(13)</label></formula><p>where is the integral of ψ.</p><p>For example, considering the integral ( <ref type="formula" target="#formula_14">7</ref>), we will have</p><formula xml:id="formula_21">a = 1, b = -a p,2 , c = -a p+1,1 - p&lt;i&lt;q (a i+1,1 -a i,1 ), d = a p+1,1 a p,2 + p&lt;i&lt;q (a i+1,1 -a i,1 )a i,2 ,</formula><p>and then, we can substitute them, in addition to</p><formula xml:id="formula_22">μ c,h = xc,h , κ c,h = n c (n c + τ c )/τ c σ 2 c,h , ν c = n c -1,</formula><p>where h = 1 or 2, into Eq. ( <ref type="formula" target="#formula_20">13</ref>) to solve the integral ( <ref type="formula" target="#formula_14">7</ref>).</p><p>The overall Myopic Multi-Objective Budget Allocation procedure based on the HV change criterion is denoted as M-MOBA-HV, and the procedure is almost identical to that of M-MOBA PCS except that for each alternative i, M-MOBA-HV will calculate the expected hypervolume change that would result from allocating τ additional sample to alternative i and allocate τ samples to the alternative i that has the largest expected hypervolume change.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">M-MOBA procedure for differential sampling between the objectives</head><p>Sometimes, objectives can be evaluated independently, e.g. if different simulation models are used to evaluate different criteria. In this case, in order to further improve the efficiency of sampling, it is possible to regard the sampling allocation process for each objective independently. This independent sampling procedure can be employed with different measures and without loss of generality we use PCS in this paper. Instead of evaluating all objectives of an alternative simultaneously as in the M-MOBA PCS procedure, we will evaluate only one objective of one alternative in each iteration. We calculate P i using the same methods as in M-MOBA PCS, and allocate the simulation sample to the solution and objective that has the biggest probability to change the current Pareto front. For comparison purposes, for a 2-objective problem, we assume the M-MOBA PCS procedure will allocate one sample for each objective of a solution in every iteration, while the M-MOBA Differential Sampling PCS (M-MOBA DS PCS) procedure will only allocate one sample to the selected objective. Empirical results in Sect. 5 show that by allowing to evaluate objectives independently, the efficiency of the algorithm may be improved substantially. This would be even more the case if evaluating different objectives would take different times or involve different costs, because it would allow the algorithm to focus on the cheaper objectives. Different costs could be easily integrated into M-MOBA DS PCS by using the quotient of probability of change and computational cost to decide which solution and objective to evaluate next.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Empirical results and analysis</head><p>In this section, we present empirical experiments using different M-MOBA methods and compare their performance with Equal allocation (which simply allocates an equal number of samples to each alternative) according to different performance measures. For each method, each design is sampled n 0 = 5 times during initialisation, and additional samples are allocated one at a time (τ = 1) until a pre-set budget has been used up. All results are averaged over 1000 runs. We report the performance of M-MOBA PCS, M-MOBA IZ, M-MOBA HV and M-MOBA DS PCS.</p><p>In some cases, we observed problems with numerical precision. As the number of samples allocated to an alternative increases, the posterior distribution becomes more and more narrow, leading to extremely small probabilities that an additional sample might influence the selection. Once the probabilities become numerically zero for all alternatives, the algorithm can no longer differentiate between them. As a simple fix to this problem, we implemented two slight modifications. First, in case we run into problems of numerical precision, τ is changed to 10 for the expected information change calculation, but still only one sample is allocated. Second, if the numerical precision problem persists, we will use Equal allocation until the problem disappears and τ is then set back to 1.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">M-MOBA PCS procedure</head><p>In an earlier paper <ref type="bibr" target="#b7">(Branke and Zhang 2015)</ref>, we compared the performance of M-MOBA PCS with MOCBA (Chen and Lee 2010) by using two configurations from <ref type="bibr" target="#b12">Chen and Lee (2010)</ref>. In <ref type="bibr" target="#b7">Branke and Zhang (2015)</ref>, as we did not have access to an implementation of MOCBA at the time, we just compared with results read approximately from figures provided in <ref type="bibr" target="#b12">Chen and Lee (2010)</ref>. For this paper, Dr. Haobin Li has kindly provided us with his code of MOCBA, and so we are able to compare MOCBA PCS and M-MOBA directly and under identical settings.</p><p>In the first benchmark problem, there are three designs and each of them is evaluated according to two objectives. Objective values of the designs are shown in Table <ref type="table" target="#tab_2">3</ref>.</p><p>The resulting P(CS) over the budget allocated is shown in Fig. <ref type="figure" target="#fig_21">23</ref>. As can be seen, our algorithm obtains a significantly higher P(CS) than Equal allocation with the same simulation budget. M-MOBA PCS performs very similar to MOCBA on this problem.</p><p>The second configuration has 16 alternatives, and the objective values of each design are shown in Table <ref type="table" target="#tab_3">4</ref> and visualised in Fig. <ref type="figure" target="#fig_23">24</ref>.</p><p>Results are summarised in Fig. <ref type="figure" target="#fig_24">25</ref>. Comparing our algorithm, M-MOBA PCS (τ = 1), MOCBA and Equal allocation, it can be seen that both M-MOBA PCS and MOCBA work much better than Equal allocation and M-MOBA PCS works better than MOCBA. The difference of performance between the latter two methods reaches a peak when the total simulation budget is around 1600. When the simulation budget continues increasing, the difference between M-MOBA PCS and MOCBA reduces again. The very good performance of M-MOBA PCS for small samples makes sense   as M-MOBA PCS has been designed from a myopic perspective, whereas MOCBA is based on asymptotic considerations.   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">M-MOBA IZ procedure</head><p>In order to test the performance of M-MOBA IZ, we construct a configuration that includes four categories of solutions mentioned before, namely IZ dominated, borderline dominated, borderline non-dominated and IZ non-dominated as shown in Fig. <ref type="figure" target="#fig_25">26</ref>. Expected values of each design are listed in Table <ref type="table" target="#tab_4">5</ref>, and the indifference zone δ is 0.2 in both objectives. The performance in terms of PCS and PGS measure is shown in Figs. <ref type="figure" target="#fig_26">27</ref> and <ref type="figure" target="#fig_27">28</ref>, respectively. In terms of PCS (Fig. <ref type="figure" target="#fig_26">27</ref>) as expected, M-MOBA PCS performs best and the difference between its performance and Equal  allocation is quite large. Both M-MOBA IZ and M-MOBA PCS work better than Equal allocation throughout the run. In terms of PGS, the highest PGS reached by M-MOBA IZ is more than five times higher than the highest PCS reached by any algorithm within the same budget since PGS is a less strict criterion. M-MOBA PCS performs even worse than Equal allocation in terms of PGS, which confirms that focusing too much on PCS may be detrimental if the user has an indifference zone. Our proposed M-MOBA IZ, on the other hand, works very well. To further investigate how the different methods spend the simulation samples, Fig. <ref type="figure" target="#fig_28">29</ref> shows the percentage of samples allocated to a particular design. M-MOBA spends quite a lot of samples on alternatives 2, 4, 7, 9, 10 and 11 in order to distinguish the small differences between these alternatives. By contrast, the samples spent by M-MOBA IZ are more evenly distributed except the apparently dominated solutions of 3, 5 and 6.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">M-MOBA HV procedure</head><p>In <ref type="bibr" target="#b8">Branke et al. (2016)</ref>, we tested three configurations, and compared them with two other methods, the M-MOBA PCS <ref type="bibr" target="#b7">(Branke and Zhang 2015)</ref> and Equal allocation. The test results in this section are taken from <ref type="bibr" target="#b8">Branke et al. (2016)</ref> and are repeated here for completeness. The first configuration is still the 16 alternatives configuration proposed by <ref type="bibr" target="#b12">Chen and Lee (2010)</ref>. Figure <ref type="figure" target="#fig_29">30</ref> reports the reduction in the HV difference as the number of samples allocated increases. It can be seen that the M-MOBA-HV method works much better than both the Equal and M-MOBA PCS methods in terms of HVD between the selected and true Pareto set. Although M-MOBA PCS has been shown to identify the Pareto-optimal solutions much more quickly than Equal allocation on this problem <ref type="bibr" target="#b7">(Branke and Zhang 2015)</ref>, in terms of HVD it is actually only slightly better than Equal allocation.</p><p>The second configuration is designed to show the impact of solutions that are close to being dominated or non-dominated. These points have a small influence on the resulting HV, and whether they are actually identified as dominated or non-dominated may not matter so much to a decision maker. The configuration has ten designs, two objectives, and the standard deviation of each alternative in each objective is set to 2. The reference point is (10,10) in this case. Expected values of each design are shown in Table <ref type="table" target="#tab_5">6</ref> and visualised in Fig. <ref type="figure" target="#fig_30">31</ref>. Designs 6 and 7 are dominated, but close to being non-dominated, and design 3 is non-dominated, but close to being dominated.  The result is shown in Fig. <ref type="figure" target="#fig_31">32</ref>. Again, M-MOBA-HV works very well. The PCSbased version of M-MOBA now is even worse than Equal allocation. To investigate this further, Fig. <ref type="figure" target="#fig_32">33</ref> shows the percentage of samples allocated to a particular design. M-MOBA PCS allocates quite a few samples to the borderline designs 3, 6 and 7, because it aims to improve the probability of correct selection, and for these designs the classification is most difficult. For a decision maker, however, these designs are probably less relevant. M-MOBA-HV instead focuses on the designs 1, 2, 4 and 5, which are the Pareto-optimal solutions probably most relevant to a decision maker. Thus, it creates reliable performance estimates where it is most relevant.</p><p>The third configuration is designed to show the impact of very similar designs. Again, for PCS-based MORS algorithms, it is difficult to distinguish between them. On the other hand, the distinction is probably not very relevant for a decision maker. There are eight designs, two objectives, and the standard deviation of each alternative in each objective is set to 2. Expected values of each design are shown in Table <ref type="table" target="#tab_6">7</ref>, with a visualisation in Fig. <ref type="figure" target="#fig_33">34</ref>. The results depicted in Fig. <ref type="figure" target="#fig_34">35</ref> are similar to configuration 2 in the sense that M-MOBA-HV works best, and the PCS-based M-MOBA is worse than Equal allocation. Again, Fig. <ref type="figure" target="#fig_35">36</ref> provides further detail on the distribution of samples onto the different alternatives.</p><p>As additional test, we run some experiments on randomly generated configurations. We generated 1000 random configurations of ten alternatives each, by sampling the true mean of each alternative from a normal distribution with mean (2, 2) and standard deviation of 3 in each objective. The sample standard deviation of each alternative has been set to 2 in each objective. The reference point has been set to max μ i + 5 in each   dimension. Algorithms are tested once on each of the 1000 random configurations, and results are averaged over these 1000 runs.</p><p>Figure <ref type="figure" target="#fig_36">37</ref> compares the HVD over the run for M-MOBA HV, M-MOBA PCS and Equal allocation. As expected, for this HVD performance criterion, M-MOBA HV is best, followed by M-MOBA PCS, and Equal allocation performing worst. The same comparison but for the P(CS) criterion is shown in Fig. <ref type="figure" target="#fig_37">38</ref>. Again as expected, for this criterion, M-MOBA PCS performs best. M-MOBA HV works OK in the beginning, but then stagnates and falls behind Equal allocation, presumably because it just does  not care about some borderline solutions, as these solutions do not contribute to the HV. The experiment on randomly generated configurations reinforces our intuition that the selection of the algorithm should depend on the chosen performance measure.</p><p>Finally, the timings reported in Table <ref type="table" target="#tab_7">8</ref> approximate the time it takes to perform one sample allocation with M-MOBA HV (the slowest of the algorithm variants proposed in this paper). We report the shortest, longest and average wall-clock time of 100 times running with MATLAB 2018b on a machine with 2.4 GHz Intel Core i7 CPU and 8GB memory. The average computational time is almost exactly linear in the number of alternatives.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">M-MOBA DS PCS procedure</head><p>Still using the 16 alternatives configuration used in <ref type="bibr" target="#b12">Chen and Lee (2010)</ref>, we test the M-MOBA DS PCS procedure and compare it with the original M-MOBA PCS procedure and Equal allocation.</p><p>Figure <ref type="figure" target="#fig_38">39</ref> shows PCS as the number of samples allocated increases. It can be seen that both M-MOBA PCS and M-MOBA DS PCS perform much better than Equal allocation and M-MOBA DS PCS performs better than M-MOBA PCS throughout the entire run. This matches our expectation because the M-MOBA DS PCS allocates the sampling budget more precisely to the objectives where they provide the highest value of information. This procedure is valuable when the simulation budget is quite limited and the objectives can be evaluated independently.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusion</head><p>In this paper, we presented an overview on the M-MOBA method for ranking and selection in case of two objectives. We show how this method can be adapted to various different scenarios such as the case of an indifference zone, hypervolume as performance criterion, or the case where objectives can be evaluated independently, and we propose new variants and evaluation criteria. Empirical results show M-MOBA is able to substantially reduce the number of simulation runs needed to obtain a desired performance, when compared to equal allocation or other methods from the literature.</p><p>In conclusion, we suggest different M-MOBA variants are used in different situations according to Table <ref type="table" target="#tab_8">9</ref>.</p><p>There are several avenues for future research, including a test on real-world simulation optimisation problems, other M-MOBA variants with different stopping rules rather than fixed budget, considering the situation when the objectives are correlated and a development of an M-MOBA variant that works with more than two objectives.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig</head><label/><figDesc>Fig. 1 a c solely dominates other alternatives</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2The Pareto set will change if and only if the estimated mean of alternative a c will fall outside the shaded area</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3The Pareto set will change if and only if the estimated mean of alternative a c will fall outside the shaded area</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4The Pareto set will change if and only if the estimated mean of alternative a c will fall outside the shaded area</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Indifference-zone  definition of <ref type="bibr" target="#b43">Teng et al. (2010)</ref> and dominance of a solution relative to solution m</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label/><figDesc>Fig. 6 M-MOBA IZ indifference-zone definition</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig</head><label/><figDesc>Fig. 7An example of solutions in different dominance categories</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8Indifference zone for a borderline dominated solution a c if all other solutions on the observed Pareto front are non-dominated</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9Indifference zone for a borderline dominated solution a c if a borderline non-dominated solution exists</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig</head><label/><figDesc>Fig. 10Indifference zone for an indifference-zone non-dominated solution if a borderline non-dominated solution exists</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig</head><label/><figDesc>Fig. 11Indifference zone for a borderline non-dominated solution if all solutions on the observed Pareto front are indifference-zone non-dominated</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig</head><label/><figDesc>Fig. 12Indifference zone for a borderline non-dominated solution if a borderline non-dominated solution exists</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Fig</head><label/><figDesc>Fig. 13Indifference zone for a solution that, if removed, reveals a set of non-dominated solutions</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Fig</head><label/><figDesc>Fig. 14Cells created to compute probability of change</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Fig. 15</head><label>15</label><figDesc>Fig. 15Even though all dominance relations are correct if solution c is observed as c , the DM may pick the wrong solution</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Fig. 16</head><label>16</label><figDesc>Fig. 16Solutions a and c are more likely to be preferred by a DM</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Fig. 17</head><label>17</label><figDesc>Fig. 17Hypervolume of a set of solutions</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Fig. 18</head><label>18</label><figDesc>Fig. 18Hypervolume difference of two sets of solutions</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>Fig. 19</head><label>19</label><figDesc>Fig. 19Hypervolume difference penalises any deviation from the true front</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19"><head>Fig. 20</head><label>20</label><figDesc>Fig. 20Hypervolume change caused by different solutions is different</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20"><head>Fig. 21</head><label>21</label><figDesc>Fig. 21 Effect of choosing reference point</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21"><head>Fig. 22</head><label>22</label><figDesc>Fig. 22Different cells that need to be considered when calculating the expected HV change from re-sampling</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_22"><head>Fig. 23</head><label>23</label><figDesc>Fig. 23 Comparison of P(CS) for different algorithms on the 3-alternative case</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_23"><head>Fig. 24</head><label>24</label><figDesc>Fig. 24 Standard configuration with 16 alternatives</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_24"><head>Fig. 25</head><label>25</label><figDesc>Fig. 25 Comparison of P(CS) for different algorithms on the 16-alternative case</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_25"><head>Fig. 26</head><label>26</label><figDesc>Fig. 26Similar solution configuration with 13 alternatives</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_26"><head>Fig. 27</head><label>27</label><figDesc>Fig. 27Similar solution configuration PCS performance comparison</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_27"><head>Fig. 28</head><label>28</label><figDesc>Fig. 28 Similar solution configuration PGS performance comparison</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_28"><head>Fig. 29</head><label>29</label><figDesc>Fig. 29 Allocation of samples to different alternatives for 13 similar alternatives configuration</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_29"><head>Fig. 30</head><label>30</label><figDesc>Fig. 30 Comparison of relative hypervolume difference for standard configuration with 16 alternatives</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_30"><head>Fig. 31</head><label>31</label><figDesc>Fig. 31Borderline configuration with ten alternatives</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_31"><head>Fig. 32</head><label>32</label><figDesc>Fig. 32 Comparison of relative hypervolume difference of borderline configuration</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_32"><head>Fig. 33</head><label>33</label><figDesc>Fig. 33Allocation of samples to the different alternatives for borderline configuration</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_33"><head>Fig. 34</head><label>34</label><figDesc>Fig. 34 Similar solution configuration with eight alternatives</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_34"><head>Fig. 35</head><label>35</label><figDesc>Fig. 35Comparison of relative hypervolume difference of similar solution configuration</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_35"><head>Fig. 36</head><label>36</label><figDesc>Fig. 36 Allocation of samples to the different alternatives for similar solution configuration</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_36"><head>Fig. 37</head><label>37</label><figDesc>Fig. 37Hypervolume difference depending on the number of samples taken, averaged over 1000 random configurations</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_37"><head>Fig. 38</head><label>38</label><figDesc>Fig.38P(CS) depending on the number of samples taken, averaged over 1000 random configurations</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_38"><head>Fig. 39</head><label>39</label><figDesc>Fig. 39 M-MOBA DS PCS procedure</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Five main basic approaches to R&amp;S and some exemplary references</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_0"><head>ALGORITHM 1 </head><label>1</label><figDesc>Procedure M-MOBA PCS 1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Good selection</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>True expected performance in each objective, SD in all cases is 5</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Standard configuration with 16 alternatives and two objectives. Standard deviation
+for all designs is 2 in each objective</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Configuration with 13 alternatives and two objectives. Standard deviation for all designs is 1.5 in each objective</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Borderline configuration with ten alternatives and two objectives. Standard deviation for all designs is 2 in each objective</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7</head><label>7</label><figDesc>Similar solution configuration with eight alternatives and two objectives.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8</head><label>8</label><figDesc>Time required per sample allocation</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 9</head><label>9</label><figDesc>Different purposes</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements We thank <rs type="person">Mr. Yang Tao, PhD</rs> student at the <rs type="affiliation">University of Nottingham</rs>, for his significant contribution to the M-MOBA HV method.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Andradottir</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Fully sequential procedures for comparing constrained systems via simulation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nav Res Logist</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="403" to="421"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Bader</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Zitzler</surname></persName>
+					</author>
+					<title level="a">Hype: an algorithm for fast hypervolume-based many-objective optimization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evol Comput</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="45" to="76"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Beume</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Naujoks</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Emmerich</surname></persName>
+					</author>
+					<title level="a">SMS-EMOA: multiobjective selection based on dominated hypervolume</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">161</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1663" to="1669"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b3">
+				<analytic>
+					<title level="a">F-race and iterated f-race: an overview</title>
+					<author>
+						<persName><forename>M</forename><surname>Birattari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Yuan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Balaprakash</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Stützle</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="m">Experimental methods for the analysis of optimization algorithms</title>
+					<editor>
+						<persName><forename>T</forename><surname>Bartz-Beielstein</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>M</forename><surname>Chiarandini</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>L</forename><surname>Paquete</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>M</forename><surname>Preuss</surname></persName>
+					</editor>
+					<imprint>
+						<date when="2010">2010</date>
+						<publisher>Springer</publisher>
+						<pubPlace>Berlin</pubPlace>
+						<biblScope unit="page" from="311" to="336"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Schmidt</surname></persName>
+					</author>
+					<title level="a">Selecting a selection procedure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Manag Sci</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page" from="1916" to="1932"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Schmidt</surname></persName>
+					</author>
+					<title level="a">New developments in ranking and selection: an empirical comparison of the three main approaches</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2005">2005</date>
+						<biblScope unit="page" from="708" to="717"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Gamer</surname></persName>
+					</author>
+					<title level="a">Efficient sampling in interactive multi-criteria selection</title>
+				</analytic>
+				<monogr>
+					<title level="m">INFORMS simulation society research workshop</title>
+					<imprint>
+						<date when="2007">2007</date>
+						<biblScope unit="page" from="42" to="46"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">A new myopic sequential sampling algorithm for multi-objective problems</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="3589" to="3598"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Tao</surname></persName>
+					</author>
+					<title level="a">Multiobjective ranking and selection based on hypervolume</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2016">2016</date>
+						<biblScope unit="page" from="859" to="870"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Butler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Morrice</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Mullarkey</surname></persName>
+					</author>
+					<title level="a">A multiple attribute utility theory approach to ranking and selection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Manag Sci</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="800" to="816"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Chau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Qu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Ryzhov</surname></persName>
+					</author>
+					<title level="a">Simulation optimization: a tutorial overview and recent developments in gradient-based methods</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2014">2014</date>
+						<biblScope unit="page" from="21" to="35"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">A lower bound for the correct subset-selection probability and its application to discreteevent system simulations</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Trans Autom Control</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">81</biblScope>
+						<biblScope unit="page" from="1227" to="1231"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b12">
+				<monogr>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<title level="m">Stochastic simulation optimization: an optimal computing budget allocation</title>
+					<imprint>
+						<date type="published" when="2010">2010</date>
+						<publisher>World Scientific</publisher>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Inoue</surname></persName>
+					</author>
+					<title level="a">New two-stage and sequential procedures for selecting the best simulated system</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">49</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="732" to="743"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wu</surname></persName>
+					</author>
+					<title level="a">Selection procedures with frequentist expected opportunity cost bounds</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="867" to="878"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Branke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Schmidt</surname></persName>
+					</author>
+					<title level="a">Sequential sampling to myopically maximize the expected value of information</title>
+				</analytic>
+				<monogr>
+					<title level="j">INFORMS J Comput</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="71" to="80"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b16">
+				<monogr>
+					<author>
+						<persName><forename>M</forename><surname>Degroot</surname></persName>
+					</author>
+					<title level="m">Optimal statistical decisions</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<biblScope unit="volume">82</biblScope>
+						<publisher>Wiley</publisher>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName><forename>G</forename><surname>Feldman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="second">R</forename><surname>Hunter</surname></persName>
+					</author>
+					<title level="a">Score allocations for bi-objective ranking and selection</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Trans Model Comput Simul (TOMACS)</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">7</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Feldman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Pasupathy</surname></persName>
+					</author>
+					<title level="a">Multi-objective simulation optimization on finite sets: optimal allocation via scalarization</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="3610" to="3621"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Frazier</surname></persName>
+					</author>
+					<title level="a">A fully sequential elimination procedure for indifference-zone ranking and selection with tight bounds on probability of correct selection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="926" to="942"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Frazier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Powell</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Dayanik</surname></persName>
+					</author>
+					<title level="a">A knowledge-gradient policy for sequential information collection</title>
+				</analytic>
+				<monogr>
+					<title level="j">SIAM J Control Optim</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="2410" to="2439"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Frazier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kazachkov</surname></persName>
+					</author>
+					<title level="a">Guessing preferences: A new approach to multi-attribute ranking and selection</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2011">2011</date>
+						<biblScope unit="page" from="4319" to="4331"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Xiong</surname></persName>
+					</author>
+					<title level="a">Simulation allocation for determining the best design in the presence of correlated sampling</title>
+				</analytic>
+				<monogr>
+					<title level="j">INFORMS J Comput</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="101" to="111"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Shi</surname></persName>
+					</author>
+					<title level="a">Some topics for simulation optimization</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2008">2008</date>
+						<biblScope unit="page" from="27" to="38"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b24">
+				<monogr>
+					
+					<author>
+						<persName><forename>J</forename><surname>Gittins</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Glazebrook</surname></persName>
+					</author>
+					<title level="m">Multi-armed bandit allocation indices</title>
+					<imprint>
+						<publisher>Wiley</publisher>
+						<pubPlace>New York</pubPlace>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					<author>
+						<persName><forename type="first">D</forename><surname>He</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Chick</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">The opportunity cost and ocba selection procedures in ordinal optimization for a fixed number of alternative systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Trans Syst Man Cybern Part C Appl Rev</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="951" to="961"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Feldman</surname></persName>
+					</author>
+					<title level="a">Optimal sampling laws for bi-objective simulation optimization on finite sets</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<publisher>IEEE</publisher>
+						<biblScope unit="page" from="3749" to="3757"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Pasupathy</surname></persName>
+					</author>
+					<title level="a">Optimal sampling laws for stochastically constrained simulation optimization on finite sets</title>
+				</analytic>
+				<monogr>
+					<title level="j">INFORMS J Comput</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="527" to="542"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Applegate</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Arora</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Chong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Cooper</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Rincon-Guevara</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Vivas-Valencia</surname></persName>
+					</author>
+					<title level="a">An introduction to multiobjective simulation optimization</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Trans Model Comput Simul</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="7:1" to="7:36"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b29">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Keeney</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Raiffa</surname></persName>
+					</author>
+					<title level="m">Decisions with multiple objectives: preferences and value trade-offs</title>
+					<imprint>
+						<date when="1993">1993</date>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Nelson</surname></persName>
+					</author>
+					<title level="a">Chapter 17 Selecting the best system</title>
+				</analytic>
+				<monogr>
+					<title level="m">Handbooks in operations research and management science</title>
+					<editor>
+						<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Henderson</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Nelson</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Elsevier</publisher>
+						<date when="2006">2006</date>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="501" to="534"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Chew</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Teng</surname></persName>
+					</author>
+					<title level="a">Finding the Pareto set for multi-objective simulation models by minimization of expected opportunity cost</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<date when="2007">2007</date>
+						<biblScope unit="page" from="513" to="521"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Chew</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Teng</surname></persName>
+					</author>
+					<title level="a">Computing budget allocation rules for multi-objective simulation models based on different measures of selection quality</title>
+				</analytic>
+				<monogr>
+					<title level="j">Automatica</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page" from="1935" to="1950"/>
+						<date when="2010a">2010a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Chew</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Teng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Goldsman</surname></persName>
+					</author>
+					<title level="a">Finding the non-dominated pareto set for multi-objective simulation models</title>
+				</analytic>
+				<monogr>
+					<title level="j">IIE Trans</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="issue">9</biblScope>
+						<biblScope unit="page" from="656" to="674"/>
+						<date when="2010b">2010b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Nelson</surname></persName>
+					</author>
+					<title level="a">Computational improvements in bootstrap ranking &amp; selection procedures via multiple comparison with the best</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="3758" to="3767"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Mattila</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Virtanen</surname></persName>
+					</author>
+					<title level="a">Ranking and selection for multiple performance measures using incomplete preference information</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">242</biblScope>
+						<biblScope unit="page" from="568" to="579"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Morrice</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Butler</surname></persName>
+					</author>
+					<title level="a">Ranking and selection with multiple targets</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2006">2006</date>
+						<biblScope unit="page" from="222" to="230"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Morrice</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Butler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Mullarkey</surname></persName>
+					</author>
+					<title level="a">An approach to ranking and selection for multiple performance measures</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<date when="1998">1998</date>
+						<biblScope unit="page" from="719" to="726"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Handling stochastic constraints in discrete optimization via simulation</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<date when="2011">2011</date>
+						<biblScope unit="page" from="4217" to="4226"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Pasupathy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Pujowidianto</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Stochastically constrained ranking and selection via SCORE</title>
+				</analytic>
+				<monogr>
+					<title level="j">ACM Trans Model Comput Simul</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="1" to="26"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Pujowidianto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Pasupathy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Closed-form sampling laws for stochastically constrained simulation optimization on large finite sets</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2012">2012</date>
+						<biblScope unit="page" from="1" to="10"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Ryzhov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Powell</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Frazier</surname></persName>
+					</author>
+					<title level="a">The knowledge gradient algorithm for a general class of online learning problems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="180" to="195"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Shahriari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Swersky</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Adams</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>De Freitas</surname></persName>
+					</author>
+					<title level="a">Taking the human out of the loop: a review of bayesian optimization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc IEEE</title>
+					<imprint>
+						<biblScope unit="volume">204</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="148" to="175"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Teng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Chew</surname></persName>
+					</author>
+					<title level="a">Integration of indifference-zone with multi-objective OCBA</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Oper Res</title>
+					<imprint>
+						<biblScope unit="volume">203</biblScope>
+						<biblScope unit="page" from="419" to="429"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Wan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Sequential probability ratio testing for multiple-objective ranking and selection</title>
+				</analytic>
+				<monogr>
+					<title level="m">Winter simulation conference</title>
+					<imprint>
+						<publisher>IEEE</publisher>
+						<date when="2017">2017</date>
+						<biblScope unit="page" from="1998" to="2009"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Georgiopoulos</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Anagnostopoulos</surname></persName>
+					</author>
+					<title level="a">Pareto-optimal model selection via SPRINT-race</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Trans Cybern</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="596" to="610"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Georgiopoulos</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Anagnostopoulos</surname></persName>
+					</author>
+					<title level="a">S-race: a multi-objective racing algorithm</title>
+				</analytic>
+				<monogr>
+					<title level="m">Genetic and evolutionary computation conference</title>
+					<imprint>
+						<publisher>ACM</publisher>
+						<date when="2013">2013</date>
+						<biblScope unit="page" from="1565" to="1572"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceding" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Georgiopoulos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Anagnostopoulos</surname></persName>
+					</author>
+					<title level="a">Sprint multi-objective model racing</title>
+				</analytic>
+				<monogr>
+					<title level="m">Genetic and evolutionary computation conference</title>
+					<imprint>
+						<publisher>ACM</publisher>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="1383" to="1390"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Zitzler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Thiele</surname></persName>
+					</author>
+					<title level="a">Multiobjective evolutionary algorithms: a comparative case study and the strength pareto approach</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Trans Evol Comput</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="257" to="271"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Zitzler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Thiele</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Laumanns</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Fonseca</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">V</forename><surname>Grunert</surname></persName>
+					</author>
+					<title level="a">Performance assessment of multiobjective optimizers: an analysis and review</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Trans Evol Comput</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="117" to="132"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

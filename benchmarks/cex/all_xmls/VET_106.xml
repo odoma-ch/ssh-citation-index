@@ -1,0 +1,816 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Clinical features of cats with aqueous tear deficiency: a retrospective case series of 10 patients (17 eyes)</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Sage</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2018-11-12">12 November 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Lisa</forename><forename type="middle">K</forename><surname>Uhl</surname></persName>
+							<idno type="ORCID">0000-0003-3379-6917</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Veterinary Clinical Sciences</orgName>
+								<orgName type="department" key="dep2">College of Veterinary Medicine</orgName>
+								<orgName type="institution">Iowa State University</orgName>
+								<address>
+									<settlement>Ames</settlement>
+									<region>IA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Akihiko</forename><surname>Saito</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Triangle Animal Eye Clinic</orgName>
+								<address>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hiroko</forename><surname>Iwashita</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Triangle Animal Eye Clinic</orgName>
+								<address>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">David</forename><forename type="middle">J</forename><surname>Maggs</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Surgical and Radiological Sciences</orgName>
+								<orgName type="department" key="dep2">School of Veterinary Medicine</orgName>
+								<orgName type="institution">University of California-Davis</orgName>
+								<address>
+									<settlement>Davis</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jonathan</forename><forename type="middle">P</forename><surname>Mochel</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Department of Biomedical Sciences</orgName>
+								<orgName type="department" key="dep2">College of Veterinary Medicine</orgName>
+								<orgName type="institution">Iowa State University</orgName>
+								<address>
+									<settlement>Ames</settlement>
+									<region>IA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Lionel</forename><surname>Sebbag</surname></persName>
+							<email>sebbaglionel@gmail.com</email>
+							<idno type="ORCID">0000-0002-0103-0127</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Veterinary Clinical Sciences</orgName>
+								<orgName type="department" key="dep2">College of Veterinary Medicine</orgName>
+								<orgName type="institution">Iowa State University</orgName>
+								<address>
+									<settlement>Ames</settlement>
+									<region>IA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Department of Biomedical Sciences</orgName>
+								<orgName type="department" key="dep2">College of Veterinary Medicine</orgName>
+								<orgName type="institution">Iowa State University</orgName>
+								<address>
+									<settlement>Ames</settlement>
+									<region>IA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Clinical features of cats with aqueous tear deficiency: a retrospective case series of 10 patients (17 eyes)</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Feline Medicine and Surgery</title>
+						<imprint>
+							<publisher>Sage</publisher>
+							<biblScope unit="volume">21</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="944" to="950"/>
+							<date type="published" when="2018-11-12">12 November 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">247BB53200CAB6FBC5D8AE221DD3BB44</idno>
+					<idno type="DOI">10.1177/1098612X18810867</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Dry eye</term>
+					<term>keratoconjunctivitis sicca</term>
+					<term>tear film</term>
+					<term>lacrimal</term>
+					<term>keratitis</term>
+					<term>conjunctivitis</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Objectives</head><p>The aim of this study was to describe the clinical findings, diagnostic test results and response to therapy of cats with Schirmer tear test 1 (STT-1) values below the reference interval.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>The medical records of three institutions were searched for cats with ocular surface disease and STT-1 values &lt;9 mm/min, confirmed at two or more separate visits.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Ten cats (17 eyes) were included. The mean ± SD (range) age and STT-1 values in affected eye(s) were 6.1 ± 5.7 (0.2-16) years and 2.4 ± 3.1 (0-8) mm/min, respectively. Concurrent ocular surface disease was bilateral in 5/10 cats. Clinical signs included conjunctivitis (14/17 eyes), corneal ulceration (6/17 eyes), non-ulcerative keratitis (4/17 eyes), symblepharon (4/17 eyes), eosinophilic keratitis (3/17 eyes), corneal sequestrum (3/17 eyes), corneal fibrosis (2/17 eyes) and meibomitis (2/17 eyes). Management included: topically applied lacrimomimetics, antiviral drugs, corticosteroids or immunomodulatory drugs; orally administered famciclovir; or surgical procedures, in various combinations. Response to therapy (defined as an increase in STT-1 value of ⩾5 mm/min) was transient (seen at a single reassessment) in 65% of eyes and sustained (seen at ⩾2 consecutive reassessments) in 18% of eyes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions and relevance</head><p>Clinical features seen in cats with low STT-1 values are described, although the association between aqueous deficiency and the reported ocular changes is unknown at this time. We encourage clinicians to assess the tear film in cats with ocular surface disease, and initiate therapy with lacrimomimetics if STT-1 values are repeatedly below normal. Such information will further define aqueous tear deficiency in cats, providing a better understanding of disease prevalence, pathogenesis and treatment.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Ocular surface diseases, such as conjunctivitis, corneal ulceration, corneal sequestrum and eosinophilic keratitis, are among the most common disorders recognized in cats with ophthalmic complaints. <ref type="bibr" target="#b0">1</ref> Owing to the intimate relationship between the ocular surface and the tear film, it is possible that tear-film deficiency is a serious comorbidity in many of these clinical presentations, as is the case in dogs <ref type="bibr" target="#b1">2</ref> and humans. <ref type="bibr" target="#b2">3</ref> In fact, a qualitative tear deficiency -or alteration in the mucin and/or lipid component of the tears -is often recognized in cats infected with feline herpesvirus-1, <ref type="bibr" target="#b3">4</ref> and those with spontaneous ulcerative keratitis, <ref type="bibr" target="#b4">5</ref> corneal sequestrum <ref type="bibr" target="#b5">6</ref> or conjunctivitis. <ref type="bibr" target="#b6">7</ref></p><p>In contrast, quantitative tear deficiency -ie, a reduction in the aqueous portion of the tears -is seldom reported in cats. Although the paucity of feline reports may be due to low disease prevalence, aqueous deficiency may also be under-recognized in this species because veterinarians are primed to look for a syndrome similar to that seen in dogs with keratoconjunctivitis sicca or 'dry eye', or because testing the aqueous tear film was long assumed to be unreliable in cats because it could be artifactually lowered as a result of stress. <ref type="bibr" target="#b3">4</ref> Normative data for the Schirmer tear test 1 (STT-1) and other diagnostic tests for assessment of the tear film have been established in healthy cats, <ref type="bibr" target="#b7">8</ref> and a recent case report showed that aqueous tear dysfunction in a cat was associated with chronic keratitis, conjunctivitis and impaired healing of corneal ulcers. <ref type="bibr" target="#b8">9</ref></p><p>The purpose of the present report, therefore, is to describe the clinical findings of a series of cats in which STT-1 values were below the reference interval (RI). <ref type="bibr" target="#b7">8</ref> In so doing we aim to encourage veterinarians to be more alert to the potential role of tear deficiency and the value of tear testing in cats with various ocular surface diseases. This, in turn, will enhance understanding of tear deficiency in cats and power prospective, case-controlled studies designed to better define the clinical appearance, establish the pathogenesis and assess therapeutic protocols for dry-eye disease in this species.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Material and methods</head><p>Medical records of Iowa State University's Lloyd Veterinary Medical Center, the University of California-Davis Veterinary Medical Teaching Hospital and Triangle Animal Eye Clinic in Tokyo, Japan, were searched from 2006 to 2018 for cats with unilateral or bilateral ocular surface disease and STT-1 values &lt;9 mm/min 8 at presentation and on at least one subsequent examination. Signalment, ocular abnormalities, diagnostic test results and management strategies were retrieved from the medical records. Response to therapy was defined as an increase in STT-1 value of ⩾5 mm/min, <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b10">11</ref> and was further defined as 'transient' or 'sustained' if the improvement was noted at one or two or more consecutive follow-up visits, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Animals</head><p>Seventeen eyes of 10 cats met all inclusion criteria (Table <ref type="table" target="#tab_0">1</ref>). The mean ± SD (range) age, body weight and STT-1 values in affected eye(s) were 6.1 ± 5.7 (0.2-16) years, 4.3 ± 1.9 (0.6-6.7) kg and 2.4 ± 3.1 (0-8) mm/min, respectively. Ocular surface disease was bilateral in five cats, one of which (case 6) had an STT-1 value &lt;9 mm/ min in only one eye. Disease was unilateral in the other five cats, three of which (cases 4, 9 and 10) had STT-1 values &lt;9 mm/min in both eyes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical diagnoses</head><p>Concurrent ocular surface pathology included conjunctivitis (14 eyes), corneal ulceration (six eyes), nonulcerative keratitis (four eyes), symblepharon (four eyes), eosinophilic keratitis (three eyes), corneal sequestrum (three eyes), corneal fibrosis (two eyes) and meibomitis (two eyes). Other ocular abnormalities seen included uveitis (three eyes), glaucoma (one eye), iris hyperpigmentation (one eye) and retrobulbar abscess (one eye). The ocular surface was described as 'lackluster' in 10/17 affected eyes, and three cats had mild crusted discharge at the medial canthus (Figure <ref type="figure" target="#fig_0">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Diagnostic testing</head><p>The STT-1 was performed in all eyes; mean ± SD (range) value in affected eyes was 2.4 ± 3.1 (0-8) mm/min. The phenol red thread test (PRTT) was performed in cases 1-4 and was within normal limits (⩾15 mm/15 s) <ref type="bibr" target="#b7">8</ref> in all affected eyes but one (case 2), despite these eyes all having low STT-1 values (Table <ref type="table" target="#tab_1">2</ref>). Corneal sensitivity was estimated using a Cochet-Bonnet aesthesiometer in two cats (cases 5 and 10) and was markedly reduced in all three affected eyes (Table <ref type="table" target="#tab_1">2</ref>). <ref type="bibr" target="#b11">12</ref> Tear film break-up time (TFBUT) was performed in case 5 only and was decreased bilaterally at 5-7 s. Fluorescein and rose bengal staining, corneal cytology, conjunctival histology and various infectious disease tests were completed in some cats (Tables <ref type="table" target="#tab_1">2</ref> and <ref type="table" target="#tab_2">3</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Therapy</head><p>A wide range of management techniques was used throughout the clinical course of the 10 cats (Table <ref type="table" target="#tab_0">1</ref>). Topically applied lacrimomimetic agents were used in 15 eyes (10 cats) for between 14 and 628 days from 1-12 times daily, depending on the severity of clinical signs. Most lacrimomimetic agents prescribed contained sodium hyaluronate; five eyes (four cats) with severe aqueous deficiency also received autologous serum. Corticosteroids were applied topically in five eyes (four cats) 1-3 times daily for 9-309 days. Other topical immunomodulatory drugs were used in four eyes (three cats) for 35-244 days; these included 0.03% tacrolimus ophthalmic ointment (two eyes), 0.2% ciclosporin ophthalmic ointment (one eye), or 1% (one eye) or 2% (one eye) ciclosporin ophthalmic suspension compounded in corn oil. Both cats that received ciclosporin compounded in corn oil developed blepharitis. Famciclovir was prescribed for oral administration in seven cats for 22-294 days at doses of 35-50 mg/kg three times daily (four cats), 86-90 mg/kg twice daily (two cats) or 100 mg/kg once daily (one cat). Topical antiviral drugs were prescribed in four eyes (four cats) for 109-366 days; these included 0.5% cidofovir ophthalmic solution applied twice daily (three eyes) or 0.1% idoxuridine ophthalmic solution applied 4-6 times daily (one eye). Surgical procedures included bilateral dissection of symblepharon (case 2), thermokeratoplasty for a non-healing ulcer (case 5), or corneoconjunctival transposition following a lamellar keratectomy for sequestrum removal (case 6). Other therapies included topically or systemically administered antibiotics, systemically administered corticosteroids or warm compresses applied to the eyelids (Table <ref type="table" target="#tab_0">1</ref>). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Response to therapy</head><p>Mean ± SD (range) follow-up time was 383 ± 320 (63-994) days. Complete resolution of clinical signs was documented in three cats (cases 4, 5 and 9), whereas partial clinical improvement was noted in five cats (cases 1, 2, 3, 7 and 8). At the last recheck examination, keratoconjunctivitis was still present in the remaining two cats (cases 6 and 10). Figure <ref type="figure" target="#fig_1">2</ref> depicts representative images from follow-up examinations of cases 2, 4, 5 and 8. The STT-1 value increased by ⩾5 mm/min in 14/17 affected eyes; this increase was transient (seen at a single reassessment) in 11 (65%) affected eyes and sustained (seen at two or more consecutive reassessments) in three (18%) affected eyes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>This report describes the clinical signs, diagnostic test results, treatment and outcome of ocular surface disease in a series of 10 cats (17 eyes) with aqueous tear deficiency (STT-1 value &lt;9 mm/min). Although the association between aqueous tear deficiency and ocular surface disease is unknown, based on this case series tear film dysfunction would be expected to have a detrimental effect on the ocular surface health of cats, similar to dogs and humans. Conversely, ocular surface diseases may have a negative effect on tear production and perpetuate dry eye. An STT-1 value &lt;9 mm/min (especially when confirmed on two separate occasions, as required in this case series)  should be considered abnormal in cats as the occurrence of low STT-1 values in ophthalmically normal cats is rare. <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b12">13</ref> Indeed, Paepe et al found that only 2/100 normal cats had STT-1 values &lt;5 mm/min, <ref type="bibr" target="#b12">13</ref> while Sebbag et al showed that 0/135 normal cats had STT-1 values &lt;7 mm/min. <ref type="bibr" target="#b7">8</ref> In addition to STT-1, the PRTT was also measured in the present study in four cats (eight eyes) but was normal in all but one affected eye. This supports previous data suggesting that the PRTT is less reliable than the STT-1 in cats. <ref type="bibr" target="#b7">8</ref> For this reason, and because the STT-1 provides a measure of basal and reflex tearing, as well as a coarse assessment of the neurological function essential for a normal lacrimal functional unit, <ref type="bibr" target="#b13">14</ref> these authors prefer using the STT-1 than the PRTT to assess the aqueous tear film in cats.</p><p>Once reduced aqueous tear film is documented, vital stains such as fluorescein, rose bengal or lissamine green can be particularly helpful in highlighting subtle changes in the corneal and/or conjunctival surfaces. <ref type="bibr" target="#b14">15</ref> Finally, corneal aesthesiometry is an essential diagnostic tool in cats in which neurologic dysfunction is suspected, as exemplified by cases 5 and 10 of this report and a cat from a previous report <ref type="bibr" target="#b8">9</ref> in which corneal hypoesthesia likely contributed to their aqueous tear deficiency. By contrast, tear osmometry has not proven as reliable or diagnostically useful in dogs <ref type="bibr" target="#b15">16</ref> or cats <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b16">17</ref> as it has in humans <ref type="bibr" target="#b2">3</ref> with tear-film deficiency.</p><p>Impaired tear production or release, or hastened tear loss, especially through evaporation, should all be considered as potential causes of low STT-1 values. In some cats of the present series, impaired tear secretion onto the ocular surface because of obstructed lacrimal ductules seems likely to have contributed to the aqueous tear deficiency noted. This may be a transient consequence of conjunctival swelling as a result of conjunctivitis (as seen in many cases in the present study) or orbital cellulitis, or a more permanent consequence of adhesions from symblepharon or eyelid agenesis (as seen in cases 1 and 2 herein). <ref type="bibr" target="#b17">18</ref> Where possible, correction of these underlying causes may normalize STT-1 values. This is likely what happened in case 8 in which successful treatment of the retrobulbar abscess was associated with a sustained increase in STT values. A neurogenic cause of aqueous tear deficiency should also be considered in cats. This is a recognized etiology in dogs <ref type="bibr" target="#b18">19</ref> and humans, <ref type="bibr" target="#b19">20</ref> and has been reported in one cat. <ref type="bibr" target="#b8">9</ref> Humans with chronic inflammation from herpes simplex virus-1 infection experience permanent damage to the trigeminal nerve with subsequent corneal hypoesthesia and decreased reflex tearing. <ref type="bibr" target="#b20">21</ref> Although multiple causes of neurogenic dry eye exist, the high prevalence of herpetic disease in cats warrants consideration and further investigation of a meta-herpetic form of dry-eye disease, as described in humans.</p><p>In dry-eye disease, absence of a confirmed etiologic diagnosis renders therapy challenging -as evident in the present case series. In such cases, therapy is limited to hydrating and lubricating the ocular surface with lacrimomimetic agents, and controlling concurrent ocular surface inflammation. This likely explains the generally poor responses observed in the cases presented here and highlights the need for future studies to determine the etiopathogenesis of qualitative and quantitative tear-film deficiency in cats. We hope this report will heighten feline practitioners' awareness of the importance of performing the STT-1 in this species so that future studies might establish a more comprehensive definition of feline dry eye that better elucidates disease prevalence, clinical features, pathogenesis and therapeutic strategies. Such studies should include larger cohorts than reported here, and also a control population in order to better understand the pathogenic role of tear-film deficiency in feline ocular surface disease.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>Aqueous tear deficiency can occur concurrently with common ocular surface diseases in cats. Although the causative association between aqueous tear deficiency and these diseases is not known, experience in other species suggests that tear-film deficiencies would be, at the very least, contributory. We encourage clinicians to perform the STT-1 in cats with ocular surface disease, and to initiate therapy with lacrimomimetics if tear-film dysfunction is noted. Complementary tests such as vital stains, TFBUT and corneal aesthesiometry can provide valuable information about the nature and sometimes the cause of the tear-film deficiency, as well as the extent of ocular surface damage. Such data will facilitate a deeper understanding of the prevalence and pathogenesis of, diversity of clinical signs associated with, and response to therapy in cats with qualitative and quantitative tear-film deficiencies.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figure1Clinical photographs of eyes of 10 cats at the time of presentation for ocular surface disease and concurrent aqueous tear deficiency (Schirmer tear test 1 [STT-1] &lt;9 mm/min). Case numbers are shown in the top left and STT-1 values in the bottom right of each image. Abnormalities included symblepharon (cases 1 and 2), corneal sequestrum (cases 3 and 6), eosinophilic keratitis (cases 4 and 10), non-healing corneal ulceration (case 5), ulcerative keratitis (case 9), conjunctivitis (case 7) and retrobulbar abscess (case 8)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2</head><label>2</label><figDesc>Figure 2 Clinical photographs of eyes of four cats at the time of follow-up following therapy for ocular surface disease and concurrent aqueous tear deficiency (Schirmer tear test 1 [STT-1] &lt;9 mm/min). See Figure 1 for appearance at presentation. Case numbers are shown in the top left and STT-1 values in the bottom right of each image. Keratitis in case 2 improved but symblepharon was static (day 135). Eosinophilic keratitis resolved in case 4 (day 309). Corneal ulceration resolved in case 5, but there was residual corneal fibrosis and neovascularization (day 305). Keratoconjunctivitis improved in case 8 following resolution of the retrobulbar abscess (day 120)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Summary information for 10 cats with reduced aqueous tear film (Schirmer tear test 1 &lt;9 mm/min) and concurrent ocular surface disease seen at the Triangle Animal Eye Clinic (TAEC), University of California-Davis Veterinary Medical Teaching Hospital (UCD-VMTH) or Iowa State University's Lloyd Veterinary Medical Center (ISU-LVMC)</figDesc><note><p>mo = month-old; yo = year-old; MI = male intact; MN = male neutered; FI = female intact; FS = female spayed; DSH = domestic shorthair; DLH = domestic longhair; OD = right eye; OS = left eye; OU = both eyes</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Results of tear film diagnostic tests and corneal aesthesiometry in 10 cats with aqueous tear deficiency (Schirmer tear test 1 [STT-1] &lt;9 mm/min) and concurrent ocular surface disease</figDesc><note><p>Results are described as 'right eye/left eye' and include findings at the first visit except when mentioned otherwise in the column header. The lower reference limit (LRL) is noted for each test in the column header</p><p>PRTT = phenol red thread test; TFBUT = tear film break-up time; CTT = corneal touch threshold; + = present; -= absent</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Results of additional diagnostic tests performed in 10 cats with aqueous tear deficiency (Schirmer tear test 1 &lt;9 mm/min) and concurrent ocular surface disease</figDesc><note><p>FHV-1 = feline herpesvirus-1; FCV = feline calicivirus; FeLV Ag = feline leukemia virus antigen; FIV Ab = feline immunodeficiency virus antibodies</p></note></figure>
+		</body>
+		<back>
+
+			
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Funding The authors received no financial support for the research, authorship, and/or publication of this article.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest</head><p>ORCID iD Lisa Uhl <ref type="url" target="https://orcid.org/0000-0003-3379-6917">https://orcid.org/0000-0003-3379-6917</ref>  Lionel Sebbag  <ref type="url" target="https://orcid.org/0000-0002-0103-0127">https://orcid.org/0000-0002-0103-0127</ref> </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="chapter" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stiles</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Feline ophthalmology</title>
+		</analytic>
+		<monogr>
+			<title level="m">Veterinary ophthalmology</title>
+			<editor>
+				<persName>
+					<surname>Gelatt</surname>
+					<forename>K</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Gilger</surname>
+					<forename>B</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Kern</surname>
+					<forename>T</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Wiley-Blackwell</publisher>
+				<pubPlace>Ames, IA</pubPlace>
+				<date when="2013">2013</date>
+				<biblScope unit="page" from="1477" to="1569"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Williams</surname>
+					<forename type="first">D</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Immunopathogenesis of keratoconjunctivitis sicca in the dog</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Clin North Am Small Anim Pract</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">38</biblScope>
+				<biblScope unit="page" from="251" to="268"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Craig</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nelson</surname>
+					<forename type="first">J</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Azar</surname>
+					<forename type="first">D</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">TFOS DEWS II Report Executive Summary</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ocul Surf</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="802" to="812"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lim</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reilly</surname>
+					<forename type="first">C</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thomasy</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Effects of feline herpesvirus type 1 on tear film break-up time, Schirmer tear test results, and conjunctival goblet cell density in experimentally infected cats</title>
+		</analytic>
+		<monogr>
+			<title level="j">Am J Vet Res</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">70</biblScope>
+				<biblScope unit="page" from="394" to="403"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cullen</surname>
+					<forename type="first">C</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Njaa</surname>
+					<forename type="first">B</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grahn</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Ulcerative keratitis associated with qualitative tear film abnormalities in cats</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="197" to="204"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Grahn</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sisler</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Storey</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Qualitative tear film and conjunctival goblet cell assessment of cats with corneal sequestra</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="167" to="170"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lim</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cullen</surname>
+					<forename type="first">C</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Schirmer tear test values and tear film break-up times in cats with conjunctivitis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="305" to="310"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sebbag</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kass</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maggs</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Reference values, intertest correlations, and test-retest repeatability of selected tear film tests in healthy cats</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Am Vet Med Assoc</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">246</biblScope>
+				<biblScope unit="page" from="426" to="435"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sebbag</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pesavento</surname>
+					<forename type="first">P</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carrasco</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Feline dry eye syndrome of presumed neurogenic origin: a case report</title>
+		</analytic>
+		<monogr>
+			<title level="j">JFMS Open Rep</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">4</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Berdoulay</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>English</surname>
+					<forename type="first">R</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nadelstein</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Effect of topical 0.02% tacrolimus aqueous suspension on tear production in dogs with keratoconjunctivitis sicca</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="225" to="232"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hendrix</surname>
+					<forename type="first">D</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Adkins</surname>
+					<forename type="first">E</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ward</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">An investigation comparing the efficacy of topical ocular application of tacrolimus and cyclosporine in dogs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Med Int</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">2011</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wagner</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meyer-Lindenberg</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Heider</surname>
+					<forename type="first">H</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">A comparison of corneal sensitivity between healthy cats and cats with corneal sequestra</title>
+		</analytic>
+		<monogr>
+			<title level="j">Berl Munch Tierarztl Wochenschr</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">116</biblScope>
+				<biblScope unit="page" from="427" to="431"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Paepe</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Verjans</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duchateau</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Routine health screening: findings in apparently healthy middle-aged and old cats</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Feline Med Surg</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="8" to="19"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stern</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Siemasko</surname>
+					<forename type="first">K</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">The role of the lacrimal functional unit in the pathophysiology of dry eye</title>
+		</analytic>
+		<monogr>
+			<title level="j">Exp Eye Res</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">78</biblScope>
+				<biblScope unit="page" from="409" to="416"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yoon</surname>
+					<forename type="first">K</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Im</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename type="first">H</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Usefulness of double vital staining with 1% fluorescein and 1% lissamine green in patients with dry eye syndrome</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cornea</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="972" to="976"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sebbag</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Park</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kass</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Assessment of tear film osmolarity using the TearLabTM osmometer in normal dogs and dogs with keratoconjunctivitis sicca</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="357" to="364"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Davis</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Townsend</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Tear-film osmolarity in normal cats and cats with conjunctivitis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="54" to="59"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Whittaker</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilkie</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Simpson</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Lip commissure to eyelid transposition for repair of feline eyelid agenesis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="173" to="178"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Matheis</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Walser-Reinhardt</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spiess</surname>
+					<forename type="first">B</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Canine neurogenic keratoconjunctivitis sicca: 11 cases (2006–2010)</title>
+		</analytic>
+		<monogr>
+			<title level="j">Vet Ophthalmol</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="288" to="290"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dartt</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Dysfunctional neural regulation of lacrimal gland secretion and its role in the pathogenesis of dry eye syndromes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ocul Surf</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="76" to="91"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>M’Garrech</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rousseau</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kaswin</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Impairment of lacrimal secretion in the unaffected fellow eye of patients with recurrent unilateral herpetic keratitis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ophthalmology</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">120</biblScope>
+				<biblScope unit="page" from="1959" to="1967"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

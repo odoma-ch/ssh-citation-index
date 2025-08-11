@@ -1,0 +1,704 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Hard chromium composite electroplating on high-strength stainless steel from a Cr(III)-ionic liquid solution</title>
+				<funder ref="#_THA5anr">
+					<orgName type="full">American Lightweight Materials Manufacturing Innovation Institute</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability>
+					<licence target="http://creativecommons.org/licenses/by-nc-nd/4.0/" ><p>This is an open access article under the CC BY-NC-ND license</p></licence>
+				</availability>
+				<date type="published" when="2019-09-03">03 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Hadi</forename><surname>Khani</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">McKetta Department of Chemical Engineering</orgName>
+								<orgName type="institution">The University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712-1589</postCode>
+									<settlement>Austin</settlement>
+									<region>TX</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Joan</forename><forename type="middle">F</forename><surname>Brennecke</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">McKetta Department of Chemical Engineering</orgName>
+								<orgName type="institution">The University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712-1589</postCode>
+									<settlement>Austin</settlement>
+									<region>TX</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Hard chromium composite electroplating on high-strength stainless steel from a Cr(III)-ionic liquid solution</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Electrochemistry Communications</title>
+						<idno type="ISSN">1388-2481</idno>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">107</biblScope>
+							<biblScope unit="page" from="106537"/>
+							<date type="published" when="2019-09-03">03 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">34EC574690E0E02A044CBFCF06970F5F</idno>
+					<idno type="DOI">10.1016/j.elecom.2019.106537</idno>
+					<note type="submission">Received 17 August 2019; Received in revised form 1 September 2019; Accepted 2 September 2019 ⁎ Corresponding author.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Trivalent chromium Electroplating XPS High-strength stainless steel Ionic liquid</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A composite chromium coating has been potentiostatically electroplated on high-strength stainless steel substrates from a trivalent chromium bath. The electrolyte solvent consists of 1-butyl-3-methylimidazolium chloride ([Bmim][Cl]) to which water, hexadecyltrimethylammonium bromide (CTAB), poly(diallyldimethylammonium chloride) (PDDA), and Al 2 O 3 particles (≈3-4 μm) were added to improve the ion transport properties, the wettability at the electrolyte-substrate interface, the metallic chromium content, and the microhardness of the coating, respectively. The X-ray photoelectron spectrum of the coating reveals 85% metallic chromium and 15% chromium oxides and chromium hydroxide. Characterization of the coating shows the existence of chromium carbide-type bonds, resulting from the incorporation of carbon atoms into the chromium crystal lattice, leading to a high degree of amorphization of the coating. Optimization of electroplating conditions yielded a uniform chromium composite coating with a Vicker's microhardness of 860 ( ± 10) HV and a thickness of 42 μm ( ± 4), which is comparable to a chromium coating obtained from conventional chromic acid baths.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Electroplated chromium coatings provide excellent corrosion and mechanical properties, but require the use of highly oxidative and toxic traditional hexavalent chromium baths. This has motivated the scientific and industrial communities to develop technologies that make use of much less toxic trivalent chromium solutions. This transition has accelerated since February 2003, when the Restriction of Hazardous Substances Directive (RoHS) was announced by the European Union, which restricts the use of hexavalent chromium baths in the manufacture of electrical and electronic products <ref type="bibr" target="#b0">[1]</ref>. To that end, there have been many efforts to electroplate chromium from both aqueous and non-aqueous electrolyte solutions of trivalent chromium salts. In an aqueous electrolyte, the reduction of electrochemically stable [Cr (H 2 O) 6 ] 3+ ions requires a high overpotential which eventually leads to the unwanted hydrogen evolution reaction (HER) at the substrate of interest, resulting in a low current efficiency and poor coating properties <ref type="bibr" target="#b1">[2]</ref>. This issue is much more challenging when stainless-steel substrates are subject to chromium electroplating since these substrates are known to have high electrocatalytic activity for the HER due to the presence of transition metals (e.g. Mn, Cr, Ni, and Fe) <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b3">4]</ref>. On the other hand, the use of imidazolium-based ionic liquids (ILs), as nonaqueous solvents, has enabled the electrodeposition of crystalline chromium with high current efficiency on some substrates <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b5">6]</ref>. While the use of water-free ILs and chromium salts is inconvenient because they require a glovebox or dry room, the most serious drawback is that dry ILs have not shown promising coating results on technologically important metals like stainless steel. However, recent studies have shown that the presence of water in an IL-based electrolyte (i.e. waterin-IL) can significantly improve mass transport properties, conductivity, and nucleation characteristics, without sacrificing corrosion and mechanical properties or current efficiency <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. Here, we show successful chromium composite electroplating on stainless steel substrates from a water-in-IL electrolyte. The issues associated with surface roughness, wettability, interfacial tension, metallic chromium content, and HER have been resolved to achieve mechanical properties comparable to those of coatings obtained from conventional chromic acid baths.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Experimental procedure</head><p>The electrochemical bath contains chromium(III) chloride hexahydrate (Sigma-Aldrich, ≥98%), 1-butyl-3-methylimidazolium chloride ([Bmim][Cl]) (Tokyo Chemical Industry Co., Ltd., ≥98.0%), and Milli-Q water (Millipore-Sigma, 18.2 MΩ-cm) in a mole ratio of 1:2:12, respectively (CrBH electrolyte hereafter). The optimized electrolyte also contains CTAB (Sigma-Aldrich, ≥99%), poly(diallyldimethylammonium chloride) (PDDA, MW = 400,000 -500,000, methanol:water solution 95:5 vol%, Sigma-Aldrich), and Al 2 O 3 particles (Industrial Supply, Inc., ≈3-4 μm size). The electrochemical cell consists of a 4130 high strength stainless steel (McMaster, HSS) working electrode (6 mm × 12 mm), a platinum gauze (AMETEK, Inc., Pt, 4 cm 2 area) as an auxiliary electrode, and a platinum wire (BASi, 99.9%) as a pseudoreference electrode. The electroplating bath was kept at 52( ± 1)°C using an oil bath. The potentiostatic method (-2.2 V vs Pt) was used to perform the chromium electroplating for 20 min under stagnant conditions. The coatings were washed with methanol and deionized water and finally dried with air flow. The same electrochemical parameters were used for all electroplating experiments.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results and discussion</head><p>The cyclic voltammogram in Fig. <ref type="figure" target="#fig_0">1a</ref> shows the electrochemical behavior of Cr(III) in the CrBH electrolyte at a glassy carbon electrode when the potential is scanned from +0.8 to -2.0 V (vs Pt) and swept positively back to +0.8 V. Two broad reduction peaks are observed at -1.17 and -1.7 V, implying that the reduction of Cr(III) to metallic chromium occurs in two steps. Previously, we have shown that predominantly [Cr (III) (H 2 O) 4 Cl 2 ] + is present in the CrBH electrolyte <ref type="bibr" target="#b7">[8]</ref>, which undergoes electrochemical reduction to [Cr II (H 2 O) 4 Cl 2 ] at a potential of -1.17 vs Pt (Eq. ( <ref type="formula" target="#formula_0">1</ref>)). The electrodeposition route proceeds via the reduction of intermediate complex adsorption, apparently bivalent chromium chloride-hydroxide [Cr II (H 2 O) 4 (OH)Cl], as an electroactive complex, to metallic chromium or Cr(OH) 2 (Eqs. ( <ref type="formula" target="#formula_2">3</ref>) and ( <ref type="formula" target="#formula_3">4</ref>)); the latter will subsequently reduce to metallic chromium according to (Eq. ( <ref type="formula" target="#formula_4">5</ref>)) <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>.</p><formula xml:id="formula_0">+ + [Cr (H O) Cl ] e [Cr (H O) Cl ] III 2 4 2 II 2 4 2<label>(1)</label></formula><formula xml:id="formula_1">+ + [Cr (H O) Cl ] OH [Cr (H O) (OH)Cl] Cl II 2 4 2 II 2 4<label>(2)</label></formula><formula xml:id="formula_2">+ + + + [Cr (H O) (OH)Cl] 2e Cr 4H O Cl OH II 2 4 0 2<label>(3)</label></formula><formula xml:id="formula_3">+ + + [Cr (H O) (OH)Cl] OH [Cr (OH) ] 4H O Cl II 2 4 II 2 2<label>(4)</label></formula><formula xml:id="formula_4">+ + [Cr (OH) ] 2e Cr 2OH II 2 0<label>(5)</label></formula><p>In parallel, HERs (Eqs. ( <ref type="formula" target="#formula_5">6</ref>) and ( <ref type="formula" target="#formula_6">7</ref>)) proceed at the cathode at less negative potentials.</p><formula xml:id="formula_5">+ + = 2H O6 2e H (g) 2OH E 0.83 vs NHE 2 2 o<label>(6)</label></formula><formula xml:id="formula_6">+ = + 2H 2e H (g) E 0.00 vs NHE 2 o<label>(7)</label></formula><p>While our chromium electroplating method has shown promising coating results on glassy carbon, copper, and brass electrodes <ref type="bibr" target="#b7">[8]</ref>, it shows almost no deposition on HSS substrates due to the predominant HER <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b3">4]</ref>. This effect can be seen in Fig. <ref type="figure" target="#fig_0">1a</ref>, where the HER at HSS has almost completely eliminated the two-step Cr(III) reduction peaks. The severe HER is expected in the CrBH electrolyte since the pH of the electrolyte is highly acidic (pH &gt; 1) due to the hydrolysis of hydrated CrCl 3 salt.</p><p>The surface morphology of HSS substrates strongly influences the extent of the HER. Unfortunately, various chemical and electrochemical surface polishing/treatments of the HSS substrates <ref type="bibr" target="#b11">[12]</ref> either roughen the HSS substrates and provide more "active" sites for HER, or deactivate the HSS substrate surface through adsorption of etchant reagents and/or products. Mechanical polishing of the substrates using silicon carbide (SiC) paper provides a finished substrate on which chromium can be electroplated reproducibly from the CrBH electrolyte. To that end, the HSS substrates were hand polished with 600 and then 1200 grit size SiC in the presence of isopropanol as a lubricant, followed by bath sonication in methanol for 10 min to dislodge remaining silicon carbide particles. As can be seen from Fig. <ref type="figure" target="#fig_0">1d</ref>, a uniform coating with a network of micro-cracks is achieved on HSS substrates that had been mechanically polished. An XPS (Kratos Axis Ultra DLD, Manchester, U.K.) analysis of the coating (Fig. <ref type="figure" target="#fig_0">1b</ref>) shows a chemical composition of 49%, 30%, and 21% for metallic chromium, chromium hydroxide (Cr(OH) 3 ), and chromium oxides (Cr 2 O 3 ), respectively. Each Cr 2p 3/2 and Cr 2p 1/2 peak of Cr 2 O 3 is deconvoluted into five small peaks at 575.9 to 579.3 eV and 584.5 to 588.5 eV, respectively, due to multiple splitting of the 3p 6 d 3 configuration. The Cr 2p 3/2 components observed at 574.1 and 577.3 eV correspond to metallic chromium and Cr(OH) 3 species, while their corresponding Cr 2p 1/2 bands appear at 583.4 and 587.0 eV, respectively. The metallic chromium, Cr(OH) 3 and Cr 2 O 3 contents should be representative of the bulk coating since the surface was mechanically scraped prior to XPS analysis. The average microhardness of the coating was 340 ( ± 35) HV using a Vicker's hardness tester (Leco, Model M-400) at a loading of 10 gf.</p><p>Although we were able to electroplate chromium on the polished HSS substrates from the CrBH electrolyte, the coating was not uniform (e.g. thicker coating on the edges and almost no coating in the center), and the thickness was just 4-7 μm and did not increase with electroplating time. Hydrogen bubbles from the HER are significantly reduced on the polished substrate compared to chemically or electrochemically treated substrates. However, the inevitable accumulation of hydrogen bubbles on the polished HSS cathode prevents the growth of the chromium coating. This problem was ameliorated by adjusting the wettability at the electrolyte/substrate interface by the addition of CTAB surfactant. CTAB decreases the surface tension of the electrolyte, which lowers the interfacial tension and facilitates the easy release of the gas bubbles from the cathode surface <ref type="bibr" target="#b12">[13]</ref>. This allows chromium ions from the bulk electrolyte solution to reach the HSS substrate, resulting in a faster rate of chromium deposition. The CTAB surfactant was added to the CrBH electrolyte (new electrolyte named C-CrBH hereafter) at concentrations between 0.1 and 10 g L -1 . The addition of CTAB significantly improves the coating uniformity, as well as the coating thickness (≈65 μm) (Fig. <ref type="figure" target="#fig_0">1e</ref> and <ref type="figure" target="#fig_0">f</ref>). The optimized concentration of CTAB was found to be 0.2 g L -1 in CrBH electrolyte; higher concentrations did not show any improvement in performance. XPS (Fig. <ref type="figure" target="#fig_0">1c</ref>) indicates that the coating on HSS is 62% metallic chromium, 21% Cr(OH) 3 , and 17% Cr 2 O 3 . The coating shows good adhesion and an enhanced Vickers microhardness (≈415 ± 20 HV) compared to the sample produced from the CrBH electrolyte. Nonetheless, the hardness is lower than chromium plated from conventional chromic acid baths and this can be attributed to internal stress and/or lower metallic chromium content. In particular, we observed a network of microcracks (1-3 μm width) throughout the coating (Fig. <ref type="figure" target="#fig_0">1d-f</ref>), which is apparently due to (i) the relieving of the internal stress of the coating, originating from HER and known as hydrogen embrittlement relief, and/or (ii) the adsorption of chromium hydroxides/oxides on the coating surface <ref type="bibr" target="#b13">[14]</ref>.</p><p>It has been emphasized by previous researchers that the formation of the intermediate layer, [Cr II (H 2 O) 4 (OH)Cl] ads , is important in controlling the quality of the electroplated chromium layer <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. Since the formation of this intermediate layer is a pH-dependent process (see Eq. (<ref type="formula" target="#formula_1">2</ref>)), the local surface pH has a significant influence on the formation of metallic chromium. To address this issue, we added the cationic polymer, PDDA, to the C-CrBH electrolyte. This resulted in the formation of adherent films with considerably fewer cracks (Fig. <ref type="figure" target="#fig_1">2a</ref> and <ref type="figure" target="#fig_1">b</ref>) and a higher metallic chromium content. PDDA is believed to adsorb on the growing film, which reduces both the hydrogen evolution rate and the critical reduction potential. This leads preferentially to the formation of an intermediate Cr II layer (which later reduces to metallic chromium, see Eqs. <ref type="formula" target="#formula_2">3</ref>, <ref type="formula" target="#formula_3">4</ref>, <ref type="formula" target="#formula_4">5</ref>), rather than chromium hydroxide/oxide. PDDA may adsorb on HER active sites and prevent the HER from taking place and, hence, inhibits a pH rise at the cathode surface during electroplating. The optimized PDDA concentration was 1.2 g L -1 in C-CrBH electrolyte (new electrolyte named CP-CrBH hereafter). The large adsorption of PDDA at higher concentrations reduces the electrodeposition rate, apparently due to a lower electron-transfer rate of chromium ions, leading to thin coatings. The XPS result for the sample obtained from CP-CrBH shows 85% metallic chromium, 5% Cr(OH) 3 , and 10% Cr 2 O 3 (Fig. <ref type="figure" target="#fig_2">3a</ref>). Deconvolution of the C 1s spectrum (Fig. <ref type="figure" target="#fig_2">3b</ref>) shows two peaks at 282.6 eV and 823.0 eV, which are attributed to CreC carbide-type bonds. The peaks at higher binding energies correspond to hydrocarbon (285.2 eV) and CeO/C]O bonds (285.2, 285.2 eV, and 285.2 eV). The presence of carbon chains in the coating is expected since both the electrolyte ([Bmim][Cl]) and the additives (CTAB and PDDA) are carbon-rich species, with the carbide carbon (CreC) species mainly originating from the reduction of electrochemically active [Bmim] cations <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b14">15]</ref>. The XRD (XRD, Rigaku Miniflex 600) pattern of the coating shows a broad diffraction peak centered at 2θ = 44°, which is indexed with the standard peak for the Cr(110) plane (Fig. <ref type="figure" target="#fig_2">3c</ref>). The high degree of amorphization is attributed to the incorporation of metalloid carbon atoms into the chromium crystal lattice, which disturbs the setting order of the chromium atoms <ref type="bibr" target="#b15">[16]</ref>. The coating has a Vickers microhardness value of ≈575 HV ( ± 15); however, this is still lower than that of chromium coatings electroplated from conventional Cr(VI) aqueous baths (≈800-900 HV). To further increase the hardness of the coating, we performed composite electroplating of chromium with 3-4 μm Al 2 O 3 particles. 2-25 g L -1 of Al 2 O 3 particles were added to the CP-CrBH electrolyte, followed by sonication at 40 °C for 15 min to disperse the particles in the solution prior to electroplating. As seen in Fig. <ref type="figure" target="#fig_1">2c-f</ref>, the Al 2 O 3 particles (the light-colored pieces) were uniformly distributed throughout the coating on the HSS surface. The addition of Al 2 O 3 to the CP-CrBH electrolyte bath reduced the crack width to &lt; 200 nm and increased the microhardness of the coating. As shown in Fig. <ref type="figure" target="#fig_2">3d</ref>, microhardness increased with increasing Al 2 O 3 concentration, but the thickness of the composite coating decreased. At the optimum 10 g L -1 Al 2 O 3 concentration, the coating had 860 ( ± 10) HV hardness, 42 ( ± 4) μm thickness, and good adhesion to the HSS substrate. This hardness is equivalent to that of chromium deposits from conventional Cr(VI) chromic acid baths. The composite chromium/Al 2 O 3 coating has the same chromium composition as the samples electroplated from CP-CrBH (see Fig. <ref type="figure" target="#fig_1">2b</ref>). We postulate that the co-deposited Al 2 O 3 particles reduce stress levels in the coating by interrupting the metal grain growth which causes tensile stress <ref type="bibr" target="#b16">[17]</ref>, resulting in the remarkable hardness values. The high hardness of the Al 2 O 3 particles themselves might contribute to the enhanced hardness values of the composite. The reduction in the thickness of the coating compared with the sample obtained from the CP-CrBH electrolyte is likely due to Al 2 O 3 particles blocking the diffusion of chromium ion species from the electrolyte to the substrate, as well as reducing the local conductivity of the coating.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusion</head><p>Chromium was successfully electroplated on steel substrates from a Cr(III) water-in-[Bmim][Cl] electrolyte after mechanical polishing of the 4130 HSS substrates. Unfortunately, the coating was thin and not uniform. Dramatic improvements in coating chromium metal content, uniformity, thickness and hardness were achieved through the addition of CTAB surfactant, cation PPDA polymer, and Al 2 O 3 particles. The final electrolyte solution (Fig. <ref type="figure" target="#fig_2">3e</ref>) chromium(III) chloride hexahydrate, 1-butyl-3-methylimidazolium chloride and water in a mole ratio of 1:2:12, with 0.2 g L -1 CTAB, 1.2 g L -1 PDDA and 10 g L -1 3-4 μm Al 2 O 3 particles. The metallic chromium composition of the composite coating was 85% and it had a hardness of 860 ( ± 10) HV. Thus, electroplating from a Cr(III) water-in-[Bmim][Cl] electrolyte (with appropriately chosen additives) can produce coatings on steel with a hardness comparable to coatings produced by electroplating from conventional Cr(VI) aqueous baths. Unfortunately, the electrolyte reusability was poor due to the contamination produced by the anodic reactions at the platinum counter electrode. We noticed that chloride and water oxidation are the predominant anodic reactions in our electroplating bath. Unfortunately, our various attempts to minimize chloride oxidation through electrolyte optimization resulted in very poor coating performance. We believe that the solution to increasing the reusability of our electrolyte lies in the composition of the anode itself, with the aim of increasing the overpotential of chloride oxidation as well as suppressing the undesired anodic reactions.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. (a) CV curve of GC and HSS electrodes in CrBH electrolyte; XPS spectra of Cr 2p peaks for the coating electroplated on HSS from (b) CrBH and (c) C-CrBH electrolyte; SEM images of coating electroplated on HSS from (d) CrBH and (e and f) C-CrBH electrolyte. Some increase in the number of cracks was observed when the samples were placed in the SEM chamber, consistent with hydrogen embrittlement. Note that this did not occur for the optimized coatings (Fig. <ref type="figure" target="fig_1">2</ref>).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. SEM images of coating electroplated from (a and b) CP-CrBH and (c-f) Al 2 O 3 /CP-CrBH electrolyte.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. XPS spectra of (a) Cr 2p peaks and (b) C 1s for the coating electroplated on HSS from CP-CrBH electrolyte; (c) XRD pattern of samples obtained from CP-CrBH electrolyte; (d) the microhardness and coating thickness for different concentrations of Al 2 O 3 particles; (e) optimized electrolyte composition and coating properties.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><head>Funding</head><p>This work was supported by the <rs type="funder">American Lightweight Materials Manufacturing Innovation Institute</rs> (cooperative agreement <rs type="grantNumber">N00014-14-2-0002</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_THA5anr">
+					<idno type="grant-number">N00014-14-2-0002</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="standard" xml:id="b0">
+		<monogr>
+			<title level="m">Directive 2002/95/EC of the European Parliament and of the Council of 27 January 2003 on the restriction of the use of certain hazardous substances in electrical and electronic equipment (RoHS) and amendments</title>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhixiang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aiming</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Junyan</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">A review of recent patents on trivalent chromium plating</title>
+		</analytic>
+		<monogr>
+			<title level="j">Recent Pat. Mater. Sci.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="50" to="57"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>El-Meligi</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ismail</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Hydrogen evolution reaction of low carbon steel electrode in hydrochloric acid as a source for hydrogen production</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Hydrog. Energy</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="91" to="97"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Olivares-Ramírez</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Campos-Cornelio</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uribe Godínez</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Borja-Arco</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Castellanos</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Studies on the hydrogen evolution reaction on different stainless steels</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Hydrog. Energy</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">32</biblScope>
+				<biblScope unit="page" from="3170" to="3173"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hou</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jiang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Electrochemical mechanism of Cr(III) reduction for preparing crystalline chromium coatings based on 1-butyl-3-methy-limidazolium hydrogen sulfate ionic liquid</title>
+		</analytic>
+		<monogr>
+			<title level="j">RSC Adv.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="64174" to="64182"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hou</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jiang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Electrochemical mechanism of trivalent chromium reduction in 1-butyl-3-methylimidazolium bromide ionic liquid</title>
+		</analytic>
+		<monogr>
+			<title level="j">Electrochim. Acta</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">130</biblScope>
+				<biblScope unit="page" from="245" to="252"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Abbott</surname>
+					<forename type="first">A</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McKenzie</surname>
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Application of ionic liquids to the electrodeposition of metals</title>
+		</analytic>
+		<monogr>
+			<title level="j">PCCP</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="4265" to="4279"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brennecke</surname>
+					<forename type="first">J</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Characterization of imidazolium chloride ionic liquids plus trivalent chromium chloride for chromium electroplating</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ind. Eng. Chem. Res.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="4879" to="4890"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Phuong</surname>
+					<forename type="first">N</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kwon</surname>
+					<forename>S-C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>L-Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huy</surname>
+					<forename type="first">B</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>Y-I</forename>
+				</persName>
+			</author>
+			<title level="a">Mechanistic study on the effect of PEG molecules in a trivalent chromium electrodeposition process</title>
+		</analytic>
+		<monogr>
+			<title level="j">Microchem. J.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">99</biblScope>
+				<biblScope unit="page" from="7" to="14"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Phuong</surname>
+					<forename type="first">N</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kwon</surname>
+					<forename>S-C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">J</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">K</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">The effects of pH and polyethylene glycol on the Cr(III) solution chemistry and electrodeposition of chromium</title>
+		</analytic>
+		<monogr>
+			<title level="j">Surf. Coat. Technol.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">206</biblScope>
+				<biblScope unit="page" from="4349" to="4355"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wei</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ren</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Environmentally friendly chromium electrodeposition: effect of pre-electrolysis on a Cr(III) bath in an anion-exchange membrane reactor</title>
+		</analytic>
+		<monogr>
+			<title level="j">RSC Adv.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="13131" to="13136"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="series" xml:id="b11">
+		<monogr>
+			<title level="m">Metals Handbook: Metallography and Microstructures</title>
+			<imprint>
+				<publisher>ASM International, The Materials Information Society</publisher>
+				<date when="1985">1985</date>
+			</imprint>
+		</monogr>
+		<series>
+			<biblScope unit="volume">9</biblScope>
+		</series>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gnanasekaran</surname>
+					<forename type="first">K</forename><forename type="middle">S</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Narasimham</surname>
+					<forename type="first">K</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Udupa</surname>
+					<forename type="first">H</forename><forename type="middle">V</forename><forename type="last">K</forename>
+				</persName>
+			</author>
+			<title level="a">The effect of the additive cetyl trimethyl ammonium bromide on the electrodeposition of lead dioxide</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Appl. Electrochem.</title>
+			<imprint>
+				<date when="1976">1976</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="189" to="198"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ramezani-Varzaneh</surname>
+					<forename type="first">H</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Allahkaram</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Isakhani-Zakaria</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Effects of phosphorus content on corrosion behavior of trivalent chromium coatings in 3.5 wt.% NaCl solution</title>
+		</analytic>
+		<monogr>
+			<title level="j">Surf. Coat. Technol.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">244</biblScope>
+				<biblScope unit="page" from="158" to="165"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gorodetsky</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ramnial</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Branda</surname>
+					<forename type="first">N</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Clyburne</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename><forename type="last">C</forename>
+				</persName>
+			</author>
+			<title level="a">Electrochemicalreduction of an imidazolium cation: a convenient preparation of imidazol-2-ylidenes and their observation in an ionic liquid</title>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Commun.</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="page" from="1972" to="1973"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zeng</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liang</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Fabrication of a nanocrystalline Cr–C layer with excellent anti-wear performance</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mater. Lett.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="4107" to="4109"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Conde</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langelaan</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fransaer</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Celis</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Improved corrosion resistance through microstructural modifications induced by codepositing SiC-particles with electrolytic nickel</title>
+		</analytic>
+		<monogr>
+			<title level="j">Corros. Sci.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="1173" to="1189"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

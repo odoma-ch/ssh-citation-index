@@ -1,0 +1,1677 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Randomized phase 3 open label study of quality of life of patients on Pemetrexed versus Erlotinib as maintenance therapy for advanced non squamous non EGFR mutated non small cell lung cancer</title>
+				<funder>
+					<orgName type="full">Tata Memorial centre-Research Administrative Council</orgName>
+					<orgName type="abbreviated">TRAC</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability>
+					<licence><p>Copyright: Patil et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License 3.0 (CC BY 3.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</p></licence>
+				</availability>
+				<date type="published" when="2019-10-29">October 29, 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Vijay</forename><surname>Patil</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Amit</forename><surname>Joshi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Vanita</forename><surname>Noronha</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Vivek</forename><surname>Agarwala</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Anuradha</forename><surname>Chougule</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sadhana</forename><surname>Kanan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Biostatistics</orgName>
+								<orgName type="institution">Advanced Center for Treatment, Research and Education in Cancer</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Atanu</forename><surname>Bhattacharjee</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Section of Biostatistics</orgName>
+								<orgName type="department" key="dep2">Centre for Cancer Epidemiology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arun</forename><surname>Chandrasekharan</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nikhil</forename><surname>Pande</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Vijai</forename><surname>Simha</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Supriya</forename><surname>Goud</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sucheta</forename><surname>More</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rajiv</forename><surname>Kumar</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Pathology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Abhishek</forename><surname>Mahajan</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Radiology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<settlement>Mumbai</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Amit</forename><surname>Janu</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Radiology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<settlement>Mumbai</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nilendu</forename><surname>Purandare</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Department of Nuclear Medicine</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Kumar</forename><surname>Prabhash</surname></persName>
+							<email>kumarprabhashtmh@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Medical Oncology</orgName>
+								<orgName type="institution">Tata Memorial Hospital</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution">Homi Bhabha National Institute</orgName>
+								<address>
+									<region>Mumbai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Randomized phase 3 open label study of quality of life of patients on Pemetrexed versus Erlotinib as maintenance therapy for advanced non squamous non EGFR mutated non small cell lung cancer</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Oncotarget</title>
+						<imprint>
+							<biblScope unit="volume">10</biblScope>
+							<biblScope unit="issue">59</biblScope>
+							<biblScope unit="page" from="6297" to="6307"/>
+							<date type="published" when="2019-10-29">October 29, 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ADD2D260BA9F6DE13CF88AD85DE0522D</idno>
+					<note type="submission">Received: February 04, 2019 Accepted: August 29, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>maintenance</term>
+					<term>pemetrexed</term>
+					<term>erlotinib</term>
+					<term>NSCLC</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Background:</head><p>We planned to compare pemetrexed maintenance with erlotinib maintenance in non squamous non Epidermal Growth Factor Receptor (EGFR) mutated non small cell lung cancer (NSCLC). The null hypothesis for this study was that there would be no difference in quality of life (QOL) between pemetrexed and erlotinib maintenance. Results: The QL2 scores at 3 months were 63.35 (SD 24.99) in pemetrexed arm and 63.01(SD 23.04) in erlotinib arm (p-0.793). Except in 1 domain, the scores were statistically similar between the 2 arms. In the domain of diarrhea, the score was higher as expected in the erlotinib arm (p-0.048). The median progression free survival was 4.5 months (95%CI 4.1-4.9 months) in pemetrexed arm versus 4.5 months (95%CI 3.8-5.2 months) in erlotinib arm (p-0.94). The median overall survival was 16.6 months (15.2-17.9 months) in pemetrexed arm versus 18.3 months (95% CI 13.75-22.91 months) in erlotinib arm (p-0.49). Methods: The study was an open label, single centre, parallel, phase 3 randomized study with 1:1 randomization between maintenance pemetrexed arm and erlotinib arm. Adult patients (age &gt; or = 18 years), with non squamous EGFR mutation, treated with first line palliative therapy, with non progressive disease post 4-6 cycles of pemetrexed-carboplatin were randomized. Primary outcome was change in the score of QOL (Global health status {QL2}) at 3 months. We estimated that with 200 patients, the study had 80% power to detect a significant difference between the two groups in the change in the global health status score at 3 months with an alpha error of 5%, with an effect size of 0.3 SD. Conclusions: Maintenance pemetrexed post pemetrexed-platinum chemotherapy fails to improve QOL or time to event outcomes over maintenance erlotinib in EGFR mutation negative NSCLC.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Treatment of non small cell lung cancer (NSCLC) has evolved over the last one and a half decades. Identification of driver mutations and treatment of these mutated cancers with appropriate tyrosine kinase inhibitors has led to encouraging improvements in outcomes <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>. Progress has been made in the management of non driver mutated non squamous NSCLC as well. Pemetrexed-cisplatin regimen is now considered as the favoured regimen for first line treatment in multiple guidelines <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>. This recommendation is based on a phase 3 study reported by Scagliotti et al where there was an overall survival (OS) advantage over gemcitabine cisplatin for non squamous histologies <ref type="bibr" target="#b5">[6]</ref>. In addition, this advantage came with lower frequency of adverse events. There have been advances with regard to maintenance treatment as well. Multiple studies have suggested that maintenance with pemetrexed either as continuation after pemetrexed-platinum therapy or as switch therapy after platinum doublet was feasible and improved survival <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref>. Maintenance therapy with pemetrexed led to an improvement in median OS by 5.2 months (HR 0.70, p ≤ 0.0001) in the study reported by Ciuleanu et al. <ref type="bibr" target="#b9">[10]</ref> Such benefits with chemotherapy were unheard of in NSCLC.</p><p>Maintenance with pemetrexed, though beneficial, has issues. None of these initial studies have stratified the patients based on their driver mutation status. Further, the intravenous delivery of pemetrexed maintenance meant recurring and continuous hospital visits for the patient. Such frequent visits can be physically and financially distressing and can also lead to non-compliance. Also, there is inconclusive data regarding the cost effectiveness of pemetrexed maintenance <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>. These issues with intravenous maintenance therapy can be overcome by having an oral substitute.</p><p>Erlotinib is a reversible tyrosine kinase inhibitor which is approved for treatment of Epidermal Growth Factor Receptor (EGFR) mutation positive NSCLC <ref type="bibr" target="#b12">[13]</ref>. However, multiple studies have also shown erlotinib to be active in EGFR activating mutation negative (EGFR neg) patients. In the SATURN study, switch maintenance with erlotinib was associated with a survival benefit, even in EGFR neg patients <ref type="bibr" target="#b13">[14]</ref>. With this background, we planned to compare pemetrexed maintenance with erlotinib maintenance in non squamous EGFR neg NSCLC. The null hypothesis for this study was that there would be no difference in quality of life (QOL) between pemetrexed maintenance and erlotinib maintenance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Highlights</head><p>1) We compared erlotinib and pemetrexed as maintenance therapy; 2) There was no difference in QOL between the 2 arms; 3) The PFS and OS were similar between the 2 arms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Baseline characteristics</head><p>200 patients were recruited in the above mentioned study period. The consort diagram is shown in Figure <ref type="figure" target="#fig_0">1</ref>. The median age of the patient on pemetrexed arm and erlotinib arm were 55 years (28-76 years) &amp; 56 years (28-79 years), respectively. All patients had received induction therapy with pemetrexed carboplatin. The stage of these patients at the start of induction pemetrexed -carboplatin was stage IIIB in 11 patients (5.5%) and stage IV in 189 patients (94.5%), respectively. The response rate post induction therapy was 41.8% and 29.9%, respectively, in pemetrexed arm and erlotinib arm, respectively. Table <ref type="table" target="#tab_0">1</ref> depicts the baseline characteristics in both arms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Compliance</head><p>Out of 103 patients randomized on pemetrexed arm, 95 patients (92.2%) received at least one cycle of chemotherapy. The median number of cycles of pemetrexed received were 5 (1-33). Pemetrexed was stopped in 77 patients (74.8%). The reasons for stopping pemetrexed were progression in 50 patients, patient's choice or intolerable side effects in 24 patients, for logistic reasons in 2 patients and death before progression in 1 patient.</p><p>Out of 97 patients randomized on erlotinib arm, 94 patients (96.9%) took at least one week of erlotinib. Erlotinib was stopped in 83 patients (85.5%). The reason for stopping erlotinib were progression in 65 patients, patient's choice or intolerable side effects in 17 patients and death before progression in 1 patient.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>QOL</head><p>One hundred and sixty five patients were eligible for primary endpoint analysis. The baseline QOL scores are shown in Table <ref type="table" target="#tab_1">2</ref>, they were comparable between the 2 arms. The QOL scores in each domain at 3 months are shown in Table <ref type="table" target="#tab_2">3</ref>. The data of QOL scores at 3 months were available for 165 patients. The global health status QOL scores at 3 months were 63.35 (SD 24.99) in pemetrexed arm and 63.01(SD 23.04) in erlotinib arm (p-0.793). Except in 1 domain, the scores were statistically similar between the 2 arms. In the domain of diarrhoea, the score was higher in the erlotinib arm (p-0.048). There was no difference in time to deterioration between any QOL domains between the 2 arms.</p><p>The data for adverse events was available for 95 patients in the pemetrexed arm and 89 patients in the erlotinib arm. The rate of any grade adverse event between the 2 arms was seen in 87.5% (n = 84) and 97.8% (n = 87) in pemetrexed arm and erlotinib arm, respectively (p-0.011). The rate of grade 3 or above adverse events between the 2 arms were 8.3% (n = 8) and 20.2% (n = 18), respectively. There was a difference in the types of adverse events between the 2 arms. The rate of hematological adverse events was higher in the pemetrexed arm, while that of dermatological adverse events was higher in erlotinib arm. The adverse events between the 2 arms are shown in Table <ref type="table" target="#tab_3">4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Time to event outcomes</head><p>The median follow up was 25.36 months. At time of censoring the data, progression was noted in 75 patients in pemetrexed and 70 patients in the erlotinib arm, respectively. The median PFS was 4.5 months (95%CI 4.1-4.9 months) in pemetrexed arm versus 4.5 months (95%CI 3.8-5.2 months) in the erlotinib arm (p-0.94) (Figure <ref type="figure" target="#fig_1">2</ref>). The corresponding hazard ratio was 0.982 (95%CI 0.709-1.361).</p><p>There were 53 deaths in pemetrexed and 48 deaths in erlotinib arm, respectively. The median OS was 16.6 months (15.2-17.9 months) in pemetrexed arm versus 18.3 months (95% CI 13.75-22.91 months) in erlotinib arm (p-0.49) (Figure <ref type="figure" target="#fig_2">3</ref>). The corresponding hazard ratio was 1.222 (95% CI 0.821-1.818).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>The current study upheld the null hypothesis. It clarified that QOL and time to event outcomes (PFS and OS) with continuation of maintenance pemetrexed after pemetrexed carboplatin doublet are similar to those obtained with administration of erlotinib as switch maintenance. These results are a surprise and they challenge the current favored regimen of pemetrexed maintenance after pemetrexed -carboplatin. It renews interest once again in the use of erlotinib in EGFR activating mutation negative NSCLC.</p><p>The saga of erlotinib in EGFR activating mutation negative cancer started with the publication of BR.21 results. In this study, patients who had failed one or more lines of chemotherapy had received either erlotinib or placebo. Erlotinib, in comparison with placebo, led to an improvement in hazard of progression (hazard ratio, 0.61, adjusted for stratification categories; P &lt; 0.001) and decreased the hazard of death too (hazard ratio, 0.70; P &lt; 0.001) <ref type="bibr" target="#b14">[15]</ref>. Erlotinib was compared against second line chemotherapy agents (standard docetaxel or pemetrexed regimens, at the treating investigators' discretion) in the TITAN study. The median PFS and OS was similar between the 2 arms <ref type="bibr" target="#b16">[17]</ref>, thus paving way for use of erlotinib in this setting. Both BR.21 and TITAN study were conducted in predominantly EGFR activating mutation negative population. The median PFS in BR.21 and the TITAN study are similar to that seen in our study. In addition, the impact of erlotinib in the maintenance setting against placebo was shown in the SATURN study. Maintenance erlotinib in the SATURN study, irrespective of EGFR activating mutation status led to an improvement in progression free survival <ref type="bibr" target="#b13">[14]</ref>. Our study took this a step forward, and demonstrated that even in maintenance setting, erlotinib has activity similar to that of maintenance pemetrexed. Taking all these studies and ours together, it seems that erlotinib has activity in EGFR mutation negative patients and has activity comparable to chemotherapy agents.</p><p>The results of our study need to be discussed in consideration with the recent Food and Drug Administration (FDA-United states) decision of removing erlotinib label in EGFR activating mutation negative NSCLC. This decision was based on the recently reported IUNO study. In this study, non EGFR mutated patients post 4 cycles of platinum doublet were randomized to either early erlotinib (maintenance) or placebo. Patients in placebo arm were treated with erlotinib on   progression, thus effectively making it a comparison of early or maintenance erlotinib versus delayed or second line erlotinib. In this study, there was no impact of early erlotinib on OS, PFS or even disease control rate <ref type="bibr" target="#b17">[18]</ref>. Thus the authors concluded that erlotinib should not be used in non EGFR mutated patients. The results of our study and the SATURN study, however, suggest the contrary. The probable reasons for these discrepancies are detailed below. Firstly, the primary endpoint of the IUNO study was OS which is an endpoint influenced by multiple factors, the important one being second line or subsequent therapy. Second line therapy was received by only 50% of patients from the maintenance erlotinib arm while 78% received it from the maintenance placebo arm. This was  in spite of similar rate of progression between both arms. Secondly, the median PFS in the IUNO study was similar in placebo and erlotinib arm. This is an odd finding, considering that 2 previous studies, BR.21 and SATURN, showed an improvement with erlotinib over placebo <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b14">15]</ref>. This raises the possibility that such a finding could be a result of either statistical chance or population pharmacogenomics. Whenever trials are performed, the false negative is set at 10-20%. In the IUNO study, it was 20%. Thus there exists a 20% probability that the results found could be falsely negative. Population pharmacogenomics can further play a role. IUNO was a predominantly east european and east asian study. The pharmacogenomics of these populations are different from Indians and Western population <ref type="bibr" target="#b18">[19]</ref>. Pharmacogenetic variation is known in erlotinib and can influence both response and toxicity <ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>.</p><p>The current guideline is to consider immunotherapy in first line setting in NSCLC and hence the importance of our results can be questioned. However, PDL1 expression is required for administration of immunotherapy. Pembrolizumab alone can be administered if PDL1 expression is &gt; 50%. For PDL1 expression of 1-49% a combination of chemotherapy with immunotherapy is required. Hence, chemotherapy without immunotherapy will still be used in patients without driver mutation and PDL1 expression below 1% <ref type="bibr" target="#b3">[4]</ref>. In multiple studies the PDL1 expression &lt;1% is seen roughly in 34-47% of patients <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref> and hence there will be a substantial proportion of patients who are still candidates for chemotherapy. Accessibility of immunotherapy agents in low and middle income countries is poor <ref type="bibr" target="#b25">[26]</ref>, and chemotherapy will be the preferred option in these settings.</p><p>Adverse event rate seen with maintenance pemetrexed and erlotinib were in accordance with their known side effects. No new safety signals were identified. Pemetrexed was associated with higher rates of myelosuppression, while erlotinib was associated with higher diarrhea rate.</p><p>Our study is not without its own limitations. The primary endpoint was quality of life and not PFS or OS. This primary endpoint was selected, as maintenance of QOL in palliative setting was considered as an important aspect of treatment <ref type="bibr" target="#b26">[27]</ref>. Improvement in quality of life reflected by symptom control is considered a crucial aspect of maintenance treatment by 90% of patients <ref type="bibr" target="#b27">[28]</ref>. It rarely happens that the results of QOL and time to event outcomes are in different directions. The study randomization was not stratified, hence a higher number of patients in the pemetrexed arm had a response to induction chemotherapy. However despite this imbalance, the pemetrexed arm failed to improve QOL, PFS or OS over the erlotinib arm. There was no placebo arm in the study. At the time of conceptualization of the study, maintenance post 4-6 cycles of pemetrexed-platinum was the standard treatment. Both pemetrexed and erlotinib were approved at that time. Hence the lung medical oncology group felt it was unethical to deny patient of maintenance and use a placebo.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Study conduct</head><p>The study was approved by the institutional ethics committee and was conducted in accordance with the ethical norms laid down by declaration of Helsinki, good clinical practice guidelines and local institutional ethics guidelines. The study was registered with CTRI India in August 2014 (CTRI/2014/08/004847). The study was conducted in the department of Medical Oncology at Tata Memorial Hospital, Mumbai, India between 7th November 2014 to 3rd March 2017. All patients recruited in this study provided written informed consent prior to participation in the study. The study was funded by an intramural grant from Tata Memorial centre-Research Administrative Council (TRAC).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Trial design</head><p>The study was an open label, single centre, parallel, phase 3 randomized study with 1:1 randomization between maintenance pemetrexed arm and erlotinib arm. There was no major amendment to the study protocol (Supplementary Appendix 1, see Supplementary Materials) or consent post start of the study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Participants</head><p>The detailed inclusion and exclusion criteria are provided in the study protocol. In brief, adult patients (age &gt; or = 18 years) with histologically proven NSCLC (Non squamous), without activating EGFR mutation, with stage IIIB (not suitable for curative intent therapy) or IV, treated with first line palliative therapy, with non progressive disease post 4-6 cycles of pemetrexed-carboplatin, with normal organ functions (absolute neutrophil count &gt;1500/ lL, hemoglobin &gt; 8 g/dL, and platelet count &gt;100,000/ lL, serum creatinine &lt;2 mg/dL, total bilirubin &lt;1.5 times the institutional upper limit of normal [ULN], aspartate aminotransferase and alanine aminotransferase levels &lt;2 times the institutional ULN), with Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0-2 and life expectancy of greater than 3 months were included in this study. Patients who had previous exposure to tyrosine kinase inhibitors, who had uncontrolled comorbidities, who had previous treatment for any other cancer or those with uncontrolled infections were excluded.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Randomisation</head><p>Patients post consenting and workup were 1:1 randomized to the 2 intervention arms. The sequence generation was done by SK, who served as an independent statistician. The randomization had no stratification factor. The request for randomization was done by the trial coordinator online via email and the randomization was performed and conveyed via email by SK.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interventions</head><p>The 2 intervention arms in the study were maintenance pemetrexed and erlotinib.</p><p>Patients randomized to pemetrexed arm received maintenance intravenous pemetrexed. Pemetrexed was administered intravenously every 3 weekly in a dose of 500 mg/m2 over 10-15 minutes. Patients received dexamethasone 8 mg intravenous single dose as antiemetic before pemetrexed. They also received vitamin B12 injection 1000 microgram every 9 weeks and tablet folic acid 5 mg daily while they were on pemetrexed. Patients in the erlotinib arm received tablet erlotinib 150 mg per oral (PO) once daily. Both these interventions were continued till progression of disease or intolerable side effects.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Endpoints</head><p>Primary endpoint of the study was to compare the QOL in both arms at 3 months post randomisation. The secondary endpoints were to compare the progression free survival (PFS), OS and toxicity between the 2 arms. The PFS was defined as time in months from the date of randomization to date of progression or death whichever occurred earlier. The OS was defined as time in months from date of start of pemetrexed-platinum chemotherapy to date of death.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Study methodology</head><p>Patients in both arms, were followed up till death. The dose modifications in both arms were in line with published literature <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b14">15]</ref>. Patients in both arms underwent response assessment according to RECIST criteria version 1.1 at 2 monthly intervals. Toxicity was documented in accordance with common terminology criteria for adverse events (CTCAE) version 4.03. European Organisation for Research and Treatment of Cancer (EORTC) QOL scale was used for assessment at baseline and at 3 months using the EORTC-QLQ-C30 and LC13 questionnaire for lung cancer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Sample size estimation</head><p>Primary outcome was change in the score of QOL (Global health status {QL2}) at 3 months. We estimated that with 200 patients, the study had 80% power to detect a significant difference in the change in the global health status score at 3 months with an alpha error of 5%, with an effect size of 0.3 standard deviation (SD).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical method</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Quality of life analysis</head><p>The quality of life data was analysed using R software using the "QoLR" package. The missing data was examined using the method suggested by Little et al. <ref type="bibr" target="#b15">[16]</ref> It suggested that the data was not missing completely at random. To overcome the chance of bias from the missing data, it was imputed using multivariate imputation by chained equations algorithm using the "mice" package in R. Imputation was not performed for completely missing data for example if QOL was not filled for any reason at 3 months, it was not imputed. The estimation of the scores of EORTC HRQOL questionnaires QLQ-C30 and EORTC QLQ-LC13 questionnaires at baseline and each visit were in accordance with the method defined in the EORTC scoring manual. The mean scores with the standard deviation were calculated. The scores at 3 months were compared using 2 sided student t test for independent samples. Per protocol analysis was performed for the primary endpoint only those patients who had filled the baseline and subsequent 3 month QOL proforma were included.</p><p>The QOL data was also collected for visits in addition to the baseline visit and the 3 month visit. The mean scores between all visits between the 2 arms were calculated. A time to deterioration analysis was planned to estimate the time until definitive deterioration. The time until definitive deterioration (TUDD) in QOl for a specific domain was defined as time interval in months calculated between time to randomization to time to deterioration in that specific QOL domain by 10 or more units or death or progression whichever occurred earlier. The TUDD was compared between the 2 arms for each domain of QOL using log rank test. The A p value of 0.05 was taken as significant and no multiplicity correction was done.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Time to event analysis</head><p>Median follow up was calculated using the reverse Kaplan Meier method. Intention to treat analysis was performed for PFS and OS. The PFS and OS were estimated using the Kaplan Meier method and the 2 arms were compared using the log rank test. The cox regression analysis was used for calculation of the hazard ratio.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSIONS</head><p>In conclusion, to our knowledge, the current study is the first study to show that maintenance pemetrexed post pemetrexed-carboplatin chemotherapy fails to improve QOL or time to event outcomes (OS and PFS) over maintenance erlotinib in EGFR mutation negative NSCLC.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Consort diagram.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Progression free survival in months between the 2 arms.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Overall survival in months between the 2 arms.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Table 1: Table depicting the baseline characteristics in both arms</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Table 2: Domain wise QOL score value comparison between Pemetrexed and Erlotinib</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Table 3: Domain wise QOL score value comparison between Pemetrexed and Erlotinib at 3 months</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Table 4: Grade 3 or above adverse events between the 2 arms</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>The study was funded by an intramural grant from <rs type="funder">Tata Memorial centre-Research Administrative Council (TRAC)</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONFLICTS OF INTEREST</head><p>The authors declare the following financial interests/ personal relationships which may be considered as potential competing interests:</p><p>Dr. Noronha reports grants from Dr. Reddy's LaboratoriesÐnc, grants from Amgen, grants from Sanofi Aventis, outside the submitted work.</p><p>Dr. Prabhash reports grants from Biocon Ltd, grants from Dr. Reddy's Laboratories Inc, grants from Fresenius Kabi India Pvt Ltd, grants from Alkem Laboratories, grants from Natco Pharma Ltd, grants from BDR Pharmaceutics Intl Pvt Ltd, grants from Roche Holding AG, outside the submitted work.</p><p>None of the other authors have anything to declare that maybe considered as potential competing interests.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">Maruti</forename><surname>Patil</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Noronha</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Joshi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Choughule</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Bhattacharjee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Kumar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Goud</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>More</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Ramaswamy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Karpe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Pande</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Chandrasekharan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Goel</surname></persName>
+					</author>
+					<title level="a">Phase III study of gefitinib or pemetrexed with carboplatin in EGFR-mutated advanced lung adenocarcinoma</title>
+				</analytic>
+				<monogr>
+					<title level="j">ESMO Open</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page">e000168</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Soria</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Ohe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Vansteenkiste</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Reungwetwattana</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Chewaskulyong</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Dechaphunkul</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Imamura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Nogami</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kurata</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Okamoto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Cho</surname></persName>
+					</author>
+					<title level="a">Osimertinib in Untreated EGFR-Mutated Advanced Non-Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">N Engl J Med</title>
+					<imprint>
+						<biblScope unit="volume">378</biblScope>
+						<biblScope unit="page" from="113" to="125"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Soria</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><surname>Felip</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><surname>Cobo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Lu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><surname>Syrigos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><surname>Göker</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><surname>Georgoulias</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><surname>Isla</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">Z</forename><surname>Guclu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><surname>Morabito</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Min</surname></persName>
+					</author>
+					<author>
+						LUX-Lung 8 Investigators
+					</author>
+					<title level="a">Afatinib versus erlotinib as second-line treatment of patients with advanced squamous cell carcinoma of the lung (LUX-Lung 8): an open-label randomised controlled phase 3 trial</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="897" to="907"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Ettinger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Aisner</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Wood</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Akerley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bauman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Chirieac</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>D'Amico</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Dilling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Dobelbower</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Govindan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gubens</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Hennon</surname></persName>
+					</author>
+					<title level="a">NCCN Guidelines Insights: Non–Small Cell Lung Cancer, Version 5.2018</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Natl Compr Canc Netw</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="807" to="821"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Novello</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Barlesi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Califano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Cufer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Ekman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">Giaj</forename><surname>Levra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kerr</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Popat</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Reck</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Senan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Simo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Vansteenkiste</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Peters</surname></persName>
+					</author>
+					<title level="a">ESMO Guidelines Committee. Metastatic non-small-cell lung cancer: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ann Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="v1" to="v27"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Scagliotti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Parikh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>von Pawel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Biesma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Vansteenkiste</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Manegold</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Serwatowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Gatzemeier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Digumarti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Zukin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Mellemgaard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Park</surname></persName>
+					</author>
+					<title level="a">Phase III Study Comparing Cisplatin Plus Gemcitabine With Cisplatin Plus Pemetrexed in Chemotherapy-Naive Patients With Advanced-Stage Non–Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="page" from="3543" to="3551"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Tomasini</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Barlesi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Mascaux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Greillier</surname></persName>
+					</author>
+					<title level="a">Pemetrexed for advanced stage nonsquamous non-small cell lung cancer: latest evidence about its extended use and outcomes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ther Adv Med Oncol</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="198" to="208"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">G</forename><surname>Paz-Ares</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>De Marinis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Dediu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Thomas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Pujol</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Bidoli</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Molinier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Sahoo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Laack</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Reck</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Corral</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Melemed</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>John</surname></persName>
+					</author>
+					<title level="a">PARAMOUNT: Final Overall Survival Results of the Phase III Study of Maintenance Pemetrexed Versus Placebo Immediately After Induction Treatment With Pemetrexed Plus Cisplatin for Advanced Nonsquamous Non–Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Oncol</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="2895" to="2902"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Gentzler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Patel</surname></persName>
+					</author>
+					<title level="a">Maintenance treatment after induction therapy in non-small cell lung cancer: latest evidence and clinical implications</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ther Adv Med Oncol</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="4" to="15"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Ciuleanu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Brodowicz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zielinski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Krzakowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Laack</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="first">L</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Bover</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Begbie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Tzekova</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Cucevic</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Pereira</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+					</author>
+					<title level="a">Maintenance pemetrexed plus best supportive care versus placebo plus best supportive care for non-small-cell lung cancer: a randomised, double-blind, phase 3 study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet</title>
+					<imprint>
+						<biblScope unit="volume">374</biblScope>
+						<biblScope unit="page" from="1432" to="1440"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>X</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Tan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Wan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Ouyang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zhao</surname></persName>
+					</author>
+					<title level="a">Cost-Effectiveness of Continuation Maintenance Pemetrexed After Cisplatin and Pemetrexed Chemotherapy for Advanced Nonsquamous Non–Small-Cell Lung Cancer: Estimates From the Perspective of the Chinese Health Care System</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clin Ther.</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="54" to="65"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Matter-Walstra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Joerger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Kühnel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Szucs</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Pestalozzi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Schwenkglenks</surname></persName>
+					</author>
+					<title level="a">Cost-Effectiveness of Maintenance Pemetrexed in Patients with Advanced Nonsquamous-Cell Lung Cancer from the Perspective of the Swiss Health Care System</title>
+				</analytic>
+				<monogr>
+					<title level="j">Value in Health</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="65" to="71"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Cohen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chattopadhyay</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Tang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Justice</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Sridhara</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Pazdur</surname></persName>
+					</author>
+					<title level="a">Approval Summary: Erlotinib Maintenance Therapy of Advanced/Metastatic Non-Small Cell Lung Cancer (NSCLC)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oncologist</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="1344" to="1351"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Cappuzzo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ciuleanu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Stelmakh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cicenas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Szczésna</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Juhász</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Esteban</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Molinier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Brugger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Melezínek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Klingelschmitt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Klughammer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Giaccone</surname></persName>
+					</author>
+					<author>
+						SATURN investigators
+					</author>
+					<title level="a">Erlotinib as maintenance treatment in advanced non-small-cell lung cancer: a multicentre, randomised, placebo-controlled phase 3 study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="521" to="529"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Shepherd</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Rodrigues Pereira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ciuleanu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">H</forename><surname>Tan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Hirsh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Thongprasert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Campos</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Maoleekoonpiroj</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Smylie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Martins</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>van Kooten</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Dediu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Findlay</surname></persName>
+					</author>
+					<author>
+						National Cancer Institute of Canada Clinical Trials Group
+					</author>
+					<title level="a">Erlotinib in Previously Treated Non–Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">N Engl J Med</title>
+					<imprint>
+						<biblScope unit="volume">353</biblScope>
+						<biblScope unit="page" from="123" to="132"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b15">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Little</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Rubin</surname></persName>
+					</author>
+					<title level="m">Statistical Analysis with Missing Data</title>
+					<imprint>
+						<publisher>John Wiley &amp; Sons</publisher>
+						<pubPlace>Hoboken</pubPlace>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+				<note>2nd Edition</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Ciuleanu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Stelmakh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cicenas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Miliauskas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Grigorescu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Hillenbach</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Johannsdottir</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Klughammer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">E</forename><surname>Gonzalez</surname></persName>
+					</author>
+					<title level="a">Efficacy and safety of erlotinib versus chemotherapy in second-line treatment of patients with advanced, non-small-cell lung cancer with poor prognosis (TITAN): a randomised multicentre, open-label, phase 3 study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="300" to="308"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Cicènas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Geater</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Petrov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Hotko</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Hooper</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Xia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Mudie</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Wu</surname></persName>
+					</author>
+					<title level="a">Maintenance erlotinib versus erlotinib at disease progression in patients with advanced non-small-cell lung cancer who have not progressed following platinum-based chemotherapy (IUNO study)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lung Cancer</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="30" to="37"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Innocenti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Das</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">H</forename><forename type="last">Jr</forename><surname>Cook</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Ratain</surname></persName>
+					</author>
+					<title level="a">Interethnic difference in the allelic distribution of human epidermal growth factor receptor intron 1 polymorphism</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clin Cancer Res.</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="1009" to="1012"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Phelps</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Stinchcombe</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Blachly</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Schaaf</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Starrett</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Poi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Papp</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Aimiuwu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Gao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Erlotinib in African Americans With Advanced Non–Small Cell Lung Cancer: A Prospective Randomized Study With Genetic and Pharmacokinetic Analyses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clin Pharmacol Ther</title>
+					<imprint>
+						<biblScope unit="volume">96</biblScope>
+						<biblScope unit="page" from="182" to="191"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Fukudo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Ikemi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Togashi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Masago</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Mio</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Terada</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Teramukai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Mishima</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Inui</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Katsura</surname></persName>
+					</author>
+					<title level="a">Population Pharmacokinetics/Pharmacodynamics of Erlotinib and Pharmacogenomic Analysis of Plasma and Cerebrospinal Fluid Drug Concentrations in Japanese Patients with Non-Small Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clin Pharmacokinet</title>
+					<imprint>
+						<biblScope unit="volume">52</biblScope>
+						<biblScope unit="page" from="593" to="609"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Rudin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Desai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Karrison</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Janisch</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Das</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ramirez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Poonkuzhali</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Schuetz</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Fackenthal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Armstrong</surname></persName>
+					</author>
+					
+					<title level="a">Pharmacogenomic and Pharmacokinetic Determinants of Erlotinib Toxicity</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Oncol.</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="page" from="1119" to="1127"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Brahmer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Reckamp</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Baas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Crinò</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Eberhardt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Poddubskaya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Antonia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Pluzanski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">E</forename><surname>Vokes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Holgado</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Waterhouse</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Ready</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Gainor</surname></persName>
+					</author>
+					<title level="a">Nivolumab versus Docetaxel in Advanced Squamous-Cell Non–Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">N Engl J Med</title>
+					<imprint>
+						<biblScope unit="volume">373</biblScope>
+						<biblScope unit="page" from="123" to="135"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Borghaei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Paz-Ares</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Horn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Spigel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Steins</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Ready</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Chow</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">E</forename><surname>Vokes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Felip</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Holgado</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Barlesi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Kohlhäufl</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Arrieta</surname></persName>
+					</author>
+					<title level="a">Nivolumab versus Docetaxel in Advanced Nonsquamous Non–Small-Cell Lung Cancer</title>
+				</analytic>
+				<monogr>
+					<title level="j">N Engl J Med</title>
+					<imprint>
+						<biblScope unit="volume">373</biblScope>
+						<biblScope unit="page" from="1627" to="1639"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Herbst</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Baas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Felip</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Pérez-Gracia</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Molina</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Arvis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Ahn</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Majem</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Fidler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Jr</forename><surname>De Castro</surname></persName>
+					</author>
+					<title level="a">Pembrolizumab versus docetaxel for previously treated, PD-L1-positive, advanced non-small-cell lung cancer (KEYNOTE-010): a randomised controlled trial</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet</title>
+					<imprint>
+						<biblScope unit="volume">387</biblScope>
+						<biblScope unit="page" from="1540" to="1550"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Ruff</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Al-Sukhun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Blanchard</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">N</forename><surname>Shulman</surname></persName>
+					</author>
+					<title level="a">Access to Cancer Therapeutics in Low-and Middle-Income Countries</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am Soc Clin Oncol Educ Book</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="58" to="65"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">I</forename><surname>Cherny</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Dafni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bogaerts</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Latino</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Pentheroudakis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Douillard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Tabernero</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zielinski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Piccart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">G</forename><surname>de Vries</surname></persName>
+					</author>
+					<title level="a">ESMO-Magnitude of Clinical Benefit Scale version 1.1</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ann Oncol</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="2340" to="2366"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Peeters</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Sibille</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Anrys</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Oyen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Dooms</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Nackaerts</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Wauters</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Vansteenkiste</surname></persName>
+					</author>
+					<title level="a">Maintenance therapy for advanced non-small-cell lung cancer: a pilot study on patients' perceptions</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Thorac Oncol</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="1291" to="1295"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

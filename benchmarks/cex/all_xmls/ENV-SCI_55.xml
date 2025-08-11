@@ -1,0 +1,2803 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Evaluating the efficacy of independent versus simultaneous management strategies to address ecological and genetic threats to population viability</title>
+				<funder>
+					<orgName type="full">Scottish Natural Heritage</orgName>
+					<orgName type="abbreviated">SNH</orgName>
+				</funder>
+				<funder ref="#_YSA2W2a">
+					<orgName type="full">Natural Environment Research Council</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Royal Society for the Protection of Birds</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">SNH</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability><licence><p>This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</p></licence></availability>
+				<date type="published" when="2019-07-20"/>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Amanda</forename><forename type="middle">E</forename><surname>Trask</surname></persName>
+							<email>amandaetrask@gmail.com</email>
+							<idno type="ORCID">0000-0002-9398-2861</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Biological Sciences, Zoology Building</orgName>
+								<orgName type="institution">University of Aberdeen</orgName>
+								<address>
+									<settlement>Aberdeen</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sarah</forename><forename type="middle">R</forename><surname>Fenn</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Biological Sciences, Zoology Building</orgName>
+								<orgName type="institution">University of Aberdeen</orgName>
+								<address>
+									<settlement>Aberdeen</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Eric</forename><forename type="middle">M</forename><surname>Bignal</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Scottish Chough Study Group</orgName>
+								<address>
+									<settlement>Isle of Islay</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Davy</forename><forename type="middle">I</forename><surname>Mccracken</surname></persName>
+							<idno type="ORCID">0000-0001-5057-0448</idno>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Integrated Land Management</orgName>
+								<orgName type="institution">Scotland' Rural College</orgName>
+								<address>
+									<settlement>Auchincruive</settlement>
+<region>Ayr</region>
+<country>UK</country>
+									
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pat</forename><surname>Monaghan</surname></persName>
+							<idno type="ORCID">0000-0003-2430-0326</idno>
+							<affiliation key="aff4">
+								<orgName type="department">Institute of Biodiversity, Animal Health &amp; Comparative Medicine</orgName>
+								<orgName type="institution">University of Glasgow</orgName>
+								<address>
+									<settlement>Glasgow</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jane</forename><forename type="middle">M</forename><surname>Reid</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Biological Sciences, Zoology Building</orgName>
+								<orgName type="institution">University of Aberdeen</orgName>
+								<address>
+									<settlement>Aberdeen</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Evaluating the efficacy of independent versus simultaneous management strategies to address ecological and genetic threats to population viability</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Applied Ecology</title>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<biblScope unit="volume">56</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="2264" to="2273"/>
+							<date type="published" when="2019-07-20"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B969B767EE1976E630EC90DB8EC975B0</idno>
+					<idno type="DOI">10.1111/1365-2664.13464</idno>
+					<note type="submission">Received: 7 February 2019 | Accepted: 5 June 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>1. Small, declining populations can face simultaneous, interacting, ecological and genetic threats to viability. Conservation management strategies designed to tackle such threats independently may then prove ineffective. Population viability analyses that evaluate the efficacy of management strategies implemented independently versus simultaneously are then essential to the design of effective management plans, yet such quantitative evaluations are typically lacking.</p><p>2. We used stochastic individual-based models, parameterised with high-quality multi-year demographic and genetic data, to evaluate the efficacy of independent or simultaneous ecological (supplementary feeding) and genetic (translocations to alleviate inbreeding) management strategies for a red-billed chough (Pyrrhocorax pyrrhocorax) population of major conservation concern. This population is experiencing ecological threats from food limitation and genetic threats from escalating inbreeding. Conservation managers therefore face a dilemma: supplementary feeding may be ineffective if inbreeding is limiting stochastic population growth rate (λ s ), while translocations may be ineffective if food is limiting.</p><p>3. Model simulations suggested that the focal population will decline to extinction relatively rapidly with no conservation management (mean λ s ≈ 0.86) and with genetic management alone (λ s ≈ 0.90). Ecological management alone reduced, but did not halt the population decline (λ s ≈ 0.93). However, simultaneous genetic and ecological management yielded population stability (λ s ≈ 1), with genetic rescue lasting ~25 years.</p><p>4. These outcomes arose because the capacity for translocations to alleviate inbreeding depression is limited by food availability, while supplementary feeding cannot achieve population viability in the presence of accumulating inbreeding. However, supplementary feeding improved environmental quality enough to allow expression of variance in fitness and thus inbreeding depression, meaning that reductions in inbreeding following translocations can increase λ s .</p><p>5. Synthesis and applications.</p><p>Our analyses suggest that simultaneous management of ecological and genetic threats will be critical to ensuring viability of Scotland's chough population; neither strategy independently is likely to achieve population persistence and may consequently waste conservation resources. Managers of other resource‐limited, inbred populations should consider that the efficacy of strategies designed to alleviate ecological and genetic threats may be interdependent, such that holistic management is essential to ensure population viability.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">| INTRODUCTION</head><p>Small, declining populations can face multiple ecological, genetic and demographic threats that act simultaneously to decrease viability <ref type="bibr" target="#b17">(Fagan &amp; Holmes, 2006;</ref><ref type="bibr" target="#b53">Soulé &amp; Mills, 1998)</ref>. Conservation managers often focus on tackling such threats independently, yet the efficacy of individual strategies may be interdependent <ref type="bibr" target="#b16">(Ewen, Armstrong, Parker, &amp; Seddon, 2012)</ref>. Independent management of threats may then fail to ensure population viability, meaning that managers must tackle threats holistically or risk further population decline and wasted conservation resources <ref type="bibr" target="#b7">(Brook, Sodhi, &amp; Bradshaw, 2008)</ref>. Evaluating the efficacy of multiple management strategies implemented independently versus simultaneously is therefore key to designing management plans that effectively and efficiently achieve long-term population viability.</p><p>Ecological threats causing population declines can include predation <ref type="bibr" target="#b64">(Wiles, Bart, Beck, &amp; Aguon, 2003)</ref>, disease <ref type="bibr" target="#b39">(Preece et al., 2017)</ref> and decreased resources (e.g. food limitation, <ref type="bibr" target="#b18">Ford, Ellis, Olesiuk, &amp; Balcomb, 2010)</ref>. Managers can therefore focus on alleviating these threats, for example, through predator or disease-vector control <ref type="bibr" target="#b29">(Liao, Atkinson, LaPointe, &amp; Samuel, 2017;</ref><ref type="bibr" target="#b49">Russell et al., 2015)</ref>, habitat management <ref type="bibr" target="#b15">(Eglington et al., 2010)</ref> or supplementary feeding <ref type="bibr" target="#b21">(González, Margalida, Sánchez, &amp; Oria, 2006)</ref>. However once a population becomes small and isolated, demographic stochasticity, and genetic threats from inbreeding and genetic drift can further decrease population viability <ref type="bibr" target="#b23">(Keller &amp; Waller, 2002)</ref>. In particular, inbreeding can threaten short-term viability by decreasing individual fitness (i.e. inbreeding depression, <ref type="bibr" target="#b9">Charlesworth &amp; Willis, 2009;</ref><ref type="bibr" target="#b23">Keller &amp; Waller, 2002)</ref>, and is therefore of immediate concern. One potential management response is population reinforcement through translocations of suitable conspecifics <ref type="bibr" target="#b52">(Seddon, 2010)</ref>. Such translocations can have demographic benefits because increased population size reduces demographic stochasticity and Allee effects <ref type="bibr" target="#b8">(Brown &amp; Kodric-Brown, 1977;</ref><ref type="bibr" target="#b22">Hufbauer et al., 2015)</ref>, and genetic benefits through reduced inbreeding and increased genetic diversity <ref type="bibr" target="#b20">(Frankham, 2015;</ref><ref type="bibr" target="#b63">Whiteley, Fitzpatrick, Funk, &amp; Tallmon, 2015)</ref>.</p><p>However, translocations may fail to increase population viability if ecological threats are an overriding constraint on stochastic population growth rate (λ s ) compared to inbreeding depression.</p><p>This may occur if inbreeding depression is weak or depends on environmental conditions (inbreeding-by-environment interactions, <ref type="bibr" target="#b10">Cheptou &amp; Donohue, 2011)</ref>. Inbreeding depression is often expected to be greater in harsh environments (Figure <ref type="figure" target="#fig_0">1</ref>, <ref type="bibr" target="#b19">Fox &amp; Reed, 2011)</ref>, although such effects are not always evident in wild populations <ref type="bibr" target="#b25">(Kruuk, Sheldon, &amp; Merilä, 2002;</ref><ref type="bibr" target="#b28">Laws, Townsend, Nakagawa, &amp; Jamieson, 2010;</ref><ref type="bibr" target="#b61">Walling et al., 2011)</ref>. However, in very harsh environments, the magnitude of inbreeding depression may be constrained by low phenotypic variation in fitness (low "opportunity for inbreeding depression", <ref type="bibr" target="#b12">Crow, 1958;</ref><ref type="bibr" target="#b60">Waller, Dole, &amp; Bersch, 2008)</ref>.</p><p>Specifically, inbreeding depression would be negligible in very harsh environments where all individuals perform poorly, and actually increase as environmental quality, and hence the opportunity for variation in fitness, increases (Figure <ref type="figure" target="#fig_0">1</ref>). Such weak inbreeding depression in very harsh experimental environments was observed in Brassica rapa <ref type="bibr" target="#b60">(Waller et al., 2008)</ref> and Rhinanthus alectorolophus <ref type="bibr" target="#b51">(Sandner &amp; Matthies, 2017)</ref>, and may explain inconsistent environmental effects on inbreeding depression in Soay sheep (Ovis aries, <ref type="bibr" target="#b37">Pemberton, Ellis, Pilkington, &amp; Bérénos, 2017)</ref>. Translocations to reduce inbreeding may then provide little improvement in population viability and instead waste conservation resources. Indeed, translocations negligibly increased persistence probability in American martens (Martes Americana) experiencing ecological threats <ref type="bibr" target="#b31">(Manlick, Woodford, Gilbert, Eklund, &amp; Pauli, 2017)</ref>. Similarly, long-term population viability of greater prairie-chickens (Tympanuchus cupido pinnatus) may be limited by ecological threats despite apparent short-term efficacy of translocations <ref type="bibr" target="#b6">(Bouzat et al., 2009)</ref>. For such populations, translocations may only be worthwhile when environmental conditions are good enough that resulting outbred offspring can express relatively higher fitness (Figure <ref type="figure" target="#fig_0">1</ref>).</p><p>Conversely, management strategies that focus on alleviating ecological threats but disregard genetic threats may also fail to ensure population viability <ref type="bibr" target="#b41">(Ralls et al., 2018)</ref>. Inbreeding has been associated with increased extinction risk in wild populations (e.g.</p><p>Glanville fritillary butterfly Melitaea cinxia, <ref type="bibr" target="#b50">Saccheri et al., 1998;</ref>>Shore campion Silene littorea, <ref type="bibr" target="#b59">Vilas, San Miguel, Amaro, &amp; Garcia, 2010;</ref>and Clarkia Pulchella, <ref type="bibr" target="#b34">Newman &amp; Pilson, 1997)</ref>, and may significantly decrease predicted time to extinction <ref type="bibr" target="#b35">(O'Grady et al., 2006)</ref>. Furthermore, inbreeding will inevitably increase if populations remain small and isolated <ref type="bibr" target="#b13">(Crow &amp; Kimura, 1970)</ref>, and thereby increasingly threaten population viability across generations.</p><p>Rigorous evaluations of the efficacy of ecological and genetic management strategies to ensure population viability should therefore consider the interdependence of these strategies over appropriate time frames. Yet, while the general need to consider joint ecological and genetic management approaches has been noted (e.g. <ref type="bibr" target="#b6">Bouzat et al., 2009;</ref><ref type="bibr" target="#b24">Kenney, Allendorf, McDougal, &amp; Smith, 2014)</ref> population viability analyses (PVAs) that quantitatively evaluate the efficacy of independent and simultaneous ecological and genetic management strategies are lacking, particularly in the context of environment-dependent inbreeding depression.</p><p>One such population that is facing genetic and ecological threats and is of major conservation concern is the Scottish red-billed chough (Pyrrhocorax pyrrhocorax, hereafter "choughs") population. Choughs are Annex 1 listed (EU Birds Directive) placing a legal duty of conservation on national agencies (i.e. Scottish Natural Heritage).</p><p>Scotland's chough population decreased from ~105 breeding pairs in 1986 <ref type="bibr" target="#b33">(Monaghan, Bignal, Bignal, Easterbee, &amp; McKay, 1989)</ref> to ~49 pairs in 2018, with most pairs inhabiting the island of Islay (~87% in 2017). This population has been the subject of individual-based demographic monitoring, comprising colour-ringing, resightings and nest-monitoring, since 1983 (Appendices 1 and 2, <ref type="bibr" target="#b43">Reid et al., 2008;</ref><ref type="bibr" target="#b45">Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2003b</ref><ref type="bibr" target="#b46">Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2004)</ref>. The main demographic rate causing population decline is low first-year survival, reflecting low food availability <ref type="bibr" target="#b43">(Reid et al., 2008;</ref><ref type="bibr" target="#b46">Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2004)</ref>. Critically low firstyear survival during 2007-2009 caused a rapid projected population decline (deterministic growth rate λ ≈ 0.87, <ref type="bibr" target="#b42">Reid et al., 2011)</ref>, sparking emergency intervention through targeted supplementary feeding during 2010-2018 <ref type="bibr" target="#b5">(Bignal &amp; Bignal, 2011)</ref>. However, Islay's chough population is isolated from other UK populations (Appendix 1) and has a critically small effective size (N e ~ 30, <ref type="bibr" target="#b55">Trask, Bignal, McCracken, Piertney, &amp; Reid, 2017)</ref>. Inbreeding is therefore inevitable and will increase relatively rapidly across generations. While the full magnitude of inbreeding depression is unknown, it is likely to be non-trivial, evidenced by phenotypic expression of a lethal recessive allele causing blindness <ref type="bibr" target="#b54">(Trask et al., 2016)</ref>. Conservation managers therefore face a dilemma of whether to continue investing in managing ecological threats, begin alternative or additional management of genetic threats, or consider ceasing management if all strategies are likely to be ineffective. Quantitative evaluation of these potential strategies to achieve population viability is therefore urgently required.</p><p>PVAs for threatened populations are often impeded by lack of data on baseline demography and/or management impacts, greatly increasing uncertainty regarding population outcomes. We use detailed demographic data, including estimated effects of supplementary feeding, and available genetic data, to parameterise PVAs designed to evaluate λ s and population viability given four potential management scenarios for the focal chough population. The four scenarios, formulated in consultation with key stakeholders and conservation managers, are (i) no management (i.e. cease supplementary feeding); (ii) genetic management only (i.e. translocations to reduce inbreeding, with associated short-term increase in population size, but cease supplementary feeding); (iii) ecological management only (i.e. continued supplementary feeding); (iv) simultaneous genetic and ecological management (i.e. translocations and supplementary feeding). We thereby evaluate the efficacy of independent and simultaneous strategies to mitigate ecological and genetic threats, and provide management recommendations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">| MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">| Model structure and demography</head><p>We used an individual-based population model to evaluate the four proposed management scenarios. Our approach incorporates among-individual variation in inbreeding coefficient alongside demographic and environmental stochasticity and dynamic age-structure, and incorporates uncertainty in the magnitude of inbreeding depression and effects of supplementary feeding.</p><p>The model considered an annual pre-breeding census, with first-year, second-year and adult (i.e. third year and older) stage classes. This structure adequately captures observed chough population dynamics <ref type="bibr" target="#b46">(Reid et al., 2004)</ref>. To capture known spatial variation in habitat and demography across Islay <ref type="bibr" target="#b47">(Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2006)</ref>, the model was structured into five subpopulations (A-E, Appendix 1). Subpopulation carrying capacities were set to the maximum number of historically occupied territories in each area, plus the number of associated sub-adults (i.e. fledging to age three) at peak population size in the 1980s <ref type="bibr" target="#b33">(Monaghan et al., 1989</ref>, Appendix 4). Additional mortality was applied if subpopulation size exceeded the defined local carrying capacity (Appendix 1). Other forms of density-dependent restrictions, such as from food-resource limitation, were implicitly captured in model scenarios. This formulation allowed simulations to explore effects of management scenarios, with hard density-dependence only restricting λ s under the best simulated conditions (Appendix 1).</p><p>Sub-adult choughs form non-breeding flocks before pairing and acquiring a breeding territory <ref type="bibr" target="#b44">(Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2003a;</ref><ref type="bibr" target="#b47">Reid et al., 2006)</ref> in two steps: whether a female successfully produced a brood, and realised brood size conditional on success <ref type="bibr" target="#b26">(Lacy, Miller, &amp; Traylor-Holzer, 2017)</ref>. Reproductive success was estimated for each subpopulation in each year as the proportion of females that produced a brood, and the mean and standard deviation of the number of fledglings in successful broods. Since observed brood sex ratios are equal on average <ref type="bibr" target="#b55">(Trask et al., 2017)</ref>, simulated offspring were assigned as female or male with equal probability. Stage-specific survival probabilities (ϕ s ) for first-years (ϕ 1 , fledging to age one year), second-years (ϕ 2 , age one to age two) and adults (ϕ Ad ), and hence mortality rates, for each subpopulation were estimated from colour-ring resighting data (Appendices 1 and 2). ϕ s values were estimated for both sexes together because sexes of sub-adult individuals that died before breeding were typically unknown, and previous analyses indicate no sex-specific differences in ϕ Ad <ref type="bibr" target="#b45">(Reid, Bignal, Bignal, McCracken, &amp; Monaghan, 2003b;</ref><ref type="bibr" target="#b46">Reid et al., 2004)</ref>.</p><p>Among-year environmental variation in ϕ s was estimated excluding sampling variance (Appendix 2). Since ϕ 1 is tightly correlated with cyclic population dynamics of the chough's tipulid prey <ref type="bibr" target="#b43">(Reid et al., 2008)</ref>, simulated environmental variation in ϕ 1 was partitioned so that half followed cyclic variation and half was stochastic, and was correlated across subpopulations (Appendix 2). As environmental variation in reproductive success is relatively small <ref type="bibr" target="#b46">(Reid et al., 2004)</ref>, it was sufficiently captured through the high simulated variance in ϕ 1 . Mortality of simulated individuals was realised at each annual time-step based on ϕ s for each age class in each subpopulation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| Inbreeding and inbreeding depression</head><p>To ensure the initial simulated population's mean inbreeding coefficient (F p ) and coefficient of kinship (K) reflected the Islay chough population's, we estimated F p and pairwise relatedness (r, where r = 2K) between individuals from microsatellite genotype data from adult choughs sampled across Islay in 2013-2014, using the Dyadic likelihood estimator <ref type="bibr" target="#b32">(Milligan, 2003)</ref> in program Coancestry v1.0.1.8 <ref type="bibr" target="#b62">(Wang, 2011</ref>, Appendix 3). These analyses yielded estimates of F p = 0.08 ± .02SE and r = 0.15 ± .01SE. To account for likely underestimation of F p and r due to microsatellite ascertainment bias, as well as expected increases between sampling and implementation of any translocations given the small N e <ref type="bibr" target="#b55">(Trask et al., 2017)</ref>, we set founder individuals' coefficients of inbreeding (F i ) to 0.1 and founder K to 0.1 (Appendix 3). In practice, simulations were relatively insensitive, and key conclusions remained unchanged, given starting F i and K between 0.05 and 0.15 (Appendix 3). F i values in subsequent generations were calculated from the simulated pedigree using standard algorithms <ref type="bibr" target="#b26">(Lacy et al., 2017)</ref>.</p><p>Inbreeding depression expressed given F i was modelled as the number of diploid lethal equivalents (2B, where B is the slope of a regression of log(fitness) on F i , <ref type="bibr" target="#b9">Charlesworth &amp; Willis, 2009;</ref><ref type="bibr" target="#b23">Keller &amp; Waller, 2002)</ref>. B can be estimated from breeding experiments <ref type="bibr" target="#b14">(Darwin, 1876)</ref>, genomic analyses <ref type="bibr" target="#b48">(Remington &amp; O'Malley, 2000)</ref> or pedigree analyses <ref type="bibr" target="#b23">(Keller &amp; Waller, 2002)</ref>. However, as complete pedigree and genomic data are unavailable for the focal population and breeding experiments are not feasible, we modelled a range comprising 2B = 3-15. The lower and upper limits reflect the mean estimated across captive populations and the sum of published mean estimates of inbreeding load across life-history stages, respectively (Appendix 3). Model replicates drew values from this range using Latin Hypercube Sampling to optimally sample parameter space <ref type="bibr" target="#b26">(Lacy et al., 2017)</ref>. Inbreeding depression was modelled entirely through a reduction in ϕ 1 (Appendix 4); ϕ 1 is the main demographic constraint on λ s in choughs <ref type="bibr" target="#b42">(Reid et al., 2011</ref><ref type="bibr" target="#b46">(Reid et al., , 2004) )</ref> and the reduction in overall lifetime reproductive success is likely to be reasonably well captured whether total inbreeding load is applied entirely to ϕ 1 or split over life-history stages <ref type="bibr" target="#b26">(Lacy et al., 2017)</ref>. Overall, this formulation ensured that initial simulated individuals could immediately experience inbreeding depression, and that genetic rescue could potentially restore the putative outbred ϕ 1 as opposed to only the currently observed ϕ 1 (Appendix 4).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">| Modelled genetic and ecological management scenarios</head><p>Genetic management (scenario ii) was modelled as translocations of unrelated (i.e. K = 0) and outbred (i.e. F i = 0) age one individuals into the focal population. Translocated individuals were therefore envisaged to originate from a suitable external source population (Appendix 5). Scenarios were designed to evaluate the potential for successful genetic rescue to achieve population viability. We initially considered one translocation of 24 individuals (12 females, 12 males) in year 3 introduced across subpopulations A-C, or two such translocations in years 3 and 6 (i.e. a total of 48 individuals, Appendix 5). These moderate-sized translocations comprised enough individuals to ensure that some would survive to breed, while avoiding "genetic swamping" of the existing population Since almost all unfed fledglings died before age one and individual utilisation of supplementary food was highly consistent across ages, this approach could not be used to evaluate effects on ϕ 2 . Effects were therefore estimated by comparing mean population-wide values of ϕ 2 between feeding and pre-feeding periods (Appendix 6). For current purposes, we assumed no effect of supplementary feeding on age at first breeding or dispersal.</p><p>To incorporate uncertainty in modelled effects of supplementary feeding, each model iteration drew values from the range of 10%-100% of estimated effect sizes using Latin Hypercube Sampling <ref type="bibr" target="#b26">(Lacy et al., 2017)</ref>. This conservative range was chosen because supplementary feeding was not carried out as a controlled experiment, meaning that differences between fed and unfed individuals might partly reflect differences in local habitat quality.</p><p>We modelled simultaneous ecological and genetic management (scenario iv) by parameterising the model with the same estimated effects of supplementary feeding plus each of the same three translocation scenarios as for the independent ecological and genetic management scenarios above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">| Model implementation and analysis</head><p>The model was built in program VORTEX v10.2.17.0 <ref type="bibr" target="#b27">(Lacy &amp; Pollak, 2017)</ref>. Initial subpopulation sizes were estimated from the number of breeding pairs in each area, plus the number of individuals fledged from each area that survived to age one or two in 2017 (i.e. subadults), with an initial stable age distribution calculated given the specified baseline demographic rates (Appendix 4).</p><p>For species like choughs with moderately long mean generation times (~6.7 years, <ref type="bibr" target="#b55">Trask et al., 2017)</ref>, the most appropriate time-frame for PVAs represents a trade-off between including sufficient generations to incorporate demographic and genetic processes affecting viability <ref type="bibr" target="#b2">(Armbruster, Fernando, &amp; Lande, 1999)</ref>, and avoiding error and unreliable predictions due to unknown future environmental conditions <ref type="bibr" target="#b4">(Beissinger &amp; Westphal, 1998;</ref><ref type="bibr" target="#b11">Crone et al., 2013)</ref>. Since we were interested in effects of inbreeding that may impact population viability over relatively short timeframes <ref type="bibr" target="#b23">(Keller &amp; Waller, 2002)</ref> we defined a 50 year time-frame, thereby encompassing ~7.5 chough generations, and allowing examination of how long genetic rescue effects last before inbreeding re-accumulates.</p><p>Each model was replicated 5,000 times. To compare the focal management scenarios, for each replicate we extracted population size in year 50, time to functional extinction (defined as a single sex remaining) and λ s calculated as the mean of the growth rate across extant years. Means and 95% confidence intervals (95%CIs) for these metrics were calculated across replicates, using R v3.2.2 <ref type="bibr" target="#b40">(R Development Core Team, 2017)</ref>. The extinction probability (P E ) was calculated as the proportion of replicate populations that went extinct within 50 years.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">| RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">| No management</head><p>The baseline model, representing the "no management" scenario, suggests that Islay's chough population would decline to extinction relatively rapidly following cessation of supplementary feeding; all replicates went extinct within the projected 50 years (Figure <ref type="figure" target="#fig_2">3a</ref>).</p><p>This outcome was effectively independent of the magnitude of inbreeding depression; the rank correlation between λ s and 2B across replicates was very small (-0.03).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">| Genetic management</head><p>Models that considered proposed genetic management scenarios (i.e. translocations), but no ecological management, suggest that Islay's chough population would still decline to extinction within the projected 50-year time-frame under proposed genetic management scenarios (Figure <ref type="figure" target="#fig_2">3b</ref>). With up to two translocations of 24 individuals, and even with 48 individuals, s ≤ 0.92, P E ≥ 0.94, and mean time to extinction was 27-35 years. Genetic management alone is therefore unlikely to achieve population viability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">| Ecological management</head><p>Supplementary feeding was estimated to have positive effects on ϕ 1 , ϕ 2 , ϕ Ad and breeding success (Figure <ref type="figure" target="#fig_1">2</ref>, Appendix 6). Models that included these effects, representing current ecological management without genetic management, showed slower population decline (Figure <ref type="figure" target="#fig_2">3c</ref>): ~37% of replicate populations were still extant in year 50, when mean population size was 18 (95%CI: 0-175). The large 95%CI demonstrates considerable uncertainty around the quantitative outcome (Figure <ref type="figure" target="#fig_2">3c</ref>). However, the overall qualitative difference from the "no management" and "genetic management" scenarios is reasonably clear; current ecological management has a positive effect in slowing the likely rate of population decline, but may not result in λ s ≥ 1 or hence population viability (Figure <ref type="figure" target="#fig_2">3</ref>).</p><p>To provide some validation of this assessment, the observed change in the Islay chough population size through the supplementary feeding period (2010-2017) falls within the 95%CI of the projected population sizes (Figure <ref type="figure" target="#fig_2">3c</ref>, Appendix S8), implying that projections are reasonable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">| Simultaneous genetic and ecological management scenario</head><p>Models that included simultaneous ecological and genetic management with one translocation of 24 individuals predicted higher s than for current ecological management alone, but still predicted population decline (Figure <ref type="figure" target="#fig_2">3d</ref>, Appendix 7). With two translocations each of 24 individuals, population size was initially stable on average ( s =1.00, 95%CI: 0.89-1.08 across years 8-25, Figure <ref type="figure" target="#fig_2">3d</ref>).</p><p>However, there was a tendency for renewed decrease from year 25, reflecting reaccumulation of inbreeding ( s = 0.97, 95%CI: .82-1.06 across years 26-50, Figure <ref type="figure" target="#fig_2">3d</ref>, Appendix 3). With two larger translocations each of 48 individuals, population isze was stable on average over the full 50‐year time‐frame (Figure <ref type="figure" target="#fig_2">3d</ref>). Again, there was substantial uncertainty in quantitative outcomes. However, the overall qualitative pattern compared to other modelled scenarios was again reasonably clear: simultaneous ecological and genetic management was the only scenario that yielded likely population viability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| DISCUSSION</head><p>Effective conservation of populations experiencing interacting ecological and genetic threats requires explicit evaluation of the efficacy of different potential management strategies. We used unusually detailed demographic data from the Scottish chough population, which is of major conservation concern, to evaluate efficacy of independent and simultaneous management strategies designed to alleviate the known ecological threat of food limitation, and the emerging genetic threat of accumulating inbreeding due to small N e .We show that capacity to alleviate inbreeding depression through translocations is limited by ecological constraints attributable to food availability, while current supplementary feeding designed to alleviate these constraints may on its own be insufficient to ensure population viability in the presence of accumulating inbreeding.The only strategy that appears capable of achieving population viability is to ameliorate both inbreeding and food limitation through translocations alongside supplementary feeding. Our results therefore suggest that managers aiming to maintain the focal population must tackle ecological and genetic threats holistically, or risk failing to achieve management objectives and wasting conservation resources.</p><p>Our PVA suggests that, with no management, the Scottish chough population is likely to go extinct relatively rapidly regardless of the magnitude of inbreeding depression (Figure <ref type="figure" target="#fig_2">3a</ref>). Rapid population decline was also projected with genetic management alone (Figure <ref type="figure" target="#fig_2">3b</ref>). This concurs with the concept that inbreeding depression, and hence the potential for genetic rescue, will be minimal in very harsh environments where all individuals have low fitness (Figure <ref type="figure" target="#fig_0">1</ref>, <ref type="bibr" target="#b60">Waller et al., 2008)</ref>. Here, outbred offspring of matings between translocated and native individuals still experience high mortality because resources are simply insufficient to survive. Indeed, an immigrant into the Isle Royale wolf (Canis lupus) population had negligible impact on λ despite increased heterozygosity, attributed to poor environmental conditions <ref type="bibr" target="#b0">(Adams, Vucetich, Hedrick, Peterson, &amp; Vucetich, 2011)</ref>. Alternatively, genetic rescue may be negligible because most translocated individuals die before reproducing due to high environmentally-induced mortality, and hence generate negligible outbreeding. For example, Eurasian otter (Lutra lutra) translocations in Sweden resulted in little evidence of genetic rescue, probably due to low survival of translocated individuals <ref type="bibr" target="#b3">(Arrendal, Walker, Sundqvist, Hellborg, &amp; Vilà, 2004)</ref>. However, even our simulated large translocations, that ensured some translocated individuals survived to reproduce, resulted in little increase in λ s (Figure <ref type="figure" target="#fig_2">3b</ref>). This implies that genetic rescue may be negligible in choughs because of high offspring mortality regardless of F i , rather than because high mortality of translocated individuals would impede outbreeding.Thus, our simulations highlight the critical need to ensure adequate habitat quality, or alleviate other ecological constraints, before attempting translocations to alleviate inbreeding depression.</p><p>While available data suggest that current supplementary feeding of Scottish choughs is having valuable positive demographic effects (Figure <ref type="figure" target="#fig_1">2</ref>, Appendix 6), our PVA suggests that this intervention alone may be insufficient to ensure population viability (Figure <ref type="figure" target="#fig_2">3c</ref>). Continuing current supplementary feeding without mitigating genetic threats may ultimately fail to achieve conservation objectives. The only simulated management scenario that achieved population viability was simultaneous supplementary feeding and translocations. Here, supplementary feeding improved environmental quality enough to allow expression of inbreeding depression, meaning that the reduction in inbreeding resulting fromtranslocations could increase λ s (Figures <ref type="figure" target="#fig_0">1</ref> and <ref type="figure" target="#fig_2">3</ref>). Ideally, improvements in environmental quality would be achieved through agrienvironment schemes that increase the abundance and availability of the chough's invertebrate prey, for example through maintaining spatio-temporal diversity in vegetation height and managing antihelminthic treatment of livestock to increase dung invertebrates <ref type="bibr" target="#b56">(Trask et al., 2019a)</ref>. and genetic management strategies have been suggested for other threatened populations, including greater prairie chickens <ref type="bibr" target="#b6">(Bouzat et al., 2009)</ref> and tigers (Panthera tigris, <ref type="bibr" target="#b24">Kenney et al., 2014)</ref>, our analyses quantitatively demonstrate the need for such holistic approaches.</p><p>The scenario of two moderate-sized translocations and supplementary feeding resulted in stable s for ~25 years (~3 chough generations), due to the joint genetic and demographic benefits of translocations alongside supplementary feeding (Appendix 7).</p><p>However, s subsequently decreased due to re-accumulating inbreeding (Figure <ref type="figure" target="#fig_2">3d</ref>, Appendix 3). Additional simulations showed that this can be resolved with a third translocation at year 25 or larger initial translocations, thereby ensuring population stability over the full 50-year period (Figure <ref type="figure" target="#fig_2">3d</ref>, Appendix 7). A similar pattern of decrease in inbreeding and increase in λ, followed by reaccumulation of inbreeding, was observed after immigration into a Scandinavian wolf population <ref type="bibr" target="#b30">(Liberg et al., 2005)</ref>; subsequent immigration then caused another decrease in inbreeding and increased λ <ref type="bibr" target="#b1">(Akesson et al., 2016)</ref>. This implies that longer-term viability of the Scottish chough population would require periodic future translocations, or re-establishment of population connectivity and dispersal that facilitates natural gene-flow.</p><p>Quantitative evaluations of proposed management approaches may be impeded by the inherent stochasticity of small, declining populations <ref type="bibr" target="#b4">(Beissinger &amp; Westphal, 1998)</ref>. Additionally, key demographic and genetic parameters are commonly unknown; effects cannot be directly estimated for strategies that have not yet been implemented, and current strategies are often implemented as emergency interventions rather than controlled experiments (e.g. <ref type="bibr" target="#b36">Oro, Margalida, Carrete, Heredia, &amp; Donázar, 2008;</ref><ref type="bibr" target="#b38">Powlesland &amp; Lloyd, 1994</ref>, Appendix 6). Our study is valuable because the high‐quality demographic data available allows such quantitative evaluations of ecological and genetic management strategies, including consideration of their interdependence. Despite inevitable uncertainty in our model outcomes, the overall qualitative conclusions from scenario comparisons seem reasonably clear; conditional on model assumptions, simultaneous ecological and genetic management is the only scenario that is likely to result in a viable Scottish chough population. Management actions should therefore focus on implementing appropriate grassland management, complemented with translocations, with continued supplementary feeding until grassland management has sufficiently improved environmental quality. Decision makers must now urgently consider this biological conclusion within a wider socio‐economic framework to assess the feasibility of these management strategies <ref type="bibr" target="#b56">(Trask et al., 2019a)</ref>.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>F I G U R E 1</head><label>1</label><figDesc>F I G U R E 1 Conceptualised magnitude of inbreeding depression (zero to very strong) expressed in relation to environmental quality (very harsh to very good). (a) For a population experiencing a very harsh environment, the magnitude of inbreeding depression expressed is constrained by low variance in fitness, and will increase as environmental quality increases. (b) Above some environmental quality (dashed green line), the standard expectation that magnitude of inbreeding depression expressed decreases as environmental quality increases applies. The exact shape of the relationship will vary among traits, environments, populations and species</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>F I G U R E 2</head><label>2</label><figDesc>F I G U R E 2 Range of effects of supplementary feeding added on to first‐year (ϕ1), second‐year (ϕ2) and adult (ϕAdult) survival probabilities (blue bars) and probability of producing a brood (red bar) considered in models of ecological management</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>F I G U R E 3</head><label>3</label><figDesc>F I G U R E 3 Size of Islay's chough population projected 50 years into the future with (a) no management, (b) genetic management only consisting of one or two translocations of 24 individuals each, or two large translocations of 48 individuals each, (c) ecological management only, and (d) simultaneous ecological and genetic management comprising the same three translocation scenarios. Mean population size (solid blue lines) with 95% CI (grey shaded area), mean stochastic population growth rate ( s ) with 95% CI and extinction probability within 50 years (P E ) are shown. For (c), the estimated size of the real chough population after the start of supplementary feeding (red dashed line) is also shown</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>We thank <rs type="person">Sue Bignal</rs>,  all landowners and farmers and everyone who helped with fieldwork on Islay. We thank members of the <rs type="institution">Scottish Chough Forum</rs>, particularly <rs type="person">Rae Mckenzie</rs> and <rs type="person">Des Thompson</rs> for valuable input on management scenarios. A.E.T. was funded by <rs type="funder">Scottish Natural Heritage (SNH)</rs> and <rs type="funder">Royal Society for the Protection of Birds</rs>. SRF was funded by a <rs type="funder">Natural Environment Research Council</rs> <rs type="grantName">iCASE studentship</rs> (<rs type="grantNumber">NE/P009719/1</rs>) supported by <rs type="funder">SNH</rs>.</p></div>
+			</div>
+			
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Scottish Natural Heritage; Natural Environment Research Council; Royal Society for the Protection of Birds</head></div>
+			</div>
+
+
+			<listOrg type="funding">
+				<org type="funding" xml:id="_YSA2W2a">
+					<idno type="grant-number">NE/P009719/1</idno>
+					<orgName type="grant-name">iCASE studentship</orgName>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATA AVAILABILITY STATEMENT</head><p>Data available via the Dryad Digital Repository <ref type="url" target="https://doi.org/10.5061/dryad.2h3qj2r">https://doi.org/10.5061/dryad.2h3qj2r</ref><ref type="bibr" target="#b57">(Trask et al., 2019b)</ref>.</p></div>
+			</div>
+
+			<div type="annex">
+				<div xmlns="http://www.tei-c.org/ns/1.0"><head>AUTHORS' CONTRIBUTIONS</head><p>All authors contributed to conceptual development, with A.E.T. and J.M.R. devising the models. A.E.T. and S.R.F. undertook demographic analyses. A.E.T. undertook the PVA and molecular genetic analyses. All authors contributed to data collection. A.E.T. wrote the manuscript, assisted by J.M.R. and with input and final approval for publication from all authors.</p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">R</forename>
+							<surname>Adams</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">M</forename>
+							<surname>Vucetich</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">W</forename>
+							<surname>Hedrick</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">O</forename>
+							<surname>Peterson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Vucetich</surname>
+						</persName>
+					</author>
+					<title level="a">Genomic sweep and potential genetic rescue during limiting environmental conditions in an isolated wolf population</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of the Royal Society B: Biological Sciences</title>
+					<imprint>
+						<biblScope unit="volume">278</biblScope>
+						<biblScope unit="issue">1723</biblScope>
+						<biblScope unit="page" from="3336" to="3344"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Akesson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>O</forename>
+							<surname>Liberg</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Sand</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Wabakken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bensch</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>O</forename>
+							<surname>Flagstad</surname>
+						</persName>
+					</author>
+					<title level="a">Genetic rescue in a severely inbred wolf population</title>
+				</analytic>
+				<monogr>
+					<title level="j">Molecular Ecology</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">19</biblScope>
+						<biblScope unit="page" from="4745" to="4756"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Armbruster</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Fernando</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Lande</surname>
+						</persName>
+					</author>
+					<title level="a">Time frames for population viability analysis of species with long generations: An example with Asian elephants</title>
+				</analytic>
+				<monogr>
+					<title level="j">Animal Conservation</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page" from="69" to="73"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Arrendal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">W</forename>
+							<surname>Walker</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">K</forename>
+							<surname>Sundqvist</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Hellborg</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Vilà</surname>
+						</persName>
+					</author>
+					<title level="a">Genetic evaluation of an otter translocation program</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Genetics</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="79" to="88"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">R</forename>
+							<surname>Beissinger</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">I</forename>
+							<surname>Westphal</surname>
+						</persName>
+					</author>
+					<title level="a">On the use of demographic models of population viability in endangered species management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Wildlife Management</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="821" to="841"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<title level="a">Supplementary feeding of subadult choughs</title>
+				</analytic>
+				<monogr>
+					<title level="j">British Wildlife</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="315" to="319"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">L</forename>
+							<surname>Bouzat</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Johnson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">E</forename>
+							<surname>Toepfer</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">A</forename>
+							<surname>Simpson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">L</forename>
+							<surname>Esker</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">L</forename>
+							<surname>Westemeier</surname>
+						</persName>
+					</author>
+					<title level="a">Beyond the beneficial effects of translocations as an effective tool for the genetic restoration of isolated populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Genetics</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="191" to="201"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">W</forename>
+							<surname>Brook</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">S</forename>
+							<surname>Sodhi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">J</forename>
+							<forename type="last">A</forename>
+							<surname>Bradshaw</surname>
+						</persName>
+					</author>
+					<title level="a">Synergies among extinction drivers under global change</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends in Ecology and Evolution</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="453" to="460"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<forename type="middle">J</forename>
+							<forename type="last">H</forename>
+							<surname>Brown</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Kodric-Brown</surname>
+						</persName>
+					</author>
+					<title level="a">Turnover rates in insular biogeography: Effect of immigration on extinction</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology</title>
+					<imprint>
+						<biblScope unit="volume">58</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="445" to="449"/>
+						<date when="1977">1977</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Charlesworth</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<surname>Willis</surname>
+						</persName>
+					</author>
+					<title level="a">The genetics of inbreeding depression</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature Reviews Genetics</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="783" to="796"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P-O</forename>
+							<surname>Cheptou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Donohue</surname>
+						</persName>
+					</author>
+					<title level="a">Environment-dependent inbreeding depression: Its ecological and evolutionary significance</title>
+				</analytic>
+				<monogr>
+					<title level="j">New Phytologist</title>
+					<imprint>
+						<biblScope unit="volume">189</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="395" to="407"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">E</forename>
+							<surname>Crone</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">M</forename>
+							<surname>Ellis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">F</forename>
+							<surname>Morris</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Stanley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Bell</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Bierzychudek</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">S</forename>
+							<surname>Menges</surname>
+						</persName>
+					</author>
+					<title level="a">Ability of matrix models to explain the past and predict the future of plant populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Biology</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="968" to="978"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">F</forename>
+							<surname>Crow</surname>
+						</persName>
+					</author>
+					<title level="a">Some possibilities for measuring selection intensities in man</title>
+				</analytic>
+				<monogr>
+					<title level="j">Human Biology</title>
+					<imprint>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="763" to="775"/>
+						<date when="1958">1958</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b13">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">F</forename>
+							<surname>Crow</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Kimura</surname>
+						</persName>
+					</author>
+					<title level="m">An introduction to population genetics theory</title>
+					<imprint>
+						<date when="1970">1970</date>
+						<publisher>Burgess Publishing Company</publisher>
+						<pubPlace>Minneapolis, MN</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b14">
+				<monogr>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Darwin</surname>
+						</persName>
+					</author>
+					<title level="m">The effects of cross and self fertilization in the vegetable kingdom</title>
+					<editor>
+						<persName>
+							<forename>J</forename>
+							<surname>Murray</surname>
+						</persName>
+					</editor>
+					<imprint>
+						<date when="1876">1876</date>
+						<pubPlace>London, UK</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">M</forename>
+							<surname>Eglington</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Bolton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">A</forename>
+							<surname>Smart</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">J</forename>
+							<surname>Sutherland</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">R</forename>
+							<surname>Watkinson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Gill</surname>
+						</persName>
+					</author>
+					<title level="a">Managing water levels on wet grasslands to improve foraging conditions for breeding northern lapwing Vanellus vanellus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="451" to="458"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b16">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">G</forename>
+							<surname>Ewen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">P</forename>
+							<surname>Armstrong</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">A</forename>
+							<surname>Parker</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">J</forename>
+							<surname>Seddon</surname>
+						</persName>
+					</author>
+					<title level="m">Reintroduction biology</title>
+					<imprint>
+						<publisher>Wiley-Blackwell</publisher>
+						<pubPlace>Oxford</pubPlace>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">F</forename>
+							<surname>Fagan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">E</forename>
+							<surname>Holmes</surname>
+						</persName>
+					</author>
+					<title level="a">Quantifying the extinction vortex</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology Letters</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="51" to="60"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">K</forename>
+							<forename type="last">B</forename>
+							<surname>Ford</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">M</forename>
+							<surname>Ellis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">F</forename>
+							<surname>Olesiuk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">C</forename>
+							<surname>Balcomb</surname>
+						</persName>
+					</author>
+					<title level="a">Linking killer whale survival and prey abundance: Food limitation in the oceans’ apex predator?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biology Letters</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="139" to="142"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">W</forename>
+							<surname>Fox</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">H</forename>
+							<surname>Reed</surname>
+						</persName>
+					</author>
+					<title level="a">Inbreeding depression increases with environmental stress: An experimental study and meta-analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evolution</title>
+					<imprint>
+						<biblScope unit="volume">65</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="246" to="258"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Frankham</surname>
+						</persName>
+					</author>
+					<title level="a">Genetic rescue of small inbred populations: Metaanalysis reveals large and consistent benefits of gene flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">Molecular Ecology</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="2610" to="2618"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">M</forename>
+							<surname>González</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Margalida</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Sánchez</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Oria</surname>
+						</persName>
+					</author>
+					<title level="a">Supplementary feeding as an effective tool for improving breeding success in the Spanish imperial eagle (Aquila adalberti)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Conservation</title>
+					<imprint>
+						<biblScope unit="volume">129</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="477" to="486"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">A</forename>
+							<surname>Hufbauer</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Szűcs</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Kasyon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Youngberg</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">J</forename>
+							<surname>Koontz</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Richards</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">A</forename>
+							<surname>Melbourne</surname>
+						</persName>
+					</author>
+					<title level="a">Three types of rescue can avert extinction in a changing environment</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of the National Academy of Sciences</title>
+					<imprint>
+						<biblScope unit="volume">112</biblScope>
+						<biblScope unit="issue">33</biblScope>
+						<biblScope unit="page" from="10557" to="10562"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">F</forename>
+							<surname>Keller</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">M</forename>
+							<surname>Waller</surname>
+						</persName>
+					</author>
+					<title level="a">Inbreeding effects in wild populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends in Ecology &amp; Evolution</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="230" to="241"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Kenney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">F</forename>
+							<forename type="middle">W</forename>
+							<surname>Allendorf</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Mcdougal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">L</forename>
+							<forename type="last">D</forename>
+							<surname>Smith</surname>
+						</persName>
+					</author>
+					<title level="a">How much gene flow is needed to avoid inbreeding depression in wild tiger populations?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of the Royal Society B: Biological Sciences</title>
+					<imprint>
+						<biblScope unit="volume">281</biblScope>
+						<biblScope unit="issue">1789</biblScope>
+						<biblScope unit="page" from="20133337" to="20133337"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">E</forename>
+							<forename type="last">B</forename>
+							<surname>Kruuk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">C</forename>
+							<surname>Sheldon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Merilä</surname>
+						</persName>
+					</author>
+					<title level="a">Severe inbreeding depression in collared flycatchers (Ficedula albicollis)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of the Royal Society B</title>
+					<imprint>
+						<biblScope unit="volume">269</biblScope>
+						<biblScope unit="page" from="1581" to="1589"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b26">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">C</forename>
+							<surname>Lacy</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">S</forename>
+							<surname>Miller</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Traylor-Holzer</surname>
+						</persName>
+					</author>
+					<title level="m">Vortex 10 user’s manual.</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<publisher>IUCN SSC Conservation Breeding Specialist Group and Chicago Zoological Society</publisher>
+						<pubPlace>Apple Valley, MN</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b27">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">C</forename>
+							<surname>Lacy</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">P</forename>
+							<surname>Pollak</surname>
+						</persName>
+					</author>
+					<title level="m">Vortex: A stochastic simulation of the extinction process</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<publisher>Chicago Zoological Society</publisher>
+						<pubPlace>Brookfield, IL</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">J</forename>
+							<surname>Laws</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">M</forename>
+							<surname>Townsend</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Nakagawa</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">G</forename>
+							<surname>Jamieson</surname>
+						</persName>
+					</author>
+					<title level="a">Limited inbreeding depression in a bottlenecked population is age but not environment dependent</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Avian Biology</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="645" to="652"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Liao</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">T</forename>
+							<surname>Atkinson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">A</forename>
+							<surname>Lapointe</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">D</forename>
+							<surname>Samuel</surname>
+						</persName>
+					</author>
+					<title level="a">Mitigating future avian malaria threats to Hawaiian forest birds from climate change</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS ONE</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="1" to="25"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<author>
+						<persName>
+							<forename>O</forename>
+							<surname>Liberg</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Andrén</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H.-C</forename>
+							<surname>Pedersen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Sand</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Sejberg</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Wabakken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bensch</surname>
+						</persName>
+					</author>
+					<title level="a">Severe inbreeding depression in a wild wolf (Canis lupus) population</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biology Letters</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="17" to="20"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">J</forename>
+							<surname>Manlick</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">E</forename>
+							<surname>Woodford</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<surname>Gilbert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Eklund</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">N</forename>
+							<surname>Pauli</surname>
+						</persName>
+					</author>
+					<title level="a">Augmentation provides nominal genetic and demographic rescue for an endangered carnivore</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Letters</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="178" to="185"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">G</forename>
+							<surname>Milligan</surname>
+						</persName>
+					</author>
+					<title level="a">Maximum-likelihood estimation of relatedness</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genetics</title>
+					<imprint>
+						<biblScope unit="volume">163</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1153" to="1167"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Easterbee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Mckay</surname>
+						</persName>
+					</author>
+					<title level="a">The distribution and status of the chough in Scotland in 1986</title>
+				</analytic>
+				<monogr>
+					<title level="j">Scottish Birds</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="114" to="118"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Newman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Pilson</surname>
+						</persName>
+					</author>
+					<title level="a">Increased probability of extinction due to decreased genetic effective population size: Experimental populations of Clarkia pulchella</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evolution</title>
+					<imprint>
+						<biblScope unit="volume">51</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page">354</biblScope>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">J</forename>
+							<surname>O'grady</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">W</forename>
+							<surname>Brook</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">H</forename>
+							<surname>Reed</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Ballou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">W</forename>
+							<surname>Tonkyn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Frankham</surname>
+						</persName>
+					</author>
+					<title level="a">Realistic levels of inbreeding depression strongly affect extinction risk in wild populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Conservation</title>
+					<imprint>
+						<biblScope unit="volume">133</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="42" to="51"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Oro</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Margalida</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Carrete</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Heredia</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Donázar</surname>
+						</persName>
+					</author>
+					<title level="a">Testing the goodness of supplementary feeding to enhance population viability in an endangered vulture</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS ONE</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Pemberton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">E</forename>
+							<surname>Ellis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">G</forename>
+							<surname>Pilkington</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Bérénos</surname>
+						</persName>
+					</author>
+					<title level="a">Inbreeding depression by environment interactions in a free-living mammal population</title>
+				</analytic>
+				<monogr>
+					<title level="j">Heredity</title>
+					<imprint>
+						<biblScope unit="volume">118</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="64" to="77"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">G</forename>
+							<surname>Powlesland</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">D</forename>
+							<surname>Lloyd</surname>
+						</persName>
+					</author>
+					<title level="a">Use of supplementary feeding to induce breeding in free-living kakapo Strigops habroptilus in New Zealand</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Conservation</title>
+					<imprint>
+						<biblScope unit="volume">69</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="97" to="106"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">D</forename>
+							<surname>Preece</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">E</forename>
+							<surname>Abell</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Grogan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Wayne</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">F</forename>
+							<surname>Skerratt</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Van Oosterzee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<surname>Epstein</surname>
+						</persName>
+					</author>
+					<title level="a">A guide for ecologists: Detecting the role of disease in faunal declines and managing population recovery</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Conservation</title>
+					<imprint>
+						<biblScope unit="volume">214</biblScope>
+						<biblScope unit="page" from="136" to="146"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b40">
+				<monogr>
+					<author>R Development Core Team</author>
+					<title level="m">R: A language and environment for statistical computing</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Ralls</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Ballou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">R</forename>
+							<surname>Dudash</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">D</forename>
+							<forename type="last">B</forename>
+							<surname>Eldridge</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">B</forename>
+							<surname>Fenster</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">C</forename>
+							<surname>Lacy</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Frankham</surname>
+						</persName>
+					</author>
+					<title level="a">Call for a paradigm shift in the genetic management of fragmented populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Letters</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="1" to="6"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">I</forename>
+							<surname>Bogdanova</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<title level="a">Diagnosing the timing of demographic bottlenecks: Sub-adult survival in red-billed choughs</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="797" to="805"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">I</forename>
+							<surname>Bogdanova</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<title level="a">Investigating patterns and processes of demographic variation: Environmental correlates of pre-breeding survival in red-billed choughs Pyrrhocorax pyrrhocorax</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">77</biblScope>
+						<biblScope unit="page" from="777" to="788"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<title level="a">Age-specific reproductive performance in red-billed choughs Pyrrhocorax pyrrhocorax: Patterns and processes in a natural population</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="765" to="776"/>
+						<date when="2003a">2003a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>Mccracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<title level="a">Environmental variability, life-history covariation and cohort effects in the red-billed chough Pyrrhocorax pyrrhocorax</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="36" to="46"/>
+						<date when="2003">2003b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>Mccracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<title level="a">Identifying the demographic determinants of population growth rate: A case study of red-billed choughs Pyrrhocorax pyrrhocorax</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="777" to="788"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>Mcracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<title level="a">Spatial variation in demography and population growth rate: The importance of natal location </title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">75</biblScope>
+						<biblScope unit="page" from="1201" to="1211"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">L</forename>
+							<surname>Remington</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">M</forename>
+							<surname>O’Malley</surname>
+						</persName>
+					</author>
+					<title level="a">Whole‐genome characterization of embryonic stage inbreeding depression in a selfed loblolly pine family</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genetics</title>
+					<imprint>
+						<biblScope unit="volume">155</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="337" to="348"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Russell</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">P</forename>
+							<surname>Jones</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">P</forename>
+							<surname>Armstrong</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Courchamp</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">J</forename>
+							<surname>Kappes</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">J</forename>
+							<surname>Seddon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">R</forename>
+							<surname>Tershy</surname>
+						</persName>
+					</author>
+					<title level="a">Importance of lethal control of invasive predators for island conservation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Biology</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">9</biblScope>
+						<biblScope unit="page" from="355" to="363"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					<author>
+						<persName>
+							<forename>I</forename>
+							<surname>Saccheri</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Kuussaari</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Kankare</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Vikman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Fortelius</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>I</forename>
+							<surname>Hanski</surname>
+						</persName>
+					</author>
+					<title level="a">Inbreeding and extinction in a butterfly metapopulation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">392</biblScope>
+						<biblScope unit="page" from="491" to="494"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">M</forename>
+							<surname>Sandner</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Matthies</surname>
+						</persName>
+					</author>
+					<title level="a">Interactions of inbreeding and stress by poor host quality in a root hemiparasite</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annals of Botany</title>
+					<imprint>
+						<biblScope unit="volume">119</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="143" to="150"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">J</forename>
+							<surname>Seddon</surname>
+						</persName>
+					</author>
+					<title level="a">From reintroduction to assisted colonization: Moving along the conservation translocation spectrum</title>
+				</analytic>
+				<monogr>
+					<title level="j">Restoration Ecology</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="796" to="802"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">E</forename>
+							<surname>Soulé</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">S</forename>
+							<surname>Mills</surname>
+						</persName>
+					</author>
+					<title level="a">No need to isolate genetics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science</title>
+					<imprint>
+						<biblScope unit="volume">282</biblScope>
+						<biblScope unit="issue">5394</biblScope>
+						<biblScope unit="page" from="1658" to="1659"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">E</forename>
+							<surname>Trask</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">B</forename>
+							<surname>Piertney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<title level="a">Evidence of the phenotypic expression of a lethal recessive allele under inbreeding in a wild population of conservation concern</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="879" to="891"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">E</forename>
+							<surname>Trask</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">B</forename>
+							<surname>Piertney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<title level="a">Estimating demographic contributions to effective population size in an age-structured wild population experiencing environmental and demographic stochasticity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<biblScope unit="volume">86</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1082" to="1093"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b56">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">E</forename>
+							<surname>Trask</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">R</forename>
+							<surname>Fenn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Pennycott</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<title level="m">Conservation strategy for redbilled choughs in Scotland: Assessment of the impact of supplementary feeding and evalutation of future management strategies</title>
+					<imprint>
+						<date when="2019a">2019a</date>
+					</imprint>
+				</monogr>
+				<note>Scottish Natural Heritage Commissioned Report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b57">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">E</forename>
+							<surname>Trask</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">R</forename>
+							<surname>Fenn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Bignal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">I</forename>
+							<surname>McCracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Monaghan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Reid</surname>
+						</persName>
+					</author>
+					<title level="m">Data from: Evaluating the efficacy of independent versus simultaneous management strategies to address ecological and genetic threats to population viability</title>
+					<imprint>
+						<date when="2019b">2019b</date>
+					</imprint>
+					<note>Dryad Digital Repository</note>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">A</forename>
+							<surname>Vanderwerf</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">H</forename>
+							<surname>Crampton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">S</forename>
+							<surname>Diegmann</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">T</forename>
+							<surname>Atkinson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">L</forename>
+							<surname>Leonard</surname>
+						</persName>
+					</author>
+					<title level="a">Survival estimates of wild and captive-bred released Puaiohi, an endangered Hawaiian thrush</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Condor</title>
+					<imprint>
+						<biblScope unit="volume">116</biblScope>
+						<biblScope unit="page" from="609" to="618"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b59">
+				<analytic>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Vilas</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>San Miguel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Amaro</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Garcia</surname>
+						</persName>
+					</author>
+					<title level="a">Relative contribution of inbreeding depression and eroded adaptive diversity to extinction risk in small populations of shore campion</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Biology</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="229" to="238"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b60">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">M</forename>
+							<surname>Waller</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Dole</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Bersch</surname>
+						</persName>
+					</author>
+					<title level="a">Effects of stress and phenotypic variation on inbreeding depression in Brassica rapa</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evolution</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="917" to="931"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b61">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">A</forename>
+							<surname>Walling</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">H</forename>
+							<surname>Nussey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Morris</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">H</forename>
+							<surname>Clutton-Brock</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">E</forename>
+							<forename type="last">B</forename>
+							<surname>Kruuk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Pemberton</surname>
+						</persName>
+					</author>
+					<title level="a">Inbreeding depression in red deer calves</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMC Evolutionary Biology</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">318</biblScope>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b62">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Wang</surname>
+						</persName>
+					</author>
+					<title level="a">COANCESTRY: A program for simulating, estimating and analysing relatedness and inbreeding coefficients</title>
+				</analytic>
+				<monogr>
+					<title level="j">Molecular Ecology Resources</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="141" to="145"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">R</forename>
+							<surname>Whiteley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">W</forename>
+							<surname>Fitzpatrick</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">C</forename>
+							<surname>Funk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">A</forename>
+							<surname>Tallmon</surname>
+						</persName>
+					</author>
+					<title level="a">Genetic rescue to the rescue</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends in Ecology and Evolution</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="42" to="49"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b64">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">J</forename>
+							<surname>Wiles</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Bart</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">E</forename>
+							<surname>Beck</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">F</forename>
+							<surname>Aguon</surname>
+						</persName>
+					</author>
+					<title level="a">Impacts of the brown tree snake: Patterns of decline and species persistence in Guam’s avifauna.</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Biology</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1350" to="1360"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

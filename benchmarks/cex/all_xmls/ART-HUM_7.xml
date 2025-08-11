@@ -1,0 +1,695 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Nominal inflection classes in verbal paradigms</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-03-12">12 March 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Matthew</forename><surname>Baerman</surname></persName>
+							<email>m.baerman@surrey.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">Surrey Morphology Group</orgName>
+								<orgName type="institution">University of Surrey</orgName>
+								<address>
+									<settlement>Guildford</settlement>
+									<country>UK BARE</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Irina</forename><surname>Monich</surname></persName>
+							<email>i.monich@surrey.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">Surrey Morphology Group</orgName>
+								<orgName type="institution">University of Surrey</orgName>
+								<address>
+									<settlement>Guildford</settlement>
+									<country>UK BARE</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tatiana</forename><surname>Reid</surname></persName>
+							<email>t.reid@surrey.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">Surrey Morphology Group</orgName>
+								<orgName type="institution">University of Surrey</orgName>
+								<address>
+									<settlement>Guildford</settlement>
+									<country>UK BARE</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Nominal inflection classes in verbal paradigms</title>
+					</analytic>
+					<monogr>
+					<title level="j" type="main">Morphology</title>
+						<idno type="ISSN">1871-5621</idno>
+						<idno type="eISSN">1871-5656</idno>
+						<imprint>
+							<biblScope unit="volume">29</biblScope>
+							<biblScope unit="page" from="317" to="335"/>
+							<date type="published" when="2019-03-12">12 March 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5B34CA2ED8B392884D908FBD2C9CB548</idno>
+					<idno type="DOI">10.1007/s11525-019-09342-5</idno>
+					<note type="submission">Received: 6 June 2018 / Accepted: 12 February 2019 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Inflection class</term>
+					<term>Verbal noun</term>
+					<term>Nuer</term>
+					<term>Irish</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>It is not uncommon for inflected nominal forms to be incorporated into verbal paradigms, as in Imonda progressive construction tōbtō soh-ia ale-f 'he is looking for fish (lit. fish search-LOC stay-PRS)', where the verbal noun 'search' is in the locative case. Equally, nominal inflection classes are not uncommon. But the two rarely cooccur. We present two case studies (the only examples we are aware of) as a contribution to the typology of inflection class systems: the Western Nilotic language Nuer, and Old Irish. In these languages nominal inflection class distinctions in case marking have become part of the verbal paradigm through the incorporation of constructions involving deverbal nouns. This provides a unique context for observing the properties of inflection classes. In Nuer, case inflection of the verbal noun can be deduced through a cascading series of implicatures, laying bare processes which are entirely covert in the ordinary noun system. With Old Irish, its transition to the modern period was accompanied by a split in the behaviour of verbal nouns, whose inflection class system was simplified when used verbally, but left intact in other contexts, showing that incorporation into the verbal paradigm had real effects on the system.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>We start with two observations. The first is that case-inflected nominal forms may be employed in verbal constructions. For example in Latin, participles (verbal adjectives) feature in a number of periphrastic constructions, as in (1), where the nominative case participle in conjunction with the copula forms the perfect. In Imonda, a Papuan language of the Border family, progressives are formed by combining the verb 'stay' with a verbal noun in the locative case (2). In the Mongolic language Buryat, nominalized verb forms serve various converbial functions <ref type="bibr" target="#b20">(Skribnik 2003:116)</ref>, as in (3), where the verb takes an ablative case ending to convey the meaning 'since'. The second observation is that inflected nominals may fall into different inflection classes; that is, that different sets of words show different morphological realizations of what are otherwise the same morphosyntactic values.</p><p>(1) Latin laudat-a praise.PTCP.PRF-F.SG.NOM est is 'she has praised'</p><p>(2) Imonda <ref type="bibr" target="#b18">(Seiler 1985:72</ref>, cited by <ref type="bibr" target="#b9">Heine and Kuteva 2002)</ref> tōbtō fish soh-ia search-LOC ale-f stay-PRS 'he is looking for fish'</p><p>(3) Buryat <ref type="bibr" target="#b20">(Skribnik 2003:122)</ref> shi you yere-hen-hee come-FUT-ABL 'since you have come'</p><p>If these two observations are combined, then in principle one should expect to find nominal inflection classes incorporated into verbal paradigms through the use of inflected nominal forms. To the best of our knowledge this is a possibility which has not been explicitly discussed in the literature before, probably because no examples were forthcoming. As a consequence there is a gap in the typology of inflection class systems. We propose here to expand the range of known inflection class systems by describing the only good examples we are aware of: the Western Nilotic language Nuer, and Old Irish (continuing into the Middle Irish period), prompted by our having observed this phenomenon in the course of research on Nuer.<ref type="foot" target="#foot_0">foot_0</ref></p><p>In both these languages case-inflected nouns play an important role in the verbal paradigm, and fall into the inflection classes typically found in the noun system. This provides a novel vantage point for looking at inflection classes. Because they have a systematic connection to another word class, that means that they are not just a property of the word class that normally contains them, but also exist as part of a larger system, in this case the verbal paradigm. The case studies presented here enable us to make two interesting observations. In Nuer, the inner workings of inflection class assignment are laid bare: the verbally-employed nouns constitute a microcosm of the inflection class system as a whole, but one in which there is a consistent morphological back-story to each and every lexeme (namely, the verbal paradigm), unlike what one finds in the opaque system found in other nouns. With Old Irish, the diachronic developments going into the modern period suggest that association with the verbal paradigm has led to a reduction or loss of inflection class distinctions in verbal nouns, while they retain these distinctions when used outside of verbal contexts.</p><p>This paper is structured as follows. Section 2 lays out the Nuer facts, showing the role of case-inflected verbal nouns (gerunds in our terminology, to distinguish them from other types of verbal nouns) in the verbal paradigm, how they are derived from the verb stem, and how they recapitulate the four case inflection patterns found elsewhere in the noun system. Section 3 presents the comparable situation in Old/Middle Irish, and shows how verbal nouns have split in Modern Irish: inflection class distinctions are retained when they are used as ordinary nouns, but lost when they are used in verbal constructions. Section 4 concludes, pointing out the typological and theoretical observations that can be drawn from this seemingly rare phenomenon.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">The Nuer language</head><p>Nuer is a Western Nilotic language of the Dinka-Nuer subgroup spoken in the Republic of South Sudan and Ethiopia by anywhere from 900,000 to well over two million speakers. <ref type="foot" target="#foot_1">foot_1</ref> Nuer has a number of dialects that can be separated into two broad varieties which we term Western Nuer and Eastern Nuer. Western Nuer, also known as Bentiw, is spoken in Ruweng, Northern Liech and Southern Liech States of South Sudan. Eastern Nuer is spoken over a vast geographical stretch -in Western Bieh (Fangak), Eastern Nile, Latjoor, Eastern Bieh and Jongley States of South Sudan and the Gambella region of Ethiopia. Many South Sudanese Nuer live abroad due to a persistent unrest in the native territories. Large Nuer settlements can be found in the U.S.A. and Australia as well as in Eastern Africa. Previous studies include <ref type="bibr" target="#b6">Crazzolara (1933)</ref>, <ref type="bibr" target="#b27">Vandevort (n.d.)</ref>, <ref type="bibr" target="#b28">Yigezu (1995)</ref>, <ref type="bibr" target="#b23">Storch (2005)</ref>, <ref type="bibr" target="#b9">Frank (1999)</ref>, <ref type="bibr" target="#b1">Baerman (2012)</ref> and <ref type="bibr" target="#b8">Faust (2017)</ref>, among others.</p><p>Some preliminaries about the vocalic system and associated suprasegmental features are necessary in order to describe the morphological alternations. Like many other Western Nilotic languages, Nuer distinguishes three degrees of vowel length, which we refer to as short, long and overlong, and represent with one to three vowel graphemes. (Diphthongs are represented as digraphs, with length indicated by the non-initial component.) Voice quality is also distinctive: breathy voice is indicated by two subscript dots, while modal voice (the unmarked phonation type, which may tend towards creakiness), is not overtly represented. There are three phonemically distinct tones (tonemes): low (v), rising (v), and one which for convenience we will call high, but which is only realized as high with breathy vowels (v ¨), while with modal vowels it is falling (v). Tone is represented just on the first vowel grapheme of any graphic sequence of vowels. Tone does not play a role in the account to follow.<ref type="foot" target="#foot_2">foot_2</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Case inflection and the gerund</head><p>Nouns in Nuer inflect for three cases: nominative, genitive and locative, whose use we illustrate here with the noun 'home'. The nominative is in effect the default case, used both for subject and for object, as in (4), among other things. The genitive is used in adnominal constructions, as in (5), where it is the complement of the gerund 'thinking about' (thus literally 'I want the thinking about of the home.'). The locative indicates location, as in (6), where it is used in conjunction with the uninflected copula, or goal of motion, as in (7).</p><p>(4) câaar-2 ẗhink.about.TR-1SG cjêeN home.NOM.SG 'I am thinking about home.'</p><p>(5) gôoor-2 ẅant.TR-1SG cǎ ¨a ¨r thinking.about.NOM.SG cjêN home.GEN.SG 'I want to think about home.'</p><p>(6) î2 ¨n I.NOM.SG à COP cjé ¨N home.LOC.SG 'I am at home.'</p><p>(7) î2 ¨n I.NOM.SG rîEN-2 run.IN-1SG cjé ¨N home.LOC.SG 'I am running home.'</p><p>The parallel constructions with a gerund in place of an ordinary noun are shown in (8)-(11), using the verb 'kick'. In (8) it is the nominative object of the verb 'want', and itself takes a genitive complement. In (9) it is the genitive complement of the gerund 'thinking about', which itself is the nominative object of 'want'. These two patterns are the usual way of making one verb the complement of another. In (10), following a cross-linguistically familiar pattern, the locative forms the basis of a progressive construction, (thus literally 'Bool is on kicking of the person'), while in (11) it expresses purpose as the complement of a verb of motion.</p><p>(8) câaar-2 ẗhink.about.TR-1SG kwêt kicking.NOM.SG rân person.GEN.SG 'I am thinking about kicking the person.'</p><p>(9) gôoor-2 ẅant.TR-1SG cǎ ¨a ¨r thinking.about.NOM.SG kwêt kicking.GEN.SG rân person.GEN.SG 'I want to think about kicking the person.'</p><p>(10) î2 ¨n I.NOM.SG à COP kwé ¨t kicking.LOC.SG rân person.GEN.SG 'I am kicking the person.'</p><p>(11) î2 ¨n I.NOM.SG rîEN-2 run.IN-1SG kwé ¨t kicking.LOC.SG rân person.GEN.SG 'I am running to kick the person.'</p><p>Note that the nominative of 'kicking' is identical to the genitive. Gerunds typically display syncretism of two out of the three cases, but which cases those are depends on inflection class. In order to demonstrate the validity of the three-way case distinction, we repeat (8)-(10) with the gerunds of two other verbs: (12)-(14) show a gerund with nominative/locative syncretism, and (15)-(17) show a gerund with genitive/locative syncretism.</p><p>(12) câaar-2 ẗhink.about.TR-1SG n2 ¨k killing.NOM.SG rân person.GEN.SG 'I am thinking about killing the person.'</p><p>(13) gôoor-2 ẅant.TR-1SG cǎ ¨a ¨r thinking.about.NOM.SG ná ¨k killing.GEN.SG rân person.GEN.SG 'I want to think about killing the person.'</p><p>(14) î2 ¨n I.NOM.SG à COP n2 ¨k killing.LOC.SG rân person.GEN.SG 'I am killing the person.'</p><p>(15) câaar-2 ẗhink.about.TR-1SG né ¨e ¨r greeting.NOM.SG rân person.GEN.SG 'I am thinking about greeting the person.'</p><p>(16) gôoor-2 ẅant.TR-1SG cǎ ¨a ¨r thinking.about.NOM.SG né ¨e ¨r-2 greeting-GEN.SG rân person.GEN.SG 'I want to think about greeting the person.'</p><p>(17) î2 ¨n I.NOM.SG à COP né ¨e ¨r-2 greeting-LOC.SG rân person.GEN.SG 'I am greeting the person.'</p><p>Typically, the gerund is a singular noun form. However, if the verb is multiplicative (a derived verbal category which indicates that the action is performed multiple times; see (25)), a plural noun form is used instead; examples (18)-(20) give the multiplicative equivalents of (8), (9) and (11). (Note that plural case is not distinguished in the particular nominal pattern that gerunds follow.)</p><p>(18) gôoor-2 ẅant.TR-1SG kwé ¨d-ní kicking-PL nâaat " person.GEN.PL 'I want to kick people many times.'</p><p>(19) gôoor-2 ẅant.TR-1SG cǎ ¨a ¨r thinking.about.NOM.SG kwé ¨d-ní kicking-PL nâaat " person.GEN.PL 'I want to think about kicking people many times.'</p><p>(20) î2 ¨n I.NOM.SG rîEN-2 run.IN-1SG kwé ¨d-ní kicking-PL nâaat " person.GEN.PL 'I am running to kick people many times.'</p><p>Although gerunds are nominalizations, we hold that the forms illustrated here still constitute a part of the verbal paradigm. As shown in Sects. 2.2-2.3, gerunds are productive and available to every verb, and they are required to form a progressive construction, and to allow one verb to be the complement of another verb. This gives nominal morphology, in particular case morphology, a point of entry into the verbal system. Nouns fall into different inflection classes on the basis of case-marking morphology, as is shown in Sect. 2.3, and these find their way into the verbal system through constructions that use the gerund.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">The shape of the verbal paradigm</head><p>As a necessary precursor to describing the morphological properties of the gerund we first sketch out the basic elements of the verbal paradigm. Nuer verbal morphology can be divided into two cross-cutting systems that we distinguish as inflectional and derivational. The inflectional paradigm consists of (i) finite forms, (ii) non-finite forms that are used with auxiliaries, and (iii) the gerund. The derivational paradigm distinguishes various types of valence alternations (both arguments and goals), as well as iteration.</p><p>An account of the verbal paradigm in turn presupposes an understanding of the system of morphological exponents, whose surface manifestation may seem opaque to those not familiar with the morphophonology of Western Nilotic languages. Morphological alternations in Nuer involve both suffixation and stem modification. While suffixation is straightforward, stem modification involves complex alternations of vowel and voice quality, length and tone, a full account of which warrants separate studies of their own (for example, see <ref type="bibr" target="#b16">Reid 2017;</ref><ref type="bibr" target="#b15">Monich 2019)</ref>. What is crucial for our purposes here is a system of two cross-cutting sets of alternations of the root vowel (verbal roots are invariably monosyllabic), which we distinguish as grade A∼B and grade 1∼2. Table <ref type="table" target="#tab_0">1</ref> illustrates the basic principles, using the verbal root meaning 'kick'. Within the verbal system, the grade A∼B alternation characterizes inflectional values such as person/number, as shown here with the contrast between 3SG and 1SG subject forms. The grade 1∼2 alternation characterizes derivational alternations, exemplified here by the contrast between the transitive paradigm and the corresponding antipassive, which is a derived intransitive.   Table <ref type="table" target="#tab_1">2</ref> shows the complete vowel inventory of the language classified in terms of the grade alternations. The grade A∼B alternation typically involves lowering (e.g. 2 ¨∼a ¨), along with diphthongization for some vowels (e.g. I∼IE); high mid vowels however undergo a voice quality change from breathy to modal voice (e ¨∼e and o ¨∼o). Grade 1∼2 typically involves raising, alongside voice quality change from modal to breathy voice. For the sake of clarity, in subsequent paradigmatic tables we include the information about the grade of the stem vowel next to the word form (e.g. kwĚd-Ê 1A).</p><p>Table <ref type="table" target="#tab_2">3</ref> exemplifies verbal morphology, with the inflectional values as rows and a selection of the derivational paradigms as columns. We review here briefly the various functions. Along the inflectional dimension, the subject-marked forms are used with the non-negated present tense, except when a nominal subject immediately follows the verb, in which case the BARE form is used. The NF form is the general form used with auxiliaries (e.g. for past and future), while the NF NEG is used just with the present negative auxiliary. Along the derivational dimension, the transitive (21) is arguably the basic form.<ref type="foot" target="#foot_3">foot_3</ref> Some of the derived paradigms involve valency changes, either reduction through the removal of the direct object (the antipassive in (22)), or increase through the addition of an argument (the applicative in (23)). The centripetal form signals a movement towards a reference point (24). (Not illustrated here are the valency-reducing paradigms that can be generated for the applicative and centripetal forms.) All of these categories can further derive multiplicative forms that signal that the action is performed multiple times or over a period of time, illustrated here with a multiplicative transitive (25).</p><p>(21) c2 ÄUX.PRF.1SG rǎaan person.NOM.SG kwĚt kick.TR.NF 'I kicked the person.'</p><p>(22) c2 ÄUX.PRF.1SG kwÉt kick.AP.NF 'I kicked.'</p><p>(23) c2 ÄUX.PRF.1SG rǎaan person.NOM.SG kwèt kick.APPL.NF Bôool B.NOM.SG 'I kicked Bool [personal name] for the person.'</p><p>(24) c2 ÄUX.PRF.1SG rǎaan person.NOM.SG kwěet kick.CP.NF rÊj inside 'I kicked the person while (I was) going inside.'</p><p>(25) c2 ÄUX.PRF.1SG rǎaan person.NOM.SG kwèt kick.MUL.NF 'I kicked the person many times.'</p><p>Underived paradigms, can have a grade 1 or grade 2 vowel, while the derived paradigms associated with argument alternations (antipassive and applicative) are restricted to grade 2. <ref type="foot" target="#foot_4">foot_4</ref> Inflectional paradigms involve an alternation between grade A∼B as well as suffixation, both of which are largely identical across all derivational paradigms, with three systematic exceptions. First, the vowel of the 3PL intransitive verbs is grade A, while other verbs have grade B. <ref type="foot" target="#foot_5">foot_5</ref> Second, the vowel of the NF form varies considerably across different derivational paradigms.<ref type="foot" target="#foot_6">foot_6</ref> Third, the imperative is unsuffixed with underived transitives, but suffixed with all other paradigms.<ref type="foot" target="#foot_7">foot_7</ref> </p><p>The gerund occupies an exceptional place within this paradigmatic matrix. First, gerunds always have a grade 2 vowel. This means that within an underived transitive paradigm, where all other forms can have a grade 1 vowel, the gerund stands out by virtue of its grade 2 vowel (see Table <ref type="table" target="#tab_2">3</ref> and fn <ref type="foot" target="#foot_7">foot_7</ref>). Second, and more importantly in the present context, gerunds have not just the nominative form shown here, but a genitive and locative form too. This is where nominal inflection classes enter into the picture.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Nominal inflection classes and gerunds</head><p>Verbal inflection, though it appears complex, is nevertheless almost entirely regular. With the few exceptions noted in Sect. 2.3, all verbs display the same suffixes and the same pattern of vowel grade alternations. Noun inflection, by contrast, is characterized by lexical specification and irregularity in both suffixation and stem alternation. We cannot pretend here to do justice to its full extent, and limit ourselves to the points relevant to the discussion at hand. (For a more complete treatment of nominal inflection, see <ref type="bibr" target="#b3">Baerman and Monich 2019.)</ref> Nouns fall into a number of classes based on their inflection both in the singular and plural, but since gerunds do not have plural forms (with the exception of the multiplicative) it is enough to look just at the different patterns of singular inflection. As with underived verbs, the stem vowel may belong to grade 1 or grade 2; Table <ref type="table" target="#tab_3">4</ref> shows the four major classes, using nouns with a grade 2 vowel. In the first two types ('forest' and 'path'), case inflection is realized by a vowel grade alternation between grade A and B. With both types the genitive has a grade B vowel and the locative a grade A, but they differ in the nominative: the first type has a grade A vowel and the second grade B.<ref type="foot" target="#foot_8">foot_8</ref> The third type ('goose') shows both a vowel grade alternation and a suffix, with grade B in the nominative and grade A, plus suffixation, in the genitive/locative. (The full form of the suffix is -k2 ¨, but the initial /k/ is only realized following a vowel.) The fourth type ('dove') has the same suffix, but has an invariant grade A root vowel.<ref type="foot" target="#foot_9">foot_9</ref> </p><p>The class membership of a noun is not phonologically determined, nor is there any single form which would allow one to predict the entire paradigm. For example, if a noun has a grade A nominative, it could belong to either the first type or  fourth type; if a noun has a grade A suffixed genitive/locative, it could belong to the third type or fourth type. That means that nouns require two principal parts in order to unambiguously identify which inflectional pattern they follow. For this reason we consider the four types represented in Table <ref type="table" target="#tab_3">4</ref> to be lexically specified inflection classes. That said, not every pattern is equally well represented in the lexicon. If we take the nominative as the point of departure, if it has a grade A vowel, the noun will usually inflect like 'forest'. If the nominative has a grade B vowel, the noun will usually inflect like 'goose'. A prominent exception to this generalization are productively derived deverbal agent nouns, and phonologically aberrant words such as unassimilated loanwords: these inflect like 'dove', with a grade A vowel plus suffixation.</p><p>Gerunds follow exactly these four patterns, as shown in Table <ref type="table" target="#tab_4">5</ref>. (Note that they invariably have a grade 2 stem vowel, a point we return to below.) The phonological properties of the verb stem determine the nominative form of the gerund, but do not determine the behaviour of the oblique case forms. This is lexically specified, and it is in this sense that nominal inflection class distinctions have become part of the verbal paradigm.</p><p>Though the relationship of the nominative gerund to the verbal stem is predictable, is rather more complex than it is for other forms in the paradigm. First, the gerund requires a grade 2 stem vowel, even if the verb stem otherwise has a grade 1 vowel, which means that morphologically the gerund behaves like a derived verb form.<ref type="foot" target="#foot_10">foot_10</ref> Second, while the other forms in the paradigm have a fixed grade A or B vowel as determined by the template in Table <ref type="table" target="#tab_2">3</ref>, for the gerund the choice of a grade A or grade B vowel is dependent on additional properties of the verb stem. These are  ïllustrated in Table <ref type="table" target="#tab_5">6</ref> for the gerunds of underived transitive verbs, taking the 2SG form as diagnostic of the underlying vowel and the length contrast.<ref type="foot" target="#foot_11">foot_11</ref> If the verb has a grade 1 stem vowel, the nominative gerund has a grade B vowel, whether the stem is short or long. If the verb has a grade 2 stem vowel, the form of the gerund is sensitive to length. If the verb stem is short, the nominative gerund has a grade A vowel. If it is long, it has a grade B vowel. In all these cases the underlying stem length is also seen in the gerund.<ref type="foot" target="#foot_12">foot_12</ref> </p><p>Oblique case morphology can then in principle follow either type (with or without suffixation), but there appear to be strong tendencies, again based on phonological properties of the verb stem (Table <ref type="table" target="#tab_6">7</ref>). If the verb has a short stem, it will typically be unsuffixed, while if it has a long stem, it will typically be suffixed.</p><p>There are two classes of exceptions. First, long stems that end in a glide (/j/ or /w/) shorten in the gerund. They still take the oblique case suffixes predicted by their underlying stem length, but the gerunds themselves are short (Table <ref type="table" target="#tab_7">8</ref>), so that the length of the nominative itself is not predictive, as was the case with verbs in Table <ref type="table" target="#tab_6">7</ref>.</p><p>Second, lexical exceptions to the usual association between stem length and oblique case suffixation are not infrequent (Table <ref type="table" target="#tab_8">9</ref>). Some short stem verbs also permit an alternative suffixed oblique form ('sharpen'), while some long stem verbs take unsuffixed oblique case forms ('drink'). That means that the inflection class distinctions in the gerund can still be lexically specified, even in the face of default tendencies.   The four inflectional classes exist only for gerunds formed from underived verbs (transitive verbs in the vast majority of cases, though there are also a handful of underived intransitives). Gerunds of derived verbs display uniform behaviour across the lexicon. There are two types. The first, found with most derivational paradigms, is represented in Table <ref type="table" target="#tab_9">10</ref> by a applicative verb: the gerund has oblique case suffixes and an invariant grade A stem.</p><p>The second is found with multiplicative verbs whose gerunds inflect as plural nouns, reflecting their inherent event plurality through explicitly nominal plural marking. As with the singular, plural case inflection in nouns falls into different classes, but only one of them is found with gerunds, namely a grade A stem vowel plus the suffix -ni ¨, the same for all three cases, as in kwè ¨d-ní ¨, the gerund of the multiplicative of 'kick' in Table <ref type="table" target="#tab_2">3</ref>.</p><p>To conclude this section, we review the basis for the claim that verbs in Nuer incorporate nominal inflection class distinctions. It depends on the assumption that we can understand gerunds as part of the verbal paradigm and not just as deverbal nouns, at least when they used in the sorts of constructions illustrated in (4)-(20). It is admittedly difficult to find arguments one way or another. Thus in contrast to the Latin gerund 'see' in (26), which takes an accusative complement, they retain nominal properties of government, taking a genitive complement rather than the nominative complement that would otherwise be expected of verb.</p><p>(26) cupid-us desirous-NOM.SG.M urb-em city-ACC.SG vidend-ī see.GER-GEN.SG 'desirous of seeing the city' <ref type="bibr" target="#b4">(Bennet 1942:221, 223)</ref> But it is hardly unreasonable to ascribe their various uses -for example, verb-verb complementation, progressive aspect, or purpose -to the sphere of activity of verbs. Were it not for their nominal morphology, one would hardly hesitate in identifying gerunds as part of the verbal paradigm. The other aspect of our claim is the identification of the different case inflection patterns as inflection classes, in the sense that there is lexical specification of inflectional morphology. To the best of our knowledge this must be true, for both ordinary nouns and for gerunds. Gerunds formed from underived verbs face a two-way lexical choice: while the nominative form is largely predictable from phonological properties of the stem, oblique case inflection can still follow either of two patterns. Although there are some tendencies based on stem phonology, there is still room for lexical specification, as illustrated in Table <ref type="table" target="#tab_8">9</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Irish</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Old/Middle Irish</head><p>The closest parallel to the Nuer system that we are aware of is that of Old and Middle Irish (8th-12th centuries; <ref type="bibr" target="#b13">McCone 2005:2)</ref>, where verbal nouns play a prominent role in the verbal paradigm. <ref type="bibr" target="#b13">McCone (2005:41)</ref> gives the following examples in each of the four cases (excluding the vocative); verbal nouns are glossed here as -ing forms:</p><p>(27) Nominative ba was.3SG bés custom.NOM.SG dano moreover dó to.him do to grés continuance.DAT.SG a n-adall<ref type="foot" target="#foot_13">foot_13</ref> ocus a tadal of.them visiting.NOM.SG and of.them revisiting.NOM.SG 'it was, moreover, his custom always to visit and revisit them'</p><p>(28) Accusative dlig-id deserve-3SG.PRS gó falsehood.NOM.SG a the.ACC.SG cairigud rebuking.ACC.SG 'falsehood should be rebuked' (lit. 'falsehood deserves the rebuking')</p><p>(29) Genitive láech hero.NOM.SG a of.him thairisme-a withstanding-GEN.SG 'a hero capable of withstanding him' (lit. 'hero of withstanding of him')</p><p>(30) Dative biuu-sa am-EMPH.1SG oc at airbaig boasting.DAT.SG 'I am (always) boasting' (lit. 'I am at boasting')</p><p>The functions illustrated here are similar to those found with the Nuer gerund, e.g. as a verbal complement (28) or as a progressive based on a locative construction (30),  and, as in Nuer, the verbal noun has nominal syntactic properties, taking genitive complements, as in (27) and (29). And crucially, they fall into different inflection classes. As a conservative Indo-European language, Old (and Middle) Irish retains a wealth of nominal inflection classes. Verbal nouns are not formed by any identifiable morphological operation, but rather are ordinary-looking nouns distributed across the different classes. Some examples of the progressive construction with the preposition oc (as employed in (30)) are given in (31), showing a variety of dative case forms according to the different inflection classes. Noun paradigms in the corresponding inflection classes in are shown in Table <ref type="table" target="#tab_10">11</ref>, using the exemplary paradigms given by <ref type="bibr" target="#b13">McCone (2005)</ref>.</p><p>(31) oc cíul 'singing' <ref type="bibr" target="#b7">(eDIL)</ref> class NOM SG ceól GEN SG cíuil oc gabail 'taking' <ref type="bibr" target="#b13">(McCone 2005:67)</ref> class II NOM SG.gabal GEN SG gabalae oca iarfaigid 'asking' <ref type="bibr" target="#b17">(Ronan 2006:67)</ref> class III NOM SG iarfaigid GEN SG iarfaigtho oc comguidi 'praying together' <ref type="bibr" target="#b10">(Gagnepain 1963:49)</ref> class IV NOM SG comguide GEN SG comguide oc aentaid 'uniting' <ref type="bibr" target="#b10">(Gagnepain 1963:141)</ref> class V dental NOM SG oéntu<ref type="foot" target="#foot_14">foot_14</ref> GEN SG óentad oc tuistin 'begetting' <ref type="bibr" target="#b10">(Gagnepain 1963:511)</ref> class V nasal NOM SG tuistiu GEN SG tuisten Note: nominative and genitive forms for illustration are taken from the Dictionary of the Irish Language: Based Mainly on Old and Middle Irish Materials <ref type="bibr" target="#b7">(eDIL)</ref>.</p><p>There is no straightforward relationship between the forms of the verbal noun and the rest of the verbal paradigm. <ref type="bibr">McCone's extensive study of Old Irish verbs (1997)</ref>  defers all discussion of verbal nouns to <ref type="bibr" target="#b26">Thurneysen (1946)</ref>, who observes that '[t]he formation of these verbal nouns is governed by no uniform rules' (p. 444), though there are certain subregularities. Thus weak verbs (characterized by a suffix -a or -i in the present stem), most of which are denominal, usually form their verbal noun with a dental suffix and inflect according to class III, for example NOM SG mórad, GEN SG mórtho from -mora (3SG PRS CONJUNCT) 'magnify' <ref type="bibr" target="#b26">(Thurneysen 1946:445, 459)</ref>.<ref type="foot" target="#foot_15">foot_15</ref> Verbal nouns formed from strong verbs, whose present stem lacks a vocalic suffix, show a greater variety of stem formations, and hence, a greater range of inflection classes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Neutralization of nominal inflection classes in the Modern Irish verb</head><p>Modern Irish retains a rich set of inflection class distinctions in its nouns, including verbal nouns, although case inflection has largely been reduced to the opposition of two forms: nominative vs. genitive <ref type="bibr" target="#b5">(Carnie 2008, Chap. 5)</ref>, as shown in Table <ref type="table" target="#tab_12">12</ref>. It also retains the use of verbal nouns in verbal constructions.</p><p>But verbal nouns show split patterns of inflection. The variety of genitive formations is retained only by verbal nouns in their purely nominal use. When used in verbal constructions, all verbal nouns show identical behaviour: they take a suffix whose allomorphs (-ta, -te, -tha or -the) are determined by stem phonology <ref type="bibr" target="#b22">(Stenson 2008:203f)</ref>.<ref type="foot" target="#foot_16">foot_16</ref> Compare (32), where the verbal noun based on 'do, make' is used as an ordinary noun, and inflects according to class A (no change between nominative and genitive singular), with (33), where the verbal noun has a verbal function in a purpose clause, and takes the genitive suffix -ta.<ref type="foot" target="#foot_17">foot_17</ref> </p><p>(32) cúrsa course.NOM.SG déanaimh doing.GEN.SG bád boat.GEN.PL 'boat building course' (Silva Nurmio, p.c., drawn from the New Corpus for Ireland)</p><p>(33) chun for a its d(h)éanta doing.GEN.SG 'in order to do it'</p><p>Crucially, the elimination of genitive allomorphy means that verbally-employed verbal nouns still have lexically specified morphology, but it is restricted to a single form. It is thus probably no longer correct to speak of inflection class distinctions, but rather of one-off morphological irregularity. Either way, the inflection class system has undergone simplification precisely in the context of the verbal paradigm, but not elsewhere.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Summary and discussion</head><p>The Nuer and Old Irish nominal paradigms provide a typologically unusual context for the exploration of inflection classes. Normally, inflection classes are understood as confined to the word class in which they are manifested, and this is understandable, since this is the only context in which they are relevant. But nominal inflection classes in these languages lead a double life: as a property of nouns, and as a component of verbal paradigms.</p><p>The diachronic development of the Irish forms demonstrates that this dual affiliation may have real consequences. In Old Irish, it made no difference whether a verbal noun was used as an independent noun or as a component of a verbal construction: case morphology and inflection classes were the same in both contexts. By the Modern Irish period the two had split, due to changes in the form of the genitive (in effect the only remaining distinct case form outside of the nominative). In their guise as independent nouns, verbal nouns retain reflexes of the original genitive and hence retain inflection class distinctions to the full extent possible. But where they participate in verbal constructions, an innovative genitive form is used, one which is morphologically identical across the lexicon. That means that although verbally-employed nouns retain inflection (nominative and genitive) and still require lexical specification (because the nominative form is not predictable from the rest of the paradigm), the role of inflection classes has been reduced or eliminated, because there is only a single form that shows any variation across the lexicon. This shows that membership in the verbal paradigm does have concrete consequences for nominal morphology.<ref type="foot" target="#foot_18">foot_18</ref> </p><p>It is not self-evident that this should be so. <ref type="bibr" target="#b25">Stump (2016)</ref> characterizes a similar configuration as metaconjugation, which refers to a set of morphological forms that occur in different paradigmatic contexts with different lexemes. Stump illustrates this with an example from Sanskrit, where the stem formative morphology used for  the present system (present and imperfect indicative, optative, and imperative subparadigms) for some verbs is used for the aorist system (aorist indicative and precative subparadigms) for others. For example, a stem formed from suffixation of -a is used for the imperfect indicative (present system) with 'strike', but for the aorist indicative (aorist system) with 'be happy' (Table <ref type="table" target="#tab_13">13</ref>). But Stump does not suggest that we should expect the two instantiations of this stem-formative class to deviate from each other as a consequence of this split, as has happened with the two instantiations of case inflection (nominal and verbal) in Irish.</p><p>The closest parallel we are aware of to the Irish developments occurs when an inflected form becomes lexicalized and consequently immune to later changes that affect the source paradigm. For example, the adjective molten was derived from a now-obsolete strong participial form of melt which has since been replaced by the productive weak form melted. The change there is understandable, because only the properly verbal form was subject to the paradigmatic pressure to replace its irregular morphology, while the isolated adjective was not. But the Irish example is different, in that both contexts involve inflected words, and it is not clear what paradigmatic pressures would have affected the genitive of verbal nouns in their verbal use that would not also have affected them in their function as independent nouns. Frequency may have played a role, in that the verbal construction which employs the genitive of a verbal noun is not common, perhaps making it prone to levelling across the lexicon. But lacking more detail about the historical developments, we do not wish to over-interpret these observations, and so leave these as open questions. The key point is that what had once been an independent and morphologically heterogeneous set of nouns has undergone innovations in its case inflection as a consequence of its association with the verbal paradigm.</p><p>Nothing of the sort is seen in Nuer, gerunds inflect in the same way as other nouns. We can draw no conclusions from that; first because we would claim no inevitability to the developments seen in Irish, and second, because we have no idea how long this state of affairs has existed in Nuer. (Comparable verbal uses of deverbal nouns have not been described for Dinka or Reel, the languages most closely related to Nuer.) But the systematic relationship of gerund inflection to the rest of the verbal paradigm does provide a unique perspective on the nature of inflection class membership. With ordinary nouns there is not much we can say. While there are default tendencies, these can be overridden, so that the lexical entry for any noun would need to list two principal parts, as suggested in Sect. 2.3. But gerunds slot into the paradigm of the verb in a way that allows us to see inflection class membership in terms of layers of morphological predictability, summarized in Table <ref type="table" target="#tab_15">14</ref>. First, there is a split between underived (typically the underived transitive) and derived verbs (such as applicatives). Gerunds of derived verbs all inflect according to the same pattern, while those of underived verbs are subject to further conditions. Two phonological properties of the verb stem (length and vowel grade) unambiguously determine the form of the nominative. Verb stem length alone then determines typical oblique case inflection; recall that in the case of glide final stems, this length is covert in the gerund itself, because the underlying length distinctions have been neutralized. Finally, lexical specification can override this default assignment of oblique case forms.</p><p>Thus while inflection class assignment in the ordinary noun system is something of a black box, with gerunds there is a morphological and phonological story behind much of this otherwise covert process. This observation can supplement recent studies where inflectional classes are evaluated on the basis of internal measures of predictability such as inflection class transparency (and <ref type="bibr" target="#b21">Stump and Finkel 2013)</ref> or paradigm entropy <ref type="bibr" target="#b0">(Ackerman and Malouf 2013)</ref>. If we isolate the gerund from the rest of the verbal paradigm then these measures will give results similar to those found for ordinary nouns. But if we step back and look at it in relationship to the rest of the verbal paradigm, a different picture will emerge, because the forms are also predicted, wholly or partly, directly from the verbal paradigm. One concrete effect of this difference might be manifested in diachronic change. Thus Nuer might follow the path of Irish and increase predictability of gerund inflection precisely in verbal contexts. One place to look for this might be with glide-final long stems (Table <ref type="table" target="#tab_7">8</ref>), where vowel shortening in the gerund has obscured the transparency of the relationship of inflection to the verb stem. Will predictability ever be restored? We cannot answer this now, of course, but there remain many undescribed dialects of Nuer, so perhaps further work might uncover telling variation in the system.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Vowel grade alternations in the verbal root 'kick'</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Vowel grades</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Inflectional and derivational paradigm for the verb 'kick'</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Nominal inflectional types (singular)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Gerund case inflection patterns</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Vowel grade of nominative singular gerund in relationship to the underived transitive verb stem</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7</head><label>7</label><figDesc>Oblique inflection of the gerunds in Table 6</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8</head><label>8</label><figDesc>Shortening of the gerund in glide-final stems</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 9</head><label>9</label><figDesc>Exceptional oblique case inflection</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 10</head><label>10</label><figDesc>Gerunds from derived verbs</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head>Table 11</head><label>11</label><figDesc>Exemplary paradigms of the classes represented in (31), per<ref type="bibr" target="#b13">McCone (2005)</ref> </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12"><head>Table 12</head><label>12</label><figDesc>Manifestations of inflection class distinctions in verbal nouns<ref type="bibr" target="#b5">(Carnie 2008)</ref></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_13"><head>Table 13</head><label>13</label><figDesc>Metaconjugation in Sanskrit <ref type="bibr" target="#b25">(Stump 2016:216)</ref></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_15"><head>Table 14</head><label>14</label><figDesc>Breakdown of gerund form assignment in Nuer</figDesc></figure>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0"><p>The Nuer facts were suggested by a handful of examples in <ref type="bibr" target="#b6">Crazzolara (1933:139f)</ref>, remarked on by<ref type="bibr" target="#b2">Baerman (2013)</ref>, but the full extent has only become apparent as a result of the fieldwork reported here.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot"><p>The Old Irish facts are of course familiar within Celtic and Indo-European studies, but their typological oddity (even within Indo-European) does not appear to have been a topic of concern. We also recognize that the nominals used in Latin verbal constructions belong to different inflection classes, e.g. the gerund inflects as a second declension noun and the supine as a fourth declension noun. But in the context of the verbal paradigm these are no longer inflection class distinctions, because it is same for every verb: inflecting as second declension noun is a property of all gerunds, and inflecting as a fourth declension noun is a property of all supines.</p></note> 
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1"><p>2 The lower figure comes from <ref type="bibr" target="#b19">Simons and Fennig (2017)</ref>, the higher one from the Joshua Project (joshuaproject.net/people_groups/13909/OD, ET).</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2"><p>Tone is the object of ongoing work and we cannot claim to have fully understood it. In addition, there is a fair amount of variation between speakers and/or varieties. In such cases we have represented the tones observed for one reference speaker.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3"><p>The main argument is morphological predictability: the morphological characteristics of the stem are apparent in the transitive, but may be neutralized in the other paradigms. There is also a small class of what might be called 'middle' verbs whose basic form is intransitive, which we do not discuss here.</p>
+<p>Note that many of the forms shown in are identical across different derivational paradigms, but there is always at least one form within the paradigm that distinguishes them.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4"><p>For some verbs, grade 1 vowels may be retained in the multiplicative and centripetal paradigms. In addition, underived roots can have a grade 2 vowel, in which case all derived paradigms also have a grade 2 vowel.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5"><p>This applies to the underived intransitive and derived antipassive.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6"><p>The applicative has grade B, underived transitives tend to have grade A; other categories show either grade, which may be subject to lexical specification (the data are so far unclear).</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_7"><p>Derived paradigms further differ in terms of the length of the stem vowel, with both vowel lengthening and vowel shortening attested. Within the inflectional paradigm, vowel length is fixed for all categories except the underived transitive and underived intransitive, where longer stem vowel can occur in present singular forms and, occasionally, the antipassive, where the NF stem can differ in vowel length from the rest of the forms. Tonal alternations occur as well.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_8"><p>Most ordinary nouns in fact lack a distinct locative, and use the genitive case form in place of it. Those nouns that maintain a distinct locative on the whole refer, unsurprisingly, to locations or goals. Gerunds however reliably display distinct locatives, perhaps due to their use in verbal constructions that require it, as in (10) and (11).</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_9"><p>The length alternations for case apparent here and in other noun paradigms are largely predictable, but it would take us too far afield to describe them, and they are not crucial for the discussion at hand.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="11" xml:id="foot_10"><p>Because of this, the gerund of an underived grade 1 transitive verb looks as if it were drawn from the verb's antipassive paradigm. There are however two reasons to suspect that this is not the case. First, underived grade 1 intransitive verbs -i.e. verbs which do not have an antipassive -likewise form their gerunds with a grade 2 vowel; for example grade 1 nîin 'sleep.BARE' versus its grade 2 nominative singular gerund nǐ ¨en. Second, there is a small class of verbs that have a stem-final alternation between /l/ in the transitive and /t/ in the antipassive, and for at least some speakers we find the transitive /t/ in the gerund.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="12" xml:id="foot_11"><p>Long stems are in fact lengthened to overlong in the singular, but because of various other morphophonological processes that affect length, this remains one of the more reliable environments for observing length contrasts.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="13" xml:id="foot_12"><p>Stems containing a glide in onset position, immediately following an initial consonant, form their gerunds as if they were short stems. Thus the long grade 2 stem verb dw2 ¨22c-ì 'cane.2SG' has the short grade A nominative gerund dw2 ¨c rather than the long grade B form *dwa ¨a ¨c expected of a long grade 2 stem.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="14" xml:id="foot_13"><p>The initial /n/ is assigned by the preceding 3PL genitive pronoun, as part of the well-known Irish morphophonological process of initial mutation.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="16" xml:id="foot_14"><p>The eDIL gives the stem vowel as [oe, oi] rather than [ae].</p></note>
+		<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="17" xml:id="foot_15"><p>Conjunct forms involve a distinct set of subject markers used with all prefixed verbs, with unprefixed verbs after certain particles and conjunctions, and, in the earliest period, in clause-final position <ref type="bibr" target="#b26">(Thurneysen 1946:350f)</ref>.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="18" xml:id="foot_16"><p>Morphologically, these are taken from the paradigm of verbal adjectives.</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="19" xml:id="foot_17"><p>In practice, the genitive is only used when the verbal noun is (i) governed by a genitive-taking preposition, and (ii) governs a genitive pronominal complement. This is now more of a literary construction than a colloquially productive one (Silva Nurmio and Ruairí Ó hUiginn, personal communication).</p></note>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="20" xml:id="foot_18"><p>The effects of word class membership on paradigms are well known, but the examples we know of involve allomorph selection, which is a different issue. For example, in Russian, possessive adjectives form the basis of many surnames. Possessive adjectives normally have case-number endings distinct from what is found with nouns, but these substantivized possessive adjectives have adopted some of the corresponding noun endings (see <ref type="bibr" target="#b21">Spencer 2002:284)</ref>. The Irish case does not involve the transfer of allomorphs from one word class to another, because the feature set is completely different. Rather, what changes is the paradigmatic context that case marking is embedded in.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements This research was funded by the Arts &amp; Humanities Research Council (UK) under grant AH/L011824/1 ('Morphological Complexity in Nuer'). Their support is gratefully acknowledged. We would also like to thank our Nuer language consultants in Kenya, the US, and the UK, without whom none of this would have been possible. Thanks also to Silva Nurmio and Ruairí Ó hUiginn for assistance with the Irish material, to Oliver Bond and Greville Corbett for helpful comments, and to two anonymous referees and the Morphology editor for helping to substantially improve the paper. The order of the authors is alphabetical.</p></div>
+			</div>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Ackerman</surname>
+							<forename>F</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Malouf</surname>
+							<forename>R</forename>
+						</persName>
+					</author>
+					<title level="a"> Morphological organization: the low conditional entropy conjecture</title>
+				</analytic>
+				<monogr>
+					<title level="j">Language</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="429" to="464"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Baerman</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<title level="a">Paradigmatic chaos in Nuer</title>
+				</analytic>
+				<monogr>
+					<title level="j">Language</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<biblScope unit="volume">88</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="467" to="494"/>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+			
+			<biblStruct type="conference" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Baerman</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<title level="a">The diachronic puzzle of Nuer case inflection</title>
+				</analytic>
+				<monogr>
+					<title level="m">Nilo-Saharan Linguistics Colloquium</title>
+					<imprint>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b3">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Baerman</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Monich</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<title level="m">Nuer noun inflection</title>
+					<imprint> 
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b4">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Bennet</surname>
+							<forename>C</forename>
+						</persName>
+					</author>
+					<title level="m">New Latin grammar</title>
+					<imprint>
+						<publisher>Allyn and Bacon</publisher>
+						<pubPlace>Boston</pubPlace> 
+						<date when="1942">1942</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b5">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Carnie</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<title level="m">Irish nouns: A reference guide</title>
+					<imprint>
+						<publisher>OUP</publisher>
+						<pubPlace>Oxford</pubPlace> 
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b6">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Crazzolara</surname>
+							<forename type="first">J</forename><forename type="second">P</forename>
+						</persName>
+					</author>
+					<title level="m">Outlines of a Nuer grammar</title>
+					<imprint>
+						<publisher>Anthropos</publisher>
+						<pubPlace>Vienna</pubPlace> 
+						<date when="1933">1933</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="e-book" xml:id="b7">
+				<monogr>
+					<author>eDIL</author>
+					<title level="m">Dictionary of the Irish Language: Based Mainly on Old and Middle Irish Materials</title>
+					<imprint>
+						<publisher>Royal Irish Academy</publisher>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Faust</surname>
+							<forename>N</forename>
+						</persName>
+					</author>
+					<title level="a">How low can you go? A note on mutation in Nuer</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of African Language and Linguistics</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="51" to="64"/>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b9">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Frank</surname>
+							<forename type="first">W</forename><forename type="middle">J</forename>
+						</persName>
+					</author>
+					<title level="m">Nuer noun morphology</title>
+					<note>Master's thesis</note>
+					<imprint>
+						<publisher>State University of New York</publisher>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b10">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Gagnepain</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<title level="m">La syntaxe du nom verbal dans les langues Celtiques</title>
+					<imprint>
+						<publisher>Klincksieck</publisher>
+						<pubPlace>Paris</pubPlace> 
+						<date when="1963">1963</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b11">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Heine</surname>
+							<forename>B</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Kuteva</surname>
+							<forename>T</forename>
+						</persName>
+					</author>
+					<title level="m">World lexicon of grammaticalization</title>
+					<imprint>
+						<publisher>CUP</publisher>
+						<pubPlace>Cambridge</pubPlace> 
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b12">
+				<monogr>
+					<author>
+						<persName>
+							<surname>McCone</surname>
+							<forename>K</forename>
+						</persName>
+					</author>
+					<title level="m">The Early Irish verb</title>
+					<imprint>
+						<publisher>An Sagart</publisher>
+						<pubPlace>Maynooth</pubPlace> 
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b13">
+				<monogr>
+					<author>
+						<persName>
+							<surname>McCone</surname>
+							<forename>K</forename>
+						</persName>
+					</author>
+					<title level="m">A first Old Irish grammar and reader</title>
+					<imprint>
+						<publisher>Department of Old and Middle Irish, National University of Ireland</publisher>
+						<pubPlace>Maynooth</pubPlace> 
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b14">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Monich</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<title level="m">A first Old Irish grammar and reader</title>
+					<imprint>
+						<publisher>Department of Old and Middle Irish, National University of Ireland</publisher>
+						<pubPlace>Maynooth</pubPlace> 
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b15">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Monich</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<title level="m">Nuer tonal inventory</title>
+					<imprint>
+						<publisher>Foras na Gaeilg</publisher>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">New Corpus for Ireland</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b16">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Reid</surname>
+							<forename>T</forename>
+						</persName>
+					</author>
+					<title level="a">Morphophonological stratification in Nuer: vowel and voice quality</title>
+				</analytic>
+				<monogr>
+					<title level="m">Sciences du langage</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b17">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Ronan</surname>
+							<forename>P</forename>
+						</persName>
+					</author>
+					<title level="m">Aspects of verbal noun constructions in Medieval Irish and Welsh</title>
+					<note>PhD thesis</note>
+					<imprint>
+						<publisher>National University of Ireland</publisher>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b18">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Seiler</surname>
+							<forename>W</forename>
+						</persName>
+					</author>
+					<title level="m">Imonda: A Papuan language </title>
+					<imprint>
+						<publisher>Canberra: Pacific Linguistics</publisher>
+						<date when="1985">1985</date>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">Pacific Linguistics</title>
+					<biblScope unit="volume">B-93</biblScope>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b19">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Simons</surname>
+							<forename type="frist">G</forename><forename type="middle">F</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Fennig</surname>
+							<forename type="frist">C</forename><forename type="middle">D</forename>
+						</persName>
+					</author>
+					<title level="m">Ethnologue: Languages of the world, Twentieth edition</title>
+					<imprint>
+						<publisher>SIL International</publisher>
+						<pubPlace>Dallas, Texas</pubPlace> 
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b20">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Skribnik</surname>
+							<forename>E</forename>
+						</persName>
+					</author>
+					<title level="a">Buryat</title>
+				</analytic>
+				<monogr>
+					<title level="m">The Mongolic Languages</title>
+					<editor>
+						<persName>
+							<surname>Janhunen</surname>
+							<forename>Ju</forename>
+						</persName>
+					</editor>
+					<imprint>
+						<publisher>Routledge</publisher>
+						<pubPlace>London</pubPlace>
+						<date when="2003">2003</date>
+						<biblScope unit="page" from="102" to="128"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Spencer</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<title level="a">Gender as an inflectional category</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Linguistics</title>
+					<imprint>
+						<date when="2002">2002</date>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="279" to="312"/>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b22">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Stenson</surname>
+							<forename>N</forename>
+						</persName>
+					</author>
+					<title level="m">Basic Irish: A grammar and workbook</title>
+					<imprint>
+						<publisher>Routledge</publisher>
+						<pubPlace>London</pubPlace> 
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b23">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Storch</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<title level="m">The noun morphology of Western Nilotic</title>
+					<imprint>
+						<publisher>Rüdiger Köppe Verlag</publisher>
+						<pubPlace>Cologne</pubPlace> 
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b24">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Stump</surname>
+							<forename type="first">G</forename><forename type="middle">T</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Finkel</surname>
+							<forename>R</forename>
+						</persName>
+					</author>
+					<title level="m">Inflectional paradigms: Content and form at the syntax–morphology interface</title>
+					<imprint>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge</pubPlace> 
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b25">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Stump</surname>
+							<forename type="first">G</forename><forename type="middle">T</forename>
+						</persName>
+					</author>
+					<title level="m">Morphological typology: From word to paradigm</title>
+					<imprint>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge</pubPlace> 
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b26">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Thurneysen</surname>
+							<forename>R</forename>
+						</persName>
+					</author>
+					<title level="m">A grammar of Old Irish</title>
+					<imprint>
+						<publisher>Institute for Advanced Studies</publisher>
+						<pubPlace>Dublin</pubPlace> 
+						<date when="1946">1946</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b27">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Vandevort</surname>
+							<forename>E</forename>
+						</persName>
+					</author>
+					<title level="m">Nuer field notes</title>
+					<ref target="http://www.dlib.indiana.edu/collections/nuer">http://www.dlib.indiana.edu/collections/nuer</ref>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Yigezu</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<title level="a">The Nuer vowel system.</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of African Languages and Linguistics</title>
+					<imprint>
+						<date when="1995">1995</date>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="157" to="170"/>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

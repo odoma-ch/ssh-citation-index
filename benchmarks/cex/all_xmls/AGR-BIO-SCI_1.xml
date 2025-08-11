@@ -1,0 +1,1567 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Assessment of welfare indicators in dairy farms offering pasture at differing levels</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier BV</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-03-28">28 March 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">L</forename><surname>Armbrecht</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Animal Science</orgName>
+								<orgName type="institution">University of Göttingen</orgName>
+								<address>
+									<postCode>37075</postCode>
+									<settlement>Göttingen</settlement>
+									<country>Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">C</forename><surname>Lambertz</surname></persName>
+							<idno type="ORCID">0000-0001-7786-4163</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Faculty of Science and Technology</orgName>
+								<orgName type="institution">Free University of Bozen-Bolzano</orgName>
+								<address>
+									<postCode>39100</postCode>
+									<settlement>Bozen</settlement>
+									<country>Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">D</forename><surname>Albers</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Chamber of Lower Saxony</orgName>
+								<orgName type="department" key="dep2">Field Testing Station for Grassland Management and Cattle Farming</orgName>
+								<address>
+									<postCode>26121</postCode>
+									<settlement>Oldenburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">M</forename><surname>Gauly</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Faculty of Science and Technology</orgName>
+								<orgName type="institution">Free University of Bozen-Bolzano</orgName>
+								<address>
+									<postCode>39100</postCode>
+									<settlement>Bozen</settlement>
+									<country>Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Assessment of welfare indicators in dairy farms offering pasture at differing levels</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Animal</title>
+						<title level="j" type="abbrev">Animal</title>
+						<idno type="ISSN">1751-7311</idno>
+						<imprint>
+							<publisher>Elsevier BV</publisher>
+							<biblScope unit="volume">13</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="2336" to="2347"/>
+							<date type="published" when="2019-03-28">28 March 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">20EC77A13BF95045723FA8AA7130603E</idno>
+					<idno type="DOI">10.1017/s1751731119000570</idno>
+					<note type="submission">Received 23 February 2018; Accepted 1 March 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>dairy cows</term>
+					<term>pasture access</term>
+					<term>animal-based measures</term>
+					<term>animal health</term>
+					<term>welfare indicators</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In terms of animal welfare, farming systems of dairy cows are perceived positively by consumers when compared to pigs or poultry. A main reason is that the majority of consumers associate dairy farming with pasture, which in turn they relate with benefits for animal health and welfare. However, holistic scientific assessments of the effects of pasturing on animal welfare are rare. Hence, it was the aim to study the animal welfare level in 61 German loose housing dairy farms by using the measures of the Welfare Quality ® protocol for dairy cattle (WQP). Data were collected twice per farm at the end of the pasture season (July to October) and approximately 6 months later at the end of the barn season (December to April). Farms were classified based on the duration cows had access to pasture per day during the pasture season: group 1 (G1) &gt; 10 h; group 2 (G2) 6 to 10 h; group 3 (G3) &lt; 6 h and group 4 (G4) without pasture access. The average herd size was 129 Holstein-Friesian or Red-Holstein cows (range 58 to 527). In addition to WQP data, performance data were gathered from routine herd data recordings. The indicators were aggregated to criteria applying the scoring system of the WQP. G4 received lower scores at the first than at the second visit for the criterion absence of hunger, while there were no differences between visits in the other groups (P = 0.58group × farm visit effect). All pasturing groups were scored better at the end of the pasture season than G4 for the criterion comfort around resting (P &lt; 0.01). Compared with G1 for both farm visits and G2 for the end of the barn season, G4 reached inferior scores for the criterion absence of injuries, including indicators such as hairless patches, lesions, and swellings and lameness. At both assessments G2 was scored higher than the other groups for the criterion absence of diseases (P = 0.04). In conclusion, pasture access had positive effects only on selected welfare indicators, however, these effects were not maintained throughout the barn season.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>In Germany, only 15% to 30% of the dairy cows have access to pasture during summer months, which is much lower compared to neighboring countries such as Austria (68%) or Switzerland (80%) <ref type="bibr" target="#b30">(Weiß, 2014)</ref>. Averaged over Europe, the proportion of dairy cows with pasture access declined from 52% in 2008 to 35% in 2012 <ref type="bibr" target="#b23">(Reijs et al., 2013)</ref>. There are several reasons for the decrease of pasture access for dairy cows in Germany and many other European countries <ref type="bibr" target="#b27">(Van den Pol-Van Dasselar, 2015)</ref>. Driven by structural changes, dairy herd sizes continue to increase, which in turn, complicates the provision of adequate pasture areas near the milking parlor <ref type="bibr" target="#b4">(Burow et al., 2013b)</ref>. In addition, the substitution of concentrates with grassland is not attractive for many farmers from an economic point of view; grassland productivity is often underestimated, practical experience lacking and advisory services not focusing on the opportunities of pasture feeding <ref type="bibr" target="#b20">(Leisen, 2014)</ref>. Indoor housing of dairy cows allows the control of environmental factors including an adjusted feed supply. However, it is often accompanied with an increased prevalence of several diseases (i.e. mastitis, lameness) and the inability of the animals to perform natural behavior (i.e. locomotion, lying down and standing up motions, resting comfort) and to synchronize it <ref type="bibr" target="#b22">(Phillips et al., 2013)</ref>. In the current discussion about animal welfare in livestock farming, dairy cows are perceived positively when compared with other livestock species <ref type="bibr" target="#b31">(Weinrich et al., 2014)</ref>. This can be explained mainly by the fact, that the majority of consumers associate dairy farming with access to pasture, which in turn is related to benefits for animal health and welfare <ref type="bibr" target="#b30">(Weiß, 2014)</ref>. In comparison to indoor-housed cows, animals with access to pasture proved to be superior in terms of hoof health, locomotion ability <ref type="bibr" target="#b14">(Hernandez-Mendo et al., 2007)</ref> and other animal-based health parameters such as prevalence of mastitis <ref type="bibr" target="#b28">(Washburn et al., 2002)</ref>, mortality and integument alterations <ref type="bibr" target="#b3">(Burow et al., 2013a)</ref>. However, comparative overall on-farm assessments of the effects of pasture access on animal welfare compiled in the barn as well as on the pasture are very limited. For example, <ref type="bibr" target="#b7">De Graaf et al. (2017)</ref> applied the Welfare Quality ® assessment protocol (WQP; <ref type="bibr" target="#b32">Welfare Quality ® , 2012)</ref> in ten dairy farms with pasturing at the beginning and end of the barn season. Findings indicated a carry-over of positive effects of access to pasture to the beginning of the barn season. The WQP has been developed as an overall on-farm assessment tool including mainly animal-based measures, beside some indicators related to management and farm resources. Hence, it was the aim of the study to assess the welfare level applying the measures of the WQP in zero-grazing dairy farms and farms providing pasture access at differing levels.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Material and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Farm selection</head><p>Data were collected on 61 conventional cubicle loose housing dairy farms located in Lower Saxony, Germany. Farms were selected with the help of the chamber of agriculture in Lower Saxony. Selection criteria were a minimum herd size of 60 Holstein-Friesian or Red-Holstein dairy cows, cubicle housing and participation at routine herd data recording. A total of 82 farms in Lower Saxony that fulfilled these requirements were contacted by the chamber of agriculture and asked for their willingness to participate in this study, which was part of the joint research project 'Systemanalyse Milch'. Finally, 63 farms agreed to participate. After the first farm visit, two farms decided not to continue and data of these farms were not included in the further analysis. The remaining 61 farms were classified according to their pasture access per day: group 1 (G1) &gt; 10 h, group 2 (G2) 6 to 10 h, group 3 (G3) &lt; 6 h and group 4 (G4) without access to pasture. Pasture access in G1 to G3 was provided for at least 120 days per year. In 12 of the farms, cows had access to a concreted outdoor area. Cubicles were either straw-bedded (27 farms) or equipped with rubber mats (34 farms). The average number of cows per farm in the final set of farms was 141 (SD: 83, minimum: 55, maximum: 585). An equal distribution of herd sizes between the groups was intended during the selection process to reduce confounding effects of herd size. Mean energy-corrected milk (ECM) yield was 9 430 kg (SD: 892, minimum: 6 950, maximum: 11 460). Table <ref type="table" target="#tab_0">1</ref> presents detailed characteristics of the farms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data collection</head><p>Farms were assessed twice between July 2014 and April 2015, using the 32 animal-, management-and resource-based indicators as described in the WQP. The initial assessment was carried out from July to October 2014, when the cows in G1 to G3 had access to pasture. Approximately 6 months later (December 2014 to April 2015), the second assessment took place during the barn confinement season. The farm visits were randomized over the four pasture groups. One farm was assessed per day. All assessments were conducted by the first author. Before the study, an assessor, who previously had been trained by members of the WQP group, trained the first author for 5 days on dairy farms on the correct application of the WQP. Before the assessments for this study started, inter-observer reliability for any of the WQP measures between the trainer and the trained first author exceeded a κ coefficient of 0.80. Detailed definitions of all measures are given in Supplementary Table <ref type="table">S1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Timeline of Welfare Quality ® assessments</head><p>Each assessment started within 1 h after morning milking. After the cows left the milking parlor feed was provided at the feed bunk. The order of measures was carried out as stated in the WQP. The first assessment was the test of human avoidance distance. Cows were selected for sampling when animals were indoors and locked in the feeding rack and by choosing every nth animal in the row. Details on the sampling size, which depended on the herd size, are provided in Supplementary Table <ref type="table">S1</ref>. After the human avoidance distance test, cows were freed from the feeding rack in all farms and had access to pasture in groups G1 to G3. Qualitative Behavioral Assessment (QBA) was carried out 30 to 60 min later. QBA was then followed by the observations of social and lying behavior. For groups with pasture access, QBA, social and lying behavior was conducted in summer months on pasture, whenever weather conditions allowed, and indoors in winter. In total, 31 of the 45 farms with pasture access were assessed on the pasture on the first farm visit in summer (G1: 15 farms, G2: 9 farms, G3: 7 farms). Clinical scoring of animal-based indicators, which are described in detail below, was performed when the animals were in the barn or yard before the afternoon milking. Furthermore, the farmer was interviewed to collect data on farm resources and management routines. In addition to the WQP procedures, data on cubicle design, animalto-feeding place ratio and animal-to-cubicle ratio were recorded.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Assessment of animal-based indicators</head><p>The animal-based measures consisted of clinical indicators and behavioral measures, which were assessed applying the QBA, a human avoidance distance test and observations of the social and lying behavior. Depending on the total herd size of the respective farm, the clinical scoring and human avoidance distance test were conducted on samples ranging between 34 and 82 cows (details in Supplementary Table <ref type="table">S1</ref>). In total, 3 128 individual cows were scored for lameness, diseases, skin lesions, cleanliness and human avoidance distance during the first, and 3 226 during the second farm visit.</p><p>To measure the human avoidance distance, the observer approached the animal to be tested at the feed bunk from an initial distance of two meters. The observer started with an extended hand and approached the animal with a speed of one step per second. If the cow showed any sign of withdrawal, the avoidance distance was estimated between the hand and muzzle of the cow at the moment of the first sign of retraction. If the muzzle could not be touched, an avoidance distance of 10 to 200 cm was estimated in 10 cm intervals. For the QBA, the herd was divided into equally distributed segments (up to eight observation points) and was observed for a total of 20 min. The following adjectives were included in the QBA and assessed by a visual analogue scale: active, relaxed, fearful, agitated, calm, content, indifferent, frustrated, friendly, bored, playful, positively occupied, lively, inquisitive, irritable, uneasy, sociable, apathetic, happy and distressed. During a herd observation of 2 h, the number of coughs was recorded as well as lying-down movements and social behaviors assessed. For the lyingdown behavior, the number of animals, which lay down, the number that were lying in their cubicles, but with their hindquarters on the edge of the cubicle, as well as the number of animals lying outside of the lying area were counted. In addition, the time needed to lay down and collisions with the cubicle were recorded. At least six lyingdown movements were assessed per farm. The social behavior included the parameters fighting, chasing, displacing or head butting. For this assessment, the herd was divided into groups of maximum 25 animals. Assessment duration for each group was equal and summed up to 2 h. In large herds with more than 150 animals representative segments covering all areas of the barn were selected. This selection was necessary on one farm of G1, on three farms of G2 and G3 and on seven farms of G4.</p><p>The procedure of clinical scoring of the animals is provided by the WQP. For ease of assessment, only one side of the animal was examined. Measures included skin alterations, cleanliness of legs, udders, upper legs and flanks and indications of diseases like nasal, ocular or vulva discharges, increased respiratory rate and diarrhea. For integument alterations, the number of hairless patches, lesions and swellings was noted. These indicators were categorized as a binary variable (absent or present). A three-point scale was used for body condition score (0 = regular, 1 = very lean, 2 = very fat) and lameness (0 = not lame, 1 = slightly lame, 2 = severely lame).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Assessment of resource-and management-based indicators</head><p>Through a direct farmer interview, data on management routines (e.g. dehorning practices and the use of analgetics or anesthetics) were collected. Milk production data (i.e. yield, fat and protein percentage) were gathered from routine herd data recording. Other resource-and managementbased indicators including the length (in cm), quantity, functionality (water flow) and cleanliness of water troughs were assessed during the farm visit by the assessor.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis</head><p>The data for the WQP were calculated for each farm using an excel sheet provided by INRA. The single indicators were aggregated to criteria applying the WQP scoring system. The following linear mixed effects model was used to analyze the criteria and indicators:</p><formula xml:id="formula_0">Y ijkl = μ + A i + B j + A i B j + A i C k + C k ð ÞA i + D l + e ijklm</formula><p>where Y ijkl is the observed value of criteria/indicator, µ the overall average of sample, A i the fixed effect of group i (G1, G2, G3, G4), B j the fixed effect of farm visit j (1, 2), A i × B j the interaction between group i and farm visit j, A i × C k the interaction between group i and cubicle flooring k (deepbedded, rubber mat), (C k )A i the fixed effect of cubicle flooring k nested into group i, D l the herd size as covariate and e ijklm the residual error. Farm was included in the model as random effect. Except for the indicator ocular discharge, the interaction between group and cubicle flooring did not display an effect and was withdrawn from the final model. Data on milk production were analyzed with the same model including group as the only fixed effect. All statistical analyses were computed with SAS, version 9.3 (Statistical Analysis Systems, Cary, NC, USA) using the GLIMMIX procedure. Farm was defined as the statistical unit. Results were considered statistically significant at a probability of α &lt; 0.05. Differences between groups were assessed by applying the Tukey-Kramer test for unbalanced data. In order to approximate normal distribution, data of the criteria absence of hunger and absence of injuries were log-, of the indicators very lean cows and seriously lame cows were square-rootand of the criterion comfort around resting and the indicator no integument alterations were arcsin-transformed before analysis. For ease of interpretation, these transformed data are presented as back-transformed least square means in the tables and results section. As back-transformation of standard errors is not possible, they are not presented. For parameters that did not approximate normal distribution even after transformation (criteria: absence of thirst, emotional state, absence of pain, social behavior; indicators: cows with ocular discharge, cows lying outside lying area, cows with diarrhea, duration of lying down movement, downer cows, collisions with cubicles, cows with severe alterations, cows with mastitis, dirty cows (leg, udder, flank), cows avoidance distance &gt;100 cm), either Poisson or binomial distribution within the GLIMMIX procedure were applied to calculate P-values.</p><p>Groups were compared for cubicle flooring using the Fisher's exact test (FREQ procedure). For herd size, milk yield and composition the Tukey-Kramer post-hoc test (GLIMMIX procedure) was applied considering farm as random effect.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Farm characteristics</head><p>As presented in Table <ref type="table" target="#tab_0">1</ref>, herd sizes in G4 averaged 181 cows while those in the pasture groups averaged 104 to 126 cows. The variation within groups was large. Groups with more than 6 h pasture access (G1, G2) showed lower ECM than the groups G3 and G4 (P &lt; 0.01). Protein content was not different between groups and averaged 3.35% to 3.40%. For fat content group averages varied between 3.98% and 4.12%. The distribution of deep-bedded and rubber matequipped cubicles differed between groups (P &lt; 0.01, χ2 test); whereas those in farms with pasture access were predominantly equipped with rubber mats and those in farms without pasture were mainly deep-bedded. The animal-tofeeding place ratio was above 1.20 for all farms with pasturing and averaged 1.06 for G4-farms. Variations between groups for the animal-to-cubicle ratio were lower (1.04 to 1.14). Except for two farms with automatic milking systems, all other farms had a milking parlor.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Welfare criteria</head><p>For the criterion absence of hunger G4 received lower scores at the first compared with the second farm visit in winter, while there were no differences between visits in the other groups (P = 0.58group × farm visit effect, Table <ref type="table" target="#tab_1">2</ref>). Scores were lower for cubicles with rubber mats (41.43 ± 3.11) than in deep-bedded ones (49.66 ± 3.28, P = 0.04). The criterion absence of thirst did not differ between groups (P = 0.09) or farm visits (P = 0.72). An effect of group (P &lt; 0.01), farm visit (P = 0.02) and its interaction (P &lt; 0.01) was found for the criterion comfort around resting. In summer, G1 received a higher score than all other groups. While G1 scores were higher in summer, it was vice versa for G4. At the end of the barn season, the level was similar among G1 and G4 concerning this criterion. As there is still no measure for thermal comfort identified in the WQP and all studied farms reached the maximum points for ease of movement, given that only loose housing farms were studied, both criteria are not presented in Table <ref type="table" target="#tab_1">2</ref>. Groups with more intensive pasturing (G1 for both farm visits and G2 after the barn season) showed better results than G4 for the criterion absence of injuries (P &lt; 0.01). In cubicles with rubber mats (40.24 ± 1.98) lower scores regarding this criterion were found than in deep-bedded cubicles (49.72 ± 2.09, P &lt; 0.01).</p><p>Absence of diseases showed differences between the groups (P = 0.04) but not between visits (P = 0.45) nor an interaction between group and farm visit (P = 0.26). G2 showed higher scores than the other three groups at both assessments. As another important criterion, absence of pain was rated better in G1 and G2 than in G4 (P = 0.02group effect). Neither of the tested effects affected the criteria social behavior (P = 0.76group effect). Of all tested effects, emotional state (aggregation of QBA) was only affected by cubicle design with higher scores for deep-bedded than for cubicles with rubber mats (P = 0.05). Group affected humananimal relationship (P = 0.05) with highest scores in G4.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Welfare indicators</head><p>Table <ref type="table" target="#tab_2">3</ref> presents results at the level of WQP indicators. The proportion of very lean animals was higher during summer compared with winter months over all groups (P = 0.02farm visit effect). Dirty water troughs were only observed during summer, whereas G1 were the worst with 20% of farms having dirty water troughs. Animals of all groups needed more time to lay down in winter than in summer months (P &lt; 0.01farm visit effect). Except for G1, animals were less clean in summer than in winter (P &lt; 0.01group × farm visit effect). When further differentiating into body parts, dirty legs occurred more frequently in summer than in winter months in all groups (84.76 ± 2.45 v. 31.61 ± 2.45, P &lt; 0.01farm visit effect), while there were no differences for dirty udders (10.39 ± 1.23 v. 7.87 ± 1.23, P = 0.13). G3 and G4 showed less dirty legs in the winter months than G1 and G2 (P &lt; 0.01group × farm visit effect). The indicator dirty flanks showed a reduced prevalence in summer compared to winter months (34.39 ± 2.36 v. 47.75 ± 2.36, P &lt; 0.01farm visit effect). For cubicles with rubber mats, there was a higher percentage of animals with dirty flanks, udders and legs than for deep-bedded cubicles (42.20 ± 1.65 v. 30.06 ± 1.55, P &lt; 0.01).</p><p>Biased by the fact, that out of the 45 farms with pasture access in G1 to G3, 31 farms were assessed on the pasture during the summer assessment, the percentage of lying outside of their designated lying area increased steadily from 0% in G1 farms to more than 12% in G4. In winter, when all animals were assessed indoors, this percentage ranged from 2.2% in G2 to 5.3% in G4. The indicator collisions with the housing equipment is biased by the same effect. At a rate of 18.7% (G4) to 23.5% (G1) cows collided with cubicle when lying down at the winter assessment. In summer, this percentage was 37.3 in G4.</p><p>The prevalence of slightly lame animals was affected by a group effect (P &lt; 0.01) and the interaction between group and farm visit (P = 0.03). In detail, an increase of slightly lame cows in G1 from summer to winter but no remarkable change in the other groups was observed. G1 and G2 indicated significantly less slightly lame cows than G4 after the pasture season. Seriously lame animals were most often found on G4-and least on G1-farms (P = 0.01group effect). In addition, the percentage was higher for cubicles with rubber mats than for deep-bedded cubicles (8.69 ± 0.60 v. 6.23 ± 0.69, P &lt; 0.04). Animals with severe integument alterations were observed at higher prevalence in G3 and G4 (P &lt; 0.01) compared to G1 and G2. Severe integument alterations occurred more often in summer than in winter in groups G3 and G4, while no difference between visits was found for the other two groups (P &lt; 0.01group × farm visit effect). In cubicles with rubber mats prevalence of this indicator was higher than in deep-bedded cubicles (18.07 ± 1.13 v. 10.69 ± 1.30, P &lt; 0.01). Animals with hairless patches were observed at lower prevalence in G1 com- pared to G3 and G4. The indicator hairless patches (P = 0.39) did not differ between farm visits, but more hairless patches were found when cubicles were equipped with rubber mats than in deep-bedded ones (58.74 ± 2.44 v. 42.79 ± 2.57, P &lt; 0.01).</p><p>Nasal discharge occurred more often in summer than in winter months (P &lt; 0.01farm visit effect) and more often in G1, G3 and G4 than in G2 (P &lt; 0.01group effect). The group (P &lt; 0.01), farm visit (P &lt; 0.01) as well as their interaction (P &lt; 0.01) affected the indicator ocular discharge. In summer, the percentage of animals with ocular discharge decreased steadily from G1 (29.2%) to G4 (9.9%), while in winter the variation was lower ranging from 5.6% (G2) to 8.1% (G4), which differed only slightly from the summer value of this group. Ocular discharge was the only indicator for which an interaction of group and cubicle design was found (P &lt; 0.01). In detail G1, G3 and G4 had a higher percentage of animals with ocular discharge in farms with deepbedded than with rubber mat-equipped cubicles, while it was vice versa in G2.</p><p>Independent of the group (P = 0.41), more than half of the animals were found with diarrhea in summer and approximately one-fifth in winter (P &lt; 0.01farm visit effect). Regarding G1 and G2, the mastitis rate was significantly lower in summer than in winter (P = 0.04group × farm visit effect). In summer, the prevalence was lower when more pasture access was provided. In all groups, anesthetics and analgetics were used more often at the second than at the first visit in summer.</p><p>The frequency of agonistic behaviors was very low in all four groups and was not affected by any of the effects included in the statistical model (P &gt; 0.05). Similarly, only a small proportion of the animals had an avoidance distance of over 100 cm. Independent of farm visit (P = 0.07) or its interaction (P = 0.69), G1 and G3 showed a higher percentage of animals with an avoidance distance between 50 and 100 cm at the end of the pasture season when compared with G4 (P = 0.03group effect). Most of the animals (37% to 49% of the cows) showed an avoidance distance of under 50 cm, without being affected by any of the tested effects.</p><p>Values for hampered respiration, frequency of coughing, vulvar discharge, mortality and dystocia were low at both visits.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>In the WQP the duration of pasture access is used as a measure for the criterion expression of other behaviors and is rated high in the calculation of the overall farm welfare status. If farms provide access for more than 6 h per day, they are scored based on the number of days/year and hours/day on pasture, while farms with less than 6 h pasture access per day receive zero points. For the purpose of this study, it was consequently not plausible to include this measure, because pasture access depended on the study design. Consequently, results are presented at criteria and indicator level, without aggregating data to principle level or overall classification.</p><p>Holistic welfare assessments using the WQP of dairy cows comparing different housing systems are still rare. The protocol was used in studies of <ref type="bibr" target="#b12">Gieseke et al (2018)</ref>, <ref type="bibr" target="#b7">De Graaf et al. (2017</ref> <ref type="bibr" target="#b6">and 2018)</ref>, <ref type="bibr" target="#b1">Andreasen et al. (2013)</ref>, <ref type="bibr" target="#b13">Heath et al. (2014)</ref> and <ref type="bibr" target="#b8">De Vries et al. (2013)</ref> to assess the welfare status of dairy cows with different research objectives. Effects of pasture access are still widely unknown. For example, <ref type="bibr" target="#b7">De  Graaf et al. (2017)</ref> applied the protocol after the pasture season and at the end of the barn season, while assessing all measures in the barn. The authors found carry over effects of pasture access even after months of the barn season. In another study, <ref type="bibr" target="#b3">Burow et al. (2013a)</ref> investigated the welfare of dairy cows with another multi-dimensional research method to compare pasture grazing and whole year indoor housing. Similar with the results of the present study, the welfare state of the cows was higher during summer grazing than during winter indoor housing. The authors related enhanced welfare with an increase in daily hours on pasture during the summer months. Considering the clear preference of high-yielding dairy cows for pasture <ref type="bibr" target="#b21">(Motupalli et al., 2014)</ref>, it becomes obvious that efficient pasturing systems is among others one feasible way to improve welfare of dairy cows.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Limitations of the study</head><p>The objective of this study was to assess the effect of pasture access on welfare indicators in conventional dairy farms using WQP as a holistic on-farm assessment tool. Though the protocol has been used for several years, its implementation in dairy research is still very limited. Previous studies revealed critiques on the assessment of the measures as such and aggregation procedures. For example, <ref type="bibr" target="#b7">De Graaf et al. (2017)</ref> recommended using two observers at the same time to avoid any influence of observer bias. In the present study, all assessments were conducted by the same person to at least reduce inter-observer bias. Following <ref type="bibr" target="#b26">Tuyttens et al. (2014)</ref>, QBA, representing a substantial measure of the WQP, is at high risk for involuntary subjective assessment of animal's behavior. In the present study, this might have been impacted by the fact that QBA was assessed on pasture for most of the G1, G2 and G3 farms at the first visit. As another weakness of the protocol the time-consuming assessment procedures with 6 to 8 h per farm is often criticized <ref type="bibr" target="#b1">(Andreasen et al., 2013)</ref>.</p><p>Regarding the aggregation procedures, <ref type="bibr" target="#b8">De Vries et al. (2013)</ref> and <ref type="bibr" target="#b13">Heath et al. (2014)</ref> criticized that the calculated WQP scores are very sensitive to certain measures, especially the water supply of the animals. On the one hand, water intake of a cow is related with the number and size of drinkers in herds, which is assessed in the WQP, but it is on the other, also influenced by various other factors that are not recorded. In agreement, <ref type="bibr" target="#b6">De Graaf et al. (2018)</ref> found a relatively large impact of the measurements regarding water supply and questioned the prescribed resource-based measures. They suggested direct measures of thirst using animal-based indicators. This may, however, require time-and cost-intensive blood analyses.</p><p>In contrast, other measures, particularly regarding cow health, were not sensitive enough <ref type="bibr" target="#b8">(De Vries et al., 2013;</ref><ref type="bibr" target="#b13">Heath et al., 2014)</ref>. Exemplarily, <ref type="bibr" target="#b8">De Vries et al. (2013)</ref> argued that due to compensating mechanisms during the WQP aggregation process the indicator lameness lacked enough weight to affect scores of the criterion absence of injuries. Likewise, the aggregation process of the criterion absence of disease is not absolutely coherent as the measure of mastitis is converted into an ordinal score. As a result, farms with 27% of the cows having a somatic cell count &gt;400 000 cells/ml receive the same score than farms with only 5% of the cows exceeding this threshold.</p><p>The benefits of WQP measures are that they generally have good repeatability on repeated farm assessments after weeks and months as shown by <ref type="bibr" target="#b11">Forkman and Keeling (2009)</ref>. The main advantage of the WQP, the large proportion of animal-based welfare measures, was attributed by <ref type="bibr" target="#b8">De Vries et al. (2013)</ref> and <ref type="bibr" target="#b26">Tuyttens et al. (2014)</ref>. Animal-based measures are preferred over resource-based measures because they are believed to be more directly linked to the true welfare status of animals.</p><p>With the aim of the present study to assess the effect of pasturing at differing levels in mind, it must be considered that for most of the farms that provided access to pasture several measures were measured outdoors at the first visit, even though animals were outside only part of the day. This especially holds true for the measures lying outside of their designated lying area, collisions with the housing equipment and the duration of lying down movements. For future studies it should be considered to weight assessments in-and outdoors based on the duration animals have access to pasture. Either some indicators may solely be assessed on pasture and others in the barn or all indicators are partly assessed in the barn and partly on pasture. Nevertheless, both further complicate WQP assessments and may outweigh benefits of this strategy.</p><p>In the present study, farms were classified by their daily duration of pasture access and compared to zero-grazing farms. In all classes the variation in herd size as well as milk yield was high and the sampled farms can be assumed to be representative of conventional loose housing dairy farms in Central Europe. However, a major limitation of this study is that pasture access was confounded with other factors that influence welfare but which are not assessed within WQP. One of these factors is the milk yield, which was around 500 kg ECM lower in the two groups with most intensive pasture access compared with the other two groups. Our results did not show any relationship between milk yield and animal welfare, comparable to the results of <ref type="bibr" target="#b5">Coignard et al. (2013)</ref> who did not find associations between milk yield and WQP results in commercial French dairy herds. However, other studies pointed out that there are direct effects of milk yield on the prevalence of several diseases in dairy cows <ref type="bibr" target="#b10">(Fleischer et al., 2001)</ref> or indirect effects like metabolic disorders resulting in the necessary use of more concentrates in the fodder to generate a high milk yield <ref type="bibr" target="#b17">(Knaus, 2009)</ref>.</p><p>As none of the farmers practiced seasonal calving, an equal distribution of lactation stages at the time of welfare assessment can be assumed. To minimize other confounding effects farmers were instructed that any specific interference, for example, claw trimming or re-grouping, should be avoided and farms were not assessed when the veterinarian did any animal treatments the day before the assessment. Another limitation, which has to be taken into account, is that animals on farms with pasture access were partly assessed on pasture during the summer visit where some measures such as lying outside of their designated lying area or collisions with the housing equipment needs a more differentiated approach. Despite the different environments (barn and pasture), the measurement of the associated indicators followed the procedure as described in the WQP in order to ensure comparability with other studies. The time the cows needed to lay down was measured in the same way, regardless of whether the cows were in-or outdoor. Results for the indicator collisions with the cubicles are biased when the assessments were done on pasture and are therefore only valid for assessments at the end of the barn season. Nevertheless, it has to be acknowledged that there is no risk of collisions with cubicles when cows are on pasture. Likewise, the indicator lying outside the designated lying area is only valid for the second farm visit.</p><p>All assessments were performed as objectively as possible, though changing weather and environmental conditions must be considered as additional influencing factor when comparing to WQP assessments that were solely conducted indoors. This especially holds true for indicators such as QBA and social behavior. On pasture, the cows had more space to realize their individual human avoidance distance; hence there could be less negative social contacts and more natural behavior due to soft and non-slip underground and environmental stimuli. Perhaps the assessments of emotional state and social behavior, which did not show significant differences in this study, might have shown different results if all farms of G2 and G3 had been assessed on the pasture. Nevertheless, effects of pasture in this study cannot only be derived from group comparisons, but also from comparisons between the assessments at the end of the pasture and barn season within the groups.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion absence of hunger</head><p>Suboptimal environmental conditions during summer months with heat stress conditions in barns of G4 on the one hand, and pastures that do not meet the requirements of high-yielding cows in the pasture groups on the other, may explain why body condition was worse in all groups in the present study in summer compared with winter. The larger differences of the body condition between summer and winter in groups with access to pasture (G1, G2 and G3), however, reflects the importance of an optimized pasture management. Results are in wide agreement with <ref type="bibr" target="#b3">Burow et al. (2013a)</ref> who found a worse body condition in pasturing cows during summer, compared with winter months when assessing 41 Danish dairy farms with cubicle housing and access to pasture for at least 120 days per year for at least 5 h daily. <ref type="bibr" target="#b28">Washburn et al. (2002)</ref> and <ref type="bibr" target="#b14">Hernandez-Mendo et al. (2007)</ref> also reported that pasturing is associated with problems for high yielding cows, especially in terms of body condition.</p><p>Problems with body condition can be mainly explained by suboptimal pasture management or by the use of the high yielding and at the same time high-quality feed requiring Holstein-Friesian breed, which is not optimally adapted to pasture feeding <ref type="bibr" target="#b24">(Thomet et al., 2014)</ref>. Consequently, pasturing systems for these animals require optimal feed supplementations, while high pasture quality has to be maintained.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion comfort around resting</head><p>For this criterion, it has to be considered that the assessment of the lying conditions, generally took place on pasture in G1, and on most farms of G2 and G3. On the 14 farms in G2 and G3, where the farmers decided to leave the cows in the barn for the day of the WQP assessment due to the weather conditions, results might have been different if the animals would have been assessed on pasture like the other farms of these two groups as well. Lying conditions are supposed to be more appropriate on the pasture than in cubicles, where lying and resting is impeded <ref type="bibr" target="#b18">(Krohn and Munksgaard, 1993)</ref>. In winter, when all cows were housed indoors, groups did not differ. Thus, it can be assumed that better scores for comfort around resting for the groups with pasture access in summer were mainly attributed to the availability of pasture, next to other factors such as the flooring, cleanliness of floors and cubicles or cubicle design.</p><p>The lower percentage of dirty flanks in farms with deepbedded cubicles than with rubber mat-equipped cubicles in this study is supported by results of <ref type="bibr" target="#b15">Kanswohl and Sanftleben (2006)</ref>, where additional litter of chopped straw on the rubber mats was provided and barns were equipped with mechanical cow brushes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion absence of injuries</head><p>This study as well as previous studies of <ref type="bibr" target="#b14">Hernandez-Mendo et al. (2007)</ref> indicated that pasture access in summer has a positive effect on lameness and can help the cows to recover hoof and leg injuries from the barn season. The high prevalence of claw diseases, recently found by <ref type="bibr" target="#b2">Armbrecht et al. (2018)</ref> in selected farms of the present study, highlights the importance of claw health as a welfare problem. In the cited study, a positive effect of pasture was found for claw diseases that are related to moist environments, though a greater effect might be attributed to free-stall design and claw trimming routine. This effect was probably reflected in the present study by the lower prevalence of slightly and severely lame animals of the pasture groups during the summer assessment. The finding that this was not substantiated throughout the barn season again points to the fact that cubicle design and management routines may be more important for animal welfare than just the access to pasture, because the positive effects of pasture could not be maintained until the end of the barn season <ref type="bibr" target="#b7">(De Graaf et al., 2017)</ref>. The positive effect of pasture on lameness may be mainly related to the prevention of strained joints and of excessive growth of poor claw horn because of the soft ground <ref type="bibr" target="#b0">(Algers et al., 2009)</ref>.</p><p>However, despite group differences in less severe integument alterations for groups with more than 6 h pasture access, there was also an interaction effect of group and farm visit. Only G1 showed less severe integument alterations in summer compared with winter, while it was vice versa and at a higher prevalence level in G3 and G4. Comparable to this study, decreasing prevalence of integument alterations, hair loss, lesions and swellings with increasing intensity of pasture were demonstrated by <ref type="bibr" target="#b4">Burow et al. (2013b)</ref>. Cows with 3 to 9 h on pasture showed a 2.2 times and cows with 9 to 21 h showed a 4.8 times lower probability of integument alterations, than cows without access to pasture. The soft underground and the extra space availability are main explanations for the reduced prevalence of injuries. In cubicles, there is a higher risk of injuries compared to the pasture, because of collisions with the barn interior or abrasions of tarsal joints on rubber mats <ref type="bibr" target="#b29">(Wechsler et al., 2000)</ref>. This is highlighted by the fact that for almost 40% of the lying down movements, cows in the zero-grazing group collided with the barn interior during the summer assessment. In this context, the fact that there is no risk of colliding with cubicles when cows are pasturing has to be acknowledged as an important benefit of pasturing. With regard to the cubicle design, findings are in line with those of <ref type="bibr" target="#b9">Dippel et al. (2009)</ref>, who attributed a better lying comfort and a lower risk for lameness and/or claw lesions to deep-bedded in comparison to mats/mattresses.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion absence of disease</head><p>With regard to the indicator diarrhea, it remains questionable whether loose watery manure, which may be caused by diets without appropriate crude fiber contents or by excessive protein contents of the grass on pasture, should be classifiedas done in the WQPat the same level with diarrhea caused by bacterial or viral infection. The prevalence of diarrhea was twice as high in summer than in winter in all four groups. <ref type="bibr" target="#b3">Burow et al. (2013a)</ref> also showed worse feces consistency during summer months. The critical threshold for the indicator diarrhea, as stated in the WQP (&gt;6.5% of the herd), was exceeded by all farms in this study. This emphasizes that all assessed farms should aim to minimize its occurrence.</p><p>In agreement with the present study, <ref type="bibr" target="#b33">White et al. (2002)</ref> found that lactating cows without access to pasture showed a higher prevalence of mastitis. Moreover, <ref type="bibr" target="#b28">Washburn et al. (2002)</ref> verified that cows without pasture access had 1.8 times as many clinical cases of mastitis and were eight times more frequently culled because of mastitis, compared to cows with access to pasture.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion absence of pain</head><p>In all groups, obviously more farms used anesthetics and analgetics for dehorning at the second visit, which mainly resulted from a decree from the Lower Saxony Ministry of Food, Agriculture and Consumer Protection. Following this decree, farmers have to use anesthetics and analgetics for dehorning since June 2015. Even though this might have biased results to some degree, regulations were implemented at a comparable rate in all groups.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion emotional state</head><p>The criterion is composed of the aggregated scores of the QBA, which can be referred to as a reliable method for the assessment of an animal's behavior <ref type="bibr" target="#b11">(Forkman and Keeling, 2009)</ref>; even though <ref type="bibr" target="#b26">Tuyttens et al. (2014)</ref> indicated that the observer bias influenced results of the QBA. Overall, differences between groups or seasons were not detected in this study. Nevertheless, there is still no other validated method to assess multiple behavioral signals and behavioral expression of animals, which could substitute QBA in the protocol.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Criterion thermal comfort</head><p>There is still no indicator for the criterion thermal comfort as an assessment of the housing conditions in the WQP. However, heat stress conditions during summer months may impair welfare on pasture and in barns alike. First reports already indicate heat stress effects in dairy cows in the studied region <ref type="bibr" target="#b19">(Lambertz et al., 2014)</ref>. The provision of shade, for example, is an important factor of an optimized pasture management due to reduced heat stress <ref type="bibr" target="#b16">(Kendall et al., 2006)</ref> and protection against solar radiation <ref type="bibr" target="#b25">(Tucker et al., 2008)</ref>. Therefore, the provision of shade on pasture and cooling systems in barns is warranted to be assessed in future studies on the effects of pasture access on welfare.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>For a number of important animal-based indicators, such as slightly and seriously lame cows, hairless patches and severe alterations, cows with access to pasture were scored superior to animals housed indoor year-round. The level of pasturing, however, did not show a consistent effect for these indicators. Neither of the pasture groups showed a difference to zerograzing farms at the end of the barn season, in which cows of all groups were kept under comparable indoor housing conditions.</p><p>Only extended pasturing of at least 10 h/day can be associated with benefits for the criteria comfort around resting and absence of injuries. As the majority of the animals even in farms with pasturing spent most of the time indoors, herd management and housing conditions (e.g. cubicle design) are most important to increase animal welfare. Negative aspects of pasture access in terms of the criterion human-animal relationship highlights the importance of improving animal handling to further exploit potential welfare benefits of pasturing.</p><p>Findings are limited by the potential effect of confounding factors such as an unequal distribution of cubicle flooring in the four groups, different milk yields, and the fact that assessments in farms with pasturing were done in-as well as outdoors. In future studies evaluating the effects of pasture on welfare, other important pasture management factors, such as the provision of shade and/or cooling systems and distance and condition of walkways to pasture areas, need to be assessed in addition to the measures defined in the WQP.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Characteristics (herd size, energy-corrected milk yield (ECM), protein and fat percentage, cubicle design, animal-to-feeding place ratio and animal-to-cubicle ratio) of 61 dairy cattle farms with &gt;10 h (G1, n = 15 farms), 6 to 10 h (G2, n = 15 farms), &lt;6 h of pasture access/day (G3, n = 15 farms) or without pasture access (G4, n = 16 farms) (LS means ± standard error, minimum to maximum in brackets)</figDesc><note><p>Values within a row with different superscripts differ signiﬁcantly at P &lt; 0.05 (Tukey–Kramer test).</p></note><note><p>Values within a row do not differ at P &lt; 0.05 (Tukey–Kramer test).</p></note><note><p>Distribution of cubicle ﬂooring differs between groups P &lt; 0.05 (Fisher’s exact test).</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Results of the Welfare Quality ® assessments at the level of criteria during pasture (visit 1, summer 2014) and barn season (visit 2, winter 14/15) for dairy cattle farms with > 10 h (G1, n = 15 farms), 6 to 10 h (G2, n = 15 farms), &lt;6 h of pasture access/day (G3, n = 15 farms) or without pasture access (G4, n = 16 farms) (back-transformed LS means, minimum to maximum in brackets)</figDesc><note><p>Values within a row with different superscripts differ significantly at P &lt; 0.05 (Tukey-Kramer test).</p></note><note><p>Criteria thermal comfort, ease of movement, expression of other behaviors were not shown.</p></note><note><p>Degrees of freedom for each variable = 51.</p></note><note><p>a. = around.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Selected results of Welfare Quality ® assessments at indicator level during pasture (visit 1, summer 2014) and barn season (visit 2, winter 14/15) of dairy cattle farms with &gt;10 h (G1, n = 15 farms), 6 to 10 h (G2, n = 15 farms), &lt;6 h of pasture access/day (G3, n = 15 farms) or without pasture access (G4, n = 16 farms) (back-transformed LS means, minimum to maximum in brackets)</figDesc><note><p>n.t. = not tested owing to lack of fulﬁllment of model assumptions.</p></note><note><p>Values within a row with different superscripts differ signiﬁcantly at P &lt; 0.05 (Tukey–Kramer test)</p></note><note><p>Cleanliness and functioning of water points, presence of tethering, access to outdoor loafing area, hampered respiration, vulvar discharge, tail docking and access to pasture are not presented in this table.</p></note><note><p>Degrees of freedom for each variable = 51.</p></note><note><p>movem. = movement.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>The study was supported by the Ministry for Science and Culture of Lower Saxony (MWK) within the collaborative research project SAM, Analysis of Dairy Production: Grazing v. Indoor Housing of Dairy Cows, Support Code: ZN 2864. Furthermore, the authors would like to acknowledge Daniel Gieseke for his support during data collection and indeed the farmers who took part in the study.</p></div>
+			</div>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of interest</head><p>The authors declare that they have no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethics Statement</head><p>The authors confirm that the ethical policies of the journal, as noted on the journal's author guidelines page, have been adhered to. No ethical approval was required as non-invasive procedures were carried out in this study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Software and data repository resources</head><p>None of the data were deposited in an official repository.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplementary material</head><p>To view supplementary material for this article, please visit <ref type="url" target="https://doi.org/10.1017/S1751731119000570">https://doi.org/10.1017/S1751731119000570</ref> </p></div>			
+			</div>
+			<div type="references">
+
+				<listBibl>
+	
+		<biblStruct type="article" xml:id="b0">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Algers</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Bertoni</surname>
+						<forename>G</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Broom</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hartung</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lidfors</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Metz</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Munksgaard</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Pina</surname>
+						<forename type="first">T</forename><forename type="middle">N</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Oltenacu</surname>
+						<forename>P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rehage</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rushen</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<title level="a">Scientific report on the effects of farming systems on dairy cow welfare and disease</title>
+			</analytic>
+			<monogr>
+				<title level="j">Annex to the EFSA Journal</title>
+				<imprint>
+					<date when="2009">2009</date>
+					<biblScope unit="volume">1143</biblScope>
+					<biblScope unit="page" from="114" to="284"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b1">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Andreasen</surname>
+						<forename type="first">S</forename><forename type="middle">N</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Wemelsfelder</surname>
+						<forename>F</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sandoe</surname>
+						<forename>P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Forkman</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<title level="a">The correlation of qualitative behavior assessments with Welfare Quality® protocol outcomes in on-farm welfare assessment of dairy cattle</title>
+			</analytic>
+			<monogr>
+				<title level="j">Applied Animal Behaviour Science</title>
+				<imprint>
+					<date when="2013">2013</date>
+					<biblScope unit="volume">143</biblScope>
+					<biblScope unit="page" from="9" to="17"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b2">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Armbrecht</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lambertz</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Albers</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Gauly</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<title level="a">Does access to pasture affect claw condition and health in dairy cows?</title>
+			</analytic>
+			<monogr>
+				<title level="j">Veterinary Record</title>
+				<imprint>
+					<date when="2018">2018</date>
+					<biblScope unit="volume">182</biblScope>
+					<biblScope unit="page" from="79" to="79"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b3">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Burow</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rousing</surname>
+						<forename>T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Thomsen</surname>
+						<forename type="first">P</forename><forename type="second">T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Otten</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sørensen</surname>
+						<forename type="first">J</forename><forename type="second">T</forename>
+					</persName>
+				</author>
+				<title level="a">Effect of grazing on the cow welfare of dairy herds evaluated by a multidimensional welfare index.</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal</title>
+				<imprint>
+					<date when="2013">2013a</date>
+					<biblScope unit="volume">7</biblScope>
+					<biblScope unit="page" from="834" to="842"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b4">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Burow</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Thomsen</surname>
+						<forename type="first">P</forename><forename type="second">T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rousing</surname>
+						<forename>T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sørensen</surname>
+						<forename type="first">J</forename><forename type="second">T</forename>
+					</persName>
+				</author>
+				<title level="a">Daily grazing time as a risk factor for alterations at the hock joint integument in dairy cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal</title>
+				<imprint>
+					<date when="2013">2013b</date>
+					<biblScope unit="volume">7</biblScope>
+					<biblScope unit="page" from="160" to="166"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b5">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Coignard</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Guatteo</surname>
+						<forename>R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Veissier</surname>
+						<forename>I</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lehébel</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hoogveld</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Mounier</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Bareille</surname>
+						<forename>N</forename>
+					</persName>
+				</author>
+				<title level="a">Does milk yield reflect the level of welfare in dairy herds?</title>
+			</analytic>
+			<monogr>
+				<title level="j">The Veterinary Journal</title>
+				<imprint>
+					<date when="2013">2013</date>
+					<biblScope unit="volume">199</biblScope>
+					<biblScope unit="page" from="184" to="187"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b6">
+			<analytic>
+				<author>
+					<persName>
+						<surname>De Graaf</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Ampe</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Buijs</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Andreasen</surname>
+						<forename type="first">S</forename><forename type="middle">N</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>De Boyer des</surname>
+						<forename>R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>van Eerdenburg</surname>
+						<forename type="first">F</forename><forename type="middle">J</forename><forename type="middle">C</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Haskell</surname>
+						<forename type="first">M</forename><forename type="middle">J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Kirchner</surname>
+						<forename type="first">M</forename><forename type="middle">K</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Mounier</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Radeski</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Winckler</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Bijttebier</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lauwers</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Verbeke</surname>
+						<forename>W</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Tuyttens</surname>
+						<forename type="first">F</forename><forename type="middle">A</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<title level="a">Sensitivity of the integrated Welfare Quality® scores to changing values of individual dairy cattle welfare measures</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal Welfare</title>
+				<imprint>
+					<date when="2018">2018</date>
+					<biblScope unit="volume">27</biblScope>
+					<biblScope unit="page" from="157" to="166"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b7">
+			<analytic>
+				<author>
+					<persName>
+						<surname>De Graaf</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Ampe</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Tuyttens</surname>
+						<forename type="first">F</forename><forename type="middle">A</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<title level="a">Assessing dairy cow welfare at the beginning and end of the indoor period using the Welfare Quality® protocol.</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal Welfare</title>
+				<imprint>
+					<date when="2017">2017</date>
+					<biblScope unit="volume">26</biblScope>
+					<biblScope unit="page" from="213" to="221"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b8">
+			<analytic>
+				<author>
+					<persName>
+						<surname>De Vries</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Bokkers</surname>
+						<forename type="first">E</forename><forename type="middle">A</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>van Schaik</surname>
+						<forename>G</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Boltreau</surname>
+						<forename>R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Engel</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Dijkstra</surname>
+						<forename>T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>de Boer</surname>
+						<forename type="first">I</forename><forename type="middle">J</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<title level="a">Evaluating results of the Welfare Quality multi-criteria evaluation model for classification of dairy cattle welfare at the herd level</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2013">2013</date>
+					<biblScope unit="volume">96</biblScope>
+					<biblScope unit="page" from="1" to="10"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b9">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Dippel</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Doleza</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Brenninkmeyer</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Brinkmann</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>March</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Knierim</surname>
+						<forename>U</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Winckler</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<title level="a">Risk factors for lameness in cubicle housed Austrian Simmental dairy cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Preventive Veterinary Medicine</title>
+				<imprint>
+					<date when="2009">2009</date>
+					<biblScope unit="volume">90</biblScope>
+					<biblScope unit="page" from="102" to="112"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b10">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Fleischer</surname>
+						<forename>P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Metzner</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Beyerbach</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hoedemaker</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Klee</surname>
+						<forename>W</forename>
+					</persName>
+				</author>
+				<title level="a">The relationship between milk yield and the incidence of some diseases in dairy cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2001">2001</date>
+					<biblScope unit="volume">84</biblScope>
+					<biblScope unit="page" from="2025" to="2035"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b11">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Forkman</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Keeling</surname>
+						<forename type="first">L</forename><forename type="middle">J</forename>
+					</persName>
+				</author>
+				<title level="a">Assessment of animal welfare measures for dairy cattle, beef bulls and veal calves</title>
+			</analytic>
+			<monogr>
+				<title level="m">Welfare Quality® Reports</title>
+				<imprint>
+					<date when="2009">2009</date>
+					<biblScope unit="volume">11</biblScope>
+					<biblScope unit="page" from="297" to="297"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b12">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Gieseke</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lambertz</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Gauly</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<title level="a">Relationship between herd size and animal welfare in dairy cattle</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2018">2018</date>
+					<biblScope unit="volume">101</biblScope>
+					<biblScope unit="page" from="1" to="15"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b13">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Heath</surname>
+						<forename type="first">C</forename><forename type="middle">A</forename><forename type="last">E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Browne</surname>
+						<forename type="first">W</forename><forename type="middle">J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Mullan</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Main</surname>
+						<forename type="first">D</forename><forename type="middle">C</forename><forename type="last">J</forename>
+					</persName>
+				</author>
+				<title level="a">Navigating the iceberg: reducing the number of parameters within the Welfare Quality® Assessment protocol for dairy cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal</title>
+				<imprint>
+					<date when="2014">2014</date>
+					<biblScope unit="volume">8</biblScope>
+					<biblScope unit="page" from="1978" to="1986"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b14">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Hernandez-Mendo</surname>
+						<forename>O</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>von Keyserlingk</surname>
+						<forename type="first">M</forename><forename type="middle">A</forename><forename type="last">G</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Veira</surname>
+						<forename type="first">D</forename><forename type="middle">M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Weary</surname>
+						<forename type="first">D</forename><forename type="middle">M</forename>
+					</persName>
+				</author>
+				<title level="a">Effects of pasture on lameness in dairy cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2007">2007</date>
+					<biblScope unit="volume">90</biblScope>
+					<biblScope unit="page" from="1209" to="1214"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="grey-literature" xml:id="b15">
+			<monogr>
+				<author>
+					<persName>
+						<surname>Kanswohl</surname>
+						<forename>N</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sanftleben</surname>
+						<forename>P</forename>
+					</persName>
+				</author>
+				<title level="m">Analyse und Bewertung von Hoch- und Tiefboxen für Milchrinder aus arbeitswirtschaftlicher, ethologischer, hygienischer und ökonomischer Sicht</title>
+				<imprint>
+					<date when="2006">2006</date>
+				</imprint>
+				<note>Research Paper of Research Institute of Agriculture and Fisheries of Mecklenburg Vorpommern, Germany</note>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b16">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Kendall</surname>
+						<forename type="first">P</forename><forename type="middle">E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Nielsen</surname>
+						<forename type="first">P</forename><forename type="middle">P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Webster</surname>
+						<forename type="first">J</forename><forename type="middle">R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Verkerk</surname>
+						<forename type="first">G</forename><forename type="middle">A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Littlejohn</surname>
+						<forename type="first">R</forename><forename type="middle">P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Matthews</surname>
+						<forename type="first">R</forename><forename type="middle">W</forename>
+					</persName>
+				</author>
+				<title level="a">The effects of providing shade to lactating dairy cows in a temperate climate</title>
+			</analytic>
+			<monogr>
+				<title level="j">Livestock Science</title>
+				<imprint>
+					<date when="2006">2006</date>
+					<biblScope unit="volume">103</biblScope>
+					<biblScope unit="page" from="148" to="157"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b17">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Knaus</surname>
+						<forename>W</forename>
+					</persName>
+				</author>
+				<title level="a">Dairy cows trapped between performance demands and adaptability</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of the Science of Food and Agriculture</title>
+				<imprint>
+					<date when="2009">2009</date>
+					<biblScope unit="volume">89</biblScope>
+					<biblScope unit="page" from="1107" to="1114"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b18">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Krohn</surname>
+						<forename>CC</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Munksgaard</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<title level="a">Behaviour of dairy cows kept in extensive (loose housing/pasture) or intensive (tie stall) environments</title>
+			</analytic>
+			<monogr>
+				<title level="j">Applied Animal Behavior Science</title>
+				<imprint>
+					<date when="1993">1993</date>
+					<biblScope unit="volume">37</biblScope>
+					<biblScope unit="page" from="1" to="16"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b19">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Lambertz</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sanker</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Gauly</surname>
+						<forename>M</forename>
+					</persName>
+				</author>
+				<title level="a">Climatic effects on milk production traits and somatic cell score in lactating Holstein-Frisian cows in different housing systems</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2014">2014</date>
+					<biblScope unit="volume">97</biblScope>
+					<biblScope unit="page" from="319" to="329"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="proceeding" xml:id="b20">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Leisen</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<title level="a">Weidebasierte Milchviehhaltung in Deutschland</title>
+			</analytic>
+			<monogr>
+				<title level="m">Proceedings of the International Conference on Grasland- and Pasture-based Milk Production</title>
+				
+				<imprint>
+					<date from="2014-08-21" to="2014-08-22">21–22 August 2014</date>
+					<biblScope unit="page" from="98" to="101"/>
+					<pubPlace>Switzerland</pubPlace>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b21">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Motupalli</surname>
+						<forename type="first">P</forename><forename type="middle">R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Sinclair</surname>
+						<forename type="first">L</forename><forename type="middle">A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Charlton</surname>
+						<forename type="first">G</forename><forename type="middle">L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Bleach</surname>
+						<forename type="first">E</forename><forename type="middle">C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rutter</surname>
+						<forename type="first">S</forename><forename type="middle">M</forename>
+					</persName>
+				</author>
+				<title level="a">Preference and behavior of lactating dairy cows given free access to pasture at two herbage masses and two distances</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Animal Science</title>
+				<imprint>
+					<date when="2014">2014</date>
+					<biblScope unit="volume">92</biblScope>
+					<biblScope unit="page" from="5175" to="5184"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="chapter" xml:id="b22">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Phillips</surname>
+						<forename type="first">C</forename><forename type="middle">J</forename><forename type="last">C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Beerda</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Knierim</surname>
+						<forename>U</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Waiblinger</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Lidfors</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Krohn</surname>
+						<forename type="first">C</forename><forename type="middle">C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Canali</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Valk</surname>
+						<forename>H</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Veissier</surname>
+						<forename>I</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hopster</surname>
+						<forename>H</forename>
+					</persName>
+				</author>
+				<title level="a">A review of the impact of housing on dairy cow behaviour, health and welfare</title>
+			</analytic>
+			<monogr>
+				<title level="m">Livestock housing: modern management to ensure optimal health and welfare of farm animals</title>
+				<editor>
+					<persName>
+						<surname>Aland</surname>
+						<forename>A</forename>
+					</persName>
+				</editor>
+				<editor>
+					<persName>
+						<surname>Banhazi</surname>
+						<forename>T</forename>
+					</persName>
+				</editor>
+				<imprint>
+					<publisher>Wageningen Academic Publishers</publisher>
+					<pubPlace>Wageningen, The Netherlands</pubPlace>
+					<date when="2013">2013</date>
+					<biblScope unit="page" from="37" to="54"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="technical-report" xml:id="b23">
+			<monogr>
+				<author>
+					<persName>
+						<surname>Reijs</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Daatselaar</surname>
+						<forename>C</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Helming</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Jager</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Beldman</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<title level="m">Grazing dairy cows in north-west Europe</title>
+				<imprint>
+					<publisher>LEI Wageningen UR</publisher>
+					<date when="2013">2013</date>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="proceeding" xml:id="b24">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Thomet</surname>
+						<forename>P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Ineichen</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Jörg</surname>
+						<forename>H</forename>
+					</persName>
+				</author>
+				<title level="a">Züchten von Kühen für eine effiziente graslandbasierte Milchproduktion</title>
+			</analytic>
+			<monogr>
+				<title level="m">Proceedings of the International Conference on Grasland- and Pasture-Based Milk Production</title>
+				<imprint>
+					<date from="2014-08-21" to="2014-08-22">21–22 August 2014</date>
+					<biblScope unit="page" from="61" to="70"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b25">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Tucker</surname>
+						<forename type="first">C</forename><forename type="middle">B</forename><forename type="last">A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Rogers</surname>
+						<forename type="first">A</forename><forename type="middle">R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Schütz</surname>
+						<forename type="first">K</forename><forename type="middle">E</forename>
+					</persName>
+				</author>
+				<title level="a">Effect of solar radiation on dairy cattle behaviour, use of shade and body temperature in a pasture-based system</title>
+			</analytic>
+			<monogr>
+				<title level="j">Applied Animal Behaviour Science</title>
+				<imprint>
+					<date when="2008">2008</date>
+					<biblScope unit="volume">109</biblScope>
+					<biblScope unit="page" from="141" to="154"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b26">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Tuyttens</surname>
+						<forename type="first">F</forename><forename type="middle">A</forename><forename type="last">M</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>de Graaf</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Heerkens</surname>
+						<forename type="first">J</forename><forename type="middle">L</forename><forename type="last">T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Jacobs</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Nalon</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Ott</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Stadig</surname>
+						<forename>L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>van Laer</surname>
+						<forename>E</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Ampe</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<title level="a">Observer bias in animal behaviour research: can we believe what we score, if we score what we believe?</title>
+			</analytic>
+			<monogr>
+				<title level="j">Animal Behaviour</title>
+				<imprint>
+					<date when="2014">2014</date>
+					<biblScope unit="volume">90</biblScope>
+					<biblScope unit="page" from="273" to="280"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="proceeding" xml:id="b27">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Van den Pol-van Dasselaar</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>de Vliegher</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hennessy</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Isselstein</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Peyraud</surname>
+						<forename>J-L</forename>
+					</persName>
+				</author>
+				<title level="a">The future of grazing</title>
+			</analytic>
+			<monogr>
+				<title level="m">Proceedings of the 3rd Meeting of the EGF Working Group ‘Grazing’</title>
+				<imprint>
+   					<publisher>Wageningen UR (University and Research Centre) Livestock Research</publisher>
+					<date when="2015">2015</date>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b28">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Washburn</surname>
+						<forename type="first">S</forename><forename type="middle">P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>White</surname>
+						<forename type="first">S</forename><forename type="middle">L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Green</surname>
+						<forename type="first">J</forename><forename type="middle">T</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Benson</surname>
+						<forename type="first">G</forename><forename type="middle">A</forename>
+					</persName>
+				</author>
+				<title level="a">Reproduction, mastitis, and body condition of seasonally calved Holstein and Jersey cows in confinement or pasture systems</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2002">2002</date>
+					<biblScope unit="volume">85</biblScope>
+					<biblScope unit="page" from="105" to="111"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b29">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Wechsler</surname>
+						<forename>B</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Schaub</surname>
+						<forename>J</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Friedli</surname>
+						<forename>K</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Hauser</surname>
+						<forename>R</forename>
+					</persName>
+				</author>
+				<title level="a">ehaviour and leg injuries in dairy cows kept in cubicle systems with straw bedding or soft lying mats</title>
+			</analytic>
+			<monogr>
+				<title level="j">Applied Animal Behaviour Science</title>
+				<imprint>
+					<date when="2000">2000</date>
+					<biblScope unit="volume">69</biblScope>
+					<biblScope unit="page" from="189" to="197"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="proceeding" xml:id="b30">
+			<analytic>
+				<author>
+					<persName>
+						<surname>Weiß</surname>
+						<forename>D</forename>
+					</persName>
+				</author>
+				<title level="a">Imagewirkung von weidenden Kühen</title>
+			</analytic>
+			<monogr>
+				<title level="m">Proceedings of the International Conference on Grasland- and Pasture-Based Milk Production</title>
+				<imprint>
+					<date from="2014-08-21" to="2014-08-22">21–22 August 2014</date>
+					<biblScope unit="page" from="43" to="48"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b31">	
+			<analytic>
+				<author>
+					<persName>
+						<surname>Weinrich</surname>
+						<forename>R</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Kühl</surname>
+						<forename>S</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Zühlsdorf</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Spiller</surname>
+						<forename>A</forename>
+					</persName>
+				</author>
+				<title level="a">Consumer attitudes in Germany towards different dairy housing systems and their implications for the marketing of pasture raised milk</title>
+			</analytic>
+			<monogr>
+				<title level="j">International Food and Agribusiness Management Review</title>
+				<imprint>
+					<date when="2014">2014</date>
+					<biblScope unit="volume">17</biblScope>
+					<biblScope unit="page" from="205" to="222"/>
+				</imprint>
+			</monogr>
+		</biblStruct>
+		
+		<biblStruct type="standard" xml:id="b32">
+			<monogr>
+				<author>Welfare Quality 2012</author>
+				<title level="m">Welfare Quality® assessment protocol for cattle applied to dairy cows</title>
+				<imprint>
+					<date when="2012">2012</date>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+		<biblStruct type="article" xml:id="b33">
+			<analytic>
+				<author>
+					<persName>
+						<surname>White</surname>
+						<forename type="first">S</forename><forename type="middle">L</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Benson</surname>
+						<forename type="first">G</forename><forename type="middle">A</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Washburn</surname>
+						<forename type="first">S</forename><forename type="middle">P</forename>
+					</persName>
+				</author>
+				<author>
+					<persName>
+						<surname>Green</surname>
+						<forename type="first">J</forename><forename type="middle">T</forename><forename type="last">J</forename>
+					</persName>
+				</author>
+				<title level="a">Milk production and economic measures in confinement or pasture systems using seasonally calved Holstein and Jersey cows</title>
+			</analytic>
+			<monogr>
+				<title level="j">Journal of Dairy Science</title>
+				<imprint>
+					<date when="2002">2002</date>
+					<biblScope unit="volume">85</biblScope>
+					<biblScope unit="page" from="62" to="104"/>
+				</imprint>
+			</monogr>	
+		</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+	</back>
+	</text>
+</TEI>

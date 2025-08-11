@@ -1,0 +1,1219 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Periodontal inflammation is related to increased serum calcitonin gene-related peptide (CGRP) levels in patients with chronic migraine</title>
+				<funder ref="#_NPCXDB2">
+					<orgName type="full">UCL Biomedical Research Centre (London, UK)</orgName>
+				</funder>
+				<funder ref="#_GbSG2TF">
+					<orgName type="full">Spanish Ministry of Economy and Competitiveness -Institute of Health Carlos III, Madrid, Spain</orgName>
+				</funder>
+				<funder ref="#_SqQsdGC">
+					<orgName type="full">Miguel Servet Program of Institute of Health Carlos III (Madrid, Spain)</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><roleName>Dr</roleName><forename type="first">Yago</forename><surname>Leira</surname></persName>
+							<email>y.leira@ucl.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Periodontology Unit</orgName>
+								<orgName type="institution" key="instit2">UCL Eastman Dental Institute and Hospital</orgName>
+								<orgName type="institution" key="instit3">University College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Periodontology Unit</orgName>
+								<orgName type="department" key="dep2">Faculty of Medicine and Odontology</orgName>
+								<orgName type="institution">University of Santiago de Compostela</orgName>
+								<address>
+									<settlement>Santiago de Compostela</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Medical-Surgical Dentistry (OMEQUI) Research Group</orgName>
+								<orgName type="institution">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pablo</forename><surname>Ameijeira</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Periodontology Unit</orgName>
+								<orgName type="department" key="dep2">Faculty of Medicine and Odontology</orgName>
+								<orgName type="institution">University of Santiago de Compostela</orgName>
+								<address>
+									<settlement>Santiago de Compostela</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Clara</forename><surname>Domínguez</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Neurology, Headache Unit</orgName>
+								<orgName type="institution" key="instit1">University Clinical Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Santiago de Compostela</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Esteban</forename><surname>López-Arias</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Paulo</forename><surname>Ávila- Gómez</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">María</forename><surname>Pérez-Mato</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tomás</forename><surname>Sobrino</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francisco</forename><surname>Campos</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francesco</forename><surname>D'aiuto</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Periodontology Unit</orgName>
+								<orgName type="institution" key="instit2">UCL Eastman Dental Institute and Hospital</orgName>
+								<orgName type="institution" key="instit3">University College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rogelio</forename><surname>Leira</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Neurology, Headache Unit</orgName>
+								<orgName type="institution" key="instit1">University Clinical Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Santiago de Compostela</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="laboratory">Clinical Neurosciences Research Laboratory</orgName>
+								<orgName type="institution" key="instit1">Clinical University Hospital</orgName>
+								<orgName type="institution" key="instit2">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Juan</forename><surname>Blanco</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Periodontology Unit</orgName>
+								<orgName type="department" key="dep2">Faculty of Medicine and Odontology</orgName>
+								<orgName type="institution">University of Santiago de Compostela</orgName>
+								<address>
+									<settlement>Santiago de Compostela</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+
+							<affiliation key="aff2">
+								<orgName type="department">Medical-Surgical Dentistry (OMEQUI) Research Group</orgName>
+								<orgName type="institution">Health Research Institute of Santiago de Compostela (IDIS)</orgName>
+								<address>
+									<addrLine>Santiago de Compostela</addrLine>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Periodontal inflammation is related to increased serum calcitonin gene-related peptide (CGRP) levels in patients with chronic migraine</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">6A0577C73B89C481AD87BA77EA3B0CB8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>calcitonin gene-related peptide</term>
+					<term>headache</term>
+					<term>inflammation</term>
+					<term>migraine disorders</term>
+					<term>periodontitis</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Background:</head><p>Recently, a relationship was found between periodontitis and chronic migraine. Calcitonin gene-related peptide (CGRP) is a key element in migraine pathophysiology. However, no information exists of the potential association between periodontal inflammation and CGRP in chronic migraine. The aim of the study was, therefore, to investigate whether there is a link between periodontitis and peripheral levels of CGRP in a cohort of patients with chronic migraine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods:</head><p>We included 102 chronic migraineurs and 77 age-and sex-matched individuals free of headache/migraine. Full-mouth periodontal parameters were recorded and the periodontal inflamed surface area (PISA) was calculated to quantify the periodon-tal inflammatory status for each participant. Sociodemographic data and comorbidi-ties were assessed by means of a standard questionnaire. We collected blood samples and serum concentrations were done for CGRP, interleukin (IL)-6 and IL-10.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results:</head><p>In the chronic migraine group, patients with periodontitis had greater lev-els of serum CGRP (19.7 ± 6.5 versus 15.3 ± 6.2 pg/mL, P &lt; 0.0001) and IL-6 (15.1 ± 9.2 versus 9.6 ± 6.3 pg/mL, P &lt; 0.0001) while non-significant differences were observed with IL-10 (2.0 ± 1.0 versus 2.8 ± 1.5 pg/mL, P = 0.675) concentra-tions than those without periodontitis. PISA was independently associated with CGRP in patients with chronic migraine (𝛽 = 0.003; 95% confidence interval: 0.001 to 0.006, P = 0.031). PISA correlated positively with CGRP (r = 0.236; P = 0.017) and IL-6 (r = 0.262; P = 0.008) in chronic migraine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions:</head><p>Periodontal inflammation is associated with increased circulating levels of CGRP in chronic migraineurs. Elucidating the exact mechanisms through which periodontitis and CGRP are linked in these patients deserves further investigation.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Migraine is a common neurovascular disorder characterized by severe headache often throbbing and unilateral. <ref type="bibr" target="#b0">1</ref> Migraine attacks are usually accompanied with nausea, vomiting, pho-tophobia, and phonophobia. <ref type="bibr" target="#b0">1</ref> Although most migraineurs have episodic migraine (&lt;15 days of head pain/month), a subgroup of migraineurs suffers from chronic migraine (&gt;15 days of head pain/month at least for 3 months). <ref type="bibr" target="#b1">2</ref> The process by which a patient develops chronic migraine due to gradual increase of headache frequency over months or years is called chronification and yearly occurs in about 2.5% of patients with migraine. <ref type="bibr" target="#b2">3</ref> Despite the fact that chronic migraine is not a fatal disease, it has a substantial impact on patient ś quality of life since it is considered as one of the most disabling diseases worldwide. <ref type="bibr" target="#b3">4</ref> Calcitonin gene-related peptide (CGRP) is a key element in migraine pathophysiology. <ref type="bibr" target="#b4">5</ref> This vasoactive neuropeptide expressed in central and peripheral nervous systems modulates nociceptive input and mediates neurogenic inflammation through activation of the trigeminovascular system. <ref type="bibr" target="#b5">6</ref> Indeed, CGRP is released inducing vasodilatation around cerebral vessels leading to migraine pain clinically seen as pulsating. <ref type="bibr" target="#b4">5</ref> It has been suggested that repeated activation of trigeminovascular system might produce migraine chronification owing to central pain sensitization. <ref type="bibr" target="#b6">7</ref> Levels of CGRP are increased in external jugular blood <ref type="bibr" target="#b7">8</ref> during migraine attacks (ictal) and in peripheral blood <ref type="bibr" target="#b8">9</ref> both ictal and interictal phase of migraine (headache-free periods). <ref type="bibr" target="#b8">9</ref> Particularly, it has been shown that chronic migraineurs have interictal elevated circulating levels of CGRP. <ref type="bibr" target="#b9">10</ref> For instance, onabotulinumtoxin A (OnabotA), a common treatment option for chronic migraine, is capable of reducing interictal CGRP serum levels <ref type="bibr" target="#b10">11</ref> and it could be a predictor of good response to this therapy. <ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13</ref> Periodontitis, a highly prevalent disease <ref type="bibr" target="#b13">14</ref> is associated with systemic inflammation and vascular changes <ref type="bibr" target="#b14">15</ref> and has been recently associated with chronic migraine. <ref type="bibr" target="#b15">16</ref> In this casecontrol study, patients with periodontitis were more likely to have chronic migraine than those without periodontitis (odds ratio [OR] = 2.4, 95% confidence interval [CI]:1.2 to 4.7). <ref type="bibr" target="#b15">16</ref> In addition, few mechanistic reports suggested that periodontitis could increase circulating levels of proinflammatory markers such as leptin <ref type="bibr" target="#b16">17</ref> or procalcitonin <ref type="bibr" target="#b17">18</ref> in chronic migraine patients, hence, hypothesizing a possible role of periodontitis as a chronifying factor of migraine. <ref type="bibr" target="#b18">19</ref> Nevertheless, studies measuring the key neuropeptide CGRP to evaluate the impact of periodontitis on chronic migraine are still missing.</p><p>Experimental studies showed that lipopolysaccharide, which is an endotoxin from Gramnegative bacteria such as those linked with periodontitis, is able to release CGRP and this process is mediated by proinflammatory cytokines. <ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21</ref> Thus, besides its role on neurogenic inflammation, CGRP can be also involved in immune response after infectious stimulus. <ref type="bibr" target="#b21">22</ref> However, to the best of our knowledge, whether periodonti-tis could contribute to elevated levels of CGRP in chronic migraine patients has not yet been explored. Therefore, we aimed to investigate the relationship between periodontitis and CGRP in chronic migraine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head><p>In this case-control study with a cross-sectional biochemical analysis we included 102 patients with chronic migraine (mean age 47.0 ± 10.2; 98.0% females) and 77 age-and sexmatched healthy controls without neurological disor-ders (mean age 47.5 ± 8.9; 97.4% females). Neurological examination was performed by a senior neurologist (RL). Chronic migraine was defined according to the International Classification of Headache Disorders 3rd edition criteria. <ref type="bibr" target="#b1">2</ref> Therefore, patients were diagnosed with chronic migraine if they presented headache occurring on ≥15 days per month for &gt;3 months. In addition, we registered time of evolution of chronic migraine (in months), intensity of headache measured with the visual analogue scale, number of days with headaches per month, duration of migraine attacks (in hours), presence of aura and allodynia. Preventives and symptomatic drugs for migraine were also recorded along with analgesic overuse.</p><p>Exclusion criteria were: 1) underage; 2) &lt; 15 teeth (excluding 3o molars); 3) patients who had received periodontal therapy in the last year; 4) consumption of systemic antibiotics within 3 months before periodontal assessment; 5) severe systemic diseases; and 6) pregnancy or lactation. The study was performed in accordance with the Declaration of Helsinki of the World Medical Association (2008) and approved by the Ethics Committee of the Servizo Galego de Saúde (ID: 2016/079) as well as following the STROBE (Strengthening the Reporting of Observational Studies in Epidemiology) guidelines. <ref type="bibr" target="#b22">23</ref> Written informed consent was obtained from each patient or their relatives after full explanation of the periodontal assessment. Demographic and relevant medical information were registered by means of a structured questionnaire for both cases and controls.</p><p>Periodontal examination protocol was recently reported. <ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b23">24</ref> In brief, two calibrated periodontists (YL and PA) masked to patient medical history recorded full-mouth periodontal measurements from each participant including probing depth (PD), attachment loss (AL), gingival recession (Rec), full-mouth plaque score (FMPS), and full-mouth bleeding score (FMBS). <ref type="bibr" target="#b24">25</ref> The presence of periodontitis was established when ≥2 interproximal sites with AL ≥3 mm and ≥2 interproximal sites with PD ≥4 mm (not on the same tooth) or one site with PD ≥5 mm was present. <ref type="bibr" target="#b25">26</ref> Patients were classified into three groups according to the severity of the disease into: 1) Mild periodontitis: those participants with ≥2 interproximal sites with AL ≥3 mm and ≥2 interproximal sites with PD ≥4 mm (not on the same tooth) or one site with PD ≥5 mm; 2) Moderate periodontitis: defined as ≥2 interproximal sites with AL ≥4 mm (not on the same tooth) or ≥2 interproximal sites with PD ≥5 mm, also not on the same tooth; and 3) Severe periodontitis: presence of ≥2 interproximal sites with AL ≥6 mm (not on the same tooth) and ≥1 interproximal site with PD ≥5 mm. <ref type="bibr" target="#b25">26</ref> Additionally, we calculated a measure of periodontitis activity, the periodontal inflamed surface area (PISA), which reflects the surface area of bleeding pocket epithelium in mm 2 . <ref type="bibr" target="#b26">27</ref> PISA was calculated as follows: 1) With the mean clinical attachment level and Rec we obtained the periodontal epithelial surface area (PESA) for each tooth; <ref type="bibr" target="#b27">28</ref> 2) The PESA value multiplied by the number of sites with BOP results in the PISA for a specific tooth; and 3) Full-mouth PISA is calculated for each participant (in mm 2 ) by the sum of the PISAs for each tooth.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Laboratory tests</head><p>Fasted samples were obtained in the morning in a pain free period (at least 12 hours from the last migraine attack). Participants had not consumed anti-inflammatory or anal-gesic medication in the previous 72 hours. Briefly, 2 mL of venous blood was collected from the antecubital fossa by venepuncture using a 20-gauge needle with a 2-mL syringe. Blood samples were allowed to clot at room temperature and after 1 hour, serum was separated from blood by cen-trifugation (15 minutes at 3,000 g) and 0.5 mL of extracted serum was immediately transferred to 1.5-mL aliquots. Each aliquot was stored at -80oC until the time of analysis. Serum levels of all biomarkers were measured by enzyme-linked immunosorbent assay (ELISA) technique following manufacturer's instructions.</p><p>Interleukin (IL)-6 ELISA kit <ref type="endnote" target="end_0">*</ref> minimum assay sensitivity was 1.6 pg/mL with an intra-and inter-assay coefficient of variation (CV) of 5.0% and 6.8%, respectively. IL-10 ELISA kit <ref type="endnote" target="end_1">†</ref> minimum assay sensitivity was 2.0 pg/mL with an intra-and inter-assay CV of 4.1% and 6.2%, respectively. CGRP ELISA kit <ref type="endnote" target="end_2">‡</ref> minimum assay sensitivity was 5.3 pg/mL with an intra-and inter-assay CV of 5.9% and 7.4%, respectively. Determinations were done in the Clinical Neurosciences Research Laboratory, which was masked to clinical data. Clinical investigators were unaware of the laboratory results until the study had ended.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis</head><p>Mean values and standard deviation were calculated for con-tinuous variables, after the method of Kolmogorov-Smirnov was applied to confirm that the data were sampled from a nor-mal distribution. Categorical data were reported as percent-ages (%) and compared by X 2 test. Independent t test and one-way analysis of variance was used to compare the mean values of biomarkers among groups. Additionally, Bonferroni post-hoc tests for multiple comparisons between groups were used. Non-normally distributed variables were reported as median (interquartile range) and compared applying Mann-Whitney U test. Nonparametric correlation analyses between PISA and biomarkers among chronic migraine patients were per-formed using Spearman rank correlation coefficient. Linear regression analysis was done to test associations between peri-odontitis, PISA and CGRP levels.</p><p>Similarly, we also evaluated the link between different grades of periodontitis and CGRP using a generalized linear model. All models were adjusted for potential confounding factors (i.e. age, sex, obesity, depres-sion, and low education level). <ref type="bibr" target="#b15">16</ref> All tests were performed at a significance level of 𝛼 = 0.05. Statistical analyses were per-formed with data analysis software. <ref type="endnote" target="end_3">§</ref></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head><p>Patients with chronic migraine had more frequently a history of depression (41.2% versus 9.1%, P &lt; 0.0001), lower education level (48.0% versus 26.0%, P = 0.003), and obesity (31.4% versus 5.2%, P &lt; 0.0001) than controls (Table <ref type="table" target="#tab_0">1</ref>). The prevalence of periodontitis was higher in chronic migraineurs compared with the control group (58.5% versus 33.8%, P = 0.001). Indeed, continuous measures of the extent and severity of periodontitis were also significantly higher in chronic migraine than controls such as average of periodontal pockets with PD ≥6 mm (10.4 ± 15.9 versus 1.6 ± 4.1, P &lt; 0.0001) and AL ≥5 mm (30.7 ± 27.5 versus 8.1 ± 10.0, P &lt; 0.0001) (Table <ref type="table" target="#tab_0">1</ref>). In addition, increased levels of active periodontitis measured by the PISA method were more present in the chronic migraine group 436.9 (244.2, 698.7) mm 2 versus 43.2 (19.9, 204.4) mm 2 (P &lt; 0.0001) (Fig. <ref type="figure" target="#fig_0">1</ref>).</p><p>Migraine-related characteristics are shown in Table <ref type="table" target="#tab_1">2</ref>.</p><p>Circulating levels of IL-6 and CGRP were significantly elevated in chronic migraine compared with controls (12.8 ± 8.6 versus 5.7 ± 5.4 pg/mL, P &lt; 0.0001 and 17.9 ± 6.7 versus 6.8 ± 4.2 pg/mL, P &lt; 0.0001; respectively). Conversely, chronic migraine patients had significantly lower IL-10 serum levels than non-migraine individuals (2.4 ± 1.3 versus 4.7 ± 3.4 pg/mL, P &lt; 0.0001). Subgroup analysis according to periodontal status revealed that among patients with chronic migraine, those with periodontitis had significantly higher IL-6 serum levels compared with those without periodontitis (15.1 ± 9.2 versus 9.6 ± 6.3 pg/mL, P &lt; 0.0001). Control participants with periodontitis also showed elevated levels of IL-6 compared with non-periodontitis controls (10.6 ± 6.5 versus 3.2 ± 2.0 pg/mL, P &lt; 0.0001). Similarly, Figure <ref type="figure" target="#fig_1">2</ref> depicts that the presence periodontitis was linked with increased CGRP in both chronic migraine patients and con-trols. IL-10 concentrations, on contrary, were significantly increased in controls without periodontitis (5.3 ± 3.9 pg/mL) than those with periodontitis (3.6 ± 1.7 pg/mL, P = 0.030) as well as compared with chronic migraine patients both with (2.0 ± 1.0 pg/mL, P &lt; 0.001) and without periodontitis (2.8 ± 1.5 pg/mL, P &lt; 0.001).</p><p>Periodontitis as a categorical variable was independently associated with increased serum levels of CGRP in patients with chronic migraine, after adjusting for age, gender, depression, obesity and low education level (𝛽 = 4.354; 95% CI: 1.685 to 7.024, P &lt; 0.0001). When severity of periodontitis was analyzed, mild (𝛽 = 4.662; 95% CI: 0.929-8.395, P = 0.014) and severe periodontitis (𝛽 = 7.366; 95% CI: 3.990 to 10.743, P &lt; 0.0001) were associated with CGRP. In contrary, no significant association was found with moderate periodontitis (𝛽 = 1.848; 95% CI: -1.182 to 4.878, P = 0.232). PISA was also significantly associated with CGRP independent of same confounders (𝛽 = 0.003; 95% CI: 0.001 to 0.006, P = 0.031). Indeed, PISA was positively correlated with serum levels of CGRP (r = 0.236; P = 0.017) and IL-6 (r = 0.262; P = 0.008) (Figs. <ref type="figure" target="#fig_2">3A</ref> and<ref type="figure" target="#fig_2">3B</ref>). A negative correlation was found with PISA and IL-10 concentrations in serum (r = -0.225; P = 0.023). IL-6 and CGRP were also correlated (r = 0.417; P &lt; 0.0001).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>We found that periodontal inflammation (i.e., PISA) was associated with increased circulating levels of CGRP in chronic migraineurs and this relationship could be mediated by enhanced systemic inflammation posed by periodontitis. To the best of our knowledge, this is the first report aiming to investigate the link between periodontitis and CGRP among chronic migraine patients.</p><p>Inflammation is present in migraine. <ref type="bibr" target="#b28">29</ref> Previously, our group showed that chronic migraineurs had elevated IL-6 levels and lower IL-10 levels compared with individuals without headache. <ref type="bibr" target="#b12">13</ref> We confirmed this observation in our cohort of participants, in which the chronic migraine group presented more IL-6 and less IL-10 in comparison with the control group. Recent evidence suggests that patients with periodontitis are more likely to have chronic migraine. <ref type="bibr" target="#b15">16</ref> In our study, we corroborated that periodontitis is common in chronic migraine. Additionally, the median values of a measure of periodontal inflammation and disease activity, the PISA method, were significantly higher in chronic migraineurs than in controls. In fact, the periodontal ulcerated and inflamed epithelium was 4.3 cm 2 in the chronic migraine group versus 0.4 cm 2 in the control group. Based on this, it is speculated that the biological plausibility behind the potential association between periodontitis and chronic migraine is mainly due to the transient entrance of inflammatory mediators into the bloodstream such as leptin or procalcitonin <ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b17">18</ref> that could travel to cerebral blood ves-sels exacerbating migraine attacks, which in turn could lead to the chronification process of the disease. In the present study we observed that chronic migraineurs with periodontitis had significantly higher serum levels of IL-compared with those without periodontitis and that there was a linear positive correlation between PISA and IL-6, thus, confirming again the link between periodontitis, systemic inflammation, and chronic migraine. On contrary and as expected owing to its anti-inflammatory nature, IL-10 circulating concentrations were lower in chronic migraine than in the control group. Furthermore, patients with both conditions (chronic migraine and periodontitis) had also lower levels of IL-10 in comparison with those with chronic migraine and without periodontitis.</p><p>It has been shown that CGRP has a causal role in migraine attacks <ref type="bibr" target="#b4">5</ref> and studies showed that this biomarker could be a good predictor of efficacy to prevent migraine attacks in chronic migraineurs. <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b11">12</ref> Release of peripheral CGRP causes vasodilation and alters the trigeminovascular system microenvironment resulting in more CGRP releases and, therefore, increasing the odds of having more frequent migraine attacks. Evidence from human experiments demonstrated that intravenous injections of CGRP could trigger migraine-like attacks in migraineurs but not in healthy individuals. <ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b29">30</ref> In addition, trials using selective non-peptide CGRP receptor antagonists provided more proof of the causative role of CGRP in migraine pathogenesis. <ref type="bibr" target="#b30">31</ref> Firstly, we observed that serum levels of CGRP were significantly higher in the chronic migraine group than those without chronic migraine. These findings are in accordance with previous studies where CGRP is consid-ered an important biomarker of chronic migraine. <ref type="bibr" target="#b9">10</ref> However, negative results were also published where interictal CGRP levels in peripheral blood did not differ between chronic migraineurs and controls. <ref type="bibr" target="#b31">32</ref> Secondly, those patients with chronic migraine and periodontitis presented increased CGRP levels compared with individuals with chronic migraine and a healthy periodontium. Thirdly, among the control group, periodontal patients had higher levels of serum CGRP in com-parison with those without periodontitis. Contrary to these results, Haririan and co-workers observed no differences in CGRP concentrations measured in both serum and saliva of patients with periodontitis and without periodontitis. <ref type="bibr" target="#b32">33</ref> However, another study showed that periodontally healthy sites showed increased gingival crevicular fluid concentrations of CGRP compared with sites with gingivitis or periodontitis (no detection of CGRP). <ref type="bibr" target="#b33">34</ref> A key finding from our study is that periodontitis and in particular the PISA were significantly associated with elevated peripheral levels of CGRP in patients with chronic migraine. This could be explained by the vasodilatory effect produced by periodontal inflammation that might increase the net rate of CGRP removal from the gums and elevate CGRP systemically, thus, promoting migraine chronification due to an increase in the number of headaches. Nevertheless, it could also be feasible that CGRP initiates the inflammatory process in the gingiva after microbial challenge in periodontally susceptible individuals. Hence, further studies assessing the risk of chronic migraineurs for having periodontitis are warranted. Another possibility is that the association observed between periodontal inflammation and CGRP could be indeed mediated by a systemic inflammatory response.</p><p>In our sample of chronic migraineurs, we found a linear correlation between PISA, IL-6 and CGRP. This is supported by experimental data, which showed that lipopolysaccharide from bacteria similar to those involved in the pathogenesis of periodontitis produced cytokines that facilitated CGRP release and sensitized the terminals via regulation of the peripheral releasing function of primary sensory afferents. <ref type="bibr" target="#b19">20</ref> Due to the cross-sectional nature of our investigation, we cannot rule out the hypothesis that CGRP stimulates IL-6 production. It has been shown that CGRP is able to produce proinflammatory cytokines from lymphocytes and macrophages after lipopolysaccharide infection. <ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b34">35</ref> It would be of great interest whether an enhanced inflammatory response contributes to release of CGRP, or is CGRP one of the contributors to increased systemic inflammation in patients with chronic migraine.</p><p>We recognize some limitations regarding the present study. Although the aforementioned cross-sectional design does not allow us to analyze causality, our results are in line with previous studies where periodontitis acts as a systemic inflammatory stressor in chronic migraine patients. Some medica-tions (e.g., non-steroidal anti-inflammatory drugs [NSAIDs], OnabotA, or triptans) as well as conditions like obesity can either decrease or increase CGRP circulating levels. However, CGRP concentrations were still significantly higher in chronic migraine than controls. In our regression models, after adjusting for obesity we found a significant association between periodontitis and CGRP in chronic migraine. Similarly, a number of factors related to either reduction or increase of gingival bleeding/inflammation such as tobacco consumption and medications (e.g., NSAIDs, OnabotA, or antihyper-tensives) together with diseases such as diabetes, obesity, or hypertension can influence the PISA scores.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSIONS</head><p>Our results indicate that periodontal inflammation is linked with higher serum levels of CGRP in patients with chronic migraine and this association could be mediated indeed by a systemic inflammatory state due to periodontitis. Longitudinal data are needed to confirm our findings. Experimental studies are also warranted to investigate the biological mechanisms underlying the relationship between periodontitis, CGRP, systemic inflammation, and chronic migraine.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. PISA values in patients with and without chronic migraine.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. CGRP serum levels of patients with and without chronic migraine according to periodontal status (expressed as mean and SD).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Correlation between PISA and: A) CGRP (pg/mL); B) IL-6 (ng/mL).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Baseline characteristics and periodontal conditions.</figDesc><note><p>a Body mass index ≥ 30 kg/m 2 .</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Summary of migraine information and treatment among chronic migraine patients (N=102).</figDesc></figure>
+<div xmlns="http://www.tei-c.org/ns/1.0" type="notes">
+  <head>Products and Companies</head>
+  <note xml:id="end_0" place="end">¶ BioLegend, San Diego, California, USA</note>
+  <note xml:id="end_1" place="end"># BioLegend, San Diego, California, USA</note>
+  <note xml:id="end_2" place="end">* * Cloud-Clone, Katy, Texas, USA</note>
+  <note xml:id="end_3" place="end">† † IBM SPSS Statistics 20.0 software for Mac, SPSS Inc., Chicago, IL, USA</note>
+</div> 
+		</body>
+		<back>
+			
+
+			<div type="acknowledgement">
+<div><p>ACKNOWLEDGMENTS This study was partially supported by grants from the <rs type="funder">Spanish Ministry of Economy and Competitiveness -Institute of Health Carlos III, Madrid, Spain</rs> (<rs type="grantNumber">PI15/01578</rs>). The funders had no role in the study design, data collection and anal-ysis, decision to publish, or preparation of the manuscript. <rs type="person">Dr. Yago Leira</rs>, <rs type="person">Dr. Tomás Sobrino</rs> and <rs type="person">Dr. Francisco Campos</rs> hold Senior Clinical Research Fellowship supp-orted by the <rs type="funder">UCL Biomedical Research Centre (London, UK)</rs>. <rs type="person">Dr. Tomás Sobrino</rs> (<rs type="grantNumber">CPII17/00027</rs>) and <rs type="person">Dr. Francisco Campos</rs> (<rs type="grantNumber">CP14/00154</rs>) are recipients of research contracts from <rs type="funder">Miguel Servet Program of Institute of Health Carlos III (Madrid, Spain)</rs>. The funders had no role in the study design, data collection and analysis, decision to publish, or preparation of the manuscript. The authors report no conflicts of interest related to this study.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_GbSG2TF">
+					<idno type="grant-number">PI15/01578</idno>
+				</org>
+				<org type="funding" xml:id="_NPCXDB2">
+					<idno type="grant-number">CPII17/00027</idno>
+				</org>
+				<org type="funding" xml:id="_SqQsdGC">
+					<idno type="grant-number">CP14/00154</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Goadsby</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Lipton</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Ferrari</surname></persName>
+					</author>
+					<title level="a">Migraine — Current Understanding and Treatment</title>
+				</analytic>
+				<monogr>
+					<title level="j">N Engl J Med</title>
+					<imprint>
+						<biblScope unit="volume">346</biblScope>
+						<biblScope unit="page" from="257" to="270"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b1">
+				<analytic>
+					<author>Headache Classification Committee of the International Headache Society (IHS)</author>
+					<title level="a">The International Classification of Headache Disorders, 3rd edition (beta version)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cephalalgia</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="629" to="808"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Bigal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Serrano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Buse</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Scher</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Stewart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Lipton</surname></persName>
+					</author>
+					<title level="a">Acute Migraine Medications and Evolution From Episodic to Chronic Migraine: A Longitudinal Population-Based Study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Headache</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="1157" to="1168"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						GBD 2016 Headache Collaborators
+					</author>
+					<title level="a"> Global, regional, and national burden of migraine and tension-type headache, 1990-2016: a systematic analysis for the Global Burden of Disease Study 2016</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet Neurol</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="954" to="976"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Lassen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Haderslev</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">B</forename><surname>Jacobsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Iversen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Sperling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Olesen</surname></persName>
+					</author>
+					<title level="a">CGRP May Play A Causative Role in Migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cephalalgia</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="54" to="61"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>U</forename><surname>Arulmani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Maassenvandenbrink</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Villalón</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Saxena</surname></persName>
+					</author>
+					<title level="a">Calcitonin gene-related peptide and its role in migraine pathophysiology</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Pharmacol</title>
+					<imprint>
+						<biblScope unit="volume">500</biblScope>
+						<biblScope unit="page" from="315" to="330"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Ramón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Cernuda-Morollón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Pascual</surname></persName>
+					</author>
+					<title level="a">Calcitonin gene-related peptide in peripheral blood as a biomarker for migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Opin Neurol</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="281" to="286"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Goadsby</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Edvinsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Ekman</surname></persName>
+					</author>
+					<title level="a">Vasoactive peptide release in the extracerebral circulation of humans during migraine headache</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ann Neurol</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="183" to="187"/>
+						<date when="1990">1990</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>X</forename><surname>Rodriguez-Osorio</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Sobrino</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Brea</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Martinez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Castillo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Leira</surname></persName>
+					</author>
+					<title level="a">Endothelial progenitor cells: A new key for endothelial dysfunction in migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurology</title>
+					<imprint>
+						<biblScope unit="volume">79</biblScope>
+						<biblScope unit="page" from="474" to="479"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Cernuda-Morollon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Larrosa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Ramon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Vega</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Martinez-Camblor</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Pascual</surname></persName>
+					</author>
+					<title level="a">Interictal increase of CGRP levels in peripheral blood as a biomarker for chronic migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurology</title>
+					<imprint>
+						<biblScope unit="volume">81</biblScope>
+						<biblScope unit="page" from="1191" to="1196"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Cernuda-Morollón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Ramón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Martínez-Camblor</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Serrano-Pertierra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Larrosa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Pascual</surname></persName>
+					</author>
+					<title level="a">OnabotulinumtoxinA decreases interictal CGRP plasma levels in patients with chronic migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Pain</title>
+					<imprint>
+						<biblScope unit="volume">156</biblScope>
+						<biblScope unit="page" from="820" to="824"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Cernuda-Morollón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Martínez-Camblor</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Ramón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Larrosa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Serrano-Pertierra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Pascual</surname></persName>
+					</author>
+					<title level="a">CGRP and VIP Levels as Predictors of Efficacy of Onabotulinumtoxin Type A in Chronic Migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Headache</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="987" to="995"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Domínguez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Vieites-Prado</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Pérez-Mato</surname></persName>
+					</author>
+					<title level="a">CGRP and PTX3 as Predictors of Efficacy of Onabotulinumtoxin Type A in Chronic Migraine: An Observational Study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Headache</title>
+					<imprint>
+						<biblScope unit="volume">58</biblScope>
+						<biblScope unit="page" from="78" to="87"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Kinane</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Stathopoulou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">N</forename><surname>Papapanou</surname></persName>
+					</author>
+					<title level="a">Periodontal diseases</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Dis Primers</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Amar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Gokce</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Morgan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Loukideli</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Van Dyke</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Vita</surname></persName>
+					</author>
+					<title level="a">Periodontal Disease Is Associated With Brachial Artery Endothelial Dysfunction and Systemic Inflammation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Arterioscler Thromb Vasc Biol</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="page" from="1245" to="1249"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Ameijeira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Domínguez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Blanco</surname></persName>
+					</author>
+					<title level="a">Association between periodontitis and chronic migraine: a case–control study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Odontology</title>
+					<imprint>
+						<biblScope unit="volume">107</biblScope>
+						<biblScope unit="page" from="90" to="95"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Ameijeira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Domínguez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Blanco</surname></persName>
+					</author>
+					<title level="a">The role of leptin as a biomarker in the relationship between periodontitis and chronic migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="1208" to="1214"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Ameijeira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Domínguez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Blanco</surname></persName>
+					</author>
+					<title level="a">High serum procalcitonin levels in patients with periodontitis and chronic migraine</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="page" from="1069" to="1074"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Ameijeira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Blanco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Leira</surname></persName>
+					</author>
+					<title level="a">Periodontal disease as a potential factor of migraine chronification</title>
+				</analytic>
+				<monogr>
+					<title level="j">Med Hypotheses</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="94" to="98"/>
+						<date when="2017">2017</date>
+
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">X</forename><forename type="first">Y</forename><surname>Hua</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Fox</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Myers</surname></persName>
+					</author>
+					<title level="a">Involvement of cytokines in lipopolysaccharide-induced facilitation of CGRP release from capsaicin-sensitive nerves in the trachea: studies with interleukin-1beta and tumor necrosis factor- alpha</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Neurosci</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="4742" to="4748"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Cuesta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Quintero</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Pons</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Suarez-Roca</surname></persName>
+					</author>
+					<title level="a">Substance P and calcitonin gene-related peptide increase IL-1β, IL-6 and TNFα secretion from human peripheral blood mononuclear cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurochem Int</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="301" to="306"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Holzmann</surname></persName>
+					</author>
+					<title level="a">Modulation of immune responses by the neuropeptide CGRP</title>
+				</analytic>
+				<monogr>
+					<title level="j">Amino Acids</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="1" to="7"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Von Elm</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Altman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Egger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Pocock</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Gøtzsche</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Vandenbroucke</surname></persName>
+					</author>
+					<title level="a">STROBE Initiative. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Epidemiol</title>
+					<imprint>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="page" from="344" to="349"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Leira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rodríguez-Yáñez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Arias</surname></persName>
+					</author>
+					<title level="a">Periodontitis as a risk indicator and predictor of poor outcome for lacunar infarct</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="20" to="30"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Ainamo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Bay</surname></persName>
+					</author>
+					<title level="a">Problems and proposals for recording gingivitis and plaque</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int Dent J</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="229" to="235"/>
+						<date when="1975">1975</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">I</forename><surname>Eke</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Page</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Thornton-Evans</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Genco</surname></persName>
+					</author>
+					<title level="a">Update of the Case Definitions for Population-Based Surveillance of Periodontitis</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">83</biblScope>
+						<biblScope unit="page" from="1449" to="1454"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Nesse</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Abbas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Van Der Ploeg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">K</forename><surname>Spijkervet</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">U</forename><surname>Dijkstra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Vissink</surname></persName>
+					</author>
+					<title level="a">Periodontal inflamed surface area: quantifying inflammatory burden</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="668" to="673"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Hujoel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>White</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">I</forename><surname>García</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Listgarten</surname></persName>
+					</author>
+					<title level="a">The dentogingival epithelial surface area revisited</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Periodontal Res</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="page" from="48" to="55"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Waeber</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Moskowitz</surname></persName>
+					</author>
+					<title level="a">Migraine as an inflammatory disorder</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurology</title>
+					<imprint>
+						<biblScope unit="volume">64</biblScope>
+						<biblScope unit="page" from="9" to="15"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Hansen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">W</forename><surname>Hauge</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jes</forename><surname>Olesen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Ashina</surname></persName>
+					</author>
+					<title level="a">Calcitonin gene-related peptide triggers migraine-like attacks in patients with migraine with aura</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cephalalgia</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="54" to="61"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Karsan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">I</forename><surname>Goadsby</surname></persName>
+					</author>
+					<title level="a">CGRP Mechanism Antagonists and Migraine Management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Neurol Neurosci Rep</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="1" to="9"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S-Y</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cho</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E-S</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C-S</forename><surname>Chung</surname></persName>
+					</author>
+					<title level="a">Feasibility of serum CGRP measurement as a biomarker of chronic migraine: a critical reappraisal</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Headache Pain</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="1" to="8"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Haririan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Andrukhov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Böttcher</surname></persName>
+					</author>
+					<title level="a">Salivary Neuropeptides, Stress and Periodontitis</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="page" from="9" to="18"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">T</forename><surname>Lundy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Shaw</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Mckinnell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Lamey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Linden</surname></persName>
+					</author>
+					<title level="a">Calcitonin gene-related peptide in gingival crevicular fluid in periodontal health and disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Clin Periodontol</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="page" from="212" to="216"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Tang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Calcitonin gene-related peptide potentiates LPS-induced IL-6 release from mouse peritoneal macrophages</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Neuroimmunol</title>
+					<imprint>
+						<biblScope unit="volume">84</biblScope>
+						<biblScope unit="page" from="207" to="212"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

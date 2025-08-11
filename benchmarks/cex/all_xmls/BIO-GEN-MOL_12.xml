@@ -1,0 +1,3494 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Structural and functional insight into the Mycobacterium tuberculosis protein PrpR reveals a novel type of transcription factor</title>
+				<funder ref="#_qJTUnHr">
+					<orgName type="full">DOE Office of Science by Argonne National Laboratory</orgName>
+				</funder>
+				<funder ref="#_GVDTSpu">
+					<orgName type="full">National Institute of Allergy and Infectious Diseases, TB Structural Genomics Grant</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">U.S. Department of Energy (DOE) Office of Science User Facility</orgName>
+				</funder>
+				<funder ref="#_CbKBweY">
+					<orgName type="full">Welch Foundation</orgName>
+				</funder>
+				<funder ref="#_aKZzJVC">
+					<orgName type="full">National Institute of Allergy and Infectious Diseases</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Oxford University Press</publisher>
+				<availability>
+					<licence target="https://creativecommons.org/licenses/by/4.0/"><p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</p></licence>
+				</availability>
+				<date type="published" when="2019-10-10">10 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Su</forename><surname>Tang</surname></persName>
+							<idno type="ORCID">0000-0002-6993-1212</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Biochemistry and Biophysics</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<postCode>77840</postCode>
+									<settlement>College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nathan</forename><forename type="middle">D</forename><surname>Hicks</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Immunology and Infectious Diseases</orgName>
+								<orgName type="institution" key="instit1">Harvard T.H.</orgName>
+								<orgName type="institution" key="instit2">Chan School of Public Health</orgName>
+								<address>
+									<postCode>02115</postCode>
+									<settlement>Boston</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yu-Shan</forename><surname>Cheng</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Chemistry</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<postCode>77840</postCode>
+									<settlement>College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Andres</forename><surname>Silva</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Biochemistry and Biophysics</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<postCode>77840</postCode>
+									<settlement>College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sarah</forename><forename type="middle">M</forename><surname>Fortune</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Immunology and Infectious Diseases</orgName>
+								<orgName type="institution" key="instit1">Harvard T.H</orgName>
+								<orgName type="institution" key="instit2">Chan School of Public Health</orgName>
+								<address>
+									<postCode>02115</postCode>
+									<settlement>Boston</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="institution" key="instit1">Ragon Institute of MGH</orgName>
+								<orgName type="institution" key="instit2">MIT, and Harvard</orgName>
+								<address>
+									<postCode>02139</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">James</forename><forename type="middle">C</forename><surname>Sacchettini</surname></persName>
+							<email>sacchett@tamu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Biochemistry and Biophysics</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<postCode>77840</postCode>
+									<settlement>College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Chemistry</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<postCode>77840</postCode>
+									<settlement>College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Structural and functional insight into the Mycobacterium tuberculosis protein PrpR reveals a novel type of transcription factor</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Nucleic Acids Research</title>
+						<title level="j" type="abbrev">Nucleic Acids Res</title>
+						<imprint>
+							<biblScope unit="volume">47</biblScope>
+							<biblScope unit="issue">18</biblScope>
+							<biblScope unit="page" from="9934" to="9949"/>
+							<date type="published" when="2023-08-18">18 August 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F421F85B497711496AE2D76F8960CEC8</idno>
+					<idno type="DOI">10.1093/nar/gkz724</idno>
+					<note type="submission">Received April 08, 2019; Revised July 19, 2019; Editorial Decision August 05, 2019; Accepted August 07, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The pathogenicity of Mycobacterium tuberculosis depends upon its ability to catabolize host cholesterol. Upregulation of the methylcitrate cycle (MCC) is required to assimilate and detoxify propionyl-CoA, a cholesterol degradation product. The transcription of key genes prpC and prpD in MCC is activated by MtPrpR, a member of a family of prokaryotic transcription factors whose structures and modes of action have not been clearly defined. We show that Mt-PrpR has a novel overall structure and directly binds to CoA or short-chain acyl-CoA derivatives to form a homotetramer that covers the binding cavity and locks CoA tightly inside the protein. The regulation of this process involves a [4Fe4S] cluster located close to the CoA-binding cavity on a neighboring chain. Mutations in the [4Fe4S] cluster binding residues rendered MtPrpR incapable of regulating MCC gene transcription. The structure of MtPrpR without the [4Fe4S] cluster-binding region shows a conformational change that prohibits CoA binding. The stability of this cluster means it is unlikely a redox sensor but may function by sensing ambient iron levels. These results provide mechanistic insights into this family of critical transcription factors who share similar structures and regulate gene transcription using a combination of acyl-CoAs and [4Fe4S] cluster.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Mycobacterium tuberculosis (Mtb) caused an estimate of 1.6 million deaths in 2017 alone, and has developed resis-tance to many commonly used antibiotics <ref type="bibr" target="#b0">(1)</ref>. Part of Mtb's effectiveness as a pathogen is that it can use fatty acids and cholesterol as primary nutrient sources during infection <ref type="bibr" target="#b1">(2)</ref><ref type="bibr" target="#b2">(3)</ref><ref type="bibr" target="#b3">(4)</ref>. The degradation of both odd-chain fatty acids and cholesterol produces propionyl coenzyme A (propionyl-CoA) <ref type="bibr" target="#b4">(5)</ref><ref type="bibr" target="#b5">(6)</ref><ref type="bibr" target="#b6">(7)</ref><ref type="bibr" target="#b7">(8)</ref><ref type="bibr" target="#b8">(9)</ref> which must be further metabolized as accumulation of propionyl-CoA leads to the toxicity to the bacilli <ref type="bibr" target="#b9">(10,</ref><ref type="bibr" target="#b10">11)</ref>.</p><p>One of the major pathways to assimilate propionyl-CoA is the methylcitrate cycle (MCC) (Supplementary Figure <ref type="figure" target="#fig_0">S1</ref>). The key enzymes of the MCC are typically clustered in the propionate metabolic operon (prp operon), which includes methylcitrate synthase (MCS, also named PrpC), methylcitrate dehydratase (MCD, also named PrpD) and methylisocitrate lyase (MCL, also named PrpB) <ref type="bibr" target="#b9">(10,</ref><ref type="bibr" target="#b11">12)</ref>. The prp operon of Mtb only contains two genes prpC (rv1131) and prpD (rv1130). The Mtb genome does not encode a functionally unique MCL, but instead employs isocitrate lyase 1 (Icl1), an enzyme in the anaplerotic glyoxylate shunt <ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref>, to accomplish the MCL function. Certain strains of Mtb, including the clinical strain CDC1551, also contain a second copy of Icl (Icl2), which has minimal MCL activity <ref type="bibr" target="#b11">(12)</ref>.</p><p>In Mtb, the transcription of the prp operon is stringently controlled by a gene-specific transcription factor, PrpR (propionate regulator, Rv1129c, MtPrpR) <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15)</ref>. The prpR gene is adjacent to the prp operon, but it runs in the opposite direction (Figure <ref type="figure" target="#fig_0">1A</ref>). MtPrpR has been shown to activate transcription of both itself and the prp operon in response to propionate or cholesterol <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b14">15)</ref>. Deleting prpR from the Mtb genome renders the bacterium incapable of activating the prp operon in response to propionate or cholesterol in vitro and eliminates its ability to grow on media containing these molecules as sole carbon sources <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b14">15)</ref>. However, prpR deficient mutants are prevalent in isoniazid-and other drug-resistant Mtb clinical isolates <ref type="bibr" target="#b15">(16,</ref><ref type="bibr" target="#b16">17)</ref>, possibly because prpR mutations cause a defect in the MCC and slow down bacterial metabolism during infection, leading to drug tolerance <ref type="bibr" target="#b16">(17)</ref>.</p><p>There is little structural information available for any homolog of MtPrpR, which makes it difficult to identify a common regulatory mechanism for this family of transcription factors. For example, we still do not understand how MtPrpR senses signaling molecules, beyond previous studies suggesting that 2-methylcitrate, an intermediate of MCC, was a PrpR coactivator in Corynebacterium glutamicum <ref type="bibr" target="#b17">(18)</ref>. It has also been suggested that cyclic AMP (cAMP) is indirectly involved in MCC modulation <ref type="bibr" target="#b18">(19,</ref><ref type="bibr" target="#b19">20)</ref>. Conserved domain analysis <ref type="bibr" target="#b20">(21)</ref> was only able to annotate the N-terminus of MtPrpR as the helix-turn-helix DNA binding domain (Figure <ref type="figure" target="#fig_0">1B</ref>). The rest of the protein was previously annotated as two domains of unknown function, DUF955 and DUF2083 <ref type="bibr" target="#b13">(14)</ref>. DUF955 was recently updated to be an IrrE N-terminal-like domain, which was reported as a Zn-dependent metaloprotease <ref type="bibr" target="#b21">(22,</ref><ref type="bibr" target="#b22">23)</ref>.</p><p>The Mtb genome also encodes an MtPrpR paralog, MtRamB (regulator of acetate metabolism B, Rv0465c), which shares 54% protein sequence identity with MtPrpR and is located upstream of icl1 (Figure <ref type="figure" target="#fig_0">1A</ref>). Unlike Mt-PrpR, which is largely accepted as a transcriptional activator <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15)</ref>, MtRamB is more likely to be a transcriptional repressor in the presence of fermentable carbon sources such as dextrose <ref type="bibr" target="#b13">(14,</ref><ref type="bibr" target="#b23">24)</ref>.</p><p>A 17 bp DNA sequence between prpR and prpD has been proposed as the primary recognition sequence of MtPrpR <ref type="bibr" target="#b14">(15)</ref> (Figure <ref type="figure" target="#fig_0">1A</ref>). It consists of a perfect (TTTGCAAA) and an imperfect (TTTGCgAA) palindrome separated by one base pair. The exact 17 bp DNA sequence also exists upstream of the icl1 gene, but is not found elsewhere in the Mtb genome. A DNA fragment containing TTTG C(A/G)AA was also mapped to MtRamB binding sites <ref type="bibr" target="#b23">(24)</ref><ref type="bibr" target="#b24">(25)</ref><ref type="bibr" target="#b25">(26)</ref>. The similarity of the recognition sequences suggests the possibility of crosstalk between MtPrpR and MtRamB during transcriptional regulation. To unravel the potential structure-function relationship of MtPrpR and its homologs, we solved the crystal structures of different forms of MtPrpR. We show that MtPrpR is a tetrameric transcription factor. The C-terminal region of the protein binds to an iron-sulfur cluster, which enables the protein to bind Coenzyme A and acetyl-CoA molecules tightly as part of the regulatory mechanism. The structure of MtPrpR represents the first structure of this family of transcription factors that control several resolved and unresolved bacterial carbon metabolic pathways.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bacterial strains, media and growth conditions</head><p>Mtb strains were maintained in complete 7H9 media (Middlebrook 7H9 salts supplemented with 0.2% glycerol, 0.05% Tween-80 and 10% Middlebrook OADC). The prpR deletion mutant of Mtb H37Rv (H37Rv prpR) was obtained from the Sassetti lab as described previously <ref type="bibr" target="#b7">(8)</ref>. PrpR deletion mutants carrying a rescuing wild-type or mutant allele were then constructed as described previously <ref type="bibr" target="#b16">(17)</ref>. Briefly, a kanamycin resistant plasmid carrying the prpR wild-type or mutant gene and 95 bp of the sequence upstream of the proposed translational start site was integrated at the L5 phage integration site of the prpR deletion strain.</p><p>The knockdown of ramB was performed using the CRISPR interference (CRISPRi) system optimized for Mtb <ref type="bibr" target="#b26">(27)</ref> targeting the sequence GCGGGCAGGTGCCGCC GCTGGA within the ramB ORF. The anhydrous tetracycline (ATc) inducible ramB knockdown vector was transformed into both wild-type H37Rv and the H37Rv prpR mutant strains.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein sequence alignment and analysis</head><p>MtPrpR and a group of representative homologous protein sequences were aligned in Clustal Omega <ref type="bibr" target="#b27">(28)</ref>. The output alignment file was further analyzed and illustrated using ESPpript 3.0 <ref type="bibr" target="#b28">(29)</ref>. The proteins with names are those whose functions are either previously reported or recognizable based on the genome context. The proteins with question marks are those with unknown functions and adjacent to uncharacterized genes or operons. Protein domain annotation was performed using InterPro <ref type="bibr" target="#b20">(21)</ref>. Protein secondary structure was predicted by PSIPRED <ref type="bibr" target="#b29">(30)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cloning, protein expression and purification</head><p>The Mtb gene rv1129c (prpR) encoding the full-length PrpR protein (MtPrpR M1) was cloned as previously described <ref type="bibr" target="#b14">(15)</ref>. Briefly, the gene was amplified from the Mtb H37Rv genome using PrpR M1 Fw and PrpR Rv primers. (All primers were synthesized by Integrated DNA Technologies, and are listed in Supplementary Table <ref type="table">S1</ref>.) The polymerase chain reaction (PCR) product was treated with the BamHI and XhoI restriction enzymes (New England Biolabs) and cloned into a pET28a vector (Novagen).</p><p>A reannotation of the Mtb prpR ORF <ref type="bibr" target="#b30">(31)</ref> suggested that the ninth amino acid valine might be the translational start site. A PrpR V9 construct removing the first eight amino acids from the N-terminus was subcloned into a pET28a vector between the BamHI and XhoI sites using PrpR V9 Fw and PrpR Rv primers. Both MtPrpR M1 and MtPrpR V9 were expressed in Escherichia coli BL21(DE3). The cells were grown in LB media supplemented with 50 g ml -1 kanamycin to an OD 600 of 0.8, induced with 0.08 mM Isopropyl ␤-D-1-thiogalactopyranoside (IPTG) and shaken at 18 • C for another 12-16 h before being pelleted. The cells were resuspended in lysis buffer (100 mM Na 2 HPO 4 /NaH 2 PO 4 pH 7.5, 200 mM NaCl, 30 mM imidazole), homogenized using a Microfluidizer M-100P (Microfluidics). Cell debris was clarified and the supernatant was applied to Ni-NTA resin (Qiagen). The resin was washed with 20 column volumes of wash buffer (100 mM Na 2 HPO 4 /NaH 2 PO 4 pH 7.5, 200 mM NaCl, 60 mM imidazole). An isocratic elution was performed using elution buffer (100 mM Na 2 HPO 4 /NaH 2 PO 4 pH 7.5, 200 mM NaCl, 300 mM imidazole).</p><p>A prpR 81-486 construct that truncated the N-terminal helix-turn-helix domain was subcloned into a ligationindependent cloning (LIC) vector pMCSG7 <ref type="bibr" target="#b31">(32)</ref> with primers PrpR D81 Fw and PrpR V486 Rv. This construct contains a His 6 -tag and a TEV cleavage site to the Nterminus of the target protein. The plasmid was transformed into E. coli BL21(DE3) competent cells. The cells were grown at 37 • C in LB medium supplemented with 100 g ml -1 carbenicillin to an OD 600 of 0.8. Protein expression was induced by 0.3 mM IPTG. Cells were grown at 18 • C for another 12-16 h before being pelleted. Protein purification was analogous to that of the full-length proteins except that 20 mM Tris-HCl pH7.8 was used instead of 100 mM Na 2 HPO 4 /NaH 2 PO 4 pH 7.5 in all the buffers. The salt and imidazole concentrations remained unchanged. The purified MtPrpR 81-486 was about 95% pure according to sodium dodecyl sulphate-polyacrylamide gelelectrophoresis (SDS-PAGE) analysis.</p><p>The protein was diluted in IEX buffer A (20 mM Tris-HCl pH 7.8) until the NaCl concentration was below 100 mM and was loaded to an anion exchange HiTrap Q FF column (GE Healthcare). The column was washed for 10 column volumes by mixing 80% IEX buffer A with 20% IEX buffer B (20 mM Tris-HCl pH 7.8, 1.0 M NaCl). An isocratic elution was performed with 30% IEX buffer B. N-terminal His 6 -tagged protein was concentrated immediately to ∼30 mg ml -1 and applied onto a HiLoad 26/600 Superdex-200 column (GE Healthcare) equilibrated with size exclusion chromatography (SEC) buffer (20 mM Tris-HCl pH 7.8, 100 mM NaCl, 3 mM dithiothreitol (DTT)). Peak fractions were pooled and concentrated to 24 mg ml -1 for crystallization trials.</p><p>MtPrpR 81-486 point mutations were introduced using the primers listed in Supplementary Table <ref type="table">S1</ref> and the QuikChange site-directed mutagenesis kit (Agilenet). The F155H variant was expressed and purified following the same procedure for the wild-type protein.</p><p>Selenomethionine (Se-Met) incorporation was adapted from previous literature <ref type="bibr" target="#b32">(33)</ref>. Specifically, Se-Met-MtPrpR 81-486 was expressed by growing the bacteria in M9 minimal salt media supplemented with 0.4% glucose, 2 mM MgSO 4 , 0.1 mM CaCl 2 and 100 g ml -1 carbenicillin. Cells were grown to an OD 600 of 0.6 and chilled on ice. A total of 100 mg l -1 each of L-lysine, L-threonine, L-phenylalanine, 50 mg l -1 each of L-leucine, L-isoleucine, L-valine and 60 mg l -1 L-selenomethionine, were added before induction along with 100 mg l -1 ferrous ammonium sulfate. Cells were shaken at 18 • C for 15 min, and protein expression was induced with 0.3 mM IPTG for 12-16 h. The selenomethionine-derived protein purification procedure was identical to that of the native protein and its behavior was also similar to that of the native protein.</p><p>Transition metal ion evaluations were performed by growing the E. coli cells in M9 minimal salt media supplemented with 0.4% glucose, 2 mM MgSO 4 , 0.1 mM CaCl 2 and 100 g ml -1 carbenicillin to an OD 600 of 0.8. Each flask was supplied with 25 M one of the chloride salts of Fe 3+ , Co 2+ , Ni 2+ , Cu 2+ and Zn 2+ 15 min before induction. Protein expression was induced with 0.3 mM IPTG for 16 h at 18 • C. The total protein expression in the whole cell lysate and the soluble protein in the supernatant were analyzed using SDS-PAGE.</p><p>PrpR 155-440 was subcloned into a pMCSG7 vector using primers PrpR F155 Fw and PrpR E440 Rv. Procedures for protein expression and affinity purification were similar to those of MtPrpR 81-486 except that all purification buffers contain 500 mM NaCl. The protein was dialyzed overnight against 20 mM Tris-HCl pH7.8, 500 mM NaCl while the His 6 -tag was cleaved with 0.02 mg ml -1 TEV protease. The TEV protease was expressed and purified from plasmid pMHTDelta238 (DNASU Plasmid Repository) as described <ref type="bibr" target="#b33">(34)</ref>. The protein was reapplied to the Ni-NTA resin to remove the His 6 -tag and the residual impurities. The protein was concentrated to about 10 mg ml -1 and injected to a HiLoad 26/600 Superdex-75 column (GE Healthcare) preequilibrated with 20 mM Tris-HCl pH 7.8, and 400 mM NaCl. The peak fractions were pooled and concentrated to ∼10 mg ml -1 .</p><p>Analytical SEC for each protein construct was performed using the Superdex 200 10/300 GL (GE Healthcare). SEC buffer for each protein construct was identical to their respective preparative SEC buffer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Crystallization</head><p>Freshly purified N-terminal His-tagged MtPrpR 81-486 or MtPrpR 81-486 F155H variant proteins at 24 mg ml -1 was screened against over 900 crystallization conditions using sitting-drop vapor diffusion set by a Mosquito Crystal liquid handler (TTP Labtech Inc). Protein was equilibrated with the crystallization conditions in 17 • C. Brown color crystals appeared within 2 days. The best growth condition contained either 100 mM HEPES pH 7.5 or 100 mM Bicine pH 9.5, 1.0 M sodium acetate, 0.08 mM Zwittergent 3-14.</p><p>MtPrpR 155-440 protein with the His-tag cleaved was screened against over 900 conditions at 10 mg ml -1 in the presence and absence of 1 mM CoA. Crystals of identical morphology for both formulations appeared in about one week in 0.2 M CaCl 2 •2H 2 O, 0.1 M HEPES pH 7.5, 28% v/v PEG 400.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data collection and structure determination</head><p>Crystal X-ray diffraction data were collected at Beamline 19-ID, 19-BM, or 23-ID at the Advance Photon Source, Argonne National Laboratory in Chicago. Anomalous scattering for selenomethionine derived MtPrpR 81-486 (PDB code: 6CZ6) was collected around the peak position at 0.97949 Å. (We planned for Fe phasing, but the beam at low energy was not stable and we succeeded with Se phasing, thus, we did not perform Fe phasing.) The crystal diffracted to ∼2.7 Å resolution. Crystal symmetry and diffraction intensity were analyzed with Denzo in HKL2000, scaled and reduced with Scalepack in HKL2000 <ref type="bibr" target="#b34">(35)</ref>. The selenomethionine derived crystal belonged to the P2 1 2 1 2 1 space group with a = 96.19 Å, b = 142.37 Å, c = 145.97 Å, ␣ = ␤ = ␥ = 90 • and contained one biological tetramer per asymmetric unit (ASU) in D2 symmetry. Experimental phasing was achieved using single-wavelength anomalous diffraction (SAD). Heavy atom sites were searched in SHELXD <ref type="bibr" target="#b35">(36)</ref> (SHELXC/D/E pipeline in CCP4 <ref type="bibr" target="#b36">(37)</ref>). Seventeen out of 28 possible heavy atom sites were found, all of which were correct when compared to the final structure. The electron density map was calculated with SHELXE <ref type="bibr" target="#b37">(38)</ref>, followed by density modification with Parrot <ref type="bibr" target="#b38">(39)</ref> in CCP4 by applying non-crystallographic symmetry (NCS) calculated from the heavy atom substructure. Automated initial model building plus refinement was conducted using Buccaneer <ref type="bibr" target="#b39">(40)</ref> in CCP4. Manual model building was performed in Coot <ref type="bibr" target="#b40">(41)</ref>. The [4Fe4S] cluster and Coenzyme A were built into the electron density in all four chains in the ASU.</p><p>The native PrpR 81-486 crystal (PDB code: 6CYY) was collected to 2.5 Å and had slightly different unit cell dimensions. The crystal was indexed to a higher symmetry of the P4 1 2 1 2 space group with a = b = 144.88 Å, c = 97.77 Å. In this case, a biological tetramer was shared by two ASUs, each containing two polypeptide chains. Since the native crystal was non-isomorphous to the heavy atom derived one, a molecular replacement search was performed in Phaser-MR <ref type="bibr" target="#b41">(42)</ref> in PHENIX <ref type="bibr" target="#b42">(43)</ref> using one polypeptide chain from the Se-PrpR 81-486 tetramer. Refinement was carried out using phenix.refine <ref type="bibr" target="#b43">(44)</ref>, by randomizing the B-factors of the MR solution and performing simulated annealing to remove as much as possible of the Rfree bias introduced by previous refinement. Real space refinement was performed in phenix.refine and Coot. Fifteen Translation/Libration/Screw (TLS) groups were defined by phenix.refine and applied in the refinement. Xray/stereochemistry and X-ray/ADP weights were optimized in the final cycles of refinement to improve the refinement statistics.</p><p>The MtPrpR 81-486 F155H variant crystal (PDB code: 6CYJ) diffracted to 2.7 Å, and the unit cell was isomorphous to the native MtPrpR 81-486 . The structure of the wildtype protein was directly refined against the mutant data by transferring the test set from the wild-type data. The process of refinement was analogous to that of the wild-type protein.</p><p>The MtPrpR 155-440 crystal (PDB code: 6D2S) diffracted to 1.8 Å and belonged to the I222 space group with a = 75.03, b = 81.71, c = 95.37, ␣ = ␤ = ␥ = 90 • . A molecular replacement search was performed in Phaser-MR using one molecule of MtPrpR 81-486 trimmed to appropriate positions as the search model. The manual model building and refinement were performed in Coot and phenix.refine analogous to that of the native MtPrpR 81-486 .</p><p>The interface analysis was performed using PISA <ref type="bibr" target="#b44">(45)</ref>. The 3D structure similarity search was performed in Dali <ref type="bibr" target="#b45">(46)</ref>. The structure figures were generated using UCSF Chimera <ref type="bibr" target="#b46">(47)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>[4Fe4S] cluster identification and characterization</head><p>The [4Fe4S] cluster was initially identified with the UVvisible spectroscopy. MtPrpR 81-486 was diluted to 30 M and transferred to a quartz cuvette of one cm path length. The UV-visible spectra were recorded from 200 to 800 nm using a Cary 50 UV-Vis spectrophotometer (Varian/Agilent Technologies, Santa Clara, CA, USA).</p><p>Laser Ablation Inductively Coupled Plasma Mass Spectrometry (LA-ICP-MS) was conducted using an ELAN DRC II ICP Mass Spectrometer (Perkin Elmer) to further confirm the identity and the stoichiometry of the metal ion. The iron standard was diluted in 1% HNO 3 to 25, 50, 100, 150, 200 ppb, and plotted as a standard curve. The protein sample (10 mg ml -1 ) was denatured, diluted 200-and 400-fold in 1% HNO 3 to 1.04 and 0.52 M, respectively, and centrifuged to remove the protein. The supernatant was then subjected to the ICP-MS system. The iron concentration was calculated based on the standard curve.</p><p>X-band continuous wave EPR spectroscopy was performed using a Bruker EleXsys E500 EPR spectrometer. The EPR signals were recorded at 10 K. The microwave frequency was 9.38 GHz. The field modulation was 5 G at 100 KHz, and the microwave power was 0.2 mW. The MtPrpR 81-486 sample aliquots at 200-250 M (10-12 mg ml -1 ) were treated aerobically with 1 mM ferricyanide ion, 2 mM dithionite or 5 mM ethylenediaminetetraacetic acid (EDTA) for &gt;3 h on ice before EPR spectra measurements.</p><p>The H 2 O 2 oxidation test was performed by mixing 20 M of purified MtPrpR 81-486 with different concentrations of H 2 O 2 (Sigma-Aldrich) in the SEC buffer. The property of [4Fe4S] cluster was monitored optically using the UVvisible spectrometry at indicated time points.</p><p>The NO response was performed as described previously <ref type="bibr" target="#b47">(48)</ref>. Briefly, PROLI NONOate (Cayman Chemical), the NO donor compound, was dissolved in 25 mM NaOH and supplemented at indicated concentrations into 50 M MtPrpR 81-486 in the SEC buffer. Each molecule of PROLI NONOate can release two molecules of NO (t 1/2 = 13 s at 25 • C) <ref type="bibr" target="#b48">(49)</ref>. The UV-visible spectrum was measured after a 10 min incubation.</p><p>The dithionite ion response was performed by incubating 30 M purified MtPrpR 81-486 with different concentrations of freshly made sodium dithionite (Sigma-Aldrich). The UV-visible spectra were monitored at indicated time points.</p><p>The impact of a chelator on the cluster and the oligomeric state of the protein was assessed by incubating 150 M MtPrpR 81-486 with 20 mM Tris-HCl pH 7.8, 100 mM NaCl, 3 mM DTT, 10 mM EDTA for 3 h or 36 h. The protein was then injected to a Superdex 200 10/300 analytical column equilibrated with the same buffer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Coenzyme A derivative isolation and identification</head><p>The CoA derivative isolation procedure was performed at 4 • C to maintain the integrity of the molecules. A total of 100 mg of 25 mg ml -1 of the wild-type MtPrpR 81-486 or the F155H variant was denatured in 10 volumes of 8 M urea acidified with 0.1 M formic acid to stabilize potential thioester bonds. Urea was freshly made and purified with mixed bed resin (Sigma-Aldrich) to minimize the content of isocyanate and other ions. The denatured protein solution was passed through a 30 kDa cut-off concentrator to remove the protein, and the flow-through was collected and loaded onto Q fast flow sepharose anion exchange resin (GE Healthcare Life Sciences). The resin was washed with five column volumes of 0.1 M formic acid and eluted with two column volumes of 2.0 M ammonium formate in 0.1 M formic acid. The eluate was lyophilized and dissolved in 0.2 ml pure water for identification. The LC-MS analysis was adapted from previous research on CoA derivatives. Specifically, a 10 l sample solution was injected into a Kinetex 2.6 m EVO C18 100A LC column 100 × 4.6 mm and separated by a mobile phase gradient elution of 50 mM ammonium acetate (A) and acetonitrile + 0.1% formic acid (B) at a flow rate of 0.5 ml min -1 . An Agilent 1200 Series LC system was used to start (B) at 10% and increase linearly to 100% from 0 to 8 min, hold (B) at 100% from 8-12 min, decrease linearly from 100 to 10% from 12 to 14 min and held at 10% for an additional 3 min (total run time 17 min). A Bruker Daltonics micrOTOF-Q II LC-MS with an electrospray ionization system was operated in positive mode at a source temperature of 220 • C, dry nitrogen gas flow of 11 l min -1 and under 3.5 bars of pressure. A 0.4 mg ml -1 sodium formate external calibration solution was directly injected at 13 min for post data analysis and calibration. Quantification was based on integrating peak area corresponding to the elution of the target compound in the extracted product ion chromatograms. Data was processed using Bruker Hystar Software 4.1 and extracted ion chromatograms were created for each target compound.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Transcription level quantification</head><p>Quantification of gene expression was performed using reverse transcription, quantitative PCR (RT-qPCR) as described previously <ref type="bibr" target="#b16">(17)</ref>. PrpR variant strains were grown to log phage in 7H9 complete media, spun down and resuspended to an OD 600 of 0.1 in 10 ml of 7H12 media (7H9 salts, 0.2% glycerol, 0.1% casamino acids and 0.05% tyloxapol) with 0.02% of the indicated short chain fatty acid. After 2 days of exposure, RNA was isolated using the Direct-Zol RNA miniprep kit (Zymo Research) and cDNA was generated using Superscript IV reverse transcriptase (Invitrogen) with 200-300 ng of total RNA as a template. The transcription of prpD, prpR, icl1 and sigA was measured with the primers included in Supplementary Table <ref type="table">S1</ref>. The transcriptional levels of prpD, prpR and icl1 were quantified using the delta-delta CT method using sigA as a housekeeping gene to normalize for input. Expression of the prpR wild-type complement in acetate was set to one in each case.</p><p>In the ramB knockdown experiments, wild-type H37Rv and the H37Rv prpR mutant strains transformed with the ramB knockdown vector were cultured in acetate or propionate media as describe above simultaneously with 100 ng ml -1 ATc where indicated to induce knockdown. RNA was collected after 48 h of media exposure and induction, and was quantified as described above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of a [4Fe4S] cluster in MtPrpR</head><p>To understand the transcriptional activation of MCC at the molecular level, we employed X-ray crystallography to characterize the structure and function of its transcriptional regulator MtPrpR. We first generated several recombinant protein expression plasmids of different constructs of MtPrpR designed based on the secondary structure and domain predictions (Supplementary Figure <ref type="figure">S2A</ref>). Each plasmid was tested for MtPrpR expression in E. coli strain BL21(DE3). Most expression constructs yielded protein that was either insoluble or aggregated during the purification procedure (Supplementary Figure <ref type="figure">S2B</ref>). However, when the first 80 residues that contained the Nterminal helix-turn-helix DNA-binding domain (residues 20-76) and its flanking loops were truncated, the resultant MtPrpR 81-486 protein was both soluble and monodispersed at concentration exceeding 20 mg ml -1 . Size exclusion chromatography (SEC) revealed the protein was a tetramer (Supplementary Figure <ref type="figure">S2C</ref>).</p><p>Recombinant MtPrpR 81-486 was brown in color, and showed an absorbance peak at 410 nm in UV-visible spectrometry (Supplementary Figure <ref type="figure">S3A</ref>), matching the absorbance of [4Fe4S] cluster. We determined the extinction coefficient at 410 nm (ε410 nm) of the purified MtPrpR 81-486 and it was ∼13 700 cm -1 M -1 . Inductively coupled plasma mass spectrometry (ICP-MS) confirmed that the identity of the metal was iron and that each polypeptide chain contained approximately four irons (data not shown). Iron-sulfur clusters are typically oxygen labile and require stringent anaerobic conditions for the protein purification or cluster reconstitution. However, aerobically purified MtPrpR 81-486 showed no apparent difference in solubility or UV-visible spectra compared to protein purified anaerobically. The EPR spectrum of untreated MtPrpR 81-486 showed a weak signal at g = 2.015 (Supplementary Figure <ref type="figure">S3B</ref>), corresponding to the paramagnetic [3Fe4S] + cluster. The concentration of this species was quantified, using a Cu(II)-EDTA standard, to be &lt;2% of the total protein concentration. We did not detect other paramagnetic iron-sulfur cluster species including [4Fe4S] + or [4Fe4S] 3+ , indicating the majority of the cluster in the protein should be the EPR-silent diamagnetic [4Fe4S] 2+ form. Since oxidative degradation of a [4Fe4S] 2+ cluster produces a [3Fe4S] + cluster <ref type="bibr" target="#b49">(50)</ref>, a small portion of [3Fe4S] + was expected, given that the protein was purified aerobically without cluster reconstitution. Intriguingly, the [4Fe4S] 2+ cluster in MtPrpR 81-486 appears to be resistant to oxidants, reductants or chelators (Supplementary Figure <ref type="figure">S3B</ref>). Treatment with 5-fold molar excess of ferricyanide ion did not increase the amount of [3Fe4S] + species. Dithionite ion at a 10-fold molar excess did not reduce the EPRsilent [4Fe4S] 2+ to the paramagnetic [4Fe4S] + form, nor did it convert the paramagnetic [3Fe4S] + to the EPR-silent [3Fe4S] 0 form. A &gt;20-fold molar excess of EDTA also failed to alter the EPR spectrum. The above results indi-cate that a physiologically relevant transition between the [4Fe4S] and the [3Fe4S] clusters is unlikely.</p><p>UV-visible spectra showed that the [4Fe4S] cluster of MtPrpR 81-486 could tolerate 0.01% (∼3 mM) of H 2 O 2 (Supplementary Figure <ref type="figure">S3C</ref>) or a 32-fold molar excess of nitric oxide (1.6 mM) (Supplementary Figure <ref type="figure">S3D</ref>) for hours without showing a decrease of the absorbance peak at 410 nm. The cluster could only be reduced by &gt;30-fold molar excess of dithionite ion (1 mM) (Supplementary Figure <ref type="figure">S3E</ref>). This high level of redox stability is very unusual for an iron-sulfur protein. Therefore, MtPrpR is unlikely to be a redox sensor in the cell. We next assessed the importance of iron in culture media to the expression levels of the recombinant MtPrpR by expressing MtPrpR 81-486 in M9-dextrose media supplemented with common transition metal (Fe, Co, Ni, Cu and Zn) ions. We could obtain soluble MtPrpR 81-486 only when iron was added to the media (Supplementary Figure <ref type="figure">S3F</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Crystal structure of MtPrpR 81-486</head><p>We conducted crystallization trials on the above mentioned recombinant proteins, and only the stable MtPrpR 81-486 containing the N-terminal His-tag produced protein crystals. An X-ray diffraction dataset was collected and processed at 2.7 Å resolution and phased using the singlewavelength anomalous diffraction (SAD) methods <ref type="bibr" target="#b50">(51,</ref><ref type="bibr" target="#b51">52)</ref> with the selenomethionine-derived (Se-Met) protein crystals (Supplementary Table <ref type="table">S2</ref>). Interestingly, the Se-Met protein crystallized in the P2 1 2 1 2 1 space group with two axes of very similar lengths (a = 142.37 Å, b = 145.96 Å). However, the native protein crystallized in a similarly packed unit cell but in the higher symmetry space group, P4 1 2 1 2, with a = b = 144.87 Å. The asymmetric unit (ASU) of the P4 1 2 1 2 crystal contained two protein molecules and was equivalent to half of the ASU of the P2 1 2 1 2 1 crystal. Nevertheless, the overall crystal unit cell volumes and the structures of both forms were nearly identical. Protein assembly analysis using the program PISA <ref type="bibr" target="#b44">(45)</ref> showed that MtPrpR 81-486 in the crystal was a homotetramer (Figure <ref type="figure" target="#fig_0">1C</ref>), which was consistent with the SEC results (Supplementary Figure <ref type="figure">S2C</ref>). The four polypeptide chains organized in D 2 symmetry. The shared surface area of the interface on each chain were around 2400 Å2 between Chains A and B; 1250 Å2 between Chains A and C; 340 Å2 between Chains A and D. Since the four chains in the Se-Met structure were virtually identical (C␣ RMSD &lt; 0.3 Å), we focus on Chain A for subsequent structure depictions.</p><p>MtPrpR contains three domains (Figure <ref type="figure" target="#fig_0">1B</ref>) aside from the N-terminal DNA-binding domain (DBD, residues 20-76) which was removed in the MtPrpR 81-486 protein construct. A possibly disordered domain (designated D II , residues 81-152) connected the DBD to the third domain (designated D III , residues 153-324). The electron density for D II was not visible in our crystal structure, but its presence in the crystallized protein was confirmed by protein mass spectrometry (Supplementary Figure <ref type="figure">S4</ref>). The D III domain is composed of a nine-helix bundle and a three-stranded ␤-sheet (Figure <ref type="figure" target="#fig_0">1D</ref>). A loop (residues 325-334) links the D III to a GAF-like (cGMP phosphodiesterase/adenylyl cyclase/FhlA) <ref type="bibr" target="#b52">(53)</ref> domain (residues 335-419).</p><p>MtPrpR also contains a long C-terminal region (residues 420-486) consisting primarily of loops plus several short secondary structure elements. The C-terminal region of Chain A interacts with the D III -GAF di-domain of Chain B in a head-to-tail manner (Figure <ref type="figure" target="#fig_0">1C</ref> and <ref type="figure" target="#fig_0">D</ref>). The interaction is stabilized by an extended ␤-sheet formation between a short ␤-strand at the end of the C-terminal region and the three ␤-strands in the D III domain of the neighboring chain.</p><p>The cubane-type [4Fe4S] cluster resides in the C-terminal region (Figure <ref type="figure" target="#fig_0">1D,</ref><ref type="figure" target="#fig_0">E</ref>) with three of the four irons interacting with Cys447, Cys450 and Cys455 in a 447 C-X 2 -C-X 4 -C 455 motif which appears to be conserved among all Mt-PrpR homologs (Supplementary Figure <ref type="figure">S5</ref>). Cys363 from the GAF-like domain of the same chain ligates the fourth iron. The loop harboring the C-X 2 -C-X 4 -C motif wraps around the [4Fe4S] cluster and buries the majority of it inside the MtPrpR 81-486 tetramer, which we propose as the major contribution to the stability of the cluster when the protein is exposed to air.</p><p>A 3D structure similarity search of the MtPrpR 81-486 structure against the Protein Data Bank (PDB) <ref type="bibr" target="#b45">(46)</ref> showed that apart from the hits on the GAF-like domain, the only structure that showed significant similarity to MtPrpR 81-486 was a Deinococcus radiation response regulator IrrE <ref type="bibr" target="#b21">(22)</ref> (PDB code: 3DTI and related entries, C␣ RMSD 5.0 Å, Supplementary Figure <ref type="figure">S6A</ref>). There were only 240 residues within the D III -GAF region of MtPrpR 81-486 that could be structurally aligned to IrrE, and the sequence identity of this region was only 14%. IrrE was reported as a metalloprotease with an HEXXH motif coordinating a Zn ion <ref type="bibr" target="#b21">(22,</ref><ref type="bibr" target="#b22">23)</ref> (Supplementary Figure <ref type="figure">S6B</ref>). However, those residues are not conserved in MtPrpR.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of Coenzyme A in MtPrpR</head><p>After building and refining the protein atoms and the [4Fe4S] clusters into the electron density map, we observed a relatively large segment of electron density in each polypeptide chain that could not be accounted for by protein or chemicals in the purification buffer or crystallization condition. This electron density was nearly identical in shape in each of the four subunits, and was located in the cavity between the D III and GAF-like domains in both the mFo-DFc and 2mFo-DFc difference electron density maps (Figure <ref type="figure" target="#fig_1">2A</ref> and <ref type="figure" target="#fig_1">B</ref>). This indicated that a ligand had been cocrystallized with the protein. To identify the ligand, MtPrpR 81-486 was denatured, and the ligand was enriched by ion exchange chromatography followed by liquid chromatography-high resolution mass spectrometry (LC-HRMS). The mass to charge (m/z) values showed that the majority of the ligand was Coenzyme A ([M+H] + m/z of 768.12) from protein expressed in LB media (Figure <ref type="figure" target="#fig_1">2C</ref>). When the protein was expressed in M9-dextrose-iron media, acetyl-CoA ([M+H] + m/z of 810.12) was also detected in addition to CoA (Figure <ref type="figure" target="#fig_1">2D</ref>). The ratio of acetyl-CoA to CoA was about 1:8 according to the HPLC UV chromatogram (data not shown). However, we did not observe well-defined electron density for the acetyl group, although there was room for it in the binding cavity. Therefore, the predominant CoA was built into all protein chains and the CoA molecules fit into the electron density. The refined mean B-factors for the CoA was 69.43 Å2 , consistent with the mean B-factor of 67.28 Å2 for the protein. As mentioned earlier, the D III and GAF-like domains of MtPrpR are structurally similar to Deinococcus IrrE protein. Notably, IrrE also possesses a deep cavity which is the counterpart of the CoA-binding cavity in MtPrpR (Supplementary Figure <ref type="figure">S6A</ref>). Although vacant in all reported IrrE structures, the cavity may function to accommodate radiationsensing ligands, given that IrrE is a radiation response protein.</p><p>Although the CoA-binding pocket was composed in part by the GAF-like domain of MtPrpR, the binding mode was quite different from those found in typical GAF domain structures. The canonical GAF domain and the closely related PAS (Per-Arnt-Sim) domain have been reported to bind to a variety of signaling molecules <ref type="bibr" target="#b52">(53)</ref><ref type="bibr" target="#b53">(54)</ref><ref type="bibr" target="#b54">(55)</ref><ref type="bibr" target="#b55">(56)</ref><ref type="bibr" target="#b56">(57)</ref> on the concave face of the central ␤-sheet of the GAF domain (Supplementary Figure <ref type="figure" target="#fig_6">S7A</ref> and <ref type="figure">B</ref>). However, the CoA-binding cavity in MtPrpR was cooperatively formed between the convex face of the central ␤-sheet of the GAF-like domain and the helix bundle of the D III domain (Figure <ref type="figure" target="#fig_1">2A</ref>; Supplementary Figure <ref type="figure" target="#fig_6">S7A</ref> and <ref type="figure">B</ref>). The adenine group was sandwiched between Phe240 and His319 and was held in place byinteractions. The rest of CoA forms a host of hydrogen bonds and electrostatic interactions with the protein, contributed by the side chains or backbone atoms of seven amino acids in the D III and GAF-like domains (Figure <ref type="figure" target="#fig_1">2A</ref> and <ref type="figure" target="#fig_1">E</ref>). The diphosphate group in particular was surrounded by four basic residues, Lys217, Lys347, Lys410 and Arg338. Phe155, located at the bottom of CoA-binding cavity, contacted the thiol group of CoA through van der Waals interactions. The C-terminal loop region of neighboring Chain B forms a hinged triangular lid that covers the CoA-binding cavity of Chain A (Figure <ref type="figure" target="#fig_1">2F</ref>). The hinge region harbors the 447 C-X 2 -C-X 4 -C 455 motif where the [4Fe4S] cluster binds. The cluster appears to stiffen the hinge region, as indicated by the lower local B-factors (Supplementary Figure <ref type="figure">S7C</ref> and <ref type="figure">D</ref>), making it difficult for the lid to open, hence locking CoA inside the cavity. Common ligand stripping procedures such as dialysis failed to dissociate CoA from the protein. Based on the structure, the integrity of the iron-sulfur cluster appears to be pivotal for protein tetramerization and the retention of CoA in the cavity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The [4Fe4S] cluster is critical for CoA binding and transcription activation</head><p>To determine if the [4Fe4S] cluster in the structure is important for transcriptional regulation, we picked two ironligating cysteine residues, Cys363 in the GAF-like domain and Cys450 in the C-terminal 447 C-X 2 -C-X 4 -C 455 motif and mutated them individually into alanine (C363A and C450A) using a prpR-containing shuttle vector <ref type="bibr" target="#b16">(17)</ref>. The wild-type prpR, each mutant and an empty vector were individually integrated into the chromosome of prpRdeleted Mtb laboratory strain H37Rv (H37Rv prpR) <ref type="bibr" target="#b7">(8)</ref>. The impact on transcription levels were compared between propionate and acetate carbon sources because both molecules are nonfermentable while only propionate elevates prp operon transcription. Upregulation of the prp operon, represented by prpD or prpR in response to pro- pionate were completely abolished in the prpR::C363A, prpR::C450A, and prpR::vector strains (Figure <ref type="figure" target="#fig_2">3A</ref>).</p><p>We next sought to visualize the iron-sulfur free form of the protein. Several methods have been attempted to obtain iron-free protein. Overexpressing MtPrpR 81-486 in M9dextrose media without supplementing iron failed to produce soluble protein. Incubating purified MtPrpR 81-486 in the SEC buffer containing 10 mM EDTA also failed to strip iron from the protein or alter its tetrameric state as shown by SEC (Supplementary Figure <ref type="figure">S2D</ref>). We then truncated a large portion of the C-terminal region (residues 441-486) containing the 447 C-X 2 -C-X 4 -C 455 iron-sulfur clusterbinding motif. In addition, residues 81-154, which were not visible in the MtPrpR 81-486 structure due to flexibility, were also removed from the expression construct. The resultant prpR 155-440 expression construct produced soluble protein with no color and the protein was a monomer in solution as shown by SEC (Supplementary Figure <ref type="figure">S2E</ref>). The crystal structure of MtPrpR 155-440 showed that the protein retained the D III -GAF core structure of MtPrpR 81-486 and, as expected, had no bound [4Fe4S] cluster. However, CoA was also absent in the structure, even though 1 mM CoA was incubated with the protein during crystallization.</p><p>The iron-free structure revealed a dramatic conformational change of the protein (Figure <ref type="figure" target="#fig_2">3B</ref>). The loop between ␤7 and ␤8 of the GAF-like domain flipped back nearly 180 degrees to be oriented towards the CoA-binding cavity and blocked the cavity entrance. A hydrophobic fragment of the loop with the amino acid sequence of 402 GLGYLGP 408 inserted into the cavity, interacting with Phe240, Phe336, Phe412, Trp232, His319 and Val414, all within van der Waals distances to the loop (Figure <ref type="figure" target="#fig_2">3C</ref>). Gly404, Tyr405 and Leu406 at the tip of the loop occupy the space where the 3 -phosphoadenosine diphosphate moiety of CoA resided in the CoA-bound form of the protein (Figure <ref type="figure" target="#fig_2">3B</ref> and <ref type="figure" target="#fig_2">C</ref>). While in the tetrameric MtPrpR 81-486 structure, the loop was held in an open conformation mainly through hydrophobic interactions with the neighboring chains. For example, the loop in Chain A was surrounded by Leu305, Ile378, Val427 and Tyr428 in the neighboring Chain C, all within a distance of 5 Å (Figure <ref type="figure" target="#fig_2">3D</ref>). In addition, Asp302 in Chain C hydrogen bonded (2.8 Å) to the backbone nitrogen of Tyr405. These interactions hold the hydrophobic loop in an open conformation allowing for CoA binding. Taken together, the iron-sulfur cluster determines the ability of MtPrpR to bind CoA by regulating the conformation of this hydrophobic loop. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CoA derivatives control the MCC pathway activation</head><p>Theinteractions between the CoA adenine group and the residues Phe240 and His319 are likely to play critical roles during CoA binding. These two residues are invariant in most MtPrpR homologs (Supplementary Figure <ref type="figure">S5</ref>). To test the importance of these interactions, we complemented the H37Rv prpR strain with prpR F240A, prpR H319A single mutations or prpR F240A/H319A double mutation. None of the resultant strains could upregulate prpD or prpR in response to propionate (Figure <ref type="figure" target="#fig_2">3A</ref>).</p><p>There is good agreement between our studies and the literature <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b14">15)</ref> that show prpR activates the transcription of the prp operon during propionate or cholesterol carbon utilization, where propionyl-CoA is the common metabolite. Therefore, we speculated that propionyl-CoA, rather than the observed CoA or acetyl-CoA, was the co-activator of the prp operon. We tried to crystallize propionyl-CoA bound MtPrpR 81-486 by mixing the protein with different concentrations of propionyl-CoA, or by purifying MtPrpR 81-486 expressed in M9-propionate media. Nonetheless, the desired propionyl group was not discernible in the electron density map. This was likely due to the closed conformation of the CoA-binding pocket as described above.</p><p>We computationally modeled propionyl-CoA into the MtPrpR 81-486 structure by treating the protein as a rigid body. This led to steric clashes between the propionyl group and Phe155 which is located in the first visible ␣-helix (␣1) in the crystal structure (Figure <ref type="figure" target="#fig_3">4A</ref> and <ref type="figure" target="#fig_3">B</ref>). These clashes could not be overcome by simply changing the rotamer conformation of Phe155. Instead, a roughly 15-degree move- ment of ␣1 is required for the protein to accommodate propionyl-CoA (Figure <ref type="figure" target="#fig_3">4B</ref>). This implies that Phe155 directly participates in the ligand selection and that the CoAbound MtPrpR was transcriptionally inactive while the propionyl-CoA-bound form should undergo a conformational change and becomes active. The active form of Mt-PrpR may alter the recognition DNA conformation, leading to the transcriptional activation of the prp operon (Figure <ref type="figure" target="#fig_3">4C</ref>).</p><p>Through a structure-guided sequence comparison, we found that Phe155 in MtPrpR was replaced by a histidine in its paralog MtRamB (Phe155→His143, Figure <ref type="figure" target="#fig_4">5A</ref>), while other CoA-contacting residues were identical. Recall that MtRamB has been shown as a transcriptional repressor of icl1 in dextrose containing media <ref type="bibr" target="#b23">(24)</ref>. We hypothesized that the Phe→His substitution would allow MtRamB to bind to a different CoA derivative, and that F155H mutation of Mt-PrpR would affect its ability to respond to propionyl-CoA. We therefore integrated a prpR F155H mutant allele into the H37Rv prpR genome. The prpR::F155H retained little or no activity as measured by the strongly attenuated upregulation of both prpD and prpR in response to propionate in two experimental runs (Figure <ref type="figure" target="#fig_4">5B</ref> and Supplementary Figure <ref type="figure">S8A</ref>). Mutating Phe155 into alanine, which has an even smaller side chain, completely abrogated the up-regulation of prpD and prpR, while mutating Phe155 into the bulky aromatic residues tryptophan or tyrosine restored the upregulation to the wild-type level (Figure <ref type="figure" target="#fig_4">5B</ref>). Notably, these bulky aromatic residues naturally exist in Mt-PrpR homologs activating either the MCC (i.e. Ajs 1637 protein of Acidovorax sp. JS42 strain harbors a Tyr <ref type="bibr" target="#b57">(58)</ref>) or the methylmalonyl pathway (i.e. the PccR protein of Rhodobacter sphaeroides harbors a Trp <ref type="bibr" target="#b25">(26)</ref>) (Supplementary Figure <ref type="figure">S5</ref>). Both pathways are used by bacteria to assimilate propionyl-CoA. Therefore, it stands to reason that propionyl-CoA clashes with those aromatic residues and induces similar conformational changes in the proteins for transcriptional activation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>An MtRamB-like mutant of MtPrpR binds to succinyl-CoA</head><p>We were particularly interested in the identity of the ligand recognized by MtRamB. However, the poor solubility of the full-length MtRamB and the aggregation of MtRamB 69-474 (truncated to corresponding positions of MtPrpR 81-486 ) obstructed a direct study of MtRamB. We instead used MtPrpR 81-486 F155H as a mimic based on the fact that the other CoA-binding residues in both proteins are identical. MtPrpR 81-486 F155H remained a tetramer in solution as shown by SEC (Supplementary Figure <ref type="figure">S2C</ref>) and crystal- lized in the same condition as the wild-type protein. The overall structure of the polypeptide chain superimposed perfectly to the CoA-bound wild-type protein, including the helix ␣1 where residue 155 is located (C␣ RMSD = 0.314 Å, Supplementary Figure <ref type="figure">S8B</ref>).</p><p>The 2mFo-DFc and mFo-DFc electron density maps showed that MtPrpR 81-486 F155H also bound to a ligand whose electron density matched with CoA in general except that the ligand was longer than CoA (Supplementary Figure <ref type="figure">S8C</ref>). This indicated that a fatty acyl-CoA derivative was bound by the mutant protein. The ligand was extracted and identified using LC-HRMS and a major [M+H] + peak with an m/z of 868.12 was detected (Figure <ref type="figure" target="#fig_4">5C</ref>) in addition to CoA. The amount of CoA was less than a quarter of the new compound according to the UV chromatogram (data not shown). This mass corresponds to both epimers of methylmalonyl-CoA as well as succinyl-CoA, which share an identical chemical formula. Attempting to build (R)or (S)-methylmalonyl-CoA into the electron density resulted in a strong negative electron density peak (above 4 ) around the methyl branch in the mFo-DFc map (Supple-mentary Figure <ref type="figure">S8D</ref>). The methyl branch also caused steric clashes with the adjacent residues His155 and Arg159, while succinyl-CoA fit the electron density without steric overlap (Figure <ref type="figure" target="#fig_4">5D</ref>). The carboxyl group of the succinyl moiety interacts with His155 (∼4 Å), Arg348, and Arg159 (∼2.8-3.2 Å) (Figure <ref type="figure" target="#fig_4">5E</ref>).</p><p>Since the MtPrpR 81-486 F155H mutant was generated to make the ligand-binding residues identical to those of MtRamB, the observation of succinyl-CoA bound by this mutant indicates that succinyl-CoA is likely also bound by MtRamB.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MtPrpR and MtRamB cross-regulate the transcription of icl1 but not prp operon</head><p>Given that Mtb has two homologous regulators controlling related pathways, crosstalk between prpR and ramB is very likely. To investigate this, we incorporated a tunable ramB knockdown into both wild-type and the prpR-deleted backgrounds using a CRISPR interference (CRISPRi) system optimized for Mtb <ref type="bibr" target="#b26">(27)</ref>. The knockdown of ramB was con- firmed as measured by a depletion of 70-90% of its transcription after anhydrous tetracycline (ATc) induction (Figure <ref type="figure" target="#fig_5">6A</ref>).</p><p>Our studies showed that icl1 transcription was repressed by MtRamB and activated by MtPrpR. Specifically, by depleting ramB through ATc induction, icl1 transcription increased by at least 2-fold in the wild-type strain during acetate utilization and the prpR strain during both acetate and propionate utilization (Figure <ref type="figure" target="#fig_5">6B</ref>). However, when propionate is utilized by the wild-type strain, MtPrpR upregulated icl1 transcription by approximately 7-fold compared to acetate utilization, and depleting ramB did not further increase icl1 transcription (Figure <ref type="figure" target="#fig_5">6B</ref>). The above results reveal a dominant role of MtPrpR during propionate metabolism. The upregulation of icl1 during propionate metabolism can be explained by the protein's MCL activity <ref type="bibr" target="#b11">(12,</ref><ref type="bibr" target="#b12">13)</ref> in the Mtb MCC.</p><p>Unlike icl1, prpD and prpR exclusively engage in MCC, and thus were only upregulated by MtPrpR in response to propionate utlization (Figure <ref type="figure" target="#fig_5">6C</ref> and <ref type="figure" target="#fig_5">D</ref>). Depleting ramB had no noticeable effect on the transcription level of prpD or prpR under either carbon source.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>Mtb's dependence on lipid catabolism <ref type="bibr" target="#b1">(2)</ref>, especially cholesterol <ref type="bibr" target="#b2">(3)</ref>, is critical for establishing a chronic infection, as is its reliance on the MCC to assimilate propionyl-CoA and detoxify its metabolic intermediates <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b19">20)</ref>. The transcription factor MtPrpR determines the on and off states of the MCC <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15)</ref>. However, the triggering molecule that activates the MCC was not known, and consequently, the biochemical mechanism of the regulation has remained a mystery. Our study showed that MtPrpR directly binds to CoA or CoA derivatives, and that the binding is under the control of an iron-sulfur cluster which is located at the C-terminal region of the protein in close proximity to the CoA-binding cavity of a neighboring chain.</p><p>Based on the crystal structures and our model, it appears that MtPrpR can adopt inactive and active conformations by binding to different CoA derivatives. Specifically, the CoA-and acetyl-CoA-bound forms are transcriptionally inactive, while the propionyl-CoA-bound MtPrpR is likely to undergo a conformational change and becomes active. The MtPrpR F155H mutant, on the other hand, was shown to bind to succinyl-CoA and was locked in a transcriptionally inactive conformation regardless of the carbon sources. Since MtPrpR F155H was generated to harbor a CoA-binding pocket mimicking that of MtRamB, we suggest that MtRamB also binds to succinyl-CoA and is locked in a transcriptionally inactive conformation, which may explain the repressive role of MtRamB.</p><p>Combining the structural and genetic information, we propose a regulatory model for the MCC and the glyoxylate shunt that is based on the binding of the corresponding CoA derivatives to MtPrpR and MtRamB (Figure <ref type="figure" target="#fig_6">7</ref>). Un- der propionyl-CoA-generating conditions, such as cholesterol and odd-chain fatty acids, MtPrpR is switched to an active conformation by binding to propionyl-CoA and robustly upregulates the MCC genes to catabolize and detoxify propionyl-CoA. When acetyl-CoA but not propionyl-CoA is generated, such as non-fermentable carbon sources acetate and even-chain fatty acids and fermentable carbon source dextrose, the glyoxylate shunt and TCA cycle will be employed to assimilate acetyl-CoA. Catabolism of acetyl-CoA via the TCA cycle produces succinyl-CoA (see below) which will be bound by MtRamB for icl1 transcriptional repression. It has been shown that dextrose could induce a strong transcriptional repression of icl1 mediated by MtRamB <ref type="bibr" target="#b23">(24)</ref>. This indicates that dextrose degradation relies heavily on the TCA cycle where high concentration of succinyl-CoA can be generated. On the other hand, acetyl-CoA produced from acetate and fatty acids are mainly routed into the glyoxylate shunt and therefore the succinyl-CoA level will be lower, resulting in a weaker repression of icl1.</p><p>Previously, Mtb was shown to operate a variant TCA cycle which employs ␣-ketoglutarate (KG) decarboxylase and succinic semialdehyde dehydrogenase instead of KG dehydrogenase (KDH) and succinyl-CoA synthetase in the traditional TCA cycle <ref type="bibr" target="#b58">(59)</ref>. This finding led to the argument that succinyl-CoA was not an intermediate of Mtb TCA cycle. However, it has been later demonstrated that Mtb syn-thesizes succinyl-CoA from KG using both KDH <ref type="bibr" target="#b59">(60,</ref><ref type="bibr" target="#b60">61)</ref> and KG:ferrodoxin oxidoreductase (KOR) <ref type="bibr" target="#b60">(61)</ref>. A high level of succinyl-CoA produced in the TCA cycle allows Mtb to temporarily shut down glyoxylate shunt mediated by MtRamB. Furthermore, it was recently reported the detection of Icl1 lysine succinylation when Mtb was cultured in a rich medium containing dextrose <ref type="bibr" target="#b61">(62)</ref>. The succinylation decreased the enzymatic activity of Icl1 <ref type="bibr" target="#b61">(62,</ref><ref type="bibr" target="#b62">63)</ref>. Taken together, it appears that an increased level of succinyl-CoA reduces the concentration of active icl1 at both the mRNA and the protein levels.</p><p>A sequence-based classification showed that MtPrpR homologs form a distinct clade of prokaryotic transcription factors that regulate acyl-CoA assimilation pathways including MCC, glyoxylate shunt, methylmalonyl pathway, ethylmalonyl-CoA pathway and several unresolved pathways <ref type="bibr" target="#b25">(26)</ref>. This clade all contain a C-X 2 -C-X 4 -C motif and very likely bind to [4Fe4S] cluster. We now refer to this clade as the iron-sulfur-dependent acyl-CoA regulators (IsaR) in order to distinguish them from the other non-iron-sulfur regulators that modulate acyl-CoA assimilation pathways <ref type="bibr" target="#b57">(58)</ref>.</p><p>A highly stable [4Fe4S] cluster is rare, but was previously reported in the E. coli endonuclease III <ref type="bibr" target="#b63">(64,</ref><ref type="bibr" target="#b64">65)</ref> whose cluster was later shown to be activated upon DNA binding so as to sense DNA lesions <ref type="bibr" target="#b65">(66)</ref>. However, as a dedicated central carbon metabolic regulator, MtPrpR seems not engaged in measuring DNA integrity. There are several lines of evidence that indicate the role of [4Fe4S] cluster in MtPrpR is to sense iron availability in the cell and modulate prp operon transcription. Although [4Fe4S] and [2Fe2S] clusters have been reported to serve as iron sensors in IscR, RirA and IRP1 for iron acquisition and iron homeostasis <ref type="bibr" target="#b66">(67)</ref>, there has not been a case before where these iron sensors directly regulate the transcription of central carbon metabolism (CCM). We demonstrated that when [4Fe4S] cluster binding was disabled, MtPrpR could not bind to CoA derivatives or activate prp operon transcription. Recent studies on Mtb transcriptome <ref type="bibr" target="#b67">(68)</ref> also showed that during ironstarvation the reduction of prp operon transcription was the most significant among all Mtb genes. Moreover, Mtb becomes non-replicating under iron-starvation <ref type="bibr" target="#b67">(68)</ref>. Therefore, lowering CCM level may be a strategy for Mtb to survive iron-restriction that is initiated by host immune system, and MtPrpR is likely a member of the iron-sensing network.</p><p>Previously, mutations in prpR, which resulted in a deficient MCC, have been found prevalent in clinically isolated drug resistant Mtb <ref type="bibr" target="#b16">(17)</ref>. The mutation sites span almost all over the MtPrpR protein. Interestingly, except for K217E, none of the mutations belong to CoA-or the ironsulfur cluster-binding residues. Mutations flanking Phe155 were also observed, which include M153T and E156G, but Phe155 was invariable, as expected based on the functional importance of the residue in determining which CoA analogs can bind. So far, we are not able to rationalize the mode of action of these drug-resistant mutations from the structure.</p><p>Taken all together, our structure of the MtPrpR represents a prototype of the IsaR family of transcription factors. Moreover, despite the sequence dissimilarity, the protein folding of MtPrpR could be repurposed and widely used by different organisms to harness a variety of signaling pathways.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Genome organization of ramB/icl1 and prp regulons and structure of MtPrpR. (A) Genome organization of ramB-icl1 and prpR-prpDC regulons. Dashed lines indicate the presence of genes in between. Distances of the intergenic regions are indicated. The tandem repeats are represented as boxes. (B) Domain organization of MtPrpR: gray-scaled boxes and the numbers above indicate the predicted domain borders; color-filled boxes and the numbers below indicate the domains observed in the structure. The D III domain is colored in light yellow; the GAF-like domain is colored in blue; the C-terminal region is colored in green. The hatched boxes indicate the domains that were either truncated (HTH) from or not visible (D II ) in the protein construct. (C) Crystal structure of the MtPrpR 81-486 tetramer. The four chains are shown in different colors. Arrows and the central ellipse indicate the 2-fold rotational relationships between each pair of polypeptide chains. (D) The top half of the MtPrpR tetramer. Chain A is colored by domain organization in the same way as in B; Chain B is colored in pink. (E) Close up of the [4Fe4S] cluster-binding site. The 2mFo-DFc electron density of the cluster is contoured at 1 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. MtPrpR CoA binding cavity. (A) The CoA binding cavity in MtPrpR 81-486 ; the protein chain is colored in gray. The binding cavity is formed by the D III (left) and the GAF-like (right) domains. Key interacting residues are labeled. CoA is shown in stick and ball; the 2mFo-DFc map of CoA is contoured at 1 . (B) Electron density of CoA in A is displayed by a 90-degree rotation. (C and D) Mass spectra of CoA and its derivatives extracted from purified MtPrpR 81-486 expressed in LB (C) or M9-dextrose-iron (D) media. M/z values and identities are labeled (ACO for acetyl-CoA). (E) CoA interacting residues. Theinteractions are indicated by bold broken lines and colored in green; hydrogen bonds (also including electrostatic interactions) are indicated by dashed lines (blue for interactions between protein and CoA; magenta for interactions to stabilize the side-chain rotamer conformation); orange arc line indicates van der Waals interactions. (F) CoA-binding cavity of Chain B (pink for protein surface, cyan for CoA) covered by the neighboring Chain A (blue).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Effect of [4Fe4S] cluster upon MtPrpR. (A) Transcription levels of prpD (N = 3) and prpR (N = 3) in MtPrpR variants under acetate or propionate conditions. Values presented as mean ± SD (Data were analyzed with two-way ANOVA followed by Sidak's test, **** P &lt; 0.0001). (B) Conformational change of MtPrpR in the presence (blue and orange for the two neighboring chains of MtPrpR 81-486 ) or absence (yellow for MtPrpR 155-440 ) of the [4Fe4S] cluster binding domain. The arrow indicates the open and closed conformations of the loop; Regions within the solid and dashed line boxes are zoomed in with detailed interactions shown in (C) and (D).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Proposed model of MtPrpR conformational change and transcriptional activation. (A) Location of helix ␣1 in Chains A and B in MtPrpR 81-486 tetramer. The N-termini of the visible portion of the protein are shown. (B) Model of propionyl-CoA bound in the CoA-binding cavity of Chain A (light blue). Atoms within 4 Å to C1 and C2 of the propionyl group are colored in purple. Rotamers of Phe155 are shown as black wires. A minimum of 15 • movement of ␣1 (dark blue for the new position) is required to overcome the clashes with propionyl-CoA. (C) Schematic of MtPrpR-mediated transcriptional regulation. Binding of propionyl-CoA is proposed to induce a conformational change of MtPrpR via helix ␣1, which may alter the distances between the adjacent HTH domains and bend the recognition DNA, leading to gene activation.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. The polymorphism of residue 155 (number as in MtPrpR) in the MtPrpR homologs controls the ligand selectivity. (A) Sequence alignment of the helix ␣1 between MtPrpR and MtRamB, highlighting Phe155 in MtPrpR and its counterpart His143 in MtRamB. (B) Transcription levels of prpD (N = 3) and prpR (N = 3) in MtPrpR F155 variants under acetate or propionate conditions. Values presented as mean ± SD (Data were analyzed with two-way ANOVA followed by Sidak's test, **** P &lt; 0.0001). (C) Mass spectrum of the ligands. M/z and ligand identities are labeled (SCA for succinyl-CoA; SCA+Na + for the sodium adduct form of SCA). (D) The 2mFo-DFc electron density of succinyl-CoA bound by MtPrpR 81-486 F155H mutant, electron density contoured at 1 . (E) The succinyl-CoA binding environment. The dashed lines indicate the interactions between the protein and the succinyl moiety.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Transcriptional regulation by MtPrpR and MtRamB on prp operon and icl1. (A) Transcription levels of ramB in Mtb H37Rv or prpR strains using acetate or propionate carbon sources with or without CRISPRi induction by anhydrous tetracycline (ATc). (B-D) Transcription levels of icl1, prpR and prpD, respectively, under the same treatment as in A. The black and red bars are WT H37Rv and H37Rv prpR, respectively, transformed with an ATc inducible vector. N = 2 for each strain, treatment and carbon source combination. Data were analyzed with two-way ANOVA followed by Tukey's test. *** P &lt; 0.0002, ns: not significant.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Schematic of MtPrpR/MtRamB regulation mediated by short-chain fatty acyl-CoAs. Left panel: MtPrpR-mediated transcriptional activation via propionyl-CoA binding. The upregulation of the prp operon and icl1 leads to a robust MCC to efficiently assimilate and detoxify propionyl-CoA. Right panel: MtRamB-mediated transcriptional repression via succinyl-CoA binding. Succinyl-CoA can be produced at different levels depending on the carbon sources and the metabolic pathways including the glyoxylate shunt and the TCA cycle. Binding to succinyl-CoA by MtRamB leads to the transcriptional repression of icl1 but not the prp operon.</figDesc><graphic type="bitmap"/></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>This research used resources of the Advanced Photon Source, a <rs type="funder">U.S. Department of Energy (DOE) Office of Science User Facility</rs> operated for the <rs type="funder">DOE Office of Science by Argonne National Laboratory</rs> under Contract No. <rs type="grantNumber">DE-AC02-06CH11357</rs>. The authors thank staff at beamlines 19-ID, 19-BM and 23-ID of the <rs type="affiliation">Advance Photon Source, Argonne National Laboratory</rs> for the assistance during the X-ray diffraction data collection; <rs type="institution">Midwest Center for Structural Genomics</rs> for providing LIC vectors; <rs type="person">Aaron B. Clubb</rs> for assistance on the ICP-MS instrument; <rs type="person">Vladimir I. Bakhmutov</rs> for assistance on the EPR instrument; <rs type="person">Tracey L. Musa</rs> for editing the manuscript.</p></div>
+			</div>
+			<div type="funding">
+<div><head>FUNDING</head><p><rs type="funder">National Institute of Allergy and Infectious Diseases, TB Structural Genomics Grant</rs> [<rs type="grantNumber">P01AI095208</rs> to J.C.S.]; <rs type="funder">Welch Foundation</rs> [<rs type="grantNumber">A-0015</rs> to J.C.S.]; <rs type="funder">National Institute of Allergy and Infectious Diseases</rs> [<rs type="grantNumber">5U19AI109755-05</rs> to S.M.F.]. Funding for open access charge: <rs type="funder">National Institute of Allergy and Infectious Diseases</rs> (to J.C.S.).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_qJTUnHr">
+					<idno type="grant-number">DE-AC02-06CH11357</idno>
+				</org>
+				<org type="funding" xml:id="_GVDTSpu">
+					<idno type="grant-number">P01AI095208</idno>
+				</org>
+				<org type="funding" xml:id="_CbKBweY">
+					<idno type="grant-number">A-0015</idno>
+				</org>
+				<org type="funding" xml:id="_aKZzJVC">
+					<idno type="grant-number">5U19AI109755-05</idno>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATA AVAILABILITY</head><p>Atomic coordinates and structure factors for the reported crystal structures have been deposited with the Protein Data Bank under accession numbers: 6CZ6, 6CYY, 6CYJ, 6D2S.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTARY DATA</head><p>Supplementary Data are available at NAR Online. </p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="technical-report" xml:id="b0">
+				<monogr>
+					<title level="m">Global tuberculosis report</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<publisher>World Health Organization</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Segal</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Bloch</surname>
+						</persName>
+					</author>
+					<title level="a">Biochemical Differentiation of Mycobacterium Tuberculosis grown in vivo and in vitro</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="page" from="132" to="141"/>
+						<date when="1956">1956</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">K</forename>
+							<surname>Pandey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">M</forename>
+							<surname>Sassetti</surname>
+						</persName>
+					</author>
+					<title level="a">Mycobacterial persistence requires the utilization of host cholesterol</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">105</biblScope>
+						<biblScope unit="page" from="9130" to="9130"/>
+						<date when="2008">2008</date>
+					</imprint>
+					<note>vol 105, pg 4376, 2008</note>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Lee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">C</forename>
+							<surname>Vanderven</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">J</forename>
+							<surname>Fahey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">G</forename>
+							<surname>Russell</surname>
+						</persName>
+					</author>
+					<title level="a">Intracellular Mycobacterium tuberculosis Exploits Host-derived Fatty Acids to Limit Metabolic Stress</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biol. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">288</biblScope>
+						<biblScope unit="page" from="6788" to="6800"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Savvi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">F</forename>
+							<surname>Warner</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">D</forename>
+							<surname>Kana</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Mckinney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>V</forename>
+							<surname>Mizrahi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">S</forename>
+							<surname>Dawes</surname>
+						</persName>
+					</author>
+					<title level="a">Functional characterization of a vitamin B(12)-dependent methylmalonyl pathway in Mycobacterium tuberculosis: implications for propionate metabolism during growth on fatty acids</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">190</biblScope>
+						<biblScope unit="page" from="3886" to="3895"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Ouellet</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">B</forename>
+							<surname>Johnston</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">R</forename>
+							<forename type="last">O</forename>
+							<surname>de Montellano</surname>
+						</persName>
+					</author>
+					<title level="a">Cholesterol catabolism as a therapeutic target in Mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="530" to="539"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">T</forename>
+							<surname>Thomas</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">C</forename>
+							<surname>VanderVen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">R</forename>
+							<surname>Sherman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">G</forename>
+							<surname>Russell</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">S</forename>
+							<surname>Sampson</surname>
+						</persName>
+					</author>
+					<title level="a">Pathway profiling in mycobacterium tuberculosis elucidation of cholesterol-derived catabolite and enzymes that catalyze its metabolism</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biol. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">286</biblScope>
+						<biblScope unit="page" from="43668" to="43678"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">E</forename>
+							<surname>Griffin</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">K</forename>
+							<surname>Pandey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">A</forename>
+							<surname>Gilmore</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>V</forename>
+							<surname>Mizrahi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Mckinney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">R</forename>
+							<surname>Bertozzi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">M</forename>
+							<surname>Sassetti</surname>
+						</persName>
+					</author>
+					<title level="a">Cholesterol Catabolism by Mycobacterium tuberculosis Requires Transcriptional and Metabolic Adaptations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="218" to="227"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">M</forename>
+							<surname>Crowe</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>I</forename>
+							<surname>Casabon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">L</forename>
+							<surname>Brown</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Liu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Lian</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Rogalski</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">E</forename>
+							<surname>Hurst</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>V</forename>
+							<surname>Snieckus</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">J</forename>
+							<surname>Foster</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">D</forename>
+							<surname>Eltis</surname>
+						</persName>
+					</author>
+					<title level="a">Catabolism of the Last Two Steroid Rings in Mycobacterium tuberculosis and Other Bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mbio</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">e00321-17</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">M</forename>
+							<surname>Upton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>McKinney</surname>
+						</persName>
+					</author>
+					<title level="a">Role of the methylcitrate cycle in propionate metabolism and detoxification in Mycobacterium smegmatis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">153</biblScope>
+						<biblScope unit="page" from="3973" to="3982"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Eoh</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">Y</forename>
+							<surname>Rhee</surname>
+						</persName>
+					</author>
+					<title level="a">Methylcitrate cycle defines the bactericidal essentiality of isocitrate lyase for survival of Mycobacterium tuberculosis on fatty acids</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">111</biblScope>
+						<biblScope unit="page" from="4976" to="4981"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">J</forename>
+							<surname>Munoz-Elias</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">M</forename>
+							<surname>Upton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Cherian</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Mckinney</surname>
+						</persName>
+					</author>
+					<title level="a">Role of the methylcitrate cycle in Mycobacterium tuberculosis metabolism, intracellular growth, and virulence</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="page" from="1109" to="1122"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">A</forename>
+							<surname>Gould</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">V</forename>
+							<surname>De Langemheen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">J</forename>
+							<surname>Munoz-Elias</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>McKinney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Sacchettini</surname>
+						</persName>
+					</author>
+					<title level="a">Dual role of isocitrate lyase 1 in the glyoxylate and methylcitrate cycles in Mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="page" from="940" to="947"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Datta</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">B</forename>
+							<surname>Shi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Bibi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Balázsi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">L</forename>
+							<surname>Gennaro</surname>
+						</persName>
+					</author>
+					<title level="a">Regulation of Central Metabolism Genes of mycobacterium tuberculosis by Parallel Feed-Forward Loops Controlled by Sigma Factor E (sigma(E))</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">193</biblScope>
+						<biblScope unit="page" from="1154" to="1160"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<surname>Masiewicz</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Brzostek</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Wolański</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Dziadek</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Zakrzewska-Czerwińska</surname>
+						</persName>
+					</author>
+					<title level="a">A Novel Role of the PrpR as a Transcription Factor Involved in the Regulation of Methylcitrate Pathway in Mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS ONE</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">e43651</biblScope>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">T</forename>
+							<surname>Zhang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">F</forename>
+							<surname>Li</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">L</forename>
+							<surname>Zhao</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Fleming</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Lin</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Wang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Z</forename>
+							<forename type="middle">Y</forename>
+							<surname>Liu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">Y</forename>
+							<surname>Li</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Galwey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">Y</forename>
+							<surname>Deng</surname>
+						</persName>
+					</author>
+					<title level="a">Genome sequencing of 161 Mycobacterium tuberculosis isolates from China identifies genes and intergenic regions associated with drug resistance</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Genet.</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="1255" to="1260"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">D</forename>
+							<surname>Hicks</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Yang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>X</forename>
+							<surname>Zhang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>B</forename>
+							<surname>Zhao</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Y</forename>
+							<forename type="middle">H</forename>
+							<surname>Grad</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Liu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>X</forename>
+							<surname>Ou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>Z</forename>
+							<surname>Chang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Xia</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>Y</forename>
+							<surname>Zhou</surname>
+						</persName>
+					</author>
+					<title level="a">Clinically prevalent mutations in Mycobacterium tuberculosis alter propionate metabolism and mediate multidrug tolerance</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="1032" to="1042"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Plassmeier</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Persicke</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Pühler</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Sterthoff</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Ruckert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Kalinowski</surname>
+						</persName>
+					</author>
+					<title level="a">Molecular characterization of PrpR, the transcriptional activator of propionate catabolism in Corynebacterium glutamicum</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biotechnol.</title>
+					<imprint>
+						<biblScope unit="volume">159</biblScope>
+						<biblScope unit="page" from="1" to="11"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">K</forename>
+							<surname>Lee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Newman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Keasling</surname>
+						</persName>
+					</author>
+					<title level="a">Catabolite Repression of the Propionate Catabolic Genes in Escherichia coli and Salmonella enterica: Evidence for Involvement of the Cyclic AMP Receptor Protein</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">187</biblScope>
+						<biblScope unit="page" from="2793" to="2800"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">C</forename>
+							<surname>VanderVen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">J</forename>
+							<surname>Fahey</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Lee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Y</forename>
+							<forename type="middle">C</forename>
+							<surname>Liu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">B</forename>
+							<surname>Abramovitch</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Memmott</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">M</forename>
+							<surname>Crowe</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">D</forename>
+							<surname>Eltis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Perola</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">D</forename>
+							<surname>Deininger</surname>
+						</persName>
+					</author>
+					<title level="a">Novel Inhibitors of Cholesterol Degradation in Mycobacterium tuberculosis Reveal How the Bacterium’s Metabolism Is Constrained by the Intracellular Environment</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLOS Pathog.</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page">e1004679</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">D</forename>
+							<surname>Finn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">K</forename>
+							<surname>Attwood</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">C</forename>
+							<surname>Babbitt</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Bateman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Bork</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Bridge</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">Y</forename>
+							<surname>Chang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>Z</forename>
+							<surname>Dosztányi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>El-Gebali</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Fraser</surname>
+						</persName>
+					</author>
+					<title level="a">InterPro in 2017—beyond protein family and domain annotations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nucleic Acids Res.</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="D190" to="D199"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Vujicic-Zagar</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Dulermo</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Le Gorrec</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Vannier</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Servant</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Sommer</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>de Groot</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Serre</surname>
+						</persName>
+					</author>
+					<title level="a">Crystal structure of the IRRE protein, a central regulator of DNA damage repair in deinococcaceae</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Mol. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">386</biblScope>
+						<biblScope unit="page" from="704" to="716"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Ludanyi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Blanchard</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Dulermo</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Brandelet</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Bellanger</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Pignol</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Lemaire</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>de Groot</surname>
+						</persName>
+					</author>
+					<title level="a">Radiation response in Deinococcus deserti: IrrE is a metalloprotease that cleaves repressor protein DdrO</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="434" to="449"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Micklinghoff</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">J</forename>
+							<surname>Breitinger</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Schmidt</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Geffers</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">J</forename>
+							<surname>Eikmanns</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">F</forename>
+							<forename type="middle">C</forename>
+							<surname>Bange</surname>
+						</persName>
+					</author>
+					<title level="a">Role of the transcriptional regulator RamB (Rv0465c) in the control of the glyoxylate cycle in mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">191</biblScope>
+						<biblScope unit="page" from="7260" to="7269"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">E</forename>
+							<surname>Galagan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Minch</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Peterson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Lyubetskaya</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Azizi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Sweet</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Gomes</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Rustad</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Dolganov</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>I</forename>
+							<surname>Glotova</surname>
+						</persName>
+					</author>
+					<title level="a">The Mycobacterium tuberculosis regulatory network and hypoxia</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">499</biblScope>
+						<biblScope unit="page" from="178" to="183"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">S</forename>
+							<surname>Carter</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">E</forename>
+							<surname>Alber</surname>
+						</persName>
+					</author>
+					<title level="a">Transcriptional Regulation by the Short-Chain Fatty Acyl Coenzyme A Regulator (ScfR) PccR Controls Propionyl Coenzyme A Assimilation by Rhodobacter sphaeroides</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">197</biblScope>
+						<biblScope unit="page" from="3048" to="3056"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">M</forename>
+							<surname>Rock</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">F</forename>
+							<forename type="middle">F</forename>
+							<surname>Hopkins</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Chavez</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Diallo</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">R</forename>
+							<surname>Chase</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">R</forename>
+							<surname>Gerrick</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">R</forename>
+							<surname>Pritchard</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">M</forename>
+							<surname>Church</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">J</forename>
+							<surname>Rubin</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">M</forename>
+							<surname>Sassetti</surname>
+						</persName>
+					</author>
+					<title level="a">Programmable transcriptional repression in mycobacteria using an orthogonal CRISPR interference platform</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page">16274</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Sievers</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Wilm</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Dineen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">J</forename>
+							<surname>Gibson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Karplus</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">Z</forename>
+							<surname>Li</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Lopez</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>McWilliam</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Remmert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Söding</surname>
+						</persName>
+					</author>
+					<title level="a">Fast, scalable generation of high‐quality protein multiple sequence alignments using Clustal Omega</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Syst. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">539</biblScope>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					<author>
+						<persName>
+							<forename>X</forename>
+							<surname>Robert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Gouet</surname>
+						</persName>
+					</author>
+					<title level="a">Deciphering key features in protein structures with the new ENDscript server</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nucleic Acids Res.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="W320" to="W324"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">W</forename>
+							<forename type="last">A</forename>
+							<surname>Buchan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Minneci</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">C</forename>
+							<forename type="last">O</forename>
+							<surname>Nugent</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Bryson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">T</forename>
+							<surname>Jones</surname>
+						</persName>
+					</author>
+					<title level="a">Scalable web services for the PSIPRED Protein Analysis Workbench</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nucleic Acids Res.</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="W349" to="W357"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">A</forename>
+							<surname>DeJesus</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Sacchettini</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">R</forename>
+							<surname>Ioerger</surname>
+						</persName>
+					</author>
+					<title level="a">Reannotation of translational start sites in the genome of Mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Tuberculosis</title>
+					<imprint>
+						<biblScope unit="volume">93</biblScope>
+						<biblScope unit="page" from="18" to="25"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Stols</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">Y</forename>
+							<surname>Gu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Dieckman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Raffen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">F</forename>
+							<forename type="middle">R</forename>
+							<surname>Collart</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">I</forename>
+							<surname>Donnelly</surname>
+						</persName>
+					</author>
+					<title level="a">A New Vector for High-Throughput, Ligation-Independent Cloning Encoding a Tobacco Etch Virus Protease Cleavage Site</title>
+				</analytic>
+				<monogr>
+					<title level="j">Protein Expres. Purif</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="8" to="15"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">D</forename>
+							<surname>Vanduyne</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">F</forename>
+							<surname>Standaert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">A</forename>
+							<surname>Karplus</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">L</forename>
+							<surname>Schreiber</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Clardy</surname>
+						</persName>
+					</author>
+					<title level="a">Atomic Structures of the Human Immunophilin FKBP-12 Complexes with FK506 and Rapamycin</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Mol. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">229</biblScope>
+						<biblScope unit="page" from="105" to="124"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">G</forename>
+							<surname>Blommel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">G</forename>
+							<surname>Fox</surname>
+						</persName>
+					</author>
+					<title level="a">A combined approach to improving large-scale production of tobacco etch virus protease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Protein Expr. Purif.</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="53" to="68"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					<author>
+						<persName>
+							<forename>Z</forename>
+							<surname>Otwinowski</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Minor</surname>
+						</persName>
+					</author>
+					<title level="a">Processing of X-ray diffraction data collected in oscillation mode</title>
+				</analytic>
+				<monogr>
+					<title level="m">Methods Enzymol.</title>
+					<imprint>
+						<date when="1997">1997</date>
+						<biblScope unit="volume">276</biblScope>
+						<biblScope unit="page" from="307" to="326"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">R</forename>
+							<surname>Schneider</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">M</forename>
+							<surname>Sheldrick</surname>
+						</persName>
+					</author>
+					<title level="a">Substructure solution with SHELXD</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D</title>
+					<imprint>
+						<biblScope unit="volume">58</biblScope>
+						<biblScope unit="page" from="1772" to="1779"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">D</forename>
+							<surname>Winn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">C</forename>
+							<surname>Ballard</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">D</forename>
+							<surname>Cowtan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">J</forename>
+							<surname>Dodson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Emsley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">R</forename>
+							<surname>Evans</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">M</forename>
+							<surname>Keegan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">B</forename>
+							<surname>Krissinel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">G </forename>
+							<forename type="last">W</forename>
+							<surname>Leslie</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>McCoy</surname>
+						</persName>
+					</author>
+					<title level="a">Overview of the CCP4 suite and current developments</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D</title>
+					<imprint>
+						<biblScope unit="volume">67</biblScope>
+						<biblScope unit="page" from="235" to="242"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">M</forename>
+							<surname>Sheldrick</surname>
+						</persName>
+					</author>
+					<title level="a">Macromolecular phasing with SHELXE</title>
+				</analytic>
+				<monogr>
+					<title level="j">Z. Kristallogr.</title>
+					<imprint>
+						<biblScope unit="volume">217</biblScope>
+						<biblScope unit="page" from="644" to="650"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Cowtan</surname>
+						</persName>
+					</author>
+					<title level="a">Recent developments in classical density modification</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="470" to="478"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Cowtan</surname>
+						</persName>
+					</author>
+					<title level="a">The Buccaneer software for automated model building. 1. Tracing protein chains</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="page" from="1002" to="1011"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Emsley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>B</forename>
+							<surname>Lohkamp</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">G</forename>
+							<surname>Scott</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Cowtan</surname>
+						</persName>
+					</author>
+					<title level="a">Features and development of Coot</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallog. D Biol. Crystallogr.</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="486" to="501"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Mccoy</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">W</forename>
+							<surname>Grosse-Kunstleve</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">D</forename>
+							<surname>Adams</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">D</forename>
+							<surname>Winn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">C</forename>
+							<surname>Storoni</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">J</forename>
+							<surname>Read</surname>
+						</persName>
+					</author>
+					<title level="a">Phaser crystallographic software</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Appl. Crystallogr.</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="658" to="674"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">D</forename>
+							<surname>Adams</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">V</forename>
+							<surname>Afonine</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Bunkoczi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">V</forename>
+							<forename type="middle">B</forename>
+							<surname>Chen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">W</forename>
+							<surname>Davis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Echols</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">J</forename>
+							<surname>Headd</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">W</forename>
+							<surname>Hung</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">J</forename>
+							<surname>Kapral</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">W</forename>
+							<surname>Grosse-Kunstleve</surname>
+						</persName>
+					</author>
+					<title level="a">PHENIX: a comprehensive Python-based system for macromolecular structure solution</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D Biol. Crystallogr.</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="213" to="221"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">V</forename>
+							<surname>Afonine</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">W</forename>
+							<surname>Grosse-Kunstleve</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Echols</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">J</forename>
+							<surname>Headd</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">W</forename>
+							<surname>Moriarty</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Mustyakimov</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">C</forename>
+							<surname>Terwilliger</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Urzhumtsev</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">H</forename>
+							<surname>Zwart</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">D</forename>
+							<surname>Adams</surname>
+						</persName>
+					</author>
+					<title level="a">Towards automated crystallographic structure refinement with phenix.refine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Crystallogr. D</title>
+					<imprint>
+						<biblScope unit="volume">68</biblScope>
+						<biblScope unit="page" from="352" to="367"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Krissinel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Henrick</surname>
+						</persName>
+					</author>
+					<title level="a">Inference of Macromolecular Assemblies from Crystalline State</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Mol. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">372</biblScope>
+						<biblScope unit="page" from="774" to="797"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Holm</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Rosenstrom</surname>
+						</persName>
+					</author>
+					<title level="a">Dali server: conservation mapping in 3D</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nucleic Acids Res.</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="W545" to="W549"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">F</forename>
+							<surname>Pettersen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">D</forename>
+							<surname>Goddard</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">C</forename>
+							<surname>Huang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">S</forename>
+							<surname>Couch</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">M</forename>
+							<surname>Greenblatt</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">C</forename>
+							<surname>Meng</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">E</forename>
+							<surname>Ferrin</surname>
+						</persName>
+					</author>
+					<title level="a">UCSF chimera a visualization system for exploratory research and analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Comput. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="1605" to="1612"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Crack</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">R</forename>
+							<surname>Stapleton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Green</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Thomson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">E</forename>
+							<surname>Le Brun</surname>
+						</persName>
+					</author>
+					<title level="a">Mechanism of [4Fe-4S](Cys)4 Cluster Nitrosylation Is Conserved among NO-responsive Regulators</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biol. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">288</biblScope>
+						<biblScope unit="page" from="11492" to="11502"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Cruz-Ramos</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Crack</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">G</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">N</forename>
+							<surname>Hughes</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Scott</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Thomson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Green</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">K</forename>
+							<surname>Poole</surname>
+						</persName>
+					</author>
+					<title level="a">NO sensing by FNR: regulation of the Escherichia coli NO-detoxifying flavohaemoglobin, Hmp</title>
+				</analytic>
+				<monogr>
+					<title level="j">EMBO J.</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="3235" to="3244"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Zhou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Z</forename>
+							<forename type="middle">G</forename>
+							<surname>Hu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Munck</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">H</forename>
+							<surname>Holm</surname>
+						</persName>
+					</author>
+					<title level="a">The cuboidal Fe3S4 cluster: Synthesis, stability, and geometric and electronic structures in a non-protein environment</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Am. Chem. Soc.</title>
+					<imprint>
+						<biblScope unit="volume">118</biblScope>
+						<biblScope unit="page" from="1966" to="1980"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">B</forename>
+							<forename type="middle">C</forename>
+							<surname>Wang</surname>
+						</persName>
+					</author>
+					<title level="a">Resolution of phase ambiguity in macromolecular crystallography</title>
+				</analytic>
+				<monogr>
+					<title level="j">Methods Enzymol.</title>
+					<imprint>
+						<date when="1985">1985</date>
+						<biblScope unit="volume">115</biblScope>
+						<biblScope unit="page" from="90" to="112"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">A</forename>
+							<surname>Hendrickson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">R</forename>
+							<surname>Horton</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">M</forename>
+							<surname>Lemaster</surname>
+						</persName>
+					</author>
+					<title level="a">Selenomethionyl proteins produced for analysis by multiwavelength anomalous diffraction (MAD): a vehicle for direct determination of 3-dimensional structure.</title>
+				</analytic>
+				<monogr>
+					<title level="j">EMBO J.</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="1665" to="1672"/>
+						<date when="1990">1990</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Aravind</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">P</forename>
+							<surname>Ponting</surname>
+						</persName>
+					</author>
+					<title level="a">The GAF domain: an evolutionary link between diverse phototransducing proteins</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends Biochem. Sci.</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="458" to="459"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">T</forename>
+							<surname>Henry</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Crosson</surname>
+						</persName>
+					</author>
+					<title level="a">Ligand-Binding PAS Domains in a Genomic, Cellular, and Structural Context</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annu. Rev. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">65</biblScope>
+						<biblScope unit="page" from="261" to="286"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">Y</forename>
+							<forename type="middle">S</forename>
+							<forename type="last">J</forename>
+							<surname>Ho</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">M</forename>
+							<surname>Burden</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<surname>Hurley</surname>
+						</persName>
+					</author>
+					<title level="a">Structure of the GAF domain, a ubiquitous signaling motif and a new class of cyclic GMP receptor</title>
+				</analytic>
+				<monogr>
+					<title level="j">EMBO J.</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="5288" to="5299"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">E</forename>
+							<surname>Martinez</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Bruder</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Schultz</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Zheng</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">E</forename>
+							<surname>Schultz</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Beavo</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">U</forename>
+							<surname>Linder</surname>
+						</persName>
+					</author>
+					<title level="a">Crystal Structure of the Tandem GAF Domains from a Cyanobacterial Adenylyl Cyclase: Novel Modes of Ligand-Binding and Dimerization</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="3082" to="3087"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">E</forename>
+							<surname>Martinez</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">Y</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">A</forename>
+							<surname>Glavas</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">X</forename>
+							<forename type="middle">B</forename>
+							<surname>Tang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Turley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">G</forename>
+							<forename type="last">J</forename>
+							<surname>Hol</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Beavo</surname>
+						</persName>
+					</author>
+					<title level="a">The two GAF domains in phosphodiesterase 2A have distinct roles in dimerization and in cGMP binding</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">99</biblScope>
+						<biblScope unit="page" from="13260" to="13265"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b57">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">A</forename>
+							<surname>Suvorova</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">A</forename>
+							<surname>Ravcheev</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">S</forename>
+							<surname>Gelfand</surname>
+						</persName>
+					</author>
+					<title level="a">Regulation and Evolution of Malonate and Propionate Catabolism in Proteobacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">194</biblScope>
+						<biblScope unit="page" from="3234" to="3240"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Tian</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Bryk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Itoh</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Suematsu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Nathan</surname>
+						</persName>
+					</author>
+					<title level="a">Variant tricarboxylic acid cycle in Mycobacterium tuberculosis: Identification of alpha-ketoglutarate decarboxylase.</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="10670" to="10675"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b59">
+				<analytic>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Wagner</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Bellinzoni</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Wehenkel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">M</forename>
+							<surname>O'Hare</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">M</forename>
+							<surname>Alzari</surname>
+						</persName>
+					</author>
+					<title level="a">Functional Plasticity and Allosteric Regulation of α-Ketoglutarate Decarboxylase in Central Mycobacterial Metabolism</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="1011" to="1020"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b60">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">D</forename>
+							<surname>Baughn</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">J</forename>
+							<surname>Garforth</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Vilcheze</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">R</forename>
+							<surname>Jacobs</surname>
+						</persName>
+					</author>
+					<title level="a">An Anaerobic-Type alpha-Ketoglutarate ferredoxin oxidoreductase completes the oxidative tricarboxylic acid cycle of mycobacterium tuberculosis</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS Pathog.</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page">e1000662</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b61">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">X</forename>
+							<surname>Xie</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Liu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Q</forename>
+							<forename type="middle">M</forename>
+							<surname>Li</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">D</forename>
+							<surname>Chen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">M</forename>
+							<surname>Xu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Q</forename>
+							<forename type="middle">Q</forename>
+							<surname>Huang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Zeng</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">L</forename>
+							<surname>Zhou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">P</forename>
+							<surname>Xie</surname>
+						</persName>
+					</author>
+					<title level="a">First Succinyl-Proteome profiling of extensively drug-resistant mycobacterium tuberculosis revealed involvement of succinylation in cellular physiology.</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Proteome Res.</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="107" to="119"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b62">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">L</forename>
+							<surname>Zhou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">X</forename>
+							<surname>Xie</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">Z</forename>
+							<forename type="middle">Z</forename>
+							<surname>Yang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">H</forename>
+							<surname>Zhou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">P</forename>
+							<surname>Xie</surname>
+						</persName>
+					</author>
+					<title level="a">Lysine succinylation of Mycobacterium tuberculosis isocitrate lyase (ICL) fine-tunes the microbial resistance to antibiotics.</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biomol. Struct. Dyn.</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="1030" to="1041"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">P</forename>
+							<surname>Cunningham</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Asahara</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">F</forename>
+							<surname>Bank</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">P</forename>
+							<surname>Scholes</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Salerno</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Surerus</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Munck</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Mccracken</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Peisach</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">H</forename>
+							<surname>Emptage</surname>
+						</persName>
+					</author>
+					<title level="a">Endonuclease III is an iron-sulfur protein</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biochemistry</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="4450" to="4455"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b64">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">G</forename>
+							<surname>Fu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<surname>Ohandley</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">P</forename>
+							<surname>Cunningham</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">K</forename>
+							<surname>Johnson</surname>
+						</persName>
+					</author>
+					<title level="a">The role of the iron-sulfur cluster in Escherichia coli endonuclease III. A resonance Raman study.</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biol. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">267</biblScope>
+						<biblScope unit="page" from="16135" to="16137"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b65">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">M</forename>
+							<surname>Boon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">L</forename>
+							<surname>Livingston</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">H</forename>
+							<surname>Chmiel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">S</forename>
+							<surname>David</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">K</forename>
+							<surname>Barton</surname>
+						</persName>
+					</author>
+					<title level="a">DNA-mediated charge transport for DNA repair</title>
+				</analytic>
+				<monogr>
+					<title level="j">PNAS</title>
+					<imprint>
+						<biblScope unit="volume">100</biblScope>
+						<biblScope unit="page" from="12543" to="12547"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b66">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Crack</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Green</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">J</forename>
+							<surname>Thomson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">N</forename>
+							<forename type="middle">E</forename>
+							<surname>Le Brun</surname>
+						</persName>
+					</author>
+					<title level="a">Iron sulfur cluster sensor-regulators</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Opin. Chem. Biol.</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="35" to="44"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b67">
+				<analytic>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Kurthkoti</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Amin</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">J</forename>
+							<surname>Marakalala</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Ghanny</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Subbian</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Sakatos</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Livny</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">M</forename>
+							<surname>Fortune</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Berney</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">M</forename>
+							<surname>Rodriguez</surname>
+						</persName>
+					</author>
+					<title level="a">The capacity of mycobacterium tuberculosis to survive iron starvation might enable it to persist in Iron-Deprived microenvironments of human granulomas</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mbio</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="e01092" to="e01117"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

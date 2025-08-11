@@ -1,0 +1,3777 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A conserved histidine in Group-1 influenza subtype hemagglutinin proteins is essential for membrane fusion activity</title>
+				<funder ref="#_3r3E7Rb">
+					<orgName type="full">National Institutes of Health</orgName>
+					<orgName type="abbreviated">NIH</orgName>
+				</funder>
+				<funder ref="#_Qvazbry">
+					<orgName type="full">U.S. Department of Health and Human Services</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">National Institute for Allergy and Infectious Disease</orgName>
+					<orgName type="abbreviated">NIAID</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">China Scholarship Council</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-08-06">06 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jessica</forename><forename type="middle">F</forename><surname>Trost</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Emory-UGA Center of Excellence of Influenza Research and Surveillance (CEIRS)</orgName>
+								<orgName type="institution">NIAID Centers of Excellence for Influenza Research and Surveillance, CEIRS)</orgName>
+								<address>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bo</forename><surname>Liang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Biochemistry</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Summer</forename><forename type="middle">E</forename><surname>Galloway</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Evangeline</forename><surname>Agbogu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Emory-UGA Center of Excellence of Influenza Research and Surveillance (CEIRS)</orgName>
+								<orgName type="institution">NIAID Centers of Excellence for Influenza Research and Surveillance, CEIRS)</orgName>
+								<address>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lauren</forename><surname>Byrd-Leotis</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Emory-UGA Center of Excellence of Influenza Research and Surveillance (CEIRS)</orgName>
+								<orgName type="institution">NIAID Centers of Excellence for Influenza Research and Surveillance, CEIRS)</orgName>
+								<address>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">David</forename><forename type="middle">A</forename><surname>Steinhauer</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Microbiology and Immunology</orgName>
+								<orgName type="institution" key="instit1">Rollins Research Center</orgName>
+								<orgName type="institution" key="instit2">Emory University School of Medicine</orgName>
+								<address>
+									<addrLine>1510 Clifton Road</addrLine>
+									<postCode>30322</postCode>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Emory-UGA Center of Excellence of Influenza Research and Surveillance (CEIRS)</orgName>
+								<orgName type="institution">NIAID Centers of Excellence for Influenza Research and Surveillance, CEIRS)</orgName>
+								<address>
+									<settlement>Atlanta</settlement>
+									<region>GA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A conserved histidine in Group-1 influenza subtype hemagglutinin proteins is essential for membrane fusion activity</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Virology</title>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">536</biblScope>
+							<biblScope unit="page" from="78" to="90"/>
+							<date type="published" when="2019-08-06">06 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">01E666B0E8820F9C8451878D6191F2F9</idno>
+					<idno type="DOI">10.1016/j.virol.2019.08.005</idno>
+					<note type="submission">Received 27 June 2019; Received in revised form 31 July 2019; Accepted 5 August 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Influenza Hemagglutinin Fusion Virus entry</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Influenza A viruses enter host cells through the endocytic pathway, where acidification triggers conformational changes of the viral hemagglutinin (HA) to drive membrane fusion. During this process, the HA fusion peptide is extruded from its buried position in the neutral pH structure and targeted to the endosomal membrane. Conserved ionizable residues near the fusion peptide may play a role in initiating these structural rearrangements. We targeted highly conserved histidine residues in this region, at HA1 position 17 of Group-2 HA subtypes and HA2 position 111 of Group-1 HA subtypes, to determine their role in fusion activity. WT and mutant HA proteins representing several subtypes were expressed and characterized, revealing that His 111 is essential for HA functional activity of Group-1 subtypes, supporting continued efforts to target this region of the HA structure for vaccination strategies and the design of antiviral compounds.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Influenza A viruses impose significant healthcare and economic burdens through seasonally recurring epidemics, and the threat of antigenically novel pandemic strains emerging in the human population is an ongoing concern. Vaccination remains the best option for preventing seasonal illness, but coverage rates are not ideal and on occasion, vaccine candidate mismatch or suboptimal efficacy cause problems with particular strains. Influenza antivirals currently licensed in the United States include the ∝-adamantane M2 inhibitors, NA inhibitors, and the recently approved inhibitor of the cap-dependent endonuclease activity of the PA polymerase subunit. These generally need to be administered shortly after onset of symptoms to alleviate illness, and the selection of drug resistant strains is a concern for all three classes of inhibitor <ref type="bibr" target="#b19">(Gubareva et al., 2001;</ref><ref type="bibr" target="#b21">Hayden et al., 2005</ref><ref type="bibr" target="#b22">Hayden et al., , 2018))</ref>. With such limitations, there continues to be a need for the design of both new vaccine candidates and novel antiviral compounds against seasonal human influenza viruses and other strains that continue to circulate in avian and animal reservoirs.</p><p>Though no anti-HA drugs for influenza have been FDA approved to date, inhibitors of membrane fusion have been utilized with varying degrees of success for viruses including members of the Retroviridae and Paramyxoviridae families. Since the early 1990s, several strategies designed to block HA fusion function include the use of compounds that inhibit the acid-induced conformational changes required for fusion or trigger these structural rearrangements prematurely <ref type="bibr" target="#b2">(Bodian et al., 1993;</ref><ref type="bibr" target="#b23">Hoffman LR, 1997;</ref><ref type="bibr" target="#b35">Russell et al., 2008)</ref>. The capacity to block HA conformational changes has been proposed as a potential mechanism of action for anti-HA stem antibodies, which have been touted as "universal vaccine" candidates <ref type="bibr" target="#b7">(Corti et al., 2011;</ref><ref type="bibr" target="#b11">Dreyfus et al., 2013;</ref><ref type="bibr" target="#b12">Ekiert et al., 2009;</ref><ref type="bibr" target="#b14">Fleishman et al., 2011;</ref><ref type="bibr" target="#b23">Hoffman LR, 1997;</ref><ref type="bibr" target="#b39">Sui et al., 2009;</ref><ref type="bibr" target="#b41">Throsby et al., 2008)</ref>. Recently, a compound based on structural data of antibody:HA complexes was shown to bind to the HA stem of Group-1 HA subtypes of influenza A viruses to inhibit acid-induced conformational changes, and antiviral activity was observed in mice following oral administration <ref type="bibr" target="#b46">(van Dongen et al., 2019)</ref>. However, the experience gained from the use of other antivirals for influenza suggests that the propensity for selection of resistant mutants creates potential roadblocks for broadly effective vaccines or antivirals acting on HA. With this in mind, we sought to identify regions of the HA that are involved in the initial triggering of conformational changes as endosomes are acidified and define particular residues that are conserved or immutable without debilitating function.</p><p>The HA, a type I membrane glycoprotein, is synthesized as precursor polypeptides (HA0) of approximately 550 amino acids that associate non-covalently to form a homotrimer. Each monomer of the HA0 trimer requires proteolytic cleavage into the disulfide-linked subunits HA1 and HA2 in order to activate virus infectivity <ref type="bibr" target="#b26">(Klenk et al., 1975;</ref><ref type="bibr" target="#b27">Lazarowitz and Choppin, 1975)</ref>. Following attachment of virions to host cells and internalization, the acidification of endosomes triggers irreversible conformational changes in the HA that drive the fusion of viral and endosomal membranes, releasing the viral genome into the cytoplasm. For the HA of the A/Aichi/2/68 (H3N2), high resolution structural information is available for HA0, neutral pH cleaved HA, and the low pH conformation adopted following acidification <ref type="bibr" target="#b1">(Bizebard et al., 1995;</ref><ref type="bibr" target="#b3">Bullough et al., 1994;</ref><ref type="bibr" target="#b6">Chen et al., 1998;</ref><ref type="bibr" target="#b48">Wilson et al., 1981)</ref>. The structure of the HA0 trimer reveals that the stem region contains a surface loop domain in each monomer that is oriented to expose the conserved arginine residue that is cleaved by activating proteases. Upon cleavage, the membrane proximal portion of the loop becomes the Nterminus of the HA2 subunit, and this conserved hydrophobic domain is commonly referred to as the fusion peptide. The fusion peptide then relocates into a cavity lined by ionizable residues, to orient into the interior of the cleaved neutral pH HA structure. The post-cleavage structure is metastable and is now "primed" for fusion activity. Subsequent conformational changes induced by acidification of endosomes convert the HA into highly stable helical rod structures that bring viral and endosomal membranes together in the fusion process.</p><p>Although the structure of the HA0 cleavage site for H1 subtypes appear to differ from other subtypes <ref type="bibr" target="#b6">(Chen et al., 1998;</ref><ref type="bibr" target="#b30">Lu et al., 2012;</ref><ref type="bibr" target="#b38">Stevens et al., 2004)</ref>, all subtypes relocate their fusion peptides into the trimer interior upon cleavage, burying ionizable residues <ref type="bibr" target="#b16">(Gamblin et al., 2004;</ref><ref type="bibr" target="#b20">Ha et al., 2002;</ref><ref type="bibr" target="#b29">Liu et al., 2009;</ref><ref type="bibr" target="#b34">Russell et al., 2004;</ref><ref type="bibr" target="#b48">Wilson et al., 1981)</ref>. These include HA2 residues Asp109 and Asp112, which are completely conserved across all HA subtypes of influenza A viruses, including the newly discovered bat viruses H17 and H18 <ref type="bibr" target="#b42">(Tong et al., 2012</ref><ref type="bibr" target="#b43">(Tong et al., , 2013))</ref>, and form a network of hydrogen bonds with the newly relocated fusion peptide. HA2 Lys 51 is also conserved across all subtypes, whereas residues at positions HA1 17, HA2 106, and HA2 111 are reasonably well conserved in group-specific fashion. In Group-1 HA subtypes, the amino acids residing at these positions are Tyr, Arg/Lys, and His, respectively, and in Group-2 HAs they are His, His, Thr/Ala. Numerous studies show that mutation of residues in and around the fusion peptide can influence HA stability, and the HA of A/Aichi/2/68 has been particularly well characterized <ref type="bibr" target="#b9">(Cross et al., 2001</ref><ref type="bibr" target="#b8">(Cross et al., , 2009;;</ref><ref type="bibr" target="#b10">Daniels et al., 1985;</ref><ref type="bibr" target="#b18">Gething et al., 1986;</ref><ref type="bibr" target="#b37">Steinhauer et al., 1995;</ref><ref type="bibr" target="#b40">Thoennes et al., 2008)</ref>. For this Group-2 HA, most of the mutations in this region destabilize the HA structure and cause it to mediate membrane fusion at elevated pH. However, mutation of HA1 residue 17 from His to Tyr, which is present in Group-1 HAs, leads to a significant decrease in the pH at which conformational changes and membrane fusion take place. The His residue at HA1 position 17 makes hydrogen bonds to carbonyl oxygens of fusion peptide residues 6 and 10 via a water molecule, and the results suggest that protonation of this residue may contribute to the initiation of conformational changes required for fusion activity. In Group-1 HAs, the larger side chain of the conserved Tyr at HA1 position 17 allows for formation of hydrogen bonds directly to fusion peptide residues 10 and 12, and presumably, analogous hydrogen bonds stabilize the structure of the HA1 H17Y mutant of Aichi HA <ref type="bibr" target="#b20">(Ha et al., 2002;</ref><ref type="bibr" target="#b34">Russell et al., 2004)</ref>. If the Tyr at HA1 position 17 has a stabilizing effect on the neutral pH structure of Group-1 HAs, we postulated that other residues in this region might be involved in destabilizing such HAs during acidification of endosomes. Therefore, we targeted HA2 residue 111 as a potential residue of interest, as it is invariant in all naturally occurring isolates of Group-1 HA subtypes including the recently discovered bat subtypes H17 and H18 <ref type="bibr" target="#b42">(Tong et al., 2012</ref><ref type="bibr" target="#b43">(Tong et al., , 2013))</ref>. Here we report studies on expressed HAs of several Group-1 subtype viruses, as well as a selection of Group-2 HAs, to examine the phenotypes displayed by mutants with changes at HA2 position 111, as well as HA1 17, with respect to membrane fusion activity and the pH at which it is mediated. We show that, for all HAs examined here, substitutions at this position resulted in a loss of fusion activity, suggesting a critical role for this residue.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Materials and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Cells and antibodies</head><p>Vero cells (CCL-81) were obtained from ATCC and were used for transfections for the following assays: a luciferase-based reporter assay to assay fusion and immunoblots and radioactive labeling and immunoprecipitation to assay cleavage and surface expression. BSR-T7/ 5 cells (originally obtained from Karl-Klauss Conzelmann) served as the target cells in the luciferase-reporter based assay. For the syncytia formation assay, BHK-21 cells (ATCC CCL-10) were transfected with HA-plasmids to analyze fusion, described below.</p><p>The HA specific antibodies utilized in this study were described previously <ref type="bibr" target="#b5">(Byrd-Leotis et al., 2015;</ref><ref type="bibr" target="#b15">Galloway et al., 2013)</ref>. BEI Resources provided the following: goat anti-H1, goat anti-H2 Singapore , goat anti-H3, goat anti-H10, goat anti-H11, goat anti-H1 PR8 , goat anti-H1 Cal , goat anti-H5 VN . Aichi HA was detected using rabbit anti-X31 serum. The antibodies used for the ELISA assay include the BEI goat anti-H2 Singapore with the secondary HRP conjugated goat anti-rabbit IgG from KPL (cat no. 474-1516) and the 2/9 monoclonal antibody (a gift from Dr. K. Nakamura) <ref type="bibr" target="#b45">(Tsuchiya et al., 2001)</ref> with the secondary HRP conjugated goat anti-mouse from Southern Biotech, cat no. 1030-05.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Plasmids</head><p>For consistency throughout the text, H3 numbering is applied to all subtypes examined. However, following the scheme proposed by Burke et al., residue HA1 17 would be denoted as HA1 7 for the subtypes H1, H2, H5, and H11 and HA1 8 for H10 <ref type="bibr" target="#b4">(Burke and Smith, 2014)</ref>. Additionally, if counting from the initiating methionine in each sequence, HA1-17 would be the 22nd residue in H2 Japan, the 23rd residue in H5 Vietnam and H11 and the 24th residue in H1, H1 California, H1 PR8, and H10. It is the 33rd residue in both H3 and H3 Aichi. The wild-type HA expression plasmids have been described previously <ref type="bibr" target="#b5">(Byrd-Leotis et al., 2015;</ref><ref type="bibr" target="#b15">Galloway et al., 2013)</ref>. To introduce the HA1 Y17H, HA1 H17Y, HA2 H111A, and HA2 T111H mutations, the wild-type HAs were PCR amplified from the pCAGGS-based expression plasmids and cloned into pCR-BLUNT, according to the manufacturer's instructions. The pCR-BLUNT plasmids containing the HA gene of interest were modified using QuikChange site-directed mutagenesis to incorporate each mutation. Ligation independent cloning (LIC) procedures were used for the generation of the final plasmids. For LIC, the mutant HA genes in the sequence-verified pCR-BLUNT clones were amplified using LIC specific primers: a + sense with the 5' flanking sequence 5'TACTTCCAATCCA TTTGCCACCATG, and a (-) sense primer with the 5' flanking sequence of 5'TTATCCACTTCCATTTCTCA. Standard LIC procedures described previously <ref type="bibr" target="#b5">(Byrd-Leotis et al., 2015;</ref><ref type="bibr" target="#b15">Galloway et al., 2013)</ref> were used for the generation of each of the WT and mutant plasmids.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Immunoblot assay</head><p>For gel analysis, 40 μl of each sample was resolved by SDS-10% PAGE and transferred to nitrocellulose membrane. After being blocked in Tris-buffered saline (TBS) containing 0.1% Tween 20 (v/v) and 5% non-fat milk (w/v) at 4 °C overnight, the membranes were rinsed and incubated at room temperature for 2 h with different anti-HA antibodies. The membranes were washed and incubated with AP-labeled protein A/G (Thermo Fisher Scientific, MA, USA) at RT for 2 h. The protein bands were then visualized by incubating with the developing solution (p-nitro blue tetrazolium chloride (NBT) and 5-bromo-4chloro-3-indolyl phosphate toluidine (BCIP)) at RT for 15 min. The relative intensity of the bands corresponding to HA0, HA1, or HA2 was determined using ImageJ (NIH) v.1.33u (USA). The percent cleavage was determined by using the equation [HA 1 /(HA 1 +HA 0 )] x100, and the percent cleavage relative to the wild type was calculated using the equation [(% cleavage mutant HA/% cleavage of WT) x 100].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Radioactive labeling and immunoprecipitation</head><p>Radiolabeling and immunoprecipitation assays were completed as previously described <ref type="bibr" target="#b15">(Galloway et al., 2013;</ref><ref type="bibr" target="#b5">Byrd-Leotis et al., 2015)</ref>. Plasmids (1 μg) containing the WT or mutant HA was complexed with Plus reagent and transfected using Lipofectamine (Invitrogen) into Vero cells. After an incubation of 16-18 h, the cells, now expressing HA, were washed 2x with PBS and incubated at 37 °C in starvation media, MEM (-Met -Cys), for 30 min. A 15 min pulse with 25 μCi of [ 35 S]-methionine (Perkin Elmer) followed, after which the cells were washed with PBS and incubated at 37 °C in complete media with excess (20x) cold methionine for a 3 h chase period. To assay for cleavage, the cells were washed once with PBS and incubated in DMEM or DMEM plus 5ug/ml TPCK trypsin (Sigma) at 37 °C for 30 min. For the examination of surface expression, surface proteins were biotinylated using 2 mg EZ-link Sulfo-NHS-SS-Biotin (Thermo Scientific) in PBS pH 8.0 for an incubation time of 30 min at ambient temperature. After incubation, biotinylated samples were washed with 50mM glycine in PBS, pH 8.0 to quench the excess biotin. Cells were washed a final time with PBS and were lysed by the addition of 0.5ml RIPA buffer (50mM Tris-HCl, pH 7.4; 150mM NaCl; 1mM EDTA; 0.5% deoxycholate; 1% triton X-100; 0.1% SDS). A 10 min centrifugation at 16,000×g pelleted the cell debris to leave cleared lysates remaining.</p><p>For the antibody pull-down, HA specific antibodies were conjugated to Protein G dynabeads (Invitrogen) in PBS + 0.02% Tween-20 for an hour at room temperature. Unbound antibody was removed following a wash step with PBS+ 0.02% Tween-20. The lysates were also precleared using the Protein G dynabeads for an hour at room temperature. The Protein G/ antibody complexed beads were incubated with the precleared lysates for an hour at room temperature. Following incubation, the beads complexed now with the specific HAs were washed three times with PBS and resuspended in 30μl 1x SDS buffer. A 5 min boil and brief centrifugation step removes the proteins from the beads.</p><p>For the precipitation of biotinylated proteins, the beads complexed with Protein-G/antibody/antigen were washed 3 times with PBS and resuspended in 50μl 50mM Tris-HCl+0.5% SDS. The beads were boiled for 5 min and centrifuged to dissociate the proteins, so that they may be collected. 25μl of the eluate is used for a subsequent pull down of the  biotinylated proteins using Streptavidin M -280 Dynabeads (Invitrogen) to isolate and precipitate cell-surface expressed HA. 100μl of beads per sample were washed three times with PBS +0.2% BSA and then resuspended in 975μl streptavidin binding buffer (20mM Tris-HCl, pH8.0; 150mM NaCl; 5mM EDTA; 1% Triton X-100; 0.2% BSA). The eluate (25μl) was added to the beads in the streptavidin binding buffer and incubated for 1 h at room temperature. The beads were then washed with PBS+ 0.2% BSA to remove unbound substrates and resuspended in 35μl 1x SDS sample buffer. The beads were boiled for 5 min and centrifuged to collect the dissociated proteins. The remaining 25μl of the immunoprecipitation elution was used to determine the total amount of HA protein in the sample. 10μl of 3x SDS sample buffer was added to the total HA sample for a final volume of 35μl.</p><p>For gel analysis, 18μl of samples were loaded and run on 12% precast SDS-PAGE gels. The gels were fixed with 50% methanol/10% acetic acid solution at room temperature for 30 min and dried under a vacuum for 1 h at 80 °C. Once dried, the gels were stored in a cassette for exposure to a phosphorimaging screen. The Phosphor screens were scanned on a Typhoon Trio variable mode imager (GE Healthcare Life Sciences). ImageQuant software was used to determine the intensity of the HA0, HA1 and HA2 bands. The values were normalized to methionine content of the appropriate subunit. Percent cleavage was determined using the equation (Ha2/(Ha2+Ha0))x100% and the percent cleavage relative to wild-type calculated as ((% cleavage mutant HA/% cleavage of WT)x100). To examine surface expressed HA and for the comparison of wild-type and mutant levels, the total level of HA in each lane was quantified and the amount of surface expressed HA was determined by the following equation, (cell surface HA/ total HA)x100 and then the percent relative to wild-type surface expression was calculated as ((% surface expression mutant HA/% surface expression WT HA)x100).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Fusion assays</head><p>Membrane fusion mediated by the HA proteins was measured in 2 assays: a qualitative syncytia assay and a quantitative luciferase reporter based assay. For the syncytia assay, BHK-21 cells were transfected with 1μg of HA containing plasmids complexed with Plus reagent and Lipofectamine (Invitrogen) per manufacturer's instructions. 24 h post-transfection, the cells were washed with PBS and were treated with serum-free DMEM plus 5 μg/μl TPCK-trypsin (Sigma) for 15 min at 37 °C. The trypsin containing media was removed and the cells were washed with PBS and then exposed to low pH PBS, adjusted with 100mM citric acid, for 5 min. The low pH was neutralized by the removal of the PBS and the immediate addition of complete growth media (CGM). The cells were incubated in CGM for 2 h at 37 °C and then were fixed and stained using a Hema3Stat Pak (Fisher Scientific) for visualization. Syncytia formation was imaged and recorded using a Zeiss Axio Observer inverted microscope with attached digital camera.</p><p>For the quantitative luciferase-based reporter assay, 1μg HAplasmid and 1μg of plasmid containing the gene for firefly luciferase under a T7 bacteriophage promoter were complexed with Plus reagent and transfected into Vero cells using Lipofectamine (Invitrogen). 16-18 h after transfection, the cells were washed with PBS and treated with 5 μg/μl TPCK trypsin in serum-free DMEM for 30 min. The trypsin treatment was followed by a wash and a 30 min incubation in serumfree DMEM plus 20 μg/μl trypsin inhibitor to neutralize any remaining trypsin activity. BSR-T7/5 cells, which constitutively express bacteriophage T7 RNA polymerase, were overlaid on to the Vero cells expressing HA at the cell surface. The combined cell populations were incubated for 1 h at 37°C to allow for the BSR-T7/5 cells to adhere to the existing monolayer of Vero cells. Non-associated cells were removed via a gentle PBS wash. The combined monolayer was exposed to low pH PBS, adjusted with 100mM citric acid, and incubated for 5 min at 37°C. The acidified PBS was removed, and the low pH environment was neutralized by a wash and then the addition of complete growth media. The combined cell populations were incubated at 37°C in the CGM for 6 h to allow for fusion and the transfer of the T7 polymerase and expression of the T7-luciferase plasmid. The cells were then washed with PBS and lysed with 0.5ml of Reporter Lysis Buffer (Promega). The lysates were frozen for 16-18 h and then collected. Cell debris were removed following centrifugation at 15,000×g at 4°C and 150μl of the clarified lysate was transferred to a white, flat bottom, polystyrene 96well plate (Corning). 50μl of luciferase assay substrate (Promega) was injected into each well and luciferase activity, indicating a successful fusion event between the two cell populations, was quantified using a BioTek Synergy 2 Luminometer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6.">Enzyme-linked immunosorbent assay</head><p>Surface expression of the HA, as either the pre-or post-conformational change structure, was determined by Enzyme-linked Immunosorbent Assay (ELISA). 0.1μg/well of plasmid containing the WT or mutant HA was complexed with Plus reagent and transfected using Lipofectamine (Invitrogen) into Vero cells in a 96-well plate. After an incubation of 16-18 h, the cells, now expressing HA, were washed with PBS, treated with 5 μg/μl TPCK trypsin diluted in serum free DMEM for 10 min at 37 °C. Following trypsin treatment, cells were washed with PBS and incubated with pH-adjusted PBS, using 100 mM citric acid, either at a neutral pH 7.0 or a low pH for 5 min at 37 °C. Following pH treatment, wells were incubated with a panel of antibodies, including a polyclonal A/Singapore/57 from BEI Resources as well as 2/9, an H2 monoclonal antibody specific to a low pH conformation. Antibodies were diluted in 2% BSA and incubated in the wells for 1 h at 37 °C. Following the primary antibody incubation, the wells were washed 3x with PBS-Tween (0.05%). An appropriate HRPconjugated antibody, donkey anti-goat HRP conjugated antibody or goat anti-mouse HRP-conjugated antibody were used for the H2  polyclonal and conformation specific 2/9 antibody, respectively, which was diluted in 2% BSA and added to the wells for 1 h at RT, while rocking. Following, wells were washed again 3x with PBS-Tween (0.05%) before the addition of 50μl TMB Substrate where the reaction proceeded for 5 min before being stopped by the addition of 150μl of TMB Stop solution. The optical density (O.D.) of each well was measured at 450 nm using a spectrophotometer. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Rationale and structural locations of critical residues</head><p>Phylogenetic and structural analyses of the hemagglutinins of the 16 HA subtypes found in avian reservoirs show that they can be divided into five clades that segregate into two groups, Group-1 and Group-2 <ref type="bibr" target="#b0">(Air, 1981;</ref><ref type="bibr" target="#b31">Nobusawa et al., 1991;</ref><ref type="bibr" target="#b34">Russell et al., 2004)</ref>. A number of structural differences distinguish the two groups, including the following: 1) compared to Group-2 HAs, the short helix of the HA2 hairpin loop of Group-1 HAs is extended by a half turn and the peptide chain that links the two helices has a "higher" turn near the top of the long helix. 2) The membrane-distal heads of Group-1 HAs, therefore, ride "higher" on the stem domains, and are rotated relative to group-2 HAs stem domains along the three-fold axes. 3) Several residues in the region of the fusion peptide segregate in group-specific fashion, and notably, HA1 position 17 and HA2 positions 106 and 111 are conserved as Tyr, Arg, His in Group-1 and His, His, Thr in Group-2 HAs, respectively. This region in the vicinity of the fusion peptide forms the focus of our current studies, and the structural locations of the residues of interest are shown in Fig. <ref type="figure" target="#fig_0">1</ref>. Previous work by our lab and others suggests that residues in the stem region in general, and in the fusion peptide region in particular, may be critical for providing initial triggers for the acid-induced structural rearrangements required for membrane fusion activity <ref type="bibr" target="#b6">(Chen et al., 1998;</ref><ref type="bibr" target="#b17">Garcia et al., 2015;</ref><ref type="bibr" target="#b24">Ivanovic et al., 2013;</ref><ref type="bibr" target="#b28">Lin et al., 2016;</ref><ref type="bibr" target="#b34">Russell et al., 2004;</ref><ref type="bibr" target="#b36">Steinhauer et al., 1996;</ref><ref type="bibr" target="#b40">Thoennes et al., 2008;</ref><ref type="bibr" target="#b47">White and Wilson, 1987)</ref>. We identified a conserved histidine at HA1 position 17 as a potential trigger residue for conformational change of Group-2 HAs. Histidine residues are of particular interest in this respect, as the imidazole side chains have a pKa of approximately 6.0 and therefore can become protonated in acidified endosomes. In Group-1 subtype HAs, HA1 position 17 is generally Tyr, so we attempted to identify an additional residue in these HAs that might play a similar role for triggering conformational changes during the entry process and focused our attention on HA2 residue 111. As seen in Fig. <ref type="figure" target="#fig_0">1</ref>, this highly conserved residue is similarly located in a region that becomes occupied by the fusion peptide following proteolytic activation of HA0, and it forms contacts with other highly conserved residues that are critical for fusion function such as HA2 Tyr 21. For the purpose of our studies, we cloned WT and mutant HAs representing a selection of Group-1 and Group-2 HAs for which we had suitable antisera for examining antigenic and biochemical properties of expressed HAs, as well as their functional phenotypes with respect to membrane fusion activity. The WT and mutant HAs utilized in the study are shown in Table <ref type="table" target="#tab_0">1</ref>, and include both human and avian representatives. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Cell surface expression of HAs</head><p>Expression plasmids encoding the HAs shown in Table <ref type="table" target="#tab_0">1</ref> were transfected into Vero cells and HA transport to the plasma membrane was examined using a cell surface biotinylation assay as shown in the gels in Fig. <ref type="figure" target="#fig_1">2 panel A</ref>. The bands representing surface-expressed HA were compared to total HA in the cell lysates of parallel assays, and the values of these are plotted as ratios with respect to corresponding WT HAs in panel B of Fig. <ref type="figure" target="#fig_1">2</ref>. It was determined that the HA1 17 mutants were expressed at levels ranging from 82% to 147% of wild-type indicating that the incorporation of histidine or tyrosine respectively did not significantly alter the expression profile of the HA. Similarly, for the HA2 111 mutant HAs, surface expression relative to WT ranged from 44% to 192%, indicating that these mutant HAs were also expressed at cell surfaces.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Cleavage activation of mutant HAs</head><p>In order to be primed for the acid-induced conformational changes that mediate membrane fusion, each monomer of the HA0 precursor structure must undergo proteolytic cleavage into the disulfide-linked subunits, HA1 and HA2. The HA of the H5 subtype A/Vietnam/1204/ 2004 contains a polybasic cleavage site that is recognized by cellular proteases and is expressed on the plasma membrane as cleaved HA; however, intracellular cleavage of the human H5 VN HA H111A mutant was quite low, approximately 2-5 percent relative to WT, in agreement with a previous report <ref type="bibr" target="#b33">(Reed et al., 2009)</ref>. The other HAs used in this study require addition of exogenous protease to activate fusion potential. To confirm that the mutant HAs can be proteolytically activated, HA proteins were expressed in the presence of [ 35 S]-methionine, cell monolayers were treated with exogenous trypsin or left untreated, and HA was precipitated with appropriate HA subtype-specific antibodies. Digestion products were then separated by SDS-PAGE under reducing conditions as shown in Fig. <ref type="figure" target="#fig_2">3</ref>, and bands corresponding to uncleaved HA0, and cleaved HA1 and HA2 subunits, were quantified by phosphoimager analysis. A comparison of mutant HA cleavage efficiency relative to the corresponding WT HA is shown in Fig. <ref type="figure" target="#fig_2">3</ref> panel A, and reveals that for the HA1 17 mutations, percent cleavage compared to wild-type ranged from 70% to 143%, indicating that mutations at this residue did not significantly impact the capacity of mutant HAs to become proteolytically activated. For the HA2 111 mutations, most HAs were also cleaved with reasonable efficiency, ranging from 43% to 132% The results demonstrate that the mutant HAs can be activated for membrane fusion potential, and the cleavage into HA1 and HA2 by exogenous trypsin shows that they are transported to the plasma membrane, confirming the results of the surface biotinylation experiments described above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Fusion activity and pH of fusion activation for mutant HAs</head><p>To examine the significance of the conserved residues at HA1 17 and HA2 111 for fusion activity, and the pH at which such activity is triggered, two assays were employed. The first, a qualitative syncytia assay, allows for the visualization of fusion events resulting in the formation of multi-nucleated syncytia by HA-expressing cell monolayers following incubation at reduced pH. For this assay, HA-expressing cells are treated with trypsin to activate fusion potential, then incubated in acidic buffer over a range of pH values differing by increments of 0.1 units. The results of this assay are represented in Fig. <ref type="figure" target="#fig_3">4</ref> and notated in Table <ref type="table" target="#tab_1">2</ref>, where images of the monolayer at the pH of fusion, visualized by the highest pH value with observable syncytia, are shown next to images of the monolayers under buffered conditions at 0.1 pH units higher. If little or no syncytia were observed within the pH range predicted based on the pH of fusion for the WT HA, the monolayers were incubated at pH 4.4, the most acidic pH examined. For the three Group-2 HAs that were tested, the HA1 H17Y mutants displayed an acid-stable phenotype with fusion activity triggered at reduced pH relative to WT, and the HA2 H111A mutant HAs induced fusion at elevated pH relative to WT HA. These results are in agreement with previous reports on Group-2 HAs with substitutions at these positions <ref type="bibr" target="#b40">(Thoennes et al., 2008)</ref>. For the Group-1 HAs, the HA1 Y17H mutations had destabilizing effects and an elevated fusion phenotype, but no fusion was detected at any pH for all HA2 H111A mutant proteins.</p><p>To corroborate these results, a quantitative luciferase-based reporter assay was carried out, which involves the transfection of the HA containing plasmid along with a plasmid containing the gene for luciferase under the control of a T7 promoter. Vero cells are transfected with these plasmids and treated with trypsin to activate surface expressed HAs. BSR-T7 cells that express the T7 polymerase are overlaid on the transfected Vero monolayer. The mixed cell populations are exposed to a low pH pulse, and functional HAs expressed on the Vero cells mediate fusion to the BSR-T7 cells, allowing for the transfer of the T7 polymerase and the expression of the luciferase reporter. The pH of fusion is denoted as the highest pH at which relative luminescence units (RLUs) are detectable, indicating the production of luciferase by the fused cell population. The results of this assay for WT and mutant HAs are shown in Fig. <ref type="figure" target="#fig_4">5</ref> and notated in Table <ref type="table" target="#tab_1">2</ref>, and reflect those obtained with the syncytia assays both with respect to capacity of mutant HAs to mediate fusion, and the pH of fusion activity relative to corresponding WT HA. Notably, no fusion was detected for any of the Group-1 HA2 H111A mutant HAs using either assay.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5.">Conformational change of A/Japan/305/57 HAs</head><p>For the WT and mutant A/Japan/305/57H2 HAs, it was possible to address the capacity to undergo acid-induced conformational changes with the conformation-specific monoclonal antibody 2/9, which reacts preferentially with the low pH structure <ref type="bibr" target="#b44">(Trost et al., 2018;</ref><ref type="bibr" target="#b45">Tsuchiya et al., 2001)</ref>. We used this monoclonal antibody, as well as a rabbit polyclonal antibody, to examine reactivity of HA-expressing cells by ELISA following treatment at pH 7.0 or 4.4. We generated an additional mutant H2 with a threonine substitution at position 111. As with the HA2 H111A mutant, this mutant HA is expressed on the cell surface and cleaved but shows no fusion activity. As shown in Fig. <ref type="figure" target="#fig_5">6</ref>, reactivity with the polyclonal serum indicates that the WT HA is expressed at higher levels relative to the mutants, consistent with our surface biotinylation results. Polyclonal antibody reactivity remained relatively unchanged following reduction in pH. The results with monoclonal antibody 2/9 show that reactivity to WT and HA1 Y17H A/Japan/305/57 HAs is significantly greater following incubation at pH 4.4 compared to neutral pH, as expected for a fusion-active HA that had changed conformation as a result of acidification. However, no differences in reactivity with 2/9 were detected following acidification for the HA2 H111A or HA2 H111T mutant HAs suggesting that they did not undergo the structural transitions required for membrane fusion activity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Discussion</head><p>Several lines of evidence suggest that the initial triggers for the acidinduced structural rearrangements of HA that drive the membrane fusion process originate in the region of the fusion peptide. A comparison of the HA0 precursor structure <ref type="bibr" target="#b6">(Chen et al., 1998)</ref> and that of the cleaved neutral pH HA <ref type="bibr" target="#b48">(Wilson et al., 1981)</ref> shows that only the residues of the HA0 cleavage loop relocate as a result of proteolytic activation (residues 323-328 of HA1 and 1-12 of HA2). However, uncleaved HA0 is relatively unresponsive to acidification, whereas the metastable cleaved HA can be triggered to undergo the well documented irreversible conformational changes that lead to fusion <ref type="bibr" target="#b3">(Bullough et al., 1994)</ref>. The major consequence of cleavage activation is that HA2 residues 1-12, the N-terminal domain of the fusion peptide, relocate into the trimer interior and bury a number of ionizable residues that line a cavity in the HA0 structure (Fig. <ref type="figure" target="#fig_6">7</ref>, panel A). The insertion of the HA2 N-terminus into the trimer interior primes the HA for fusion activity, and mutation of any residue within the first 10 positions of HA2, as well as several of the residues in the cavity that are buried, are known to destabilize the cleaved neutral pH HA <ref type="bibr" target="#b9">(Cross et al., 2001</ref><ref type="bibr" target="#b8">(Cross et al., , 2009;;</ref><ref type="bibr" target="#b10">Daniels et al., 1985;</ref><ref type="bibr" target="#b18">Gething et al., 1986;</ref><ref type="bibr" target="#b37">Steinhauer et al., 1995)</ref>. In studies using double mutants, the pH phenotype conferred by mutations in the fusion peptide region display dominance over changes more distal in the HA structure <ref type="bibr" target="#b36">(Steinhauer et al., 1996)</ref>. Mutations in the fusion peptide region that elevate the pH of fusion have also been observed to confer resistance to a neutralizing monoclonal antibody that binds at monomer interfaces of the membrane distal head domains <ref type="bibr" target="#b51">(Yewdell et al., 1993)</ref>, and studies on the kinetics of acid-induced refolding using a panel of conformation-specific anti-peptide monoclonal antibodies demonstrated that reactivity in the stem region preceded reactivity in the membrane-distal domains following acidification <ref type="bibr" target="#b47">(White and Wilson, 1987)</ref>. Also, analysis of the fusion kinetics of single virions using mutant viruses with changes in the fusion peptide, and/or HA2 residue 112 that lines the cavity, determined that withdrawal of the fusion peptide constitutes the rate-limiting step in the fusion process <ref type="bibr" target="#b24">(Ivanovic et al., 2013)</ref>. Studies using hydrogen-deuterium exchange and mass spectrometry to analyze the dynamics of acid-induced structural rearrangements lead to a similar conclusion, that extrusion of the fusion peptide precedes other events in the refolding process <ref type="bibr" target="#b17">(Garcia et al., 2015)</ref>.</p><p>The results reported here confirm and extend a number of previous studies demonstrating that the HA region where fusion peptide residues insert into the trimer interior upon cleavage activation of the HA0 precursor, can play a critical role in HA stability and the priming of membrane fusion activity. The results with Group-2 mutant HAs for avian H3 and H10 strains support our previous results and conclusions based on the human H3 HA from A/Aichi/2/68 <ref type="bibr" target="#b40">(Thoennes et al., 2008)</ref>. Specifically, these results confirm that changes at HA2 position 111 destabilize the Group-2 HAs resulting in a higher pH of fusion, whereas the introduction of Tyr for the conserved His at HA1 17 significantly stabilizes the structure, decreasing the pH of fusion by 0.4 or more in each case. These results support a role for HA1 His 17 as a potential trigger residue in the initiation of acid-induced conformational changes. When precursor HA0 is activated for fusion potential by proteolysis, the relocation of the newly-formed fusion peptide buries HA2 His 17, which forms hydrogen bonds to fusion peptide residues 6 and 10 via a water molecule <ref type="bibr" target="#b6">(Chen et al., 1998;</ref><ref type="bibr" target="#b34">Russell et al., 2004;</ref><ref type="bibr" target="#b48">Wilson et al., 1981)</ref>, and the stabilizing phenotype conferred by a tyrosine substitution may be due in part to the longer side chain allowing formation of direct hydrogen bonds with residues 10 and 12 of the fusion peptide. Of the conserved residues that are buried in Group-2 HAs, HA1 His 17 is a strong candidate to change protonation state during the pH transitions that would be encountered in the endosome. For the Group-1 HAs, the substitutions for Tyr at HA1 position 17 were all destabilizing, resulting in a higher pH of membrane fusion activity. Again, these may be due to the loss of hydrogen bonds formed between the Tyr and fusion peptide residues in the WT HA neutral pH structure. For the His to Ala substitution mutants at HA2 position 111, no fusion was detected at any pH examined. This suggests that the removal of the ionizable side chain of the His 111 residue in WT Group-1 HAs may render the structure unresponsive to acidification and suggests a potential role for the His 111 residues in initiating the conformational changes that mediate fusion activity. For the HA of A/Japan/305/57 virus, the conformation-specific monoclonal antibody 2/9 preferentially recognizes the low pH structure, and we demonstrated that WT Japan HA becomes significantly more reactive for MAb 2/9 upon acidification, whereas binding to mutant HAs with Ala or Thr at HA2 position 111 showed no changes in reactivity following reduction in pH. The results indicate that the mutants were not undergoing conformational changes and explain the loss of functional activity observed in the two membrane fusion assays.</p><p>For Group-1 HAs, the residue HA2 His 111 is buried following relocation of the fusion peptide upon activating cleavage. In the cleaved neutral pH structure, it resides in close proximity to completely conserved HA2 residues Trp21 and Tyr 22 and forms hydrogen bonds with the hydroxyl group on the side chain of the latter. A comparison of Group-1 HA structures and those of Group-2 HAs, which contain Thr at position 111, show that the residue at this position dictates the orientation of the indole side chain of Trp 21, and structural features in this area might have critical implications for initiation of fusion. Both Trp 21 and Tyr 22 are conserved in all subtypes, and the structures of several HA-antibody complexes reveal that Trp 21 resides in the footprint of several broadly-reactive antibodies that can inhibit acid-induced conformational changes <ref type="bibr" target="#b7">(Corti et al., 2011;</ref><ref type="bibr" target="#b11">Dreyfus et al., 2013;</ref><ref type="bibr" target="#b12">Ekiert et al., 2009</ref><ref type="bibr" target="#b13">Ekiert et al., , 2011;;</ref><ref type="bibr" target="#b25">Kallewaard et al., 2016;</ref><ref type="bibr" target="#b39">Sui et al., 2009;</ref><ref type="bibr" target="#b41">Throsby et al., 2008;</ref><ref type="bibr" target="#b49">Wu et al., 2015)</ref>. Even though His 111 is not directly contacted by such antibodies, a His to Thr recombinant protein lost reactivity to one such antibody, C179 <ref type="bibr" target="#b11">(Dreyfus et al., 2013)</ref>, and laboratory passage of an H5 subtype virus multiple times in the presence of another, CR6261, selected for a His to Leu substitution at position 111 <ref type="bibr" target="#b41">(Throsby et al., 2008)</ref>. In each case, the functional efficiency of the HA was not assessed, but we have observed that viruses with very poor fusion activity can be rescued by reverse genetics <ref type="bibr" target="#b8">(Cross et al., 2009;</ref><ref type="bibr" target="#b9">Cross et al., 2001;</ref><ref type="bibr" target="#b23">Hoffman LR, 1997)</ref>, including examples of mutants that were well documented for a hemifusion phenotype <ref type="bibr" target="#b32">(Qiao et al., 1999)</ref>. In these examples the virus titers in cell culture were orders of magnitude lower than WT, and following passage in the absence of any selective pressure, they reverted to either WT sequence or alternative amino acids. The threshold level of fusion activity required for virus fitness in natural environments is not known, but HA2 His 111 is conserved in all Group-1 HA subtypes.</p><p>Protonation of the His 111 side chain during endosomal acidification could potentially destabilize the structure in this region and help initiate the cascade of conformational changes that lead to membrane fusion. As discussed above, HA2 residues 106 and 111 are conserved in group-specific fashion, and the residues 106 through 112 are critical for function in that they undergo the helix-to-loop transition that results in formation of the helical bundles that draw viral and endosomal membranes into proximity to one another during fusion. Therefore, it is notable that mutagenesis and X-ray crystallography studies on an H2 subtype HA with an Arg-to-His substitution at HA2 position 106 also reveal an acid-stable fusion phenotype <ref type="bibr" target="#b50">(Xu and Wilson, 2011)</ref>. Their structural data show that the side chain of the His 106 mutant HA rotates as acidification proceeds and structural changes translate to other regions of the HA in an intermediate "relaxed state". They suggest that "a precise balance of charged residues" may help ensure that the HA structural transitions occur at optimal pH for endosomal fusion, and this would be consistent with our results with HA2 His 111 mutants. It could also be the case that HA2 His 111 is critical for ensuring that the structure in this region of the metastable pre-fusion HA is optimal for responding to acidification. A notable difference between Group-1 and Group-2 HAs is that the residue at HA2 111 influences H-bonds to Tyr22 and His 38 (in Group-1), and the orientation of the indole ring of Trp21 <ref type="bibr" target="#b34">(Russell et al., 2004)</ref>; Fig. <ref type="figure" target="#fig_6">7</ref>, panels C and D). As noted above, mutation of position 111 can result in a loss of reactivity with fusion inhibiting antibodies that have Trp21 in the footprint. Recently, van Dongen et al., reported that an orally active antiviral compound based on one such antibody was effective against challenge by group-1 viruses of the H1 and H5 subtypes, and like the antibodies, the footprint of the drug includes residues Trp21 and His 38 <ref type="bibr" target="#b46">(van Dongen et al., 2019)</ref>. A major challenge for the continued development of antiviral compounds such as this, or broadly effective "universal" vaccines will be the issues of drug resistance and escape from immune recognition, and the ongoing identification of residues, such as HA2 His 111, that are required for optimal function and fitness for a range of influenza subtypes will be critical.</p><p>Taken together with our current results, it would appear that the triggering of structural changes initiates at residues proximal to the fusion peptide such as HA2 106 and 111, and that these initiating events are then transmitted to the more distal domains prior to the "unclamping" of the membrane-distal head domains during the fusion process. Overall, if specific highly conserved residues such as HA2 His 111 in the fusion peptide region prove to be immutable for functionality, they may represent an "Achilles heel" target for fusion inhibitors that are resilient to drug resistance.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. (A) The H3 subtype monomer is shown with the HA1 displayed in blue, and HA2 shown in red. The gray circles highlight the receptor binding domain (top) and fusion peptide pocket (bottom). The structural locations of the HA1 17 and HA2 111 residues are indicated by black arrows. The lower right of the panel shows the residues specific to group 1 and group 2 clades which are highly conserved within each group. The blue arrow indicates the location of HA2 His 111 (Thr in Group-2 HAs), and the red arrow shows the location of HA1 His 17 (Tyr in Group-1 HAs). The other residues identified are all in the HA2 subunit (from top -K51, R/H106, E/Q105, D109, and D112). The HA2 N-terminal fusion peptide is noted as FP. (B) The phylogenetic tree of the panel of 16 avian-origin HA subtypes found in avian reservoirs which are separated into five clades (color-coded) and can be segregated into two groups, Group-1 and Group-2. (For interpretation of the references to color in this figure legend, the reader is referred to the Web version of this article.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Surface expression of WT and mutant HAs by metabolic labelling and biotinylation of HA expressing cells. SDS-Page analysis, where lanes "T" represent total HA protein and "SE" represent surface expressed HA protein. (A) Gel images for human and avian subtypes corresponding to Group-1 are shown. (B) Gel images for human and avian subtypes corresponding to Group-2 are shown. (C) Quantitative representation of surface expressed mutants relative to the WT surface expression level. Error bars represent the standard deviation following three independent experiments.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Proteolytic cleavage potential of WT and mutant HAs. Radiolabeled HA-expressing cells were treated with or without trypsin as indicated by + andand lysates were immunoprecipitated with an HA-specific antibody and resolved using SDS-PAGE. (A) Gel images for both human and avian Group-1 HA subtypes. (B) Gel images for both human and avian Group-2 HA subtypes. (C) Quantitation of the trypsin cleavage of mutant HA subtypes relative to the WT HA.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. The pH of fusion as detected by the formation of syncytia. Photomicrographs of syncytia formation by avian and human Group-1 (A) and Group-2 (B) HA subtypes. BHK cells expressing HA were treated with trypsin and pH adjusted in 0.1 pH unit increments. The pH of fusion is shown as the highest pH at which syncytia were observed adjacent to cell monolayers the next increment lower, where fusion was significantly reduced by comparison.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. The pH of fusion as determined by the quantitative luciferase-based reporter assay. The pH of fusion is represented by the point at which relative luminescence units are able to be detected, indicating fusion of the two cell populations and expression of luciferase. (A) Group-1 HA human and avian subtypes. Notably in this group, no fusion was detected of the H111A mutants. (B) Group-2 HA human and avian subtypes.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Conformational change of A/Japan/305/57 WT and mutant HA1 Y17H, HA2 H111A and HA2 H111T HAs. Enzyme-linked immunosorbent assay was performed as follows: Expressed HAs were trypsin treated followed by incubation at neutral pH (7.0) or low pH (4.4). (A) HA reactivity using H2 subtype polyclonal antibody. (B) HA reactivity using monoclonal antibody 2/9.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Structural depiction of HA2 position 111 region comparing Group-1 and Group-2 HAs, represented by H2 and H3 subtypes respectively. A full trimer viewed from the side is shown in the middle to indicate the region represented in the panels (area between hatched lines). Panels A and B represent views down the 3-fold axis of symmetry (top view) for H2 and H3 subtype HAs, and panels C and D show magnified views of these structures from the same orientation represented in the HA trimer at the center of the figure. Fusion peptide residues are shown in navy and group-specific residues HA1 17 and HA2 111, as well as highly conserved HA2 residues Trp21 and Tyr22, are shown in red. (For interpretation of the references to color in this figure legend, the reader is referred to the Web version of this article.)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Origin of HA subtype proteins.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Fusion pH of wild-type and mutant HAs.</figDesc><note><p>n.o.: no HA fusion was observed at or above pH 4.4.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>This study was supported by the <rs type="funder">U.S. Department of Health and Human Services</rs> contract <rs type="grantNumber">HHSN272201400004C</rs> (<rs type="affiliation">NIAID Centers of Excellence for Influenza Research and Surveillance</rs>. J.F.T. was supported by <rs type="funder">National Institute for Allergy and Infectious Disease (NIAID)</rs> of the <rs type="funder">NIH</rs> under award number <rs type="grantNumber">T32AI106699</rs>. W.W. was supported by a visiting scientist award from the <rs type="funder">China Scholarship Council</rs>. We also thank <rs type="institution">BEI</rs> for providing anti-HA antibodies, <rs type="person">Konrad Bradley</rs> for generating the H5 VN subclone and <rs type="person">Evangeline Agbogu</rs> for technical assistance.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Qvazbry">
+					<idno type="grant-number">HHSN272201400004C</idno>
+				</org>
+				<org type="funding" xml:id="_3r3E7Rb">
+					<idno type="grant-number">T32AI106699</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Air</surname>
+					<forename type="first">G</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Sequence relationships among the hemagglutinin genes of 12 subtypes of influenza A virus</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="1981">1981</date>
+				<biblScope unit="volume">78</biblScope>
+				<biblScope unit="page" from="7639" to="7643"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bizebard</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gigant</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rigolet</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rasmussen</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diat</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bosecke</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wharton</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knossow</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of influenza virus haemagglutinin complexed with a neutralizing antibody</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">376</biblScope>
+				<biblScope unit="page" from="92" to="94"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bodian</surname>
+					<forename type="first">D</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamasaki</surname>
+					<forename type="first">R</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Buswell</surname>
+					<forename type="first">R</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stearns</surname>
+					<forename type="first">J</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kuntz</surname>
+					<forename type="first">I</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">Inhibition of the fusion-inducing conformational change of influenza hemagglutinin by benzoquinones and hydroquinones</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochemistry</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">32</biblScope>
+				<biblScope unit="page" from="2967" to="2978"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bullough</surname>
+					<forename type="first">P</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hughson</surname>
+					<forename type="first">F</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of influenza haemagglutinin at the pH of membrane fusion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">371</biblScope>
+				<biblScope unit="page" from="37" to="43"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Burke</surname>
+					<forename type="first">D</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">A recommended numbering scheme for influenza A HA subtypes</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page">e112302</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Byrd-Leotis</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Galloway</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Agbogu</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Influenza hemagglutinin (HA) stem region mutations that stabilize or destabilize the structure of multiple HA subtypes</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">89</biblScope>
+				<biblScope unit="page" from="4504" to="4516"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">K</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of the hemagglutinin precursor cleavage site, a determinant of influenza pathogenicity and the origin of the labile conformation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cell</title>
+			<imprint>
+				<date when="1998">1998</date>
+				<biblScope unit="volume">95</biblScope>
+				<biblScope unit="page" from="409" to="417"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Corti</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Voss</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Codoni</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Macagno</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jarrossay</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vachieri</surname>
+					<forename type="first">S</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pinna</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Minola</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vanzetta</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Silacci</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernandez-Rodriguez</surname>
+					<forename type="first">B</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Agatic</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bianchi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Giacchetto-Sasselli</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Calder</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sallusto</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collins</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haire</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Temperton</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langedijk</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lanzavecchia</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A neutralizing antibody selected from plasma cells that binds to group 1 and group 2 influenza a hemagglutinins</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">333</biblScope>
+				<biblScope unit="page" from="850" to="850"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cross</surname>
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langley</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Composition and functions of the influenza fusion peptide</title>
+		</analytic>
+		<monogr>
+			<title level="j">Protein Pept. Lett.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="766" to="778"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cross</surname>
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wharton</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Studies on influenza haemagglutinin fusion peptide mutants generated by reverse genetics</title>
+		</analytic>
+		<monogr>
+			<title level="j">EMBO J.</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="4432" to="4442"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Daniels</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Downie</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hay</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knossow</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Fusion mutants of the influenza virus hemagglutinin glycoprotein</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cell</title>
+			<imprint>
+				<date when="1985">1985</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="431" to="439"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dreyfus</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ekiert</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of a classical broadly neutralizing stem antibody in complex with a pandemic H2 influenza virus hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">87</biblScope>
+				<biblScope unit="page" from="7149" to="7154"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ekiert</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhabha</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Elsliger</surname>
+					<forename>M-A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Friesen</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jongeneelen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Throsby</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goudsmit</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Antibody recognition of a highly conserved influenza virus epitope</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science (New York, N.Y.)</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">324</biblScope>
+				<biblScope unit="page" from="246" to="251"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ekiert</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Friesen</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhabha</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kwaks</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jongeneelen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ophorst</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cox</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Korse</surname>
+					<forename type="first">H</forename><forename type="middle">J</forename><forename type="middle">V</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brandenburg</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vogels</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brakenhoff</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kompier</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koldijk</surname>
+					<forename type="first">M</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cornelissen</surname>
+					<forename type="first">L</forename><forename type="middle">A</forename><forename type="middle">H</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Poon</surname>
+					<forename type="first">L</forename><forename type="middle">L</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peiris</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koudstaal</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goudsmit</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">A highly conserved neutralizing epitope on group 2 influenza A viruses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science (New York, N.Y.)</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">333</biblScope>
+				<biblScope unit="page" from="843" to="850"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fleishman</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Whitehead</surname>
+					<forename type="first">T</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ekiert</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dreyfus</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Corn</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strauch</surname>
+					<forename>E-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baker</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Computational design of proteins targeting the conserved stem region of influenza hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science (New York, N.Y.)</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">332</biblScope>
+				<biblScope unit="page" from="816" to="821"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Galloway</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reed</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Influenza HA subtypes demonstrate divergent phenotypes for cleavage activation and pH of fusion: implications for host range and adaptation</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS Pathog</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page">e1003151</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haire</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiao</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ha</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vasisht</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Daniels</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Elliot</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">The structure and receptor binding properties of the 1918 influenza hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">303</biblScope>
+				<biblScope unit="page" from="1838" to="1842"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename type="first">N</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guttman</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ebner</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamic changes during acidinduced activation of influenza hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Structure</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="665" to="676"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gething</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Doms</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>York</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Studies on the mechanism of membrane fusion: site-specific mutagenesis of the hemagglutinin of influenza virus</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Cell Biol.</title>
+			<imprint>
+				<date when="1986">1986</date>
+				<biblScope unit="volume">102</biblScope>
+				<biblScope unit="page" from="11" to="23"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gubareva</surname>
+					<forename type="first">L</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Webster</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hayden</surname>
+					<forename type="first">F</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Comparison of the activities of zanamivir, oseltamivir, and RWJ-270201 against clinical isolates of influenza virus and neuraminidase inhibitor-resistant variants</title>
+		</analytic>
+		<monogr>
+			<title level="j">Antimicrob. Agents Chemother</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="3403" to="3408"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ha</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">H5 avian and H9 swine influenza virus haemagglutinin structures: possible origin of influenza subtypes</title>
+		</analytic>
+		<monogr>
+			<title level="j">EMBO J.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="865" to="875"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hayden</surname>
+					<forename type="first">F</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Klimov</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tashiro</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hay</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Monto</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McKimm-Breschkin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Macken</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hampson</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Webster</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Amyard</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zambon</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Neuraminidase inhibitor susceptibility network position statement: antiviral resistance in influenza A/H5N1 viruses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Antivir. Ther.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="873" to="877"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hayden</surname>
+					<forename type="first">F</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sugaya</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hirotsu</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>de Jong</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hurt</surname>
+					<forename type="first">A</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ishida</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sekino</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamada</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Portsmouth</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kawaguchi</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shishido</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arai</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tsuchiya</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uehara</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Watanabe</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Baloxavir marboxil for uncomplicated influenza in adults and adolescents</title>
+		</analytic>
+		<monogr>
+			<title level="j">N. Engl. J. Med.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">379</biblScope>
+				<biblScope unit="page" from="913" to="923"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hoffman</surname>
+					<forename type="first">L</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>K</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">tructure-based identification of an inducer of the low-pH conformational change in the influenza virus hemagglutinin: irreversible inhibition of infectivity</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="8808" to="8820"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ivanovic</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Choi</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Whelan</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Oijen</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Harrison</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Influenza virus membrane fusion by cooperative fold-back of stochastically induced hemagglutinin intermediates</title>
+		</analytic>
+		<monogr>
+			<title level="j">eLife</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="e00333" to="e00333"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kallewaard</surname>
+					<forename type="first">N</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Corti</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collins</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Neu</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McAuliffe</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Benjamin</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wachter-Rosati</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palmer-Hill</surname>
+					<forename type="first">F</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yuan</surname>
+					<forename type="first">A</forename><forename type="middle">Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Walker</surname>
+					<forename type="first">P</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vorlaender</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bianchi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guarino</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Marco</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vanzetta</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Agatic</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Foglierini</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pinna</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernandez-Rodriguez</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fruehwirth</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Silacci</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ogrodowicz</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martin</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sallusto</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suzich</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lanzavecchia</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Structure and function analysis of an antibody recognizing all influenza a subtypes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cell</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">166</biblScope>
+				<biblScope unit="page" from="596" to="608"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Klenk</surname>
+					<forename type="first">H</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rott</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Orlich</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blodorn</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Activation of influenza A viruses by trypsin treatment</title>
+		</analytic>
+		<monogr>
+			<title level="j">Virology</title>
+			<imprint>
+				<date when="1975">1975</date>
+				<biblScope unit="volume">68</biblScope>
+				<biblScope unit="page" from="426" to="439"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lazarowitz</surname>
+					<forename type="first">S</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Choppin</surname>
+					<forename type="first">P</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Enhancement of the infectivity of influenza A and B viruses by proteolytic cleavage of the hemagglutinin polypeptide</title>
+		</analytic>
+		<monogr>
+			<title level="j">Virology</title>
+			<imprint>
+				<date when="1975">1975</date>
+				<biblScope unit="volume">68</biblScope>
+				<biblScope unit="page" from="440" to="454"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Noel</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Onuchic</surname>
+					<forename type="first">J</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">Lowered pH leads to fusion peptide release and a highly dynamic intermediate of influenza hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Phys. Chem. B</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">120</biblScope>
+				<biblScope unit="page" from="9654" to="9660"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haire</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Walker</surname>
+					<forename type="first">P</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Coombs</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Structures of receptor complexes formed by hemagglutinins from the Asian Influenza pandemic of 1957</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">106</biblScope>
+				<biblScope unit="page" from="17175" to="17180"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiao</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename type="first">G</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Insights into avian influenza virus pathogenicity: the hemagglutinin precursor HA0 of subtype H16 has an alpha-helix structure in its cleavage site with inefficient HA1/HA2 cleavage</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="12861" to="12861"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nobusawa</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aoyama</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kato</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suzuki</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tateno</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakajima</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Comparison of complete amino acid sequences and receptor-binding properties among 13 serotypes of hemagglutinins of influenza A viruses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Virology</title>
+			<imprint>
+				<date when="1991">1991</date>
+				<biblScope unit="volume">182</biblScope>
+				<biblScope unit="page" from="475" to="485"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Qiao</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Armstrong</surname>
+					<forename type="first">R</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Melikyan</surname>
+					<forename type="first">G</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cohen</surname>
+					<forename type="first">F</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">A specific point mutant at position 1 of the influenza hemagglutinin fusion peptide displays a hemifusion phenotype</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Biol. Cell</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="2759" to="2769"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Reed</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yen</surname>
+					<forename type="first">H</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DuBois</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bridges</surname>
+					<forename type="first">O</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salomon</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Webster</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Amino acid residues in the fusion peptide pocket regulate the pH of activation of the H5N1 influenza virus hemagglutinin protein</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">83</biblScope>
+				<biblScope unit="page" from="3568" to="3580"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haire</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiao</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ha</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">H1 and H7 influenza haemagglutinin structures extend a structural classification of haemagglutinin subtypes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Virology</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">325</biblScope>
+				<biblScope unit="page" from="287" to="296"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kerry</surname>
+					<forename type="first">P</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martin</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gamblin</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of influenza hemagglutinin in complex with an inhibitor of membrane fusion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="17736" to="17741"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename type="first">Y</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wharton</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oldstone</surname>
+					<forename type="first">M</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Studies using double mutants of the conformational transitions in influenza hemagglutinin required for its membrane fusion activity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">93</biblScope>
+				<biblScope unit="page" from="12873" to="12878"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wharton</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Studies of the membrane fusion activities of fusion peptide mutants of influenza virus hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">69</biblScope>
+				<biblScope unit="page" from="6643" to="6651"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Corper</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Basler</surname>
+					<forename type="first">C</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Taubenberger</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palese</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of the uncleaved human H1 hemagglutinin from the extinct 1918 influenza virus</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">303</biblScope>
+				<biblScope unit="page" from="1866" to="1866"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sui</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hwang</surname>
+					<forename type="first">W</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perez</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wei</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aird</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>L-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Santelli</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stec</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cadwell</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ali</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wan</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murakami</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yammanuru</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cox</surname>
+					<forename type="first">N</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bankston</surname>
+					<forename type="first">L</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Donis</surname>
+					<forename type="first">R</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liddington</surname>
+					<forename type="first">R</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marasco</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Structural and functional bases for broad-spectrum neutralization of avian and human influenza A viruses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Mol. Biol.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="265" to="273"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Thoennes</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename type="first">Z</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">B</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langley</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Russell</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Analysis of residues near the fusion peptide in the influenza hemagglutinin structure for roles in triggering membrane fusion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Virology</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">370</biblScope>
+				<biblScope unit="page" from="403" to="414"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Throsby</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van den Brink</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jongeneelen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Poon</surname>
+					<forename type="first">L</forename><forename type="middle">L</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Alard</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cornelissen</surname>
+					<forename type="first">L</forename><forename type="middle">A</forename><forename type="middle">H</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bakker</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cox</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Deventer</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guan</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cinatl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ter Meulen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lasters</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carsetti</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peiris</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>de Kruif</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goudsmit</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Heterosubtypic neutralizing monoclonal antibodies cross-protective against H5N1 and H1N1 recovered from human IgM+ memory B cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="e3942" to="e3942"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rivailler</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Conrardy</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Castillo</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Recuenco</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ellison</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Davis</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>York</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Turmelle</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moran</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rogers</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weil</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rowe</surname>
+					<forename type="first">L</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sammons</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Frace</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lindblade</surname>
+					<forename type="first">K</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cox</surname>
+					<forename type="first">N</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Anderson</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rupprecht</surname>
+					<forename type="first">C</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Donis</surname>
+					<forename type="first">R</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">A distinct lineage of influenza A virus from bats</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U. S. A.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">109</biblScope>
+				<biblScope unit="page" from="4269" to="4274"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bourgeois</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Recuenco</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gomez</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dreyfus</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McBride</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carney</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gilbert</surname>
+					<forename type="first">A</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guo</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Davis</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paulson</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rupprecht</surname>
+					<forename type="first">C</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holmes</surname>
+					<forename type="first">E</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Donis</surname>
+					<forename type="first">R</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">New world bats harbor diverse influenza A viruses</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS Pathog</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page">e1003657</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Trost</surname>
+					<forename type="first">J</forename><forename type="middle">f</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LeMasters</surname>
+					<forename type="first">E</forename><forename type="middle">h</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carney</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sugawara</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hongo</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steinhauer</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tumpey</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Katz</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Levine</surname>
+					<forename type="first">M</forename><forename type="middle">Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Z-N</forename>
+				</persName>
+			</author>
+			<title level="a">Development of a high-throughput assay to detect antibody inhibition of low pH induced conformational changes of influenza virus hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="e0199683" to="e0199683"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tsuchiya</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sugawara</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hongo</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsuzaki</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Muraki</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Z-N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakamura</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Antigenic structure of the haemagglutinin of human influenza A/H2N2 virus</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Gen. Virol.</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">82</biblScope>
+				<biblScope unit="page" from="2475" to="2484"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>van Dongen</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename><forename type="last">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kadam</surname>
+					<forename type="first">R</forename><forename type="middle">U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Juraszek</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lawson</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brandenburg</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schmitz</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schepens</surname>
+					<forename type="first">W</forename><forename type="middle">G</forename><forename type="last">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stoops</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Diepen</surname>
+					<forename type="first">H</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jongeneelen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vermond</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Eijgen-Obregoso Real</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blokland</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garg</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goutier</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lanckacker</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Klap</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peeters</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename><forename type="last">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Buyck</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jonckers</surname>
+					<forename type="first">T</forename><forename type="middle">H</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roymans</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roevens</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vogels</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koudstaal</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Friesen</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raboisson</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dhanak</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goudsmit</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">A small-molecule fusion inhibitor of influenza virus is orally active in mice</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">363</biblScope>
+				<biblScope unit="page">eaar6221</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Anti-peptide antibodies detect steps in a protein conformational change: low-pH activation of the influenza virus hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Cell Biol.</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="2887" to="2896"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skehel</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiley</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Structure of the haemagglutinin membrane glycoprotein of influenza virus at 3 A resolution</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1981">1981</date>
+				<biblScope unit="volume">289</biblScope>
+				<biblScope unit="page" from="366" to="373"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cho</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shore</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Choi</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jiang</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Deng</surname>
+					<forename>Y-Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bourgeois</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Almli</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yi</surname>
+					<forename type="first">K</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bae</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stevens</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qin</surname>
+					<forename>C-F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename type="first">G</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chang</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Donis</surname>
+					<forename type="first">R</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">A potent broad-spectrum protective human monoclonal antibody crosslinking two haemagglutinin monomers of influenza A virus</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Commun.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="7708" to="7708"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilson</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Structural characterization of an early fusion intermediate of influenza virus hemagglutinin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">85</biblScope>
+				<biblScope unit="page" from="5172" to="5182"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yewdell</surname>
+					<forename type="first">J</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Taylor</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yellen</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Caton</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gerhard</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bächi</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Mutations in or near the fusion peptide of the influenza virus hemagglutinin affect an antigenic site in the globular region</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Virol.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">67</biblScope>
+				<biblScope unit="page" from="933" to="942"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,808 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Analysis of stochastic Nicholson-type delay system with patch structure ✩</title>
+				<funder ref="#_9D3bca3 #_parx4WU #_bqzvuBT">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-05-14">14 May 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Xin</forename><surname>Yi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematical Sciences</orgName>
+								<orgName type="institution">Shanxi University</orgName>
+								<address>
+									<postCode>030006</postCode>
+									<settlement>Taiyuan</settlement>
+									<region>Shanxi</region>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Guirong</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematical Sciences</orgName>
+								<orgName type="institution">Shanxi University</orgName>
+								<address>
+									<postCode>030006</postCode>
+									<settlement>Taiyuan</settlement>
+									<region>Shanxi</region>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Analysis of stochastic Nicholson-type delay system with patch structure</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Applied Mathematics Letters</title>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">96</biblScope>
+							<biblScope unit="page" from="223" to="229"/>
+							<date type="published" when="2019-05-14">14 May 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">621ED503B585EEDC2D5D4ED42FEA5FB9</idno>
+					<idno type="DOI">10.1016/j.aml.2019.05.016</idno>
+					<note type="submission">Received 27 March 2019 Received in revised form 8 May 2019 Accepted 8 May 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Stochastic Nicholson-type delay system Patch structure Lyapunov functional Ultimate boundedness</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper is devoted an investigation of a stochastic Nicholson-type delay system with patch structure, which includes the models of marine protected areas and B-cell chronic lymphocytic leukemia dynamics all affected by some stochastic perturbation. Firstly, we prove that the system has a unique global positive solution by constructing a suitable Lyapunov functional. Then we show that the system is ultimately bounded in probability and the average in time of the second moment of solution is bounded. Furthermore, we give asymptotic pathwise estimation of the solution under some conditions. Finally, numerical simulations confirm the theoretical results. Our results improve and generalize previous related results.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>As a classical model of population dynamics, Nicholson's blowflies equation, proposed by Nicholson <ref type="bibr" target="#b0">[1]</ref> and Gurey et al. <ref type="bibr" target="#b1">[2]</ref>, has attracted interest of many mathematicians and biologists. Subsequently, this model has been generalized, modified and extensively studied, in what concerns existence, stability and persistence of solutions, and other dynamical aspects, see <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref>. In the real world, biological processes are unavoidably subject to some kinds of environmental noises. To reveal the effects of stochasticity, many scholars have studied stochastic population models <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref>. In a recent paper <ref type="bibr" target="#b19">[20]</ref>, Wang et al. first study a scalar stochastic Nicholson's blowflies delayed differential equation</p><formula xml:id="formula_0">dx(t) = [-αx(t) + px(t -τ )e -γx(t-τ ) ]dt + σx(t)dB(t).<label>(1.1)</label></formula><p>Besides, population dynamics models incorporating migration (dispersion) have been considered, which are capable of depicting a metapopulation of some species that grow by local dynamics and interact in different nonisolated patches structure coupled by dispersal, see <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b21">22]</ref>. To describe the models of marine protected areas and B-cell chronic lymphocytic leukemia dynamics, Berezansky et al. <ref type="bibr" target="#b22">[23]</ref> considered the Nicholson-type delay differential system with patch structure as follows</p><formula xml:id="formula_1">{ ẋ1 (t) = -a 1 x 1 (t) -b 2 x 1 (t) + b 1 x 2 (t) + p 1 x 1 (t -τ )e -γ 1 x 1 (t-τ ) , ẋ2 (t) = -a 2 x 2 (t) -b 1 x 2 (t) + b 2 x 1 (t) + p 2 x 2 (t -τ )e -γ 2 x 2 (t-τ ) .<label>(1.2)</label></formula><p>Taking a compartmental model of B-cell chronic lymphocytic leukemia dynamics as an example, the parameters in (<ref type="formula" target="#formula_1">1.2</ref>) are defined as follows: x 1 (t) and x 2 (t) are the number of normal cells and leukemic cells, respectively; a 1 and a 2 are the mortality rate of the normal cells and leukemic cells, respectively; b i are the migration coefficients, i = 1, 2; G(x i (t -τ )) = p i x i (t -τ )e -γ i x i (t-τ ) are the cell growth rates, i = 1, 2. This means that the cell growth rates decrease exponentially as functions of cell number; p 1 and p 2 denote the maximum per-cell daily proliferation rate of the normal cells and leukemic cells, respectively; 1</p><p>γ i are the sizes at which the cells proliferate at their maximum proliferation rates, i = 1, 2; τ is the time required to perform the necessary divisions. Taking a model of marine protected areas as an example, the specific meanings of parameters can be seen in <ref type="bibr" target="#b22">[23]</ref>.</p><p>In this paper, we study here fluctuations in the environment, which are assumed to manifest themselves as fluctuations in the parameters a i of system (<ref type="formula" target="#formula_1">1.2</ref>), so that a i → a i -σ i Ḃi (t), i = 1, 2. Here B i (t) are the standard Brownian motion defined on a complete probability space (Ω , F, P) with a filtration {F t } t≥0 satisfying the usual conditions, and σ 2 i &gt; 0 are the noise intensities, i = 1, 2. Then corresponding to the deterministic system ( <ref type="formula" target="#formula_1">1.2</ref>), the stochastic model takes the following form</p><formula xml:id="formula_2">{ dx 1 (t) = [-a 1 x 1 (t) -b 2 x 1 (t) + b 1 x 2 (t) + p 1 x 1 (t -τ )e -γ 1 x 1 (t-τ ) ]dt + σ 1 x 1 (t)dB 1 (t), dx 2 (t) = [-a 2 x 2 (t) -b 1 x 2 (t) + b 2 x 1 (t) + p 2 x 2 (t -τ )e -γ 2 x 2 (t-τ ) ]dt + σ 2 x 2 (t)dB 2 (t),<label>(1.3)</label></formula><p>with initial conditions:</p><formula xml:id="formula_3">x i (t) = φ i (s), s ∈ [-τ, 0], φ i (0) &gt; 0,<label>(1.4)</label></formula><p>where φ i ∈ C([-τ, 0]; [0, +∞)), a i , b i , p i , τ are nonnegative constants, i = 1, 2. To simplify, in what follows, we shall denote α 1 = a 1 + b 2 , α 2 = a 2 + b 1 , x(t) = (x 1 (t), x 2 (t)) T , R + = (0, +∞) and R 2 + = {x ∈ R : x i &gt; 0, i = 1, 2}.</p><p>The contents of the remainder of the paper are summarized. In Section 2, we give a proof of the existence and uniqueness for global positive solution of system (<ref type="formula" target="#formula_2">1.3</ref>) with initial value (<ref type="formula" target="#formula_3">1.4</ref>). In Section 3, we show that system (<ref type="formula" target="#formula_2">1.3</ref>) is ultimately bounded in probability and the average in time of the second moment of solution is bounded. The pathwise properties of solution are the subject of Section 4. Our main results are illustrated and confirmed by numerical simulations under certain parameters in Section 5. At last, the paper ends with a brief conclusion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Existence and uniqueness of positive solution</head><p>Using Lyapunov analysis method <ref type="bibr" target="#b8">[9]</ref>, we shall show that system (<ref type="formula" target="#formula_2">1.3</ref>) has a unique global positive solution.</p><p>Theorem 2.1. For any given initial conditions (<ref type="formula" target="#formula_3">1.4</ref>), there is a unique positive solution x(t) of system (<ref type="formula" target="#formula_2">1.3</ref>) on [-τ, ∞), and the solution will remain in R 2 + with probability one.</p><p>Proof . Since the coefficients of system ( <ref type="formula" target="#formula_2">1.3</ref>) are locally Lipschitz continuous, for any given initial value ( <ref type="formula" target="#formula_3">1.4</ref>), there is a unique local solution on [-τ, τ e ), where τ e denotes the explosion time. Now, we shall prove that the solution is global, i.e. τ e = +∞ a.s. To this end, let k 0 ≥ 1 be sufficiently large such that φ i (t) ∈ ( 1 k 0 , k 0 ) for t ∈ [-τ, 0], i = 1, 2. For each integer k ≥ k 0 , define the stopping time as τ k = inf { t ∈ [0, τ e ) : min{x 1 (t), x 2 (t)} ≤ 1 k or max{x 1 (t), x 2 (t)} ≥ k } ,where throughout this paper, we denote ∅ as the empty set and set inf ∅ = ∞. Clearly, τ k is increasing as k → ∞. Set τ ∞ = lim k→∞ τ k , whence τ ∞ ≤ τ e a.s. If we can show that τ ∞ = ∞ a.s., then τ e = ∞ and x(t) ∈ R 2 + a.s. for all t ≥ 0. If this assertion is not true, then there exist T &gt; 0 and ε ∈ (0, 1) such that P{τ ∞ ≤ T } &gt; ε. For any k ≥ k 0 , let Ω k = {ω ∈ Ω : τ k (ω) ≤ T }. That is, P(Ω k ) &gt; ε for any k ≥ k 0 . Define the C 2 -function V : R 2 + → R + by V (x 1 , x 2 ) = ∑ 2 i=1 (x i -1 -ln x i ). For any 0 ≤ t &lt; (τ k ∧ T ), it follows from Itô's formula that</p><formula xml:id="formula_4">dV (x 1 (t), x 2 (t)) = LV (x 1 (t), x 2 (t), x 1 (t -τ ), x 2 (t -τ ))dt + 2 ∑ i=1 σ i (x i (t) -1)dB i (t),<label>(2.1)</label></formula><p>where LV (x 1 , x 2 , y 1 , y 2 ) = ( 1 -1 x 1 ) (-α 1 x 1 + b 1 x 2 + p 1 y 1 e -γ 1 y 1 ) + ( 1 -1 x 2 ) (-α 2 x 2 + b 2 x 1 + p 2 y 2 e -γ 2 y 2 ) + 1 2 (σ 2 1 +σ 2 2 ). Using the inequality x ≤ 2(x-1-ln x)+2 for any x ∈ R + , and the fact that sup x∈R + xe -x = 1 e , we have</p><formula xml:id="formula_5">LV (x 1 (t), x 2 (t), x 1 (t -τ ), x 2 (t -τ )) ≤ 2 max{b 1 , b 2 }V (x 1 (t), x 2 (t)) + K 1 ,<label>(2.2)</label></formula><p>where the positive constant K 1 := α 1 + α 2 + σ 2 1 2 + σ 2 2 2 + p 1 γ 1 e + p 2 γ 2 e + 4 max{b 1 , b 2 }. Further, for any k ≥ k 0 , integrating both sides of (2.1) from 0 to τ k ∧ T , yields</p><formula xml:id="formula_6">V (x 1 (τ k ∧T ), x 2 (τ k ∧T )) ≤ K 2 +2 max{b 1 , b 2 } ∫ τ k ∧T 0 V (x 1 (t), x 2 (t))dt+ 2 ∑ i=1 σ i ∫ τ k ∧T 0 (x i (t)-1)dB i (t),<label>(2.3)</label></formula><p>where K 2 = V (x 1 (0), x 2 (0)) + K 1 T . Taking the expectations on both sides of (<ref type="formula" target="#formula_6">2.3</ref>), we have EV (x 1 (τ k ∧ T ), x 2 (τ k ∧ T )) ≤ K 2 + 2 max{b 1 , b 2 } ∫ T 0 EV (x 1 (τ k ∧ t), x 2 (τ k ∧ t))dt. By the Gronwall inequality we then obtain that</p><formula xml:id="formula_7">EV (x 1 (τ k ∧ T ), x 2 (τ k ∧ T )) ≤ K 2 e 2T max{b 1 ,b 2 } , k ≥ k 0 .<label>(2.4)</label></formula><p>Noting that for every ω ∈ Ω k , there is at least one of x 1 (τ k , ω) or x 2 (τ k , ω) that is equal to k or 1 k . Hence, V (x 1 (τ k ), x 2 (τ k )) is no less than either (k -1 -ln k) ∧ ( 1 k -1 + ln k). It follows from (<ref type="formula" target="#formula_7">2.4</ref>) that K 2 e 2T max{b 1 ,b 2 } ≥ E[I Ω k V (x 1 (τ k ), x 2 (τ k ))] ≥ P (Ω k ) [ (k -1 -ln k) ∧ ( 1 k -1 + ln k) ] ≥ ε [ (k -1 -ln k) ∧ ( 1 k -1 + ln k) ] , where I Ω k denotes the indicator function of Ω k . Letting k → ∞, then ∞ &gt; K 2 e 2T max{b 1 ,b 2 } = ∞, which leads to a contradiction. So we must have τ ∞ = ∞ a.s. as required. □</p><p>Remark 2.2. Without migration (b 1 = b 2 = 0), the delay stochastic Nicholson-type model (1.3) is a direct extension of the stochastic Nicholson model in <ref type="bibr" target="#b19">[20]</ref>. From Theorem 2.1, we know that the condition α &gt; σ 2 2 in <ref type="bibr" target="#b19">[20]</ref> for the existence and uniqueness of positive solution, is not necessary. Therefore, Theorem 2.1 improves and generalizes Lemma 2.2 in <ref type="bibr" target="#b19">[20]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Ultimate boundedness in probability</head><p>In this section, we examine the ultimate boundedness in mean, ultimate boundedness in probability, and the average in time of the second moment of solution. Firstly, we give their definitions as follows.</p><p>Definition 3.1. System ( <ref type="formula" target="#formula_2">1.3</ref>) is said to be ultimately bounded in mean if there is a positive constant L independent of initial conditions ( <ref type="formula" target="#formula_3">1.4</ref>) such that lim sup E|x(t)| ≤ L.</p><p>Definition 3.2. System (<ref type="formula" target="#formula_2">1.3</ref>) is said to be ultimate boundedness in probability if, for any ε ∈ (0, 1), there exist positive constants H 1 = H 1 (ε), H 2 = H 2 (ε) such that solution (x 1 (t), x 2 (t)) of system ( <ref type="formula" target="#formula_2">1.3</ref> with any given initial values ( <ref type="formula" target="#formula_3">1.4</ref>) satisfies lim sup P{x1 (t) ≥ H1 } &lt; ε, lim sup P{x2 (t) ≥ H2 } &lt; ε.</p><p>Theorem 3.3. For any given initial values (1.4), solution (x1 (t), x2 (t)) of system (<ref type="formula" target="#formula_2">1.3</ref>) satisfies lim sup E[x 1 (t) + x 2 (t)] ≤ p 1 γ 1 eη + p 2 γ 2 eη , where η = min{α 1 -b 2 , α 2 -b 1 }. Further, system (<ref type="formula" target="#formula_2">1.3</ref>) is ultimately bounded in mean.</p><p>Proof . By Theorem 2.1, the solution x(t) will remain in R 2 + for all t ≥ -τ with probability one. Define the</p><formula xml:id="formula_8">C 2 -function V 1 : R 3 + → R + by V 1 (t, x 1 , x 2 ) = e ηt (x 1 + x 2 ). Applying Itô's formula, we have dV 1 (t, x 1 (t), x 2 (t)) = LV 1 (t, x 1 (t), x 2 (t), x 1 (t -τ ), x 2 (t -τ ))dt + e ηt 2 ∑ i=1 σ i x i (t)dB i (t),<label>(3.1)</label></formula><p>where LV 1 (t, x 1 , x 2 , y 1 , y 2 ) = e ηt [(b 2 -α 1 + η)x 1 + (b 1 -α 2 + η)x 2 + p 1 y 1 e -γ 1 y 1 + p 2 y 2 e -γ 2 y 2 ] ≤ e ηt ( p 1 γ 1 e + p 2 γ 2 e). Integrating both sides of ( <ref type="formula" target="#formula_8">3.1</ref>) from 0 to t and using the above equality, we obtain V 1 (t, x 1 (t), x 2 (t)) ≤ V 1 (0, φ 1 (0), φ 2 (0)) + ( p 1 γ 1 e + p 2 γ 2 e ) ∫ t 0 e ηs ds + 2 ∑ i=1 σ i ∫ t 0 e ηs x i (s)dB i (s). This implies E(x 1 (t) + x 2 (t)) ≤ e -ηt V 1 (0, φ 1 (0), φ 2 (0)) + ( p 1 γ 1 e + p 2 γ 2 e ) ∫ t 0 e (s-t)η ds. Furthermore, letting t → ∞ and noting from the equality |x| ≤ x 1 + x 2 , for x = (x 1 , x 2 ) T ∈ R 2 + , we have lim sup t→∞ E|x(t)| ≤ p 1 γ 1 eη + p 2 γ 2 eη . □</p><p>By Chebyshev’s inequality and Theorem 3.3, we have the following result.</p><p>Theorem 3.4.System (<ref type="formula" target="#formula_2">1.3</ref>) is ultimately bounded in probability.</p><p>Theorem 3.5. Assume that there is positive number θ such that</p><formula xml:id="formula_9">2α 1 -σ 2 1 -(b 1 + b 2 )θ &gt; 0, 2α 2 -σ 2 2 - b 1 + b 2 θ &gt; 0.<label>(3.2)</label></formula><p>Then, for any given initial values (<ref type="formula" target="#formula_3">1.4</ref>), solution x(t) of system ( <ref type="formula" target="#formula_2">1.3</ref>)</p> satisfies<formula xml:id="formula_10">lim sup t→∞ 1 t ∫ t 0 E|x(s)| 2 ds ≤ C,<label>(3.3)</label></formula><p>where</p><formula xml:id="formula_11">C := { 4p 2 1 γ 2 1 e 2 [2α 1 -σ 2 1 -(b 1 +b 2 )θ] + 4p 2 2 γ 2 2 e 2 [2α 2 -σ 2 2 - b 1 +b 2 θ ] } • { min { 2α 1 -σ 2 1 -(b 1 +b 2 )θ, 2α 2 -σ 2 2 -b 1 +b 2 θ } } -1</formula><p>is a positive constant. That is, the average in time of the second moment of solution x(t) is bounded.</p><p>Proof . By Itô formula, the Cauchy-Schwarz inequality and the fact that sup x∈R + xe -x = 1 e , it follows from (<ref type="formula" target="#formula_2">1.3</ref>) that</p><formula xml:id="formula_12">d(x 2 1 (t) + x 2 2 (t)) ≤ { - [ 2α 1 -σ 2 1 -(b 1 + b 2 )θ ] x 2 1 (t) + 2p 1 γ 1 e x 1 (t) - [ 2α 2 -σ 2 2 - b 1 + b 2 θ ] x 2 2 (t) + 2p 2 γ 2 e x 2 (t) } dt + 2σ 1 x 2 1 (t)dB 1 (t) + 2σ 2 x 2 2 (t)dB 2 (t).<label>(3.4)</label></formula><p>We can integrate both sides of ( <ref type="formula" target="#formula_12">3.4</ref>) from 0 to t, and then take the expectations to get</p><formula xml:id="formula_13">0 ≤ E(x 2 1 (t) + x 2 2 (t)) ≤ x 2 1 (0) + x 2 2 (0) + ∫ t 0 E [ - ( 2α 1 -σ 2 1 -(b 1 + b 2 )θ ) x 2 1 (s) + 2p 1 γ 1 e x 1 (s) ] ds + ∫ t 0 E [ - ( 2α 2 -σ 2 2 - b 1 + b 2 θ ) x 2 2 (s) + 2p 2 γ 2 e x 2 (s) ] ds.</formula><p>Noting</p><formula xml:id="formula_14">- 2α 1 -σ 2 1 -(b 1 + b 2 )θ 2 x 2 1 (s) + 2p 1 γ 1 e x 1 (s) ≤ 2p 2 1 γ 2 1 e 2 [2α 1 -σ 2 1 -(b 1 + b 2 )θ] , - 2α 2 -σ 2 2 -b 1 +b 2 θ 2 x 2 2 (s) + 2p 2 γ 2 e x 2 (s) ≤ 2p 2 2 γ 2 2 e 2 [2α 2 -σ 2 2 -b 1 +b 2 θ ]</formula><p>, we obtain that</p><formula xml:id="formula_15">2α 1 -σ 2 1 -(b 1 + b 2 )θ 2 ∫ t 0 Ex 2 1 (s)ds + 2α 2 -σ 2 2 -b 1 +b 2 θ 2 ∫ t 0 Ex 2 2 (s)ds ≤ x 2 1 (0) + x 2 2 (0) + 2p 2 1 γ 2 1 e 2 [ 2α 1 -σ 2 1 -(b 1 + b 2 )θ ] t + 2p 2 2 γ 2 2 e 2 [2α 2 -σ 2 2 -b 1 +b 2 θ ]t.</formula><p>It is straightforward to see that lim sup t→∞ 1 t ∫ t 0 E|x(s)| 2 ds ≤ C. □</p><p>Remark 3.6. If α 1 = α 2 , b 1 = b 2 = 0, p 1 = p 2 , γ 1 = γ 2 , we get lim sup t→∞ Ex 1 (t) ≤ p 1 α 1 γ 1 e which does not require any condition. Moreover, in this case, ( <ref type="formula" target="#formula_9">3.2</ref>) reduces to α 1 &gt; σ 2 1 2 and lim sup t→∞ 1 t ∫ t 0 Ex 2 1 (s)ds ≤ 4p 2 1 γ 2 1 e 2 (2α 1 -σ 2 1 ) 2 . So, Theorems 3.3-3.5 can be seen an extension of Theorem 3.1 in <ref type="bibr" target="#b19">[20]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Asymptotic pathwise estimation</head><p>Theorem 4.1. Let (<ref type="formula" target="#formula_9">3.2</ref>) hold. For any given initial values (<ref type="formula" target="#formula_3">1.4</ref>), the solution x(t) of system (<ref type="formula" target="#formula_2">1.3</ref>) has the property that</p><formula xml:id="formula_16">lim sup t→∞ 1 t ln xi (t) ≤ , a.s. where i = 1, 2, Q = Q 1 + Q 2 with Q 1 = min { p 2 1 [2α 1 -σ 2 1 -(b 1 +b 2 )θ]γ 2 1 e 2 , √ [2α 1 -σ 2 1 -(b 1 +b 2 )θ] 2 +4( p 1 γ 1 e ) 2 -[2α 1 -σ 2 1 -(b 1 +b 2 )θ] 2 } and Q 2 = min { p 2 2 [2α 2 -σ 2 2 - b 1 +b 2 θ ]γ 2 2 e 2 , √ (2α 2 -σ 2 2 - b 1 +b 2 θ ) 2 +4( p 2 γ 2 e ) 2 -(2α 2 -σ 2 2 - b 1 +b 2 θ ) 2 } .</formula><p>Proof . By Itô's formula, it follows from ( <ref type="formula" target="#formula_13">3.2</ref>) that</p><formula xml:id="formula_17">ln(1 + x 2 1 (t) + x 2 2 (t)) ≤ ln(1 + x 2 1 (0) + x 2 2 (0)) + 2 ∫ t 0 x 1 (s) 1 + x 2 1 (s) + x 2 2 (s) (-α 1 x 1 (s) + b 1 x 2 (s) + p 1 γ 1 e )ds + 2 ∫ t 0 x 2 (s) 1 + x 2 1 (s) + x 2 2 (s) (-α 2 x 2 (s) + b 2 x 1 (s) + p 2 γ 2 e )ds -2 2 ∑ i=1 σ 2 i ∫ t 0 x 4 i (s) (1 + x 2 1 (s) + x 2 2 (s)) 2 ds 1, φ 2 (t) = 0.3 for t ∈ [-1, 0]. + 2 ∑ i=1 σ 2 i ∫ t 0 x 2 i (s) 1 + x 2 1 (s) + x 2 2 (s) ds + M 1 (t) + M 2 (t) ≤ ln(1 + x 2 1 (0) + x 2 2 (0)) -2 2 ∑ i=1 σ 2 i ∫ t 0 x 4 i (s) (1 + x 2 1 (s) + x 2 2 (s)) 2 ds + Qt + M 1 (t) + M 2 (t),<label>(4.1)</label></formula><p>where M i (t) = 2σ i ∫ t 0 x 2 i (s) 1+x 2 1 (s)+x 2 2 (s) dB i (s) is a martingale, i = 1, 2. For any positive integer n, using the exponential martingale inequality ( <ref type="bibr" target="#b8">[9]</ref>, Theorem 7.4 on p.44), we get P { sup 0≤t≤n { M i (t) -2 ∫ t 0 σ 2 i x 4 i (s) (1+x 2 1 (s)+x 2 2 (s)) 2 ds } &gt; 2 ln n } ≤ 1 n 2 , i = 1, 2. Since ∑ ∞ n=1 1 n 2 &lt; ∞, and the Borel-Cantelli lemma (<ref type="bibr" target="#b8">[9]</ref>, Lemma 2.4 on p.7), we know that there exist a set Ω 0 ∈ F with P(Ω 0 ) = 1 and an integer-valued random variable n 0 = n 0 (ω) such that for every ω ∈ Ω 0 , M i (t) ≤ 2 ∫ t 0 σ 2 i x 4 i (s) (1+x 2 1 (s)+x 2 2 (s)) 2 ds + 2 ln n, for all 0 ≤ t ≤ n and n ≥ n 0 , i = 1, 2. Substituting the above inequality into (4.1), for any ω ∈ Ω 0 , n ≥ n 0 , 0 ≤ t ≤ n, we have ln(1 + x 2 1 (t) + x 2 2 (t)) ≤ ln(1 + x 2 1 (0) + x 2 2 (0)) + Qt + 4 ln n. Therefore, for all ω ∈ Ω 0 , 0 ≤ n -1 ≤ t ≤ n, n ≥ n 0 , we have 1 t ln(1 + x 2 1 (t) + x 2 2 (t)) ≤ 1 n-1 [ ln(1 + x 2 1 (0) + x 2 2 (0)) + Qn + 4 ln n ] . Letting n → ∞ and using the inequality y ≤ 1 2 (1 + y 2 ) for any y ∈ (-∞, +∞), we obtain lim sup t→∞ 1 t ln x i (t) ≤ lim sup n→∞ 1 2(n-1) [ln(1 + x 2 (0)) + Qn + 4 ln n] = Q 2 , a.s. □</p><p>Remark 4.2. If α 1 = α 2 , b 1 = b 2 = 0, p 1 = p 2 , γ 1 = γ 2 , we compute Q = min { p 2 1 (2α 1 -σ 2 1 )γ 2 1 e 2 , √ (2α 1 -σ 2 1 ) 2 +4( p 1 γ 1 e ) 2 -(2α 1 -σ 2 1 ) 2 } by Theorem 4.1. Then, Q ≤ K, where K = min{ p 2 1 γ 2 1 e 2 (2α 1 -σ 2 ) , p 1 γ 1 e } is defined in <ref type="bibr" target="#b19">[20]</ref>. It means, our work can be seen as a generalization of Theorem 3.2 in <ref type="bibr" target="#b19">[20]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Numerical simulations</head><p>In this section, we make numerical simulations to illustrate our results by using the Milstein method <ref type="bibr" target="#b23">[24]</ref>. We consider the following example</p><formula xml:id="formula_18">{ dx 1 (t) = [-2x 1 (t) + 0.8x 2 (t) + 4x 1 (t -1)e -x 1 (t-1) ]dt + 0.04x 1 (t)dB 1 (t), dx 2 (t) = [-2.3x 2 (t) + 0.3x 1 (t) + 2x 2 (t -1)e -x 2 (t-1) ]dt + 0.05x 2 (t)dB 2 (t).<label>(5.1)</label></formula><p>Letting θ = 1, condition ( <ref type="formula" target="#formula_9">3.2</ref> has been checked and Theorems 3.3, 3.5 and 4.1 hold. Then we compute that lim supt→∞ E|x(t)| ≤ 6e ≈ 2.2073, lim supt→∞ 1t 0 E|x(t)| dt ≤ 9.1968 e2 ≈ 1.2446, and lim supt→∞ 1 t ln xi (t) ≤ 0.3823, i = 1, 2. Fig. <ref type="figure" target="#fig_0">1</ref> clearly supports these results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusions</head><p>Theorem 2.1 shows that, the original model ( <ref type="formula" target="#formula_1">1.2</ref>) and the associated stochastic model (1.3) behave similarly in the sense that both have positive solutions which will not explode to infinity at a finite time. In other words, we show that the noise will not spoil this nice property. From Remarks 2.2, 3.6 and 4.2, we know that our results can be seen a generalization of those in <ref type="bibr" target="#b19">[20]</ref>.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1.Numerical simulation of the solution of model (5.1) with initial value φ 1 (t) = 1, φ 2 (t) = 0.3 for t ∈ [-1, 0].</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>✩ This work was supported partially by the <rs type="funder">National Natural Science Foundation of China</rs> (Nos.<rs type="grantNumber">11471197</rs>, <rs type="grantNumber">11571210</rs>, <rs type="grantNumber">11501339</rs></p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_9D3bca3">
+					<idno type="grant-number">11471197</idno>
+				</org>
+				<org type="funding" xml:id="_parx4WU">
+					<idno type="grant-number">11571210</idno>
+				</org>
+				<org type="funding" xml:id="_bqzvuBT">
+					<idno type="grant-number">11501339</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nicholson</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">An outline of the dynamics of animal populations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Aust. J. Zool.</title>
+			<imprint>
+				<date when="1954">1954</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="9" to="65"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gurney</surname>
+					<forename type="first">W</forename><forename type="middle">S</forename><forename type="last">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blythe</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nisbet</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Nicholson’s blowflies revisited</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1980">1980</date>
+				<biblScope unit="volume">287</biblScope>
+				<biblScope unit="page" from="17" to="21"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Faria</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Periodic solutions for a non-monotone family of delayed differential equations with applications to Nicholson systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Differential Equations</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">263</biblScope>
+				<biblScope unit="page" from="509" to="533"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<title level="a">The positive periodic solution for Nicholson-type delay system with linear harvesting terms</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Model.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="5581" to="5590"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Permanence for Nicholson-type delay systems with nonlinear density-dependent mortality terms</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nonlinear Anal. RWA</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="1931" to="1937"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Faria</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Röst</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Persistence, permanence and global stability for an n-dimensional Nicholson system</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Dynam. Differential Equations</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="723" to="744"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ackleh</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Allen</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carter</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Establishing a beachhead: a stochastic population model with an Allee effect applied to species invasion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Theor. Popul. Biol.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="290" to="300"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Delay population dynamic and environmental noise</title>
+		</analytic>
+		<monogr>
+			<title level="j">Stoch. Dyn.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="149" to="162"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b8">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="m">Stochastic Differential Equations and Applications</title>
+			<imprint>
+				<publisher>Horwood Publishing Limited</publisher>
+				<pubPlace>Chichester</pubPlace>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hening</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename type="first">D</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Coexistence and extinction for stochastic Kolmogorov systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann. Appl. Probab.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="1893" to="1942"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Linh</surname>
+					<forename type="first">N</forename><forename type="middle">T</forename><forename type="last">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ton</surname>
+					<forename type="first">T</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamics of a stochastic ratio-dependent predator-prey model</title>
+		</analytic>
+		<monogr>
+			<title level="j">Anal. Appl.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="329" to="344"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Banerjee</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">A stochastic SIRS epidemic model with infectious force under intervention strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Differential Equations</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">259</biblScope>
+				<biblScope unit="page" from="7463" to="7502"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jiao</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gui</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Environmental variability in a stochastic epidemic model</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Comput.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">329</biblScope>
+				<biblScope unit="page" from="210" to="226"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Guo</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Stochastic persistence and stationary distribution in an SIS epidemic model with media coverage</title>
+		</analytic>
+		<monogr>
+			<title level="j">Physica A</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">492</biblScope>
+				<biblScope unit="page" from="2220" to="2236"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Global threshold dynamics of a stochastic epidemic model incorporating media coverage</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Differential Equations</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">2018</biblScope>
+				<biblScope unit="page" from="462" to="462"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cao</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shan</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">A stochastic SIS epidemic model with vaccination</title>
+		</analytic>
+		<monogr>
+			<title level="j">Physica A</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">486</biblScope>
+				<biblScope unit="page" from="127" to="143"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fu</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Impact of the fear effect in a prey-predator model incorporating a prey refuge</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Comput.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">356</biblScope>
+				<biblScope unit="page" from="328" to="337"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Global transmission dynamics of a Zika virus model</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Lett.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">92</biblScope>
+				<biblScope unit="page" from="190" to="195"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Nontrivial periodic solution of a stochastic non-autonomous model with biodegradation of microcystins</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Lett.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">94</biblScope>
+				<biblScope unit="page" from="87" to="93"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Stochastic Nicholson’s blowflies delayed differential equations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Lett.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">87</biblScope>
+				<biblScope unit="page" from="20" to="26"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hill</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thomas</surname>ì
+					<forename type="first">C</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lewis</surname>
+					<forename type="first">O</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">Effects of habitat patch size and isolation on dispersal by hesperia comma butterflies: implications for metapopulation structure</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Anim. Ecol.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">65</biblScope>
+				<biblScope unit="page" from="725" to="735"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Terry</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Impulsive culling of a structured population on two patches</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Math. Biol.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="843" to="875"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Berezansky</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Idels</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Troib</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Global dynamics of Nicholson-type delay systems with applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nonlinear Anal. RWA</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="436" to="445"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Higham</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">An algorithmic introduction to numerical simulation of stochastic differential equations</title>
+		</analytic>
+		<monogr>
+			<title level="j">SIAM Rev.</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="525" to="546"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

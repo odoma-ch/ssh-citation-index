@@ -1,0 +1,1222 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Relating national levels of crop damage to the abundance of large grazing birds: Implications for management</title>
+				<funder ref="#_U2vw64Q">
+					<orgName type="full">Swedish EPA</orgName>
+				</funder>
+				<funder ref="#_7VREyXA #_pAszGBC">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability><licence><p>This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</p></licence></availability>
+				<date type="published" when="2019-07-08"/>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Teresa</forename><surname>Montràs-Janer</surname></persName>
+							<email>teresa.montras.janer@slu.se</email>
+							<idno type="ORCID">0000-0003-0961-4634</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Grimsö Wildlife Research Station</orgName>
+								<orgName type="department" key="dep2">Department of Ecology</orgName>
+								<orgName type="institution">Swedish University of Agricultural Sciences</orgName>
+								<address>
+									<settlement>Riddarhyttan</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jonas</forename><surname>Knape</surname></persName>
+							<idno type="ORCID">0000-0002-8012-5131</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Ecology</orgName>
+								<orgName type="institution">Swedish University of Agricultural Sciences</orgName>
+								<address>
+									<settlement>Uppsala</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lovisa</forename><surname>Nilsson</surname></persName>
+							<idno type="ORCID">0000-0003-4822-7864</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Grimsö Wildlife Research Station</orgName>
+								<orgName type="department" key="dep2">Department of Ecology</orgName>
+								<orgName type="institution">Swedish University of Agricultural Sciences</orgName>
+								<address>
+									<settlement>Riddarhyttan</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ingunn</forename><surname>Tombre</surname></persName>
+							<idno type="ORCID">0000-0002-1229-5972</idno>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Arctic Ecology Department</orgName>
+								<orgName type="department" key="dep2">The Fram Centre</orgName>
+								<orgName type="institution">Norwegian Institute for Nature Research</orgName>
+								<address>
+									<settlement>Tromsø</settlement>
+									<country key="NO">Norway</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tomas</forename><surname>Pärt</surname></persName>
+							<idno type="ORCID">0000-0001-7388-6672</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Ecology</orgName>
+								<orgName type="institution">Swedish University of Agricultural Sciences</orgName>
+								<address>
+									<settlement>Uppsala</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Johan</forename><surname>Månsson</surname></persName>
+							<idno type="ORCID">0000-0002-5189-2091</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Grimsö Wildlife Research Station</orgName>
+								<orgName type="department" key="dep2">Department of Ecology</orgName>
+								<orgName type="institution">Swedish University of Agricultural Sciences</orgName>
+								<address>
+									<settlement>Riddarhyttan</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Relating national levels of crop damage to the abundance of large grazing birds: Implications for management</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Applied Ecology</title>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<biblScope unit="volume">56</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="2286" to="2297"/>
+							<date type="published" when="2019-07-08"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">765F18AE88EC7FAFD01BF7F69617200A</idno>
+					<idno type="DOI">10.1111/1365-2664.13457</idno>
+					<note type="submission">Received: 7 February 2019 | Accepted: 3 June 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>agriculture</term>
+					<term>crop protection</term>
+					<term>human-wildlife conflicts</term>
+					<term>INLA</term>
+					<term>large grazing birds</term>
+					<term>population</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>1. Populations of large grazing birds have increased in Europe during the past five decades, raising conflicts between conservation and farming interests. Managing these conflicts requires knowledge about the currently unknown relationship between population sizes and crop damage levels.</p><p>2. We analysed unique data on reported, inspected and compensated crop damage caused by geese, swans and cranes together with data from population surveys in Sweden to investigate how bird abundance is related to damage levels at the national scale between 2000 and 2015.</p><p>3. Over the study period, the annual number of damage reports, yield loss and costs for compensation increased. These crop damage levels were positively related to national population indices of common crane, barnacle and greylag goose. The shape of these relationships varied between species and encompassed considerable uncertainty. However, on a year-to-year basis (detrended data) we found no evident association between damage levels and bird numbers.</p><p>4. Yield loss and compensation costs per reported damage did not increase with higher population indices of greylag goose, but they did so for barnacle goose.</p><p>5. Synthesis and applications.</p><p>We present a novel study of the relationships between different crop damage level indicators (damage reports, yield loss and compensation costs) and population numbers of large grazing birds. We identified a positive relationship with high uncertainty for all cases. We also identified the need to (a) better synchronize the monitoring of damages and bird numbers in time and space and (b) further study the relationships between damage levels and bird numbers at smaller (local and regional) and larger (flyway) spatial scales to reduce the uncertainty of the relationship and to gain a more holistic understanding of the system.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">| INTRODUCTION</head><p>Wildlife damage on human livelihoods can unfold into conflicts between human interests such as conservation, agriculture and forestry <ref type="bibr" target="#b34">(Redpath et al., 2013)</ref>. When managing conflicts arising from human-wildlife interactions, knowledge about the relationship between damage levels and population size is fundamental to understand possible outcomes of different interventions and management strategies, as well as to set relevant goals <ref type="bibr" target="#b5">(Conover, 2002;</ref><ref type="bibr" target="#b18">Madsen et al., 2017)</ref>.</p><p>The need for interventions to mitigate damage by large grazing birds (geese, swans and cranes) on agricultural fields, has recently been accentuated <ref type="bibr" target="#b10">(Fox &amp; Madsen, 2017)</ref>. Many populations of large grazing birds have increased from threatened to superabundant in Europe during at least five decades <ref type="bibr" target="#b10">(Fox &amp; Madsen, 2017)</ref> due to conservation efforts and agricultural intensification <ref type="bibr" target="#b7">(Ebbinge, 1991;</ref><ref type="bibr" target="#b9">Fox, Elmberg, Tombre, &amp; Hessel, 2017;</ref><ref type="bibr" target="#b11">Gauthier, Giroux, Reed, Bechet, &amp; Belanger, 2005)</ref> and a warmer climate <ref type="bibr" target="#b13">(Jensen, Madsen, Johnson, &amp; Tamstorf, 2014;</ref><ref type="bibr" target="#b21">Mason, Keane, Redpath, &amp; Bunnefeld, 2018)</ref>. The increasing numbers of large grazing birds and their preference for agricultural fields over their natural foraging habitats -because crops provide higher quality food <ref type="bibr" target="#b8">(Fox &amp; Abraham, 2017)</ref> -cause a loss in harvest yield for the farmers <ref type="bibr" target="#b9">(Fox et al., 2017)</ref>. For example, in Islay, Scotland, spring grazing barnacle geese reduced harvests on spring grasslands by up to 82% <ref type="bibr" target="#b31">(Perceival &amp; Houston, 1992)</ref>. Also, annual economic compensation for harvest losses due to barnacle geese ranged from 5,000 euros in Belgium to more than 5 million euros in the Netherlands in recent years <ref type="bibr" target="#b14">(Jensen, Madsen, &amp; Nagy, 2018)</ref>. As the impact of foraging large grazing birds on agricultural landscapes increases, it fuels the conflict between farming and conservation objectives <ref type="bibr" target="#b38">(Stroud, Madsen, &amp; Fox, 2017)</ref>. While it is reasonable to assume that agricultural yield losses depend on the number of birds and their grazing pressure <ref type="bibr" target="#b30">(Parrott &amp; McKay, 2001)</ref>, the annual variation in yields caused by factors other than grazing birds (e.g. weather, soil, crop-type) make specific quantification of damage difficult to assess <ref type="bibr" target="#b0">(Anon, 1970;</ref><ref type="bibr" target="#b22">McKenzie &amp; Shaw, 2017)</ref>. For instance, plants may compensate for grazing <ref type="bibr" target="#b40">(Van der Graaf, Stahl, &amp; Bakker, 2005;</ref><ref type="bibr" target="#b23">McNaughton, 1979)</ref> and under certain conditions intermediate grazing may stimulate plant growth <ref type="bibr" target="#b23">(McNaughton, 1979)</ref>. Few studies have been able to evaluate the relationship between bird numbers and damage levels and this link has often simply been assumed to be linear <ref type="bibr" target="#b6">(Cusack et al., 2018;</ref><ref type="bibr" target="#b22">McKenzie &amp; Shaw, 2017)</ref>, especially at the national scale where most political and strategic management decisions are conducted <ref type="bibr" target="#b9">(Fox et al., 2017)</ref>.</p><p>Increasing populations of large grazing birds and damage to agricultural fields have led to recent initiatives to establish adaptive flyway management plans. All states along the flyway for these birds need to reach a consensus in agreeing their goals and measures to tackle this issue <ref type="bibr" target="#b18">(Madsen et al., 2017;</ref><ref type="bibr" target="#b38">Stroud et al., 2017)</ref>. Several measures to mitigate the damage and conservation conflicts exist and have been suggested within the plans for example, set-aside areas, bird-scaring and population control <ref type="bibr" target="#b9">(Fox et al., 2017)</ref>. However, the current lack of data linking crop damage with population size creates a challenge when it comes to (a) predicting outcomes of proposed interventions, (b) allocating money for compensation costs and (c) adapt any subsequent goals and recommendations for monitoring and compensation strategies.</p><p>In Sweden, farmers can report crop damage caused by large grazing birds to acquire economic compensation from an accredited government compensatory scheme. Reported damages must be approved, species involved identified and yield losses estimated by authorized government inspectors before economic compensations are paid. In addition, estimates of population numbers of large grazing birds are conducted as part of the national monitoring schemes <ref type="bibr" target="#b26">(Nilsson, 2013)</ref>. We use this available data to (a) investigate the relative importance of the species reported to cause crop damage in Sweden; (b) describe temporal and large scale spatial patterns of damage; (c) reveal the relationships between estimated national population numbers and levels of crop damage across 16 years (2000-2015) and whether these relationships differ among the species; and (d) explore the relationship between the amount of damage, yield loss and compensation costs incurred.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">| MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">| Crop damage data</head><p>In 1995, the Swedish Government launched a system to compensate farmers for crop damage caused by large grazing birds. Since then, all farmers can report crop damage to the County Administrative Boards (CABs) to receive compensation. All reported damages are verified according to a standardized procedure by trained and authorized inspectors from the CABs <ref type="bibr" target="#b20">(Månsson et al., 2011)</ref>. The specific methodology varies slightly between crop types (e.g. potato, cereals, hay) but is in general based on a comparison between damaged and undamaged parts of the same field (or a field in close proximity if the whole field is damaged) to estimate yield loss. If damage occurs during an early stage, the field is visited twice: first immediately after the damage occurs to geo-tag the affected area and to identify the species responsible and then a second time just before harvest, to estimate the yield loss. The inspectors verify the affected crops and identify the species responsible based on established protocols <ref type="bibr" target="#b20">(Månsson et al., 2011)</ref>. Because the first inspection takes place immediately after the farmer contacts the CAB, we expect the identification of the culprit species to be accurate. Harvest loss due to other factors such as drought, flooding or other wildlife (e.g. wild boar Sus scrofa) is also estimated and deducted from the total loss <ref type="bibr" target="#b20">(Månsson et al., 2011)</ref>. Once the damage is registered, the CABs calculate the economical compensations due to be paid, based on the annual crop market price.</p><p>The species included in the compensation scheme are bean goose Anser fabalis, barnacle goose Branta leucopsis, brent goose B. bernicla, greylag goose A. anser, greater white-fronted goose A. albifrons, mute swan Cygnus olor, whooper swan C. cygnus and common crane Grus grus. Canada goose B. canadensis is a non-native species and is not compensated for since conditional shooting is permitted for this species throughout the year (i.e. farmers can shoot geese outside the open hunting season on fields where they cause damage). In 2009, the hunting regulations for greylag geese changed, allowing for conditional shooting. Hence, farmers were allowed to perform lethal scaring as soon as greylag geese were feeding on unharvested crops independent of season <ref type="bibr" target="#b19">(Månsson, 2017)</ref>. As a consequence, the CABs decided to cease compensation for crop damage caused by greylag geese (see Figure <ref type="figure">S1</ref>), except for in regions of high concentration of geese like Scania (the southernmost Swedish province) and local areas where shooting was prohibited to avoid disturbance, for example in the vicinity of wetland reserves.</p><p>We used three indices to quantify damage level: the number of approved reports of damage (damage reports), registered kilos of yield loss (yield loss) and the amount of compensation paid (compensation costs). Information about the compensatory scheme was spread by information campaigns via CABs and farmer associations. It is reasonable to assume that the awareness about the compensation scheme among farmers was low immediately after it was introduced. To decrease the risk of such a bias, we excluded the first 5 years of data before the year 2000 (n 1995-1999 = 21 damage reports).</p><p>Since geese often occur in mixed flocks (Table <ref type="table">S1</ref>), one damage report may include several species. When investigating species-specific crop damage, we included all damage reports (i.e. involving single and mixed flocks). Consequently, the number of species-specific reports (n 2000-2015 = 2,851) is greater than the actual number of damage reports (n 2000-2015 = 2,194 reports). To calculate yield loss and compensation costs for each species, we weighted yield loss and compensation costs according to the species' contribution to each reported damage (i.e. the proportion of each species in the flock).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| National indices of bird numbers</head><p>We used the total number of birds registered during the annual national autumn counts in September for greylag geese, and October for barnacle and bean geese <ref type="bibr" target="#b28">(Nilsson &amp; Haas, 2016)</ref>. These counts are conducted mainly by volunteers in the vicinity of roosting sites, mainly in southern Sweden (&lt;61° North) and are designed to cover all main stopover sites <ref type="bibr" target="#b26">(Nilsson, 2013)</ref>. The number of surveyed sites has basically been constant for the October counts, whereas the range of September counts has expanded as greylag geese have been found further north <ref type="bibr" target="#b26">(Nilsson, 2013)</ref>. For common crane, we used the maximum number of birds counted during the second half of September at the four major autumn stopover sites: lakes Tåkern, Hjälstaviken, Kvismaren and Hornborgasjön <ref type="bibr" target="#b16">(Lundin, 2005;</ref><ref type="bibr" target="#b27">Nilsson, 2016)</ref>. The timing of the crane and geese monitoring periods match the species' peak numbers at Swedish autumn staging sites. These estimates of population numbers should be viewed as estimates of national numbers and do not provide detailed information about local abundances and within-year variation <ref type="bibr" target="#b26">(Nilsson, 2013)</ref>. Autumn counts for whooper swan involved very poor coverage (&lt;200 individuals/ year) and were not analysed.</p><p>Common cranes arrive in Sweden in March and leave early October. Barnacle geese peak in April-May and September-October. Greylag geese arrive in February and March and the vast majority leave in September-October. Whooper swans arrive in February-March and leave in October-November. Bean geese arrive in March and leave in November <ref type="bibr" target="#b36">(Shah &amp; Coulson, 2018)</ref> (see Figure <ref type="figure" target="#fig_0">1d</ref> for details on number of migrant individuals). All these species, except common crane, winter in southernmost Sweden during mild winters. The Swedish breeding populations are estimated (figures are number of breeding pairs) at 30,000 cranes; 4,900 barnacles; 41,000 greylags; 5,600 whoopers and 850 beans <ref type="bibr" target="#b29">(Ottosson et al., 2012)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">| Crop availability and market prices</head><p>Since 2000, ley is the most abundant crop in Sweden (40% of the agricultural land) followed by wheat (14%) and barley (13%) (84% of wheat corresponds to winter crops while 92% of barley, to spring crops; <ref type="bibr" target="#b1">Anon, 2018a)</ref>. The south and central areas of Sweden have an agricultural-dominated landscape fragmented with urban settlements and boreonemoral forests. Ley is the major crop (&gt;37%), followed by wheat (15%), barley (14%) and a mosaic of rapeseed, potatoes, legumes, carrots and beets (&lt;5%). In the north, forest cover increases and agricultural heterogeneity decreases with ley and barley as the major crops (c. 70% and 12% respectively). The availability of crops at the national scale did not show any distinct trends from 2000 until 2015 (Figure <ref type="figure">S2</ref>). Similarly, market prices (corrected for inflation), did not show any tendency over the study period either (Figure <ref type="figure">S3</ref>). There is considerable variation in the market price between crops, for example, higher for rapeseed and potato (14-34 euros/100 kg) and lower for barley and wheat (8-17 euros/100 kg) <ref type="bibr" target="#b1">(Anon, 2018a</ref><ref type="bibr" target="#b2">(Anon, , 2018b))</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">| Statistical analyses</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.1">| Modelling relationships between population indices and damage levels</head><p>To analyse the broad relationship between damage reports and population indices we fitted, for each species, a Negative Binomial Generalized Linear Mixed Model (GLMM), with a natural logarithm link-function. The number of damage reports acted as the response variable and population index as the explanatory. To analyse how yield loss and compensation costs are related to population indices, we fitted a Gamma GLMM with natural logarithm link-function for each species, using yield loss and compensation costs as the response variables and population index as the explanatory. In all models we log-transformed the explanatory variables. The use of log-log models satisfies the restriction that damage levels would be zero when population index is zero, if the exponent, beta, is positive.</p><p>We accounted for temporal autocorrelation by assuming that regression residuals follow a random walk (i.e. Rw1) process. Our model for damage reports is expressed as.</p><formula xml:id="formula_0">D t ∼ NegBin(mu ∧ D t , theta) log (mu ∧ D t ) = Intercept + 1 × log P t + u t<label>(1)</label></formula><p>and the models for yield loss and compensation costs are expressed as.</p><formula xml:id="formula_1">Y t ∼ Gamma(mu ∧ Y t ) log (mu ∧ Y t ) = Intercept + 1 × log P t + z t<label>(2)</label></formula><formula xml:id="formula_2">C t ∼ Gamma(mu ∧ C t ) log (mu ∧ C t ) = Intercept + 1 × log P t + w t<label>(3)</label></formula><p>where, mu ^ refers to the mean; D t the number of damage reports in year t; P t population index (×1,000 birds) in year t; Y t yield loss (in metric tonnes) in year t; and C t compensation costs (×1,000 euros) in year t. u t is the Rw1 residual defined by the formula u t = u t-1 + Ѵ t ; where u t is the trend of the response variable at time t; u t-1 the trend at time t -1; and Ѵ t the noise component. Ѵ t follows a Normal distribution (Ѵ t ~ N (0, σ Ѵ 2 )) and σ Ѵ 2 is the variance of the noise component. The same applies for the Rw1 residuals z t and w t in Models 2 and 3 respectively. These models refer to the broad association (over the study period) between covariates and response due to a common trend. All three models are log-log models. Hence, the relationship between covariates will be a power law of the type P^ β 1 (Model 1), P^ ζ 1 (Model 2) and P^ δ 1 (Model 3) and linear if β 1 (ζ 1 or δ 1 ) = 1.</p><p>To evaluate how inter-annual fluctuations of population indices are related to inter-annual fluctuations of damage reports, yield loss and compensation costs, we ran Models 1, 2 and 3 including a drift term into the random walk. A random walk Rw1 with a drift term is equivalent to a non-drift random walk plus a linear effect of time, which can be simply added as an ordinary covariate. This is a modelbased variant of detrending the response and covariate to examine the annual association between the variables when trends in both variables are accounted for. Our models are expressed as.</p><formula xml:id="formula_3">D t ∼ NegBin(mu ∧ D t , theta) log (mu ∧ D t ) = Intercept + 2 × log (P t ) + u t +Ω 1 × drift term<label>(4)</label></formula><formula xml:id="formula_4">Y t ∼ Gamma(mu ∧ Y t ) log (mu ∧ Y t ) = Intercept + 2 × log (P t ) + z t + 1 × drift term<label>(5)</label></formula><formula xml:id="formula_5">C t ∼ Gamma(mu ∧ C t ) log (mu ∧ C t ) = Intercept + 2 × log (P t ) + w t + 1 × drift term<label>(6)</label></formula><p>where, drift term = t -RT and RT is a reference time, accounting for the first year of our dataset (i.e. 2000). So, if time variable t is a vector from year 2000, 2001… to 2015, the drift term will be a vector 0, 1, 2… to 15. These are also log-log models and, therefore, the relationships between covariates will also be a power law of the type P^ β 2 (Model 4), P^ ζ 2 (Model 5) and P^ δ 2 (Model 6); linear if β 2 (ζ 2 or δ 2 ) = 1.</p><p>Bean goose was excluded from the analysis because of the small number of damage reports, yield loss and compensation costs they represented. We ran the temporal regression analysis using Integrated Nested Laplace Approximation <ref type="bibr" target="#b35">(Rue, Martino, &amp; Chopin, 2009)</ref> (Bayesian approach) with R-INLA for model execution (www.r-inla.org) as described in <ref type="bibr" target="#b42">Zuur Ieno and Saveliev (2017)</ref>. All statistical analyses were conducted with r version 3.3.3 <ref type="bibr" target="#b33">(R Core Team, 2017)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.2">| Diffuse priors</head><p>Because we used a Bayesian approach, priors are required for the parameters in the models: the size of the NegBin distribution (k) for Models 1 and 4; precision of the Gamma distribution (Ø) for Models 2, 3, 5 and 6; and intercepts, slopes and variance σ Ѵ 2 from the noise component Ѵ t of the random walk for all models. We used vague priors in all cases. Priors for the fixed parameters, intercepts, k and Ø were set to default settings in R-INLA. For σ Ѵ, we used Penalised Complexity prior distributions, recommended for time series with no available prior information <ref type="bibr" target="#b37">(Simpson, Rue, Martins, Riebler, &amp; Sorbye, 2014)</ref>. For details on prior specification see Appendix S1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">| RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">| Crop damage in Sweden</head><p>Between 2000 and 2015, inspectors of the Swedish CABs surveyed and approved 2,194 damage reports, resulting in 34,500 metric tonnes of yield loss. Of these, 88% were compensated with a total cost of 3.4 million euros. The remaining 12% were not compensated because there was no evident damage when the final inspection was conducted, for example, due to compensatory plant growth. About 90% of all damages were caused by common cranes, barnacle and greylag geese (Table <ref type="table" target="#tab_0">1</ref>). The remaining 8% was due to whooper swans and bean geese. Barley, ley (hay and pastures) and wheat were the most reported crops to be damaged (41%, 27% and 14% respectively) while rapeseed, potatoes and legumes were less often reported (5%, 3% and 2% respectively). All other crops represented &lt;2% of the total damage reports.</p><p>Damage reports increased by a factor of five from 2000 to 2008, when maximum levels of damage reports were recorded for cranes, barnacles and greylags. From 2009 to 2013, the total number of damage reports decreased. During the same time period, greylag goose damage reports also decreased, while crane damage reports levelled off and barnacle damage reports increased. From 2014 to 2015, the total number of damage reports increased again (Figure <ref type="figure" target="#fig_0">1a</ref>). A similar temporal pattern was found for yield loss (Figure <ref type="figure" target="#fig_0">1b</ref>) and compensation costs (Figure <ref type="figure" target="#fig_0">1c</ref>). However, there was a mismatch between peaks of compensation costs and those for damage reports and yield loss.</p><p>More damage reports were registered in southern than northern Sweden. Similarly, yield losses and compensation costs were higher in the south and involved more species and crops (Figure <ref type="figure" target="#fig_1">2</ref>). South Sweden showed a bimodal pattern of damage, with peaks during spring and late summer to autumn. In mid and northern Sweden damage was concentrated in late summer and autumn. (Figure <ref type="figure" target="#fig_1">2b</ref>). In southern Sweden, 64% of the spring damage was due to barnacles (two thirds on ley and 16% on barley), 25% to greylags (half on ley, 20% on barley and wheat and 9% in rapeseed) and 7% to cranes (half on barley, a quarter on wheat and 12% on legumes). From the autumn damage reported in south Sweden, 42% was caused by greylags in July (half on barley, 14% on leguminous, 12% on wheat and 7% on ley, beets and carrots) and 46% by cranes in August (two-thirds on barley and 18% on wheat). As for mid Sweden, 75% of the autumn damage was due to cranes (twothirds on barley, 13% on wheat and potatoes and 7% on leguminous) and 18% to greylags (half on barley, 15% on wheat and 12% on leguminous and carrots). In northern Sweden, 74% of all registered damage was due to cranes foraging on barley fields (Figure <ref type="figure" target="#fig_1">2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">| Relationships between population indices and damage levels</head><p>Damage levels (damage reports, yield loss and compensation costs) were positively related to population indices for common crane, barnacle and greylag goose (Figure <ref type="figure" target="#fig_2">3</ref>). However, the broad relationships contained a high level of uncertainty (Table <ref type="table" target="#tab_1">2</ref>). Linear relationships could not be ruled out for common crane and greylag goose (Table <ref type="table" target="#tab_1">2</ref>). However, a nonlinear relationship appeared to fit best for greylag goose (Figure <ref type="figure" target="#fig_2">3</ref>). Under the log-log model, a linear relationship (beta = 1) did not appear compatible with the data for barnacle goose (Table <ref type="table" target="#tab_1">2</ref>).</p><p>As population indices and damage levels displayed a general increase during the study period (Figure <ref type="figure" target="#fig_0">1</ref>), we also investigated whether annual changes in population indices were associated with annual changes in crop damage (detrended data). We found no evident relationship between annual estimates of population indices and damage levels when data was detrended (Figure <ref type="figure" target="#fig_3">4</ref>; Table <ref type="table" target="#tab_1">2</ref>). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| DISCUSSION</head><p>Knowledge about the relationship between population size and damage levels is crucial for wildlife damage management <ref type="bibr" target="#b5">(Conover, 2002;</ref><ref type="bibr" target="#b18">Madsen et al., 2017)</ref>. However, this knowledge is lacking for large grazing birds, especially at large spatial scales <ref type="bibr" target="#b9">(Fox et al., 2017)</ref>, and the relationship is often assumed to be linear <ref type="bibr" target="#b6">(Cusack et al., 2018;</ref><ref type="bibr" target="#b22">McKenzie &amp; Shaw, 2017)</ref>. In this manuscript we investigated this important knowledge gap in the ecology of wildlife damage management. We assessed the relationship between national numbers of staging large grazing birds and national levels of reported crop damage, yield loss and compensation costs in Sweden, described how national temporal patterns of damage differs across the country and discussed how further information about spatiotemporal patterns of damage is crucial to provide guidance for when and where preventive actions should be prioritized and how to monitor the system.</p><p>We showed that crop damage has increased in Sweden since 2000. Common crane, barnacle and greylag goose caused the majority of yield losses and costs for compensation (c. 90%). It is reasonable to assume that damage levels are related to bird numbers and grazing pressures <ref type="bibr" target="#b30">(Parrott &amp; McKay, 2001)</ref>. Our results broadly supported this assertion as when estimated populations sizes of large grazing birds increased, so did the levels of crop damage. We also showed that relationships between population numbers and damage levels seem to differ among species. Although a linear relationship could not be ruled out for common crane and greylag goose, barnacle goose showed a curvilinear relationship with all three damage level indicators (damage reports, yield loss and compensation costs) increasing at a lower rate when population numbers increase. For barnacles, this pattern could be explained by a tendency for the flocks to aggregate more than the other two species <ref type="bibr" target="#b26">(Nilsson, 2013)</ref>, that is concentrating the impact of damage. This is further supported by an observed increase of yield loss per reported damage at higher population indices (Figure <ref type="figure" target="#fig_4">5</ref>). For greylag goose we found no such increase, suggesting that more fields could be damaged when population index increase. However, the lowered, but still increasing rates of yield loss as barnacle numbers increase, suggest additional factors are at play, for example, October counts not mirroring the actual culprit population. Most of the damage caused by barnacles occurred in April-May, implying a mix of Swedish and Russian breeders. If October counts contained a higher proportion of the Russian population (exponentially increasing; <ref type="bibr" target="#b10">Fox &amp; Madsen, 2017)</ref> versus the Swedish population (not increasing; <ref type="bibr" target="#b29">Ottosson et al., 2012)</ref> this could mask the relationships. Regardless, awareness of potential nonlinearity is important because predicted outcomes for damage levels could change quite dramatically when population numbers change. The new compensation policy for greylag goose established in 2009 may have reduced farmers' motivation for reporting greylag damage. Hence, damage levels for greylag goose could be underestimated and the relationships biased.</p><p>Regardless of the shape of the relationships, compensation costs seemed on average proportional to yield loss. However, annual peaks of yield loss did not always mirror annual peaks of compensation costs, which seems consistent with the variability of crop types that are damaged (Figure <ref type="figure">S3</ref>). As large grazing birds tend to concentrate in big numbers around wetlands, foraging on the surrounding agricultural landscape <ref type="bibr" target="#b12">(Jankowiak et al., 2015)</ref>, individual farmers in areas of high concentrations of large grazing birds may be disproportionately affected <ref type="bibr" target="#b9">(Fox et al., 2017)</ref>.</p><p>Our study demonstrated a high degree of uncertainty around the predicted estimates of the relationships between damage levels and population indices. In addition, annual changes in population indices did not relate to detrended inter-annual changes of damage levels. There are several possible reasons. national indices of population size were based on monitoring data restricted to specific staging sites during a few weeks in autumn. It is reasonable to assume that the autumn staging monitoring provides a reasonable index of national  <ref type="bibr" target="#b26">(Nilsson, 2013)</ref> but not necessarily good enough to precisely describe inter-annual fluctuations. Moreover, it involves some spatio-temporal mismatch between estimated population numbers and occurrence of crop damage. Secondly, the present study is based on reported damage, inspected by government personnel. Therefore, the results rely on the farmer's willingness to report. We have no information about any variation in willingness to report, but this may depend on crop type (as they differ in provided income), revenue of the farms themselves and any previous experience of damage. Since availability of different crops and market prices has been stable over the study period (Figures <ref type="figure">S2</ref> and <ref type="figure">S3</ref>), we assume that willingness to report within crop types, has not changed. Yet, it is reasonable to suspect that willingness to report may increase with increasing levels of damage, that is, tolerance to damage levels may have changed across time and space. Thirdly, the opportunistic foraging behaviour of large grazing birds can lead to sudden bursts of crop damage when local food availability and foraging conditions change <ref type="bibr" target="#b3">(Béchet, Giroux, Gauthier, Nichols, &amp; Hines, 2003;</ref><ref type="bibr" target="#b4">Clausen &amp; Madsen, 2015;</ref><ref type="bibr" target="#b39">Tombre et al., 2008)</ref>. This spatio-temporal mismatch together with local damage peaks is hard to detect with the coarse data at our disposal.</p><p>Wildlife damage depends not only on the presence of species causing damage, but also on resource availability <ref type="bibr" target="#b5">(Conover, 2002)</ref>, both of which vary across Sweden. The most damage was reported in southern Sweden, with peaks during spring and autumn, comprising a greater diversity of bird species and crop types. In northernmost Sweden, damage was concentrated in late summer and early autumn, three quarters of which took place on barley fields by common cranes. Although barley and wheat had similar availability, barley was more reported than wheat by all species (e.g. in southern and mid Sweden, autumn greylag reports on barley and wheat were 2:1; while crane reports were 3:1). Barley was also more reported than ley for cranes (&lt;7% damage reports on ley even though its availability was four times higher than barley). Ley, the most abundant crop overall in Sweden and suitable throughout spring until late summer, was the most reported crop damaged by geese in spring in southernmost Sweden. Strategies for crop protection, therefore, need to be adapted to regional and seasonal conditions and the species involved.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">| Management implications</head><p>Management under uncertainty is a major challenge in all natural systems. Recently developed adaptive goose flyway management plans in Europe suggest population control to reduce damage and conservation conflicts: see for example the adaptive management plan for the pink-footed goose <ref type="bibr" target="#b17">(Madsen and Williams 2012)</ref>, and the current work to establish management plans to control the superabundant numbers of barnacle and greylag geese <ref type="bibr" target="#b14">(Jensen et al. 2018;</ref><ref type="bibr" target="#b32">Powolny et al. 2018)</ref>. The present study suggests that population control may be one possible tool to mitigate damage on a long-term basis (&gt;15 years), especially when populations of large grazing birds continue to increase and crop damage levels are positively related to bird numbers. However, interpretation and guidance should be made with caution as this is a very complex and dynamic system both in time and space. The degree of uncertainty in our estimation demonstrates the difficulty to quantitatively predict specific outcomes of such management actions. Clearly, we need to address the uncertainty around damage-population size relationships and to do so, we need to design monitoring schemes that capture the site-specific variation of crop damage and abundance of wildlife. A possible way to increase the spatiotemporal resolution of data may be to include opportunistic citizen science data or to include observers in new bird monitoring programs in relation to crop protection. Such effort is also compatible with an increased cooperation with farmers, to build upon trust and to increase the understanding of attitudes and effectiveness for managing conservation conflicts <ref type="bibr" target="#b15">(Josefsson, Pärt, Berg, Lokhorst, &amp; Eggers, 2018;</ref><ref type="bibr" target="#b24">Mishra, Young, Fiechter, Rutherford, &amp; Redpath, 2017;</ref><ref type="bibr" target="#b41">Young et al., 2016)</ref>. Where there are possibilities to receive economical compensation for crop damage (as in Sweden), farmers should be actively encouraged to report damages together with, for example, participation in citizen science-based monitoring of large grazing birds promoted by local conservation organizations.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>F I G U R E 1</head><label>1</label><figDesc>F I G U R E 1 Development of total annual damage reports (a), yield loss (metric tonnes) (b), compensation costs (euros) (c) and population count (d) for different species of large grazing birds in Sweden from 2000 to 2015</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>F I G U R E 2</head><label>2</label><figDesc>F I G U R E 2 Spatial distribution of damage reports (a); intra-annual distribution of damage reports for five species of large grazing birds and the four most damaged crop types) (b); percentage of total damage for three regions in Sweden (c) from 2000 to 2015. The division north, mid and south Sweden is for illustration purposes only and follows the historical division of Norrland, Svealand and Götaland respectively</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>F I G U R E 3</head><label>3</label><figDesc>I G U R E 3 Relationship between damage reports, yield loss and compensation costs, and population indices for the three main species of large grazing birds causing crop damage in Sweden from 2000 to 2015, based on regression model (1), (2) and (3) respectively; as described in Methods. Solid lines represent the estimated curves based on the slope coefficient for the effect of population index over the response variables. Dashed lines, the 95% credible interval. Black dots, the observed values. Red dots in the greylag goose graphs represent observed values after 2009 when compensation rules changed for this species</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>F I G U R E 4</head><label>4</label><figDesc>F I G U R E 4 Scatterplot of the annual changes of damage reports, yield loss and compensation costs versus the annual changes of index (in log scale), for three main species of large grazing birds causing crop damage in Sweden from 2000 to 2015. Red dots in the greylag goose graphs represent the data after 2009 when compensation rules changed for this species population size</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>F I G U R E 5</head><label/><figDesc>F I G U R E 5 Scatterplot of the ratios yield loss (metric tonnes) and compensation costs (thousands of euros) per damage reports versus population indices (thousands of individuals), for three main species of large grazing birds causing crop damage in Sweden from 2000 to 2015. Red dots in the greylag goose graphs represent the data after 2009 when compensation rules changed for this species</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>T A B L E 1</head><label>1</label><figDesc>T A B L E 1 Number of damage reports, yield loss (metric tonnes T), compensation costs (euros) and percentages (in parentheses) for five species of large grazing birds in Sweden from 2000 to 2015 (see TableS2for detailed damage levels in North, mid and South Sweden)</figDesc><note><p>Note: The category 'others' includes Canada goose, mute swan, greater white-fronted goose, brent goose and unidentified geese. a Canada goose = 197 T and 11,500 euros; mute swan = 8 T and 2,600 euros; greater white-fronted goose = 105 T and 60,200 euros; brent goose = 21 T and 2,400 euros; unidentified = 129 T and 20,500 euros.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>T A B L E 2</head><label>2</label><figDesc>T A B L E 2 Population parameter estimates for the broad and detrended association analysis between damage reports, yield loss and compensation costs, and population indices for the three main species of large grazing birds causing crop damage in Sweden from 2000 to 2015</figDesc><note><p>Note: Rcex (×1,000 individuals). See Tables S5 and S6 for details.</p><p>Abbreviation: CI, credible interval.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>FORMAS financial support grant to JM (<rs type="grantNumber">942-2015JM (942- -1360</rs>) )  and grant no. <rs type="grantNumber">215-2014-1425</rs> (TP) and <rs type="funder">Swedish EPA</rs> grant no. <rs type="grantNumber">13/361</rs> (TP). <rs type="person">Fredrik Haas</rs>, <rs type="person">Leif Nilsson</rs> for authorizing the use of the geese and the whooper swan counts. <rs type="person">Lars Gezelius</rs>, <rs type="person">Clas Hermansson</rs>, <rs type="person">Martin Tjernberg</rs> for authorizing the use of the common crane counts. <rs type="person">David Flumm</rs> for the English proof review. <rs type="person">Henrik Andrén</rs>, <rs type="person">Matthew Low</rs>, <rs type="person">Steve Redpath</rs> and three anonymous reviewers whose comments highly improved this manuscript.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_7VREyXA">
+					<idno type="grant-number">942-2015JM (942- -1360</idno>
+				</org>
+				<org type="funding" xml:id="_U2vw64Q">
+					<idno type="grant-number">215-2014-1425</idno>
+				</org>
+				<org type="funding" xml:id="_pAszGBC">
+					<idno type="grant-number">13/361</idno>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+				<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATA AVAILABILITY STATEMENT</head><p>Data available via the Dryad Digital Repository <ref type="url" target="https://doi.org/10.5061/dryad.6b2c0n3z">https://doi.org/10.5061/dryad.6b2c0n3z</ref><ref type="bibr" target="#b25">(Montràs-Janer et al., 2019)</ref>.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="grey-literature" xml:id="b0">
+				<monogr>
+					<author>
+						Anon
+					</author>
+					<title level="a">National Research Council. Land use and wildlife resources</title>
+					<imprint>
+						<date when="1970">1970</date>
+						<publisher>The National Academic Press</publisher>
+						<pubPlace>Washington, DC</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b1">
+				<monogr>
+					<author>
+						Anon
+					</author>
+					<title level="a">Jordbruksverket</title>
+					<imprint>
+						<date when="2018a">2018a</date>
+						<publisher>Swedish Board of Agriculture</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b2">
+				<monogr>
+					<author>
+						Anon
+					</author>
+					<title level="a">Statistika centralbyrån</title>
+					<imprint>
+						<date when="2018a">2018b</date>
+						<publisher>Statistics Sweden</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Bechet</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Giroux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Gauthier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">JJames</forename><forename type="middle">D</forename><surname>Nichols</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Hines</surname></persName>
+					</author>
+					<title level="a">Spring hunting changes the regional movements of migrating greater snow geese</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="553" to="564"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">K</forename><surname>Clausen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<title level="a">Philopatry in a changing world: response of pink-footed geese Anser brachyrhynchus to the loss of a key autumn staging area due to restoration of Filsø Lake, Denmark</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Ornithology</title>
+					<imprint>
+						<biblScope unit="volume">157</biblScope>
+						<biblScope unit="page" from="229" to="237"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b5">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Conover</surname></persName>
+					</author>
+					<title level="a">Resolving human‐wildlife conflicts. The Science of wildlife damage management</title>
+					<imprint>
+						<date when="2002">2002</date>
+						<publisher>CRC Press, Lewis Publishers</publisher>
+						<pubPlace>Boca Raton, FL</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Cusack</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Duthie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Rakotonarivo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Pozo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">H</forename><forename type="last">E</forename><surname>Mason</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Månsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Bunnefeld</surname></persName>
+					</author>
+					<title level="a">Time series analysis reveals synchrony and asynchrony between conflict management effort and increasing large grazing bird populations in northern Europe</title>
+				</analytic>
+				<monogr>
+					<title level="j">Conservation Letters</title>
+					<imprint>
+						<biblScope unit="page">e12450</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Ebbinge</surname></persName>
+					</author>
+					<title level="a">The impact of hunting on mortality rates and spatial distribution of geese wintering in the Western Palearctic</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ardea</title>
+					<imprint>
+						<biblScope unit="volume">79</biblScope>
+						<biblScope unit="page" from="197" to="209"/>
+						<date when="1991">1991</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Fox</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Abraham</surname></persName>
+					</author>
+					<title level="a">Why geese benefit from the transition from natural vegetation to agriculture</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ambio</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="188" to="197"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Fox</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Elmberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Tombre</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Hessel</surname></persName>
+					</author>
+					<title level="a">Agriculture and herbivorous waterfowl: a review of the scientific basis for improved management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Reviews</title>
+					<imprint>
+						<biblScope unit="volume">92</biblScope>
+						<biblScope unit="page" from="854" to="877"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Fox</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<title level="a">Threatened species to super-abun- dance: The unexpected international implications of successful goose conservation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ambio</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="179" to="187"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName><forename>G</forename><surname>Gauthier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Giroux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Reed</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Bechet</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Belanger</surname></persName>
+					</author>
+					<title level="a">Interactions between land use, habitat use, and population increase in greater snow geese: What are the consequences for natural wetlands?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Global Change Biology</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="856" to="868"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ł</forename><surname>Jankowiak</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Skórka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ł</forename><surname>Ławicki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Wylegała</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Polakowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Wuczyński</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Tryjanowski</surname></persName>
+					</author>
+					<title level="a">Patterns of occurrence and abundance of roosting geese: the role of spatial scale for site selection and consequences for conservation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecological Research</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="833" to="842"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Høj</forename><surname>Jensen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Johnson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Tamstorf</surname></persName>
+					</author>
+					<title level="a">Snow conditions as an estimator of the breeding output in high-Arctic pink-footed geese Anser brachyrhynchus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Polar Biology</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">H</forename><surname>Jensen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Nagy</surname></persName>
+					</author>
+					<title level="a">AEWA International Species Management Plan for the Barnacle Goose (Branta leucopsis) - Russia/ Germany  &amp; Netherlands population, East Greenland/Scotland &amp; Ireland population, Svalbard/South-west Scotland population</title>
+				</analytic>
+				<monogr>
+					<imprint>
+						<date when="2018">2018</date>
+						<pubPlace>Bonn, Germany</pubPlace>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">AEWA Technical Series</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Josefsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Pärt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Å</forename><surname>Berg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Lokhorst</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Eggers</surname></persName>
+					</author>
+					<title level="a">Landscape context and farm uptake limit effects of bird conservation in the Swedish Volunteer &amp; Farmer Alliance</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="2719" to="2730"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Lundin</surname></persName>
+					</author>
+					<title level="a">Cranes -where, when and why?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Vår Fågelvärld</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<publisher>Swedish Ornithological Society -Birdlife</publisher>
+						<pubPlace>Falköping, Sweden</pubPlace>
+					</imprint>
+				</monogr>
+				<note>Supplement 2005: 43</note>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b17">
+				<monogr>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Williams</surname></persName>
+					</author>
+					<title level="m">International Species Management Plan for the Svalbard population of the pink‐footed goose Anser brachyrhynchus</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<publisher>African-Eurasian Waterbird Agreement</publisher>
+						<pubPlace>Bonn, Germany</pubPlace>
+					</imprint>
+				</monogr>
+				<note>AEWA Technical Report, 48</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Williams</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Johnson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Tombre</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Dereliev</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Kuijken</surname></persName>
+					</author>
+					<title level="a">Implementation of the first adaptive management plan for a European migratory waterbird population: The case of the Svalbard pink-footed goose Anser brachyrhynchus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ambio</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="275" to="289"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Månsson</surname></persName>
+					</author>
+					<title level="a">Lethal scaring – Behavioral and short-term numerical response of greylag goose Anser anser</title>
+				</analytic>
+				<monogr>
+					<title level="j">Crop Protection</title>
+					<imprint>
+						<biblScope unit="volume">96</biblScope>
+						<biblScope unit="page" from="258" to="264"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b20">
+				<monogr>
+					
+					<author>
+						<persName><forename>J</forename><surname>Månsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Levin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Larsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Hake</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Ängsteg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Wiberg</surname></persName>
+					</author>
+					<title level="m">Besiktnng av viltskador på gröda – med inriktning på fre‐ dade fåglar</title>
+					<imprint>
+						<publisher>Viltskadecenter, Grimsö Forskningsstation</publisher>
+						<date when="2011">2011</date>
+						<pubPlace>Riddarhyttan, Sweden</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">H</forename><forename type="last">E</forename><surname>Mason</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Keane</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Redpath</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Bunnefeld</surname></persName>
+					</author>
+					<title level="a">The changing environment of conservation conflict: Geese and farming in Scotland</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="651" to="662"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Mckenzie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Shaw</surname></persName>
+					</author>
+					<title level="a">Reconciling competing values placed upon goose populations: The evolution of and experiences from the Islay Sustainable Goose Management Strategy</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ambio</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="198" to="209"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Mcnaughton</surname></persName>
+					</author>
+					<title level="a">Grazing as an Optimization Process: Grass-Ungulate Relationships in the Serengeti</title>
+				</analytic>
+				<monogr>
+					<title level="j">The American Naturalist</title>
+					<imprint>
+						<biblScope unit="volume">113</biblScope>
+						<biblScope unit="page" from="691" to="703"/>
+						<date when="1979">1979</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Mishra</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Young</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Fiechter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Rutherford</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Redpath</surname></persName>
+					</author>
+					<title level="a">Building partnerships with communities for biodiversity conservation: lessons from Asian mountains</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">54</biblScope>
+						<biblScope unit="page" from="1583" to="1591"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b25">
+				<monogr>
+					
+					<author>
+						<persName><forename>T</forename><surname>Montràs-Janer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Knape</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Nilsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Tombre</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Pärt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Månsson</surname></persName>
+					</author>
+					<title level="m">Data from: Relating national levels of crop damage to the abundance of large grazing birds: Implications for management</title>
+					<imprint>
+						<date when="2019">2019</date>
+						<publisher>Dryad Digital Repository</publisher>
+					</imprint>
+				</monogr>
+				
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Nilsson</surname></persName>
+					</author>
+					<title level="a">Censuses of autumn staging and wintering goose populations in Sweden 1977/1978–2011/2012</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ornis Svecica</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="page" from="1" to="40"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b27">
+				<monogr>
+					
+					<author>
+						<persName><forename>L</forename><surname>Nilsson</surname></persName>
+					</author>
+					<title level="m">Common cranes in agricultural landscapes – linking space use and foraging patterns to conservation and damage prevention</title>
+					<imprint>
+						<publisher>Swedish University of Agricultural Sciences</publisher>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b28">
+				<monogr>
+					
+					<author>
+						<persName><forename>L</forename><surname>Nilsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Haas</surname></persName>
+					</author>
+					<title level="m">International counts of staging and winter‐ ing waterbirds and geese in Sweden</title>
+					<imprint>
+						<publisher>Biologiska institutionen, Lunds Universitet</publisher>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+				<note>Annual report for 2015/2016</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b29">
+				<monogr>
+					<author>
+						<persName><forename>U</forename><surname>Ottosson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Ottvall</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Elmberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Green</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Gustafsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Haas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Tjenberg</surname></persName>
+					</author>
+					<title level="m">Fåglarna i Sverige -Antal och förekomst</title>
+					<imprint>
+						<publisher>Swedish Ornithological Society</publisher>
+						<date when="2012">2012</date>
+						<pubPlace>Halmstad, Sweden</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Parrott</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">V</forename><surname>Mckay</surname></persName>
+					</author>
+					<title level="a">Mute swan grazing on winter crops: estimation of yield loss in oilseed rape and wheat</title>
+				</analytic>
+				<monogr>
+					<title level="j">Crop Protection</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page" from="913" to="919"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Perceival</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Houston</surname></persName>
+					</author>
+					<title level="a">The Effect of Winter Grazing by Barnacle Geese on Grassland Yields on Islay</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="35" to="40"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Powolny</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">H</forename><surname>Jensen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Nagy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Czajkowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Fox</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Lewis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<title level="a">AEWA International Single Species Management Plan for the greylag goose (Anser anser) -Northwest/ Southwest European population</title>
+				</analytic>
+				<monogr>
+					<imprint>
+						<date when="2018">2018</date>
+						<pubPlace>Bonn, Germany</pubPlace>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">AEWA Technical Series</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b33">
+				<monogr>
+					
+					<author>
+						R Core Team
+					</author>
+					<title level="m">R: A language and environment for statistical comput‐ ing</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<pubPlace>Vienna, Austria</pubPlace>
+						<publisher>R Foundation for Statistical Computing</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Redpath</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Young</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Evely</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Adams</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Sutherland</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Whitehouse</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Gutiérrez</surname></persName>
+					</author>
+					<title level="a">Understanding and managing conservation conflicts</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends in Ecology and Evolution</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="100" to="109"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Rue</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Martino</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Chopin</surname></persName>
+					</author>
+					<title level="a">Approximate Bayesian Inference for Latent Gaussian models by using Integrated Nested Laplace Approximations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of the Royal Statistical Society Series B</title>
+					<imprint>
+						<biblScope unit="volume">71</biblScope>
+						<biblScope unit="page" from="319" to="392"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b36">
+				<analytic>
+					<author>
+						<persName><forename>M</forename><surname>Shah</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Coulson</surname></persName>
+					</author>
+					<title level="a">Artportalen (Swedish species observation system)</title>
+				</analytic>
+				<monogr>
+					<title level="m">ArtDatabanken</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>Version 92.131</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b37">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="first">P</forename><surname>Simpson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Rue</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="first">G</forename><surname>Martins</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Riebler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Sorbye</surname></persName>
+					</author>
+					<title level="a">Penalising Model Component Complexity: A Principled, Practical Approach to Constructing Priors</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<publisher>Cornell University Library</publisher>
+					</imprint>
+				</monogr>
+				<note>arXiv preprint</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Stroud</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Fox</surname></persName>
+					</author>
+					<title level="a">Key actions towards the sustainable management of European geese</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ambio</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="328" to="338"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Tombre</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Høgda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Madsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Griffin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Kuijken</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Shimmings</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Verscheure</surname></persName>
+					</author>
+					<title level="a">The onset of spring and timing of migration in two arctic nesting goose populations: The pink-footed goose Anser bachyrhynchus and the barnacle goose Branta leucopsis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Avian Biology</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="691" to="703"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Van der Graaf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Stahl</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Bakker</surname></persName>
+					</author>
+					<title level="a">Compensatory growth of Festuca rubra after grazing: Can migratory herbivores increase their own harvest during staging?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="961" to="969"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Young</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Searle</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Butler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Simmons</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Watt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Jordan</surname></persName>
+					</author>
+					<title level="a">The role of trust in the resolution of conservation conflicts</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Conservation</title>
+					<imprint>
+						<biblScope unit="volume">195</biblScope>
+						<biblScope unit="page" from="196" to="202"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b42">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Zuur</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">N</forename><surname>Ieno</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Saveliev</surname></persName>
+					</author>
+					<title level="m">Beginner’s guide to spa‐ tial, temporal and spatio‐temporal ecological data analysis with R‐INLA. Vol. I: Using GLM and GLMM</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<publisher>Highland Statistics Ltd.</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

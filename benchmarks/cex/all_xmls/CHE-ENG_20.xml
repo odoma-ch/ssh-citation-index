@@ -1,0 +1,728 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Simplified Correlation for Liquid Holdup in a Horizontal Two-Phase Gas-Liquid Annular Flow</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Akademia Baru</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-13">13 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Andriyanto</forename><surname>Setyawan</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Refrigeration and Air Conditioning Engineering</orgName>
+								<address>
+									<addrLine>Politeknik Negeri Bandung</addrLine>
+									<postCode>40012</postCode>
+									<settlement>Bandung</settlement>
+									<country key="ID">Indonesia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><surname>Indarto</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mechanical and Industrial Engineering</orgName>
+								<orgName type="institution">Gadjah Mada University</orgName>
+								<address>
+									<postCode>55281</postCode>
+									<settlement>Yogyakarta</settlement>
+									<country key="ID">Indonesia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><surname>Deendarlianto</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mechanical and Industrial Engineering</orgName>
+								<orgName type="institution">Gadjah Mada University</orgName>
+								<address>
+									<postCode>55281</postCode>
+									<settlement>Yogyakarta</settlement>
+									<country key="ID">Indonesia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Simplified Correlation for Liquid Holdup in a Horizontal Two-Phase Gas-Liquid Annular Flow</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Advanced Research in Fluid Mechanics and Thermal Sciences</title>
+						<idno type="ISSN">2289-7879</idno>
+						<imprint>
+							<publisher>Akademia Baru</publisher>
+							<biblScope unit="volume">62</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<biblScope unit="page" from="20" to="30"/>
+							<date type="published" when="2019-10-13">13 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">FBF094E677E3C8084F163BA3DE126A4E</idno>
+					<note type="submission">Received 5 November 2018 Received in revised form 3 March 2019 Accepted 12 July 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Annular flow</term>
+					<term>horizontal pipe</term>
+					<term>liquid holdup</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper presents the development of a simplified correlation for the prediction of liquid holdup a two-phase gas liquid annular flow in a horizontal pipe. The correlation was developed on the basis of the combination of the present experimental data and the available previous data and correlations. The proposed correlation could predict the liquid holdup with an average error 15.2%. Generally, 80% of the total data lie within ±20% error band, 97% data within ±30% error band, and 100% data within ±30% error band. All available previous data and correlation have mean absolute error (MAE) in the range of 4.5% to 27.8%.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Two phase flow is a common phenomenon found in refrigeration and air conditioning system and other industrial areas. It can easily be found in both evaporator and condenser. The flow could be found in many regimes or patterns, such as bubbly, slug, stratified, wavy, and annular flow. In annular flow, the liquid flows in the pipe wall and the gas core flows at a higher velocity in the center of the pipe surrounded by a thin liquid film. In evaporator or condenser of a refrigeration system, this flow regime occupies a large portion of the pipe length. For horizontal orientation, the flow regime has an asymmetry of film thickness in circumferential pipe position. The film at the top of the pipe is usually very thin and the thicker liquid film is found at the bottom of the pipe.</p><p>The liquid holdup of a two-phase flow in a pipe expresses the portion of the pipe volume filled by liquid refrigerant. In the other words, it is the ratio of the volume of pipe filled by liquid refrigerant and the total volume of the pipe, or expressed as</p><formula xml:id="formula_0">𝜂 = 𝑉 𝐿 𝑉 𝐺 + 𝑉 𝐿 = 𝑉 𝐿 𝑉<label>(1)</label></formula><p>where VL, VG, and V denote the volume of liquid, volume of gas, and total volume, respectively. The liquid holdup can also be stated as the ratio of cross-sectional pipe area filled with liquid to the total pipe area, or</p><formula xml:id="formula_1">𝜂 = 𝐴 𝐿 𝐴 𝐺 + 𝐴 𝐿 = 𝐴 𝐿 𝐴<label>(2)</label></formula><p>where AL, AG, and A denote the pipe filled by liquid, the pipe area filled by gas, and the total pipe area.</p><p>Similarly, the gas holdup or the void fraction, ε, is defined as the ratio of pipe area filled by gas to the total pipe area, or can be expressed as</p><formula xml:id="formula_2">𝜀 = 1 -𝜂 = 1 - 𝐴 𝐿 𝐴 = 𝐴 𝐺 𝐴<label>(3)</label></formula><p>The common method of the measurement of liquid holdup or void fraction is by conductance probe, as proposed by Andreussi et al., <ref type="bibr" target="#b0">[1]</ref>, Tsochatzidis et al., <ref type="bibr" target="#b1">[2]</ref>, Fossa <ref type="bibr" target="#b2">[3]</ref>, and Ko et al., <ref type="bibr" target="#b3">[4]</ref>. Other methods are X-ray absorption, proposed by Kendoush and Sarkis <ref type="bibr" target="#b4">[5]</ref>, acoustic emission, proposed by Al-lababidi et al., <ref type="bibr" target="#b5">[6]</ref>, and three-phase Y ray densitometer, proposed by Dabirian et al., <ref type="bibr" target="#b6">[7]</ref>. Later, Setyawan et al., <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref> proposed an indirect method of liquid holdup measurement through the measurement of water film thickness.</p><p>In multiphase flow, the liquid holdup depends on various parameters, such as the velocity of the fluid components, the fluid properties, and geometry of the flow. By using drift-flux model, Chisholm <ref type="bibr" target="#b10">[11]</ref> suggested a correlation for the prediction of liquid holdup as follows</p><formula xml:id="formula_3">𝜂 = 1 -𝜀 = 1 -[1 + ( 1 -𝑥 𝑥 ) ( 𝜌 𝐺 𝜌 𝐿 ) √1 -𝑥 (1 - 𝜌 𝐿 𝜌 𝐺 )] -1 .<label>(4)</label></formula><p>In this correlation, x denotes the flow quality and ρ denotes the phase density. The subscripts L and G indicate the liquid and gas, respectively. In addition to the liquid holdup, the flow quality also affects the heat transfer of two-phase flow in evaporator <ref type="bibr" target="#b11">[12]</ref>.</p><p>Using data from experiments in 45.4 mm diameter pipe, Spedding and Chen <ref type="bibr" target="#b12">[13]</ref> proposed a correlation to predict the liquid holdup in term of void fraction as follows</p><formula xml:id="formula_4">𝜂 = 1 -𝜀 = 1 -[1 + 2.22 ( 1 -𝑥 𝑥 ) 0.65 ( 𝜌 𝐺 𝜌 𝐿 ) 0.65 ] -1<label>(5)</label></formula><p>The variables of this correlation are the same with that of correlation of Chisholm <ref type="bibr" target="#b10">[11]</ref>, i.e. the liquid holdup or void fraction was expressed in terms of the flow quality (x) and the density of gas and liquid phases, ρG and ρL.</p><p>Using the results of experiment in a 51 mm horizontal pipe, Hamersma and Hart <ref type="bibr" target="#b13">[14]</ref> proposed a correlation as follows</p><formula xml:id="formula_5">𝜂 = 1 -𝜀 = 1 -[1 + 0.26 ( 1 -𝑥 𝑥 ) 0.67 ( 𝜌 𝐺 𝜌 𝐿 ) 0.33 ] -1<label>(6)</label></formula><p>This correlation has the similar variables to that of Eq. (<ref type="formula" target="#formula_4">5</ref>) with the modification in the coefficient of the equation to comply their experimental results.</p><p>Spedding and Spence <ref type="bibr" target="#b14">[15]</ref> modified the correlation of Eq. ( <ref type="formula" target="#formula_4">5</ref>) in term of void fraction by using the superficial liquid velocity (JL) and superficial gas velocity (JG) as follows</p><formula xml:id="formula_6">1 -𝜀 𝜀 = [0.45 + 0.08𝑒 -100(0.25-𝐽 𝐿 2 ) ] ( 𝐽 𝐺 𝐽 𝐿 ) 0.65<label>(7)</label></formula><p>The superficial liquid velocity represents the velocity of the liquid in the channel if there is a singlephase liquid flow. Similarly, the superficial gas velocity represents the velocity of gas when there is only gas flowing in the channel. Detailed examination of this correlation discloses that JL and JG have different effects on the liquid holdup. Later, Spedding et al., <ref type="bibr" target="#b15">[16]</ref> also proposed a correlation for liquid holdup. However, it was only aimed for stratified flow.</p><p>Hart et al., <ref type="bibr" target="#b16">[17]</ref> combined the phase superficial velocity and Reynolds number at its superficial liquid velocity (ReSL) to predict the liquid holdup in the following expression</p><formula xml:id="formula_7">𝜂 1 -𝜂 = 𝐽 𝐿 𝐽 𝐺 {1 + [10.4𝑅𝑒 𝑆𝐿 -0.363 ( 𝜌 𝐿 𝜌 𝐺 ) 0.5 ]}<label>(8)</label></formula><p>This correlation was developed from the experimental results in 51-mm pipe and using quick-closing valve for measuring the liquid holdup.</p><p>By examining the previously available correlation for void fraction and liquid holdup, Woldesemayat and Ghajar <ref type="bibr" target="#b17">[18]</ref> proposed the following expression for the prediction of liquid holdup</p><formula xml:id="formula_8">𝜂 = 1 - 𝐽 𝐺 𝐽 𝐺 (1 + ( 𝐽 𝐿 𝐽 𝐺 ) ( 𝜌 𝐺 𝜌 𝐿 ) 0.33 ) + 2.9 [ 𝑔𝐷𝜎(1 + cos 𝜃)(𝜌 𝐿 -𝜌 𝐺 ) 𝜌 𝐿 2 ] 0.25 (1.22 + 1.22 sin 𝜃)^( 𝑃 𝑎𝑡𝑚 𝑃 𝑠𝑦𝑠𝑡𝑒𝑚 )<label>(9)</label></formula><p>This correlation was developed by involving the flow conditions, fluid properties, inclination angle, and system pressure. In this correlation, g denotes the acceleration of gravity, D expresses the pipe diameter, σ designates the liquid surface tension, P denotes the pressure, and  refers to the angle of inclination.</p><p>The simpler correlation was suggested by Cioncolini and Thome <ref type="bibr" target="#b18">[19]</ref> as follows</p><formula xml:id="formula_9">𝜂 = 1 - ℎ𝑥 𝑛 1 + (ℎ -1)𝑥 𝑛<label>(10)</label></formula><p>where</p><formula xml:id="formula_10">ℎ = -2.129 + 3.129 ( 𝜌 𝐺 𝜌 𝐿 ) -0.2186 and = 0.3847 + 0.6513 ( 𝜌 𝐺 𝜌 𝐿 ) 0.515 .</formula><p>The last correlation for liquid holdup valid for 0 &lt; x &lt; 1 and 10 -3 &lt; (ρG/ρL) &lt; 1.</p><p>The aim of this paper is to propose a new simplified correlation to predict the liquid holdup in annular flow, developed from the combination of experimental results and the available previous data or correlation. The accuracy of the proposed correlation for predicting the liquid holdup is also discussed and compared to the available previous data or correlations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Methodology</head><p>To examine the behavior of liquid holdup in annular flow, an experimental test rig similar to that of Setyawan et al., <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref> was developed. It comprises of horizontal loop of 10-m acrylic tube with an inner diameter of 26 mm. The loop was supplied by air from a compressor at one end of the flow loop. To ensure the proper annular flow development, water was introduced across a spongy pipe. A test section for measuring the liquid holdup was located at a sufficient distance for ensuring the proper formation of annular flow. In this case, the test section has a distance of 200 times the pipe diameter from the air and water injector. The measurements of gas and liquid flow rate were carried out by a bank of rotameter manufactured by Tokyo-Keisho™ and Brooks™. After passing the test section and visual observation segment, the phases of gas and liquid were separated by using a water-air separator. The water was then pumped back into a reservoir; meanwhile the air was released into atmosphere.</p><p>The measurement of liquid holdup was performed by two CECM (constant electric-current method) sensors, originally designed by Fukano <ref type="bibr" target="#b21">[22]</ref>. Each sensor comprises of two ring-shaped electrodes with a thickness of 1 mm and each electrode is separated with a distance of 5 mm. The sensors measure the drop of voltage across a pair of electrodes. In this rig, the sensors were attached between the power electrodes in an acrylic tube with the same diameter as the pipe. During the experiment, the constant-current power source supplied a constant electric current in the range of 0.1 A to 11.1 mA DC current to the power electrodes. The voltage drop measured by the sensors depends on the resistance of the liquid and gas phases across the sensors. If the electrical resistance is high, the voltage drop will also high, indicates the high fraction of gas phase or low liquid holdup. Similarly, if the voltage drop is low, it indicates the low gas fraction or high liquid holdup. For visual observation, the rig was provided with a visualization box equipped by a set of DC LCD lamps. The box has a length of 1.0 m and was installed downstream from the test section. To minimize the effect of the refraction of water, the visualization box was filled with water.</p><p>The experiments were carried out in with superficial liquid velocity of 0.025, 0.05, 0.1, 0.2, and 0.4 m/s and superficial gas velocity of 12, 18, 25, 30, and 40 m/s. The combination of the liquid and gas superficial velocity gives 30 flow conditions. Most of the flow regime is in the annular flow and the only a small portion are in the transition to annular flow.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results</head><p>The sample of appearance of the liquid and gas flow in the two-phase annular flow for the superficial liquid velocity (JL) of 0.1 m/s and superficial gas velocity (JL) of 18 m/s is presented in Figure <ref type="figure" target="#fig_0">1</ref>. As shown, the gas flow in the channel core, surrounded by liquid flowing in the pipe wall. A ringshaped wave in this figure indicates the existence of disturbance wave that flows with the higher velocity than that of ripple wave in the pipe wall. The samples of the of the experimental liquid holdup of the present work at constant JL of 0.1 m/s are presented in Figure <ref type="figure" target="#fig_1">2</ref>. As could be seen, the liquid holdup has higher amplitude when the JG is low and has smaller amplitude with the increase of gas velocity. At JL of 0.1 m/s and JG of 10 m/s, the liquid flows with an average liquid holdup of 0.114. As JL velocity increases to 12 m/s, the liquid holdup decreases to 0.094. At JG of 18 m/s, the liquid holdup is reduced to 0.084. Further increase of JG to 25 30 m/s, and 40 result in the decrease of liquid holdup to 0.06, 0.049, and 0.036, respectively. Detailed examination of Figure <ref type="figure" target="#fig_2">3</ref> reveals that the liquid holdup signal comprises of higher amplitude disturbance waves when the JG is small. As the JG increases, the amplitude of the disturbance wave decreases. On the other hand, the waves appear more frequently when the JG increases. Figure <ref type="figure" target="#fig_2">3</ref> summarizes the liquid holdup for all predetermined ranges of JG and JL. As shown, the liquid holdup increases as the JL increases. It is, probably, due to the more liquid flows in the pipe when the JL increases. Consequently, the thickness of the liquid layer increases. This gives the higher liquid holdup, as from the definition, it represents the area of the pipe occupied by liquid. As JG increases, the liquid holdup decreases. In this condition, the higher velocity of air resulted in the higher shear force at the interface of air and water. Consequently, the liquid wave velocity increases and water film amplitude decreases, giving the lower liquid holdup.</p><p>Detailed examination of Figure <ref type="figure" target="#fig_2">3</ref> shows that superficial gas velocity affects the liquid holdup more significantly than that of liquid velocity. As an illustration, if the superficial liquid velocity is multiplied by 4 times, the liquid holdup increases by an averagely 2.2 time. Meanwhile, reducing superficial gas velocity by the same factor gives the increase of liquid holdup by 2.8, averagely. The combination of the present data with the available previous data and correlations results in the widely spread liquid holdup as shown in Figure <ref type="figure" target="#fig_3">4(a)</ref>. As could be observed from this figure, the widely spread data cause the difficulty to interpret the correlation between the liquid holdup value and the flow conditions.</p><p>The liquid holdup could also be expressed as function of Reynolds number for both liquid and gas at their superficial velocities. The Reynolds number of liquid flow at its superficial velocity is expressed as</p><formula xml:id="formula_11">𝑅𝑒 𝑆𝐿 = 𝐽 𝐿 𝐷𝜌 𝐿 𝜇 𝐿<label>(11)</label></formula><p>Similarly, the Reynolds number of gas at its superficial velocity is expressed as</p><formula xml:id="formula_12">𝑅𝑒 𝑆𝐺 = 𝐽 𝐺 𝐷𝜌 𝐺 𝜇 𝐺<label>(12)</label></formula><p>If the liquid holdup from the present work and the previously available data and correlations are plotted as a function of Reynolds number at its superficial velocity (Figure <ref type="figure" target="#fig_3">4(b)</ref>), the similar patterns to that of Figure <ref type="figure" target="#fig_3">4(a)</ref> is obtained. Therefore, it is still difficult to interpret the relationship between the liquid holdup and the flow condition and the fluid properties.</p><p>To simplify the relationship between the liquid holdup and the flow conditions, the present experimental data is plotted as a function of the ratio of Reynolds number for both phases (ReSG/ReSL), as depicted in Figure <ref type="figure" target="#fig_4">5</ref>. The last chart now has a more specific pattern than that of Figure <ref type="figure" target="#fig_3">4</ref>. As could be seen, the liquid holdup from the experimental work has a specific pattern that could be approximated as a power function of 𝑦 = 𝑎𝑥 𝑛 . To examine the above assumption, the data from the present work are combined with those from previous publications. Figure <ref type="figure" target="#fig_5">6</ref> shows the plot of liquid holdup as a function of ReSG/ReSL of this present work combined with the data and correlations from Chisholm <ref type="bibr" target="#b10">[11]</ref>, Sekoguchi et al., <ref type="bibr" target="#b22">[23]</ref>, Spedding and Chen <ref type="bibr" target="#b12">[13]</ref>, Hamersma and Hart <ref type="bibr" target="#b13">[14]</ref>, Fukano and Ousaka <ref type="bibr" target="#b23">[24]</ref>, Spedding and Spence <ref type="bibr" target="#b14">[15]</ref>, Hart et al., <ref type="bibr" target="#b16">[17]</ref>, Woldesemayat and Ghajar <ref type="bibr" target="#b17">[18]</ref>, and Cioncolini and Thome <ref type="bibr" target="#b18">[19]</ref>. As shown, the plot of Figure <ref type="figure" target="#fig_5">6</ref> has a similar pattern to that of Figure <ref type="figure" target="#fig_4">5</ref>. This emphasizes that the liquid holdup could be simply expressed in terms of Reynolds number ratio of both phases (ReSG/ReSL). Using this evidence, the simplified correlation for the liquid holdup is proposed as a power function of the ratio of liquid Reynolds number to that of gas Reynolds number as follows   This proposed correlation is much simpler that those of available previous correlations. However, the accuracy of this new correlation is reasonably good. The accuracy of the simplified proposed correlation is plotted in Figure <ref type="figure" target="#fig_6">7</ref>. It is shown that most of data lie within ±30% error band. To examine the proposed correlation thoroughly, the mean absolute error (MAE) is used Evaluation using MAE gives an overall MAE of 15.2%. In detail, 73.2% data are within ±20% error band, 89.6% data are within ±30% error, and 97.1% are within ±50% error range. This emphasizes that the proposed correlation has a considerably good accuracy in the prediction of liquid holdup.</p><formula xml:id="formula_13">𝜂 = 0.2969 ( 𝑅𝑒 𝑆𝐺 𝑅𝑒 𝑆𝐿 ) -0.627<label>(13)</label></formula><formula xml:id="formula_14">𝑀𝐴𝐸 = ( 𝜂 𝑒𝑥𝑝𝑒𝑟𝑖𝑚𝑒𝑛𝑡 -𝜂 𝑐𝑜𝑟𝑟𝑒𝑙𝑎𝑡𝑖𝑜𝑛 𝜂 𝑒𝑥𝑝𝑒𝑟𝑖𝑚𝑒𝑛𝑡 ) 𝑥 100%<label>(12)</label></formula><p>The performance of the proposed correlation to the individual data or correlations is provided in Table <ref type="table" target="#tab_0">1</ref>. The present experimental data has an MAE of 13.7%. In addition, 80% of the data lie within ±20% error band, 97% data within ±30% error band, and 100% data within ±30% error band. In general all available previous data and correlation have MAE in the range of 4.5% to 27.8%. The proposed correlation is reasonably simpler than that proposed by Garcia et al., <ref type="bibr" target="#b24">[25]</ref> as follows <formula xml:id="formula_15">𝜂 𝜆 𝐿 = 𝑎𝑅𝑒 𝑏 + 1 -𝑎𝑅𝑒 𝑏 {1 + ( 1 𝑡 ( 𝑄 𝐺 𝑄 𝐿 )) 𝑐 } 𝑑<label>(13)</label></formula>where Re is the mixture Reynolds number. The symbols a, b, c, d, and t were determined by the curve fitting and the values were influenced by the mixture Reynolds number. The mean absolute error of this correlation was reported to be 28.1% and only 73.3% of data points are in the error band of ±39.8%. Therefore, the proposed correlation is better than that of Garcia et al., <ref type="bibr" target="#b24">[25]</ref>. The other correlation proposed by Pagan et al., <ref type="bibr" target="#b25">[26]</ref> for churn-annular flow also gives a significantly higher MAE.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>An experimental investigation on the behaviour of liquid holdup in horizontal annular flow has been carried out. The development of the correlation for predicting of the liquid holdup involving the Reynolds numbers of liquid and gas phases has also been accomplished. The MAEs of the proposed correlation to the available previous data and correlations are in the range of 4.5% to 27.8%, with an average of 15.2%. The proposed correlation could predict 73.2% data within ±20% error band, 89.6% data within ±30% error band, and 97.1% data within ±30% error band. This shows the reasonably good accuracy of the simplified correlation in predicting the liquid holdup of annular flow in a horizontal pipe.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1.Visualization of annular flow for JL = 0.1 m/s and JG = 18 m/s</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. The signal samples of liquid holdup</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The liquid holdup of the (a) present experimental data plotted as function of gas superficial velocity (JG) and (b) superficial liquid velocity (JL)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. The liquid holdup of the (a) present data and previous data/correlation plotted as function of superficial gas velocity and (b) Reynolds number of gas</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. The liquid holdup of the present work plotted as function of ReSG/ReSL</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. The liquid holdup of the present work and previous works plotted as function of ReSG/ReSL</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7.The performance of simplified correlation to the present work and the previously available data and correlations</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>The comparison of the performance of the proposed correlation to the available data/correlations</figDesc></figure>
+		</body>
+		<back>
+
+			
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgement</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>This research was supported by the Ministry of Research, Technology, and Higher Education of the Republic of Indonesia.</head></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Andreussi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Di Donfrancesco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Messia</surname></persName>
+					</author>
+					<title level="a">An impedance method for the measurement of liquid hold-up in two-phase flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="777" to="785"/>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Tsochatzidis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Karapantsios</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Kostoglou</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Karabelas</surname></persName>
+					</author>
+					<title level="a">A conductance probe for measuring liquid fraction in pipes and packed beds</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="653" to="667"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Fossa</surname></persName>
+					</author>
+					<title level="a">Design and performance of a conductance probe for measuring the liquid fraction in two-phase gasliquid flows</title>
+				</analytic>
+				<monogr>
+					<title level="j">Flow Meas. Instrum</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="103" to="109"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Ko</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">Y</forename><surname>Won</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Jerng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">An improved electrical-conductance sensor for void-fraction measurement in a horizontal pipe</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nuclear Engineering Technology</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="804" to="813"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Kendoush</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">A</forename><surname>Sarkis</surname></persName>
+					</author>
+					<title level="a">Void fraction measurement by X-ray absorption</title>
+				</analytic>
+				<monogr>
+					<title level="j">Experimental Thermal and Fluid Science</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="615" to="621"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Al-Lababidi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Addali</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yeung</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Mba</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Khan</surname></persName>
+					</author>
+					<title level="a">Gas void fraction measurement in two-phase gas/liquid slug flow using acoustic emission technology</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Vibration and Acoustics</title>
+					<imprint>
+						<biblScope unit="volume">131</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="64501" to="64501"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ramin</forename><surname>Dabirian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ashwin</forename><surname>Padsalgikar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mobina</forename><surname>Mohammadikharkeshi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Ram</forename><forename type="middle">S</forename><surname>Mohan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ovadia</forename><surname>Shoham</surname></persName>
+					</author>
+					<title level="a">The Effects of Phase Velocities and Fluid Properties on Liquid Holdup Under Gas-Liquid Stratified Flow</title>
+				</analytic>
+				<monogr>
+					<title level="m">SPE Western Regional Meeting</title>
+					<imprint>
+						<publisher>Society of Petroleum Engineers</publisher>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>Andriyanto</forename><surname>Setyawan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Deendarlianto</forename><surname>Indarto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Fredrick</forename><surname>Neo</surname></persName>
+					</author>
+					<title level="a">Experimental investigation on liquid film asymmetry in air-water horizontal annular flow</title>
+				</analytic>
+				<monogr>
+					<title level="m">AIP Conference Proceedings</title>
+					<imprint>
+						<publisher>AIP Publishing</publisher>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">1737</biblScope>
+						<biblScope unit="page">040009</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>Andriyanto</forename><surname>Setyawan</surname></persName>
+					</author>
+					<title level="a">Experimental investigations of the circumferential liquid film distribution of air-water annular two-phase flow in a horizontal pipe</title>
+				</analytic>
+				<monogr>
+					<title level="j">Experimental Thermal and Fluid Science</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="page" from="95" to="118"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Andriyanto</forename><surname>Setyawan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Deendarlianto</forename><surname>Indarto</surname></persName>
+					</author>
+					<title level="a">Measurement of liquid holdup by using conductance probe sensor in horizontal annular flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Advanced Research in Fluid Mechanics and Thermal Sciences</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="11" to="24"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Chisholm</surname></persName>
+					</author>
+					<title level="a">Pressure gradients due to friction during the flow of evaporating two-phase mixtures in smooth tubes and channels</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Heat and Mass Transfer</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="347" to="358"/>
+						<date when="1973">1973</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>Pravinth</forename><surname>Balthazar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Muzathik</forename><forename type="middle">Abdul</forename><surname>Majeed</surname></persName>
+					</author>
+					<title level="a">Simulation analysis of two-phase heat transfer characteristics in a smooth horizontal ammonia (R717) evaporator tube</title>
+				</analytic>
+				<monogr>
+					<title level="j">CFD Letters</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="49" to="58"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Spedding</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">J</forename><forename type="last">J</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Holdup in two-phase flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="307" to="339"/>
+						<date when="1984">1984</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Hamersma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Hart</surname></persName>
+					</author>
+					<title level="a">A pressure drop correlation for gas/liquid pipe flow with a small liquid holdup</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chemical Engineering Science</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1187" to="1196"/>
+						<date when="1987">1987</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Spedding</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Spence</surname></persName>
+					</author>
+					<title level="a">Prediction of holdup in two phase flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Engineering Fluid Mechanics</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page" from="109" to="118"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Spedding</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Cooper</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Mcbride</surname></persName>
+					</author>
+					<title level="a">Prediction of pressure loss and holdup in two phase horizontal cocurrent pipe flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">Dev. Chem. Eng. Mineral Process</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="issue">1-2</biblScope>
+						<biblScope unit="page" from="113" to="119"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Hart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Hamersma</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><forename type="last">H</forename><surname>Fortuin</surname></persName>
+					</author>
+					<title level="a">Correlations predicting frictional pressure drop and liquid holdup during horizontal gas-liquid pipe flow with a small liquid holdup</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="947" to="964"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Melkamu</forename><forename type="middle">A</forename><surname>Woldesemayat</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Afshin</forename><forename type="middle">J</forename><surname>Ghajar</surname></persName>
+					</author>
+					<title level="a">Comparison of void fraction correlations for different flow patterns in horizontal and upward inclined pipes</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="347" to="370"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>Andrea</forename><surname>Cioncolini</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">John</forename><forename type="middle">R</forename><surname>Thome</surname></persName>
+					</author>
+					<title level="a">Void fraction prediction in annular two-phase flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="page" from="72" to="84"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Fukano</surname></persName>
+					</author>
+					<title level="a">Measurement of time varying thickness of liquid film flowing with high speed gas flow by CECM</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nuclear Engineering and Design</title>
+					<imprint>
+						<biblScope unit="volume">184</biblScope>
+						<biblScope unit="issue">2-3</biblScope>
+						<biblScope unit="page" from="363" to="377"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>Andriyanto</forename><surname>Setyawan</surname></persName>
+					</author>
+					<title level="a">Experimental investigation on disturbance wave velocity and frequency in air-water horizontal annular flow</title>
+				</analytic>
+				<monogr>
+					<title level="j">Modern Applied Science</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="84" to="96"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Setyawan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Deendarlianto</forename><surname>Indarto</surname></persName>
+					</author>
+					<title level="a">Experimental investigations of the circumferential liquid film distribution of air-water annular two-phase flow in a horizontal pipe</title>
+				</analytic>
+				<monogr>
+					<title level="j">Experimental Thermal and Fluid Science</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="page" from="95" to="118"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Sekoguchi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Ousaka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Fukano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Morimoto</surname></persName>
+					</author>
+					<title level="a">Air-water annular two-phase flow in a horizontal tube: 1st report, circumferential distribution of film thicknesses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bulletin of JSME</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">208</biblScope>
+						<biblScope unit="page" from="1559" to="1566"/>
+						<date when="1982">1982</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>Tohru</forename><surname>Fukano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Akiharu</forename><surname>Ousaka</surname></persName>
+					</author>
+					<title level="a">Air-water two-phase annular flow in near-horizontal tubes (effect of pipe inclination on the fundamental parameters)</title>
+				</analytic>
+				<monogr>
+					<title level="j">JSME International Journal. Ser. 2, Fluids Engineering, Heat Transfer, Power, Combustion, Thermophysical Properties</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="477" to="485"/>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Garcia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Garcia</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Joseph</surname></persName>
+					</author>
+					<title level="a">Composite power law holdup correlations in horizontal pipes</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Multiphase Flow</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page" from="1276" to="1303"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Pagan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Williams</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kam</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Waltrich</surname></persName>
+					</author>
+					<title level="a">A simplified model for churn and annular flow regimes in small-and large-diameter pipes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chemical Engineering Science</title>
+					<imprint>
+						<biblScope unit="volume">162</biblScope>
+						<biblScope unit="page" from="309" to="321"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

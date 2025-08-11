@@ -1,0 +1,682 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A 3D Risk Assessment Model based on GIS Layers Technique</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Totem publisher</publisher>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Awwad</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Ittefaq Steel Product Company</orgName>
+								<address>
+									<postCode>7600</postCode>
+									<settlement>Dammam</settlement>
+									<country>KSA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Gobran</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Mechanical Power Engineering Department</orgName>
+								<orgName type="department" key="dep2">Faculty of Engineering</orgName>
+								<orgName type="institution">Zagzig University</orgName>
+								<address>
+									<postCode>44519</postCode>
+									<settlement>Zagazig</settlement>
+									<country key="EG">Egypt</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Kamal</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Mechanical Power Engineering Department</orgName>
+								<orgName type="department" key="dep2">Faculty of Engineering</orgName>
+								<orgName type="institution">Zagzig University</orgName>
+								<address>
+									<postCode>44519</postCode>
+									<settlement>Zagazig</settlement>
+									<country key="EG">Egypt</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mohammed</forename><forename type="middle">A</forename><surname>Boraey</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Mechanical Power Engineering Department</orgName>
+								<orgName type="department" key="dep2">Faculty of Engineering</orgName>
+								<orgName type="institution">Zagzig University</orgName>
+								<address>
+									<postCode>44519</postCode>
+									<settlement>Zagazig</settlement>
+									<country key="EG">Egypt</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A 3D Risk Assessment Model based on GIS Layers Technique</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">International Journal of Performability Engineering</title>
+						<idno type="eISSN">2993-8341</idno>
+						<idno type="ISSN">0973-1318</idno>
+						<imprint>
+							<publisher>Totem publisher</publisher>
+							<biblScope unit="volume">15</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="2563" to="2569"/>
+							<date type="published" when="2019-03-20"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5EAAF2B0CCAB4156A87755B501553812</idno>
+					<idno type="DOI">10.23940/ijpe.19.10.p1.25632569</idno>
+					<note type="submission">Submitted on August 6, 2019; Revised on September 19, 2019; Accepted on September 23, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>geographical information system</term>
+					<term>risk assessment</term>
+					<term>3D risk matrix</term>
+					<term>health and safety management</term>
+					<term>risk layers</term>
+					<term>geographical safety electronic information communication system</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper proposes a new three-dimensional risk assessment model which is based on the traditional two-dimensional risk matrix by adding a new degree of freedom representing the number of overlapped or interacted risk layers. The proposed model uses a geographical information system to managing health and safety through different stages like prevention through design, working safely and responding to undesired situations through providing the required information about spatial based risks. The new model helps the assessor to make realistic hypotheses, avoid uncertainty and improve the accuracy of determining the likelihood and consequences. In addition to the new risk assessment model, a new electronic geographic and safety information communication system is recommended in order to make the new risk assessment model more effective and improve the management of occupational health and safety. The electronic system integrates geographical based data and safety related information to produce risk maps in different places inside and around the workplace. Such a system will facilitate access to data anywhere at all times, enhancing dynamic risk assessment. Finally, the new risk assessment model and the electronic information system are expected to contribute in improving the management of health and safety, assessing risks and preventing losses.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The geographical information system (GIS) is a method for dealing with geographic data. It can be used for data entry, analysis, presenting and transferring. It is widely used nowadays for urban planning to <ref type="bibr" target="#b0">[1]</ref>:</p><p> Study the growth of population in different suburbs.</p><p> Identify the long-term effect of slash and burn actions on the growing of amphibian.</p><p> Early prediction of floods by studying geographical phenomena e.g. rainfall, terrains, ⋯, etc.</p><p> Identify suitable building locations in earthquake zones by studying rock specification, exploration of mines for different minerals,</p><p> Identify the best locations of telecommunication stations and study the ground water inventory and characteristics as well as fresh water.</p><p>Also, GIS can help in assessing and protecting people health through studying the impact of environment on people health. GIS could improve environmental health parameters such as <ref type="bibr" target="#b1">[2]</ref>:</p><p> Studying the impact of the distance between inhabited areas and traffic congestion on air pollution and its health effects.</p><p> Keeping an eye on contamination of source of potable water and its effect on public health.</p><p> Identifying the relation between exposure of mothers to agricultural pesticides and autism of children or studying the</p><p> Relation between environmental conditions and respiratory diseases.</p><p>T. Nyerges educed a method for risk assessment which includes many elements like risk scoping, analysis, monitoring, communication and management relating to environmental health and human health as well. The aim behind this method is to recognize how and when GIS can help in risk assessment and to fill gaps regarding the required knowledge. The advantage of the method (four level risk assessments) is that it focuses on not only risk evaluation, but also scoping, analysis and management <ref type="bibr" target="#b2">[3]</ref>. T.Kistemann used the GIS to assess the microbial risk by monitoring three potable water reservoirs in Germany for a period of 14 months. He established an informational platform to follow the microbial source in water tributaries. Furthermore, he developed a technique of a microbial risk assessing geo-ecological information system which is beneficial in protecting water from contamination in catchment areas <ref type="bibr" target="#b3">[4]</ref>. N. Brown discussed how spatial data can be used to analyze and assess risks, as most of risk aspects have a spatial nature. GIS can help in the identification of both hazards and elements at risk like potential places for volcano and population or properties that can be affected by volcanic products. GIS can also provide simple overlying maps that describe the interaction and relation between hazard footprints and elements at risk <ref type="bibr" target="#b4">[5]</ref>. M.Peggion studied the use of GIS for understanding the factors included in risk conditions related to complicated systems in order to be able to consider all relevant aspects such as political, economic, social, and cultural ones. GIS can be used in case of disaster recovery or environmental restoration or emergencies e.g. evacuation of people in case of floods. GIS promotes the analysis of risk by providing the required information for strategic planning to locate potential emergencies, allocate the mitigation efforts, identify preparedness actions required in orders, prioritize the response activities and start the recovery stage <ref type="bibr" target="#b5">[6]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Using of GIS for Managing Occupational Health and Safety (OHS)</head><p>In 2017, 2.78 million workers lost their lives because of occupational accidents and diseases. This represents an increase of 19.3% compared to the number of occupational fatalities in 2011(2.33 million). This means that around 7500 people die daily because of work related activities. In addition to occupational fatalities, there are 374 million non-fatal injuries annually <ref type="bibr" target="#b6">[7]</ref>. The economic situation has been badly affected due to deteriorating occupational safety and health, as around 4 % of the annual global gross domestic product is lost as a result of the direct and in-direct cost of daily occupational adversities which equal 2.8 trillion US dollars <ref type="bibr" target="#b7">[8]</ref>. This paper aims to improve OHS and subsequently reap the fruitful consequences not only by precious human's souls, but also by boosting the global economic growth. This paper will shed a light on how GIS can be used to provide precious information for managing health and safety in different industries and recognize the effect of correlated geographical layers on assessing risks in the workplace through developing a new risk assessment model with three dimensions. Starting the task with half or non-complete informationis considered one of the most common causes of accidents <ref type="bibr" target="#b8">[9]</ref>. GIS is able to accommodate different kinds of OHS related information through its database in addition to being able to represent it in various ways <ref type="bibr" target="#b9">[10]</ref>. The following are some examples of the type of information that can be provided by GIS and how it can help in identifying hazards, assessing and controlling risks and managing health and safety.</p><p> Information about wind speed and direction can be used in fighting fires, allocating of assembly points, evacuating of affected people, responding to accidental release of harmful gas as well as stopping and starting some critical activities such as lifting loads, scaffolding and working at heights.</p><p> Information about soil type classification helps in taking the suitable precautions while excavation or trenching <ref type="bibr" target="#b10">[11]</ref>.</p><p> Information about soil contamination in mining areas helps in detecting of potential release of poisonous, flammable, explosive gases or harmful fumes <ref type="bibr" target="#b11">[12]</ref>.</p><p> Information about underground services like electric cables, gas pipelines and water pipelines helps in protecting employees while working carrying out excavation work or manual digging <ref type="bibr" target="#b12">[13]</ref>.</p><p> Information about water currents, potential vortices zones and water depth helps to protect workers while performing tasks under water.</p><p>Such information can be used in different stages of managing health and safety either proactively or reactively as follows:</p><p>(1) Prevention through design The aim of prevention through design is to avoid or mitigate work related injuries or ill health cases by considering the prevention techniques while designing the equipment, tools, processes or premises <ref type="bibr" target="#b13">[14]</ref>. GIS based information can help in this area. For example, information about a potential earthquake or tsunami could have helped to improve the structure of the Fukushima nuclear plant.</p><p>(2) Working safely In many circumstances, geographical information is needed for ensuring the safe running of work, like what happened in mecca's grand mosque crane accident, when the high speed of wind caused one crawler crane to fall which led to many fatalities. GIS based information about the speed and direction of wind could have prevented such accident.</p><p>(3) Responding to emergencies Poor response to emergency cases usually occurs due to lack of information or difficulty to get the right information quickly like what happened while responding to the Fukushima disaster 2011 <ref type="bibr" target="#b14">[15]</ref>. GIS could have provided information about traffic, wind direction, the extent of contaminated area and could have identified the safe areas to evacuate people.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">3D Risk Matrix</head><p>The normal risk assessment matrix usually depends on two dimensions (2D); one represents the likelihood while the other represents the severity of consequences <ref type="bibr" target="#b15">[16]</ref>. Although this model is simple and easy to be implemented, in some cases there is a need to take a specific factor into consideration. Some three-dimensional (3D) models are created to add an assessment factor to both likelihood and consequence.</p><p>M. Ruiz developed a 3D risk assessment model by adding velocity of risk as a third dimension. This model helps the risk manager prioritize risks and focus on the immediate ones based on likelihood, consequence and velocity. This makes the risk assessment more accurate and valuable <ref type="bibr" target="#b16">[17]</ref>.</p><p>C. Waston developed a 3D risk matrix by adding a new axis which represents the level of controls. The new axis enables a visual description of risk and highlights the least well-controlled one. The new axis can also setup the likelihood and consequence of all causes and effects related to the identified hazard. He used spreadsheets and 3-dimensional charting to visually confirm the interaction between causes and control measures <ref type="bibr" target="#b17">[18]</ref>. D. Antoniadis developed a 3D risk matrix to overcome the restrictions and limitations of the 2D matrix like poor consideration of complexity and interdependence, difficulty of visualization, and inability to weigh risks based on multiplication of factors. He developed a new 3D model by replacing the severity of the consequence axis into two axes; one for time impact and the other for cost impact. This model can enhance the output of the process for both qualitative and quantitative assessment and can focus on critical areas to speed up the process <ref type="bibr" target="#b18">[19]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Proposed Model (GIS based 3D Risk Matrix)</head><p>As discussed, the simple two-dimensional risk assessment model which considers severity and likelihood is simple and easy to be implemented but the main restrictions of this model are the inability to decisively judge uncertainty about the presence of hidden risks and the difficulty to create the right prediction of what could happen. To clarify this point, we will discuss the risk assessment and analysis of digging using a hand powered tool inside an excavation or trench two times; one using the traditional 2D model while the other using the proposed model. While using the simple 2D model, we will consider the likelihood of an accident like contacting underground utilities, engulfment of soil, exposure to poisonous gases, etc. We are not able to make the real hypothesis of what will exactly happen so we cannot expect the actual consequences as we do not know how many hazards the worker will be exposed to. Because most of the risks are spatial in nature, GIS can provide information about any geographical risk which can accurately tell us how many risk layers are included in the task. GIS can introduce risk maps in different layers. Based on the maps, we can determine how many risk layers are present in the task place. The more overlapping or interacting layers, the higher the risk level is. Figure <ref type="figure" target="#fig_0">1</ref> illustrates the overlapped risk layers </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Risk Assessment for a Digging Task Inside a Trench</head><p>Here we will assess the risk of a specific task two times; one using the traditional 2D risk model and the other using the proposed 3D model to illustrate how the new technique can help in assessing risks in a better way.</p><p>Table <ref type="table" target="#tab_0">1</ref> illustrates the risk assessment based on 2d risk matrix shown in Figure <ref type="figure" target="#fig_1">2</ref> and risk level number code shown in Table <ref type="table" target="#tab_1">2</ref>.</p><p>Now we can see how this model works and its limitations are clearer regarding the inability to determine what is the exact number of risks included. This model depends mainly on assuming presence of all potential risks so it will require high levels of precautions or control measures (the more serious risk level, the more powerful controls are required (see Table <ref type="table" target="#tab_2">3</ref>. Implementing of more controls could complicate the work although it is neither needed nor reasonable such as switching off the electric power in a specific area for long time. Also, this model assumes the same likelihood for all the risks without considering interaction among hazards, such as the interaction between the potential release of flammable gases which causes fire and the high speed of wind which could lead to spreading of the fire.</p><p>Here we will add a new axis to the 2D risk matrix. This axis represents the number of interacted risk layers included in the task or potential to be in the task place. Figure <ref type="figure" target="#fig_2">3</ref> displays the risk matrix.</p><p>The risk rate will be represented by numbers and letters where numbers represent the normal likelihood and consequence and letters represent the number of interacting layers as per Table <ref type="table" target="#tab_3">4</ref>. For example, if the risk rate is 16 C, this means the risk rate is high and that task includes 3 interacting risk layers.</p><p>The assessor can also specify the type of risk layers included by using a specific letter to refer to each layer (see Table <ref type="table" target="#tab_4">5</ref> as an example). Then he can represent the risk rate using letters e.g. (16,<ref type="table">GU)</ref> which means that such risk is high and contains two overlapped risk layers which are hazardous gases and underground utilities. Figure <ref type="figure" target="#fig_3">4</ref> shows an example about the 3D risk matrix with named risk layers.</p><p>This is the general concept and it is very important that each organization agrees on its representation criteria and shares full information about it with all workers to ensure they are familiar with it and can understand its meaning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Safety and Geographical Information Communication Electronic System (SGICES)</head><p>In February 2015, during the high Level Safety Conference, the international civil aviation organization (IACO) recommended originating a safety information monitoring system which could provide a web based safety information to generate indicators to support aviation safety <ref type="bibr" target="#b21">[22]</ref>. H. Atay discussed the development of a web-based spatial decision support system to be used in linear construction projects which would enable workers to be familiar with the hazards of any portion of the construction site <ref type="bibr" target="#b22">[23]</ref>. In this paper, we recommend the establishment of a safety geographically information communication electronic system (SGICES) which integrates geographical information related to potential hazards and safety management information. SGICES could be an additional useful tool for managing safety within any organization from different industries. t would provide access to necessary information such as the workplace land and surroundings (accidents relief way), workplace layout, workplace utilities map, workplace firefighting systems, process Instrumentation Diagrams, each hazard map (distributed as safety in processmulti layers according to the defined hazards) and Operation -Safety interaction zones. Also, SGICES can help to:</p><p> Report and manage work related incidents, injuries, ill health cases and damage.</p><p> Plan the entire year's health and safety inspections in advance.</p><p> Share manuals, safety data sheets, safety observations and safe operating procedures with different workers.</p><p> Review statistics in detail and present them on a map or in charts.</p><p> Learn from previous occurrences in the organization.</p><p> Follow up implementation of corrective actions and closing of nonconformities.</p><p> Share awareness training movies based on subject, department ...etc.</p><p>The advantage of the electronic system is to make the required data available and accessible everywhere inside or outside the workplace for different levels of workers. The electronic system enhances the dynamic risk assessment and helps to easily make and communicate changes of the assessment based on the predicted circumstances</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Conclusions</head><p>This paper discusses the limitations of the traditional 2D risk assessment model in identifying geographic based risks in detail and the difficulty to consider the correlated risk layers. A new model of risk assessment is developed to improve considering different risk layers based on geographical data. Also, a new risk matrix is developed by adding a third axis to the likelihood axis and the consequence axis. The third axis represents the number of overlapping risk layers. The proposed model helps the assessor to determine the likelihood and consequence in a better way by assuring the presence of some risk layers and excluding of others. In addition, it has the ability to highlight the interaction between different risk layers.</p><p>An electronic based information system is proposed to make the new risk assessment model more effective and will enhance communication of safety information between workers from different levels and locations in addition to integrating the safety information with the geographical information to help predict the risks that could occur because of geographic conditions. It is expected that the new risk assessment model and the electronic information system help to improve assessing risks, managing health and safety, controlling risks, and increasing awareness of employees regarding safety.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1.</head><label>1</label><figDesc>Figure 1. The overlapping of risks layers</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Two-dimensional 5×5 risk matrix</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure3. GIS based 3D risk matrix representing the number of interacting risk layers</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure4. GIS based 3D risk matrix representing interacting risk layers and their names</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Table 1. Risk assessment for digging inside a trench</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Risk level number code</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Required actions related to risks level <ref type="bibr" target="#b20">[21]</ref></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Representing the number of layers as letters</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 .</head><label>5</label><figDesc>Representing the layers as names</figDesc></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="series" xml:id="b0">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Huisman</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>By</surname>
+					<forename type="first">R</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="m">Principles of Geographic Information Systems</title>
+			<imprint>
+				<date when="2009">2009</date>
+			</imprint>
+		</monogr>
+		<series>
+			<title level="s">ITC Educational Textbook Series</title>
+		</series>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tim</surname>
+					<forename type="first">U</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">The Application of GIS in Environmental Health Sciences: Opportunities and Limitations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environmental Research</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="75" to="88"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nyerges</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Robkin</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moore</surname>
+					<forename type="first">T</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Geographic Information Systems for Risk Evaluation: Perspectives on Applications to Environmental Health</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cartography and Geographic Information Systems</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="123" to="144"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kistemann</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ClaBen</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koch</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dangendorf</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fischeder</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gebel</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Microbial Load of Drinking Water Reservoir Tributaries During Extreme Rainfall and Runoff</title>
+		</analytic>
+		<monogr>
+			<title level="j">Applied and Environmental Microbiology</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">68</biblScope>
+				<biblScope unit="page" from="2188" to="2197"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brown</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">The Use of Geographic Information Systems in Risk Assessment with Specific Focus on the RiVAMP Methodology</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the Sixth Caribbean GIS Conference</title>
+			<imprint>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Peggion</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bernardini</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Masera</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">Geographic Information Systems and Risk Assessment</title>
+			<imprint>
+				<date when="2008">2008</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<monogr>
+			<author>
+				<persName>
+					<surname>H</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>T</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kiat</surname>
+					<forename type="first">T</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="m">Global Estimates of Occupational Accidents and Work-related Illnesses</title>
+			<imprint>
+				<publisher>Workplace Safety and Health Institute</publisher>
+				<pubPlace>Singapore</pubPlace>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b7">
+		<monogr>
+			<author>ILO</author>
+			<title level="m">Calls for Urgent Global Action to Flight Occupational Diseases</title>
+			<ref target="http://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_211627/lang--en/index.htm">http://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_211627/lang--en/index.htm</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zakaria</surname>
+					<forename type="first">N</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mansor</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Abdullah</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Workplace Accident in Malaysia: Most Common Causes and Solutions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Business and Management Review</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="75" to="88"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Delaunay</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Westhuizen</surname>
+					<forename type="first">H</forename><forename type="middle">V</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Godard</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Agius</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barbier</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Godderis</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Use of GIS in Visualization of Work-Related Health Problems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Occupational Medicine</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">65</biblScope>
+				<biblScope unit="page" from="682" to="692"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b10">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Schroeder</surname>
+					<forename type="first">W</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dickenson</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Warrington</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="m">Soils in Construction</title>
+			<imprint>
+				<publisher>Waveland Press</publisher>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Suh</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yi</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Choi</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">An Overview of GIS-based Modeling and Assessment of Mining-Induced Hazards: Soil, Water, and Forest</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Environmental Research and Public Health</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="1463" to="1463"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mark</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gauna</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluating the Risk of Coal Bursts in Underground Coal Mines</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Mining Science and Technology</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="47" to="52"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">National Institute for Occupational Safety and Health (NIOSH) Prevention Through Design (PtD) Workshop Closing Remarks</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Safety Research</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="203" to="204"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yamaguchi</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Lessons Learned from Radiation Risk Communication Activities Regarding the Fukushima Nuclear Accident</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of the National Institute of Public Health</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">67</biblScope>
+				<biblScope unit="page" from="93" to="102"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b15">
+		<monogr>
+			<author>HSE</author>
+			<title level="m">Brıef Guıde to Controlıng Rısk in Work Place</title>
+			<imprint>
+				<publisher>Health and Safety Executive</publisher>
+				<pubPlace>Merseyside</pubPlace>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b16">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Chaparro</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="m">A New Dimension to Risk Assessment</title>
+			<imprint>
+				<publisher>Centre for Mathematical Sciences Lund University</publisher>
+				<pubPlace>Lund</pubPlace>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b17">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Watson</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="m">Risk Assessment using the Three Dimensions of Probability (Likelihood), Severity, and Level of Control</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Antoniadis</surname>
+					<forename type="first">T</forename><forename type="middle">T</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<title level="a">3D Risk Matrix Methodology</title>
+		</analytic>
+		<monogr>
+			<title level="m">ISEC-02</title>
+			<imprint>
+				<date when="2003">2003</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b19">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Labor</surname>
+					<forename type="first">O</forename><forename type="middle">M</forename><forename type="last">O</forename>
+				</persName>
+			</author>
+			<title level="m">Excavation Hazards</title>
+			<ref target="http://www.labour.gov.on.ca/english/hs/sawo/pubs/fs_trenches.php">http://www.labour.gov.on.ca/english/hs/sawo/pubs/fs_trenches.php</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b20">
+		<monogr>
+			<author>IOSH</author>
+			<title level="m">ISOH Managing Safely</title>
+			<imprint>
+				<publisher>Institute of Occupational Safety and Health</publisher>
+				<pubPlace>Wigston</pubPlace>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b21">
+		<analytic>
+			<author>organization</author>
+			<title level="a">I.c.a.</title>
+		</analytic>
+		<monogr>
+			<title level="m">High Level Safety Conference</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Atay</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ergen</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Toz</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">GIS based Decision Support System for Health and Safety Management in Linear Projects</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the International Conference on Computing in Civil and Building Engineering</title>
+			<imprint>
+				<date when="2010">2010</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

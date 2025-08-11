@@ -9,7 +9,7 @@ from typing import Dict, List, NamedTuple, Optional
 
 class ExtractResult(NamedTuple):
     """Unified result return format for PDF extraction."""
-    text: str
+    text: str | List[str]
     metadata: Optional[Dict] = None
     images: Optional[List] = None
 

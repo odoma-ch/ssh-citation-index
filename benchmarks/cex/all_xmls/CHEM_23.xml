@@ -1,0 +1,1898 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Laser-pyrolyzed electrochemical paper-based analytical sensor for sulphite analysis</title>
+				<funder ref="#_fDQ8FTs">
+					<orgName type="full">FAPESP and Shell Brazil through the 'Research Centre for Gas Innovation -RCGI'</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">ANP (Brazil's National Oil, Natural Gas and Biofuels Agency)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">R&amp;D levy regulation</orgName>
+				</funder>
+				<funder ref="#_99nKmyc #_eyBwp2f #_Mw9gGNw #_W9jbvfN #_82uJQ67">
+					<orgName type="full">São Paulo Research Foundation (FAPESP)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Coordenação de Aperfeiçoamento de Pessoal de Nível Superior -Brasil (CAPES)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">USP</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier BV</publisher>
+				<availability>
+					<licence target="http://creativecommons.org/licenses/BY/4.0/"><p>This is an open access article under the CC BY license</p></licence>
+				</availability>
+				<date type="published" when="2019-09-05">05 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Alisson</forename><surname>Bezerra Martins</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alnilan</forename><surname>Lobato</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nikola</forename><surname>Tasić</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Fernando</forename><forename type="middle">J</forename><surname>Perez-Sanz</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pedro</forename><surname>Vidinha</surname></persName>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Thiago</forename><forename type="middle">R L C</forename><surname>Paixão</surname></persName>
+							<email>trlcp@iq.usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Luís</forename><surname>Moreira Gonçalves</surname></persName>
+						<email>lmgoncalves@iq.usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Departamento de Química Fundamental</orgName>
+								<orgName type="department" key="dep2">Instituto de Química</orgName>
+								<orgName type="institution">Universidade de São Paulo (USP)</orgName>
+								<address>
+									<settlement>São Paulo</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Laser-pyrolyzed electrochemical paper-based analytical sensor for sulphite analysis</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Electrochemistry Communications</title>
+						<idno type="ISSN">1388-2481</idno>
+						<imprint>
+							<publisher>Elsevier BV</publisher>
+							<biblScope unit="volume">107</biblScope>
+							<biblScope unit="page">106541</biblScope>
+							<date type="published" when="2019-09-05">05 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">7874E9FE8D4E8E41C45BBF8FECCE89A3</idno>
+					<idno type="DOI">10.1016/j.elecom.2019.106541</idno>
+					<note type="submission">Received 22 July 2019; Received in revised form 23 August 2019; Accepted 4 September 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Electroanalysis Food quality Sample preparation Laser scribed paper-based analytical devices Square-wave voltammetry Volatile extraction</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A CO 2 laser can be used to pyrolyze the surface of common paperboard to produce a conductive carbon material for subsequent use as an electrode for general electrochemical measurements. In this work, a laser-pyrolyzed electrochemical paper-based analytical device (LP-ePAD) of this type was combined with a gas-diffusion microextraction (GDME) unit for the square-wave voltammetric analysis of sulphites in commercial beverages. The fabricated LP-ePAD had a resistivity at room temperature of 11 ± 4 Ω per square electrical sheet (measured with a four-point probe system). The developed methodology showed a limit of detection of 1 mg L -1 for sulphite analysis, with good repeatability and reproducibility (coefficient of variation below 7%), as well having as the desirable qualities of portability and low price.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Recently, one of the authors reported a new approach to the fabrication of electrochemical paper-based devices (ePADs) which does not require expensive equipment or controlled laboratory conditions <ref type="bibr" target="#b0">[1]</ref>. The proposed approach used a CO 2 laser to pyrolyze a paperboard surface in order to convert cellulose to carbon, creating a carbon surface for electroanalytical applications in a single low-cost step. ePADs were originally proposed in 2009 by Dungchai and co-authors using silk screen/screen printing procedures which could leave impurities on the paper after solvent evaporation <ref type="bibr" target="#b1">[2]</ref>. Since then, a range of approaches to ePAD fabrication have been reported: casting <ref type="bibr" target="#b2">[3]</ref>, inkjet printing <ref type="bibr" target="#b3">[4]</ref>, use of graphite leads or direct pencil drawing, wire or fibre attachment <ref type="bibr" target="#b4">[5]</ref>, sputtering approaches under an inert atmosphere <ref type="bibr" target="#b5">[6]</ref>, as well as carbon pyrolysis using a tube furnace under oxygen <ref type="bibr" target="#b6">[7]</ref>. However, all of these procedures have at least one of the following disadvantages: each ePAD has to be manually fabricated, resulting in a lack of reproducibility, high cost, or the need for a controlled environment. By contrast, the laser pyrolysis procedure <ref type="bibr" target="#b7">[8]</ref> can be used to fabricate reproducible low-cost devices in a single step <ref type="bibr" target="#b0">[1]</ref>.</p><p>Sulphites have been used as food additives for many years, due to their many applications (prevention of the microbial growth, browning reactions and flavour stabilizing properties) and their outstanding efficiency <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b9">10]</ref>. However, their use should be controlled because of possible adverse clinical effects, particularly to sensitive individuals, ranging from dermatitis, urticaria, abdominal pain and diarrhoea to some rare yet dangerous anaphylactic responses <ref type="bibr" target="#b10">[11]</ref>.</p><p>Typically, the term 'sulphites' refers to a variety of compounds: sulphur dioxide, sodium sulphite, sodium bisulfite, sodium metabisulfite, potassium metabisulfite, and potassium sulphite (INS 220 to INS 225) <ref type="bibr" target="#b11">[12]</ref>. However, in practice, in the pH range 2-6 most common in beverages, sulphur is present in the form of hydrogen sulphite (HSO 3 ) <ref type="bibr" target="#b9">[10]</ref>. The electrochemical response of sulphites has been studied for over a decade <ref type="bibr" target="#b12">[13]</ref>, using several types of electrodes, including: mercury <ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref>, gold <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref>, platinum <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b27">28]</ref>, copper <ref type="bibr" target="#b28">[29]</ref>, glassy carbon electrode (GCE) <ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref>, multiwalled carbon nanotubes <ref type="bibr" target="#b32">[33,</ref><ref type="bibr" target="#b33">34]</ref>, screen-printed carbon electrode (SPCE) <ref type="bibr" target="#b34">[35,</ref><ref type="bibr" target="#b35">36]</ref>, and modified working electrodes <ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref>. To the best of the authors' knowledge, however, sulphites have never been investigated using paper-based analytical devices.</p><p>Electroanalysis has several advantages for testing food samples, primarily speed, sensitivity and portability, but in general this approach is susceptible to interference from other compounds present in these complex matrices. In order to circumvent common interference problems, a recognition element, such as an antibody <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b44">45]</ref>, aptamer or a molecular imprinted polymer <ref type="bibr" target="#b45">[46]</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref>, may be attached to the electrode surface. However, that can be expensive and sometimes technically challenging. Alternatively, one can make use of a sample preparation step, which may result in a cheaper and often more robust analytical methodology <ref type="bibr" target="#b50">[51,</ref><ref type="bibr" target="#b51">52]</ref>.</p><p>Taking all of this into account, this work's rationale was, as a proofof-concept, to combine inexpensive and portable paper electrodes with a light, low-cost sample preparation system, namely gas-diffusion microextraction (GDME) <ref type="bibr" target="#b34">[35,</ref><ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b52">53]</ref>, for sulphite analysis in food matrices.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Materials and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Chemicals and samples</head><p>All reagents were of analytical grade and were used as received. Aqueous solutions were prepared using ultrapure water with a resistivity not less than 18.2 MΩ cm at 298 K.</p><p>Sodium sulphite (Merck, Darmstadt, Germany) was used as a source of sulphites; hydrochloric acid (HCl) solutions were prepared from the concentrated acid (CAQ, Diadema, Brazil); an acetate buffer (pH 4.8, 0.01 mol L -1 ) was prepared with sodium acetate and acetic acid (both from CAQ). Regarding the Ripper method: sulphuric acid solution (25%) was prepared from the concentrated acid (CAQ); potassium iodate (KI) was acquired from CAAL (Santa Cecília, Brazil). Starch and potassium iodide (KIO 3 ) were bought from Synth (Diadema, Brazil). Beverage samples were obtained from an ordinary supermarket.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Extraction</head><p>The GDME extraction system has been described before (Fig. <ref type="figure" target="#fig_0">1A</ref>) <ref type="bibr" target="#b52">[53]</ref><ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref>. The membrane was a Mitex PTFE (Millipore) with a porosity of 5.0 μm. The extraction procedure was carried out as follows: (1) 10 mL of sample were placed inside the sampling flask; (2) 2 mL of 1 mol L -1 HCl were added to the sample just before the extraction; (3) extraction occurred in a thermostatic water bath at 55 °C in the course of 15 min; (4) the acceptor solution was 1.00 mL of acetate buffer; (5) 80 μL of 1 mol L -1 HCl was added to 80 μL of the extract just before the electroanalysis to convert the HSO 3 -species into voltammetry-sensitive SO 2 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Fabrication of electrodes and resistance measurements</head><p>The electrodes were fabricated via room-temperature laser pyrolysis, using a WorkSpecial CO 2 laser cutting system (model WS 9060C). The optimized fabrication parameters were as follows: (a) the laser wavelength was 10.6 μm with a pulse duration of approx. 14 μs; (b) the laser scan rate was ca. 16 mm s -1 ; (c) the working distance between laser and the target material was ca. 13 mm. RDWorks software was used to design the LP-ePADs templates on 665 g m 2 paperboard (WestRock Company, Atlanta, USA) and control the fabrication procedure. Prior to the electrochemical measurements, silver grids were printed on the connection pads of the electrodes to improve their electrical conductivity. Furthermore, these silver grids were protected from direct contact with the electrolyte by printing a barrier of fastdrying inert glue (Cascola from Henkel, Düsseldorf, Germany). Finally, to overcome the common problem of reference electrode instability in paper-based devices, silver ink was painted on top of the reference electrode area. More details can be found in the literature <ref type="bibr" target="#b0">[1]</ref>.</p><p>The optimization procedure was based on the feedback results obtained from the four-point probe resistivity measurements, which were carried out using a Keysight DAQ970A (Santa Rosa, USA). Furthermore, the reproducibility of the proposed fabrication protocol was investigated by measuring the resistivity of 15 identical electrodes prepared using the parameters specified above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Electrochemical measurements</head><p>Voltammetric measurements were performed using a Metrohm AUT86702 system with Nova v 2.1.4 software. Electrochemical measurements were performed at room temperature without removing oxygen with the nitrogen flow. The square-wave voltammetry (SWV) parameters for sulphite analysis had been optimized previously <ref type="bibr" target="#b34">[35]</ref>, and the chosen conditions were as follows: the square-wave frequency was 50 Hz, the potential step 5 mV and the wave amplitude 25 mV (resulting in a scan rate of 250 mV s -1 ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Comparison of methods</head><p>The 'Ripper' methodology <ref type="bibr" target="#b56">[57]</ref> is an old simplification of the OIV (Organisation Internationale de la Vigne et du Vin) method <ref type="bibr" target="#b57">[58]</ref> based on iodometric titration of the acidified sample (the titrating triiodine was formed from KIO 3 with an excess of KI). Specifically, 5 mL of 1:4 concentrated H 2 SO 4 were added to 25 mL of the sample immediately before the titration, and starch was used as the endpoint indicator <ref type="bibr" target="#b21">[22]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results and discussion</head><p>The voltammetric reduction of SO 2 is far from being trivial <ref type="bibr" target="#b58">[59]</ref>. Moreover, it has long been studied with electrodes such as mercury <ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref> or copper <ref type="bibr" target="#b28">[29]</ref>. Kolthoff and Miller first suggested that, at a low pH, sulphur dioxide undergoes a two-electron, two-proton reduction forming sulphoxylic acid <ref type="bibr" target="#b14">[15]</ref>:</p><formula xml:id="formula_0">+ + + SO 2e 2H H SO 2 2 2</formula><p>This was more recently corroborated by Streeter et al. via electrochemical electron spin resonance (ESR) <ref type="bibr" target="#b28">[29]</ref>.</p><p>The matrix effect is a common issue encountered when analysing complex mixtures by electrochemical methods. Sample preparation is often the best way to solve this problem -and not only can it solve the selectivity issue but it can also enhance the sensitivity <ref type="bibr" target="#b51">[52]</ref>. GDME is a simple and portable technique that combines the advantages of microextraction with membrane-aided volatile and semi-volatile extraction <ref type="bibr" target="#b51">[52,</ref><ref type="bibr" target="#b52">53]</ref>. In this study, the sample was acidified prior to extraction, changing the pH to a value such that all hydrogen sulphite is converted to sulphite. Then, when gaseous SO 2 fills the headspace, an aliquot diffuses through the membrane and is entrapped in the acceptor solution, changing back to non-gaseous hydrogen sulphite with a pH change. In this way, sulphite can easily be determined without requiring an antibody, aptamer or any other recognizing element.</p><p>The resistance of the electrodes was measured using a four-point probe system (Fig. <ref type="figure" target="#fig_0">1B</ref>) <ref type="bibr" target="#b59">[60]</ref>. Typically, in these kinds of measurement it is necessary to apply a correction factor that depends on the geometry (G) of the surface. In this study, the distance between the probes was specified (i.e. 7 mm) so that G = 1, and no further correction is required. This is due to the fact that the width of the active surface (4 mm) is less than three times the distance between the probes <ref type="bibr" target="#b60">[61]</ref>. The following resistances were obtained: working electrode -(20 ± 6) Ω; counter-electrode -(20 ± 8) Ω; and reference electrode before the addition of silver ink -(16 ± 4) Ω (i.e. the same within the uncertainty range). This resulted in an average of (19 ± 6) Ω, and considering a width of 4 mm, a sheet resistance of 11 ± 4 Ω per square. The expression 'sheet resistance' is often found in the literature concerning conductive surfaces, and values are expressed in the unit of Ω per square <ref type="bibr" target="#b61">[62,</ref><ref type="bibr" target="#b62">63]</ref>. Sheet resistance is the equivalent of resistivity for a thin conductive surface:</p><formula xml:id="formula_1">= R l A</formula><p>where R is the resistance of a conductor (Ω), ρ is the resistivity of the material of the conductor (Ω m -1 ), A is the surface of the conductor perpendicular to the current direction (m 2 ), and l is the length. Furthermore, the surface resistivity of a perpendicular section of the conductor is:</p><formula xml:id="formula_2">= A w t</formula><p>where w is the width (m) and t is the thickness (m). By combining both equations:</p><formula xml:id="formula_3">= R l w t</formula><p>It is common in studies of conductive surfaces to use sheet resistance (R SH ) instead of resistivity to avoid determination of the surface thickness, which simplifies the equation to:</p><formula xml:id="formula_4">= R R l w SH</formula><p>R SH is the resistance of rectangular surface for which length and width have the same value, ergo the sheet resistance is the resistance of a geometrical square of a thin surface. Measurements with the fourpoint probe system not only gave rise to more reproducible results but also, in general, 60-80% lower resistance when compared with data from a common 2-wire multimeter.</p><p>The analytical parameters obtained from the analytical curve (Fig. <ref type="figure" target="#fig_1">2</ref>) are as follows: the square of the sample correlation coefficient (r 2 ) is 0.9987, while the limits of detection and of quantification (LOD and LOQ) are1.2 mg L -1 and 3.9 mg L -1 , respectively. The intercept was above zero, probably due to the presence of sulphites in the electrodes (sulphites are a common additive in pulping during the paper manufacturing process). The LOD and LOQ were calculated as three and ten times the standard deviation of the intercept/slope, respectively. Although there are lower LODs in the literature (around 0.01 mg L -1 <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b29">30]</ref>), these limits are suitable for liquid samples like wine or juices and can be decreased with longer extraction times. They are also appropriate bearing in mind that many countries have regulatory limits of 10 mg L -1 . Repeatability was evaluated by measuring five different solutions of 30 mg L -1 , and was (0.18 ± 0.1) mA, i.e. the coefficient of variation (C.V.) was 6%. Reproducibility was evaluated in the same manner but on three different days, and was (183 ± 5) μA, i.e. the C.V. is 3%. The free sulphite content was determined in several different samples by the proposed methodology and by the simplified Ripper methodology. Quantification by GDME-LP-ePAD was performed by a single standard addition. As shown in Table <ref type="table" target="#tab_0">1</ref>, the results are similar within error margins. No dark-coloured samples were analysed because the endpoint of the titration using starch (in the Ripper method) is a dark violet shade that would be difficult to observe. No interference studies were performed since there is no suspicion that any other compounds volatile enough to be extracted at the temperatures used (ethanol, carbon dioxide, acetaldehyde, etc.), have similar behaviour regarding pH changes, or might have the same peak potential in the SWV.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>For the first time LP-ePADs were used in an analytical assay. Assisted by a simple GDME sample preparation step, a LOQ lower than the 10 mg L -1 regulatory limit was attained, along with suitable reproducibility. The developed analytical method is particularly competitive in terms of price and portability, allowing measurements at the point of production. It may therefore be of interest to drinks producers who use sulphites as an additive.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. (A) Simple scheme showing the GDME; (B) photo of the resistance being measured.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Square wave voltammograms of several extracts with different sulphite concentrations (from 2.5 to 25 mg L -1 ). Inset: the corresponding calibration curve (peak current vs. sulphite concentration).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Comparison of analytical results obtained using the proposed method (GDME-LP-ePADs) and the simplified Ripper method. All sulphite values are in mg L -1 and analyses were done in duplicate.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>Authors acknowledge the <rs type="funder">São Paulo Research Foundation (FAPESP)</rs> for financial support (<rs type="grantNumber">2017/10522-5</rs>, <rs type="grantNumber">2018/14425-7</rs>, <rs type="grantNumber">2018/20745-4</rs>, <rs type="grantNumber">2019/11214-8</rs> and <rs type="grantNumber">2018/13922-7</rs>) and the <rs type="funder">Coordenação de Aperfeiçoamento de Pessoal de Nível Superior -Brasil (CAPES)</rs>. We acknowledge the <rs type="funder">FAPESP and Shell Brazil through the 'Research Centre for Gas Innovation -RCGI'</rs> (<rs type="grantNumber">2014/50279-4</rs>), hosted by <rs type="funder">USP</rs> and support given by <rs type="funder">ANP (Brazil's National Oil, Natural Gas and Biofuels Agency)</rs> through the <rs type="funder">R&amp;D levy regulation</rs>. We would like to also acknowledge professor <rs type="person">Josef Wilhelm Baader</rs> for the kind gift of some of the reagents.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_99nKmyc">
+					<idno type="grant-number">2017/10522-5</idno>
+				</org>
+				<org type="funding" xml:id="_eyBwp2f">
+					<idno type="grant-number">2018/14425-7</idno>
+				</org>
+				<org type="funding" xml:id="_Mw9gGNw">
+					<idno type="grant-number">2018/20745-4</idno>
+				</org>
+				<org type="funding" xml:id="_W9jbvfN">
+					<idno type="grant-number">2019/11214-8</idno>
+				</org>
+				<org type="funding" xml:id="_82uJQ67">
+					<idno type="grant-number">2018/13922-7</idno>
+				</org>
+				<org type="funding" xml:id="_fDQ8FTs">
+					<idno type="grant-number">2014/50279-4</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of competing interest</head><p>All authors declare no conflicts of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>De Araujo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><forename type="last">R</forename><surname>Frasson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Ameku</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Silva</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><surname>Angnes</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">R</forename><forename type="middle">L</forename><forename type="last">C</forename><surname>Paixão</surname></persName>
+					</author>
+					<title level="a">Single-step reagentless laser scribing fabrication of electrochemical paper-based analytical devices</title>
+				</analytic>
+				<monogr>
+					<title level="j">Angew. Chem. Int. Ed</title>
+					<imprint>
+						<biblScope unit="volume">56</biblScope>
+						<biblScope unit="page" from="15113" to="15117"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Dungchai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Chailapakul</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Henry</surname></persName>
+					</author>
+					<title level="a">Electrochemical detection for paperbased microfluidics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">81</biblScope>
+						<biblScope unit="page" from="5821" to="5826"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>O</forename><surname>Amor-Gutiérrez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">Costa</forename><surname>Rama</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Costa-García</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">T</forename></persName>
+					</author>
+					<title level="a">Fernández-Abedul, Paperbased maskless enzymatic sensor for glucose determination combining ink and wire electrodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biosens. Bioelectron</title>
+					<imprint>
+						<biblScope unit="volume">93</biblScope>
+						<biblScope unit="page" from="40" to="45"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Da Costa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Tortorich</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J.-W</forename><surname>Choi</surname></persName>
+					</author>
+					<title level="a">A paper-based electrochemical sensor using inkjet-printed carbon nanotube electrodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">ECS J. Solid State Sci. Technol</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="S3044" to="S3047"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Fosdick</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Anderson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Renault</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Degregory</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Loussaert</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Crooks</surname></persName>
+					</author>
+					<title level="a">Wire, mesh, and fiber electrodes for paper-based electroanalytical devices</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">86</biblScope>
+						<biblScope unit="page" from="3659" to="3666"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Siegel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Phillips</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Wiley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Whitesides</surname></persName>
+					</author>
+					<title level="a">Thin, lightweight, foldable thermochromic displays on paper</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lab Chip</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="2775" to="2781"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Giuliani</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Benavidez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Duran</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Vinogradova</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Rios</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Garcia</surname></persName>
+					</author>
+					<title level="a">Development and characterization of carbon based electrodes from pyrolyzed paper for biosensing applications</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Electroanal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">765</biblScope>
+						<biblScope unit="page" from="8" to="15"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Nayak</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Kurra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Xia</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">N</forename><surname>Alshareef</surname></persName>
+					</author>
+					<title level="a">Highly efficient laser scribed graphene electrodes for on-chip electrochemical sensing applications</title>
+				</analytic>
+				<monogr>
+					<title level="j">Adv. Electron. Mater</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page">1600185</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Fazio</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Warner</surname></persName>
+					</author>
+					<title level="a">A review of sulphites in foods: analytical methodology and reported findings</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Addit. Contam</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="433" to="454"/>
+						<date when="1990">1990</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Guido</surname></persName>
+					</author>
+					<title level="a">Sulfites in beer: reviewing regulation, analysis and role</title>
+				</analytic>
+				<monogr>
+					<title level="m">Sci. Agric.</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="page" from="189" to="197"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName><forename>H</forename><surname>Vally</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">L</forename><forename type="last">A</forename><surname>Misso</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Madan</surname></persName>
+					</author>
+					<title level="a">Clinical effects of sulphite additives</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clin. Exp. Allergy</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="1643" to="1651"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Pisoschi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Pop</surname></persName>
+					</author>
+					<title level="a">Comparative sulfite assay by voltammetry using Pt electrodes, photometry and titrimetry: application to cider, vinegar and sugar analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Open Chem</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="1248" to="1256"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Isaac</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Livingstone</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Wain</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Compton</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Davis</surname></persName>
+					</author>
+					<title level="a">Electroanalytical methods for the determination of sulfite in food and beverages</title>
+				</analytic>
+				<monogr>
+					<title level="j">TrAC Trends Anal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="page" from="589" to="598"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Reynolds</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yuan</surname></persName>
+					</author>
+					<title level="a">Polarographic reduction of aqueous sulfur dioxide</title>
+				</analytic>
+				<monogr>
+					<title level="j">Polyhedron</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="1467" to="1473"/>
+						<date when="1986">1986</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Kolthoff</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Miller</surname></persName>
+					</author>
+					<title level="a">The reduction of sulfurous acid (sulfur dioxide) at the dropping mercury electrode</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Am. Chem. Soc</title>
+					<imprint>
+						<biblScope unit="volume">63</biblScope>
+						<biblScope unit="page" from="2818" to="2821"/>
+						<date when="1941">1941</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Da Anunciação</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Valente</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<title level="a">Use of a membraneless extraction module for the voltammetric determination of total sulfites in wine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collect. Czechoslov. Chem. Commun</title>
+					<imprint>
+						<biblScope unit="volume">75</biblScope>
+						<biblScope unit="page" from="721" to="730"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Gosman</surname></persName>
+					</author>
+					<title level="a">Polarographic studies with the dropping mercury kathode. Part X. The reduction of sulphurous acid</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collect. Czechoslov. Chem. Commun</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page" from="185" to="197"/>
+						<date when="1930">1930</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Benayada</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bessiere</surname></persName>
+					</author>
+					<title level="a">Comportement chimique et electrochimique de SO 2 dans les milieux acides phosphoriques concentres</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="593" to="596"/>
+						<date when="1985">1985</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">V</forename><surname>Čermák</surname></persName>
+					</author>
+					<title level="a">Polarographische Studie der Elektroden-und chemischen Reaktionen des Systems schwefelige Säure-Dithionige Säure II. Polarographisches verhalten der schwefeligen Säure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collect. Czechoslov. Chem. Commun</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="page" from="1871" to="1885"/>
+						<date when="1958">1958</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Jacobsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Sawyer</surname></persName>
+					</author>
+					<title level="a">Electrochemical reduction of sulfur dioxide at a mercury electrode</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Electroanal. Chem. Interfacial Electrochem</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="181" to="192"/>
+						<date when="1967">1967</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Almeida</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Guido</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Santos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Fogg</surname></persName>
+					</author>
+					<title level="a">Voltammetric determination of free and total sulfur dioxide in beer</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electroanalysis</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="587" to="590"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b21">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Magalhães</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<title level="a">Determination of free and total sulfites in wine using an automatic flow injection analysis system with voltammetric detection</title>
+					<imprint>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+				<series>
+						<title level="s">Food Addit. Contam. Part A. Chem. Anal. Control. Expo. Risk Assess</title>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="175" to="180"/>
+					</series>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Guarda</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Maciel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Wiethan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Schneider</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Do Nascimento</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Dias</surname></persName>
+					</author>
+					<title level="a">Simultaneous determination of ethanethiol, inorganic sulfide, and sulfite in wines by cathodic stripping voltammetry</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Anal. Methods</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="837" to="844"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Quijada</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Huerta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Morallón</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Vázquez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">E</forename><forename type="last">A</forename><surname>Berlouis</surname></persName>
+					</author>
+					<title level="a">Electrochemical behaviour of aqueous SO 2 at polycrystalline gold electrodes in acidic media: a voltammetric and in situ vibrational study: part 1. Reduction of SO 2 : deposition of monomeric and polymeric sulphur</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="1847" to="1862"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">V</forename><surname>Tolmachev</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">T</forename><surname>Bae</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Scherson</surname></persName>
+					</author>
+					<title level="a">In situ spectroscopic determination of faradaic efficiencies in systems with forced convection under steady state: electroreduction of bisulfite to dithionite on gold in an aqueous electrolyte</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="page" from="1149" to="1155"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Dvořák</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Dostálek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Štěrba</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Čejka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Kellner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Čulík</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Beinrohr</surname></persName>
+					</author>
+					<title level="a">Determination of total sulphur dioxide in beer samples by flow-through chronopotentiometry</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Inst. Brew</title>
+					<imprint>
+						<biblScope unit="volume">112</biblScope>
+						<biblScope unit="page" from="308" to="313"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Quijada</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Vázquez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Pérez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Aldaz</surname></persName>
+					</author>
+					<title level="a">Voltammetric behaviour of irreversibly adsorbed SO 2 on a Pt(111) electrode in sulphuric acid medium</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Electroanal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">372</biblScope>
+						<biblScope unit="page" from="243" to="250"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>A.-F</forename><surname>Enache</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Dan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Vaszilcsin</surname></persName>
+					</author>
+					<title level="a">Electrochemical oxidation of sulphite in neutral media on platinum anode</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int. J. Electrochem. Sci</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="4466" to="4478"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Streeter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Wain</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Davis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Compton</surname></persName>
+					</author>
+					<title level="a">Cathodic reduction of bisulfite and sulfur dioxide in aqueous solutions on copper electrodes: an electrochemical ESR study</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Phys. Chem. B</title>
+					<imprint>
+						<biblScope unit="volume">109</biblScope>
+						<biblScope unit="page" from="18500" to="18506"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Granados</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Maspoch</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Blanco</surname></persName>
+					</author>
+					<title level="a">Determination of sulphur dioxide by flow injection analysis with amperometric detection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Chim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">179</biblScope>
+						<biblScope unit="page" from="445" to="451"/>
+						<date when="1986">1986</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Cardwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Cattrall</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Scollary</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">C</forename><surname>Hamilton</surname></persName>
+					</author>
+					<title level="a">Determination of free sulphur dioxide in red wine by alternating current voltammetry</title>
+				</analytic>
+				<monogr>
+					<title level="j">Analyst</title>
+					<imprint>
+						<biblScope unit="volume">116</biblScope>
+						<biblScope unit="page" from="253" to="256"/>
+						<date when="1991">1991</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Scampicchio</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Lawrence</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Arecchi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Mannino</surname></persName>
+					</author>
+					<title level="a">Determination of sulfite in wine by linear sweep voltammetry</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electroanalysis</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page" from="444" to="447"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Silva</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Takeuchi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Santos</surname></persName>
+					</author>
+					<title level="a">Carbon nanotubes for voltammetric determination of sulphite in some beverages</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Chem</title>
+					<imprint>
+						<biblScope unit="volume">173</biblScope>
+						<biblScope unit="page" from="763" to="769"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Sudha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Senthil Kumar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Thangamuthu</surname></persName>
+					</author>
+					<title level="a">Simultaneous electrochemical sensing of sulphite and nitrite on acid-functionalized multi-walled carbon nanotubes modified electrodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Alloys Compd</title>
+					<imprint>
+						<biblScope unit="volume">749</biblScope>
+						<biblScope unit="page" from="990" to="999"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Ramos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Vyskočil</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<title level="a">Free sulphite determination in wine using screen-printed carbon electrodes with prior gas-diffusion microextraction</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochem. Commun</title>
+					<imprint>
+						<biblScope unit="volume">63</biblScope>
+						<biblScope unit="page" from="52" to="55"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Ramos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>Brandão</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Vyskočil</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<title level="a">Electrochemical sensing of total sulphites in beer using non-modified screen-printed carbon electrodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Inst. Brew</title>
+					<imprint>
+						<biblScope unit="volume">123</biblScope>
+						<biblScope unit="page" from="45" to="48"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><surname>Beitollahi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><surname>Mahmoudi-Moghaddam</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Tajik</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Jahani</surname></persName>
+					</author>
+					<title level="a">A modified screen printed electrode based on  La3+-doped Co3O4 nanocubes for determination of sulfite in real samples</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microchem. J</title>
+					<imprint>
+						<biblScope unit="volume">147</biblScope>
+						<biblScope unit="page" from="590" to="597"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Preecharueangrit</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Thavarungkul</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Kanatharana</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Numnuam</surname></persName>
+					</author>
+					<title level="a">Amperometric sensing of sulfite using a gold electrode coated with ordered mesoporous carbon modified with nickel hexacyanoferrate</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Electroanal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">808</biblScope>
+						<biblScope unit="page" from="150" to="159"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Winiarski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>De Barros</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Magosso</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Jost</surname></persName>
+					</author>
+					<title level="a">Electrochemical reduction of sulfite based on gold nanoparticles/silsesquioxane-modified electrode</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">251</biblScope>
+						<biblScope unit="page" from="522" to="531"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Pournaghi-Azar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Sabzi</surname></persName>
+					</author>
+					<title level="a">Electrocatalytic oxidation of sulfite on a cobalt pentacyanonitrosylferrate film modified glassy carbon electrode</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electroanalysis</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="860" to="865"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Choi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Electrocatalytic reduction of sulfur dioxide by iron phthalocyanine monolayer in acidic conditions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem. Lett</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="648" to="649"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b41">
+				<monogr>
+					<title/>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Raoof</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Ojani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Karimi-Maleh</surname></persName>
+					</author>
+
+					<title level="m">Int. J. Electrochem. Sci</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="257" to="269"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Martins</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">D</forename><surname>Popolim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">A</forename><forename type="last">F</forename><surname>Nagato</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Takemoto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Araki</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Toma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Angnes</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><forename type="middle">V</forename><forename type="last">C</forename><surname>Penteado</surname></persName>
+					</author>
+					<title level="a">Fast and reliable analyses of sulphite in fruit juices using a supramolecular amperometric detector encompassing in flow gas diffusion unit</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Chem</title>
+					<imprint>
+						<biblScope unit="volume">127</biblScope>
+						<biblScope unit="page" from="249" to="255"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Marques</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Santos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Sousa</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Bueno</surname></persName>
+					</author>
+					<title level="a">Sensitive labelfree electron chemical capacitive signal transduction for D-dimer electroanalysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">182</biblScope>
+						<biblScope unit="page" from="946" to="952"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Ricci</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Adornetto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Palleschi</surname></persName>
+					</author>
+					<title level="a">A review of experimental aspects of electrochemical immunosensors</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">84</biblScope>
+						<biblScope unit="page" from="74" to="83"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Suryanarayanan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C.-T</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K.-C</forename><surname>Ho</surname></persName>
+					</author>
+					<title level="a">Molecularly imprinted electrochemical sensors</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electroanalysis</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="1795" to="1811"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Lahcen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Amine</surname></persName>
+					</author>
+					<title level="a">Recent advances in electrochemical sensors based on molecularly imprinted polymers and nanomaterials</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electroanalysis</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="188" to="201"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><forename type="last">S</forename><surname>Couto</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Costa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Mounssef</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Fernandes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Carvalho</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><forename type="last">P</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Delerue-Matos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><forename type="last">C</forename><surname>Braga</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Moreira Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Quinaz</surname></persName>
+					</author>
+					<title level="a">Electrochemical sensing of ecstasy with electropolymerized molecularly imprinted poly(o-phenylenediamine) polymer on the surface of disposable screen-printed carbon electrodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sensors Actuators B Chem</title>
+					<imprint>
+						<biblScope unit="volume">290</biblScope>
+						<biblScope unit="page" from="378" to="386"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Rebelo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Cagide</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Borges</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Delerue-Matos</surname></persName>
+					</author>
+					<title level="a">Electrochemical sensing of the thyroid hormone thyronamine (T0AM) via molecular imprinted polymers (MIPs)</title>
+				</analytic>
+				<monogr>
+					<title level="m">Talanta</title>
+					<imprint>
+						<date when="2019">2019</date>
+						<biblScope unit="volume">194</biblScope>
+						<biblScope unit="page" from="689" to="696"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Malitesta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Mazzotta</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Picca</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Poma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Chianella</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Piletsky</surname></persName>
+					</author>
+					<title level="a">MIP sensors -the electrochemical approach</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Bioanal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">402</biblScope>
+						<biblScope unit="page" from="1827" to="1846"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Niu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wen</surname></persName>
+					</author>
+					<title level="a">Recent advances in biological sample preparation methods coupled with chromatography, spectrometry and electrochemistry analysis techniques</title>
+				</analytic>
+				<monogr>
+					<title level="j">TrAC Trends Anal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="123" to="146"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Valente</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<title level="a">Recent advances in membrane-aided extraction and separation for analytical purposes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sep. Purif. Rev</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="179" to="194"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Valente</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<title level="a">Gas-diffusion microextraction</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Sep. Sci</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="3207" to="3212"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Magalhães</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Valente</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Pacheco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Dostálek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Sýkora</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<title level="a">Analysis of aldehydes in beer by gas-diffusion microextraction: characterization by high-performance liquid chromatography-diodearray detection-atmospheric pressure chemical ionization-mass spectrometry</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Chromatogr. A</title>
+					<imprint>
+						<biblScope unit="volume">1217</biblScope>
+						<biblScope unit="page" from="3717" to="3722"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Ferreira</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Ramos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Almeida</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<title level="a">Application of gas-diffusion microextraction to solid samples using the chromatographic determination of α-diketones in bread as a case study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Analyst</title>
+					<imprint>
+						<biblScope unit="volume">140</biblScope>
+						<biblScope unit="page" from="3648" to="3653"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Cruz</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Valente</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Barros</surname></persName>
+					</author>
+					<title level="a">Application of gas-diffusion microextraction to the analysis of free and bound acetaldehyde in wines by HPLC-UV and characterization of the extracted compounds by MS/MS detection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Bioanal. Chem</title>
+					<imprint>
+						<biblScope unit="volume">403</biblScope>
+						<biblScope unit="page" from="1031" to="1037"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Ripper</surname></persName>
+					</author>
+					<title level="a">Die schweflige Säure im Weine und deren Bestimmung. (Mitteilungen aus Schmitt's Laboratorium, [Untersuchungs-Amt, chemische Versuchsstation und hygienisches Institut] zu Wiesbaden.)</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Prakt. Chemie</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="428" to="473"/>
+						<date when="1892">1892</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b57">
+				<monogr>
+					
+					<author>
+						<persName><surname>Oiv</surname></persName>
+					</author>
+					<title level="m">Compendium of International Methods of Wine and Must Analysis, 2 International Organisation of Vine and Wine</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<pubPlace>Paris, France</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Hemmingsen</surname></persName>
+					</author>
+					<title level="a">The electrochemical reaction of sulphur-oxygen compounds-part I. A review of literature on the electrochemical properties of sulphur/sulphur-oxygen compounds</title>
+				</analytic>
+				<monogr>
+					<title level="j">Electrochim. Acta</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="2775" to="2784"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b59">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Smits</surname></persName>
+					</author>
+					<title level="a">Measurement of sheet resistivities with the four-point probe</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bell Syst. Tech. J</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="711" to="718"/>
+						<date when="1958">1958</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b60">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Yilmaz</surname></persName>
+					</author>
+					<title level="a">The geometric resistivity correction factor for several geometrical samples</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Semicond</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="page">082001</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b61">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Jin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Ma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Shi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Niu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Yu</surname></persName>
+					</author>
+					<title level="a">The sheet resistance of graphene under contact and its effect on the derived specific contact resistivity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbon</title>
+					<imprint>
+						<biblScope unit="volume">82</biblScope>
+						<biblScope unit="page" from="500" to="505"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b62">
+				<monogr>
+					
+					<author>
+						<persName><forename>M</forename><surname>Salim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Hamidi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Saad</surname></persName>
+					</author>
+					<title level="m">Development of sheet resistivity on silver nanoparticle filled epoxy for electronic packaging devices</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<publisher>Elsevier</publisher>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">Ref. Modul. Mater. Sci. Mater. Eng</title>
+				</series>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

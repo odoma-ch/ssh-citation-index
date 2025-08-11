@@ -1,0 +1,1682 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Bifactor model of effortful control and impulsivity and their prospective prediction of ego resiliency</title>
+				<funder ref="#_gCsyaZH #_5e6rJDC #_S7jrWEH #_aQnwnsr">
+					<orgName type="full">National Institute on Alcohol Abuse and Alcoholism</orgName>
+				</funder>
+				<funder ref="#_Z3XsnN9">
+					<orgName type="full">National Institutes of Mental Health</orgName>
+				</funder>
+				<funder ref="#_TzmcGPm">
+					<orgName type="full">National Institute of Mental Health</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2018-11-29">2018-11-29</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Frances</forename><forename type="middle">L</forename><surname>Wang</surname></persName>
+							<email>wangfl@upmc.edu</email>
+							<idno type="ORCID">0000-0001-6548-0031</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Psychiatry</orgName>
+								<orgName type="institution">University of Pittsburgh</orgName>
+								<address>
+									<settlement>Pittsburgh</settlement>
+									<region>PA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nancy</forename><surname>Eisenberg</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Psychology</orgName>
+								<orgName type="institution">Arizona State University</orgName>
+								<address>
+									<settlement>Tempe</settlement>
+									<country>Arizona</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tracy</forename><forename type="middle">L</forename><surname>Spinrad</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">T. Denny Sanford School of Social and Family Dynamics</orgName>
+								<orgName type="institution">Arizona State University</orgName>
+								<address>
+									<settlement>Tempe</settlement>
+									<region>Arizona</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Bifactor model of effortful control and impulsivity and their prospective prediction of ego resiliency</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Personality</title>
+						<title level="j" type="abbrev">Journal of Personality</title>
+						<idno type="ISSN">0022-3506</idno>
+						<idno type="eISSN">1467-6494</idno>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<biblScope unit="volume">87</biblScope>
+							<biblScope unit="issue">5</biblScope>
+							<biblScope unit="page" from="919" to="933"/>
+							<date type="published" when="2018-11-29"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">62DEF5A9CEBB0630EB268E476679A4B4</idno>
+					<idno type="DOI">10.1111/jopy.12444</idno>
+					<note type="submission">Received: 6 May 2018 | Revised: 3 October 2018 | Accepted: 4 November 2018</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>bifactor model</term>
+					<term>effortful control</term>
+					<term>ego resiliency</term>
+					<term>impulsivity</term>
+					<term>sex differences</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Objective:</head><p>Children's effortful control and impulsivity are important predictors of the personality trait, ego resiliency (i.e., resiliency). Most researchers have not considered the fact that effortful control and impulsivity share substantial conceptual and empirical overlap, yet they also have been shown to be distinct. We tested a bifactor model of effortful control and impulsivity to characterize their shared and unique variance, the prospective prediction of resiliency by the factors of the bifactor model, and moderation by sex and age.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Method:</head><p>In a longitudinal study of children (N = 214; 76.5% non-Hispanic Caucasian, 12.2% Hispanic, 11.3% other race/ethnicity), parent-and teacher-reported effortful control and impulsivity, as well as behavioral measures of effortful control, were assessed on two occasions (T1: 4.5-8 years; T2: 6-10 years). Parent-reported resiliency was used as a covariate (T1) and the outcome (T3: 8-12 years).</p></div>
+				<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results:</head><p>The bifactor model yielded a common effortful inhibitory control factor, pure attentional control factor, and pure impulsivity factor. Pure impulsivity and pure attentional control positively predicted resiliency, but only for girls. Effortful inhibitory control did not uniquely predict resiliency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion:</head><p>Disentangling the shared and unique aspects of effortful control and impulsivity could clarify the roles they play in important outcomes, such as resiliency.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">| INTRODUCTION</head><p>The personality trait of ego resiliency (hereafter referred to as resiliency) refers to an individual's ability to modify his or her modal level of ego control (i.e., inhibition/expression of impulses, feelings, and desires) to meet the demands of the environment <ref type="bibr" target="#b4">(Block &amp; Block, 1980)</ref>. Individuals with high resiliency are able to engage in flexible problem-solving and adapt in the face of changing circumstances. Those low in resiliency may find it difficult to respond flexibly to fluctuations in their environments, tend to become disorganized or perseverate when dealing with stressors, and would be expected to have more trouble recovering from traumatic experiences. It is important to understand how children develop resiliency because low levels of this trait are associated with greater internalizing problems, externalizing problems (although this relation is less consistent; <ref type="bibr" target="#b15">Eisenberg et al., 2004;</ref><ref type="bibr" target="#b21">Huey &amp; Weisz, 1997)</ref>, and poor social competence and peer status <ref type="bibr" target="#b13">(Eisenberg, Fabes, Gurthrie, &amp; Reiser, 2000;</ref><ref type="bibr" target="#b33">Spinrad et al., 2006)</ref>. It is worth noting that resiliency is a trait distinct from the concept of resilience to adversity, which refers to a positive behavioral adaption in the face of significant adversity <ref type="bibr" target="#b24">(Masten, 2001)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1">| Temperamental predictors of resiliency</head><p>Investigators have conceptualized personality traits, such as resiliency, as having roots in temperament <ref type="bibr" target="#b28">(Rothbart, Ahadi, &amp; Evans, 2000)</ref>. Temperament has been defined as, "constitutionally-based individual differences in reactivity and regulation" <ref type="bibr" target="#b30">(Rothbart &amp; Bates, 2006, p. 100)</ref>. Effortful control is the regulatory component of temperament, which is defined as "the efficiency of executive attention-including the ability to inhibit a dominant response and/or to activate a subdominant response, to plan, and to detect errors" <ref type="bibr" target="#b30">(Rothbart &amp; Bates, 2006, p. 129)</ref>. Although impulsivity is a widely used term that has been assigned a variety of different meanings (see <ref type="bibr" target="#b41">Whiteside &amp; Lynam, 2001</ref> for a more comprehensive review), we define impulsivity as a reactive component of temperament describing one's speed of response initiation and level of surgent approach behavior <ref type="bibr" target="#b30">(Rothbart &amp; Bates, 2006)</ref>. Individuals with high levels of impulsivity may approach rewards and pursue desires in an unthinking manner, whereas individuals with very low levels of impulsivity tend to be inhibited, withdrawn, and rigid. Although impulsivity and effortful control both involve control (or lack thereof), impulsivity is considered a more involuntary and automatic form of control, whereas effortful control is considered more flexible and voluntary <ref type="bibr" target="#b15">(Eisenberg et al., 2004;</ref><ref type="bibr" target="#b27">Nigg, 2017)</ref>. Researchers also believe, and have evidence suggesting, that the overt expression of impulsive tendencies can be modulated or changed, at least to some degree, by effortful control <ref type="bibr" target="#b15">(Eisenberg et al., 2004)</ref>.</p><p>Impulsivity and effortful control have been shown to be important predictors of resiliency. Researchers have shown that children with greater effortful control are viewed by adults as higher in resiliency <ref type="bibr" target="#b8">(Cumberland-Li, Eisenberg, &amp; Reiser, 2004;</ref><ref type="bibr" target="#b14">Eisenberg, Spinrad, &amp; Morris, 2002;</ref><ref type="bibr" target="#b15">Eisenberg et al., 2004)</ref>. Children high in effortful control are skilled at regulating negative emotions when faced with aversive experiences, which potentially allows them to adapt and rebound more quickly. The relation between impulsivity and resiliency tends to be more complex. For example, findings of one study demonstrated that children (4-8 years old) with low levels of impulsivity had the lowest levels of resiliency, whereas children with average and high levels of resiliency were relatively higher in resiliency (but similar in resiliency to one another; i.e., a quadratic effect; <ref type="bibr" target="#b14">Eisenberg et al., 2002)</ref>. These findings suggest that low impulsivity undermines resiliency, possibly because children low in impulsivity react rigidly to novel stressors and lack the spontaneity to adapt to changes. <ref type="bibr" target="#b16">Eisenberg et al. (2003)</ref> also found that higher levels of ego control, which is conceptually similar to low impulsivity, was associated with poorer resiliency. However, this finding only became apparent after controlling for effortful control. Prior to controlling for effortful control, the association in the latter study had been reversed, suggesting that ego control more purely reflected the intended construct only after partialling out the confounding effect of effortful control. Indeed, high ego control likely reflects high effortful control to a certain extent because these constructs may be difficult for adult observers to distinguish. It also has been suggested that once one controls for low levels of effortful control that might be evidenced in impulsivity, what is left in the impulsivity construct is spontaneity and flexibility unrelated to lack of self-regulation (e.g., <ref type="bibr" target="#b15">Eisenberg et al., 2004)</ref>. In sum, children with lower levels of impulsivity might display lower levels of resiliency (linear or quadratic), and this relation might become more evident after controlling for effortful control. This body of research suggests that, in addition to teaching children self-regulatory skills more broadly, resiliency will be strengthened when children are taught to regulate impulsive behavior resulting from a lack of foresight (high impulsivity) as well as to regulate rigidity and inflexibility (low impulsivity).</p><p>It is important to note that we view effortful control, impulsivity, and resiliency as constructs that are correlated, but still distinct. Although resiliency has been shown to be predicted by effortful control and impulsivity, this trait is expected to be predicted by other factors as well, including other temperamental traits, learning, and the nature of contextual stressors <ref type="bibr" target="#b15">(Eisenberg et al., 2004)</ref>. In addition, resiliency specifically measures how well an individual adapts to stressful circumstances, whereas effortful control and impulsivity do not.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.2">| Overlap between effortful control and impulsivity</head><p>The present study examined the roles of childhood temperamental effortful control and impulsivity in predicting resiliency in late childhood/early adolescence. However, understanding these relations requires consideration of the fact that effortful control and impulsivity show substantial conceptual and statistical overlap. Researchers have found that effortful control and impulsivity are negatively correlated (e.g., sometimes as high as r = -0.75; <ref type="bibr" target="#b11">Eisenberg et al., 2013;</ref><ref type="bibr" target="#b39">Wang, Chassin, Eisenberg, &amp; Spinrad, 2015)</ref>. This inverse correlation seems most likely due to effortful control involving high levels of behavioral inhibitory control (the ability to effortfully inhibit behavior) whereas impulsivity suggests low inhibition of behavior. Despite this high degree of overlap, researchers also found robust evidence for their distinctiveness <ref type="bibr" target="#b11">(Eisenberg et al., 2013;</ref><ref type="bibr" target="#b27">Nigg, 2017;</ref><ref type="bibr" target="#b39">Wang et al., 2015)</ref>. Using multiple behavioral and questionnaire measures of effortful control and impulsivity, <ref type="bibr" target="#b11">Eisenberg et al. (2013)</ref> found that these two constructs loaded on different latent factors at three time points in early childhood. Effortful control and impulsivity are distinct, but correlated, constructs (see also <ref type="bibr" target="#b39">Wang et al., 2015)</ref>.</p><p>Most researchers have only tested one-, two-, or threefactor models of effortful control and impulsivity, with correlations among factors to account for the shared variance. A critical oversight in the literature, including prior studies in this sample (i.e., <ref type="bibr" target="#b15">Eisenberg et al., 2004)</ref>, is that few researchers have modeled both the high degree of shared variance between these two traits, as well as what is distinct to each. This suggests that most existing models of effortful control and impulsivity do not adequately reflect the data and may miss important conclusions about children's development. By modeling the overlap and unique aspects of effortful control and impulsivity, it may be possible to further clarify the role of self-regulation in various aspects of developmental psychopathology, such as resiliency <ref type="bibr" target="#b27">(Nigg, 2017)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3">| Utility of a bifactor model</head><p>The bifactor model can capture the overlap and unique aspects of a set of constructs. In this model, a "general" factor encompasses all of the factor indicators, and some number of "specific" factors encompass only a subset of the factor indicators <ref type="bibr" target="#b5">(Chen, West, &amp; Sousa, 2006)</ref>. In this study, we tested an a priori bifactor model of effortful control and impulsivity. This model consists of one "specific" or pure effortful control factor representing what is unique to effortful control, one "specific" or pure impulsivity factor representing what is unique to impulsivity, and one "general" factor representing the common variance in these constructs (hereafter referred to as the general control factor). Setting correlations among these factors to zero ensures that the factors represent unique variance after partialling out variance from the other factors.</p><p>Previous empirical findings support modeling the shared variance between temperament/personality traits using hierarchical factor models, in which lower-order factors are factor indicators of a higher-order "general" factor. Indeed, several studies using child and adult samples and a variety of personality/temperament models (including the Big Five) demonstrated that a general personality/temperament factor accounted for the common variance among the lower-order traits <ref type="bibr" target="#b7">(Costa &amp; McCrae, 1995;</ref><ref type="bibr" target="#b32">Rushton, Bons, &amp; Hur, 2008)</ref>. These studies support the notion that that there exists a commonality among traits lying on different dimensions that should be modeled. Note that a bifactor model is of more interest than a hierarchical model to represent the shared variance between effortful control and impulsivity. Unlike in hierarchical models, in bifactor models: (a) the magnitude of the associations among specific factors and each of its indicators can be directly assessed; (b) it is easier to examine prediction by the specific factors over and above the general factor; and (c) it can be assessed whether hypothesized specific factors are independent of the general factor <ref type="bibr" target="#b5">(Chen et al., 2006)</ref>.</p><p>Although the conceptual meaning of the shared variance between effortful control and impulsivity is unclear, it is possible that it captures an aspect of self-regulation-perhaps the ability to effortfully inhibit behavior (i.e., inhibitory control)-that adult observers are unable to disentangle when reporting on children's effortful control versus impulsivity. For example, children low on impulsivity may be viewed as effortfully regulated (whether or not they are), as are children who effortfully inhibit their behavior when it is appropriate to do so. The "specific" effortful control and impulsivity factors might also be more meaningful and robust predictors of resiliency because they represent purer measures of each construct. The results obtained using this particular method may differ in important ways from prior work in this and other samples that examined temperamental characteristics separately (e.g., <ref type="bibr" target="#b14">Eisenberg et al., 2002</ref><ref type="bibr" target="#b16">Eisenberg et al., , 2003))</ref>; if so, this would support the theoretic importance of modeling the shared and unique variance among temperamental characteristics when predicting future outcomes. Thus, we tested this bifactor model and its prediction of resiliency to clarify the meaning of the shared variance between effortful control and impulsivity and shed new light on the roles of effortful control and impulsivity in prospectively predicting children's resiliency. We modeled reporter bias in measures of effortful control, impulsivity, and resiliency, and used multiple modes of assessment, thus strengthening the interpretability of their associations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.4">| Moderation by age and sex</head><p>It is important to understand whether the pure effortful control, pure impulsivity, and general factors predict resiliency differently for younger and older children or for girls and boys. Research shows that effortful control generally increases as children get older <ref type="bibr" target="#b23">(Kochanska, Murray, &amp; Harlan, 2000;</ref><ref type="bibr" target="#b25">Murphy, Eisenberg, Fabes, Shepard, &amp; Guthrie, 1999)</ref>. Because age-related increases in effortful control might allow children to more effectively regulate impulsivity, pure impulsivity might be a less robust predictor of resiliency for older compared to younger children. Indeed, researchers suggest that the effect of impulsivity on children's externalizing problems, while controlling for effortful control, disappears at older ages (albeit still evident in zero-order correlations; <ref type="bibr" target="#b15">Eisenberg et al., 2004;</ref><ref type="bibr" target="#b35">Valiente et al., 2003)</ref>.</p><p>Few researchers have tested whether the relation between effortful control and resiliency is moderated by age. Although effortful control has sometimes predicted low levels of internalizing and externalizing problems (outcomes related to resiliency) more strongly for younger (4 years old) than for older participants (5 and 6 years old; <ref type="bibr" target="#b9">Dennis, Brotman, Huang, &amp; Gouley, 2007)</ref>, in other studies the strength of prediction by effortful control has not changed with age (internalizing and externalizing problems in 10-14 year olds; <ref type="bibr" target="#b36">Valiente et al., 2006)</ref>. It is possible that effortful control more strongly predicts outcomes in younger children, but it does not differentially predict outcomes by age starting in middle childhood. Nonetheless, none of these studies specifically examined resiliency as the outcome. It seemed possible that effortful control differentially predicts resiliency with age, but we were unsure about the exact nature of this pattern. Finally, few researchers have examined whether age moderates the relations among general temperamental or personality factors to variables such as ego resiliency. It is difficult to hypothesize whether the general control factor would be moderated by age (after the early years when effortful control is rapidly emerging) in predicting resiliency.</p><p>There are clear sex differences in effortful control and impulsivity: girls tend to have higher effortful control and lower impulsivity than do boys <ref type="bibr" target="#b18">(Else-Quest, Hyde, Goldsmith, &amp; Van Hulle, 2006)</ref>. If these mean-level differences also reflect differences in variability, effortful control and impulsivity might predict resiliency differently for boys and girls. Moreover, <ref type="bibr" target="#b6">Chuang, Lamb, and Hwang (2006)</ref> found that boys had significantly higher resiliency than did girls during childhood, but they had lower resiliency than girls in adolescence. This pattern of mean differences might indicate distinct underlying etiologies of resiliency for boys and girls, and thus, potentially different temperamental predictors. Although it seems quite possible that sex moderates the relation between temperament and resiliency, it is difficult to predict the exact nature of these interactions due to a lack of corresponding empirical literature on the topic.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.5">| The current study</head><p>The current study tested a bifactor model of effortful control and impulsivity in childhood. We hypothesized that such a model would fit the data well because research shows high correlations between these two temperamental traits (but has not explicitly modeled this shared variance), and that each of these temperamental traits is distinct <ref type="bibr" target="#b11">(Eisenberg et al., 2013;</ref><ref type="bibr" target="#b39">Wang et al., 2015)</ref>. Next, because prior studies of the same sample that used resiliency as an outcome did not capture the shared variance between effortful control and impulsivity <ref type="bibr" target="#b14">(Eisenberg et al., 2002</ref><ref type="bibr" target="#b16">(Eisenberg et al., , 2003))</ref>, we extended the literature by testing whether childhood pure effortful control, pure impulsivity, and general control factors predicted resiliency in late childhood/early adolescence, both with and without controlling for prior resiliency. This method allowed a test of whether these temperamental traits were related to resiliency over time, as well as whether these traits predicted resiliency above and beyond the stability of resiliency. We expected greater pure effortful control and pure impulsivity to predict greater resiliency. We were unsure if and how the general control factor would predict resiliency. Moderation of these paths by age and sex was tested. We tentatively hypothesized that pure impulsivity would more strongly predict resiliency for younger than for older children <ref type="bibr" target="#b35">(Valiente et al., 2003)</ref>. We did not form hypotheses about moderation by sex or whether general or effortful control factors would be moderated by age.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">| METHOD</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">| Participants</head><p>Participants were recruited for a longitudinal study <ref type="bibr" target="#b15">(Eisenberg et al., 2004)</ref> from local schools and using newspaper ads and flyers placed at after-school programs and children's stores. Prior to being chosen for participation, parents completed the Child Behavior Checklist (CBCL; <ref type="bibr" target="#b0">Achenbach, 1991a</ref><ref type="bibr" target="#b1">Achenbach, , 1991b))</ref>. All children with T scores of 60 or above on either internalizing or externalizing problems were chosen for participation <ref type="bibr" target="#b0">(Achenbach, 1991a</ref><ref type="bibr" target="#b1">(Achenbach, , 1991b))</ref>. Children with T scores below 60 were also included in the larger study and matched as closely as possible on sex, parent education and occupation, age, and race. Thus, this longitudinal sample represented a wide range of scores on the CBCL. Specifically, 55.1% of the children had a T ≥ 60 on externalizing problems and 53.7% had a T score ≥60 on internalizing (N = 214 at T1). At least partial data were available for 193 children at T2 and 185 at T3.</p><p>The current study used data from T1 (4.5-8 years old; M = 6.08, SD = 0.75), T2 (6-10 years old, M = 7.66, SD = 0.83), and T3 (8-12 years old, M = 9.74, SD = 0.93). Individuals who dropped out at both T2 and T3 assessments (n = 12) were compared against those who did not on demographic variables and measures that were available at T1. Participants who dropped out were more likely to be Native American, χ 2 (1) = 11.72, p &lt; 0.001, and to have lower parent-reported T1 resiliency, t = -2.57, p = 0.01, and lower teacher-reported attention focusing, t = -2.73, p = 0.01. See Table <ref type="table" target="#tab_0">1</ref> for sample characteristics. Note that the racial/ethnic composition of the sample roughly approximates the ethnic composition of those residing in Arizona, the geographic region in which data were collected <ref type="bibr" target="#b34">(U.S. Census Bureau, 2000)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| Procedures</head><p>At all three assessments, children and parents (typically mothers) participated in an experimental session at a university laboratory and completed questionnaires at a university laboratory or at home. Questionnaires were sent home to the other parent (if available) and returned by mail. Parents were asked permission to send questionnaires to the child's teacher. Some participants who moved continued to participate by mail. Consent or assent (the latter for younger children) was obtained from parents, children, and teachers at each assessment. Families were paid $25 at T1 and $30 at all other assessments. Children received a small prize. Approval for this study was obtained by the Institutional Review Board at Arizona State University.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">| Measures</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1">| Demographic variables</head><p>At T1, primary caregivers (henceforth referred to as parents; 94.8% mothers and 5.2% fathers) reported on children's sex, age, race/ethnicity, and their own education in years. The highest level of education obtained by mother or father was used as a covariate to index socioeconomic status (SES) because this variable might be the most stable and sensitive indicator of SES risk for youths <ref type="bibr" target="#b42">(Williams &amp; Collins, 1995;</ref>see Table <ref type="table" target="#tab_0">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2">| Children's impulsivity</head><p>At both T1 and T2, parents and teachers reported (1 = extremely untrue; 7 = extremely true) on children's impulsivity using the Child Behavior Questionnaire (CBQ; <ref type="bibr" target="#b29">Rothbart, Ahadi, Hershey, &amp; Fisher, 2001)</ref>. Some items included, "Usually rushes into an activity without thinking about it" and "Sometimes interrupts others when they are speaking." Separate parent-or teacher-reported impulsivity composites were formed at both T1 and T2 by averaging items for impulsivity. Cronbach's alpha for parent-reported impulsivity was 0.81 (T1) and 0.79 (T2) and for teacher-reported impulsivity was 0.89 (T1) and 0.84 (T2).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.3">| Children's effortful control</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>T1 and T2 CBQ</head><p>At T1 and T2, parents and teachers reported (1 = extremely untrue; 7 = extremely true) on children's attentional focusing and inhibitory control subscales of the CBQ, which are the subdimensions of effortful control <ref type="bibr" target="#b29">(Rothbart et al., 2001</ref>; e.g., "Can lower his/her voice when asked to do so" and "When watching TV, is easily distracted by other noises or movements" (latter item was reverse-coded). Eight separate parent-and teacher-reported T1 or T2 attentional focusing and inhibitory control subscales were computed by averaging the items for each of the subscales within each reporter at both T1 and T2. Cronbach's alpha for parent-reported attentional focusing was 0.91 (T1) and 0.72 (T2), for parent-reported inhibitory control as 0.84 (T1) and 0.81 (T2), for teacherreported attentional focusing was 0.85 (T1) and 0.82 (T2), and for teacher-reported inhibitory control was 0.88 (T1) and 0.90 (T2).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>T1 and T2 puzzle box task</head><p>This task assesses children's persistence in the face of a challenge and has been considered a measure of attention focusing and/or inhibitory control <ref type="bibr" target="#b12">(Eisenberg et al., 1996;</ref><ref type="bibr" target="#b15">Eisenberg et al., 2004)</ref>. It was administered at both T1 and T2. Children sat in front of a 24 in. × 12 in. × 14 in. box that contained a puzzle. The back of the box was clear Plexiglas to facilitate observations of children's hand movements, and</p><p>the front of the box was covered by a cloth that had sleeves through which children could slip their arms. This cloth could be lifted so that children could look at the puzzle. The children were told to try and put the puzzle together without looking and if they finished in 5 min at T1 or 4 min at T2, they would receive an attractive prize. Task scores reflected the amount of time the child persisted on the task rather than cheating or being off task. These scores were computed by dividing the number of seconds the child worked on the puzzle without cheating by the number of seconds the child was alone with the task. Interrater reliabilities were r = 0.99 at T1 and r = 0.96 at T2.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>T1 and T2 sitting still task</head><p>The sitting still task assessed children's ability to inhibit movements when asked to do so (because they had physiological equipment attached to their body) and has been considered a measure of effortful behavioral regulation <ref type="bibr" target="#b10">(Eisenberg et al., 2001)</ref>. At both T1 and T2, children were told that they would be watching two short films and to sit still while viewing them so the equipment did not come off.</p><p>The experimenter pretended to start the film (nothing came on) and left the room. During this time, children were left alone and videotaped for 1 min. Coders rated the movement of the left hand (where the skin conductance electrode was attached) on a 4-point scale (1 = no movement, 4 = small movements such as wiggling fingers for &gt;40 s, or two big movements, such as moving the arm). Coders also rated global body movements (heart rate electrodes were on the trunk of the body) on a 5-point scale (1 = no movement, 5 = small movements for three-fourth of the time, such as tapping feet or slightly moving head, or four big movements, such as moving the head 90° or body shifting). At T1 and T2, correlations between hand and body movements were 0.55 and 0.60, respectively (p &lt; 0.001). Interrater reliabilities for hand and body movement ratings were 0.94 and 0.99 at T1, respectively, and were both 0.77 at T2. Children's ability to sit still was computed at both T1 and T2 by standardizing and averaging scores for the hand and global body movements at each time point. Scores were reverse coded so that greater scores indicated children's greater ability to sit still (i.e., corresponding with greater levels of effortful control).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>T1 and T3 resiliency</head><p>At T1 and T3, parents reported (1 = most undescriptive, 9 = most descriptive) on children's ego resiliency (henceforth called resiliency)-viewed as a dispositional characteristicusing items derived from Block and Block's Q-sort <ref type="bibr" target="#b4">(Block &amp; Block, 1980)</ref>. The Blocks' original items, which were rated by clinicians, were further refined because the range of content was broad. Items were selected if experts in the field (faculty and students studying self-regulation and related topics) rated them as tapping resiliency, but not adjustment, social competence, or emotionality (see <ref type="bibr" target="#b12">Eisenberg et al., 1996</ref>, for details). These items were further refined to create a yet purer measure of resiliency using 10 experts' ratings of how much each item reflected pure resiliency <ref type="bibr" target="#b8">(Cumberland-Li et al., 2004)</ref>. Eleven items were retained (e.g., <ref type="bibr" target="#b16">Eisenberg et al., 2003)</ref>. Note that these procedures also served to reduce overlap of resiliency with questionnaire measures of effortful control and impulsivity, which is illustrated by their low-tomoderate intercorrelations (see Table <ref type="table" target="#tab_1">2</ref>). Cronbach's alpha was 0.71 for T1 and T3 reports of resiliency. Some items included, "Can bounce back and recover after a stressful or bad experience" and "Freezes up when things are stressful, or else keeps doing the same thing over and over again."</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.4">| Data analytic plan</head><p>Analyses were conducted in Mplus v.7.11 using maximum likelihood with robust standard errors and full information maximum likelihood <ref type="bibr" target="#b26">(Muthén &amp; Muthén, 1998-2013)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bifactor modeling</head><p>We created a bifactor model using data from multiple reporters and measurement occasions. To account for reporter-specific method variance, we modeled method factors, similar to several previous studies (e.g., <ref type="bibr" target="#b22">Keiley, Lofthouse, Bates, Dodge, &amp; Pettit, 2003;</ref><ref type="bibr" target="#b39">Wang et al., 2015)</ref>. Data from two time points (T1 and T2) were used because we wanted to capture stable and trait-like temperamental processes, avoid capturing state-like processes that could occur using only one time point, and because it allowed us to include ratings of two teachers per child, as well as the parent. The decision to combine T1 and T2 indicators is supported by the high stability of effortful control and impulsivity from T1 to T2. For example, the same parent-reported subscales assessed at T1 and T2 were highly and significantly correlated (rs = 0.60-0.81) and the same teacher-reported subscales at T1 and T2 showed significant, moderate-to-high correlations despite being reported by different teachers (rs = 0.40-0.58; see Table <ref type="table" target="#tab_1">2</ref>). Moreover, the number of indicators at T1 or T2 alone was insufficient to support model convergence; subscales (not items) were used as indicators and, for example, there were only two measures of impulsivity at each time point. The effortful control indicators were T1 and T2 parent-and teacherreported attention focusing and inhibitory control subscales, T1 and T2 puzzle box task, and T1 and T2 sitting still task (eight indicators). The impulsivity indicators were T1 and T2 parent-and teacher-reported impulsivity (four indicators).</p><p>To estimate the bifactor model, we specified that all effortful control indicators load on a pure effortful control factor, all impulsivity indicators load on a pure impulsivity factor, and all indicators load on a general control factor. To account for reporter-specific method variance, all parent-reported indicators loaded onto a parent report factor, all T1 teacher-reported indicators loaded onto a T1 teacher report factor, and all T2 teacher-reported indicators loaded onto a T2 teacher report factor (T1 and T2 teachers were not the same). Note, we did not model method-specific variance from the behavioral tasks. The puzzle box is relatively objective and would not be expected to have substantial method variance. The sitting still task was rated by a variety of different coders across each time point, suggesting little shared method variance.</p><p>The pure effortful control, pure impulsivity, and general control factors were specified to be uncorrelated with one another to establish orthogonal factors that represent unique variance after partialling out variance due to other factors. The pure and general factors were also specified to be uncorrelated with parent and teacher report factors because, by definition, trait and method factors should be uncorrelated and independent <ref type="bibr" target="#b20">(Geiser, Bishop, &amp; Lockhart, 2015)</ref>. Parent and teacher report factors were allowed to correlate because there is likely to be a relation between these method factors (e.g., all three are indicated by self-report inventories). Indicators that did not load onto their respective factors at p &lt; 0.05 were deleted from the model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Final models</head><p>We ran one model predicting T3 resiliency that did not control for T1 resiliency, which allowed us to examine relations between temperamental traits and resiliency over time. We ran a second model predicting T3 resiliency that did control for T1 resiliency to examine whether temperamental traits predicted resiliency above and beyond what could be explained by T1 resiliency. In the first model, covariates (T1 age, sex, parent education) and predictors (pure effortful control, pure impulsivity, general control factors) were entered into a first block in predicting T3 resiliency (main effect model). In a second block, the following latent variable interactions were created using the XWITH and type = random commands in Mplus and added to the model: pure effortful control-by-sex and -by-age, pure impulsivity-by-sex and -by-age, and general controlby-sex and -by-age. Nonsignificant interactions (p &lt; 0.05) were trimmed. The same procedures were followed for the second model, except we included T1 resiliency as a covariate. Given α = 0.05, this study is adequately powered (0.82) to assess the increase in explained variance due to an interaction of small effect (f 2 = 0.04). In all models we included T1 and/or T3 parent-reported resiliency on the aforementioned parent-report method factor to model this reporter-specific measurement variance. Covariates were mean-centered. Interaction terms were probed using simple slope analyses <ref type="bibr" target="#b2">(Aiken &amp; West, 1991)</ref>, calculated using the Model Constraint command in Mplus.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">| RESULTS</head><p>See Table <ref type="table" target="#tab_0">1</ref> for descriptive statistics separately by sex.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">| Zero-order correlations</head><p>Higher levels of T3 resiliency were significantly correlated with higher levels of T1 resiliency, higher levels of parent-reported effortful control, and higher levels of T1 teacher-reported inhibitory control (see Table <ref type="table" target="#tab_1">2</ref>). T3 resiliency was not correlated with any other teacher-reported temperament measures, behavioral measures, parent-reported impulsivity, age, sex, or parental education. T1 resiliency was positively related to most T1 measures (parent-reported temperament, teacher-reported effortful control, behavioral measures), but not to most T2 temperament measures (although it was positively, significantly related to both reports of inhibitory control, parents' reports of attention focusing and teachers' reports of impulsivity). Girls generally showed greater levels of effortful control and lower levels of impulsivity than boys across reporters and modes of measurement, but there was no sex difference in resiliency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">| Bifactor model</head><p>See Table <ref type="table" target="#tab_2">3</ref> for factor loadings and retained indicators for the final bifactor model of effortful control and impulsivity. For the pure effortful control factor, the only indicators that were retained (p &lt; 0.05) were T1 and T2 parent-reported attention focusing and T1 teacher-reported attention focusing. All other effortful control indicators (i.e., T1 and T2 parent-and teacher-reported inhibitory control, T2 teacher-reported attention focusing, T1 and T2 puzzle box, and T1 and T2 sitting still) were deleted from the pure effortful control factor. For the pure impulsivity factor, all four T1 and T2 parent-and teacher-reported impulsivity items were retained (p &lt; 0.05). For the general control factor, all indicators (16) were retained (p &lt; 0.05). Reporterspecific factors were significantly correlated with one another, rs = 0.43-0.51, p &lt; 0.001. Model fit was good: χ 2 (84) = 131, p &lt; 0.001, RMSEA = 0.05, CFI = 0.97, SRMR = 0.047 (note that model fit and coefficients remained nearly identical when compared to a model that retained all paths). Although some indicators loaded less than what might be considered "substantial" on their factor (e.g., standardized factor loading &lt;0.30), these indicators typically loaded above 0.30 on the other factor and/or had an R 2 that was quite high, above 0.45. Moreover, the pattern and magnitude of loadings were similar to bifactor models from a previous study <ref type="bibr" target="#b40">(Wang, Eisenberg, Valiente, &amp; Spinrad, 2016)</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">| Final models</head><p>For the model that did not control for T1 resiliency, the pure effortful control-by-sex and pure impulsivity-by-sex interactions were significant. For the model that did control for T1 resiliency, the pure impulsivity-by-sex interaction was significant. The rest of the interaction terms were trimmed. See Table <ref type="table" target="#tab_3">4</ref> for coefficients of final models and Figure <ref type="figure" target="#fig_0">1</ref> for path diagrams.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.1">| Without controlling for T1 resiliency</head><p>In the first main effects block, higher levels of pure impulsivity and pure effortful control predicted higher levels of T3 resiliency. The general control factor, age, sex, and parental education did not significantly predict T3 resiliency.</p><p>In the second interaction block, the significant pure effortful control-by-sex interaction was such that higher levels of pure effortful control predicted higher levels of T3 resiliency for girls, b = 0.55, p = 0.001, but not for boys, b = 0.08, p = 0.51. The significant pure impulsivity-by-sex interaction was such that higher levels of pure impulsivity significantly predicted higher levels of T3 resiliency for girls, b = 0.47, p &lt; 0.001, but not for boys, b = 0.06, p = 0.60.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.2">| Controlling for T1 resiliency</head><p>In the first main effects block, higher levels of T1 resiliency significantly predicted higher levels of T3 resiliency. The effect of pure effortful control on T3 resiliency tended toward but did not reach statistical significance. Pure impulsivity, general control, age, sex, and parent education did not predict T3 resiliency. In the second interaction block, the significant pure impulsivity-by-sex interaction was such that higher levels of impulsivity significantly predicted higher levels of T3 resiliency for girls, b = 0.27, p = 0.01, but not for boys, b = -0.14, p = 0.22.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| DISCUSSION</head><p>We tested a bifactor model of effortful control and impulsivity in childhood to gain a better understanding of these temperamental constructs and their overlap. In addition, we examined how these factors were related to children's resiliency. The final bifactor model fit the data well. However, only attentional focusing subscales (three of the four) loaded significantly on the pure effortful control factor of the final bifactor model. Pure impulsivity (for girls) predicted resiliency both with and without controlling for prior resiliency. In the model that did not control for earlier resiliency, pure effortful control predicted resiliency for girls only. After controlling for T1 resiliency, the effect of pure effortful control on T3 resiliency no longer held.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">| Interpretation of the common and specific factors</head><p>The bifactor model was such that all effortful control and impulsivity indicators (including behavioral measures and adult reports) loaded on the general control factor (with impulsivity loading negatively), only attentional focusing indicators (except T2 teacher-reported attentional focusing) loaded on the pure effortful control factor, and all impulsivity indicators loaded on the pure impulsivity factor. This model structure was somewhat different from our original hypotheses because we expected all effortful control items to load onto the pure effortful control factor. Because of this difference, a couple of the factors are not reflective of what they were originally named (i.e., pure effortful control, pure impulsivity and general control).</p><p>Although not originally hypothesized, in retrospect, the bifactor model findings make some sense. We conjecture that the general control factor reflects primarily effortful inhibitory control. Indeed, it is inhibitory control (or the lack thereof), especially as applied to overt, observable behavior, that is probably most in common for effortful control and impulsivity. Moreover, effortful attentional control likely contributes to the effortful inhibition of behavior, for example, by focusing on alternative courses of behavior and modulating emotion that affects the overt expression of emotion. If the general control factor does reflect effortful inhibitory control, this suggests that adults' observations of children's high impulsivity sometimes erroneously reflects low effortful inhibitory control and observations of children's low impulsivity sometimes erroneously reflects high effortful inhibitory control. Thus, the overlap between effortful control and impulsivity might partially reflect that impulsivity items pick up on low effortful inhibitory control to a certain extent. We refer to the general control factor as the "common effortful inhibitory control" factor from this point forward. The pure impulsivity factor likely reflects the remaining variance associated with impulsivity items (e.g., spontaneity), and could represent a purer version of impulsivity that does not reflect a lack of effortful control (e.g., approach-related behaviors that are not due to lack of inhibitory control).</p><p>The factor that contained the attentional focusing scales (all except T2 teacher-reported attentional focusing) is slightly more difficult to interpret. We hereafter refer to this factor as the pure attentional control factor. One hypothesis is that this pure attentional control factor reflects effortful attentional control involved in aspects of self-regulation other than the effortful inhibition of overt behavior. Indeed, effortful attentional control also contributes to the inhibition of cognitions (labeled attentional inhibition by <ref type="bibr" target="#b27">Nigg, 2017)</ref>, and this might be what is captured by the separate pure attentional control factor. Thus, children with high scores on the pure attentional control factor may be skilled at controlling cognitive interference and in regulating internal emotional states <ref type="bibr" target="#b19">(Friedman &amp; Miyake, 2004)</ref>. The pure attentional control factor could also reflect aspects of executive functioning that contribute to self-regulation, and particularly those aspects that pertain to the inhibition of cognition, perhaps allowing for cognitive flexibility (e.g., shifting one's thoughts to respond to situations in different ways; <ref type="bibr" target="#b3">Anderson, 2002)</ref>. This factor might also partly reflect the executive attention network, which is a neural substrate underlying the development of effortful control and that is responsible for monitoring and resolving conflict among other brain networks <ref type="bibr" target="#b31">(Rothbart, Sheese, &amp; Posner, 2007)</ref>. Given that executive attention likely underlies effortful control, and that aspects of executive functioning contribute to self-regulation <ref type="bibr" target="#b17">(Eisenberg &amp; Zhou, 2016)</ref>, it makes sense that items designed to measure effortful control (and particularly attentional regulation) might also tap executive attention and a variety of processes involved in self-regulation through attentional control.</p><p>However, we are unsure why T2 teacher-reported attentional focusing did not load on the pure attentional control factor. Perhaps at older ages (compared to at a younger age), internal attentional processes used to regulate cognitions and emotions are more difficult for teachers to report accurately because children become more independent in performing classroom activities. Finally, it is noteworthy that the behavioral measures used in this study (i.e., puzzle box and sitting still tasks) loaded onto the common effortful inhibitory control factor, but not the pure attentional control factor. This suggests that the puzzle box and sitting still tasks primarily reflect effortful inhibitory control and attentional control processes that serve to regulate overt behaviors at the ages assessed in this study (4.5-10 years old). Moreover, it seems that these tasks do not reflect the aspect of children's attentional control that serves to regulate internal emotions and cognitions not necessarily related to controlling overt behavior.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">| Prediction of resiliency</head><p>We also found that the childhood temperamental factors were associated with resiliency measured in late childhood/ early adolescence. The pure impulsivity factor had a main effect on resiliency, such that higher levels of pure impulsivity predicted higher levels of resiliency. This main effect did not hold after controlling for earlier resiliency. However, pure impulsivity was moderated by sex in predicting resiliency both with and without controlling for prior resiliency. Specifically, higher levels of pure impulsivity were associated with higher levels of resiliency for girls, but pure impulsivity did not significantly predict resiliency for boys. Our results are consistent with previous studies showing that that it might be low impulsivity in particular that undermines the development of resiliency, with pure impulsivity reflecting a capacity for spontaneity (e.g., <ref type="bibr" target="#b14">Eisenberg et al., 2002</ref><ref type="bibr" target="#b16">Eisenberg et al., , 2003))</ref>. It is worth noting that impulsivity and T3 resiliency were not associated in zero-order correlations (see Table <ref type="table" target="#tab_1">2</ref>). Thus, removing overlap with effortful control makes impulsivity a more robust predictor of resiliency <ref type="bibr" target="#b14">(Eisenberg et al., 2002</ref><ref type="bibr" target="#b16">(Eisenberg et al., , 2003))</ref>. Results highlight the need to rigorously distinguish among traits that are conceptually and empirically distinct but may overlap strongly with other constructs due to the measurement, such as impulsivity and effortful control. More careful attention to these issues might help elucidate the role of temperament in many outcomes of interest.</p><p>Although we did not hypothesize a sex-specific effect, perhaps pure impulsivity predicted resiliency only for girls because girls are more likely than boys to be low in impulsivity (see Table <ref type="table" target="#tab_1">2</ref>; <ref type="bibr" target="#b18">Else-Quest et al., 2006)</ref>. If the positive association between resiliency and impulsivity is only apparent at more extreme low levels of impulsivity (as found by <ref type="bibr" target="#b14">Eisenberg et al., 2002)</ref>, which is more characteristic of girls, perhaps this explains the gender-specific effect. Girls low in impulsivity may show lower resiliency because they react in more constrained ways to stressful circumstances that are novel.</p><p>The current investigation is one of few studies examining how pure effortful attentional control, which more purely reflects the attentional regulation of internal states, predicts resiliency. Without controlling prior resiliency, we found that the pure attentional control factor significantly predicted resiliency and was moderated by sex, such that higher levels of pure attentional control were associated with higher levels of resiliency for girls only. However, these effects were no longer significant after controlling for T1 resiliency. This pattern of results calls into question the directionality of this association (in regard to causality).</p><p>Nonetheless, findings from the model that did not control for T1 resiliency provide preliminary evidence that the use of pure attentional control as an internal regulatory process is important in the development of resiliency, and that these skills might be more important for girls than for boys. Perhaps pure attentional control shows some links with resiliency because it contributes to cognitive flexibility, which is the ability to switch between thoughts or think about multiple concepts simultaneously <ref type="bibr" target="#b3">(Anderson, 2002)</ref>. Deficits in this skill could lead to greater challenges in responding to new situations in different ways (perhaps especially for girls), resulting in diminished resiliency. Because attentional focusing is involved in regulating the internal experience of emotion <ref type="bibr" target="#b38">(Wadlinger &amp; Isaacowitz, 2011)</ref>, children with lower scores on the pure attentional control factor (and perhaps especially girls) might show lower resiliency because they are less able than children with higher attentional control to manage emotions when stressed. These findings require replication because they were not consistent across all models.</p><p>This is also one of few studies to examine how the effortful inhibitory control of overt behaviors, independent of effortful attentional control over purely internal states, predicts resiliency. We did not find that the common effortful inhibitory control factor uniquely predicted resiliency in any models. However, zero-order correlations showed consistent associations between effortful control subscales and resiliency. Post-hoc analyses helped reconcile this discrepancy; analyses showed that the common effortful inhibitory control factor significantly predicted resiliency prior to adding the T1 and/or T3 resiliency scales onto the parent-report method factor. The significant zero-order correlations between T1 and/or T3 resiliency and indicators of effortful control likely reflect shared reporter effects that do not persist once method variance is taken into account in the final model. Findings suggest that the ability to effortfully inhibit overt behaviors (that is independent of impulsivity and effortful attentional control) is not related to the development of resiliency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">| Differences by sex and age</head><p>The sex moderation pattern found in the current study might shed some light on the development of resiliency for boys versus girls. It is noteworthy that pure attentional control (albeit only without controlling T1 resiliency) and pure impulsivity were only predictive of resiliency for girls, but not for boys. This finding suggests that other factors, such as learning styles, experiences, and other temperamental traits might predict resiliency for boys at this age. Additionally, perhaps pure impulsivity, effortful attentional control, and/or effortful inhibitory control would predict boys' resiliency during a different developmental window. In contrast, the development of girls' resiliency at this age appears to be more reliant upon their spontaneity and, to a lesser extent, their control over internal states, but not upon their effortful inhibition of overt behaviors. It is not difficult to imagine that some girls facing stress may have the capacity to voluntarily regulate behaviors according to external demands (i.e., sitting still, following rules); however, they may remain internally distressed because they cannot spontaneously pursue other avenues to cope or effortfully re-direct attention from distressing emotions or cognitions.</p><p>Previous studies have not found similar sex differences in the prediction of resiliency by effortful control and impulsivity <ref type="bibr" target="#b8">(Cumberland-Li et al., 2004;</ref><ref type="bibr" target="#b14">Eisenberg et al., 2002</ref><ref type="bibr" target="#b15">Eisenberg et al., , 2004))</ref>. This difference might be due to our use of a multi-method and -reporter bifactor model that more accurately teases apart overlap among these temperamental traits and accounts for reporter bias. Our sex-dependent findings are in line with previous research suggesting that resiliency follows different developmental trajectories for girls and boys <ref type="bibr" target="#b6">(Chuang et al., 2006)</ref>; our findings similarly suggest that resiliency could have a distinct etiology for girls compared to boys.</p><p>Finally, we tested whether any of the factors in the bifactor model were moderated by age in predicting resiliency. Our findings suggest that these constructs do not differently predict resiliency by age. However, it is possible that age moderation was not found because of the relatively limited age range. Each wave had a 4-year age span among participants. Perhaps age differences in the prediction of resiliency appear after greater time lags. Indeed, prior research showed that the effect of impulsivity may grow stronger with age <ref type="bibr" target="#b35">(Valiente et al., 2003)</ref>. Future research should examine age moderation in a sample with greater age heterogeneity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">| Strengths, limitations, and conclusions</head><p>The current study had several limitations. We did not test three-way interactions among temperament, sex, and age due to a probable lack of power and because, although the extant literature shows that gender differences may differ by age, these effects may only emerge later in adolescence than captured in this study (e.g., <ref type="bibr" target="#b37">Wade, Cairney, &amp; Pevalin, 2002)</ref>. The lack of sufficient age heterogeneity within each wave might have limited our ability to detect age moderation. We could not test a quadratic effect of impulsivity on resiliency (as found in <ref type="bibr" target="#b14">Eisenberg et al., 2002)</ref> because this model unfortunately did not converge. Similarly, because participants who out of the study had lower teacher-reported attention focusing, a restricted range in this variable could have explained the nonsignificant loading of the teacher-reported attention focusing indicator on the pure attentional control factor. Because the current sample consisted of mostly non-Hispanic Caucasian children, results may not be generalizable to other racial/ethnic groups. Research investigating differences in these relations by race/ethnicity is warranted. Future research investigating additional outcomes that show differential prediction by the factors discovered in this study will also help clarify the meaning of the latent factors.</p><p>The current study had several strengths. We used behavioral measures coded by observers as well as parents' and teachers' reports of effortful control and impulsivity in our bifactor model. We partialled out method variance due to parent and teacher reporter bias and controlled for baseline measures of resiliency to yield prospective analyses. Our use of a bifactor model also increased understanding of the overlap between effortful control and impulsivity.</p><p>This investigation yielded several insights into the prospective effects of effortful control and impulsivity on resiliency. Effortful control and impulsivity might show overlap partly because reports of impulsivity tap low effortful inhibitory control. Questionnaire reports of attentional focusing might capture internal regulatory processes that help children control their overt behavior (i.e., effortful inhibitory control), as well as their cognitions and emotions, and these two processes might be somewhat distinct.</p><p>After disentangling effortful inhibitory control, impulsivity, and attentional control, their prediction of resiliency was somewhat different than in the previous literature and dependent upon sex. The pure impulsivity factor, and, to a lesser extent, the pure attentional control factor, predicted girls' resiliency, suggesting that resiliency is more determined by girls' control-related temperamental traits. None of the factors predicted resiliency for boys, suggesting that other variables may be more prominent in the development of boys' resiliency at this age. Results suggest that teaching girls to be more flexible and spontaneous in the face of stress, as well as strategies to employ attentional control, may foster greater resiliency; more research is needed to understand how to improve boys' resiliency. Disentangling the common and unique aspects of temperamental traits may be an important step toward illuminating the role of temperament in the development of future outcomes.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figures depicting results from the final two models. Figure 1a does not control T1 resiliency whereas Figure 1b does. Solid lines indicate statistically significant paths and dashed lines indicate non‐statistically significant paths. Text overlaying paths signifies if the effect was significant only for females (i.e., significant sex moderation). Pure effortful control was subsequently renamed pure attentional control in the discussion section</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Descriptive Statistics</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Zero‐order correlations</figDesc><note><p>Note. Resil: resiliency. IMP: impulsivity. Puzzle: puzzle box task. (P): parent‐reported. (T): teacher‐reported. Sex: 0 = female, 1 = male.</p><p>p &lt; 0.10. *p &lt; 0.05. **p &lt; 0.01.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Bifactor model</figDesc><note><p>Note. Correlations among latent factors are discussed in the Results section. Numbers shown in parentheses are standard errors. P: parent‐report. T: teacher‐report. “–”: not estimated.</p><p>a In the discussion, the “pure effortful control” factor was subsequently renamed the “pure attentional control” factor to better represent the pattern of factor loadings.</p><p>b In the discussion, the “general control” factor was subsequently renamed the “common effortful inhibitory control” factor to better represent the pattern of factor loadings. *p &lt; 0.05.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Final model results</figDesc><note><p>Note. “–”: Not estimated. Sex: 0 = female, 1 = male. In the interaction model, the effect of variables that interact with sex represent the effect for females. Unstandardized coefficients are presented because standardized results are not available when using the type = random command. Absolute model fit statistics are unavailable when using type = random in Mplus to accommodate latent variable interactions.</p><p>a In the discussion, the “pure effortful control” factor was subsequently renamed the “pure attentional control” factor. bIn the discussion, the “general control” factor was subsequently renamed the “common effortful inhibitory control” factor. † p &lt; 0.10. *p &lt; 0.05. **p &lt; 0.001.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>This work was supported by grants from the <rs type="funder">National Institutes of Mental Health</rs> to <rs type="person">Nancy Eisenberg</rs> and <rs type="person">Tracy Spinrad</rs> (<rs type="grantNumber">R01 MH60838</rs>) and the <rs type="funder">National Institute on Alcohol Abuse and Alcoholism</rs> to <rs type="person">Frances Wang</rs> (<rs type="grantNumber">F31 AA023128</rs>; <rs type="grantNumber">T32 AA007453</rs>).</p></div>
+			</div>
+			<div type="funding">
+<div><p><rs type="funder">National Institute on Alcohol Abuse and Alcoholism</rs>, Grant/Award Number: <rs type="grantNumber">F31 AA023128</rs> and <rs type="grantNumber">T32/AA007453</rs>; <rs type="funder">National Institute of Mental Health</rs>, Grant/Award Number: <rs type="grantNumber">R01 MH60838</rs></p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Z3XsnN9">
+					<idno type="grant-number">R01 MH60838</idno>
+				</org>
+				<org type="funding" xml:id="_gCsyaZH">
+					<idno type="grant-number">F31 AA023128</idno>
+				</org>
+				<org type="funding" xml:id="_5e6rJDC">
+					<idno type="grant-number">T32 AA007453</idno>
+				</org>
+				<org type="funding" xml:id="_S7jrWEH">
+					<idno type="grant-number">F31 AA023128</idno>
+				</org>
+				<org type="funding" xml:id="_aQnwnsr">
+					<idno type="grant-number">T32/AA007453</idno>
+				</org>
+				<org type="funding" xml:id="_TzmcGPm">
+					<idno type="grant-number">R01 MH60838</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONFLICT OF INTERESTS</head><p>The authors declared no potential conflicts of interest with respect to the research, authorship, and/or publication of this article.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="manual" xml:id="b0">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Achenbach</surname>
+					<forename type="first">T</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="m">Integrative guide for the 1991 CBCL/4–18, YSR, and TRF profiles</title>
+			<imprint>
+				<publisher>University of Vermont Department of Psychiatry</publisher>
+				<date when="1991">1991a</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="manual" xml:id="b1">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Achenbach</surname>
+					<forename type="first">T</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="m">Manual for the Child Behavior Checklist/4–18 and 1991 profile</title>
+			<imprint>
+				<publisher>University of Vermont Department of Psychiatry</publisher>
+				<date when="1991">1991b</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b2">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Aiken</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>West</surname>
+					<forename type="first">S</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="m">Multiple regression: Testing and interpreting interactions</title>
+			<imprint>
+				<publisher>Sage</publisher>
+				<pubPlace>Newbury Park, CA</pubPlace>
+				<date when="1991">1991</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Anderson</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Assessment and development of executive function (EF) during childhood</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child Neuropsychology</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="71" to="82"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Block</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Block</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">The role of ego‐control and ego resiliency in the organization of behavior</title>
+		</analytic>
+		<monogr>
+			<title level="m">Minnesota symposium on child psychology</title>
+			<editor>
+				<persName>
+					<surname>Collins</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Erlbaum</publisher>
+				<pubPlace>Hillsdale, NJ</pubPlace>
+				<date when="1980">1980</date>
+				<biblScope unit="page" from="39" to="101"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">F</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>West</surname>
+					<forename type="first">S</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sousa</surname>
+					<forename type="first">K</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">A comparison of bifactor and second‐order models of quality of life</title>
+		</analytic>
+		<monogr>
+			<title level="j">Multivariate Behavioral Research</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">41</biblScope>
+				<biblScope unit="page" from="189" to="225"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chuang</surname>
+					<forename type="first">S</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lamb</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hwang</surname>
+					<forename type="first">C</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Personality development from childhood to adolescence: A longitudinal study of ego‐control and ego‐resiliency in Sweden</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Behavioral Development</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="338" to="343"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Costa</surname>
+					<forename type="first">P</forename><forename type="middle">T</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McCrae</surname>
+					<forename type="first">R</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Domains and facets: Hierarchical personality assessment using the revised NEO personality inventory</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Personality Assessment</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">64</biblScope>
+				<biblScope unit="page" from="21" to="50"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cumberland‐Li</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Relations of young children’s agreeableness and resiliency to effortful control and impulsivity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Social Development</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="193" to="212"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dennis</surname>
+					<forename type="first">T</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brotman</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huang</surname>
+					<forename type="first">K</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gouley</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Effortful control, social competence, and adjustment problems in children at risk for psychopathology</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Clinical Child and Adolescent Psychology</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="442" to="454"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cumberland</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shepard</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guthrie</surname>
+					<forename type="first">I</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of regulation and emotionality to children’s externalizing and internalizing problem behavior</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child development</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">72</biblScope>
+				<biblScope unit="page" from="1112" to="1134"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Edwards</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sallquist</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eggum</surname>
+					<forename type="first">N</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Are effortful and reactive control unique constructs in young children?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Developmental Psychology</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="2082" to="2094"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guthrie</surname>
+					<forename type="first">I</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murphy</surname>
+					<forename type="first">B</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maszk</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holmgren</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suh</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of regulation and emotionality to problem behavior in elementary school children</title>
+		</analytic>
+		<monogr>
+			<title level="j">Development and Psychopathology</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="141" to="162"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gurthrie</surname>
+					<forename type="first">I</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Dispositional emotionality and regulation: Their role in predicting quality of social functioning</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Personality and Social Psychology</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">78</biblScope>
+				<biblScope unit="page" from="136" to="157"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Morris</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Regulation, resiliency, and quality of social functioning</title>
+		</analytic>
+		<monogr>
+			<title level="j">Self and Identity</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="121" to="128"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cumberland</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shepard</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thompson</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of effortful control and impulsivity to children’s resiliency and adjustment</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child Development</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">75</biblScope>
+				<biblScope unit="page" from="25" to="46"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Valiente</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename type="first">C</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shepard</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cumberland</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of effortful control and ego control to children’s resiliency and social functioning</title>
+		</analytic>
+		<monogr>
+			<title level="j">Developmental Psychology</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="761" to="776"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<title level="a">Conceptions of executive functioning and regulation: When and to what degree do they overlap?</title>
+		</analytic>
+		<monogr>
+			<title level="m">Executive function in preschool age children: Integrating measurement, neurodevelopment and translational research</title>
+			<editor>
+				<persName>
+					<surname>Griffin</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Freund</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>McCardle</surname>
+					<forename>P</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>American Psychological Association</publisher>
+				<pubPlace>Washington, DC</pubPlace>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Else‐Quest</surname>
+					<forename type="first">N</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hyde</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goldsmith</surname>
+					<forename type="first">H</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Hulle</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Gender differences in temperament: A meta‐ analysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychological Bulletin</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">132</biblScope>
+				<biblScope unit="page" from="33" to="72"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Friedman</surname>
+					<forename type="first">N</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Miyake</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">The relations among inhibition and interference control functions: A latent‐variable analysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Experimental Psychology: General</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">133</biblScope>
+				<biblScope unit="page" from="101" to="135"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Geiser</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bishop</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lockhart</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Collapsing factors in multitrait‐multimethod models: Examining consequences of a mismatch between measurement design and model</title>
+		</analytic>
+		<monogr>
+			<title level="j">Frontiers in Psychology</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">6</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Huey</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weisz</surname>
+					<forename type="first">J</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Ego control, ego resiliency, and the Five‐Factor Model as predictors of behavioral and emotional problems in clinic‐referred children and adolescents</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Abnormal Psychology</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">106</biblScope>
+				<biblScope unit="page" from="404" to="415"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Keiley</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lofthouse</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bates</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dodge</surname>
+					<forename type="first">K</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pettit</surname>
+					<forename type="first">G</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Differential risks of covarying and pure components in mother and teacher reports of externalizing and internalizing behavior across ages 5 to 14</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Abnormal Child Psychology</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="267" to="283"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kochanska</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murray</surname>
+					<forename type="first">K</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Harlan</surname>
+					<forename type="first">E</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">Effortful control in early childhood: Continuity and change, antecedents, and implications for social development</title>
+		</analytic>
+		<monogr>
+			<title level="j">Developmental Psychology</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="220" to="232"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Masten</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Ordinary magic: Resilience processes in development</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Psychologist</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">56</biblScope>
+				<biblScope unit="page" from="227" to="238"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Murphy</surname>
+					<forename type="first">B</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shepard</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guthrie</surname>
+					<forename type="first">I</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Consistency and change in children’s emotionality and regulation: A longitudinal study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Merrill‐Palmer Quarterly</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="413" to="444"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b26">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Muthén</surname>
+					<forename type="first">L</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Muthén</surname>
+					<forename type="first">B</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="m">MPlus user’s guide</title>
+			<imprint>
+				<publisher>Author</publisher>
+				<date from="1998" to="2013">1998–2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nigg</surname>
+					<forename type="first">J</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">On the relations among self‐regulation, self‐control, executive functioning, effortful control, cognitive control, impulsivity, risk‐taking, and inhibition for developmental psychopathology</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Child Psychology and Psychiatry</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">58</biblScope>
+				<biblScope unit="page" from="361" to="363"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rothbart</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ahadi</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Evans</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Temperament and personality: Origins and outcomes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Personality and Social Psychology</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">78</biblScope>
+				<biblScope unit="page" from="122" to="135"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rothbart</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ahadi</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hershey</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fisher</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Investigations of temperament at three to seven years: The children’s behavior questionnaire</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child Development</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">72</biblScope>
+				<biblScope unit="page" from="1287" to="1604"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rothbart</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bates</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Temperament</title>
+		</analytic>
+		<monogr>
+			<title level="m">Handbook of child psychology: Vol. 3. Social, emotional, and personality development</title>
+			<editor>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Damon</surname>
+					<forename>W</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Lerner</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>John Wiley &amp; Sons Inc</publisher>
+				<pubPlace>Hoboken, NJ</pubPlace>
+				<date when="2006">2006</date>
+				<biblScope unit="page" from="99" to="166"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rothbart</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sheese</surname>
+					<forename type="first">B</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Posner</surname>
+					<forename type="first">M</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Executive attention and effortful control: Linking temperament, brain networks, and genes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child Development Perspectives</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="2" to="7"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rushton</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bons</surname>
+					<forename type="first">T</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hur</surname>
+					<forename type="first">Y</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">The genetics and evolution of the general factor of personality</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Research in Personality</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="1173" to="1185"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cumberland</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Valiente</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shepard</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guthrie</surname>
+					<forename type="first">I</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of temperamentally based control processes to children’s social competence: A longitudinal study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Emotion</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="498" to="510"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+
+	<biblStruct type="webpage" xml:id="b34">
+		<monogr>
+			<author>U.S. Census Bureau</author>
+			<title level="m">Census 2000 data for the state of Arizona</title>
+			<ref src="https://www.census.gov/census2000/states/az.html">https://www.census.gov/census2000/states/az.html</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Valiente</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename type="first">C</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabes</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Losoya</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murphy</surname>
+					<forename type="first">B</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">The relations of effortful control and reactive control to children’s externalizing problems: A longitudinal assessment</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Personality</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="1171" to="1196"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Valiente</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reiser</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cumberland</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Losoya</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liew</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Relations among mothers’ expressivity, children’s effortful control, and their problem behaviors: A four‐year longitudinal study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Emotion</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="459" to="472"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wade</surname>
+					<forename type="first">T</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cairney</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pevalin</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Emergence of gender differences in depression during adolescence: National panel results from three countries</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of the American Academy of Child &amp; Adolescent Psychiatry</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">41</biblScope>
+				<biblScope unit="page" from="190" to="198"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wadlinger</surname>
+					<forename type="first">H</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Isaacowitz</surname>
+					<forename type="first">D</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Fixing our focus: Training attention to regulate emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Personality and Social Psychology Review</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="75" to="102"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chassin</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Effortful control predicts adolescent antisocial‐aggressive behaviors and depressive symptoms: Co‐occurrence and moderation by impulsivity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Child Development</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="1812" to="1829"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Valiente</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinrad</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Role of temperament in early adolescent pure and co‐occurring internalizing and externalizing problems using a bifactor model: Moderation by parenting and gender</title>
+		</analytic>
+		<monogr>
+			<title level="j">Development and Psychopathology</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="1487" to="1504"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Whiteside</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lynam</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">The five factor model and impulsivity: Using a structural model of personality to understand impulsivity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Personality and individual differences</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="669" to="689"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Williams</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collins</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">US socioeconomic and racial differences in health: Patterns and explanations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annual Review of Psychology</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="349" to="386"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

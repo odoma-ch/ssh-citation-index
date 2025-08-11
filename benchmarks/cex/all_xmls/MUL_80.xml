@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Use of Natural Language Processing to identify Obsessive Compulsive Symptoms in patients with schizophrenia, schizoaffective disorder or bipolar disorder</title>
+				<funder ref="#_VkCM4xQ">
+					<orgName type="full">Medical Research Council</orgName>
+				</funder>
+				<funder ref="#_mxhePWE">
+					<orgName type="full">Maudsley Charity</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">National Institute for Health Research</orgName>
+					<orgName type="abbreviated">NIHR</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Clinical Record Interactive Search</orgName>
+					<orgName type="abbreviated">CRIS</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Guy's and St Thomas' Charity</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer Science and Business Media LLC</publisher>
+				<availability>
+					<licence target="http://creativecommons.org/licenses/by/4.0/"><p>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</p></licence>
+				</availability>
+				<date type="published" when="2019-10-02">2019-10-02</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">David</forename><surname>Chandran</surname></persName>
+							<email>david.chandran@kcl.ac.uk</email>
+							<idno type="ORCID">0000-0002-0123-666X</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Deborah</forename><forename type="middle">Ahn</forename><surname>Robbins</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Chin-Kuo</forename><surname>Chang</surname></persName>
+							<idno type="ORCID">0000-0002-8338-7196</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Health and Welfare</orgName>
+								<orgName type="institution">University of Taipei</orgName>
+								<address>
+									<settlement>Taipei City</settlement>
+									<country>Taiwan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hitesh</forename><surname>Shetty</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">South London and Maudsley NHS Foundation Trust</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jyoti</forename><surname>Sanyal</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">South London and Maudsley NHS Foundation Trust</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Johnny</forename><surname>Downs</surname></persName>
+							<idno type="ORCID">0000-0002-8061-295X</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">South London and Maudsley NHS Foundation Trust</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marcella</forename><surname>Fok</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michael</forename><surname>Ball</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Richard</forename><surname>Jackson</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Robert</forename><surname>Stewart</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">South London and Maudsley NHS Foundation Trust</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hannah</forename><surname>Cohen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jentien</forename><forename type="middle">M</forename><surname>Vermeulen</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Psychiatry</orgName>
+								<orgName type="institution">University of Amsterdam</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Frederike</forename><surname>Schirmbeck</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Psychiatry</orgName>
+								<orgName type="institution">University of Amsterdam</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="institution">Arkin Institute for Mental Health</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lieuwe</forename><surname>De Haan</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Psychiatry</orgName>
+								<orgName type="institution">University of Amsterdam</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="institution">Arkin Institute for Mental Health</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Richard</forename><surname>Hayes</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Psychiatry, Psychology, and Neuroscience</orgName>
+								<orgName type="institution">Kings College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Use of Natural Language Processing to identify Obsessive Compulsive Symptoms in patients with schizophrenia, schizoaffective disorder or bipolar disorder</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Scientific Reports</title>
+						<title level="j" type="abbrev">Sci Rep</title>
+						<idno type="eISSN">2045-2322</idno>
+						<imprint>
+							<publisher>Springer Science and Business Media LLC</publisher>
+							<biblScope unit="volume">9</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<date type="published" when="2019-10-02"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">83459C47C3C033463B53C623A3D2868F</idno>
+					<idno type="DOI">10.1038/s41598-019-49165-2</idno>
+					<note type="submission">Received: 5 September 2018 Accepted: 15 August 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>obsessive and compulsive Symptoms (ocS) or obsessive compulsive Disorder (ocD) in the context of schizophrenia or related disorders are of clinical importance as these are associated with a range of adverse outcomes. natural Language processing (nLp) applied to electronic Health Records (eHRs) presents an opportunity to create large datasets to facilitate research in this area. this is a challenging endeavour however, because of the wide range of ways in which these symptoms are recorded, and the overlap of terms used to describe ocS with those used to describe other conditions. We developed an nLp algorithm to extract ocS information from a large mental healthcare eHR data resource at the South London and Maudsley nHS foundation trust using its clinical Record interactive Search (cRiS) facility. We extracted documents from individuals who had received a diagnosis of schizophrenia, schizoaffective disorder, or bipolar disorder. These text documents, annotated by human coders, were used for developing and refining the NLP algorithm (600 documents) with an additional set reserved for final validation (300 documents). The developed NLP algorithm utilized a rules-based approach to identify each of symptoms associated with ocS, and then combined them to determine the overall number of instances of ocS. After its implementation, the algorithm was shown to identify ocS with a precision and recall (with 95% confidence intervals) of 0.77 (0.65-0.86) and 0.67 (0.55-0.77) respectively. the development of this application demonstrated the potential to extract complex symptomatic data from mental healthcare eHRs using nLp to facilitate further analyses of these clinical symptoms and their relevance for prognosis and intervention response.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The increasing use of electronic health records (EHRs) across health services provides opportunities for research using real world data <ref type="bibr" target="#b0">1</ref> . However, there are challenges to realizing the potential of EHRs in research. For example, whilst some information is recorded in structured fields, often useful contextual information, such as description of symptoms, is embedded in free text <ref type="bibr" target="#b1">2</ref> . Information from free text fields can be extracted and coded manually to generate datasets which can be analyzed for research, but this is not feasible on a large scale. Consequently, the advantages of conducting studies on a larger scale are lost: for example, the statistical power to look at rare exposures or outcomes, and the ability to control for multiple potential confounders. An alternative to manually coding free text fields is to develop automated approaches through the application of Natural Language Processing (NLP).</p><p>NLP approaches have been used previously to facilitate a number of studies using EHRs <ref type="bibr" target="#b2">3</ref> , although the technique is still at a relatively early stage of application. NLP algorithms take into account the linguistic context around words and phrases of interest and go beyond a simple keyword search of the text: for example, distinguishing between instances where a patient is described as experiencing a particular symptom from instances where the texts states that the patient is not experiencing that symptom, or where it is someone else (e.g. a friend or relative) who is experiencing that specific symptom. A key word count would not be capable of making such distinctions. NLP applications can be developed using machine learning and rules based approaches, each with its own advantages and drawbacks in relation to specific problems.</p><p>Machine learning in the context of NLP refers to an automated method of creating an NLP application <ref type="bibr" target="#b3">4</ref> . It involves an annotated set of training data being utilized by various algorithms to create models to classify future documents <ref type="bibr" target="#b4">5</ref> . The time taken for the algorithm to create this model and to apply the model to future issues varies based on a wide range of factors; however, a machine learning approach takes substantially less time to develop than a rules-based approach.</p><p>In contrast, rule based approaches involve a human coder manually analyzing training data and creating rules based on their observations of the data <ref type="bibr" target="#b5">6</ref> , these rules are then implemented programmatically. This can be a challenging task, as the rules created need to be broad enough to ensure that they are applied to all the required instances, but not excessively broad as might lead to the rules being incorrectly applied. An advantage to the rules based approach is that it, arguably, allows for rules to be created for substantially more complex problems than most machine learning algorithms would be able to solve (particularly with similarly sized datasets) <ref type="bibr" target="#b6">7</ref> .</p><p>NLP applications can operate with a high degree of precision (positive predictive value) and recall (sensitivity) although this can vary considerably between applications <ref type="bibr" target="#b7">8</ref> . Variation in performance of NLP applications may relate in part to the complexity of the task being undertaken <ref type="bibr" target="#b8">9</ref> . As EHRs continue to be exploited for research, NLP is being applied to increasingly subtle and complex tasks <ref type="bibr" target="#b9">10</ref> .</p><p>In this paper, we describe the development of an NLP application for extracting data on obsessive compulsive symptoms (OCS) and obsessive compulsive disorder (OCD) from free text in EHRs in patients with schizophrenia, schizoaffective or bipolar disorders, using a rules-based approach. In the context of schizophrenia, OCS can be defined as persistent, repetitive, intrusive, and distressful thoughts (obsessions) not related to the patient's delusions or repetitive, goal-directed rituals (compulsions) clinically distinguishable from schizophrenic mannerisms or posturing <ref type="bibr" target="#b10">11</ref> . For the purposes of this investigation we define OCD patients as a subset of OCS patients where a clinician has recognised that these symptoms are of sufficient severity, duration, or cause sufficient functional impairment that a clinical diagnosis of a disorder is given. OCS are relatively common in schizophrenia or related disorders and are associated with depressive symptoms and poorer functioning <ref type="bibr" target="#b11">12</ref> . There are a number of challenges inherent in identifying co-morbid OCS from clinical record for this patient group. For example, the terms used to describe OCS (such as obsession and compulsion) are not specific to these symptoms and these symptoms need to be distinguished from other aspects of these disorders. This study provides an example of the development of an NLP algorithm for a relatively complex task using a large psychiatric EHRs database. We describe obstacles and solutions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Setting.</head><p>The data used to develop the NLP algorithm for extracting OCS were obtained from the South London and Maudsley NHS Foundation Trust (SLaM) which is a near-monopoly secondary mental healthcare service provider to 1.36 million residents in four boroughs of south London (Croydon, Lambeth, Lewisham and Southwark), as well as providing some national tertiary mental healthcare services. The SLaM Biomedical Research Centre (BRC), supported by National Institute for Health Research funding, provides anonymised electronic clinical records from the SLaM Case Register for research purposes through the BRC Clinical Record Interactive Search (CRIS) system. The CRIS system was developed in 2008 and accesses full EHRs across all SLaM services since 2007, including both structured and open-text fields, currently on more than 300,000 service users. A detailed description of CRIS and its development is described elsewhere <ref type="bibr" target="#b6">7</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethics statement.</head><p>The CRIS data resource received appropriate research ethics approval as a de-identified database for secondary analyses from Oxford Research Ethics Committee C (reference 08/H0606/71 + 5) and the authors can confirm that the study presented here was performed in accordance with the guidelines and regulations set out in this approval.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Inclusion criteria.</head><p>To develop and test the OCS NLP algorithm, data extracts were obtained for individuals who were aged 15 years or older at the time of their first severe mental illness (SMI) diagnosis date within the observation period (from 1 January 2007 to 31 December 2015) and who had received a diagnosis (ICD-10 code) of schizophrenia (F20), schizoaffective disorder (F25), or bipolar disorder (F31) during the observation period. Diagnoses were obtained from structured fields and also from unstructured free text using a previously validated NLP algorithm, described elsewhere <ref type="bibr" target="#b12">13</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Definition of OCS.</head><p>As mentioned above, in this study OCS were defined according to the Structured Clinical Interview for DSM Disorders-Patient (SCID-P) <ref type="bibr" target="#b13">14</ref> as 'persistent, repetitive, intrusive, and distressful thoughts (obsessions) not related to the patient's delusions, or repetitive, goal-directed rituals (compulsions) clinically distinguishable from schizophrenic mannerisms or posturing". As such, individuals whose obsessional thoughts or compulsions were related to psychotic content of thoughts or delusions were not considered to have comorbid OCS <ref type="bibr" target="#b8">9</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Extracting data for training and validation of the algorithm.</head><p>Data were extracted from EHRs for training and development of the algorithm from those individuals who met the inclusion criteria. To avoid reading and coding a substantial volume of unrelated documents we applied a filter such that we only extracted documents containing specific key terms. Although, once developed, an NLP algorithm can be substantially more sophisticated than a key word search, the development process may include keyword searchers. In this instance a set of key terms were selected which were potentially broad enough to cover all the records that mentioned OCS. The Yale Brown Obsessive Compulsive Scale (Y-BOCS) <ref type="bibr" target="#b14">15</ref> was used as a guide to select these key words. The following key words terms (as shown in table <ref type="table" target="#tab_0">1</ref>) were used to filter the EHRs:</p><p>• OCD (and variations such as O.C.D)</p><p>• Obsess (and variations such as "obsessional" and "obsessive"</p><p>• Compulsive (and variations such as "compulsion", "compulsiveness" and "compelled")</p><p>• Ritual (and variations such as "ritualistic")</p><p>• Hoard (and variations such as "hoarding" or "hoarded")</p><p>• The presence of any of the YBOCS key terms.</p><p>• The presence of any of the Patient Insight Key terms.</p><p>Through applying the filter, a random sample of 900 documents that contained at least one of the terms shown in Table <ref type="table" target="#tab_0">1</ref> (including patient notes and correspondence), with one document per unique patient, were randomly extracted from the anonymised EHRs. This sample was then divided into a training set (600 documents) and a validation set (300 documents). These documents contained multiple instances of references to OCS, with each document containing at least one instance, with no upper limit. Text strings around each key word (described above) were extracted from these documents. Each text string included the keyword and the sentence which contained this key word plus two sentences either side of the key word sentence. This was to ensure that any contextual information contained in the surrounding sentences could be incorporated into the NLP algorithm. In some instances, the text strings comprised fewer than five sentences due to there being less than two sentences before and/or after the keyword sentence in that particular document.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Developing manual coding rules.</head><p>The training and validation sets of documents were then manually coded according to a predetermined set of manual coding rules which were developed using the Y-BOCS as a guide. An approach taken when developing the manual coding rules for identifying OCS in text strings has been outlined in appendices A and B. For example, if the text mentioned that the patient had both obsessions and compulsions, then the patient was classified as having OCS. However, if the text only mentioned obsessions or compulsions (but not both terms) this was only considered OCS if the text also listed specific examples found in the Y-BOCS, such as checking or cleaning, or described intrusive, ego-dystonic thoughts. There were a number of reasons for this conservative approach: firstly, clinical text may be produced by a range of different health professionals or may describe a patient's belief about themselves and secondly, the terms obsession or compulsion are used in a wide range of contexts beyond OCS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Annotating training and validation data sets.</head><p>The training dataset consisted of 600 documents (containing at least one of the key words) which were manually annotated by two annotators (DA, RH) individually annotating each of the records. After the annotations were completed, the results were compared, and individual points of disagreement were identified. To resolve these points of disagreement, a discussion occurred between the two annotators, under the supervision on an arbitrator (DC) to ensure that the process did not give one of the annotators an undue level of input. Inter-annotator reliability between the two annotators produced observed agreement of 92.0% (Cohen's κ of 0.80), indicating good inter-annotator agreement in determining the OCS coding rules.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Development of an nLp algorithm for extracting ocS.</head><p>The training data were used to create classification rules needed to build the algorithm. The algorithm was developed using Generalized Architecture for Text Engineering (GATE). which includes a suite of tools for the development of NLP rules which are based on JAPE. JAPE is a unique, Java based, NLP scripting language that is native to GATE. It allows users to generate rules with very high levels of complexity. The manual coding rules which had been applied to annotate the training set were combined with observations of the annotated training set data to create a set of broad rules in JAPE which were then integrated into the application. This involved developing sets of exclusion rules and inclusion rules. Inclusion rules, determined the patterns of text required for an instance to be classed as positive, in the absence of exclusion rules. Exclusion rules used sets of exclusion terms, which would lead to an instance being classed as a negative (these are terms such as negations, or experiencers that are not the patient themselves). The algorithm involved the following steps (Table <ref type="table" target="#tab_1">2</ref> contains terms that were used in the exclusion of terms as described in steps 4-8)</p><p>1. Splitting the text on a sentence by sentence level</p><p>2. Finding the presence of a possible OCS reference (in the context of the particular app) within the text.</p><p>3. Check for a combination of terms that would indicate an instance of OCS, as in the context of the particular app (e.g. the Hoarding app identifies an instance of Hoarding as an OCS symptom).</p><p>4. Exclude all instances wherein the text was characteristic of prompt questions within a clinical questionnaire. Specifically, the algorithm identified all combinations of words and punctuation that were unique to forms (which were determined through analysis of the training data). If any instances contained any of these combinations, they were excluded. In the context of the extracted data, there were very few cases of these.</p><p>5. Exclude any instances wherein the sentence contains any negating terms. Each of the five apps had a specific set of negating terms. Through an examination of the training data, a list of negating words and phrases were determined. Any instance that contained any of these words and phrases were excluded.</p><p>6. Exclude any instances wherein terms referring to experiencers who were not the subject (such as terms referring to family members or friends), appeared in the sentence. This was done through the determining a list of terms that could refer to an individual other than the patient (including terms for family members or friends or romantic partners). Any instance that contained one of these instances was excluded.</p><p>7. Exclude any instances where there were references to uncertainty about the diagnosis (as the aim of the application was to identify definite instances). This was done through creating a list of hedge words and excluding any instance that contained any of the hedge words.</p><p>8. Exclude instances of self-diagnosis (where the text indicates the patient diagnosed themselves with OCD). This was done through examining the training data, finding terms that were used in cases where self-diagnosis occurred and excluding those instances.</p><p>We included lexical variances in the extraction rules [i.e. acronyms (e.g. OCD), misspellings (e.g. obses*instead of instead of obsessive)]. We took into account semantic variants in the terms of obsessive and compulsive in the extraction because, in so far as, these may have alternative meanings beyond their definitions in the context of OCD/OCS. This was done by distinguishing between the different examples of the obsessions and compulsions provided in the text. Through application of these rules, records were classified.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Validation of an nLp App for extracting ocS.</head><p>The validation dataset was used as a final test of how well the algorithm performed compared to manually coded data providing an indication of how well this algorithm would perform across the remaining 300,000 plus patient records on the CRIS system. To ensure that there was no information bias in the development of the application, the validation data remained unseen by the NLP developer (DC) throughout the App development process, until it was utilized to test the final version of the OCS algorithm. The accuracy of the OCS algorithm was evaluated using measurements of precision (i.e. positive predictive value) and recall (i.e. sensitivity) at the instance level. Precision was measured as the proportion of positive OCS instances identified by the NLP application tool that were correct according to the manual annotations of these same documents; recall was measured as the proportion of OCS instances in the documents (based on manual annotations) that were correctly identified by the NLP application tool. The development of the NLP application aimed to maximize precision in order to reduce the likelihood of false positive results. This NLP-based OCS application was then applied across the entire SLaM Case Register. Finally, for research purposes the OCS algorithm was combined with data from a pre-existing diagnosis algorithm and information on diagnosis from structured fields. Overall precision and recall produced by combining these approaches were calculated. The 95% confidence intervals were calculated using the exact binomial method <ref type="bibr" target="#b15">16</ref> , which were calculated using the Stata software package.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Initially, a machine learning approach was trialed to develop an OCS NLP application because this could be developed and deployed more rapidly. This application was developed using TextHunter which is a bespoke piece of software developed at the SLaM BRC that allows for the fast creation and deployment of Machine Learning applications based on an annotated training set and gold standard. TextHunter utilizes an Support Vector Machine (SVM) approach to building an ML model. SVM development is seamlessly integrated into GATE, allowing for its smooth and rapid implementation. This approach had allowed for the creation of a wide range of successful applications using TextHunter. TextHunter develops models using a wide range for features and parameters, determining which one returns the highest Precision, Recall and F1 scores. However, the performance this approach was judged to be insufficient (attaining a precision of 0.74 and a recall of 0.51). It is possible that ML could return better results if a Deep Learning approach and been taken. However, while this was considered, its operation was determined to be too computationally and time intensive to be practical for the project. It does however remain an option for future exploration of the topic.</p><p>Examination of the text strings in the training dataset indicated that there was diversity in the words and phrases surrounding the key words in the training data set. Comparing the annotations generated by the algorithm to manual coding of the same training data indicated that the algorithm was not able to perform at a satisfactory level and that another approach was needed. It was noted that each of the individual keywords could form a potential application of its own. Therefore, we decided to build five separate component algorithms and combine them into a single functional OCS algorithm. This involved running each of the subset apps over the training data separately. The broad annotation rules that had been developed earlier were modified to suit each of the five component algorithms, individually. A decision was made, not to artificially use an equal number of keywords for each sub app, to ensure that the sample would be representative of overall data set with respect to the prevalence of those keywords.</p><p>The performance (precision and recall) of individual components of the OCS algorithm in the validation set and the performance overall across all text strings are described in Table <ref type="table" target="#tab_2">3</ref>. From the algorithm components themselves, performances of over 0.7 were observed in terms of precision except for Compulsions, Similarly, recall of over 0.8 was observed in each algorithm except for Ritual and Obsessions. In the specific context of OCD, the OCD component of the algorithm returned a precision of 1 and a recall of 0.85. The component algorithms were used together to detect the presence any OCS, (including OCD)-i.e. any text strings which described one or more of the following: obsessions, compulsion, OCD, hoarding, rituals-in accordance with the coding rules outlined in Table <ref type="table" target="#tab_3">4</ref>. The precision and recall (with 95% confidence intervals) for detecting any OCS, (including OCD) were 0.77 (0.65-0.86) and 0.67 (0.55-0.77) respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>These results highlight that it is feasible to develop a tool to address a relatively complex data classification task in electronic health records using NLP. The algorithm we developed was able to identify co-morbid OCS in people diagnosed with schizophrenia, schizoaffective disorder or bipolar disorder with acceptable precision and recall, particularly in terms of the ability to identify OCD, as compared to existing algorithms that have been developed for CRIS (some of which are illustrated in a previous publication <ref type="bibr" target="#b6">7</ref> ) which showed a range of precisions between 0.93 to 0.97 and a range of recalls between 0.59 to 0.99.</p><p>Identifying OCS using clinical records is arguably a comparatively challenging task for an NLP application for a number of reasons. Unlike many other health constructs (e.g. hypertension) OCS are often described using terms which have a wide range of usage in both specialized and lay contexts. For example, 'obsession' may be used to describe nothing more than a keen interest, or 'compulsion' to describe the desire to engage in risk taking behaviours, such as gambling, neither of which would qualify as OCS. Also, these symptoms can manifest in a variety of ways and in many cases, may not be the primary concern of the clinicians writing clinical notes and correspondence. Moreover, OCS need to be clinically distinguishable from schizophrenic mannerisms or posturing or other psychosis related repetitive thoughts or behaviour <ref type="bibr" target="#b9">10</ref> consequently the algorithm needed to be able to use information presented in the free text to make these distinctions.</p><p>To the best of our knowledge, this is the first time an algorithm has been developed to extract OCS from free text using NLP. However, NLP or other algorithms have been used to extract other types of information from clinical records. Examples of this are applications to find the presence of cognitive behavioural therapy (CBT) delivery <ref type="bibr" target="#b16">17</ref> , adverse drug effects (ADR) <ref type="bibr" target="#b17">18</ref> and antipsychotic polypharmacy data <ref type="bibr" target="#b12">13</ref> .</p><p>A key strength of the OCS algorithm was its ability to successfully identify obsessive and compulsive symptoms in free text, with a reasonable level of precision despite the complexity of these texts and the variety of way clinicians refer to these symptoms. The performance of this algorithm improved when divided into component algorithms and modified accordingly, performing particularly well at identifying OCD. The key limitation was the lower recall, which created a risk of underestimating cases of OCS. In the development of this algorithm, precision was considered more important than recall, i.e. false positives were considered to be a more important issue to avoid than false negatives. The results presented here are for instances in the text describing OCS (including OCD). In practice this NLP algorithm would be applied to classify patients where there are likely to be multiple instances describing the same symptoms. Consequently, OCS instances that are missed (due to the lower recall) may be less important because there are likely to be other instances for the same patient which the algorithm will detect.</p><p>To develop this algorithm, we undertook a rules-based rather after initially trying a machine learning approach. A rules based approach has its own limitations. Firstly, it is a substantially more time-consuming approach than a machine learning one <ref type="bibr" target="#b18">19</ref> . This is because it takes a coder far longer to identify and code rules than for an automated system to construct a model. Furthermore, a rules-based approach is far more vulnerable to a coder's subjectivity and personal biases than a machine learning one. This is a particularly key issue given the importance in NLP in understanding the intent of the text that is analyzed. By comparison, the downside to a machine learning approach is that its efficacy decreases in relation to the complexity of the task which may mean the algorithm is unable to perform well or that the algorithm would require an increasingly large set of training data (increasing the time taken to process that data and create the application and the time required to develop the training data) <ref type="bibr" target="#b3">4</ref> .</p><p>There are a number of avenues for further development. One approach is to endeavour to improve algorithm performance by increasing the size of the training dataset providing further examples of positive and negative instances which would allow new rules to be developed. A further point of development is identifying the temporality around positive mentioned OCS, which is not currently determined. This is an important challenge, as there have not been any previously developed methods for determining (from unstructured text), if the subject of a record currently has OCS or if they had them in the past (and if so how far in the past). Therefore, future work will involve adding a temporality component. In addition, the work that was done was limited through using a single corpus (CRIS), future work will involve using the algorithm over the text data of clinical records from other trusts, which will give an indication of the algorithms generalizability. </p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Key modifier words used in the natural language processing application for OCS.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>List of terms used to identify candidates for exclusion.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Performance of individual components of the OCS algorithm in the validation set (300 documents) and the performance overall for detecting any OCS (including OCD) across all strings with Precision (positive predictive value) and recall (sensitivity) provided.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Manual annotation rules for OCS.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>This work was supported by the <rs type="funder">Clinical Record Interactive Search (CRIS)</rs> system funded and developed by the <rs type="funder">National Institute for Health Research (NIHR) Biomedical Research Centre at South London and Maudsley NHS Foundation Trust and King's College London</rs> and a joint infrastructure grant from <rs type="funder">Guy's and St Thomas' Charity</rs> and the <rs type="funder">Maudsley Charity</rs> (grant number <rs type="grantNumber">BRC-2011-10035</rs>). We appreciated the technical support from <rs type="affiliation">informatics personnel in the Biomedical Research Centre</rs>. For part of the time spent on this project, RH was funded by a <rs type="funder">Medical Research Council</rs> (<rs type="grantName">MRC) Population Health Scientist Fellowship</rs> (grant number <rs type="grantNumber">MR/ J01219X/1</rs>). <rs type="person">David Chandran</rs>, <rs type="person">Chin-Kuo Chang</rs>, <rs type="person">Deborah Ahn</rs>, <rs type="person">Hitesh Shetty</rs>, <rs type="person">Jyoti Sanyal</rs>, <rs type="person">Robert Stewart</rs> and <rs type="person">Richard Hayes</rs> have all received salary support from the <rs type="funder">National Institute for Health Research (NIHR) Biomedical Research Centre at South London and Maudsley NHS Foundation Trust and King's College London</rs>. The authors would like to gratefully acknowledge the assistance and advice rendered by <rs type="person">Sumithra Velupillai</rs>, <rs type="person">Angus Roberts</rs> and <rs type="person">Mizanur Khondoker</rs> of <rs type="institution">Kings College London</rs>. The views expressed are those of the author(s) and not necessarily those of the <rs type="institution">NHS</rs>, the <rs type="institution">NIHR</rs> or the Department of Health.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_mxhePWE">
+					<idno type="grant-number">BRC-2011-10035</idno>
+				</org>
+				<org type="funding" xml:id="_VkCM4xQ">
+					<idno type="grant-number">MR/ J01219X/1</idno>
+					<orgName type="grant-name">MRC) Population Health Scientist Fellowship</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>The project was conceived of by R.H. and L.d.H. The development of the application was led by D.C. D.A.R. and M.F. contributed substantially to the implementation of the application. Work on extraction of datasets from CRIS was done by H.S. and J.S. Earlier work on a M.L. approach was done by R.J. and M.B. The aforementioned authors as well as R.S., C.-K.C., J.D., H.C., J.M.V. and F.S. all contributed substantially to the initial writing of the paper and revisions that were subsequently made to it.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Publisher's note</head><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Coorevits</surname>
+						</persName>
+					</author>
+					<title level="a">Electronic health records: new opportunities for clinical research</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. internal medicine</title>
+					<imprint>
+						<biblScope unit="volume">274</biblScope>
+						<biblScope unit="page" from="547" to="560"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Stewart</surname>
+						</persName>
+					</author>
+					<title level="a">The south london and maudsley nhs foundation trust biomedical research centre (slam brc) case register: development and descriptive data</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMC psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page">51</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Nikiforou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Ponirou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Diomidous</surname>
+						</persName>
+					</author>
+					<title level="a">Medical data analysis and coding using natural language processing techniques in order to derive structured data information</title>
+				</analytic>
+				<monogr>
+					<title level="j">ICIMTH</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="page" from="53" to="55"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Sebastiani</surname>
+						</persName>
+					</author>
+				</analytic>
+				<title level="a">Machine learning in automated text categorization</title>
+				<monogr>
+					<title level="j">ACM computing surveys (CSUR)</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="page" from="1" to="47"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b4">
+				<analytic>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">S</forename>
+							<surname>Weld</surname>
+						</persName>
+					</author>
+					<title level="a">Open information extraction using wikipedia</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the 48th annual meeting of the association for computational linguistics</title>
+					<imprint>
+						<publisher>Association for Computational Linguistics</publisher>
+						<date when="2010">2010</date>
+						<biblScope unit="page" from="118" to="127"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Winograd</surname>
+						</persName>
+					</author>
+					<title level="a">Understanding natural language</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cogn. psychology</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="1" to="191"/>
+						<date when="1972">1972</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Perera</surname>
+						</persName>
+					</author>
+					<title level="a">Cohort profile of the south london and maudsley nhs foundation trust biomedical research centre (slam brc) case register: current status and recent enhancement of an electronic mental health record-derived data resource</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMJ open</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page">e008721</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b7">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">S</forename>
+							<surname>Jones</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">R</forename>
+							<surname>Galliers</surname>
+						</persName>
+					</author>
+					<title level="m">Evaluating natural language processing systems: An analysis and review</title>
+					<imprint>
+						<date when="1995">1995</date>
+						<publisher>Springer Science &amp; Business Media</publisher>
+						<biblScope unit="volume">1083</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Hripcsak</surname>
+						</persName>
+					</author>
+					<title level="a">Unlocking clinical data from narrative reports: a study of natural language processing</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annals internal medicine</title>
+					<imprint>
+						<biblScope unit="volume">122</biblScope>
+						<biblScope unit="page" from="681" to="688"/>
+						<date when="1995">1995</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">M</forename>
+							<surname>Meystre</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">G</forename>
+							<forename type="middle">K</forename>
+							<surname>Savova</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">C</forename>
+							<surname>Kipper-Schuler</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">F</forename>
+							<surname>Hurdle</surname>
+						</persName>
+					</author>
+					<title level="a">Extracting information from textual documents in the electronic health record: a review of recent research</title>
+				</analytic>
+				<monogr>
+					<title level="j">Yearb. medical informatics</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="128" to="144"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>de Haan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>B</forename>
+							<surname>Hoogenboom</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>N</forename>
+							<surname>Beuk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>van Amelsvoort</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Linszen</surname>
+						</persName>
+					</author>
+					<title level="a">Obsessive-compulsive symptoms and positive, negative, and depressive symptoms in patients with recent-onset schizophrenic disorders</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Can. J. Psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="519" to="524"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>de Haan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>B</forename>
+							<surname>Sterk</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Wouters</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">H</forename>
+							<surname>Linszen</surname>
+						</persName>
+					</author>
+					<title level="a">The 5-year course of obsessive-compulsive symptoms and obsessive-compulsive disorder in first-episode schizophrenia and related disorders</title>
+				</analytic>
+				<monogr>
+					<title level="j">Schizophr. bulletin</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="151" to="160"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Kadra</surname>
+						</persName>
+					</author>
+					<title level="a">Extracting antipsychotic polypharmacy data from electronic health records: developing and evaluating a novel process</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMC psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page">166</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b13">
+				<monogr>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">B</forename>
+							<surname>First</surname>
+						</persName>
+					</author>
+					<title level="m">Structured clinical interview for dsm-iv-tr axis i disorders, research version, patient edition</title>
+					<imprint>
+						<date when="2002">2002</date>
+						<publisher>SCID-I/P</publisher>
+					</imprint>
+				</monogr>
+				
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Steketee</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Frost</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Bogart</surname>
+						</persName>
+					</author>
+					<title level="a">The yale-brown obsessive compulsive scale: Interview versus self-report</title>
+				</analytic>
+				<monogr>
+					<title level="j">Behav. Res. Ther</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="page" from="675" to="684"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">J</forename>
+							<surname>Clopper</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">E</forename>
+							<forename type="middle">S</forename>
+							<surname>Pearson</surname>
+						</persName>
+					</author>
+					<title level="a">The use of confidence or fiducial limits illustrated in the case of the binomial</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biom.</title>
+					<imprint>
+						<biblScope unit="page" from="404" to="413"/>
+						<date when="1934">1934</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Colling</surname>
+						</persName>
+					</author>
+					<title level="a">Identification of the delivery of cognitive behavioural therapy for psychosis (cbtp) using a cross-sectional sample from electronic health records and open-text information in a large uk-based mental health case register</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMJ open</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">e015297</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName>
+							<forename>E</forename>
+							<surname>Iqbal</surname>
+						</persName>
+					</author>
+					<title level="a">Identification of adverse drug events from free text electronic patient records and information in a large mental health case register</title>
+				</analytic>
+				<monogr>
+					<title level="j">PloS one</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page">e0134208</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Mykowiecka</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Marciniak</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Kupść</surname>
+						</persName>
+					</author>
+					<title level="a">Rule-based information extraction from patients’ clinical data</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. biomedical informatics</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="923" to="936"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

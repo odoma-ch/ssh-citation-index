@@ -40,6 +40,7 @@ Given the provided text, parse all full reference entries and format them accord
    - "surname": string
 3. Ensure the output is valid JSON, with no trailing commas.
 4. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
+5. If there are no references, return an empty list.
 
 ### Example
 

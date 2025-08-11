@@ -1,0 +1,1992 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Suboptimal investment behavior and welfare costs: A simulation based approach</title>
+				<funder ref="#_p64PC2Z">
+					<orgName type="full">Fondo Nacional de Desarrollo Cientȡfico y Tecnolgico</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier BV</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2018-09-25">25 September 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Pablo</forename><surname>Castañeda</surname></persName>
+							<email>pablo.castaneda@uai.cl</email>
+							<affiliation key="aff0">
+								<orgName type="department">Business School</orgName>
+								<orgName type="institution">Universidad Adolfo Ibañez</orgName>
+								<address>
+									<settlement>Santiago</settlement>
+									<addrLine>Diagonal Las Torres 2640</addrLine>
+									<country key="CL">Chile</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lorenzo</forename><surname>Reus</surname></persName>
+							<email>lorenzo.reus@uai.cl</email>
+							<affiliation key="aff1">
+								<orgName type="department">Engineering and Sciences</orgName>
+								<orgName type="institution">Universidad Adolfo Ibañez</orgName>
+								<address>
+									<settlement>Santiago</settlement>
+									<addrLine>Diagonal Las Torres 2640</addrLine>
+									<country key="CL">Chile</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Suboptimal investment behavior and welfare costs: A simulation based approach</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Finance Research Letters</title>
+						<title level="j" type="abbrev">Finance Research Letters</title>
+						<idno type="ISSN">1544-6123</idno>
+						<imprint>
+							<publisher>Elsevier BV</publisher>
+							<biblScope unit="volume">30</biblScope>
+							<biblScope unit="page" from="170" to="180"/>
+							<date type="published" when="2018-09-25">25 September 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">E759017FFA96D4EF3A01C5356311C756</idno>
+					<idno type="DOI">10.1016/j.frl.2018.09.009</idno>
+					<note type="submission">Received 18 April 2018; Received in revised form 29 August 2018; Accepted 21 September 2018 ⁎ Corresponding author.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Asset allocation Martingale method Portfolio selection Suboptimal investment Monte Carlo simulation Welfare loss JEL classification: D81 G11 G18 H55</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We propose a representation of suboptimal investment behavior based on the stochastic discount factor (SDF) paradigm. Suboptimal investment behavior is rationalized as being the investor's optimal decision under a wrong SDF, while wealth trajectories and budget constraints are based on the true SDF. We develop a novel Monte Carlo simulation approach to compute the welfare costs for this suboptimal behavior.</p><p>We study the suboptimal portfolio choice under CRRA preferences using two financial market models. The Monte Carlo simulation delivers comparable welfare losses to those computed in the original studies, which are based on partial differential equations (PDE) and -finite-difference schemes.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Over the last twenty five years, behavioral financial economists have provided mounting evidence of suboptimal behavior among investors (e.g. excess trading, over-confidence, anchoring, framing, conservatism, herding behavior, under-diversification etc.).<ref type="footnote" target="#foot_0">foot_0</ref> At the same time, the theory of continuous-time optimal portfolio choice initiated by <ref type="bibr" target="#b60">Merton (1971)</ref> has been extended to deal with ever more general preferences <ref type="footnote" target="#foot_1">foot_1</ref> and models of asset returns, <ref type="footnote" target="#foot_2">foot_2</ref> producing analytical solutions that facilitate the task of computing (either closed-form, or nearly) optimal portfolio rules. <ref type="footnote" target="#foot_3">foot_3</ref> In this paper, we propose a representation of suboptimal investment behavior that is based on the SDF paradigm, and develop a novel Monte Carlo (MC) simulation approach to compute the welfare costs due to suboptimal investment behavior. Our representation is based on the notion that suboptimal investment behavior can be rationalized as being the investor’s optimal decision under the wrong SDF, while wealth trajectories and budget constraints are based on the true SDF, hence generating a welfare loss. We apply this simple idea to assess the welfare cost of suboptimal investment rules.</p><p>We study the quantitative implications of suboptimal portfolio choice under standard constant relative risk aversion (CRRA) preferences, using two different financial market models: the stochastic volatility model of <ref type="bibr" target="#b58">Liu and Pan (2003)</ref>, and the time-varying bond risk premia model of <ref type="bibr" target="#b53">Koijen et al. (2010)</ref>. In both cases, our MC simulation approach delivers comparable welfare losses to those computed in the original studies, both of which are based on partial differential equations (PDE) and - finite-difference schemes.</p><p>Our paper adds to the literature on two fronts. First, it proposes a way to rationalize suboptimal investment decisions using the SDF paradigm. If we have observable portfolio allocations, this relationship helps estimating a functional form of the SDF. <ref type="footnote" target="#foot_4">foot_4</ref> Second, it proposes a MC simulation approach based on the martingale approach to portfolio problems (e.g. <ref type="bibr" target="#b23">Cox and Huang, 1989</ref> and <ref type="bibr" target="#b49">Karatzas et al., 1987</ref>. Recent applications can be found in <ref type="bibr" target="#b20">Castañeda and Devoto, 2016</ref> and <ref type="bibr" target="#b56">Lim et al., 2017)</ref>. Specifically, we use the well-known relationship between the SDF and the optimal policies that determine the investor’s utility (e.g. consumption, terminal wealth etc.), to compute the welfare cost produced by solving the investment problem under both the true and the wrong SDF.<ref type="footnote" target="#foot_5">foot_5</ref></p><p>Our paper is related to several strands of the literature. The portfolio choice problem under consideration belongs to the Merton tradition. On the computation of welfare costs due to suboptimal investment behavior, this is related to <ref type="bibr" target="#b1">Balduzzi and Lynch (1999);</ref><ref type="bibr" target="#b19">Campbell and Viceira (1999);</ref><ref type="bibr" target="#b0">Aït-Sahalia and Brandt (2001);</ref><ref type="bibr" target="#b57">Liu et al. (2003);</ref><ref type="bibr" target="#b58">Liu and Pan (2003);</ref><ref type="bibr" target="#b46">Kahl et al. (2003);</ref><ref type="bibr" target="#b25">Das and Uppal (2004);</ref><ref type="bibr" target="#b21">Cocco et al. (2005);</ref><ref type="bibr" target="#b14">Branger et al. (2008);</ref><ref type="bibr" target="#b18">Calvet et al. (2009);</ref><ref type="bibr" target="#b10">Branger et al. (2010);</ref><ref type="bibr" target="#b53">Koijen et al. (2010);</ref><ref type="bibr" target="#b11">Branger and Hansis (2012);</ref><ref type="bibr" target="#b45">Jin and Zhang (2012);</ref><ref type="bibr" target="#b55">Larsen and Munk (2012);</ref><ref type="bibr" target="#b12">Branger and Larsen (2013);</ref><ref type="bibr" target="#b13">Branger et al. (2013);</ref><ref type="bibr" target="#b61">Roche et al. (2013);</ref><ref type="bibr" target="#b36">Flor and Larsen (2014);</ref><ref type="bibr" target="#b33">Diris et al. (2014);</ref><ref type="bibr" target="#b35">Escobar et al. (2015)</ref> and <ref type="bibr" target="#b52">Koijen et al. (2016)</ref>, among others. All the papers above that consider continuous-time models, use some form of finite difference scheme to determine the welfare costs of suboptimal investment behavior, while ours relies on MC simulation. Finally, on the computation of nearly-optimal portfolio rules, our paper makes additions to the work of <ref type="bibr" target="#b39">Haugh et al. (2006)</ref> and <ref type="bibr" target="#b7">Bick et al. (2013)</ref>.</p></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">The model</head><p>We consider a continuous-time portfolio problem with d ≥ 1 state variables Y_{i,t}, i,j = 1, ..., d, and d sources of Brownian uncertainty, W_{i,t}, i = 1, ..., d. State variables follow a vector diffusion process: dY_t = μ_Y(t, Y_t)dt + σ_Y(t, Y_t)dW_t, Y_0 ∈ ℝ^d given, where μ_Y(t, Y_t) ∈ ℝ^d and σ_Y(t, Y_t) ∈ ℝ^{d×d} satisfy regular conditions for {Y_{j,t}}_{j=1}^d to be integrable processes, W_t = (W_{t,1},...,W_{d,t}), and the symbol (′) denotes the transposition of matrices and vectors.</p><p>The investor allocates his wealth between n risky securities, and one riskless security (a money market account) with an instantaneous rate of return r t ≡ r(t, Y t ). The security price S i, t satisfies the stochastic differential equation dS_{t,t}/S_{t,t} = (μ_t(t, Y_t) - δ_t(t, Y_t))dt + σ_t(t, Y_t)dW_t, S_{t,0} > 0 given, where δ_{t,t} ≡ δ_t(t, Y_t) ∈ ℝ the dividend rate, μ_{t,t} ≡ μ_t(t, Y_t) ∈ ℝ is the (ex-dividend) expected return, and σ_{t,t}′ ≡ σ_t(t, Y_t)′ ∈ ℝ^n is the vector of volatility coefficients of security t. We denote by σ_t the n × n-dimensional volatility matrix whose ith row is σ_{t, v}, and assume σ_t to be invertible.</p><p>We assume the market price of risk (MPR), θ_t = θ(t, Y_t) ≡ σ(t, Y_t)^{-1}(μ(t, Y_t) - r(t, Y_t)1), to satisfy the Novikov condition 𝔼_0[exp(1/2 ∫_0^T θ_t*θ_t dt)] &lt; ∞, where 1 is a unit vector, and 𝔼_0[·] stands for the mathematical expectation taken at time 0.</p><p>The financial wealth process of the investor, X t , evolves over time according to:</p><formula xml:id="formula_0">dX_t/X_t = (1 - π_t*1)r_t dt + π_t*(μ_t dt + σ_t dW_t); X_0 ≥ 0 given; π_t ∈ 𝒦 ⊆ ℝ^d; ∫_0^T ||π_t*σ_t||^2 &lt; ∞; X_t ≥ 0, ∀ t ≥ 0;<label>(1)</label></formula><p>where π t is the vector of wealth proportions invested in the set of risky assets, and is a convex set that summarizes the portfolio restrictions to which the investor's asset allocation problem is subject.</p><p>The preferences of the investor are given by a standard CRRA vN-M index,</p><formula xml:id="formula_1">U_0(X_T) = { 𝔼_0[1/(1-γ)X_T^{1-γ}] if γ ∈ ℝ_{++}\{1} 𝔼_0[log(X_T)] if γ = 1 },<label>(2)</label></formula><p>where γ &gt; 0 is the Arrow-Pratt coefficient of relative risk aversion.</p></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">The value function</head><p>Using the convex duality approach of <ref type="bibr" target="#b24">Cvitanic and Karatzas (1992)</ref>, it follows that the attainable time-T cash-flow that maximizes (<ref type="formula" target="formula_1">2</ref>), subject to (<ref type="formula" target="formula_0">1</ref>), is equivalent to the problem that maximizes (<ref type="formula" target="formula_1">2</ref>) subject to the static budget constraint given by</p><formula xml:id="formula_2">𝔼_0[ξ_T η_T X_T] ≤ X_0,<label>(3)</label></formula><p>where</p><formula xml:id="formula_3">ξ_T ≡ exp(-∫_0^T (r_t + 1/2 θ_t*θ_t) dt - ∫_0^T θ_t*dW_t)<label>(4)</label></formula><p>is the arbitrage-free stochastic discount factor (SDF) that prevails in the absence of portfolio constraints (i.e. when 𝒦 = ℝ^n), η_T ≡ exp(-∫_0^T (ψ(λ_t) + λ_t*θ_t + 1/2 λ_t*λ_t) dt - ∫_0^T λ_t*dW_t) is an adjustment factor needed to enforce the portfolio restrictions over the optimal investment rule (i.e. π_t* ∈ 𝒦)<ref type="footnote" target="#foot_6">foot_6</ref> where λ_t ∈ ℝ^n is a Lagrange multiplier vector process, and ψ(λ_t) ≡ sup_{π_t ∈ 𝒦}(-π_t*λ_t) is the support function of λ_t. The optimal solution of this problem is given by</p><formula xml:id="formula_4">X_T* = (y ξ_T η_T)^{-1/γ},<label>(5)</label></formula><p>where</p><formula xml:id="formula_5">y = (X_0/𝔼_0[ξ_T*η_T*])^γ > 0<label>(6)</label></formula><p>is the Lagrange multiplier of (<ref type="formula" target="formula_2">3</ref>), and ρ ≡ 1 - 1/γ. The multiplier is derived from the martingale condition 𝔼_0[ξ_T η_T X_T*] = X_0.</p><p>Combining (<ref type="formula" target="formula_1">2</ref>), (<ref type="formula" target="formula_4">5</ref>) and (<ref type="formula" target="formula_5">6</ref>), it follows by direct computation that the value function of the problem when γ ∈ ℝ_{++}\{1}, is given by</p><formula xml:id="formula_6">J(0, X_0, Y_0) ≡ sup_{π ∈ 𝒦(X_0,Y_0)} U_0(X_T) = 𝔼[1/(1-γ)(y ξ_T η_T)^ρ] = 1/(1-γ)X_0^{1-γ}a(0, Y_0)^γ,<label>(7)</label></formula><p>where a(0, Y_0) = 𝔼_0[(ξ_T η_T)^ρ], and 𝒦*(X_0,Y_0) is the set of investment rules that satisfy (<ref type="formula" target="formula_0">1</ref>), and the condition U_0(X_T) &lt; +∞. When γ = 1, we have</p><formula xml:id="formula_7">J(0, X_0, Y_0) = 𝔼_0[log X_T*] = log(X_0) - 𝔼_0[log(ξ_T η_T)]<label>(8)</label></formula></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">The certainty equivalent loss</head><p>We rationalize the suboptimal behavior of the unsophisticated investor as being caused by the use of a wrong SDF when solving his/her portfolio selection problem, say ξ̃_T η̃_T. In the literature, ξ̃_T η̃_T usually corresponds to a simpler dynamics of the financial market, compared to the one that best fits the empirical evidence being presented <ref type="bibr" target="#b25">(Das and Uppal, 2004;</ref><ref type="bibr" target="#b14">Branger et al., 2008;</ref><ref type="bibr" target="#b10">Branger et al., 2010;</ref><ref type="bibr" target="#b53">Koijen et al., 2010;</ref><ref type="bibr" target="#b11">Branger and Hansis, 2012;</ref><ref type="bibr" target="#b45">Jin and Zhang, 2012;</ref><ref type="bibr" target="#b55">Larsen and Munk, 2012;</ref><ref type="bibr" target="#b12">Branger and Larsen, 2013;</ref><ref type="bibr" target="#b36">Flor and Larsen, 2014;</ref><ref type="bibr" target="#b35">Escobar et al., 2015;</ref><ref type="bibr" target="#b52">Koijen et al., 2016, etc.)</ref>. The unsophisticated investor acts rationally in the sense that it uses the same optimization problem to allocate. However, the misperception of this investor leads to use a wrong SDF and thus to deviate from the optimal allocation, as seen in (<ref type="formula" target="formula_4">5</ref>). This means solutions (<ref type="formula" target="formula_4">5</ref>) and (<ref type="formula" target="formula_5">6</ref>) will change to X_T^{**} = (ȳξ̃_Tη̃_T)^{-1/γ} where this time ȳ is derived from the martingale condition under the true SDF 𝔼_0[ξ_Tη_TX_T^{**}] = 𝔼_0[ξ_Tη_T(ȳξ̃_Tη̃_T)^{-1/γ}] = X_0 from where we have ȳ = (X_0/𝔼_0[ξ_Tη_T(ξ̃_Tη̃_T)^{-1/γ}])^-γ.</p><p>When using the wrong SDF, the unsophisticated investor reaches the following level of expected utility<ref type="footnote" target="#foot_7">foot_7</ref></p><formula xml:id="formula_8">U_0(X_T^{**}) = 𝔼_0[\frac{1}{1-γ}(X_T^{**})^{1-γ}] = 𝔼_0[\frac{1}{1-γ}(ȳξ̃_Tη̃_T)^ρ] = \frac{1}{1-γ}X_0^{1-γ}b(0,Y_0)<label>(9)</label></formula><p>for γ ∈ ℝ_{++}\{1}, where b(0, Y_0) = \frac{𝔼_0[(ξ̃_Tη̃_T)^ρ]}{𝔼_0[ξ_Tη_T(ξ̃_Tη̃_T)^{-1/γ}]^{1-γ}}. For the case γ = 1, we obtain</p><formula xml:id="formula_9">U_0(X_T^{**}) = 𝔼_0[log X_T^{**}] = log(X_0) - 𝔼_0[log(ξ̃_Tη̃_T𝔼_0[ξ_Tη_T(ξ̃_Tη̃_T)^{-1}])]<label>(10)</label></formula><p>As a welfare loss measure, we compute the initial wealth loss needed by the investor following the optimal investment strategy to reach the same expected utility of the unsophisticated investor. In other words, we measure the welfare cost of suboptimal investment behavior as L_0 ∈ [0,1], where L_0 satisfies J(0,X_0(1-L_0),Y_0) = U_0(X_T^{**}).</p><p>When γ ∈ ℝ_{++}\{1}, note from Eq. (<ref type="formula" target="formula_6">7</ref>) that J(0,X_0(1-L_0),Y_0) = (1-L_0)^{1-γ}J(0,X_0,Y_0) = (1-L_0)^{1-γ}U_0(X_T^*). Hence, the certainty equivalent (CEQ) loss is given by</p><formula xml:id="formula_10">L_0 = 1 - \left(\frac{𝔼_0[(X_T^{**})^{1-γ}]}{𝔼_0[(X_T^*)^{1-γ}]}\right)^{1/(1-γ)}<label>(11)</label></formula><p>When γ = 1, note from Eq. (<ref type="formula" target="formula_7">8</ref>) that J(0,X_0(1-L_0),Y_0) = log(1-L_0) + J(0,X_0,Y_0) = log(1-L_0) + U_0(X_T^*). Thus</p><formula xml:id="formula_11">L_0 = 1 - exp\left[𝔼_0\left[log\frac{X_T^{**}}{X_T^*}\right]\right]<label>(12)</label></formula><p>The expressions in (<ref type="formula" target="formula_10">11</ref>) and (<ref type="formula" target="formula_11">12</ref>) can be of help when values of X_T^* and X_T^{**} can at best be approximated by simulating trajectories of (π_t^*,π_t^{**})_{t∈[0,T]}, or some admissible approximation of these (e.g. <ref type="bibr" target="#b7">Bick et al. (2013)</ref>). In the same vein, when the vector process (λ_t)_{t∈[0,T]} can be determined, or at least approximated (e.g. <ref type="bibr" target="#b39">Haugh et al. (2006)</ref>), we can use (<ref type="formula" target="formula_6">7</ref>) and (<ref type="formula" target="formula_8">9</ref>) to write</p><formula xml:id="formula_12">L_0 = 1 - \left(\frac{b(0,Y_0)}{a(0,Y_0)^γ}\right)^{1/(1-γ)} = 1 - \left(\frac{𝔼_0[ξ_Tη_T(ξ̃_Tη̃_T)^{-1/γ}]^{γ-1}𝔼_0[(ξ̃_Tη̃_T)^ρ]}{𝔼_0[ξ_T^ρη_T^ρ]^γ}\right)^{1/(1-γ)}<label>(13)</label></formula><p>for the case γ ∈ ℝ_{++}\{1}. Likewise, we can use (<ref type="formula" target="formula_7">8</ref>) and (<ref type="formula" target="formula_9">10</ref>) to write</p><formula xml:id="formula_13">L_0 = 1 - exp\left(𝔼_0\left[log\frac{ξ_Tη_T}{ξ̃_Tη̃_T𝔼_0[ξ_Tη_T(ξ̃_Tη̃_T)^{-1}]}\right]\right)<label>(14)</label></formula><p>for the case γ = 1. The expressions above naturally call for Monte Carlo simulations as the numerical method of choice. In particular, we can estimate the CEQ loss by computing independent copies of the expression inside the expectation, and then taking the average of all of these. In doing so, we will need to use an Euler (time) discretization scheme, over the "right" and "wrong" SDE (ξ_T and ξ̃_T), and adjustment factor (η_T and η̃_T).</p><p>Extensions to more general HARA utility functions, including external habit-forming preferences, consumption-leisure decisions (<ref type="bibr" target="#b9">Bodie et al. (1992,</ref><ref type="bibr" target="#b8">2004)</ref>), durable goods (<ref type="bibr" target="#b29">Detemple and Giannikos (1996)</ref>), internal habit-forming preferences (<ref type="bibr" target="#b32">Detemple and Zapatero (1992)</ref>; <ref type="bibr" target="#b63">Schroder and Skiadas (2002)</ref>), or finite-activity jump processes (<ref type="bibr" target="#b59">Jeanblanc-Piqué and Pontier (1990)</ref>; <ref type="bibr" target="#b57">Liu et al. (2003)</ref>; <ref type="bibr" target="#b14">Branger et al. (2008)</ref>), can be easily accommodated. All that is needed is a representation of the optimal payoffs (i.e. X_T^* and X_T^{**}) as computable functions of the "adjusted" SDF (resp., ξη and ξ̃η̃). Two important cases that cannot be accommodated within the outlined framework are the cases of (Epstein-Zin) Stochastic Differential Utility (SDU) preferences, and jumps processes generated by an infinite activity process (<ref type="bibr" target="#b45">Jin and Zhang (2012)</ref>). See, for instance, <ref type="bibr" target="#b26">Detemple (2012)</ref> for a recent account on this matter.</p>
+</div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Quantitative analysis</head><p>We conduct two numerical exercises to illustrate the application of the method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Omission of an asset class</head><p>The first exercise explores the consequences of omitting an asset class in the asset allocation problem. In particular, it considers a simplified version (i.e. without jumps) of the model studied by <ref type="bibr" target="#b58">Liu and Pan (2003)</ref> (hereafter LP), in a complete market with two sources of Brownian motion uncertainty (i.e. W ∈ ℝ^2), a constant interest rate (IR) and two risky assets: a stock index, and an option contract.</p><p>In this case, the stock index satisfies</p><formula xml:id="formula_14">dS_t/S_t = (r + θ_{S,t}√V_t)dt + √V_t dW_{S,t}, S_0 given<label>(15)</label></formula><p>where θ_{S,t} is MPR of equity risk, and V_t follows a (<ref type="bibr" target="#b40">Heston, 1993</ref>) dynamics, dV_t = κ(V̄ - V_t)dt + η√V_t(ρdW_{S,t} + √(1-ρ^2)dW_{V,t}), V_0 given, where (κ, η, ρ) are constant parameters, ρ ∈ [-1,1] is the (instantaneous) correlation between dS/S and dV, and W = (W_S, W_V)′ are two independent BMP.</p><p>The price of the option contract can be written as O_t = g(S_t,V_t), for some function g. An application of Ito's Lemma delivers dO_t = (rO_t + θ_{S,t}σ_{OS,t} + θ_{O,t}σ_{OV,t})dt + σ_{OS,t}dW_{S,t} + σ_{OV,t}dW_{V,t}, where σ_{OS,t} = √V_t[g_SS_t + g_Vηρ], σ_{OV,t} = √V_tg_Vη(1-ρ^2)^{1/2}, with g_S = ∂_Sg, g_V = ∂_Vg, and θ_{O,t} as the MPR of volatility risk. Following Liu and Pan, we set θ_{S,t} = θ_S√V_t, and θ_{O,t} = θ_O√V_t, where (θ_S, θ_O) are two constant parameters.</p><p>The true dynamic of V_t is not observable, but we assume that it could be inferred with the data available in the market. We consider the case where the welfare cost is due to a wrong inference made on V_t. Specifically, we assume that the unsophisticated investor believes V_t to follow a time-varying deterministic GARCH(1,1) process (e.g. <ref type="bibr" target="#b22">Corradi, 2000)</ref></p><formula xml:id="formula_15">dV_t = (ω_0 + ω_1V_t)dt, V_0 given<label>(16)</label></formula><p>where (ω_0, ω_1) are constant parameters. Just like in LP, there are no portfolio constraints, that is π_t = (π_{S,t},π_{O,t}) ∈ 𝒦 = ℝ^2, which renders η_T = η̃_T = 1. The wrong inference on the volatility leads the unsophisticated investor to believe that the option contract is redundant in the portfolio choice problem. The unsophisticated investor dismisses the option contract, and hence the SDF used satisfies dξ̃_t/ξ̃_t = -rdt - θ_{S,t}dW_{S,t}, instead of the true SDF that satisfies dξ_t/ξ_t = -rdt - θ_{S,t}dW_{S,t} - θ_{O,t}dW_{V,t}<ref type="footnote" target="#foot_8">foot_8</ref>. In this way we can compute the CEQ loss using the expressions in (<ref type="formula" target="formula_12">13</ref>) and (<ref type="formula" target="formula_13">14</ref>), by simulating trajectories of ξ_T and ξ̃_T, respectively.</p><p>To validate our simulation approach for estimating the welfare cost, we replicate the sensitivity analysis done by LP (Fig. <ref type="figure" target="#fig_0">1</ref>). The loss estimated in LP derives from a strategy that does not use the derivative contract and a strategy that does, which equals the difference between using the true and wrong SDF in our exercise. Results are consistent. The CEQ loss amounts to nearly 30% of initial wealth in the basecase. As explained in LP, the demand for the option contract is driven mostly by the myopic component. That's why the loss is larger when θ_O deviates from zero and when risk aversion is smaller. The demand for the option contract increases and thus premium earnings on volatility risk. Similar to LP, the loss increases when both the initial volatility (V_0) and the stochastic component of the volatility (η) increase, because the hedging demand for the option contract increases too. The same happens when we increase the investment horizon. Fig. C.2 in Appendix C shows these same results but in terms of a management fee (explained latter in Exercise 2) and not the CEQ loss.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Missing intertemporal hedging demand</head><p>The second exercise explores the effects of not accounting for the intertemporal hedging demand, when the nominal interest rates (IR) process is stochastic. In particular, it considers the complete market version of the model studied by <ref type="bibr" target="#b53">Koijen et al. (2010)</ref> (hereafter KNW), with 4 and four (instead of three) risky assets: two zero-coupon nominal bonds, an (added) inflation-linked security, and a stock index.</p>
+<p>The KNW model contains a 2-dimensional state variable vector, Y_t = (Y_{1,t}, Y_{2,t})′ ∈ ℝ^2, which evolves according to</p><formula xml:id="formula_16">\begin{pmatrix} dY_{1,t} \\ dY_{2,t} \end{pmatrix} = \begin{pmatrix} κ_{11} &amp; κ_{12} \\ κ_{21} &amp; 0 \end{pmatrix} \begin{pmatrix} Y_{1,t} \\ Y_{2,t} \end{pmatrix} dt + \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix} \begin{pmatrix} dW_{1,t} \\ dW_{2,t} \\ dW_{3,t} \\ dW_{4,t} \end{pmatrix}<label>(17)</label></formula><p>(Y_{1,0}, Y_{2,0}) given, where (κ_{11}, κ_{12}, κ_{21}) are constant coefficients. The nominal IR (r_t), is an affine affine function of Y_t satisfying r_t = β_{r0} + β_{r1}Y_t ∈ ℝ, where β_{r0} is a constant coefficient, and β_{r1}′ ∈ ℝ^2 contains constant parameters. The prices of the risky assets evolve according to the following system  \begin{cases} dB_t^{T_j}/B_t^{T_j} = (r_t + σ_{B_j,t}θ_t) dt + σ_{B_j,t}dW_t, B_0^{T_j} given, \\dS_{Π,t}/S_{Π,t} = (r_t + σ_{Π,t}θ_t)dt + σ_{S_{Π,t}}dW_t, S_{Π,0} given, \\dS_t/S_t = (r_t + σ_Sθ_t)dt + σ_S dW_t, S_0 given,\end{cases} where B_t^{T_j} = 𝔼_t[ξ_{t,T_j}] is the (arbitrage-free) price of a nominal zero-coupon bond with maturity T_j, with 0 &lt; T_1 &lt; T_2 = T and ξ_{t,T_j} ≡ ξ_{T_j}/ξ_t as the conditional SDF, σ_{B_j,t}′ ∈ ℝ^4. S_{Π,t} is the price of an inflation-linked security. Π_t is the price index with S_{Π,t} = 𝔼_t[ξ_{t,T}Π_T] and σ_{S_{Π,t}}′ ∈ ℝ^4, S_t is the price of the stock-index, and σ_S′ ∈ ℝ^4. We assume the volatility matrix, σ_t = (σ_{B_1,t}, σ_{B_2,t}, σ_{S_{Π,t}}, σ_S), to be invertible. In addition, KNW impose the MPR as affine in the state variables, that is to say, θ_t = θ_0 + θ_1Y_t ∈ ℝ^4, with θ_1 ∈ ℝ^{4×2}. Details on the calibration, which is based on KNW estimations, is given in Appendix A.</p><p>We consider the case where the welfare loss is due to the unsophisticated investor mistakenly assessing the time-varying nature of the investment opportunity set. Specifically, we assume that he/she wrongly perceives the nominal bond risk premia to be constant (i.e. σ_{B_j,t}θ_t ≡ x_{B_j}, for j = 1,2), where they are in fact stochastic (i.e. time-varying functions of Y_t)<ref type="footnote" target="#foot_9">foot_9</ref>. We also assume the unsophisticated investor ignores the variation in the term structure of interest rates.</p><p>Admissible portfolio rules are subject to standard no short-sales and no borrowing constraints. To emulate the results from KNW, we add the restriction that the demand of the inflation linked security equals zero at all times. The set 𝒦 is therefore given by 𝒦 = {π_t ∈ ℝ^4 : π_{t,i} ≥ 0, ∀ i, π_t*1 ≤ 1, π_{3,t} = 0}</p><p>The adjustment factor η_T for set 𝒦 is not known. Therefore, we simulate independent copies for the wealth X_t^* and X_t^{**} and determine the CEQ loss using Eqs. (<ref type="formula" target="formula_10">11</ref>) and (<ref type="formula" target="formula_11">12</ref>). To do this, we first compute the unconstrained version of the optimal and sub-optimal portfolio rules, π_t^{*u} and π_t^{**u} respectively; and then compute nearly optimal constrained portfolio rules from the latter.</p><p>From optimality conditions, it is easy to see that unconstrained optimal allocation satisfies</p><formula xml:id="formula_17">π_t^{*u} = (γσ_t′)^{-1}θ_t + (σ_t′)^{-1}\left\{∑_{j=1}^2 σ_{Y_j}′ \frac{∂_{Y_j}a^u(t,Y_{1,t},Y_{2,t})}{a^u(t,Y_{1,t},Y_{2,t})}\right\}<label>(18)</label></formula><p>where a^u(t,Y_{1,t},Y_{2,t}) = 𝔼_t[ξ_{t,T}^ρ]. This is the optimal unconstrained portfolio rule (i.e. when 𝒦 = ℝ^4) decomposed into its myopic and hedging demand terms. To compute the hedging demand we use the Monte Carlo with Malliavin Derivative (MCMD) method of <ref type="bibr" target="#b27">Detemple et al. (2003)</ref>. The details of this computation can be found in Appendix B.</p><p>The unconstrained allocation of the unsophisticated investor does not include the hedging demand, since the nominal bond risk premium and term structure does not depend on states Y_1 and Y_2. Therefore, we have</p><formula xml:id="formula_18">π_t^{**u} = (γσ_t′)^{-1}θ_0<label>(19)</label></formula><p>Appendix A shows the details in how to derive Eqs. (<ref type="formula" target="formula_17">18</ref>) and (<ref type="formula" target="formula_18">19</ref>). We define the nearly optimal portfolio policy for the constrained problem as (with x^+ ≡ max(x,0))</p><formula xml:id="formula_19">π^* = \begin{cases}π_3^* = 0 \text{ and } π_{i,t}^* = (π_t^{*u})_i^+, &amp; \text{if } b^u ≡ ∑_{i≠3} (π_t^{*u})_i^+ ≤ 1, \\π_3^* = 0 \text{ and } π_{i,t}^* = (π_t^{*u})_i^+/b^u, &amp; \text{otherwise.}\end{cases}<label>(20)</label></formula><p>The constrained policy for the unsophisticated investor π^{**} is computed similarly, under the same rule in (<ref type="formula" target="formula_19">20</ref>) and using π_t^{**u}. The outlined procedure allows us to simulate independent copies of X_T^* and X_T^{**}, using (<ref type="formula" target="formula_0">1</ref>) and the investment policies π^* and π^{**} respectively.</p><p>KNW estimate the loss of a life-cycle investor, when it conditions its decisions on wealth and age only and without considering the time-varying bond risk premia or the variation in the term structure of interest rates. Thus, this loss is comparable to the loss between π^* and π^{**}. Table <ref type="table" target="tab_0">1</ref> depicts the CEQ loss estimates, using the estimated coefficients in KNW. We also compute the welfare loss in terms of the same metric used by KNW, which is the maximum management fee (F) that can be charged when investing with the "correct" model (i.e. the true data generating process, or DGP) to end up with the same expected utility level as with the suboptimal strategy. The relationship between L_0 and F is given by (see further details in Appendix C)</p><formula xml:id="formula_20">F = -\frac{1}{T} log(1 - L_0)<label>(21)</label></formula><p>Naturally, a greater welfare loss implies higher fees. Our results are consistent with the ones obtained by KNW. Fees are similar when we change the investment horizon, and loss magnitudes are close to 100 basis points (bp) for γ = 5 (value used by KNW). As expected, the loss measured in terms of fees is slightly lower when the investor is more risk averse.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions and further extensions</head><p>This paper proposes a way of rationalizing suboptimal investment behavior, based on the SDF paradigm. The proposed methorenders Monte Carlo simulation as the numerical method of choice to compute the welfare loss due to suboptimality. The proposed method can be applied whenever the optimal payoffs can be represented as computable functions of the "adjusted" (due to convex portfolio constraints) SDF.</p><p>We carry out two numerical exercises to illustrate the application of the method. One with a missing asset class (options), and a second one unsophisticated investor wrongly assumes the investment opportunity set to be constant. In both cases, we show that welfare cost due to suboptimality can be relatively high. These findings go somewhat against recent studies showing that the hedging component of optimal investment rules are of lesser importance (e.g. <ref type="bibr" target="#b33">Diris et al., 2014;</ref><ref type="bibr" target="#b54">Lan, 2015)</ref>.</p><p>Our representation of suboptimal investment behavior can also be used to assess model risk. In particular, a model risk could be conducted by using as the wrong SDF, the one that omits an important state variable, or misses a relevant source of risk (e.g. <ref type="bibr" target="#b14">Branger et al., 2008;</ref><ref type="bibr" target="#b11">Branger and Hansis, 2012;</ref><ref type="bibr" target="#b12">Branger and Larsen, 2013;</ref><ref type="bibr" target="#b47">Kallsen and Muhle-Karbe, 2015)</ref>. This representation could possibly allow the employment of the wrong SDF in misspecified models (e.g. <ref type="bibr" target="#b62">Rubtsov, 2016;</ref><ref type="bibr" target="#b42">Jang et al., 2016)</ref> and estimate the losses with respect to a model without any misspecification.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 CEQ loss sensitivity results. The parameters of the base-case scenario are similar to those in LP, that is, γ=2, θ₀=-6, √V₀=0.13, η=0.25, κ=5, T=5 years, r=5%, ρ=-0.4.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>CEQ loss L 0 (%) and equivalent management fee F (bp. per annun), for different risk aversion and time horizons T.</figDesc></figure>
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">
+    <p>See, for instance, <ref type="bibr" target="#b5">Barberis and Thaler (2003);</ref> <ref type="bibr" target="#b2">Barber and Odean (2005);</ref> <ref type="bibr" target="#b6">Benartzi and Thaler (2005);</ref> <ref type="bibr" target="#b17">Calvet et al. (2007),</ref> <ref type="bibr" target="#b18">(2009);</ref> <ref type="bibr" target="#b3">Barber and Odean (2013)</ref> and <ref type="bibr" target="#b38">Gaudecker et al. (2015)</ref>, and the references therein.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1">
+    <p>See, for instance, <ref type="bibr" target="#b41">Hindy and Huang (1992);</ref> <ref type="bibr" target="#b32">Detemple and Zapatero (1992);</ref> <ref type="bibr" target="#b34">Duffie and Epstein (1992)</ref> and <ref type="bibr" target="#b29">Detemple and Giannikos (1996)</ref>, for extensions beyond time-separable expected utility preferences, and <ref type="bibr" target="#b44">Jian and Zhou (2008)</ref> for preferences that capture the proposals of prospect theory.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2">
+    <p>See, for instance, <ref type="bibr" target="#b40">Heston (1993)</ref> and <ref type="bibr" target="#b15">Broadie et al. (2007)</ref>. There is also the issue of added parameter uncertainty that results from the estimation of a more complex specification, like in <ref type="bibr" target="#b4">Barberis (2000);</ref> <ref type="bibr" target="#b37">Garlappi et al. (2006);</ref> <ref type="bibr" target="#b48">Kan and Zhou (2007)</ref> and <ref type="bibr" target="#b43">Jang and Park (2016)</ref>. In addition to standard time-additive expected utility, the more recent literature includes (internal) habit-forming preferences, recursive preferences, time-inconsistent preferences, and preferences consistent with cumulative prospect theory.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3">
+    <p>See, for instance, <ref type="bibr" target="#b50">Kim and Omberg (1996);</ref> <ref type="bibr" target="#b64">Wachter (2002);</ref> <ref type="bibr" target="#b27">Detemple et al. (2003);</ref> <ref type="bibr" target="#b30">Detemple and Rindisbacher (2005);</ref> <ref type="bibr" target="#b39">Haugh et al. (2006);</ref> <ref type="bibr" target="#b31">Detemple and Rindisbacher (2010)</ref> and <ref type="bibr" target="#b7">Bick et al. (2013)</ref>, and the references therein.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4">
+    <p>See, for instance, <ref type="bibr" target="#b51">Koijen (2014)</ref> and <ref type="bibr" target="#b16">Buraschi et al. (2014)</ref> for examples on the estimation of the SDF based on observable quantities related to portfolio choice problems.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5">
+    <p>Our representation holds for any preference model for which the optimal wealth can be represented as a function of the SDF.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6">
+    <p>In the specific case of incomplete markets, i.e. π i,t = 0 for some i = {1, ..., n}, we have ψ(λ) = −π′λ = 0, and hence, η t = exp(∫₀ᵗ −λ′t θt − ½λ′t λtdt − ∫₀ᵗ λ′t dWt). See, for instance, <ref type="bibr" target="#b30">Detemple and Rindisbacher (2005)</ref>, <ref type="bibr" target="#b31">Detemple and Rindisbacher (2010)</ref>.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_7">
+    <p>The expected utility under the suboptimal portfolio rule has the same functional form obtained by <ref type="bibr" target="#b12">Branger and Larsen (2013)</ref> and <ref type="bibr" target="#b13">Branger et al. (2013)</ref>. This is in the spirit of Feynman–Kac; see, e.g. Proposition 2 in <ref type="bibr" target="#b28">Detemple et al. (2008)</ref>.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_8">
+    <p>To be more precise, the redundancy of the option contract results in an infinite set of optimal portfolio policies, and hence, in the indeterminacy of any optimal portfolio rule. Setting π_0,t\** = 0 is a simple way to avoid such indeterminacy.</p>
+</note>
+
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_9">
+    <p>As shown by KNW, when rₜ is affine in Yₜ then Bₜᵀ = exp(nᵀ(xₜ) + mᵀ(xₜ)′Yₜ), with nᵀ(xₜ) and mᵀ(xₜ) as deterministic functions of time-to-maturity, T = T − t. Therefore, the nominal bond volatility can be written as σᴮₜᵀ = hᵀ(t)σʸₜ + bᵀ(t)σᴠʸₜ, where hᵀ(t) and bᵀ(t) are deterministic functions of T − t. Nominal bond risk premia, πᴮₜᵀ = σᴮₜᵀλₜ, are therefore time-varying functions of Yₜ.</p>
+</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>The second author acknowledges financial support <rs type="funder">Fondo Nacional de Desarrollo Cientȡfico y Tecnolgico</rs> #<rs type="grantNumber">11170012</rs>. We thank <rs type="person">Jorge Sabat</rs> for providing excellent research assistance during the early stages of the research project.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_p64PC2Z">
+					<idno type="grant-number">11170012</idno>
+				</org>
+			</listOrg>
+	
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Aït-Sahalia</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brandt</surname>
+					<forename type="first">M</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Variable selection for portfolio choice</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">56</biblScope>
+				<biblScope unit="page" from="1297" to="1351"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Balduzzi</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lynch</surname>
+					<forename type="first">A</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Transaction costs and predictability: some utility cost calculations</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Econ.</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="47" to="78"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barber</surname>
+					<forename type="first">B</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Odean</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Individual investors</title>
+		</analytic>
+		<monogr>
+			<title level="m">Advances in Behavioral Finance</title>
+			<editor>
+				<persName>
+					<surname>Thaler</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Princeton University Press</publisher>
+				<pubPlace>Princeton, NJ</pubPlace>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barber</surname>
+					<forename type="first">B</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Odean</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">The behavior of individual investors</title>
+		</analytic>
+		<monogr>
+			<title level="m">Handbook of Economics of Finance</title>
+			<editor>
+				<persName>
+					<surname>Constantinides</surname>
+					<forename type="first">G</forename><forename type="middle">M</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Harris</surname>
+					<forename type="first">M</forename><forename type="middle">S</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Elsevier</publisher>
+				<pubPlace>Holland</pubPlace>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barberis</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Investing for the long run when returns are predictable</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Finance</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">55</biblScope>
+				<biblScope unit="page" from="225" to="264"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barberis</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thaler</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">A survey of behavioral finance</title>
+		</analytic>
+		<monogr>
+			<title level="m">Handbook of Economics of Finance</title>
+			<editor>
+				<persName>
+					<surname>Constantinides</surname>
+					<forename type="first">G</forename><forename type="middle">M</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Harris</surname>
+					<forename type="first">M</forename><forename type="middle">S</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Elsevier</publisher>
+				<pubPlace>Holland</pubPlace>
+				<date when="2003">2003</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Benartzi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thaler</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Naive diversification strategies in defined contribution savings plans</title>
+		</analytic>
+		<monogr>
+			<title level="m">Advances in Behavioral Finance</title>
+			<editor>
+				<persName>
+					<surname>Thaler</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Princeton University Press</publisher>
+				<pubPlace>Princeton, NJ</pubPlace>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bick</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kraft</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Munk</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Solving constrained consumption–investment problems by simulation of artificial market strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Manage. Sci.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">59</biblScope>
+				<biblScope unit="page" from="485" to="503"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bodie</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Otruba</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stephan</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal consumption–portfolio choices and retirement planning</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Dyn. Control</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="1115" to="1148"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bodie</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Merton</surname>
+					<forename type="first">R</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Samuelson</surname>
+					<forename type="first">W</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Labor supply flexibility and portfolio choice in a life cycle model</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Dyn. Control</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="427" to="449"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Branger</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Breuer</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schlag</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Discrete-time implementation of continuous-time portfolio strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur. J. Finance</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="137" to="152"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Branger</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hansis</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Asset allocation: how much model choice matter?</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Bank. Finance</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="1865" to="1882"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Branger</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Larsen</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Robust portfolio choice with uncertainty about jump and diffusion risk</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Bank. Finance</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="5036" to="5047"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Branger</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Larsen</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Munk</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Robust portfolio choice with ambiguity and learning about return predictability</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Bank. Finance</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="1397" to="1411"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Branger</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schlag</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schneider</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal portfolios when volatility can jump</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Bank. Finance</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">32</biblScope>
+				<biblScope unit="page" from="1087" to="1097"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Broadie</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chernov</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johannes</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Model specification and risk premia: evidence from future options</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="1453" to="1490"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Buraschi</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kosowski</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sritrakul</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Incentives and endogenous risk taking: a structural view on hedge funds alphas</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">69</biblScope>
+				<biblScope unit="page" from="2819" to="2870"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Calvet</surname>
+					<forename type="first">L</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Campbell</surname>
+					<forename type="first">J</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sodini</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Down or out: assessing the welfare costs of household investment mistakes</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Pol. Econ.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">115</biblScope>
+				<biblScope unit="page" from="707" to="747"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Calvet</surname>
+					<forename type="first">L</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Campbell</surname>
+					<forename type="first">J</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sodini</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Fight or flight? portfolio rebalancing by individual investors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Q. J. Econ.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">124</biblScope>
+				<biblScope unit="page" from="301" to="348"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campbell</surname>
+					<forename type="first">J</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Viceira</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Consumption and portfolio decisions when expected returns are time-varying</title>
+		</analytic>
+		<monogr>
+			<title level="j">Q. J. Econ.</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="433" to="495"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Castañeda</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Devoto</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">On the structural estimation of an optimal portfolio rule</title>
+		</analytic>
+		<monogr>
+			<title level="j">Finance Res. Lett.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="290" to="300"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cocco</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gomes</surname>
+					<forename type="first">F</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maenhout</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Consumption and portfolio choice over the life cycle</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="491" to="533"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Corradi</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Reconsidering the continuous time limit of the GARCH(1, 1) process</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econom.</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">96</biblScope>
+				<biblScope unit="page" from="145" to="153"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cox</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huang</surname>
+					<forename type="first">C</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal consumption and portfolio policies when asset prices follow a diffusion process</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Theory</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="33" to="83"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cvitanić</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Karatzas</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Convex duality in constrained portfolio optimization</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann. Appl. Probab.</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="767" to="818"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Das</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uppal</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Systemic risk and international portfolio choice</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">59</biblScope>
+				<biblScope unit="page" from="2809" to="2834"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="a">Portfolio selection: a review</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Optim. Theory Appl.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">161</biblScope>
+				<biblScope unit="page" from="1" to="21"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rindisbacher</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">A Monte Carlo method for optimal portfolios</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">58</biblScope>
+				<biblScope unit="page" from="1540" to="6261"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garcia</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rindisbacher</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Simulation methods for optimal portfolios</title>
+		</analytic>
+		<monogr>
+			<title level="m">Financial Engineering, Handbook in Operations Research and Management Science</title>
+			<editor>
+				<persName>
+					<surname>Birge</surname>
+					<forename type="first">J</forename><forename type="middle">R</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Linetsky</surname>
+					<forename>V</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Elsevier</publisher>
+				<pubPlace>Amsterdam</pubPlace>
+				<date when="2008">2008</date>
+				<biblScope unit="page" from="867" to="923"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Giannikos</surname>
+					<forename type="first">C</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Asset and commodity prices with multi-attribute durable goods</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Dyn. Control</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="1451" to="1504"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rindisbacher</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Closed-form solutions for optimal portfolio selection with stochastic interest rate and investment constraints</title>
+		</analytic>
+		<monogr>
+			<title level="j">Math. Finance</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="539" to="568"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rindisbacher</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamic asset allocation: portfolio decomposition formula and applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="25" to="100"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Detemple</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zapatero</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal consumption-portfolio policies with habit formation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Math. Finance</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="251" to="274"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Diris</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Palm</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schotman</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Long-term strategic asset allocation: an out-of-sample evaluation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Manage. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="2185" to="2202"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Duffie</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Epstein</surname>
+					<forename type="first">L</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Stochastic differential utility</title>
+		</analytic>
+		<monogr>
+			<title level="j">Econometrica</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">60</biblScope>
+				<biblScope unit="page" from="353" to="394"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Escobar</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferrando</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rubtson</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Robust portfolio choice with derivative trading under stochastic volatility</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Bank. Finance</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="142" to="157"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Flor</surname>
+					<forename type="first">C</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Larsen</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Robust portfolio choice with stochastic interest rates</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann. Finance</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="243" to="265"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Garlappi</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uppal</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Portfolio selection with parameter and model uncertainty: a multi-prior approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="41" to="81"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gaudecker</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Audecker</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Von</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">How does household portfolio diversification vary with financial literacy and financial advice?</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">70</biblScope>
+				<biblScope unit="page" from="489" to="507"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Haugh</surname>
+					<forename type="first">M</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kogan</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluating portfolio policies: a duality approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oper. Res.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="405" to="418"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Heston</surname>
+					<forename type="first">S</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">A closed-form solution for options with stochastic volatility with applications to bond and currency options</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="327" to="343"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hindy</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huang</surname>
+					<forename type="first">C</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Intertemporal preferences for uncertain consumption: a continuous time approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Econometrica</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">60</biblScope>
+				<biblScope unit="page" from="781" to="801"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lim</surname>
+					<forename type="first">H</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Robust consumption and portfolio rules with time-varying model confidence</title>
+		</analytic>
+		<monogr>
+			<title level="j">Finance Res. Lett.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="342" to="352"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Park</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Ambiguity and optimal portfolio choice with value-at-risk constraint</title>
+		</analytic>
+		<monogr>
+			<title level="j">Finance Res. Lett.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="158" to="176"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jian</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename type="first">X</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<title level="a">Behavioral portfolio selection in continuous time</title>
+		</analytic>
+		<monogr>
+			<title level="j">Math. Finance</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="385" to="426"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jin</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename type="first">A</forename><forename type="middle">X</forename>
+				</persName>
+			</author>
+			<title level="a">Decomposition of optimal portfolio weight in a jump-diffusion model and its applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="2877" to="2919"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kahl</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Longstaff</surname>
+					<forename type="first">F</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Paper millionaires: how valuable is stock to a stockholder who is restricted from selling it?</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Econ.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">67</biblScope>
+				<biblScope unit="page" from="385" to="410"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kallsen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Muhle-Karbe</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Option pricing and hedging with small transaction costs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Math. Finance</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="702" to="723"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal portfolio choice with parameter uncertainty</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Quant. Anal.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="621" to="656"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Karatzas</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lehoczy</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shreve</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal portfolio and consumption decisions for a small investor, on a finite horizon</title>
+		</analytic>
+		<monogr>
+			<title level="j">SIAM J. Control Optim.</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="1557" to="1586"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename type="first">T</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Omberg</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamic nonmyopic portfolio behavior</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="141" to="161"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Koijen</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<title level="a">The cross-section of managerial ability, incentives, and risk preferences</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">69</biblScope>
+				<biblScope unit="page" from="1051" to="1098"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Koijen</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Niewerburgh</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yogo</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Health and mortality delta: assessing the welfare cost of household insurance choice</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="957" to="1010"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Koijen</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nijman</surname>
+					<forename type="first">T</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Werker</surname>
+					<forename type="first">B</forename><forename type="middle">J</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<title level="a">When can life cycle investors benefit from time-varying bond risk premia?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="741" to="780"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b54">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lan</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">An out-of-sample evaluation of dynamic portfolio strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="2359" to="2399"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Larsen</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Munk</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">The costs of suboptimal dynamic asset allocation: general results and applications to interest rate risk, stock volatility risk, and growth/ value tilts</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Dyn. Control</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="266" to="293"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="forthcoming-article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lim</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shin</surname>
+					<forename type="first">Y</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">The Effects of Pre-/Post-retirement Downside Consumption Constraints on Optimal Consumption, Portfolio, and Retirement</title>
+		</analytic>
+		<monogr>
+			<note>In Press</note>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Longstaff</surname>
+					<forename type="first">F</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamic asset allocation with event risk</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Finance</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">58</biblScope>
+				<biblScope unit="page" from="231" to="259"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Dynamic derivative strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Econ.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">69</biblScope>
+				<biblScope unit="page" from="401" to="430"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b59">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jeanblanc-Piqué</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pontier</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal portfolio for a small investor in a market model with discontinuous prices</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Math. Optim.</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="287" to="310"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b60">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Merton</surname>
+					<forename type="first">R</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Optimum consumption and portfolio rules in a continuous-time model</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Econ. Theory</title>
+			<imprint>
+				<date when="1971">1971</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="373" to="413"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b61">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Roche</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tompaidis</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Why does junior put all his eggs in one basket? a potential rational explanation for holding concentrated portfolios</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Econ.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">109</biblScope>
+				<biblScope unit="page" from="775" to="796"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b62">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rubtsov</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Model misspecification and pricing of illiquid claims</title>
+		</analytic>
+		<monogr>
+			<title level="j">Finance Res. Lett.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="242" to="249"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b63">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shroder</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skiadas</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">An isomorphism between asset pricing models with and without linear habit formation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Financ. Stud.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="1189" to="1221"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b64">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wachter</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Portfolio and consumption decisions under mean-reverting returns: an exact formula for complete markets</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Financ. Quant. Anal.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="63" to="91"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

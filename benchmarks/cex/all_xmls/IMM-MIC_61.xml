@@ -1,0 +1,1332 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Comparative biochemical and structural analysis of the flavin-binding dodecins from Streptomyces davaonensis and Streptomyces coelicolor reveals striking differences with regard to multimerization</title>
+				<funder ref="#_7NSAmPW">
+					<orgName type="full">NANOKAT</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">German Federal Ministry of Education and Research</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-07-24">24 July 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Florian</forename><surname>Bourdeaux</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Organic Chemistry and Chemical Biology</orgName>
+								<orgName type="institution" key="instit1">Buchmann Institute for Molecular Life Sciences</orgName>
+								<orgName type="institution" key="instit2">Goethe University Frankfurt</orgName>
+								<address>
+									<postCode>60438</postCode>
+									<settlement>Frankfurt am Main</settlement>
+									<country>Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Petra</forename><surname>Ludwig</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Institute for Technical Microbiology</orgName>
+								<orgName type="department" key="dep2">Faculty for Biotechnology</orgName>
+								<orgName type="institution">Mannheim University of Applied Sciences</orgName>
+								<address>
+									<postCode>68163</postCode>
+									<settlement>Mannheim</settlement>
+									<country>Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Karthik</forename><surname>Paithankar</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Organic Chemistry and Chemical Biology</orgName>
+								<orgName type="institution" key="instit1">Buchmann Institute for Molecular Life Sciences</orgName>
+								<orgName type="institution" key="instit2">Goethe University</orgName>
+								<address>
+									<postCode>60438</postCode>
+									<settlement>Frankfurt Frankfurt am Main</settlement>
+									<country>Germany;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bodo</forename><surname>Sander</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Chemistry and Biology</orgName>
+								<orgName type="laboratory">Unit for Structural Biology</orgName>
+								<orgName type="institution">Philipps University Marburg</orgName>
+								<address>
+									<postCode>35032</postCode>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lars-Oliver</forename><surname>Essen</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Chemistry and Biology</orgName>
+								<orgName type="laboratory">Unit for Structural Biology</orgName>
+								<orgName type="institution">Philipps University Marburg</orgName>
+								<address>
+									<postCode>35032</postCode>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Martin</forename><surname>Grininger</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Organic Chemistry and Chemical Biology</orgName>
+								<orgName type="institution" key="instit1">Buchmann Institute for Molecular Life Sciences</orgName>
+								<orgName type="institution" key="instit2">Goethe University Frankfurt</orgName>
+								<address>
+									<postCode>60438</postCode>
+									<settlement>Frankfurt am Main</settlement>
+									<country>Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Matthias</forename><surname>Mack</surname></persName>
+							<email>m.mack@hs-mannheim.de</email>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Institute for Technical Microbiology</orgName>
+								<orgName type="department" key="dep2">Faculty for Biotechnology</orgName>
+								<orgName type="institution">Mannheim University of Applied Sciences</orgName>
+								<address>
+									<postCode>68163</postCode>
+									<settlement>Mannheim</settlement>
+									<country>Germany</country>
+								</address>
+							</affiliation>
+						</author>
+
+						<title level="a" type="main">Comparative biochemical and structural analysis of the flavin-binding dodecins from Streptomyces davaonensis and Streptomyces coelicolor reveals striking differences with regard to multimerization</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Microbiology</title>
+						<imprint>
+							<biblScope unit="volume">165</biblScope>
+							<biblScope unit="page" from="1095" to="1106"/>
+							<date type="published" when="2019-07-24">24 July 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2D33E0F4FA7DF81652FB529169112BD1</idno>
+					<idno type="DOI">10.1099/mic.0.000835</idno>
+					<note type="submission">Received 07 May 2019; Accepted 26 June 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>dodecin</term>
+					<term>riboflavin</term>
+					<term>roseoflavin</term>
+					<term>Streptomyces davaonensis</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Dodecins are small flavin-binding proteins that are widespread amongst haloarchaeal and bacterial species. Haloarchaeal dodecins predominantly bind riboflavin, while bacterial dodecins have been reported to bind riboflavin-5′-phosphate, also called flavin mononucleotide (FMN), and the FMN derivative, flavin adenine dinucleotide (FAD). Dodecins form dodecameric complexes and represent buffer systems for cytoplasmic flavins. In this study, dodecins of the bacteria Streptomyces davaonensis (SdDod) and Streptomyces coelicolor (ScDod) were investigated. Both dodecins showed an unprecedented low affinity for riboflavin, FMN and FAD when compared to other bacterial dodecins. Significant binding of FMN and FAD occurred at relatively low temperatures and under acidic conditions. X-ray diffraction analyses of SdDod and ScDod revealed that the structures of both Streptomyces dodecins are highly similar, which explains their similar binding properties for FMN and FAD. In contrast, SdDod and ScDod showed very different properties with regard to the stability of their dodecameric complexes. Site-directed mutagenesis experiments revealed that a specific salt bridge (D10-K62) is responsible for this difference in stability.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Riboflavin (vitamin B 2 ) can be synthesized by most known prokaryotic species <ref type="bibr" target="#b0">[1]</ref>. Riboflavin is a precursor of flavin mononucleotide (FMN) and flavin adenine dinucleotide (FAD) (Fig. <ref type="figure" target="#fig_0">1</ref>). FMN and FAD are cofactors of the so-called flavoproteins, proteins that are able to carry out highly diverse biological functions <ref type="bibr" target="#b1">[2]</ref>. Since all cells contain considerable amounts of riboflavin, FMN and FAD <ref type="bibr" target="#b2">[3]</ref>, it is likely that micro-organisms encounter flavins in their habitat as a result of cell decomposition. Since uptake of e.g. riboflavin is more economical than its biosynthesis, many bacteria and archaea contain membrane-bound transporters for riboflavin <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>. Cytoplasmic riboflavin is either converted to FMN and FAD by flavokinases and FAD synthetases <ref type="bibr" target="#b5">[6]</ref> or stored by riboflavin-binding proteins in birds <ref type="bibr" target="#b6">[7]</ref> and mammals <ref type="bibr" target="#b7">[8]</ref> or by dodecins in archaea <ref type="bibr" target="#b8">[9]</ref>. Dodecins are the smallest known flavoproteins (about 70 amino acids per monomer) and appear to only be present in prokaryotic cells <ref type="bibr" target="#b8">[9]</ref>. Dodecins form dodecameric protein complexes with six structurally identical binding pockets whereby each pocket accommodates two flavins sandwiched between two tryptophan residues. The flavin-binding dodecins can be divided into two groups, the archaeal and the bacterial dodecins. While archaeal dodecins seem to be restricted to the class Halobacteria (haloarchaea), bacterial dodecins are distributed among several phyla and have also been identified and characterized in the pathogens Mycobacterium tuberculosis (MtDod) <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref> and Pseudomonas aeruginosa <ref type="bibr" target="#b8">[9]</ref>. Halobacterium salinarum dodecin (HsDod) is the best-studied archaeal dodecin and has been reported to be involved in riboflavin storage and homeostasis <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref>. The primary structures of bacterial dodecins are less conserved when compared to archaeal dodecins and the flavin-binding specificities are less pronounced, i.e. FMN, riboflavin and also FAD are accepted as ligands. While FMN seems to be the most important flavin ligand of bacterial dodecins <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b14">15]</ref>, dodecins were found to also bind coenzyme A <ref type="bibr" target="#b15">[16]</ref> or calcium <ref type="bibr" target="#b16">[17]</ref>, and a function in cofactor storage has been proposed <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b15">16]</ref>.</p><p>The bacteria Streptomyces davawensis (now Streptomyces davaonensis) <ref type="bibr" target="#b17">[18]</ref> and Streptomyces cinnabarinus are the only organisms known to produce the riboflavin analogue roseoflavin, which is activated by flavokinases and FAD synthetases to the cofactor analogues roseoflavin mononucleotide (RoFMN) and roseoflavin adenine dinucleotide (RoFAD) (Fig. <ref type="figure" target="#fig_0">1a</ref>). RoFMN and RoFAD are inhibitors of flavoproteins <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref> and RoFMN inhibits FMN riboswitches <ref type="bibr" target="#b21">[22]</ref>. Since the bacterial dodecin MtDod was reported to bind roseoflavin with high affinity <ref type="bibr" target="#b22">[23]</ref>, it seemed likely that the corresponding dodecins from S. davaonensis (SdDod) and S. cinnabarinus (ScinDod) would play a role in roseoflavin resistance by tightly binding the flavin and thus inactivating this antibiotic. In-depth analysis of an S. davaonensis dodecindeficient strain, however, suggested that SdDod does not contribute strongly to roseoflavin resistance <ref type="bibr" target="#b23">[24]</ref>. The finding that an S. davaonensis dodecin deletion strain showed an altered metabolome and different behaviour under oxidative stress was rather in line with a flavin-buffering role <ref type="bibr" target="#b23">[24]</ref>. As mentioned above, flavins are present at relatively high levels in prokaryotic cells (riboflavin, ~17 µM; FMN, 45 µM; FAD, 170 µM) <ref type="bibr" target="#b2">[3]</ref> and have the potential to generate highly reactive, cytotoxic compounds in an oxic environment. Consequently, it seemed plausible that the flavin-binding dodecins shield these reactive chemicals from other cellular structures. Interestingly, MtDod was found to bind FMN more strongly at an acidic pH <ref type="bibr" target="#b9">[10]</ref> and the hypothesis is that under these conditions MtDod helps the pathogen to survive acidic conditions encountered when entering a dormant state. Previous work has shown that the internal pH of dormant endospores of e.g. Bacillus species is more than 1 pH unit below that of the cytoplasm of growing cells <ref type="bibr" target="#b24">[25]</ref>. The same was reported for spores of Bacillus subtilis, Streptomyces antibioticus and Streptomyce kasugaensis <ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref>. The streptomycetes S. davaonensis and Streptomyces coelicolor may have acidic spores as well and we therefore also envisaged a role for Streptomyces dodecins in flavin binding under acidic conditions.</p><p>The present study was initiated to shed more light on the function of the bacterial dodecins of S. davaonensis and S. coelicolor (ScDod). S. coelicolor is not a flavin overproducer and also does not synthesize roseoflavin. The working hypothesis was that SdDod would protect S. davaonensis from roseoflavin and/or reactive flavins in general whereby ScDod was studied as a control. Our data suggest that SdDod and ScDod are involved in flavin homeostasis of the ubiquitous soil-dwelling streptomycetes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Chemicals</head><p>Roseoflavin was obtained from MP Biomedicals (Heidelberg, Germany). The flavins used for binding experiments and all other chemicals were obtained from Sigma-Aldrich (Munich, Germany). Flavins are light-sensitive and all samples and cultures containing flavins were kept in the dark.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bacterial strains, plasmids, growth media and cloning</head><p>The strains and plasmids used in this work are listed in Table <ref type="table" target="#tab_0">S1</ref> (available in the online version of this article). The genes encoding SdDod (BN_159 1333) and ScDod (SCO0915) were amplified by PCR using specific oligonucleotide primers and chromosomal DNA as a template (for all primers see Table <ref type="table" target="#tab_1">S2</ref>). The NdeI/XhoI-treated PCR products were ligated to NdeI/XhoI-treated pET24a(+), which introduced codons specifying a C-terminal His 6 -tag. From the structural data we deduce that the His 6 -tag does not interfere with oligomerization as the His 6 -tag points towards the outside of the multimers. For crystallization of ScDod without a His-tag, a plasmid based on pET28a(+) was constructed. The corresponding PCR product was digested with PciI/XhoI and ligated to NcoI/XhoI-treated pET28a(+). All inserts of all constructs were proof sequenced. Escherichia coli was used for cloning and was cultivated aerobically in lysogeny broth (LB) <ref type="bibr" target="#b28">[29]</ref> at 37 °C.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Site-directed mutagenesis</head><p>Site-directed mutagenesis was carried out using the QuikChange II XL Site-Directed Mutagenesis kit according to the instructions of the manufacturer. Two complementary mismatch oligonucleotides were used to generate point mutations in the expression plasmids pET24a(+)SdDod-His 6 and pET24a(+)ScDod-His 6 . The sequences of the employed oligonucleotides are listed in Table <ref type="table" target="#tab_1">S2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>overproduction and purification of dodecins</head><p>The genes encoding SdDod, ScDod and variants thereof were overexpressed in E. coli Rosetta 2(DE3), or for crystallization in E. coli CpXFMN <ref type="bibr" target="#b23">[24]</ref> with 50 µM riboflavin or roseoflavin present in the growth medium. Cells were aerobically grown in LB in the presence of 50 µg ml -1 kanamycin and 34 µg ml -1 chloramphenicol to an optical density (OD 600 ) of 0.6 at 37 °C. IPTG was added to a final concentration of 1 mM and cultures were grown for another 5 h. Cells were harvested by centrifugation and stored at -20 °C prior to cell disruption. Frozen cell paste was suspended in 30 ml His Trap binding buffer (3 mM KH 2 PO 4 , 17 mM K 2 HPO 4 , 300 mM KCl, 10 mM imidazole; pH 8.0) containing one tablet of cOmplete (Roche, Mannheim, Germany). The cell suspension was passed twice through a French press at 2000 bar (200 MPa). Two centrifugation steps (13 100 g, 4 °C, 10 min followed by 108000 g, 4 °C, 30 min) removed cell debris and unbroken cells. All affinity chromatography steps were performed using the ÄKTApurifier system at a flow rate of 2 ml min -1 and at room temperature (RT). The supernatant was loaded onto a 5 ml HisTrap column, which was equilibrated with His Trap binding buffer. When the UV signal returned to baseline the column was washed with 14 column volumes (CV) of 20 % (v/v) His Trap elution buffer (300 mM KCl, 500 mM imidazole, 3 mM KH 2 PO 4 , 17 mM K 2 HPO 4 ; pH 8.0). For elution a His Trap elution buffer gradient of 1 % ml -1 (v/v) starting at 20 % was used. Protein-containing fractions were pooled and dialyzed employing dialysis tubes (molecular weight cut-off: 8-12 kDa) in 1 L of the dodecin buffer (300 mM NaCl, 5 mM MgCl 2 , 20 mM Tris-HCl; pH 7.5) until no further change in conductivity was observed. Dialyzed dodecin solutions were further purified by size-exclusion chromatography (SEC) with a Superdex 200 Increase 10/300 GL column and dodecin buffer as running buffer. Dodecamer fractions were pooled and purity was analysed by sodium dodecyl sulfate-polyacrylamide gel electrophoresis (SDS-PAGE). Dodecin (dodecamer) samples were concentrated, shock frozen and stored at -20 °C. ScDod not containing a His 6 -tag was purified by a heat denaturation, dialysis, anion exchange chromatography and SEC as described <ref type="bibr" target="#b15">[16]</ref>. Protein solutions were concentrated with centrifugal concentrators (30.000 Da molecular weight cut-off; Amicon, Merck, Darmstadt, Germany).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Determination of protein amounts and flavin levels</head><p>Dodecins were determined by their absorbance at 280 nm (NanoDrop 2000C, Thermo Scientific, Karlsruhe, Germany) and the calculated extinction coefficient of 12 490 M -1 cm -1 . Flavin levels were determined at different wavelengths (riboflavin, 375 nm and 450 nm; FMN/FAD, 375 nm, 450 nm and 473 nm; roseoflavin, 505 nm) employing the following extinction coefficients: 375 nm, 10 000 M -1 cm -1 ; 450 nm, 12 000 M -1 cm -1 ; 473 nm, 9200 M -1 cm -1 ; 505 nm, 31 000 M -1 cm -1 ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Analysis of proteins employing SdS-PAGE</head><p>Precast gels were used for SDS-PAGE analysis (Mini-PROTEAN TGX stain-free precast PAGE gels, BioRad, Dreieich, Germany). For standard SDS-PAGE a 2× sample buffer [126 mM Tris-HCl, pH 6.8; 20 % (v/v) glycerol; 4 % (w/w) SDS; 0.02 % (w/w) bromophenol blue; 20 mM dithiothreitol] was added to the protein solutions and the resulting mixtures were incubated for 5 min at 95 °C. For mild denaturing or semi native SDS-PAGE a 2× SDS-free sample buffer [1 M 6-aminocaproic acid, 100 mM BisTris-HCl, 100 mM NaCl, 20 % (v/v) glycerol, 0.1 % (w/w) SERVA Blue G, pH 7.0] was added to the protein solutions and the resulting mixtures were loaded to the gel without heat treatment. The running buffer contained 25 mM Tris-HCl (pH 8.3), 192 mM glycine and 3.5 mM SDS. Running conditions were 15 min at 100 V followed by 45 min at 150 V. For the stability measurement of ScDod in the presence of SDS and urea, the proteins were incubated in a solution with a final concentration of 2 % (w/w) SDS or a solution with 2 % (w/w) SDS and 8 M urea at 95 °C. All samples were analysed by SDS-PAGE but without additional heat treatment during sample preparation. The stabilizing effect of FMN on dodecins was determined as follows. Dodecins (10 µM) were incubated at 20 °C in the dark for 15 min with a fivefold molar excess of FMN (50 µM). The samples were subsequently analysed by SDS-PAGE. To analyse the binding behaviour and effects of riboflavin and roseoflavin on SdDod (10 µM), proteins were incubated with a 2-to -20-fold molar excess of a flavin (20-200 µM), incubated in the dark at RT for 15 min and analysed by SDS-PAGE.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Determination of flavin binding to dodecins</head><p>The thermocyclic fluorescence assays and the thermofluorescence assay were essentially conducted as described recently <ref type="bibr" target="#b9">[10]</ref>. For the present flavin binding determination a real-time PCR instrument (C1000 Thermal Cycler and CFX96 Real-Time System; Bio-Rad) with an excitation/emission filter bandwidth of 450-490/560-580 nm was used. For the thermocyclic fluorescence assay, 25 µL of a 16 µM FMN : dodecin solution was added to the 96-well plates. The basic buffer contained 300 mM NaCl, 5 mM MgCl 2 . Depending on the pH values to be reached, the mixtures contained 23.8 mM of additional buffer reagents (for pH 4.0, citrate; for pH 5.0, acetate; for pH 5.0, citrate; for pH 6.0-7.0, phosphate; for pH 7.5, Tris-HCl). The heating-phase temperature was increased stepwise from 5 °C to 95 °C (5-50 °C, 4.5 °C steps; 50-95 °C, 2 °C steps). Following each heating phase, a 30 min 5 °C cooling phase took place, followed by fluorescence measurements. The fluorescence (cooling phase) was plotted against the heating temperature and the slope between the two steps was used to determine the start of denaturation of the dodecamer [slope above 120 relative fluorescence units (RFU) C -1 ]. For the thermofluorescence assay 2 µL of a 50 µM flavin : dodecin solution (basic buffer solution; 300 mM NaCl, 5 mM MgCl 2 and 10 mM Bis-tris methane) (pH 6.17) was added to 23 µL of a basic buffer system (300 mM NaCl, 5 mM MgCl 2 ) and 23.8 mM of universal buffer system components (AAB, acetic acid, ADA and bicine; MMT, malic acid, MES and Tris-HCl). The temperatures were raised from 5 °C to 95 °C in 0.5 °C steps every 30 s and after every heating phase the fluorescence was measured. The fluorescence was plotted against the temperature and inflection points were determined by Boltzman sigmoidal curve fitting. For the titration experiments SdDod or ScDod (0-8 µM each) were incubated in the presence of 1 µM of the corresponding flavin for 1 h at 20° in the dark. For measurements at pH 5.0 a buffer solution containing 300 mM NaCl, 5 mM MgCl 2 and 20 mM acetic acid (pH 5.0) was used. For measurements at pH 7.5 the standard dodecin buffer solution containing 300 mM NaCl, 5 mM MgCl 2 and 20 mM Tris-HCl (pH 7.5) was employed. After incubation fluorescence was measured in a plate reader with excitation at 445±9 nm and emission detection at 520±20 nm. The fluorescence of a well was measured four times and averaged, and measurements were conducted in triplicates. Data were background corrected (measurement of 100 µL buffer solution), averaged and normalized with the fluorescence signal of the well with only 1 µM flavin (0 µM dodecin). Dissociation constants were determined by non linear curve fitting (Origin Pro 8.6) with function ( <ref type="formula" target="#formula_0">1</ref>). Variables: [A 0 ] (overall flavin concentration, allowed values 1±0.05 µM), F max (fluorescence of unbound flavin, allowed values 100±5 %), [D 0 ] (overall dodecin concentration) and F ∞ (fluorescence of bound flavin).</p><formula xml:id="formula_0">F = Fmax -Fmax-F∞ [ A0 ] ( [ D0 ] + [ A0 ] +K d - √ ([ D0 ] + [ A0 ] +K d ) 2 -4 [ A0 ][ D0 ] 2 )<label>(1)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Crystallization of purified dodecins</head><p>Prior to crystallization, ScDod was denatured and refolded in the presence of FMN in the dodecin buffer as reported for the dodecin of Thermus thermophilus (TtDod) and MtDod <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b15">16]</ref> and excessive amounts of FMN were removed by SEC using a Superdex 200 16/60 column (running buffer: 100 mM NaCl, 20 mM Tris-HCl; pH 8). The SdDod used for crystallization was overproduced in E. coli CpXFM in the presence of 50 µM riboflavin or roseoflavin as described previously <ref type="bibr" target="#b23">[24]</ref>. Crystallization experiments were performed by mixing 1 µL of the protein solution mixed with an equal amount of reservoir solution in a hanging droplet setup. The following conditions yielded crystals. SdDod: 6 mg ml -1 roseoflavin : SdDod (droplet concentration); 500 µL reservoir solution: 5 % poly-γ-glutamate (PGA)-LM, 22 % (w/v) PEG-3350, 0.1 M Na-cacodylate, pH 6.5; light magenta coloured crystals grew at 20 °C. ScDod: 10 mg ml -1 FMN : ScDod (droplet concentration); 1 ml reservoir solution: 0.2 M (NH 4 ) 2 SO 4 , 10 % (w/v) PEG-4000, 0.1 M NaOAc, pH 4.8; yellow/orange coloured crystals grew at 18 °C. Crystals were treated with cryoprotectant solutions and cryocooled in liquid nitrogen. For SdDod crystals the reservoir solution contained 20 % (v/v) ethylene glycol and for SdDod crystals the reservoir solution contained 20 % (v/v) glycerol.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data collection, processing and structure determination</head><p>SdDod crystals were exposed to single-wavelength X-radiation at the Swiss Light Source (X06DA PX3) and maintained at 100 K while data were recorded onto a detector (PILATUS 2 M-F). In the case of ScDod, data were collected with singlewavelength X-radiation from a Bruker-Nonius FR591/CuKα at 100 K. SdDod data were processed using the program xia2 and scaled using AIMLESS within the CCP4 suite. For both structures the phase problem was solved using the molecular replacement method with the program MOLREP, employing the structural model of MtDod (PDB accession code: 2YIZ). The structure was iteratively refined with REFMAC5 with manual model building using Coot. The side-chain positioning and model geometry improvements were performed using the PDB_REDO server and manually verified in Coot. The data collection and refinement statistics are given in Table <ref type="table">S4</ref>. The PDB ID is 6RI3 for SdDod and 6R1E for ScDod.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The bacterial dodecins Sddod and Scdod are exceptional as they only bind flavins at low pH values and low temperatures</head><p>As a first step with regard to the biochemical analysis of SdDod and ScDod, the amino acid sequences of these proteins were compared to the amino acid sequences of wellstudied dodecins from other microbial species (Fig. <ref type="figure" target="#fig_0">1b</ref>). The comparison suggested that SdDod and ScDod were flavinbinding dodecins due to the presence of the conserved/ characteristic amino acid residues W39 and Q58 (SdDod and ScDod numbering), amino acids known to be important for flavin binding (Fig. <ref type="figure" target="#fig_0">1b</ref>) <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b15">16]</ref>. Notably, W39 builds the aromatic tetrade that is essential in sandwiching flavins. Although SdDod and ScDod were predicted to bind flavins, purification of these dodecins from recombinant E. coli strains yielded flavin-free preparations with no absorbance at the riboflavin-specific wavelengths of 375 nm and 450 nm. This suggested that the flavins present in the cytoplasm of E. coli (riboflavin, FMN and FAD; Fig. <ref type="figure" target="#fig_0">1a</ref>) were not captured by SdDod or ScDod while being overproduced in this organism. Purified apo-SdDod was investigated with regard to the binding of flavins by titration with FMN and riboflavin (Fig. <ref type="figure">S1</ref>). SdDod showed no detectable binding of FMN and riboflavin at the physiological pH of 7.5 (Fig. <ref type="figure">S1a</ref>). Similar results were obtained when titrating ScDod (data not shown). This binding behaviour was unexpected, as eight (H4, Y6, D38, W39, E41, R46, Q58 and R66) out of nine amino acids known to interact with FMN in MtDod are present in ScDod and SdDod at a comparable position (Fig. <ref type="figure" target="#fig_0">1b</ref>). H48, which is known to interact with FMN in MtDod <ref type="bibr" target="#b9">[10]</ref>, is the only exception, and in SdDod (and ScDod) a glutamine residue (Q48) is present at this position. At pH 5.0 binding of FMN by SdDod and also ScDod was observed (Fig. <ref type="figure">S1a</ref>) and this can be explained by the fact that protonation of the 5′-phosphate of FMN led to a more hydrophobic compound, which in turn is more likely to be bound by the tryptophan residues W39 of SdDod. Binding of riboflavin was not observed at pH 5.0 (data not shown). Measurement of tryptophan fluorescence in an FMN : dodecin titration experiment supported the idea that flavin binding does not occur at the cytoplasmic pH (Fig. <ref type="figure">S1b</ref>). Temperature-dependent dissociation of flavin : dodecin complexes is a direct quantitative measure for flavin binding and was subsequently used to characterize flavin binding by SdDod and ScDod at different pH values and temperatures in more depth (Fig. <ref type="figure" target="#fig_1">2</ref>). At relatively low temperatures flavins were bound by dodecins and fluorescence was quenched. With increasing temperatures the flavin : dodecin complexes incrementally disassembled (dodecin does not denature above 80 °C) and the released flavins were measured using a fluorescence detector. Temperature-dependent dissociation was determined for the complexes of ScDod and SdDod with riboflavin, FMN and FAD at different pH values and temperatures(Fig. <ref type="figure" target="#fig_1">2</ref>). The inflection points of the sigmoidal temperature-fluorescence curves were taken as a measure of complex stability, with higher values of the inflection point reflecting a more stable flavin : dodecin complex. Our data revealed that both dodecins are only able to bind FMN and FAD (but not riboflavin) weakly at physiological pH, but more strongly at a more acidic pH, supporting the results of our titration experiment. As FMN binding was observed under more acidic conditions, titration experiments with FMN and Streptomyces dodecins were performed at pH 5 (Fig. <ref type="figure">S2</ref>). As a result of this experiment, the K D for FMN binding to ScDod and SdDod was estimated to be between 50 and 150 nM. This apparent binding affinity is lower than that for the bacterial dodecin MtDod (K D =18 nM, pH 5.0) and is one of the lowest found for bacterial dodecins <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b15">16]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The three-dimensional structures of Sddod and Scdod are highly similar</head><p>As a next step with regard to the characterization of SdDod and ScDod, the three-dimensional structures of SdDod (PDB ID: 6RI3) and ScDod (PDB ID: 6R1E) were determined at resolutions of 2.4 Å and 2.6 Å, respectively and the structures were found to be highly similar. The monomers are composed of three β-sheets that partly enwrap an α-helix (β 1 α 1 β 2 β 3 topology) and the alpha-carbon coordinates align well to each other (Fig. <ref type="figure" target="#fig_2">3a</ref>), meaning that the root-mean-square deviations (RMSDs) between the compared dodecin monomers are in the range of 1 Å. The quaternary structures of SdDod and ScDod are similar as well, except for the fact that the trimers show differences in the relative positioning of the monomers. Monomers 2 show a significant deviation between SdDod and ScDod, causing channel 1 of SdDod to be wider than channel 1 of ScDod(Fig. <ref type="figure" target="#fig_2">3b</ref>). The 12 monomers of SdDod or ScDod assemble to a hollow spherical structure with 6 flavin dimer-binding pockets located at the twofold axes (Fig. <ref type="figure" target="#fig_2">3c</ref>). Two types of channel are formed at the threefold axes, termed channel 1 and channel 2, differing with regard to the trimeric interphases and bound ions. In line with the similar binding behaviour of SdDod and ScDod, the nine amino acids relevant for flavin binding (H4, Y6, D38, W39, E41, R46, Q48, Q58 and R66) superimpose well in the structures of both dodecins (not shown). These residues also superimpose well with the corresponding amino acids in MtDod, except for H48 (see Fig. <ref type="figure" target="#fig_0">1b</ref>), where SdDod and ScDod contain a glutamine residue (Q48). Owing to the high structural conservation of the flavin-binding pockets, the different binding properties (see the first results section) are best explained by the specific impact of the exchange of H48 in MtDod for Q48 in SdDod and ScDod. Unfortunately, the co-crystallization of dodecins with flavins was not successful and thus we were not able to obtain information on flavin binding at the atomic level. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SdS-PAGE analysis of purified Scdod and Sddod reveals differences in the stability of dodecameric multimers</head><p>When SdDod and ScDod were analysed by SDS-PAGE under denaturing conditions (2 % SDS, 10 mM DTT), SdDod was found to be present only in its monomeric form, whereas ScDod (as expected for a bacterial dodecin) formed a multimer(Fig. <ref type="figure" target="#fig_3">4</ref>). ScDod subsequently was challenged with different denaturing agents and conditions (Fig. <ref type="figure" target="#fig_4">5</ref>). The monomeric form of ScDod was only obtained when the protein samples were incubated at 95 °C for more than 20 min in the presence of 2 % SDS, 10 mM DTT, 2 % β-mercaptoethanol, 1 mM EDTA and 8M urea, and we concluded that the ScDod dodecamer was remarkably more stable than ScDod.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The amino acid d10 of Sddod is responsible for the reduced stability of the dodecameric form of Sddod</head><p>Structural analysis of the dodecin from M. tuberculosis (MtDod) <ref type="bibr" target="#b10">[11]</ref> suggested that three salt bridges in particular contribute to stabilization of the dodecameric form of MtDod, namely E10-K62, R29-D69 and E41-R46 (Fig. <ref type="figure" target="#fig_0">1b</ref>). Similar salt bridges (E10-K62, R29-E69 and E41-R46) were found to be present in ScDod. In SdDod the corresponding salt bridges were predicted to be D10-K62, R29-E69 and E41-R46, and we hypothesized that the salt bridge D10-K62 in SdDod (replacing E10-K62 in ScDod) was responsible for the strongly reduced stability of the SdDod dodecamer observed in the presence of 2% SDS and 10 mM DTT when compared to ScDod (see preceding paragraph). Site-directed  mutagenesis experiments were carried out to test this idea. In total, 13 different variant genes of SdDod were generated. The mutated genes and the properties of the corresponding variants of SdDod are listed in Table <ref type="table" target="#tab_0">1</ref>. All dodecin genes were expressed in E. coli Rosetta 2(DE3) and the variant proteins were purified to apparent homogeneity by affinity chromatography followed by SEC. While most variants behaved like the wild-type during purification, some ScDod variants showed an additional trimer peak upon SEC, indicating changes in quaternary structure (Fig. <ref type="figure">S3</ref>). Denaturing SDS-PAGE of the SdDod variants in comparison to wildtype SdDod revealed that D10 is indeed the key amino acid with regard to the relative lability of SdDod when compared to ScDod (Fig. <ref type="figure">S4</ref>). The variant SdDod-D10E was the only protein that was able to form multimers (dodecamers) under the applied conditions (Fig. <ref type="figure">S4</ref>, lane D10E). This can be explained by the stronger salt bridge E10-K62 induced by the carboxyl of E10, which is closer to K62 when compared to the carboxyl of the (shorter) amino acid residue D10 of wild-type SdDod. These results were nicely supported upon analysis of the ScDod variant ScDod-K62A (Fig. <ref type="figure">S4</ref>, lane K62A). In this dodecin variant, the formation of a salt bridge between E10 and A62 is not possible and this explains the clearly decreased tendency to form a dodecamer. All other ScDod variants behaved like the wild-type protein. As a next step in our analysis we employed blue native gel electrophoresis (BN-PAGE) and obtained a more differentiated picture with regard to the multimerization of wild-type dodecins and variants thereof (Fig. <ref type="figure">S5a-c</ref>). BN-PAGE was carried out in the presence of Coomassie G-250, which provided the necessary charges for electrophoretic separation of the proteins while being only a very mild denaturant. In contrast to the wild-type (Fig. <ref type="figure">S5a</ref>, lane 1), SdDod-D10E formed a dodecamer (Fig. <ref type="figure">S5a</ref>, lane 2), supporting the idea that D10 is responsible for the relative lability of the S. davaonensis dodecin. In addition, upon BN-PAGE analysis of SdDod-E44Q, we found that E44 of SdDod plays a role in multimerization and also that the variant SdDod-E44Q (in contrast to all other variants) formed a dodecamer (Fig. <ref type="figure">S5a</ref>, lane 8). The likely reason for this is that E44 of wild-type SdDod has the potential to weaken the salt bridge E41-R46 that is important for dodecamer formation. When E44 was replaced by Q44, E41-R46 was more stable, resulting in a multimer under the applied conditions. The importance of A62 in salt bridge formation was validated by BN-PAGE analysis of SdDod-K62A and the double mutant SdDod-D10E/K62A (Fig. <ref type="figure">S5b</ref>, lanes 12 and 14). BN-PAGE analysis of the S. coelicolor dodecin variants ScDod-Q44E, ScDod-K62A and ScDod-Q44E/K62A gave further insights into the multimerization of dodecins. ScDod-Q44E (Fig. <ref type="figure">S5c</ref>, lane 17) behaved like the wild-type, which can be explained by the fact that although E44 of the mutant (as in SdDod) weakens the salt bridge E41-R46, this does not play a role, as the salt bridges E10-K62 (notably this salt bridge is not present in SdDod) and R29-E69 provide enough stability with regard to the overall complex. When amino acid replacements affect the salt bridge E10-K62, as in the case of ScDod-K62A (Fig. <ref type="figure">S5c</ref>, lane 18), dodecamer formation does not occur, and this is even more pronounced in the double mutant ScDod-Q44E/K62A (Fig. <ref type="figure">S5c</ref>, lane 19). In contrast to the single mutant ScDod-Q44E, E44 in ScDod-Q44E/K62A now markedly interferes with the salt bridge E41-R46, which underscores the importance of E44 of SdDod with regard to stability of the multimer. A selection of mutants was also examined with regard to their thermal stability by a thermocyclic fluorescence assay at different pH values (Fig. <ref type="figure">S6</ref>) <ref type="bibr" target="#b9">[10]</ref>. Overall, the data nicely supported the PAGE results and validated that ScDod is more stable than SdDod. Further, the data clearly support the idea that D10 of wild-type SdDod is responsible for this observed difference in stability. Intriguingly, SdDodK62A in this assay was apparently even less stable than the wild-type of SdDod (native D10-K62 interaction), suggesting that D10 in SdDod forms a weak interaction with K62. Introducing the D10E mutation to SdDodK62A, creating the double mutant SdDodD10E/K62A, recovers some stability, presumably through interactions of E10 with other amino acids in the dodecamer. A further interesting feature is that the K62A mutation has a smaller impact on SdDodD10-K62 (native interaction) than on ScDodE10-K62 (native interaction), making SdDodK62A significantly more stable than ScDodK62A. A possible explanation for this is that the weak interaction of D10 and K62 in SdDod needs to be compensated by other interactions and these compensating interactions reduce the impact of the K62A mutations. One of those compensating interactions may be mediated by E44 interacting with R46 (of the same monomer). Indeed, introducing this interaction in ScDod by mutating the lowstability mutant ScDodK62A to ScDodQ44E/K62A again leads to a more stable dodecamer. Notably, this mutation also affects dodecamer assembly, which is reflected by a minor dodecamer fraction in SEC (see Fig. <ref type="figure">S3</ref>). Table <ref type="table" target="#tab_0">1</ref> summarizes the results of the different experiments.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Roseoflavin affects the dodecameric structure of the dodecin from S. davaonensis</head><p>The experiments described above showed that ScDod and SdDod have different properties with regard to multimerization and we speculated that the binding of flavins may also be affected by these different properties. Riboflavin is produced by both streptomycetes in similar amounts <ref type="bibr" target="#b29">[30]</ref>, whereas roseoflavin is an antibiotic that is only produced by S. davaonensis <ref type="bibr" target="#b30">[31]</ref>. Purified preparations of both dodecins (apo-forms) were incubated in the presence of a fivefold molar excess of riboflavin or roseoflavin in the dark (to avoid flavin degradation) and analysed by SDS-PAGE under denaturing conditions (but without heat treatment)(Fig. <ref type="figure" target="#fig_5">6</ref>). The gels were evaluated under visible light (to detect yellow riboflavin and red roseoflavin), under UV light (to detect fluorescent riboflavin) and by staining with Coomassie brilliant blue G-250 (to detect the proteins). It can be clearly seen that formation of dodecamers of SdDod was induced upon the addition of roseoflavin, whereas the structurally very similar riboflavin did not have such an effect. In a subsequent similar experiment different amounts of roseoflavin were added to apo-SdDod and the shift from 9 kDa to 108 kDa was found to occur in the presence of 100 µM roseoflavin (Fig. <ref type="figure">S7</ref>). In case of apo-ScDod no differences could be detected (Fig. <ref type="figure">S7</ref>), since apo-ScDod forms dodecamers even in the absence of flavins.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fmn affects the multimerization of the dodecin from S. davaonensis</head><p>The following experiments were carried out to evaluate putative differences between the two streptomycete dodecins with regard to the binding of FMN, the preferred ligand of bacterial dodecins. Purified preparations of SdDod and ScDod were incubated in the presence of a fivefold molar excess of FMN and analysed by denaturing SDS-PAGE (Fig. <ref type="figure">S8</ref>). Wild-type dodecin from S. davaonensis showed a clear shift towards a higher molecular mass in the presence of FMN, indicating that FMN promoted the formation of multimers (probably trimers). Formation of the dodecamer, however, did not occur (Fig. <ref type="figure">S8</ref>). As expected, S. davaonensis SdDod-D10E already showed the dodecameric structure in the absence of FMN (see also Figs <ref type="figure">S4</ref> and<ref type="figure">S5</ref>) and thus no difference could be observed in the presence of FMN. Some amino acid replacements in SdDod (E17D; D20E; N28T; N36K; N50E) led to an apparent stimulation of multimerization (Fig. <ref type="figure">S8</ref>). SdDod-E44Q apparently formed a dodecamer in the presence of FMN (Fig. <ref type="figure">S8</ref>) underscoring the importance of the salt bridge E41-R46 in multimerization and the role of the competing E44. Wildtype ScDod apparently formed a dodecamer in the absence as well as in the presence of FMN, and the same was true for ScDod-D20E (Fig. <ref type="figure">S8</ref>). The variant ScDod-K62A formed a monomer (and not a dodecamer) in the absence of FMN. In the presence of FMN a trimer (but not a dodecamer) was found. The missing salt bridge E10-K62 apparently affected FMN binding and thus this mutant did not shift to the multimeric structure and rather behaved like the wild-type SdDod, where the salt-bridge D10-K62 is weaker.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>The streptomycete dodecins SdDod and ScDod show a typical feature of bacterial flavin-binding dodecins as they predominantly bind FMN in contrast to the haloarchaeal dodecins, which prefer riboflavin. Still, SdDod and ScDod are remarkable, because they bind flavins with a very low affinity. FMN and FAD are only bound at low temperatures and/or under acidic conditions, while riboflavin binding is too weak to be observed in our different experimental settings. At present it is unclear whether these differences, which have been observed in vitro, are of physiological relevance. A sequence comparison of SdDod and ScDod to the actinobacterial MtDod (which binds flavins better) immediately suggests that the amino acid residue Q48 in SdDod and ScDod (see Fig. <ref type="figure" target="#fig_0">1b</ref>) is the reason for the low flavin affinity of SdDod and ScDod. It is the only exchange in flavin-binding amino acids when compared to MtDod, which harbours a histidine residue at this position (H48). In principle, Q48 of SdDod and ScDod would also be able to able to form a hydrogen bond with the ribityl moiety of flavins. However, we were not able to co-crystallize SdDod and ScDod with flavins and thus could not find evidence for such a hydrogen bond. Notably, the dodecin from T. thermophilus carries a threonine at a comparable position (which does not form a hydrogen bond with the ribityl of the flavin) and still binds FMN and riboflavin with similar affinities to MtDod <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b15">16]</ref>. Another possibility for the low apparent flavin affinity of SdDod and ScDod could be the slightly different arrangement of the dodecin monomers in the dodecamer affecting the geometry of the flavin-binding pocket (Fig. <ref type="figure" target="#fig_2">3b</ref>).</p><p>An interesting result of our study was the finding that multimerization of SdDod was promoted in the presence of &gt;20 µM roseoflavin. Wild-type S. davaonesis produces about 20 µM roseoflavin in a liquid medium under laboratory conditions and it was therefore tempting to speculate that SdDod was involved in resistance to this antibiotic. However, since a dodecin-deficient variant of S. davaonensis grows perfectly in the presence of 200 µM roseoflavin <ref type="bibr" target="#b23">[24]</ref>, a key role for SdDod in resistance to roseoflavin appears to be unlikely. We cannot rule out, of course, the possibility that SdDod plays a role in flavin homeostasis, storing riboflavin and roseoflavin, however, such a role is extremely difficult to show. Alternatively, the dodecins in streptomycetes could play a role in delivering flavins to flavoenzymes and/or to roseoflavin biosynthetic enzymes. FMN is the direct precursor of 8-demethyl-8-aminoriboflavin-5′-phosphate, which is subsequently converted to roseoflavin.</p><p>To our surprise, we found strong differences between SdDod and ScDod with regard to dodecamer stability. Thermal melting curves revealed that SdDod is stable up to 88 °C and ScDod does not denature below 95 °C (see Table <ref type="table" target="#tab_0">1</ref>). Our mutagenesis studies revealed that the lower stability of SdDod is caused by the weaker salt bridge between the D10 M1 and K62 M2 of two dodecin monomers in channel 2 (the superscript M1 and M2 denote monomers of trimeric units). In ScDod the comparable salt bridge is E10 M1 -K62 M2 . In SdDod neither the intra-nor the inter-monomer salt bridge is dominant(Fig. <ref type="figure" target="#fig_6">7a</ref>); both are weaker than the inter-monomer (M1 to M2) salt bridge of ScDod (Fig. <ref type="figure" target="#fig_6">7b</ref>). Mutating D10 to E10 in SdDod, creating the mutant SdDodD10E, led to a similar thermal stability to that of ScDod. In line with the important role of this salt bridge, the high thermal stability of ScDod is diminished in the mutant ScDodK62A, where the salt bridge is no longer present. The mutation of E10 to D10 during the course of evolution was tolerated because the protein remained highly stable. The biological reason for the apparent differences in the stability of ScDod and SdDod unfortunately remain unclear.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Chemical structures of the flavins investigated in this study and primary structures of dodecins from different prokaryotic species. (a) Structures of riboflavin and the riboflavin-derived cofactors flavin mononucleotide (FMN) and flavin adenine dinucleotide (FAD). The riboflavin analogue roseoflavin is an antibiotic and is produced by S. davaonensis but not by S. coelicolor. Roseoflavin is activated by flavokinases and FAD synthetases to the cofactor analogues roseoflavin mononucleotide (RoFMN) and roseoflavin adenine dinucleotide (RoFAD). (b) Primary structures of dodecins from the actinomycetales S. davaonensis (SdDod), S. coelicolor (ScDod) and M. tuberculosis (MtDod) share a high degree of similarity. X-ray structures are available for the dodecins from T. thermophilus (TtDod)<ref type="bibr" target="#b15">[16]</ref>, M. tuberculosis <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>, Halorhodospira halophila (HhDod)<ref type="bibr" target="#b8">[9]</ref> and H. salinarum (HsDod)<ref type="bibr" target="#b12">[13]</ref>. Amino acids boxed in yellow are known to be relevant for flavin binding in MtDod, TtDod, HhDod and HsDod. Amino acids labelled with an asterisk were subjected to site-directed mutagenesis in the present work.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig.2. Binding of the flavins FMN and FAD by ScDod and SdDod is favoured under acidic conditions. The temperature-dependent dissociation of flavin : dodecin complexes can be determined by measuring the release of fluorescent flavins. Inflection points (exemplarily shown for FMN and SdDod in panel (a) are a measure of complex stability, with higher inflection point values reflecting a more stable flavin : dodecin complex. The initial low fluorescence shown in panel (a) is caused by the quenching of bound FMN. With increasing temperature (stepwise temperature increases of 1.0 °C 60 s -1 ), fluorescence increases as FMN is released. Experiments were carried out at different pH values and the curves are colour coded as indicated in the figure inset. (b) Inflection points of FMN : SdDod, FAD : SdDod, FMN : ScDod and FAD : ScDod complexes plotted against pH value. The average of three biological replicates is depicted as a solid (FMN) or dashed (FAD) line. Inflections points were only determined for certain pH values (FAD, pH 5.66 to 6.00; FMN, pH 7.00), because a fit with reasonable parameters was not possible above those values, although flavin binding was still observed. A lower inflection point temperature for e.g. FAD indicates that FAD : dodecin complexes are less stable and that binding is less probable.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The X-ray structures of SdDod and ScDod are highly similar. (a) Alignment of SdDod (blue), ScDod (green) and, as a reference, MtDod (red) <ref type="bibr" target="#b10">[11]</ref>. The folds of the monomers are highly conserved and show only minor deviations. (b) Superposition of SdDod (blue) and ScDod (green) trimers aligned via monomer 1 (M1). While the monomers themselves align well, the relative positioning of the monomers in the trimer differs. M2 shows a significant deviation between SdDod and ScDod, causing channel 1 of SdDod to be wider than channel 1 of ScDod. In contrast, the trimers of ScDod and MtDod superimpose well (not shown). (c) Core features of the dodecin dodecamer shown for SdDod. The monomers of channel/trimer 1 are coloured in green, blue and red. The monomers in channel/trimer 2 are coloured in magenta, cyan and green. The binding pocket (highlighted in yellow) is located between trimers and embedded between two channel 1 trimers.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Denaturing SDS-PAGE analysis of purified His 6 -tagged dodecins from S. davaonensis (SdDod) (left) and S. coelicolor (ScDod) (right) reveals differences with regard to the formation of multimers. Lane M represents the marker. SdDod (lane 1) is present as a monomer under denaturing conditions, whereas ScDod (lane 2) apparently forms a multimer, most likely a dodecamer. The dodecameric form of ScDod appears to be smaller than the expected 144 kDa, which can be explained by its compact spherical structure.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig.5. The dodecameric form of purified His 6 -tagged dodecin from S. coelicolor (ScDod) is remarkably stable. Pure samples of ScDod were analysed by SDS-PAGE and staining with Coomassie brilliant blue G-250 under different denaturing conditions. Far left panel, 2 % SDS (SDS), 10 mM DTT (DTT). Left panel, 2 % SDS, 10 mM DTT, 2 % β-mercaptoethanol (β-ME). Right panel, 2 % SDS, 10 mM DTT, 2 % β-mercaptoethanol, 1 mM EDTA (EDTA). Far right panel, 2 % SDS, 10 mM DTT, 8M urea (urea). Lane M represents the marker. Lane 1 represents the control samples of ScDod, which were incubated at room temperature. Lane 2 represents the ScDod samples that were incubated at 95 °C for 10 min. Lane 3 represents the ScDod samples that were incubated at 95 °C for 20 min. Lane 4 represents the ScDod samples that were incubated at 95 °C for 30 min. Complete dissociation of the dodecamers was only observed when protein samples were incubated at 95 °C for more than 20 min in the presence of 2 % SDS, 10 mM DTT and 8M urea, indicating that ScDod was remarkably stable.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Riboflavin and roseoflavin bind to ScDod and SdDod, although SdDod changes its quaternary structure in the presence of roseoflavin. The dodecins ScDod and SdDod (50 µM) were incubated in the presence of 250 µM riboflavin (R) or 250 µM roseoflavin (Ro). After incubation in the dark, the samples were mixed with SDS free loading dye and analysed by SDS-PAGE. Samples were loaded to the gel without heat treatment and the running buffer contained SDS to create a mildly denaturing environment. The documentation occurred under (a) visible light, (b) UV light and (c) after staining with Coomassie brilliant blue G-250. Roseoflavin is bound by both dodecins [pink band in (a) between 55-70 kDa and grey band in (b)] and is able to partially stabilize the SdDod dodecamer [monomer and dodecamer band in (c)]. Since ScDod does not denature under these conditions, the oligomer stabilizing effect cannot be tested employing this method. D, dodecamer. M, monomer. Lane L, PageRuler Plus Prestained Protein Ladder.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig.7. Interactions in SdDod and ScDod at the atomic level. Channel 2 of SdDod and ScDod is shown and viewed from the inner side of the dodecamer. The monomers SdDod M1* and ScDod M2* were generated by crystallographic symmetry operations. Analysis of SdDod revealed that the inter-and intra-monomer salt bridges are of a similar distance (D10 MX to K62 MX : 3.4±0.0 Å and D10 MX to K62 MY : 3.4±0.1 Å). In ScDod the E10 MX to K62 MY salt bridge is 2.7±0.0 Å and the distance of the E10 MX to K62 MX salt bridge is 4.7±0.1 Å.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Dodecins from various bacterial species and their properties</figDesc><note><p>a, Hh, H. halophila; Mt, M. tuberculosis; Sd, S. davaonensis; Sc, S. coelicolor and Tt, T. thermophilus.</p><p>b, D, Dodecamer; T, Trimer; M, Monomer.</p><p>c, For all SDS-PAGE experiments see Fig. S4.</p><p>d, Thermocyclic assay, temperature at which the specific dodecin loses the ability to completely rebind FMN (see also Fig. S6 and Table S3).</p></note></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><head>Funding information</head><p>This work was funded by the research training group <rs type="funder">NANOKAT</rs> (<rs type="grantNumber">FKZ 0316052A</rs>) of the <rs type="funder">German Federal Ministry of Education and Research</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_7NSAmPW">
+					<idno type="grant-number">FKZ 0316052A</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>The authors declare that there are no conflicts of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fischer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bacher</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Biosynthesis of flavocoenzymes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat Prod Rep</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="324" to="350"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Joosten</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Berkel</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename><forename type="last">H</forename>
+				</persName>
+			</author>
+			<title level="a">Flavoenzymes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr Opin Chem Biol</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="195" to="202"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bennett</surname>
+					<forename type="first">B</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kimball</surname>
+					<forename type="first">E</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Osterhout</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Dien</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Absolute metabolite concentrations and implied enzyme active site occupancy in Escherichia coli</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat Chem Biol</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="593" to="599"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>García-Angulo</surname>
+					<forename type="first">V</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Overlapping riboflavin supply pathways in bacteria</title>
+		</analytic>
+		<monogr>
+			<title level="j">Crit Rev Microbiol</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="196" to="209"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jaehme</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Slotboom</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Diversity of membrane transport proteins for vitamins in bacteria and archaea</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochim Biophys Acta</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">1850</biblScope>
+				<biblScope unit="page" from="565" to="576"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Serrano</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferreira</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martínez-Júlvez</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Medina</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Theprokaryotic FAD synthetase family: a potential drug target</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr Pharm Des</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="2637" to="2648"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Monaco</surname>
+					<forename type="first">H</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Crystal structure of chicken riboflavin-binding protein</title>
+		</analytic>
+		<monogr>
+			<title level="j">Embo J</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="1475" to="1483"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename type="first">H</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Merrill</surname>
+					<forename type="first">A</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Riboflavin-Binding proteins</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annu Rev Nutr</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="279" to="299"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Grininger</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Staudt</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johansson</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wachtveitl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oesterhelt</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Dodecin is the key player in flavin homeostasis of archaea</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Biol Chem</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">284</biblScope>
+				<biblScope unit="page" from="13068" to="13076"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bourdeaux</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hammer</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vogt</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schweighöfer</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nöll</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Flavin Storage and Sequestration by Mycobacterium tuberculosis Dodecin</title>
+		</analytic>
+		<monogr>
+			<title level="j">ACS Infect Dis</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="1082" to="1092"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiong</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kumar</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ge</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Structural and biophysical characterization of Mycobacterium tuberculosis dodecin Rv1498A</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Struct Biol</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">175</biblScope>
+				<biblScope unit="page" from="31" to="38"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vinzenz</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grosse</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Linne</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meissner</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Essen</surname>
+					<forename type="first">L</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">Chemical engineering of Mycobacterium tuberculosis dodecin hybrids</title>
+		</analytic>
+		<monogr>
+			<title level="j">Chem Commun</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="11071" to="11073"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bieger</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Essen</surname>
+					<forename type="first">L</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oesterhelt</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Crystal structure of halophilic dodecin: a novel, dodecameric flavin binding protein from Halobacterium salinarum</title>
+		</analytic>
+		<monogr>
+			<title level="j">Structure</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="375" to="385"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Grininger</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Seiler</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zeth</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oesterhelt</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Dodecin sequesters FAD in closed conformation from the aqueous solution</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Mol Biol</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">364</biblScope>
+				<biblScope unit="page" from="561" to="566"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Staudt</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oesterhelt</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grininger</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wachtveitl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Ultrafast excited-state deactivation of flavins bound to dodecin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Biol Chem</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">287</biblScope>
+				<biblScope unit="page" from="17637" to="17644"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Meissner</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schleicher</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weber</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Essen</surname>
+					<forename type="first">L</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="a">The dodecin from Thermus thermophilus, a bifunctional cofactor storage protein</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Biol Chem</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">282</biblScope>
+				<biblScope unit="page" from="33142" to="33154"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Arockiasamy</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aggarwal</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Savva</surname>
+					<forename type="first">C</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holzenburg</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sacchettini</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Crystal structure of calcium dodecin (Rv0379), from Mycobacterium tuberculosis with a unique calcium-binding site</title>
+		</analytic>
+		<monogr>
+			<title level="j">Protein Sci</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="827" to="833"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Landwehr</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kämpfer</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glaeser</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rückert</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kalinowski</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Taxonomic analyses of members of the Streptomyces cinnabarinus cluster, description of Streptomyces cinnabarigriseus sp. nov. and Streptomyces davaonensis sp. nov</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Syst Evol Microbiol</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">68</biblScope>
+				<biblScope unit="page" from="382" to="393"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pedrolli</surname>
+					<forename type="first">D</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jankowitsch</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schwarz</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langer</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakanishi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Riboflavin analogs as antiinfectives: occurrence, mode of action, metabolism and resistance</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr Pharm Des</title>
+			<imprint>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Langer</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hashimoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hobl</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mathes</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mack</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Flavoproteins are potential targets for the antibiotic roseoflavin in Escherichia coli</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bacteriol</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">195</biblScope>
+				<biblScope unit="page" from="4037" to="4045"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Langer</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakanishi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mathes</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knaus</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Binter</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Theflavoenzyme azobenzene reductase AzoR from Escherichia coli binds roseoflavin mononucleotide (RoFMN) with high affinity and is less active in its RoFMN form</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochemistry</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="4288" to="4295"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pedrolli</surname>
+					<forename type="first">D</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jankowitsch</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schwarz</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Langer</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakanishi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Natural riboflavin analogs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Methods Mol Biol</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">1146</biblScope>
+				<biblScope unit="page" from="41" to="63"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mathes</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vogl</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stolz</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hegemann</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">In vivo generation of flavoproteins with modified cofactors</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Mol Biol</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">385</biblScope>
+				<biblScope unit="page" from="1511" to="1518"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ludwig</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sévin</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Busche</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kalinowski</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bourdeaux</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Characterization of the small flavin-binding dodecin in the roseoflavin producer Streptomyces davawensis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Microbiology</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">164</biblScope>
+				<biblScope unit="page" from="908" to="919"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Magill</surname>
+					<forename type="first">N</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cowan</surname>
+					<forename type="first">A</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koppel</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Setlow</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">The internal pH of the forespore compartment of Bacillus megaterium decreases by about 1 pH unit during sporulation</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bacteriol</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">176</biblScope>
+				<biblScope unit="page" from="2252" to="2258"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wilks</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Slonczewski</surname>
+					<forename type="first">J</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">pH of the cytoplasm and periplasm of Escherichia coli: rapid measurement by green fluorescent protein fluorimetry</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bacteriol</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">189</biblScope>
+				<biblScope unit="page" from="5601" to="5607"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Quirós</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salas</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Intracellular water volume and internal pH of Streptomyces antibioticus spores</title>
+		</analytic>
+		<monogr>
+			<title level="j">FEMS Microbiol Lett</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">141</biblScope>
+				<biblScope unit="page" from="245" to="249"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chae</surname>
+					<forename>W-B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>Y-B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Choi</surname>
+					<forename>S-W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>H-B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>E-K</forename>
+				</persName>
+			</author>
+			<title level="a">Enhancing the sporulation of Streptomyces kasugaensis by culture optimization</title>
+		</analytic>
+		<monogr>
+			<title level="j">Korean J Chem Eng</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="438" to="443"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bertani</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Lysogeny at mid-twentieth century: P1, P2, and other experimental systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bacteriol</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">186</biblScope>
+				<biblScope unit="page" from="595" to="600"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pedrolli</surname>
+					<forename type="first">D</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matern</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ester</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Siedler</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">A highly specialized flavin mononucleotide riboswitch responds differently to similar ligands and confers roseoflavin resistance to Streptomyces davawensis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nucleic Acids Res</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="8662" to="8673"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jankowitsch</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schwarz</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rückert</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gust</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Szczepanowski</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Genome sequence of the bacterium Streptomyces davawensis JCM 4913 and heterologous production of the unique antibiotic roseoflavin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bacteriol</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">194</biblScope>
+				<biblScope unit="page" from="6818" to="6827"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,2379 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Comparison of different methods for detecting change points in hydroclimatic time series</title>
+				<funder ref="#_pUPJhys">
+					<orgName type="full">Strategic Priority Research Program of Chinese Academy of Sciences</orgName>
+				</funder>
+				<funder ref="#_zGcJj5N">
+					<orgName type="full">Youth Innovation Promotion Association CAS</orgName>
+				</funder>
+				<funder ref="#_58d9jtt #_BXyWKq5 #_VKpct9k">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-07-21">21 July 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ping</forename><surname>Xie</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory of Water Resources and Hydropower Engineering Science</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<postCode>430072</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Collaborative Innovation Center for Territorial Sovereignty and Maritime Rights</orgName>
+								<address>
+									<postCode>430072</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Haiting</forename><surname>Gu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory of Water Resources and Hydropower Engineering Science</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<postCode>430072</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Yan-Fang</forename><surname>Sang</surname></persName>
+							<email>sangyf@igsnrr.ac.cn</email>
+							<affiliation key="aff2">
+								<orgName type="department">Institute of Geographic Sciences and Natural Resources Research</orgName>
+								<orgName type="laboratory">Key Laboratory of Water Cycle and Related Land Surface Processes</orgName>
+								<orgName type="institution">Chinese Academy of Sciences</orgName>
+								<address>
+									<postCode>100101</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ziyi</forename><surname>Wu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory of Water Resources and Hydropower Engineering Science</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<postCode>430072</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Vijay</forename><forename type="middle">P</forename><surname>Singh</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Department of Biological and Agricultural Engineering</orgName>
+								<orgName type="department" key="dep2">Zachry Department of Civil Engineering</orgName>
+								<orgName type="institution">Texas A&amp;M University</orgName>
+								<address>
+									<addrLine>321 Scoates Hall</addrLine>
+									<postCode>2117 77843-2117</postCode>
+									<settlement>TAMU College Station</settlement>
+									<region>TX</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Comparison of different methods for detecting change points in hydroclimatic time series</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of Hydrology</title>
+						<imprint>
+							<biblScope unit="volume">577</biblScope>
+							<date type="published" when="2019-07-21">21 July 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">DDBA33578D345DE9085C16AB1A5545CE</idno>
+					<idno type="DOI">10.1016/j.jhydrol.2019.123973</idno>
+					<note type="submission">Received 14 February 2019; Received in revised form 25 May 2019; Accepted 19 July 2019 ⁎ Corresponding author.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Change point</term>
+					<term>Hydrological variability</term>
+					<term>Detection</term>
+					<term>Time series analysis</term>
+					<term>Nonstationary</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>An abrupt change is an important manifestation of hydroclimatic variability. Accurate detection of change points is a critical issue in hydroclimatic and climate change studies. In the article, we evaluated the performances of 12 methods (including both parametric and non-parametric) for detecting change points in hydroclimatic time series by considering the influences of eight major factors. Different methods exhibited different efficiencies and eight of the methods performed better which are recommended for application. Furthermore, the mean values of series and locations of change points were found to have little influence on the detection of change points. However, for a time series with smaller variance but bigger skewness and larger difference in the mean values before and after the change point, the abrupt changes can be more easily and accurately detected. Detection of change points in shorter series would have larger uncertainty. Based on the Monte-Carlo experiments, the efficiency of each method was quantified and its capability was quantitatively clarified. Detection of abrupt changes in precipitation over Southwest China showed that the Indian monsoon had a dominant influence on precipitation in the regions south of 30°N and west of 110°E. Since 2007 the Indian monsoon has maintained a weakening pattern, causing a decrease in precipitation on the Yunnan-Guizhou Plateau, which is one of the main causes of frequently occurring droughts. Results of this study can be a useful reference for choosing a method to detect change points in hydroclimate time series, and be an important complement for the detection and attribution of hydroclimatic variability.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Hydrological analysis and design are fundamental in water-resources engineering practice <ref type="bibr" target="#b9">(Favre et al., 2004;</ref><ref type="bibr" target="#b36">Raghunath, 2006;</ref><ref type="bibr" target="#b21">Kao and Govindaraju, 2007)</ref>. Climatic and hydrological processes are usually assumed stationary, and observed hydroclimatic data are generally assumed to satisfy the consistency condition <ref type="bibr" target="#b3">(Beighley and Moglen, 2003;</ref><ref type="bibr" target="#b37">Renard and Lang, 2007;</ref><ref type="bibr" target="#b38">Sang et al., 2010)</ref>. Therefore, many methods of hydrological analysis and design are based on the stationary and consistency assumptions <ref type="bibr" target="#b55">(Xu and Singh, 2004)</ref>. However, the hydroclimatic system has been exhibiting significant variability over recent decades, perhaps due to the impacts of global change <ref type="bibr" target="#b0">(Allen et al., 2002;</ref><ref type="bibr" target="#b48">Trenberth et al., 2014)</ref>. In particular, streamflow regimes in many basins worldwide have been changing because of the profound influence of human activities, including water infrastructures, channel modifications, drainage works, as well as land use and cover changes <ref type="bibr" target="#b31">(Milly et al., 2008;</ref><ref type="bibr" target="#b41">Sang and Yang, 2017)</ref>. Statistically, probability distributions of hydroclimatic data and their parameters are changing <ref type="bibr" target="#b25">(López and Francés, 2013;</ref><ref type="bibr" target="#b7">Cheng et al., 2014)</ref>. How to detect the changed signals in the hydroclimatic system is of great socioeconomic significance <ref type="bibr" target="#b8">(Diffenbaugh et al., 2008;</ref><ref type="bibr" target="#b14">IPCC, 2013)</ref> and remains a challenge.</p><p>An abrupt change is a phenomenon frequently encountered in hydroclimate studies. It usually presents some physical process that causes an rapid switch or change from one mode of behavior to another <ref type="bibr" target="#b46">(Thorne et al., 2005)</ref>, as an important manifestation of hydroclimatic variability, for it intuitively reflects the changed signals in many situations <ref type="bibr" target="#b29">(McCabe and Wolock, 2002;</ref><ref type="bibr" target="#b53">Wilby and Harris, 2006;</ref><ref type="bibr" target="#b30">McCuen, 2016)</ref>. Another well-known example is the abrupt increase (or decrease) in streamflow and water level in rivers due to dams and other water-retaining constructions <ref type="bibr" target="#b60">(Zhang et al., 2014;</ref><ref type="bibr" target="#b47">Tongal et al., 2017;</ref><ref type="bibr" target="#b43">Stosic et al., 2016)</ref>.</p><p>There are many methods for detecting abrupt change points in hydroclimatic time series. These methods, with different mathematical hypotheses and scopes of application, can be divided into two types: parametric and non-parametric tests <ref type="bibr" target="#b20">(Kendall et al., 1999)</ref>. When using parametric tests, such as moving T-test <ref type="bibr" target="#b52">(Welch, 1947)</ref> and moving F-test <ref type="bibr" target="#b16">(Jackson et al., 2016)</ref>, a proper probability distribution should be preset and its statistical parameters should be estimated from observed data <ref type="bibr" target="#b11">(Geisser and Johnson, 2006)</ref>. Non-parametric tests, such as Mann-Kendall test <ref type="bibr" target="#b22">(Kisi and Ay, 2014)</ref> and Pettitt test <ref type="bibr" target="#b35">(Pettitt, 1979)</ref>, need not to postulate any probability distribution and thus perform better compared with parametric tests.</p><p>All methods for the detection of change points in time series have advantages and disadvantages <ref type="bibr" target="#b24">(Lloyd et al., 2014;</ref><ref type="bibr" target="#b17">Jeon et al., 2016;</ref><ref type="bibr" target="#b49">Turner et al., 2016)</ref>, and they may not suffice to meet practical needs. For example, the moving average method is suitable for detecting the change point at around the middle of a time series but performs poorly for the change point that is close to either of the two endpoints <ref type="bibr" target="#b32">(Nigro et al., 2014)</ref>. The Mann-Kendall test is commonly used for detecting change points but would be unreliable when there are several change points in a time series <ref type="bibr" target="#b12">(Gocic and Trajkovic, 2013)</ref>. The rescaled range analysis method mainly depends on the difference between a time series before the change point and that after the change point <ref type="bibr" target="#b28">(Mandelbrot and Wallis, 1969)</ref>. Generally, change points detected by a method are often not as reliable as expected, and results vary with the methods used. Hence, the reliability of detected abrupt changes in a hydroclimatic time series may be suspect, which may lead to an unreasonable evaluation of global change impacts and biased hydrological design values. However, efficiency and applicability of different methods for detecting change points are not clearly clarified, and how to accurately detect change points in a hydroclimatic time series still remains a challenge.</p><p>The objective of this study therefore is to evaluate the efficiencies of the twelve methods that are used widely for the detection of change points, aiming at providing guidelines for choosing a proper method. To that end, the capabilities of these methods are first clarified through Monte-Carlo experiments, where the influences of eight factors are considered. After that, these methods are used to detect the variability and abrupt changes of annual precipitation in Southwest China, and their relationship with the climatic variability is investigated. The conclusions are given finally.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Methods for detection of change points</head><p>Twelve methods that are used widely for the detection of change points were considered here, with the aim to compare their performances and improve the accuracy of detection results. These methods included: moving F-test, moving T-test, Lee-Heghinian Bayesian method <ref type="bibr" target="#b23">(Lee and Heghinian, 1977)</ref>, ordered clustering method, rescaled range analysis method, Brown-Forsythe test <ref type="bibr" target="#b4">(Brown and Forsythe, 1974)</ref>, moving rank sum test, moving runs test, optimal dimidiate partitioning method, Mann-Kendall test, Bayesian analysis method <ref type="bibr" target="#b33">(Perreault et al., 2000a,</ref><ref type="bibr" target="#b34">Perreault et al., 2000b)</ref>, and Pettitt test. Their abbreviations and applicable conditions are briefly listed in Table <ref type="table" target="#tab_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Comparison of different methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Factors influencing detection of change point</head><p>In order to quantitatively evaluate the performances of different methods, the factors which influence the detection of change points in hydroclimatic time series should be first specified. Considering a general situation of hydrological variability, for a time series X t (t = 1,2, …,n t ) with a length of n t , it is assumed that there is one abrupt change at an unknown time point n 1 (n 1 &lt; n t ), which is to be estimated by using the twelve methods. The sub-series before and after the change point n 1 is denoted as X 1 and X 2 (Fig. <ref type="figure" target="#fig_0">1</ref>), which follow a certain probability distribution:</p><formula xml:id="formula_0">X1 ~PDF(EX, Cv, Cs)
+X2 ~PDF(EX , Cv2 , Cs2 )<label>(1)</label></formula><p>where PDF means the probability density function; EX (EX'), Cv (Cv'), Cs (Cs') are the mean value, coefficient of variation, and coefficient of skewness of the series X 1 (X 2 ). From Eq. (<ref type="formula" target="#formula_0">1</ref>), it is seen that eight factors would influence the detection of change point at n 1 , that is, the length n 1 of X 1 , length n t -n 1 of X 2 , EX, Cv, Cs, EX', Cv', and Cs'. To more clearly describe the difference between X 1 and X 2 , some factors can be transformed to:</p><formula xml:id="formula_1">= = = EX EX EX Cv Cv Cv Cs Cs Cs ( )/ ( )/ ( )/ 1 2 3<label>(2)</label></formula><p>where 1 describes the relative difference between EX and EX'; 2 describes the relative difference between Cv and Cv'; and 3 describes the relative difference between Cs and Cs'. The eight new factors are then denoted as n t , n 1 /n t , EX, Cv, Cs, , , 1 2 3 , and their influences on the detection of a change point can be more conveniently evaluated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Design of MC experiments for investigating the influences of eight factors</head><p>Monte-Carlo (MC) experiments were done to investigate the influences of the above eight factors on the performances of 12 methods given in Table <ref type="table" target="#tab_0">1</ref>. The specific steps are described as follows:</p><p>(1) Set a group of values for parameter n t , n 1 /n t , EX, Cv, Cs, , , 1 2 3 , and generate synthetic series with the total number of N (N = 10,000 here). Each synthetic series includes the same change point. (2) Use the ith (i = 1, 2, …, 12) method in Table <ref type="table" target="#tab_0">1</ref> to detect the change point in the jth (j = 1, 2, …, 10,000) synthetic series, and evaluate the efficiency R ij of the result using the following equation:</p><formula xml:id="formula_2">= &gt; = = R i j 1, 0, , 1, 2, ...,12; 1, 2, ...,10000 ij n n n n n n | | 1 | | 1 ij ij 1 t 1 t<label>(3)</label></formula><p>where n 1 is the change point preset, and n ij is the change point in the jth synthetic series detected by the ith method; n t is the length of synthetic series; and 1 is a threshold used to quantify the difference between n 1 and n ij . A method succeeds if the estimation n ij is close to the true point n 1 , with the criterion of (n ij -n 1 )/ n 1 &lt; δ 1 . Here 1 was set as 0.01 for the MC experiments;</p><p>(3) The efficiency of each method was described as C i , i = 1, 2, …, 12:</p><formula xml:id="formula_3">= × = C N R 1 100\% i j N ij 1<label>(4)</label></formula><formula xml:id="formula_4">= = S N R C 1 ( ) i j N ij i 2 1 2<label>(5)</label></formula><p>where S i 2 is the variance of the R ij result and was used to describe its uncertainty.</p><p>(4) Reset the kth group of values for eight parameters in step (1), and repeat the steps (1-3) to investigate the variation of methods' efficiency with parameter values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Influence of each factor on detection of change point</head><p>Through the MC experiments explained above, the influences of eight factors (n t , n 1 /n t , EX, Cv, Cs, , , 1 2 3 ) on the efficiency of the 12 methods were analyzed, as discussed below.</p><p>(1) Influence of n t . Here the Pearson-III (P-III) probability distribution, as applied commonly in hydrological design in China, was used to generate the synthetic series. The values of six parameters were set as: EX = 1000, Cv = 0.5, Cs = 2, = = = 1, 0, 0 1 2 3, and the position of change point was set at the middle of synthetic series, that is, = n /n 0.5 1 t . Then, the data length (i.e., parameter n t ) was increased from 50 to 500, with a length interval of 50, to investigate its influence on the efficiency of each method. Fig. <ref type="figure" target="#fig_1">2</ref> shows performances of these methods. The influence of data length n t on these methods is obviously different. Among them, MFT, RST, and ODP performed poorly for any length, with an efficiency smaller than 10%. The results of MKT were also not as good as expected no matter the length, with an efficiency smaller than 30%. Comparatively, the other eight methods (MTT, LHB, OCM, BFT, MRS, MRT, BYS and PET) performed much better, and PET performed the best, with an efficiency bigger than 40%.</p><p>It is thus seen that the data length has a big influence on the detection of a change point. The efficiency of the eight methods with satisfactory performance can be divided into three parts, corresponding to the data length &lt; 200, 200-400, and &gt; 400, respectively. Their efficiency was similar in each part, but increased with the data length. The efficiency was higher than 70% for the data length bigger than 400. Note that the noncontinuous variation of methods' efficiency is due to the threshold δ 1 = 0.01 preset. Interestingly, it was found that the efficiency of each method for a smaller length had a bigger uncertainty, described by the height of box in Fig. <ref type="figure" target="#fig_1">2</ref>, and the change point in a time series with a longer length can be more easily detected. Considering that the result for a certain data length had similar uncertainty for each method, it was not considered again in the following discussion. The Fig. <ref type="figure" target="#fig_1">2</ref>. Variation of the efficiencies of 12 methods with the increase of series length n t . The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters n 1 /n t = 0.5, EX = 1000, Cv = 0.5, Cs = 2, = = = 1, 0, 0 1 2 3 . lengths of observed hydroclimatic time series are usually smaller than 100 years, and the results with shorter data lengths have worse efficiencies (in Fig. <ref type="figure" target="#fig_1">2</ref>), thus the length of synthetic series was set as 100 to investigate the influence of other seven factors.</p><p>(2) Influence of n 1 /n t . The parameters were set as: n t = 100, EX = 1000, Cv = 0.5, Cs = 2, = = = 1, 0, 0 1 2 3</p><p>, and parameter n 1 / n t was valued as 1/5, 1/4, 2/5, 1/2, 2/3, 3/5, 4/5, mainly to investigate its influence. Fig. <ref type="figure" target="#fig_2">3</ref> presents the results obtained from different methods, which can be divided into four types based on their different efficiencies. BFT, MRS, MKT, and RST were in the first type and their performances became better when the change point moved from the start-point to the endpoint of the series. When using PET and MRT in the second type, the best results appeared when the change point was in the middle of the series (i.e., n 1 /n t = 0.5), but the performance of the two methods became worse when the change point moved from the middle to the endpoint, especially for MRT. The MTT, OCM, LHB and BYS methods belonged to the third type, for which the results did not change with the position of change point but were stable. For the MFT and ODP method in the fourth type, the results were the worst and far away from the true results, with an efficiency &lt; 10%. (3) Influence of EX. The parameters were set as: n t = 100, n 1 /n t = 0.5, Cv = 0.5, Cs = 2, = = = 1, 0, 0 1 2 3, and the mean value EX of the sub-series before the change point was given different values, mainly to investigate its influence on the detection. Fig. <ref type="figure" target="#fig_3">4</ref> indicates that when the mean value increased from 0 to 5000 and other seven parameters were fixed at certain values, there were no obvious changes in the results obtained from different methods. It was found that the EX parameter had little influence on both the detection of change point and the efficiency of each method, and it need not to be considered in practical analysis. Following the general understanding of hydrological variability, it is known that the significance of abrupt change is mainly determined by the degree of relative difference between before and after the change point, but should have little relationship with the mean value of the series, explaining the reasonableness of the result in Fig. <ref type="figure" target="#fig_3">4</ref>. (4) Influence of Cv. The parameters were set as n t = 100, n 1 = 50, EX = 1000, Cs = 2, = = = 1, 0, 0 1 2 3</p><p>, and the Cv parameter increased from 0 to 1.5 to investigate its influence. In Fig. <ref type="figure" target="#fig_4">5</ref>, dramatic changes occur in the results of all methods, except for MFT, RST and OPD which kept their inferior performance and had an efficiency smaller than 10%. The efficiency of other nine methods (MTT, LHB, OCM, BFT, MRS, MRT, MKT, BYS, PET) similarly declined quickly with the increase of Cv value. This can be qualitatively explained as follows. If a time series shows a large variation (that is, large Cv value), the random component would occupy a large ratio in the original series and submerge the abrupt change occurring in the series, causing the difficulty in detecting the change point. (5) Influence of Cs. The parameters were set as n 1 = 50, EX = 1000, Cv = 0.5, = = = 1, 0, 0 1 2 3, and the Cs parameter increased from 0.5 to 3.0, to investigate its influence. In Fig. <ref type="figure" target="#fig_5">6</ref>, the efficiency of the BFT, PET, MRS and MRT methods increased with the increase of Cs value. Comparatively, the efficiency of MKT, MTT, BYS, LHT and OCM kept stable, but again they exhibited inferior performance for any Cs value. It was found that big skew characteristics (i.e., big Cs value) of a time series would be favorable for the detection of change point, which can be explained as follows.</p><p>For a hydrological time series with more skew statistical characteristics (that is, bigger Cs value), the values at most of data points are more likely concentrated to its modal value but far from its mean value, causing more obvious difference between before and after the change point and the easier detection. (6) Influence of 1 . The six parameters were set as n 1 = 50, EX = 1000, Cv = 0.5, Cs = 2, = = 0, 0 2 3 , and the 1 parameter was increased from 0 to 2.0 to investigate its influence. Results in Fig. <ref type="figure" target="#fig_6">7</ref> show that the efficiency of all methods became better with the increase of parameter 1 , except for RST and ODP which kept their inferior performance. It is known that parameter 1 just reflects the difference of mean values before and after the change point in the original series, thus a bigger value of 1 indicates a more obvious abrupt change, and it would more easily be detected. (7) Influence of 2 . The parameters were set as n 1 = 50, EX = 1000, Cv = 0.5, Cs = 2, = = 1, 0 1 3 , and the 2 parameter was increased from 0 to 1.5 to investigate its influence. In Fig. <ref type="figure" target="#fig_7">8</ref>, the results obtained from the 12 methods showed different changes. To be specific, the result of MFT increased sharply, but that of MKT, MRS, BFT, OCM, LHB, MTT, BYS, and PET decreased. Interestingly, the efficiency of MRT fell first in the 2 range of 0-0.5 and then increased afterwards. The results of RST and OPD were as small as 0 and did not change for any 2 value. The increasing efficiency of MFT with 2 was due to its own basic idea, that is, MFT uses the F test to evaluate the significance between two variances; bigger 2 value means bigger difference in the variance of the two sub-series between before and after the change point, which would more easily be detected by MFT. Besides, the varying efficiency of MRT was mainly due to the first increase and then decrease in the number of runs when considering the P-III PDF. (8) Influence of 3 . The parameters were set as n 1 = 50, EX = 1000, Cv = 0.5, Cs = 2, = = 1, 0 1 2 , and parameter 3 was increased from 0 to 2 to investigate its influence. In Fig. <ref type="figure" target="#fig_8">9</ref>, the efficiency of MFT, RST and OCM was at low level and did not change with the increase of parameter 3 ; the efficiency of MKT just increased slightly. Comparatively, the efficiency of other eight methods increased obviously with parameter</p><p>3 . The result here was similar to that in Fig. <ref type="figure" target="#fig_5">6</ref>, and the reason was also closely related to the modal value of series, as explained above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Discussion of results</head><p>Overall, the above results of MC experiments indicated that the efficiency of the twelve methods was mainly influenced by the parameters 1 , Cv and 2 . When a time series had bigger 1 but smaller Cv and 2 , its change point would more easily be detected. The Cs and 3 parameters also had an influence on the results, but the degree of influence was weaker than that of the former three factors. The change point in a time series with bigger Cs and 3 would more easily be detected. The EX and n 1 /n t parameters had little influence on the results. The n 1 parameter had little influence on the efficiency of these methods, but the results would have big uncertainty when parameter n 1 had smaller values. As a result, these factors should be carefully considered when choosing a proper method to detect change points in a hydroclimatic time series.</p><p>Besides, results also indicated different efficiencies of the 12 methods. The MFT, RST, MKT and ODP methods performed poorly, although the MFT method can perform slightly better facing larger values of parameter 2 . Comparatively, the efficiencies of MTT, LHB, OCM, BFT, MRS, MRT, BYS and PET were better, and thus they are recommended for the detection of change point. The efficiency of each method estimated in this study (in Table <ref type="table" target="#tab_0">1</ref>) can be a useful reference for the choice of a method for the detection of change points in hydroclimatic time series. However, the detection of change points in hydrological time series is much more complex and difficult than that in synthetic series, because the influencing factors would mutually influence each other simultaneously. In practice, not only the efficiency of these methods but also their different performances under various practical situations should be considered. Thus these methods are further tested using a case study of observed dataset in the next section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Abrupt changes in precipitation in Southwest China</head><p>Southwest China, covering the southeast Tibetan Plateau, is one of the regions that is sensitive to global climate change <ref type="bibr" target="#b56">(Yao et al., 2012;</ref><ref type="bibr" target="#b39">Sang et al., 2013;</ref><ref type="bibr" target="#b10">Feng et al., 2014)</ref>. Especially, the southeast Tibetan Plateau is well known as the "Asian water tower", where many major Asian rivers, including the Yellow River, Yangtze River, Brahmaputra River, Mekong River and others, originate from <ref type="bibr" target="#b26">(Lutz et al., 2014;</ref><ref type="bibr" target="#b15">Immerzeel et al., 2013)</ref>. They provide a vital water source for hundreds of millions of people in China and Southeast Asia <ref type="bibr" target="#b15">(Immerzeel et al.,2013;</ref><ref type="bibr" target="#b61">Zhang et al., 2016)</ref>. Over recent years, global climate change has caused a change in the streamflow regimes of these major rivers <ref type="bibr" target="#b59">(Zhang et al., 2013)</ref>, and caused frequent occurrences of drought events in Southwest China. Knowledge about the variability of hydrological process and its response to the changing climate is thus critical for drought mitigation and sustainable water resources management in the region.</p><p>Following the water vapor fluxes <ref type="bibr" target="#b40">(Sang et al., 2016)</ref>, it is known that the precipitation process in Southwest China is mainly controlled by the Indian summer monsoon (ISM). ISM brings significant amounts of warm and wet air currents from the Indian Ocean and comes to Southwest China through the Bay of Bengal. Recent studies have indicated the weakening of Indian monsoon <ref type="bibr" target="#b54">(Wu, 2005;</ref><ref type="bibr" target="#b45">Thompson et al., 2006)</ref>. It can directly influence the precipitation variability in Southwest China, and would directly cause severe drought disasters and water resources shortages <ref type="bibr" target="#b10">(Feng et al., 2014;</ref><ref type="bibr" target="#b18">Ji et al., 2015;</ref><ref type="bibr" target="#b44">Tan et al., 2017)</ref>. However, it is still not clear when the ISM started its weakening pattern, and what influence it has on the precipitation variability and its spatial distribution in Southwest China. Accurate detection and attribution of abrupt changes in the precipitation in Southwest China is therefore a fundamental issue.</p><p>To clarify it, we used the twelve methods to detect abrupt changes in both the time series of ISM and precipitation in Southwest China, and compared the results for investigating the physical causes. For achieving the goal, we used the annual precipitation data measured at 144 meteorological stations in Southwest China (Fig. <ref type="figure" target="#fig_10">11</ref>) and detected their change points. The ISM index used here is defined based on the convection near the Bay of Bengal, whose intensive activity is associated with two of the major precipitation maxima in the south Asian region <ref type="bibr" target="#b50">(Wang and Fan, 1999)</ref>, including Southwest China. All the precipitation and ISM data have the same observation period from 1961 to 2013.</p><p>The change point detected in the ISM time series is shown in Table <ref type="table" target="#tab_1">2</ref>. Among all the results, the change point of 2007 was detected by seven methods (MTT, LHB, OCM, RST, BFT, ODP, BYS). The change points obtained from MFT, MRT, MRS and PET were 2008 or 2006, just being close to 2007. As a result, it was thought that the abrupt change in the ISM process occurred in 2007, since then the Indian monsoon has a much smaller amplitude. The mean values of the ISM time series before and after 2007 were 0.160 and -0.964, respectively. Fig. <ref type="figure" target="#fig_9">10</ref> visually presents that the ISM time series kept stable in 1961-2007 but then obviously decreased, indicating its reliability.</p><p>The same practice was applied to the annual precipitation series. Results in Fig. <ref type="figure" target="#fig_10">11</ref> indicate that among all the 144 precipitation time series, the precipitation time series measured at 48 stations in the central area (i.e., the Yunnan-Guizhou Plateau within 100°-111°E and 22°-30°N) of Southwest China showed a decreasing pattern, with the abrupt decrease occurring around 2002-2008, being consistent with the abrupt decrease in 2007 in the ISM. The local difference of results can be due to the complex topography, geography and hydroclimate conditions in the area. Besides, the precipitation time series measured at eight stations at the boundary of Southwest China did not indicate significant abrupt changes at 5% significance level. It is thus thought that although the boundary of Southwest China is geographically closer to the Bay of Bengal, the weakening Indian monsoon has little influence on the precipitation in the local area, but the effect of weakening strengthens when moving inland. However, the precipitation time series measured north of 30°N on the whole showed no abrupt changes or even abrupt increase, differing from the abrupt decrease of precipitation south of 30°N.</p><p>A previous study <ref type="bibr" target="#b57">(Yao et al., 2013)</ref> confirmed three distinct domains of climate condition in the Tibetan Plateau, associated with the influence of westerlies (north of 35°N), Indian monsoon (south of 30°N), and transition in between 30°N and 35°N respectively. The results of spatial pattern of abrupt changes in annual precipitation were consistent with previous studies. Hence, two important findings can be obtained here. The first is that the Indian monsoon directly controls the precipitation variability in the regions south of 30°N and west of 110°E in Southwest China, but its effect is weak in the local area of boundary. The other is that the weakening pattern of the Indian monsoon over the recent decade caused the decrease in precipitation on the Yunnan-Guizhou Plateau in Southwest China, which can be main reason for frequent occurrences of droughts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>As an important complement for the detection and attribution of hydroclimatic variability, accurate detection of abrupt changes in hydroclimatic time series is critical for understanding the effects of climate change and human activities. Although there have been many methods for meeting the needs, they do not suffice to meet practical needs due to limited applications. In this study, we compared the performances of 12 methods that are used widely for the detection of change points through Monte-Carlo experiments. We found that the MFT, RST, MKT and ODP methods had inferior performance. Comparatively, the MTT, LHB, OCM, BFT, MRS, MRT, BYS and PET methods performed better, and thus they are recommended for the detection of change points.</p><p>We also found that for those time series which have smaller variance (Cv and 2 in Figs. <ref type="figure" target="#fig_4">5</ref> and <ref type="figure" target="#fig_7">8</ref>) but bigger difference in mean values before and after the change point ( 1 in Fig. <ref type="figure" target="#fig_6">7</ref>), the abrupt changes can be more easily and accurately detected; for the time series with big skew characteristics (Cs and 3 in Figs. <ref type="figure" target="#fig_5">6</ref> and <ref type="figure" target="#fig_8">9</ref>), the abrupt changes can also be easily and accurately detected. However, the mean values (EX in Fig. <ref type="figure" target="#fig_3">4</ref>) of time series and the location (n 1 /n t in Fig. <ref type="figure" target="#fig_2">3</ref>) in the series have little influence on the detection of change points. For the time series with shorter length (n 1 in Fig. <ref type="figure" target="#fig_1">2</ref>), the detection results of change points may have bigger uncertainty and thus should be carefully considered. Considering performances of these methods and the influences of the above factors, we quantified the efficiency of each method (Table <ref type="table" target="#tab_0">1</ref>), and emphasize the accuracy and reliability of the change points from the method with high efficiency.</p><p>We then used these methods to detect abrupt changes in precipitation in Southwest China, and further investigated its physical connection to the weakening Indian monsoon. Results indicate that the Indian monsoon directly controls the precipitation variability in the regions south of 30°N and west of 110°E in Southwest China, but its effect is weak in the local area of boundary (Fig. <ref type="figure" target="#fig_10">11</ref>). Since 2007 the Indian monsoon has maintained its weakening pattern <ref type="figure" target="#fig_9">10</ref>), and causes the decrease in precipitation on the Yunnan-Guizhou Plateau, which may be the main reason for the frequent occurrence of droughts. If the Indian monsoon keeps the weakening effect, the droughts and water resources shortages in Southwest China would be inevitably aggravated, causing great difficulty to the socioeconomic development in local and surrounding regions. Therefore, more proactive and effective adaptation strategies should be implemented to handle the unfavorable situation.</p><p>Finally, it should be pointed out that characteristics of observed hydroclimatic data are complex, and the detection of change points in hydroclimatic time series is challenging. Both the complex variability of hydroclimatic process and the efficiencies of different methods should be carefully considered together. Especially, the physical causes of the abrupt changes in hydroclimatic process should be explored, based on which the reliable results of abrupt change in time series can be obtained.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Diagrammatic sketch showing general situation of abrupt change point in a time series.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Variation of the efficiencies of 12 methods with the increase of series length nt. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters n1/nt = 0.5, EX = 1000, Cv = 0.5, Cs = 2, 1 =1, 2 =0, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Variation of the efficiencies of 12 methods with the movement (n 1 /n t ) of change point in time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters n t = 100, EX = 1000, Cv = 0.5, Cs = 2, = = = 1, 0, 0 1 2 3 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Variation of the efficiencies of 12 methods with the increase of mean value EX of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters nt = 100, n1/nt = 0.5, Cv = 0.5, Cs = 2, 1 =1, 2 =0, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>4</label><figDesc>Fig. 5. Variation of the efficiencies of 12 methods with the increase of variation coefficient Cv of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters nt = 100, n1/nt = 0.5, EX = 1000, Cs = 2, 1 =1, 2 =0, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Variation of the efficiencies of 12 methods with the increase of skewness coefficient Cs of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters nt = 100, n1/nt = 0.5, EX = 1000, Cv = 0.5, 1 =1, 2 =0, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Variation of the efficiencies of 12 methods with the increase of parameter 1 of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters nt = 100, n1/nt = 0.5, EX = 1000, Cv = 0.5, Cs = 2, 2 =0, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. Variation of the efficiencies of 12 methods with the increase of parameter 2 of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters nt = 100, n1/nt = 0.5, EX = 1000, Cv = 0.5, Cs = 2, 1 =1, 3 =0 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9.Variation of the efficiencies of 12 methods with the increase of parameter 3 of time series. The results are obtained from the synthetic series, which follow the Pearson-III probability distribution and have the parameters n t = 100, n 1 /n t = 0.5, EX = 1000, Cv = 0.5, Cs = 2, = = 1, 01 2 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 10 .</head><label>10</label><figDesc>Fig. 10. Abrupt change point detected in the time series of Indian summer monsoon, and the mean values of series before and after the change point.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 11 .</head><label>11</label><figDesc>Fig. 11. Abrupt change points detected in the annual precipitation time series at measured at 144 stations in Southwest China.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Average efficiencies of 12 methods used widely for the detection of abrupt change points in time series. The results are obtained from Monte-Carlo experiments.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Abrupt change points in the time series of the Indian summer monsoon index detected by 12 methods.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>The authors gratefully acknowledged the valuable comments and suggestions given by the Editor and the anonymous reviewers. The data was obtained from the <rs type="institution">China Meteorological Data Sharing Service System</rs> (<ref type="url" target="http://cdc.cma.gov.cn/">http://cdc.cma.gov.cn/</ref>) and the website: <ref type="url" target="http://apdrc.-">http://apdrc.-</ref>soest.hawaii.edu/projects/monsoon/ismidx/ismidx-jja.txt. This project was financially supported by the <rs type="funder">National Natural Science Foundation of China</rs> (No. <rs type="grantNumber">91547205</rs>, <rs type="grantNumber">91647110</rs>, <rs type="grantNumber">51579181</rs>), the <rs type="funder">Strategic Priority Research Program of Chinese Academy of Sciences</rs> (No. <rs type="grantNumber">XDA20060402</rs>), and the <rs type="funder">Youth Innovation Promotion Association CAS</rs> (No. <rs type="grantNumber">2017074</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_58d9jtt">
+					<idno type="grant-number">91547205</idno>
+				</org>
+				<org type="funding" xml:id="_BXyWKq5">
+					<idno type="grant-number">91647110</idno>
+				</org>
+				<org type="funding" xml:id="_VKpct9k">
+					<idno type="grant-number">51579181</idno>
+				</org>
+				<org type="funding" xml:id="_pUPJhys">
+					<idno type="grant-number">XDA20060402</idno>
+				</org>
+				<org type="funding" xml:id="_zGcJj5N">
+					<idno type="grant-number">2017074</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of Competing Interest</head><p>None.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Allen</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ingram</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stainforth</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Constraints on future changes in climate and the hydrologic cycle</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">419</biblScope>
+				<biblScope unit="page" from="224" to="232"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ansari</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bradley</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Rank-sum tests for dispersions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann. Math. Stat.</title>
+			<imprint>
+				<date when="1960">1960</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="1174" to="1189"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bassingthwaighte</surname>
+					<forename type="first">J</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raymond</surname>
+					<forename type="first">G</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluating rescaled range analysis for time series</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann. Biomed. Eng.</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="432" to="444"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Beighley</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moglen</surname>
+					<forename type="first">G</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Adjusting measured peak discharges from an urbanizing watershed to reflect a stationary land use signal</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page">D1093</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brown</surname>
+					<forename type="first">M</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Forsythe</surname>
+					<forename type="first">A</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="a">The small sample behavior of some statistics which test the equality of several means</title>
+		</analytic>
+		<monogr>
+			<title level="j">Technometrics</title>
+			<imprint>
+				<date when="1974">1974</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="129" to="132"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Buishand</surname>
+					<forename type="first">T</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Tests for detecting a shift in the mean of hydrological time series</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="1984">1984</date>
+				<biblScope unit="volume">73</biblScope>
+				<biblScope unit="page" from="51" to="69"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Improvement of sequential cluster analysis method for extracting turning point of time series (in Chinese with English abstract)</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. China Hydrol.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="41" to="44"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>AghaKouchak</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gilleland</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Katz</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Non-stationary extreme value analysis in a changing climate</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clim. Change</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">127</biblScope>
+				<biblScope unit="page" from="353" to="369"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Diffenbaugh</surname>
+					<forename type="first">N</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Giorgi</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pal</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Climate change hotspots in the United States</title>
+		</analytic>
+		<monogr>
+			<title level="j">Geophys. Res. Lett.</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">35</biblScope>
+				<biblScope unit="page" from="375" to="402"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Favre</surname>
+					<forename type="first">A</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Adlouni</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perreault</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thiémonge</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bobée</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Multivariate hydrological frequency analysis using copulas</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="290" to="294"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Feng</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Cause of severe droughts in Southwest China during 1951–2010</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clim. Dynam.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="2033" to="2042"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b11">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Geisser</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename type="first">W</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<title level="m">Modes of Parametric Statistical Inference</title>
+			<imprint>
+				<publisher>John Wiley &amp; Sons</publisher>
+				<date when="2006">2006</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gocic</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Trajkovic</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Analysis of changes in meteorological variables using Mann-Kendall and Sen's slope estimator statistical tests in Serbia</title>
+		</analytic>
+		<monogr>
+			<title level="j">Global Planet. Change</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">100</biblScope>
+				<biblScope unit="page" from="172" to="182"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Goodwell</surname>
+					<forename type="first">A</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kumar</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Temporal information partitioning networks (tipnets): a process network approach to infer ecohydrologic shifts</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unit="page" from="5899" to="5919"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b14">
+		<monogr>
+			<author>IPCC</author>
+			<title level="m">Climate Change 2013: The Physical Science Basis, Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</title>
+			<imprint>
+				<publisher>Cambridge University Press</publisher>
+				<pubPlace>USA</pubPlace>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Immerzeel</surname>
+					<forename type="first">W</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pellicciotti</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bierkens</surname>
+					<forename type="first">M</forename><forename type="middle">F</forename><forename type="last">P</forename>
+				</persName>
+			</author>
+			<title level="a">Rising river flows throughout the twenty-first century in two Himalayan glacierized watersheds</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Geosci.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="742" to="745"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jackson</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hannah</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fryer</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Millar</surname>
+					<forename type="first">C</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Malcolm</surname>
+					<forename type="first">I</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Development of spatial regression models for predicting summer river temperatures from landscape characteristics: implications for land and fisheries management</title>
+		</analytic>
+		<monogr>
+			<title level="j">Hydrol. Process</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="1225" to="1238"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jeon</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sung</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chung</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Abrupt change point detection of annual maximum precipitation using fused lasso</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">538</biblScope>
+				<biblScope unit="page" from="831" to="841"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ji</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Increase in flood and drought disasters during 1500–2000 in Southwest China</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Hazards</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">77</biblScope>
+				<biblScope unit="page" from="1853" to="1861"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jo</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jeon</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Bayesian analysis to detect abrupt changes in extreme hydrological processes</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">538</biblScope>
+				<biblScope unit="page" from="63" to="70"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b20">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Kendall</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stuart</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ord</surname>ì
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arnold</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="m">Kendall’s Advanced Theory of Statistics: Volume 2A-Classical Inference and the Linear Model (Kendall’s Library of Statistics)</title>
+			<imprint>
+				<publisher>Hodder Arnold</publisher>
+				<date when="1999">1999</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kao</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Govindaraju</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">A bivariate frequency analysis of extreme rainfall with implications for design</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Geophys. Res.: Atmos.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">112</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kisi</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ay</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Comparison of Mann-Kendall and innovative trend method for water quality parameters of the Kizilirmak River</title>
+		</analytic>
+		<monogr>
+			<title level="j">Turkey. J. Hydrol.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">513</biblScope>
+				<biblScope unit="page" from="362" to="375"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">A</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Heghinian</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">A shift of the mean level in a sequence of independent normal random variables: a Bayesian approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Technometrics</title>
+			<imprint>
+				<date when="1977">1977</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="503" to="506"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lloyd</surname>
+					<forename type="first">C</forename><forename type="middle">E</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Freer</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collins</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnes</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename type="first">J</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Methods for detecting change in hydrochemical time series in response to targeted pollutant mitigation in river catchments</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">514</biblScope>
+				<biblScope unit="page" from="297" to="312"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>López</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Francés</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Non-stationary flood frequency analysis in continental Spanish rivers, using climate and reservoir indices as external covariates</title>
+		</analytic>
+		<monogr>
+			<title level="j">Hydrol. Earth Syst. Sci.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="3189" to="3203"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lutz</surname>
+					<forename type="first">A</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Immerzeel</surname>
+					<forename type="first">W</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shrestha</surname>
+					<forename type="first">A</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bierkens</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Consistent increase in High Asia's runoff due to increasing glacier melt and precipitation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Clim. Change</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="587" to="587"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mallakpour</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Villarini</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">A simulation study to examine the sensitivity of the Pettitt test to detect abrupt changes in mean</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. Assoc. Sci. Hydrol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="245" to="254"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mandelbrot</surname>
+					<forename type="first">B</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wallis</surname>
+					<forename type="first">J</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Robustness of the rescaled range R/S in the measurement of noncyclic long run statistical dependence</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="1969">1969</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="967" to="988"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>McCabe</surname>
+					<forename type="first">G</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wolock</surname>
+					<forename type="first">D</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">A step increase in streamflow in the conterminous United States</title>
+		</analytic>
+		<monogr>
+			<title level="j">Geophys. Res. Lett.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="2185" to="2185"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b30">
+		<monogr>
+			<author>
+				<persName>
+					<surname>McCuen</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="m">Modeling Hydrologic Change: Statistical Methods</title>
+			<imprint>
+				<publisher>CRC Press</publisher>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Milly</surname>
+					<forename type="first">P</forename><forename type="middle">C</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Betancourt</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Falkenmark</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hirsch</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kundzewicz</surname>
+					<forename type="first">Z</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lettenmaier</surname>
+					<forename type="first">D</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stouffer</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Stationarity is dead: whither water management?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">319</biblScope>
+				<biblScope unit="page" from="573" to="574"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nigro</surname>
+					<forename type="first">M</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pakzad</surname>
+					<forename type="first">S</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dorvash</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Localized structural damage detection: change point analysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput-Aided Civ. Inf.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="416" to="432"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Perreault</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bernier</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bobée</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parent</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Bayesian change-point analysis in hydrometeorological time series. Part 1. The normal model revisited</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2000">2000a</date>
+				<biblScope unit="volume">235</biblScope>
+				<biblScope unit="page" from="221" to="241"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Perreault</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bernier</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bobée</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parent</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Bayesian change-point analysis in hydrometeorological time series. Part 2. Comparison of change-point models and forecasting</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2000">2000b</date>
+				<biblScope unit="volume">235</biblScope>
+				<biblScope unit="page" from="242" to="263"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pettitt</surname>
+					<forename type="first">A</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">A non-parametric approach to the change-point problem</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Roy. Stat. Soc.</title>
+			<imprint>
+				<date when="1979">1979</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="126" to="135"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="book" xml:id="b36">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Raghunath</surname>
+					<forename type="first">H</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="m">Hydrology: principles, analysis and design</title>
+			<imprint>
+				<publisher>New Age Int</publisher>
+				<date when="2006">2006</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Renard</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Use of a Gaussian copula for multivariate extreme value analysis: some case studies in hydrology</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Water Resour.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="897" to="912"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sang</surname>
+					<forename type="first">Y</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Probabilistic forecast and uncertainty assessment of hydrologic design values using Bayesian theories</title>
+		</analytic>
+		<monogr>
+			<title level="j">Hum. Ecol. Risk Assess.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="1184" to="1207"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sang</surname>
+					<forename type="first">Y</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gong</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Temporal-spatial climate variability in the headwater drainage basins of the yangtze river and yellow river China</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Climate</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="5061" to="5071"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sang</surname>
+					<forename type="first">Y</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Singh</surname>
+					<forename type="first">V</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gong</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Precipitation variability and response to changing climatic condition in the Yarlung Tsangpo River basin China</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Geophys. Res.: Atmos.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">121</biblScope>
+				<biblScope unit="page" from="8820" to="8831"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sang</surname>
+					<forename type="first">Y</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Urban waterlogs control in China: more effective strategies and actions are needed</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Hazards</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">85</biblScope>
+				<biblScope unit="page" from="1291" to="1294"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shoemaker</surname>
+					<forename type="first">L</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Fixing the F test for equal variances</title>
+		</analytic>
+		<monogr>
+			<title level="j">Am. Stat.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">57</biblScope>
+				<biblScope unit="page" from="105" to="114"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stosic</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Telesca</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>de Souza Ferreira</surname>
+					<forename type="first">D</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stosic</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Investigating anthropically induced effects in streamflow dynamics by using permutation entropy and statistical complexity analysis: a case study</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">540</biblScope>
+				<biblScope unit="page" from="1136" to="1145"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>An</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shen</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Edwards</surname>
+					<forename type="first">R</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Decreasing monsoon precipitation in southwest China during the last 240 years associated with the warming of tropical ocean</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clim. Dynam.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">48</biblScope>
+				<biblScope unit="page" from="1769" to="1778"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Thompson</surname>
+					<forename type="first">L</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mosley-Thompson</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brecher</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Davis</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>León</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Les</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mashiotta</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mountain</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Abrupt tropical climate change: past and present</title>
+		</analytic>
+		<monogr>
+			<title level="j">P. Natl. Acad. Sci. USA</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">103</biblScope>
+				<biblScope unit="page" from="10536" to="10543"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Thorne</surname>
+					<forename type="first">P</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parker</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Christy</surname>
+					<forename type="first">J</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mears</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Uncertainties in climate trends: lessons from upper-air temperature records</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bull. Am. Meteorol. Soc.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="1437" to="1442"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tongal</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Demirel</surname>
+					<forename type="first">M</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moradkhani</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Analysis of dam-induced cyclic patterns on river flow dynamics</title>
+		</analytic>
+		<monogr>
+			<title level="j">Hydrol. Sci. J.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="626" to="641"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Trenberth</surname>
+					<forename type="first">K</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dai</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schrier</surname>
+					<forename type="first">G</forename><forename type="middle">V</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename type="first">P</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barichivich</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Briffa</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sheffield</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Global warming and changes in drought</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Clim. Change</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="17" to="22"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Turner</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>White</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Phillips</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>King</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hosking</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bracegirdle</surname>
+					<forename type="first">T</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marshall</surname>
+					<forename type="first">G</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mulvaney</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Deb Others</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Absence of 21st century warming on Antarctic Peninsula consistent with natural variability</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">535</biblScope>
+				<biblScope unit="page" from="411" to="415"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fan</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Choice of South Asian summer monsoon indices</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bull. Amer. Meteor. Soc.</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">80</biblScope>
+				<biblScope unit="page" from="629" to="638"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wanner</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ockenfeld</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brunke</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fischer</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pusch</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">The distribution and turnover of benthic organic matter in a lowland river: influence of hydrology, seston load and impoundment</title>
+		</analytic>
+		<monogr>
+			<title level="j">River Res. Appl.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="107" to="122"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Welch</surname>
+					<forename type="first">B</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">The generalization ofstudent's' problem when several different population variances are involved</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biometrika</title>
+			<imprint>
+				<date when="1947">1947</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="28" to="35"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wilby</surname>
+					<forename type="first">R</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Harris</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">A framework for assessing uncertainties in climate change impacts: low-flow scenarios for the River Thames UK</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page">W02419</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b54">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Weakening of Indian summer monsoon in recent decades</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Atmos. Sci.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="21" to="29"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Singh</surname>
+					<forename type="first">V</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Review on regional water resources assessment models under stationary and changing climate</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Manag.</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="591" to="612"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yao</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thompson</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guo</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duan</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Different glacier status with atmospheric circulations in Tibetan Plateau and surroundings</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Clim. Change</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="663" to="667"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	 
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yao</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Masson-Delmotte</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Risi</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sturm</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Werner</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">A review of climatic controls on δ18O in precipitation over the Tibetan Plateau: observations and simulations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Geophys.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="525" to="548"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yue</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename type="first">C</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<title level="a">Applicability of prewhitening to eliminate the influence of serial correlation on the Mann-Kendall test</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resour. Res.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">38</biblScope>
+				<biblScope unit="page">D1068</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b59">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Su</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hao</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tong</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Discharge regime and simulation for the upstream of major rivers over Tibetan Plateau</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Geophys. Res.: Atmos.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">118</biblScope>
+				<biblScope unit="page" from="8500" to="8518"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b60">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Singh</surname>
+					<forename type="first">V</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Trend, periodicity and abrupt change in streamflow of the East River, the Pearl River basin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Hydrol. Process.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="305" to="314"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b61">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luo</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Using glacier area ratio to quantify effects of melt water on runoff</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Hydrol.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">538</biblScope>
+				<biblScope unit="page" from="269" to="277"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b62">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Du</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fan</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Characteristics and causes of changes in annual runoff of the Wuding river in 1956–2009</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environ. Earth Sci.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">69</biblScope>
+				<biblScope unit="page" from="225" to="234"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

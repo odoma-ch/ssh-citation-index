@@ -1,0 +1,1357 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Mathematical Modeling to Study Multistage Stem Cell Transplantation in HIV-1 Patients</title>
+				<funder ref="#_e2VB6sR">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-08-19">19 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Manar</forename><forename type="middle">A</forename><surname>Al Qudah</surname></persName>
+							<email>manarqudah@yahoo.com</email>
+							<idno type="ORCID">0000-0002-9066-5334</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Mathematical Science Department</orgName>
+								<orgName type="institution">Princess Nourah bint Abdulrahman University</orgName>
+								<address>
+									<postBox>P.O. Box 84428</postBox>
+									<postCode>11671</postCode>
+									<settlement>Riyadh</settlement>
+									<country key="SA">Saudi Arabia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sana’a</forename><forename type="middle">A</forename><surname>Zarea</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Mathematical Science Department</orgName>
+								<orgName type="institution">Princess Nourah bint Abdulrahman University</orgName>
+								<address>
+									<postBox>P.O. Box 84428</postBox>
+									<postCode>11671</postCode>
+									<settlement>Riyadh</settlement>
+									<country key="SA">Saudi Arabia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Saoussan</forename><forename type="middle">A</forename><surname>Kallel-Jallouli</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Faculté des Sciences de Tunis</orgName>
+								<orgName type="institution">Université de Tunis El Manar</orgName>
+								<address>
+									<postCode>LR03ES04 2092</postCode>
+									<settlement>Tunis</settlement>
+									<country key="TN">Tunisia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Mathematical Modeling to Study Multistage Stem Cell Transplantation in HIV-1 Patients</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Discrete Dynamics in Nature and Society</title>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<date type="published" when="2019-08-19">19 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8D52B18C3330F5139C08DAA245B62EF4</idno>
+					<idno type="DOI">10.1155/2019/6379142</idno>
+					<note type="submission">Received 10 June 2019; Accepted 30 July 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Stem cells as a therapeutic measure for the treatment of different diseases have a great potential to give rise to different mature cells as they could be used to treat HIV-1 patients when provided with the convenient factors. Thus, this paper proposes a new mathematical model, represented by a system of ODEs, to study the effect of stem cell transplantation for HIV-1 patients. Since stem cells lineage passes through many stages to become more specialized cell types, investigating (theorizing) the best stage for these cells to be engrafted was needed. The proposed system of ODEs can help medicine make the right decision about the proposed therapy.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>A virus called HIV (human immunodeficiency virus) causes AIDS (acquired immunodeficiency syndrome). HIV is a retrovirus that attacks the vital organs and the cells of the human immune system, making people more vulnerable to diseases and infections. Without treatment, HIV can develop into AIDS in many cases. In the absence of therapy the virus progresses. The developing rate of the virus differs between individuals and changes according to many factors. These factors include ability of the body to fight against HIV, the age of the individual, access to healthcare, the individual's genetic inheritance, the presence of other infections, and the resistance to certain strains of HIV.</p><p>According to the World Health Organization's guidelines issued in June 2018, there is no viable cure or vaccine for HIV, but treatments can improve patients' quality of life.</p><p>When given the right treatment, some patients can live with HIV and reduce their viral load to such a degree that it is not discoverable. Studies by the CDC (Centers for Disease Control and Prevention) proved that in individuals who have no discoverable viral load "through sex there is effectively no risk of transmitting HIV to an HIV-negative partner." Generally, people who live with HIV take a composition of medications called HAART (highly active antiretroviral therapy) or CART (combination antiretroviral therapy) <ref type="bibr" target="#b0">[1]</ref>. This antiretroviral therapy (ART) prevents or slows the virus from developing.</p><p>We can find two types of HIV: HIV-1 and HIV-2. HIV-1 is more infective and more dangerous than HIV-2 as mentioned in <ref type="bibr" target="#b1">[2]</ref>. Also HIV-1 concretes both lymphadenopathy associated virus (LAV) and human T-lymphotropic virus-3 (HTLV-III). HIV-2 is largely found in West Africa <ref type="bibr" target="#b2">[3]</ref>, according to its relatively poor capacity for transmission.</p><p>Understanding the dynamics of HIV-1 by mathematical modeling plays a basic role in medicine. All mathematical models of HIV-1 are based on the model in <ref type="bibr" target="#b3">[4]</ref> where they considered the interaction between four components: uninfected CD4 + T-cells, latent infected CD4 + T-cells, infected CD4 + T-cells, and the free virus. Then, many researchers modified this model such as in <ref type="bibr" target="#b4">[5]</ref> where they presented the same model without the latent infected CD4 + T-cells. The models that are studied in <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref> focused on models interested in the dynamics of HIV and a hope for a cure for the infection.</p><p>Stem Cell Therapy. Nowadays, stem cell studies are a field of much interest, and within this area there is a need for mathematical model representation of the dynamics growth for stem cells. Inside any organism the new cells need a source, which requires a continuous role to replace the older cells, to keep the balance of homeostasis for tissue, and to react to the external ecological stresses. In each organ adult stem cells <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref> are planning this important role to replace the older cells. Through its niche in the organism and its special nature, the stem cell is able to renew itself. The daughter cells are generated from the stem cells through cell divisions and will differentiate into one of any number of organ specific cell types; in this process of differentiation, they lose their initial capacity for self-renewal. Lie and Xie <ref type="bibr" target="#b12">[13]</ref> discussed an accurate equilibrium between stem cell selfrenewal and differentiation; also they studied the way stem cells regulate the body and treat human disease. A lot of interest has also been focused on embryonic stem cells <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b14">15]</ref>, a kind of stem cell from earlier in human development, and it is a smart cell that can be differentiated into any type of cells within the body.</p><p>Adult stem and embryonic cells have the same properties of proliferation, differentiation, and self-renewal. Hence, thinking about their transplantation in the patient can be a good idea to replace injured cells and help in restoring the function of damaged cells. Recent studies have shown the efficacy of this technique to regenerate some body organs <ref type="bibr" target="#b15">[16]</ref>. All of the abovementioned properties are a critical field within the research of stem cells. According to the recent researches that studied proliferation of stem cells, this paper introduces a mathematical model. As discussed in Henrigou et al. <ref type="bibr" target="#b16">[17]</ref> and Bonab et al. <ref type="bibr" target="#b17">[18]</ref>, many therapies of stem cells depend on the availability of the number of the stem cells to transfer. Therefore, the representation of the rate of growth for a population of stem cells as a mathematical model will be very useful. Several models applied to stem cell proliferation as in Loeffler and Wichman <ref type="bibr" target="#b18">[19]</ref> and as in Cowan and Morris <ref type="bibr" target="#b19">[20]</ref> have been reviewed and accordingly this paper's mathematical model was constructed.</p><p>Depending on the ability of stem cells to differentiate into some of the specialized phenotypes in response to appropriate signals <ref type="bibr" target="#b20">[21]</ref>, this paper proposes to treat HIV-1 patients by engraftment of the type of cells able to transform to T-cells (CD4+T). Other varieties of cells were tested for restoring the heart <ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref>, the cornea <ref type="bibr" target="#b26">[27]</ref>, and pancreatic functions <ref type="bibr" target="#b27">[28,</ref><ref type="bibr" target="#b28">29]</ref>.</p><p>This paper begins by recalling a known mathematical model for multilineage stem cells, which was used to formulate a new mathematical model of the viral dynamic of HIV-1 treatment by stem cell therapy. The study of the model enables us to choose the best stage in the lineage to engraft these cells and help medicine make the good decision.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Mathematical Modeling of n-Multistage Stem Cell Maturation</head><p>Let 𝑠 i be the density of stem cells at the 𝑖th stage for 𝑖 = 1, 2, . . . , 𝑛 -1, of differentiation and the density of mature cells for 𝑖 = 𝑛. Let ℎ(𝑡) be the concentration of signaling molecules which depends only on the density of mature cells 𝑠 𝑛 ; thus the dynamics of a cytokine (a protein, polypeptide, or glycoprotein that are used in signaling and intracellular signaling and also aid in cell-to-cell communication in immune responses and stimulate the movement of cells towards sites of inflammation and infection) can be represented as a firstorder differential equation:𝑑ℎ/𝑑𝑡 = 𝜇(1 -ℎ -𝛾ℎ𝑠 𝑛 (𝑡)), where 𝜇 is the death rate of a mature stem cell population and 𝛾 is a +ve constant; solving this equation using the approximation of the quasi-steady state we get ℎ = ℎ 𝛾 (𝑡) = 1/(1 + 𝛾𝑠 𝑛 (𝑡)).</p><p>The stem cell lineage can be expressed as an ODEs system <ref type="bibr" target="#b29">[30]</ref>:</p><formula xml:id="formula_0">𝑑𝑠 1 𝑑𝑡 = 𝑓 1 (ℎ (𝑡) , 𝑠 1 (𝑡)) , 𝑑𝑠 2 𝑑𝑡 = 𝑓 2 (ℎ (𝑡) , 𝑠 2 (𝑡)) + 𝑔 1 (ℎ (𝑡) , 𝑠 1 (𝑡)) , . . . 𝑑𝑠 𝑛 𝑑𝑡 = 𝑓 𝑛 (ℎ (𝑡) , 𝑠 𝑛 (𝑡)) + 𝑔 𝑛-1 (ℎ (𝑡) , 𝑠 𝑛-1 (𝑡)) .<label>(1)</label></formula><p>Here 𝑓 𝑖 (ℎ(𝑡), 𝑠 𝑖 (𝑡)) is the change of 𝑠 𝑖 (𝑡) that is caused by processes at the 𝑖th stage of maturation. If gain cells caused by the loss of differentiation or death are more weakened than the self-renewal and proliferation, then 𝑓 𝑖 (ℎ(𝑡), 𝑠 𝑖 (𝑡)) &gt; 0; otherwise 𝑓 𝑖 (ℎ(𝑡), 𝑠 𝑖 (𝑡)) &lt; 0. But if we suppose that mature cells are postmitotic (they cannot proliferate), then since 𝑓 𝑛 is accounted only for cell death, we have 𝑓 𝑛 (ℎ(𝑡), 𝑠 𝑛 (𝑡)) &lt; 0. We denote 𝑔 𝑖 (ℎ(𝑡), 𝑠 𝑖 (𝑡)) ≥ 0 to be the flux of cells from the maturation stage 𝑖 to maturation stage 𝑖 + 1 due to differentiation.</p><p>Let 𝑝 𝑖 (𝑡) denote the proliferation rate of the subpopulation of type 𝑖 at time 𝑡, 𝑎 𝑖 (𝑡) denote the fraction of selfrenewal, and 𝜇 𝑖 (𝑡) denote the death rate. Then, the flux to mitosis at time 𝑡 will be 𝑝 𝑖 (𝑡)𝑠 𝑖 (𝑡). The fraction 𝑎 𝑖 (𝑡) of daughter cells dose not differentiate. Thus, the influx to cell population 𝑖 after cell division is 2𝑎 𝑖 (𝑡)𝑝 𝑖 (𝑡)𝑠 𝑖 (𝑡) and the flux to the next cell compartment is 2(1 -𝑎 𝑖 (𝑡))𝑝 𝑖 (𝑡)𝑠 𝑖 (𝑡). The flux to death at time 𝑡 is given by 𝜇 𝑖 (𝑡)𝑠 𝑖 (𝑡). Hence we obtain</p><formula xml:id="formula_1">𝑓 𝑖 (𝑡) = (2𝑎 𝑖 (𝑡) -1) 𝑝 𝑖 (𝑡) 𝑠 𝑖 (𝑡) -𝜇 𝑖 (𝑡) 𝑠 𝑖 (𝑡) , for 𝑖 &lt; 𝑛, 𝑔 𝑖 (𝑡) = 2 (1 -𝑎 𝑖-1 (𝑡)) 𝑝 𝑖-1 (𝑡) 𝑠 𝑖-1 (𝑡) , for 1 &lt; 𝑖 &lt; 𝑛, 𝑓 𝑛 (𝑡) = -𝜇 𝑛 (𝑡) 𝑠 𝑛 (𝑡) .<label>(2)</label></formula><p>Assume that the proliferation rates and the death rates are constant with time, and self-renewal fractions are controlled by the signal feedback,𝑎 𝑖 (𝑡) = 𝑎 𝑖 (ℎ(𝑠 𝑖 (𝑡)) = 𝑎 𝑖,𝑚𝑎𝑥 (ℎ(𝑠 𝑖 (𝑡)), where 𝑎 𝑖,𝑚𝑎𝑥 = 𝑎 𝑖 is the maximal fraction of self-renewal. Therefore, system ( <ref type="formula" target="#formula_0">1</ref>) can be written as</p><formula xml:id="formula_2">𝑑𝑠 1 𝑑𝑡 = (2𝑎 1 ℎ -1) 𝑝 1 𝑠 1 -𝜇 1 𝑠 1 , 𝑑𝑠 2 𝑑𝑡 = (2𝑎 2 ℎ -1) 𝑝 2 𝑠 2 + 2 (1 -𝑎 1 ℎ) 𝑝 1 𝑠 1 -𝜇 2 𝑠 2 , . . . 𝑑𝑠 i 𝑑𝑡 = (2𝑎 i ℎ -1) 𝑝 i 𝑠 i + 2 (1 -𝑎 i-1 ℎ) 𝑝 i-1 𝑠 i-1 -𝜇 i 𝑠 i , . . . 𝑑𝑠 𝑛 𝑑𝑡 = 2 (1 -𝑎 𝑛-1 ℎ) 𝑝 𝑛-1 𝑠 𝑛-1 -𝜇 𝑛 𝑠 𝑛 .<label>(3)</label></formula><p>Using that ℎ = 1/(1 + 𝛾𝑠 𝑛 ), then system ( <ref type="formula" target="#formula_2">3</ref>) becomes</p><formula xml:id="formula_3">𝑑𝑠 1 𝑑𝑡 = ( 2𝑎 1 1 + 𝛾𝑠 𝑛 -1) 𝑝 1 𝑠 1 -𝜇 1 𝑠 1 , 𝑑𝑠 2 𝑑𝑡 = ( 2𝑎 2 1 + 𝛾𝑠 𝑛 -1) 𝑝 2 𝑠 2 + 2 (1 - 𝑎 1 1 + 𝛾𝑠 𝑛 ) 𝑝 1 𝑠 1 -𝜇 2 𝑠 2 , . . . 𝑑𝑠 i 𝑑𝑡 = ( 2𝑎 i 1 + 𝛾𝑠 𝑛 -1) 𝑝 i 𝑠 i + 2 (1 - 𝑎 i-1 1 + 𝛾𝑠 𝑛 ) 𝑝 i-1 𝑠 i-1 -𝜇 i 𝑠 i , . . . 𝑑𝑠 𝑛 𝑑𝑡 = 2 (1 - 𝑎 𝑛-1 1 + 𝛾𝑠 𝑛 ) 𝑝 𝑛-1 𝑠 𝑛-1 -𝜇 𝑛 𝑠 𝑛 .<label>(4)</label></formula><p>For the initial data and the model parameters, we add the following biologically relevant assumptions as in <ref type="bibr" target="#b29">[30]</ref>:</p><formula xml:id="formula_4">𝑡𝜖 [0, ∞) . 𝑠 𝑖 (0) ≥ 0, 𝑓𝑜𝑟 𝑖 = 1, . . . , 𝑛, 𝜇 𝑖 ≥ 0, 𝑓𝑜𝑟 𝑖 = 1, . . . , 𝑛 -1, 𝜇 𝑛 &gt; 0, 𝑝 𝑖 &gt; 0, 𝑓𝑜𝑟 𝑖 = 1, . . . , 𝑛 -1, 𝑎 𝑖,𝑚𝑎𝑥 𝜖 [0, 1) , 𝑓𝑜𝑟 𝑖 = 1, . . . , 𝑛 -1, 𝛾 &gt; 0.<label>(5)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Mathematical Modeling of the n-Multistage Stem Cell Therapy for HIV-1 Patients</head><p>In our previous work <ref type="bibr" target="#b30">[31]</ref>, we proposed for the first time in literature a model that explains the effect of stem cell transplantation on HIV-1 viral dynamics. The basic model structure that describes the therapy uses four state variables: stem cells (S), healthy T-cells (T), infected T-cells (T i ), and the virus (𝑉):</p><formula xml:id="formula_5">𝑑𝑆 𝑑𝑡 = [𝑏 (𝛼 𝑆 -𝛼 𝐷 ) -𝛿 𝑆 ] 𝑆 𝑑𝑇 𝑑𝑡 = 𝜆 𝑇 -𝑑 𝑇 𝑇 -𝑘 𝑇 TV + (2𝛼 𝐷 + 𝛼 𝐴 ) 𝑏𝐴𝑆 𝑑𝑇 𝑖 𝑑𝑡 = 𝑘 𝑇 TV -𝜌 𝑇 𝑖 𝑇 𝑖 𝑑𝑉 𝑑𝑡 = 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉,<label>(6)</label></formula><p>where the parameters 𝑏, 𝛼 𝑆 , 𝛼 𝐷 are nonnegative and 𝑏(𝛼 𝑆 -𝛼 𝐷 )-𝛿 𝑆 are nonpositive. We know there are three possibilities for a stem cell to divide <ref type="bibr" target="#b31">[32]</ref>:</p><p>(i) Symmetric self-renewal, where a stem cell can divide to become two stem cells, with probability 𝛼 𝑠 (ii) Asymmetric self-renewal, where one daughter cell remains a stem cell while the other does not inherit this characteristic, with probability 𝛼 𝐴 (iii) Symmetric commitment differentiation, where a stem cell can divide to become two committed cells, with probability 𝛼 𝐷</p><p>Therefore 𝛼 𝐴 + 𝛼 𝑆 + 𝛼 𝐷 = 1. We suppose that the stem cells 𝑆 divide at rate 𝑏 and die at rate 𝛿 𝑆 . We need to introduce an amplification factor 𝐴 to finally get the simplified ODE: 𝑑𝑆/𝑑𝑡 = [𝑏(𝛼 𝑆 -𝛼 𝐷 ) -𝛿 𝑆 ]𝑆, such that 𝑏(𝛼 𝑆 -𝛼 𝐷 ) -𝛿 𝑆 represents the net per-capita growth rate of stem cells <ref type="bibr" target="#b32">[33]</ref>; for the uninfected susceptible 𝑇 cells the production rate is 𝜆 𝑇 , and the death rate is 𝑑 𝑇 and they become infected cells (𝑇 𝑖 ) at rate 𝑘 𝑇 ; the infected cells are produced and die at the rates 𝑘 𝑇 and 𝜌 𝑇 𝑖 , respectively; free virions (𝑉) are produced from infected cells at rate 𝜋 𝑇 𝑖 and decline at rate 𝑐.</p><p>Since stem cells 𝑆 = 𝑆 1 need many stages to transform to mature cells 𝑆 n = T, in this paper we shall perform our previous work <ref type="bibr" target="#b30">[31]</ref> by including the stages of the lineage of stem cells given by system ( <ref type="formula" target="#formula_3">4</ref>). Our system ( <ref type="formula" target="#formula_5">6</ref>) can then transform to a new system that describes the n-multistage stem cells transformation in the therapy of HIV-1 patients. This new model describes the dynamics of stem cell transplantation on the virus using (𝑛 + 2) state variables ((𝑛 + 2) ODEs):</p><formula xml:id="formula_6">𝑑𝑆 1 𝑑𝑡 = ( 2𝑎 1 1 + 𝛾𝑇 -1) 𝑝 1 𝑆 1 -𝜇 1 𝑆 1 , 𝑑𝑆 2 𝑑𝑡 = ( 2𝑎 2 1 + 𝛾𝑇 -1) 𝑝 2 𝑆 2 + 2 (1 - 𝑎 1 1 + 𝛾T ) 𝑝 1 𝑆 1 -𝜇 2 𝑆 2 , . . . 𝑑𝑆 i 𝑑𝑡 = ( 2𝑎 i 1 + 𝛾T -1) 𝑝 i 𝑆 i + 2 (1 - 𝑎 i-1 1 + 𝛾T ) 𝑝 i-1 𝑆 i-1 -𝜇 i 𝑆 i , . . . 𝑑𝑆 𝑛-1 𝑑𝑡 = ( 2𝑎 𝑛-1 1 + 𝛾T -1) 𝑝 𝑛-1 𝑆 𝑛-1 + 2 (1 - 𝑎 𝑛-2 1 + 𝛾𝑇 ) 𝑝 𝑛-2 𝑆 𝑛-2 -𝜇 𝑛-1 𝑆 𝑛-1 , 𝑑𝑇 𝑑𝑡 = 𝜆 𝑇 -𝑑 𝑇 𝑇 -𝑘 𝑇 TV + 2 (1 - 𝑎 𝑛-1 1 + 𝛾𝑇 ) 𝑝 𝑛-1 𝑆 𝑛-1 -𝜇 𝑛 T, 𝑑𝑇 𝑖 𝑑𝑡 = 𝑘 𝑇 TV -𝜌 𝑇 𝑖 𝑇 𝑖 , 𝑑𝑉 𝑑𝑡 = 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉.<label>(7)</label></formula><p>Different numbers of compartment n were chosen in previous researches, as mentioned in <ref type="bibr" target="#b33">[34]</ref>. By n=8 we mean that the direct reflection of the biological case of differentiation of white blood stem cells into neutrophilic granulocytes <ref type="bibr" target="#b34">[35]</ref>; in this case we treat all immature and mature cells as separated populations so they might be understood as stem cells and their direct progeny. The compartment n=6 corresponds to short-and long-term repopulating stem cells, multipotent progenitor cells, committed progenitor cells, precursors, and mature cells, so it is related to the properties of division cells. For simplicity we consider 𝑛 = 2. The nth compartment is the population of mature cells, which we suppose, for simplicity, do not divide any more. In the next section, we will study the following 5-dimensional version extracted from model ( <ref type="formula" target="#formula_6">7</ref>):</p><formula xml:id="formula_7">𝑑𝑆 1 𝑑𝑡 = ( 2𝑎 1 1 + 𝛾𝑇 -1) 𝑝 1 𝑆 1 -𝜇 1 𝑆 1 , 𝑑𝑆 2 𝑑𝑡 = ( 2𝑎 2 1 + 𝛾𝑇 -1) 𝑝 2 𝑆 2 + 2 (1 - 𝑎 1 1 + 𝛾T ) 𝑝 1 𝑆 1 -𝜇 2 𝑆 2 , 𝑑𝑇 𝑑𝑡 = 𝜆 𝑇 -(𝑑 𝑇 + 𝜇 3 ) 𝑇 -𝑘 𝑇 TV + 2 (1 - 𝑎 2 1 + 𝛾𝑇 ) 𝑝 2 𝑆 2 , 𝑑𝑇 𝑖 𝑑𝑡 = 𝑘 𝑇 TV-𝜌 𝑇 𝑖 𝑇 𝑖 , 𝑑𝑉 𝑑𝑡 = 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉.<label>(8)</label></formula><p>Here 𝜇 3 is the death rate of T-cells that come out from the final stage of the stem cell maturation, so for simplicity let 𝑑 𝑇 + 𝜇 3 = 𝛽.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Study of the Mathematical Model of the 2-Multistage Stem Cell Therapy for HIV-1 Patients</head><p>In this section, we are going to discuss the stability of the model of viral dynamics corresponding to the stem cell therapy given by system ( <ref type="formula" target="#formula_7">8</ref>). We shall try to find out equilibrium points of system ( <ref type="formula" target="#formula_7">8</ref>) in the form (𝑆 1 , 𝑆 2 , 𝑇, 𝑇 𝑖 , 𝑉). As in <ref type="bibr" target="#b35">[36]</ref> we take 𝛾 to be very small; therefore we replace 𝑎 i /(1 + 𝛾𝑇) by 𝑎 𝑖, for 𝑖 = 1, 2, . . . , 𝑛 -1, which is equivalent to choosing ℎ = 1/(1 + 𝛾𝑇)𝜖(0, 1) as in <ref type="bibr" target="#b36">[37]</ref>.</p><p>The following theorem gives us the equilibrium points for the following system:</p><formula xml:id="formula_8">𝑑𝑆 1 𝑑𝑡 = (2𝑎 1 -1) 𝑝 1 𝑆 1 -𝜇 1 𝑆 1 , 𝑑𝑆 2 𝑑𝑡 = (2𝑎 2 -1) 𝑝 2 𝑆 2 + 2 (1 -𝑎 1 ) 𝑝 1 𝑆 1 -𝜇 2 𝑆 2 , 𝑑𝑇 𝑑𝑡 = 𝜆 𝑇 -𝛽𝑇 -𝑘 𝑇 TV + 2 (1 -𝑎 2 ) 𝑝 2 𝑠 2 , 𝑑𝑇 𝑖 𝑑𝑡 = 𝑘 𝑇 TV-𝜌 𝑇 𝑖 𝑇 𝑖 , 𝑑𝑉 𝑑𝑡 = 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉.<label>(9)</label></formula><p>If the basic reproduction ratio of the viruses is given by 𝑅 0 = 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 /𝑐𝜌 𝑇 𝑖 𝛽, then we get the following theorem.</p><p>Theorem 1. System ( <ref type="formula" target="#formula_8">9</ref>) has two equilibrium points given by 𝑃 1 (𝑆 1 , 𝑆 2 , 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, 𝜆 𝑇 /𝛽, 0, 0) corresponding to the free disease case and 𝑃 2 (𝑆 1 , 𝑆 2 , 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, (𝜆 𝑇 /𝛽)(1/ 𝑅 0 ), (𝛽𝑐/𝑘 𝑇 𝜋 𝑇 𝑖 )(𝑅 0 -1), (𝛽/𝑘 𝑇 )(𝑅 0 -1)) corresponding to the endemic case.</p><p>Proof. To find the equilibrium points, we solve the following system for (𝑆 1 , 𝑆 2 , 𝑇, 𝑇 𝑖 , 𝑉):</p><formula xml:id="formula_9">(2a 1 -1) p 1 S 1 -𝜇 1 S 1 = 0 (2𝑎 2 -1) 𝑝 2 𝑆 2 + 2 (1 -𝑎 1 ) 𝑝 1 𝑆 1 -𝜇 2 𝑆 2 = 0 𝜆 𝑇 -𝛽𝑇 -𝑘 𝑇 𝑇𝑉 + 2 (1 -𝑎 2 ) 𝑝 2 𝑠 2 = 0 𝑘 𝑇 𝑇𝑉-𝜌 𝑇 𝑖 𝑇 𝑖 = 0 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉 = 0.<label>(10)</label></formula><p>By introducing 𝑅 0 = 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 /𝑐𝜌 𝑇 𝑖 𝛽, we get the result.</p><p>In the next theorems we study the stability at the equilibrium points 𝑃 1 and 𝑃 2 .</p><p>Theorem 2. The free disease case 𝑃 1 is asymptotically stable if 𝑅 0 &lt; 1 and unstable if 𝑅 0 &gt; 1.</p><p>Proof. The Jacobian matrix corresponding to system ( <ref type="formula" target="#formula_8">9</ref>) is given by</p><formula xml:id="formula_10">𝐽 = [ [ [ [ [ [ [ [ [ (2𝑎 1 -1) 𝑝 1 -𝜇 1 0 0 0 0 2 (1 -𝑎 1 ) 𝑝 1 (2𝑎 2 -1) 𝑝 2 -𝜇 2 0 0 0 0 2( 1-𝑎 2 ) 𝑝 2 -𝛽 -𝑘 𝑇 𝑉 0 -𝑘 𝑇 𝑇 0 0 𝑘 𝑇 𝑉 -𝜌 𝑇 𝑖 𝑘 𝑇 𝑇 0 0 0 𝜋 𝑇 𝑖 -𝑐 ] ] ] ] ] ] ] ] ] .<label>(11)</label></formula><p>At the health point 𝑃 1 the Jacobian matrix becomes</p><formula xml:id="formula_11">𝐽 1 = [ [ [ [ [ [ [ [ [ [ [ [ (2𝑎 1 -1) 𝑝 1 -𝜇 1 0 0 0 0 2 (1 -𝑎 1 ) 𝑝 1 (2𝑎 2 -1) 𝑝 2 -𝜇 2 0 0 0 0 2 ( 1 -𝑎 2 ) 𝑝 2 -𝛽 0 -𝑘 𝑇 𝜆 𝑇 𝛽 0 0 0 -𝜌 𝑇 𝑖 𝑘 𝑇 𝜆 𝑇 𝛽 0 0 0 𝜋 𝑇 𝑖 -𝑐 ] ] ] ] ] ] ] ] ] ] ] ] .<label>(12)</label></formula><p>So the characteristic equation det(𝐽 1 -𝑟𝐼) = 0 has the eigenvalues</p><formula xml:id="formula_12">𝑟 1 = (2𝑎 1 -1) 𝑝 1 -𝜇 1 , 𝑟 2 = (2𝑎 2 -1) 𝑝 2 -𝜇 2 , 𝑟 3 = -𝛽, 𝑟 4,5 = -𝛽 (𝑐 + 𝜌 𝑇 𝑖 ) ± √ [𝛽 (𝑐 + 𝜌 𝑇 𝑖 )] 2 -4𝛽 [𝛽𝑐𝜌 𝑇 𝑖 -𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 ] 2𝛽 = -𝛽 (𝑐 + 𝜌 𝑇 𝑖 ) ± √𝛽√𝛽𝑐 2 -2𝛽𝑐𝜌 𝑇 𝑖 + 4𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 + 𝛽𝜌 2 𝑇 𝑖 2𝛽 .<label>(13)</label></formula><p>To get the asymptotically stable case for the free disease equilibrium point we shall have for the first and the second roots (2𝑎 1 -1)𝑝 1 &lt; 𝜇 1 and (2𝑎 2 -1)𝑝 2 &lt; 𝜇 2 which are true and agree with <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b35">36]</ref>; since the population of mature cells 𝑆 3 reaches some value, then the term (2𝑎 𝑖 (𝑡) -1)𝑝 𝑖 (𝑡)𝑆 𝑖 (𝑡) &lt; 0, for 𝑖 &lt; 𝑛, and the number of cells at stage i decreases, while the lowness of the density for the mature cells causes (2𝑎 𝑖 (𝑡) -1)𝑝 𝑖 (𝑡)𝑠 𝑖 (𝑡) &gt; 0, for 𝑖 &lt; 𝑛, and if the death rates are not too high, then the number of cells at stage i increases. These show how the level of mature cells affects the dynamics of each cell subpopulation. Also it is clear that 𝑟 3 = -𝛽 &lt; 0, and if 𝑅 0 = 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 /𝑐𝜌 𝑇 𝑖 𝛽 &lt; 1, then 𝑐𝜌 𝑇 𝑖 𝛽 2 &gt; 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 𝛽, so (𝛽(𝑐+𝜌 𝑇 𝑖 )) 2 &gt; 𝛽(𝛽𝑐 2 -2𝛽𝑐𝜌 𝑇 𝑖 + 4𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 + 𝛽𝜌 2 𝑇 𝑖 ); then 𝑟 4,5 &lt; 0. If 𝑅 0 = 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 /𝑐𝜌 𝑇 𝑖 𝛽 &gt; 1, then 𝑐𝜌 𝑇 𝑖 𝛽 2 &lt; 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 𝛽, so (𝛽(𝑐+𝜌 𝑇 𝑖 )) 2 &lt; 𝛽(𝛽𝑐 2 -2𝛽𝑐𝜌 𝑇 𝑖 +4𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 +𝛽𝜌 2 𝑇 𝑖 ); then 𝑟 4,5 &gt; 0. Thus, we get the result.</p><p>Remark 3. (1) If 𝑅 0 = 1, then 𝑃 1 = 𝑃 2 (2) If 𝑅 0 &lt; 1, then 𝑃 2 is impossible To study the endemic point 𝑃 2 , we need the following lemma.</p><p>Lemma 4 (see <ref type="bibr" target="#b36">[37]</ref>). The polynomial 𝑓(𝑟) = 𝑟 3 +𝑎 1 𝑟 2 +𝑎 2 𝑟+𝑎 3 has the following results:</p><p>(i) If 𝑎 3 &lt; 0, then 𝑓(𝑟) has at least one positive root</p><p>(ii) If 𝑎 1 &gt; 0, 𝑎 3 ≥ 0, and 𝑎 2 ≥ 0, then 𝑓(𝑟) has no positive root</p><p>(iii) If 𝑎 1 &gt; 0, 𝑎 3 ≥ 0, and 𝑎 2 &lt; 0, then 𝑓(𝑟) has a positive root:</p><formula xml:id="formula_13">𝑟 = 1 3 (-𝑎 1 + √ 𝑎 1 2 -3𝑎 2 )<label>(14)</label></formula><p>Theorem 5. If 𝑅 0 ≥ 1, then the endemic point P 2 is asymptotically stable.</p><p>Proof. At the point (0, 0, (𝜆 𝑇 /𝛽)(1/𝑅 0 ), (𝛽𝑐/𝑘 𝑇 𝜋 𝑇 𝑖 )(𝑅 0 -1), (𝛽/𝑘 𝑇 )(𝑅 0 -1)) the Jacobian matrix becomes</p><formula xml:id="formula_14">𝐽 2 = [ [ [ [ [ [ [ [ [ [ [ [ (2𝑎 1 -1) 𝑝 1 -𝜇 1 0 0 0 0 2 (1 -𝑎 1 ) 𝑝 1 (2𝑎 2 -1) 𝑝 2 -𝜇 2 0 0 0 0 2( 1-𝑎 2 ) 𝑝 2 -𝛽𝑅 0 0 -𝑘 𝑇 𝜆 𝑇 𝛽𝑅 0 0 0 𝛽 ( 𝑅 0 -1) -𝜌 𝑇 𝑖 𝑘 𝑇 𝜆 𝑇 𝛽𝑅 0 0 0 0 𝜋 𝑇 𝑖 -𝑐 ] ] ] ] ] ] ] ] ] ] ] ] .<label>(15)</label></formula><p>So the characteristic equation det(𝐽 2 -𝑟𝐼) = 0 has the eigenvalues 𝑟 1 = (2𝑎 1 -1)𝑝 1 -𝜇 1 , 𝑟 2 = (2𝑎 2 -1)𝑝 2 -𝜇 2 , and the other eigenvalues are roots of the polynomial 𝑓(𝑟) = 𝑟 3 + 𝑎 1 𝑟 2 + 𝑎 2 𝑟 + 𝑎 3 = 0, where 𝑎 1 = 𝑐+𝜌 𝑇 𝑖 + 𝛽𝑅 0 , 𝑎 2 = 𝛽𝑅 0 (𝑐 + 𝜌 𝑇 𝑖 ), and 𝑎 3 = 𝑐𝜌 𝑇 𝑖 𝛽(𝑅 0 -1).</p><p>Since 𝑅 0 ≥ 1, then 𝛽𝑅 0 (𝑐 + 𝜌 𝑇 𝑖 ) ≥ 0, and 𝑐𝜌 𝑇 𝑖 𝛽(𝑅 0 -1) ≥ 0. Then, according to Lemma 4, we deduce that 𝑃 2 is asymptotically stable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Study of the Mathematical Model of the n-Multistage Stem Cell Therapy for HIV-1 Patients</head><p>In this section, we will consider previously given (𝑛 + 2)-dimensional system ( <ref type="formula" target="#formula_6">7</ref>). As mentioned in the previous section, we can replace 𝑎 i /(1 + 𝛾𝑇) by 𝑎 𝑖 for 𝑖 = 1, 2, . . . , 𝑛 -1. Then ( <ref type="formula" target="#formula_6">7</ref>) can be written as</p><formula xml:id="formula_15">𝑑𝑆 1 𝑑𝑡 = (2𝑎 1 -1) 𝑝 1 𝑆 1 -𝜇 1 𝑆 1 , 𝑑𝑆 2 𝑑𝑡 = (2𝑎 2 -1) 𝑝 2 𝑆 2 + 2 (1 -𝑎 1 ) 𝑝 1 𝑆 1 -𝜇 2 𝑆 2 , . . . 𝑑𝑆 𝑛-1 𝑑𝑡 = (2𝑎 𝑛-1 -1) 𝑝 𝑛-1 𝑆 𝑛-1 + 2 (1 -𝑎 𝑛-2 ) 𝑝 𝑛-2 𝑆 𝑛-2 -𝜇 𝑛-1 𝑆 𝑛-1 , 𝑑𝑇 𝑑𝑡 = 𝜆 𝑇 -(𝑑 𝑇 + 𝜇 𝑛 ) 𝑇 -𝑘 𝑇 TV + 2 (1 -𝑎 𝑛-1 ) 𝑝 𝑛-1 𝑆 𝑛-1 , 𝑑𝑇 𝑖 𝑑𝑡 = 𝑘 𝑇 TV -𝜌 𝑇 𝑖 𝑇 𝑖 , 𝑑𝑉 𝑑𝑡 = 𝜋 𝑇 𝑖 𝑇 𝑖 -𝑐𝑉.<label>(16)</label></formula><p>Assume that 𝑑 𝑇 + 𝜇 𝑛 = 𝛽 󸀠 . If the basic reproduction ratio of the viruses (that depends on the patient) is given by 𝑅 0 = 𝑘 𝑇 𝜆 𝑇 𝜋 𝑇 𝑖 /𝑐𝜌 𝑇 𝑖 𝛽 󸀠 , then, using mathematical induction, we can deduce the following theorem.</p><p>Theorem 6. System ( <ref type="formula" target="#formula_15">16</ref>) has two equilibrium points given by the following:</p><p>𝑃 1 (𝑆 1 , 𝑆 2 , . . . , 𝑆 𝑛-1 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, . . . , 0, 𝜆 𝑇 /𝛽 󸀠 , 0, 0), corresponding to the free disease case, and</p><formula xml:id="formula_16">𝑃 2 (𝑆 1 , 𝑆 2 , . . . , 𝑆 𝑛-1 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, . . . , 0, 𝜆 𝑇 𝛽 󸀠 ⋅ 1 𝑅 0 , 𝛽 󸀠 𝑐 𝑘 𝑇 𝜋 𝑇 𝑖 (𝑅 0 -1) , 𝛽 󸀠 𝑘 𝑇 (𝑅 0 -1)) ,<label>(17)</label></formula><p>corresponding to the endemic case.</p><p>Theorem 7. The free disease case 𝑃 1 is asymptotically stable if 𝑅 0 &lt; 1 and unstable if 𝑅 0 &gt; 1.</p><p>Remark 8. (1) If 𝑅 0 = 1, then 𝑃 1 = 𝑃 2 (2) If 𝑅 0 &lt; 1, then 𝑃 2 is impossible</p><p>Theorem 9. If 𝑅 0 ≥ 1, then the endemic point 𝑃 2 is asymptotically stable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusion</head><p>We have formulated an n-multistage system of ODEs model to study the influence of the treatment of HIV-1 infection with stem cell transplantation. Evidently the effect of the therapy on the viral dynamics depends on the patient (depends on 𝑅 0 ).</p><p>(i) If 𝑅 0 ≤ 1, we have only one equilibrium point corresponding to the free disease case 𝑃 1 (𝑆 1 , 𝑆 2 , . . . , 𝑆 𝑛-1 , 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, . . . , 0, 𝜆 𝑇 /𝑑 𝑇 , 0, 0), which is asymptotically stable. We can then conclude that the infected T-cells and virus particles will be cleared and the stem cells exhausted. In this case, the patient is healed</p><p>Here we can also add a comment on the best stage we can choose for the mutant cells to be transplanted on the patient.</p><p>Since all the components 𝑆 1 , 𝑆 2 , . . . , 𝑆 𝑛-1 of the point 𝑃 1 are equal to zero, then it is better to transplant the stem cells when they are nearly transformed to mature T-cells. This result is known in the cases of corneal transplantation, skin transplantation, and cardiac disease.</p><p>(ii) If 𝑅 0 &gt; 1, the free disease case 𝑃 1 is unstable, and the infected state 𝑃 2 (𝑆 1 , 𝑆 2 , . . . , 𝑆 𝑛-1 , 𝑇, 𝑇 𝑖 , 𝑉) = (0, 0, . . . , 0, (𝜆 𝑇 /𝑑 𝑇 )(1/𝑅 0 ), (𝑑 𝑇 𝑐 𝑉 /𝑘 𝑇 𝜋 𝑇 𝑖 )(𝑅 0 -1), (𝑑 𝑇 /𝑘 𝑇 )(𝑅 0 -1)) is asymptotically stable, which means that any HIV-1 infection for that patient will progress to chronic infection after stem cell exhaustion</p><p>Therefore, stem cell therapy will not offer a cure to that infected person (𝑅 0 &gt; 1) but simply will help delay progression to the chronic stage. If we repeat the transplantation of stem cells in a manner to prevent its exhaustion from the patient, we can prevent AIDS.</p><p>We advise medicine to try to replace the chemical drug therapy with the apparently safe stem cell therapy. But will clinical experiments meet the expectations?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Future Works</head><p>For more interest we will study a fractional order of mathematical modeling to study multistage stem cell transplantation on HIV-1 patients based on <ref type="bibr" target="#b37">[38,</ref><ref type="bibr" target="#b38">39]</ref>. The presence of a fractional differential order in differential equations can lead to more consistency and more accuracy to real life than the integer-order models because the fractional derivatives enable the description of the memory and hereditary properties inherent in various processes and materials. The most important property of these models is their nonlocal property which does not exist in the integer-order differential operators. We mean by this property that the next state of a model depends not only on its current state but also on all of its historical states.</p></div>		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>This research was funded by the <rs type="institution">Deanship of Scientific Research at Princess Nourah bint Abdulrahman University</rs> through the <rs type="programName">Fast-track Research Funding Program</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_e2VB6sR">
+					<orgName type="program" subtype="full">Fast-track Research Funding Program</orgName>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data Availability</head><p>No data were used to support this study.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest</head><p>The authors declare that they have no conflicts of interest regarding the publication of this paper. </p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="webpage" xml:id="b0">
+				<monogr>
+					<ref target="https://commons.wikimedia.org/wiki/User:Splette-Thomas Splettstoesser, https://www.scistyle.com">https://commons.wikimedia.org/wiki/User:Splette-Thomas Splettstoesser, https://www.scistyle.com./</ref>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">B</forename>
+							<surname>Gilbert</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">W</forename>
+							<surname>Mckeague</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Eisen</surname>
+						</persName>
+					</author>
+					<title level="a">Comparison of HIV-1 and HIV-2 infectivity from a prospective cohort study in Senegal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Statistics in Medicine</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="573" to="593"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">W</forename>
+							<surname>Doms</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">D</forename>
+							<surname>Reeves</surname>
+						</persName>
+					</author>
+					<title level="a">Human immunodeficiency virus type 2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of General Virology</title>
+					<imprint>
+						<biblScope unit="volume">83</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="1253" to="1265"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">S</forename>
+							<surname>Perelson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">D</forename>
+							<forename type="middle">E</forename>
+							<surname>Kirschner</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">D</forename>
+							<surname>Boer</surname>
+						</persName>
+					</author>
+					<title level="a">Dynamics of HIV infection of CD4+ T cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical Biosciences</title>
+					<imprint>
+						<biblScope unit="volume">114</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="81" to="125"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">P</forename>
+							<surname>Duffin</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">H</forename>
+							<surname>Tullis</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical Models of the Complete Course of HIV Infection and AIDS</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Theoretical Medicine</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="215" to="221"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">R</forename>
+							<forename type="middle">V</forename>
+							<surname>Culshaw</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Ruan</surname>
+						</persName>
+					</author>
+					<title level="a">A delay-differential equation model of HIV infection of CD4+ T-cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical Biosciences</title>
+					<imprint>
+						<biblScope unit="volume">165</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="27" to="39"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Kirschner</surname>
+						</persName>
+					</author>
+					<title level="a">Using mathematics to understand HIV immune dynamics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Notices</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="191" to="202"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">S</forename>
+							<surname>Perelson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">W</forename>
+							<surname>Nelson</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical Analysis of HIV-1 Dynamics in Vivo</title>
+				</analytic>
+				<monogr>
+					<title level="j">SIAM Review</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="3" to="44"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">W</forename>
+							<surname>Nelson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">S</forename>
+							<surname>Perelson</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical analysis of delay differential equation models of HIV-1 infection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical Biosciences</title>
+					<imprint>
+						<biblScope unit="volume">179</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="73" to="94"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">O</forename>
+							<forename type="middle">M</forename>
+							<surname>Ogunlaran</surname>
+						</persName>
+						
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">C</forename>
+							<forename type="last">O</forename>
+							<surname>Noutchie</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical Model for an Effective Management of HIV Infection</title>
+				</analytic>
+				<monogr>
+					<title level="j">BioMed Research International</title>
+					<imprint>
+						<biblScope unit="volume">2016</biblScope>
+						<biblScope unit="page" from="1" to="6"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+				<note>Article ID 4217548</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Mora</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Serzanti</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Consiglio</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Memo</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Dell’era</surname>
+						</persName>
+					</author>
+					<title level="a">Clinical potentials of human pluripotent stem cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Biology and Toxicology</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="351" to="360"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Nishio</surname>
+						</persName>
+					</author>
+					<title level="a">Human pluripotent stem cells: Towards therapeutic development for the treatment of lifestyle diseases</title>
+				</analytic>
+				<monogr>
+					<title level="j">World Journal of Stem Cells</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page">56</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					<author>
+						<persName>
+							<forename>L</forename>
+							<surname>Li</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Xie</surname>
+						</persName>
+					</author>
+					<title level="a">Stem cell niche: Structure and Function</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annual Review of Cell and Developmental Biology</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="605" to="631"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">A</forename>
+							<surname>Thomson</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Itskovitz-Eldor</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">S</forename>
+							<surname>Shapiro</surname>
+						</persName>
+					</author>
+					<title level="a">Embryonic Stem Cell Lines Derived from Human Blastocysts</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science</title>
+					<imprint>
+						<biblScope unit="volume">282</biblScope>
+						<biblScope unit="issue">5391</biblScope>
+						<biblScope unit="page" from="1145" to="1147"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">L</forename>
+							<forename type="middle">M</forename>
+							<surname>Hoffman</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">K</forename>
+							<surname>Carpenter</surname>
+						</persName>
+					</author>
+					<title level="a">Characterization and culture of human embryonic stem cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature Biotechnology</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="699" to="708"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">K</forename>
+							<surname>Nguyen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Nag</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<title level="a">Methods to assess stem cell lineage, fate and function</title>
+				</analytic>
+				<monogr>
+					<title level="j">Advanced Drug Delivery Reviews</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page" from="1175" to="1186"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Hernigou</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Beaujean</surname>
+						</persName>
+					</author>
+					<title level="a">Treatment of Osteonecrosis With Autologous Bone Marrow Grafting</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clinical Orthopaedics and Related Research</title>
+					<imprint>
+						<biblScope unit="volume">405</biblScope>
+						<biblScope unit="page" from="14" to="23"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">M</forename>
+							<surname>Bonab</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Alimoghaddam</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Talebian</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">H</forename>
+							<surname>Ghaffari</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Ghavamzadeh</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>B</forename>
+							<surname>Nikbin</surname>
+						</persName>
+					</author>
+					<title level="a">Aging of mesenchymal stem cell in vitro</title>
+				</analytic>
+				<monogr>
+					<title level="j">BMC Cell Biology</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="issue">14</biblScope>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Loeffler</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">E</forename>
+							<surname>Wichmann</surname>
+						</persName>
+					</author>
+					<title level="a">A comprehensive mathematical model of stem cell proliferation which reproduces most of the published experimental results</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Proliferation</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="543" to="561"/>
+						<date when="1980">1980</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Cowan</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">V</forename>
+							<forename type="middle">B</forename>
+							<surname>Morris</surname>
+						</persName>
+					</author>
+					<title level="a">Determination of proliferative parameters from growth curves</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Proliferation</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="153" to="159"/>
+						<date when="1987">1987</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Körbling</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>Z</forename>
+							<surname>Estrov</surname>
+						</persName>
+					</author>
+					<title level="a">Adult Stem Cells for Tissue Repair — A New Therapeutic Concept?</title>
+				</analytic>
+				<monogr>
+					<title level="j">The New England Journal of Medicine</title>
+					<imprint>
+						<biblScope unit="volume">349</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="570" to="582"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">L</forename>
+							<forename type="middle">M</forename>
+							<forename type="last">A</forename>
+							<surname>Beeres</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">F</forename>
+							<forename type="middle">M</forename>
+							<surname>Bengel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Bartunek</surname>
+						</persName>
+					</author>
+					<title level="a">Role of Imaging in Cardiac Stem Cell Therapy</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of the American College of Cardiology</title>
+					<imprint>
+						<biblScope unit="volume">49</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="1137" to="1148"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">J</forename>
+							<forename type="middle">C</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">Y</forename>
+							<surname>Chen</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>G</forename>
+							<surname>Sundaresan</surname>
+						</persName>
+					</author>
+					<title level="a">Molecular Imaging of Cardiac Cell Transplantation in Living Animals Using Optical Bioluminescence and Positron Emission Tomography</title>
+				</analytic>
+				<monogr>
+					<title level="j">Circulation</title>
+					<imprint>
+						<biblScope unit="volume">108</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="1302" to="1305"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					<author>
+						<persName>
+							<forename>O</forename>
+							<surname>Lindvall</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>Z</forename>
+							<surname>Kokaia</surname>
+						</persName>
+					</author>
+					<title level="a">Review stem cells for the treatment of neurological disorders</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">441</biblScope>
+						<biblScope unit="issue">7097</biblScope>
+						<biblScope unit="page" from="1094" to="1096"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">U</forename>
+							<surname>Kim</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">I</forename>
+							<forename type="middle">H</forename>
+							<surname>Park</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">T</forename>
+							<forename type="middle">H</forename>
+							<surname>Kim</surname>
+						</persName>
+					</author>
+					<title level="a">Brain transplantation of human neural stem cells transduced with tyrosine hydroxylase and GTP cyclohydrolase 1 provides functional improvement in animal models of Parkinson disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neuropathology</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="129" to="140"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Hagell</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>P</forename>
+							<surname>Brundin</surname>
+						</persName>
+					</author>
+					<title level="a">Cell Survival and Clinical Outcome Following Intrastriatal Transplantation in Parkinson Disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Neuropathology and Experimental Neurology</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="741" to="752"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					<author>
+						<persName>
+							<forename>K</forename>
+							<surname>Chakrabarty</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Shetty</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Ghosh</surname>
+						</persName>
+					</author>
+					<title level="a">Corneal cell therapy: with iPSCs, it is no more a far-sight</title>
+				</analytic>
+				<monogr>
+					<title level="j">Stem Cell Research and Therapy</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="issue">287</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">E</forename>
+							<surname>Couri</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">C</forename>
+							<surname>Oliveira</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">B</forename>
+							<surname>Stracieri</surname>
+						</persName>
+					</author>
+					<title level="a">C-Peptide Levels and Insulin Independence Following Autologous Nonmyeloablative Hematopoietic Stem Cell Transplantation in Newly Diagnosed Type 1 Diabetes Mellitus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of the American Medical Association</title>
+					<imprint>
+						<biblScope unit="volume">301</biblScope>
+						<biblScope unit="issue">15</biblScope>
+						<biblScope unit="page" from="1573" to="1579"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">K</forename>
+							<forename type="middle">A</forename>
+							<surname>D'amour</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">G</forename>
+							<surname>Bang</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Eliazer</surname>
+						</persName>
+					</author>
+					<title level="a">Production of pancreatic hormone–expressing endocrine cells from human embryonic stem cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature Biotechnology</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="1392" to="1401"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Stiehl</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Marciniak-Czochra</surname>
+						</persName>
+					</author>
+					<title level="a">Characterization of stem cells using mathematical models of multistage cell lineages</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical and Computer Modelling</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="issue">7-8</biblScope>
+						<biblScope unit="page" from="1505" to="1517"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">A</forename>
+							<surname>Alqudah</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">A</forename>
+							<surname>Kallel</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>S</forename>
+							<surname>Zarea</surname>
+						</persName>
+					</author>
+					<title level="a">Stability of a modified mathematical model of AIDS epidemic can stem cells offer a new hope of cure for HIV1?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Life Science Journal</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Wu</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">H</forename>
+							<forename type="middle">Y</forename>
+							<surname>Kwon</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>F</forename>
+							<surname>Rattis</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>J</forename>
+							<surname>Blum</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>C</forename>
+							<surname>Zhao</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Ashkenazi</surname>
+						</persName>
+					</author>
+					<title level="a">Imaging Hematopoietic Precursor Division in Real Time</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Stem Cell</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="541" to="554"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">M</forename>
+							<forename type="middle">D</forename>
+							<surname>Johnston</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">C</forename>
+							<forename type="middle">M</forename>
+							<surname>Edwards</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">W</forename>
+							<forename type="middle">F</forename>
+							<surname>Bodmer</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">K</forename>
+							<surname>Maini</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">J</forename>
+							<surname>Chapman</surname>
+						</persName>
+					</author>
+					<title level="a">Examples of Mathematical Modeling</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Cycle</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="issue">17</biblScope>
+						<biblScope unit="page" from="2106" to="2112"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Stiehl</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Marciniak-Czochra</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical Modeling of Leukemogenesis and Cancer Stem Cell Dynamics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical Modelling of Natural Phenomena</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="166" to="202"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Marciniak-Czochra</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>T</forename>
+							<surname>Stiehl</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">D</forename>
+							<surname>Ho</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Jäger</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>W</forename>
+							<surname>Wagner</surname>
+						</persName>
+					</author>
+					<title level="a">Modeling of Asymmetric Cell Division in Hematopoietic Stem Cells—Regulation of Self-Renewal Is Essential for Efficient Repopulation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Stem Cells and Development</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="377" to="386"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">P</forename>
+							<forename type="middle">R</forename>
+							<surname>Paździorek</surname>
+						</persName>
+					</author>
+					<title level="a">Mathematical Model of Stem Cell Differentiation and Tissue Regeneration with Stochastic Noise</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bulletin of Mathematical Biology</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="1642" to="1669"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					<author>
+						<persName>
+							<forename>R</forename>
+							<surname>Naresh</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>A</forename>
+							<surname>Tripathi</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>D</forename>
+							<surname>Sharma</surname>
+						</persName>
+					</author>
+					<title level="a">A nonlinear AIDS epidemic model with screening and time delay</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied Mathematics and Computation</title>
+					<imprint>
+						<biblScope unit="volume">217</biblScope>
+						<biblScope unit="issue">9</biblScope>
+						<biblScope unit="page" from="4416" to="4426"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					<author>
+						<persName>
+							<forename>Y</forename>
+							<surname>Ding</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>H</forename>
+							<surname>Ye</surname>
+						</persName>
+					</author>
+					<title level="a">A fractional-order differential equation model of HIV infection of CD4+ T-cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mathematical and Computer Modelling</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="issue">3-4</biblScope>
+						<biblScope unit="page" from="386" to="392"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					<author>
+						<persName>
+							<forename type="first">A</forename>
+							<forename type="middle">A</forename>
+							<surname>Arafa</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename type="first">S</forename>
+							<forename type="middle">Z</forename>
+							<surname>Rida</surname>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<forename>M</forename>
+							<surname>Khalil</surname>
+						</persName>
+					</author>
+					<title level="a">A fractional-order model of HIV infection with drug therapy effect</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of the Egyptian Mathematical Society</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="538" to="543"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

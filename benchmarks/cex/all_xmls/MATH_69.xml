@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Almost self-inverse graphs</title>
+				<funder>
+					<orgName type="full">JC Bose Fellowship, Department of Science and Technology, Government of India</orgName>
+				</funder>
+				<funder ref="#_m8qgdPa">
+					<orgName type="full">Israel Science Foundation</orgName>
+				</funder>
+				<funder ref="#_ByTwxnJ">
+					<orgName type="full">Joint NSFC-ISF</orgName>
+				</funder>
+				<funder ref="#_YMGQXXy">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_WSzJyE7">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Taylor &amp; Francis Group</publisher>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2018-06-22"/>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Bapat</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Indian Statistical Institute Delhi Center</orgName>
+								<address>
+									<settlement>New Delhi</settlement>
+									<country>India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Panda</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Technion-Israel Institute of Technology</orgName>
+								<address>
+									<settlement>Haifa</settlement>
+									<country key="IL">Israel</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Almost self-inverse graphs</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">LINEAR AND MULTILINEAR ALGEBRA</title>
+						<imprint>
+							<biblScope unit="volume">67</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="2065" to="2076"/>
+							<publisher>Taylor &amp; Francis Group</publisher>
+							<date type="published" when="2018-06-22"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ADED72165ADCAC9D230941DBDDC507E6</idno>
+					<idno type="DOI">10.1080/03081087.2018.1481357</idno>
+					<note type="submission">Received 19 November 2017 Accepted 22 May 2018</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Almost self-inverse graph</term>
+					<term>self-inverse graph</term>
+					<term>boxminus corona</term>
+					<term>corona</term>
+					<term>even type edge</term>
+					<term>inverse graph</term>
+					<term>minimal path</term>
+					<term>odd type edge</term>
+					<term>unique perfect matching</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Let G be a simple graph with adjacency matrix A(G). The inverse of the graph G, when it exists, is the unique weighted graph whose adjacency matrix is similar to A(G) -1 via a particular type of similarity. An invertible graph G is said to be an almost self-inverse graph if the inverse graph of G can be obtained from G just by joining two nonadjacent vertices. We present a characterization of almost selfinverse graphs of a specific class of graphs which contains the class of nonsingular trees.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Throughout, G is a simple, undirected graph on vertices 1, 2, . . . , n. The adjacency matrix A(G) of G is the square symmetric matrix of size n whose (i, j)th entry a ij is 1 if i is adjacent to j and 0 otherwise.</p><p>A perfect matching in a graph G is a spanning forest whose components are paths on two vertices. If G has a unique perfect matching, then we denote it by M. Furthermore, when v is a vertex, we shall always use v to denote the matching mate for v, that is, v is the vertex for which the edge [v, v ] ∈ M. A graph G is said to be nonsingular if A(G) is nonsingular. It is known that the bipartite graphs with unique perfect matchings are nonsingular, see <ref type="bibr" target="#b0">[1]</ref>. Let H be the class of connected bipartite graphs with unique perfect matchings. We use G+e to denote the graph which is obtained from G by joining two nonadjacent vertices.</p><p>A signature matrix is a diagonal matrix with diagonal entries from {1, -1}. Note that for any signature matrix S, we have S -1 = S.</p><p>Definition 1.1 (<ref type="bibr" target="#b0">[1]</ref>): Let G ∈ H. The graph G is said to have an inverse if there is a signature matrix S such that SA(G)−1 S is nonnegative. The weighted graph H associated with SA(G)−1 S is called the inverse graph of G, and it is denoted by G+ . An invertible graph G is said to be a self-inverse graph if G is isomorphic to its inverse graph.</p><p>In <ref type="bibr" target="#b0">[1]</ref>, Godsil supplied a class of invertible graphs and posed the problem to characterize the graphs in H which possess inverses. Some of the significant works on the inverse graph were done in <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref>.</p><p>The study of different properties of the inverse graphs of the graphs which possess inverses is also an interesting subject. For example, characterizing connected bipartite graphs G with a unique perfect matching for which G is isomorphic to its inverse graph, is another challenging open question. This question, for the class of graphs G ∈ H with G/M is bipartite (G/M is the graph obtained from G by contracting each matching edge to a vertex) asked by Godsil in 1985 and has already been answered by Simion and Cao in <ref type="bibr" target="#b7">[8]</ref>. In <ref type="bibr" target="#b9">[10]</ref>, Tifenbach supplied necessary and sufficient conditions for a graph in H satisfying G ∼ = G + via a particular isomorphism. In <ref type="bibr" target="#b6">[7]</ref>, Panda and Pati supplied a characterization of a more general class of graphs in H which are self-inverse. We introduce the following notion which is similar to the notion of self-inverse graphs.</p><p>Definition 1.2: An invertible graph G is said to be an almost self-inverse graph if there exist two nonadjacent vertices u and v in G such that G + ∼ = G + [u, v].</p><p>Remark 1.1: The inverse graph G + is an unweighted graph for an almost self-inverse graph G. The inverse graph G + of an almost self-inverse graph G has one more edge than G.</p><p>Example 1.3: Consider the path P6 = [1, 1 , 2, 2 , 3, 3 ] on six vertices. By using [1, Theorem 2.2], P6 is invertible. The inverse graph P6+ is [1 , 1, 2 , 2, 3 , 3] + [1, 3 ]. We notice that the graph P + 6 is isomorphic to the graph P 6 + [1 , 3]. Hence, P 6 is an almost self-inverse graph.</p><p>Using Definition 1.2 and Remark 1.1, the inverse graph of an almost self-inverse tree is unicyclic and the inverse graph of an almost self-inverse unicyclic graph in H is bicyclic. In <ref type="bibr" target="#b5">[6]</ref>, the author characterized the almost self-inverse unicyclic graphs in H. It is natural to ask for characterizing the almost self-inverse graphs for a larger class of graphs in H. In this article, we supply a characterization of almost self-inverse graphs for a specific class of graphs H nmcs , see Definition 2.4. The class H nmcs has been defined in <ref type="bibr" target="#b2">[3]</ref> and this class contains the class of nonsingular trees.</p><p>We proceed in the following way. In Section 2, we recall the definition of H nmcs . In Section 3, we construct four different classes (G 1 , G 2 , G 3 and G 4 ; see Definitions 3.1, 3.2, 3.3 and 3.4) of almost self-inverse graphs in H nmcs . In Section 4, we prove that these are the only almost self-inverse graphs in H nmcs . This work advances knowledge in the area of graph inverses. The following is our main theorem in this article.</p><p>Theorem 1.4: Let G ∈ H nmcs . Then G is almost self-inverse if and only if G ∈ ∪ 4 i=1 G i .</p><p>The following question is natural. Why do we choose the class H nmcs ? There are two reasons. Firstly, we have an easiest necessary and sufficient condition for a graph in H nmcs to be invertible, see <ref type="bibr" target="#b2">[3]</ref>. Secondly, we have the characterization of self-inverse graphs in H nmcs , see <ref type="bibr" target="#b6">[7]</ref>. Overall, the graph structures of the graphs in H nmcs are well studied with regard to the concept of the inverse graph and which help us to characterize the almost self-inverse graphs in H nmcs .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">The class H nmcs</head><p>In order to define the class H nmcs , the authors differentiated between the nonmatching edges of a graph in H. They noticed that there are three types of nonmatching edges which are odd type, even type and mixed type. So first we recall the definitions of odd type, mixed type and even type edge.</p><p>Definition 2.1 (<ref type="bibr" target="#b2">[3,</ref> Definition 1,p.1447]): Consider a graph G with a unique perfect matching M.</p><p>A path P = [u 1 , u 2 , . . . , u 2k ] is called an alternating path if the edges on P are alternately matching and nonmatching edges, that is, for each i, if [u i , u i+1 ] is a matching (resp. nonmatching) edge and [u i+1 , u i+2 ] ∈ E(G), then [u i+1 , u i+2 ] is a nonmatching (resp. matching) edge. Let P = [u 1 , u 2 , . . . , u 2k ] be an alternating path. We say P is an mm-alternating path (matching-matching-alternating path) if [u 1 , u 2 ], [u 2k-1 , u 2k ] ∈ M. We say P is an nn-alternating path (nonmatching-nonmatching-alternating path) if [u 1 , u 2 ], [u 2k-1 , u 2k ] / ∈ M.</p><p>Definition 2.2 (<ref type="bibr" target="#b2">[3,</ref> Definition 3,p.1447]): Let [u, v] ∈/ M. An extension at [u, v] is an nnalternating u-v-path other than [u, v]. An extension at [u, v] is called even type (resp. odd type) if the number of nonmatching edges on that extension is even (resp. odd).</p><p>Definition 2.3 (<ref type="bibr" target="#b2">[3,</ref> Definition 8,p.1449]): The nonmatching edge [u, v] is said to be an odd type edge, if either there are no extensions at [u, v] or each extension at [u, v] is odd type. We say [u, v] is an even type edge, if each extension at [u, v] is even type. We say [u, v] is mixed type, if it has an even type extension and an odd type extension. Let E be the set of all even type edges. A strict even type edge is an even type edge which has at least two extensions. For example, see [<ref type="bibr" target="#b2">[3,</ref> Example 9, p.1449]</p><p>Definition 2.4 (<ref type="bibr" target="#b6">[7,</ref> Definition 9, p.9]): By H nmcs , we denote the class of graphs G in H such that G satisfying the following conditions.</p><p>(1) The graph G has no mixed type edges. (2) The graph G satisfies the condition 'C: the extensions at two distinct even type edges never have an odd type edge in common'. (3) Each even type edge of G is strict (an even type edge which has at least two extensions).</p><p>Here 'nmcs' is an abbreviation of 'no mixed type edges, condition C and strict even type edges'.</p><p>Definition 2.5 (<ref type="bibr" target="#b6">[7,</ref> Definition 26,p.14]): Let H be a connected bipartite corona graph. Let S be a subset of nonmatching edges of H such that each cycle in H has an even number of edges from S. Let boxminus corona H S be the graph created from H by adding two even type extensions of length 3 at each edge e ∈ S. For example of a boxminus corona graph, see <ref type="bibr" target="#b6">[7,</ref> Example 28, Figure <ref type="figure" target="#fig_6">7</ref>].</p><p>Example 2.6 (<ref type="bibr" target="#b6">[7]</ref>): Let H be the bipartite corona graph shown in Figure <ref type="figure" target="#fig_0">1</ref>. We consider the subset S = {[1, 2], [3,4], [5, 6]} of nonmatching edges of H. Notice that each cycle in H contains even number of edges from H. Now we add two even type extensions of length 3 at [1, 2], [3, 4] and [5, 8]. The final graph is H S .</p><p>Definition 2.7 (<ref type="bibr" target="#b2">[3,</ref> Definition 13,p.6]): An mm-alternating path is called a minimal path if it does not contain an even type extension.</p><p>Theorem 2.8 (<ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b6">7]</ref>): Let G ∈ Hnmcs . Then the following assertions hold true.</p><p>(1) The inverse graph G + exists if and only if (G -E)/M is bipartite, where E is the set of all even type edges. See <ref type="bibr" target="#b2">[3,</ref> Corollary 33,P.13]. By (G -E)/M, denote the graph obtained by deleting all the even type edges and then contracting each matching edge to a single vertex. (2) The graph G is self-inverse if and only if G is a boxminus corona graph. See <ref type="bibr" target="#b6">[7,</ref> Theorem 31,p.17]. (3) The (i, j)th-entry of A(G) -1 is given below:</p><formula xml:id="formula_0">A(G) -1 ij = P(i,j)∈P M (i,j) (-1) ( P(i,j) -1)/2 e∈E(P(i,j))</formula><p>(1m e ), where P M (i, j) is the set of minimal i-j-paths in G, P(i, j) denotes the number of edges in P(i, j), E(P(i, j)) is the set of even type edges in P(i, j) and m e is the number of even type extensions at e ∈ E(P(i, j)). See <ref type="bibr" target="#b6">[7,</ref> Lemma 15,p.11].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Construction of almost self-inverse graphs</head><p>In this section, we construct four different classes of almost self-inverse graphs in H nmcs .</p><p>A pendant vertex is a degree one vertex. A quasi-pendant vertex is a vertex which is adjacent to a pendant vertex.</p><p>Definition 3.1: Let G 1 be the class of graphs G which is constructed in the following manner (Figure <ref type="figure" target="#fig_1">2</ref>).</p><p>(1) Let H S be a boxminus corona graph and let [u, u ] be a path on two vertices; we begin with the disjoint union of H S and [u, u ]. (2) Choose two quasi-pendant vertices x and y in H S such that the distance between x and y is odd and each x-y-path in H S contains an even number of odd type edges. (3) Add the edges [u, x] and [u , y].</p><p>Definition 3.2: Let G 2 be the class of graphs G which is constructed in the following manner (Figure <ref type="figure" target="#fig_2">3</ref>).</p><p>(1) Let H 1S and H 2S be two boxminus corona graphs and let [u, u ] be a path on two vertices; we begin with the disjoint union of H 1S , H 2S and [u, u ]. (2) Choose two quasi-pendant vertices x and y in H 1S and H 2S , respectively. (3) Add the edges [x, u] and [u , y].</p><p>Definition 3.3: Let G 3 be the class of graphs G which is constructed in the following manner (Figure <ref type="figure" target="#fig_3">4</ref>).</p><p>(1) Let H S be a boxminus corona graph. (2) Choose a quasi-pendant vertex x and an even type extension [t, u, u , y] in H S such that the distance between x and t is even in H S and each x-t-path in H contains an even number of odd type edges. (3) Add the edge [u, x].</p><p>Definition 3.4: Let G 4 be the class of graphs G constructed in the following manner (Figure <ref type="figure" target="#fig_4">5</ref>).</p><p>(1) Let H 1S and H 2S be two boxminus corona graphs; we begin with the disjoint union of H 1S and H 2S . (2) Choose vertices x and u in H 1S and H 2S , respectively such that the vertex x is quasipendant vertex in H 1S and u is an internal vertex (a nonpendant vertex of a path) of an even type extension in H 2S . (3) Add the edge [x, u].</p><p>The following theorem says that each graph in ∪ 4 i=1 G i is almost self-inverse.</p><p>Theorem 3.5: Let G ∈ ∪ 4 i=1 G i . Then G is almost self-inverse.</p><p>Proof: We first assume that G ∈ G 1 . The construction of a graph in G 1 gives the following information about G.</p><p>(1) Each even type edge in G has exactly two even type extensions. (2) Each nonmatching edge in G is either even type or odd type. (3) The extensions at two distinct even type edges never have an edge in common. (4) The length of each path from x to y in G -{u, u } is odd and it contains an even number of odd type edges. (5) The graph G has exactly one minimal x -y -path P 5 m of length 5 where each nonmatching edge is odd type. (6) There is no mm-alternating x -y -path other than P 5 m . (7) There is no x-y-path in G which contains a vertex from {u, u } other than [x, u, u , y].</p><p>Notice that G ∈ H nmcs . First we show that G + exists. To show G + exists, it is enough to show that (G -E)/M is bipartite, that is, each cycle in (G -E) contains an even number of odd type and an even number of matching edges by Theorem 2.8. Let C be a cycle in (G -E). We now show that C contains an even number of odd type and an even number of matching edges. There are two cases.</p><p>CASE I. The cycle C does not contain the path [x, u, u , y]. Then C is also a cycle in G -{u, u } = H. The construction of G says that H is a boxminus corona graph. Using Theorem 2.8, C contains an even number of odd type and an even number of matching edges.</p><p>CASE II. The cycle C contains the path [x, u, u , y]. Using item 7, there is a x-y-path in G -E such that C is the union of [x, u, u , y] and that path. Using Item 4, C must contain an even number of odd type edges and an even number of matching edges.</p><p>Therefore, each cycle in (G -E) contains an even number of odd type and an even number of matching edges. Hence, G + exists.</p><p>Now, we show that G + e ∼ = G + via an isomorphism f, defined by f (x) = x (each vertex x maps to its matching mate vertex x ) for each x ∈ V(G). Using the construction of G, we have the following observations.</p><p>(1) For a matching edge [u, u ], we have A(G + ) f (u),f (u ) = A(G) u,u = 1. (2) Any nonmatching edge [u, v] ∈ G, this [u, v] is either even type or odd type. (3) For any odd type edge [u, v] in G, there are no extensions at [u, v]. Then there is exactly one mm-alternating u -v -path in G which is minimal. By using Theorem 2.8, we have A(G + ) f (u),f (v) = A(G + ) u ,v = 1 = A(G) u,v .(4) For any even type edge [u, v] in G, the path [u , u, v, v ] is minimal. There are no minimal u -v -paths in G other than [u , u, v, v ]. By using Theorem 2.8, A(G + ) u ,v = (m 1 -1) where m 1 is the number of even type extensions at [u, v]. Here, m 1 = 2. Hence, A(G + ) f (u),f (v) = A(G + ) u ,v = 1 = A(G) u,v . (5) The graph G has exactly one minimal path [x , x, u, u , y, y ]. Then A(G + ) x ,y = 1. Hence, A(G + ) f (x),f (y) = A(G + ) x ,y = 1 = A(G + [x, y]) x,y .</p><p>Claim. There is no edge [u, v] other than [x , y ] in G + such that [f -1 (u), f -1 (v)] = [u , v ] is not in G.</p><p>Proof of the claim: Suppose that there is an edge [u, v] other than [x , y ] in G + such that [f -1 (u), f -1 (v)] = [u , v ] is not in G. Using Theorem 2.8, there is a minimal u -v -path in G and the length of that minimal path is at least 5, otherwise [f -1 (u), f -1 (v)] = [u , v ] is in G. This contradicts the fact that G has exactly one minimal path of length 5 which is [x , x, u, u , y, y ]. The claim is justified.</p><p>Hence, G + ∼ = G + e.</p><p>Similar arguments work if G ∈ G 2 ∪ G 3 ∪ G 4 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Characterizing the almost self-inverse graphs in H nmcs</head><p>In this section we prove Theorem 1.4.</p><p>Remark 4.1: If G ∈ Hnmcs is an almost self-inverse graph, then G+ is an unweighted graph. By using item (3) of Theorem 2.8, we have each even type edge in G has exactly two even  type extensions and each odd type edge has no extensions.</p><p>The following is a very crucial necessary condition for a graph in H nmcs to be almost self-inverse. In <ref type="bibr" target="#b6">[7]</ref>, the 'minimal' path of length 5 has been used to supply a necessary condition for a graph in H nmcs to be self-inverse. Here is another instance of that.</p><p>Lemma 4.1: Let G ∈ H nmcs be an almost self-inverse graph. Then the graph G has exactly one minimal path of length 5. </p><p>Proof: By using Theorem 2.8, we have the following. (1) The edge [v, v ] ∈ E(G + ) for each matching edge [v, v ] ∈ E(G). (2) The edge [v , w ] ∈ E(G + ) for each nonmatching edge [v, w] ∈ E(G).</p><p>We notice that G is isomorphic to a spanning subgraph of G + via an isomorphism f, defined by f (x) = x (each vertex x maps to its matching mate vertex x ) for each x ∈ V(G).. Let H be the isomorphic image of G in G + . It is clear that V(H) = V(G) and E(H) = {[x , y ] | [x, y] ∈ E(G)}. Since G is an almost self-inverse graph, G + has one extra edge than H. Let [u, v] be the such edge in G + but not in H. By using Theorem 2.8, there is a minimal path from u to v in G.</p><p>Claim. The length of each u-v-minimal path in G is exactly 5.</p><p>Proof of the Claim: Suppose that there is a minimal u-v-path, say P(u, v) in G of length not equal to 5. Then there are two cases.</p><p>CASE I. The length of P(u, v) is at most 3. Then either P(u, v) is just a matching edge or P(u, v) = [u, u , v , v]. In both cases [u, v] ∈ E(H), which is not possible. Hence, the length of P(u, v) cannot be one or three.</p><p>CASE II. The length of P(u, v) is more than 5. Let P(u, v) = [u, u , x 1 , x 1 , . . . , x k , x k , v , v] where k ≥ 2. Then we have at least two minimal paths [u, u , x 1 , x 1 , x 2 , x 2 ] and [x k-1 , x k-1 , x k , x k , v , v] of length 5 in G. By using Theorem 2.8, the edges [u, x 2 ], [x k-1 , v] ∈ E(G + ) but not in G. Then G + has two more edges than G which is not possible. The claim is justified.</p><p>There is exactly one minimal u-v-path in G of length 5, otherwise G + is weighted. Suppose that there is another minimal path from one vertex i to another vertex j of length 5. Then G + has two extra edges than G which is not possible. Hence, G has exactly one minimal path of length 5. The proof is complete.</p><p>Convention: Let G ∈ H nmcs be an almost self-inverse graph. Then the graph G has exactly one minimal path of length 5. Henceforth, we use P 5 m = [x , x, u, u , y, y ] to denote this minimal path and the nonmatching edges [x, u] and [u , y] are denoted by e 1 and e 2 , respectively.</p><p>The following is an immediate corollary of Lemma 4.1. An odd type edge is said to be basic odd type if it is not part of any extension.</p><p>Corollary 4.2: Let G ∈ H nmcs be an almost self-inverse graph. Then the following assertions hold true.</p><p>(1) The length of each mm-alternating path is at most 5. (2) The length of each even type extension in G is 3. (3) Each matching edge adjacent to an even type edge is a pendant edge. (4) The end vertices x and y of P 5 m are pendants. (5) Each matching edge (not equal to the matching edge [u, u ]) adjacent to a basic odd type edge is a pendant edge. (6) The nonmatching edges e 1 and e 2 are both odd type.</p><p>Proof: In each case, we have more than one minimal paths of length 5 in G.</p><p>The following lemma tells us that at least one of the nonmatching edges in P m 5 is basic odd type.</p><p>Lemma 4.3: Let G ∈ H nmcs be an almost self-inverse graph. Then at lest one edge from {e 1 , e 2 } is basic odd type.</p><p>Proof: By using Item (6) of Corollary 4.2, e 1 and e 2 are both odd type edges. Assume that e 1 = [x, u] and e 2 = [u , y] are both nonbasic odd type edges. Let Q 1 and Q 2 be two extensions such that Q i contains the edge e i for i = 1, 2. Using Corollary 4.2, length of each even type extension is 3. It is clear that Q 1 = Q 2 , otherwise P m 5 is not a minimal path. Let Q 1 = [x, u, u , r] and Q 2 = [y, u , u, s], where r and s are two vertices in G. Then we get an mm-alternating path [r , r, u , u, s, s ] of length 5. This path [r , r, u , u, s, s ] is a minimal path, otherwise two extensions at two distinct even type edges have an odd type edge in common. This contradicts the fact that G has exactly one minimal path of length 5. CASE I. Both e 1 and e 2 are basic odd type. CASE II. Exactly one edge from {e 1 , e 2 } is basic odd type. For this case, without loss of generality we assume that e 1 = [x, u] is basic odd type and e 2 is odd type but not basic odd type. Then the edge e 2 = [u , y] lies on an even type extension and [u, u ] is the matching edge on that extension and we use [t, u, u , y] to denote that even type extension at [t, y], where t is a vertex in G.</p><p>The following two lemmas supply the necessary structures of an almost self-inverse graph.</p><p>Lemma 4.4: Let G ∈ H nmcs be an almost self-inverse graph. Assume that e 1 and e 2 are both basic odd type edges. Then the following assertions hold true.</p><p>(1) We have d(u) = d(u ) = 2. (2) Let [p, q, q , z] be an even type extension in G. Then d(q) = d(q ) = 2. (3) Each component of G -{u, u } is a boxminus corona graph. Furthermore, if there is a x-y-path, then each x-y-path in G -{u, u } is odd and contains an even number of odd type edges.</p><p>Proof: First assertion: It is clear that d(u) and d(u ) are at least 2. Suppose that d(u) &gt; 2. Let p( = x, u ) be adjacent to u. Let p be the vertex such that [p, p ] ∈ M. It is clear that p = y, otherwise G has an odd cycle and p = x , y , otherwise G has more than one perfect matchings. Using Item (3) of Corollary 4.2 we see that, the edge [u, p] is odd type. Since e 1 and e 2 are both basic odd type, the path [p , p, u, u , y, y ] is a minimal path of length 5 which is different from P 5 m . This contradicts the fact that G has exactly one minimal path of length 5. Hence, d(u) = 2. Proving d(u ) = 2 is similar. The proof is complete.</p><p>Second assertion: The proof is similar to the proof of first assertion of Lemma 4.4. Third assertion: Let G 1 be a component of G -{u, u }. By Lemma 4.1, the graph G has exactly one minimal path of length 5. By Corollary 4.2 and Item 2 of Lemma 4.4, we have the following observations about G 1 .</p><p>(1) There is no odd type extension in G 1 and each even type edge has exactly two even type extensions. (2) The length of each even type extension in G 1 is 3. (3) Each matching edge adjacent to an even type edge in G 1 is pendant. (4) Each matching edge adjacent to a basic odd type edge in G 1 is pendant. (5) The degree of each internal vertex of an even type extension in G 1 is 2. (6) There is no minimal path of length 5 in G 1 . Let M 1 be the perfect matching in G 1 . Let E 1 be the set of all even type edges in G 1 . Since G is invertible, the graph (G -E)/M is bipartite. Then (G 1 -E 1 )/M 1 is bipartite. Let H be the graph obtained from G 1 by deleting all the even type extensions while keeping the endvertices of the extensions (the degree of each internal vertex of an even type extension is 2). It is clear that H is a corona graph. Since (G 1 -E 1 )/M 1 is bipartite, each cycle in H contains an even number of edges from E 1 . Hence, G 1 is a boxminus corona graph.</p><p>We now prove the second part of the third assertion. Since G + exists and the path [x, u, u , y] contains an even number of odd type edges, by Lemma 27 in <ref type="bibr" target="#b2">[3]</ref>, each path from x to y contains an even number of odd type edges. Since G is bipartite and the length of [x, u, u , y] is odd, the length of each path from x to y in G -{u, u } is odd. The proof is complete.</p><p>Lemma 4.5: Let G ∈ H nmcs be an almost self-inverse graph. Assume that the edge e 1 is basic odd type and the edge e 2 is nonbasic odd type. Then the following assertions hold true. (1) We have d(u) = 3 and d(u ) = 2. (2) Let [p, q, q , z] be an even type extension in G such that the edge e2 = [u , y] = [p, q], [q , z]. Then d(p) = 2 and d(p ) = 2. (3) Each component of G − [x, u] is a boxminus corona graph. Furthermore, if there is a x-t-path, then the length of each x-t-path in G − [x, u] is even and contains an even number of odd type edges.</p><p>Proof: The proof is similar to the proof of Lemma 4.4.</p><p>We are ready to prove Theorem 1.4.</p><p>Proof of Theorem 1.4: We first assume that G+ ∼= G + e. By Lemma 4.1, the graph G has exactly one minimal path of length 5, say, [x , x, u, u , y, y ]. Then either both the edges e1 = [x, u] and e2 = [u , y] are basic odd type or exactly one edge is basic odd type. If e1 and e2 are both basic odd type edges, then by Lemma 4.4, G ∈ G1 ∪ G2 . If exactly one edge from {e1 , e2 } is basic odd type, then by Lemma 4.5, G ∈ G3 ∪ G4.</p><p> Suppose that G ∈ ∪4i=1 Gi . Then by using Theorem 3.5, G+ ∼= G + e.</p><p>Our discussions lead the following open problem.</p><p>Problem 4.6: Characterize the bipartite graphs G with a unique perfect matching such that G is almost self-inverse.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Example of a boxminus corona graph. (For interpretation of the references to colour in this figure, the reader is referred to the web version of this article.)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. An example of a graph in G 1 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. An example of a graph in G 2 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. An example of a graph in G 3 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. An example of a graph in G 4 .</figDesc><graphic type="bitmap"/></figure>
+		</body>
+		<back>
+
+			
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgments</head><p>The authors sincerely thank the referees and the editors for their valuable suggestions.</p></div>
+			</div>
+
+
+			<div type="funding">
+<div><head>Funding</head><p>The research of the first author was supported by the <rs type="funder">JC Bose Fellowship, Department of Science and Technology, Government of India</rs> and the second author research was supported by the <rs type="funder">Joint NSFC-ISF</rs> <rs type="programName">Research Program</rs> (jointly funded by the <rs type="funder">National Natural Science Foundation of China</rs> and the <rs type="funder">Israel Science Foundation</rs> [grant nos. <rs type="grantNumber">11561141001</rs>, <rs type="grantNumber">2219/15</rs>], the <rs type="funder">National Natural Science Foundation of China</rs> [grant no.<rs type="grantNumber">11531001</rs>])</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_ByTwxnJ">
+					<orgName type="program" subtype="full">Research Program</orgName>
+				</org>
+				<org type="funding" xml:id="_m8qgdPa">
+					<idno type="grant-number">11561141001</idno>
+				</org>
+				<org type="funding" xml:id="_YMGQXXy">
+					<idno type="grant-number">2219/15</idno>
+				</org>
+				<org type="funding" xml:id="_WSzJyE7">
+					<idno type="grant-number">11531001</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disclosure statement</head><p>No potential conflict of interest was reported by the authors.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Godsil</surname>
+					<forename type="first">C</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">Inverses of trees</title>
+		</analytic>
+		<monogr>
+			<title level="j">Combinatorica</title>
+			<imprint>
+				<date when="1985">1985</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="33" to="39"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Akbari</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kirkland</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">On unimodular graphs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Linear Algebra Appl</title>
+			<imprint>
+				<date when="">2007</date>
+				<biblScope unit="volume">421</biblScope>
+				<biblScope unit="page" from="3" to="15"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Panda</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pati</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">On some graphs which possess inverses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Linear Multilinear Algebra</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">64</biblScope>
+				<biblScope unit="page" from="1445" to="1459"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Panda</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pati</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">On the inverse of a class of bipartite graphs with unique perfect matchings</title>
+		</analytic>
+		<monogr>
+			<title level="j">Electron J Linear Algebra</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="89" to="101"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Panda</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Inverses of bicyclic graphs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Electron J Linear Algebra</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">32</biblScope>
+				<biblScope unit="page" from="217" to="231"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Panda</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Unicyclic graphs with bicyclic inverses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Czech Math J</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">67</biblScope>
+				<biblScope unit="page" from="1133" to="1143"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Panda</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pati</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">On some graphs which satisfy the reciprocal eigenvalue properties</title>
+		</analytic>
+		<monogr>
+			<title level="j">Linear Algebra appl</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">530</biblScope>
+				<biblScope unit="page" from="445" to="460"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Simion</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cao</surname>
+					<forename type="first">D</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Solution to a problem of C.D.Godsil regarding bipartite graphs with unique perfect matching</title>
+		</analytic>
+		<monogr>
+			<title level="j">Combinatorica</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="85" to="89"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tifenbach</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kirkland</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Directed intervals and dual of a graph</title>
+		</analytic>
+		<monogr>
+			<title level="j">Linear Algebra Appl</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">431</biblScope>
+				<biblScope unit="page" from="792" to="807"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tifenbach</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Strongly self-dual graphs</title>
+		</analytic>
+		<monogr>
+			<title level="j">Linear Algebra Appl</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">435</biblScope>
+				<biblScope unit="page" from="3151" to="3167"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

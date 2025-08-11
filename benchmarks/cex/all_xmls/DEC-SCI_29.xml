@@ -1,0 +1,1208 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The cafeteria problem: order sequencing and picker routing in on-the-line picking systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-03-22">22 March 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">David</forename><surname>Füßler</surname></persName>
+							<email>david.fuessler@uni-jena.de</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Friedrich-Schiller-Universität Jena Lehrstuhl für Operations Management</orgName>
+								<address>
+									<addrLine>Carl-Zeiss-Str. 3</addrLine>
+									<postCode>07743</postCode>
+									<settlement>Jena</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Stefan</forename><surname>Fedtke</surname></persName>
+							<email>stefan.fedtke@uni-jena.de</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Friedrich-Schiller-Universität Jena Lehrstuhl für Operations Management</orgName>
+								<address>
+									<addrLine>Carl-Zeiss-Str. 3</addrLine>
+									<postCode>07743</postCode>
+									<settlement>Jena</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nils</forename><surname>Boysen</surname></persName>
+							<email>nils.boysen@uni-jena.de</email>
+							<idno type="ORCID">0000-0002-1681-4856</idno>
+							<affiliation key="aff0">
+								<orgName type="institution">Friedrich-Schiller-Universität Jena Lehrstuhl für Operations Management</orgName>
+								<address>
+									<addrLine>Carl-Zeiss-Str. 3</addrLine>
+									<postCode>07743</postCode>
+									<settlement>Jena</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The cafeteria problem: order sequencing and picker routing in on-the-line picking systems</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">OR Spectrum</title>
+						<idno type="ISSN">0171-6468</idno>
+						<idno type="eISSN">1436-6304</idno>
+						<imprint>
+							<publisher>Springer</publisher>
+							<biblScope unit="volume">41</biblScope>
+							<biblScope unit="issue">3</biblScope>
+							<biblScope unit="page" from="727" to="756"/>
+							<date type="published" when="2019-03-22">22 March 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">E2E04D6E011EE86578B8AB297FC41EF7</idno>
+					<idno type="DOI">10.1007/s00291-019-00553-0</idno>
+					<note type="submission">Received: 14 August 2018 / Accepted: 15 March 2019 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Facility logistics</term>
+					<term>Blocking</term>
+					<term>Order sequencing</term>
+					<term>Scheduling B Nils Boysen</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper is dedicated to the cafeteria problem: given a single waiter operating multiple counters for different dishes arranged along a line and a set of customers with given subsets of dishes they desire, find a sequence of customers, which may not overtake each other, and a service schedule for the waiter, such that the makespan is minimized. This generic problem is shown to have different real-world applications in order picking with blocking restrictions. We present different heuristic and exact solution procedures for both problem parts, i.e., customer sequencing and waiter scheduling, and systematically compare these approaches. Our computational results reveal that the largest performance gains are enabled by not strictly processing order after order. Instead, the waiter should be allowed to flexibly swap between customers waiting along the line. Such a flexible service policy considerably reduces the makespan and the total walking distance of the waiter.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Non-crossing constraints, e.g., among quay cranes processing container vessels in harbors, have gained plenty attention in recent years. The survey paper of <ref type="bibr" target="#b3">Boysen et al. (2017)</ref>, for instance, documents the great research effort in this field. The focus of this research area is on obstructions among the processors of a service process, e.g., among cranes interfering with each other when operating along the quay wall. However, there exist other processes where rather the recipients of a service face obstructions among each other. In this context, the paper on hand investigates a general problem setting, which we call the cafeteria problem:</p><p>Consider a cafeteria consisting of multiple counters arranged along a straight line each providing a unique dish (or beverage). These counters are served by a single waiter, who walks along the line and requires a deterministic service time that varies from counter to counter. Furthermore, we have a set of customers each demanding a given individual meal defined by the subset of counters to be visited. Initially, all customers queue at the start of the line and, then, enter the service area one after another. They are only allowed to either wait behind another customer or move in forward direction. To ensure a clearly arranged process (or due to limited space), customers cannot overtake each other, if their way toward their next counter is blocked by a preceding customer waiting for service in front of an earlier counter. They have to wait for the processing of their predecessor and are, thus, blocked. We aim at a sequence of customers entering the service area and at a detailed service schedule in which the customers' counter visits are processed by the waiter, such that the makespan is minimized. The makespan is reached once the waiter, who is typically the bottleneck resource in a cafeteria process, has readily serviced the final dish.</p><p>Example Consider a service area consisting of four successive counters operated by a single waiter (represented by the icons in Fig. <ref type="figure" target="#fig_0">1</ref>), where three customers have to be served. The red, yellow, and green customer demand the dishes of counters three, two and four, and two, respectively. Waiter and customers walk one counter per time unit, and processing at each counter, where both waiter and customer have to be present, takes two time units. Figure <ref type="figure" target="#fig_0">1</ref> depicts two alternative solutions for this example instance of the cafeteria problem. Solution (a) with customer sequence yellow, green, red] results in a makespan of 14 time units, whereas in solution (b) customer sequence red, yellow, green] is not completed before time unit 16 has elapsed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1">Applications</head><p>Our cafeteria is just a placeholder for quite a few real-world applications. Related problems may also occur in the context of electronic circuit board assembly along a line of successive automatic insertion machines [see <ref type="bibr" target="#b33">Weber and Weiss (1994)]</ref>, or order picking in warehouses with narrow aisles [see <ref type="bibr" target="#b19">Gue et al. (2006);</ref><ref type="bibr" target="#b23">Hong et al. (2012)]</ref>. However, our work was inspired by the following two examples we recently encountered in distribution centers.</p><p>• In a German distribution center that supplies liquor stores, supermarkets, and large restaurants with beverages, an AGV-assisted order picking process is organized as follows (see Fig. <ref type="figure" target="#fig_1">2a</ref>). The inventory of palletized beverages is stored in successive slots arranged along a picking aisle. Automated-guided vehicles (AGVs) travel along the one-way path, and each vehicle conveys one or multiple trolleys dedicated to a specific customer. Whenever an AGV reaches a beverage requested by its customer, the vehicle stops, indicates the beverage with a beacon, and displays the number of requested crates on a display. Then, the logistics worker (waiter) operating the line segment approaches the AGV, loads the requested number of crates on the vehicle, accredits the processed order line, and the AGV continues its travel along the path. During the loading process, successive AGVs are blocked since overtaking in the narrow picking aisle is not possible. Due to tight delivery schedules the managers of the distribution center aim at an efficient picking process. This general aim can be operationalized by minimizing the makespan, i.e., the point in time when the last customer order is processed. However, the worker serving the AGVs suffers from considerable walking distances during a work shift. Thus, reducing the physical burden of their workers is another practical aim.</p><p>• Almost the same picking process can also be realized by carriers hanging from a monorail. The CarryPick TM system of Swisslog (see Fig. <ref type="figure" target="#fig_1">2b</ref>) is one example for such a system. With reference applications at a German drugstore chain and a Swiss supermarket chain <ref type="bibr" target="#b30">(Swisslog 2017)</ref>, each carrier carries a pallet dedicated to a specific store (customer) and automatically stops in front of a requested stock keeping unit (SKU). In addition to a screen and an LED dot indicating the current picking position to the picker (waiter), carriers can also be equipped with an automatic weighing mechanism to further reduce picking errors <ref type="bibr" target="#b30">(Swisslog 2017)</ref>. The carriers utilize the same monorail for their movement along the picking path, so that they cannot overtake each other. Thus, we have to solve our cafeteria problem, i.e., order sequencing plus picker scheduling, to ensure an efficient picking process.</p><p>It can be concluded that our generic cafeteria problem occurs as a building block in quite a few relevant applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.2">Literature review</head><p>The name cafeteria process has previously been applied by <ref type="bibr" target="#b33">Weber and Weiss (1994)</ref> to denominate a related stochastic process along successive servers. In their process, customers also block each other, but demand service at only a single station, this being station i with probability p i . In our distribution center context, however, customers announce their demands ahead by submitting their orders, so that we have a deterministic problem. Furthermore, we also include the movement of the waiter servicing our counters. Thus, to the best of the authors' knowledge our cafeteria problem has not been treated in the scientific literature before. We, therefore, only review related fields that share some similarities with our problem. First, we review two fields of application with similar scheduling problems.</p><p>Blocking among order pickers when routing them through a warehouse has already been considered by <ref type="bibr" target="#b19">Gue et al. (2006)</ref>, <ref type="bibr" target="#b23">Hong et al. (2012)</ref>, and <ref type="bibr" target="#b10">Chen et al. (2013)</ref>. The pickers blocking each other while moving in a narrow aisle equal the customers blocking each other along the counters of the cafeteria. However, while pickers can instantaneously access a shelf (once they are not blocked) without any further resource, there is no self-service in our cafeteria and customers have to be served by the waiter. Integrating the waiter considerably complicates the problem setting, so that previous warehousing research is not transferable.</p><p>Another related field of application is the scheduling of quay cranes in container ports, which was first described by <ref type="bibr" target="#b12">Daganzo (1989)</ref>. Here, quay cranes (un-)load a deterministic or stochastic set of ships with some objective, e.g., minimizing the sum of the ships' waiting costs. The manifold exact and heuristic solution methods developed in this area are, for instance, summarized by the recent surveys of <ref type="bibr" target="#b4">Bierwirth and Meisel (2010,</ref> <ref type="bibr" target="#b5">2015)</ref>. Again, there is a major difference of this field of research to our cafeteria problem. In quay crane scheduling, the processors, i.e., the cranes, are mobile whereas the recipients, i.e., the ships, remain immobile during the service process. In the cafeteria, both the waiter and the customers are mobile. Consequently, the non-crossing constraints of both problems are different [for a survey on scheduling under non-crossing constraints, see <ref type="bibr" target="#b3">Boysen et al. (2017)</ref>]. In ports the cranes, i.e., the processors, interfere, whereas in our problem it is the recipients of the service process blocking each other. Again, the research of this area is not directly transferable to our problem.</p><p>From a structural point of view, our cafeteria problem is closely related to flowshop scheduling [for a first survey and elementary complexity results see, for instance, <ref type="bibr" target="#b18">Graham et al. (1979)</ref> and <ref type="bibr" target="#b15">Garey et al. (1976)</ref>]. In one problem variant, i.e., the permutation flow-shop problem, jobs cannot change their position in a (global) production sequence, so that all production stages process jobs in exactly the same sequence <ref type="bibr" target="#b28">(Ruiz and Maroto 2005)</ref>. In the cafeteria problem, customers (corresponding to the jobs of the flow-shop) can also not overtake each other and thus, have to enter all counters (corresponding to the production stages) in the same sequence. Note that if a customer does not require a specific dish at a counter, the processing time at the corresponding production stage can simply be set to zero [missing operation, see <ref type="bibr" target="#b21">Hefetz and Adiri (1982)</ref>] in flow-shop scheduling. Therefore, the sequencing part of the cafeteria problem resembles the permutation flow-shop problem.</p><p>However, customer sequencing is just one part of our cafeteria problem, so that we have to check whether existing extensions of basic flow-shop scheduling are flexible enough to model the remaining part of our problem too. Transportation times of the jobs when moving between stages are considered by <ref type="bibr" target="#b29">Sawik (1995),</ref><ref type="bibr" target="#b31"> Tang et al. (2002),</ref><ref type="bibr" target="#b34"> Xuan and Tang (2007)</ref>. They can be applied to model the movement of customers between counters. Also blocking between jobs has been considered in the flow-shop context, e.g., in <ref type="bibr" target="#b25">Liu et al. (2008</ref><ref type="bibr" target="#b27">), Ribas et al. (2011)</ref>. Here, limited buffers between production stages lead to obstructions, because a job finished at its current production stage may block this machine until the successive machine is free. Note, however, that the blockings occurring in the cafeteria are even more complicated. The counters each have a length and each customer occupies space along the line of counters, so that multiple customers waiting behind a blocked counter build a queue that may block multiple preceding counters too. Even with transportation times and blockings, there is still no counterpart to our waiter in the basic flow-shop scheduling problem. Additional human resources operating the machines, however, have also been considered by machine scheduling research. An additional human operator required to load each job onto its machine during a setup time has been considered by <ref type="bibr" target="#b6">Brucker et al. (2002</ref><ref type="bibr" target="#b7">), Brucker et al. (2005</ref><ref type="bibr" target="#b11">), Cheng et al. (1999</ref><ref type="bibr" target="#b17">), Glass et al. (2000),</ref><ref type="bibr" target="#b20">Hall et al. (2000),</ref><ref type="bibr" target="#b32"> Wang and Cheng (2001)</ref>. In our setting, however, the waiter has to be present during the whole processing time. For job-shop scheduling, i.e., jobs may vary in the succession of machines they have to visit, and multiple human operators with infinite velocity when moving between machines such a setting has been considered by <ref type="bibr" target="#b0">Agnetis et al. (2011</ref><ref type="bibr" target="#b1">Agnetis et al. ( , 2014) )</ref> and <ref type="bibr" target="#b26">Mencia et al. (2013)</ref>. A similar setting in an openshop environment has been considered by <ref type="bibr" target="#b9">Ciro et al. (2016)</ref>. We, however, have only a single human operator, i.e., our waiter, moving along the line of counters with a given finite velocity. Furthermore, we have a permutation flow-shop environment and machine transfers subject to limited transportation times and blocking. To the best of the authors' knowledge, such a problem has not yet been treated in the machine scheduling literature.</p><p>It can, thus, be concluded that our cafeteria problem constitutes a novel problem that requires dedicated solution procedures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3">Contribution and paper structure</head><p>This paper is dedicated to solving the cafeteria problem with optimization procedures. In the distribution center for beverages we encountered (see Sect. 1.1), the process was not optimized, but the picker in each aisle had to operate according to a very simple policy. Customer orders are sequenced according to the first-come-first-served (FCFS) policy. Given this sequence, the picker just processes order after order. Starting with the first order of the sequence, the picker accompanies the AGV through the picking line and loads the demanded crates until the current order is completed. Then, the picker returns to the next AGV with the subsequent order, which is again accompanied until completion, and so on until all orders are processed. We call this order sequencing approach the random approach and the waiter scheduling policy the order-by-order policy. Note that solution (b) of Fig. <ref type="figure" target="#fig_0">1</ref> results from the order-by-order policy for the given customer sequence. Naturally, this leaves two levers for an optimization procedure to improve this process:</p><p>• One problem of the order-by-order policy is that the picker always traverses (almost) the complete picking aisle with each order. This leads to long unproductive walking times of the bottleneck resource 'picker'. Instead, the picker could flexibly swap between orders, which we dub the order-swapping policy. Instead of completing order after order, the picker can process neighboring stops of different orders before moving to another section of the line where other orders are waiting for processing. The potential improvement is exemplified by solution (a) of Fig. <ref type="figure" target="#fig_0">1</ref>, where the picker starts with the yellow customer at counter two, then proceeds with the green customer at the same counter, before moving onwards to counter 4 where the yellow customer is finished. We present solution procedures for the order-swapping policy, if customer sequences are already given in Sect. 2. Note that the order-by-order policy completely specifies the picker movement once the order sequence is given, so that no optimization procedure for scheduling the waiter is required under this policy. We benchmark both approaches in Sect. 4.</p><p>• The second lever for a more efficient service process is the customer sequence. Instead of a random processing of customers according to FCFS, finding the right customer sequence can be part of the optimization problem, which we treat in Sect. 3. Once a suited optimization approach is available, we can apply this procedure to quantify its benefit compared to the random approach.</p><p>The remainder of the paper is structured as follows: Section 2, first, addresses the waiter scheduling once the customer sequence is given. We formulate the resulting problem, prove computational complexity, and present suited exact and heuristic solution procedures. Then, Sect. 3 extends our view on the cafeteria problem and also integrates the sequencing of customer orders. In a comprehensive computational study, we benchmark our algorithms (see Sect. 4) and evaluate the impact of our two levers for an efficient service process (see Sect. 5). Finally, Sect. 6 concludes the paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Scheduling the waiter for given customer sequences</head><p>For a given sequence of customers our cafeteria problem is left with the decision on the waiter's processing sequence of the customers' dish requests, i.e., routing the waiter to the respective counters. We dub this subproblem the cafeteria waiter scheduling problem (CWSP). This section tackles the CWSP by describing possible routing approaches and introducing suitable solution procedures.</p><p>Recall that a common method in warehousing practice is to schedule the waiter via the order-by-order policy. Under this policy, the waiter serves each customer separately in the order they arrive. Starting with the first dish request, the waiter accompanies each customer along the cafeteria line until the last dish is served and the customer's meal is complete. Afterward, she returns to the next customer in line. This process is repeated until all customers are served. On the positive side, this straightforward policy offers a very simple scheduling approach that does not require any form of optimization and can easily be communicated to the picker. On the other hand, escorting each customer from counter to counter results in excessive (unproductive) walking time for the waiter, which may increase the makespan.</p><p>Another approach for scheduling the waiter is the order-swapping policy. Instead of serving each customer separately, the waiter can swap between customers and serve dish requests in an arbitrary order (as long as they do not block each other). This policy promises better solutions, due to the additional flexibility given to the waiter. However, in order to determine a good or even an optimal waiter schedule suited solution procedures are required. The following sections investigate the CWSP under the order-swapping policy in detail. After a problem description in Sects. 2.1, Sects. 2.2-2.4 are devoted to different solution methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Problem definition</head><p>Our cafeteria waiter scheduling problem (CWSP) under the order-swapping policy is defined as follows: Let D = {1, . . . , m} be a set of m dishes each served at a separate counter. Without loss of generality, we assume that the dishes are numbered according to their position along the line, i.e., dish d is served at the d'th counter. In line with our warehousing example, we assume that all counters have an identical size (e.g., the width of a standardized euro-pallet) and are successively arranged without gap along the cafeteria line. Furthermore, let C = {1, . . . , n} be the given set of n customers, numbered according to the given customer sequence in which they are processed. Thus, customer 1 is the first to enter the line and so on until, finally, customer n moves into the line. Each customer i orders a meal defined by a set O i = {1, . . . , m i } of m i dishes, again, numbered in the order of their line position. The set = {(i, k)|i ∈ C, k ∈ O i } includes the dish requests of all customers, and d i,k ∈ D specifies the k-th dish requested by customer i. Note that d i,k also corresponds to the counter index and the counters position in the line. Due to the numbering of orders and the premise that customers cannot overtake each other, precedence constraints restricting the waiter's processing sequence of dish requests can be preprocessed. Parameter λ (i,k),( j,l) defines these relations, i.e., obtains value 1, if (i, k) has to be a predecessor of ( j, l) and value 0, otherwise:</p><formula xml:id="formula_0">λ (i,k),( j,l) = ⎧ ⎪ ⎪ ⎪ ⎨ ⎪ ⎪ ⎪ ⎩ 1, if i = j ∧ d i,k &lt; d i,l<label>(1)</label></formula><formula xml:id="formula_1">or i &lt; j ∧ d i,k ≤ d j,l<label>(2)</label></formula><formula xml:id="formula_2">or i &lt; j ∧ d j,l &lt; d i,k ≤ d j,l + ( j -i -1)<label>(3)</label></formula><formula xml:id="formula_3">0, else<label>(4)</label></formula><p>These precedence constraints define that dish d i,k has to be serviced by the waiter before dish d j,l , if i and j refer to the same customer and k-th dish is available at an earlier counter [see ( <ref type="formula" target="#formula_0">1</ref>)]. If i refers to an earlier customer than j (according to the given customer sequence), then any dish for earlier customer i served at an earlier counter blocks dishes demanded from later counters (or the same counter) of later customer j [see ( <ref type="formula" target="#formula_1">2</ref>)]. If later customer j demands a dish served at an earlier counter compared to earlier customer i's current dish, then the tailback of customers queueing behind i and blocking access to the counter has to be considered [see ( <ref type="formula" target="#formula_2">3</ref>)]. Again, in line with our warehousing example, we assume that each customer requires identical space which equals the length of a single counter (i.e., the width of a europallet). Thus, if two customers queue behind another customer waiting at counter 5, then counters 3-5 are blocked for another customer arriving at the queue. Finally, no precedence constraints exist, if neither of these previous conditions holds [see ( <ref type="formula" target="#formula_3">4</ref>)]. The set ( j,l) = {(i, k)|λ (i,k),( j,l) = 1} contains all predecessors of ( j, l).</p><p>Given these precedence constraints, we seek a waiter schedule defined by a processing sequence π = (π 1 , . . . , π T ), with T = | |, in which all dish requests are serviced by the waiter. Thus, π t ∈ , defines the dish served by the waiter at service period (or sequence position) t within π . Such a solution is called feasible, if</p><p>• for each (i, k) ∈ there is exactly one service period t ∈ {1, . . . , T } with π t = (i, k) in π , that is each dish request of customers has to be served exactly once by the waiter,</p><p>• for each service period t ∈ {1, . . . , T } there is exactly one (i, k) ∈ with π t = (i, k) in π , that is the waiter has to serve a dish request in each service period, and • if λ (i,k),( j,l) = 1, dish request (i, k) has to be served before dish request ( j, l), that is all precedence relations are satisfied.</p><p>For a given waiter schedule π , we are able to determine the position p i,t ∈ R of each customer i during each service period t of the service process as well as the amount of (actual) time t ∈ R ≥0 required by each service period. Customer positions At the beginning of our planning horizon, i.e., in t = 0, all customers line up in front of the cafeteria. That is p i,0 = 1i for each i ∈ C. The positions of each customer during the service process solely depend on the waiter schedule π . Customers move along the line as far as possible and stop at the next counter that serves a desired dish. If a dish is to be served in service period t, the customer has to be positioned at the respective counter:</p><formula xml:id="formula_4">π t = (i, k) → p i,t = d i,k .<label>(5)</label></formula><p>Furthermore, customers can neither move faster than their given speed v cust allows, nor overtake other customers in front of them, nor pass the next relevant counter:</p><formula xml:id="formula_5">π t = (i, k) → p i,t = min p i,t-1 + t • v cust ; p i-1,t -1; d i,k , if (i, k) has not yet been served min p i,t-1 + t • v cust ; p i-1,t -1 , else.<label>(6)</label></formula><p>Service time The actual time required for processing a dish in service period t depends on the waiter walking speed v wait , the customer moving speed v cust , and the serving time τ i,k for the respective dish (i, k). If either the waiter or the customer reaches the next relevant counter first, she has to wait for the other one in order to serve the respective dish. Therefore, the maximum of waiter walking time and customer moving time has to be determined and added to the serving time:</p><formula xml:id="formula_6">t = max d i,k -p i,t-1 v cust ; |d i,k -d i ,k | v wait + τ i,k ,<label>(7)</label></formula><p>where dish (i , k ) is the dish served in service period t -1. Among all feasible solutions CWSP seeks one waiter schedule π that minimizes the total processing time of all customer orders</p><formula xml:id="formula_7">F(π ) = T t=1 t .<label>(8)</label></formula><p>Due to the structure of our problem, objective value F(π ) corresponds to the makespan, i.e., the point in time when all orders of the given order sequence are readily serviced.</p><p>Theorem 1 CWSP is strongly NP-hard.</p><p>Proof See "Appendix A".</p><p>Note that presupposing varying walking speeds of waiter and customers may seem superfluous, because in a real-world cafeteria we only have human actors with similar speed. However, in our warehouse application human waiters and mechanical AGVs may have different speeds, so that in this application differentiating speeds is essential.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Mixed-integer programming model</head><p>To solve our CWSP to optimality with a standard MIP solver, we introduce a mixedinteger program first.</p><p>Given the notation summarized in Table <ref type="table" target="#tab_0">1</ref>, a mixed-integer program for our CWSP is defined by objective function ( <ref type="formula" target="#formula_8">9</ref>) and constraints <ref type="formula" target="#formula_9">10)-(22)</ref>:</p><formula xml:id="formula_8">CWSP-MIP Minimize F(Z , P, ) = T t=1 t<label>(9)</label></formula><p>subject to </p><formula xml:id="formula_9">T t=1 z i,k,t = 1 ∀ (i, k) ∈<label>(10)</label></formula><formula xml:id="formula_10">(i,k)∈ z i,k,t = 1 ∀ t = 1, . . . , T<label>(11)</label></formula><formula xml:id="formula_11">t ≥ d i,k -p i,t-1 v cust + τ i,k -M • (1 -z i,k,t ) ∀ t = 1, . . . , T ; (i, k) ∈<label>(12)</label></formula><formula xml:id="formula_12">1 ≥ i∈O d i,1 v wait + τ i,1 • z i,1,1<label>(13)</label></formula><formula xml:id="formula_13">t ≥ (i,k)∈ d i,k • z i,k,t -(i,k)∈ d i,k • z i,k,t-1 v wait + (i,k)∈ τ i,k • z i,k,t ∀ t = 2, . . . , T<label>(14)</label></formula><formula xml:id="formula_14">t ≥ (i,k)∈ d i,k • z i,k,t-1 -(i,k)∈ d i,k • z i,k,t v wait + (i,k)∈ τ i,k • z i,k,t ∀ t = 2, . . . , T<label>(15)</label></formula><formula xml:id="formula_15">p i,t ≤ d i,1 + M • t-1 t =1 z i,1,t ∀ i = 1, . . . , n; t = 1, . . . , T<label>(16)</label></formula><formula xml:id="formula_16">p i,t ≤ d i,k + M • 1 - t-1 t =1 z i,k-1,t + M • t-1 t =1 z i,k,t ∀ i = 1, . . . , n; k = 2, . . . , m i ; t = 1, . . . , T<label>(17)</label></formula><formula xml:id="formula_17">p i,t ≤ p i,t-1 + t • v cust ∀ i = 1, . . . , n; t = 1, . . . , T<label>(18)</label></formula><formula xml:id="formula_18">p i,t ≤ p i-1,t -1 ∀ i = 2, . . . , n; t = 1, . . . , T<label>(19)</label></formula><formula xml:id="formula_19">p i,t ≥ p i,t-1 ∀ i = 2, . . . , n; t = 1, . . . , T<label>(20)</label></formula><formula xml:id="formula_20">p i,t ≥ d i,k -M • (1 -z i,k,t ) ∀ (i, k) ∈ ; t = 1, . . . , T<label>(21)</label></formula><formula xml:id="formula_21">z i,k,t ∈ {0, 1} ∀(i, k) ∈ ; t = 1, . . . , T<label>(22)</label></formula><p>Our objective function ( <ref type="formula" target="#formula_8">9</ref>) minimizes the makespan, i.e., the point in time when all customers are served. Constraints ( <ref type="formula" target="#formula_9">10</ref>) and ( <ref type="formula" target="#formula_10">11</ref>) ensure that each dish request is executed exactly once and that a dish is served within each service period. The actual processing time required by service period t, t , is defined by <ref type="formula" target="#formula_11">12)-(15</ref>. First, t depends on the time required by the customer to move from its initial position to the relevant counter, stated in (12). Moreover, the waiter has to move from the counter, where she served the last dish, to the next relevant counter, stated in <ref type="formula" target="#formula_12">13)-(15</ref>. In both cases, the processing time τ i,k at the respective counter is added too. The exact positions of customers throughout the process are modeled via constraints <ref type="formula" target="#formula_15">16)-(21</ref>. Hereby, ( <ref type="formula" target="#formula_15">16</ref>) and ( <ref type="formula" target="#formula_16">17</ref>) ensure that the customer served in period t does not pass the relevant counter. The moving speed of customers is considered in inequalities ( <ref type="formula" target="#formula_17">18</ref>). Due to ( <ref type="formula" target="#formula_18">19</ref>), customers are not able to overtake each other, and due to ( <ref type="formula" target="#formula_19">20</ref>), they can only move in forward direction. Furthermore, constraints ( <ref type="formula" target="#formula_20">21</ref>) ensure that customers have reached their targeted counter whenever the waiter serves them a demanded dish. Finally, ( <ref type="formula" target="#formula_21">22</ref>) define the domain of the variables. Note that additional constraints to ensure the precedence relations λ (i,k),( j,l) among dish requests are redundant due to the exact modeling of customer positions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">A dynamic programming procedure</head><p>This section presents an alternative to solve our CWSP to optimality with the help of a dynamic programming (DP) procedure.</p><p>Our DP is composed of |T | + 1 stages, each representing a service period, i.e., processing a dish request of a customer by the waiter (plus a virtual initial stage). Each stage contains states Z = (J , w, p) with J ⊆ 0 = ∪ {(0, 0)}, w ∈ {0, . . . , m}, and p ∈ ([1n, m] ∪ {∞}) n defining the set of already served dish requests, the current waiter position along the line, and the array of current customer positions, i.e., p = ( p 1 , p 2 , . . . , p n ), respectively. Note that p i &lt; 0 means that a customer is still queuing in front of the cafeteria and p i = ∞ that she has left the cafeteria. The partial objective value for each state is denoted by f (Z ) or f (J , w, p) and represents the completion time of all served dish requests so far. There is a transition from state Z = (J , w, p) to state Z = (J , w , p ), if ∃ ( j, l) ∈ with j,l \ J = ∅ and</p><p>• J \ J = {( j, l)}, that is an additional dish request is served during the service period,</p><p>• w = d j,l , that is the waiter is currently at the correct counter, and</p><p>• the customer movement is well defined, i.e.,</p><formula xml:id="formula_22">p = ( p i ) i∈C with p j = d j,l and p i = min{α, β, γ } ∀ i ∈ C, i = j with<label>(23)</label></formula><formula xml:id="formula_23">α = d i,k * with k * = min{k|(i, k) ∈ \ J }, if |{(i, k)|(i, k) ∈ \ J }| ≥ 1 ∞, else<label>(24)</label></formula><formula xml:id="formula_24">β = p i + (Z , Z ) • v cust , if p i + (Z , Z ) • v cust ≤ m ∞, else<label>(25)</label></formula><formula xml:id="formula_25">γ = p i-1 -1 with p 0 = ∞,<label>(26)</label></formula><p>that is the served customer is at the correct counter ( <ref type="formula" target="#formula_22">23</ref>), customers do not pass their next relevant counter ( <ref type="formula" target="#formula_23">24</ref>), customers cannot move faster than their speed allows ( <ref type="formula" target="#formula_24">25</ref>), and customers cannot pass each other ( <ref type="formula" target="#formula_25">26</ref>).</p><p>The additional processing time (Z , Z ) associated with such a transition amounts to</p><formula xml:id="formula_26">(Z , Z ) = max |w -w| v wait , d j,l -p j v cust + τ j,l .<label>(27)</label></formula><p>Given the initial state Z 0 = (∅, 0, (0, -1, . . . , -n)) with f (Z 0 ) = 0 and the transitions' contribution to the objective value, we have the basic Bellman recursion</p><formula xml:id="formula_27">f (Z ) = min Z =(J ,w, p): |J \J |=1 { f (Z ) + (Z , Z )}.<label>(28)</label></formula><p>After a stage-wise forward recursion, we can determine the final objective value by comparing all states of the final stage:</p><formula xml:id="formula_28">F = min Z =(J ,w, p): J = 0 { f (Z )} .<label>(29)</label></formula><p>Via a simple backward recursion, an optimal order sequence can be extracted.</p><p>Regarding the computational effort of our DP, we have a maximum of O(2 | | •m•m n ) states, at most O(2 | | •m •m n •| |) transitions, and each transition requires an iteration through all customers n. Thus, we have an exponential worst-case runtime, which is in line with our complexity result. Example (cont.) Consider the example presented in Fig. <ref type="figure" target="#fig_0">1b</ref>. We extend the example by a fourth customer which enters the list first. She demands dishes at counters one and four, followed by customers red (dish three), yellow (dishes two and four), and green (dish two). A brief summary of relevant instance parameters and the resulting DP graph are depicted in Fig. <ref type="figure" target="#fig_2">3</ref>. One of two optimal solutions is given by dish request sequence (1, 1) → (2, 1) → (1, 2) → (3, 1) → (4, 1) → (3, 2) with an optimum makespan of 21. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Beam search approach</head><p>Because the number of states grows exponentially with the number of dish requests, we modify our DP approach to obtain a heuristic beam search procedure (BS). Beam search requires less computational time and memory as it only branches the ζ (beam width) most promising states, according to their partial objective value, of each stage in the DP tree. Hence, if ζ is sufficiently small, space and CPU time required for solving our CWSP are polynomially bounded. However, it is not guaranteed that the approach finds an optimal solution. Example (cont.) Consider the graph given in Fig. <ref type="figure" target="#fig_2">3</ref>. When applying the beam search procedure with a beam width of ζ = 4 to the same example, we derive a smaller graph without the highlighted states (lighter gray color). In this example, we still find an optimal solution, which is not generally the case.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Sequencing the customers</head><p>In the distribution center for beverages we visited (see Sect. 1), the customer sequence is not optimized and orders are just processed according to a FCFS policy. Since FCFS does not consider any order characteristics, but simply sequences incoming orders according to their arrival times, we emulate this approach by a random order sequence (dubbed the random approach). Beyond this status quo, this section suggests different straightforward optimization procedures for the sequencing part of our cafeteria problem. We seek a suited sequence of customers in which they enter the line of counters. Recall that this sequence remains unaltered during the whole cafeteria process, because customers cannot overtake each other. If the waiter processes customers according to the order-by-order policy and strictly serves customer after customer according to their sequence, the whole cafeteria problem reduces to the sequencing of customers. In this case, the whole cafeteria problem can be solved by a modification of the famous algorithm of <ref type="bibr" target="#b16">Gilmore and Gomory (1964)</ref> for sequencing transport requests on the line. This is elaborated in Sect. 3.1. Naturally, this order sequence can also be applied under the order-swapping policy, where the waiter may flexibly swap between orders. However, we also suggest a simple priority rule-based approach (see Sect. 3.2). Once these solutions procedures are available, we can evaluate whether order sequences are a suited lever for a more efficient cafeteria process (see Sect. 5).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Iterative Gilmore and Gomory approach</head><p>When applying the order-by-order policy, the waiter iteratively serves customers in the same order as they enter the cafeteria. Therefore, each customer i defines a job job i = (d i,1 , d i,m i ) which starts at the first counter d i,1 and ends at the last counter d i,m i she demands a dish from. The goal of our customer sequencing problem (CSP) under the order-by-order policy is to schedule these jobs such that the makespan of the serving process is minimized.</p><p>At first glance, this problem resembles a popular special case of the traveling salesman problem (TSP), the TSP on the line. The famous solution procedure of <ref type="bibr" target="#b16">Gilmore and Gomory (1964)</ref> solves this special case to optimality in polynomial time [see also <ref type="bibr" target="#b8">Burkard et al. (1998)</ref>]. Specifically, it can be applied to sequence transport requests along a line, such that the total travel distance (of the waiter, in our case) is minimized in O(n 2 ). However, the TSP on the line and our CSP differ in two points:</p><p>• The TSP on the line looks for a round trip, i.e., a tour through all jobs along the line with a final return to the start position. Within a solution of our CSP, however, the waiter starts at the beginning of the cafeteria and ends at the last counter she serves a dish at. Thus, we have to solve the path version of the problem, which can be obtained by embedding the approach of <ref type="bibr" target="#b16">Gilmore and Gomory (1964)</ref> in an iterative solution procedure with a runtime in O(n 3 ), dubbed "IGG", given by Algorithm 1. Example (cont.) Consider our example of Fig. <ref type="figure" target="#fig_0">1</ref>. In solution (b), the waiter follows the order-by-order policy for customer sequence red, yellow, green], which results in a total walking distance of 8 and a makespan of 16 time units including the 8 time units for serving the four dish requests for two time units each. When applying IGG, we derive solution (c) and customer sequence green, yellow, red] depicted in Fig. <ref type="figure" target="#fig_3">4</ref> with a total walking distance of 5 and a makespan of 14 time units.</p><p>• IGG optimizes the customer sequence according to the walking distance of the waiter. In general, this solution is not optimal according to our makespan objective,   because the additional travel of the customers is not considered. The optimal IGG solution of Fig. <ref type="figure" target="#fig_3">4</ref>, for instance, results in an optimal walking distance of 5 plus the 8 time units for serving the four dishes; this suggests a makespan of 13 time units. The actual makespan, however, is 14 time units, because the single time unit the waiter remains idle until the arrival of the yellow customer at counter two is not included. However, if we presuppose that the customers are fast enough that they always wait at their first counter once the waiter returns to the next customer, then IGG can directly be applied to solve our customer sequencing problem for the order-by-order policy. If this is not the case, IGG serves as a heuristic approach for CSP.</p><p>Naturally, IGG can also be applied to determine a heuristic solution for CSP, if the waiter follows the order-swapping policy. The next section, however, introduces an alternative approach.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">A priority rule-based approach considering customer blockings</head><p>We tried out quite a few simple priority rule-based approaches, but only report the one working best. This approach is based on the following two simple observations. First, with much more customers than counters, i.e., n &gt; m, there tend to be clusters of up to m customers potentially blocking each other. Furthermore, to fairly distribute the blocking over these clusters, each cluster should contain a mix of customers causing many, medium and few potential blockings. To realize these basic characteristics in a customer sequence, we proceed as follows:</p><p>First, we quantify the number of potential blockings i for each customer i ∈ C. This is done by determining the total number of all other customers j ∈ C, with j = i, which are potentially blocked. Specifically, we determine i = j∈C ψ i j , where</p><formula xml:id="formula_29">ψ i j = 1, if d i,1 ≤ d j,1 0, else ∀ i, j ∈ C.<label>(30)</label></formula><p>Then, we sort all customers i ∈ C according to non-increasing i values. Finally, we successively consider this intermediate sequence, assign the j-th customer of this intermediate sequence to cluster j mod m, and bring the resulting clusters into a random sequence, which constitutes our final customer sequence.</p><p>Note that our computational study presented in the following section shows that this straightforward approach for customer sequencing is only slightly outperformed by a metaheuristic, i.e., a multi-start simulated annealing procedure, with a runtime of several hours. This metaheuristic is described in "Appendix B." Due to this result, we abstain from presenting even more elaborate sequencing approaches.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Computational performance</head><p>In this section, we elaborate on the computational performance of our solution procedures. Specifically, we determine the runtimes and optimality gaps for our exact and heuristic solution procedures for differently sized test instances. Before we describe the results of these tests in Sects. 4.2 and 4.3, we, first, elaborate on the generation scheme for deriving our test instances in Sect. 4.1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Instance generation</head><p>Unfortunately, there exists no established testbed for our cafeteria problem. Therefore, we had to generate our own instances. Specifically, we proceeded as follows: The values listed in Table <ref type="table" target="#tab_1">2</ref> are combined in a full factorial manner, which leads to 27 unique parameter settings. For each setting, instance generation is repeated 10 times, so that in total 270 instances have been obtained.</p><p>Each instance is generated as follows: First, the amount of requested dishes is drawn from interval [γ ; γ ] for each single customer. Then, according to this result, the specific dishes per customer are randomly drawn from the m dishes available. All random numbers follow a uniform distribution. The size of each counter and each customer are normalized to one distance unit, and both waiter and customers move one distance unit per time unit. Note that, later when investigating managerial aspects in Sect. 5, we also address the impact of varying speeds.  All procedures have been coded in Visual Basic (Visual Studio 2012 Ultimate) based on Microsoft's .NET Framework 4.6, and all computations have been performed on a personal computer with Intel Core i7-3770 processor with 4 × 3.4 GHz clock speed and 8 GB DDR-3 RAM. As a standard solver, we apply Gurobi Optimizer 7.5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Performance tests for the CWSP</head><p>First, we address the solution approaches dedicated to the waiter scheduling problem CWSP for a given customer sequence (see Sect. 2). Specifically, we benchmark standard solver Gurobi solving CWSP-MIP (see Sect. 2.2), our exact dynamic programming (DP) procedure (see Sect. 2.3), and our beam search (BS) heuristic (see Sect. 2.4) executed with a beam width ζ = 300. Since CWSP is an operational problem with a rather short-term planning horizon, each solution approach receives a timeout of 300 s. Note that for Gurobi we only restrict the (pure) solution time, so that by adding the time required by the standard solver to prepare the model, a total time requirement larger than the time out may result. Also for our DP runtimes larger than the timeout may occur, because we measure time after completing each stage only. For these three competitors, we report the performance criteria listed in Table <ref type="table" target="#tab_2">3</ref>. The performance results summarized in Table <ref type="table" target="#tab_3">4</ref> suggest the following findings:</p><p>• Among the exact solution procedures, Gurobi is clearly outperformed by DP. In total, the latter solves 98 instances to optimality (i.e., 36.3%) within the given runtime and even finds 15 optimal solutions for the largest instances with n = 50 customers. Gurobi only finds 28 proven optimal solutions for the smallest instances with n = 10 customers, i.e., 10.4%. On the negative side, DP either finds an optimal solution within the given runtime or returns unsuccessfully without a feasible solution, i.e., in 63.7% of all instances. Therefore, we only report #opt for DP; in all other cases DP fails. Gurobi finds feasible solutions in 92.6% of all instances and only struggles with the very largest instances.</p><p>• With regard to the heuristic solution performance, it can be concluded that BS delivers convincing results even for the largest instances of real-world size. It misses just a single optimal solution among those instances where the optimal objective value is known and clearly outperforms the heuristic values obtained by Gurobi for all larger instances. However, BS too requires a considerable solution time for the largest instances, i.e., an average of 154 s over all instances with n = 50 customers.</p><p>To further benchmark the quality of the solution procedures introduced for waiter scheduling, we extend the computational results and compare lower bounds. Table <ref type="table" target="#tab_4">5</ref> shows the gap of each solution approach compared to the LP-relaxation, which proved best among the lower bounds we tested. Other lower bounds, e.g., based on the minimum spanning tree-relaxation of the TSP [see <ref type="bibr" target="#b22">Held and Karp (1970)</ref>], performed even worse. Unfortunately, already the best lower bound is not tight and for all instances solved to optimality (see Table <ref type="table" target="#tab_3">4</ref>) the gap is about 55%. This gap increases among all instances, see Table <ref type="table" target="#tab_4">5</ref>. Whether more sophisticated lower bounds for the sequential ordering problem, e.g., described in <ref type="bibr" target="#b2">Ascheuer et al. (1993)</ref>, lead to considerably better results for waiter scheduling remains questionable. It can be concluded that finding tight lower bounds for waiter scheduling is a challenging task and should receive more attention in future research. Preliminary computational tests confirm this finding for the overall cafeteria problem. This result is not astounding, since the cafeteria problem extends waiter scheduling and also includes customer sequencing. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Performance tests for the holistic problem</head><p>Next, we skip to the overall cafeteria problem where also determining the customer sequence is part of the problem. Note that we formulated a MIP model for the holistic problem including customer sequencing and waiter scheduling under the order-swapping policy, but, unfortunately, not even for tiny instances with a handful of customers standard solver Gurobi could obtain reasonable results, even with a much larger runtime of several hours. Gurobi even struggled with finding lower bounds, which is in line with our investigation of bound quality for waiter scheduling presented in the previous section. Therefore, we decided to benchmark our three competitors [i.e., a RANDOM sequence, the customer sequence obtained by our iterative Gilmore-Gomory (dubbed IGG, see Sect. 3.1), and our priority rule-based approach (dubbed PRIO, see Sect. 3.2)] against the results of the multi-start simulated annealing metaheuristic (see "Appendix B") executed with a runtime of 2 h. In relation to this benchmark, we report the average gap (∅gap) and the number of best solutions obtained by the respective procedure (#best) for all three competitors in Table <ref type="table" target="#tab_5">6</ref>. Note that all three procedures only evaluate a single customer sequence and solve the remaining waiter scheduling problem (CWSP) under the order-swapping policy with BS and beam width ζ = 300. Thus, there is no (significant) difference in the solution time, and in all three cases, the share of the sequencing parts is negligible compared to the execution time of BS.</p><p>The results of Table <ref type="table" target="#tab_5">6</ref> lead us to the following conclusions. Our priority rule-based approach for determining the customer sequence clearly outperforms both competitors. The worst results are obtained by the random customer sequences, which resemble the status quo in the distribution center we visited. IGG leads to more best solutions and a much smaller average gap, but for the largest instances with n = 50 customers and m = 50 counters the average gap is substantial (i.e., 14.06%). PRIO leads to the best results. In fact, due to the large solution space and the long runtime of BS for solving the waiter scheduling problem, not even metaheuristic mSA with a runtime of 2 h is able to considerably improve these results.</p><p>It can be concluded that our BS heuristic seems well suited to solve even large-sized instances of real-world size of the waiter scheduling problem. Moreover, our simple rule-based approach delivers acceptable objective values for the sequencing part of the cafeteria problem. Therefore, we apply these two approaches throughout the further tests elaborated in the following section, if not explicitly stated otherwise.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Managerial aspects</head><p>This section addresses important managerial aspects and supports managers having to setup and operate a cafeteria system. First, Sect. 5.1 explores the impact of our two levers (i.e., optimized customer sequences instead of random sequences and flexible order swapping of the waiter instead of the order-by-order policy, see Sect. 1.3) on the system performance. Then, we take the waiter's perspective and address the question whether optimized schedules also reduce the total walking distance (see Sect. 5.2). Finally, we explore whether faster AGVs can considerably improve the system performance (see Sect. 5.3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Impact of levers</head><p>The status quo in the distribution center we consider is to process random customer sequences according to the order-by-order policy. This section explores the performance gains if optimized order sequences are applied and the waiter follows the more flexible order-swapping policy instead. Table <ref type="table" target="#tab_6">7</ref> summarizes the impact of these two levers on the system performance. Specifically, we report the relative decrease of makespan compared to the makespan obtained by the status quo solution in percent for n = 10, n = 30, and n = 50 customers. The following three approaches are benchmarked with the status quo:</p><p>• Our iterative Gilmore-Gomory procedure (IGG, see Sect. 3.1) applied to a random customer sequence represents the case where only the customer sequence is optimized, but the waiter still processes the customers order by order.</p><p>• The case where customer sequences are not optimized (e.g., they are processed according to FCFS), but the waiter follows an optimized order-swapping schedule is represented by approach 'RANDOM + BS'.</p><p>• Finally, both customer sequences and the waiter schedule under the order-swapping policy can be optimized. This approach is denoted 'PRIO + BS'.</p><p>The results of these four solution approaches averaged over all our 270 data instances elaborated in Sect. 4.1 are summarized in Table <ref type="table" target="#tab_6">7</ref>. The following conclusion can be drawn from these results:</p><p>• Only optimizing the customer sequence, if the waiter still follows the order-byorder policy cannot improve system performance. Recall that the IGG presented in Sect. 3.1 minimizes the walking distance of the waiter if customers are strictly serviced one after another. However, this approach neglects additional waiting time of the waiter until the customers have arrived at the respective counters. Obviously, this simplification deteriorates the objective values to such an extent, that IGG cannot even outperform random customer sequences. In fact, for n = 10 and n = 50 customers the average makespan delivered by IGG is even larger than that of a random sequence.</p><p>• A similar result with regard to the impact of customer sequences can be concluded if the waiter operates under the order-swapping policy. In this case, too, the performance gains of optimized customer sequences are not overly large. However, at least about 6% additional performance can be gained by customer sequences optimized with our priority rule-based approach.</p><p>• The largest performance gains, however, are promised by allowing the waiter to flexibly swap among orders. An optimized waiter scheduling under the orderswapping policy almost halves the makespan compared to the status quo where the waiter processes customer after customer according to the order-by-order policy.</p><p>It can be concluded that among our two levers, especially, the order-swapping policy promises a large improvement. It about halves the makespan compared to the orderby-order policy, whereas optimizing the customer sequences only promises just 6% additional reduction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Impact on picker walking</head><p>In the distribution center we visited, another concern of the managers was the excessive walking of the pickers during their shifts. Their calculations have shown that regularly a dozen kilometers per shift were exceeded. Consequently, this section is dedicated to the question whether optimizing the waiter schedule under the order-swapping policy not only boosts the picking performance, but also considerably reduces the picker's total walking distances. To explore this question, we setup the following experiment.</p><p>To emulate a realistic on-the-line picking environment, we apply the following data. The picker is assumed to walk v wait = 1.36 m/s (about 5 km/h). This is a typical moderate walking speed that is often agreed with the trade unions as an average target speed <ref type="bibr" target="#b13">(Füßler and Boysen 2017)</ref>. The AGVs are assumed to have the same speed v cust = 1.36 m/s. Due to safety reasons, many AGVs are restricted to walking speed if they interfere with human pickers. The counters (storage positions for crates of beverages) are assumed to be 1 m wide, which is enough space to store a standardized euro-pallet (i.e., 80 cm) with maneuvering space to the left and right. We presuppose m = 50 counters (storage positions), which is about the size we observed in our distribution center. Assuming an average processing time (picking duration) of 15 s/dish (order line), preliminary tests have shown that about 100 (27) customers can be served within an hour, if the number of order lines per order is drawn from interval [γ ; γ ] = [1;3] ([γ ; γ ] = [7;10]). To emulate different shift lengths, we therefore apply n = 100 (n = 27), n = 200 (n = 54), and n = 800 (n = 216) customers for shifts of lengths of 1, 2, and 8 h, respectively, if we have just a few (many) order lines per customer with [γ ; γ ] = [1; 3] ([γ ; γ ] = [7; 10]).</p><p>In this environment, we benchmark the following competitors:</p><p>• IGG: We apply the iterative Gilmore-Gomory approach (IGG, see Sect. 3.1) for optimizing the customer sequence, while the waiter follows the order-by-order policy.</p><p>• PRIO + BS -M: This approach optimizes the customer sequence according to our priority rule-based approach (see Sect. 3.2) and optimizes the waiter schedule under the order-swapping policy with the help of our beam search procedure (BS, see Sect. 2.4) applied with beam width ζ = 300. The aim of this approach is to minimize the makespan.</p><p>• PRIO + BS -W: To explore to what extent the waiter's total walking distance can be reduced, we adapt our dynamic programming scheme for optimizing the waiter schedule under the order-swapping policy to the walking distance objective (see" Appendix C"). The resulting beam search approach minimizes the total walking distance of the waiter for a given customer sequence, which is again derived by applying our priority rule-based approach of Sect. 3.2. • Finally, we have the status quo where random order sequences are processed under the order-by-order policy. We report the improvement over this policy for the previous three approaches (i.e., the reduction of the respective approach in relation to either the makespan or the total walking distance of the status quo policy in %) in Table <ref type="table" target="#tab_7">8</ref>.</p><p>The results of this test summarized in Table <ref type="table" target="#tab_7">8</ref> suggest the following findings:</p><p>• Only optimizing the customer sequence by IGG while still applying the order-byorder policy improves over the status quo only if each customer demands just a few order lines. In this case, the total walking distance is reduced by 15% and also a better makespan can be achieved. If, however, each customer demands plenty order lines, then there is a high probability that the picker has to pass the whole line anyway when processing each order according to the order-by-order policy. Optimizing the customer sequence has not much flexibility in this case, and only negligible improvements over the status quo can be realized.</p><p>• In line with our previous results, optimizing customer sequences and waiter schedules under the order-swapping policy with our PRIO + BS -M leads to a considerable reduction of the makespan compared to the status quo. Note that the relative reductions here are slightly smaller than our previous 50%, because in this test a processing time of 15 s/dish is included. The reductions of the waiter's total walking distance is even more impressive. Even for plenty order lines the reduction is by more than 75%.</p><p>• If we directly minimize the total walking distance of the waiter by applying PRIO + BS -W, we reach almost the same results as for PRIO + BS -M. As expected, the total walking distance is even smaller, but just to a tiny extent well below 1%. With regard to the makespan, PRIO + BS -W is slightly outperformed by PRIO + BS -M, but, again, just to a very small extent. Since computational tests (we do not report here) have shown that the solution performance of both approaches is almost identical, we can conclude that there is a strong correlation among both objectives. Minimizing the makespan also tends to minimize the waiter's walking distance and vice versa. It can be concluded that optimization also promises a great relief for the waiter. Our average result for an 8-h shift suggests a total walking distance of about 17 km for the current process in our example distribution center. By optimization, this can be reduced to an average walking distance of just about 4 km/shift.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Impact of faster AGVs</head><p>Instead of implementing the order-swapping policy steered by an optimization procedure, a distribution center seeking better system performance could also consider investing into a technical solution. Faster AGVs, for instance, also promise a reduction of the makespan. This section explores whether the gains of faster AGVs can compete with the huge improvement promised by optimization. We apply the same setting as is elaborated in the previous section, and only vary the velocity of the AGVs. Specifically, we vary v cust by applying values (0.5; 0.75; 1; 1.25; 1.5) • v wait , with v wait = 1.36 m/s. Furthermore, we distinguish between a large and a small number of dishes per customer [γ ; γ ], assume m = 50 counters and n = 27, or n = 100 customers for 1-h shifts. Figure <ref type="figure" target="#fig_4">5</ref> shows the results for the status quo (i.e., random customer sequences processed under the order-by-order policy) and our beam search approach PRIO + BS, which optimizes customer sequences and waiter schedules according to the order-swapping policy.</p><p>It can be concluded that investing additional budget into faster AGVs is only a worthwhile idea if operating under the order-by-order policy and only until the velocity equals the speed the waiter. However, the money seems much better spent into an optimization procedure enabling the order-swapping policy. This approach promises a much lower makespan, which cannot be considerably improved by faster AGVs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusion</head><p>This paper explores the cafeteria process: A given set of customers demanding deterministic subsets of dishes served at the counters of a cafeteria are processed by a single waiter. We show that optimizing the customer sequence, in which the customers enter the cafeteria, and the waiter schedule, in which the waiter serves the dish requests of queuing customers, considerably improves the performance compared to a nonoptimized system. We introduce suited solution procedures for both problem parts, i.e., customer sequencing and waiter scheduling, and test them in a comprehensive computational study. The main findings of these tests are the following:</p><p>• Large performance gains are obtainable by optimizing customer sequences and waiter schedules compared to non-optimized solutions. The makespan is almost halved. Especially, allowing the waiter a flexible swapping among customers greatly improves the results. This is good news for managers of a cafeteria, but also for the waiter. Our results show that the makespan is closely related to the waiter's walking distance. Thus, by minimizing the makespan also the waiter's ergonomic strain while walking between the counters can be considerably reduced.</p><p>• When having to improve the performance of a cafeteria process, money is much better spent for optimization procedures determining suited customer sequences and waiter schedules compared to investing into faster AGVs. Their impact is shown to quickly diminish.</p><p>These findings may help to improve order picking in the real-world distribution center supplying liquor stores, supermarkets, and large restaurants with beverages where we saw the cafeteria process in action.</p><p>Future research could challenge our solution procedures. For instances of real-world size determining good waiter schedules takes considerable time, so that the evaluation of many different customer sequences is even more time-consuming. Thus, solving very large instance of the cafeteria problem remains a challenging task. Furthermore, future research could also support the layout design phase. By altering the assignment of dishes to counters even larger performance gains may be obtainable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix A: Complexity of CWSP</head><p>This appendix shows that our CWSP, i.e., the scheduling of the waiter once the customer sequence is given, is strongly NP-hard. The reduction is from the 3-Partition problem, which is well known to be NP-complete in the strong sense <ref type="bibr" target="#b14">(Garey and Johnson 1979)</ref>. 3-Partition Given an integer B ∈ Z + and a set A (with |A| = 3q) containing integers B/4 &lt; a j &lt; B/2, ∀ j = 1, . . . , 3q. The problem is to find a partition of set A into q disjoint subsets {A 1 , A 2 , . . . , A q }, such that j∈A i a j = B for each i = 1, . . . , q or to prove that no such partition exists.</p><p>Proof Our pseudo-polynomial transformation scheme for deriving an instance I of CWSP from an instance I of 3-Partition is as follows: We introduce n = 3q + 1 customers. For each integer value of I , we introduce one customer demanding just a single dish. These customers build the counterparts to the integer values and are, thus, called the counterpart customers. The single additional customer interrupts the waiter again and again when serving the counterpart customers, so that we call her the stop customer. All customers move with a velocity of v cust = 12q B along the counters, which all have a normalized length of one distance unit. The line consists of m = 12q 2 + 3q + 2 counters, and our single waiter moves with infinite velocity. Note that it is easily possible to give the waiter a finite velocity in this proof, which, however, makes the calculations a bit more complicated. The first 3q customers, which enter the line according to the given customer sequence, are the counterpart customers. They each demand a single dish served at the end of the line. i.e., at the last 3q counters before the final one. The first counterpart customer, thus, demands the dish served at the second to last counter, the second customer the third seen from the end of the line and so on. Servicing each dish demanded by a counterpart customer requires the waiter a processing time that equals the corresponding integer value, so that we have τ j,1 = a j for all j = 1, . . . , 3q. The stop customer is the last to enter the line. She demands q +2 dishes. Her first dish is served at the very first counter and lasts until all counterpart customers have passed the line and reached their successive counters at the end of the line. We call this dish request the wait dish, which takes the waiter a processing time of τ 3q+1,1 = q B. Her next q dishes are the so-called stop dishes, which, starting at counter 12q +1, are served at counters having 12q -1 unused counters between them. The processing times at these stop counters are τ 3q+1,i = 1 for all i = 2, . . . , q + 1, and it takes the stop customer exactly B time units to move from stop counter to stop counter. Finally, the stop customer is serviced at the very last counter with what we call the final dish. Servicing the final dish takes the waiter a processing time of one time unit. Figure <ref type="figure" target="#fig_5">6</ref> schematically depicts the setup of the resulting cafeteria. The question we ask is whether there is a solution to I with makespan Z ≤ B 2 + B 6q + 2q B + q + 1.</p><p>A feasible solution for an instance I of 3-Partition can be transformed to a feasible solution of the corresponding instance I of CWSP by pursuing the following waiter schedule. At first, the waiter remains idle for B 4 + B 12q time units until all counterpart customers have passed the first counter and the wait dish of the stop customer can be serviced. The latter requires q B time units. Once processing the wait dish ends, all counterpart customers have exactly reached their 3q counters of the end of the line where they aim to receive their respective dish. Afterward, the stop customer moves onwards and passes 12q -1 counters toward her first stop dish. At a velocity of v cust = 12q B , the movement from wait dish to the first stop counter (and later on between two successive stop counters) takes her exactly B time units. During these B time units, the waiter is not occupied by the stop customer, but can rush (with infinite velocity) to the counterpart customers, where she can serve exactly the three dishes of the counterpart customers corresponding to an integer subset of 3-Partition. In this way, the waiter successively services all subsets of dishes corresponding to subsets of 3-Partition each time interrupted by one time unit servicing the stop customer once having reached the next stop dish after exactly B time units. Once the stop customer has received her last stop dish, it takes her B 4 + B 12q time units to pass the last 3q counters and another single time unit to be served the final dish at the last counter. Thus, we have B 4 + B 12q time units at the start until the wait dish can be serviced. This takes q B time units to be processed, and then, another q B + q time units are required to processes all counterpart customers (i.e., serviced in q subsets of duration B) interrupted by q stop dishes of the stop customer. Finally, it takes the stop customer another B 4 + B 12q time units to pass the last 3q counters and an additional time unit at the last counter. Altogether, this leads to a makespan of Z = B 2 + B 6q + 2q B + q + 1 and a feasible schedule for I .</p><p>On the other hand, a feasible solution for an instance I of CWSP is also a feasible solution for the corresponding 3-Partition instance I . A makespan of Z ≤ B 2 + B 6q + 2q B + q + 1 for I can only be reached if the stop customer reaches the end of the line without any waiting at a counter. Thus, once the wait dish at the start is serviced, this leaves exactly B time units for servicing counterpart customers, before the stop customer reaches another stop counter. If these gaps of B time units are not exactly filled with three counterpart customers whose processing time of their respective dishes adds up to exactly B time units, then there remains at least one dish for a counterpart customer to be serviced after the stop customer has left her last stop counter toward the end of the line. Even if there is just one remaining dish and this final dish is the one with the shortest processing time among all counterpart customers and serviced at the second to last counter, then due to the restrictions of the integer values of 3-Partition, i.e., B/4 &lt; a j &lt; B/2, this dish cannot be completed before the stop customer reaches this job (because the way from the last stop counter to the second last counterpart counter takes her just B 4 -B 12q time units). She is blocked, and a makespan Z ≤ B 2 + B 6q + 2q B + q + 1 cannot be realized. Only if all counterpart customers are already serviced, once the stop customer leaves the final stop counter, no blocking occurs. This, however, is only possible if sets of three dishes dedicated to three counterpart customers are serviced in each of the q gaps of duration B. These three dishes directly correspond to a feasible subset of 3-Partition, which completes the proof.</p><p>Note that the same proof also holds for the case where the sequencing of customers is part of the problem. No other sequence than the one applied in the previous proof can reach the applied bound on the makespan. All other sequences lead to cases where customers block each other and the makespan bound is exceeded.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix B: A multi-start simulated annealing algorithm</head><p>In this appendix, we introduce a straightforward multi-start simulated annealing approach for benchmarking our other (even more) basic approaches to determine customer sequences. We follow the basic simulated annealing scheme introduced by <ref type="bibr" target="#b24">Kirkpatrick et al. (1983)</ref>. First, we apply the priority rule-based approach (see Sect. 3.2) to find an initial customer sequence, which is evaluated under the order-swapping policy with beam search (see Sect. 2.4). Neighborhood solutions are determined by swapping the positions of two randomly selected customers within current customer sequence . This leads to a new solution new whose objective value F( new ) is determined by applying the beam search procedure for waiter scheduling. This new solution new is accepted if a random number of interval [0,1] with uniform distribution is smaller than exp F( old )-F( new) TP and refused otherwise. Temperature T P is controlled via the traditional cooling scheme of <ref type="bibr" target="#b24">Kirkpatrick et al. (1983)</ref> with an initial temperature of 50, a stop temperature of 1, and a cooling factor of 0.99, which is multiplied with the current temperature in each iteration. When reaching the stop temperature, we restart the procedure with the best customer sequence found so far. If no improved solution is found in the next iteration, we draw a new customer sequence randomly and restart the procedure. The procedure ends after a total runtime of 2 h (7200 CPU seconds).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix C: A dynamic program for CWSP minimizing the waiter's total walking distance</head><p>In this appendix, we derive a DP scheme that can be applied to our CWSP when minimizing the waiter's walking distance. This approach is a simple modification of the DP approach described in Sect. 2.3 which minimizes the makespan for a given customer sequence.</p><p>The DP consists of |T | + 1 stages, each representing a service period. As we minimize the walking distance of the waiter, we can neglect the exact positions of the customers during the process. Note that customers are assumed to always be at the respective counter currently demanded, because potential waiting times of the waiter are not relevant. This leaves us with states Z = (J , w) defined by set J of finished dish requests and current waiter location w. The partial objective value of a state f (Z ) or f (J , w) represents the total walking distance of the waiter after completing all dish requests in J . We have a transition from state Z = (J , w) to another state Z = (J , w ), if ∃ ( j, l) ∈ with j,l \ J = ∅, J \ J = {( j, l)}, and w = d j,l . The additional walking distance of such a transition amounts to</p><formula xml:id="formula_30">(Z , Z ) = |w -w|.<label>(31)</label></formula><p>Starting from initial state Z 0 = (∅, 0) with f (Z 0 ) = 0, we can determine the partial objective value for a new state with the basic Bellman recursion</p><formula xml:id="formula_31">f (Z ) = f (J , w ) = min Z =(J ,w): |J \J |=1 { f (Z ) + (Z , Z )}.<label>(32)</label></formula><p>After a forward recursion through all stages, we compare all final states in order to determine the optimal solution value</p><formula xml:id="formula_32">F = min Z =(J ,w): J = 0 { f (Z )} .<label>(33)</label></formula><p>Finally, an optimal order sequence can be extracted by a backward recursion. Analogously to the previous dynamic program for our CWSP when minimizing the makespan (see Sect. 2.3), we derive a heuristic beam search procedure from the DP scheme by applying the alterations defined in Sect. 2.4.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Example for the cafeteria problem</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Applications for the cafeteria problem</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Dynamic programming/beam search graph for CWSP</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4</head><label>3</label><figDesc>Fig. 4 Gilmore–Gomory solution with minimal waiter walking distance</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Impact of AGV speed on the makespan for the status quo approach and optimization procedure PRIO + BS</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Schematic cafeteria layout of transformation</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Notation for CWSP</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Parameter values for instance generation</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Performance criteria</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Computational performance for CWSP of Gurobi solving CWSP-MIP, dynamic programming (DP), and beam search (BS)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Gap to the LP-relaxation of CWSP-MIP for Gurobi solving CWSP-MIP, dynamic programming (DP), and beam search (BS)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Solution performance for the holistic cafeteria problem (i.e., customer sequencing and waiter scheduling under the order-swapping policy) for competitors random solution (RANDOM), iterative Gilmore–Gomory (IGG), and the priority rule-based approach (PRIO) in relation to the multi-start simulated annealing metaheuristic</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7</head><label>7</label><figDesc>Performance gains for n = 10/30/50 customers for both sequencing and both waiter scheduling approaches in relation to the status quo in percent</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8</head><label>8</label><figDesc>Reduction of the waiter's total walking distance (W) and makespan (M) of our three optimization approaches IGG, PRIO + BS -M, and PRIO + BS -W in relation to the status quo approach in % for different shift lengths and varying numbers of order lines</figDesc></figure>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Agnetis</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Flamini</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nicosia</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pacifici</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A job-shop problem with one additional resource type</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Sched</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="225" to="237"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Agnetis</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murgia</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sbrilli</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">A job shop scheduling problem with human operators in handicraft production</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Prod Res</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="page" from="3820" to="3831"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ascheuer</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Escudero</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grötschel</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stoer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">A cutting plane approach to the sequential ordering problem (with applications to job scheduling in manufacturing)</title>
+		</analytic>
+		<monogr>
+			<title level="j">SIAM J Optim</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="25" to="42"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Boysen</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Briskorn</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meisel</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">A generalized classification scheme for crane scheduling with interference</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">258</biblScope>
+				<biblScope unit="page" from="343" to="357"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bierwirth</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meisel</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">A survey of berth allocation and quay crane scheduling problems in container terminals</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">202</biblScope>
+				<biblScope unit="page" from="615" to="627"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bierwirth</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meisel</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">A follow-up survey of berth allocation and quay crane scheduling problems in container terminals</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">244</biblScope>
+				<biblScope unit="page" from="675" to="689"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brucker</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dhaenens-Flipo</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knust</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kravchenko</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Werner</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Complexity results for parallel machine problems with a single server</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Sched</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="429" to="457"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Brucker</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Knust</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Complexity results for flow-shop problems with a single server</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">165</biblScope>
+				<biblScope unit="page" from="398" to="407"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Burkard</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Deineko</surname>
+					<forename type="first">V</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Dal</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van der Veen</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Woeginger</surname>
+					<forename type="first">G</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Well-solvable special cases of the traveling salesman problem: a survey</title>
+		</analytic>
+		<monogr>
+			<title level="j">SIAM Rev</title>
+			<imprint>
+				<date when="1998">1998</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="496" to="546"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ciro</surname>
+					<forename type="first">C</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dugardin</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yalaoui</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kelly</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Open shop scheduling problem with a multi-skills resource constraint: a genetic algorithm and an ant colony optimisation approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Prod Res</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="4854" to="4881"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xie</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">An ant colony optimization routing algorithm for two order pickers with congestion consideration</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput Ind Eng</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">66</biblScope>
+				<biblScope unit="page" from="77" to="85"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename type="first">T</forename><forename type="middle">C</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sriskandarajah</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">One-operator-two-machine flowshop scheduling with setup and dismounting times</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput Oper Res</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="715" to="730"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Daganzo</surname>
+					<forename type="first">C</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">The crane scheduling problem</title>
+		</analytic>
+		<monogr>
+			<title level="j">Transp Res B</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="159" to="175"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Füßler</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boysen</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient order processing in an inverse order picking system</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput Oper Res</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">88</biblScope>
+				<biblScope unit="page" from="150" to="160"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b14">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Garey</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename type="first">D</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="m">Computers and intractability: a guide to the theory of NP-completeness</title>
+			<imprint>
+				<publisher>Freeman</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="1979">1979</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Garey</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename type="first">D</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sethi</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">The complexity of flowshop and jobshop scheduling</title>
+		</analytic>
+		<monogr>
+			<title level="j">Math Oper Res</title>
+			<imprint>
+				<date when="1976">1976</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="117" to="129"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gilmore</surname>
+					<forename type="first">P</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gomory</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Sequencing a one state-variable machine: a solvable case of the traveling salesman problem</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oper Res</title>
+			<imprint>
+				<date when="1964">1964</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="655" to="679"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Glass</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shafransky</surname>
+					<forename type="first">Y</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strusevich</surname>
+					<forename type="first">V</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Scheduling for parallel dedicated machines with a single server</title>
+		</analytic>
+		<monogr>
+			<title level="j">Naval Res Logist</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="304" to="328"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Graham</surname>
+					<forename type="first">R</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lawler</surname>
+					<forename type="first">E</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lenstra</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rinnooy Kan</surname>
+					<forename type="first">A</forename><forename type="middle">H</forename><forename type="last">G</forename>
+				</persName>
+			</author>
+			<title level="a">Optimization and approximation in deter- ministic sequencing and scheduling: a survey</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ann Discrete Math</title>
+			<imprint>
+				<date when="1979">1979</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="287" to="326"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gue</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meller</surname>
+					<forename type="first">R</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skufca</surname>
+					<forename type="first">J</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">The effects of pick density on order picking areas with narrow aisles</title>
+		</analytic>
+		<monogr>
+			<title level="j">IIE Trans</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">38</biblScope>
+				<biblScope unit="page" from="859" to="868"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hall</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Potts</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sriskandarajah</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Parallel machine scheduling with a common server</title>
+		</analytic>
+		<monogr>
+			<title level="j">Discrete Appl Math</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">102</biblScope>
+				<biblScope unit="page" from="223" to="243"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hefetz</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Adiri</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">A note on the influence of missing operations on scheduling problems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Naval Res Logist</title>
+			<imprint>
+				<date when="1982">1982</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="535" to="539"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Held</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Karp</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">The traveling-salesman problem and minimum spanning trees</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oper Res</title>
+			<imprint>
+				<date when="1970">1970</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="1138" to="1162"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hong</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peters</surname>
+					<forename type="first">B</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Batch picking in narrow-aisle order picking systems with consid- eration for picker blocking</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">221</biblScope>
+				<biblScope unit="page" from="557" to="570"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kirkpatrick</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gelatt</surname>
+					<forename type="first">C</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vecchi</surname>
+					<forename type="first">M</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Optimization by simulated annealing</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="1983">1983</date>
+				<biblScope unit="volume">220</biblScope>
+				<biblScope unit="page" from="671" to="680"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jin</surname>
+					<forename type="first">Y</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">An effective hybrid PSO-based algorithm for flow shop scheduling with limited buffers</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput Oper Res</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">35</biblScope>
+				<biblScope unit="page" from="2791" to="2806"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mencia</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sierra</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Varela</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">An efficient hybrid search algorithm for job shop scheduling with operators</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Prod Res</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="5221" to="5237"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ribas</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Companys</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tort-Martorell</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">An iterated greedy algorithm for the flowshop scheduling problem with blocking</title>
+		</analytic>
+		<monogr>
+			<title level="j">Omega</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="293" to="301"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ruiz</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maroto</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">A comprehensive review and evaluation of permutation flowshop heuristics</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Oper Res</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">165</biblScope>
+				<biblScope unit="page" from="479" to="494"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sawik</surname>
+					<forename type="first">T</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Scheduling flexible flow lines with no in-process buffers</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Prod Res</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">33</biblScope>
+				<biblScope unit="page" from="1357" to="1367"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b30">
+		<monogr>
+			<author>Swisslog</author>
+			<title level="m">CaddyPick: picking made easy</title>
+			<ref target="https://www.swisslog.com/de-de/kontakt/downloads?mediaItem=5551B202AE7541FA9662BDC8A95B7041">https://www.swisslog.com/de-de/kontakt/downloads?mediaItem=5551B202AE7541FA9662BDC8A95B7041</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luh</surname>
+					<forename type="first">P</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Steel-making process scheduling using Lagrangian relaxation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Prod Res</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="55" to="70"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename type="first">T</forename><forename type="middle">C</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<title level="a">An approximation algorithm for parallel machine scheduling with a common server</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Oper Res Soc</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="234" to="237"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Weber</surname>
+					<forename type="first">R</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weiss</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">The cafeteria process—Tandem queues with 0–1 dependent service times and the bowl shape phenomenon</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oper Res</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="895" to="912"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xuan</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Scheduling a hybrid flowshop with batch production at the last stage</title>
+		</analytic>
+		<monogr>
+			<title level="j">Comput Oper Res</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="2718" to="2733"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

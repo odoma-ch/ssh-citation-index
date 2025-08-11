@@ -49,6 +49,7 @@ Given the provided text, extract all full reference entries and format them acco
    - "surname": string
 4. Ensure the output is valid JSON, with no trailing commas.
 5. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
+6. If there are no references, return an empty list.
 
 ### Example
 

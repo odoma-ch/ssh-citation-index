@@ -1,0 +1,1061 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Ebook Rate of Use in OhioLINK: A Ten-Year Study of Local and Consortial Use of Publisher Packages in Ohio</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability><licence target="http://creativecommons.org/licenses/by-nc/4.0/"><p>Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/) CC BY-NC.</p></licence></availability>
+				<date type="published" when="2019-12">September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Amy</forename><surname>Fry</surname></persName>
+							<email>afry@bgsu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Bowling Green State University</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Ebook Rate of Use in OhioLINK: A Ten-Year Study of Local and Consortial Use of Publisher Packages in Ohio</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">College &amp; Research Libraries</title>
+						<idno type="ISSN">2150-6701</idno>
+						<imprint>
+							<biblScope unit="volume">80</biblScope>
+							<biblScope unit="issue">6</biblScope>
+							<biblScope unit="page" from="827"/>
+							<date type="published" when="2019-12">September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.5860/crl.80.6.827</idno>
+					<idno type="MD5">F1C029156D106767046EB15F1FA454B8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper examines publisher ebook package use in the OhioLINK academic library consortium between 2007 and 2017 alongside use of the same titles at individual institutions. With nearly 100,000 titles acquired over 10+ years from three publishers and available to users at more than 90 institutions, the picture of ebook use this study presents is unique in its breadth and scope. The data show that, consortiumwide, close to 100 percent of titles were used, with their initial use overwhelmingly taking place within one year of their publication date. At individual institutions, the rate of use was far lower and never exceeded the rate of use of print books at the author's own institution. These findings have important implications for how institutions approach ebook acquisition to maximize rate of use of ebook collections.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>While libraries have owned ebooks for several decades, standard usage statistics from many major publishers have been available for a far shorter amount of time. With more years of COUNTER statistics now available, libraries can finally establish with increased confidence an overall rate of use for many of our ebook collections and begin to understand and predict rates of use for ebooks acquired by different methods. This paper attempts to establish a rate of use for consortium-purchased publisher packages of ebooks acquired since 2007 at Bowling Green State University in Ohio (BGSU) and in the OhioLINK academic library consortium, as well as answer the following questions:</p><p>• Are consortium-purchased, front-list (newly published, not backfile) titles in publisher packages used at a rate similar to those in other types of ebook collections?</p><p>• How does the rate of use for ebooks consortiumwide compare to that of individual institutions?</p><p>• How does rate of use of ebook collections compare to that of print?</p><p>Because OhioLINK ebook usage statistics go back up to 10 years on some packages, this study provides a long-term perspective on ebook use at both a local and consortial level that is unique in the literature. The data show that, consortiumwide, close to 100 percent of titles in OhioLINK's largest publisher packages of ebooks are used, with their initial use overwhelmingly taking place within one year of the title's publication date. Rate of use of these titles at individual institutions, however, barely approaches half the consortial rate in some instances, and in most cases is far lower, even for the titles that have been available the longest. By contrast, rate of use of print books, at least at BGSU, remains very high, with titles acquired in 2008-2009 (the oldest examined) achieving a rate of use of 77 percent, and print titles with publication dates from 2007 to 2017 all seeing a higher rate of use at BGSU than ebooks at any institution examined. This research potentially has important implications for ebook purchasing models and print and electronic collection building both at individual academic libraries and in academic consortia.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Literature Review</head><p>In her 2018 article in Library Resources &amp; Technical Services, Karen Kohn expressed the desire that rate of use (counting titles used vs. not used) rather than amount of use would become standard for exploring questions of ebook use. <ref type="bibr" target="#b0">1</ref> Happily, quite a few studies have presented this metric, providing a range of options with which to compare the data in the current study. These articles examine use going back as far as 2001, though the majority cover use from only a 12-month period or less. The use rates presented across these studies vary widely but, taken as a whole, seem to show that individually selected titles (firm orders) and publisher packages not encumbered by digital rights management (DRM) software (which can present significant barriers to use) offer a more significant return on investment for purchasing libraries in terms of percent of titles used than aggregator collections.</p><p>Table <ref type="table" target="#tab_0">1</ref> summarizes the findings of 19 published studies that present rate of use for ebooks acquired in a variety of methods. In studies of titles acquired via demand-driven acquisition (DDA, in which large numbers of ebooks are made discoverable in a library's catalog but titles are not purchased until they receive a certain threshold of use), approval plans (in which titles that meet certain collection criteria are purchased automatically), and firm orders (in which titles are individually purchased), the majority show that fewer than 20 percent of available titles received use during the period of time examined. Publisher packages, on the other hand, mostly had use rates of between 20 and 50 percent in published studies. On the whole, aggregator packages appeared to get the lowest rate of use per available titles, with no published studies showing use rates of more than 19 percent.</p><p>A number of studies have compared use of print and electronic books. Littman and Connaway studied use of 7,880 titles in both formats at Duke University; in the 16 months between February 2001 and August 2002, 40 percent were used electronically while 36 percent were used in print. <ref type="bibr" target="#b35">36</ref> Christianson and Aucoin compared the use of 2,852 titles at Louisiana State University owned in both print and electronic format and found that 29 percent were used in print and 20 percent were used electronically in calendar year 2002. <ref type="bibr" target="#b36">37</ref> Kimball, Ives, and Jackson compared the use of 4,288 titles in the physical sciences and chemistry owned both in print and electronically at Texas A&amp;M and found that, in academic year 2006-2007, 24 percent of the titles were used electronically while 23 percent were used in print. <ref type="bibr" target="#b37">38</ref> Levine-Clark and Brown looked at the use of 3,896 books from Duke University Press between 2009 and 2012, about a third of which were available both in print and as ebooks. A total of 588 titles were used electronically (39% of titles available in that format) while 903 titles (or 54%) were used in print. <ref type="bibr" target="#b38">39</ref> Goodwin studied the use of 285 Duke University Press titles held in both formats at Coastal Carolina University and found that 73 percent were used electronically while only 29 percent were used in print in the 29 months between April 2011 and October 2013. <ref type="bibr" target="#b39">40</ref> Knowlton compared the rate of use of print and ebooks with publication dates between 1990 and 2014 at the University of Memphis during academic year 2013-2014 and found that the rate of use for the print titles was 16.1 percent, while that of the ebooks was 10.4 percent. <ref type="bibr" target="#b40">41</ref> This author compared the rate of use in 2013-2014 of nonreference print and electronic monographs acquired between 2008 and 2014 at BGSU and found that 27 percent of print books were used in contrast to only 12 percent of ebooks. <ref type="bibr" target="#b41">42</ref> It is important to note that it is difficult to compare amount of use for print and electronic collections; rate of use is a more valid measure. Titles should also have similar publication and/or acquisition dates for a comparison between print and electronic formats to be valid.</p><p>Several studies have examined the use of ebooks at the consortial level or acquired through a consortium at an individual institution. In 2001, Langston found that 94 percent of 1,522 ebooks available to all 23 California State University libraries received at least one use between May and December 2001. <ref type="bibr" target="#b42">43</ref> Woodward and Henderson wrote about a consortial ebook purchasing program at six UK libraries; 143 titles were purchased between December 2012 and September 2013 with a 98.6 percent use rate. <ref type="bibr" target="#b43">44</ref> In the PALCI consortium, 61.67 percent of 30,000 JSTOR titles in a consortiumwide DDA program live during spring 2015 were used. <ref type="bibr" target="#b44">45</ref> In addition to a small number of locally purchased ebooks, Lamothe looked at use of three consortium-purchased bundles between 2007 and 2012 at Laurentian University. <ref type="bibr" target="#b45">46</ref> There, 32 percent of 37,703 Springer titles in a consortium-purchased publisher package were used, 29 percent of a consortial bundle of 7,135 titles in NetLibrary and 6 percent of 7,800 titles in MyiLibrary. Slater examined use of 21,072 NetLibrary ebooks provided via consortium to users at Oakland University between 2005 and 2007. A total of 16 percent received use during that time (219 of the titles were also owned in print; 24 percent of those received use during the same period). <ref type="bibr" target="#b46">47</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Consortial Ebook Use at BGSU</head><p>The majority of BGSU's ebook collections are acquired consortially through OhioLINK, Ohio's statewide academic library consortium. BGSU is one of more than 90 member institutions in OhioLINK which serves more than half a million students statewide, plus thousands more faculty, staff, and researchers. OhioLINK has broad, long-standing ebook acquisition agreements for front-list titles with three major publishers (among other agreements): Springer, Oxford, and Wiley.</p><p>OhioLINK's agreement with Springer began in 2007. Initially, all books were accessible to OhioLINK users only through OhioLINK's own ebook platform, the OhioLINK Electronic Book Center (EBC), but access was also allowed at the SpringerLink site beginning in 2009.</p><p>OhioLINK began purchasing Oxford ebooks in a few subjects in July 2006. The agreement gradually included more and more content; by 2017, it encompassed nearly all ebooks released by Oxford. Beginning in 2016, titles from five University Press Scholarship Online (UPSO) publishers (vended and hosted by Oxford) were also added. Like Springer, Oxford titles were initially only available on the OhioLINK EBC, but content also became accessible through the Oxford Scholarship Online platform beginning in 2009. UPSO titles are only accessible on the Oxford platform.</p><p>OhioLINK's agreement with Wiley began in 2012 and has always included most Wiley ebook titles. Unlike the other two publishers, Wiley titles have only ever been accessible to OhioLINK users through the Wiley Books Online platform.</p><p>Title lists from OhioLINK and the publishers along with usage reports were used to determine the details of titles owned. As of May 2018, OhioLINK owned 12,915 ebooks from Oxford/University Press Scholarship Online, 7,755 ebooks from Wiley, and at least 78,828 from Springer (though the actual number of Springer titles owned by OhioLINK is probably somewhat higher). Though the usage reports obtained from these publishers include use of other titles, including locally purchased titles, open-access titles, and some older imprints, these were not included in the calculations of use rate for this study: for these three ebook publishers, this study focuses on the rate of use of only the titles in the consortial collections.</p><p>Because online publication date for these ebooks was not uniformly available, print publication date is used throughout this study as an indicator of how long a title has been available. OhioLINK's ebook purchase agreements are for front-list titles-the publishers' newest imprints-and almost all become available online, are cataloged by OhioLINK staff, and appear in OhioLINK catalogs and discovery layers during their imprint year or the year before. As illustrated by table <ref type="table" target="#tab_1">2</ref>, the vast majority of imprint dates for titles in these three packages fall within the dates of the packages' active agreements.</p><p>EBC usage statistics for both BGSU and OhioLINK as a whole dating back to 2007 were collected from the OhioLINK EBC usage statistics portal for Springer and Oxford. These data did not always contain enough information to match use to a specific title, or sometimes use matched to an obviously incorrect title (for example, one with a print publication date of many years after the date of use). When this happened, the data were removed from the analysis. Fully 953 out of 31,740 records representing 27,843 titles used on the OhioLINK EBC platform consortiumwide and 70 out of 6,440 records representing 5,988 titles used on the OhioLINK EBC platform at BGSU were removed for this reason. Titles from the usage reports were then matched by ISBN or title to publisher title lists to merge use data with robust bibliographic information.</p><p>COUNTER BR2 usage statistics reports for BGSU were downloaded from the publisher websites for all three publishers. COUNTER BR2 reports or consortium reports based on the COUNTER statistics for all of OhioLINK were provided by OhioLINK. There were some limitations to the reports available: COUNTER statistics have only been available for Springer since 2012 and Oxford since 2013, and OhioLINK was only able to supply reports dating back to 2013 for Springer and 2014 for Oxford. Therefore, there are gaps in the study where not all usage is reflected.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Analysis</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Use of Consortially Acquired Publisher Collections</head><p>Despite the missing data, use of all three of these publishers' ebook collections is nearly 100 percent consortiumwide (see table <ref type="table" target="#tab_2">3</ref>); 98 to 100 percent of Oxford ebooks owned by OhioLINK with a print publication date of 2007-2014 have been used at least once by an OhioLINK member institution since 2007. Likewise, Springer ebooks from these years have a 96 to 99 percent use rate consortiumwide, and 91 to 92 percent of Wiley ebooks with a print publication date of 2012-2014 have been used. Overall, Oxford ebooks with print publication dates between 2007 and 2017 have a use rate of 90 percent, Springer ebooks have a use rate of 89 percent, and Wiley ebooks (2012-2017) have a use rate of 86 percent consortiumwide. This is in line with previous studies, all of which reported very high percentages of titles used within consortia.</p><p>At BGSU, the use rate for all three publisher packages is much lower. The highest rate of use for Oxford ebooks is 48 percent for 2007 imprints. For Springer it is 38 percent (2008 imprints) and, for Wiley, 28 percent (2012 imprints).</p><p>These data raise three important questions: is BGSU's rate of use for these packages comparable to that of other ebook packages? Does BGSU use ebooks at a rate similar to that of other institutions? And how does BGSU's rate of use for ebooks compare to its rate of use for print books?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Use of Other Ebook Packages at BGSU</head><p>BGSU's use of around 28,600 ebooks outside these three publisher packages was also examined for this study. The majority of these are in two ProQuest aggregator collections the library has subscribed to since 2006. A smaller group of ProQuest titles was acquired by OhioLINK via a combination of DDA and direct purchasing in 2013-2014. The other titles examined are a group of Cambridge ebooks also purchased by OhioLINK in 2013-2014 and several hundred JSTOR titles BGSU purchased with a group of Ohio libraries (but not via OhioLINK) in 2015. <ref type="bibr" target="#b47">48</ref> As shown in the appendix (see table <ref type="table" target="#tab_8">9</ref>), BGSU's overall rate of use for these packages ranged from 24 to 58 percent. Therefore, BGSU's use of Oxford titles was comparable to its use of titles in other packages, while Springer and Wiley use was lower.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Use of OhioLINK Packages at Other Institutions</head><p>Using only the data available for all OhioLINK institutions, rate of use was calculated for ten individual Ohio institutions, including BGSU, for some Oxford and Springer ebooks. Usage between 2014 and 2017 for Oxford books with imprint years of 2014-2017 and usage between  2015 and 2017 for Springer books with imprint years of 2015-2017 were chosen because these were the only years for which complete OhioLINK use data by institution was available. These data, combined with EBC usage data, could give a complete picture of use for these titles without any gaps.</p><p>A condition for access to the consortial use data was agreement to keep the identities of individual institutions other than BGSU anonymous. Table <ref type="table" target="#tab_4">5</ref> includes some nonidentifying characteristics of the institutions chosen to aid comparison.</p><p>Figures <ref type="figure" target="#fig_0">1</ref> and <ref type="figure" target="#fig_1">2</ref> and table <ref type="table" target="#tab_5">6</ref> share the results of this analysis. While 74 percent of Oxford titles with a print publication date of 2014 were used by at least one of these ten institutions, rate of use for 2014 Oxford titles at each institution individually were almost uniformly low, with the highest percent use at an individual institution reaching only 27 percent.</p><p>During the entire four-year period, individual institutions used    between 1 and 15 percent of the 5,249 Oxford ebooks included, while collectively the 10 institutions used 45 percent. BGSU's overall rate of use of these titles was 12 percent.</p><p>With one anomaly, use of Springer imprints by these 10 institutions followed the same pattern. Collectively, 80 percent of 2015 imprints received use from the 10 institutions, while use at individual institutions ranged from 3 to 45 percent, falling between 1 and 18 percent for 2017 imprints (excluding OH7). <ref type="bibr" target="#b48">49</ref> Over the three years in question, these 10 institutions collectively used 66 percent of the 25,835 Springer titles with print publication dates from 2015 to 2017, while individual institutions' rates of use ranged from 1 to 29 percent. BGSU used only 6 percent of the titles, while all but one other institution used at least 10 percent, and three (including OH7) used more than 20 percent.</p><p>It appears that BGSU's rate of use is comparable to that of other Ohio institutions for Oxford ebooks but lower than that of other institutions for Springer ebooks, while these individual Ohio institutions' use of these collections overall is low. The published studies in table <ref type="table" target="#tab_0">1</ref> show front-list Springer or Oxford ebooks receiving rates of use of between 15 and 50 percent at five different institutions during periods of time ranging from 12 to 56 months, though the number of titles included in these studies is each much smaller than the number available to OhioLINK libraries. However, it is difficult to draw many conclusions without weighing additional factors, such as the size, currency, and subject distribution of the institution's print and electronic monograph collection (more choice may cause fewer titles in one particular collection to receive use), the size of the user base and the distribution of areas of study compared to the subject distribution of the ebook collection, and how the institution creates access to its collection (cataloging standards and the functionality of its discovery system).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Use of Print Books at BGSU</head><p>The rate of use of print books at BGSU is much higher than its rate of use for any ebook collection, both overall and by imprint year.</p><p>In 2014, the author collected data that showed that BGSU's recently acquired, nonreference print monographs, beginning with those acquired in 2008-2009, were used at a much higher rate than is commonly expected in academic libraries. <ref type="bibr" target="#b49">50</ref> As table <ref type="table" target="#tab_7">8</ref> shows, the rate of use of these titles has continued to grow. These data support the fact that the longer a group of titles is available, the more will be used, an idea that was first noted for print books by Burrell in his seminal 1985 paper, which established what is known as the "80/20 rule." "When we observe a fixed collection over an increasing length of time we find that gradually more and more of the items are circulated for the first time so that gradually the size of the circulating collection increases," he wrote. <ref type="bibr" target="#b50">51</ref> Therefore, the print titles with the highest rate of use are usually the oldest titles in a sample, and it takes some time for them to attain maximum use, though the rate at which more titles are used for the first time slows down markedly as the collection ages.</p><p>The same is also true for ebooks: use accumulates over time, so the titles that have been available the longest show the highest rate of use, and groups of titles usually see their biggest gains in use in their first few years of availability. In OhioLINK, 60 percent or more of the titles in the three publisher collections examined in this study were used for the first time within one year of their print publication date. Since 2012, 10 percent or fewer new titles were used for the first time beginning with the third year after their publication date, and this number has only shrunk as titles have aged. At BGSU, use of older ebooks grew more slowly, but the pattern since 2012 has been similar. Therefore, while it is unlikely that print titles acquired at BGSU in 2008-2009 will gain more than a few more percentage points above their cumulative rate of use in 2017 (77%), it is also unlikely that many more than the 36 percent of the 2007 ebooks that have been used by the BGSU community will ever be.</p><p>Rate of use of any individual institution's collection is dependent on a wide variety of factors, including collection size, the size of the user population, and the institution's curricular foci. Several environmental factors may contribute to BGSU's high rate of use for its recently acquired print monographs. First, the OhioLINK consortium provides a vast user base for BGSU's print collection, and, with many OhioLINK libraries shifting purchasing to local ebooks, which cannot be shared consortiumwide, it is possible that BGSU's print titles are more in demand now than ever before. Second, though BGSU offers many online courses and programs, it is still a largely residential campus, so most local users do not experience significant barriers to accessing its print collection. Finally, steady increases to costs of electronic subscriptions combined with a flat collections budget have caused recent print purchases to fall sharply, again creating more demand for the few current print titles still being added.</p><p>Even so, many print use studies have revealed rates of use much higher than the commonly accepted figure of 60 percent, which this author's research suggests is held more on the basis of repetition than reality. <ref type="bibr" target="#b51">52</ref> It will be important to continue to monitor rates of use over time to see if local use bias toward print will shift in the future. Until it does, print books remain an excellent way for BGSU to spend its collection dollars.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions and Discussion</head><p>This study shows that, while rate of use of ebook collections (especially large publisher packages) can be disappointingly low at individual institutions, in the OhioLINK consortium almost 100 percent of titles are used by the time they have been available for only a few years, suggesting that consortial ebook agreements can provide the best return on investment in terms of use. <ref type="bibr" target="#b52">53</ref> It is important to note that, just because individual institutions may only ever use a small percentage of a consortial ebook collection, this does not mean consortial deals are not still an excellent value for individual institutions. Carrico et al. succinctly described the efficiencies of buying titles in large publisher packages, which can outweigh the costs of unused titles. <ref type="bibr" target="#b53">54</ref> Furthermore, consortial agreements for ebooks provide the additional benefit of centrally managed ordering, payment, and (to some extent) cataloging, as Garskof et al. point out. Such services may be hard for individual institutions to measure in dollars but definitely ease the staff burden of managing ebook agreements and can prevent mistakes that could negatively impact use locally. <ref type="bibr" target="#b54">55</ref> While it is important for a consortial group to weigh individual institutional costs against likely rate of use when creating purchase agreements, consortial purchasing of ebooks could slow the shift that has taken place in OhioLINK to locally owned ebooks, which cannot be shared across institutions and which potentially undermine the collective collection's ability to serve students and researchers around the state.</p><p>This study also illustrates how quickly users gobble up front-list ebook titles at the consortial level. With more publishers offering online book archives, libraries should keep in mind that these may not provide as great a return on investment as front-list titles. Kent makes this point in his article about the University of Melbourne's experience purchasing the Springer Book Archive, use of which "declined markedly" after just a few years of ownership. <ref type="bibr" target="#b55">56</ref> The value of print books, at least at BGSU, is still obvious. While many individual Ohio institutions achieved higher rates of use than BGSU for Springer or Oxford ebooks, none exceeded the rate of use of BGSU's print titles for an individual imprint year, and these print titles received, overall, a much higher rate of use than BGSU's ebook collections. As ebook collections continue to grow at BGSU, however, especially with high-quality, DRM-free titles such as are available in our Springer, Wiley, Oxford/UPSO, JSTOR, and other collections, it is highly possible that BGSU's rate of use of ebooks will grow as well. The literature has clearly established that users prefer print monographs to electronic monographs, especially for certain kinds of uses, but recent surveys show that a growing minority of users have no preference for one format over the other for some uses and most are amenable to using electronic books when print is unavailable. <ref type="bibr" target="#b56">57</ref> Other studies have shown that books used in print are also likely to be used electronically, indicating that content is more important than format for academic library users. <ref type="bibr" target="#b57">58</ref> These changes do not indicate an enthusiastic adoption of ebooks by any means, but continuing to track user preferences and behavior will allow libraries to manage collection budgets in ways that maximize content provision while meeting user needs and preferences with minimal friction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Areas for Further Research</head><p>While this study focused exclusively on rate of use by imprint year, a necessary next step will be incorporating publisher and subject information with use. This will help BGSU continue to make good decisions about where to spend its limited print and ebook collection dollars and may explain some of the differences in use rate evident between institutions for different ebook collections. Kent found that greatest use of the Springer Book Archive occurred in subjects that aligned closely with the University of Melbourne's research strengths. <ref type="bibr" target="#b58">59</ref> BGSU's research strengths are largely reflected in its humanities and social sciences doctoral programs, and the university does not have a law school, an engineering program, or any medical degrees outside of a nursing program run in partnership with another nearby university. This may explain BGSU's stronger use of Oxford ebooks (which include more humanities and social sciences titles) and lower rate of use for Springer and Wiley ebooks. By contrast, many of the other nine institutions in Ohio whose use was examined individually do have law and medical schools as well as engineering programs, providing a larger user base for the STEM titles that make up the bulk of those publishers' ebook collections.</p><p>Another clear path for future research is related to ebook costs. Carrico found that, despite the fact that large numbers of STEM titles were not used, the purchasing models (which included a large publisher package) led to low overall cost per use for those titles. <ref type="bibr" target="#b59">60</ref> However, several researchers have pointed out that ebooks generally cost far more than print, and (in one study at Auburn) Bailey, Scott, and Best determined that ebooks cost an average of 35 percent more than their print equivalents. <ref type="bibr" target="#b60">61</ref> Obviously libraries do not want to spend money on content that is not going to receive use, whether it's print or electronic, but discounts via bundles or consortia (or both) could still mean that libraries pay less even for packages with low rates of use than they would if they individually purchased only the titles that were used. DDA, of course, remains a popular method of purchase because it makes large numbers of titles available while minimizing purchasing costs. Garskof et al. found that, for PALCI libraries, return on investment (ROI) was 3-6 times the individual library contribution for their DDAs. <ref type="bibr" target="#b61">62</ref> Further investigation of ROI for consortium-acquired ebooks based on use could inform creative solutions for cost-sharing and the development of shared packages, maximizing benefits for both libraries and publishers.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1</head><label>1</label><figDesc>FIGURE 1 Rate of Use of 2014-2017 Oxford Imprints at 10 Ohio Institutions</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 2</head><label>2</label><figDesc>FIGURE 2 Rate of Use of 2015-2017 Springer Imprints at 10 Ohio Institutions</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1</head><label>1</label><figDesc>Rate of Use for Ebooks in Published Studies by Length of Study and Acquisition Type</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2</head><label>2</label><figDesc>Number of Titles in OhioLINK Publisher Packages, by Imprint Year</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 3</head><label>3</label><figDesc>Percent Ebook Titles Used in OhioLINK by Publisher and Imprint Year</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>TABLE 4</head><label>4</label><figDesc>Percent Ebook Titles Used at BGSU by Publisher and Imprint Year</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE 5</head><label>5</label><figDesc>OhioLINK Institutions Used in Comparison</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>TABLE 6</head><label>6</label><figDesc>Use Rate for Oxford and Springer for 10 Ohio Institutions, 2014–2017 and 2015–2017</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>TABLE 7</head><label>7</label><figDesc>Rate of Use for Print and Electronic Books at BGSU, by Imprint Year</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>TABLE 8</head><label>8</label><figDesc>Print Use at BGSU for Titles Acquired 2008–2017</figDesc></figure>
+
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"/>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>Karen</forename><surname>Kohn</surname></persName>
+					</author>
+					<title level="a">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Resources &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page">63</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>Lynn</forename><surname>Wiley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Elizabeth</forename><surname>Clarage</surname></persName>
+					</author>
+					<title level="a">Building on success: evolving local and consortium purchase-on-demand programs</title>
+				</analytic>
+				<monogr>
+					<title level="j">Interlending &amp; Document Supply</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="105" to="110"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Tina</forename><forename type="middle">E</forename><surname>Chrzastowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Lynn</forename><forename type="middle">N</forename><surname>Wiley</surname></persName>
+					</author>
+					<title level="a">E-Book Use and Value in the Humanities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Resources &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">59</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="172" to="186"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Steven</forename><forename type="middle">B</forename><surname>Carrico</surname></persName>
+					</author>
+					<title level="a">What Cost and Usage Data Reveals about E-Book Acquisitions: Ramifications for Collection Development</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Resources &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">59</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="102" to="111"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>Merinda</forename><surname>Mclure</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Amy</forename><surname>Hoseth</surname></persName>
+					</author>
+					<title level="a">Patron-driven e-book use and users' e-book perceptions: a snapshot</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collection Building</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="136" to="147"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>Kay</forename><surname>Downey</surname></persName>
+					</author>
+					<title level="a">A Comparative Study of Print Book and DDA Ebook Acquisition and Use</title>
+				</analytic>
+				<monogr>
+					<title level="j">Technical Services Quarterly</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="139" to="160"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b6">
+				<monogr>
+					
+					<author>
+						Kohn
+					</author>
+					<title level="m">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>Amber</forename><surname>Lannon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Dawn</forename><surname>McKinnon</surname></persName>
+					</author>
+					<title level="a">Business E-books: What Can Be Learned From Vendor Supplied Statistics?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Business &amp; Finance Librarianship</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="89" to="99"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>Lisa</forename><surname>Rose-Wiles</surname></persName>
+					</author>
+					<title level="a">Are Print Books Dead? An Investigation of Book Circulation at a Mid-Sized Academic Library</title>
+				</analytic>
+				<monogr>
+					<title level="j">Technical Services Quarterly</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="129" to="152"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Mary</forename><surname>Gilbertson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Elizabeth</forename><forename type="middle">Chadbourn</forename><surname>McKee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Lutishoor</forename><surname>Salisbury</surname></persName>
+					</author>
+					<title level="a">Just in Case or Just in Time? Outcomes of a 15-Month Patron-Driven Acquisition of E-Books at the University of Arkansas Libraries</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Collections, Acquisitions, &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="10" to="20"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Catherine</forename><forename type="middle">S Y</forename><forename type="last">Y</forename><surname>Kwok</surname></persName>
+					</author>
+					<title level="a">Demand-Driven Acquisition at HKUST Library: The New Normal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Interlending and Document Supply</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="153" to="158"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b11">
+				<monogr>
+					<author>
+						Carrico
+					</author>
+					<title level="m">What Cost and Usage Data Reveals About E-Book Acquisitions: Ramifications for Collection Development</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jan</forename><surname>Horner</surname></persName>
+					</author>
+					<title level="a">E-Preferred Approval Books at the University of Manitoba: A Comparison of Print and Ebook Usage</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evidence Based Library and Information Practice</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="90" to="105"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>Antje</forename><surname>Mays</surname></persName>
+					</author>
+					<title level="a">Toward Data-Informed Collection Decisions: 4+ Years of PDA Insights at Winthrop</title>
+				</analytic>
+				<monogr>
+					<title level="m">Against the Grain</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="page" from="98" to="101"/>
+					</imprint>
+				</monogr>
+				
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b14">
+				<monogr>
+					<author>
+						Mays
+					</author>
+					<title level="m">Toward Data-Informed Collection Decisions</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Philip</forename><forename type="middle">Gregory</forename><surname>Kent</surname></persName>
+					</author>
+					<title level="a">Measuring the Impact: Springer Book Archives at Melbourne</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collection Building</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="137" to="142"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b16">
+				<monogr>
+					
+					<author>
+						Lannon
+					</author>
+					<author>
+						McKinnon
+					</author>
+					<title level="m">Business E-books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>Terry</forename><surname>Bucknell</surname></persName>
+					</author>
+					<title level="a">The 'Big Deal' Approach to Acquiring E-Books: A Usage-Based Studyy</title>
+				</analytic>
+				<monogr>
+					<title level="j">Serials: The Journal for the Serials Community</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="126" to="134"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b18">
+				<monogr>
+					
+					<author>
+						Kohn
+					</author>
+					<title level="m">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b19">
+				<monogr>
+					
+					<author>
+						Kohn
+					</author>
+					<title level="m">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b20">
+				<monogr>
+					
+					<author>
+						Lannon
+					</author>
+					<author>
+						McKinnon
+					</author>
+					<title level="m">Business E-books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>Weijing</forename><surname>Yuan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Marlene</forename><surname>Van Ballegooie</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Jennifer</forename><forename type="middle">L</forename><surname>Robertson</surname></persName>
+					</author>
+					<title level="a">Ebooks Versus Print Books: Format Preferences in an Academic Library</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collection Management</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="28" to="48"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b22">
+				<monogr>
+					
+					<author>
+						Horner
+					</author>
+					<title level="m">E-Preferred Approval Books at the University of Manitoba</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b23">
+				<monogr>
+					
+					<author>
+						Yuan
+					</author>
+					<author>
+						Van Ballegooie
+					</author>
+					<author>
+						Robertson
+					</author>
+					<title level="m">Ebooks Versus Print Books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b24">
+				<monogr>
+					
+					<author>
+						Carrico
+					</author>
+					
+					<title level="m">What Cost and Usage Data Reveals about E-Book Acquisitions</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b25">
+				<monogr>
+					
+					<author>
+						Lannon
+					</author>
+					<author>
+						McKinnon
+					</author>
+					<title level="m">Business E-books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b26">
+				<monogr>
+					
+					<author>
+						Yuan
+					</author>
+					<author>
+						Van Ballegooie
+					</author>
+					<author>
+						Robertson
+					</author>
+					<title level="m">Ebooks Versus Print Books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b27">
+				<monogr>
+					
+					<author>
+						Rose-Wiles
+					</author>
+					<title level="m">Are Print Books Dead?</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Steven</forename><forename type="middle">A</forename><surname>Knowlton</surname></persName>
+					</author>
+					<title level="a">A Two-Step Model for Assessing Relative Interest in E-books Compared to Print</title>
+				</analytic>
+				<monogr>
+					<title level="j">College &amp; Research Libraries</title>
+					<imprint>
+						<biblScope unit="volume">77</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="20" to="33"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b29">
+				<monogr>
+					
+					<author>
+						Kohn
+					</author>
+					<title level="m">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b30">
+				<monogr>
+					
+					<author>
+						Kohn
+					</author>
+					<title level="m">Using Logistic Regression to Examine Multiple Factors Related to E-book Use</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b31">
+				<monogr>
+					
+					<author>
+						Lannon
+					</author>
+					<author>
+						McKinnon
+					</author>
+					<title level="m">Business E-books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b32">
+				<monogr>
+					
+					<author>
+						Mays
+					</author>
+					<title level="m">Toward Data-Informed Collection Decisions</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b33">
+				<monogr>
+					
+					<author>
+						Lannon
+					</author>
+					<author>
+						McKinnon
+					</author>
+					<title level="m">Business E-books</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>Nancy</forename><surname>Sprague</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ben</forename><surname>Hunter</surname></persName>
+					</author>
+					<title level="a">Assessing e-books: Taking a closer look at e-book statistics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Collections, Acquisitions, and Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="150" to="157"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>Justin</forename><surname>Littman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Lynn</forename><forename type="middle">Silipigni</forename><surname>Connaway</surname></persName>
+					</author>
+					<title level="a">A Circulation Analysis of Print Books and e-Books in an Academic Research Library</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Resources &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="256" to="262"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>Marilyn</forename><surname>Christianson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Marsha</forename><surname>Aucoin</surname></persName>
+					</author>
+					<title level="a">Electronic or Print Books: Which Are Used?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Collections, Acquisitions, &amp; Technical Services</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="71" to="81"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>Rusty</forename><surname>Kimball</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Gary</forename><surname>Ives</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kathy</forename><surname>Jackson</surname></persName>
+					</author>
+					<title level="a">Comparative Usage of Science E-Book and Print Collections at Texas A&amp;M University Libraries</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collection Management</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="15" to="28"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b38">
+				<monogr>
+					<author>
+						<persName><forename>Michael</forename><surname>Levine-Clark</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Christopher</forename><forename type="middle">C</forename><surname>Brown</surname></persName>
+					</author>
+					<title level="m">E or P? A Comparative Analysis of Electronic and Print Book Usage</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<pubPlace>Austin, TX</pubPlace>
+					</imprint>
+				</monogr>
+				<note>Electronic Resources &amp; Libraries Conference</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					<author>
+						<persName><forename>Cathy</forename><surname>Goodwin</surname></persName>
+					</author>
+					<title level="a">The e-Duke Scholarly Collection: E-Book v. Print Use</title>
+				</analytic>
+				<monogr>
+					<title level="m">Collection Building</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="101" to="105"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b40">
+				<monogr>
+					
+					<author>
+						Knowlton
+					</author>
+					<title level="m">A Two-Step Model for Assessing Relative Interest in E-Books Compared to Print</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>Amy</forename><surname>Fry</surname></persName>
+					</author>
+					<title level="a">Factors Affecting the Use of Print and Electronic Books: A Use Study and Discussion</title>
+				</analytic>
+				<monogr>
+					<title level="j">College &amp; Research Libraries</title>
+					<imprint>
+						<biblScope unit="volume">79</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="68" to="85"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>Marc</forename><surname>Langston</surname></persName>
+					</author>
+					<title level="a">The California State University E-book Pilot Project: implications for cooperative collection development</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Collections, Acquisitions, and Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="19" to="32"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>Hazel</forename><surname>Woodward</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Helen</forename><surname>Henderson</surname></persName>
+					</author>
+					<title level="a">Who are the winners? E-book consortial purchasing</title>
+				</analytic>
+				<monogr>
+					<title level="j">Insights</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="82" to="86"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jeremy</forename><surname>Garskof</surname></persName>
+					</author>
+					<title level="a">Towards the Collective Collection: Lessons Learned from PALCI's DDA Pilot Projects and Next Steps</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collaborative Librarianship</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="84" to="98"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Alain</forename><forename type="middle">R</forename><surname>Lamothe</surname></persName>
+					</author>
+					<title level="a">Comparing usage between selective and bundled e-monograph purchases</title>
+				</analytic>
+				<monogr>
+					<title level="j">Collection Building</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="116" to="121"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>Robert</forename><surname>Slater</surname></persName>
+					</author>
+					<title level="a">E-books or print books, “big deals” or local selections—What gets more use?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Collections, Acquisitions, &amp; Technical Services</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="31" to="41"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b47">
+				<monogr>
+					<title level="m">Collections of ebooks available to BGSU but not examined for this study include titles purchased locally via DDA and EBA (evidence-based acquisition) programs that did not begin until summer 2016 and the Safari Books Online package, which does not provide title-level usage statistics</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b48">
+				<monogr>
+					<title level="m">OH7's 47 percent rate of use for 2017 titles seems to reflect, in the context of the data overall, abnormal use and not indicative of trends, though this chart does accurately reflect the usage statistics received for that institution</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>Amy</forename><surname>Fry</surname></persName>
+					</author>
+					<title level="a">Factors Affecting the Use of Print and Electronic Books: A Use Study and Discussion</title>
+				</analytic>
+				<monogr>
+					<title level="j">College &amp; Research Libraries</title>
+					<imprint>
+						<biblScope unit="volume">79</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="68" to="85"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Quentin</forename><forename type="middle">L</forename><surname>Burrell</surname></persName>
+					</author>
+					<title level="a">The 80/20 Rule: Library Lore or Statistical Law?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Documentation</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">35</biblScope>
+						<date when="1985">1985</date>
+						<publisher>Emerald</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					<author>
+						<persName><forename>Amy</forename><surname>Fry</surname></persName>
+					</author>
+					<title level="a">Conventional Wisdom or Faulty Logic? The Recent Literature on Monograph Use and E-book Acquisition</title>
+				</analytic>
+				<monogr>
+					<title level="j">Library Philosophy &amp; Practice</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<biblScope unit="volume">1307</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b52">
+				<monogr>
+					<title level="j">Lamothe also drew this conclusion for Laurentian University: “Very large packages that are purchased from [a] publisher that has removed as many access restrictions as possible seem to exhibit a high level of us- age.” See Lamothe, “Comparing Usage between Selective and Bundled E-Monograph Purchases,” 120.</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b53">
+				<monogr>
+					
+					<author>
+						Carrico
+					</author>
+					<title level="m">What Cost and Usage Data Reveals about E-Book Acquisitions</title>
+					<imprint>
+						<biblScope unit="page">104</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b54">
+				<monogr>
+					
+					<author>
+						Garskof
+					</author>
+					<title level="m">Towards the Collective Collection</title>
+					<imprint>
+						<biblScope unit="page">89</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b55">
+				<monogr>
+					
+					<author>
+						Kent
+					</author>
+					<title level="m">Measuring the Impact</title>
+					<imprint>
+						<biblScope unit="page">139</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename>Sandra</forename><surname>Bozarth</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Ying</forename><surname>Zhong</surname></persName>
+					</author>
+					<title level="m">E-books: Are We on the Same Page</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Electronic Resources Librarianship</title>
+					<imprint>
+						<biblScope unit="page">241</biblScope>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b57">
+				<monogr>
+					
+					<author>
+						Yuan
+					</author>
+					<author>
+						Ballegooie
+					</author>
+					<author>
+						Robertson
+					</author>
+					<title level="m">Ebooks Versus Print Books</title>
+					<imprint>
+						<biblScope unit="page" from="37" to="42"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b58">
+				<monogr>
+					
+					<author>
+						Kent
+					</author>
+					<title level="m">Measuring the Impact</title>
+					<imprint>
+						<biblScope unit="page">137</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b59">
+				<monogr>
+					
+					<author>
+						Carrico
+					</author>
+					<title level="m">What Cost and Usage Data Reveals about E-Book Acquisitions</title>
+					<imprint>
+						<biblScope unit="page">109</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+
+			<biblStruct type="grey-literature" xml:id="b60">
+				<monogr>
+					<title level="m">This is mentioned in Horner, “E-Preferred Approval Books at the University of Manitoba,” 100 and Karen S. Fischer et al., “Give 'Em what they Want: A One-Year Study of Unmediated Patron-Driven Acquisition of e- Books,” College &amp; Research Libraries 73, no. 5 (2012): 476. See also Timothy P. Bailey, Amanda L. Scott, and Rickey D. Best, “Cost Differentials between E-Books and Print in Academic Libraries,” College &amp; Research Libraries 76, no. 1 (2015): 13.</title>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b61">
+				<monogr>
+					
+					<author>
+						Garskof
+					</author>
+					<title level="m">Towards the Collective Collection,</title>
+					<imprint>
+						<biblScope unit="page">90</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

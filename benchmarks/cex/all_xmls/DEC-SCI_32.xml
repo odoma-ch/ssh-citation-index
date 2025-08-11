@@ -1,0 +1,1185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Prepositioning inventory for disasters: a robust and equitable model</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-04-27">27 April 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">German</forename><forename type="middle">A</forename><surname>Velasquez</surname></persName>
+							<idno type="ORCID">0000-0002-9204-729X</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Edward P. Fitts Department of Industrial and Systems Engineering</orgName>
+								<orgName type="institution">NC State University</orgName>
+								<address>
+									<postCode>27695</postCode>
+									<settlement>Raleigh</settlement>
+									<region>NC</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Maria</forename><forename type="middle">E</forename><surname>Mayorga</surname></persName>
+							<email>memayorg@ncsu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Edward P. Fitts Department of Industrial and Systems Engineering</orgName>
+								<orgName type="institution">NC State University</orgName>
+								<address>
+									<postCode>27695</postCode>
+									<settlement>Raleigh</settlement>
+									<region>NC</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Eduardo</forename><forename type="middle">A R</forename><surname>Cruz</surname></persName>
+							<email>eduardoayrescruz@ufpr.br</email>
+							<affiliation key="aff1">
+								<orgName type="institution">Universidade Federal do Parana</orgName>
+								<address>
+									<settlement>Curitiba</settlement>
+									<region>PR</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Prepositioning inventory for disasters: a robust and equitable model</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">OR Spectrum</title>
+						<idno type="ISSN">0171-6468</idno>
+						<idno type="eISSN">1436-6304</idno>
+						<imprint>
+							<publisher>Springer</publisher>
+							<biblScope unit="volume">41</biblScope>
+							<biblScope unit="page" from="757" to="785"/>
+							<date type="published" when="2019-04-27">27 April 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">DD06BE930A48B155E96ACA739C4B61B1</idno>
+					<idno type="DOI">10.1007/s00291-019-00554-z</idno>
+					<note type="submission">Received: 21 August 2017 / Accepted: 15 April 2019 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Humanitarian logistics</term>
+					<term>Heuristics</term>
+					<term>Robust optimization</term>
+					<term>Facility location</term>
+					<term>Inventory prepositioning</term>
+					<term>Equity</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Disaster responses are usually joint efforts between agencies of different sizes and specialties. Improving disaster response can be achieved by prepositioning relief items in the appropriate amount and at the appropriate locations. In this paper, we develop a multi-agency prepositioning model under uncertainty. In particular, we develop a model in which the prepositioning strategy developed by a major aid agency or a local government considers sharing resources with other aid agencies. The proposed model considers multiple relief item types, storage capacity, budgetary and equity constraints while integrating supplier selection, inventory and facility location decisions. Uncertainty is modeled using robust optimization. We provide a deterministic model as well as its robust counterpart where demand and link disruptions are considered uncertain. In addition, a heuristic approach for solving the uncapacitated deterministic version of the proposed model is provided. In order to evaluate the proposed model and heuristic, two computational experiments are presented. In the first experiment, we assess the quality of the robust solutions by simulating a number of realizations. In the second experiment, we test the performance of the heuristic compared to the optimal policy.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Major natural disaster events, such as the Great East Japan Earthquake in 2011, hurricane Sandy in 2012, the Nepal earthquake in 2015 and Louisiana severe storms and flooding in 2016, certainly captured the media's attention. However, there are many more disasters that occur and are not publicized; an average of 375 natural disasters were reported each year between 2008 and 2017 <ref type="bibr" target="#b26">(International Federation of Red Cross and Red Crescent Societies (IFRC) 2018)</ref>. According to the Center for Research on the Epidemiology of Disasters (CRED), in 2017 more than 9500 people were killed and 96 million were reported affected by natural disasters. In the same year, natural disasters cost $334 billion <ref type="bibr" target="#b13">(Center for Research on the Epidemiology of Disasters (CRED) 2018)</ref>. Some types of natural disasters, such as floods and hurricanes, are recurring and can be predicted within a reasonable time frame prior to their onset <ref type="bibr" target="#b25">(International Federation of Red Cross and Red Crescent Societies (IFRC) 2015)</ref>. This time window can be used for preparedness activities in order to mitigate the impact of the disaster. As noted by <ref type="bibr" target="#b21">Galindo and Batta (2013a)</ref>, a key part of the preparedness activities relates to the prepositioning of emergency supplies. Prepositioning strategies can improve response time in a post-disaster situation, which can save lives and reduce economic loss. Our research is focused on the prepositioning of supplies as a preparation strategy for such natural disasters.</p><p>In our model, demand for relief items at dispensing locations must be served; some of this demand is served by prepositioned supplies so that it is immediately available, while any remaining demand is served with supplies acquired post-disaster. Considering that our model determines the location, amount and distribution of relief items, it is important to incorporate equity into the decision process. An equitable solution will distribute prepositioned relief items proportionately to the demand in all dispensing locations. This means that in a perfectly equitable solution, the same fraction of demand is served at all dispensing locations using prepositioned relief items (versus supplies acquired post-disaster). Based on this definition of equity, we also define a level of tolerable inequity as the range between the maximum and the minimum fraction of prepositioned demand among all dispensing locations. By controlling the level of tolerable inequity, the modeler will be able to analyze the trade-offs between effectiveness and equity.</p><p>Inventory prepositioning models are difficult for humanitarian organizations to implement. First, inventory prepositioning models are becoming increasingly more sophisticated requiring high levels of expertise in order to be used in a real-world setting. Second, personnel in charge of humanitarian logistics activities usually lack formal education in humanitarian logistics <ref type="bibr">(Crum et al. 2011)</ref>. Third, humanitarian organizations lack adequate investment in technology including the use of methods such as mathematical modeling <ref type="bibr" target="#b7">(Beamon and Kotleba 2006;</ref><ref type="bibr" target="#b24">Gustavsson 2003)</ref>. Our approach aims to define a series of policies and condense them into a practical implementable heuristic. With this approach, we exploit the benefits of applying operations research methods such as mixed integer linear programming and robust optimization while making them accessible and implementable to people outside an academic environment. The fundamental idea is that the resulting policies of this work can be implemented by humanitarian organizations using their own personnel with no additional investment in external consulting or optimization software.</p><p>The proposed model considers a scenario in which a major aid agency or local government, acting as coordinator of a disaster response, must plan a prepositioning strategy considering a multi-agency effort. The major aid agency is considered to have a limited budget to allocate among inventory, warehousing and distribution. Affiliates collaborate by providing relief items and are allowed to use the facilities opened by the major aid agency. Affiliates' supply distribution capabilities, or responsiveness, are captured by a parameter called "inefficiency", which is used as a factor in the objective function. Our work shows that such supply distribution capabilities of the affiliates affect the coordinator's budget allocation and, thus, must be taken into consideration. Henceforth, we refer to the decision maker (e.g., local government) as the coordinator and the affiliates (e.g., FEMA, NGOs) as outside sources.</p><p>In this paper, we propose deterministic and robust formulations with an accompanying heuristic approach in order to select suppliers, locate distribution centers and determine the amount of relief items to be stored in the selected distribution centers. The objective of our model is to minimize the total demand-weighted distance between distribution centers and dispensing locations. A limited budget used for opening distribution centers and procuring relief items is considered. Moreover, the solution must meet a predefined level of tolerable inequity. Agencies participating in the disaster response effort (i.e., affiliates) are incorporated into the model as outside sources. In a real setting, relief items that might come from an outside source can be a result of agreements within humanitarian organizations, inter-state agreements or federal aid.</p><p>The remainder of the paper is organized as follows: Section 2 provides a review of the literature which relates most closely to our problem. Section 3 presents a description of the problem we intend to solve and our assumptions, while Sect. 4 contains the model notation and mathematical formulations. Section 5 introduces the proposed heuristic. Section 6 is organized as follows: First, we describe the methodology to randomly generate the instances of the problem that were used in the computational experiments. Second, we present the computational experiments under nominal data and assess the robustness of the solutions under realizations. Third, we perform a sensitivity analysis on several parameters. Section 7 presents our conclusions and future research objectives.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Previous related work</head><p>According to <ref type="bibr" target="#b5">Apte (2010)</ref>, humanitarian logistics involves planning, implementation and decisions related to the flow and storage of goods and information in a humanitarian context. <ref type="bibr" target="#b45">Van Wassenhove (2006)</ref> identifies four phases in a disaster cycle: mitigation, preparedness, response and rehabilitation. Inventory prepositioning, which takes place in the preparedness phase, is identified as consisting of facility location, inventory management and transportation decisions <ref type="bibr">(Duran et al. 2011)</ref>. In this section, we review the literature on inventory prepositioning. For comprehensive literature reviews on humanitarian logistics, see <ref type="bibr" >Altay and Green (2006)</ref>; <ref type="bibr" target="#b22">Galindo and Batta (2013b)</ref> and <ref type="bibr" target="#b12">Caunhye et al. (2012)</ref>.</p><p>We divide our review into optimization and heuristic approaches. The optimization approaches considered in this review fall into the following categories: deterministic, stochastic and robust models. Early models in invenFtory prepositioning were deterministic and based on well-known facility location problems such as set covering <ref type="bibr">(Hale and Moberg 2005)</ref> and p-median <ref type="bibr" target="#b2">(Akkihal 2006)</ref>. <ref type="bibr">Hale and Moberg (2005)</ref> determine the location of storage areas for critical emergency resources to efficiently serve multiple supply chain facilities. <ref type="bibr" target="#b2">Akkihal (2006)</ref> identifies optimal locations for prepositioning non-consumable inventories by minimizing the average global distance from the nearest warehouse to a beneficiary.</p><p>Due to the complexity of humanitarian environments, uncertainty is usually considered in inventory prepositioning models. Stochastic programming is by far the most commonly used approach in inventory prepositioning. For a review of twostage stochastic programming in disaster management, see <ref type="bibr" target="#b23">Grass and Fischer (2016)</ref>. In general, two-stage stochastic inventory prepositioning models consider location and amount prepositioned as first-stage decisions while transportation decisions are considered in the second-stage. Objective functions used in these studies include minimizing expected total cost <ref type="bibr" target="#b14">(Chang et al. 2007;</ref><ref type="bibr" target="#b36">Rawls and Turnquist 2010;</ref><ref type="bibr">Mete and Zabinsky 2010;</ref><ref type="bibr" target="#b16">Döyen et al. 2012)</ref>, maximizing satisfied demand <ref type="bibr" target="#b6">(Balcik and Beamon 2008)</ref>, minimizing average response time <ref type="bibr">(Duran et al. 2011)</ref> and minimizing the number of casualties <ref type="bibr" target="#b39">(Salmerón and Apte 2010)</ref>. Stochastic programming models, such as the ones mentioned above, require the probability distribution of the uncertain parameters, which in many cases may be very difficult to obtain <ref type="bibr">(Ben-Tal et al. 2011)</ref>.</p><p>One of the standard methods used to model uncertainty is robust optimization. Robust optimization is a methodology which is concerned with finding solutions that perform well with respect to uncertain future conditions <ref type="bibr" target="#b34">(Peng et al. 2011)</ref>. For a comprehensive review on robust optimization, see <ref type="bibr" target="#b8">Ben-Tal et al. (2009)</ref>, <ref type="bibr">Bertsimas et al. (2011)</ref> and <ref type="bibr" target="#b20">Gabrel et al. (2014)</ref>. Robust optimization is particularly useful in situations where it is very difficult to identify probability distributions to model the uncertain data <ref type="bibr">(Ben-Tal et al. 2011)</ref>. The complexity and unique characteristics of each disaster response setting make inventory prepositioning a suitable candidate to exploit the benefits of robust optimization, which is the approach used in this paper.</p><p>Robust optimization approaches have been used in humanitarian logistics. However, only a few papers have studied robust optimization approaches in inventory prepositioning. <ref type="bibr">Zokaee et al. (2016)</ref> propose a single-stage robust optimization model that minimizes a relief chain's total costs while ensuring a minimum percentage of demand satisfied for all affected areas. They consider uncertainty in demand supply and cost parameters. Instead, we focus on uncertainty in demand and link disruptions. <ref type="bibr" target="#b32">Ni et al. (2018)</ref> propose a two-stage robust optimization model that minimizes logistics and deprivation costs for a single type of relief supply. We propose a multicommodity single-stage robust optimization model. Furthermore, our work differs from these studies due to (i) the definition of the objective function (our model minimizes total demand-weighted distance) and (ii) the focus on considering a coordinated multi-agency disaster response.</p><p>Another aspect in which our work diverges from previous studies related to inventory prepositioning is our interest in developing heuristic approaches. Two common characteristics can be found in heuristics proposed in the humanitarian context. First, these heuristics are usually employed in conjunction with an optimization model <ref type="bibr" target="#b46">(Yi and Özdamar 2007;</ref><ref type="bibr">Rath and Gutjahr 2014</ref> and<ref type="bibr" target="#b21">Galindo and Batta 2013a)</ref>. <ref type="bibr" target="#b46">Yi and Özdamar (2007)</ref> propose a two-phase location-distribution model where, in the first phase, location decisions are taken using a mixed integer optimization model and, in the second phase, a heuristic is employed to determine routing decisions. <ref type="bibr">Rath and Gutjahr (2014)</ref> solve a three-objective model considering location and routing decisions where constraints are heuristically generated and added in each iteration. <ref type="bibr" target="#b21">Galindo and Batta (2013a)</ref> propose a heuristic approach for clustering locations allowing the optimization model to solve larger instances. Second, the majority of the proposed heuristics are usually employed to determine transportation and routing decisions. <ref type="bibr" target="#b9">Berkoune et al. (2012)</ref> develop a genetic algorithm to solve disaster relief transportation problems. <ref type="bibr" target="#b19">Ferrer et al. (2016)</ref> propose a multi-criteria model to determine a distribution plan for relief aid in disaster response. To the best knowledge of the authors, there are no papers proposing heuristics for inventory prepositioning that are not optimization-based and consider facility and inventory decisions. One of the contributions of our paper is that we develop a greedy heuristic with budgetary and equity constraints.</p><p>Equitable or fair distribution of relief supplies is an important aspect in inventory prepositioning. Only a few papers in inventory prepositioning consider equity or fairness. <ref type="bibr">Bozorgi-Amiri et al. (2013)</ref> incorporate fairness as one of two objectives by minimizing the maximum shortage of relief items at the dispensing locations. <ref type="bibr" target="#b38">Rezaei-Malek and Tavakkoli-Moghaddam (2014)</ref> incorporate a fairness level into the model where the difference of weighted unsatisfied demands between two demand points does not exceed a maximum considered amount of fairness level defined by experts. <ref type="bibr">Zokaee et al. (2016)</ref> consider equity by creating a new constraint ensuring that a predefined minimum percentage of relief items demand must be satisfied. Similar to <ref type="bibr">Zokaee et al. (2016)</ref>, we consider the level of tolerable inequity, which is the range of fraction of demand satisfied by prepositioned supplies, as a parameter that is specified by the user.</p><p>Literature on inventory prepositioning models considering cooperation among multiple relief agencies is limited. Although disaster responses usually require the intervention of many organizations <ref type="bibr" target="#b1">(Akhtar et al. 2012)</ref>, the vast majority of inventory models in the literature consider one agency. Furthermore, most of the papers study coordination in the humanitarian context from a conceptual perspective <ref type="bibr">(Balcik et al. 2010;</ref><ref type="bibr" target="#b18">Feng et al. 2010;</ref><ref type="bibr" target="#b1">Akhtar et al. 2012)</ref>. In this paper, we propose a robust optimization model for inventory prepositioning considering agency cooperation in the form of relief aid available post-disaster.</p><p>The interaction and relationships among these different actors participating in the relief effort are known as coordination <ref type="bibr">(Balcik et al. 2010)</ref>. Cooperation mechanisms used pre-disaster including logistics decisions such as procurement, warehousing and transportation <ref type="bibr">(Balcik et al. 2010)</ref>. Our proposed model focuses on the warehousing decisions. In particular, we are concerned with the location and capacities of storage facilities that are shared by several aid agencies. This coordination strategy for warehousing facilities has low associated costs, low technological requirements and high potential for implementation <ref type="bibr" target="#b18">(Feng et al. 2010)</ref>. Furthermore, adequate storage facilities required during a relief effort might be difficult to find <ref type="bibr">(Balcik et al. 2010;</ref><ref type="bibr" target="#b1">Akhtar et al. 2012)</ref>. A review of the literature reveals gaps in humanitarian logistics research. The main contributions of our work are as follows: First, we extend the literature in humanitarian logistics by developing a robust inventory prepositioning model that can be used in a multi-agency disaster response. Furthermore, we develop a heuristic approach for the uncapacitated deterministic version of our model that could be used in environments where costly barriers to use off-the-shelf optimization software, such as training or licensing, are present. Second, we extend the literature in robust optimization by applying <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref> budget uncertainty model to an inventory prepositioning problem under demand and network damage uncertainty.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Problem description and assumptions</head><p>Let us assume that a hurricane is expected to make landfall in the upcoming days. A local government or major aid agency, i.e., the coordinator, has decided to plan a prepositioning strategy in collaboration with other humanitarian organizations, i.e., outside sources. We hypothesize that outside sources capabilities affect the coordinator's prepositioning strategy in terms of the location and amount of prepositioned relief supplies. Therefore, the coordinator must consider outside sources in the decision process in order to improve the overall disaster response. Examples of relief items to be prepositioned include water, ready-to-eat meals, comfort and medical kits. An area that contains the population that could potentially be affected by a disaster is determined and a forecast of demand for relief items has been generated. In addition, based on this preliminary assessment of demand quantity and location, a set of potential distribution center locations and a set of suppliers are defined.</p><p>In this paper, we study a single-period three-level multi-commodity disaster relief chain. As shown in Fig. <ref type="figure" target="#fig_0">1</ref>, the first level of our relief chain consists of suppliers and outside sources, the second level contains distribution centers, and the last level is the set of dispensing locations. Relief items provided by the coordinator are procured predisaster from suppliers and prepositioned at the distribution centers. In the same level of the suppliers, outside sources procure relief items post-disaster and use distribution centers to serve the dispensing locations. In the second level, distribution centers have finite capacities to store prepositioned relief items. Dispensing locations, the last level, represent the areas where relief items are received by the affected population. The proposed model determines the flow of relief items through the considered disaster relief chain and the location of the distribution centers in an effective and equitable manner. To this aim, two models are proposed: a deterministic model (Sect. 4.2) and its robust counterpart (Sect. 4.3) where demand and link disruptions are considered uncertain. The main assumptions in our deterministic model are summarized as follows, while relaxations of these assumptions are explained when the robust model is introduced:</p><p>1. Costs and distances are known.</p><p>2. Facilities have known storage capacity and are not affected by the disaster.</p><p>3. Demand for relief items is deterministic and known (relaxed in the robust formulation).</p><p>4. Links are not affected by the disaster (relaxed in the robust formulation).</p><p>Deterministic models imply that all parameters used, such as demand, costs and distances, are known and fixed. For instance, prior to the use of the proposed model, demand might be forecasted based on historical data and procurement and transportation costs might be determined and agreed upon with suppliers. Distances between locations are also assumed to be known and remain fixed post-disaster which means that if a route is disrupted, another route of the same characteristics can be used. These types of assumptions, such as assumptions 1 and 2, are also found in <ref type="bibr">(Verma and Gaukler 2015)</ref> and <ref type="bibr" target="#b21">(Galindo and Batta 2013a)</ref>.</p><p>Distribution centers are desired to be located near the dispensing locations. However, as they are carefully chosen prior to the disaster, they are not located in disaster-prone areas and have the necessary infrastructure to remain operational postdisaster (Dr. J. Casani, personal interview). There are available data regarding hazards that might put the operation of an opened distribution center at risk. For instance, Fig. <ref type="figure" target="#fig_1">2</ref> shows the results of two different risks in coastal North Carolina: The left figure shows the areas where the water level would increase due to the presence of a category-5 tropical cyclone. The map on the right shows the flood risk caused by rain. The sources of the risk maps shown above come from official sites such as the National Hurricane Center (www.nhc.noaa.gov) and the Government of the State of North Carolina (www. nc.gov).</p><p>In our robust optimization model, we relax the third and fourth assumption by considering demand and link disruptions uncertain. As noted by <ref type="bibr" target="#b29">Mert and Adivar (2010)</ref>, in real humanitarian operations, sources of uncertainty are various. Factors such as the demand, availability and cost associated with the procurement and distribution of relief items are uncertain. Thus, we focus on demand and link disruption uncertainty and discuss potential extensions to include other sources of uncertainty.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Mathematical formulation</head><p>We propose a model that minimizes the total demand-weighted distance between distribution centers and dispensing locations subject to budget and equity constraints where demand may be satisfied partially by the coordinator and outside sources. The coordinator manages the available budget for the prepositioning strategy, i.e., cost of opening distribution centers and prepositioned relief items. The outside sources, which can also provide relief supplies, use the distribution centers opened by the coordinator to serve the dispensing locations.</p><p>In this section, we first discuss key aspects of our models, such as equity, outsource efficiency and costs. Then, we introduce two inventory prepositioning models. The first model is deterministic and the second is a robust optimization model where we assume uncertainty in demand for relief items and link disruptions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Definitions</head><p>In this section, we discuss three key definitions of our proposed model. First, we define equity and describe how it is modeled. Second, we discuss the outside source efficiency and how it is incorporated into our models. Finally, we examine how the cost parameters used in the models might be calculated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1">The trade-off between effectiveness and equity</head><p>In our model, effectiveness is measured as the total demand-weighted distance between distribution centers and dispensing locations and equity is calculated based on the fraction of demand that is served with prepositioned relief items. In order to illustrate the effectiveness-equity trade-off, let us assume a network with one distribution center and two demand locations located at 10 and 20 units of distance away, as shown in Fig. <ref type="figure" target="#fig_2">3</ref>. In addition, assume that each demand location, A and B, requires 100 units of relief items, and we are allowed to distribute only 100 units of relief items in total. If we want to provide a perfectly equitable solution (i.e., level of inequity = 0), we must distribute 50% of demand to both locations, resulting in a total demand-weighted distance of 0.5 × 100 × 10 + 0.5 × 100 × 20 = 1500. Now suppose we define a level of tolerable inequity of 0.2. In this case, we can send more items to the closer dispensing location resulting in a reduction in the total demand-weighted distance of 0.6 × 100 × 10 + 0.4 × 100 × 20 = 1400. With this illustration, we can see that we can improve our demand-weighted total distance by increasing the level of tolerable inequity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.2">Outside sources and their efficiencies</head><p>Recall that the coordinator's inventory is prepositioned, while aid from outside sources is shipped to the distribution centers post-disaster. Parameter f is an inefficiency factor or a penalty associated with not having supply immediately available. Inefficiencies can occur for multiple reasons including higher procurement costs, longer travel distances, delays in transport and reduced transportation capacity. Next we show one way to estimate parameter f considering inefficiencies related to transportation capacity.</p><p>Since outside sources may vary in size and expertise, a reasonable assumption to make is that their efficiency-or inefficiency-in disaster response might vary as well. For modeling purposes, inefficiency is expressed with the parameter f . Here, let the inefficiency factor f be a unit-less ratio between the aggregated response rate of all outside sources and the coordinator's response rate. Response rates i are defined as the speed at which demand can be served by agency i. One suggestion for the calculation of parameter f is as follows:</p><formula xml:id="formula_0">f = c s∈S s<label>(1)</label></formula><p>where</p><formula xml:id="formula_1">i = nq t i .<label>(2)</label></formula><p>Equation ( <ref type="formula" target="#formula_1">2</ref>) is used to calculate response rates for the coordinator (i.e., i = c) and the outsides sources (i.e., i = s, s ∈ S). Assuming that each affiliate's fleet is homogeneous, n is the number of trucks and q is the capacity of each truck. Finally, t is the sum of minimum travel times that affiliate i requires to reach all dispensing locations.</p><p>If the inefficiency factor f &gt; 1, this means that the affiliate is more inefficient than the coordinator in responding to the disaster. On the other hand, if the inefficiency factor f &lt; 1, the affiliate is less inefficient than the coordinator in responding to a disaster. Once the disaster occurs and the disaster response begins, outside sources must ship relief items to the distribution centers before they are sent to the dispensing locations, while the coordinator's inventory is already prepositioned at the distribution centers. Therefore, a reasonable assumption to make regarding the outside source inefficiency factor is that f &gt; 1. The above is meant to illustrate one way to estimate f ; ultimately, this serves as a penalty associated with not having relief items immediately available which can cause human suffering.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.3">Cost parameters</head><p>Our model considers three types of cost. Cost parameter c 1 includes transportation cost from suppliers to distribution center and procurement cost, cost parameter c 2 represents the transportation cost from the distribution centers to the dispensing locations, and cost parameter c 3 represents the cost of setting up a distribution center. A finite budget for prepositioning is assumed to be available. Cost parameters are only associated with the coordinator since it is the entity that manages the available budget for disaster response.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Deterministic model</head><p>Table <ref type="table" target="#tab_0">1</ref> contains the notation used in our proposed models. The deterministic formulation is as follows:</p><formula xml:id="formula_2">Minimize j,k,l d jk v kl y jkl + f • j,k,l d jk v kl w jkl<label>(3)</label></formula><formula xml:id="formula_3">subject to i, j,l c 1 i jl x i jl + j,k,l c 2 jkl v kl y jkl + j c 3 j z j ≤ b,<label>(4)</label></formula><formula xml:id="formula_4">k v kl y jkl ≤ i x i jl ∀ j, l,<label>(5)</label></formula><formula xml:id="formula_5">k,l v kl y jkl ≤ K j z j ∀ j,<label>(6)</label></formula><formula xml:id="formula_6">k w jkl ≤ Mz j ∀ j, l,<label>(7)</label></formula><formula xml:id="formula_7">γ ≤ j y jkl ≤ θ ∀ k, l,<label>(8)</label></formula><formula xml:id="formula_8">θ -γ ≤ α,<label>(9)</label></formula><formula xml:id="formula_9">j y jkl + j w jkl ≥ 1 ∀ k, l,<label>(10)</label></formula><formula xml:id="formula_10">y jkl + w jkl ≤ 1 -u k ∀ j, k, l,<label>(11)</label></formula><formula xml:id="formula_11">z j = {0, 1} x i jl , y jkl , w jkl , θ, γ ≥ 0 ∀ i, j, k, l.<label>(12)</label></formula><p>The objective function ( <ref type="formula" target="#formula_2">3</ref>) minimizes the total demand-weighted distance from distribution centers to dispensing locations. In Eq. ( <ref type="formula" target="#formula_2">3</ref>), the first term represents the sum of demand-weighted distances of demand served with relief items prepositioned by the coordinator, while the second term represents the sum of demand-weighted distances of demand served with relief items provided by the outside sources. Equation ( <ref type="formula" target="#formula_3">4</ref>) expresses the coordinator's budget constraint. Equation ( <ref type="formula" target="#formula_4">5</ref>) guarantees that relief items delivered by the coordinator to dispensing locations are available at distribution centers. Equation ( <ref type="formula" target="#formula_5">6</ref>) ensures that capacities to store prepositioned relief items at distribution centers are respected. Equation ( <ref type="formula" target="#formula_6">7</ref>) ensures that outsides sources use only opened distribution centers. Equity is modeled by Eqs. ( <ref type="formula" target="#formula_7">8</ref>) and ( <ref type="formula" target="#formula_8">9</ref>). Equation ( <ref type="formula" target="#formula_7">8</ref>) serves the purpose of assigning the maximum and minimum fraction of demand served by the coordinator (i.e., using prepositioned relief items) to auxiliary variables γ and θ , while Eq. ( <ref type="formula" target="#formula_8">9</ref>) ensures that the range between the auxiliary variables γ and θ is less or equal than the parameter α. Equation ( <ref type="formula" target="#formula_9">10</ref>) guarantees that all demand must be met. Equation ( <ref type="formula" target="#formula_10">11</ref>) limits link capacities. Equation ( <ref type="formula" target="#formula_11">12</ref>) represents the binary and non-negativity constraints.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">The robust model</head><p>In this section, we introduce the robust counterpart where demand and link disruptions are assumed uncertain. Demand uncertainty is modeled using the budget uncertainty set approach proposed by <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref>. Some of the advantages of using the uncertainty budget model are (i) the robust formulation maintains the complexity of its deterministic counterpart and (ii) the modeler can control the level of conservativeness in the solution. Uncertainty in link disruption is modeled using the interval uncertainty set proposed by <ref type="bibr" target="#b42">Soyster (1973)</ref>.</p><p>Let us define demand ṽkl as the uncertain parameter where each ṽkl is modeled as a symmetric and bounded random variable that takes values in [v kl -vkl , v kl + vkl ]. Parameter v kl represents the demand nominal value, and the perturbation vkl is computed as vkl = v kl where is referred to as the demand variability. The budget uncertainty set approach proposed by <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref> allows the modeler to control the level of protection against uncertainty by defining a parameter named , which determines the number of uncertain parameters that are allowed to vary.</p><p>Following <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref>, the standard procedure to develop the robust reformulation of a linear problem is that we first introduce the protection function in those constraints affected by the uncertain parameter ṽkl . Then, we rewrite the added protection function in the form of an optimization problem. Finally, the protection function in the form of an optimization problem is substituted by its dual. Let us illustrate this procedure with the deterministic objective function (Eq. <ref type="formula" target="#formula_2">3</ref>).</p><p>The robust counterpart of the deterministic objective function (Eq. <ref type="formula" target="#formula_2">3</ref>) can be written as</p><formula xml:id="formula_12">Min j,k,l v kl χ jkl + β(χ jkl , )<label>(13)</label></formula><p>where χ jkl = d jk (y jkl + f w jkl ) and β(χ jkl , ) is defined as the protection function.</p><p>Given χ * jkl and assuming that protection levels ( s) only take integer values, the protection function can be written as</p><formula xml:id="formula_13">β(χ * jkl , ) = max {S|S⊂V ,|S|≤ } (k,l)∈S vkl j |χ * jkl |<label>(14)</label></formula><p>where V = {(k, l)| vkl &gt; 0}, ∈ [0, |S|] and S represents the set of uncertain parameters.</p><p>As the procedure indicates, the above formula is written as a linear optimization problem:</p><formula xml:id="formula_14">maximize (k,l)∈V vkl p kl j |χ jkl | subject to (k,l)∈V p kl ≤ 0 ≤ p kl ≤ 1, ∀(k, l) ∈ V<label>(15)</label></formula><p>and the dual can be written as</p><formula xml:id="formula_15">minimize (k,l)∈V μ kl + λ subject to λ + μ kl ≥ vkl γ kl ∀(k, l) ∈ V -γ kl ≤ j χ jkl ≤ γ kl ∀(k, l) ∈ V λ, μ kl , γ kl ≥ 0 ∀(k, l) ∈ V<label>(16)</label></formula><p>where λ, μ kl and γ kl are dual variables.</p><p>We have shown the steps needed to reformulate the objective function. By repeating these steps with the budget, balance and storage capacity constraints, i.e., Eqs. <ref type="formula" target="#formula_3">4)-(6</ref>, the robust linear problem with uncertain demand can be written as follows:</p><formula xml:id="formula_16">Minimize j,k,l v kl χ jkl + λ + (k,l)∈V μ kl<label>(17)</label></formula><p>subject to <ref type="formula" target="#formula_7">)  Constraints (8)</ref></p><formula xml:id="formula_17">i, j,l c 1 i jl x i jl + j,k,l c 2 jkl v kl y jkl + j c 3 j z j + λ + (k,l)∈V μ kl ≤ b,<label>(18)</label></formula><formula xml:id="formula_18">k v kl y jkl + λ + k∈V μ kl ≤ i x i jl ∀ j, l,<label>(19)</label></formula><formula xml:id="formula_19">k,l v kl y jkl + λ + (k,l)∈V μ kl ≤ K j z j ∀ j,<label>(20)</label></formula><formula xml:id="formula_20">λ + μ kl ≥ vkl γ kl ∀(k, l) ∈ V ,<label>(21)</label></formula><formula xml:id="formula_21">-γ kl ≤ j χ jkl ≤ γ kl ∀(k, l) ∈ V ,<label>(22)</label></formula><formula xml:id="formula_22">-γ kl ≤ j c 2 jkl y jkl ≤ γ kl ∀(k, l) ∈ V ,<label>(23)</label></formula><formula xml:id="formula_23">-γ kl ≤ j,l y jkl ≤ γ kl ∀(k, l) ∈ V ,<label>(24)</label></formula><formula xml:id="formula_24">-γ kl ≤ j y jkl ≤ γ kl ∀(k, l) ∈ V ,<label>(25)</label></formula><formula xml:id="formula_25">λ, μ kl , γ kl ≥ 0, ∀(k, l) ∈ V ,<label>(26</label></formula><p>(27)</p><p>Equation ( <ref type="formula" target="#formula_16">17</ref>) represents the robust form of the objective function, i.e., Eq. ( <ref type="formula" target="#formula_2">3</ref>). Similarly, Eqs. <ref type="formula" target="#formula_17">18)-(20</ref>are the robust form of Eqs. <ref type="formula" target="#formula_3">4)-(6</ref>. Equations. <ref type="formula" target="#formula_20">21)-(26</ref>represent the constraints of the protection functions written in dual form, as shown in Problem <ref type="formula" target="#formula_15">16</ref>.</p><p>In order to incorporate uncertainty in link disruptions, let us assume that capacity can be reduced by an uncertain value of ũk in those links connecting dispensing locations k that belong to set L. Uncertain parameters ũk are assumed to be independently distributed and can take any value in the range [u k , ûk ]. The nominal value u k is assumed to take the value of 0, which means that there is no link disruption.</p><p>Link capacity reduction ûk takes a value between 0 and 1, where 0 means that the link is undamaged and 1 means that the link is broken. Given that the uncertain parameter ũk will take the value of ûk in the worst-case scenario, a robust solution with respect to link disruption is found if we replace ũk by ûk in those links connecting distribution centers to dispensing locations that belong to a predefined set L.</p><p>In order to consider link disruptions uncertain in the robust model <ref type="formula" target="#formula_16">17)-(27</ref>, we replace constraint ( <ref type="formula" target="#formula_10">11</ref>) with</p><formula xml:id="formula_27">j y jkl + j w jkl ≤ 1 -ûkl ∀ (k, l) ∈ L.<label>(28)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">A greedy heuristic</head><p>In this section, we develop a greedy heuristic for solving the uncapacitated deterministic version of the proposed model. We base our algorithm on the dropping heuristic originally proposed by <ref type="bibr" target="#b28">Kuehn and Hamburger (1963)</ref> with the following key differences. First, we use a p-median objective function where we minimize the total demand-weighted distance between distributions centers (DCs) and dispensing locations. Second, we add budgetary constraints in a similar fashion as proposed by <ref type="bibr">Wang et al. (2003)</ref>. Finally, we introduce additional steps to ensure equity constraints are met.</p><p>The algorithm consists of the main heuristic, i.e., the equitable inventory prepositioning heuristic, and a subprocedure, i.e., the budget reallocation heuristic. Our proposed algorithm begins by choosing which distribution centers (DCs) to open and a fraction δ of prepositioned demand for all dispensing locations (DLs) and relief items considering that all DCs are available. This is considered as the initial solution. Then, by using a cost-to-benefit ratio as a criterion, DCs are iteratively closed until no further improvement in the objective value is achieved.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The equitable inventory prepositioning heuristic</head><p>Step 1: Initialize Define J as the set of potential distribution centers. Open distribution centers at all eligible candidate sites and assign demand nodes to the distribution center that minimizes the total demand-weighted distance.</p><p>Step 2: Allocate Assign the same fraction of demand to all demand locations given the available budget. Then, reallocate budget using the budget reallocation heuristic provided in Sect. 5.1.</p><p>Step 3: Drop Compute the value φ j for all opened distribution centers as follows:</p><formula xml:id="formula_28">φ j = k,l f v kl w jkl min{(d rk -δ k ) : r ∈ J \ { j}} + k,l v kl y jkl min{(d rk -δ k ) : r ∈ J \ { j}}<label>(29)</label></formula><p>where δ k = min{d jk : j ∈ J }. Close the distribution center with the smallest value of φ j /c 3 j . J ← J \{ j} where j = argmin φ j /c 3 j , reassign dispensing locations to the opened distribution centers that minimize the total demandweighted distance and repeat Step 2.</p><p>Step 4: Terminate If a reduction in the objective function is found by removing a candidate distribution center or the cost of opening distribution centers is greater than the available budget, go to Step 3. Otherwise, take the previous solution and STOP.</p><p>The variable φ j represents the increase in the total demand-weighted distance, while c 3 j represents the savings incurred by dropping distribution center j. Therefore, the ratio φ j /c 3 j represents the total demand-weighted distance (i.e., cost) that is increased for each monetary unit saved (i.e., benefit) caused by closing distribution center j. The distribution center with least favorable cost/benefit ratio is dropped.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Budget reallocation heuristic</head><p>The budget reallocation heuristic performed in Step 2 is presented next:</p><p>Step 1: Initialize Sort in ascending order the dispensing locations using the distance to the opened DC that minimizes the total distribution cost, that is c 1 i jl and c 2 jkl . Assign 0 to the demand fraction y jkl corresponding to the dispensing location in the first position of the sequence, calculate the saved budget and reallocate the saved budget uniformly among all the dispensing locations (including the one in the first position of the sequence).</p><p>Step 2: Assign Starting from the second element in the sequence of dispensing locations, assign the minimum fraction y jkl to this element, calculate the saved budget and reallocate the saved budget uniformly among all demand fractions y jkl (a) If the fraction prepositioned is more than allowed, i.e., y jkl &gt; 1, assign a value of 1 to that element, calculate the saved budget and reallocate the saved budget among the y jkl elements that have the minimum value. (b) If the equity constraint is violated, i.e., max y jklmin y jkl ≥ α, assign min y jkl +α to the elements that have maximum value, calculate the saved budget and reallocate the saved budget among all y jkl .</p><p>Step 3: Repeat Repeat Step 2 for all dispensing locations.</p><p>In order to illustrate how Step 1 in the budget reallocation heuristic is computed, consider the network shown in Fig. <ref type="figure" target="#fig_3">4a</ref> which has n = 2 distribution centers, o = 2 dispensing locations and p = 1 relief item. Distances and the minimum total cost for each DC-DL pair are assumed as follows:</p><formula xml:id="formula_29">d jk = 10 20 30 2.5 , min i c 1 i j1 + c 2 jk1 = 12 24 33 6.5</formula><p>The minimum cost for each dispensing location (i.e., column-wise) corresponds to the following j indices: 1 2 . Therefore, the distances used for sorting are 10 2.5 . Once distances are sorted in ascending order, dispensing locations are ordered as follows: 2 1 . This means that the first candidate to reduce its budget will be k = 2 which has the smallest value (i.e., 2.5) in the sorted distance vector 2.5 10 and the last candidate to modify its budget is k = 1 with a distance of 10, taken also from the aforementioned sorted distance vector.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Example</head><p>In this section, we explain how the heuristic works with an example. As shown in Fig. <ref type="figure" target="#fig_3">4a</ref>, we consider a network with 2 potential distribution centers, 2 dispensing locations, 1 outside source and 1 relief item. For the sake of simplification, we assume that c 1 i jl = 0 and c 2 jkl = d jk . Assigning c 1 i jl = 0 allows us to disregard the suppliers located in the first level of the relief chain. Available budget is 300, and the cost of opening any distribution center is 100. Tolerable inequity α is set to 0.25, and outside source inefficiency f is set to 3.</p><p>After executing Steps 1 and 2, we obtain an objective value of 4725 and the distribution network shown in Fig. <ref type="figure" target="#fig_3">4c</ref>. Variables φ 1 and φ 2 calculated in Step 3 are 5600 and 1225, respectively. Likewise, since c 3 = 100, ratios φ 1 /c 3 and φ 2 /c 3 are 560 and 122.5. Since φ 2 /c 3 is the minimum ratio among all dispensing locations, distribution center B is dropped and the objective value is updated to 4100. Since we find an improvement compared to the previous objective value of 4725, we take the new solution. At this point, we only have one distribution center opened so we stop.</p><p>Figure <ref type="figure" target="#fig_3">4</ref> shows the sequence and results of the steps executed using the inventory prepositioning heuristic proposed in Sect. 5. Figure <ref type="figure" target="#fig_3">4a</ref> shows the initial network, and Fig. <ref type="figure" target="#fig_3">4b,</ref><ref type="figure" target="#fig_3">c</ref> shows the solutions found before and after executing the budget reallocation heuristics in Step 2. Figure <ref type="figure" target="#fig_3">4d</ref> shows the final solution of the algorithm which is found in the second iteration. The results of the heuristic is that distribution center A should be opened. The optimal flow of relief items is to preposition at distribution center A, 75% of the relief items needed at dispensing location 1 and 100% required at dispensing location 2. Optimal total demand-weighted distance is 4100.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Effect of outside source inefficiency</head><p>By using the same example data found in Sect. 5.2, we can observe how the outside source inefficiency parameter f affects the final solution. Let us assume now that the outside source inefficiency parameter f is changed from 3 and set to 2. For analysis, we divide the budget into two categories depending on its use: Warehousing budget is used for setting up distribution centers, while inventory budget is used for procuring relief items. As shown in Table <ref type="table" target="#tab_1">2</ref>, in the case when f = 2, the optimal policy dictates that both distribution centers should be opened and the optimal demand-weighted distance is 3525 as opposed to only one when f = 3 was used and optimal demandweighted distance of 4100. Since there is a limited budget, inventory left for procuring relief items is reduced when more budget is used for setting up distribution centers. Therefore, the fraction of demand prepositioned is lower (45% and 20% for dispensing locations 1 and 2, respectively) when f = 2 compared to the demand prepositioned when f = 3 (75% and 100% for dispensing locations 1 and 2). Two additional aspects to note are that both solutions utilize all the available budget and are at the maximum tolerable inequity.</p><p>Based on this example, we can conclude that if outside source inefficiency f is small (i.e., outside source can serve almost as fast as the coordinator), more warehouses are opened and thus disaster response-measured in demand-weighted distance-is improved. On the other hand, if outside source inefficiency f is large (i.e., outside sources take, on average, more time to response to the disaster than the coordinator), less warehouses are opened and more prepositioned supplies are used; in other words, relief supplies prepositioned by the coordinator are preferred over relief supplies provided by outside sources.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Computational experiments</head><p>In this section, we evaluate the performance of the proposed robust formulation as well as the heuristic by using randomly generated instances, based on the geography of the state of North Carolina, USA. To this aim, we first introduce the methodology for generating the instances used to test our proposed formulations and heuristic. Second, the robust formulation is evaluated comparing the robust solutions with: (1) the deterministic solution and (2) a number of simulated realizations. Third, budget allocation decisions are analyzed for different values of outside source inefficiency and demand variability. Finally, heuristic performance is evaluated and compared to optimal solutions. All experiments were performed on a computer with Intel Core i5 2.4 GHz CPU and 8 GB RAM. The proposed heuristic was implemented in Julia 0.5.2, while optimal nominal and robust solutions were found using Gurobi 7.5.1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Methodology for randomly generating instances</head><p>We consider a major aid agency or a state government agency, which acts as the coordinator, that wants to design a prepositioning strategy for the state of North Carolina. Suppliers, potential distribution center locations and dispensing locations are randomly chosen from the subset of 5-digit zip codes of the state of North Carolina which have a population greater than 3000. This results in 518 zip codes, from a total of 806 possible zip codes. The database used to obtain population information is found in <ref type="bibr" target="#b27">Kay (2013)</ref>. Great circle distance with a 1.2 correction factor is used to simulate driving distance between nodes. Nodes are chosen using a demand-weighted distribution. This means that nodes with a larger population have higher probability of being chosen than nodes with a smaller population. As in <ref type="bibr" target="#b37">Rawls and Turnquist (2012)</ref>, we assume relief items types to be consumables or non-consumables, and thus, two relief item types are considered ( p = 2). Nominal demand quantity is computed as 10% of the population at each dispensing location. For the case of consumable items, we assume that we must preposition sufficient inventory to serve the needs equivalent to five days.</p><p>Cost parameters used in the proposed models are calculated as follows: c 1 , which represents the cost of prepositioning, considers the procurement cost and the predisaster transportation cost. c 2 , which expresses the distribution cost from distribution centers to dispensing locations, is calculated using the post-disaster transportation  cost. The cost of opening and setting a distribution center (i.e., c 3 ) is set to $150, 000. Procurement costs as well as transportation cost pre-and post-disaster are summarized in Table <ref type="table" target="#tab_2">3</ref>, and procurement costs are uniformly generated between 13 and 17 for consumable relief items and between 23 and 27 for non-consumable relief items. Procurement and transportation cost calculations are based on the case study found in <ref type="bibr" target="#b37">Rawls and Turnquist (2012)</ref>. In our model, relief items are only prepositioned at the distribution centers, which implies that transportation of prepositioned items to dispensing locations will occur after the disaster has taken place. As observed by <ref type="bibr" target="#b21">Galindo and Batta (2013a)</ref> and others, delivery cost after a disaster has occurred become larger due to road and infrastructure damage. For evaluation purposes, we assume an increase of 30% in post-disaster transportation cost compared to pre-disaster.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Optimization results</head><p>By using the methodology described in Sect. 6.1, we randomly generate one instance of size [m, n, o] = [5, 10, 15], that is 5 suppliers, 10 potential distribution centers and 15 dispensing locations (see Fig. <ref type="figure" target="#fig_4">5</ref>). Since there are two relief item types, the maximum number of uncertain demand parameters is 30. Hence, protection level can take any integer value in [0, 30]. Available budget b is set to $2,000,000. Outside source inefficiency f is set to 1.5. Storage capacity at each distribution center is calculated as 70% of the total storage space required. Disruptions at links connecting distribution centers to dispensing locations 1, 3 and 4 are assumed to be uncertain, i.e., L = {1, 3, 4}. Link capacity reduction is set to 0.1.</p><p>First, we compare the robust with the nominal value for two different demand variabilities (i.e., 10% and 20%), outside source inefficiencies f and protection levels . Percentage change in the objective value shown in Fig. <ref type="figure" target="#fig_5">6</ref> is computed as (Z ( ) R -Z N )/Z N , where Z ( ) R is the robust objective value as a function of protection level and Z N is the nominal objective value.</p><p>Figure <ref type="figure" target="#fig_5">6a</ref> shows the percentage change in the objective value when varying demand variability for different protection levels . In particular, the percentage change in objective values at protection level = 10 is approximately 9% and 18% for demand variability = 10% and 20%, respectively. At protection level = 30, which yields the most conservative solution, the percentage change in objective values is approximately 11% and 23%. This figure also reveals a higher rate in the percentage of change for low protection levels compared to higher protection levels. Figure <ref type="figure" target="#fig_5">6b</ref> shows the percentage change in the objective value when varying outside source inefficiency for different protection levels . As we can observe in Fig. <ref type="figure" target="#fig_5">6b</ref>, a similar trend is followed when outside source inefficiency is increased.</p><p>In our model, the probability of constraint violation is the fraction of demand realizations that a given solution is not able to fully serve due to insufficient budget or inventory. In other words, a lower probability of constraint violation is associated with a higher level of protection . Figure <ref type="figure" target="#fig_6">7</ref> shows the probability of constraint violation for different levels of protection. The equation used to derive the probabilities shown in Fig. <ref type="figure" target="#fig_6">7</ref> can be found in <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref>. As suggested by <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref>, the probability of constraint violation can be used as a guidance to select the protection level . For instance, if the modeler wants to find a solution with a probability of constraint violation less than 5%, a protection level ≥ 10 should be selected. On the other hand, if the maximum tolerable probability of constraint violation is desired to be 1%, a protection level of at least 14 should be chosen.</p><p>Table <ref type="table" target="#tab_3">4</ref> summarizes the optimal objective value when varying the set of links with uncertain capacities L and the link capacity reduction û. As expected, higher magnitudes of link disruption and number of links with uncertain link capacity significantly increase the objective value, i.e., total demand-weighted distance. Experiments con-  ducted with different values of demand variability and protection level show a similar trend.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3">Simulation results</head><p>We have argued that the level of protection , which is a parameter chosen by the modeler, affects the quality of the robust solution. In order to properly choose the level of protection, <ref type="bibr" target="#b17">Dunning (2016)</ref> suggests to evaluate the performance of the robust solution by simulating several realizations of the uncertain parameters. To this aim, we simulate 1000 demand realizations for each robust solution found by varying the protection level.</p><p>In order to fairly evaluate the quality of the robust solution, we must make some assumptions. First, we assume that the amount of relief items prepositioned and the distribution centers opened cannot be changed but the actual distribution of relief items to dispensing locations can be changed depending on the demand realization. The logic behind this assumption is that prepositioning and setting up a distribution center takes time and must occur before the demand is realized while the distribution of prepositioned supplies to the dispensing locations is done after demand is known. Second, we assume that demand realizations are independent and uniformly distributed in the range [v kl -vkl , v kl + vkl ]. Perturbation vkl is computed as follows: vkl = v kl where is referred to as the demand variability. Lastly, unmet demand is penalized in the objective function with a factor of 10 times the outside source inefficiency (i.e., 10 f ).</p><p>Simulation results are summarized in Fig. <ref type="figure" target="#fig_7">8</ref> and Table <ref type="table" target="#tab_4">5</ref>. Figure <ref type="figure" target="#fig_7">8</ref> shows the expected objective value, the maximum and the minimum values using different robust solutions. Two zones with different behavior can be identified in the figure. When the protection level ≤ 10, there is a consistent decrease in the expected and maximum objective values resulting in less variability. For ≥ 10, the solution objective becomes insensitive to the protection level. This finding indicates that the protection level does not need to be adjusted to more than 10 to achieve the best expected results. Table <ref type="table" target="#tab_4">5</ref> shows a summary of the simulation results depicted in Fig. <ref type="figure" target="#fig_7">8</ref>. For instance, by setting the protection level = 10, the expected objective value decreases by 29% and the change in variation, measured as the standard deviation, decreases by 47%. Similar numbers can be found for protection levels between 10 and 30.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.4">Budget allocation</head><p>In this section, we derive some insight on how the budget is allocated for different protection levels , demand variability and outside sources inefficiencies f . As we did in Sect. 5, for analysis purposes we divide budget into two categories depending on its use: Warehousing budget is used for setting up distribution centers, while inventory budget is used for procuring relief items. We consider a problem with 10 suppliers, 20 potential distribution center locations and 30 dispensing locations. Capacities are assumed uncertain in those links connecting dispensing locations 1, 3 and 4 with an uncertain link capacity reduction of 10%. Figure <ref type="figure" target="#fig_8">9</ref> shows the effect the outside source inefficiency factor f has in budget allocation decisions. We consider two demand variabilities as well as two protection levels . Figure <ref type="figure" target="#fig_8">9a-d</ref> shows a similar behavior for each of these scenarios. For outside source inefficiencies between 1 and 2, i.e., 1 ≥ f ≤ 2, there is a steep increase in the budget spent in prepositioned relief items resulting in less distribution centers opened. For 2 ≥ f ≤ 5, we observe that budget allocation is insensitive to the value of f with the exception of a phase transition at f ≈ 3.5 where budget assigned to procure inventory reach a maximum. This phenomenon can be explained by looking at the effect of the factor f on the objective value. The factor f is multiplying the demand-weighted distance of the fraction of demand served by the outside sources. Assuming f &gt; 1, the objective value increases, i.e., deteriorates since it is a minimization problem, when the factor f increases. Therefore, when the factor f increases, the model tries to reduce its negative effects in the objective value by prepositioning more relief supplies, i.e., reducing the fraction of demand served by the outside sources, and decreasing the number of opened distribution centers given the limited budget.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.5">Effects of storage capacity</head><p>In this section, we conduct a comparative analysis considering distribution centers with five different storage capacities and two values of penalty parameter f . The levels of storage capacity are reported in units as well as in percentage (%) of total demand. We vary this number from very low (&lt; 3%) to very high (&gt; 20%). We compare resulting objective values, the number of opened distribution centers, the number of opened distribution centers used at full capacity and the percentage of nominal demand prepositioned.</p><p>Table <ref type="table" target="#tab_5">6</ref> shows that better objective values are found using a sparse and decentralized network, i.e., many small distribution centers, rather than a centralized network with few large distribution centers. We believe this observation is due to the definition of the objective function. Because the objective function minimizes the demand-weighted distance between distribution centers and demand locations, its value decreases or stays the same as the number of opened distribution centers is increased. When comparing the effect of the parameter f , we can observe that a high value of f , i.e., f = 4.5, increases the amount of prepositioned relief items and reduces the number of opened distribution centers compared to the results obtained with a low f , i.e., f = 1.5. The managerial insight of these results is that the use of prepositioned relief items, which are ready to ship immediately after the disaster occurs, increases when outside sources' help is highly penalized. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.6">Heuristic performance</head><p>In this section, we show the results of two experiments. First, we evaluate the performance of our heuristic. Second, we characterize the cases where our heuristic works well for capacitated problems.</p><p>In the first experiment, we evaluate how the heuristic performs using two measures: optimality gap (i.e., error) and computational time. Error is calculated using [(Z H -Z * )/Z * ] × 100% where Z H is the heuristic objective value and Z * is the optimal objective value. Computational time is calculated in seconds.</p><p>Results are reported in Table <ref type="table" target="#tab_6">7</ref>. Problem sizes are defined by the number of suppliers |J |, the number of potential distribution centers |K |, the number of dispensing locations |L| and two relief items. Error reported in Table <ref type="table" target="#tab_6">7</ref> is the average of the error of ten replications. Based on these results, heuristic solutions show an average error less than 1.7% for all instances and the maximum error found is 2.9%. Regarding computational time, all heuristic instances were solved in less than ten seconds, which is good enough for the conditions in which the heuristic is intended to be used. Furthermore, when the proposed heuristic is used to provide an initial feasible solution, the average computational time to find an optimal solution is reduced by 40%.</p><p>In the second experiment, we evaluate optimal and heuristic solutions considering distribution centers with five different storage capacities and two values of penalty parameter f . We compare objective values, the number of opened distribution centers and the number of distribution centers used at full capacity. We consider a problem with 10 suppliers, 20 potential distribution centers, 30 dispensing locations and a budget of $4 million. We assume demand is deterministic and no link disruptions.  Table <ref type="table" target="#tab_7">8</ref> shows that heuristic solution violates capacity restrictions only for the smallest distribution centers considered in the experiment, i.e., setup cost of $70000 and storage capacity of 13000 units, which represents 2.5% of total nominal demand. For the remaining cases, the storage capacities are not exceeded; hence, the solution can be fairly compared to the optimal solution which considers capacity constraints. In these cases, the heuristic provides solutions within 0.4% compared of the optimal policy. This occurs with both values of the parameter f studied.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusions and future research</head><p>In this paper, we address the problem of prepositioning supplies in preparation for a disaster under uncertainty in demand and link disruption considering a multi-agency disaster response. We examine an inventory prepositioning problem from the perspective of the main aid agency considering sharing distribution centers with other agencies. We model a multi-commodity three-echelon relief item chain that consists of suppliers, distribution centers and dispensing locations. The objective of our model is to minimize total demand-weighted distance from distribution centers to dispensing locations while considering storage capacity, budget and equity constraints. Demand uncertainty is modeled using the budget uncertainty set approach proposed by <ref type="bibr" target="#b10">Bertsimas and Sim (2004)</ref>. Uncertainty in link disruption is modeled using the interval uncertainty set proposed by <ref type="bibr" target="#b42">Soyster (1973)</ref>.</p><p>Additionally, we develop and test a heuristic approach to solve the uncapacitated deterministic version of our proposed model. The E-IP algorithm begins by choosing which distribution centers to open and a fraction of prepositioned demand for all dispensing locations and relief items considering that all distribution centers are available. This is considered as the initial solution. Then, by using a cost-to-benefit ratio as a criterion, the heuristic iteratively closes distribution centers until no further improvement of the objective function is achieved. Experiments show that the heuristic approach achieved solutions within 3% compared to the optimal policy. The heuristic approach proposed in this paper would give practitioners the advantage of solving the deterministic problem without the need for a mathematical model or optimization software. In further studies, we intend to test if computational times when optimally solving the proposed model can be reduced by using the heuristic solution, which is a relaxed solution of the proposed model, as a lower bound.</p><p>Robust solutions are analyzed in a series of experiments showing the percentage change in the objective function compared to the deterministic model varying the protection level and the demand variability. We discuss the probability of constraint violation for different protection levels and provide guidelines to choose model parameters. Simulation results show that robust solutions could reduce the expected objective value and standard deviation by 30% and 50%, respectively, compared to the deterministic solutions. Additionally, a sensitivity analysis is performed on the outside source inefficiency factor. We show that outside source inefficiency affects budget allocation decisions; in particular, inventory budget increases and warehousing budget decreases as the outside source becomes more inefficient. Furthermore, as demand variability increases, more is spent on inventory, for a given level of outside source inefficiency.</p><p>In this paper, we provide a holistic view of the inventory prepositioning problem. Disaster responses are usually a joint effort between several aid agencies. Previous models seek to optimize the prepositioning strategy for one aid agency. In some cases, the single-agency approach to the prepositioning problem could lead to a suboptimal disaster response since, as we demonstrated in this paper, budget allocation decisions are affected by the characteristics of the other agencies involved in the disaster response. Several directions of future work have been identified. (1) Our heuristic could be extended to find robust solutions considering capacitated distribution center locations. (2) In some cases, uncertain parameters are correlated. For instance, demand for relief supplies may depend on where the disaster strikes. Therefore, a more realistic model can be constructed by considering correlated data. (3) Several sources of uncertainty, such as supply availability and cost parameters, can be incorporated into the model following the same approach used to model demand uncertainty.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Schema of the proposed disaster relief chain. Solid lines represent relief item flows from distribution centers to dispensing locations. Dashed lines represent flow from suppliers to distribution centers. Dashed dotted lines represent flows from outside sources to distribution centers</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Tropical cyclone storm surge (left) and flood hazard (right) maps for Coastal North Carolina</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 A distribution center (shaded triangle) serving dispensing locations A and B located at 10 and 20 units of distance, respectively. Demand for relief items required to be served is 100 units at both dispensing locations A and B</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 Sequence of solutions when executing the proposed heuristic using the example data</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Randomly generated instance of a relief network with 5 suppliers, 10 potential distribution centers and 15 dispensing locations</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Sensitivity of the proposed robust model compared to the deterministic model under different demand variabilities (left) and outside source inefficiencies (right)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7</head><label>7</label><figDesc>Fig. 7 Probability of constraint violation under different protection levels</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8Simulation results for maximum, minimum and expected total weighted distance for different protection levels . Total demand-weighted distance, i.e., the y-axis, is given in millions. Outside source inefficiency f is set to 1.5, unmet demand is penalized by a factor of 10 f , demand variability is set to 0.5, and no link capacity is considered uncertain</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9Budget of $4 million allocated to opening distribution centers and inventory cost when varying outsource inefficiency f . Two different demand variabilities (i.e., = 0.1 and = 0.2) and protection levels (i.e., = 3 and = 10) are evaluated. A problem with 10 suppliers, 20 potential distribution centers and 30 dispensing location is considered. Capacities are assumed uncertain in those links connecting dispensing locations 1, 3 and 4 with an uncertain link capacity reduction of 10%</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Definitions of sets, indexes, decision variables and parameters used in the proposed models</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Comparison of optimal solutions with different values of outside source inefficiency ( f )</figDesc><note>Tolerable level of inequity α is set to 0.25. When f = 2, only distribution center A should be opened, while if f = 3, the optimal policy suggests to opened both distribution centers A and B. Letters inside parenthesis indicate the distribution center used to preposition the relief items</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Procurement and transportation cost rates for relief items</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Percentage change in objective value for different link capacity maximum reductions ûk ∀k ∈ L and sets of links with uncertain capacity L</figDesc><note>Demand variabilities ACK is set to 0.3; outside source inefficiencies f is equal to 1.5. Percentage change is calculated with respect to the optimal value considering nominal link capacities, i.e., no link disruption. Protection level BEL is set to 6</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Simulation results given by the robust solution for different protection levels</figDesc><note>Objective values and standard deviations are given millions. A total of 1000 demand realizations were simulated for each protection level</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Comparative analysis considering distribution centers of different sizes and setup cost</figDesc><note>We consider a problem with 10 suppliers, 20 potential distribution centers and 30 dispensing location. Demand variability and protection level are set to 0.1 and 10, respectively. Capacities are assumed uncertain in those links connecting dispensing locations 1, 3 and 4 with an uncertain link capacity reduction of 10%. A budget of $4 million is considered</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7</head><label>7</label><figDesc>Computational time comparison between the heuristic and the deterministic uncapacitated version of the proposed model</figDesc><note>Column Opt-heu represents the average computational time to find an optimal solution when the proposed heuristic was used to provide an initial feasible solution. Problem sizes are considered with respect to the number of suppliers |I |, the number of potential distribution centers |J | and the number of dispensing locations |K |. All experiments were conducted using a 1800 seconds time limit and the default MIP gap. In the cases where time limit was reached, final gap was less than 0.5%</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8</head><label>8</label><figDesc>Comparison of optimal solutions considering capacity constraints with heuristic solutions</figDesc><note>We consider a problem with 10 suppliers, 20 potential distribution centers, 30 dispensing locations and a budget of $4 million</note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements We would like to thank <rs type="person">Dr. Julie Casani</rs>, former Director of <rs type="affiliation">Public Health Preparedness</rs> for the state of North Carolina and Adjunct Associate Professor of <rs type="affiliation">Biological Sciences at NC State University</rs> and <rs type="person">Dr. Michael Kay</rs>, <rs type="person">Associate Professor</rs> at <rs type="institution">NC State University</rs>, for their valuable suggestions.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Aharon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Byung</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Supreet</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Tao</surname></persName>
+					</author>
+					<title level="a">Robust optimization for emergency logistics planning: risk mitigation in humanitarian relief supply chains</title>
+				</analytic>
+				<monogr>
+					<title level="j">Transp Res Part B: Methodol</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="1177" to="1189"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Akhtar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Marr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">V</forename><surname>Garnevska</surname></persName>
+					</author>
+					<title level="a">Coordination in humanitarian relief chains: chain coordinators</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Humanit Logist Supply Chain Manag</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="85" to="103"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b2">
+				<monogr>
+					<author>
+						<persName><forename>A</forename><surname>Akkihal</surname></persName>
+					</author>
+					<title level="m">Inventory pre-positioning for humanitarian operations</title>
+					<imprint>
+						<date when="2006">2006</date>
+						<publisher>Massachusetts Institute of Technology</publisher>
+					</imprint>
+				</monogr>
+				<note>PhD thesis</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>B-A</forename><surname>Ali</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Jabalameli</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><forename type="last">J</forename><surname>Mirzapour Al-e Hashem</surname></persName>
+					</author>
+					<title level="a">A multi-objective robust stochastic programming model for disaster relief logistics under uncertainty</title>
+				</analytic>
+				<monogr>
+					<title level="j">OR Spectr</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="905" to="933"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Anurag</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Gary</forename><forename type="middle">M</forename><surname>Gaukler</surname></persName>
+					</author>
+					<title level="a">Pre-positioning disaster responsefacilities at safe locations: an evaluation of deterministic andstochastic modeling approaches</title>
+				</analytic>
+				<monogr>
+					<title level="j">Comput Op Res</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="page" from="197" to="209"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b5">
+				<monogr>
+					
+					<author>
+						<persName><forename>A</forename><surname>Apte</surname></persName>
+					</author>
+					<title level="a">Humanitarian logistics: a new field of research and action</title>
+					<imprint>
+						<publisher>Now Publishers Inc</publisher>
+						<date when="2010">2010</date>
+						<biblScope unit="volume">7</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Balcik</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Benita</forename><forename type="middle">M</forename><surname>Beamon</surname></persName>
+					</author>
+					<title level="a">Facility location in humanitarian relief</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Logist</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="page" from="101" to="121"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Benita</forename><forename type="middle">M</forename><surname>Beamon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Stephen</forename><forename type="middle">A</forename><surname>Kotleba</surname></persName>
+					</author>
+
+					<title level="a">Inventory management support systems for emergency humanitarian relief operations in south sudan</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Logist Manag</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="187" to="212"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b8">
+				<monogr>
+					<author>
+						<persName><forename>A</forename><surname>Ben-Tal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>El Ghaoui</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Nemirovski</surname></persName>
+					</author>
+					<title level="a">Robust optimization</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<publisher>Princeton University Press</publisher>
+						<pubPlace>Princeton</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<title level="a">Transportation in disaster response operations.</title>
+					<author>
+						<persName><forename>D</forename><surname>Berkoune</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Renaud</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rekik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Ruiz</surname></persName>
+					</author>
+					<title level="a">Transportation in disaster response operations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soc-Econ Plan Sci </title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="23" to="32"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName><forename>D</forename><surname>Bertsimas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Sim</surname></persName>
+					</author>
+					<title level="a">The price of robustness</title>
+				</analytic>
+				<monogr>
+					<title level="j">Op Res</title>
+					<imprint>
+						<biblScope unit="volume">52</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="35" to="53"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Burcu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Benita</forename><forename type="middle">M</forename><surname>Beamon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Caroline</forename><forename type="middle">C</forename><surname>Krejci</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Kyle</forename><forename type="middle">M</forename><surname>Muramatsu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Magaly</surname></persName>
+					</author>
+					<title level="a">Coordination in humanitarian relief chains: practices, challenges and opportunities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Prod Econ</title>
+					<imprint>
+						<biblScope unit="volume">126</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="22" to="34"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Aakil</forename><forename type="middle">M</forename><surname>Caunhye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Xiaofeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Shaligram</surname></persName>
+					</author>
+					<title level="a">Optimization models in emergency logistics: a literature review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soc-Econ Plan Sci</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="4" to="13"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b13">
+				<monogr>
+					<author>
+						Center for Research on the Epidemiology of Disasters (CRED)
+					</author>
+					<title level="a">Annual disaster statistical review 2017</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>M-S</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y-L</forename><surname>Tseng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-W</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">A scenario planning approach for the flood emergency logistics preparation problem under uncertainty</title>
+				</analytic>
+				<monogr>
+					<title level="j">Transp Res Part E: Logist Transp Rev</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="737" to="754"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Dimitris</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">David</forename><forename type="middle">B</forename><surname>Brown</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Constantine</surname></persName>
+					</author>
+					<title level="a">Theory and applications of robust optimization</title>
+				</analytic>
+				<monogr>
+					<title level="j">SIAM Rev</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="464" to="501"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Döyen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Aras</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Barbarosoğlu</surname></persName>
+					</author>
+					<title level="a">A two-echelon stochastic facility location model for humanitarian relief logistics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Optim Lett</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="1123" to="1145"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b17">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">R</forename><surname>Dunning</surname></persName>
+					</author>
+					<title level="m">Advances in robust and adaptive optimization: algorithms, software, and insights</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<publisher>Massachusetts Institute of Technology</publisher>
+					</imprint>
+				</monogr>
+				<note>PhD thesis</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Fan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Yang</surname></persName>
+					</author>
+					<title level="a">Collaboration in Humanitarian Logistics</title>
+				</analytic>
+				<monogr>
+					<title level="m">ICLEM 2010: Logistics for sustained economic development: infrastructure, information, integration</title>
+					<imprint>
+						<date when="2010">2010</date>
+						<biblScope unit="page" from="1127" to="1133"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">José</forename><forename type="middle">M</forename><surname>Ferrer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Teresa</forename><forename type="middle">M</forename><surname>Ortuño</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Gregorio</surname></persName>
+					</author>
+					<title level="a">A grasp metaheuristic for humanitarian aid distribution</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Heuristics</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="55" to="87"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Gabrel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Murat</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Thiele</surname></persName>
+					</author>
+					<title level="a">Recent advances in robust optimization: An overview</title>
+				</analytic>
+				<monogr>
+					<title level="j"> Eur J Op Res</title>
+					<imprint>
+						<biblScope unit="volume">235</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="471" to="483"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Galindo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Batta</surname></persName>
+					</author>
+					<title level="a">Prepositioning of supplies in preparation for a hurricane under potential destruction of prepositioned supplies</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soc-Econ Plan Sci</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="20" to="37"/>
+						<date when="2013a">2013a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Galindo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Batta</surname></persName>
+					</author>
+					<title level="a">Review of recent developments in OR/MS research in disaster operations management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Op Res</title>
+					<imprint>
+						<biblScope unit="volume">230</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="201" to="211"/>
+						<date when="2013b">2013b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Grass</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Fischer</surname></persName>
+					</author>
+					<title level="a">Two-stage stochastic programming in disaster management: A literature survey</title>
+				</analytic>
+				<monogr>
+					<title level="j">Surv Op Res Manag Sci</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="85" to="100"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Gustavsson</surname></persName>
+					</author>
+					<title level="a">Humanitarian logistics: context and challenges</title>
+				</analytic>
+				<monogr>
+					<title level="j">Forced Migr Rev</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="6" to="8"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b25">
+				<monogr>
+					
+					<author>
+						International Federation of Red Cross and Red Crescent Societies (IFRC)
+					</author>
+					<title level="m">World disasters report: Focus on local actor, the key to humanitarian effectiveness</title>
+					<imprint>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b26">
+				<monogr>
+					
+					<author>
+						International Federation of Red Cross and Red Crescent Societies (IFRC)
+					</author>
+					<title level="m">World disasters report: leaving no one behind</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b27">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kay</surname></persName>
+					</author>
+					<title level="m">Matlog: logistics engineering matlab toolbox</title>
+					<imprint>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Alfred</forename><forename type="middle">A</forename><surname>Kuehn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Michael</forename><forename type="middle">J</forename><surname>Hamburger</surname></persName>
+					</author>
+					<title level="a">A heuristic program for locating warehouses</title>
+				</analytic>
+				<monogr>
+					<title level="m">Manag Sci</title>
+					<imprint>
+						<date when="1963">1963</date>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="643" to="666"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Mert</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">O</forename><surname>Adivar</surname></persName>
+					</author>
+					<title level="a">Fuzzy disaster relief planning with credibility measures</title>
+				</analytic>
+				<monogr>
+					<title level="m">24th Mini EURO conference on Continuous optimization and information-based technologies in the financial sector</title>
+					<imprint>
+						<date when="2010">2010</date>
+						<biblScope unit="page" from="23" to="26"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Michael</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Richard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Gyöngyi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Spens Karen</surname></persName>
+					</author>
+					<title level="a">Trends and developments in humanitarian logistics-a gap analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Phys Distrib Logist Manag</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="32" to="45"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Nezih</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Walter</forename><forename type="middle">G</forename><surname>Green</surname></persName>
+					</author>
+					<title level="a">Or/ms research in disaster operations management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Op Res</title>
+					<imprint>
+						<biblScope unit="volume">175</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="475" to="493"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Ni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Shu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Song</surname></persName>
+					</author>
+					<title level="a">Location and Emergency Inventory Pre-Positioning for Disaster Response Operations: Min-Max Robust Model and a Case Study of Yushu Earthquake</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prod Oper Manag</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="160" to="183"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Onur</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Zelda</forename><forename type="middle">B</forename><surname>Zabinsky</surname></persName>
+					</author>
+					<title level="a">Stochastic optimization of medical supply location and distribution in disaster management</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Prod Econ</title>
+					<imprint>
+						<biblScope unit="volume">126</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="76" to="84"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Lawrence</forename><forename type="middle">V</forename><surname>Snyder</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Andrew</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Zuli</surname></persName>
+					</author>
+					<title level="a">Reliable logistics networks design with facility disruptions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Transp Res Part B: Methodol</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="1190" to="1211"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Qian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Rajan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Joyendu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Rump</forename><forename type="middle">M</forename><surname>Christopher</surname></persName>
+					</author>
+					<title level="a">Budget constrained location problem with opening and closing of facilities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Comput Op Res</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">13</biblScope>
+						<biblScope unit="page" from="2047" to="2069"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Carmen</forename><forename type="middle">G</forename><surname>Rawls</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Marc</forename><forename type="middle">A</forename><surname>Turnquist</surname></persName>
+					</author>
+					<title level="a">Pre-positioning of emergency supplies for disaster response</title>
+				</analytic>
+				<monogr>
+					<title level="j">Transp Res Part B: Methodol</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="521" to="534"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Carmen</forename><forename type="middle">G</forename><surname>Rawls</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Marc</forename><forename type="middle">A</forename><surname>Turnquist</surname></persName>
+					</author>
+					<title level="a">Pre-positioning and dynamic delivery planning for short-term response following a natural disaster</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soc-Econ Plan Sci</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="46" to="54"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>Mohammad</forename><surname>Rezaei-Malek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Reza</forename><surname>Tavakkoli-Moghaddam</surname></persName>
+					</author>
+					<title level="a">Robust humanitarian relief logistics network planning</title>
+				</analytic>
+				<monogr>
+					<title level="j">Uncertain Supply Chain Management</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="73" to="96"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Salmerón</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Apte</surname></persName>
+					</author>
+					<title level="a">Stochastic Optimization for Natural Disaster Asset Prepositioning</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prod Op Manag</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="561" to="574"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Serhan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Marco</forename><forename type="middle">A</forename><surname>Gutierrez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Pinar</surname></persName>
+					</author>
+					<title level="a">Pre-positioning of emergency items for care international</title>
+				</analytic>
+				<monogr>
+					<title level="j">Interfaces</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="223" to="237"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Shiva</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B-A</forename><surname>Ali</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Jafar</surname></persName>
+					</author>
+					<title level="a">A robust optimization model for humanitarian relief chain design under uncertainty</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Math Model</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="issue">17</biblScope>
+						<biblScope unit="page" from="7996" to="8016"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Allen</forename><forename type="middle">L</forename><surname>Soyster</surname></persName>
+					</author>
+					<title level="a">Technical noteconvex programming with set-inclusive constraints and applications to inexact linear programming</title>
+				</analytic>
+				<monogr>
+					<title level="j">Op Res</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1154" to="1157"/>
+						<date when="1973">1973</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					<title level="a">A math-heuristic for the warehouse location-routing problem in disaster relief</title>
+					<author>
+						<persName><forename>R</forename><surname>Stefan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Walter</forename><forename type="middle">J</forename><surname>Gutjahr</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="j">Comput Op Res</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="25" to="39"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><surname>Trevor</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Christopher</forename><forename type="middle">R</forename><surname>Moberg</surname></persName>
+					</author>
+					<title level="a">Improving supply chain disaster preparedness: a decision process for secure site location</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Phys Distrib Logist Manag</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="195" to="207"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">N</forename><surname>Van Wassenhove</surname></persName>
+					</author>
+					<title level="a">Humanitarian aid logistics: supply chain management in high gear</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Op Res Soc</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="475" to="489"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Yi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Özdamar</surname></persName>
+					</author>
+					<title level="a">A dynamic logistics coordination model for evacuation and support in disaster response activities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur J Op Res</title>
+					<imprint>
+						<biblScope unit="volume">179</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1177" to="1193"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

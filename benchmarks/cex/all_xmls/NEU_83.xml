@@ -1,0 +1,1990 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Interaction of the Psychiatric Risk Gene Cacna1c With Post-weaning Social Isolation or Environmental Enrichment Does Not Affect Brain Mitochondrial Bioenergetics in Rats</title>
+				<funder ref="#_DMGbd87">
+					<orgName type="full">MW</orgName>
+				</funder>
+				<funder ref="#_VPFX52b">
+					<orgName type="full">RS</orgName>
+				</funder>
+				<funder ref="#_YagjaFG #_3d3Hg7S #_U4DfHhV #_f67ZXqm">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_72UmgT2 #_EbJ7Dqf">
+					<orgName type="full">DFG</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-25">25 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Susanne</forename><surname>Michels</surname></persName>
+							<email>susanne.michels@pharmazie.uni-marburg.de</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Pharmacology and Clinical Pharmacy</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Carsten</forename><surname>Culmsee</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Pharmacology and Clinical Pharmacy</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Amalia</forename><forename type="middle">M</forename><surname>Dolga</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Molecular Pharmacology</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="department" key="dep3">Groningen Research Institute of Pharmacy (GRIP)</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<settlement>Groningen</settlement>
+									<country key="NL">Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Moria</forename><forename type="middle">D</forename><surname>Braun</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Experimental and Biological Psychology</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Theresa</forename><forename type="middle">M</forename><surname>Kisko</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Experimental and Biological Psychology</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">Özge</forename><surname>Sungur</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Experimental and Biological Psychology</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Stephanie</forename><forename type="middle">H</forename><surname>Witt</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Genetic Epidemiology in Psychiatry</orgName>
+								<orgName type="institution">Central Institute of Mental Health</orgName>
+								<address>
+									<settlement>Mannheim</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marcella</forename><surname>Rietschel</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Genetic Epidemiology in Psychiatry</orgName>
+								<orgName type="institution">Central Institute of Mental Health</orgName>
+								<address>
+									<settlement>Mannheim</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Astrid</forename><surname>Dempfle</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Institute of Medical Informatics and Statistics</orgName>
+								<orgName type="institution">Kiel University</orgName>
+								<address>
+									<settlement>Kiel</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Markus</forename><surname>Wöhr</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Experimental and Biological Psychology</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rainer</forename><forename type="middle">K W</forename><surname>Schwarting</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Center for Mind, Brain and Behavior</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Experimental and Biological Psychology</orgName>
+								<orgName type="institution">University of Marburg</orgName>
+								<address>
+									<settlement>Marburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Interaction of the Psychiatric Risk Gene Cacna1c With Post-weaning Social Isolation or Environmental Enrichment Does Not Affect Brain Mitochondrial Bioenergetics in Rats</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Frontiers in Cellular Neuroscience</title>
+						<idno type="ISSN">1662-5102</idno>
+						<imprint>
+							<biblScope unit="volume">13</biblScope>
+							<date type="published" when="2019-10-25">25 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2AAA6B21E74E20759D6CAF332CEEEE28</idno>
+					<idno type="DOI">10.3389/fncel.2019.00483</idno>
+					<note type="submission">This article was submitted to Cellular Neuropathology, a section of the journal Frontiers in Cellular Neuroscience Received: 23 January 2019 Accepted: 11 October 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>brain bioenergetics</term>
+					<term>Ca V 1.2</term>
+					<term>gene x environment interaction</term>
+					<term>isolated mitochondria</term>
+					<term>neuropsychiatric disorders</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The pathophysiology of neuropsychiatric disorders involves complex interactions between genetic and environmental risk factors. Confirmed by several genome-wide association studies, Cacna1c represents one of the most robustly replicated psychiatric risk genes. Besides genetic predispositions, environmental stress such as childhood maltreatment also contributes to enhanced disease vulnerability. Both, Cacna1c gene variants and stressful life events are associated with morphological alterations in the prefrontal cortex and the hippocampus. Emerging evidence suggests impaired mitochondrial bioenergetics as a possible underlying mechanism of these regional brain abnormalities. In the present study, we simulated the interaction of psychiatric diseaserelevant genetic and environmental factors in rodents to investigate their potential effect on brain mitochondrial function using a constitutive heterozygous Cacna1c rat model in combination with a four-week exposure to either post-weaning social isolation, standard housing, or social and physical environmental enrichment. Mitochondria were isolated from the prefrontal cortex and the hippocampus to evaluate their bioenergetics, membrane potential, reactive oxygen species production, and respiratory chain complex protein levels. None of these parameters were considerably affected in this particular gene-environment setting. These negative results were very robust in all tested conditions demonstrating that Cacna1c depletion did not significantly translate into altered bioenergetic characteristics. Thus, further investigations are required to determine the disease-related effects on brain mitochondria.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Neuropsychiatric disorders such as major depression, bipolar disorder, schizophrenia, and autism are highly prevalent, multifaceted, and heterogeneous diseases with shared symptomatic features <ref type="bibr" target="#b0">(Adam, 2013)</ref>. Despite being among the leading causes of disability worldwide, their underlying pathophysiology still remains poorly understood <ref type="bibr" target="#b25">(Kessler et al., 2009)</ref>. Established current neurobiological theories attempting to elucidate the pathophysiology of these complex psychiatric disorders focus on genetic and environmental risk factors, and their interactions <ref type="bibr" target="#b24">(Keers and Uher, 2012)</ref>.</p><p>Identified by genome-wide association studies, Cacna1c represents the most robustly replicated psychiatric risk gene in major depression, bipolar disorder, schizophrenia, and autism. Cacna1c encodes the α 1C subunit of the major L-type calcium channel (LTCC) in the brain (Ca V 1.2) <ref type="bibr" target="#b3">(Bhat et al., 2012;</ref><ref type="bibr" target="#b11">Cross-Disorder Group of the Psychiatric Genomics Consortium, 2013)</ref>. Several studies provide convincing evidence that the risk variant rs1006737 is associated with altered Ca V 1.2 expression, impaired calcium signaling, as well as compromised structure and function of brain regions relevant for characteristic behavioral changes observed in psychiatric patients <ref type="bibr" target="#b3">(Bhat et al., 2012;</ref><ref type="bibr" target="#b15">Erk et al., 2014;</ref><ref type="bibr" target="#b41">Paulus et al., 2014)</ref>. Particularly affected brain regions include the prefrontal cortex (PFC) and the hippocampus (HC), which are essential for stress regulation, emotion, cognition, learning, and memory <ref type="bibr" target="#b8">(Busatto, 2013)</ref>. Supportive findings from transgenic animal models confirm the impact of the cross-disorder risk gene Cacna1c on PFC-and HC-dependent behaviors. For instance, constitutive Cacna1c haploinsufficiency leads to increased anxiety and antidepressant-like effects in mice and causes sex-specific deficits in social behavior and affective communication in juvenile as well as adult rats <ref type="bibr" target="#b12">(Dao et al., 2010;</ref><ref type="bibr" target="#b22">Kabir et al., 2017;</ref><ref type="bibr" target="#b26">Kisko et al., 2018a,</ref><ref type="bibr" target="#b27">Kisko et al., 2018b;</ref><ref type="bibr" target="#b46">Redecker et al., 2019)</ref>. Furthermore, embryonic deletion of Cacna1c in mouse forebrain glutamatergic neurons results in diminished synaptic plasticity, cognitive decline, and reduced sociability <ref type="bibr" target="#b14">(Dedic et al., 2018)</ref>.</p><p>Susceptibility to psychiatric illnesses is only partly genetic, with environmental stress such as childhood neglect and maltreatment representing an additional important contributing factor <ref type="bibr" target="#b37">(Nanni et al., 2012)</ref>. In line with the effects of Cacna1c gene variants, these adverse experiences in early-life are also linked to morphological brain alterations, in this case PFC and HC volume loss <ref type="bibr" target="#b18">(Frodl et al., 2010;</ref><ref type="bibr" target="#b38">Opel et al., 2014)</ref>. Physical and emotional neglect during childhood can be simulated in rodents by postweaning social isolation, which induces behavioral phenotypes related to various neuropsychiatric disorders including social withdrawal and cognitive inflexibility <ref type="bibr" target="#b52">(Seffer et al., 2015)</ref>. Moreover, these prominent impairments due to juvenile social deprivation are accompanied by reduced PFC volume and decreased hippocampal synaptic plasticity <ref type="bibr" target="#b17">(Fone and Porkess, 2008)</ref>. On the contrary, social and physical environmental enrichment, mimicking positive and protective life experiences, promotes HC neurogenesis, improves learning and memory, reduces depression-related behavior, and has beneficial effects on affective communication through ultrasonic vocalizations in rats <ref type="bibr" target="#b6">(Brenes et al., 2009</ref><ref type="bibr" target="#b5">(Brenes et al., , 2016))</ref>.</p><p>Various epidemiologic studies indicate that a single risk factor is not sufficient for the development of a certain psychiatric disorder. These complex diseases rather result from multiple interdependent processes involving the interaction of different genetic and environmental factors <ref type="bibr" target="#b24">(Keers and Uher, 2012)</ref>. At the cellular level, the substantial impact of genetic and environmental risks as well as their interplay on neuroplasticity and behavior might be mediated by alterations in mitochondrial functioning, which have been frequently associated with psychiatric disorders <ref type="bibr" target="#b33">(Manji et al., 2012)</ref>. In mouse hippocampal HT22 cells, we recently found that siRNA-mediated knockdown of Cacna1c promotes mitochondrial resilience to oxidative stress, which reflects a common cellular response to environmental stress <ref type="bibr" target="#b34">(Michels et al., 2018a,</ref><ref type="bibr" target="#b35">Michels et al, 2018b)</ref>. Mitochondria are crucial for cellular energy metabolism and play an important role in regulating calcium homeostasis, redox balance, synaptic plasticity, and cell viability, thereby influencing neural circuits that control highorder functions of the brain such as mood, cognition, and social behavior <ref type="bibr" target="#b28">(Klinedinst and Regenold, 2015)</ref>. In this context, emerging evidence strongly suggests impaired mitochondrial bioenergetics as possible underlying mechanism of regional brain abnormalities in mood disorders by compromising energydependent processes such as neuronal plasticity and the brain's ability to resist or adapt to environmental stressors <ref type="bibr" target="#b54">(Sousa et al., 2014)</ref>.</p><p>Based on these findings, we hypothesized that the interaction of defined psychiatric disease-relevant genetic and environmental factors possibly affects brain mitochondrial function. To this aim, we used a constitutive heterozygous Cacna1c rat model in combination with a 4-week exposure to either social isolation, standard housing, or social and physical environmental enrichment during the juvenile developmental period. Subsequently, mitochondria were isolated from PFC and HC, both representing particularly susceptible brain regions in neuropsychiatric disorders, to evaluate their bioenergetics, membrane potential, reactive oxygen species (ROS) production, and respiratory chain complex protein levels.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Animals and Breeding</head><p>Constitutive heterozygous Cacna1c +/-rats were generated by SAGE Labs (now Horizon Discovery Ltd., Cambridge, United Kingdom) on a Sprague Dawley background via zincfinger nucleases following a previously established protocol <ref type="bibr" target="#b19">(Geurts et al., 2009)</ref>. Cacna1c +/-rats carry a 4 base pair (bp) deletion at 460649-460652 bp in the genomic sequence resulting in an early stop codon in exon 6. Homozygous Cacna1c -/- rats are embryonically lethal. Genotyping was performed as reported before <ref type="bibr" target="#b26">(Kisko et al., 2018a)</ref> using the following primers: 5 -GCTGCTGAGCCTTTTATTGG-3 (Cacna1c Cel-1 F) and 5 -CCTCCTGGATAGCTGCTGAC-3 (Cacna1c Cel-1 R).</p><p>As published previously, a heterozygous breeding protocol was used to obtain offspring from both genotypes <ref type="bibr" target="#b26">(Kisko et al., 2018a)</ref>. To this aim, Sprague Dawley females (Charles River, Sulzfeld, Germany) and male Cacna1c +/-rats were paired for breeding. Sprague Dawley females were used because breeding efficacy is reduced in female Cacna1c +/-rats. In order to avoid litter effects, only litters with both genotypes present were included in the experiments. Breeding was performed at the Faculty of Psychology, University of Marburg, Germany. Approximately 2 weeks after pairing for breeding, females were individually housed and inspected daily for pregnancy and delivery. The day of birth was considered as postnatal day (PND) 0. Rats were identified by paw tattoo, using non-toxic animal tattoo ink (Ketchum permanent tattoo inks green paste; Ketchum Manufacturing Inc., Brockville, Canada). The ink was inserted subcutaneously through a 30-gauge hypodermic needle tip into the center of the paw on PND 5 ± 1. Rats were housed under standard laboratory conditions (22 ± 2 • C and 40-70% humidity) with free access to standard rodent chow and water.</p><p>All procedures were reported in compliance with the ARRIVE guidelines (Animal Research: Reporting in vivo Experiments) and were conducted in strict accordance with the National Institutes of Health Guidelines for the Care and Use of Laboratory Animals and the relevant local or national rules and regulations of Germany and were subject to prior authorization by the local government (MR 20/35 Nr. 19/2014; Tierschutzbehörde, Regierungspräsidium Gießen, Germany).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene x Environment Study</head><p>To study the effects of a gene x environment (GxE) interaction on brain mitochondrial bioenergetics, we applied a 2 × 3 design and exposed male Cacna1c +/-rats and Cacna1c +/+ littermate controls to one of three experimental housing conditions for four consecutive weeks after weaning on PND 21, i.e., between PND 22 and 50 ± 1 (Figure <ref type="figure" target="#fig_0">1</ref>). From each litter, six rats were included in the experiment whenever possible with a pair of Cacna1c +/- and Cacna1c +/+ siblings each being randomly exposed to (A) post-weaning social isolation (Iso), (B) standard housing (Stand), or (C) social and physical environmental enrichment (Enr).</p><p>(A) Post-weaning social isolation (Iso) in a Makrolon type III cage (425 × 265 × 150 mm, plus high stainlesssteel covers; Tecniplast Deutschland GmbH, Hohenpeißenberg, Germany), housed alone, applying a previously established protocol <ref type="bibr" target="#b52">(Seffer et al., 2015)</ref>.</p><p>(B) Standard housing (Stand) in a polycarbonate Makrolon Type IV cage (580 × 380 × 200 mm, plus high stainlesssteel covers; Tecniplast Deutschland GmbH, Hohenpeißenberg, Germany), housed in groups of six rats, consistent with previously applied control conditions <ref type="bibr" target="#b52">(Seffer et al., 2015)</ref>.</p><p>(C) Social and physical environmental enrichment (Enr) in a large commercial rat cage (AniOne Remus, 104 × 59 × 107 cm; MultiFit Tiernahrungs GmbH, Krefeld, Germany) containing three wooden platforms connected by ramps, two metal food dispensers, and an assortment of cage accessories and places to hide, applying a modified protocol previously established <ref type="bibr" target="#b5">(Brenes et al., 2016)</ref>. The initial cage setup comprised six hiding places (2x Rodent Retreats red, Bio-Serv, Flemington, NJ, United States; 2× AniOne Grasnest Size L, MultiFit Tiernahrungs GmbH, Krefeld, Germany; 1× AniOne Grastunnel, MultiFit Tiernahrungs GmbH, Krefeld, Germany; 1× empty cardboard box, Dallmayr capsa, Munich, Germany), six wooden sticks for the animals to chew on, and two petri dishes with water in addition to the water bottle affixed to the cage wall. Twice a week, various accessories were either added to the cage (e.g., 2× wire feeding balls stuffed with paper tissue, Food-Ball Ø 12 cm, TRIXIE Heimtierbedarf GmbH, Tarp, Germany; 3× marbles; 2× empty toilet paper rolls) or exchanged, in the case of hiding places (1× wooden rat house, Jesper Eckhaus Size M, TRIXIE Heimtierbedarf GmbH, Tarp, Germany; 1× JR Farm Heuhaus 85 g, JR FARM GmbH, Holzheim-Pessenburgheim, Germany). During social and physical environmental enrichment, rats further received two servings of six pieces of sweetened puffed wheat cereal (Kellogg's Smacks; Kellogg Deutschland, Hamburg, Germany), which were hidden within the cage.</p><p>In standard housing and social and physical environmental enrichment conditions, two siblings were always housed with two further pairs of Cacna1c +/-and Cacna1c +/+ siblings from different litters. To avoid age differences between litters, all rats included in the experiment were born within a 4day time window.</p><p>In total, 54 rats were included in the experiment, with n = 9 per genotype and experimental housing condition (Cacna1c +/+ -Iso, Cacna1c +/+ -Stand, Cacna1c +/+ -Enr, Cacna1c +/--Iso, Cacna1c +/--Stand, Cacna1c +/--Enr; short: +/+ Iso, +/+ Stand, +/+ Enr, +/-Iso, +/-Stand, +/-Enr). One Cacna1c +/-rat housed under social and physical environmental enrichment conditions died before the end of the experiment and was excluded from data analysis. PFC and HC of the right brain hemispheres were removed on three consecutive days immediately following the 4 weeks of exposure to the experimental housing conditions at ∼2 months of age. All subsequent analyses were conducted blinded to genotype and environmental background.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplementary Genotype Studies</head><p>Besides the GxE study, we performed two additional studies. In the first supplementary study, we tested whether brain mitochondrial bioenergetics differs in Cacna1c +/-rats and Cacna1c +/+ littermate controls depending on brain hemisphere. In this study, six male Cacna1c +/-rats and six male Cacna1c +/+ littermate controls exposed to standard housing conditions were included. Brains were removed at ∼2 months of age.</p><p>In the second supplementary study, we tested whether brain mitochondrial bioenergetics differs in Cacna1c +/-rats and Cacna1c +/+ littermate controls depending on age and sex. In this study, eight male Cacna1c +/-rats and eight male Cacna1c +/+ littermate controls as well as eight female Cacna1c +/-rats and eight female Cacna1c +/+ littermate controls exposed to standard housing conditions were included. Brains were removed at ∼10 months of age (Figure <ref type="figure" target="#fig_0">1</ref>).</p><p>Rats included in the supplementary studies were used before weaning to study isolation-induced ultrasonic vocalizations, developmental milestones, and somatosensory reflexes [<ref type="bibr" target="#b58">(Wöhr et al., 2013)</ref>; not shown].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Brain Extraction</head><p>For brain removal, rats were first deeply anesthetized with isoflurane (Baxter, Unterschleißheim, Germany), and then decapitated and their brains were quickly extracted. The HC was identified and removed as described previously <ref type="bibr" target="#b56">(Sungur et al., 2017)</ref>, following the gross anatomical criteria established before <ref type="bibr" target="#b49">(Rosen et al., 2000)</ref>. To expose the dorsal part of the HC, the cerebral cortex covering it was incised and pulled up. The HC was then separated from cortex and removed toward the ventral side. Next, using a cold stainless steel adult rat brain matrix (Zivic Instruments, Pittsburgh, PA, United States), the brain was divided into left and right hemispheres and subsequently the prefrontal cortex (PFC) was isolated via a coronal cut approximately between +2.5 and +5.0 mm from bregma, using the rat brain atlas as anatomical reference <ref type="bibr" target="#b42">(Paxinos and Watson, 2007)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mitochondrial Isolation</head><p>Mitochondria were isolated from both PFC and HC of acutely dissected adult rat brains using a pump-controlled cell homogenizer (Isobiotec, Heidelberg, Germany) with a clearance of 10 µm and a constant pump flow rate of 700 µl/min as published previously <ref type="bibr" target="#b51">(Schmitt et al., 2013)</ref>. In brief, fresh brain tissue (∼50 mg), kept in isolation buffer containing 300 mM sucrose, 5 mM TES, 200 µM EGTA, and 1 mM DTT, was coarsely sheared with a 20G Neoject needle (Dispomed, Gelnhausen, Germany) and then strained through a 100 µm nylon cell strainer (Corning Incorporated, Corning, NY, United States). The resulting cell suspension was filled in a 1 ml gas tight glass syringe (Supelco, Munich, Germany) and homogenized with three strokes through the cell homogenizer. Subsequently, the homogenate was centrifuged at 800 × g for 10 min at 4 • C. The supernatant, referred to as total lysate, was transferred to a new tube and centrifuged at 9,000 × g, again for 10 min at 4 • C (Heraeus fresco 17, Thermo Fisher Scientific, Darmstadt, Germany). The resulting supernatant contains the cytosolic fraction and the emerging pellet represents the crude mitochondrial fraction which was slowly resuspended in 500 µl mitochondrial isolation buffer (70 mM sucrose, 210 mM mannitol, 5 mM HEPES, 1 mM EGTA, 0.5% (w/v) BSA; pH 7.2). All steps were performed on ice. The total protein concentration was determined using the Pierce BCA Protein Assay Kit (Thermo Fisher Scientific, Darmstadt, Germany) with BSA standards based on mitochondrial isolation buffer.</p><p>Unless otherwise stated, all reagents were purchased from Sigma-Aldrich (Munich, Germany). As isolated mitochondria decline in their functional quality over time, our study was strictly littermate controlled and the isolation process was conducted in a randomized order to compensate for potential inter-day and time-dependent variability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein Analysis</head><p>Protein was extracted from frozen prefrontal and hippocampal tissue (10 mg) lysed in buffer containing 50 mM Tris-HCl, 150 mM NaCl, 5 mM EDTA, 1.0% (w/v) Triton X-100, and 0.5% (w/v) Na-deoxycholate, freshly supplemented with 2 mM PMSF, 1 mM Na 3 VO 4 , and 10 mM NaF. Tissue lysis was succeeded by a homogenization step using a T10 basic Ultra-Turrax (IKA-Werke, Staufen, Germany) for 10 s. The homogenates were then centrifuged for 15 min at 13,000 × g and 4 • C resulting in the protein-comprising supernatants (Heraeus Fresco 17; Thermo Fisher Scientific, Darmstadt, Germany). In addition, the collected fractions from the isolation procedure, i.e., total lysate, cytosolic and mitochondrial fraction, were also used for protein quantitation. The total protein amount was determined with the Pierce BCA Protein Assay Kit (Thermo Fisher Scientific, Darmstadt, Germany). A total of 50 µg protein per sample were loaded on 7.5 and 12.5% polyacrylamide gels, respectively. After electrophoresis, the proteins were transferred onto PVDF membranes (Roche Diagnostics, Mannheim, Germany) and incubated with the respective primary antibodies overnight at 4 • C. The following antibodies were used: Ca V 1.2 (1:1,000; Alomone Labs, Jerusalem, Israel) and Vinculin (1:20,000; Sigma-Aldrich, Munich, Germany). Protein detection was achieved using peroxidase labeled secondary antibodies (Vector Laboratories, Burlingame, CA, United States) and luminol based HRP-Juice Plus (PJK GmbH, Kleinblittersdorf, Germany). The resulting chemiluminescence was imaged with a ChemiDoc XRS system (Bio-Rad Laboratories, Hercules, CA, United States). Protein quantification was performed using Bio-Rad Image Lab TM Software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mitochondrial Bioenergetics Measurement</head><p>The oxygen consumption rate (OCR) as an indicator of mitochondrial respiration was measured with a Seahorse XF e 96 Analyzer (Agilent Technologies, Waldbronn, Germany). The coupling assay was performed according to existing protocols <ref type="bibr" target="#b48">(Rogers et al., 2011)</ref>. Briefly, 6 µg of freshly isolated mitochondrial protein per well were assayed in mitochondrial assay solution containing 70 mM sucrose, 220 mM mannitol, 10 mM KH 2 PO 4 , 5 mM MgCl 2 , 2 mM HEPES, 1 mM EGTA, and 0.2% (w/v) fatty-acid-free BSA, with an adjusted pH of 7.2 and supplemented with the complex II substrate succinate (10 mM) and the complex I inhibitor rotenone (2 µM). The consistent adherence of the mitochondria to the well ground was ensured by centrifugation of the whole plate at 2,000 × g for 20 min at 4 • C (Heraeus Megafuge 40R; Thermo Fisher Scientific, Darmstadt, Germany). The Seahorse system allows for the consecutive injection of different modulators of the electron transport chain. The compounds and final concentrations used are as follows: 4 mM ADP, 2.5 µg/ml oligomycin, 4 µM FCCP, 4 µM antimycin A. Data analysis and parameter calculation were conducted as described previously <ref type="bibr" target="#b50">(Salabei et al., 2014)</ref> and in Table <ref type="table" target="#tab_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Flow Cytometry</head><p>Freshly isolated mitochondrial protein was suspended in mitochondrial assay solution at a concentration of 50 µg/ml. The probes were stained with fluorescent dye and incubated on ice for 15 min protected from light. Mitochondrial superoxides were detected by incubation with 1.25 µM MitoSOX Red indicator (Thermo Fisher Scientific, Darmstadt, Germany). Changes in mitochondrial membrane depolarization were determined using MitoPT TMRE Kit (0.2 µM; ImmunoChemistry Technologies, Hamburg, Germany) and with 10 mM succinate and 2 µM rotenone added to the buffer. The samples were measured with a total count of 50,000 events utilizing a Guava easyCyte 6-2L flow cytometer (Merck Millipore, Darmstadt, Germany). Analysis and gating were performed with the GuavaSoft 3.1.1 software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical Analysis</head><p>Data is presented as single values together with their mean and standard deviation (SD). Analysis of the cortex and the hippocampus were performed separately. The outcome variables studied in the statistical analysis were Ca V 1.2 protein levels, body weight, tissue weight, the parameters of the mitochondrial bioenergetics measurements (Basal, State 3, State 4 o , State 3 u , Anti A, and RCR), ETC complex protein levels (CI-CV), MitoSOX, and TMRE fluorescence. Besides genotype (Cacna1c +/+ /Cacna1c +/-), explanatory variables included in the analysis were environment (Iso, Stand, Enr), brain hemisphere (left/right), age (2/10 months), and sex (male/female). Each of these factors was fully crossed with the genotype, but none of them were crossed with any of the other explanatory variables. Hence, a separate analysis of each of these variables on the respective outcome variables was performed.</p><p>In the case of Ca V 1.2 protein levels, the experimental design (i.e., 3 housing conditions × 2 genotype conditions) was evaluated by a 2-factorial analysis of variance (ANOVA), including the main effects genotype, environment, and the geneenvironment interaction. For all other outcome variables, the littermate pairs [one rat with genotype Cacna1c +/+ (WT), the other with genotype Cacna1c +/-(HET)] which were raised under the same environmental (housing) conditions were considered in the analysis. Rather than analyzing the 2-factor cross-over design as a 2-factorial ANOVA</p><formula xml:id="formula_0">y ijk = a + b i x 1k + c j x 2k + (bc) ij x 1k x 2k + ε ijk<label>(1)</label></formula><p>for rat k with genotype i and housing j, we evaluated the model</p><formula xml:id="formula_1">y WTjk -y HETjk = a + b j x k + ε jk<label>(2)</label></formula><p>for the siblings k (with different genotypes WT and HET) in housing j, instead. In this model, testing for b j = 0 is a test for the existence of a gene-environment interaction. A test on a = 0 is a test for the existence of a main genotype effect. The first test in each 2-factorial ANOVA was always a test on the gene-environment interaction. If the hypothesis of no interaction could be rejected, we report results for each genotype x environment combination separately. If neither a significant gene-environment interaction, nor a genotype main effect was present, the environmental main effect was analyzed without consideration of littermate pairs. Residual distributions were visually checked for symmetry and variance homogeneity. All residual distributions had symmetric shape, and only in the data sets of the MitoSOX and TMRE measurements variance heteroscedasticity was present. Generally, the 2-factorial ANOVAs were evaluated by ordinary least squares (OLS) and F-tests with the exception of the MitoSOX and TMRE data, in which the 2-factorial ANOVA was evaluated by weighed least squares (WLS) with weights set to the reciprocal of the OLSresidual variance.</p><p>All p-values are reported up to four digits of significance and were considered statistically significant at p &lt; 0.01. The analysis was carried out using R (Version 3.5.2). All statistical models and full result tables are presented in the Supplementary Material. Figures were created with GraphPad Prism (Version 7; GraphPad Software, La Jolla, CA, United States).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head><p>In order to study the combined effects of a heterozygous Cacna1c knockout and different environmental influences on brain mitochondria, we first validated the reduction of Ca V 1.2 levels in Cacna1c +/-rats, compared the mean body weight per group, examined the PFC/HC tissue weight, and verified the functional integrity of the isolated mitochondria. As evident from Figure <ref type="figure" target="#fig_1">2</ref>, the Ca V 1.2 protein content is decreased by around 50% in the PFC of Cacna1c +/-rats (mean 0.47; 95% confidence interval (CI) 0.41,0.54) compared to their Cacna1c +/+ littermates (mean 0.94; 95% CI 0.87,1.01), irrespective of the environmental condition (see Supplementary Material for full tables of statistical results). The same applies to the Ca V 1.2 protein levels in the HC of Cacna1c +/-(mean 0.44; 95% CI 0.35,0.53) versus Cacna1c +/+ rats (mean 0.97; 95% CI 0.88,1.06). Statistical analysis found no evidence for a gene-environment interaction (GxE; PFC, p = 0.6632; HC, p = 0.9989) or for an environmental effect (E; PFC, p = 0.4049; HC, p = 0.2590), but revealed a significant genetic effect (G; PFC, p &lt; 0.0001; HC, p &lt; 0.0001). Besides the 240 kDa full-length form of Ca V 1.2, a C-terminally truncated shorter version of the α 1C -subunit was also affected by the heterozygous Cacna1c knockout as shown in Supplementary Figure <ref type="figure">S1a</ref>. Together, these constitute the primary and major size forms of α 1C in the brain <ref type="bibr" target="#b7">(Buonarati et al., 2017)</ref>.</p><p>In turn, the housing condition had an impact on the body weight of the 2-month-old rats. Compared to social isolation and standard housing, social and physical environmental enrichment led to a significant weight loss of 33.1 g (95% CI 28.4,37.9) in both Cacna1c +/-rats and their Cacna1c +/+ littermates (E, p = 0.0035; G, p = 0.0189; GxE, p = 0.6312) (Figure <ref type="figure" target="#fig_1">2C</ref>). Immediately after its extraction, we also determined the weight of the two brain regions studied (Supplementary Figure <ref type="figure">S1b</ref>). However, since we found no significant genotype-and/or environmentdependent differences in PFC (GxE, p = 0.3293; G, p = 0.4180; E, p = 0.9694; mean 62.7; 95% CI 59.9,65.6) and HC (GxE, p = 0.3070; G, p = 0.3630; E, p = 0.7412; mean 42.0; 95% CI 40.0,43.9) tissue weight, it was not considered in further analyses of mitochondrial function.</p><p>The previously established isolation of mitochondria from fresh brain tissue using a speed-and pressure-controlled cell rupture system including a Balch-style homogenizer with a defined clearance constitutes a fast, efficient, and replicable method <ref type="bibr" target="#b51">(Schmitt et al., 2013)</ref>, which ensured the separation of a crude fraction of functional active mitochondria from nuclear and cytosolic parts (Supplementary Figure <ref type="figure">S2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mitochondrial Bioenergetics and Respiratory Chain Complex Levels</head><p>To compare brain bioenergetics in the GxE study using extracellular flux analysis, mitochondria were isolated from PFC and HC of Cacna1c +/-rats and their Cacna1c +/+ littermates, which were each exposed to one of the three experimental housing conditions, i.e., post-weaning social isolation, standard housing, or social and physical environmental enrichment during the critical developmental period of adolescence (Figure <ref type="figure" target="#fig_0">1</ref>). As cellular regulation of mitochondrial function was removed during isolation, energy demand and substrate availability can be specifically modulated to identify sitespecific changes in mitochondrial activity and to examine the degree of coupling between the electron transport chain (ETC) and the oxidative phosphorylation machinery. In the performed coupling experiments, respiratory states, indicative of mitochondrial function, were measured as absolute oxygen consumption rate (respiration), normalized to mitochondrial protein content (Figure <ref type="figure" target="#fig_2">3</ref>).</p><p>To assess the Basal respiration state, mitochondria were initially incubated with the complex II substrate succinate and, to prevent reverse electron flow, with the complex I inhibitor rotenone (Figures <ref type="figure" target="#fig_3">4A, B</ref>). Then, ADP was added to induce phosphorylation and ATP synthesis (State 3; Figures <ref type="figure" target="#fig_3">4C, D</ref>). Both parameters did not differ significantly among the six groups, neither in the PFC (Basal; GxE, p = 0.0235; G, p = 0.5950; E, p = 0.4888; State 3; GxE, p = 0.0236; G, p = 0.6760; E, p = 0.5307) nor in the HC (Basal; GxE, p = 0.2917; G, p = 0.6090; E, p = 0.7683; State 3; GxE, p = 0.5156; G, p = 0.6880; E, p = 0.8343), thereby excluding an effect on ATP turnover. Next, State 4 o was initiated by the injection of oligomycin to inhibit the ATP synthase (complex V). This state allows to assess proton leak and was not affected by either the genotype (G; PFC, p = 0.6430; HC, p = 0.3560), the environment (E; PFC, p = 0.6178; HC, p = 0.8159) or their interaction (GxE; PFC, p = 0.0332; HC, p = 0.3022) in both brain regions studied ( <ref type="figure" target="#fig_3">Figures 4E, F</ref>). After oligomycin addition the protonophore FCCP was injected to dissipate the proton gradient leading to enhanced oxygen consumption, which is not coupled to phosphorylation. Thus, the achieved State 3 u is exclusively controlled by substrate oxidation. Here, the genotype (G; PFC, p = 0.2270; HC, p = 0.6070), the environment (E; PFC, p = 0.4331; HC, p = 0.8917), and their interaction (GxE; PFC, p = 0.2116; HC, p = 0.5315) also showed no effect on State 3 u respiration of mitochondria isolated from PFC or HC (Figures <ref type="figure" target="#fig_3">4G, H</ref>). The final injection of the complex III inhibitor antimycin A was used to correct all parameters for non-mitochondrial respiration, which was consistently low in all conditions as cytosolic oxidases were eliminated during the isolation process (GxE; PFC, p = 0.1301; HC, p = 0.3117; G; PFC, p = 0.8220; HC, p = 0.7310; E; PFC, p = 0.3851; HC, p = 0.8580) (Figures <ref type="figure" target="#fig_3">4I, J</ref>).</p><p>In line with previous studies investigating brain regionspecific differences in mitochondrial bioenergetics <ref type="bibr" target="#b40">(Pandya et al., 2016)</ref>, all respiration rates in the HC were lower compared to the PFC with no effect on the respiratory control ratio (Figures <ref type="figure" target="#fig_3">4,</ref><ref type="figure" target="#fig_4">5</ref>). The respiratory control ratio (RCR) is defined as the oxygen consumption in State 3 divided by that in State 4 o . This internally normalized parameter provides combined information on substrate oxidation capacity, ATP turnover, and proton leakage making it a potent overall marker of energetic dysfunction <ref type="bibr" target="#b4">(Brand and Nicholls, 2011)</ref>. In mitochondria from the right PFC (mean RCR 2.97; 95% CI 2.80,3.13) as well as from the right HC (mean RCR 3.42; 95% CI 3.19,3.64) of 2-monthold male rats, we obtained constant RCR values for all the six groups compared (Figure <ref type="figure" target="#fig_4">5</ref>). There was no GxE interaction (PFC, p = 0.7004; HC, p = 0.4914), no genetic (PFC, p = 0.8960; HC, p = 0.7890), and no environmental effect (PFC, p = 0.9640; HC, p = 0.9275) on RCR in both, PFC and HC.</p><p>To control for potential brain hemisphere-, age-, or sexrelated effects, mitochondrial RCRs were also evaluated in right versus left hemisphere, in 2-versus 10-month-old animals, and in female versus male, using Cacna1c +/-rats and Cacna1c +/+ littermates exposed to standard housing conditions in two supplementary studies (Supplementary Figure <ref type="figure">S3</ref>). Our measurements revealed neither a gene-hemisphere interaction (p = 0.2740) nor an effect of the hemisphere (p = 0.2010) on 2month-old male PFC RCR alone (Supplementary Figure <ref type="figure">S3a</ref>). Interestingly, in the PFC of 10-month-old normally housed male Cacna1c +/-rats, the RCR was moderately, but significantly elevated by 0.45 (95% CI 0.28,0.62) compared to the 3.90 average RCR (95% CI 3.67,4.13) of Cacna1c +/+ littermate controls (GxA, p &lt; 0.0001; G, p = 0.0004) (Supplementary Figure <ref type="figure">S3b</ref>). However, no genotype effect on RCR of 10month-old animals was observed in male HC (G, p = 0.3360; mean 4.50; 95% CI 4.11,4.90), female PFC (G, p = 0.4260; mean 4.32; 95% CI 3.94,4.69), and female HC (G, p = 0.0909; mean 4.35; 95% CI 4.21,4.49), respectively (Supplementary Figures <ref type="figure">S3c-e</ref>). Further, male HC RCRs were significantly higher in the 10-compared with the 2-month-old animals (Age, p = 0.0003; GxA, p = 0.6583) (Supplementary Figure <ref type="figure">S3c</ref>). No statistically significant differences between sexes were detected; neither in PFC RCR (GxS, p = 0.0613; S, p = 0.3369) nor in HC RCR (GxS, p = 0.0748; S, p = 0.2708) (Supplementary Figures <ref type="figure">S3d, e</ref>).</p><p>In addition to the functional assessment, we continued to quantify the expression levels of the five ETC complexes by Western blot. Consistently, these showed no changes in relation to genotype and/or environment, neither in the PFC (CI; GxE, p = 0.8250; G, p = 0.6930; E, p = 0.1221; CII; GxE, p = 0.3438; G, p = 0.4050; E, p = 0.8441; CIII; GxE, p = 0.5105; G, p = 0.1390; E, p = 0.5992; CIV; GxE, p = 0.9364; G, p = 0.7110; E, p = 0.7078; CV; GxE, p = 0.1485; G, p = 0.9990; E, p = 0.6015) nor in the HC (CI; GxE, p = 0.6014; G, p = 0.5580; E, p = 0.4120; CII; GxE, p = 0.1782; G, p = 0.7990; E, p = 0.4237; CIII; GxE, p = 0.3912; G, p = 0.5160; E, p = 0.7028; CIV; GxE, p = 0.2748; G, p = 0.8500; E, p = 0.6958; CV; GxE, p = 0.6685; G, p = 0.3960; E, p = 0.4066) (Supplementary Figures <ref type="figure">S4,</ref><ref type="figure">S5</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mitochondrial Superoxide Levels and Membrane Potential</head><p>To further substantiate the results from the bioenergetics analyses, we measured associated mitochondrial parameters including ROS levels and membrane potential ( m ) by using flow cytometry <ref type="bibr" target="#b10">(Cottet-Rousselle et al., 2011)</ref>. The fluorescent dye MitoSOX is rapidly targeted to mitochondria where it is selectively oxidized by superoxide (O 2 •-) producing red fluorescence (Supplementary Figure <ref type="figure">S6a</ref>). O 2 •-is increasingly formed upon perturbations in the electron flow across the respiratory chain. Moreover, superoxide generation is strongly dependent on the mitochondrial membrane potential, which, in turn, is particularly important for the regulation of ATP synthesis, indicating that all these processes are closely interconnected. The slow-responding cationic dye TMRE (tetramethylrhodamine ethyl ester) accumulates within the mitochondria in a membrane potential-dependent manner and is thereby well suited for measuring pre-existing m (Supplementary Figure <ref type="figure">S6b</ref>). As detailed in Figure <ref type="figure" target="#fig_5">6</ref> and consistent with our previous findings, both superoxide levels and m of mitochondria isolated from Prefrontal cortex and HC remained unaltered in response to Cacna1c haploinsufficiency and different environmental situations with the exception of physical and social enrichment. Here, we found significantly higher mitochondrial ROS levels (mean 10.9; 95% CI 8.0,13.7) versus isolation and standard housing (mean 6.3; 95% CI 5.5,7.0), but only in mitochondria isolated from the PFC and not from the HC. While showing no gene-environment interaction (p = 0.7700) and no genetic effect (p = 0.3180), mitochondrial ROS levels were significantly higher in the PFC of enriched animals (E, p = 0.0062). No statistical significant differences were observed in hippocampal mitochondrial superoxide levels (mean 7.5; 95% CI 6.5,8.5; GxE, p = 0.9490; G, p = 0.9050; E, p = 0.2559) as well as in the membrane potential of mitochondria isolated from PFC (mean 17.2; 95% CI 15.8,18.5; GxE, p = 0.6998; G, p = 0.0696; E, p = 0.5434) and HC (mean 18.6; 95% CI 16.9,20.3; GxE, p = 0.4958; G, p = 0.0471; E, p = 0.5026).</p><p>In summary, genotype and environment alone or in interaction did not have a substantial effect on overall mitochondrial bioenergetics in brain regions that are affected in psychiatric disorders (PFC, HC). Furthermore, the functional profile of the isolated brain mitochondria was completed by the evaluation of respiratory chain complex levels, superoxide formation, and membrane potential also not providing evidence for mitochondrial impairment associated with the investigated conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>In contrast to our initial evidence-based hypothesis, we could not detect any major differences in brain mitochondrial performance between constitutive haploinsufficient Cacna1c +/- rats and wildtype littermates irrespective of the environmental condition, i.e., post-weaning social isolation, standard housing, and social and physical environmental enrichment. By studying different aspects of mitochondrial function such as respiration, ROS production, m , and ETC-complex protein levels, we repeatedly confirmed that there is no genotype effect, no distinct environment effect, and also no GxE interaction, emphasizing the robustness and reliability of our (negative) results. To our knowledge, a potential link between altered expression of the psychiatric risk gene Cacna1c and cerebral mitochondrial function has not been investigated in vivo so far. It is well known, however, that the respiratory chain is regulated by the cytosolic calcium concentration <ref type="bibr" target="#b44">(Pizzo et al., 2012)</ref>, which in turn is very likely dependent on the level of Ca V 1.2 at the cell membrane. Despite a ∼50% reduction in brain Ca V 1.2 levels in the present rat model, the heterozygous Cacna1c genotype consistently had no effect on PFC and HC bioenergetics compared   to wildtype littermates, independent of the hemisphere and environmental condition studied. One possible reason might be that developmental Cacna1c heterozygosis either is not sufficient to perceive detectable changes, or induces adaptive mechanisms facilitating alternative calcium influx routes. In this regard, it has been reported previously that chronic genetic loss of Ca V 1.2 in the central nervous system of mice leads to a compensatory upregulation of calcium-permeable AMPA receptors, thereby maintaining appropriate intracellular calcium concentrations and normal neuronal plasticity <ref type="bibr" target="#b30">(Langwieser et al., 2010)</ref>.</p><p>In the context of GxE interactions, we have shown recently that Cacna1c downregulation mediates cellular resilience against oxidative stress in neuronal HT22 cells particularly at the level of mitochondria <ref type="bibr" target="#b34">(Michels et al., 2018a)</ref>. Furthermore, using different Cacna1c siRNAs, our previous findings indicate that a sufficiently strong knockdown of at least 62% in Ca V 1.2 expression is essential to achieve significant protective effects in mouse hippocampal HT22 cells exposed to oxidative stress, including the maintenance of ATP production, respiration, and m as well as the prevention of excessive ROS formation <ref type="bibr" target="#b34">(Michels et al., 2018a,</ref><ref type="bibr" target="#b35">Michels et al., 2018b)</ref>. Consistently, several animal studies have confirmed that modified Cacna1c expression modulates stress susceptibility in adult male mice <ref type="bibr" target="#b57">(Terrillion et al., 2017;</ref><ref type="bibr" target="#b14">Dedic et al., 2018)</ref>. However, in these previous studies, mitochondrial parameters were not analyzed. For example, the region-specific deletion of Cacna1c in the nucleus accumbens was associated with increased stress sensitivity in mice exposed to chronic social defeat for 10 days <ref type="bibr" target="#b57">(Terrillion et al., 2017)</ref>. Accordingly, Cacna1c depletion in forebrain glutamatergic neurons during embryonic development promoted susceptibility to chronic stress in mice subjected to social defeat for 3 weeks <ref type="bibr" target="#b14">(Dedic et al., 2018)</ref>. Conversely, 4 weeks of chronic unpredictable stress induced depressive-and anxiety-like behavior in both Cacna1c heterozygous mice and their wildtype littermates when assessed 1-2 days following stress <ref type="bibr" target="#b2">(Bavley et al., 2017)</ref>. Similar to this unchanged performance in PFC-dependent behavioral tasks, Cacna1c haploinsufficiency did not interact with 4-week early life social isolation stress to affect PFC or HC mitochondrial bioenergetics in the present rat study. Discrepancies in the above-mentioned findings might be related to different species, sites of the genetic modification, age, stress paradigms and duration, or readouts. Environmental enrichment was initially intended for rescuing potential adverse genotype effects on mitochondrial performance and had neither a combined geneenvironment impact, nor a beneficial influence on its own in the current experiments. However, physical and social environmental enrichment showed a general effect on the rats' biometric characteristics and ROS generation. In line with prior studies, environmentally enriched animals had significantly lower body weights than their non-enriched controls, possibly attributed to a higher physical activity and most likely influenced by the type and duration of enrichment <ref type="bibr" target="#b55">(Sparling et al., 2018)</ref>. Moreover, 4 weeks of environmental enrichment resulted in significantly increased mitochondrial ROS levels in the rats' prefrontal cortex, constituting a common response of tissues to physical exercise <ref type="bibr" target="#b45">(Radak et al., 2016)</ref>.</p><p>Compared to Cacna1c-associated effects, the impact of chronic stress alone on brain mitochondrial function has already been examined in a number of rodent studies (for review see <ref type="bibr" target="#b28">Klinedinst and Regenold, 2015;</ref><ref type="bibr" target="#b43">Picard and McEwen, 2018)</ref>. Traditional chronic stress paradigms, including chronic unpredictable stress (CUS) for 6 weeks and chronic restraint stress (CRS) for 2-3 weeks, are established animal models of depression. Published findings indicate that CUS in adult male rats is accompanied by inhibited activities of the mitochondrial respiratory chain complexes I, III, and IV in whole tissue homogenates from cerebral cortex and cerebellum, but not from PFC and HC <ref type="bibr" target="#b47">(Rezin et al., 2008)</ref>. Under the same conditions, another study described decreased complex I and IV activities in isolated PFC and HC mitochondria <ref type="bibr" target="#b31">(Liu and Zhou, 2012)</ref>. Opposing results, however, showed increased complex I, II, and III activities in PFC tissue of adult Wistar rats exposed to CUS <ref type="bibr" target="#b39">(Ortmann et al., 2016)</ref>. In mice, CUS led to a reduced respiratory control ratio in isolated mitochondria from cortex and HC <ref type="bibr" target="#b20">(Gong et al., 2011)</ref>. Using the CRS model, further research revealed decreases in enzyme activity of complex I-III without affecting complex IV activity, oxygen consumption, and ATP production in isolated cortical rat mitochondria <ref type="bibr" target="#b32">(Madrigal et al., 2001)</ref>. CRS in mice caused complex IV inhibition in mitochondria isolated from HC <ref type="bibr" target="#b53">(Seo et al., 2011)</ref> and diminished complex I-driven State 3 respiration in isolated forebrain mitochondria <ref type="bibr" target="#b23">(Kambe and Miyata, 2015)</ref>. Collectively, variations in stress induction paradigms, brain region selection, tissue processing, method application, and parameter evaluation probably contribute to the diverging and in part conflicting results regarding the impact of chronic stress on mitochondrial outcomes. Furthermore, existing studies largely focused on ETC complex activity measurements and observed in most cases decreased activities with effects ranging between 30 and 70% <ref type="bibr" target="#b43">(Picard and McEwen, 2018)</ref>. However, it has been demonstrated in isolated non-synaptic rat mitochondria that complex I, III and IV activities could be reduced by more than 60% before respiration and ATP synthesis are considerably affected <ref type="bibr" target="#b13">(Davey and Clark, 1996)</ref>. This suggests that moderate changes in candidate complex activities have little effect on the overall capability of mitochondria to maintain brain energy homeostasis, which is dependent on the integrity of many processes. On the contrary, the oxygen consumption and RCR, which were measured in our and some previous studies, represent a more comprehensive and revealing option to detect bioenergetic dysfunction in isolated mitochondria <ref type="bibr" target="#b4">(Brand and Nicholls, 2011)</ref>.</p><p>With 4 weeks of post-weaning social isolation, we used a different model of environmental stress and found no changes in mitochondrial respiration, membrane potential, ROS formation, or protein levels of the ETC complexes in rat PFC and HC compared to the socially reared littermate controls. Such chronic social isolation represents a mild and more natural stressor than CUS and CRS, which still evokes a variety of neurobehavioral changes in rodents comparable to those observed in patients with psychiatric disorders, including anxiety and depression <ref type="bibr" target="#b16">(Filipović et al., 2017)</ref>. As reported previously, 4 weeks of juvenile social isolation stress led to decreased ATP and elevated ROS levels in the HC of male mice <ref type="bibr" target="#b1">(Amiri et al., 2015)</ref>. Postweaning social isolation for 8 weeks also resulted in reduced ATP accumulation in the frontal cortex, but not in the striatum of male Sprague Dawley rats <ref type="bibr" target="#b36">(Möller et al., 2013)</ref>. In addition, male Wistar rats showed slightly increased complex IV activity as well as unchanged mitochondrial membrane potential and ROS production in the PFC after 1-week social isolation during the pre-pubertal period <ref type="bibr" target="#b29">(Krolow et al., 2012)</ref>. All these parameters, which were used as measures of mitochondrial function, were assessed from whole frozen tissue, whereas our experiments were predominantly conducted with isolated fresh mitochondria. Thus, the published measurements are solely normalized to the total protein content in the tissue homogenates, making it impossible to distinguish if the existent findings are based on altered mitochondrial quantity or quality. Whilst the meaningful normalization to mitochondrial protein allowed us to specifically evaluate the functional status of brain mitochondria. Besides varying stress duration and assays used, this apparent difference in the normalization procedure might be a further explanation for the inconsistent findings and additionally impedes the comparability of the studies.</p><p>Prefrontal cortex and HC are among the most frequently studied brain regions in neuropsychiatric disorders based on their documented stress sensitivity, especially during the juvenile developmental period and their particular implication in diseaserelevant neuronal circuits <ref type="bibr" target="#b9">(Carlson et al., 2006)</ref>. Nonetheless, while providing brain-region-specific analyses of PFC and HC mitochondria, our work did not differentiate between cells or cell subtypes, sharing this limitation also with all relevant prior studies. Mitochondria isolated from brain tissue originate from different cell types including neuronal and glial cells. This heterogeneous composition of cells could mask potential cell type-dependent variations in stress susceptibility and changes in the glia-neuron ratio. Furthermore, the expression of Ca V 1.2 varies between excitable and non-excitable cells <ref type="bibr" target="#b21">(Harraz and Altier, 2014)</ref>, which might thus be differently affected by the heterozygous Cacna1c knockout. The investigation of cell typespecific mitochondrial bioenergetics therefore constitutes a key challenge for future studies.</p><p>Although brain mitochondrial function was not affected or adaptive mechanisms were not yet exhausted in our particular risk GxE setting, i.e., Cacna1c haploinsufficiency and post-weaning social isolation, we are still convinced that mitochondria represent an important intersection point between genetic alternations, psychosocial experiences and abnormalities in cerebral energy metabolism, synaptic plasticity in psychiatric disorders <ref type="bibr" target="#b33">(Manji et al., 2012)</ref>. The overall inconsistent findings in this research field highlight the complexity and heterogeneity of those illnesses and suggest that study results are strongly dependent on many factors, such as animal species, experimental design, and analysis methods. Hence, additional investigations are required to determine the disease-relevant effects on bioenergetics also including long-term studies of GxE interactions in both sexes, since we found a significant effect of Cacna1c haploinsufficiency on mitochondrial respiration in the PFC of 10-month-old male, but not female rats, which was not evident in the 2-month-old animals. The extent of this observed genotype effect under standard housing conditions might further vary in combination with different environmental situations and may overall contribute to our understanding of the pathophysiology of neuropsychiatric disorders.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1 |</head><label>1</label><figDesc>FIGURE1| Experimental design. Shortly after birth, the genotypes of the rats (Cacna1c +/+ vs. Cacna1c +/-) were determined. With 3 weeks of age (PND 21), the rats were separated from their mothers and allocated to one of three experimental housing conditions, i.e., post-weaning social isolation (Iso), standard housing (Stand), and social and physical environmental enrichment (Enr), where they spend 4 weeks before their brains were removed (PND 50 ± 1) and the mitochondria were isolated from the prefrontal cortex (PFC) and the hippocampus (HC).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 2 |</head><label>2</label><figDesc>FIGURE 2 | Ca V 1.2 protein levels in rat brain and body weight. Ca V 1.2 protein expression levels in the right prefrontal cortex and hippocampus of 2-month-old male Cacna1c +/-rats and Cacna1c +/+ littermate controls from the different environmental conditions were analyzed by Western blot. (A) One representative immunoblot per brain area is shown. (B) The bar graphs were obtained by densitometric quantification of the Western blot data. The values are normalized to the loading control vinculin and presented as fold of Cacna1c +/+ -Stand (mean ± SD, n = 6). (C) Whole body weight was determined after the 4-week exposure to the experimental housing conditions at ∼2 months of age (mean ± SD, n = 8-9). Statistical significance is highlighted by an asterisk ( * ). +/+, wildtype Cacna1c +/+ ; +/-, heterozygous Cacna1c +/-; Iso, isolation; Stand, standard housing; Enr, enrichment.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 3 |</head><label>3</label><figDesc>FIGURE 3 | Key steps in oxidative phosphorylation and representative oxygen consumption rate measurement with isolated mitochondria from rat brain. (A) The scheme illustrates the electron transport chain with its five different complexes. Modulating compounds used in the Seahorse mitochondrial coupling assay are highlighted in red. (B) An exemplary measurement of the oxygen consumption rate (OCR) from isolated rat brain mitochondria is shown together with key parameters of mitochondrial respiration, which were calculated from the data. Five technical replicates are displayed as mean ± SD. IMS, intermembrane space; MM, mitochondrial membrane; OCR, oxygen consumption rate; Oligo, oligomycin; AA, antimycin A.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 4 |</head><label>4</label><figDesc>FIGURE 4 | Indices of mitochondrial function calculated from the OCR measurements. Individual parameters of the bioenergetics measurements with isolated mitochondria from rat right prefrontal cortex (PFC; A,C,E,G,I) and right hippocampus (HC; B,D,F,H,J) are specified. (A,B) With rotenone and succinate present in the assay buffer, the Basal rate implies the ADP-independent, complex II-mediated respiration. (C,D) The State 3 OCR is initiated with the injection of ADP and accounts for the phosphorylating respiration. (E,F) State 4 o is induced by the addition of the ATP synthase inhibitor oligomycin and stands for the non-phosphorylating respiration. (G,H) FCCP uncouples the oxygen consumption from ATP production and is used to assess State 3 u , which represents the maximal respiratory activity. (I,J) The Anti A rate constitutes the OCR response to antimycin A which inhibits the mitochondrial respiration. The parameter values are calculated as absolute oxygen consumption rate in pmolO 2 /min/6 µg mitochondrial protein. The data of n = 8-9 2-month-old male rats per group are presented as mean ± SD. OCR, oxygen consumption rate; +/+, wildtype Cacna1c +/+ (gray bars); +/-, heterozygous Cacna1c +/-(clear bars); Iso, isolation; Stand, standard housing; Enr, enrichment.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 5 |</head><label>5</label><figDesc>FIGURE 5 | Respiratory control ratio (RCR) as indicator for mitochondrial integrity. The RCR was determined from isolated mitochondria of (A) the right prefrontal cortex and (B) the right hippocampus of 2-month-old male Cacna1c +/-rats and Cacna1c +/+ littermate controls which were each kept in one of the three different environmental conditions. The State 3 to State 4 o ratio (RCR) is a measure of the coupling quality between respiration and phosphorylation (mean ± SD, n = 8-9). PFC, prefrontal cortex; HC, hippocampus; + / +, wildtype Cacna1c +/+ (gray bars); +/-, heterozygous Cacna1c +/-(clear bars); Iso, isolation; Stand, standard housing; Enr, enrichment.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIGURE 6 |</head><label>6</label><figDesc>FIGURE 6 | Assessment of mitochondrial superoxide levels and membrane potential. Flow cytometric measurements were conducted with isolated mitochondria from right prefrontal cortex (PFC; A,C) and right hippocampus (HC; B,D) of 2-month-old male rats using (A,B) the mitochondrial superoxide indicator dye MitoSOX and (C,D) the mitochondrial membrane potential sensitive dye TMRE. The data was gated to the reference condition Cacna1c +/+ -Stand in each group of six and is displayed as mean ± SD (n = 8-9). Statistical significance is highlighted by an asterisk ( * ). +/+, wildtype Cacna1c +/+ (gray bars); +/-, heterozygous Cacna1c +/- (clear bars); Iso, isolation; Stand, standard housing; Enr, enrichment.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 |</head><label>1</label><figDesc>Seahorse parameter calculations.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Frontiers in Cellular Neuroscience | www.frontiersin.org</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>October 2019 | Volume 13 | Article 483</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>The authors thank <rs type="person">Ina Eisenbach</rs>, <rs type="person">Katharina Elsässer</rs>, <rs type="person">Goutham Ganjam</rs>, <rs type="person">Lena Hoffmann</rs>, <rs type="person">Birgit Honrath</rs>, <rs type="person">Anja Jelinek</rs>, <rs type="person">Rukhshona Kayumova</rs>, <rs type="person">Helena Martins</rs>, <rs type="person">Thomas Möbius</rs>, <rs type="person">Malena Rabenau</rs>, <rs type="person">Tobias Redecker</rs>, <rs type="person">Gerhard Schratt</rs>, and <rs type="person">Dominik Seffer</rs> for their support in this project.</p></div>
+			</div>
+			<div type="funding">
+<div><head>FUNDING</head><p>This work was part of the <rs type="institution">DFG FOR 2107</rs> and supported by <rs type="funder">DFG</rs> grants to CC (<rs type="grantNumber">CU 43/9-1</rs> and <rs type="grantNumber">CU 43/9-2</rs>), AD (<rs type="grantNumber">DE 1614/3-1</rs> and <rs type="grantNumber">DE 1614/3-2</rs>), <rs type="funder">RS</rs> (<rs type="grantNumber">SCHW 559/14-1</rs> and <rs type="grantNumber">SCHW 559/14-2</rs>), and <rs type="funder">MW</rs> (<rs type="grantNumber">WO 1732/4-1</rs> and <rs type="grantNumber">WO 1732/4-2</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_72UmgT2">
+					<idno type="grant-number">CU 43/9-1</idno>
+				</org>
+				<org type="funding" xml:id="_EbJ7Dqf">
+					<idno type="grant-number">CU 43/9-2</idno>
+				</org>
+				<org type="funding" xml:id="_YagjaFG">
+					<idno type="grant-number">DE 1614/3-1</idno>
+				</org>
+				<org type="funding" xml:id="_VPFX52b">
+					<idno type="grant-number">DE 1614/3-2</idno>
+				</org>
+				<org type="funding" xml:id="_3d3Hg7S">
+					<idno type="grant-number">SCHW 559/14-1</idno>
+				</org>
+				<org type="funding" xml:id="_DMGbd87">
+					<idno type="grant-number">SCHW 559/14-2</idno>
+				</org>
+				<org type="funding" xml:id="_U4DfHhV">
+					<idno type="grant-number">WO 1732/4-1</idno>
+				</org>
+				<org type="funding" xml:id="_f67ZXqm">
+					<idno type="grant-number">WO 1732/4-2</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ETHICS STATEMENT</head><p>This study was carried out in accordance with the recommendations of the National Institutes of Health Guidelines for the Care and Use of Laboratory Animals and the relevant local or national rules and regulations of Germany. The protocol was approved by the local government (MR 20/35 Nr. 19/2014; Tierschutzbehörde, Regierungspräsidium Gießen, Germany).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AUTHOR CONTRIBUTIONS</head><p>SM, AMD, MW, RS, and CC designed the study. SW and MR performed the genotyping of the rat strain. SM, AMD, MB, TK, and AS conducted the experiments. SM analyzed the data and wrote the manuscript with the help of all authors. AD performed the statistical analyses. AMD, SW, MR, AD, MW, RS, and CC supervised the project and acquired funding. All authors read and approved the final manuscript.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTARY MATERIAL</head><p>The Supplementary Material for this article can be found online at: <ref type="url" target="https://www.frontiersin.org/articles/10.3389/fncel.2019.00483/full#supplementary-material">https://www.frontiersin.org/articles/10.3389/fncel. 2019.00483/full#supplementary-material</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of Interest:</head><p>The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Adam</surname></persName>
+					</author>
+					<title level="a">Mental health: on the spectrum</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">496</biblScope>
+						<biblScope unit="page" from="416" to="418"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Amiri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Amini-Khoei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Haj-Mirzaian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rahimi-Balaei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Naserzadeh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Dehpour</surname></persName>
+					</author>
+					<title level="a">Tropisetron attenuated the anxiogenic effects of social isolation by modulating nitrergic system and mitochondrial function</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biochim. Biophys. Acta</title>
+					<imprint>
+						<biblScope unit="volume">1850</biblScope>
+						<biblScope unit="page" from="2464" to="2475"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Bavley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Fischer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Rizzo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Rajadhyaksha</surname></persName>
+					</author>
+					<title level="a">Cav1.2 channels mediate persistent chronic stress-induced behavioral deficits that are associated with prefrontal cortex activation of the p25/Cdk5-glucocorticoid receptor pathway</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurobiol. Stress</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="27" to="37"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Bhat</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Dao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Terrillion</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Arad</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Soldatov</surname></persName>
+					</author>
+					<title level="a">CACNA1C (Cav1.2) in the pathophysiology of psychiatric disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prog. Neurobiol</title>
+					<imprint>
+						<biblScope unit="volume">99</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Brand</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Nicholls</surname></persName>
+					</author>
+					<title level="a">Assessing mitochondrial dysfunction in cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biochem. J</title>
+					<imprint>
+						<biblScope unit="volume">435</biblScope>
+						<biblScope unit="page" from="297" to="312"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Brenes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Lackinger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">U</forename><surname>Höglinger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Schratt</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="middle">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<title level="a">Differential effects of social and physical environmental enrichment on brain plasticity, cognition, and ultrasonic communication in rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Comp. Neurol.</title>
+					<imprint>
+						<biblScope unit="volume">524</biblScope>
+						<biblScope unit="page" from="1586" to="1607"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Brenes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Padilla</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Fornaguera</surname></persName>
+					</author>
+					<title level="a">A detailed analysis of open-field habituation and behavioral and neurochemical antidepressant-like effects in postweaning enriched rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Behav. Brain Res.</title>
+					<imprint>
+						<biblScope unit="volume">197</biblScope>
+						<biblScope unit="page" from="125" to="137"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">R</forename><surname>Buonarati</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Henderson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Murphy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Horne</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Hell</surname></persName>
+					</author>
+					<title level="a">Proteolytic processing of the L-type Ca2+ channel alpha11.2 subunit in neurons</title>
+				</analytic>
+				<monogr>
+					<title level="j">F1000Rese</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page">1166</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">F</forename><surname>Busatto</surname></persName>
+					</author>
+					<title level="a">Structural and Functional Neuroimaging Studies in Major Depressive Disorder With Psychotic Features: A Critical Review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Schizophr. Bull.</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="776" to="786"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Carlson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Zarate</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Drevets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Manji</surname></persName>
+					</author>
+					<title level="a">Neural circuitry and neuroplasticity in mood disorders: Insights for novel therapeutic targets</title>
+				</analytic>
+				<monogr>
+					<title level="j">NeuroRx</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="22" to="41"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Cottet-Rousselle</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Ronot</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Leverve</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-F</forename><surname>Mayol</surname></persName>
+					</author>
+					<title level="a">Cytometric assessment of mitochondria using fluorescent probes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cytometry A</title>
+					<imprint>
+						<biblScope unit="volume">79</biblScope>
+						<biblScope unit="page" from="405" to="425"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						Cross-Disorder Group of the Psychiatric Genomics Consortium
+					</author>
+					<title level="a">Identification of risk loci with shared effects on five major psychiatric disorders: a genome-wide analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Lancet</title>
+					<imprint>
+						<biblScope unit="volume">381</biblScope>
+						<biblScope unit="page" from="1371" to="1379"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Dao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">Belmonte</forename><surname>Mahon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><surname>Cai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Kovacsics</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Blackwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><surname>Arad</surname></persName>
+					</author>
+					<title level="a">Mood Disorder Susceptibility Gene CACNA1C Modifies Mood-Related Behaviors in Mice and Interacts with Sex to Influence Behavior in Mice and Diagnosis in Humans</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biol. Psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">68</biblScope>
+						<biblScope unit="page" from="801" to="810"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Davey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Clark</surname></persName>
+					</author>
+					<title level="a">Threshold Effects and Control of Oxidative Phosphorylation in Nonsynaptic Rat Brain Mitochondria</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Neurochem.</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="1617" to="1624"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Dedic</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Pöhlmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Richter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Mehta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Czamara</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Metzger</surname></persName>
+					</author>
+					<title level="a">Cross-disorder risk gene CACNA1C differentially modulates susceptibility to psychiatric disorders during development and adulthood</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="page" from="533" to="543"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Erk</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Meyer-Lindenberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">E</forename><forename type="last">J</forename><surname>Linden</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Lancaster</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Mohnke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Grimm</surname></persName>
+					</author>
+					<title level="a">Replication of brain function effects of a genome-wide supported psychiatric risk variant in the CACNA1C gene and new multi-locus effects</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neuroimage</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="147" to="154"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Filipović</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Todorović</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Bernardi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Gass</surname></persName>
+					</author>
+					<title level="a">Oxidative and nitrosative stress pathways in the brain of socially isolated adult male rats demonstrating depressive- and anxiety-like symptoms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Brain Struct. Funct.</title>
+					<imprint>
+						<biblScope unit="volume">222</biblScope>
+						<biblScope unit="page" from="1" to="20"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">C</forename><forename type="last">F</forename><surname>Fone</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Porkess</surname></persName>
+					</author>
+					<title level="a">Behavioural and neurochemical effects of post-weaning social isolation in rodents—Relevance to developmental neuropsychiatric disorders</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurosci. Biobehav. Rev.</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="1087" to="1102"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Frodl</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Reinhold</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Koutsouleris</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Reiser</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Meisenzahl</surname></persName>
+					</author>
+					<title level="a">Interaction of childhood stress with hippocampus and prefrontal cortex volume reduction in major depression</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Psychiatr. Res.</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="799" to="807"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Geurts</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Cost</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Freyvert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Zeitler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Miller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Choi</surname></persName>
+					</author>
+					<title level="a">Knockout Rats via Embryo Microinjection of Zinc-Finger Nucleases</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science</title>
+					<imprint>
+						<biblScope unit="volume">325</biblScope>
+						<biblScope unit="page">433</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Gong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-H</forename><surname>Ding</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X-L</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Hu</surname></persName>
+					</author>
+					<title level="a">Chronic mild stress damages mitochondrial ultrastructure and function in mouse brain</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurosci. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">488</biblScope>
+						<biblScope unit="page" from="76" to="80"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">F</forename><surname>Harraz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Altier</surname></persName>
+					</author>
+					<title level="a">STIM1-mediated bidirectional regulation of Ca2+ entry through voltage-gated calcium channels (VGCC) and calcium-release activated channels (CRAC)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Front. Cell. Neurosci.</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">43</biblScope>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">D</forename><surname>Kabir</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Burgdorf</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Fischer</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Rajadhyaksha</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Mok</surname></persName>
+					</author>
+					<title level="a">Cacna1c in the Prefrontal Cortex Regulates Depression-Related Behaviors via REDD1</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neuropsychopharmacology</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="2032" to="2042"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Kambe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Miyata</surname></persName>
+					</author>
+					<title level="a">Potential involvement of the mitochondrial unfolded protein response in depressive-like symptoms in mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurosci. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">588</biblScope>
+						<biblScope unit="page" from="166" to="171"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Keers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Uher</surname></persName>
+					</author>
+					<title level="a">Gene–Environment Interaction in Major Depression and Antidepressant Treatment Response</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Psychiatry Rep.</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="129" to="137"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Kessler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Aguilar-Gaxiola</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Alonso</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chatterji</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ormel</surname></persName>
+					</author>
+					<title level="a">The global burden of mental disorders: An update from the WHO World Mental Health (WMH) Surveys</title>
+				</analytic>
+				<monogr>
+					<title level="j">Epidemiol. Psichiatr. Soc.</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="23" to="33"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Kisko</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Braun</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Michels</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Witt</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><surname>Rietschel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><surname>Culmsee</surname></persName>
+					</author>
+					<title level="a">Cacna1c haploinsufficiency leads to pro-social 50-kHz ultrasonic communication deficits in rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Dis. Model. Mech.</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page">dmm034116</biblScope>
+						<date when="2018">2018a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Kisko</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Braun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Michels</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Witt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rietschel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Culmsee</surname></persName>
+					</author>
+					<title level="a">Sex-dependent effects of Cacna1c haploinsufficiency on juvenile social play behavior and pro-social 50-kHz ultrasonic communication in rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genes Brain Behav</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page">e12552</biblScope>
+						<date when="2018">2018b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Klinedinst</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Regenold</surname></persName>
+					</author>
+					<title level="a">A mitochondrial bioenergetic basis of depression</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bioenerg. Biomembr.</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="page" from="155" to="171"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Krolow</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Noschang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Weis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Pettenuzzo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Huffell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Arcego</surname></persName>
+					</author>
+					<title level="a">Isolation Stress During the Prepubertal Period in Rats Induces Long-Lasting Neurochemical Changes in the Prefrontal Cortex</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurochem. Res</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="1063" to="1073"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Langwieser</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Christel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kleppisch</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Hofmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Wotjak</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Moosmang</surname></persName>
+					</author>
+					<title level="a">Homeostatic Switch in Hebbian Plasticity and Fear Learning after Sustained Loss of Cav1.2 Calcium Channels</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Neurosci.</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="8367" to="8375"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhou</surname></persName>
+					</author>
+					<title level="a">Corticosterone reduces brain mitochondrial function and expression of mitofusin, BDNF in depression-like rodents regardless of exercise preconditioning</title>
+				</analytic>
+				<monogr>
+					<title level="j">Psychoneuroendocrinology</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="1057" to="1070"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Madrigal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Olivenza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Moro</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Lizasoain</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Lorenzo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Rodrigo</surname></persName>
+					</author>
+					<title level="a">Glutathione Depletion, Lipid Peroxidation and Mitochondrial Dysfunction Are Induced by Chronic Stress in Rat Brain</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neuropsychopharmacology</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="420" to="429"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Manji</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kato</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Di Prospero</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Ness</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Beal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><surname>Krams</surname></persName>
+					</author>
+					<title level="a">Impaired mitochondrial function in psychiatric disorders</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Rev. Neurosci.</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="293" to="307"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Michels</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Ganjam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Martins</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Schratt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="last">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<title level="a">Downregulation of the psychiatric susceptibility gene Cacna1c promotes mitochondrial resilience to oxidative stress in neuronal cells</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Death Discov.</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page">54</biblScope>
+						<date when="2018">2018a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Michels</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="last">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Culmsee</surname></persName>
+					</author>
+					<title level="a">Psychiatric risk gene Cacna1c determines mitochondrial resilience against oxidative stress in neurons</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cell Death Dis.</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page">645</biblScope>
+						<date when="2018">2018b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Möller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Du Preez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">P</forename><surname>Viljoen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Berk</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Emsley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">H</forename><surname>Harvey</surname></persName>
+					</author>
+					<title level="a">Social isolation rearing induces mitochondrial, immunological, neurochemical and behavioural deficits in rats, and is reversed by clozapine or N-acetyl cysteine</title>
+				</analytic>
+				<monogr>
+					<title level="j">Brain Behav. Immun.</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="156" to="167"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>V</forename><surname>Nanni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Uher</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Danese</surname></persName>
+					</author>
+					<title level="a">Childhood Maltreatment Predicts Unfavorable Course of Illness and Treatment Outcome in Depression: A Meta-Analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. J. Psychiatry</title>
+					<imprint>
+						<biblScope unit="volume">169</biblScope>
+						<biblScope unit="page" from="141" to="151"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Opel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Redlich</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Zwanzger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Grotegerd</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Arolt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Heindel</surname></persName>
+					</author>
+					<title level="a">Hippocampal Atrophy in Major Depression: a Function of Childhood Maltreatment Rather than Diagnosis?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neuropsychopharmacology</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="2723" to="2731"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Ortmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Z</forename><surname>Réus</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">M</forename><surname>Ignácio</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Abelaira</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Titus</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>De Carvalho</surname></persName>
+					</author>
+					<title level="a">Enriched Flavonoid Fraction from Cecropia pachystachya Trécul Leaves Exerts Antidepressant-like Behavior and Protects Brain Against Oxidative Stress in Rats Subjected to Chronic Mild Stress</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurotox. Res.</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="469" to="483"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Pandya</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Royland</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Macphail</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Sullivan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">Rao S</forename><surname>Kodavanti</surname></persName>
+					</author>
+					<title level="a">Age- and brain region-specific differences in mitochondrial bioenergetics in Brown Norway rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurobiol. Aging</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="25" to="34"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Paulus</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bedenbender</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Krach</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Pyka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Krug</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Sommer</surname></persName>
+					</author>
+					<title level="a">Association of rs1006737 in CACNA1C with alterations in prefrontal activation and fronto-hippocampal connectivity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Hum. Brain Mapp</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="1190" to="1200"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b42">
+				<monogr>
+					
+					<author>
+						<persName><forename>G</forename><surname>Paxinos</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Watson</surname></persName>
+					</author>
+					<title level="m">The Rat Brain in Stereotaxic Coordinates, 6th Edn</title>
+					<imprint>
+						<date when="2007">2007</date>
+						<publisher>Elsevier</publisher>
+						<pubPlace>Amsterdam</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Picard</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Mcewen</surname></persName>
+					</author>
+					<title level="a">Psychological stress and mitochondria: a systematic review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Psychosom. Med</title>
+					<imprint>
+						<biblScope unit="volume">80</biblScope>
+						<biblScope unit="page" from="141" to="153"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Pizzo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Drago</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Filadi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Pozzan</surname></persName>
+					</author>
+					<title level="a">Mitochondrial Ca 2 homeostasis: mechanism, role, and tissue specificities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Pflugers Arch.</title>
+					<imprint>
+						<biblScope unit="volume">464</biblScope>
+						<biblScope unit="page" from="3" to="17"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Radak</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Suzuki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Higuchi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Balogh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Boldogh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Koltai</surname></persName>
+					</author>
+					<title level="a">Physical exercise, reactive oxygen species and neuroprotection</title>
+				</analytic>
+				<monogr>
+					<title level="j">Free Radic. Biol. Med</title>
+					<imprint>
+						<biblScope unit="volume">98</biblScope>
+						<biblScope unit="page" from="187" to="196"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Redecker</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Kisko</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="last">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<title level="a">Effects of Cacna1c haploinsufficiency on social interaction behavior and 50-kHz ultrasonic vocalizations in adult female rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Behav. Brain Res.</title>
+					<imprint>
+						<biblScope unit="volume">367</biblScope>
+						<biblScope unit="page" from="35" to="52"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">T</forename><surname>Rezin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Cardoso</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Gonçalves</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Scaini</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Fraga</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Riegel</surname></persName>
+					</author>
+					<title level="a">Inhibition of mitochondrial respiratory chain in brain of rats subjected to an experimental model of depression</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurochem. Int</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="page" from="395" to="400"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Rogers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Brand</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Petrosyan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Ashok</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Elorza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Ferrick</surname></persName>
+					</author>
+					<title level="a">High throughput microplate respiratory measurements using minimal quantities of isolated mitochondria</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS One</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page">e21746</biblScope>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					<title level="a">The mouse brain library @ www.mbl.org</title>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Rosen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Williams</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Capra</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Connolly</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Cruz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Lu</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="s">Int. Mouse Genome Conf.</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page">166</biblScope>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Salabei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Gibb</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">G</forename><surname>Hill</surname></persName>
+					</author>
+					<title level="a">Comprehensive measurement of respiratory activity in permeabilized cells using extracellular flux analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat. Protoc</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="421" to="438"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Schmitt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Saathoff</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Meissner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E-M</forename><surname>Schropp</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Lichtmannegger</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Schulz</surname></persName>
+					</author>
+					<title level="a">A semi-automated method for isolating functionally intact mitochondria from cultured cells and tissue biopsies</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Biochem</title>
+					<imprint>
+						<biblScope unit="volume">443</biblScope>
+						<biblScope unit="page" from="66" to="74"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Seffer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Rippberger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="last">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<title level="a">Prosocial 50-kHz ultrasonic communication in rats: post-weaning but not postadolescent social isolation leads to social impairments-phenotypic rescue by re-socialization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Front. Behav. Neurosci</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page">102</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename>J-S</forename><surname>Seo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K-W</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T-K</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I-S</forename><surname>Baek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-Y</forename><surname>Im</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P-L</forename><surname>Han</surname></persName>
+					</author>
+					<title level="a">Behavioral stress causes mitochondrial dysfunction via ABAD up-regulation and aggravates plaque pathology in the brain of a mouse model of Alzheimer disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Free Radic. Biol. Med</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="1526" to="1535"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Sousa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Machado-Vieira</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Zarate</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Manji</surname></persName>
+					</author>
+					<title level="a">Targeting mitochondrially mediated plasticity to develop improved therapeutics for bipolar disorder</title>
+				</analytic>
+				<monogr>
+					<title level="j">Expert Opin. Ther. Targets</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="1131" to="1147"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Sparling</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Baker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Bielajew</surname></persName>
+					</author>
+					<title level="a">Effects of combined preand post-natal enrichment on anxiety-like, social, and cognitive behaviours in juvenile and adult rat offspring</title>
+				</analytic>
+				<monogr>
+					<title level="j">Behav. Brain Res</title>
+					<imprint>
+						<biblScope unit="volume">353</biblScope>
+						<biblScope unit="page" from="40" to="50"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">Ö</forename><surname>Sungur</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><forename type="last">E</forename><surname>Jochner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Harb</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Kılıç</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Garn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><forename type="last">W</forename><surname>Schwarting</surname></persName>
+					</author>
+					<title level="a">Aberrant cognitive phenotypes and altered hippocampal BDNF expression related to epigenetic modifications in mice lacking the post-synaptic scaffolding protein SHANK1: implications for autism spectrum disorder</title>
+				</analytic>
+				<monogr>
+					<title level="j">Hippocampus</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="906" to="919"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b57">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Terrillion</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Francis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Puche</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Lobo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">D</forename><surname>Gould</surname></persName>
+					</author>
+					<title level="a">Decreased nucleus accumbens expression of psychiatric disorder risk gene Cacna1c promotes susceptibility to social stress</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int. J. Neuropsychopharmacol</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page" from="428" to="433"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Wöhr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Silverman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Scattoni</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Turner</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Harris</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Saxena</surname></persName>
+					</author>
+					<title level="a">Developmental delays and reduced pup ultrasonic vocalizations but normal sociability in mice lacking the postsynaptic cell adhesion protein neuroligin2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Behav. Brain Res</title>
+					<imprint>
+						<biblScope unit="volume">251</biblScope>
+						<biblScope unit="page" from="50" to="64"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

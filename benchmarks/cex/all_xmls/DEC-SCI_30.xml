@@ -1,0 +1,1929 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">An efficient dynamic switching algorithm for mining colossal closed itemsets from high dimensional datasets</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier BV</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-07-24">24 July 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Manjunath</forename><forename type="middle">K</forename><surname>Vanahalli</surname></persName>
+							<email>manjunath.k.vanahalli@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Information Technology</orgName>
+								<orgName type="institution">National Institute of Technology Karnataka</orgName>
+								<address>
+									<postCode>575025</postCode>
+									<settlement>Surathkal Mangalore</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nagamma</forename><surname>Patil</surname></persName>
+							<email>nagammapatil@nitk.ac.in</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Information Technology</orgName>
+								<orgName type="institution">National Institute of Technology Karnataka</orgName>
+								<address>
+									<postCode>575025</postCode>
+									<settlement>Surathkal Mangalore</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">An efficient dynamic switching algorithm for mining colossal closed itemsets from high dimensional datasets</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Data &amp; Knowledge Engineering</title>
+						<idno type="ISSN">0169-023X</idno>
+						<idno type="eISSN">1872-6933</idno>
+						<imprint>
+							<publisher>Elsevier BV</publisher>
+							<biblScope unit="volume">123</biblScope>
+							<biblScope unit="page" from="101721"/>
+							<date type="published" when="2019-07-24">24 July 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">12B67A4FB30FD25A797C5EA1D48F821B</idno>
+					<idno type="DOI">10.1016/j.datak.2019.101721</idno>
+					<note type="submission">Received 7 March 2018; Received in revised form 24 May 2019; Accepted 22 July 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Bioinformatics High dimensional dataset Preprocessing Frequent Colossal Closed Itemsets Rowset Closeness Pruning strategy</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The abundant data across a variety of domains including bioinformatics has led to the formation of dataset with high dimensionality. The conventional algorithms expend most of their time in mining a large number of small and mid-sized itemsets which does not enclose complete and valuable information for decision making. The recent research is focused on Frequent Colossal Closed Itemsets (FCCI), which plays a significant role in decision making for many applications, especially in the field of bioinformatics. The state-of-the-art algorithms in mining FCCI from datasets consisting of a large number of rows and a large number of features are computationally expensive, as they are either pure row or feature enumeration based algorithms. Moreover, the existing preprocessing techniques fail to prune the complete set of irrelevant features and irrelevant rows. The proposed work emphasizes an Effective Improvised Preprocessing (EIP) technique to prune the complete set of irrelevant features and irrelevant rows, and a novel efficient Dynamic Switching Frequent Colossal Closed Itemset Mining (DSFCCIM) algorithm. The proposed DSFCCIM algorithm efficiently switches between row and feature enumeration methods based on data characteristics during the mining process. Further, the DSFCCIM algorithm is integrated with a novel Rowset Cardinality Table, Itemset Support Table , 
+two efficient methods to check the closeness of rowset and itemset, and two efficient pruning strategies to cut down the search space. The proposed DSFCCIM algorithm is the first dynamic switching algorithm to mine FCCI from datasets consisting of a large number of rows and a large number of features. The performance study shows the improved effectiveness of the proposed EIP technique over the existing preprocessing techniques and the improved efficiency of the proposed DSFCCIM algorithm over the existing algorithms.</p><p>✩ The research work is about mining large cardinality itemsets called as Colossal Itemsets from a dataset consisting of a large number of features and a large number of rows.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Frequent Itemset Mining (FIM) is a major and an interesting part of Association Rule Mining (ARM). Generating association rules are straightforward once the frequent itemsets are mined with their respective support count. An extensive research in the field of itemset mining led to the development of many efficient FIM algorithms <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. The generation of redundant association rules from a large number of mined frequent itemsets resulted in the proposal of Frequent Closed Itemsets (FCI). Mining FCI has received great interest over the past two decades. Conventional algorithms <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> focus on mining FCI from transactional datasets consisting of a large number of rows (samples) and smaller number of attributes (features). These conventional algorithms are feature enumeration based algorithms as they tend to mine FCI by searching the itemset space. An average increase in the transaction length leads to an exponential increase in the running time of these algorithms. In the modern era, abundant data across a variety of domains including bioinformatics has led to the formation of high dimensional datasets, whose data characteristics are different from that of transactional datasets. These high dimensional datasets consist of smaller number of rows and considerably large number of features. The amount of information that can be extracted from high dimensional datasets is potentially huge, but extraction of information and knowledge from these datasets is a non-trivial task.</p><p>The conventional algorithms face an uphill task of mining FCI from high dimensional datasets. The computational problems of these conventional algorithms were solved by proposing row enumerated algorithms to mine FCI from high dimensional datasets <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref>. These algorithms are row enumeration based algorithms as they tend to mine FCI by searching the rowset space. Pan et al. <ref type="bibr" target="#b37">[38]</ref> proposed an algorithm with the combination of feature and row enumeration methods to mine FCI from high dimensional datasets. The result of FCI mining algorithms includes a large number of small and mid-sized itemsets, which does not enclose valuable and complete information in many applications <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b45">[46]</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref>. In the applications dealing with high dimensional datasets such as bioinformatics, ARM gives greater importance to the large-sized itemsets called as colossal itemsets <ref type="bibr" target="#b38">[39,</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref>. The colossal itemsets are more influential in decision making and are significant in many applications <ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b45">46]</ref>. Alves et al. <ref type="bibr" target="#b38">[39]</ref> and Naulaerts et al. <ref type="bibr" target="#b42">[43]</ref> showed the importance of discovering the colossal itemsets from high dimensional datasets such as gene expression data. The existing FIM algorithms <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref> and FCI mining algorithms <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref> are inefficient in mining Frequent Colossal Closed Itemsets (FCCI) from high dimensional datasets as they expend an exponential time in mining a large number of small and mid-sized itemsets.</p><p>Zhu et al. <ref type="bibr" target="#b46">[47]</ref> were the first to introduce the concept of colossal itemsets and designed the Pattern Fusion algorithm to mine them. The preprocessing technique of existing frequent colossal itemset mining algorithms <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b47">48,</ref><ref type="bibr" target="#b49">50,</ref><ref type="bibr" target="#b50">51]</ref> and FCCI mining algorithms <ref type="bibr" target="#b44">[45,</ref><ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b48">49]</ref> fail to prune the complete set of irrelevant features and irrelevant rows, leading to an exponential increase in the mining search space. Algorithms <ref type="bibr" target="#b44">[45,</ref><ref type="bibr" target="#b46">47]</ref> mine limited set of FCCI leading to the generation of an incomplete set of association rules, which consequently affects the decision making. Most of the mined FCCI by the BVBUC algorithm <ref type="bibr" target="#b44">[45]</ref> tend to provide incorrect support information leading to the generation of an incorrect set of association rules, resulting in deficient decision making. The closeness checking method and pruning strategy to cut down the mining search space of the state-of-the-art FCCI mining algorithms are inefficient. Moreover, these algorithms are either pure row enumerations or pure feature enumeration based algorithms, which highlight the inefficiency in mining FCCI from datasets consisting of a large number of rows and a large number of features. The algorithm with a combination of different enumeration methods is required to handle the changing characteristics of a data subset efficiently.</p><p>To surmount the drawbacks, a novel efficient Dynamic Switching Frequent Colossal Closed Itemset Mining (DSFCCIM) algorithm integrating the following proposed techniques was designed. The proposed DSFCCIM algorithm dynamically switches between the bottom-up row enumeration method and bottom-up feature enumeration method to handle the changing characteristics of a data subset during the mining process.</p><p>1. An Effective Improvised Preprocessing (EIP) technique was proposed to prune the complete set of irrelevant features and irrelevant rows by effective utilization of minimum support threshold and minimum cardinality threshold respectively. 2. An efficient Rowset Cardinality Table (RCT) based closeness checking method was proposed to check the closeness of a rowset during row enumeration method. The proposed method checks the closeness of newly mined frequent colossal itemsets irrespective of previously mined FCCI. It is not required to store the complete set of previously mined FCCI in the main memory as the closeness checking of a rowset indicates the closeness of an itemset mined at that particular rowset. 3. An efficient RCT based pruning strategy was proposed to cut down the row enumerated mining search space by efficient utilization of the minimum cardinality threshold. The RCT at the row enumerated node provides prior information regarding the cardinality of the itemsets to be mined at descendant nodes without traversing them, unlike existing FCCI mining algorithms which do not provide any prior information regarding the same. 4. An efficient switching condition that dynamically switches between the bottom-up row enumeration method and bottom-up feature enumeration method to handle the changing characteristics of the data subset during the mining process. 5. An efficient Itemset Support Table (IST) based closeness checking method was proposed to check the closeness of an itemset during feature enumeration method. 6. An efficient IST based pruning strategy was proposed to cut down the feature enumerated mining search space by efficient utilization of the minimum support threshold. The IST at the feature enumerated node provides prior information regarding the support of the itemsets to be mined at descendant nodes without traversing them, unlike existing FCCI mining algorithms which do not provide any prior information regarding the same.</p><p>The DSFCCIM algorithm efficiently mine the FCCI from dataset consisting of a large number of rows and a large number of features. To the best of our knowledge, this is the first attempt to have a combination of different enumeration methods for mining FCCI. The proposed algorithm utilizes the bitset approach for fast computation. Results show that the proposed preprocessing technique is very effective in pruning a complete set of irrelevant features and irrelevant rows than existing preprocessing techniques. DSFCCIM algorithm outperforms the existing algorithms in terms of runtime using efficient pruning strategies and closeness checking methods.</p><p>The remaining paper is organized as follows. The related work is emphasized in Section 2. The preliminaries are described in Section 3. The proposed pre-processing technique is demonstrated in Section 4. Section 5 shows the advantages and disadvantages of different search strategies in a row and feature enumeration space. Section 6 will emphasize on proposed algorithm, closeness checking methods and pruning strategies. Results highlighting the effectiveness of proposed pre-processing technique and efficiency of DSSFCCIM algorithm are shown in Section 7. Conclusion and future work are mentioned in Section 8.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related work</head><p>An extensive literature survey has been carried in the field of itemset mining. FIM algorithms have been classified into the generate-and-test approach and pattern-growth approach. Many efficient FIM algorithms were developed over the years <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. Generations of redundant rules from a large number of frequent itemsets led to the proposal of FCI. Some of the best conventional algorithms like CLOSET <ref type="bibr" target="#b24">[25]</ref>, CLOSET+ <ref type="bibr" target="#b28">[29]</ref>, CHARM <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b30">31]</ref> and DCI_DISCLSED <ref type="bibr" target="#b22">[23]</ref> were proposed to mine FCI from transactional datasets. These conventional algorithms are best to mine FCI from transactional datasets, where the row count is large and feature count is small.</p><p>These conventional algorithms <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> are computationally expensive in mining FCI from high dimensional datasets. The computational problem was handled by row enumerated algorithms like CARPENTER <ref type="bibr" target="#b34">[35]</ref>, TD-Close <ref type="bibr" target="#b32">[33]</ref> and TTD-Close <ref type="bibr" target="#b33">[34]</ref>. These row enumerated algorithms convert the original high dimensional dataset to transposed table, which in turn is used to generate conditional transposed table at every row enumerated node. These algorithms make use of either bottom-up or top-down search strategy to navigate through the row enumerated search space. Pan et al. proposed COBBLER algorithm <ref type="bibr" target="#b37">[38]</ref>, which uses a combination of feature and row enumeration methods to mine FCI from high dimensional datasets. The CARPENTER, TD-Close, TTD-Close and COBBLER algorithms mine large number of small and mid-sized FCI from high dimensional datasets, which have limited information for many applications. Colossal itemsets are large cardinality itemsets with greater importance in decision making and provide more suitable information for many applications <ref type="bibr" target="#b38">[39,</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref>. Alves et al. <ref type="bibr" target="#b38">[39]</ref> and Naulaerts et al. <ref type="bibr" target="#b42">[43]</ref> showed the importance of discovering the colossal itemsets from high dimensional datasets such as gene expression data.</p><p>Zhu et al. proposed pattern-fusion algorithm <ref type="bibr" target="#b46">[47]</ref> which traverses the tree according to the feature enumeration method. Pattern fusion algorithm randomly discovers colossal itemsets by merging the selected small cardinality frequent itemsets called the core patterns. Pattern fusion algorithm mines large cardinality itemsets by approximating the number of colossal closed itemsets generated, rather than traversing each node of the tree. Approximating the number of colossal closed itemsets generated might lead to missing some of the significant FCCI. Pattern fusion algorithm will not be able to mine the complete set of FCCI leading to the generation of an incomplete set of association rules. CP-Miner <ref type="bibr" target="#b43">[44]</ref> and PCP-Miner <ref type="bibr" target="#b43">[44]</ref> are pure row enumeration based algorithms to mine frequent colossal itemsets from high dimensional datasets.</p><p>Sohrabi et al. proposed a BVBUC algorithm <ref type="bibr" target="#b44">[45]</ref> to mine frequent colossal itemsets. The authors state that the largest frequent itemset of each branch in the bottom-up row enumerated tree is generated at the minimum support threshold level. The BVBUC algorithm mines the itemsets from the nodes belonging to the minimum support threshold level of the row enumerated tree and prunes their descendants. The BVBUC algorithm will not be able to mine complete set of FCCI, leading to the generation of an incomplete set of association rules. Most of the mined FCCI tend to provide incorrect support information leading to the generation of an incorrect set of association rules.</p><p>N. Zulkurnain et al. proposed a pure row enumeration based DisClose algorithm <ref type="bibr" target="#b48">[49]</ref> to mine FCCI from high dimensional datasets. The algorithm expend time in itemset generator, rowset generator, and unique rowset generator which are used in closeness checking of an itemset. The preprocessing techniques of the existing FCCI mining algorithms are ineffective as they fail to prune the complete set of irrelevant rows and irrelevant features, which exponentially increases the mining search space. The existing algorithms are inefficient in mining FCCI from datasets consisting of a large number of rows and a large number of features. Further, the existing FCCI algorithms are inefficient in handling the changing characteristics of data subset during the mining process. A combination of different enumeration methods is required to handle the different characteristics possessed by different datasets efficiently.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Preliminaries</head><p>Let the high dimensional dataset D consist of m number of gene samples, R = {𝑟 1 , 𝑟 2 , . . . 𝑟 𝑚 } and n number of gene features, G = {𝑔 1 , 𝑔 2 , . . . , 𝑔 𝑛 }. Each row 𝑟 𝑖 has a unique row identifier, rid and consists of a set of gene features. A non-empty subset of gene features X ⊆ G is defined as an itemset. An itemset consisting of l gene features is defined as l-itemset. Let r(𝑔 𝑗 ) signify the rows in which gene feature 𝑔 𝑗 of the dataset is present. A non-empty subset of rids Y ⊆ R is defined as rowset. A rowset consisting of l rids is defined as l-rowset. Let f (𝑟 𝑖 ) signify the gene features present in the 𝑖th row of the dataset.</p><p>Example 1. Table <ref type="table" target="#tab_0">1</ref> shows an example of high dimensional dataset D consisting of 8 rows, where each row is described with a unique row identifier (rid), R = {1, 2, 3, 4, 5, 6, 7, 8} and 11 gene features, G = {a, b, c, d, e, f, g, h, i, j, k}.</p><p>Definition 1 (Support). The number of rows in which an itemset 𝑋 occurs is called the support of an itemset, denoted by sup(X).</p><p>Example 2. In Table <ref type="table" target="#tab_0">1</ref>, the support of an itemset X = {b, d, g, h}, sup(X) is 2.</p><p>Definition 2 (Support Set). The rows in which an itemset X occurs is called the support set of an itemset, denoted by supset(X).</p><p>Example 3. In Table <ref type="table" target="#tab_0">1</ref>, the support set of an itemset X = {b, d, g, h}, supset(X) is {2, 3}.</p><p>Definition 3 (Cardinality). The number of items in an itemset X is called as the cardinality of an itemset, denoted by card(X). Example 4. In Table <ref type="table" target="#tab_0">1</ref>, the cardinality of an itemset X = {b, d, g, h}, card(X) is 4.</p><p>Definition 4 (Frequent Itemset). An itemset X is called a frequent itemset if and only if sup(X) ≥ minsup, where minsup is user specified least support threshold.</p><p>Example 5. In Table <ref type="table" target="#tab_0">1</ref>, an itemset X = {b, h} is a frequent itemset with minimum support threshold set to 2, sup(X) ≥ 2.</p><p>Definition 5 (Frequent Closed Itemset). An itemset 𝑋 is called a frequent closed itemset if and only if it is frequent and there exists no proper superset 𝑋 ′′ (𝑋 ⊂ 𝑋 ′′ ) such that support of 𝑋 is same as the support of 𝑋 ′′ , 𝑠𝑢𝑝(𝑋) = 𝑠𝑢𝑝(𝑋 ′′ ).</p><p>Example 6. In Table <ref type="table" target="#tab_0">1</ref>, an itemset X = {d, g, h} is a frequent closed itemset with minimum support threshold set to 2 because dgh is frequent and there exists no proper superset X ′′ with the same support as X.</p><p>Definition 6 (Frequent Colossal Itemset). An itemset 𝑋 is called a frequent colossal itemset if and only if it is frequent and card(𝑋) ≥ 𝑚𝑖𝑛𝑐𝑎𝑟𝑑, where 𝑚𝑖𝑛𝑐𝑎𝑟𝑑 is user specified least cardinality threshold.</p><p>Example 7. In Table <ref type="table" target="#tab_0">1</ref>, an itemset X = {a, b, f, j} is a frequent colossal itemset with minimum support threshold set to 2 and minimum cardinality threshold set to 4, sup(X) ≥ 2 and card(X) ≥ 4</p><p>Definition 7 (Frequent Colossal Closed Itemset). An itemset 𝑋 is called a frequent colossal closed itemset if and only if it is frequent closed and 𝑐𝑎𝑟𝑑(𝑋) ≥ 𝑚𝑖𝑛𝑐𝑎𝑟𝑑, where 𝑚𝑖𝑛𝑐𝑎𝑟𝑑 is user specified least cardinality threshold.</p><p>Example 8. In Table <ref type="table" target="#tab_0">1</ref>, the itemset X = {b, d, g, h} is a frequent colossal closed itemset with minimum support threshold set to 2 and minimum cardinality threshold set to 4, sup(X) ≥ 2 and card(X) ≥ 4</p><p>Definition 8 (Closure). Given an itemset 𝑋 ⊆ 𝐺 and a rowset 𝑌 ⊆ 𝑅 in a high dimensional dataset D (𝑅, 𝐺), we define</p><formula xml:id="formula_0">𝑟(𝑋) = {𝑟 𝑖 ∈ 𝑅 | ∀𝑔 𝑘 ∈ 𝑋, 𝑔 𝑘 𝑖𝑠 𝑝𝑟𝑒𝑠𝑒𝑛𝑡 𝑖𝑛 𝑟 𝑖 𝑜𝑓 𝐷}<label>(1)</label></formula><formula xml:id="formula_1">𝑓 (𝑌 ) = {𝑔 𝑘 ∈ 𝐺 | ∀𝑟 𝑖 ∈ 𝑌 , 𝑔 𝑘 𝑖𝑠 𝑝𝑟𝑒𝑠𝑒𝑛𝑡 𝑖𝑛 𝑟 𝑖 𝑜𝑓 𝐷}<label>(2)</label></formula><p>The closure of an itemset 𝑋, 𝐶(𝑋) and closure of a rowset 𝑌 , 𝐶(𝑌 ) is defined as follows</p><formula xml:id="formula_2">𝐶(𝑋) = 𝑓 (𝑟(𝑋))<label>(3)</label></formula><formula xml:id="formula_3">𝐶(𝑌 ) = 𝑟(𝑓 (𝑌 ))<label>(4)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Proposed Effective Improvised Preprocessing (EIP) technique</head><p>The preprocessing technique in the existing frequent colossal itemset mining algorithms and FCCI mining algorithms fails to prune the complete set of irrelevant rows and irrelevant features, which leads to an exponential increase in the mining search space. The proposed EIP technique incorporates the bitset approach for fast computation. The bitTable as shown in Table <ref type="table" target="#tab_1">2</ref> is constructed with the same dataset characteristics as that of high dimensional dataset D shown in Table <ref type="table" target="#tab_0">1</ref>. If a row of high dimensional dataset D consists of feature 𝑔 𝑗 , then the 𝑗th bit of the corresponding row in bitTable is set to 1, else it is set to 0. The rs in Table <ref type="table" target="#tab_1">2</ref> indicates the number of features present in the respective row. For example, the number of features present in 5th row is 6. The cs in Table <ref type="table" target="#tab_1">2</ref> indicates the support of the respective feature in the bitTable. For example, the support of the feature d in bitTable is 5. The features of the high dimensional dataset which do not satisfy the criteria of minsup are described as irrelevant features. The rows of the high dimensional dataset which do not satisfy the criteria of mincard are described as irrelevant rows. The preprocessing technique of the existing FCI algorithms prunes the irrelevant features before proceeding with mining of FCI. Let G ′ be the set of irrelevant features in the dataset. The features {c, k} are the irrelevant features with minsup set to 2, G ′ = {c, k}.</p><formula xml:id="formula_4">𝐺 1 = (𝐺 -𝐺 ′ ) = {𝑎, 𝑏, 𝑑, 𝑒, 𝑓 , 𝑔, ℎ, 𝑖, 𝑗}<label>(5)</label></formula><p>The Eq. ( <ref type="formula" target="#formula_4">5</ref>) highlights the pruning of irrelevant features {c, k} from the bitTable as shown in Table <ref type="table" target="#tab_1">2</ref>. Table <ref type="table" target="#tab_2">3a</ref> shows the bitTable after pruning the irrelevant features {c, k}. The irrelevant features and irrelevant rows have to be pruned before proceeding with FCCI mining. Hence, the preprocessing technique in the existing colossal itemset mining algorithms <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b49">50,</ref><ref type="bibr" target="#b50">51]</ref> and FCCI mining algorithm <ref type="bibr" target="#b48">[49]</ref> prune the irrelevant rows after pruning the irrelevant features. Let R ′ be the set of irrelevant rows from the dataset. The 8th row is irrelevant with mincard set to 2, R ′ = {8}.</p><formula xml:id="formula_5">𝑅 1 = (𝑅 -𝑅 ′ ) = {1, 2, 3, 4, 5, 6, 7}<label>(6)</label></formula><p>The Eq. ( <ref type="formula" target="#formula_5">6</ref>) highlights the pruning of irrelevant row {8} from the bitTable shown in Table <ref type="table" target="#tab_2">3a</ref>. Table <ref type="table" target="#tab_2">3b</ref> shows the bitTable after pruning the irrelevant row {8}. The pruning of irrelevant rows affects the support of features (sup(𝑔 𝑗 ), ∀ 𝑔 𝑗 ∈ 𝐺 1 ). The pruning of irrelevant row {8} will reduce the support of feature {e} and eventually converts it to an irrelevant feature, G ′ = {e}. The preprocessing technique in the existing colossal itemset mining algorithm <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b49">50,</ref><ref type="bibr" target="#b50">51]</ref> and FCCI mining algorithm <ref type="bibr" target="#b48">[49]</ref> prune the irrelevant features and irrelevant rows just once, and after that fails to take advantage of the reduction in the support of features due to the pruning of irrelevant rows. Hence, the preprocessing technique in the existing colossal itemset mining algorithms and FCCI mining algorithms fail to prune the complete set of irrelevant features and irrelevant rows. To overcome this drawback of existing preprocessing techniques, the proposed EIP technique takes advantage of the reduction in the support of features due to the pruning of irrelevant rows and continues to prune the irrelevant features.</p><formula xml:id="formula_6">𝐺 2 = (𝐺 1 -𝐺 ′ ) = {𝑎, 𝑏, 𝑑, 𝑓 , 𝑔, ℎ, 𝑖, 𝑗}<label>(7)</label></formula><p>The Eq. ( <ref type="formula" target="#formula_6">7</ref>) highlights the pruning of irrelevant feature {e} from the bitTable as shown in Table <ref type="table" target="#tab_2">3b</ref>. Table <ref type="table" target="#tab_2">3c</ref> shows the bitTable after pruning the irrelevant feature {e}. Pruning the irrelevant features affects the cardinality of rows (card( rid), ∀ rid ∈ 𝑅 1 ). The pruning of irrelevant feature {e} will reduce the cardinality of the 7th row and eventually converting it to irrelevant row, R ′ = {7}. The proposed EIP technique takes advantage of the reduction in the cardinality of rows due to the pruning of irrelevant features and continues to prune the irrelevant rows. The proposed EIP technique prunes the irrelevant features and irrelevant rows alternatively in an iterative manner until all the remaining features and rows in the bitTable satisfy the criteria of minsup and mincard respectively, whereas, the existing preprocessing technique prune the irrelevant features and irrelevant rows just once.</p><formula xml:id="formula_7">𝑅 2 = (𝑅 1 -𝑅 ′ ) = {1, 2, 3, 4, 5, 6}<label>(8)</label></formula><p>The Eq. ( <ref type="formula" target="#formula_7">8</ref>) highlights the pruning of irrelevant row {7} from the bitTable shown in Table <ref type="table" target="#tab_2">3c</ref>. Table <ref type="table" target="#tab_2">3d</ref> shows the bitTable after pruning the irrelevant row 7. All the remaining features and rows in the bitTable shown in Table <ref type="table" target="#tab_2">3d</ref> satisfy the criteria of minsup and mincard, hence the reduction terminates. Table <ref type="table" target="#tab_2">3d</ref> shows the bitTable after applying proposed EIP technique with the minsup and mincard values set to 2. Table <ref type="table" target="#tab_2">3b</ref> shows the bitTable after applying preprocessing technique of the existing algorithms with the minsup and mincard values set to 2. It is observed that proposed EIP technique prunes the complete set of irrelevant features and irrelevant rows, which is a major limitation of the preprocessing technique in existing algorithms. Table <ref type="table" target="#tab_3">4</ref> shows the bitTable after proposed EIP technique with the minsup and mincard values set to 3. After proposed EIP preprocessing, let 𝐺𝑓 𝑖𝑛𝑎𝑙 be the set of relevant features and 𝑅𝑓 𝑖𝑛𝑎𝑙 be the set of relevant rows. The proposed EIP technique is divided into two tasks, Minimum Support Threshold Preprocessing (MSTP) task to prune the irrelevant features and Minimum Cardinality Threshold Preprocessing (MCTP) task to prune the irrelevant rows. Algorithm 1 shows the proposed EIP technique. Procedures 1 and 2 shows the MSTP task and MCTP task respectively. The proposed EIP technique invokes the MSTP and MCTP tasks in an iterative manner until all the remaining features and rows in the bitTable satisfy the criteria of minsup and mincard respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Search strategies</head><p>The existing FCCI mining algorithms are based on either pure feature enumeration or row enumeration methods. A pure row or feature enumeration method is inefficient as the characteristics of the data subset being handled changes from one subset to another. The existing algorithms will not be able to efficiently mine FCCI from datasets consisting of a large number of rows and a large number of features. A combination of search strategies is required to efficiently handle the different characteristics possessed by different datasets. This section presents the motivation for the selection of bottom-up search strategy to traverse the row enumerated tree and feature enumerated tree.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.">Bottom-up traversal of row enumerated tree</head><p>The proposed work mines FCCI from the high dimensional datasets by adapting a row enumeration technique due to the data characteristics of the high dimensional datasets. The bottom-up traversing of the row enumerated space implies that the search starts from the smaller rowset value. Fig. <ref type="figure" target="#fig_0">1</ref> shows the bottom-up row enumeration tree for the preprocessed bitTable 3d, with each node representing the rowset and the corresponding bitset result is indicated under the corresponding node. Each node refers to its respective proposed Rowset Cardinality Table as shown in Fig. <ref type="figure" target="#fig_0">1</ref> for closeness checking of a rowset and pruning the descendant nodes which do not generate colossal itemsets.</p><p>The bottom-up search strategy is efficient in mining colossal itemsets as the large cardinality itemsets are present at the initial level of bottom-up row enumerated tree. The bottom-up approach also has a benefit of utilizing the bitset result of the parent node to obtain the bitset result at the child nodes, thus exponentially reducing the number of bitwise AND operations to be performed. Only one bitwise AND operation is required to obtain the bitset result at each node. For example, in Fig. <ref type="figure" target="#fig_0">1</ref>, the bitset result at node 1236 requires one bitwise AND operation. The bitset result of node 123 and node 6 are utilized to generate the bitset result of node 1236. The anti-monotone property of minimum cardinality threshold is utilized by the bottom-up search strategy to cut down the search space. It means that, if an itemset at a node represented by l-rowset is not colossal, then an itemset at a child node represented by (l + 1)-rowset is also not colossal. For example, with minsup value set to 2 and mincard value set to 3, the descendants of node 123 can be pruned as the itemsets in descendant nodes are not colossal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.1.">Bottom-up traversal of feature enumerated tree</head><p>The bottom-up traversing of the feature enumeration space implies that the search starts from higher frequent itemsets. Fig. <ref type="figure" target="#fig_1">2</ref> shows the bottom-up feature enumeration tree for the bitTable 4, with each node representing the itemset and the corresponding bitset result is indicated under the corresponding node. Each node refers to its respective proposed Itemset Support Table as shown in Fig. <ref type="figure" target="#fig_1">2</ref> for closeness checking of an itemset and pruning the descendant nodes which do not generate frequent itemsets. The bottom-up approach has a benefit of utilizing the bitset result of the parent node to obtain the bitset result of the child node, thus exponentially reducing the number of bitwise AND operations to be performed. Only one bitwise AND operation is required to obtain the bitset result at each node. For example, in Fig. <ref type="figure" target="#fig_1">2</ref>, the bitset result at node bdgh requires one bitwise AND operation. The bitset result of node bdg and node h are utilized to generate the bitset result of node bdgh. The anti-monotone property of minimum support threshold is utilized by the bottom-up search strategy to cut down the search space. The proposed DSFCCIM algorithm dynamically switches between the bottom-up row enumeration method and bottom-up feature enumeration method based on the data characteristics during the mining process.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">The proposed algorithm</head><p>A combination of row and feature enumeration is employed to mine the FCCI from datasets consisting of a large number of rows and a large number of features. A novel Dynamic Switching Frequent Colossal Closed Itemset Mining (DSFCCIM) algorithm is proposed to efficiently handle the changing characteristics of the data subset during the mining process. The DSFCCIM algorithm dynamically switches between the bottom-up row enumeration method and bottom-up feature enumeration method based on the data characteristics during the mining process. Fig. <ref type="figure" target="#fig_2">3a</ref> shows an example of dynamic switching from row enumeration tree to feature enumeration tree. Fig. <ref type="figure" target="#fig_2">3b</ref> shows an example of dynamic switching from feature enumeration tree to row enumeration tree.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.">Rowset cardinality table</head><p>The proposed closeness checking method takes advantage of the Rowset Cardinality Table (RCT) in row enumeration tree to check the closeness of a rowset. If the rowset is closed, then the itemset mined at that rowset is also closed. The RCT helps in closeness checking of a rowset without the need to scan through the previously mined FCCI itemsets. The proposed pruning strategy utilizes the RCT to efficiently cut down the search space. The RCT provides the prior information regarding the cardinality of the itemsets to be mined at the descendant nodes without traversing them. The RCT for every node is shown in Fig. <ref type="figure" target="#fig_0">1</ref>.</p><p>Definition 9 (Rowset Cardinality Table ). Given a rowset Y = {𝑟 𝑖1 , 𝑟 𝑖2 , . . . , 𝑟 𝑖𝑘 } representing a row enumerated node in the order of 𝑟 𝑖1 &lt; 𝑟 𝑖2 &lt; ⋯ &lt; 𝑟 𝑖𝑘 , the Rowset Cardinality Table (𝑅𝐶𝑇 𝑌 ) at node Y contains the updated cardinality for each row in (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ) depending on the cardinality of the bitset result obtained at node Y.</p><p>Example 9. Table <ref type="table" target="#tab_4">5a</ref>, <ref type="table" target="#tab_4">b</ref>, <ref type="table" target="#tab_4">c</ref> and <ref type="table" target="#tab_4">d</ref> show the Rowset Cardinality Table at nodes 12, 13, 14 and 23 respectively in Fig. <ref type="figure" target="#fig_0">1</ref>. The Rowset Cardinality Table (𝑅𝐶𝑇𝑌 ) at node Y is obtained by the following steps: 1. Obtain the indices of all the ones appearing in the bitset result obtained at node Y. 2. For each row in (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ), calculate the number of ones from the preprocessed bitTable appearing at the indices obtained from the step 1.</p><p>Example 10. Obtaining Rowset Cardinality Table for node 14 (𝑅𝐶𝑇 14 ) and 23 (𝑅𝐶𝑇 23 ) in Fig. <ref type="figure" target="#fig_0">1</ref>.</p><p>Example 10. Obtaining Rowset Cardinality Table for node 14 (𝑅𝐶𝑇14 ) and 23 (𝑅𝐶𝑇23 ) in Fig.  <ref type="figure" target="#fig_0">1</ref>. • Rowset Cardinality Table for node 14, 𝑅𝐶𝑇 14 is shown in Table <ref type="table" target="#tab_4">5c</ref>. The indices of all the ones appearing in the bitset result (11010001) at node 14 are {1,2,4,8}.</p><p>• For each row in (𝑅 2 -Y ) = {2,3,5,6}, the number of ones appearing at the indices {1,2,4,8} from the preprocessed bitTable as shown in Table <ref type="table" target="#tab_2">3d</ref> are {2,1,2,1}.</p><p>• Rowset Cardinality Table for node 23, 𝑅𝐶𝑇 23 is shown in Table <ref type="table" target="#tab_4">5d</ref>. The indices of all the ones appearing in the bitset result (01101100) at node 23 are {2,3,5,6}.</p><p>• For each row in (𝑅 2 -Y ) = {1,4,5,6}, the number of ones appearing at the indices {2,3,5,6} from the preprocessed bitTable as shown in Table <ref type="table" target="#tab_2">3d</ref> are {2,2,3,2}.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.">Proposed RCT based closeness checking</head><p>The RCT based closeness checking method is proposed to speed up the closeness checking of a rowset during the traversal of a row enumerated tree. The closeness of the rowset indicates that the itemset occurring in that rowset is also closed. The proposed efficient closeness checking method will not scan through the previously mined FCCI to check for the existence and closeness of newly mined frequent colossal itemset.</p><p>Lemma 1. A rowset 𝑌 ⊆ 𝑅 𝑓 𝑖𝑛𝑎𝑙 during the row enumeration is closed iff the cardinality of all the rows in the 𝑅𝐶𝑇 𝑌 is less than the cardinality of an itemset 𝑋 ⊆ 𝐺 𝑓 𝑖𝑛𝑎𝑙 mined at rowset 𝑌 .</p><p>Proof. According to Definition 8 (Eqs. <ref type="formula" target="#formula_0">1,</ref><ref type="formula" target="#formula_1">2</ref>, <ref type="formula" target="#formula_2">3</ref>, <ref type="formula" target="#formula_3">4</ref>), if rowset Y is closed, then Y = r(X ). So, it is necessary to prove that Y = r(X ) using 𝑅𝐶𝑇 𝑌 . The 𝑅𝐶𝑇 𝑌 (rid) provides the updated cardinality value corresponding to the rid in 𝑅𝐶𝑇 𝑌 . (For all)∀ rid ∈ (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ), if 𝑅𝐶𝑇 𝑌 (rid) is less than the cardinality of an itemset X mined at the rowset Y, then an itemset X has not occurred in (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ). This indicates that an itemset X has occurred only in Y, thus proving Y = r(X ). Therefore, rowset Y is closed.</p><p>Lemma 2. A rowset 𝑌 ⊆ 𝑅 𝑓 𝑖𝑛𝑎𝑙 during the row enumeration is not closed iff the cardinality of any one of the rows in the 𝑅𝐶𝑇 𝑌 is equal to the cardinality of an itemset 𝑋 ⊆ 𝐺 𝑓 𝑖𝑛𝑎𝑙 mined at a rowset 𝑌 .</p><p>Proof. According to Definition 8 (Eqs. <ref type="formula" target="#formula_0">1,</ref><ref type="formula" target="#formula_1">2</ref>, <ref type="formula" target="#formula_2">3</ref>, <ref type="formula" target="#formula_3">4</ref>), if rowset Y is not closed, then Y ≠r(X ). So, it is necessary to prove that Y ≠r(X ) using 𝑅𝐶𝑇 𝑌 . The 𝑅𝐶𝑇 𝑌 (rid) provides the updated cardinality value corresponding to the rid in 𝑅𝐶𝑇 𝑌 . According to the steps followed for obtaining 𝑅𝐶𝑇 𝑌 at rowset Y, the updated cardinality for each rid in 𝑅𝐶𝑇 𝑌 will never be greater than the cardinality of an itemset X mined at rowset Y. (For any)∀ rid ∈ (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ), if 𝑅𝐶𝑇 𝑌 (rid) is equal to the cardinality of an itemset X mined at the rowset Y, then an itemset X has occurred in (𝑅 𝑓 𝑖𝑛𝑎𝑙 -Y ). Hence, Y ≠r(X ) is proved. Therefore, rowset Y is not closed.</p><p>The RCT based closeness checking is based on Lemmas 1 and 2. If the rowset is closed, then the itemset occurring in that rowset is also closed. An itemset abd is obtained from rowset 12 during row enumeration. The rowset 12 is closed because the cardinality of all the rows in 𝑅𝐶𝑇 12 as shown in Table <ref type="table" target="#tab_4">5a</ref> is less than the cardinality of abd. Hence, abd is also closed. An itemset bd is obtained from rowset 13 during row enumeration. The rowset 13 is not closed because the cardinality of rid 2 and rid 6 in 𝑅𝐶𝑇 13 as shown in Table <ref type="table" target="#tab_4">5b</ref> is equal to the cardinality of bd.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3.">Proposed RCT based pruning strategy</head><p>The RCT based pruning strategy is proposed to efficiently cut down the row enumeration search space. The proposed pruning strategy utilizes RCT at every node as it provides prior information regarding the cardinality of an itemset to be mined at descendant  nodes without traversing them, unlike the existing FCCI mining algorithms which do not provide any prior information regarding the same.</p><p>Given a rowset Y, if the cardinality of any rids in 𝑅𝐶𝑇 𝑌 is less than the mincard, then the descendant nodes corresponding to those rids can be pruned as they do not generate colossal itemsets. For example, with minsup and mincard values set to 2, the 𝑅𝐶𝑇 123 as shown in Table <ref type="table" target="#tab_13">6</ref> gives prior information regarding the cardinality of itemsets to be mined at descendant nodes (1234, 1235 and 1236). The cardinality of rid 4 and rid 5 in 𝑅𝐶𝑇 123 are less than mincard, which leads to the pruning of nodes 1234, 12345, 123456, 12346, 1235 and 12356 from row enumeration search space as they do not generate the colossal itemsets. The existing FCCI algorithms lack the ability to retrieve the prior information regarding the cardinality of an itemset to be mined at descendant nodes, while the proposed pruning strategy enjoys the benefit of prior information provided by RCT.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.4.">Itemset support table</head><p>The proposed closeness checking method takes advantage of the Itemset Support Table (IST) in the feature enumeration tree to check the closeness of an itemset. The IST helps in closeness checking of an itemset without the need to scan through the previously mined FCCI itemsets. The proposed pruning strategy utilizes the IST to efficiently cut down the search space. The IST provides prior information regarding the support of the itemsets to be mined at the descendant nodes without traversing them. The IST for every node is shown in Fig. <ref type="figure" target="#fig_1">2</ref>.</p><p>Definition 10 (Itemset Support Table ). Given a itemset X = {𝑔 𝑖1 , 𝑔 𝑖2 , … , 𝑔 𝑖𝑘 } representing a feature enumerated node in a lexicographical order, the Itemset Support Table (𝐼𝑆𝑇 𝑋 ) at node X contains the updated support for each gene feature in (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ) depending on the support of the bitset result obtained at node X.</p><p>The Itemset Support Table (𝐼𝑆𝑇 𝑋 ) at node X is obtained by the following steps.</p><p>1. Obtain the indices of all the ones appearing in the bitset result obtained at node X.</p><p>2. For each feature in (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ), calculate the number of ones from the preprocessed bitTable appearing at the indices obtained from the step 1.</p><p>Example 11. Obtaining Itemset Support Table for node ab (𝐼𝑆𝑇 𝑎𝑏 ) and dg (𝐼𝑆𝑇 𝑑𝑔 ) in Fig. <ref type="figure" target="#fig_1">2</ref>.</p><p>• Itemset Support Table for node ab, 𝐼𝑆𝑇 𝑎𝑏 is shown in Table <ref type="table" target="#tab_6">7a</ref>. The indices of all the ones appearing in the bitset result (11010) at node ab are {1,2,4}.</p><p>• For each feature in {𝑑, 𝑔, ℎ, 𝑗}, the number of ones appearing at the indices {1,2,4} from the preprocessed bitTable as shown in Table <ref type="table" target="#tab_3">4</ref> are {2,1,2,2}.</p><p>• Itemset Support Table for node dg, 𝐼𝑆𝑇 𝑑𝑔 is shown in Table <ref type="table" target="#tab_6">7c</ref>, the indices of all the ones appearing in the bitset result (01101) at node 𝑑𝑔 are {2,3,5}.</p><p>• For each row in {𝑎, 𝑏, ℎ, 𝑗}, the number of ones appearing at the indices {2,3,5} from the preprocessed bitTable as shown in Table <ref type="table" target="#tab_3">4</ref> are {2,2,3,1}.</p><p>Example 12. Table <ref type="table" target="#tab_6">7a</ref>, b, c and d show the Itemset Support Table at nodes ab, bd, dg and ah respectively in Fig. <ref type="figure" target="#fig_1">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.5.">Proposed IST based closeness checking</head><p>The IST based closeness checking method is proposed to speed up the closeness checking of an itemset during the traversal of a feature enumerated tree. The proposed efficient closeness checking method will not scan through the previously mined FCCI to check for the existence and closeness of newly mined frequent colossal itemset. Lemma 3. An itemset 𝑋 ⊆ 𝐺 𝑓 𝑖𝑛𝑎𝑙 during the feature enumeration, occurring in 𝑌 rows is closed iff the support of all the features in the 𝐼𝑆𝑇 𝑋 is less than |𝑌 |.</p><p>Proof. According to Definition 8 (Eqs. <ref type="formula" target="#formula_0">1,</ref><ref type="formula" target="#formula_1">2</ref>, <ref type="formula" target="#formula_2">3</ref>, <ref type="formula" target="#formula_3">4</ref>), if X is closed, then X = f (Y ). So it is necessary to prove that X = f (Y ) using 𝐼𝑆𝑇 𝑋 . The 𝐼𝑆𝑇 𝑋 (feature) provides the updated support value corresponding to the feature in 𝐼𝑆𝑇 𝑋 . (For all)∀ feature ∈ (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ), if 𝐼𝑆𝑇 𝑋 (feature) &lt; |Y |, then Y does not contain features from (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ). This indicates that Y contains only an itemset X, thus proving X = f (Y ). Therefore, X is closed.</p><p>Lemma 4. An itemset 𝑋 ⊆ 𝐺 𝑓 𝑖𝑛𝑎𝑙 during the feature enumeration, occurring in 𝑌 rows is not closed iff the support of any one of the features 𝐼𝑆𝑇 𝑋 is equal to |𝑌 |.</p><p>Proof. According to Definition 8 (Eqs. <ref type="formula" target="#formula_0">1,</ref><ref type="formula" target="#formula_1">2</ref>, <ref type="formula" target="#formula_2">3</ref>, <ref type="formula" target="#formula_3">4</ref>), if X is not closed, then X ≠ f (Y ). So it is necessary to prove that X ≠ f (Y ) using 𝐼𝑆𝑇 𝑋 . The 𝐼𝑆𝑇 𝑋 (feature) provides the updated support value corresponding to the feature in 𝐼𝑆𝑇 𝑋 . According to the steps followed for obtaining 𝐼𝑆𝑇 𝑋 , the updated support for each feature in 𝐼𝑆𝑇 𝑋 will never be greater than |Y|. (For any)∀ feature ∈ (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ), if 𝐼𝑆𝑇 𝑋 (feature) is equal to |Y |, then Y contain features from (𝐺 𝑓 𝑖𝑛𝑎𝑙 -X ). Hence, X ≠f (Y ) is proved. Therefore, X is not closed.</p><p>The IST based closeness checking is based on Lemmas 3 and 4. For Example, an itemset ab during feature enumeration occurring in 124 is closed. An itemset ab is closed because the support of all the features in 𝐼𝑆𝑇 𝑎𝑏 shown in Table <ref type="table" target="#tab_6">7a</ref> is less than |124|. An itemset dg during feature enumeration occurring in 235 is not closed according to Lemma 4 because the support of feature h in 𝐼𝑆𝑇 𝑑𝑔 shown in Table <ref type="table" target="#tab_6">7c</ref> is equal to |235|.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.6.">Proposed IST based pruning strategy</head><p>The IST based pruning strategy is proposed to efficiently cut down the feature enumeration search space. The proposed pruning strategy utilizes IST at every node as it provides prior information regarding the support of an itemset to be mined at descendant nodes without traversing them, unlike the existing FCCI mining algorithms which does not provide any prior information regarding the same.</p><p>Given an itemset X, if the support of any features in 𝐼𝑆𝑇 𝑋 is less than the minsup, then the descendant nodes corresponding to those features can be pruned as they do not generate frequent itemsets. For example, with minsup and mincard set to 2, the 𝐼𝑆𝑇 𝑎𝑏𝑑 as shown in Table <ref type="table" target="#tab_7">8</ref> gives prior information regarding the support of itemsets to be mined at descendant nodes (abdg, abdh and abdj). The support of feature g, h and j in 𝐼𝑆𝑇 𝑎𝑏𝑑 are less than minsup, which leads to the pruning of nodes abdg, abdgh, abdghj, abdgj, abdh, abdhj and abdj from feature enumeration search space as they do not generate the frequent itemsets. The existing FCCI algorithms lack the ability to retrieve the prior information regarding the support of an itemset to be mined at descendant nodes, while the proposed pruning strategy enjoys the benefit of prior information provided by IST.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.7.">Dynamic switching frequent colossal closed itemset mining (DSFCCIM) algorithm</head><p>The DSFCCIM algorithm is shown in Algorithm 2. Procedures 3 and 4 show the RowEnum procedure and FeatureEnum procedure respectively. The proposed DSFCCIM algorithm mines FCCI by performing a depth-first traversal of both row and feature enumeration trees. The preprocessed bitTable, minsup, and mincard are provided as an input to the algorithm. The FCCI, set of frequent colossal closed items is initialized to null. 𝑅 𝑓 𝑖𝑛𝑎𝑙 and 𝐺 𝑓 𝑖𝑛𝑎𝑙 are the set of rows and features to be enumerated respectively. The rcomb and fcomb are the first row and feature considered during the depth-first traversal of the row enumeration space and feature enumeration space respectively. The algorithm adopts either RowEnum procedure or FeatureEnum procedure depending on the switching condition. The switching condition in DSFCCIM algorithm is shown in Eq. ( <ref type="formula" target="#formula_8">9</ref>). 𝑅 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙 is the number of different row enumerated node combinations of 𝑅 𝑓 𝑖𝑛𝑎𝑙 distinct rows taken l at a time. 𝐺 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙 is the number of different feature enumerated node combinations of 𝐺 𝑓 𝑖𝑛𝑎𝑙 distinct features taken l at a time. The algorithm chooses the RowEnum procedure if the switching condition holds true else it will choose the FeatureEnum procedure. The Fig. <ref type="figure" target="#fig_3">4</ref> shows the traversal of nodes after applying DSFCCIM algorithm on the bitTable shown in Table <ref type="table" target="#tab_2">3d</ref>. The algorithm switches from row enumeration to feature enumeration at node 12.</p><formula xml:id="formula_8">𝑅 𝑓 𝑖𝑛𝑎𝑙 ∑ 𝑙=1 𝑅 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙 ≤ 𝐺 𝑓 𝑖𝑛𝑎𝑙 ∑ 𝑙=1 𝐺 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙<label>(9)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.7.1.">Rowenum procedure</head><p>• Pruning Strategy 1: If the node rcomb or its descendants do not reach till minsup, then the rcomb and its descendants (if existing) are pruned to cut down the search space. For example, the nodes 46, 5, 56, 6 shown in Fig. <ref type="figure" target="#fig_0">1</ref> are pruned during the mining process, if the minsup value is set to 3.</p><p>• The rbitset_result is calculated at the node rcomb. For example, the rbitset_result at node 12 is 11100000 (abd).</p><p>• Pruning Strategy 2: Pruning strategy 2 in RowEnum procedure highlight the proposed RCT based pruning strategy. The RCT based pruning strategy provides an added computational boost to the proposed DSFCCIM algorithm as it provides prior information regarding the cardinality of the itemsets to be mined.</p><p>• Optimization: If the number of rids in rcomb is less than minsup, then the closeness checking of the rowset rcomb is not required. For example, the closeness checking of all the 2-rowsets is not required when the minsup value is set to 3. The optimization in RowEnum procedure helps to skip closeness checking for (minsup-1) number of levels.</p><p>Switching condition is checked at every row enumerated node. The concept of the switching condition is to check the number of nodes to be traversed in the subtree at a node. Row enumeration or feature enumeration is selected depending on a smaller number of node traversal in the subtree at a node. Let m be the number of rows to be enumerated at node rcomb and n be the number of features in an itemset occurring at the node rcomb, then the switching condition at the node rcomb during row enumeration is shown in Eq. ( <ref type="formula" target="#formula_9">10</ref>). 𝑚 𝐶 𝑙 is the number of different row enumerated node combinations of m distinct rows taken l at a time. 𝑛 𝐶 𝑙 is the number of different feature enumerated node combinations of n distinct features taken l at a time. The algorithm switches to the feature enumeration space if the switching condition holds true, else it continues with a depth-first traversal of row enumeration space. </p><formula xml:id="formula_9">𝑛 ∑ 𝑙=1 𝑛 𝐶 𝑙 ≤ 𝑚 ∑ 𝑙=1 𝑚 𝐶 𝑙<label>(10)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.7.2.">Featureenum procedure</head><p>• Pruning Strategy 1: If the node fcomb or its descendants do not reach till mincard, then the fcomb and its descendants (if existing) are pruned to cut down the search space. For example, the nodes gj, h, hj, j as shown in Fig. <ref type="figure" target="#fig_1">2</ref> are pruned during the mining process, if the mincard value is set to 3.</p><p>• The fbitset_result is calculated at the node fcomb. For example, the fbitset_result at node ab is 11010 (124).</p><p>• Pruning Strategy 2: Pruning strategy 2 in FeatureEnum procedure highlight the proposed IST based pruning strategy. The IST based pruning strategy provides an added computational boost to the proposed DSFCCIM algorithm as it provides prior information regarding the support of the itemsets to be mined.</p><p>• Optimization: If the number of features in fcomb is less than mincard, then the closeness checking of the itemset fcomb is not required. For example, the closeness checking of all the 2-itemsets is not required when the mincard value is set to 3. The optimization in FeatureEnum procedure helps to skip closeness checking for (mincard-1) number of levels.</p><p>Switching condition is checked at every feature enumerated node. The concept of the switching condition is to check the number of nodes to be traversed in the subtree at a node. Let n be the number of features to be enumerated at node fcomb and m be the number of rows in which an itemset fcomb has occurred, then the switching condition at node fcomb during feature enumeration is shown in Eq. ( <ref type="formula" target="#formula_10">11</ref>). 𝑚 𝐶 𝑙 is the number of different row enumerated node combinations of m distinct rows taken l at a time. 𝑛 𝐶 𝑙 is the number of different feature enumerated node combinations of n distinct features taken l at a time. The algorithm switches to the row enumeration space if the switching condition holds true, else it continues with depth-first traversal of feature enumeration space.</p><formula xml:id="formula_10">𝑚 ∑ 𝑙=1 𝑚 𝐶 𝑙 ≤ 𝑛 ∑ 𝑙=1 𝑛 𝐶 𝑙<label>(11)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.8.">Complexity analysis</head><p>For the high dimensional dataset D consisting of 𝑚 𝑓 𝑖𝑛𝑎𝑙 number of rows and 𝑛 𝑓 𝑖𝑛𝑎𝑙 number of gene features after the proposed preprocessing technique, the space complexity of the bitTable is (𝑚 𝑓 𝑖𝑛𝑎𝑙 𝑛 𝑓 𝑖𝑛𝑎𝑙 ). The rowset closeness checking method and pruning strategy of the proposed algorithm with the row enumeration approach take advantage of the RCT at the respective row enumeration node. During the row enumeration approach, the RCT at any particular row enumerated node Y will be in the memory until the completion of rowset closeness checking method and pruning strategy. Hence there will be only one RCT in the memory during the row enumeration approach and requires (𝑚 𝑓 𝑖𝑛𝑎𝑙 -|𝑌 |) to be in the memory. The space complexity during the row enumeration approach is (𝑚 𝑓 𝑖𝑛𝑎𝑙 𝑛 𝑓 𝑖𝑛𝑎𝑙 + (𝑚 𝑓 𝑖𝑛𝑎𝑙 -|𝑌 |)). The itemset closeness checking method and pruning strategy of the proposed algorithm with the feature enumeration approach take advantage of the IST at the respective feature enumeration node. During the feature enumeration approach, the IST at any particular feature enumerated node X will be in the memory until the completion of itemset closeness checking method and pruning strategy. Hence there will be only one IST in the memory during the feature enumeration approach and requires (𝑛 𝑓 𝑖𝑛𝑎𝑙 -|𝑋|) to be in the memory. The space complexity during the row enumeration approach is (𝑚 𝑓 𝑖𝑛𝑎𝑙 𝑛 𝑓 𝑖𝑛𝑎𝑙 + (𝑛 𝑓 𝑖𝑛𝑎𝑙 -|𝑋|)).</p><p>The proposed algorithm with row enumeration approach traverse all the row enumerated nodes in the worst case. The total number of row enumerated nodes that need to be traversed in the worst case is u, u = ∑𝑅 𝑓 𝑖𝑛𝑎𝑙 𝑙=1 𝑅 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙 . (𝑚 𝑓 𝑖𝑛𝑎𝑙 -|𝑌 |) time is required for the RCT based rowset closeness checking method and pruning strategy. The time complexity is (𝑢(𝑚 𝑓 𝑖𝑛𝑎𝑙 -|𝑌 |)) during the row enumeration approach. The proposed algorithm with feature enumeration approach traverse all the feature enumerated nodes in the worst case. The total number of feature enumerated nodes that need to be traversed in the worst case is v, v = ∑𝐺 𝑓 𝑖𝑛𝑎𝑙 𝑙=1 𝐺 𝑓 𝑖𝑛𝑎𝑙 𝐶 𝑙 .</p><p>(𝑛 𝑓 𝑖𝑛𝑎𝑙 -|𝑋|) time is required for the IST based itemset closeness checking method and pruning strategy. The time complexity is (𝑣(𝑛 𝑓 𝑖𝑛𝑎𝑙 -|𝑋|)) during the feature enumeration approach.</p><p>Let the total number of row enumerated nodes that need to be traversed in average case be, c, such that c = ∑ 𝑘 𝑙=1 𝑘 𝐶 𝑙 , where k is the level in the row enumerated tree up to which all the mined itemsets are colossal; all the nodes that are present in the levels higher than k will not be traversed as these levels do not contain any colossal itemsets; 𝑘 ≪ 𝑚 𝑓 𝑖𝑛𝑎𝑙 and 𝑐 ≪ 𝑢. The time complexity is (𝑐(𝑚 𝑓 𝑖𝑛𝑎𝑙 -|𝑌 |)) during the row enumeration approach in the average case. Let the total number of feature enumerated nodes that need to be traversed in average case be, d, such that d = ∑ 𝑠 𝑙=1 𝑠 𝐶 𝑙 , where s is the level in the feature enumerated tree up to which all the mined itemsets are frequent; all the nodes that are present in the levels higher than s will not be traversed as these levels do not contain any frequent itemsets; 𝑠 ≪ 𝑛 𝑓 𝑖𝑛𝑎𝑙 and 𝑑 ≪ 𝑣. The time complexity is (𝑑(𝑛 𝑓 𝑖𝑛𝑎𝑙 -|𝑋|)) during the feature enumeration approach in the average case.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Results and discussion</head><p>This section demonstrates the effectiveness of the proposed EIP technique and the efficiency of the proposed DSFCCIM algorithm. The experiments were carried out on a computer with a specification of 3.4 GHz core i7-3770 CPU, 8 GB RAM, and 1 TB hard disk. The proposed EIP technique was compared with the preprocessing techniques of CP-Miner, PCP-Miner, BVBUC, DisClose and Pattern Fusion (PF). The DisClose algorithm outperforms the other existing FCCI mining algorithms in terms of runtime; hence, the proposed    DSFCCIM algorithm was compared with the DisClose algorithm. The BVBUC and Pattern Fusion algorithms cannot be considered for the experimental runtime evaluation as it fails to mine the complete set of FCCI and many of the mined FCCI from BVBUC algorithm tend to provide incorrect support information. The PCP-Miner and CP-Miner cannot be considered for the experimental runtime evaluation as both algorithms fail to mine FCCI from the high dimensional dataset as they are designed to mine only frequent colossal itemsets and not FCCI. The proposed EIP technique and the proposed DSFCCIM algorithm were implemented in C++. The preprocessing techniques of PCP-Miner, CP-Miner, BVBUC, DisClose, and PF algorithms were implemented in C++ . The DisClose algorithm was also implemented in C++ . The experiments were conducted on three high-dimensional datasets: ovarian cancer, lung cancer, and prostate cancer <ref type="bibr" target="#b53">[54]</ref>. Ovarian cancer consists of 253 samples (rows) and 15 154 gene features; lung cancer consists of 181 samples and 12 533 gene features; prostate cancer consists of 102 samples and 12 600 gene features.</p><p>For different values of minsup and mincard, comparison of the proposed EIP technique and preprocessing technique of PCP-Miner, CP-Miner, BVBUC, DisClose and PF algorithms for ovarian cancer, lung cancer, and prostate cancer datasets have been tabulated from Tables <ref type="table" target="#tab_8">[9]</ref><ref type="table" target="#tab_9">[10]</ref><ref type="table" target="#tab_10">[11]</ref><ref type="table" target="#tab_11">[12]</ref><ref type="table" target="#tab_12">[13]</ref><ref type="table" target="#tab_13">[14]</ref>. These tables highlight the final set of relevant rows and relevant features after preprocessing. From the experimental results, it can be inferred that the proposed EIP technique prunes all irrelevant rows and irrelevant features in all cases when compared to the existing preprocessing techniques.   The preprocessing technique of BVBUC algorithm and PF algorithm prunes the irrelevant features just once; hence it was observed from the experimental results that for a given dataset, minsup and varying mincard, the number of irrelevant features pruned by the preprocessing technique of BVBUC and PF algorithm will remain same. The experimental results also show that, for a given dataset, minsup and varying mincard the preprocessing technique of BVBUC algorithm and PF algorithm fails to prune the irrelevant rows. The  preprocessing technique of PCP-Miner algorithm and CP-Miner algorithm prunes the irrelevant features and then rows which do not contain any features, only once. The experimental results show that the number of rows pruned by the preprocessing technique of PCP-Miner and CP-Miner algorithm in all the three high dimensional datasets for a given minsup and mincard is zero. This illustrates that the number of rows in all three high dimensional datasets which does not contain any features is zero.</p><p>The number of irrelevant features pruned by the preprocessing technique of PCP-Miner, CP-Miner and DisClose algorithm for a given dataset, minsup and varying mincard will remain same. The pruning of irrelevant features remains the same because these existing preprocessing techniques prune the irrelevant features just once and fail to take advantage of the reduction in support of features due to the pruning of irrelevant rows. The experimental results highlight that the proposed EIP technique takes advantage of the reduction in the cardinality of rows due to the pruning of irrelevant features and reduction in support of features due to the pruning of irrelevant rows. The proposed EIP technique prunes the irrelevant features, and irrelevant rows alternatively in an iterative manner until all the remaining features and rows satisfy the criteria of minsup and mincard respectively.</p><p>Further, the number of relevant features and relevant rows after the proposed EIP technique is zero, when the (minsup, mincard) reaches (20, 6000), (30, 5000), (40, 5000), (50, 4000) for the ovarian cancer dataset as shown in Tables <ref type="table" target="#tab_8">9</ref> and <ref type="table" target="#tab_9">10</ref>. This indicates that there are no FCCI and proposed EIP technique yields the final results without the need for the proposed DSFCCIM algorithm. However, the existing FCCI mining algorithms have to go through an enormous number of row combinations to fetch the same final results even after applying their respective preprocessing techniques. Similarly, the same was inferred in comparison of the proposed EIP technique and existing best preprocessing techniques for the lung cancer dataset (as shown in Tables <ref type="table" target="#tab_10">11</ref> and <ref type="table" target="#tab_11">12</ref>) and prostate cancer dataset (as shown in Tables <ref type="table" target="#tab_12">13</ref> and <ref type="table" target="#tab_13">14</ref>). The proposed EIP technique outperforms the existing preprocessing techniques effectively by pruning the complete set of irrelevant features and irrelevant rows.</p><p>Figs. <ref type="figure" target="#fig_4">5</ref><ref type="figure" target="#fig_5">6</ref><ref type="figure" target="#fig_6">7</ref>show the runtime comparison of proposed DSFCCIM algorithm with proposed EIP technique and DisClose algorithm at different values of minsup and mincard for ovarian cancer, lung cancer, and prostate cancer dataset respectively. The x-axes in Figs. <ref type="figure" target="#fig_4">5</ref><ref type="figure" target="#fig_5">6</ref><ref type="figure" target="#fig_6">7</ref>indicate the varying mincard and the y-axes indicate the runtime in logarithmic scale. Disclose algorithm was not able to record the runtime for ovarian cancer dataset when the (minsup, mincard) was (10,1000) and (20,1000). After administering the proposed EIP technique, the number of relevant rows and relevant features in the ovarian cancer dataset is zero when the minsup reach 20, and mincard reach 6000. This indicates that DSFCCIM algorithm is not obligatory to gauge the final result for ovarian cancer dataset when the minsup reach 20, and mincard reach 6000, whereas DisClose algorithm has to enumerate through huge row space to gauge the final result. Fig. <ref type="figure" target="#fig_5">6</ref> indicates that DSFCCIM algorithm is not obligatory to gauge the final result for lung cancer dataset when the minsup reach 20, and mincard reach 4000. However, Disclose is not obligatory to gauge the final result for lung cancer dataset when the minsup reach 30, and mincard reach 5000. Figs. <ref type="figure" target="#fig_4">[5]</ref><ref type="figure" target="#fig_5">[6]</ref><ref type="figure" target="#fig_6">[7]</ref> show that DSFCCIM algorithm outperforms the Disclose algorithm. The results illustrate that DSFCCIM algorithm is efficient in handling the changing characteristics of data subset during the mining process. The results also illustrate the efficiency of proposed closeness checking methods and pruning strategies.</p><p>Figs. 8-10 show the runtime comparison of proposed DSFCCIM algorithm with proposed EIP technique and DisClose algorithm with proposed EIP technique at different values of minsup and mincard for ovarian cancer, lung cancer, and prostate cancer dataset respectively. The x-axes in Figs. 8-10 indicate the varying mincard and the y-axes indicate the runtime in logarithmic scale. After administering the proposed EIP technique and 8, it is evident that both algorithms DSFCCIM and DisClose are not obligatory to gauge the final result ovarian cancer the minsup reach 20, and mincard reach 6000. Fig. <ref type="figure" target="#fig_15">9</ref> indicates that both algorithms DSFCCIM and DisClose are not obligatory to gauge the final result for lung cancer dataset when the minsup reach 20, and mincard reach 4000. Figs. <ref type="figure" target="#fig_7">[8]</ref><ref type="figure" target="#fig_8">[9]</ref><ref type="figure" target="#fig_9">[10]</ref> show that DSFCCIM algorithm with proposed EIP technique outperforms the Disclose algorithm with proposed EIP technique. Figs. <ref type="figure" target="#fig_7">[8]</ref><ref type="figure" target="#fig_8">[9]</ref><ref type="figure" target="#fig_9">[10]</ref> illustrate the efficiency of proposed closeness checking methods and pruning strategies.</p><p>The switching condition depends on the number of row enumerated nodes or feature enumerated nodes to be traversed in the subtree. The switching condition directs the DSFCCIM algorithm to start mining FCCI from ovarian cancer, lung cancer, and prostate cancer datasets with the row enumeration approach, due to the data characteristics of the respective datasets. The characteristics of the data subset being handled by the algorithm will change from one subset to another during the mining process. The changed characteristics of the data subset during the mining decides the number of row enumerated nodes or feature enumerated nodes to be traversed in the subtree. It is observed that the DSFCCIM algorithm continues mining FCCI from ovarian cancer, lung cancer, and prostate cancer datasets with row enumeration approach and do not switch to feature enumeration approach. The row enumeration approach is the best approach to continue mining FCCI from ovarian cancer, lung cancer, and prostate cancer datasets because the number of row enumerated nodes to be traversed in the subtree at any point of the mining process is less than the number of feature enumerated nodes to be traversed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.">Conclusion</head><p>The conventional algorithms expend most of the running time in mining a large number of small and mid-size itemsets which have limited information. Colossal itemsets have greater importance in decision making and provide more suitable information for many applications. An EIP technique was proposed to prune the complete set of irrelevant features and rows by effective utilization of minsup and mincard respectively. The proposed novel DSFCCIM algorithm dynamically switches between bottom-up row and feature enumeration method depending on the data characteristics during the mining process. The DSFCCIM algorithm is enclosed with efficient pruning strategies to cut down the search space. The DSFCCIM algorithm is the first dynamic switching algorithm to mine FCCI from datasets consisting of a large number of rows and a large number of features.</p><p>RCT and IST based closeness checking method are proposed to speedup the closeness checking of a rowset and an itemset, respectively. The proposed closeness checking methods will not scan through the mined FCCI to check the existence and closeness of newly mined frequent colossal itemset. Results show that the proposed EIP technique is more effective in pruning the complete set of irrelevant features and rows than the existing preprocessing techniques. The results also highlight that the efficiency of the proposed DSFCCIM algorithm in comparison to the existing FCCI mining algorithms.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Bottom-up row enumeration tree with Rowset CardinalityTable for respective nodes.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Bottom-up feature enumeration tree with Itemset SupportTable for respective nodes.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Combination of row and feature enumeration tree.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Traversal of nodes after applying DSFCCIM algorithm on bitTable shown in Table3d.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Runtime for ovarian cancer dataset with proposed EIP technique for DSFCCIM algorithm.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Runtime for lung cancer dataset with proposed EIP technique for DSFCCIM algorithm.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7.Runtime for prostate cancer dataset with proposed EIP technique for DSFCCIM algorithm.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8.Runtime for ovarian cancer dataset with proposed EIP technique for algorithms DSFCCIM and DisClose.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9.Runtime for lung cancer dataset with proposed EIP technique for algorithms DSFCCIM and DisClose.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 10 .</head><label>10</label><figDesc>Fig. 10.Runtime for prostate cancer dataset with proposed EIP technique for algorithms DSFCCIM and DisClose.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_0"><head>Procedure 1.</head><label>1</label><figDesc>Procedure 1. MSTP_task()</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_1"><head>Procedure 2.</head><label>1</label><figDesc>Procedure 2. MCTP_task()</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_2"><head>Algorithm 1.</head><label>1</label><figDesc>Proposed Effective Improvised Preprocessing (EIP) Technique</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_3"><head>Algorithm 2 .</head><label>2</label><figDesc>DSFCCIM algorithm</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_4"><head>Procedure 3 .</head><label>3</label><figDesc>Procedure 3. RowEnum(rcomb,rbitset_result,𝑅′′ final,FCCI)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_5"><head>Procedure 4 .</head><label>4</label><figDesc>Procedure 4. FeatureEnum(fcomb,fbitset_result,G′′ final,FCCI)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>High dimensional dataset D.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>bitTable corresponding to high dimensional dataset D.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Proposed Effective Improvised Preprocessing (EIP) technique.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Preprocessed bitTable when minsup = 3 and mincard = 3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Rowset cardinality table of 12, 13, 14 and 23.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Rowset cardinality table of 123, 𝑅𝐶𝑇 123 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7</head><label>7</label><figDesc>Itemset support table of ab, bd, dg and ah.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8</head><label>8</label><figDesc>Itemset support table of abd, 𝐼𝑆𝑇 𝑎𝑏𝑑 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 9</head><label>9</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for ovarian cancer dataset with minsup set to 20 and 30.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 10</head><label>10</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for ovarian cancer dataset with minsup set to 40 and 50.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head>Table 11</head><label>11</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for lung cancer dataset with minsup set to 20 and 30.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11"><head>Table 12</head><label>12</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for lung cancer dataset with minsup set to 40 and 50.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12"><head>Table 13</head><label>13</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for prostate cancer dataset with minsup set to 20 and 30.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_13"><head>Table 14</head><label>14</label><figDesc>Comparison of proposed EIP technique and preprocessing technique used in DisClose, BVBUC, PF, CP-Miner and PCP-Miner for prostate cancer dataset with minsup set to 40 and 50.</figDesc></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="proceeding" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Agrawal</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Srikant</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Fast algorithms for mining association rules</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proc. 20th Int. Conf. Very Large Data Bases, VLDB</title>
+			<imprint>
+				<date when="1994">1994</date>
+				<biblScope unit="page" from="487" to="499"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="proceeding" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bayardo</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+					<genName>Jr</genName>
+				</persName>
+			</author>
+			<title level="a">Efficiently mining long patterns from databases</title>
+		</analytic>
+		<monogr>
+			<title level="m">ACM Sigmod Record</title>
+			<imprint>
+				<publisher>ACM</publisher>
+				<date when="1998">1998</date>
+				<biblScope unit="page" from="85" to="93"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pei</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">Mining frequent patterns without candidate generation</title>
+		</analytic>
+		<monogr>
+			<title level="j">ACM Sigmod Record</title>
+			<imprint>
+				<publisher>ACM</publisher>
+				<date when="2000">2000</date>
+				<biblScope unit="page" from="1" to="12"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename>K-C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liao</surname>
+					<forename>I-E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chang</surname>
+					<forename>T-P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename>S-F</forename>
+				</persName>
+			</author>
+			<title level="a">A frequent itemset mining algorithm based on the principle of inclusion–exclusion and transaction mapping</title>
+		</analytic>
+		<monogr>
+			<title level="j">Inform. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">276</biblScope>
+				<biblScope unit="page" from="278" to="289"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="proceeding" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename type="first">J</forename><forename type="middle">X</forename>
+				</persName>
+			</author>
+			<title level="a">Ascending frequency ordered prefix-tree: efficient mining of frequent patterns</title>
+		</analytic>
+		<monogr>
+			<title level="m">Database Systems for Advanced Applications, 2003.(DASFAA 2003). Proceedings. Eighth International Conference on</title>
+			<imprint>
+				<publisher>IEEE</publisher>
+				<date when="2003">2003</date>
+				<biblScope unit="page" from="65" to="72"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename type="first">J</forename><forename type="middle">X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xiao</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Afopt: An efficient implementation of pattern growth approach</title>
+		</analytic>
+		<monogr>
+			<title level="m">FIMI</title>
+			<imprint>
+				<date when="2003">2003</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Qiu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lan</surname>
+					<forename>Y-J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xie</surname>
+					<forename>Q-S</forename>
+				</persName>
+			</author>
+			<title level="a">An improved algorithm of mining from fp-tree</title>
+		</analytic>
+		<monogr>
+			<title level="m">Machine Learning and Cybernetics, 2004. Proceedings of 2004 International Conference on</title>
+			<imprint>
+				<publisher>IEEE</publisher>
+				<date when="2004">2004</date>
+				<biblScope unit="page" from="1665" to="1670"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tanbeer</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ahmed</surname>
+					<forename type="first">C</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jeong</surname>
+					<forename>B-S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename>Y-K</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient single-pass frequent pattern mining using a prefix-tree</title>
+		</analytic>
+		<monogr>
+			<title level="j">Inform. Sci.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">179</biblScope>
+				<biblScope unit="page" from="559" to="583"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yildiz</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Selale</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Mining frequent patterns from microarray data</title>
+		</analytic>
+		<monogr>
+			<title level="m">Health Informatics and Bioinformatics (HIBIT), 2011 6th International Symposium on</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Index-bittablefi: An improved algorithm for mining frequent itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="j">Knowl.-Based Syst.</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="507" to="513"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Javed</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Khokhar</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Frequent pattern mining on message passing multiprocessor systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Distrib. Parallel Databases</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="321" to="334"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename type="first">K</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Deng</surname>
+					<forename>D-J</forename>
+				</persName>
+			</author>
+			<title level="a">A novel parallel algorithm for frequent pattern mining with privacy preserved in cloud computing environments</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Ad Hoc Ubiquitous Comput.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="205" to="215"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>K-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Parallel tid-based frequent pattern mining algorithm on a pc cluster and grid computing system</title>
+		</analytic>
+		<monogr>
+			<title level="j">Expert Syst. Appl.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="2486" to="2494"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>K-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Balanced tidset-based parallel fp-tree algorithm for the frequent pattern mining on grid system</title>
+		</analytic>
+		<monogr>
+			<title level="m">Semantics, Knowledge and Grid, 2008. SKG’08. Fourth International Conference on</title>
+			<imprint>
+				<date when="2008">2008</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>K-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Tidset-based parallel fp-tree algorithm for the frequent pattern mining problem on pc clusters</title>
+		</analytic>
+		<monogr>
+			<title level="m">Advances in Grid and Pervasive Computing</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<date when="2008">2008</date>
+				<biblScope unit="page" from="18" to="28"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sohrabi</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barforoush</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Parallel frequent itemset mining using systolic arrays</title>
+		</analytic>
+		<monogr>
+			<title level="j">Knowl.-Based Syst.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">37</biblScope>
+				<biblScope unit="page" from="462" to="471"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename type="first">K</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lo</surname>
+					<forename>Y-C</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient algorithms for frequent pattern mining in many-task computing environments</title>
+		</analytic>
+		<monogr>
+			<title level="j">Knowl.-Based Syst.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="10" to="21"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="conference" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lucchese</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Orlando</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perego</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Parallel mining of frequent closed patterns: Harnessing modern computer architectures</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on</title>
+			<imprint>
+				<date when="2007">2007</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Buehrer</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parthasarathy</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Y-K</forename>
+				</persName>
+			</author>
+			<title level="a">Adaptive parallel graph mining for cmp architectures</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Mining, 2006. ICDM’06. Sixth International Conference on</title>
+			<imprint>
+				<date when="2006">2006</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>S-Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>Y-B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>G-P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<title level="a">Mapreduce-based closed frequent itemset mining with efficient redundancy filtering</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Mining Workshops (ICDMW), 2012 IEEE 12th International Conference on</title>
+			<imprint>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Apiletti</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baralis</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cerquitelli</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garza</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Michiardi</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pulvirenti</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Pampa-hd: a parallel mapreduce-based frequent pattern miner for high-dimensional data</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Mining Workshop (ICDMW), 2015 IEEE International Conference on</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Negrevergne</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Termier</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Méhaut</surname>
+					<forename>J-F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uno</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Discovering closed frequent itemsets on multicore: Parallelizing computations and optimizing memory accesses</title>
+		</analytic>
+		<monogr>
+			<title level="m">High Performance Computing and Simulation (HPCS), 2010 International Conference on</title>
+			<imprint>
+				<date when="2010">2010</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lucchese</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Orlando</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Perego</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Fast and memory efficient mining of frequent closed itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Knowl. Data Eng.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="21" to="36"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pasquier</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bastide</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Taouil</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lakhal</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Discovering frequent closed itemsets for association rules</title>
+		</analytic>
+		<monogr>
+			<title level="m">Database Theory—ICDT’99</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<date when="1999">1999</date>
+				<biblScope unit="page" from="398" to="416"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pei</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Closet: An efficient algorithm for mining frequent closed itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="m">ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery</title>
+			<imprint>
+				<date when="2000">2000</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Uno</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Asai</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uchida</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arimura</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Lcm: An efficient algorithm for enumerating frequent closed item sets</title>
+		</analytic>
+		<monogr>
+			<title level="m">FIMI</title>
+			<imprint>
+				<date when="2003">2003</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Uno</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kiyomi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arimura</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Lcm ver 2: Efficient mining algorithms for frequent/closed/maximal itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="m">FIMI</title>
+			<imprint>
+				<date when="2004">2004</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Uno</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kiyomi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arimura</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Lcm ver. 3: collaboration of array, bitmap and prefix tree for frequent itemset mining</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the 1st International Workshop on Open Source Data Mining: Frequent Pattern Mining Implementations</title>
+			<imprint>
+				<publisher>ACM</publisher>
+				<date when="2005">2005</date>
+				<biblScope unit="page" from="77" to="86"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pei</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Closet+: Searching for the best strategies for mining frequent closed itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the Ninth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+			<imprint>
+				<publisher>ACM</publisher>
+				<date when="2003">2003</date>
+				<biblScope unit="page" from="236" to="245"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="conference" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zaki</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hsiao</surname>
+					<forename>C-J</forename>
+				</persName>
+			</author>
+			<title level="a">Charm: An efficient algorithm for closed itemset mining</title>
+		</analytic>
+		<monogr>
+			<title level="m">SDM</title>
+			<imprint>
+				<date when="2002">2002</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zaki</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hsiao</surname>
+					<forename>C-J</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient algorithms for mining closed itemsets and their lattice structure</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Knowl. Data Eng.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="462" to="478"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="conference" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cong</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>K-L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tung</surname>
+					<forename type="first">A</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Mining frequent closed patterns in microarray data</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Mining, 2004. ICDM’04. Fourth IEEE International Conference on</title>
+			<imprint>
+				<date when="2004">2004</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shao</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Mining frequent patterns on very high dimensional data: a topdown row enumeration approach</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceeding of the 2006 SIAM International Conference on Data Mining (SDM’06)</title>
+			<imprint>
+				<publisher>SIAM</publisher>
+				<date when="2006">2006</date>
+				<biblScope unit="page" from="280" to="291"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shao</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Top-down mining of frequent closed patterns from very high dimensional data</title>
+		</analytic>
+		<monogr>
+			<title level="j">Inform. Sci.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">179</biblScope>
+				<biblScope unit="page" from="899" to="924"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="proceeding" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cong</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tung</surname>
+					<forename type="first">A</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zaki</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Carpenter: Finding closed patterns in long biological datasets</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the Ninth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+			<imprint>
+				<publisher>ACM</publisher>
+				<date when="2003">2003</date>
+				<biblScope unit="page" from="637" to="642"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sohrabi</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ghods</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Top-down vertical itemset mining</title>
+		</analytic>
+		<monogr>
+			<title level="m">Sixth International Conference on Graphic and Image Processing (ICGIP 2014)</title>
+			<imprint>
+				<publisher>International Society for Optics and Photonics</publisher>
+				<date when="2015">2015</date>
+				<biblScope unit="page">94431V</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vimieiro</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Moscato</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Disclosed: An efficient depth-first, top-down algorithm for mining disjunctive closed itemsets in high-dimensional data</title>
+		</analytic>
+		<monogr>
+			<title level="j">Inform. Sci.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">280</biblScope>
+				<biblScope unit="page" from="171" to="187"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pan</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tung</surname>
+					<forename type="first">A</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cong</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Cobbler: combining column and row enumeration for closed pattern discovery</title>
+		</analytic>
+		<monogr>
+			<title level="m">Scientific and Statistical Database Management, 2004. Proceedings. 16th International Conference on</title>
+			<imprint>
+				<publisher>IEEE</publisher>
+				<date when="2004">2004</date>
+				<biblScope unit="page" from="21" to="30"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Alves</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rodriguez-Baena</surname>
+					<forename type="first">D</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aguilar-Ruiz</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Gene association analysis: a survey of frequent pattern mining from gene expression data</title>
+		</analytic>
+		<monogr>
+			<title level="j">Brief. Bioinform.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="page">bbp042</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Carmona-Saez</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chagoyen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rodriguez</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Trelles</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carazo</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pascual-Montano</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Integrated analysis of gene expression by association rules discovery</title>
+		</analytic>
+		<monogr>
+			<title level="j">BMC Bioinform.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="54" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Koyutürk</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Subramaniam</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Szpankowski</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grama</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Detecting conserved interaction patterns in biological networks</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Comput. Biol.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="1299" to="1322"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Manda</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ozkan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McCarthy</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bridges</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Cross-ontology multi-level association rule mining in the gene ontology</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page">e47411</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Naulaerts</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meysman</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bittremieux</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vu</surname>
+					<forename type="first">T</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Berghe</surname>
+					<forename type="first">W</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goethals</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laukens</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">A primer to frequent itemset mining for bioinformatics</title>
+		</analytic>
+		<monogr>
+			<title level="j">Brief. Bioinform.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="216" to="231"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename>T-L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vo</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Snasel</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient algorithms for mining colossal patterns in high dimensional databases</title>
+		</analytic>
+		<monogr>
+			<title level="j">Knowl.-Based Syst.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">122</biblScope>
+				<biblScope unit="page" from="75" to="89"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sohrabi</surname>
+					<forename type="first">M</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barforoush</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Efficient colossal pattern mining in high dimensional datasets</title>
+		</analytic>
+		<monogr>
+			<title level="j">Knowl.-Based Syst.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">33</biblScope>
+				<biblScope unit="page" from="41" to="52"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yoon</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">G</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Subcellular localization prediction through boosting association rules</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE/ACM Trans. Comput. Biol. Bioinform.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="609" to="618"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yan</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename type="first">P</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Mining colossal frequent patterns by core pattern fusion</title>
+		</analytic>
+		<monogr>
+			<title level="m">Data Engineering, 2007. ICDE 2007. IEEE 23rd International Conference on</title>
+			<imprint>
+				<publisher>IEEE</publisher>
+				<date when="2007">2007</date>
+				<biblScope unit="page" from="706" to="715"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Okubo</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haraguchi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Finding top-n colossal patterns based on clique search with dynamic update of graph</title>
+		</analytic>
+		<monogr>
+			<title level="m">Formal Concept Analysis</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<date when="2012">2012</date>
+				<biblScope unit="page" from="244" to="259"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zulkurnain</surname>
+					<forename type="first">N</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haglin</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Keane</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Disclose: discovering colossal closed itemsets via a memory efficient compact row-tree</title>
+		</analytic>
+		<monogr>
+			<title level="m">Emerging Trends in Knowledge Discovery and Data Mining</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<date when="2012">2012</date>
+				<biblScope unit="page" from="141" to="156"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename>T-L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vo</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename typr="first">L</forename><forename typr="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">A new method for mining colossal patterns</title>
+		</analytic>
+		<monogr>
+			<title level="m">Systems, Man, and Cybernetics (SMC), 2016 IEEE International Conference on</title>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename>T-L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vo</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huynh</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Snasel</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nguyen</surname>
+					<forename typr="first">L</forename><forename typr="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">Constraint-based method for mining colossal patterns in high dimensional databases</title>
+		</analytic>
+		<monogr>
+			<title level="m">International Conference on Information Systems Architecture and Technology</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Besson</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Robardet</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boulicaut</surname>
+					<forename>J-F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rome</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Constraint-based concept mining and its application to microarray data analysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Intell. Data Anal.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="59" to="82"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Han</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tzvetkov</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Tfp: An efficient algorithm for mining top-k frequent closed itemsets</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Trans. Knowl. Data Eng.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="652" to="663"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="online-database" xml:id="b53">
+		<monogr>
+			<title level="m">Biological-Datasets</title>
+			<ref target="http://datam.i2r.a-star.edu.sg/datasets/krbd/index.html">http://datam.i2r.a-star.edu.sg/datasets/krbd/index.html</ref>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

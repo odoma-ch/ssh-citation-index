@@ -1,0 +1,1603 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A high-resolution geospatial assessment of the rooftop solar photovoltaic potential in the European Union</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability>
+					<licence target="http://creativecommons.org/licenses/BY/4.0/"><p>This is an open access article under the CC BY license (http://creativecommons.org/licenses/BY/4.0/).</p></licence>
+				</availability>
+				<date type="published" when="2019-08-07">07 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Katalin</forename><surname>Bódis</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">European Commission</orgName>
+								<orgName type="institution" key="instit2">Joint Research Centre (JRC)</orgName>
+								<address>
+									<settlement>Ispra</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Ioannis</forename><surname>Kougias</surname></persName>
+							<email>ioannis.kougias@ec.europa.eu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">European Commission</orgName>
+								<orgName type="institution" key="instit2">Joint Research Centre (JRC)</orgName>
+								<address>
+									<settlement>Ispra</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arnulf</forename><surname>Jäger-Waldau</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">European Commission</orgName>
+								<orgName type="institution" key="instit2">Joint Research Centre (JRC)</orgName>
+								<address>
+									<settlement>Ispra</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nigel</forename><surname>Taylor</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">European Commission</orgName>
+								<orgName type="institution" key="instit2">Joint Research Centre (JRC)</orgName>
+								<address>
+									<settlement>Ispra</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sándor</forename><surname>Szabó</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">European Institute of Innovation &amp; Technology (EIT)</orgName>
+								<address>
+									<settlement>Budapest</settlement>
+									<country key="HU">Hungary</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A high-resolution geospatial assessment of the rooftop solar photovoltaic potential in the European Union</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Renewable and Sustainable Energy Reviews</title>
+						<idno type="ISSN">1364-0321</idno>
+						<imprint>
+							<biblScope unit="volume">114</biblScope>
+							<biblScope unit="page" from="109309"/>
+							<date type="published" when="2019-08-07">07 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">76241D356E7BB29F8B369E5989144F16</idno>
+					<idno type="DOI">10.1016/j.rser.2019.109309</idno>
+					<note type="submission">Received 18 April 2019; Received in revised form 29 July 2019; Accepted 30 July 2019.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Rooftop photovoltaic Grid parity Distributed generation Renewable energy financing EU energy strategy</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Rooftop solar photovoltaic (PV) systems can make a significant contribution to Europe's energy transition. Realising this potential raises challenges at policy and electricity system planning level. To address this, the authors have developed a geospatially explicit methodology using up-to-date spatial information of the EU building stock to quantify the available rooftop area for PV systems. To do this, it combines satellite-based and statistical data sources with machine learning to provide a reliable assessment of the technical potential for rooftop PV electricity production with a spatial resolution of 100 m across the European Union (EU). It estimates the levelised cost of electricity (LCOE) using country-specific parameters and compares it to the latest household electricity prices. The results show that the EU rooftops could potentially produce 680 TWh of solar electricity annually (representing 24.4% of current electricity consumption), two thirds of which at a cost lower than the current residential tariffs. Country aggregated results illustrate existing barriers for cost-effective rooftop systems in countries with low electricity prices and high investment interest rates, as well as provide indications on how to address these.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Decentralised electricity generation with renewable technologies such as rooftop PV systems can contribute significant power capacity additions through a large number of smaller-scale installations, taking advantage of the continuously decreasing cost of PV installations <ref type="bibr" target="#b0">[1]</ref>. This category covers a wide range of sizes, from residential roofs with systems of a few kW to large-area commercial roofs. The owners are typically prosumers and include citizens acting as private individuals or in energy communities or cooperatives, as well as businesses. In 2017, the PV contribution to the EU electricity demand was 114 TWh, from an installed capacity of 107 GW. Considering that the share of residential and commercial rooftop systems is estimated at 28% and 18% respectively, it appears that EU hostsso several million of rooftop systems.</p><p>Looking forward, the EU's re-cast renewable energy directive <ref type="bibr" target="#b1">[2]</ref> set the target for the 2030 share of renewables in gross final energy consumption at 32%. To achieve this, the EU needs to increase its use of renewables in the power sector by a much higher amount and a significant part of this will come from solar systems. The Bloomberg 2018 New Energy Outlook <ref type="bibr" target="#b2">[3]</ref> forecasts a slight increase in the electricity demand in Europe (EU, Iceland, Norway and Switzerland) from 3454 TWh in 2017-3566 TWh in 2030. To realise the 32% target, the EU will thus need to increase its use of renewable energy in the power sector to at least 65%, with the contribution of solar being of the order of 440 TWh/year <ref type="bibr" target="#b2">[3]</ref>. This implies scope for tens of millions of new rooftop systems.</p><p>In parallel is the aim to minimise or phase support schemes as renewables become market competitive. The EU has shifted from feed-in tariff (FiT) subsidy schemes towards more market-driven mechanisms (e.g. competitive auctions) aiming to eventually reach subsidy-free energy systems' deployment. The European Commission (EC) guidelines on state aid for environmental protection and energy <ref type="bibr" target="#b3">[4]</ref> describe the conditions under which aid for energy may be considered compatible and does not adversely affect trading conditions. It also foresees specific exceptions for installations of a "certain size", a measure affecting rooftop systems.</p><p>These developments lead to the question: can the EU building stock can provide the space for significantly increasing the PV electricity production and under which economic conditions? At the same time, the spatial distribution of such systems is critical to grid system management and planning. The present study was therefore conceived to develop a pan-European spatial analysis tool to quantify the PV electricity potential of existing buildings' rooftops to a high level of accuracy. This is complemented by a measure of financial viability, comparing the levelised cost of PV electricity production with current retail prices (socket parity).</p><p>The structure of the paper is as follows: Section 2 provides background information and a literature review outlines of methods to assess rooftop solar PV potential along with the definition of the different approaches. Section 3 describes the development of the spatial methodology: The harmonisation of the various data layers, the assumptions made, parameters' fine-tuning and the model validation are presented in detail. Section 4 provides information about the used data: source, resolution and coverage. Detailed information about the data layers and a brief analysis of their characteristics and limitations is provided in an appendix. Section 5 provides the obtained results including countrylevel figures of existing potential and expected cost. Lastly, Section 6 is devoted to the interpretation of the results and a discussion on the relations between the financial factors, policies and technological challenges impacting the utilisation of the identified potential. lastly, the conclusions summarise the main findings of the study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.">Background and literature review</head><p>The exploitation potential of a renewable energy resource for a site or area can be addressed at several levels: a. Resource potential: for photovoltaics, the annual incident solar radiation and other relevant environment parameters such ambient temperature and wind speed; b. Technical potential: available suitable surface area, system technical performance, sustainability criteria if applicable; c. Economic potential: technology costs, avoided supply costs;</p><p>d. Market potential: deployment considering competition with other sources, policies, legal-permitting aspects, incentives, socio-cultural factors, etc.</p><p>This study specifically addresses rooftop PV systems and focuses on two aspects: assessment of technical potential (combining aspects a. and b. above) using a high-resolution spatial analysis of large pan-European datasets, and of economic potential using a grid cost parity approach.</p><p>Technical potential. Castellanos et al. <ref type="bibr" target="#b4">[5]</ref> distinguish existing methodologies to identify and assess rooftop solar PV potential in three categories: i. Low-level methods; ii. Medium-level methods; iii. High-level methods.</p><p>Low-level spatial analysis techniques are considered those processing aggregated statistical data. Examples include the methods using population density as a proxy for building/rooftop area <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b6">7]</ref>. Such methods assume a homogeneity of the data throughout the analysed area resulting in estimations of limited reliability. Methods of the medium-level category include approaches that combine aggregated statistical data with spatial information derived from geographic information system (GIS) and light detection and ranging (LiDAR) methods. The third category includes high-level analyses that utilise advanced methods for rooftop digitisation and detail spatial information and analysis of the solar irradiance. Such methods typically incorporate sophisticated tools to estimate the role of rooftop inclination, aspect and shading of buildings.</p><p>In a similar manner, Byrne et al. <ref type="bibr" target="#b7">[8]</ref> identify three categories of methodologies and describe them in a more explicit manner: i. Sample methodology; ii. Multivariate sampling-based methodology; iii. Complete census methodology.</p><p>Sampling techniques process estimates of available roof surface of a certain area that are then extrapolated to the total analysed area. Naturally, they are not absolutely accurate but can often provide a reliable estimate. Multivariate sampling-based methodologies identify correlations between the roof area and statistical data (e.g. population density, number of floors). The addition of variables increases the reliability of this method as it also allows some validation of the obtained results since the methodology retains a sample-based approach. Complete census methodology corresponds to the high-level methodologies described by Castellanos et al.. Such methods compute the entire rooftop area of the analysed region by processing statistical datasets of building-related information (floor area, number of floors, total number of buildings) and digital spatial information of the region by applying state-of-the-art GIS technologysoftware. They also spatially analyse the available solar irradiation incidence by analysing big geodatasets of solar irradiance. Techniques in the third category are generally expected to produce results of higher accuracy and reliability compared to the other two categories, and typically rely on detailed digital elevation models of a target area <ref type="bibr" target="#b6">[7]</ref>. As such, they are demanding in terms of data collection and computing power, as well as being more complex and considerably more time-consuming.</p><p>The present analysis is -to the authors' best knowledge-the first effort to develop a high-level, complete census methodology to assess EU as a whole. The sole EU-wide assessment available is a medium-level technique reported by Defaix et al. <ref type="bibr" target="#b8">[9]</ref>. The authors used statistical data of floor area per dwelling and average number of persons per dwelling to estimate the average floor area per capita. The latter multiplied with the EU population provided an estimation of the total floor area of private households in the EU. Defaix et al. then derived estimates on the average number of buildings' floors to estimate the rooftop area.</p><p>In preliminary investigations, the authors of the present article applied a low-level approach developed by the International Energy Agency (IEA) and presented in Ref. <ref type="bibr" target="#b5">[6]</ref>. This method identifies a function that -roughly-describes the relationship between rooftop area and population density. In order to obtain a rough estimation of EU's rooftop potential, the authors applied this function on the gridded population statistics (total population and population density) available from Eurostat at a 1 km resolution <ref type="bibr" target="#b9">[10]</ref>.</p><p>Due to the difficulties to develop high-level methodologies assessing large areas, the majority of previous works analyse rather small areas with digital elevation modelling techniques. Nguyen et al. <ref type="bibr" target="#b10">[11]</ref> have developed a methodology that identifies suitable buildings through the application of LiDAR. The methodology identified the inner roof area and eliminated very small houses that are not suitable for solar PV system installation. The derived information was eventually coupled with solar irradiation and shading simulation on a micro-site of about 30-50 households in Kingston, Ontario U.S <ref type="bibr" target="#b10">[11]</ref>. Kodysh et al. have estimated the solar potential on multiple buildings. They analysed highresolution LiDAR data in order to create solar radiation maps and estimate the solar potential of buildings individually. The developed method was then applied to a small area of interest in Knox County, Tennessee, USA <ref type="bibr" target="#b11">[12]</ref>. LiDAR data was also used in an analysis of rooftop solar potential in Malaysia <ref type="bibr" target="#b12">[13]</ref>. In that study, the LiDAR data was processed to estimate the available rooftop area, the solar radiation as well as to provide information on the aspect and slope of the buildings' rooftops. Aspect and inclination information was used to identify the first-rate locations for rooftop solar PV installations. Calcabrini et al. designed a simplified method to precisely calculate the yield of a PV system in complex urban environments. The method develops a high-resolution 3D model of the environment surrounding the PV system transforming digital elevation models into solar energy potential maps <ref type="bibr" target="#b13">[14]</ref>. These studies refer to small scales of the neighbourhood size, indicating the difficulties to assessing large areas such as the EU using high-level approaches.</p><p>At a city-level scale, the analysis of Hong et al. estimates the rooftop potential of a specific district in Seoul, Republic of Korea. Hourly solar radiation data of Seoul were coupled with the available building rooftop area for solar PV installations. Thus, data of the Gangnam district were analysed using spatial information provided by Korean national authorities. The high-level analysis included an analysis of the shadowing effect of buildings through the application of a hill-shade analysis to estimate the reduction of productive roof areas. Accordingly, the average geographic potential in the analysed district accounts for 66% of the total rooftop area <ref type="bibr" target="#b14">[15]</ref>. A study of <ref type="bibr" target="#b15">[16]</ref> assessed the rooftop solar PV potential of a neighbourhood in Karachi, Pakistan. The sampling-based analysis adopted average solar radiation data over the analysed district, normalised in monthly values. Moreover, sample rooftop areas were used to calculate the total available rooftop area through extrapolation <ref type="bibr" target="#b15">[16]</ref>. Ko et al. also applied a hill-shade analysis for Taiwan although, their research used annual average daily solar radiation data per city of limited accuracy <ref type="bibr" target="#b16">[17]</ref>. Their analysis assumed building roof availability of 50%, a percentage also suggested by other analyses in the literature <ref type="bibr" target="#b17">[18,</ref><ref type="bibr" target="#b18">19]</ref>. Some analyses distinguish the suitability factor between residential and commercial buildings, assigning a lower rate for the first (39%) and a higher one for the latter (60%) <ref type="bibr" target="#b7">[8]</ref>. Defaix et al. assumed a slightly lower percentage of the useable roof area of 40% <ref type="bibr" target="#b8">[9]</ref>. In all cases, non-suitable area corresponds to the required distance between the racks, access-maintenance space, and area covered by equipment such as water tanks, water meters etc. <ref type="bibr" target="#b19">[20]</ref> presented a city-scale analysis <ref type="bibr" target="#b19">[20]</ref> an assessment of the Indian city of Mumbai. High-granularity land use data were assessed along with image processing. Solar irradiance and temperature data were also taken into account to estimate the expected output of various types of solar PV modules. Byrne et al. implemented a city-scale analysis for Seoul, Republic of Korea <ref type="bibr" target="#b7">[8]</ref>. The authors processed building-related datasets to estimate the total roof area available in the studied city. However, as the statistics provided total floor area, assumptions on the different types of buildings -and the associated number of floors-were required. This provided an only gross estimate of Seoul's total rooftop area that was then cross-checked with census data.</p><p>At a wider larger scale, a comprehensive analysis of 128 major cities of the U.S. stands out. The recent study was took place in the National Renewable Energy Laboratory (NREL) <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b21">22]</ref> and processed LiDAR data obtained from the U.S. Department of Homeland Security to gain high-resolution building footprint information. In addition to the area covered, the data processing provided information about the effect of building shading, the tilt and the azimuth of the analysed rooftops. This allowed the application of suitability criteria. The solar resource was derived from meteorological data corresponding to a typical meteorological year. The authors of the NREL study expressed their intention to use statistical modelling to extrapolate the results to give a nationwide estimate of the technical potential. Indeed, most of the existing assessments at a national level extrapolate local data to a national scale or make assumptions on the buildings' typology (e.g. height, number of floors). However, this approach introduces uncertainty in the calculations as it assumes a uniform buildings' characteristics across vast areas. Such an assumption, particularly in large territories as the U.S., is expected to provide estimations of limited accuracy that can only serve as rough indications of the available technical potential. Similarly, an early assessment in Canada <ref type="bibr" target="#b22">[23]</ref> used an average number of floors figure to estimate the rooftop area from the total floor space of residential buildings. The analysis of Spain <ref type="bibr" target="#b23">[24]</ref> processed a × m m 200 200 dataset and perforce introduced a representative building typology as the geographical unit of the analysis. An assessment in Israel adopted a sophisticated approach to estimate available rooftop areas by processing aerial orthophotos <ref type="bibr" target="#b24">[25]</ref>. However, it only matched this to uniform city-average solar radiation information that ignore site-specific irrandiance differences. A country-level spatial analysis for rooftop PV systems analysed the case of South Korea <ref type="bibr" target="#b25">[26]</ref> and performed a sensitivity analysis on factors affecting solar electricity productivity (location, azimuth, slope).</p><p>Economic potential.</p><p>There is no agreed definition of economic potential for assessing renewable energy technologies. Since, broadly speaking, the economic viability is dependent on substituting an existing source of electricity with that from a PV system, a commonly used approach <ref type="bibr" target="#b26">[27]</ref> is compare the LCOE with current electricity prices. The LCOE parameter, as calculated using Equation ( <ref type="formula" target="#formula_0">1</ref>), is based on a net present value approach and provides a unit cost estimate, taking account of the location-specific performance, the initial investment, the operating costs and the discount rate. Equivalence of these two parameters is typically referred to as grid parity, or socket parity if retail prices are used as the benchmark.</p><formula xml:id="formula_0">= = + + = + LCOE t n I M r t n E r 1 (1 ) 1 (1 ) t t t t t<label>(1)</label></formula><p>where: I t : capital investment expenditures in year t M t : operation and maintenance (O&amp;M) expenditures in year t E t : electricity generation in year t r: discount rate n: investment period considered (20 years)</p><p>Hagerman et al. <ref type="bibr" target="#b27">[28]</ref> analysed spatially the cost and potential grid parity of rooftop systems in the U.S. under three different scenarios. They concluded that socket parity without subsidies was not feasible in 2015. The economic viability of rooftop has also been studied in Slovenia, using high-resolution remote sensing data <ref type="bibr" target="#b28">[29]</ref> including the environmental impact into the assessment. In the EU context, the authors provided early estimations of the cost of PV electricity at a continental-scale analysis <ref type="bibr" target="#b29">[30]</ref>. These early attempts did not process data layers of built-up areas; grid parity and the LCOE were simply estimated on the sum of global irradiation incident on a typical PV system.</p><p>It is stressed the grid parity approach takes no account, for instance, of the PV system size, its configuration or whether the produced electricity is directly consumed, stored or injected into the grid. A recent study by the US NREL <ref type="bibr" target="#b30">[31]</ref> applied a more complex approach, whereby economic potential is judged positive if the levelised avoided cost of energy minus levelised cost of energy generation (LCOE) is positive.</p><p>Detailed calculation of avoided cost is itself a challenge. Ideally, it requires knowledge of which share of charges are volumetric i.e. proportional to consumption, and which are fixed i.e. independent of consumption. For the EU, Eurostat reports a breakdown of electricity prices into energy production costs, transmission/distribution costs and taxes and levies, but the extent to these are volumetric may vary from supplier to supplier in a given market. Analysing very specific scenarios moves the scope to an assessment of market potential, and a good example of which is the study of the viability of residential PV systems in Ireland <ref type="bibr" target="#b31">[32]</ref>. In this case, a range of usage profiles, costs and financing options were considered. The results indicate that even when economic potential based on net present value approaches such as LCOE are favourable, detailed analysis of measures such as internal rate of return and payback period can be less favourable in relation to the expectations of private citizens and businesses. Such detailed assessments are beyond the scope of the present EU-wide study, which aims to provide a first check on economic potential using location-specific LCOE values and national electricity prices. In particular, this type of simplified upper-bound approach, allows us to identify areas where PV shows low economic potential compared to the technical potential, and what measures could help address this situation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Methodology</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Available rooftop area</head><p>Preliminary studies considered a range of data sources for the EU building stock <ref type="bibr" target="#b9">[10]</ref>. National or regional data on roof areas or building footprint areas are not available at EU level. Aggregated statistical figures (e.g. floor area of residential and non-residential buildings, build-up area) are provided by certain data sources (e.g. Eurostat, EU Buildings Database, Odyssee). However, following an analysis of such data from different data it appeared that they are neither semantically nor numerically harmonised <ref type="bibr" target="#b9">[10]</ref>.</p><p>This lead to consideration of satellite earth observation data, specifically the European Settlement Map (ESM). This is a spatial raster dataset that maps human settlements in Europe based on satellite imagery and the Global Human Settlement Layer (GHSL) technology <ref type="bibr" target="#b32">[33]</ref> (see the Appendix for more details). However, an initial comparison of ESM rooftop area data with reference cadastre data on rooftop areas showed an overestimation by a factor of 2-5. This underlined the need to incorporate additional thematic datasets and develop functions for statistical and spatial corrections into the methodology. Accordingly, the land cover dataset (CORINE Land Cover (CLC)) and the European Urban Atlas (EUA) were processed to adjust information on EU built-up areas derived by the ESM.</p><p>Based on the 44 land cover classes of the pan-European CORINE Land Cover (CLC) and the slightly different 27 classes of the European Urban Atlas (EUA), 20 common land cover classes were defined all over Europe. The reclassification was based on geographical identity of overlapping areas and thematic correspondence of the two applied land cover datasets (see Appendix). This harmonised land cover data was then statistically compared with reference data i.e. a consistent building area dataset of the Netherlands <ref type="bibr" target="#b33">[34]</ref>. The openly available Dutch national cadastre data also includes the footprint of buildings and was used as a reference.</p><p>Figs. <ref type="figure" target="#fig_0">1</ref> and <ref type="figure" target="#fig_1">2</ref> illustrate the steps of the developed methodology and the procedure to accurately identify rooftops and measure their area. Indicatively, the images show neighbourhoods in dense urban areas. The example in Fig. <ref type="figure" target="#fig_0">1-A</ref> shows the building distribution in the aerial photo (this is a visual aid, but is not used in the analysis). Fig. <ref type="figure" target="#fig_0">1-B</ref> shows how the building footprints based on cadastre data (red polygons) compare with the built-up identified in the ESM data (grey patches). The observed over-estimations usually correspond to constructed areas without buildings. Examples include flat surfaces such as tennis courts, parking lots, playgrounds, sport fields. These needed to be filtered out (the red patches in Fig. <ref type="figure" target="#fig_0">1-C</ref>).</p><p>The observed systematic error for each land cover type in the reference area was then generalised. We introduced a spatial statistical tool to determine the correspondence between the ESM and the cadastre buildings data. This resulted in correction coefficients (Fig. <ref type="figure" target="#fig_0">1-D</ref>) for each class of the high-resolution EUA (100% indicates no correction, and lower values indicate an increasing reduction needed on the ESM estimates).</p><p>In the next step of the process, the correction factors were applied on a continental scale using the transformed land cover classes of the pan-European data set. Accordingly, in areas where cadastre data were not available, the land cover-based correction coefficients were applied. The values of the correction coefficients for every land cover class are provided in the fourth column of the Table in the appendix. The methodology applied over the harmonised, pan-European coverage resulted in the EU-building density map in 100 m resolution. Fig. <ref type="figure" target="#fig_1">2</ref> illustrates results for an urban area outside the area covered by the reference cadaster data. Overall the resulting data set represents a raster at × m m 100 100 scale of building density values (building area m 2 per 10 000 m 2 or hectacre) for all Europe. As a check, aggregation of data to country level gave values similar to those of the Odyssee data <ref type="bibr" target="#b34">[35]</ref> (+4% on EU average) on the area of residential and non-residential buildings.</p><p>Fig. <ref type="figure" target="#fig_2">3</ref> illustrates the results for the Lombardy region in northern Italy.</p><p>This granular building density data formed the basis for estimating the available rooftop area for PV systems. The available rooftop area was reduced to the suitable area for PV installation. Firstly, a direct equivalence between building area and rooftop area was assumed. Out of this, only a fraction can be used for PV systems due to several factors. These include other uses of the roof (e.g. air conditioning, chimneys), shading from construction elements or neighbouring buildings, unfavourable orientation/inclination of roof parts and the required space to access the PV system itself. Moreover, the "net" available area for rooftop installations depends on building construction practices that have been followed in the different EU Member State. The estimation of the net available area was based on the authors' previous work <ref type="bibr" target="#b9">[10]</ref>, where approximately half (49-64%) of EU roofs appeared to be suitable for PV. Taking into account the required distance between modules, the needed access walkways for maintenance and obstacles (e.g. chimneys) an additional reduction coefficient (60%) has been applied to estimate the net area.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Solar energy potential</head><p>The Photovoltaic Geographical Information System (PVGIS) methodology <ref type="bibr" target="#b35">[36,</ref><ref type="bibr" target="#b36">37]</ref> is used for the PV energy yield calculation of each × m m 100 100 element in building area density raster, based on hourly solar radiation data for the period 2005-2016. North of 60 N, the solar radiation data have been obtained from the ECMWF ERA-5 reanalysis <ref type="bibr" target="#b37">[38]</ref>, while for the rest of the study region the solar radiation data are from the CM SAF SARAH data set, calculated from satellite data <ref type="bibr" target="#b38">[39]</ref>. The spatial resolution is 3 arc-minutes (approximately km 5 ). The cal- culation considers crystalline silicon modules and the systems are assumed to be south-facing, installed at a 20°inclination in areas south of the 60 th parallel north and at a 40°inclination in areas north of the 60 th parallel north. Balance-of-system and degradation losses are set uniformly at 14%. Fig. <ref type="figure" target="#fig_3">4</ref> shows the geographical variability of the capacity factor (CF), which ranges between 4% and 22%.</p><p>The analysis also considered the solar PV system losses and module degradation. Indeed, the power output of PV modules tends to decrease with age. According to the large study of Jordan and Kurtz <ref type="bibr" target="#b40">[41]</ref>, modules typically lose 0.5% of their power per year of operation. The developed methodology assumed a system lifetime of 20 years meaning that the remaining power at the end of that period would be 90% of the nameplate one. Over 20 years of operation, the average power would, thus, be 95% of the original value. Additional system losses occur in the  inverter where PV output is transformed into AC current and in cables. As it is not, currently, possible to accurately calculate all these effects over EU, the analysis assumed a uniform value of 14% for system losses and losses due to ageing <ref type="bibr" target="#b36">[37]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Levelised electricity cost</head><p>Location-specific LCOE values were calculated using Equation ( <ref type="formula" target="#formula_0">1</ref>). The cost of the initial investment I t for the rooftop systems was assigned the benchmark value of €1100/kWp <ref type="bibr" target="#b0">[1]</ref>, uniform for all countries. Rooftop systems can be commercial or private residential investments with only the latter being charged with value-added tax (VAT). VAT values vary significantly between countries and only estimates are available on the respective shares of commercial and residential systems. Accordingly, the present analysis did not consider the additional VAT cost for private systems. The annual OM costs were estimated as a percentage of the initial capital investment. The selected value was intentionally conservative <ref type="bibr" target="#b41">[42]</ref> and equal to 3% (the equivalent of €33/ kW). This reflects the higher OM of rooftop systems due to their relatively smaller size compared to ground-mounted systems. Total electricity generation E t was estimated for every location as described in section §3.2 and then aggregated at country-and EU-level.</p><p>Cash flows for the estimation of the LCOE have been transformed into net present values for the analysed time horizon n of 20 years. This was done by using the weighted average cost of capital (WACC) values as a discount rate r. The WACC shows the cost of funding new project investments and is calculated as the cost of each capital component multiplied by its proportional weight and then summing. WACC is typically used by EU authorities and national regulators <ref type="bibr" target="#b42">[43]</ref> as an index to assess the return on investments required by investors <ref type="bibr" target="#b43">[44]</ref> and is also the common utility practice <ref type="bibr" target="#b44">[45]</ref>. The recent EU-funded DiaCore project analysed the impact of risks in renewable energy sources (RES) investments in EU countries <ref type="bibr" target="#b45">[46]</ref> and provided WACC values at country-level. DiaCore assessed the various financing parameters but also collected information on specific investment-related risks of RES. Since the latter influence the costs of equity and debt for RES, they need to be considered when calculating the WACC. Accordingly, the use of WACC as a discount rate for the estimation of the LCOE of RES is considered a valid approach <ref type="bibr" target="#b46">[47]</ref> and has been adopted in relevant studies <ref type="bibr" target="#b47">[48]</ref>. Fig. <ref type="figure" target="#fig_4">5a</ref> illustrates the EU WACC values varying over a wide spectrum: from 3.5% (Germany) up to 11-12% in countries of Eastern Europe <ref type="bibr" target="#b45">[46]</ref>.</p><p>The output of the developed algorithm resulted in a Europe-wide LCOE layer with a 5 km spatial resolution (Fig. <ref type="figure" target="#fig_4">5b</ref>). The minimum value of LCOE is equal to 6.2 EURcent/kWh for areas with high solar electricity potential (Cyprus) while the maximum value LCOE 32.1 EURcent/kWh corresponds to less advantageous locations. The variability of the financial cost (WACC) is a key point to explain why LCOE is not always correlated to the CF values. Countries with good solar electricity potential (e.g. Greece, Romania, Bulgaria) have a high cost of capital, while several EU Member States with less favourable solar potential (e.g. Denmark, Belgium) have lower production cost (LCOE) due to their access to cheaper finance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Data</head><p>Table <ref type="table" target="#tab_0">1</ref> summarises the data sources used as input in the model. It includes various GIS databases used to estimate the available rooftop area, solar irradiance spatial data and statistical information of consumption and prices at Member State-level. As described in section 3, the most complex part of the developed methodology is the estimation of the rooftop area. The harmonised geospatial datasets (items 1 to 5) formed the basis for the spatial analysis and modelling the available rooftop area for solar PV. The high-resolution solar irradiance data (nr.6 in Table <ref type="table" target="#tab_0">1</ref>), provided detailed information of the expected PV production of a given system over the analysed area. The country-level statistical information on the current retail prices and total consumption were used to assess the economic viability of the rooftop PV systems over EU.</p><p>The Appendix provides detailed information about the datasets to enable reproducibility of the methodology.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Technical and economic rooftop solar electricity potential</head><p>The described methodology systematically calculated the available rooftop solar electricity potential for the full × m m 100 100 raster across the EU Member States. Fig. <ref type="figure" target="#fig_5">6</ref> shows the aggregated results for each of the analysed countries. The column height indicates the total available technical potential of rooftop solar PV systems. This is the expected electricity output (GWh/year) if 100% of the suitable rooftop systems were developed, independently of the cost. The different colours of the columns in Fig. <ref type="figure" target="#fig_5">6</ref> indicate the LCOE at which electricity is produced as well as the proportion of each LCOE band (see the figure legend) in the overall technical potential. The role of the solar irradiation incident per country plays a major role and in the countries of south EU (Italy, Spain, Portugal, Cyprus, Malta) where solar electricity can be produced at 6-12 EURcent/kWh. This is mainly due to the high productivity of PV systems (Fig. <ref type="figure" target="#fig_3">4</ref>). France and Germany offer significant opportunities for production at a relatively low cost. Their large building stock and the corresponding rooftop area result in a high technical potential (&gt;100 TWh/year for each country). Such a potential coupled with the low cost of capital (Fig. <ref type="figure" target="#fig_4">5a</ref>) allows the development of rooftop systems under advantageous terms.</p><p>Fig. <ref type="figure" target="#fig_6">7</ref> provides a map with the technical potential of each country and the total expected electricity output (GWh/year), if fully developed. Numbers in Fig. <ref type="figure" target="#fig_6">7</ref> show the share of the economic potential as a proportion of the technical one for each country. They provide the percentage of rooftop systems that are cost-competitive and produce electricity at a lower cost than the latest available (2017) retail electricity prices in the analysed countries <ref type="bibr" target="#b48">[49]</ref>. In that sense, national retail electricity prices act as a reference for defining the economic potential, making the assumption that the comparison of LCOE and household electricity price defines the cost-competitive systems. Despite the limitations of such a simplification, retail electricity prices are, to our knowledge, the best available indicator to assess the solar PV systems' competitiveness.</p><p>Specific countries such as Germany, France, Italy, Spain stand out in the maps as they host the highest economic potential that translates to more options for advantageous investments. Competitive LCOE in these countries only partially comes from a favourable solar resource; lower cost of finances (WACC) combined with higher retail electricity prices are important cost-efficiency drivers <ref type="bibr" target="#b48">[49]</ref>. provides the 2017 prices for Germany, Spain, Italy and France at 30.5, 23.0, 21.3 and 16.9 EURcent/ kWh, respectively <ref type="bibr" target="#b48">[49]</ref>. Comparing these values to the output of the developed model, it appears that PV-produced electricity is cheaper by 49%, 44%, 42% and 23%, respectively. Contrary to this case stand countries of Eastern EU (Bulgaria, Hungary, Romania, Estonia) mainly due to their low retail prices (9.5-12 EURcent/kWh).</p><p>The analysis points out that grid parity is not presently possible in Eastern EU (Romania, Poland, Hungary, Czech Republic, Slovakia, Croatia, Lithuania, Latvia, Estonia). This observation is surprising for countries having favourable solar resource (e.g. Romania, Croatia, Bulgaria). The values in Fig. <ref type="figure" target="#fig_7">8</ref> show that solar irradiation is not the primary factor in determining the economic competitiveness of rooftop PV electricity. Neighbourhood countries with similar solar resources have very different economic potential. Between Netherlands and Belgium, differences are clearly the result of retail prices since the WACC is similar. Huge differences in the economic potential between Austria and Hungary come from a combined effect. The similar technical potential is reduced by Hungary's high cost of finance and low retail electricity prices. An interesting difference is observed between Greece and Bulgaria (Fig. <ref type="figure" target="#fig_7">8</ref>), both having excellent solar resource. Despite the high WACC in both countries, increased retail prices in Greece make PV competitive. The opposite effect appears in Estonia where theWACC is similar to that of Western Europe. However, low retail prices render PV investment less attractive. The different blocking factors obviously call for different policy options to increase rooftop PV competitiveness and these are highlighted in the discussions section.</p><p>Table <ref type="table" target="#tab_1">2</ref> provides aggregated country values of modelled rooftop area available for PV deployment. It also includes values of the theoretic electricity output if the technical and economic potentials were fully utilised. These values are compared to 2016 electricity consumption values of each EU Member State (MS) clearly showing the important potential role of rooftop systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Potential share of rooftop PV in final electricity consumption</head><p>Fig. <ref type="figure" target="#fig_7">8</ref> shows the potential share in the countries' final electricity consumption if their economic potential is fully utilised. It is worth noticing the cases of Cyprus and Malta where the unique solar resource is matched with good financing conditions, resulting in the lowest system production cost in the EU. The case of Portugal also stands out; the excellent solar potential is coupled with favourable financing conditions and rather high retail prices (22.8 EURcent/kWh). These countries could cover a very high share of their electricity needs by developing rooftop PV systems at their most advantageous sites.</p><p>The second group of countries is Italy and Greece that could potentially cover &gt;30% of their electricity consumption through rooftop systems. France, Spain and Germany could also cover a significant part (20-30%) of their annual consumption with such systems. Considering the very large energy needs of these three countries, it appears that rooftop systems can play a major role in the EU energy transition, even if they are only partially utilised.</p><p>It appears that for several countries (Czech Republic, Hungary, Bulgaria, Latvia, Estonia) the rooftop PV systems would deliver electricity at a higher cost than the electricity tariffs (light blue colour in Fig. <ref type="figure" target="#fig_7">8</ref>). In these countries, cost-competitive production is not possible, at least under the current financial and technological conditions. In eight MS (light yellow colour in Fig. <ref type="figure" target="#fig_7">8</ref>) only a negligible fraction of the total consumption (&lt;1%) could be covered by cost-competitive rooftop systems. The economic potential of rooftop PV could potentially cover 16.8% of the total electricity consumption in the EU.</p><p>Grid infrastructure and operation costs may render part of the economic potential less attractive investment. Prioritising installations at the advantageous locations where the production cost is near its lowend (9-11 EURcent/kWh) is a low-risk strategy to deploy systems that will contribute at least 50 000 GWh/year in the EU.</p><p>Assuming full exploitation of the technical potential, five countries could cover &gt;30% of their electricity consumption by rooftop PV, four countries could cover &gt;20%, and another two would exceed 15%. The additional share of rooftop electricity in the EU would then be 24.4%. Such figures, even if only partially realised, represent a leap for the presently stagnant EU PV deployment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Discussion</head><p>The present analysis assesses the available potential for rooftop systems in the EU with the research question being whether the EU building stock can provide advantageous terms for PV deployment. The present study provides country-aggregated estimates supporting highefficiency strategies for solar PV deployment covering up to 25% of the electricity consumed in the EU in order to meet energy and climate targets. Findings also respond to the -often unjustified-claim that solar PV will fail to achieve large shares due to land limitations.</p><p>The quantification of rooftop PV potential in the local level also allows for setting up realistic targets and implementation road-maps. In light of the 32% overall RES target, deploying the cost-competitive share of rooftop systems in electricity (16.8%) is not an overstatement, since the energy mix will require a very high share of RES in the power sector. The estimated EU-wide economic potential of 467 TWh/year is very near to the forecasted needs for solar PV systems by 2030, equal to 440 TWh/year. The electro-mobility segment may balance, in the medium term, the effects of energy efficiency measures and result in increased electricity demand near the buildings. Rooftop systems can cover such an increased demand and if designed to produce electricity mainly for local consumption, side-effects such as grid congestion and dispatch cost will be avoided.</p><p>Fig. <ref type="figure" target="#fig_7">8</ref> shows countries where implementation should start immediately. It is those countries where rooftop PV could cover a significant (&gt;30%) share of the electricity consumption at competitive cost: Cyprus, Portugal, Malta, Greece, Italy while a second group of MSs  (France, Spain and Germany) could cover more than 20%. In order to speed-up deployment, these countries could favour deployment in commercial and public building. Such practice would benefit from economies of scale, replicability and would mobilise the local PV markets. Simplification of licensing procedures and infrastructure interventions to increase grid capacity in selected locations could also support the deployment rates. The rich solar resources of these countries coupled with favourable financial conditions result in low costs of solar electricity. On the one hand, priority should be given to locations where the lowest cost is achieved, as shown in Fig. <ref type="figure" target="#fig_5">6</ref>. Equally importantly, selection of priority locations should also consider local needs, in a bottom-up approach. In that sense, local governments and municipalities, particularly those committed in decarbonisation initiatives such as the Covenant of Mayors (CoM) <ref type="bibr" target="#b50">[51]</ref> could play an active role.</p><p>Implementation in the New EU Member States in Eastern Europe that have lower economic potential for rooftop (countries illustrated with yellow and light blue colours in Fig. <ref type="figure" target="#fig_7">8</ref>) will probably take longer. Notably, there are significant differences among this group of MSs, particularly as far as the available solar potential is concerned (e.g. Bulgaria vs. Estonia). Particularly countries with rich solar potential should put their efforts on removing barriers to rooftop PV. In general, these countries need a central top-down approach to drive the implementation, as priority was so far given to electricity's affordability. Apart from reassessing such priorities and re-evaluating conventional subsidy practices, the central approach could utilise the available degraded land through solar PV system installations at closed landfills <ref type="bibr" target="#b51">[52]</ref> and coal mines <ref type="bibr" target="#b52">[53]</ref>. The authors' recent studies show that integrated solutions have multiple benefits and -when properly designedcan be cost competitive even in Eastern countries.</p><p>High penetration of rooftop PV into distribution networks may lead to stability issues and distortions of the power system. Rooftop PV generation exceeding the demand may rise the voltage. Typically, to mitigate this challenge, excess solar power production is curtailed. The mitigation of such effects will require wider use of battery systems coupled with intelligent control systems that utilise and store surplus power <ref type="bibr" target="#b53">[54]</ref>. Technological advancements in the power electronics sector may support higher rooftop PV penetration by expanding the role of inverters in distributed generation systems. Smart inverters add or subtract reactive power into the grid boosting or reducing the grid voltage, respectively. Although such functionalities may allow up to a 40% increase of the installed solar PV capacity without upgrades of the grid infrastructure <ref type="bibr" target="#b54">[55]</ref>, this may not be sufficient. Such reactive power control methods have limitations <ref type="bibr" target="#b55">[56]</ref> and their alone application may not be efficient in maintaining voltage within the desired limits.</p><p>An additional outcome of the present analysis is that it shows that socket parity of rooftop PV is already possible in many EU countries and without subsidies. Further cost reductions in the PV technology sector coupled with increases in the systems' efficiency will increase rooftop PV competitiveness. Actual installations will respond to market signals, which are influenced by a combination of factors. Accordingly, the developed market potential will be shaped by the presented technical and economic factors but it will be also affected by policy and market mechanisms. The present single-scenario analysis highlights how the combined effect of high financing costs with low retail electricity prices may hamper the growth of PV installations in certain EU Member State. The authors intend to examine in a follow-up activity the sensitivity of rooftop systems' potential to the various economic and financial factors (VAT, WACC, capital and OM costs). This will also include the case of zero WACC that corresponds to cash payments, a common case for rooftop PV systems.</p><p>The results show that PV investment in some Eastern European countries is not attractive yet despite the similar resource availability. As pointed out, high WACC and low retail electricity prices make PV a "no-go" investment option. In order to make it a fair yield investment, these countries can boost PV competitiveness without direct support schemes for RES. The solution rather lies in solving the structural problems in financing and pricing of electricity options. If the finance for the RES investment would be available at the average EU level, most of these countries would become attractive for PV investors. This was also shown by a recent Data Envelope analysis showing that technical efficiency for solar is high in the EU but there is a lot of room to improve the PV cost of finance <ref type="bibr" target="#b56">[57]</ref>. Increasing the retail prices is probably a less attractive policy option in short term but in longer term will be probably inevitable for countries with scarce indigenous energy sources relying on exported energy carriers. Closing the gap in the RES financing (Fig. <ref type="figure" target="#fig_4">5a</ref>) could become an EU-wide target attractive not only for the EU as whole but also for each MS. Such win-win policy could gather accelerated momentum in the EU Energy Agenda.</p><p>Overall, RES investments are more sensitive to variations in the cost of capital than conventional systems <ref type="bibr" target="#b42">[43]</ref> due to their capital intensity. Deploying a RES system in a MS with a WACC equal to 12% would approximately cost twice than installing the same system in a country where the cost of capital is 3.5% and would not be cost-competitive. In order to overcome this disparity, an EU-based think tank, Temperton et al.), has recently suggested the creation of an EU-wide Renewable Energy Cost Reduction Facility (RES-CRF), an idea that was already circulating among specialists for some time <ref type="bibr" target="#b42">[43]</ref>.</p><p>Areas for further considerationAs a result of the rooftop potential calculation, some strategic research dimensions are identified for the rapid acceleration of PV deployment in the EU electricity generation portfolios: i. The methodology and tools developed can be used to provide estimates of rooftop potential for specific municipal areas and support sustainable energy planning, as for example under the Covenant of Mayors' initiative <ref type="bibr" target="#b50">[51]</ref>. These should also include efficient administrative procedures to facilitate a rapid expansion of installations. ii. Future improvement in the ESM resolution can open the way for identification of individual building sizes as well as building area density. From a planning point of view, identifying and prioritising buildings with large, flat roofs could allow rapid PV deployment benefited by the economies of scale. iii. The developed methodology estimates the available area for rooftop systems using building area density values as a proxy. The modelled results could be validated using measurements in sample areas. Test measurements would ideally have a very high accuracy of the available area for system installation, higher than that of the reference cadastre data, as well as wider geographic coverage that enables training and validation of the modelled results. iv. Developing the present socket parity measure of economic potential to more nuanced criteria can open the way to identifying cost-optimal locations and the policy measures best suited to creating such conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusions</head><p>The analysis of earth-observation geospatial data has led to an innovative model for calculating the rooftop area and technical potential for PV electricity generation over the whole of the EU. By comparing the geospatial model with country-specific values for cost of capital and for electricity prices, an estimate of economic potential can be made for each EU country. The developed methodology estimates that almost 25% of current EU electricity consumption could be produced by rooftop systems (all PV-produced electricity accounted for just 3.94% in 2016 <ref type="bibr" target="#b49">[50]</ref>). The developed methodology is highly flexible and can be used to further explore the impact of technical and economic factors while maintaining the pan-European geospatial approach. Policies at country-and regional-level to exploit this potential can bring benefits a) for employment in the manufacturing, installation and operational sectors, b) stimulate greater involvement of citizens in achieving the EU's transition to a low-carbon energy system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix. Data</head><p>Transformation between the 27 land cover classes of the European Urban Atlas and the corresponding CORINE Land Cover categories resulting in the 20 main land cover types. The third column shows the correction coefficient (%) applied to reduce overestimates of the raw European Settlement Map data by land cover type.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>European Settlement Map</head><p>The European Settlement Map (ESM) is a spatial raster dataset that maps human settlements in Europe based on satellite imagery and using GHSL technology that was developed by the EC Joint Research Centre <ref type="bibr" target="#b57">[58]</ref>. The applied data (also referred as "ESM2p5m") includes coverage of built-up areas with a resolution of 2.5 m using 2012 satellite images <ref type="bibr" target="#b32">[33]</ref>. The source data for ESM were provided by the Copernicus programme <ref type="bibr" target="#b58">[59]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>European Urban Atlas</head><p>The European Urban Atlas (EUA) 2012 provides high-resolution land cover maps for almost seven hundred functional urban areas and their surroundings with a population of more than 50 000 inhabitants <ref type="bibr" target="#b59">[60]</ref>. Through its superior resolution, the Urban Atlas captures low density urban fabric, and provides a far more accurate picture of the outskirts of urban zones. The urban areas are classified into 27 land cover classes and relate to the year 2012 which is the reference year of the ESM.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CORINE Land Cover</head><p>The CORINE Land Cover (CLC) was originally specified to standardize data collection on European land in support of environmental policy development. CLC data classifies the land cover type into 44 classes using the methodology described in the relevant technical guide <ref type="bibr" target="#b60">[61]</ref>. The spatial resolution of the applied gridded CLC data is 100 m. The data is available in the Lambert Azimuthal Equal Area (LAEA) projection with the ETRS 1989 datum (EPSG code: 3035). The present study used CLC data from the year 2012, version 18 <ref type="bibr" target="#b61">[62]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Reference data layer: Digital cadastral map of the Netherlands</head><p>The public mapping services of the Netherlands provide a high-resolution, vector-based data for buildings <ref type="bibr" target="#b33">[34]</ref>. This freely-accessed data is the most integral cadastre dataset currently available and formed the reference basis for the correction coefficients.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Solar irradiance data</head><p>Solar radiation data for Europe have been obtained from the Satellite Application Facility on Climate Monitoring (CM SAF) collaboration <ref type="bibr" target="#b62">[63]</ref> that provides solar radiation estimates based on satellite images <ref type="bibr" target="#b63">[64]</ref>. The data used are from the SARAH solar radiation product <ref type="bibr" target="#b38">[39]</ref>. These data consist of global and direct horizontal irradiance components and have a spatial resolution of 3 arc-minutes ( 5 km) and hourly time resolution. The data have been processed in terms of a recent research activity at the authors; institution <ref type="bibr" target="#b39">[40]</ref>, in order to obtain monthly solar radiation estimates averaged over 10 years data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical data: Retail electricity price and final electricity consumption</head><p>The applied statistical value of electricity price is the final price charged to medium size households. Electricity prices for household consumers are defined as the average national price (EUR/kWh) including taxes and levies applicable for the first semester of each year for medium size household consumers with annual consumption between 2500 and 5000 kWh. The developed model used values for the year 2017 <ref type="bibr" target="#b48">[49]</ref>.</p><p>Retail electricity prices include a fixed cost component that depends on the maximum power or current a household can withdraw from the grid. This maximum power charge may be reduced or avoided with a rooftop system <ref type="bibr" target="#b64">[65]</ref>. Thus, it needs to be considered and deducted from the grid cost component when comparing the retail electricity prices with the rooftop LCOE.</p><p>Estimating this fixed cost element for the whole of the EU is a complex exercise as the various countries have different tariff structure which may even vary between regions, consumption bands etc. A recent study on the tariff design of the EU <ref type="bibr" target="#b65">[66]</ref> showed that the EU average energy component is estimated to be 70%. It also revealed that network charges in the EU have an average value of 4.9 EURcent/kWh <ref type="bibr" target="#b65">[66]</ref>. Since rooftop PV deployment does not remove all network costs, the analysis assumed a benchmark fixed cost equal to 3 EURcent/kWh and subtracted it from the total price values provided by Ref. <ref type="bibr" target="#b48">[49]</ref>.</p><p>The data for annual final consumption of electrical energy per EU Member State was also taken from Eurostat <ref type="bibr" target="#b49">[50]</ref>.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. (A) Aerial photo, not used in the analysis (B) Overlay of ESM image and cadaster data: red polygons indicate the reference cadastre building footprints; grey patches are the areas identified as built-up in the ESM layer. (C) Blue polygons: buildings based on cadastre (reference) data, red patches: observed overshot in the ESM to be filtered out. (D) scaling factor between ESM and cadastre building density per land cover classes in the reference area. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2.Example of application of the method for a different location: (E) arial photo showing the harmonised EUA land class areas. and associate correction factors to be applied to the ESM building area estimates (F) end result: building density map in m 100 resolution -the maximum value is 6000 m 2 , so 60% building density.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Example of obtained building density raster for the Lombardy region in northern Italy. The scale refers to the rooftop area resolved to a level of granularity of 100 m × 100 m.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Calculated CF of south-facing rooftop PV systems in Europe. Source: Authors' analysis of EC Joint Research Centre (JRC) data<ref type="bibr" target="#b36">[37,</ref><ref type="bibr" target="#b39">40]</ref> </figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5.Map of the WACC values (5a), source<ref type="bibr" target="#b45">[46]</ref>: and spatial distribution of the LCOE (5b) of rooftop solar PV systems in the EU as resulted from the present analysis.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Technical potential of rooftop solar PV systems in each EU Member State expressed in GWh/ year. The colour of the columns shows what share of the technical potential can be produced at each LCOE band. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Technical electricity potential of rooftop PV in the current EU building stock and share (%) of the cost-competitive technical potential.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. Modelled rooftop solar PV share in the final electricity consumption (2016 levels) with full exploitation of the economic potential for the assumed WACC and retail electricity price values.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Datasets used in the methodology and their source.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>The modelled available area for rooftop PV system installation. Technical and economic solar electricity potential and their potential share in the final electricity consumption (2016 values) <ref type="bibr" target="#b49">[50]</ref></figDesc></figure>
+
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disclaimer</head><p>The views expressed are purely those of the authors and may not in any circumstances be regarded as stating an official position of the European Commission.</p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="series" xml:id="b0">
+				<monogr>
+					<author>
+						<persName><forename>A</forename><surname>Jäger-Waldau</surname></persName>
+					</author>
+					<title level="m">PV status report 2018</title>
+					<imprint>
+						<publisher>Publications Office of the European Union</publisher>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">JRC science for policy report</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b1">
+				<monogr>
+					<author>Council of European Union</author>
+					<title level="m">Directive (EU) 2018/2001 of the European Parliament and of the Council on the promotion of the use of energy from renewable sources</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b2">
+				<analytic>
+					
+					<author>
+						Bloomberg
+					</author>
+					<title level="a">New energy Outlook 2018</title>
+				</analytic>
+				<monogr>
+					<title level="m">New Energy Finance</title>
+					<imprint>
+						<date when="2018">2018. 2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b3">
+				<monogr>
+					
+					<author>
+						European Commission
+					</author>
+					<title level="m">Guidelines on State aid for environmental protection and energy 2014-2020</title>
+					<imprint>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Castellanos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Sunter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Kammen</surname></persName>
+					</author>
+					<title level="a">Rooftop solar photovoltaic potential in cities: how scalable are assessment approaches?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Res Lett</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b5">
+				<monogr>
+					
+					<author>
+						IEA ETP
+					</author>
+					<title level="m">Technology perspectives 2016: towards sustainable urban energy systems</title>
+					
+					<imprint>
+						<publisher>Technical Report International Energy Agency</publisher>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Freitas</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Catita</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Redweik</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Brito</surname></persName>
+					</author>
+					<title level="a">Modelling solar potential in the urban environment: state-of-the-art review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Sustain Energy Rev</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="915" to="931"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Byrne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Taminiau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Kurdgelashvili</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">N</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">A review of the solar city concept and methods to assess rooftop solar electric potential, with an illustrative application to the city of Seoul</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Sustain Energy Rev</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="830" to="844"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Defaix</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Van Sark</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Worrell</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Visser</surname></persName>
+					</author>
+					<title level="a">Technical potential for photovoltaics on buildings in the EU-27</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sol Energy</title>
+					<imprint>
+						<biblScope unit="volume">86</biblScope>
+						<biblScope unit="page" from="2644" to="2653"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b9">
+				<monogr>
+					
+					<author>
+						<persName><forename>K</forename><surname>Bódis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Huld</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Pinedo Pascua</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Taylor</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><surname>Jäger-Waldau</surname></persName>
+					</author>
+					<title level="m">Technical potential of rooftop photovoltaics in EU member states, regions and cities</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<publisher>European Commission</publisher>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">JRC Technical Report</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Pearce</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Harrap</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Barber</surname></persName>
+					</author>
+					<title level="a">The application of LiDAR to assessment of rooftop solar photovoltaic deployment potential in a municipal district unit</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sensors</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="4534" to="4558"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Kodysh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Omitaomu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Bhaduri</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Neish</surname></persName>
+					</author>
+					<title level="a">Methodology for estimating solar potential on multiple building rooftops for photovoltaic systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sustainable Cities and Society</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="31" to="41"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">A</forename><surname>Latif</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Nam</forename><surname>Zaki</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Salleh</surname></persName>
+					</author>
+					<title level="a">GIS-based estimation of rooftop solar photovoltaic potential using LiDAR</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings -2012 IEEE 8th International Colloquium on Signal Processing and Its Applications, CSPA 2012</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<biblScope unit="page" from="388" to="392"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Calcabrini</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Ziar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Isabella</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Zeman</surname></persName>
+					</author>
+					<title level="a">A simplified skyline-based method for estimating the annual solar energy potential in urban environments</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature Energy</title>
+					<imprint>
+						<biblScope unit="issue">1</biblScope>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Hong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Koo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Jeong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Development of a method for estimating the rooftop solar photovoltaic (PV) potential by analyzing the available rooftop area using Hillshade analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Energy</title>
+					<imprint>
+						<biblScope unit="volume">194</biblScope>
+						<biblScope unit="page" from="320" to="332"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+				
+					<author>
+						<persName><forename>J</forename><surname>Khan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Arsalan</surname></persName>
+					</author>
+					<title level="a">Estimation of rooftop solar photovoltaic potential using geospatial techniques: a perspective from planned neighborhood of Karachi -Pakistan</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Energy</title>
+					<imprint>
+						<biblScope unit="volume">90</biblScope>
+						<biblScope unit="page" from="188" to="203"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Ko</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Tsai</surname></persName>
+					</author>
+					<title level="a">Evaluation of the development potential of rooftop solar photovoltaic in Taiwan</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Energy</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="page" from="582" to="595"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="conference" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><surname>Jamal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><surname>Ongsakul</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Salehin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><surname>Ferdous</surname></persName>
+					</author>
+					<title level="a">Potential rooftop distribution mapping using geographic information systems (GIS) for solar PV installation: a case study for Dhaka, Bangladesh</title>
+				</analytic>
+				<monogr>
+					<title level="m">2014 3rd international conference on the developments in renewable energy technology (ICDRET)</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="page" from="1" to="6"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Kabir</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Endlicher</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Jägermeyr</surname></persName>
+					</author>
+					<title level="a">Calculation of bright roof-tops for solar PV applications in Dhaka Megacity, Bangladesh</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Energy</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="1760" to="1764"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Banerjee</surname></persName>
+					</author>
+					<title level="a">Estimation of rooftop solar photovoltaic potential of a city</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sol Energy</title>
+					<imprint>
+						<biblScope unit="volume">115</biblScope>
+						<biblScope unit="page" from="589" to="602"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b20">
+				<monogr>
+					<author>
+						<persName><forename>P</forename><surname>Gagnon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Margolis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Melius</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Phillips</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Elmore</surname></persName>
+					</author>
+					<title level="m">Rooftop solar photovoltaic technical potential in the United States: a detailed assessment, technical report January</title>
+					<imprint>
+						<publisher>National Renewable Energy Lab (NREL)</publisher>
+						<pubPlace>Golden, CO (United States)</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21"> !!!!!!!!!
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Margolis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Gagnon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Melius</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Phillips</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Elmore</surname></persName>
+					</author>
+					<title level="a">Using GIS-based methods and lidar data to estimate rooftop solar technical potential in US cities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Res Lett</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b22">
+				<analytic>
+					<title level="a">An evaluation of the potential of building integrated photovoltaics in Canada</title>
+					<author>
+						<persName><forename>S</forename><surname>Pelland</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Poissant</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the SESCI 2006 conference</title>
+					<imprint>
+						<biblScope unit="page" from="1" to="8"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Izquierdo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rodrigues</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Fueyo</surname></persName>
+					</author>
+					<title level="a">A method for estimating the geographical distribution of the available roof surface area for large-scale photovoltaic energypotential evaluations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sol Energy</title>
+					<imprint>
+						<biblScope unit="volume">82</biblScope>
+						<biblScope unit="page" from="929" to="939"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Vardimon</surname></persName>
+					</author>
+					<title level="a">Assessment of the potential for distributed photovoltaic electricity production in Israel</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Energy</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="page" from="591" to="594"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Hong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Koo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+					</author>
+					<title level="a">A GIS (geographic information system)-based optimization model for estimating the electricity generation of the rooftop PV (photovoltaic) system</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">65</biblScope>
+						<biblScope unit="page" from="190" to="199"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b26">
+				<monogr>
+					
+					<author>
+						<persName><forename>E</forename><surname>Vartiainen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Masson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Breyer</surname></persName>
+					</author>
+					<title level="m">PV LCOE in Europe 2014-30, technical report</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<publisher>European PV Technology Platform</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Hagerman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Jaramillo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Morgan</surname></persName>
+					</author>
+					<title level="a">Is rooftop solar PV at socket parity without subsidies?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy Policy</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="page" from="84" to="94"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Lukač</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Seme</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Dežan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Žalik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Štumberger</surname></persName>
+					</author>
+					<title level="a">Economic and environmental assessment of rooftops regarding suitability for photovoltaic systems installation based on remote sensing data</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">107</biblScope>
+						<biblScope unit="page" from="854" to="865"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b29">
+				<monogr>
+					
+					<author>
+						<persName><forename>T</forename><surname>Huld</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Jäger-Waldau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Ossenbrink</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Szabó</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Taylor</surname></persName>
+					</author>
+					<title level="m">Cost maps for unsubsidised photovoltaic electricity JRC scientific and policy reports</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<publisher>European Commission, Joint Research Centre</publisher>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">JRC scientific and policy reports</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="tecnical-report" xml:id="b30">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">A</forename><surname>Brown</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><surname>Beiter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><surname>Heimiller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><surname>Davidson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><surname>Denholm</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><surname>Melius</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><surname>Lopez</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><surname>Hettinger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><surname>Mulcahy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><surname>Porro</surname></persName>
+					</author>
+					<title level="m">Estimating renewable energy economic potential in the United States. Methodology and initial results, Technical Report</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<pubPlace>Golden, CO (United States)</pubPlace>
+						<publisher>National Renewable Energy Lab.(NREL)</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<title level="a">Solar pv where the sun doesn't shine: estimating the economic impacts of support schemes for residential pv with detailed net demand profiling</title>
+					<author>
+						<persName><forename>S</forename><surname>La Monaca</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Ryan</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="j">Energy Policy</title>
+					<imprint>
+						<biblScope unit="volume">108</biblScope>
+						<biblScope unit="page" from="731" to="741"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b32">
+				<monogr>
+					
+					<author>
+						<persName><forename>S</forename><surname>Ferri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Siragusa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Sabo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Pafi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Halkia</surname></persName>
+					</author>
+					<title level="m">The european settlement map 2017 release. Methodology and output of the european settlement map</title>
+				</monogr>
+				<series>
+					<title level="s">JRC science for policy report</title>
+					<imprint>
+						<publisher>European Commission</publisher>
+						<date when="2017">2017</date>
+					</imprint>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b33">
+				<monogr>
+					<title level="m">Public Mapping Services of Netherlands (PDOK)</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>Digital cadastral map</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b34">
+				<monogr>
+					<title/>
+					<author>
+						Odyssee-Mure
+					</author>
+					<title level="m">Database on energy efficiency indicators</title>
+					<imprint>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Huld</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Amillo</surname></persName>
+					</author>
+					<title level="a">Estimating pv module performance over large geographical regions: the role of irradiance, air temperature, wind speed and solar spectrum</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energies</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="5159" to="5181"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b36">
+				<monogr>
+					
+					<author>
+						<persName><forename>T</forename><surname>Huld</surname></persName>
+					</author>
+					<title level="m">EC JRC photovoltaic geographical information system.(PVGIS)</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b37">
+				<monogr>
+					
+					<author>
+						<persName><surname>ECMWF</surname></persName>
+					</author>
+					<title level="m">ERA5 dataset. Technical report</title>
+					<imprint>
+						<publisher>European Centre for Medium-Range Weather Forecasts</publisher>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="techinal-report" xml:id="b38">
+				<monogr>
+					
+					<author>
+						<persName><forename>R</forename><surname>Müller</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Pfeifroth</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Träger-Chatterjee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Cremer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Trentmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Hollmann</surname></persName>
+					</author>
+					<title level="m">Surface solar radiation data set-heliosat (SARAH)-Edition 1. Satellite application facility on climate monitoring, technical report, EUMETSAT satellite application facility on climate monitoring (CM SAF)</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<pubPlace>offenbach, Germany</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Huld</surname></persName>
+					</author>
+					<title level="a">PVMAPS: software tools and data for the estimation of solar radiation and photovoltaic module performance over large geographical areas</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sol Energy</title>
+					<imprint>
+						<biblScope unit="volume">142</biblScope>
+						<biblScope unit="page" from="171" to="181"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Jordan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Kurtz</surname></persName>
+					</author>
+					<title level="a">Photovoltaic degradation rates-an analytical review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prog Photovolt Res Appl</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="12" to="29"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Cole</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Frew</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Gagnon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Reimers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zuboy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Margolis</surname></persName>
+					</author>
+					<title level="a">Envisioning a low-cost solar future: exploring the potential impact of Achieving the SunShot 2030 targets for photovoltaics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">155</biblScope>
+						<biblScope unit="page" from="690" to="704"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Temperton</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Buck</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Graf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Brückmann</surname></persName>
+					</author>
+					<title level="a">Agora energiewende (2018): reducing the cost of financing renewables in Europe, report of a multi-stakeholder dialogue on the proposed EU renewable energy cost reduction facility</title>
+				</analytic>
+				<monogr>
+					<title level="j">Agora Energiewende</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Talavera</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Pérez-Higueras</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Almonacid</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Fernández</surname></persName>
+					</author>
+					<title level="a">A worldwide assessment of economic feasibility of HCPV power plants: profitability and competitiveness</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">119</biblScope>
+						<biblScope unit="page" from="408" to="424"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b44">
+				<monogr>
+					
+					<author>
+						<persName><forename>W</forename><surname>Short</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Packey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Holt</surname></persName>
+					</author>
+					<title level="m">A manual for the economic evaluation of energy efficiency and renewable energy technologies</title>
+					<imprint>
+						<date when="1995">1995</date>
+						<publisher>National Renewable Energy Laboratory (NREL)</publisher>
+						<pubPlace>Colorado, US</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="technical-report" xml:id="b45">
+				<monogr>
+					
+					<author>
+						<persName><forename>G</forename><surname>Resch</surname></persName>
+					</author>
+					<title level="m">Policy dialogue on the assessment and convergence of RES policy in EU member states, technical report</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<publisher>DIA-CORE</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					<author>
+						<persName><forename>C</forename><surname>Breyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Gerlach</surname></persName>
+					</author>
+					<title level="a">Global overview on grid-parity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Prog Photovolt Res Appl</title>
+					<imprint>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="121" to="136"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Ondraczek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Komendantova</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Patt</surname></persName>
+					</author>
+					<title level="a">WACC the dog: the effect of financing costs on the levelized cost of solar PV power</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Energy</title>
+					<imprint>
+						<biblScope unit="volume">75</biblScope>
+						<biblScope unit="page" from="888" to="898"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b48">
+				<monogr>
+					
+					<author>
+						Eurostat
+					</author>
+					<title level="m">Electricity prices by type of user</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b49">
+				<monogr>
+					
+					<author>
+						Eurostat
+					</author>
+					<title level="m">Energy available for final consumption, Electrical energy.nrg_105a.</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b50">
+				<monogr>
+					
+					<author>
+						European Commission
+					</author>
+					<title level="m">Covenant of Mayors for climate and energy</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Szabó</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Bódis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Kougias</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Moner-Girona</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Jäger-Waldau</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Barton</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Szabó</surname></persName>
+					</author>
+					<title level="a">A methodology for maximizing the benefits of solar landfills on closed sites</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Sustain Energy Rev</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="page" from="1291" to="1300"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Bódis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Kougias</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Taylor</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Jäger-Waldau</surname></persName>
+					</author>
+					<title level="a">Solar photovoltaic electricity generation: a lifeline for the european coal regions in transition</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sustainability</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page">3703</biblScope>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Alam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Muttaqi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Sutanto</surname></persName>
+					</author>
+					<title level="a">Distributed energy storage for mitigation of voltage-rise impact caused by rooftop solar PV</title>
+				</analytic>
+				<monogr>
+					<title level="m">IEEE power and energy society general meeting</title>
+					<imprint>
+						<biblScope unit="page" from="1" to="8"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Fairley</surname></persName>
+					</author>
+					<title level="a">How rooftop solar can stabilize the grid [News]</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Spectrum</title>
+					<imprint>
+						<biblScope unit="volume">52</biblScope>
+						<biblScope unit="page" from="11" to="13"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Sim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Avvari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Kaliannan</surname></persName>
+					</author>
+					<title level="a">HR outsourcing trends in Malaysia: the undetected tiger</title>
+				</analytic>
+				<monogr>
+					<title level="j">Strategic Outsourcing</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="189" to="217"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Mezősi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Szabó</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Szabó</surname></persName>
+					</author>
+					<title level="a">Cost-efficiency benchmarking of European renewable electricity support schemes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Renew Sustain Energy Rev</title>
+					<imprint>
+						<biblScope unit="volume">98</biblScope>
+						<biblScope unit="page" from="217" to="226"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b57">
+				<monogr>
+					
+					<author>
+						<persName><forename>M</forename><surname>Pesaresi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Ehrlich</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Ferri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Florczyk</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Freire</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Halkia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Julea</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kemper</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Soille</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Syrris</surname></persName>
+					</author>
+					<title level="m">Operating procedure for the production of the global human settlement layer from landsat data of the epochs 1975 1990, 2000, and 2014</title>
+					<imprint>
+						<publisher>European Commission</publisher>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+				<series>
+					<title level="s">JRC science for policy report, JRC97705</title>
+				</series>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b58">
+				<monogr>
+					<author>Copernicus land monitoring service</author>
+					<title level="m"> european settlement map</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>http://land.copernicus.eu/pan-european/GHSL/european-settlement-map/</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b59">
+				<monogr>
+					<author>Copernicus land monitoring service</author>
+					<title level="m">European Urban Atlas</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>https://land.copernicus.eu/local/urban-atlas/urban-atlas-2012</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b60">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Bossard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Feranec</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Otahel</surname></persName>
+					</author>
+					<title level="a">CORINE land cover technical guide -addendum 2000</title>
+				</analytic>
+				<monogr>
+					<title level="j">EEA Technical Report</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<date when="2000">2000</date>
+						<publisher>European Environment Agency</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b61">
+				<monogr>
+					<author>Copernicus land monitoring service</author>
+					<title level="m">CORINE Land Cover</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>http://land.copernicus.eu/pan-european/corine-land-cover</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b62">
+				<monogr>
+					
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+					<title level="m">The satellite application facility on climate monitoring , surface solar radiation data set heliosat</title>
+				</monogr>
+				<note>www.cmsaf.eu</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Müeller</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Behrendt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Hammer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Kemper</surname></persName>
+					</author>
+					<title level="a">A new algorithm for the satellitebased retrieval of solar surface irradiance in spectral bands</title>
+				</analytic>
+				<monogr>
+					<title level="j">Remote Sens</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="622" to="647"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b64">
+				<monogr>
+					
+					<author>
+						<persName><forename>E</forename><surname>Vartiainen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Masson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Breyer</surname></persName>
+					</author>
+					<imprint>
+						<date when="2017">2017</date>
+						<publisher>European Technology &amp; Innovation Platform (ETIP)</publisher>
+					</imprint>
+					<title level="m">The true competitiveness of Solar PV, A European case study</title>
+				</monogr>
+				<note>http://www.etip-pv.eu/fileadmin/Documents/ETIP_PV_Publications_2017-2018/LCOE_Report_March_2017.pdf</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b65">
+				<analytic>
+					<author>Directorate-General for Energy</author>
+					<title level="a">Study on tariff design for distribution systems</title>
+				</analytic>
+				<monogr>
+					<title level="m">Technical Report European Commission</title>
+					<imprint>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+				<note>https://ec.europa.eu/ energy/en/studies/study-tariff-design-distribution-systems</note>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

@@ -6,6 +6,10 @@ from pathlib import Path
 from typing import Optional
 
 from .. import ExtractorFactory, TeiBiblParser, __version__
+from ..core.models import References
+from ..pipelines.reference_parsing import parse_reference_file
+from ..pipelines.reference_extraction_and_parsing import run_pdf_extract_and_parse
+from ..llm.client import LLMClient
 
 
 def extract_command(args):
@@ -31,42 +35,95 @@ def extract_command(args):
         sys.exit(1)
 
 
-def parse_command(args):
-    """Parse citations from text or XML."""
+def parse_xml_command(args):
+    """Parse citations from a TEI/XML file and output JSON or XML."""
     try:
-        parser = TeiBiblParser()
-        
-        if args.input.suffix.lower() == '.xml':
-            # Parse XML file
-            references_lists = parser.from_xml(file_path=args.input)
-            references = [ref for refs in references_lists for ref in refs]
-        else:
-            # TODO: Implement text parsing with LLM
-            print("Text parsing not yet implemented", file=sys.stderr)
-            sys.exit(1)
-        
+        refs = References.from_xml(file_path=args.input)
         if args.output:
             output_path = Path(args.output)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            
             if args.format == 'xml':
-                from ..core.models import References
-                refs = References(references)
                 xml_output = refs.to_xml(pretty_print=True)
-                with open(output_path, 'w', encoding='utf-8') as f:
-                    f.write(xml_output)
-            elif args.format == 'json':
+                output_path.write_text(xml_output, encoding='utf-8')
+            else:
                 import json
-                with open(output_path, 'w', encoding='utf-8') as f:
-                    json.dump([ref.model_dump() for ref in references], f, indent=2)
-            
+                output_path.write_text(
+                    json.dumps([r.model_dump() for r in refs], indent=2),
+                    encoding='utf-8',
+                )
             print(f"Parsed references saved to: {output_path}")
         else:
-            for ref in references:
-                print(ref)
-                
+            for r in refs:
+                print(r)
     except Exception as e:
-        print(f"Error parsing {args.input}: {e}", file=sys.stderr)
+        print(f"Error parsing XML {args.input}: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+def parse_text_command(args):
+    """Parse citations from a raw text/markdown file using LLM."""
+    try:
+        api_key = None
+        if args.api_key_env:
+            import os
+            api_key = os.environ.get(args.api_key_env)
+        client = LLMClient(endpoint=args.api_base, model=args.model, api_key=api_key)
+        refs = parse_reference_file(
+            args.input, llm_client=client, prompt_name=str(args.prompt), temperature=args.temperature
+        )
+        if args.output:
+            output_path = Path(args.output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            if args.format == 'xml':
+                xml_output = refs.to_xml(pretty_print=True)
+                output_path.write_text(xml_output, encoding='utf-8')
+            else:
+                import json
+                output_path.write_text(
+                    json.dumps([r.model_dump() for r in refs], indent=2),
+                    encoding='utf-8',
+                )
+            print(f"Parsed references saved to: {output_path}")
+        else:
+            for r in refs:
+                print(r)
+    except Exception as e:
+        print(f"Error parsing text {args.input}: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+def run_command(args):
+    """End-to-end: PDF -> text -> references (LLM)."""
+    try:
+        api_key = None
+        if args.api_key_env:
+            import os
+            api_key = os.environ.get(args.api_key_env)
+        client = LLMClient(endpoint=args.api_base, model=args.model, api_key=api_key)
+        refs = run_pdf_extract_and_parse(
+            args.input,
+            llm_client=client,
+            extractor=args.extractor,
+            temperature=args.temperature,
+        )
+        if args.output:
+            output_path = Path(args.output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            if args.format == 'xml':
+                xml_output = refs.to_xml(pretty_print=True)
+                output_path.write_text(xml_output, encoding='utf-8')
+            else:
+                import json
+                output_path.write_text(
+                    json.dumps([r.model_dump() for r in refs], indent=2),
+                    encoding='utf-8',
+                )
+            print(f"Parsed references saved to: {output_path}")
+        else:
+            for r in refs:
+                print(r)
+    except Exception as e:
+        print(f"Error running pipeline for {args.input}: {e}", file=sys.stderr)
         sys.exit(1)
 
 
@@ -104,17 +161,56 @@ def main(argv: Optional[list] = None):
     extract_parser.add_argument("--output-dir", type=Path, help="Output directory for intermediate files")
     extract_parser.set_defaults(func=extract_command)
     
-    # Parse command
-    parse_parser = subparsers.add_parser("parse", help="Parse citations from text or XML")
-    parse_parser.add_argument("input", type=Path, help="Input file")
-    parse_parser.add_argument("--output", type=Path, help="Output file")
-    parse_parser.add_argument(
-        "--format", 
+    # Parse XML command
+    parse_xml_parser = subparsers.add_parser("parse-xml", help="Parse citations from TEI/XML file")
+    parse_xml_parser.add_argument("input", type=Path, help="Input XML file")
+    parse_xml_parser.add_argument("--output", type=Path, help="Output file")
+    parse_xml_parser.add_argument(
+        "--format",
         choices=["xml", "json"],
         default="xml",
-        help="Output format"
+        help="Output format",
     )
-    parse_parser.set_defaults(func=parse_command)
+    parse_xml_parser.set_defaults(func=parse_xml_command)
+
+    # Parse text via LLM
+    parse_text_parser = subparsers.add_parser("parse-text", help="Parse citations from text using LLM")
+    parse_text_parser.add_argument("input", type=Path, help="Input text/markdown file")
+    parse_text_parser.add_argument("--output", type=Path, help="Output file")
+    parse_text_parser.add_argument("--prompt", type=Path, default=Path("prompts/reference_extraction_and_parsing_pydantic.md"))
+    parse_text_parser.add_argument("--api-base", type=str, required=True)
+    parse_text_parser.add_argument("--model", type=str, required=True)
+    parse_text_parser.add_argument("--api-key-env", type=str, default=None, help="Env var that holds API key (optional)")
+    parse_text_parser.add_argument("--temperature", type=float, default=0.0)
+    parse_text_parser.add_argument(
+        "--format",
+        choices=["xml", "json"],
+        default="json",
+        help="Output format",
+    )
+    parse_text_parser.set_defaults(func=parse_text_command)
+
+    # End-to-end run
+    run_parser = subparsers.add_parser("run", help="Run end-to-end PDF → parsed references")
+    run_parser.add_argument("input", type=Path, help="Input PDF file")
+    run_parser.add_argument(
+        "--extractor",
+        choices=ExtractorFactory.get_available_extractors(),
+        default="pymupdf",
+        help="PDF extractor to use",
+    )
+    run_parser.add_argument("--output", type=Path, help="Output file")
+    run_parser.add_argument("--api-base", type=str, required=True)
+    run_parser.add_argument("--model", type=str, required=True)
+    run_parser.add_argument("--api-key-env", type=str, default=None)
+    run_parser.add_argument("--temperature", type=float, default=0.0)
+    run_parser.add_argument(
+        "--format",
+        choices=["xml", "json"],
+        default="json",
+        help="Output format",
+    )
+    run_parser.set_defaults(func=run_command)
     
     # Benchmark command
     benchmark_parser = subparsers.add_parser("benchmark", help="Run evaluation benchmarks")

@@ -273,16 +273,131 @@ class TeiBiblParser:
         file_path: Optional[str | Path] = None,
         pretty_print: bool = True,
     ) -> str:
-        """Convert references to XML format.
+        """Convert references to TEI XML format.
 
         Args:
-            references: References to convert
+            references: Reference | List[Reference] | List[List[Reference]]
             file_path: Optional file path to save XML
             pretty_print: Whether to format XML nicely
 
         Returns:
-            XML string
+            XML string (also written to file if file_path provided)
         """
-        # Implementation would go here - this is a complex method
-        # For now, return a placeholder
-        return "<TEI><!-- TODO: Implement XML generation --></TEI>" 
+        from lxml import etree
+        from ..models import Reference
+
+        # Normalize to list of lists
+        if isinstance(references, Reference):
+            refs_ll = [[references]]
+        elif isinstance(references, list):
+            if len(references) > 0 and isinstance(references[0], Reference):
+                refs_ll = [references]
+            else:
+                refs_ll = references  # assume already List[List[Reference]]
+        else:
+            refs_ll = []
+
+        NSMAP = {None: self._namespaces.get(None, "http://www.tei-c.org/ns/1.0")}
+        tei = etree.Element("TEI", nsmap=NSMAP)
+
+        for refs in refs_ll:
+            list_bibl = etree.SubElement(tei, "listBibl")
+            for ref in refs:
+                bibl_struct = etree.SubElement(list_bibl, "biblStruct")
+
+                # Analytic (article in a journal or part of monograph)
+                if ref.analytic_title:
+                    analytic = etree.SubElement(bibl_struct, "analytic")
+                    title_a = etree.SubElement(analytic, "title")
+                    title_a.set("level", "a")
+                    title_a.text = ref.analytic_title
+                    if ref.authors:
+                        for author in ref.authors:
+                            _append_author_or_org(analytic, author)
+
+                # Monographic (book/journal issue)
+                monogr = etree.SubElement(bibl_struct, "monogr")
+                if ref.monographic_title:
+                    title_m = etree.SubElement(monogr, "title")
+                    title_m.set("level", "m")
+                    title_m.text = ref.monographic_title
+                if ref.journal_title:
+                    title_j = etree.SubElement(monogr, "title")
+                    title_j.set("level", "j")
+                    title_j.text = ref.journal_title
+
+                if ref.editors:
+                    for editor in ref.editors:
+                        _append_author_or_org(monogr, editor, tag="editor")
+
+                if ref.publisher:
+                    publisher = etree.SubElement(monogr, "publisher")
+                    publisher.text = ref.publisher
+                if ref.publication_place:
+                    pub_place = etree.SubElement(monogr, "pubPlace")
+                    pub_place.text = ref.publication_place
+                if ref.translator:
+                    _append_author_or_org(monogr, ref.translator, tag="editor", role="translator")
+
+                # Imprint / issuance details
+                if any([ref.publication_date, ref.volume, ref.issue, ref.pages]):
+                    imprint = etree.SubElement(monogr, "imprint")
+                    if ref.publication_date:
+                        date = etree.SubElement(imprint, "date")
+                        date.text = ref.publication_date
+                    if ref.volume:
+                        vol = etree.SubElement(imprint, "biblScope")
+                        vol.set("unit", "volume")
+                        vol.text = ref.volume
+                    if ref.issue:
+                        iss = etree.SubElement(imprint, "biblScope")
+                        iss.set("unit", "issue")
+                        iss.text = ref.issue
+                    if ref.pages:
+                        pgs = etree.SubElement(imprint, "biblScope")
+                        pgs.set("unit", "page")
+                        pgs.text = ref.pages
+
+                if ref.cited_range:
+                    cr = etree.SubElement(bibl_struct, "citedRange")
+                    cr.text = ref.cited_range
+
+        xml_bytes = etree.tostring(tei, pretty_print=pretty_print, encoding="utf-8", xml_declaration=True)
+        xml_str = xml_bytes.decode("utf-8")
+        if file_path is not None:
+            Path(file_path).parent.mkdir(parents=True, exist_ok=True)
+            Path(file_path).write_text(xml_str, encoding="utf-8")
+        return xml_str
+
+
+def _append_author_or_org(parent, entity, tag: str = "author", role: str | None = None):
+    """Append a person or organization element under parent."""
+    from ..models import Person, Organization
+    from lxml import etree
+
+    el = etree.SubElement(parent, tag)
+    if role:
+        el.set("role", role)
+
+    if isinstance(entity, Person):
+        pers = etree.SubElement(el, "persName")
+        if entity.first_name:
+            fn = etree.SubElement(pers, "forename")
+            fn.set("type", "first")
+            fn.text = entity.first_name
+        if entity.middle_name:
+            mn = etree.SubElement(pers, "forename")
+            mn.set("type", "middle")
+            mn.text = entity.middle_name
+        if entity.surname:
+            sn = etree.SubElement(pers, "surname")
+            sn.text = entity.surname
+        if entity.name_link:
+            nl = etree.SubElement(pers, "nameLink")
+            nl.text = entity.name_link
+        if entity.role_name:
+            rn = etree.SubElement(pers, "roleName")
+            rn.text = entity.role_name
+    elif isinstance(entity, Organization):
+        org = etree.SubElement(el, "orgName")
+        org.text = entity.name

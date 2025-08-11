@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Is There Still A Weather Anomaly? An Investigation of Stock and Foreign Exchange Markets</title>
+				<funder ref="#_wX7VFed">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_3fEUbq9">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability><licence target="http://creativecommons.org/licenses/by-nc-nd/4.0/"><p>This manuscript version is made available under the CC-BY-NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/</p></licence></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Athanasios</forename><surname>Andrikopoulos</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Hull University Business School</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Changyu</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Hull University Business School</orgName>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Min</forename><surname>Zheng</surname></persName>
+							<email>mzheng@cufe.edu.cn.</email>
+							<affiliation key="aff1">
+								<orgName type="department">China Institute for Actuarial Science</orgName>
+								<orgName type="institution">Central University of Finance and Economics</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Is There Still A Weather Anomaly? An Investigation of Stock and Foreign Exchange Markets</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8FAF938BF7ECD7EF0902473FA35BF2D4</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Weather</term>
+					<term>mood</term>
+					<term>stock market</term>
+					<term>foreign exchange market</term>
+					<term>behavioral finance</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Since <ref type="bibr" target="#b25">Saunders (1993)</ref>, there has been ongoing research on whether the weather can affect asset prices. Our study of the impact of weather on stock and foreign exchange (henceforth FX) markets shows that the weather has no effect during 2002-2018, suggesting that any effect may have dissipated after discovery as practitioners have tried to use investment vehicles to exploit it. The results indicate that mood changes caused by the weather do not significantly affect FX and stock returns.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Behavioral finance holds that security market prices are determined not only by their intrinsic values but also by investor psychology. Weather can affect investors' moods and thus their behavior in financial markets. For example, investors may be in a good (bad) mood when it is sunny (during thunderstorms), so they (do not) buy stocks <ref type="bibr" target="#b8">(Daniel et al., 1998)</ref>.</p><p>If the weather affects investor mood, resulting in stock price fluctuations, could the weather also affect the FX market? The exchange rate is affected by many factors, like inflation and interest rates. In the short term, it may be affected by events like Brexit. Will FX participants be affected by the weather in their trading decisions?</p><p>We investigate whether the weather affects FX markets. We select nine currencies: US Dollar (USD), Japanese Yen (JPY), Euro (EUR), Pound (GBP), Australian Dollar (AUD), Canadian Dollar (CAD), Swiss Franc (CHF), New Zealand Dollar (NZD) and Swedish Krona (SEK), respectively. We include eight currency pairs in our study, pairing the various currencies against USD and GBP, respectively. To compare the effects of the weather on the FX and stock markets, we also review US and UK stock indices. We find insufficient evidence that the weather can affect the stock and FX markets in the US and the UK. Although the weather can affect a person's mood, this does not mean that it can affect asset prices.</p><p>The next section reviews the relevant literature. Section 3 describes the weather and return data for the FX and stock markets. Section 4 details the methodology. Section 5 offers the results and section 6 discusses their implications. The final section concludes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related Literature</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Weather and Behavioral Finance</head><p>When the weather is favorable, people's cognitive processes are simplified <ref type="bibr" target="#b13">(Isen, 2001)</ref> while increased humidity negatively affects staff performance, causing a loss of focus <ref type="bibr" target="#b12">(Howarth and Hoffman, 1984)</ref>. Exposure to extreme temperatures decreases ability to perform tasks <ref type="bibr" target="#b24">(Pilcher et al., 2002)</ref> and willingness to help others <ref type="bibr" target="#b7">(Cunningham, 1979)</ref>.</p><p>Existing research on weather and financial markets is confined to stock markets. <ref type="bibr" target="#b25">Saunders (1993)</ref> finds a negative relationship between cloud cover on Wall Street and New York Stock Exchange (NYSE) returns for a period of more than 50 years. <ref type="bibr" target="#b11">Hirshleifer and Shumway (2003)</ref> (henceforth HS) find a positive correlation between sunshine and stock index returns for markets with low transaction costs. Extreme weather also affects stock markets. If a snowstorm occurs, investors spend more time commuting, and therefore have less time for stock trading. On blizzard days, trading volumes of listed companies in affected locations dropped 17% <ref type="bibr" target="#b18">(Loughran and Schultz, 2004)</ref>.</p><p><ref type="bibr" target="#b21">MacAndrew (1993)</ref> argues that seasonal affective disorder (SAD) can change investors' risk attitude. He finds a positive correlation between stock market returns and daily hours of sunshine. <ref type="bibr" target="#b3">Cao and Wei (2005)</ref> show that the returns of nine countries' stock indices are negatively correlated with temperature and this relationship is stronger in winter. <ref type="bibr" target="#b15">Jacobsen and Marquering (2008)</ref> find that in 44 countries, seasons influence investment strategies by changing investors' moods.</p><p><ref type="bibr" target="#b16">Keef and Roush (2005)</ref> find that icy winds from Antarctica have a negative effect on daily returns on the New Zealand Stock Exchange. <ref type="bibr" target="#b9">Dowling and Lucey (2005)</ref> show that precipitation plays a significant role in investors' decisions and offer evidence that the relationship between weather and equity returns is more pronounced in times of positive market performance. Using a large and globally diverse dataset, robust econometric approaches and deseasonalized and regular weather variables. <ref type="bibr" target="#b10">Dowling and Lucey (2008)</ref> find that SAD and low temperatures have the strongest relationship with equity prices. This literature studies the effects of weather on stock markets; however, no study examines its effects on currency markets.</p><p>The FX transaction network is global and in 24-hour continuous operation except during weekends and major holidays. There may be difficulties in studying the effects of emotional variables on FX returns. For example, in trading the GBP/JPY, it is difficult to determine whether the weather in London or Tokyo has a greater effect. <ref type="bibr" target="#b25">Saunders (1993)</ref> acknowledges that NYSE trading orders are from across the US. However, as local brokers in New York (henceforth NY) may influence stock pricing, the local weather in NY could be used as a proxy for the mood of market participants. <ref type="bibr" target="#b18">Loughran and Schultz (2004)</ref> note that NYSE's trading orders come from across the US. Hence, they study the changes of stock returns of NASDAQ companies in relation to the weather of the company's registered location (represented by one of 25 US cities).</p><p>Since weather affects mood, our hypothesis is that it indirectly affects financial markets by influencing market participants' risk preferences. We choose markets in London and New York because the local investors in these financial centers play important roles in trading.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Foreign Exchange market participants</head><p>To study whether FX market participants are affected by the weather when they trade, we need to discuss the institutional setting of the FX market and the main electronic trading venues.</p><p>The FX market is the largest financial market worldwide with a daily volume of USD5.1 trillion <ref type="bibr" target="#b1">(BIS, 2016)</ref>. Currencies are traded through the spot and derivatives markets. The players in the FX market include: central banks, commercial banks, investment managers, hedge funds, corporations and retail investors. The highest volume of currencies is traded in the interbank market. Commercial banks assist customers with FX transactions and conduct speculative trades for themselves. Central banks act in the FX market to stabilize, or increase the competitiveness of, their nations' economies. Investment managers and hedge funds comprise the second-largest group of FX market participants, after banks. Investment managers trade currencies for pension funds, foundations and endowments. Firms involved in importing and exporting conduct FX transactions to pay for goods and services and hedge exchange-rate risk.</p><p>Retail investors account for an extremely low share in FX trading. However, this share is growing rapidly due to emergence of electronic trading and the proliferating number of execution venues, which have lowered transaction costs and increased market liquidity. Most FX brokers operate from the UK. The Electronic Broking Services and Thomson Reuters Dealing are the two main competing trading exchanges and together connect more than 1,000 banks <ref type="bibr" target="#b5">(Cheng, 2007)</ref> while major banks provide their own trading systems.</p><p>The result of the different FX traders is a highly liquid global market with large transaction volumes and low transaction costs, creating the common perception that currency markets are extremely informationally efficient. However, the literature has documented currency anomalies or, in other words, investment strategies able to make systematic profits, such as 'carry trade' <ref type="bibr" target="#b19">(Lustig and Verdelhan, 2007;</ref><ref type="bibr" target="#b20">Lustig et al., 2011)</ref>, 'momentum' <ref type="bibr" target="#b2">(Burnside et al., 2011;</ref><ref type="bibr" target="#b22">Menkhoff et al., 2012)</ref>, 'value effect' <ref type="bibr" target="#b0">(Asness et al., 2013;</ref><ref type="bibr" target="#b23">Menkhoff et al., 2016)</ref>, and 'output gap' <ref type="bibr" target="#b6">(Colacito et al., 2018)</ref>. The literature has studied a number of currency anomalies but not the weather issue that is the focus of this study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Sample and Summary Statistics</head><p>We select the world's nine most traded currencies by value according to <ref type="bibr" target="#b1">BIS (2016)</ref>: USD, EUR, JPY, GBP, AUD, CAD, CHF, NZD and SEK. We include eight currency pairs, pairing the various currencies against USD and GBP respectively. For stock index data in NY, we choose the Dow Jones Industrial Average (DJIA), NASDAQ, and S&amp;P500. For London, we choose the FTSE100 and FTSE350.</p><p>We collect daily weather data from Bloomberg, 4,078 observations from 02/01/2002 to 29/06/2018. We delete non-trading days in the weather data. To compare the effects of the weather on NY and London, we delete non-trading days on either of the two exchanges. All the data is in logarithmic returns. We subtract the lowest from the highest temperature to obtain the temperature difference. Extreme temperatures and temperature differences are used as independent variables. <ref type="bibr" target="#b17">Keim (1983)</ref> argues that stock returns are seasonal. HS seasonally adjust their data, since seasonal patterns may affect the results. To ensure unbiased results, we follow the same data pre-processing protocol.</p><p>Overall, the weather in each of these cities has its distinct characteristics. NY has a higher (lower) temperature than London in summer (winter). London's wind and humidity are far greater than NY's all year. NY's rainfall is greater than London's during the whole period. In spring (summer), except for London's highest (lowest) and average temperature, the other London and NY weather variables follow a normal distribution. In autumn in NY, although humidity is relatively low, its fluctuation is high. In Table <ref type="table" target="#tab_0">1</ref>, Panel A shows the correlations among the different UK and US stock indices and Panels B and C show the correlations respectively of the USD and GBP's exchange rates.</p><note type="other">[Insert Table 1]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Methodology</head><p>Following HS and <ref type="bibr" target="#b4">Chang et al. (2008)</ref>, we study the relationship between the stock and FX market returns against seven weather variables: wind speed (WIND), average temperature (TEMPMEAN), high temperature (HIGHTEMP), humidity (HUMI), low temperature (LOWTEMP), precipitation (PREC) and temperature difference (TEMPDIFFER), as follows:</p><formula xml:id="formula_0">𝑟𝑒𝑡𝑢𝑟𝑛 𝑖 = 𝛼 1 + 𝛽 𝑖,1 𝑊𝐼𝑁𝐷 𝑗 + 𝛽 𝑖,2 𝑇𝐸𝑀𝑃𝑀𝐸𝐴𝑁 𝑗 + 𝛽 𝑖,3 𝐻𝐼𝐺𝐻𝑇𝐸𝑀𝑃 𝑗 + 𝛽 𝑖,4 𝐻𝑈𝑀𝐼 𝑗 +𝛽 𝑖,5 𝐿𝑂𝑊𝑇𝐸𝑀𝑃 𝑗 + 𝛽 𝑖,6 𝑃𝑅𝐸𝐶 𝑗 + 𝛽 𝑖,7 𝑇𝐸𝑀𝑃𝐷𝐼𝐹𝐹𝐸𝑅 𝑗 + 𝜖 𝑖</formula><p>where 𝑖 = 𝑈𝑆, 𝑈𝐾 and 𝑗 = 𝑁𝑌, London.</p><p>We use a Logit model to estimate the probability of the weather variables affecting the stock and FX returns, following HS. We distinguish two cases: (1) positive and (2) negative or zero returns, The Logit model is described as:</p><formula xml:id="formula_1">P(𝑟 𝑖 &gt; 0) = 𝑒 𝛾 1 + 𝑒 𝛾 where: 𝛾 = 𝛾1𝑊𝐼𝑁𝐷 𝑗 + 𝛾2𝑇𝐸𝑀𝑃𝑀𝐸𝐴𝑁 𝑗 + 𝛾3𝐻𝐼𝐺𝐻𝑇𝐸𝑀𝑃 𝑗 + +𝛾4𝐻𝑈𝑀𝐼 𝑗 + 𝛾5𝐿𝑂𝑊𝑇𝐸𝑀𝑃 𝑗 + 𝛾6𝑃𝑅𝐸𝐶 𝑗 + 𝛾7𝑇𝐸𝑀𝑃𝐷𝐼𝐹𝐹𝐸𝑅 𝑗 .<label>(2)</label></formula><p>when the returns are positive, the variable (𝑟 𝑖 ) takes a value of one, and zero otherwise.</p><p>In both models, the independent variables are NY's (London's) weather variables, and the dependent variables are the US (DJIA, S&amp;P500 and NASDAQ) or UK stock market returns (FTSE100 and FTSE350) and eight foreign currencies against the USD or GBP. The dummy variable, temperature difference, takes the value of one when the difference between the highest and the lowest temperature is greater than 10 degrees, and zero otherwise, to deal with multicollinearity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Empirical Results</head><p>In Table <ref type="table" target="#tab_1">2</ref>, Columns (1)-( <ref type="formula" target="#formula_2">2</ref>) report the linear regression results of NY weather and the USD exchange rates with the t-value in brackets, adjusted to Newey-West standard errors. Only the CHF/USD is significantly related to the low and average temperatures (at 5%). A one-degree increase of the low (average) temperature will decrease (increase) the CHF/USD returns by 0.03% (0.04%).</p><p>We then move to the Logit model. From Columns (3)-( <ref type="formula">4</ref>) in Table <ref type="table" target="#tab_1">2</ref>, the γ coefficients of the low and average temperatures in NY for the NZD/USD returns are respectively -7.09% and 11.00% and they are significant at 5%. Hence, keeping all other variables constant, when the low or average temperature in NY increases by one degree, the probability of positive NZD/USD returns increases to exp(-0.071)/(1 + exp(-0.071)) = 48.23% or exp(0.1100)/(1 + exp(0.1100)) = 52.75% respectively. The other significant 𝛾 coefficient, 9.3% (Columns (3)-( <ref type="formula">4</ref>)) is of the average temperature in NY for the AUD/USD. When the probability of positive AUD/USD returns increases to exp(0.093)/(1 + exp(0.093)) = 52.32%, the average NY temperature increases by one degree.</p><note type="other">[Insert Table 2]</note><p>Columns (1)-(3) in Table <ref type="table" target="#tab_2">3</ref> report the linear regression results of US stock indices and the weather in NY. All variables are insignificant. The correlation between precipitation and the US stock indices is insignificant, which conflicts with the findings of HS. The latter study the correlation between precipitation in 26 cities and the city's stock market returns, and find that precipitation is negatively correlated with the NY stock market. This difference with our results could be because we choose a different time period (2002-2018). Columns (4)-(6) in Table <ref type="table" target="#tab_2">3</ref> show the Logit regression results of US stock indices. All but two γ coefficients are insignificant: the DJIA and NY's precipitation, and the S&amp;P500 and NY's temperature difference. One unit increase in NY's precipitation (temperature difference) increases the probability of positive returns for DJIA (S&amp;P500) to 51.04% (45.81%).</p><note type="other">[Insert Table 3]</note><p>We also run linear and Logit regressions of the weather in London with the GBP exchange rates and two UK stock indices respectively, shown in Tables <ref type="table" target="#tab_3">4</ref> and<ref type="table" target="#tab_4">5</ref>. There is no significant correlation between the London weather and the GBP exchange rates or UK stock indices.</p><p>The exception is in two Logit regressions, between AUD/GBP and NZD/GBP returns with London wind speed and precipitation, respectively. The probability of positive AUD/GBP (NZD/GBP) returns increases to 49.69% (55.87%), corresponding to γ=-0.0123 (γ=0.236) when the wind speed (precipitation) in London increases by one unit. This is consistent with the results of HS, in which London precipitation is unrelated to the UK stock market.</p><note type="other">[Insert Table 4] [Insert Table 5]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Discussion</head><p>Some studies (e.g., HS), report that the weather affects the stock market. The literature has also documented many currency anomalies (e.g., <ref type="bibr" target="#b19">Lustig and Verdelhan, 2007)</ref>. Moreover, FX trading volume from retail investors has recently grown rapidly with the growth of electronic execution and proliferating execution venues, increasing market liquidity.</p><p>However, we find that the weather has little effect on stock and FX markets during 2002-2018. Our study is consistent with <ref type="bibr" target="#b9">Dowling and Lucey's (2005)</ref> statement that "Investor sentiment impact on decisions is not equivalent to emotional impact on asset pricing".</p><p>One reason may be that, based on <ref type="bibr" target="#b25">Saunders (1993)</ref>, investors recognize the effects of weather and have tried to exploit it. It may be also because the weather anomaly has been absorbed by financial markets. The world's first weather derivative instrument was introduced in 1997 <ref type="bibr" target="#b14">(Jeucken, 2004)</ref>, and in 1999 the Chicago Mercantile Exchange introduced exchangetraded weather futures and options. Meanwhile, since 2000, electronic trading has become much more popular and the importance of local market participants (brokers and market makers) therefore diminished, though many trades still take place in NY and London while investors are geographically dispersed, from virtually everywhere.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Conclusions</head><p>We use seven weather variables, eight bilateral exchange rates and New York's and London's main stock indices. In 42 regressions (including the Logit and linear regressions), only nine out of 294 (42 regressions times seven coefficients per regression) coefficients are significant. Hence, the weather variables used for New York and London have no apparent impact on the stock and FX markets during 2002-2018.</p><p>As the economy is globalizing and investors increasingly dispersed, it is increasingly difficult to find significant relationships between weather and financial markets. Future research should study how the weather affects the economy and how firms can hedge weather risks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tables.</head></div><figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>This table provides descriptive statistics for stock return and FX rate data.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 . New-York weather regressions and USD exchange rates.</head><label>2</label><figDesc>Columns (1)-(2) display New York regression results of exchange rate returns on seven weather variables. Columns (3)-(4) display the New York Logit model results that relate the probability of positive daily USD FX return to seven weather variables. N is the sample size. The Logit model with the lowest Bayesian information criterion (BIC) is preferred.</figDesc><note><p>Notes: The t-statistics of estimates are reported in parentheses. * significance at the 10% level, ** significance at the 5% level, *** significance at the 1% level.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 . New York weather regressions and US stock indices.</head><label>3</label><figDesc>Columns (1)-(3) display New York regression results of daily stock returns on seven weather variables. Columns (4)-(6) display the New York Logit model results that relate the probability of positive daily stock returns to seven weather variables. N is the sample size. BIC is the Bayesian information criterion; the Logit model with the lowest BIC is preferred.</figDesc><note><p>Notes: The t-statistics of estimates are reported in parentheses. * significance at the 10% level, ** significance at the 5% level, *** significance at the 1% level.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 . London weather regressions and GBP exchange rates.</head><label>4</label><figDesc>Columns (1)-(2) display the London Logit model results that relate the probability of a positive daily GBP FX return to seven weather variables. N is the sample size. The Logit model with the lowest Bayesian information criterion (BIC) is preferred.</figDesc><note><p>Notes: The t-statistics of estimates are reported in parentheses. * significance at the 10% level, ** significance at the 5% level, *** significance at the 1% level.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 . London weather regressions and UK stock indices.</head><label>5</label><figDesc>Columns (1)-(2) display London regression results of daily stock returns on seven weather variables. Columns (3)-(4) display the London Logit model results that relate the probability of positive daily stock returns to seven weather variables. N is the sample size. The Logit model with the lowest Bayesian information criterion (BIC) is preferred.</figDesc><note><p>Notes: The t-statistics of estimates are reported in parentheses. * significance at the 10% level, ** significance at the 5% level, *** significance at the 1% level.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>Financial support from the <rs type="funder">National Natural Science Foundation of China</rs> (No. <rs type="grantNumber">71571197</rs>) and the 111 Project (No. <rs type="grantNumber">B17050</rs>) are gratefully acknowledged.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_wX7VFed">
+					<idno type="grant-number">71571197</idno>
+				</org>
+				<org type="funding" xml:id="_3fEUbq9">
+					<idno type="grant-number">B17050</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Asness</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Moskowitz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Pedersen</surname></persName>
+					</author>
+					<title level="a">Value and momentum everywhere</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">68</biblScope>
+						<biblScope unit="page" from="929" to="985"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b1">
+				<monogr>
+					<author>Bank for International Settlements (BIS)</author>
+					<title level="m">Triennial Central Bank Survey</title>
+					<imprint>
+						<biblScope unit="page" from="1" to="23"/>
+						<date when="2016">2016</date>
+						<pubPlace>Basel, Switzerland</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName><forename>C</forename><surname>Burnside</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Eichenbaum</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Rebelo</surname></persName>
+					</author>
+					<title level="a">Carry trade and momentum in currency markets</title>
+				</analytic>
+				<monogr>
+					<title level="m">Annual Review of Financial Economics</title>
+					<imprint>
+						<date when="2011">2011</date>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="511" to="535"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Wei</surname></persName>
+					</author>
+					<title level="a">Stock market returns: A note on temperature anomaly</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Banking and Finance</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="1559" to="1573"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Chou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Lin</surname></persName>
+					</author>
+					<title level="a">Weather and intraday patterns in stock returns and trading activity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Banking and Finance</title>
+					<imprint>
+						<biblScope unit="page" from="1754" to="1766"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b5">
+				<monogr>
+					<author>
+						<persName><forename>G</forename><surname>Cheng</surname></persName>
+					</author>
+					<title level="m">7 Winning Strategies for Trading Forex</title>
+					<imprint>
+						<date when="2007">2007</date>
+						<publisher>Harriman House Limited</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b6">
+				<monogr>
+					
+					<author>
+						<persName><forename>R</forename><surname>Colacito</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Riddiough</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Sarno</surname></persName>
+					</author>
+					<title level="m">Business cycles and the cross-section of currency returns</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Cunningham</surname></persName>
+					</author>
+					<title level="a">Weather, mood, and helping behavior: Quasi experiments with the sunshine Samaritan</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Personality and Social Psychology</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="1947" to="1956"/>
+						<date when="1979">1979</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Daniel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Hirshleifer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Subrahmanyam</surname></persName>
+					</author>
+					<title level="a">Investor psychology and security market under-and overreactions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="page" from="1839" to="1885"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Dowling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Lucey</surname></persName>
+					</author>
+					<title level="a">Weather, biorhythms, beliefs and stock returns-Some preliminary Irish evidence</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Review of Financial Analysis</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="337" to="355"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Dowling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Lucey</surname></persName>
+					</author>
+					<title level="a">Robust global mood influences in equity pricing</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Multinational Financial Management</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="145" to="164"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Hirshleifer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Shumway</surname></persName>
+					</author>
+					<title level="a">Good Day Sunshine: Stock Returns and the Weather</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">58</biblScope>
+						<biblScope unit="page" from="1009" to="1032"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Howarth</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Hoffman</surname></persName>
+					</author>
+					<title level="a">A multidimensional approach to the relationship between mood and weather</title>
+				</analytic>
+				<monogr>
+					<title level="j">British Journal of Psychology</title>
+					<imprint>
+						<biblScope unit="volume">75</biblScope>
+						<biblScope unit="page" from="15" to="23"/>
+						<date when="1984">1984</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Isen</surname></persName>
+					</author>
+					<title level="a">An influence of positive affect on decision making in complex situations: Theoretical issues with practical implications</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Consumer Psychology</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="75" to="85"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b14">
+				<monogr>
+					<title level="m">Sustainability in Finance: Banking on the Planet</title>
+					<author>
+						<persName><forename>M</forename><surname>Jeucken</surname></persName>
+					</author>
+					<imprint>
+						<date when="2004">2004</date>
+						<publisher>Eburon Academic Publishers</publisher>
+						<pubPlace>Netherlands</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<title level="a" type="main">Is it the weather?</title>
+					<author>
+						<persName><forename type="first">B</forename><surname>Jacobsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><surname>Marquering</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Banking and Finance</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="526" to="540"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					<author>
+						<persName><forename>S</forename><surname>Keef</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Roush</surname></persName>
+					</author>
+					<title level="a">Influence of weather on New Zealand financial securities. Accounting and Finance</title>
+				</analytic>
+				<monogr>
+					<title level="j">Accounting and Finance</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="415" to="437"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					<author>
+						<persName><forename>D</forename><surname>Keim</surname></persName>
+					</author>
+					<title level="a">Size related anomalies and stock return seasonality: Further evidence</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="13" to="32"/>
+						<date when="1983">1983</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Loughran</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Schultz</surname></persName>
+					</author>
+					<title level="a">Weather, stock returns, and the impact of localized trading behavior</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial and Quantitative Analysis</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="343" to="364"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Lustig</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Verdelhan</surname></persName>
+					</author>
+					<title level="a">The cross section of foreign currency risk premia and consumption growth risk</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Economic Review</title>
+					<imprint>
+						<biblScope unit="volume">97</biblScope>
+						<biblScope unit="page" from="89" to="117"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Lustig</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Roussanov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Verdelhan</surname></persName>
+					</author>
+					<title level="a">Common risk factors in currency markets</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="3731" to="3777"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b21">
+				<monogr>
+					<author>
+						<persName><forename>F</forename><surname>Macandrew</surname></persName>
+					</author>
+					<title level="m">Environmental Psychology</title>
+					<imprint>
+						<publisher>Brooks/Cole</publisher>
+						<pubPlace>Pacific Grove, California</pubPlace>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Menkhoff</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Sarno</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Schmeling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Schrimpf</surname></persName>
+					</author>
+					<title level="a">Currency momentum strategies</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<biblScope unit="volume">106</biblScope>
+						<biblScope unit="page" from="660" to="684"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Menkhoff</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Sarno</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Schmeling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Schrimpf</surname></persName>
+					</author>
+					<title level="a">Currency value</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="416" to="441"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Pilcher</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Nadler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Busch</surname></persName>
+					</author>
+					<title level="a">Effects of hot and cold temperature exposure on performance: A meta-analytic review</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ergonomics</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="682" to="698"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Saunders</surname></persName>
+					</author>
+					<title level="a">Stock prices and Wall Street weather</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Economic Review</title>
+					<imprint>
+						<biblScope unit="volume">83</biblScope>
+						<biblScope unit="page" from="1337" to="1345"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

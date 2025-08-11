@@ -1,0 +1,1858 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Traits of litter-dwelling forest arthropod predators and detritivores covary spatially with traits of their resources</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Pierre-Marc</forename><surname>Brousseau</surname></persName>
+							<email>brousseau.pierre-marc@courrier.uqam.ca</email>
+							<affiliation key="aff0">
+								<orgName type="department">Département des Sciences Biologiques</orgName>
+								<orgName type="institution">Université du Québec a Montréal</orgName>
+								<address>
+									<addrLine>Montréal</addrLine>
+									<postCode>H2X 1Y4</postCode>
+									<settlement>Quebec</settlement>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dominique</forename><surname>Gravel</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Département de Biologie</orgName>
+								<orgName type="institution" key="instit1">Canada Research Chair in Integrative Ecology</orgName>
+								<orgName type="institution" key="instit2">Université de Sherbrooke</orgName>
+								<address>
+									<postCode>J1K 2X9</postCode>
+									<settlement>Sherbrooke</settlement>
+									<region>Quebec</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">I</forename><forename type="middle">Tanya</forename><surname>Handa</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Département des Sciences Biologiques</orgName>
+								<orgName type="institution">Université du Québec a Montréal</orgName>
+								<address>
+									<addrLine>Montréal</addrLine>
+									<postCode>H2X 1Y4</postCode>
+									<settlement>Quebec</settlement>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Traits of litter-dwelling forest arthropod predators and detritivores covary spatially with traits of their resources</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">0E833EE072C188483815A0322D643EA4</idno>
+					<idno type="DOI">10.1002/ecy.2815</idno>
+					<note type="submission">received 3 November 2018; revised 10 May 2019; accepted 28 May 2019.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>co-distribution</term>
+					<term>food web</term>
+					<term>functional traits</term>
+					<term>ground beetles</term>
+					<term>millipedes</term>
+					<term>Opiliones</term>
+					<term>spiders</term>
+					<term>trait matching</term>
+					<term>trophic interactions</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The functional trait approach proposes that relating traits of organisms within a community to variation in abiotic and biotic characteristics of their environment will provide insight on the mechanisms of community assembly. As traits at a given trophic level might act as filters for the selection of traits at another trophic level, we hypothesized that traits of consumers and of their resources covary in space. We evaluated complementary predictions about top-down (negative) and bottom-up (positive) trait covariation in a detrital food web. Additionally, we tested whether positive trait covariation was better explained by the Resource Concentration Hypothesis (i.e., most commonly represented trait values attract abundant consumers) or the Resource Specialization Hypothesis (i.e., resource diversity increases niche availability for the consumers). Macroarthopods were collected with pitfall traps over two summers in three forested sites of southern Quebec in 110 plots that varied in tree species composition. Six feeding traits of consumers (detritivores and predators) and six palatability traits of their resources (leaf litter and prey) were matched to assess spatial covariation. Trait matches included consumer biting force/resource toughness, detritivore mandibular gape/leaf thickness, predator/prey body size ratio, etc. Our results demonstrate for the first time a covariation between feeding traits of detritivores and palatability traits of leaf litter (31-34%), and between feeding traits of litter-dwelling predators and palatability traits of potential prey (38-44%). The observed positive covariation supports both the Resource Concentration Hypothesis and Resource Specialization Hypothesis. Spatial covariation of consumer and resource traits provides a new tool to partially predict the structure of the detrital food web. Nonetheless, topdown regulation remains difficult to confirm. Further research on top-down processes will be undoubtedly necessary to refine our capacity to interpret the effect of biotic interactions on co-distribution.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Functional traits are morphological, physiological, phenological, or behavioral characteristics measurable at the individual level that can be related to the fitness of an organism <ref type="bibr" target="#b52">(Violle et al. 2007,</ref><ref type="bibr" target="#b40">Pey et al. 2014)</ref>. Abiotic and biotic environmental characteristics can act as filters selecting individuals based on these characteristics <ref type="bibr" target="#b12">(Diamond 1975,</ref><ref type="bibr" target="#b23">Keddy 1992</ref>,<ref type="bibr" target="#b45">Shipley 2010)</ref>. Thus, relating functional trait composition of a community to environmental conditions could provide insight on the mechanisms of community assembly and allow for a more predictive ecology <ref type="bibr" target="#b31">(McGill et al. 2006</ref>,<ref type="bibr" target="#b2">Brousseau et al. 2018a)</ref>. While considerable advances have been made in plant functional ecology <ref type="bibr" target="#b52">(Violle et al. 2007,</ref><ref type="bibr" target="#b42">Reich 2014,</ref><ref type="bibr" target="#b17">Garnier et al. 2016)</ref>, the use of a functional trait approach with animals has been slower to implement and much remains to be done <ref type="bibr" target="#b40">(Pey et al. 2014,</ref><ref type="bibr" target="#b34">Moretti et al. 2017,</ref><ref type="bibr" target="#b2">Brousseau et al. 2018a)</ref>. Considering animals in a multi-trophic functional perspective complicates the identification of filters influencing the structure and function of communities, as traits at a given trophic level might act as filters for the selection of traits at another trophic level <ref type="bibr" target="#b20">(Ibanez 2012,</ref><ref type="bibr">Lavorel et al. 2013,</ref><ref type="bibr" target="#b27">Le Provost et al. 2017)</ref>. For instance, predator communities with particular feeding traits can select particular prey based on their palatability traits. Alternatively, palatability traits of prey can determine the available resources and drive which predators could be present in a community. As a consequence, when adopting a multi-trophic community approach, one can hypothesize that traits should covary among consumers and their resources in both space and time, but that the direction may vary depending on whether top-down or bottom-up processes are more important within the ecosystem.</p><p>Food web structure has been shown to be associated with different aspects of ecosystem functioning <ref type="bibr" target="#b0">(Bartomeus et al. 2016,</ref><ref type="bibr" target="#b19">Gravel et al. 2016)</ref>, but resolving complex food webs is time consuming and often beyond reach. Tools that allow us to extrapolate the effects of food web structure on ecosystem function are needed. One way to move forward without resolving entire food webs involves matching the consumer feeding traits and resource palatability traits (i.e., traits determining the degree to which a resource is edible) that determine trophic interactions. Trait matches that predict interactions can be validated through lab arena experiments (e.g., <ref type="bibr" target="#b3">Brousseau et al. 2018b)</ref> or through models analyzing well-resolved food webs (e.g., <ref type="bibr" target="#b25">Laigle et al. 2018)</ref>. Examples of trait matching include the length of pollinator tongue and corolla depth of flowers <ref type="bibr" target="#b20">(Ibanez 2012)</ref>, biting force of ground beetles and cuticular toughness of prey <ref type="bibr" target="#b3">(Brousseau et al. 2018b)</ref> and lipid content of predatory marine mammals and caloric content of prey <ref type="bibr" target="#b47">(Spitz et al. 2014)</ref>. A match of traits between the consumer and the resource is the first condition for an interaction to occur <ref type="bibr" target="#b0">(Bartomeus et al. 2016,</ref><ref type="bibr" target="#b44">Schmitz 2017)</ref>. A second condition is that species must encounter each other in space and time, i.e., they must share similar traits to pass through the same spatiotemporal and abiotic filters <ref type="bibr" target="#b19">(Gravel et al. 2016)</ref>. However, given the potential for trait convergence (e.g., traits related to resistance to desiccation) in situations where abiotic filtering is much stronger than biotic filtering, mismatches can also result between consumer feeding traits and the palatability traits of their resources <ref type="bibr" target="#b27">(Le Provost et al. 2017)</ref>.</p><p>Complementary hypotheses can be postulated for how traits will covary over space and time and whether assembly follows a bottom-up or a top-down sequence when biotic filters are at play. (1) Following the Resource Concentration Hypothesis <ref type="bibr" target="#b43">(Root 1973)</ref>, it can be hypothesized that the most commonly represented resource trait values (expressed as the community weighted mean, CWM) will attract abundant consumers with matching traits <ref type="bibr" target="#b27">(Le Provost et al. 2017)</ref>. Thus, a forest dominated by trees that produce tougher leaf litter should favor detritivores with a stronger biting force. (2) The Resource Specialization Hypothesis <ref type="bibr" target="#b46">(Southwood et al. 1979)</ref> proposes that diversity of resource palatability traits (expressed as functional dispersion, FDis) can increase niche availability for consumers, which will be reflected in an increase of the FDis of their matching feeding traits <ref type="bibr" target="#b19">(Gravel et al. 2016)</ref>. Thus, if leaves found in the litter community vary greatly in toughness, the leaf litter should sustain a detritivore community with a high variability in their biting force. For both these bottom-up hypotheses, we predicted a positive covariation of trait matches as trait values of resources will favor consumers harboring matching trait values.</p><p>Predictions associated with top-down control are less clear-cut, since increasing consumer functional diversity might enhance resource consumption but increasing resource functional diversity might counteract this response <ref type="bibr" target="#b19">(Gravel et al. 2016)</ref>. For example, a detritivore community composed mainly of species with weak mandibles could rapidly consume the least tough leaves from the previous autumn, leaving a litter composed mainly of tough leaves. Here, we predicted that (3) topdown pressure will be higher on resources whose traits match the feeding traits of consumers resulting in a negative covariation between traits of consumers and resources. These bottom-up and top-down hypotheses have never been tested with explicit trait matches of consumers and resources in soil ecosystems, but <ref type="bibr" target="#b32">Milcu et al. (2013)</ref> found that the relation between the functional diversity of plants and detritivores was better explained by the Resource Specialization Hypothesis in a soil grassland ecosystem.</p><p>Our study aimed to test the general hypothesis that resource palatability traits will covary in space with associated consumer feeding traits using empirical data from three distinct forest communities of litter-dwelling macroarthropod detritivores and predators and their respective leaf litter or prey resources. We expected that covariation between consumer and resource traits will follow a bottom-up sequence and will be stronger when considering FDis (which better reflects niche diversity) than CWM. Macroarthropods were sampled over two summers in three different forest sites that varied substantially in overstory tree composition and thus leaf litter. We analyzed the relationship between feeding traits and palatability traits of detritivores and leaf litter, and of invertebrate predators and prey based on three trait matches (Table <ref type="table" target="#tab_0">1</ref>) to determine if they covaried in space.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Study sites</head><p>Sampling was carried out in three protected temperate deciduous forests of southern Quebec, Canada (Parc national du Mont St. Bruno, Gault Nature Reserve of Mont St. Hilaire, and Mont Echo in the Montagnes Vertes ecological reserve). Sites at Mont St. Bruno and Mont St. Hilaire are separated by ~12.5 km while Mont Echo is ~75 km south of them. Mont St. Bruno (45°33 0 09″ N, 73°19 0 18″ W) and Mont St. Hilaire (45°32 0 59″ N 73°09 0 39″ W) are situated in the St. Lawrence Lowland and are dominated by deciduous forests surrounded by agricultural and suburban developments. The forest is mainly composed of Acer saccharum, Quercus rubra, and Fagus grandifolia. Other common trees in these sites include Acer pensylvanicum, Fraxinus americana, and Ostrya virginiana. Mont Echo (45°06 0 06″ N, 72°30 0 37″ W) is part of the Appalachian Mountains and is dominated by mature forest of A. saccharum and F. grandifolia at low elevation, and Abies balsamea and Betula spp. at higher elevation. Some sections of the study site are also covered by high densities of the shrub Viburnum lantanoides and ferns (mainly Dennstaedtia punctilobula). Average annual temperature from 2000 to 2012 was 7°C and 6°C, respectively, at Mont St. Bruno/ Mont St. Hilaire and Mont Echo with average annual precipitation of 1,071 and 1,371 mm <ref type="bibr" target="#b13">(Environment Canada 2016)</ref>. Total precipitation during the 2011 and 2012 sampling period was respectively 331 and 211 mm at Mont St. Bruno/Mont St. Hilaire, and 496 and 303 mm at Mont Echo <ref type="bibr" target="#b13">(Environment Canada 2016)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Sampling plots</head><p>Ten sampling plots were installed at both Mont St. Hilaire and Mont St. Bruno, in three distinct stands dominated by A. saccharum, Q. rubra, or F. grandifolia for a total of 30 plots (1 m radius, centered on a pitfall trap) per site. Plots were at least 40 m apart. A Hobo data logger (Onset Computer Corporation, Bourne, MA, USA) was installed at 1 m height in each plot to record temperature hourly between 23 June and 30 August 2012. Soil humidity was measured at the center of the plot at each sampling periods in 2012 with a Field Scout TDR 300 (Spectrum Technologies, Inc., Aurora, IL, USA) with 4 cm long rods. Altitudinal range at these sites was 203-272 m and 105-183 m, respectively.</p><p>Fifty plots were installed at Mont Echo along two parallel transects (25 plots/transect) covering an elevation gradient of 200 m (altitudinal range was 572-769 m) across the gradient between the A. saccharum and the A. balsamea stands. Plots were separated along transects by 40 m. Temperature and humidity were recorded as at Mont St. Bruno/Mont St. Hilaire.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Arthropod sampling</head><p>One Multi-Pher pitfall trap <ref type="bibr" target="#b22">(Jobin and Coulombe 1988)</ref> was installed at each of the 110 plots. Traps were continuously active from mid June to late August 2011, and samples were collected every 2-3 weeks. In the following year, traps were active only during two consecutive weeks in June, July, and August. Pitfall traps were 12 cm in diameter and 16 cm depth. Ethyl alcohol (40%) with 5% white vinegar was used for preservation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Vegetation characterization and functional traits</head><p>Litter samples were collected adjacent to each pitfall trap (&lt;1 m away) once in August 2011, and once during each trapping period in 2012. These samples consisted primarily of partially decomposed deciduous leaves and senesced evergreen needles. Sample volume was standardized as the volume that filled a 20.4 9 15.4 cm plastic bag without compaction. All leaves were visually identified to species when possible and individually weighed to the nearest 0.01 g.</p><p>Three functional traits, related to leaf litter decomposability and palatability for detritivore arthropods (see justification in Arthropod identification and functional traits), were measured: leaf toughness, leaf thickness, and leaf dry matter content <ref type="bibr" target="#b1">(Bernays 1998,</ref><ref type="bibr" target="#b30">Makkonen et al. 2012,</ref><ref type="bibr" target="#b8">David 2014)</ref>. All traits were measured on 10 leaves selected randomly, avoiding recently fallen (partly green leaves), across samples (or the maximum number available) per species per stand at Mont St Bruno/Mont St. Hilaire, and from five evenly distributed distance intervals (0-180, 200-380, 400-580, 600-780, 800-980 m) at Mont Echo. Litter was rehydrated before measuring traits by gradually spraying water on leaves in a closed plastic box until saturation was reached, i.e., when water droplets accumulated at the leaf surface and in the tray. Leaf toughness (g/mm 2 ), defined as the pressure required to perforate the leaf, was measured with a Pesola Medio-Line pressure set (Pesola Pr€ azisionswaagen AG, Schindellegi, Switzerland). Up to five toughness measurements were taken on each of 10 leaves, and the average value per leaf was used in the analysis. Leaf thickness was measured with a microcaliper to the nearest lm. Leaf dry matter content was measured as the mass of the dry leaf (at 65°C) divided by the mass of the hydrated leaf (measured after the rehydration process).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Arthropod identification and functional traits</head><p>All Diplopoda, Isopoda, Carabidae (adults and larvae), Araneae, and Opiliones caught in pitfall traps were identified to the species level. Larvae of Diptera, Coleoptera, Mecoptera, and Lepidoptera were identified as morphospecies.</p><p>The traits of consumers and resources were selected to represent three potential feeding trait matches for each trophic interaction (detritivore/litter and predator/prey; Table <ref type="table" target="#tab_0">1</ref>). For detritivore/litter interactions, we also included detritivore body volume as an unmatched trait to represent different aspects of feeding <ref type="bibr" target="#b4">(Brown et al. 2004)</ref>. Body volume (mm 3 ) was evaluated based on shape, length, width, and height of each species and used as a measure of body size. Cuticular toughness was measured using a Pesola Medio-Line pressure set to which we added an entomological pin of size 2 (diameter = 0.45 mm). Toughness, in g/mm 2 , was defined as the pressure required to break through the integument with the pin. A value of zero was given for very small and soft species while a value of 1 was given to small, but sclerotized, species. A biting force index at mouthpart tip was measured based on the formula h 9 b/c, where for mandibulate arthropods, h is the width of the head behind the eyes (i.e., the attachment point of the adductor muscle of the mandibles), b is the basal width of the mandible between the upper condyle and the insertion point of the adductor muscle, and c is the length from the upper condyle to tip <ref type="bibr" target="#b54">(Wheater and Evans 1989)</ref>. For arachnids, h is the size (length 9 width) of left chelicera, b is the basal width of the movable digit, and c is its length <ref type="bibr" target="#b50">(van der Meijden et al. 2010)</ref>. The biting force index of the molar plate was evaluated by measuring h as the length of the stipe, b between the condyle and the insertion point of the abductor muscle, and c between the condyle and the midpoint of the molar plate. The traits were measured on at least six specimens per species (or the number of available specimens). Complete protocols for the measurement of arthropod traits are available in Appendix S1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis</head><p>Several pitfall trap samples were lost due to mammal disturbance or flooding, resulting in an unequal number of days per trap between plots. We did not analyze data from six plots that were active for less than two-thirds of the trapping periods (Table <ref type="table" target="#tab_1">2</ref>). The abundance of each species was summed in each plot and corrected to reflect a total of 85 d of trapping by applying the formula 85 9 abundance/trapping days, rounded to the upper whole number. The detritivore guild included Diplopoda and Isopoda, while the predator guild included Araneae, Opiliones, and Carabidae (adults and larvae). Prey included detritivores and larvae (excluding Carabidae). The very large millipede species Narceus americanus was not considered as a prey as it is unlikely to be predated by any of observed predators and would have artificially inflated the CWM and FDis of prey where the species is present.</p><p>The first objective in the analyses was to determine if (and which) environmental factors influenced the structure of detritivore and predator communities and the distribution of their feeding traits. To answer this question, we first described resource community structure with a principal component analysis (PCA). A PCA was performed for each resource (leaf litter and prey) on the abundance of the species in Hellinger distance <ref type="bibr" target="#b28">(Legendre and Gallagher 2001)</ref>. The PCA scores were then used as explanatory variables for a redundancy analysis (RDA) of detritivore and predator communities. The rotation of leaf litter and prey species is presented in Appendix S2: Figs. <ref type="figure">S1-S3</ref>.</p><p>For each consumer level (detritivores and predators), we performed three RDAs on the species abundance in Hellinger distance, and on standardized CWM and FDis of their feeding traits per plots. The environmental matrix included temperature, humidity, and the species structure (based on the PCA scores) and functional structure of the lower trophic level. For detritivores, the scores of axes explaining more than 10% of the observed variation of leaf litter (i.e., the first three axes) were included. Functional structure was represented as the CWM of all three leaf palatability traits. The same logic was used for predator communities, but the PCA scores on prey species were added, as well as the PCA scores on leaf litter species, which can influence shelter and hunting field of predators <ref type="bibr" target="#b51">(Vehviläinen et al. 2008)</ref>. Three prey axes were used to be symmetric with leaf litter despite the third PCA axis explaining &lt; 10% of the variation. Also, the CWM of the palatability traits of leaf litter was replaced by those of the prey. All explanatory variables were standardized. The significant contribution of explanatory variables was assessed with permutation tests with 9,999 iterations using the function anova in R <ref type="bibr" target="#b41">(R Core Team 2017)</ref>. Using the CWM, the FDis or both metrics to represent the functional structure of the resource in the RDA analysis yielded very similar results. For this reason, we only present results based on the CWM of resource traits.</p><p>The second objective of our analyses was to determine if consumer feeding traits and resource palatability traits covaried in space. In the case of positive covariation, we sought to evaluate if the covariation corresponded to the Resource Concentration Hypothesis or the Resource Specialization Hypothesis; i.e., determining if the covariation is better observed with the CWM or the FDis of traits. Finally, we evaluated how well trait covariation described consumer/resource distribution as compared to species composition. The covariation of consumer and resource traits was analyzed in a multivariate space with the Procrustes co-inertia method <ref type="bibr" target="#b29">(Legendre and Legendre 2012)</ref>. Procrustes analyzes were also used to compare the species composition of each trophic level.</p><p>We first performed PCA on each standardized functional component (CWM and FDis) and species abundance (in Hellinger distance) of the leaf litter, detritivores, prey, and predators independently. The PCAs were then compared (leaf litter vs. detritivores, and prey vs. predators) with a Procrustes analysis with the function protest of the vegan library in R with 9,999 iterations <ref type="bibr" target="#b37">(Oksanen et al. 2013)</ref>.</p><p>Procrustes analysis determines the degree of association between two matrices by scaling and rotating the data to find the maximum fit; the less that data are scaled and rotated, the greater the association between the matrices. Procrustes analyzes also allow to represent visually the concordance between the matrices <ref type="bibr" target="#b38">(Peres-Neto and Jackson 2001)</ref> and thus allows to interpret the degree and the direction of the covariation between traits of the compared trophic levels. If both traits of a match (e.g., detritivore mandibular strength and litter toughness) covary positively (e.g., the angle between the traits is small), it means that detritivores with stronger mandibles are found in sites characterized by tough litter. In light of the hypotheses presented here, this scenario would be better explained by a bottom-up control since top-down regulation would decrease resource availability. Thus, top-down control is expected to yield a negative covariation of these traits: i.e., the detritivores with weaker mandibles are characteristic of sites characterized by tough litter as the relative abundance of weak litter will decrease following its consumption.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Species diversity</head><p>Overall, we identified 13 plant, 20 detritivore, 177 predator, and 115 prey larva (from which 62 of 115 were caught fewer than five times) species (Table <ref type="table" target="#tab_1">2</ref> and Appendix S3). Species richness of detritivores was higher at Mont St. Bruno (19 species) than at Mont St. Hilaire (12 species) and Mont Echo (six species). Carabidae were the most abundant predator taxa with 14,635 specimens caught, but Araneae had the highest species richness with 115 species (Table <ref type="table" target="#tab_1">2</ref>). Species richness of Araneae was higher at Mont Echo than in other sites and their abundance was particularly low in Mont St. Bruno. Inversely, Carabidae and Opiliones were more abundant at Mont St. Bruno than in other sites, but the richness of Carabidae was higher at Mont Echo where 32 species were observed. Species composition of leaf litter and prey species varied across sites, particularly at Mont Echo, as reflected in the PCA analysis (Appendix S2: Fig <ref type="figure">S4</ref>). Leaf litter was representative of dominant tree species with only A. saccharum and F. grandifolia common to all three sites (Appendix S2: Fig. <ref type="figure">S4A</ref> and Appendix S3: Tables <ref type="table">S1</ref>). The presence of A. balsamea and Betula spp. separated Mont Echo from the other sites (Appendix S2: Fig. <ref type="figure">S4A</ref>). Litter composition was more similar across sites on axes 2 and 3 (Appendix S2: Fig. <ref type="figure">S4B</ref>). The first three axes of the leaf litter PCA explained respectively 56%, 16%, and 14% of the total variation. The PCA of prey species distribution revealed a separation of Mont Echo from other sites on the first axis, and a separation of Mont St. Bruno and Mont St. Hilaire on the second axis (Appendix S2: Fig. <ref type="figure">S4C</ref>). All sites were similar on the third axis (Appendix S2: Fig. <ref type="figure">S4D</ref>). The first three axes of the PCA explained respectively 28%, 20%, and 6% of the overall variation in prey community composition.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Detritivores: environmental factors and feeding traits</head><p>Communities of arthropod detritivores were well separated on the first two axes of the RDA showing distinct communities at the three sites (Fig. <ref type="figure" target="#fig_0">1A</ref>). The first two axes explained respectively 42% and 12% of the observed variation in species composition. The variation explained by the first two axes was similar when analyzing the FDis (43% and 9%) but was lower when analyzing the CWM (25% and 8%). The separation of the sites was less clear for CWM and the FDis, but plots at Mont St. Bruno still tended to be distinct from the other two sites (Figs. <ref type="figure" target="#fig_1">2A,</ref><ref type="figure" target="#fig_1">B</ref>). Leaf litter community structure explained the most variation in the distribution of detritivore feeding traits (expressed as CWM or FDis; Table <ref type="table" target="#tab_2">3</ref>). Temperature, leaf litter toughness, and leaf litter thickness (only for FDis) also significantly explained feeding trait distribution of detritivores. All explanatory variables except humidity had a significant influence on detritivore distribution, but temperature contributed the most (Table <ref type="table" target="#tab_2">3</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Detritivore-litter: covariation in multivariate space</head><p>All Procrustes analyses between arthropod detritivore communities and leaf litter communities revealed significant correlations except for the CWM at Mont St. Hilaire (Table <ref type="table" target="#tab_3">4</ref>). At Mont St. Hilaire and Mont St. Bruno, palatability and feeding traits positively covaried following our trait match hypotheses (Table <ref type="table" target="#tab_0">1</ref>), i.e., detritivore biting force with leaf litter toughness, and detritivore mandibular gape with leaf litter thickness (Figs. <ref type="figure" target="#fig_2">3B</ref> and <ref type="figure" target="#fig_3">4B,</ref><ref type="figure" target="#fig_3">C</ref>). At Mont Echo, however, all detritivore traits covaried negatively with all leaf litter traits, except dry matter content in FDis (Figs. <ref type="figure" target="#fig_2">3C</ref> and <ref type="figure" target="#fig_3">4D</ref>). Detritivore body volume positively covaried consistently with leaf litter toughness for both CWM and FDis, except at Mont Echo (Figs. <ref type="figure" target="#fig_2">3</ref> and <ref type="figure" target="#fig_3">4</ref>). Procrustes analyzes consistently showed a higher correlation between FDis of palatability traits of leaf litter communities and feeding traits of arthropod detritivore communities than between CWM and these variables, but differences were not always clear between indices (Table <ref type="table" target="#tab_3">4</ref>). Correlations were generally highest when species composition was analyzed except at Mont St. Bruno. Results were similar when correlations were tested for each year separately, although the correlations tended to be lower in intrasite comparisons in 2012 (data not shown).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Predators: environmental factors and feeding traits</head><p>As observed for detritivores, predator species composition was distinct among the three sites (Fig. <ref type="figure" target="#fig_0">1B</ref>), but sites were more similar in functional composition  (Figs. <ref type="figure" target="#fig_1">2C,</ref><ref type="figure" target="#fig_1">D</ref>). The first two axes of the RDA on predator species composition explained 35% and 11%, respectively, of the observed variation. The variation explained by the first two axes was higher when analyzing the CWM (42% and 10%) but lower when analyzing the FDis (26% and 10%). Prey community structure had the highest influence on the variation in the distribution of the predator feeding traits expressed as CWM (Table <ref type="table" target="#tab_4">5</ref>). Temperature, litter community structure and the CWM of prey body volume and width also had a significant influence. In contrast, FDis of predator feeding traits was significantly explained only by the second PCA axis of prey community structure (Table <ref type="table" target="#tab_4">5</ref>). Prey community structure had the highest influence on the variation in the distribution of the predator species. Soil humidity and temperature, and the litter community structure also had a significant influence (Table <ref type="table" target="#tab_4">5</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Predators-prey: covariation in multivariate space</head><p>The Procrustes analysis on the CWM and FDis of prey traits and predator traits was significant only when all sites were analyzed together (Table <ref type="table" target="#tab_3">4</ref>). Predator biting force consistently covaried positively with prey cuticular toughness, and predator body volume consistently covaried with prey body width (Figs. <ref type="figure" target="#fig_2">3D</ref> and <ref type="figure" target="#fig_3">4E</ref>). In contrast, predator and prey body volume consistently covaried negatively. The correlation between species composition of arthropod predator and prey communities was always higher (Procrustes R 2 &gt; 0.7) than for functional composition. The correlation was generally slightly higher for FDis than CWM except at Mont St. Bruno, where it was slightly lower. These results were also maintained when 74 additional prey taxa (sampled through Tullgren extractions and consisting of smaller body-sized individuals) were included in the overall analyses (data not shown). The results also remained similar when correlations were tested for each year separately (data not shown).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>Our results show a covariation between consumer (detritivores and predators) feeding traits and resource (leaf litter and prey) palatability traits in the leaf litter layer of deciduous temperate forests in southern Quebec. Most hypothesized trait matches covaried positively, indicating a bottom-up sequence in most of the studied communities. These results help to better understand the role of traits in the structure of complex food webs and particularly inform us on connectance (i.e., the percentage of potential links realized) within the studied arthropod community. In a community with high trait covariation between consumer feeding and resource palatability, the probability that two encountering individuals harbor matching traits increases and results in greater connectance (see mathematical demonstration in <ref type="bibr" target="#b19">Gravel et al. 2016)</ref>. In detritivore/leaf litter interactions, such connectance could result in higher decomposition rates, while for predator-prey interactions, it could favor trophic regulation. Empirical data linking network connectance to ecosystem functions are still lacking, but our results suggest that soil food webs present an interesting model to test this link.</p><p>Our results also show that while the covariation between the feeding and palatability traits of consumers and their resources was generally better explained by the Resource Specialization Hypothesis (Table <ref type="table" target="#tab_3">4</ref>), the minimal differences in explanatory power make it impossible to accept this hypothesis over the Resource Concentration Hypothesis. Finally, the variation in species composition, functional composition (expressed as the CWM) and functional variance (expressed as the FDis) of arthropod detritivore communities is best explained by the same factors, but in different proportions (Table <ref type="table" target="#tab_2">3</ref>). Thus, microsite variation in temperature best described species composition, but the functional characteristics of arthropod detritivore communities were better explained by leaf litter species and functional structure. The results were not as clear for arthropod predator species, but prey species composition and functional composition explained a higher proportion of the functional structure of predators than abiotic condition and leaf litter community (Table <ref type="table" target="#tab_4">5</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Trait matching</head><p>Simple feeding and palatability traits explained 31-44% of community structure of detritivorous and predatory macroarthropods dwelling in the forest leaf litter (Table <ref type="table" target="#tab_3">4</ref>). Our study included a high species richness of arthropods (312 species) and three sites presenting different species composition. In this context, our results suggest that as few as three functional trait matches per trophic level may be useful to consider biotic interactions at play in community assembly. Nonetheless, we recognize that our study did not consider other sources of variation that most likely contribute to explaining spatial covariation. For example, we only considered feeding interactions, while abiotic filters also play an important role in structuring forest litter-dwelling arthropod communities <ref type="bibr" target="#b15">(Frouz et al. 2004)</ref>. While including traits related to abiotic factors may have increased our predictive ability, for a large diversity of arthropods, such traits that are related empirically to abiotic gradients are lacking <ref type="bibr" target="#b34">(Moretti et al. 2017)</ref>. We also did not include potential variation in resources present in each site such as intraspecific variation related to different decomposition stages or parts of plants, or potential prey excluded from the study, but present in the study system, such as earthworms, springtails, mites,  nematodes, protists, and microbes. As the amplitude of seasonal functional variation was never studied for feeding and palatability traits of litter-dwelling arthropods, it is unclear how seasonality, including phenology and developmental stages of arthropods, could influence our results. Finally, traits related to stoichiometry were shown to be useful to describe herbivore/ plant interactions <ref type="bibr" target="#b11">(Deraison et al. 2015)</ref> and to be good predictors of detritivore-litter interactions in aquatic systems <ref type="bibr" target="#b36">(Ohta et al. 2016)</ref>. Including stoichiometry in future work will undoubtedly be interesting to explore, in addition to the physical aspects of feeding interactions studied here.</p><p>Our results show that the hypothesized trait matches between consumers and resources (Table <ref type="table" target="#tab_0">1</ref>) tend to covary in space for detritivore-litter and predator-prey interactions. We observed a consistent positive covariation between leaf litter toughness and detritivore biting force, except at Mont Echo (Figs. <ref type="figure" target="#fig_2">3</ref> and <ref type="figure" target="#fig_3">4</ref>). Leaf litter thickness and detritivore mandibular gape also covaried positively at Mont St. Hilaire and Mont St. Bruno. Similar trait matching was observed for predators and prey (Figs. <ref type="figure" target="#fig_2">3</ref> and <ref type="figure" target="#fig_3">4</ref>), although absence of significant intrasite collinearity did not allow for analysis of intrasite variation. Predator biting force covaried positively with prey cuticular toughness, and predator body volume covaried positively with prey body width. We also observed a negative covariation between the body volume of predators and prey. Based on our initial prediction, negative covariation was expected in the presence of top-down control because of stronger pressure on prey with traits matching the feeding traits of predators. Our results could be interpreted as bottom-up and top-down processes acting simultaneously on different traits; i.e., predator body volume could have a top-down effect on prey body volume while prey cuticular toughness has a bottom-up effect on biting force of the predators. Alternatively, this may also result from body size being related to a high number of functions <ref type="bibr" target="#b39">(Peters 1986)</ref>, and thus being more sensitive to abiotic conditions, contrary to traits that are directly related to feeding such as biting force.</p><p>The negative covariation of body volumes vs. the positive covariation of other predator/ prey trait matches has another alternative explanation. The coevolutionary alternation hypothesis <ref type="bibr" target="#b49">(Thompson 1999)</ref> predicts that predation pressure will trigger a higher display of defense in more commonly attacked prey, prompting the predator to include new prey that are less defended in its diet. The predation release will then induce a reduction of defense due to metabolic costs creating an interaction loop <ref type="bibr" target="#b35">(Nuismer and Thompson 2006)</ref>. If this hypothesis is right, we should expect an alternation in the direction of the covariation of some matching traits through time. In our case, we could expect that body volume of predators and prey would covary positively and the strength of predators and toughness of the prey would covary negatively. It is unclear on what timescale such micro-coevolution can be observed, but it could require several decades <ref type="bibr" target="#b49">(Thompson 1999)</ref>. Such variation should be easier to observe by monitoring defensive traits of the prey such as chemical and physical defense.</p><p>The importance of trait matching to explain food web interactions has been demonstrated previously for arthropods <ref type="bibr" target="#b20">(Ibanez 2012,</ref><ref type="bibr" target="#b21">Ibanez et al. 2013,</ref><ref type="bibr" target="#b11">Deraison et al. 2015,</ref><ref type="bibr" target="#b3">Brousseau et al. 2018b)</ref>, but has been rarely used to explain community structure. Nonetheless, spatial covariation was previously observed between grasshopper community biting force and plant community leaf toughness <ref type="bibr" target="#b27">(Le Provost et al. 2017)</ref>, pollinator tongue length and flower corolla depth <ref type="bibr" target="#b16">(Garibaldi et al. 2015)</ref> and bird beak size and fruit size <ref type="bibr" target="#b10">(Dehling et al. 2014)</ref>. Similar covariation was observed between feeding and palatability traits of zoo-and phytoplankton in boreal lakes, although this covariation was no longer significant when abiotic and landscape filtering were considered <ref type="bibr" target="#b48">(St-Gelais et al. 2018)</ref>. Our study is the first to use trait matching to investigate community structure of litter-dwelling detritivores and predators in forest ecosystems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Environmental factors</head><p>The abiotic factors we measured only had a small influence on the functional composition of detritivores and predators (Tables <ref type="table" target="#tab_2">3</ref> and <ref type="table" target="#tab_4">5</ref>). A correlation between abiotic factors and feeding traits can reveal a correlation between the feeding traits and unmeasured traits related to abiotic factors or dispersion <ref type="bibr" target="#b19">(Gravel et al. 2016)</ref>. If abiotic or landscape factors have a strong filtering role, it can create trait mismatches between consumers and their resources <ref type="bibr" target="#b27">(Le Provost et al. 2017)</ref>. For example, bees in recently burned forests were shown to have shorter tongues than bees in unburned sites; this covariation has perhaps nothing to do with the interaction with available flowers, rather it is probably due to a correlation between tongue length and nesting sites, which are strongly affected by fire <ref type="bibr" target="#b33">(Moretti et al. 2009)</ref>. We observed at the Mont Echo site that trait matches between detritivores and leaf litter correspond to our top-down control hypotheses, in contrast to the other two sites. Mont Echo differed from other sites by having a higher variability in soil humidity (between 4.5-37.7%) and a higher proportion of coniferous litter (22% compared to &lt;1% in other sites). Humidity level is an important filter for Diplopoda and Isopoda <ref type="bibr" target="#b9">(David and Handa 2010)</ref> and could be particularly important in coniferous forests <ref type="bibr" target="#b55">(Wytwer and Tracz 2003)</ref>. Humidity variation at the Mont Echo site may thus have driven the negative covariation between traits. Also, we included in the analyses all leaf litter species, although, we are not sure that the detritivore species found at Mont Echo actually consumed coniferous needle litter. Litters of A. balsamea and Picea sp. are the thickest and toughest species across all sites (Appendix S3; Table <ref type="table">S1</ref>) and could be unpalatable even for the strongest detritivore with the largest mandibular gape in this site. Unmeasured traits such as chemical defense compounds could also prevent or reduce interactions <ref type="bibr" target="#b6">(Cárcamo et al. 2000)</ref>.</p><p>The relative importance of environmental factors to resource community structure varied as a function of consumer functional or taxonomic structure (Tables <ref type="table" target="#tab_2">3</ref> and <ref type="table" target="#tab_4">5</ref>). This is particularly clear for detritivores: temperature is the dominant factor for taxonomic structure while litter community structure (principally the third axis) is the dominant factor for functional structure. Such results show that environmental factors that impact taxonomic community structure may not have similar effects on the functional structure of feeding traits. It is worth noting, however, that we did not include sites with extreme environmental conditions. In addition, resource community structure was integrated in the analysis as the score of the first three PCA axes; these axes are a surrogate of the community structure but do not reflect it perfectly, which may have influenced our results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSION</head><p>Our study shows that the traits of interacting trophic levels (litter-detritivores and predator-prey) covary in space. Interestingly, similar results were observed in a different ecosystem between plants and herbivores with equivalent traits (leaf toughness-biting force; <ref type="bibr" target="#b27">Le Provost et al. 2017)</ref>. While these results help to understand assembly processes across trophic levels, they are mainly based on bottom-up dynamics. However, top-down control dynamics are also known to occur in the soil ecosystem <ref type="bibr" target="#b5">(Buchkowski 2016)</ref>. Although we observed trait covariation at the Mont Echo site for detritivores and forest litter that corresponded to the hypothesized effect of top-down control, other factors may also be at play. Observing top-down control could be particularly hard to detect in species-rich ecosystems that contain many indirect interspecific interactions <ref type="bibr" target="#b7">(Cazelles et al. 2016)</ref>. A potential way to consider top-down effects could be by looking at the distribution of antipredator traits. Stronger predation pressure on a particular point of prey functional space could favor the presence of antipredator traits in the species sharing these traits values. Nonetheless, increasing our understanding of top-down processes is required to better understand food web dynamics <ref type="bibr" target="#b5">(Buchkowski 2016)</ref> and to understand the impact of higher trophic levels on ecosystem functioning <ref type="bibr" target="#b53">(Wang and Brose 2018)</ref>. </p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1.</head><label>1</label><figDesc>Redundancy analysis on the distribution of (A) detritivorous and (B) predatory arthropod species of forest litter sampled in three sites in southern Quebec: circle, Mont St. Bruno; square, Mont St. Hilaire; triangle, Mont Echo. Blue arrows indicate significant variables based on PERMANOVA.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 2</head><label>2</label><figDesc>Representation of RDA on the distribution of feeding traits of (A, B) detritivorous and (C, D) predatory arthropods of forest leaf litter sampled in three sites in southern Quebec based on their (A-C) community weight mean (CWM) and (B-D) functional dispersion (FDis): circle, Mont St. Bruno; square, Mont St. Hilaire; triangle, Mont Echo. Blue arrows indicate significant variables based on PERMANOVA. M. advantage, mechanical advantage.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIG. 3</head><label>3</label><figDesc>Procrustes analyses on the community weighted mean (CWM) of palatability (in italic type with dashed arrow) and feeding traits (in boldface type with solid arrows) of (A-C) leaf litter and arthropod detritivores, or (D) potential prey and predators. Different colors indicate hypothesized trait matches. Circle, Mont St. Bruno; square, Mont St. Hilaire; triangle, Mont Echo.M. advantage, mechanical advantage</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIG. 4.</head><label>4</label><figDesc>Procrustes analyses on the functional dispersion (FDis) of palatability traits of leaf litter (in italic type with dashed arrow) and feeding traits (in boldface type with solid arrows) of (A-D) leaf litter and arthropod detritivores, or (E) potential prey and predators. Different colors indicate hypothesized trait matches. Circle, Mont St. Bruno; square, Mont St. Hilaire; triangle, Mont Echo. M. advatange, mechanical advantage.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 .</head><label>1</label><figDesc>List of hypothetical trait matches between feeding traits of consumers (detritivores or predators) and palatability traits of their resources (leaf litter or prey).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2 .</head><label>2</label><figDesc>Summary description of the communities at each sampling site for each trophic level.</figDesc><note><p>Diplopoda and Isopoda were considered both detritivores (consuming leaf litter) and prey (to predators). Abundance is presented as the mean (AE SE) per plot and richness as the total number of species per site. Min, minimum; max, maximum.</p><p>† Mean per plot.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 3 .</head><label>3</label><figDesc>Summary statistics (F values and statistical significance, degrees of freedom: 1, 95) of redundancy analysis (RDA) performed on detritivore communities. Species composition, community weighted mean (CWM) and functional dispersion (FDis) of four feeding traits (body volume, mandibular gape, biting force at the tip of the mandibles, and biting force of the molar plate of the mandibles) were compared. A significant value indicates that the variables significantly explain a part of the variation observed in the species or functional structure of the community.</figDesc><note><p>*P ≤ 0.05; **P ≤ 0.01; ***P ≤ 0.001.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>TABLE 4 .</head><label>4</label><figDesc>Correlations based on Procrustes analyses of arthropod detritivore and leaf litter communities and arthropod predator and prey communities.</figDesc><note><p>Note: Correlations were calculated for PCA of species structure or for functional structure indices (community weighted mean and functional dispersion) of contrasted trophic levels.</p><p>*P ≤ 0.05; **P ≤ 0.01; ***P ≤ 0.001.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE 5 .</head><label>5</label><figDesc>Summary statistics (F value and statistical significance, degrees of freedom: 1, 92) of redundancy analysis (RDA) performed on predator communities.</figDesc><note><p>Notes: Species composition, community weighted mean (CWM), and functional dispersion (FDis) of three feeding traits (body volume, biting force, and the mechanical advantage (length : width ratio) of the mandibles) are compared. A significant value indicates that the variables significantly explain a part of the variation observed in the species or functional structure of the community.</p><p>*P ≤ 0.05; **P ≤ 0.01; ***P ≤ 0.001.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>We thank <rs type="person">Donald Rodrigue</rs>, <rs type="person">Nathalie Rivard</rs> and staff at the <rs type="institution">Parc national du Mont Saint-Bruno as well David Manelli of the Gault Natural Reserve</rs> for their logistic support. We also thank <rs type="person">Chelsea Archambault</rs>, <rs type="person">Evick Mestre</rs>, <rs type="person">Etienne Normandin</rs>, <rs type="person">Eug enie Potvin</rs>, and <rs type="person">Laura Jeanne Raymond-L eonard</rs> for their help in field and laboratory, and <rs type="person">Sylvain Coq</rs> and <rs type="person">L. J. Raymond-L eonard</rs> for feedback on the manuscript. Our research was financed by the <rs type="funder">Natural Sciences and Engineering Research Council of Canada (NSERC)</rs> and le <rs type="funder">Fond de recherche du Qu ebec-Nature</rs> et technologies (FRQNT). The ideas and the methodology were developed jointly by all three authors. Data were collected by <rs type="person">P. M. Brousseau</rs> and analyzed by <rs type="person">P. M. Brousseau</rs> and <rs type="person">D. Gravel. P. M. Brousseau</rs> led the writing and all authors contributed critically to subsequent revisions.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPORTING INFORMATION</head><p>Additional supporting information may be found in the online version of this article at <ref type="url" target="http://onlinelibrary.wiley.com/doi/10.1002/ecy.2815/suppinfo">http://onlinelibrary.wiley.com/doi/ 10.1002/ecy.2815/suppinfo</ref> </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+	
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Bartomeus</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Tylianakis</surname>
+							<forename type="first">J</forename><forename type="middle">M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Aizen</surname>
+							<forename type="first">M</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Dickie</surname>
+							<forename type="first">I</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Bernard-Verdier</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<title level="a">A common framework for identifying linkage rules across different types of interactions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="1894" to="1903"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Bernays</surname>
+							<forename type="first">E</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<title level="a">Evolution of feeding behavior in insect herbivores</title>
+				</analytic>
+				<monogr>
+					<title level="j">BioScience</title>
+					<imprint>
+						<date when="1998">1998</date>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="35" to="44"/>
+					</imprint>
+				</monogr>
+			</biblStruct> 
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Brousseau</surname>
+							<forename>P-M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Handa</surname>
+							<forename type="first">I</forename><forename type="middle">T</forename>
+						</persName>
+					</author>
+					<title level="a">On the development of a functional trait approach for studying terrestrial arthropods</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<date when="2018">2018a</date>
+						<biblScope unit="volume">87</biblScope>
+						<biblScope unit="page" from="1209" to="1220"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Brousseau</surname>
+							<forename>P-M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Handa</surname>
+							<forename type="first">I</forename><forename type="middle">T</forename>
+						</persName>
+					</author>
+					<title level="a">Traitmatching and phylogeny as predictors of predator-prey interactions involving ground beetles</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2018">2018b</date>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="192" to="202"/>
+					</imprint>
+				</monogr>
+			</biblStruct> 
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Brown</surname>
+							<forename type="first">J</forename><forename type="middle">H</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gillooly</surname>
+							<forename type="first">J</forename><forename type="middle">F</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Allen</surname>
+							<forename type="first">A</forename><forename type="middle">P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Savage</surname>
+							<forename type="first">V</forename><forename type="middle">M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>West</surname>
+							<forename type="first">G</forename><forename type="middle">B</forename>
+						</persName>
+					</author>
+					<title level="a">Toward a metabolic theory of ecology</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology</title>
+					<imprint>
+						<date when="2004">2004</date>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="page" from="1771" to="1789"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Buchkowski</surname>
+							<forename type="first">R</forename><forename type="middle">W</forename>
+						</persName>
+					</author>
+					<title level="a">Top-down consumptive and traitmediated control do affect soil food webs: it's time for a new model</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soil Biology and Biochemistry</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="29" to="32"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Cárcamo</surname>
+							<forename type="first">H</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Abe</surname>
+							<forename type="first">T</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Prescott</surname>
+							<forename type="first">C</forename><forename type="middle">E</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Holl</surname>
+							<forename type="first">F</forename><forename type="middle">B</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Chanway</surname>
+							<forename type="first">C</forename><forename type="middle">P</forename>
+						</persName>
+					</author>
+					<title level="a">Influence of millipedes on litter decomposition, N mineralization, and microbial communities in a coastal forest in British Columbia, Canada</title>
+				</analytic>
+				<monogr>
+					<title level="j">Canadian Journal of Forest Research</title>
+					<imprint>
+						<date when="2000">2000</date>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="817" to="826"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Cazelles</surname>
+							<forename>K</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Araujo</surname>
+							<forename type="first">M</forename><forename type="middle">B</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Mouquet</surname>
+							<forename>N</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>
+						</persName>
+					</author>
+					<title level="a">A theory for species co-occurrence in interaction networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Theoretical Ecology</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="39" to="48"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName>
+							<surname>David</surname>
+							<forename type="first">J</forename><forename type="middle">F</forename>
+						</persName>
+					</author>
+					<title level="a">The role of litter-feeding macroarthropods in decomposition processes: a reappraisal of common views</title>
+				</analytic>
+				<monogr>
+					<title level="j">Soil Biology and Biochemistry</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="page" from="109" to="118"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					<author>
+						<persName>
+							<surname>David</surname>
+							<forename type="first">J</forename><forename type="middle">F</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Handa</surname>
+							<forename type="first">I</forename><forename type="middle">T</forename>
+						</persName>
+					</author>
+					<title level="a">The ecology of saprophagous macroarthropods (millipedes, woodlice) in the context of global change</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Reviews</title>
+					<imprint>
+						<date when="2010">2010</date>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="page" from="881" to="895"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Dehling</surname>
+							<forename type="first">D</forename><forename type="middle">M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Toepfer</surname>
+							<forename>T</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Schaefer</surname>
+							<forename type="first">H</forename><forename type="middle">M</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Jordano</surname>
+							<forename>P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Boehning-Gaese</surname>
+							<forename>K</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Schleuning</surname>
+							<forename>M</forename>
+						</persName>
+					</author>
+					<title level="a">Functional relationships beyond species richness patterns: trait matching in plant-bird mutualisms across scales</title>
+				</analytic>
+				<monogr>
+					<title level="j">Global Ecology and Biogeography</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="page" from="1085" to="1093"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Deraison</surname>
+							<forename>H</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Badenhausser</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Borger</surname>
+							<forename>L</forename>
+						</persName>
+						<persName>
+							<surname>Gross</surname>
+							<forename>N</forename>
+						</persName>
+					</author>
+					<title level="a">Herbivore effect traits and their impact on plant community biomass: an experimental test using grasshoppers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="650" to="661"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b12">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Diamond</surname>
+							<forename type="first">J</forename><forename type="middle">M</forename>
+						</persName>
+					</author>
+					<title level="a">Assembly of species communities</title>
+				</analytic>
+				<monogr>
+					<title level="m">Ecology and evolution of communities</title>
+					<editor>
+						<persName>
+							<surname>Cody</surname>
+							<forename type="first">M</forename><forename type="middle">L</forename>
+						</persName>
+					</editor>
+					<editor>
+						<persName>
+							<surname>Diamond</surname>
+							<forename type="first">J</forename><forename type="middle">M</forename>
+						</persName>
+					</editor>
+					<imprint>
+						<publisher>Harvard University Press, Cambridge</publisher>
+						<pubPlace>Massachusetts, USA</pubPlace>
+						<date when="1975">1975</date>
+						<biblScope unit="page" from="342" to="444"/>
+					</imprint>
+				</monogr>   
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b13">
+				<monogr>
+					<author>Environment Canada</author>
+					<title level="m">Historical data</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>   
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Evans</surname>
+							<forename type="first">M</forename><forename type="middle">E</forename><forename type="last">G</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Forsythe</surname>
+							<forename type="first">T</forename><forename type="middle">G</forename>
+						</persName>
+					</author>
+					<title level="a">Feeding mechanisms, and their variation in form, of some adult ground-beetles (Coleoptera: Caraboidea)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Zoology</title>
+					<imprint>
+						<date when="1985">1985</date>
+						<biblScope unit="volume">206</biblScope>
+						<biblScope unit="page" from="113" to="143"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Frouz</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Ali</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Frouzova</surname>
+							<forename>J</forename>
+						</persName>
+						<persName>
+							<surname>Lobinske</surname>
+							<forename type="first">R</forename><forename type="middle">J</forename>
+						</persName>
+					</author>    
+					<title level="a">Horizontal and vertical distribution of soil macroarthropods along a spatio-temporal moisture gradient in subtropical central Florida</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environmental Entomology</title>
+					<imprint>
+						<date when="2004">2004</date>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="1282" to="1295"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+			
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Garibaldi</surname>
+							<forename type="first">L</forename><forename type="middle">A</forename>
+						</persName>
+					</author>    
+					<title level="a">Trait matching of flower visitors and crops predicts fruit set better than trait diversity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Applied Ecology</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<biblScope unit="volume">52</biblScope>
+						<biblScope unit="page" from="1436" to="1444"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b17">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Garnier</surname>
+							<forename>E</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Navas</surname>
+							<forename>M-L</forename>
+						</persName>
+						<persName>
+							<surname>Grigulis</surname>
+							<forename>K</forename>
+						</persName>
+					</author>
+					<title level="m">Plant functional diversity: organism traits, community structure, and ecosystem properties</title>
+					<imprint>
+						<publisher>Oxford University Press</publisher>
+						<pubPlace>Oxford, UK</pubPlace>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Poisot</surname>
+							<forename>T</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Albouy</surname>
+							<forename>C</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Velez</surname>
+							<forename>L</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Mouillot</surname>
+							<forename>D</forename>   
+						</persName>
+					</author>    
+					<title level="a">Inferring food web structure from predator-prey body size relationships</title>
+				</analytic>
+				<monogr>
+					<title level="j">Methods in Ecology and Evolution</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="1083" to="1090"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Albouy</surname>
+							<forename>C</forename>   
+						</persName>
+						<persName>
+							<surname>Thuiller</surname>
+							<forename>W</forename>   
+						</persName>
+					</author>                 
+					<title level="a">The meaning of functional trait compositions of food webs for ecosystem functioning</title>
+				</analytic>
+				<monogr>
+					<title level="j">Philosophical Transactions of the Royal Society B: Biological Sciences</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">371</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Ibanez</surname>
+							<forename>S</forename>   
+						</persName>
+					</author>               
+					<title level="a">Optimizing size thresholds in a plant-pollinator interaction web: towards a mechanistic understanding of ecological networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oecologia</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<biblScope unit="volume">170</biblScope>
+						<biblScope unit="page" from="233" to="242"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Ibanez</surname>
+							<forename>S</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Lavorel</surname>
+							<forename>S</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Puijalon</surname>
+							<forename>S</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Moretti</surname>
+							<forename>M</forename>   
+						</persName>
+					</author>               
+					<title level="a">Herbivory mediated by coupling between biomechanical traits of plants and grasshoppers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="479" to="489"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="series" xml:id="b22">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Jobin</surname>
+							<forename type="first">L</forename><forename type="middle">J</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Coulombe</surname>
+							<forename>C</forename>   
+						</persName>
+					</author>
+					<title level="m">The Multi-Pher insect trap</title>
+					<imprint>
+						<publisher>Forestry Canada</publisher>
+						<pubPlace>Quebec City, Quebec, Canada</pubPlace>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+				<series>
+				<title level="s">Information Leaflet LFC-26</title>
+				</series>    
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Keddy</surname>
+							<forename type="first">P</forename><forename type="middle">A</forename>   
+						</persName>
+					</author>               
+					<title level="a">Assembly and response rules: two goals for predictive community ecology</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Vegetation Science</title>
+					<imprint>
+						<date when="1992">1992</date>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page" from="157" to="164"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Köhler</surname>
+							<forename>H-R</forename>   
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Alberti</surname>
+							<forename>G</forename>  
+						</persName>
+					</author>               
+					<title level="a">Morphology of the mandibles in the millipedes (Diplopoda, Arthropoda)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Zoologica Scripta</title>
+					<imprint>
+						<date when="1990">1990</date>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="195" to="202"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Laigle</surname>
+							<forename>I</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Aubin</surname>
+							<forename>I</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Digel</surname>
+							<forename>C</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Brose</surname>
+							<forename>U</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Boulangeat</surname>
+							<forename>I</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gravel</surname>
+							<forename>D</forename>  
+						</persName>
+					</author>               
+					<title level="a">Species traits as drivers of food web structure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oikos</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="volume">127</biblScope>
+						<biblScope unit="page" from="316" to="326"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Lavorel</surname>
+							<forename>S</forename>  
+						</persName>
+					</author>               
+					<title level="a">A novel framework for linking functional diversity of plants with other trophic levels for the quantification of ecosystem services</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Vegetation Science</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="942" to="948"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Le Provost</surname>
+							<forename>G</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gross</surname>
+							<forename>N</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Borger</surname>
+							<forename>L</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Deraison</surname>
+							<forename>H</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Roncoroni</surname>
+							<forename>M</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Badenhausser</surname>
+							<forename>I</forename>  
+						</persName>
+					</author>               
+					<title level="a">Trait-matching and mass effect determine the functional response of herbivore communities to land use intensification</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="1600" to="1611"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Legendre</surname>
+							<forename>P</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Gallagher</surname>
+							<forename type="first">E</forename><forename type="middle">D</forename>  
+						</persName>
+					</author>               
+					<title level="a">Ecologically meaningful transformations for ordination of species data</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oecologia</title>
+					<imprint>
+						<date when="2001">2001</date>
+						<biblScope unit="volume">129</biblScope>
+						<biblScope unit="page" from="271" to="280"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b29">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Legendre</surname>
+							<forename>P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Legendre</surname>
+							<forename>L</forename>
+						</persName>
+					</author>
+					<title level="m">Numerical ecology</title>
+					<imprint>
+						<publisher>Elsevier</publisher>
+						<pubPlace>Amsterdam, Netherlands</pubPlace>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Makkonen</surname>
+							<forename>M</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Berg</surname>
+							<forename type="first">M</forename><forename type="middle">P</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Handa</surname>
+							<forename type="first">I</forename><forename type="middle">T</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Haettenschwiler</surname>
+							<forename>S</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>van Ruijven</surname>
+							<forename>J</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>van Bodegom</surname>
+							<forename type="first">P</forename><forename type="middle">M</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Aerts</surname>
+							<forename>R</forename>  
+						</persName>
+					</author>               
+					<title level="a">Highly consistent effects of plant litter identity and functional traits on decomposition across a latitudinal gradient</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology Letters</title>
+					<imprint>
+						<date when="2012">2012</date>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="1033" to="1041"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<author>
+						<persName>
+							<surname>McGill</surname>
+							<forename type="first">B</forename><forename type="middle">J</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Enquist</surname>
+							<forename type="first">B</forename><forename type="middle">J</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Weiher</surname>
+							<forename>E</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Westoby</surname>
+							<forename>M</forename>  
+						</persName>
+					</author>               
+					<title level="a">Rebuilding community ecology from functional traits</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends in Ecology and Evolution</title>
+					<imprint>
+						<date when="2006">2006</date>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="178" to="185"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Milcu</surname>
+							<forename>A</forename>
+						</persName>
+					</author>               
+					<title level="a">Functionally and phylogenetically diverse plant communities key to soil biota</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="1878" to="1885"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Moretti</surname>
+							<forename>M</forename> 
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Bello</surname>
+							<forename type="first">F</forename><forename type="middle">de</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Roberts</surname>
+							<forename type="first">S</forename><forename type="middle">P</forename><forename type="last">M</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Potts</surname>
+							<forename type="first">S</forename><forename type="middle">G</forename>  
+						</persName>
+					</author>               
+					<title level="a">Taxonomical vs. functional responses of bee communities to fire in two contrasting climatic regions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<biblScope unit="volume">78</biblScope>
+						<biblScope unit="page" from="98" to="108"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Moretti</surname>
+							<forename>M</forename> 
+						</persName>
+					</author>               
+					<title level="a">Handbook of protocols for standardized measurement of terrestrial invertebrate functional traits</title>
+				</analytic>
+				<monogr>
+					<title level="j">Functional Ecology</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="558" to="567"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Nuismer</surname>
+							<forename type="first">S</forename><forename type="middle">L</forename> 
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Thompson</surname>
+							<forename type="first">J</forename><forename type="middle">N</forename>  
+						</persName>
+					</author>               
+					<title level="a">Coevolutionary alternation in antagonistic interactions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Evolution</title>
+					<imprint>
+						<date when="2006">2006</date>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="page" from="2207" to="2217"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Ohta</surname>
+							<forename>T</forename> 
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Matsunaga</surname>
+							<forename>S</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Niwa</surname>
+							<forename>S</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Kawamura</surname>
+							<forename>K</forename>  
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Hiura</surname>
+							<forename>T</forename>  
+						</persName>
+					</author>               
+					<title level="a">Detritivore stoichiometric diversity alters litter processing efficiency in a freshwater ecosystem</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oikos</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">125</biblScope>
+						<biblScope unit="page" from="1162" to="1172"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b37">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Oksanen</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Blanchet</surname>
+							<forename type="first">F</forename><forename type="middle">G</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Kindt</surname>
+							<forename>R</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Legendre</surname>
+							<forename>P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Minchin</surname>
+							<forename type="first">P</forename><forename type="middle">R</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>O'Hara</surname>
+							<forename>B</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Simpson</surname>
+							<forename type="first">G</forename><forename type="middle">L</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Solymos</surname>
+							<forename>P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Steven</surname>
+							<forename type="first">M</forename><forename type="middle">H</forename><forename type="last">H</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Wagner</surname>
+							<forename>H</forename>
+						</persName>
+					</author>
+					<title level="m">The vegan library: Community ecology package</title>
+					<ref src="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</ref>
+				</monogr>   
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Peres-Neto</surname>
+							<forename type="first">P</forename><forename type="middle">R</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Jackson</surname>
+							<forename type="first">D</forename><forename type="middle">A</forename>  
+						</persName>
+					</author>               
+					<title level="a">How well do multivariate data sets match? The advantages of a Procrustean superimposition approach over the Mantel test</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oecologia</title>
+					<imprint>
+						<date when="2001">2001</date>
+						<biblScope unit="volume">129</biblScope>
+						<biblScope unit="page" from="169" to="178"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b39">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Peters</surname>
+							<forename type="first">R</forename><forename type="middle">H</forename>
+						</persName>
+					</author>
+					<title level="m">The ecological implications of body size</title>
+					<imprint>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge, UK</pubPlace>
+						<date when="1986">1986</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Pey</surname>
+							<forename>B</forename>
+						</persName>
+					</author>               
+					<title level="a">Current use of and future needs for soil invertebrate functional traits in community ecology</title>
+				</analytic>
+				<monogr>
+					<title level="j">Basic and Applied Ecology</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="194" to="206"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="standard" xml:id="b41">
+				<monogr>
+					<author>R Core Team</author>
+					<title level="m">R: A Language and Environment for Sta-tistical Computing</title>
+					<imprint>
+						<publisher>R Foundation for Statistical Computing</publisher>
+						<pubPlace>Vienna, Austria</pubPlace>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>   
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Reich</surname>
+							<forename type="first">P</forename><forename type="middle">B</forename>
+						</persName>
+					</author>               
+					<title level="a">The world-wide 'fast-slow' plant economics spectrum: a traits manifesto</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Ecology</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="page" from="275" to="301"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Root</surname>
+							<forename type="first">R</forename><forename type="middle">B</forename>
+						</persName>
+					</author>               
+					<title level="a">Organization of a plant-arthropod association in simple and diverse habitats: fauna of collards (Brassica oleracea)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecological Monographs</title>
+					<imprint>
+						<date when="1973">1973</date>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="page" from="95" to="120"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Schmitz</surname>
+							<forename>O</forename>
+						</persName>
+					</author>               
+					<title level="a">Predator and prey functional traits: understanding the adaptive machinery driving predator-prey interactions</title>
+				</analytic>
+				<monogr>
+					<title level="j">F1000Research</title>
+					<imprint>
+						<date when="2017">2017</date>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page">1767</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b45">
+				<monogr>
+					<author>
+						<persName>
+							<surname>Shipley</surname>
+							<forename>B</forename>
+						</persName>
+					</author>
+					<title level="m">From plant traits to vegetation structure: chance and selection in the assembly of ecological communities</title>
+					<imprint>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge, UK</pubPlace>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>	
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Southwood</surname>
+							<forename type="first">T</forename><forename type="middle">R</forename><forename type="last">E</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Brown</surname>
+							<forename type="first">V</forename><forename type="middle">K</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Reader</surname>
+							<forename type="first">P</forename><forename type="middle">M</forename>
+						</persName>
+					</author>               
+					<title level="a">The relationships of plant and insect diversities in succession</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biological Journal of the Linnean Society</title>
+					<imprint>
+						<date when="1979">1979</date>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="327" to="348"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Spitz</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Ridoux</surname>
+							<forename>V</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Brind'Amour</surname>
+							<forename>A</forename>
+						</persName>
+					</author>               
+					<title level="a">Let's go beyond taxonomy in diet description: testing a trait-based approach to prey-predator relationships</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Animal Ecology</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">83</biblScope>
+						<biblScope unit="page" from="1137" to="1148"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					<author>
+						<persName>
+							<surname>St-Gelais</surname>
+							<forename type="first">N</forename><forename type="middle">F</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Vogt</surname>
+							<forename type="first">R</forename><forename type="middle">J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>del Giorgio</surname>
+							<forename type="first">P</forename><forename type="middle">A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Beisner</surname>
+							<forename type="first">B</forename><forename type="middle">E</forename>
+						</persName>
+					</author>               
+					<title level="a">The taxonomic and functional biogeographies of phytoplankton and zooplankton communities across boreal lakes</title>
+				</analytic>
+				<monogr>
+					<title level="j">bioRxiv</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="volume">373332</biblScope>
+						<biblScope unit="page" from="1" to="34"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Thompson</surname>
+							<forename type="first">J</forename><forename type="middle">N</forename>
+						</persName>
+					</author>               
+					<title level="a">Specific hypotheses on the geographic mosaic of coevolution</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Naturalist</title>
+					<imprint>
+						<date when="1999">1999</date>
+						<biblScope unit="volume">153</biblScope>
+						<biblScope unit="page" from="S1" to="S14"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					<author>
+						<persName>
+							<surname>van der Meijden</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Herrel</surname>
+							<forename>A</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Summers</surname>
+							<forename>A</forename>
+						</persName>
+					</author>               
+					<title level="a">Comparison of chela size and pincer force in scorpions; getting a first grip</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Zoology</title>
+					<imprint>
+						<date when="2010">2010</date>
+						<biblScope unit="volume">280</biblScope>
+						<biblScope unit="page" from="319" to="325"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Vehviläinen</surname>
+							<forename>H</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Koricheva</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Ruohomäki</surname>
+							<forename>K</forename>
+						</persName>
+					</author>               
+					<title level="a">Effects of stand tree species composition and diversity on abundance of predatory arthropods</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oikos</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<biblScope unit="volume">117</biblScope>
+						<biblScope unit="page" from="935" to="943"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Violle</surname>
+							<forename>C</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Navas</surname>
+							<forename type="first">M</forename><forename type="middle">L</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Vile</surname>
+							<forename>D</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Kazakou</surname>
+							<forename>E</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Fortunel</surname>
+							<forename>C</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Hummel</surname>
+							<forename>I</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Garnier</surname>
+							<forename>E</forename>
+						</persName>
+					</author>               
+					<title level="a">Let the concept of trait be functional</title>
+				</analytic>
+				<monogr>
+					<title level="j">Oikos</title>
+					<imprint>
+						<date when="2007">2007</date>
+						<biblScope unit="volume">116</biblScope>
+						<biblScope unit="page" from="882" to="892"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Wang</surname>
+							<forename>S</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Brose</surname>
+							<forename>U</forename>
+						</persName>
+					</author>               
+					<title level="a">Biodiversity and ecosystem functioning in food webs: the vertical diversity hypothesis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ecology Letters</title>
+					<imprint>
+						<date when="2018">2018</date>
+						<biblScope unit="volume">21</biblScope>
+						<biblScope unit="page" from="9" to="20"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Wheater</surname>
+							<forename type="first">C</forename><forename type="middle">P</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Evans</surname>
+							<forename type="first">M</forename><forename type="middle">E</forename><forename type="last">G</forename>
+						</persName>
+					</author>               
+					<title level="a">The mandibular forces and pressures of some predacious Coleoptera</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Insect Physiology</title>
+					<imprint>
+						<date when="1989">1989</date>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="815" to="820"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					<author>
+						<persName>
+							<surname>Wytwer</surname>
+							<forename>J</forename>
+						</persName>
+					</author>
+					<author>
+						<persName>
+							<surname>Tracz</surname>
+							<forename>H</forename>
+						</persName>
+					</author>               
+					<title level="a">Diplopoda communities in different forest habitats of Białowie_za Primeval Forest, Poland</title>
+				</analytic>
+				<monogr>
+					<title level="j">African Invertebrates</title>
+					<imprint>
+						<date when="2003">2003</date>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="293" to="311"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+      
+
+		</listBibl>
+
+		
+ 	</div>
+	</back>
+	</text>
+</TEI>

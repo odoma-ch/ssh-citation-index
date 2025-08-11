@@ -1,0 +1,835 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Gender Trends in Authorship in Psychiatry Journals From 2008 to 2018</title>
+				<funder>
+					<orgName type="full">Takeda</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Sage Therapeutics</orgName>
+				</funder>
+				<funder ref="#_SJY59Xf">
+					<orgName type="full">National Institute of Mental Health</orgName>
+				</funder>
+				<funder ref="#_SndyVzy #_uUchqnC #_yujWXTn #_GAQcxVj">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-10-15">2019/10/15</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Kamber</forename><forename type="middle">L</forename><surname>Hart</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Sophia</forename><surname>Frangou</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Roy</forename><forename type="middle">H</forename><surname>Perlis</surname></persName>
+						</author>
+						<title level="a" type="main">Gender Trends in Authorship in Psychiatry Journals From 2008 to 2018</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Biological Psychiatry</title>
+						<idno type="ISSN">0006-3223</idno>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">86</biblScope>
+							<biblScope unit="issue">8</biblScope>
+							<biblScope unit="page" from="639" to="646"/>
+							<date type="published" when="2019-10-15">2019/10/15</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">395294EFD57FC35E3803128439F22C7A</idno>
+					<idno type="DOI">10.1016/j.biopsych.2019.02.010</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Academic psychiatry</term>
+					<term>Authorship</term>
+					<term>Gender disparity</term>
+					<term>Gender trends</term>
+					<term>Psychiatry journals</term>
+					<term>Publications Biological Psychiatry: Celebrating 50 Years Biological Psychiatry: Celebrating 50 Years</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>BACKGROUND:</head><p>Women are currently underrepresented in academic psychiatry. As publication activity reflects both leadership and participation in academia, we examined temporal trends in women's authorship by conducting a large-scale bibliometric study of psychiatry journals.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS:</head><p>We examined changes in proportions of women in the first, last, and overall authorship positions over time; relationship to journal impact factor and editorial board makeup; and rates of transition to senior author status using original research articles published in the 24 highest-impact psychiatry journals between January 2008 and May 2018.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS:</head><p>In 30,934 articles, women represented 40.0% of all authors in 2008 and 44.8% in 2018, with a signiﬁcant increase in the percentage of women as ﬁrst authors (2008: 43.5%, 2018: 49.5%; B = 0.64, p = .002) and last authors over time (2008: 30.0%, 2018: 35.7%; B = 0.64, p = 1  3 10 -5). Articles with women as last authors were signiﬁcantly more likely than those with men as last authors to have a woman as ﬁrst author (c21 = 126.1, p&lt;, 2.2 &lt;10 -16). Women exhibited slower rates of transition to the last author position (log rank p = 2 3 10 -16); time to 10% transition was 5 years for men and 9 years for women.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSIONS:</head><p>These results indicate continued improvement in the representation of women authors in psychiatry journals, resulting in near parity in ﬁrst authors. However, slower rates of transition to the senior author position and continued underrepresentation of women as senior authors suggest ongoing challenges in achieving gender parity in academic leadership. At the present rate of change for last authors (0.64% increase per year), women would achieve parity in senior authorship in w20 to 25 years.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>As of 2017, women comprised a majority of medical students (50.7%), psychiatry residents (52.2%), and students enrolled in psychology graduate departments (up to 80%) in the United States <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b1">2)</ref>. However, they remain underrepresented among psychiatry academic faculty <ref type="bibr" target="#b2">(3)</ref>. The percentage of women diminishes with increasing seniority among psychiatry medical school faculty, from 57% of assistant professors to 32% of full professors in 2017 <ref type="bibr" target="#b2">(3)</ref>. Similarly, among psychology graduate school faculty, the proportion of full professors who were women in 2014 was nearly half (35%) that of assistant professors who were women (60%) <ref type="bibr" target="#b0">(1)</ref>. The underrepresentation of women in academic psychiatry is also evident outside of the United States. For example, in the United Kingdom in 2010, women accounted for 35% of all academic psychiatrists in the Royal College of Psychiatrists, and in Turkey in 2011, 33% of all academic psychiatry positions were held by a woman <ref type="bibr" target="#b3">(4,</ref><ref type="bibr" target="#b4">5)</ref>.</p><p>The lower representation of women in higher academic positions has been termed the "leaky pipeline," and it remains one of the most persistent features of gender disparity across academia <ref type="bibr" target="#b0">(1)</ref>. In recent years, the causes, consequences, and potential solutions to this gender disparity have come to the foreground of both theoretical discussions and empirical research <ref type="bibr" target="#b5">(6)</ref>. The root of this phenomenon has been suggested to be multifactorial, as women in research careers may face additional challenges including insufficient mentoring, difficulty obtaining research funding, subtle or overt discrimination, and pressure to balance personal and work responsibilities <ref type="bibr" target="#b3">(4,</ref><ref type="bibr" target="#b6">7)</ref>. There have been efforts to address these challenges, including institutional guidelines, training to improve awareness of gender bias, and public sector initiatives to improve support systems for women <ref type="bibr" target="#b3">(4,</ref><ref type="bibr" target="#b7">8)</ref>. However, recent research suggests that gender disparities persist within academic psychiatry, as well as in psychology graduate departments, and that the rate of improvement may be slowing <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b8">9)</ref>.</p><p>Publication activity reflects both leadership and inclusiveness and is a key criterion for promotion and research funding awards, making it one of the most important metrics of academic success. Women's participation in academic publication therefore provides a measure, albeit an imperfect one, of progress toward parity within academia. Three prior reports examined gender and temporal trends in authorship within psychiatry, including author position: one examining articles on eating disorders <ref type="bibr" target="#b9">(10)</ref> and two looking at articles published in the three highest-impact journals <ref type="bibr" target="#b6">(7,</ref><ref type="bibr" target="#b10">11)</ref>. However, these studies were able to analyze only a small subset of psychiatry journals and articles. To further inform efforts to address gender disparity in psychiatry, we conducted a large-scale bibliometric study of gender representation within the highest-impact psychiatry journals over the last 10 years. We aimed to assess 1) the change in the representation of women as authors in the first and last author positions, as these positions are notable indicators of research participation and leadership; 2) the association between the gender of first and last authors; 3) the associations between journal metrics (i.e., journal impact factor and the gender composition of journal editors) and the representation of women as authors; and 4) other factors that may influence gender differences in authorship such as time to transition from first to last author position and gaps in publication.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS AND MATERIALS</head><p>We identified all psychiatry journals (n = 33) publishing original research with an impact factor .4 according to the most recent Web of Science Journal Citation Reports (2016) <ref type="bibr" target="#b11">(12)</ref>. Using the RISmed package in R (version 1.1.423; R Foundation for Statistical Computing, Vienna, Austria), we curated a list of articles published in these 33 journals between January 1, 2008, and May 1, 2018 <ref type="bibr" target="#b12">(13)</ref>. Focusing on original research, article type was limited to journal articles; comments, editorials, review articles, retracted articles, and errata were excluded a priori. Biographies, personal narratives, portraits, introductory journal articles, practice guidelines, consensus development conferences, congresses, clinical conferences, addresses, guidelines, duplicate publications, legal cases, interviews, and news articles were also excluded. Figure <ref type="figure" target="#fig_0">1</ref> shows the process of article selection and the number of articles excluded from the study.</p><p>For each article, a list of named authors (excluding consortium collaborators/investigators listed in PubMed) was compiled using the EasyPubMed package in R by searching PubMed for the PMID, returning the article's extensible markup language (XML) code, and extracting authors' first name, last name, and initials <ref type="bibr" target="#b13">(14)</ref>. We used the genderize.io application programming interface for R to assign gender to each author based on his or her first name. Genderize.io predicts a gender and probability of gender for each name <ref type="bibr" target="#b14">(15)</ref>. At the time of the study, this program contained 216,286 distinct names from 79 different countries, and prior research has demonstrated the high reliability of this gender identification method <ref type="bibr" target="#b15">(16)</ref>. Consistent with prior work, gender was assigned to an author only when the program predicted the gender of the author's first name with a probability of 60% or greater <ref type="bibr" target="#b16">(17)</ref>.</p><p>We calculated the overall percentage of authors who were women, percentage of first authors who were women, and percentage of last authors who were women. All percentages were calculated out of the total number of authors within each authorship position for whom gender could be deduced based on the author's first name (in other words, the denominator would be the total number of male and female authors). To determine the association between author gender proportions and journal prominence, we calculated the correlation among each of these three measures (overall percentage of women authors, percentage of first authors who were women, and percentage of last authors who were women) and journal impact factor using Spearman's rank order correlation. To determine if the change in impact factor was associated with the change in female representation over time, we calculated the correlation between the rate of change in impact factor (from 2008 to 2016) and rate of change in female representation in the same time period using Spearman's rank order correlation. For journals that did not begin publishing until after 2008 (Journal of Behavioral Addiction and Lancet Psychiatry), the rate of change for both variables was calculated between 2016 and the first year in which an impact factor was available.</p><p>We used linear regression to model temporal trends in author gender ratios for each outcome measure. Finally, we repeated these linear models in the five journals with the highest impact factor in 2016 for which author gender could be identified above the 70% threshold (Lancet Psychiatry, Biological Psychiatry, World Psychiatry, American Journal of Psychiatry, and JAMA Psychiatry).</p><p>In secondary analysis, we sought to examine factors that may influence gender disparity in authorship. First, a list of editors and editorial board members for each journal were compiled as of June 2018, and gender was assigned to each editor/board member as above. We then determined the correlation between the proportion of women editors and the proportion of women on the editorial board to the proportion of overall authors who were women. We also examined the relationship between the gender of the first author and the gender of the senior author using a chi-square test after excluding single-author articles. Finally, we considered two potential indicators of disruption in academic progress, namely time to transition to senior authorship and largest gap in publication (for any authorship position). The former linked individuals by matching first and last names (excluding middle initials, which may not be consistently included) and examined time to incident senior authorship among all those authors with a gender identified who published in 2008 as a nonsenior author. We performed standard Kaplan-Meier log-rank analysis to compare the time to transition to last author between men and women, with censoring at the end of the study period. We also estimated the longest gap in publications (number of years in which an author did not publish in any of the represented journals) for each author. We analyzed differences in the longest gap in publications between men and women using a Mann-Whitney U test.</p><p>Sensitivity analysis examined a less stringent threshold for journal inclusion (i.e., 50% confidence in status). As these results did not differ meaningfully from primary results, they are presented in the Supplement but not addressed further. A second sensitivity analysis examined the more stringent cutoff for author gender determination using a 95% probability threshold for determining author gender; this excluded an additional 7.9% of authors. The primary analyses looking at change in female representation over time and the relationship of female authorship metrics and impact factor were repeated.</p><p>The present study is exempt from institutional review board review given that the data analyzed were public data available on the Internet.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head><p>We collected 58,331 articles published in 33 psychiatry journals from January 2008 to May 2018. Limiting to original research, we identified a collection of 40,899 articles. Seven journals were excluded from analyses because we were unable to identify gender for at least 70% of their authors (Acta Psychiatrica Scandinavica; Epidemiology and Psychiatric Sciences; Molecular Psychiatry; Psychological Medicine; Translational Psychiatry; Journal of Neurology, Neurosurgery, and Psychiatry; and Journal of Psychopharmacology). Additionally, two journals were excluded owing to a low number of indexed journal articles published per year (Neuropsychiatry, mean = 5.5 6 3.5 articles; Current Opinion in Psychiatry, mean = 8.9 6 14.8 articles). This yielded a collection of 30,934 articles from 24 journals for analysis.</p><p>In this collection, gender was predicted at a probability of 60% or greater for 89.1% of authors (Table <ref type="table" target="#tab_0">1</ref>). Of authors with a gender identified, women represented 42.7% of all authors, 46.8% of first authors, and 33.4% of last authors. Overall representation of women authors per journal ranged from 32.4% to 53.9%, the percentage of women as first authors ranged from 21.1% to 62.7%, and the percentage of women as last authors ranged from 27.3% to 44.7%. Additional descriptive statistics for each journal are presented in Table <ref type="table" target="#tab_0">1</ref>. Over the 10-year study period, there were significant increases in the overall percentage of women authors (B = 0.48, p = 7.3 3 10 26 ), percentage of women as first authors (B = 0.64, p = .002), and percentage of women as last authors (B = 0.66, p = 1 3 10 25 ). Figure <ref type="figure" target="#fig_1">2</ref> shows the change in female representation over time for each authorship position, separated by journal.</p><p>There were no significant associations between journal impact factor and overall percentage of women authors (rs = 2.37, p = .08), percentage of women as first authors (rs = 2.25, p = .23), or percentage of women as last authors (rs = 2.16, p = .47) (Figure <ref type="figure" target="#fig_2">3</ref>). However, there was a significant negative correlation between the rate of change in impact factor and the rate of change in the percentage of female representation (rs = 2.44, p = .03). That is to say, a large increase in impact factor over the study period corresponded with a decrease in the overall representation of women over the study period, and a small change in impact factor corresponded with an increase in female representation over the study period.</p><p>Among the five highest-impact journals, results were qualitatively similar in magnitude. There was no significant change in the percentage of women as first authors over time (B = 0.66, p = .18). However, there were significant increases in the overall percentage of women authors (B = 0.62, p = .009) and the percentage of women as last authors (B = 0.92, p = .001) (Supplemental Figure <ref type="figure">S3</ref>). Because World Psychiatry has a much higher impact factor than the other included journals and it publishes commentaries predominantly, we repeated the analyses in the five highest-impact journals excluding World Psychiatry. There were no significant correlations between impact factor and the representation of women authors, but again, there was a significant increase in the overall proportion of women authors (B = 0.44, p = .002) and the proportion of women as last authors (B = 1.45, p &lt; .001).</p><p>Using the more stringent cutoff for assigning gender to authors (95%), results for the primary analyses were quantitatively similar in magnitude. There were significant increases in the overall percentage of women authors (B = 0.47, p &lt; .001), percentage of women as first authors (B = 0.60, p = .004), and percentage of women as last authors (B = 0.57, p &lt; .001). There were no significant correlations between impact factor and the representation of women authors.</p><p>There was no significant correlation between the proportion of women authors and the proportion of women editors (r 16 = .41, p = .09) or editorial board members (r 15 = 2.24, = .35). Limiting to journal articles with more than one author (n = 28,557), there was a significant association between the gender of the first and last authors (c 2 1 = 126.1, p , 2.2 3 10 216 ). In particular, articles with a woman as the last author were 7.7% more likely to have a woman as first author compared with articles with a man as the last author.</p><p>Finally, women showed slower rates of transition to last author as compared with men (Kaplan-Meier log-rank p = 2 3 10 216 ). Figure <ref type="figure" target="#fig_3">4</ref> shows the cumulative proportion of individuals who have transitioned to the last author position, separated by gender. The time to 10% transition was 5 years for men and 9 years for women. Women authors also exhibited a significant difference in the maximum gap between publications (women, median = 7 years, interquartile range = 3 years; men, median = 7 years, interquartile range = 3 years; Mann-Whitney U = 702,950,000, p &lt; .001).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>In this study of author gender in 30,934 original research articles published in 24 medium-and high-impact psychiatry journals between January 2008 and May 2018, women represented 40.0% of all authors in 2008 and 44.8% of all authors in 2018, with evidence of continued improvement over the study period. The percentage of women as first authors increased from 43.5% in 2008 to 49.5% in 2018, and the percentage of women as last authors also increased, from 30.0% in 2008 to 35.7% in 2018. Our results indicate near gender parity in overall participation in academic publishing and in leadership of specific projects, but continued underrepresentation of women in senior leadership roles.</p><p>We expected the representation of women authors to reflect the representation of women in academic psychiatry. According to the Association of American Medical Colleges faculty report from 2017, women represented 51.4% of academic psychiatrists <ref type="bibr" target="#b2">(3)</ref>. Our results indicate that the representation of women as authors was lower than the overall representation of women as faculty. Looking across time, from 2009 and 2017, there was an increase in the total percentage of women faculty, at a rate of 1.13% per year, and an increase in the percentage of women full professors, at a rate of 1.3% per year <ref type="bibr" target="#b2">(3,</ref><ref type="bibr" target="#b17">18)</ref>. The rate of increase for women faculty was greater than the rate of increase in women authors (0.48%) and in women as last authors (0.66% per year). This implies that while women are being promoted, the rate at which they are publishing in highimpact psychiatry journals is not increasing at a comparable rate.</p><p>Prior works examining a smaller number of articles have shown similar improvements in the overall representation of women as authors and in the proportion of women as first authors within psychiatry. One study that included 5429 articles addressing eating disorders found that women's first authorship increased in specialty journals and high-impact journals from 1997 to 2016, but that women were significantly less likely to be listed as a first or last author in the highimpact journals <ref type="bibr" target="#b9">(10)</ref>. Another study considered 1732 articles in three high-impact psychiatry journals and found an increase in the overall representation of women as authors and as first authors from 1994 to 2007 <ref type="bibr" target="#b10">(11)</ref>. The final report found an overall increase in the percentage of authors who were women over the last 2 decades in the three highest-ranking psychiatric journals (from 24.6% in 1994 to 38.9% in 2014). However, the rate of improvement appeared to be slowing <ref type="bibr" target="#b6">(7)</ref>.</p><p>Despite increased overall representation, the proportion of women as last authors in the current study remains lower (33.4% of all last authors) than the proportion of women authors in any authorship position or in first author positions. This result is consistent with the "leaky pipeline" model, with the decreased representation of women at increasing levels of seniority. Both the American Psychological Association and the Association of American Medical Colleges have recently documented this phenomenon by showing the disproportionately low proportions of women in leadership positions such as full professorships <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b2">3)</ref>. Many factors have been proposed to explain the leaky pipeline, including increased difficulty for women to receive promotions as compared with similarly qualified men <ref type="bibr" target="#b3">(4)</ref>. Indeed, in our survival analysis, we show that women take significantly longer to transition to the last author position as compared with male authors. Longer publication gaps alone are unlikely to account for the slower transition to last authors by women, as the maximum publication gap for women was only marginally longer than that gap for men. While it is important to note that authors may be publishing outside of the journals included in this study, creating longer measured gaps in publications than actually occurred, this analysis assesses how frequently men and women are contributing to high-impact research within the field of clinical psychiatry.</p><p>Prior work has also suggested that junior women within academia find it more difficult than their male counterparts to find mentors, possibly owing to the scarcity of women in senior positions <ref type="bibr" target="#b3">(4)</ref>. Our results indicate that women as last authors were significantly more likely to have a woman first author listed on their manuscript. This result underscores the importance of developing a "critical mass" of senior women who are able to support and mentor junior women conducting research and to offer guidance, support, and modeling for how to balance a career and responsibilities outside of work. Increasing the number of women in senior leadership positions may help to bolster the careers of junior women in academia, as mentors who are women (as compared with male mentors) may be more likely to take on junior women and support their academic careers both through role modeling and explicit assistance and advice in their careers and personal lives <ref type="bibr" target="#b18">(19)</ref>. Additionally, institutional efforts to facilitate networking and mentoring, both informally and via formal research collaborations, represent one of many potential strategies <ref type="bibr" target="#b5">(6,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b19">20)</ref>. These initiatives need not be limited to traditional new investigator contexts, recognizing that the transition from early to midcareer status may be particularly fraught.</p><p>The necessity of having women in senior positions to support other women researchers may also extend to journal editorial boards. While there was not a significant correlation between the proportion of authors who were women and the proportion of women editors/editorial board members, the overall proportion of women editors/editorial board members was generally low (mean = .39 6 .23). Future work should consider how the composition of the editorial board may impact the selection of articles for publication, the extent of the editorial board's influence on publication decisions, and if there are biases within the review process toward manuscripts submitted by women. Neuropsychopharmacology has recently taken steps to improve gender parity among reviewer selection and bring awareness to areas of the manuscript selection process that may be impacted by implicit bias <ref type="bibr" target="#b20">(21)</ref>. It is also important to consider how changes in impact factor may influence women's representation. Our results did show a significant negative correlation between the rate of change in impact factor and the rate of change in women's representation. This implies that in journals with an impact factor that is increasing quickly, such as new journals, it may be more difficult for women to have their work accepted as the impact factor increases. On the other hand, established journals with more stable impact factors are seeing the greatest rates of increase in women's representation. Prior work has shown that implementing processes such as double-blind review can increase the representation of women as authors <ref type="bibr" target="#b21">(22)</ref>. However, it is impossible to determine if the underrepresentation of women as senior authors is due to fewer acceptances than their male counterparts or if it is due to fewer initial manuscript submissions, as most journals do not release demographic information on the authors submitting manuscripts to their journal.</p><p>Among the highest-ranking psychiatry journals by impact factor, the overall representation of women and the proportion of women as last authors also increased over the last 10 years. For both the overall proportion of women authors and the proportion of women as last authors, the rate of improvement was numerically greater in the high-impact journals than in the overall collection of journals. This finding indicates that while the association between journal impact factor and women authorship was generally negative (although not statistically significant), the journals with the highest impact factor are showing substantial improvement in the overall proportion of women authors and the proportion of women as last authors.</p><p>Looking outside of psychiatry, studies assessing the gender gap within other academic disciplines have shown varying results. In pediatrics, where over 70% of physicians are women, there have been similar rates of improvements in the proportion of women as first authors and in the proportion of women as last authors, but the proportion of senior authors who are women still remains low (only 38.1% in 2016) <ref type="bibr" target="#b22">(23)</ref>. Academic orthopedics and neurosurgery, two disciplines known to have an underrepresentation of women, have seen much slower rates of increase for women authors <ref type="bibr" target="#b23">(24)</ref>.</p><p>The issues outlined here are relevant to all areas of academia, as two recent articles looking broadly across many fields, including the natural sciences, math, finance, and medicine, have demonstrated <ref type="bibr" target="#b24">(25,</ref><ref type="bibr" target="#b25">26)</ref>. Specifically, the presented results on gender disparity and the psychiatry results from the work of Holman et al. <ref type="bibr" target="#b25">(26)</ref> are quantitatively similar, demonstrating the reproducibility of the current data over a wider range of journals. While these prior works provide a broad summary of the state of gender parity, the limiting of journals to high-impact psychiatry journals allows us to dive deeper into factors that may influence the gender parity specific to our field. Indeed, our secondary analyses, such as the time to transition to last authorship or the relationship between the gender of the first and last authors, remain to be investigated in other areas of medicine and academia.</p><p>We note several limitations to the current results. First, we were unable to assign gender to 10.9% of authors using the genderize.io package. While previous studies have manually curated author gender using internet searches, this method would be unrealistic for the comprehensive set of articles used in this study. This limitation mainly concerns gender-neutral names (i.e., names that are approximately equally likely to denote a man or a woman) and would bias our results toward the null (i.e., failure to see differences in rates of women's authorship). Second, the present data do not allow us to examine trends in article submissions, only article publication. We therefore cannot examine whether gender bias affects the submission process and may reduce or delay publications from women authors. Third, we are unable to analyze the gender representation within journals that did not list author first name in PubMed. However, we have no reason to expect that the excluded journals would differ substantially from the analyzed journals. Finally, we recognize that the traditional first/last author distinction of seniority is not universally used. We chose to use this method instead of alternatives such as the sequence-determines-credit approach because it is the most commonly used in academic medicine and has increased interpretability (e.g., the proportion of senior authors who are women can be compared with the proportion of women professors).</p><p>Overall, our results demonstrate a slow but continued improvement in the proportion of women as first authors and last authors in 24 top psychiatry journals over the last past decade. However, the rate of improvement is less pronounced than might be expected in light of ongoing efforts to address parity, suggesting the need to continue efforts to improve conditions for advancement of women in academic psychiatry and explore new strategies for doing so.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure1. CONSORT-like diagram for journal article selection.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Temporal trends for author gender representation separated by journal (2008-2018). (A) Percentage of women authors by journal by year, (B) percentage of women as first authors by journal by year, (C) percentage of women as last authors by journal by year, and (D) Loess regression of percentage of women authorship by year.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Correlation between author gender representation and impact factor of journal. (A) Percentage of women authors, (B) percentage of women as first authors, and (C) percentage of women as last authors.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure4. Kaplan-Meier plot of the cumulative proportion of authors who transitioned to the last author position separated by gender.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Author Gender Representation by Journal (2008-2018) Sorted by Percentage of Women as Last Authors</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS AND DISCLOSURES</head><p>This work was supported by <rs type="funder">National Institute of Mental Health</rs> Grant Nos. <rs type="grantNumber">1R01MH106577</rs> (to RHP), <rs type="grantNumber">R01MH104284</rs> (to SF), and <rs type="grantNumber">R01MH113619</rs> (to SF). The study sponsors had no role in study design, writing of the report, or data collection, analysis, or interpretation. The authors had full access to all data and made the decision to submit for publication.</p><p>RHP has served on advisory boards or provided consulting to Genomind, <rs type="person">RID Ventures</rs>, and <rs type="funder">Takeda</rs>, and holds equity in <rs type="person">Psy Therapeutics</rs> and <rs type="person">Outermost Therapeutics</rs>. SF has served on advisory boards or provided consulting for <rs type="funder">Sage Therapeutics</rs>. KLH reports no biomedical financial interests or potential conflicts of interest.</p></div>
+<div><head>ARTICLE INFORMATION</head><p>From the Center for Quantitative Health (KLH, RHP), Division of Clinical Research, Massachusetts General Hospital, Boston, Massachusetts; and the <rs type="institution">Department of Psychiatry (SF), Icahn School of Medicine at Mount Sinai, New York, New York</rs>.</p><p>Address correspondence to <rs type="person">Roy H. Perlis, M.D., M.Sc</rs>., <rs type="affiliation">Department of Psychiatry, Harvard Medical School, Simches Research Building, 185 Cambridge Street, Boston</rs>, <rs type="grantNumber">MA 02114</rs>; E-mail: rperlis@partners.org.</p><p>Received Oct 10, 2018; revised Feb 2, 2019; accepted Feb 4, 2019.</p><p>Supplementary material cited in this article is available online at <ref type="url" target="https://doi.org/10.1016/j.biopsych.2019.02.010">https:// doi.org/10.1016/j.biopsych.2019.02.010</ref>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_SJY59Xf">
+					<idno type="grant-number">1R01MH106577</idno>
+				</org>
+				<org type="funding" xml:id="_SndyVzy">
+					<idno type="grant-number">R01MH104284</idno>
+				</org>
+				<org type="funding" xml:id="_uUchqnC">
+					<idno type="grant-number">R01MH113619</idno>
+				</org>
+				<org type="funding" xml:id="_yujWXTn">
+					<idno type="grant-number">MA 02114</idno>
+				</org>
+				<org type="funding" xml:id="_GAQcxVj">
+					<idno type="grant-number">2019.02.010</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="standard" xml:id="b0">
+		<monogr>
+			<author>APA Committee on Women in Psychology</author>
+			<title level="m">The changing gender composition of psychology: Update and expansion on the 1995 Task Force Report</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Heiser</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">More women than men enrolled in U.S. medical schools in 2017</title>
+		</analytic>
+		<monogr>
+			<title level="j">AAMC News</title>
+			<imprint>
+				<date when="2017-12-18">2017, December 18</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b2">
+		<monogr>
+			<author>Association of American Medical Colleges</author>
+			<title level="m">Distribution of U.S. medical school faculty by sex, rank, and department</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dutta</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hawkes</surname>
+					<forename type="first">S</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Iversen</surname>
+					<forename type="first">A</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Howard</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Women in academic psychiatry</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychiatrist</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="313" to="317"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Erden Aki</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ozcelik Eroglu</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Uslu</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Longitudinal analysis of female authorship of psychiatry articles in Turkey</title>
+		</analytic>
+		<monogr>
+			<title level="j">Noro Psikiyatri Arsivi</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="95" to="98"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b5">
+		<monogr>
+			<editor>
+				<persName>
+					<surname>Frangou</surname>
+					<forename>S</forename>
+				</persName>
+			</editor>
+			<title level="m">Women in Academic Psychiatry</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Süßenbacher</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Amering</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gmeiner</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schrank</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Gender-gaps and glass ceilings: A survey of gender-specific publication trends in Psychiatry between 1994 and 2014</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur Psychiatry</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="90" to="95"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Doyle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pederson</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meltzer-Brody</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Demographic and personal characteristics of male and female chairs in academic psychiatry</title>
+		</analytic>
+		<monogr>
+			<title level="j">Acad Psychiatry</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="402" to="409"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Morahan</surname>
+					<forename type="first">P</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rosen</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Richman</surname>
+					<forename type="first">R</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gleason</surname>
+					<forename type="first">K</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">The leadership continuum: A framework for organizational and individual assessment relative to the advancement of women physicians and scientists</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Womens Health</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="387" to="396"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Strand</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bulik</surname>
+					<forename type="first">C</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Trends in female authorship in research papers on eating disorders: 20-Year bibliometric study</title>
+		</analytic>
+		<monogr>
+			<title level="j">BJPsych Open</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="39" to="46"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Amering</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schrank</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sibitz</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">The gender gap in high-impact psychiatry journals</title>
+		</analytic>
+		<monogr>
+			<title level="j">Acad Med</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="946" to="952"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b11">
+		<monogr>
+			<author>Clarivate Analytics</author>
+			<title level="m">Data citation index</title>
+			<ref target="https://www.clarivate.com/products/web-of-science-forum/data-citation-index/">https:// www.clarivate.com/products/web-of-science-forum/data-citation-index/</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="software" xml:id="b12">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Kovalchik</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="m">Download Content from NCBI Databases, Package ‘RISmed’ Version 2.1.7</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="software" xml:id="b13">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Fantini</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">Search and Retrieve Scientific Publication Records from PubMed, Package ‘easyPubMed’ Version 2.3</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="software" xml:id="b14">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Wais</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="m">Gender Prediction Based on First Names, Package ‘genderizeR’ Version 2.0.0</title>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wais</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Gender prediction methods based on first names with genderizeR</title>
+		</analytic>
+		<monogr>
+			<title level="j">R J</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="17" to="37"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shen</surname>
+					<forename type="first">Y</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Webster</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shoda</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fine</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Persistent underrepresentation of women’s science in high profile journals</title>
+		</analytic>
+		<monogr>
+			<title level="j">bioRxiv</title>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b17">
+		<analytic>
+			<author>Association of American Medical Colleges</author>
+		</analytic>
+		<monogr>
+			<title level="m">Distribution of faculty by department, rank, and gender, 2009</title>
+			<imprint>
+				<date when="2009">2009</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Levinson</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kaufman</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Clark</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tolle</surname>
+					<forename type="first">S</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Mentors and role models for women in academic medicine</title>
+		</analytic>
+		<monogr>
+			<title level="j">West J Med</title>
+			<imprint>
+				<date when="1991">1991</date>
+				<biblScope unit="volume">154</biblScope>
+				<biblScope unit="page" from="423" to="426"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lieberman</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ehrhardt</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Simpson</surname>
+					<forename type="first">H</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arbuckle</surname>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fyer</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Essock</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Eliminating the glass ceiling in academic psychiatry</title>
+		</analytic>
+		<monogr>
+			<title level="j">Acad Psychiatry</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="523" to="528"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jordan</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carlezon</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Neuropsychopharmacology (NPP): Gender balance in journal function</title>
+		</analytic>
+		<monogr>
+			<title level="j">Neuropsychopharmacology</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="4" to="8"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Budden</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tregenza</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aarssen</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koricheva</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Leimu</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lortie</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Double-blind review favours increased representation of female authors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Trends Ecol Evol</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="4" to="6"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fishman</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Williams</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goodman</surname>
+					<forename type="first">D</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ross</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Gender differences in the authorship of original research in pediatric journals, 2001-2016</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Pediatr</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">191</biblScope>
+				<biblScope unit="page" from="244" to="249"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sing</surname>
+					<forename type="first">D</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jain</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ouyang</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Gender trends in authorship of spine-related academic literature-a 39-year perspective</title>
+		</analytic>
+		<monogr>
+			<title level="j">Spine J</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="1749" to="1754"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bendels</surname>
+					<forename type="first">M</forename><forename type="middle">H</forename><forename type="last">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Müller</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brueggmann</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Groneberg</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Gender disparities in high-quality research revealed by Nature Index journals</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page">e0189136</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Holman</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stuart-Fox</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hauser</surname>
+					<forename type="first">C</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">The gender gap in science: How long until women are equally represented?</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS Biol</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page">e2004956</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

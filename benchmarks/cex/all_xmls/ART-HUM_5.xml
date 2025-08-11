@@ -1,0 +1,2817 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">ACOUSTICALLY EXPRESSING AFFECT</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Aimee</forename><surname>Battcock</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">McMaster University</orgName>
+								<address>
+									<settlement>Hamilton</settlement>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michael</forename><surname>Schutz</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">McMaster University</orgName>
+								<address>
+									<settlement>Hamilton</settlement>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">ACOUSTICALLY EXPRESSING AFFECT</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Music Perception</title>
+						<idno type="ISSN">0730-7829</idno>
+						<idno type="eISSN">1533-8312</idno>
+						<imprint>
+							<biblScope unit="volume">37</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<biblScope unit="page" from="66" to="91"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">74CA697B27D21C9DCC5D817912A3CE13</idno>
+					<idno type="DOI">10.1525/mp.2019.37.1.66</idno>
+					<note type="submission">Received: August 10, 2018, accepted June 28, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>emotion</term>
+					<term>perception</term>
+					<term>applied music cognition</term>
+					<term>valence</term>
+					<term>arousal</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<div xmlns="http://www.tei-c.org/ns/1.0"><p>COMPOSERS CONVEY EMOTION THROUGH MUSIC BY co-varying structural cues. Although the complex interplay provides a rich listening experience, this creates challenges for understanding the contributions of individual cues. Here we investigate how three specific cues (attack rate, mode, and pitch height) work together to convey emotion in Bach's Well Tempered-Clavier (WTC). In three experiments, we explore responses to (1) eight-measure excerpts and (2) musically ''resolved'' excerpts, and (3) investigate the role of different standard dimensional scales of emotion. In each experiment, thirty nonmusician participants rated perceived emotion along scales of valence and intensity (Experiments 1 &amp; 2) or valence and arousal (Experiment 3) for 48 pieces in the WTC. Responses indicate listeners used attack rate, Mode, and pitch height to make judgements of valence, but only attack rate for intensity/arousal. Commonality analyses revealed mode predicted the most variance for valence ratings, followed by attack rate, with pitch height contributing minimally. In Experiment 2 mode increased in predictive power compared to Experiment 1. For Experiment 3, using ''arousal'' instead of ''intensity'' showed similar results to Experiment 1. We discuss how these results complement and extend previous findings of studies with tightly controlled stimuli, providing additional perspective on complex issues of interpersonal communication.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>''Music can serve as a way of capturing feelings, knowledge of feelings, or knowledge about the forms of feeling, communicating them from the performer or the creator to the listener.'' <ref type="bibr" target="#b35">(Gardner, 1993, p. 124)</ref></p> 
+<p>MUSIC'S RELATIONSHIP WITH EMOTION IS one of the central reasons for our engagement with it <ref type="bibr" target="#b55">(Juslin &amp; Laukka, 2004)</ref> and continues to fascinate composers, listeners, psychologists, and neuroscientists alike. Similar to their use in vocal expression, listeners attend to and decode specific cues in lawful ways, with certain cues unique to music. Emotional communication is complex, governed by a multitude of factors both within the acoustic signal itself as well as from learned associations and experiences (i.e., national anthems, cultural conventions, etc.). The complexity and importance of this issue has generated sustained research interest <ref type="bibr" target="#b44">(Hevner, 1936;</ref><ref type="bibr" target="#b59">Koelsch et al., 2004;</ref><ref type="bibr" target="#b97">Wiggins, 1998)</ref>, finding consistent agreement in many aspects of its communicative abilities. Although some aspects are difficult to quantify precisely, a growing body of research on the relationship between psychophysical cues and their emotional associations has proven informative.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Timing as a Cue for Emotional Expression</head><p>Timing is a powerful cue for emotional communication; however, understanding its effect is complex as timing encompasses several distinct musical properties such as tempo and rhythm <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999;</ref><ref type="bibr" target="#b57">Juslin &amp; Madison, 1999;</ref><ref type="bibr" target="#b79">Schellenberg, Krysciak, &amp; Campbell, 2000)</ref>. Tempo, which describes the number of beats per minute, is of great importance for conveyed emotion <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999;</ref><ref type="bibr" target="#b34">Gagnon &amp; Peretz, 2003;</ref><ref type="bibr" target="#b82">Scherer &amp; Oshinsky, 1977)</ref>. The role of musical tempo holds some parallels with articulation rate in speech, with fast and slow tempos associated with happiness and sadness respectively <ref type="bibr" target="#b45">(Hevner, 1937</ref><ref type="bibr" target="#b53">, Juslin, 1997;</ref><ref type="bibr" target="#b76">Rigg, 1940)</ref>. Sensitivity to tempo emerges at an early age, with children as young as four making affective judgments using tempo rather than familiarity <ref type="bibr" target="#b66">(Mote, 2011)</ref>. This develops earlier than their sensitivity to mode <ref type="bibr" target="#b19">(Dalla Bella, Peretz, Rousseau, &amp; Gosselin, 2001)</ref>. <ref type="bibr" target="#b66">Mote (2011)</ref> argues that the dependency on tempo suggests children may generalize associations between speed and emotion in human behavior-particularly speech-to music. This early sensitivity to timing may help explain why cues like tempo are found to have stronger effects than mode <ref type="bibr" target="#b43">(Hevner, 1935</ref><ref type="bibr" target="#b45">(Hevner, , 1937))</ref>.</p><p>Rhythm also plays a complex yet powerful role in emotional communication. The effect of rhythm is found to vary as a function of melody and intended emotion. In an experiment consisting of four measure melodies from unknown folksongs or experimentally composed melodies selected to express ''happy,'' ''sad,'' or ''scary,'' listeners rated melodies higher in the appropriately expressed emotion when excerpts contained rhythmic variation. In addition, the effect of rhythmic variation interacted with pitch <ref type="bibr" target="#b79">(Schellenberg et al., 2000)</ref>. The authors suggest their selection of emotional exemplars resulted in melodies that differed on a number of structural dimensions (number of contour changes, mean pitch level, as well as meter), which can explain why the effect of rhythm appeared context specific. Furthermore, the effect of rhythm can be so powerful it extends crossculturally, correlating with emotions like joy, sadness, and peace within Hindustani ragas presented to Western listeners <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999)</ref>. There participants rated pieces expressing joy to contain more simple rhythms in contrast to sad pieces, which participants judged to have more complex rhythms. In addition, these naı ¨ve, Western listeners could accurately identify the intended emotions conveyed within the ragas. These findings demonstrated that despite unfamiliarity with the musical stimuli, the cue of rhythm remained a salient indicator of the conveyed emotion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mode as a Cue for Emotional Expression</head><p>Unlike timing and pitch the musical cue of mode is specific to music, referring to the structure of pitch information. <ref type="bibr" target="#b43">Hevner's (1935)</ref> landmark work on mood associations with common Western modes (major and minor) illustrates that minor modes are associated with negatively valenced emotions such as ''sad'' and ''melancholy,'' whereas major melodies are described as ''cheerful'' and ''gay.'' In fact, mode is often a significant predictor of valence, with the major mode commonly associated with positively valenced emotions <ref type="bibr" target="#b17">(Costa, Fine, Enrico, &amp; Bitti, 2004;</ref><ref type="bibr" target="#b18">Crowder, 1985)</ref>.</p><p>The connection between emotion and musical mode is well established <ref type="bibr" target="#b47">(Hunter, Schellenberg, &amp; Schimmack, 2008;</ref><ref type="bibr" target="#b68">Pallesen et al., 2005;</ref><ref type="bibr" target="#b74">Quinto, Thompson, &amp; Keating, 2013;</ref><ref type="bibr" target="#b93">Webster &amp; Weir, 2005)</ref>, showing major-minor distinctions are useful predictors of emotions such as happiness and sadness <ref type="bibr" target="#b19">(Dalla Bella et al., 2001;</ref><ref type="bibr" target="#b36">Gerardi &amp; Gerken, 1995;</ref><ref type="bibr" target="#b58">Kastner &amp; Crowder, 1990)</ref>. The impact of mode is so strong it can shape emotional responses more so than pitch or timing <ref type="bibr" target="#b43">(Hevner, 1935</ref><ref type="bibr" target="#b45">(Hevner, , 1937))</ref>. However the relative contributions of mode and tempo are complex <ref type="bibr" target="#b34">(Gagnon &amp; Peretz, 2003;</ref><ref type="bibr" target="#b56">Juslin &amp; Lindström, 2010)</ref>.</p><p>Although powerful, mode is a culture-specific cue that requires learning <ref type="bibr" target="#b16">(Corrigall &amp; Trainor, 2014)</ref>. <ref type="bibr" target="#b65">Meyer's (1956)</ref> proposed theory of deviations highlights the idea that relationships between major and minor keys stem from expectations of regular and normative melodic progressions. In this regard, the associations and regularities must be internalized in order to form implicit and explicit musical expectations. Mode's power requires exposure: before the age of five, children are unable to identify this relationship between short melodies and emotional faces <ref type="bibr" target="#b19">(Dalla Bella et al., 2001;</ref><ref type="bibr" target="#b36">Gerardi &amp; Gerken, 1995;</ref><ref type="bibr" target="#b58">Kastner &amp; Crowder, 1990)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pitch as a Cue for Emotional Expression</head><p>Emotion can also be conveyed through the perceptual property known as pitch-the subjective ''highness'' or ''lowness'' of a tone. Despite its clear role in speech <ref type="bibr" target="#b5">(Bachorowski &amp; Owren, 1995;</ref><ref type="bibr" target="#b10">Breitenstein, Lancker, &amp; Daum, 2001;</ref><ref type="bibr" target="#b80">Scherer, 1995)</ref>, it's musical role is less straightforward. Pieces in higher octaves are generally found to be associated with more positive emotional adjectives such as happy, glad, and dreamy when assessing pairs of pitches <ref type="bibr" target="#b27">(Eitan &amp; Timmers, 2010)</ref>, scales <ref type="bibr" target="#b15">(Collier &amp; Hubbard, 2001)</ref>, commercially recorded works <ref type="bibr" target="#b39">(Gundlach, 1935;</ref><ref type="bibr" target="#b92">Watson, 1942;</ref><ref type="bibr" target="#b95">Wedin, 1972)</ref>, and transposed compositions <ref type="bibr" target="#b45">(Hevner, 1937)</ref>. Conversely, lower octaves are associated with negative emotions such as sad, agitated, and somber <ref type="bibr" target="#b39">(Gundlach, 1935;</ref><ref type="bibr" target="#b45">Hevner, 1937;</ref><ref type="bibr" target="#b82">Scherer &amp; Oshinsky, 1977;</ref><ref type="bibr" target="#b92">Watson, 1942;</ref><ref type="bibr" target="#b95">Wedin, 1972)</ref>.</p><p>However, research on discrete emotions provides a different perspective. For example, high pitches are in some cases associated with negative emotions, as well as low pitches with positive emotions <ref type="bibr" target="#b51">(Ilie &amp; Thompson, 2006;</ref><ref type="bibr" target="#b82">Scherer &amp; Oshinsky, 1977)</ref>. Second, pitch information (specifically pitch range) does not emerge as a strong predictor of listeners' ratings of target emotions across different musical cultures-although other cues do seem to translate <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999)</ref>. Those authors suggest this may have occurred given that pitch range plays an important role in expectancy, which can be generalized to emotional arousal, rather than specific emotions. Thus, the pitch information contained in Hindustani ragas did not provide useful information for listeners to interpret a specific, discrete emotion.</p><p>Research using the dimensional perspective of emotion also raises questions about pitch height's role. High-pitched music has been associated with both high and low-arousal emotional terms; listeners are found to associate high pitch with anger and fear <ref type="bibr" target="#b82">(Scherer &amp; Oshinsky, 1977;</ref><ref type="bibr" target="#b95">Wedin, 1972a)</ref>, in addition to affective adjectives representing low arousal states such as graceful and serene <ref type="bibr" target="#b45">(Hevner, 1937)</ref>. Musical stimuli lower in pitch have been associated with sadness and boredom <ref type="bibr" target="#b45">(Hevner, 1937;</ref><ref type="bibr" target="#b82">Scherer &amp; Oshinsky, 1977)</ref>, but also with affective adjectives such as excitement and agitation <ref type="bibr" target="#b45">(Hevner, 1937;</ref><ref type="bibr" target="#b76">Rigg, 1940)</ref>.</p><p>Although a body of research suggest pitch height plays a role in musical emotion, its relationship appears less clear than cues such as tempo <ref type="bibr" target="#b33">(Gabrielsson &amp; Lindström, 2010)</ref> and mode. The varying effects of pitch may emerge, in part, from the range of stimuli used within experiments. Differences may occur not only as a result of the increased complexity of polyphony <ref type="bibr" target="#b51">(Ilie &amp; Thompson, 2006)</ref> over monophony <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999)</ref>, but also with respect to performed versus synthesized and manipulated <ref type="bibr" target="#b82">(Scherer &amp; Oshinsky, 1977)</ref> musical stimuli. Monophonic and experimentally ''controlled'' stimuli are often used for studies exploring the cue-response relationships, therefore more work on the natural use of cues will shed light on the complex relationships between cues and listener perceptions of musical emotion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Measuring Emotional Communication</head><p>Assessments of musical emotion involve both discrete and dimensional models. Discrete models function as forced-choice paradigms based on the framework of <ref type="bibr" target="#b28">Ekman's (1992)</ref> theory of basic emotions. These models assume a limited number of fundamental emotions such as anger, joy, sadness, fear, etc., derivative of biologically determined emotional responses <ref type="bibr" target="#b9">(Borod, 2000)</ref>. Experimental procedures utilizing discrete emotional models often require participants to select which discrete emotion is represented <ref type="bibr" target="#b61">(Laukka, Eerola, Thingujam, Yamasaki, &amp; Beller, 2013)</ref>. Although discrete models facilitate paradigms involving recognition, they restrict the range of more complex but recognizable emotions <ref type="bibr" target="#b26">(Eerola &amp; Vuoskoski, 2013)</ref>.</p><p>In contrast, the dimensional model of emotion can offer more reliable measurement with emotionally ambiguous stimuli <ref type="bibr" target="#b25">(Eerola &amp; Vuoskoski, 2010)</ref>. For example, <ref type="bibr" target="#b78">Russell's (1980)</ref> popular circumplex model organizes emotional responses into two dimensions: valence and arousal. In this framework, valence represents the intrinsic positive or negative component of emotion and arousal represents the intensity or energy of the emotion. A number of studies have harnessed this view's utility in music <ref type="bibr" target="#b94">(Wedin, 1969</ref><ref type="bibr" target="#b95">(Wedin, , 1972a</ref><ref type="bibr" target="#b96">(Wedin, , 1972b))</ref>. In these studies, factor analyses on the semantic contents of adjectives or words listeners associated to musical excerpts indicated arousal and emotional valence emerge as the two main dimensions.</p><p>Two dimensional models can account for a large proportion of variance <ref type="bibr" target="#b84">(Schubert, 1999)</ref>; however, the standard dimensions of valence and arousal alone fail to fully explain responses <ref type="bibr" target="#b8">(Bigand, Vieillard, Madurell, Marozeau, &amp; Dacquet, 2005)</ref> leading to interest in alternatives. For example, <ref type="bibr" target="#b83">Schimmack and Grob (2000)</ref> argue that the ambiguous definition of arousal introduces confusion, which can be interpreted as either an awake-tired or tense-relaxed state. As such, many studies explore variations from the standard dimensional model, using labels such as tension <ref type="bibr" target="#b51">(Ilie &amp; Thompson, 2006)</ref>, activity <ref type="bibr" target="#b62">(Leman, Vermeulen, De Voogdt, Moelants, &amp; Lesafre, 2005)</ref>, and strength <ref type="bibr" target="#b64">(Luck et al., 2008)</ref>. Consequently, here we assess emotion using different dimensional labels in order to contribute to ongoing discussions on this contested topic.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Reflections on Stimuli Used to Explore Emotion</head><p>Several studies use polyphonic musical examples, such as one drawing upon stimuli chosen to represent specific quadrants of the circumplex model <ref type="bibr" target="#b21">(Dibben, 2004)</ref>. Others focus on film soundtracks designed to stir up emotion <ref type="bibr" target="#b91">(Vuoskoski &amp; Eerola, 2011)</ref>, offering insight into the processing of highly emotional musical experiences. However the popularity and familiarity of this music introduce interesting challenges to interpreting results. Participants may be familiar with certain pieces of film music, having formed pre-existing associations with moments in the film, influencing their responses to the music. Furthermore, pieces from film soundtracks can contain sounds from multiple instruments in an orchestra or band, which introduce another layer of complexity (incorporating different timbres, pitch information, etc.).</p><p>The growing field of Music Information Retrieval (MIR) also extends the literature of perceived emotions in music by extracting features from stimuli to determine which predict emotion ratings. This approach has led to useful insight on a wide range of stimuli, such as polyphonic ringtones <ref type="bibr" target="#b31">(Friberg, Schoonderwaldt, Hedblad, Fabiani, &amp; Elowsson, 2014)</ref>, film soundtracks <ref type="bibr" target="#b22">(Eerola, 2011)</ref>, and pop music <ref type="bibr" target="#b98">(Yang &amp; Chen, 2012)</ref>. For example, <ref type="bibr" target="#b60">Korhonen, Clausi, and Jernigan (2006)</ref> used five excerpts of a Western art music style, collecting the continual emotional appraisals for dimensions of valence and arousal. The authors used the overall median emotional appraisal across the response timeseries to represent each piece in their analyses. They then created models of the emotional content for each piece as a function of time and the musical features extracted from excerpts. As music is a time and potentially emotion varying stimuli, these time-series approaches can prove powerful tools for exploration. At the same time, requiring participants to provide continuous responses affects participants' cognitive load, potentially affecting their emotional responses. Additionally, although stimuli used in MIR research on this topic is rooted in naturalistic music listening, a large proportion focus on either pop music or soundtrack music containing multiple instruments. The sheer complexity of these naturalistic examples complicates efforts to draw strong conclusions about specific musical cues. Finally, the degree to which automated analyses accurately reflect the structural cues recognized as significant by music theorists is in itself an open question <ref type="bibr">(Byrd &amp; Crawford, 2002)</ref>. Consequently, additional work is needed to explore conveyed emotion in other musically polyphonic styles, and assessment of the effectiveness of feature extraction compared to score based cue quantification is crucial.</p><p>In order to provide a more focused perspective on the specific cues communicating emotional information, researchers often turn to monophonic (single-line) melodies affording rigorous quantification <ref type="bibr" target="#b40">(Hailstone et al., 2009;</ref><ref type="bibr" target="#b63">Lindström, 2006;</ref><ref type="bibr" target="#b74">Quinto et al., 2013)</ref>. Others have turned to stimuli designed or composed to depict discrete emotions <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999;</ref><ref type="bibr" target="#b40">Hailstone et al., 2009)</ref>. These approaches avoid the problems inherent with more naturalistic approaches such as studies of film music and/or MIR based analyses of large corpora of popular music, by offering precise control of multiple parameters. However, they are far removed from the types of music that so powerfully evoke strong emotions-such as the sounds heard in concert halls, home stereo systems, and personal listening devices. In addition, experimental designs independently manipulating cues such as pitch and timing to avoid confounds overlook the powerful cumulative effects of the ways in which great composers chose to co-vary certain cues <ref type="bibr" target="#b86">(Schutz, 2017)</ref>.</p><p>Previous work has offered useful insight into musical emotion utilizing naturalistic stimuli with considerable variation on many dimensions, or tightly controlled stimuli with controlled manipulations. Here we aim to fill a gap between these approaches by exploring perceptual consequences of specific cues in unaltered renditions of widely performed and studied music. In order to identify the independent contributions of ''natural'' cues lacking independence, we drew on our team's previous extensive analysis and encoding of cues such as pitch timing and mode, as well as the technique of commonality analysis, or variance partitioning, on regression modeling. This provides novel insight into the unique and shared contributions of co-varying cues as manipulated by a renowned composer, offering useful new insight into how they work together to convey emotion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The Present Study</head><p>Here we assess the relationship between musical structure and emotion perception of unaltered music written by a historically distinguished composer, J. S. Bach (1685-1705). Building upon previous approaches manipulating cues such as pitch and timing, we explored the degree to which Bach's choices of mode, pitch, and timing affect listeners' emotional responses to complex polyphonic music routinely performed and enjoyed in a wide variety of musical settings. Specifically, we used J. S. Bach's well known Well-Tempered Clavier (WTC) Book 1 as performed by Friedrich Gulda <ref type="bibr" target="#b2">(Bach, 1722/1973)</ref>. Our approach complements and extends previous targeted explorations of manipulations to individual cues by exploring the perceptual consequences of the ways in which Bach naturally co-varied their use in a set of pieces still widely performed and studied. This preserves the musical complexity often experienced by listeners, offering on opportunity to assess generalizability of previous research on monophonic or experimentally designed acoustic stimuli, as well as previous studies of emotional excerpts that likely came with extra-musical associations (i.e., film scores, popular music excerpts, etc.)</p><p>Given the significance of mode <ref type="bibr" target="#b19">(Dalla Bella et al., 2001;</ref><ref type="bibr" target="#b42">Heinlein, 1928;</ref><ref type="bibr" target="#b56">Juslin &amp; Lindström, 2010;</ref><ref type="bibr" target="#b74">Quinto et al., 2013)</ref>, we wanted to base this exploration on a ''balanced'' set of major and minor key pieces. This proved surprisingly difficult, as Western music is overwhelmingly written in major keys. Classical composers such as Haydn and Mozart display a bias towards the major mode <ref type="bibr" target="#b87">(Tan, Pfordresher, &amp; Harre ´, 2010)</ref>, which can also be found in both jazz <ref type="bibr" target="#b11">(Broze &amp; Shanahan, 2013)</ref> and rock <ref type="bibr" target="#b88">(Temperley &amp; de Clercq, 2013)</ref>. As such, Bach's WTC is ideally suited for this exploration and offers a naturally balanced set of pieces with one Prelude and one Fugue in each major and minor key.</p><p>Emotional responses to the stimuli were encoded using a dimensional model in order to account for the complexity and richness of emotional affect within this set of pieces. We adapted <ref type="bibr" target="#b78">Russell's (1980)</ref> circumplex model of emotion to represent the emotional space with scales of valence and arousal. For comparison, we tested two versions-one incorporating dimensions of valence and intensity (Experiments 1 and 2), and another with dimensions of valence and arousal (Experiment 3). In order to generalize our results broadly, we chose to use participants with minimal music training. Although previous research indicates nonmusicians and musicians may perceive emotional connotations in music similarly <ref type="bibr" target="#b8">(Bigand et al., 2005;</ref><ref type="bibr" target="#b54">Juslin &amp; Laukka, 2003)</ref>, those of untrained participants allowed us to establish a consistent baseline that could be expanded upon in future research.</p><p>This study had two primary aims. First, to determine the relationship between timing, mode, and pitch on the perception of emotion, as they naturally vary in an ecologically valid polyphonic stimulus. Second, to determine the validity of an alternative affective dimensionintensity-in lieu of <ref type="bibr" target="#b78">Russell's (1980)</ref> dimension of arousal. Our hypotheses included predictions that: 1) timing, mode, and pitch cues will predict listener ratings of emotion; 2) musical mode will increase in its importance within musically ''resolved'' excerpts (excerpts cut to end in the piece's starting nominal key); and 3) cues will vary to the extent they are important across valence and intensity/arousal. For our second aim, we predicted that listener responses of emotional intensity (Experiment 1) for perceived emotions would not be significantly different than ratings of perceived emotional arousal (Experiment 2).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experiment 1: Intensity</head><p> METHOD Participants. We recruited thirty nonmusicians (&lt; 1 year of music training) undergraduates (12 males, M ¼ 19.7 years, SD ¼ 2.9; 18 females, M ¼ 19.1 years, SD ¼ 3.0) from the McMaster University Psychology participant pool who reported normal hearing and normal or corrected-to-normal vision. The experiment met ethics standards according to the McMaster University Research Ethics Board. Participants received course credit in return for participation.</p><p>Musical stimuli. Experimental stimuli consisted of audio recordings of J. S. Bach's WTC (Book 1) as performed by Friedrich Gulda (n ¼ 48). Excerpts contained the first eight measures of each piece, with a two-second fade out starting at the ninth musical measure. Although faster and slower pieces varied in duration, this approach provided consistency in terms of musical units (measure length). Stimuli lasted 7-64 s in duration (M ¼ 30.2 s, SD ¼ 13.6). We prepared all excerpts using Amadeus Pro.</p><p>Cue quantification. Beyond encoding the modality indicated in each piece's key signature, our analysis required quantifying two additional cues: pitch height and timing. We calculated pitch height using methods based upon <ref type="bibr" target="#b49">Huron, Yim, and Chordia (2010)</ref>-and later extended by <ref type="bibr" target="#b72">Poon and Schutz (2015)</ref>-to weight notes according to their duration (similar to other music, these pieces included both long and short notes). In this approach, pitch height is calculated by summing duration-weighted pitch values within each measure, then dividing by the sum of note durations within that measure. Previously, <ref type="bibr" target="#b72">Poon and Schutz (2015)</ref> also used this method to calculate theoretical averages for the first eight measures of each of the 48 pieces using tempi noted in a score. Here we used that approach as a point of departure, adjusting the tempi used in the calculations to reflect those in the stimuli played for participants. We also re-calculated information as needed for Experiment 2, which involved excerpts of variable lengths rather than the eight-measure excerpts used in Experiment 1 and 3. This ensured that all attack rate information used for comparison in each experiment corresponded to the stimuli heard by participants. Additional technical details on pitch and timing quantification methods are available in <ref type="bibr" target="#b72">Poon and Schutz (2015)</ref>, including a figure annotating the exact pitch and timing values assigned to each note in the first measure of the C Major Prelude. We used this approach to calculate musical attack rate in part to allow for parallel comparisons of timing in speech, specifically with articulation rate <ref type="bibr" target="#b52">(Johnstone &amp; Scherer, 2000;</ref><ref type="bibr" target="#b81">Scherer, 2003)</ref>.</p><p>Pitch height values varied from 33.13-53.00 (M ¼ 43.90, SD ¼ 4.03) corresponding to *F3 to *C 5; attack rate information for eight-measure excerpts ranged from 1.30-10.13 attacks per s (M ¼ 4.91, SD ¼ 2.18). We operationalized mode as the tonal center of the piece, as indicated by the denoted key signature of each score, coded dichotomously (0 ¼ minor, 1 ¼ major). Admittedly, nominally minor excerpts in our experiment contained some major chords and vice versa, making for a less controlled treatment of mode than monophonic excerpts created to be either unambiguously major or minor. Nonetheless, this is entirely in keeping with normative practice in musical composition, where harmonic progressions typically include both major and minor chords. As each of these pieces starts in the nominal key, we believe it is a reasonable way to explore mode as it is experienced in concert halls and on recordings-rather than the more controlled (but uncommon in natural practice) approaches found in psychological experiments.</p><p>Design and procedure. Participants first completed a consent form and musical experience survey (see Appendix A), then entered a sound-attenuating booth where the research assistant verbally instructed participants on the rating task. After each excerpt, participants rated two aspects of perceived emotion, using scales for valence and intensity. Instructions emphasized the full use of each scale displayed. Research assistants told participants they would be asked to provide ratings of emotion based on what the music conveys on two scales after listening to each piano excerpt. They described valence as how positive or negative the emotion sounds, ranging on a scale from 1 (negative) to 7 (positive). Intensity referred to the ''energy'' of the emotion, where high intensity pieces may sound excited or agitated, and low arousal pieces may sound dull or calm. The scale of intensity ranged from 1 (low intensity) to 100 (high intensity). We asked participants to make ratings based on emotion conveyed, rather than inquiring about emotions evoked <ref type="bibr" target="#b32">(Gabrielsson, 2002)</ref>. After hearing these instructions, participants completed four practice trials with alternate recordings not used in testing trials performed by Rosalyn Tureck <ref type="bibr" target="#b0">(Bach, 1722/1953)</ref>, where they could ask the research assistant for procedural clarifications. We conducted the experiment using Psy-choPy <ref type="bibr" target="#b71">(Peirce et al., 2019)</ref>, a Python-based psychology program, and presented the experiment on a DELL monitor. Participants listened to the stimuli at a consistent and comfortable listening level through two Gateway 2000 speakers placed on either side of the computer monitor in a sound-attenuating booth (IAC Acoustics, Winchester, US). Each participant heard an individually randomized order of the 48 excerpts and provided responses via an Apple mouse connected to a 13-inch MacBook Pro located outside the booth.</p><p> RESULTS Visualizing participant data on <ref type="bibr" target="#b78">Russell's (1980)</ref> twodimensional circumplex model provides a useful first step to understanding emotional responses in these stimuli. Figure <ref type="figure" target="#fig_1">1a</ref> shows ratings for the first experiment, illustrating minor key pieces received lower valence ratings than major for both preludes (left column) and fugues (right column). In fact, of the 24 preludes, only one major piece (B major) fell in the lower half of valence ratings. Of the 24 fugues, only one (C major) clearly fell in the lower half of valence ratings (B major and D minor fugues tied for the 12th lowest valence rating). This is consistent with previous research indicating mode's strong effect on emotion, and suggests our treatment of mode as a binary variable based on the nominal key of each piece provides a useful framework for understanding the emotional messages conveyed. However, as shown by <ref type="bibr" target="#b72">Poon and Schutz (2015)</ref>, composers co-vary cues in normative musical practice, making it difficult to understand the ultimate reason for this putative effect of mode. To explore this issue further, we turned to three separate statistical analyses. These both provide different perspectives on interpreting the data, as well as useful points of comparison with a rich literature on emotional communication in both speech and music.</p><p>In order to clarify cue contributions, we assessed participant ratings from three perspectives. First, we examined Pearson product-moment and Pearson point biserial correlations between the three acoustic cues (pitch, timing, mode) and the two dimensions of response (valence, intensity). Second, we assessed the relationship between acoustic cues (attack rate, mode, pitch) and listener responses, as captured by a twodimensional model of valence and intensity, using a least squares standard multiple linear regression. Third, we further assessed relative cue contributions with commonality analyses to determine partitioned variance within the regression models. We determined Cronbach's alpha for listener ratings across 48 excerpts to be a ¼ 0.98 for both valence and intensity ratings, suggesting participant ratings are highly consistent. Valence ratings ranged from 1.90-6.13 (M ¼ 4.12, SD ¼ 1.20) and intensity ratings ranged 21.00-82.20 (M ¼ 51.52, SD ¼ 19.69).</p><p>Correlations. Within the three acoustic cues, we found a significant correlation only between attack rate and mode, r(46) ¼ .43, p &lt; .01). Pitch height correlated significantly with neither attack rate, r(46) ¼ À.14, p ¼ .35, nor mode, r(46) ¼ .14, p ¼ .33). Independentsamples t-tests revealed significant differences in attack rate attack rate, t(46) ¼ -3.24, p &lt; .05, but not pitch height, t(45) ¼ À.98, p ¼ .33, between major and minor key pieces. This is consistent with finding a significant correlation between mode and attack rate, but a lack of significant correlation between mode and pitch height. Within participant ratings, we found a positive correlation between ratings of valence and intensity, r(46) ¼ .80, p &lt; .001, indicating the dimensions of the standard two dimensional model did not function independently in this context.</p><p>Exploring the relationship between acoustic cues and participant ratings, both attack rate, r(46) ¼ .71, p &lt; .001, and mode, r(46) ¼ .76, p &lt; .001, correlated with valence ratings. This is consistent with the visualization in Figure <ref type="figure" target="#fig_1">1a</ref> suggesting that mode plays a strong role in explaining valence ratings. Similarly, both attack rate, r(46) ¼ .71, p &lt; .001, and mode, r(46) ¼ .44, p &lt; .002, correlated with intensity ratings. In contrast, pitch height did not play a meaningful role, as it correlated with neither valence, r(46) ¼ .17, p ¼ .24, nor intensity, r(46) ¼ À.08, p ¼ .61, ratings. This analysis suggests that emotional responses are affected by only by timing and mode, with minimal role of pitch height. This outcome is helpful in drawing contrasts between previous work on the perceptual consequences of pitch and timing on emotional speech <ref type="bibr" target="#b10">(Breitenstein, Van Lancker, &amp; Daum, 2001)</ref>  themselves (e.g., timing correlates with mode)-which are likely common in music written for artistic purposes-complicates interpretation of simple correlations between cues and ratings. Consequently, we turned to additional analyses to better understand what cues predict listener ratings of emotions, as well as the specific contributions of individual cues to participant responses.</p><p>Linear regression analysis. We ran a standard linear multiple regression analyses on normalized predictor values using the R Statistical Package to assess predictors of mean ratings of valence and intensity. We chose the major mode as the reference level for mode, where the remaining level of the categorical variable (minor mode) is contrasted against it in analysis. The regression analysis revealed that all three acoustic cuesattack rate, mode, and pitch height-significantly predicted ratings of valence (Table <ref type="table" target="#tab_0">1</ref>). In contrast, only attack rate predicted ratings of intensity (Table <ref type="table" target="#tab_0">1</ref>). This approach illustrates two important insights beyond those available from the correlations alone. First, when examined with this more nuanced assessment, mode does not predict intensity ratings. Although it correlated with intensity ratings in our first analysis, the linear regression suggests its contribution stems from its correlation with attack rate. Conversely, although we did not find a simple correlation between pitch height and valence ratings in our first analysis, it did serve as a significant predictor here.</p><p>Overall, the 3-cue predictor model accounted for 77% of the variance in ratings of valence (adjusted R 2 ¼ .765), F(3, 44) ¼ 52.13, p &lt; .001, and 49% of the variance in ratings of intensity (adjusted R 2 ¼ .492), F(3, 44) ¼ 16.20, p &lt; .001. Tolerance and variance inflation factor (VIF) values indicated no issue of multicollinearity despite moderate correlation, r ¼ .43, p ¼ .002, between attack rate and mode (attack rate, tolerance ¼ .773, VIF ¼ 1.293; mode, tolerance ¼ .772, VIF ¼ 1.295). The inclusion of interaction effects increased overall model predictability by a small amount for valence (adjusted R 2 ¼ .771), F(7, 40) ¼ 23.55, p &lt; .001, and intensity (adjusted R 2 ¼ .494), F(7, 40) ¼ 7.55, p &lt; .001 (see Appendix B).</p><p>Commonality analysis. Finally, in order to more fully understand the overall contributions of each cue, we used commonality analysis to decompose the R 2 of each model. This technique affords examination of contributions of both unique and shared variance for each of our predictors (Table <ref type="table" target="#tab_1">2</ref> &amp; <ref type="table" target="#tab_2">3</ref>). Commonality analysis allows for reporting on the multivariate relationships between predictors beyond beta values, however does not address potential interaction effects within the model. Here, ''shared'' variance between predictors (overlapping regions in Figure <ref type="figure" target="#fig_1">2</ref>) represent the variance those variables have in common with the dependent variable <ref type="bibr" target="#b75">(Ray-Mukherjee et al., 2014)</ref>. The presence of negative commonalities occurs when correlations among predictor variables have opposite signs <ref type="bibr" target="#b70">(Pedhazur, 1997)</ref>, or in the case that a variable confounds the explained variance of another variable in the model <ref type="bibr" target="#b12">(Capraro &amp; Capraro, 2001)</ref>, such as a suppressor variable. Suppressor variables remove error variance in other predictors. As a result, the variable ''suppresses'' irrelevant variance and increases the predictive ability of the other predictor and regression model overall <ref type="bibr" target="#b14">(Cohen &amp; Cohen, 1983;</ref><ref type="bibr" target="#b12">Capraro &amp; Capraro, 2001)</ref>.</p><p>Cue contributions. To further explore the relative strengths of each cue, we examined their unique and shared contributions to predictions of participant response (Figures 3 &amp; 4) using commonality analysis. Uniquely, attack rate accounted for the largest amount of variance within both valence (25%) and intensity (59%) ratings. Mode uniquely accounted for 27% of variance within valence ratings, but only 4% in intensity ratings. Pitch height uniquely accounted for 3% of variance in valence ratings but did not meaningfully contribute (&lt; 1%) to the intensity model.</p><p>Shared variance accounted for a total of 45% of valence and 37% of intensity ratings, with the largest contribution from the relationship between attack rate and mode (44% contributed to valence model, 36% to intensity model). Mode and pitch height contributed 6% of shared variance to the ratings of valence (Table <ref type="table" target="#tab_1">2</ref>) but did not to contribute to ratings of intensity (Table <ref type="table" target="#tab_2">3</ref>). Attack rate and pitch height accounted for -3% of shared valence variance in contrast to 4% of shared intensity variance. Variance common between all three cues explained -3% and -3% of variance in the valence and intensity models respectively. Some researchers interpret negative commonalities as indicating confounding suppression effects <ref type="bibr" target="#b7">(Beaton, 1973)</ref>, whereas others postulate this suggests the predictor of interest has no influence <ref type="bibr" target="#b30">(Frederick, 1999)</ref>. <ref type="bibr" target="#b12">Capraro and Capraro (2001)</ref> caution the interpretation of negative values for variance common to all predictors: they argue a negative commonality value for all cues combined suggests an inverse relationship to the dependent variable, in contrast to the direct relationships found for individual predictors. As this represents the first application of commonality analysis to the study of music, for our purposes we believe it best to follow the latter approach and focus on cues with positive values.</p><p> DISCUSSION Our results are consistent with previous findings in both music and speech that faster attack rates lead to higher judgments of valence and intensity, suggesting faster delivery of acoustic information may convey more positive emotions <ref type="bibr" target="#b10">(Breitenstein et al., 2001;</ref><ref type="bibr" target="#b53">Juslin, 1997)</ref>. In contrast to work from <ref type="bibr" target="#b51">Ilie and Thompson (2006)</ref> and <ref type="bibr" target="#b82">Scherer and Oshinsky (1977)</ref>, we found pitch height did not correlate with valence or intensity ratings, but appeared as a significant predictor within the three-cue regression model of valence ratings. Our analysis of the structural properties identified a correlation between mode and timing, consistent with previous findings that major key pieces tend to be faster than minor-both in these specific excerpts <ref type="bibr" target="#b72">(Poon &amp; Schutz, 2015)</ref>, as well as more generally across a range of musical literature <ref type="bibr" target="#b73">(Post &amp; Huron, 2009)</ref>. However, our results build on those outcomes by exploring perceptual evaluations of pieces varied in mode and timing. Additionally, they provide a useful converging measure to research using more constrained or systematically manipulated stimuli.</p><p>Attack rate significantly predicts listener ratings of both valence and intensity, indicating timing cues play an important role in both aspects of emotion. Both our linear regression and commonality analyses demonstrate timing as the most consistent predictor of emotional ratings. According to commonality analysis, attack rate uniquely predicted 25% of the total variance of valence ratings, and 59% of total intensity variance. Additionally, its shared contributions with mode predicted 44% of valence 35% of intensity variance. In contrast, pitch height contributed minimally (3% for valence, &lt; 1% for intensity). While attack rate remained the most valuable cue for ratings of intensity, mode uniquely predicted more variance of valence ratings than attack rate. This holds important implications for performer's interpretation of the musical score, for unlike pitch and mode, performers' decisions regarding tempo directly affect timing cues such as attack rate, and a review of well-known recordings of this music demonstrates considerable disagreement in tempo interpretation. For example, <ref type="bibr" target="#b69">Palmer (1994)</ref>'s review of tempi used in this set of pieces illustrates that Glenn Gould <ref type="bibr" target="#b1">(Bach, 1722/1965)</ref> performed the E minor fugue (BWV 855) at twice the rate of Tureck <ref type="bibr" target="#b0">(Bach, 1722/1953)</ref>. Similarly, Newman <ref type="bibr" target="#b2">(Bach, 1722/1973)</ref> performed the B minor prelude (BWV 869) at three times the rate of Gulda <ref type="bibr" target="#b2">(Bach, 1722/1973)</ref>. Finding that the cue most under control of performer interpretation plays a considerable role in emotion raises intriguing questions regarding the complex relationship between compositional structure and performer interpretation in shaping listeners' responses to musical passages.</p><p>Mode is typically regarded as an important cue for the perception of emotional valence <ref type="bibr" target="#b47">(Hunter et al., 2008;</ref><ref type="bibr" target="#b68">Pallesen et al., 2005)</ref>. Our findings are to some degree consistent with this view, as depicted by plotting the mean rating of each piece across the circumplex space (Figure <ref type="figure" target="#fig_1">1</ref>). Further, our statistical analyses illustrate that mode correlates with valence, with major key excerpts rated higher in valence and more intense. This is consistent with a large body of previous work, where major keys are commonly associated with positive valence in contrast to minor keys <ref type="bibr" target="#b43">(Hevner, 1935)</ref>. Regression analyses converge with the correlational results by finding this cue significantly predicted valence ratings. However, they also illustrate that it played little role in predicting intensity ratings despite a significant correlational trend (likely a reflection of Bach's use of faster attack rates for major key pieces). According to our assessment of relative cue strength, mode functioned as the strongest cue for valence ratings, and second for intensity ratings. Uniquely, it predicted more variance associated with valence ratings (26.89%) than intensity (4.30%). This demonstrates that while mode is important for distinctions of valence, it may not be informative in the perception of emotional intensity. Furthermore, our results suggest mode's contribution to listener ratings, specifically for emotional intensity, may be a function of its relationship to cues more crucial to this emotional dimension, such as attack rate.</p><p>The selective effect of mode is particularly intriguing given disagreement over mode's significance in emotional evaluation. Although many studies of musical emotion have found it plays a powerful role <ref type="bibr" target="#b19">(Dalla Bella et al., 2001;</ref><ref type="bibr" target="#b47">Hunter et al., 2008;</ref><ref type="bibr" target="#b93">Webster &amp; Weir, 2005)</ref>, prominent music theorists suggest its role is minimal and may be the result of its correlation with other cues of musical structure <ref type="bibr" target="#b41">(Hatten, 2004)</ref>. Our results help to clarify some confusion over this important musical parameter by demonstrating mode's important role in listener perception of valence, but not intensity.</p><p>Research on music and speech suggest higher pitches correlate with positive valence <ref type="bibr" target="#b10">(Breitenstein et al., 2001;</ref><ref type="bibr" target="#b45">Hevner, 1937)</ref>. In contrast, here pitch height correlated with neither valence nor intensity. Furthermore, it had minimal predictive power in the commonality analysis. We suspect this difference may reflect the more complex role of pitch height in music with multiple voices and harmonic structure. Research on speech tokens often use a single voice for obvious reasons, and musical research exploring parallels often uses monophonic or single-voiced stimuli <ref type="bibr" target="#b40">(Hailstone et al., 2009;</ref><ref type="bibr" target="#b63">Lindström, 2006;</ref><ref type="bibr" target="#b74">Quinto et al., 2013)</ref>. Although such simplified monophonic melodies provide a compelling parallel to speech, they share a tenuous connection to music that typically contains a great deal of pitch information beyond that of a single voice (i.e., polyphony, accompaniment, harmonic context, etc.). Pitch height predicted valence ratings in the linear regression analysis (albeit to a lesser degree than other cues and cue combinations), but did not significantly predict intensity ratings. Although this might suggest some role for pitch height, our commonality analyses found it contributed minimally. Unique contributions of pitch height accounted for &lt; 1% (intensity) and 3% (valence) of listener ratings. Therefore, we conclude pitch height holds limited predictive value within this corpus of complex, polyphonic music created by a renowned composer for musical-rather than research-purposes.</p><p>In summary, our regression findings are somewhat consistent with previous work indicating the role of timing, mode, and pitch in perceived emotion; however, we found minimal contribution of pitch for both valence and arousal ratings. Our findings also suggest cue importance varies as a function of emotional dimension. All three cues predicted valence ratings, yet only attack rate predicted intensity ratings. Mode and pitch height served as better predictors of valence rather than intensity. These results inform previous debates on the importance of timing and mode <ref type="bibr" target="#b34">(Gagnon &amp; Peretz, 2003;</ref><ref type="bibr" target="#b56">Juslin &amp; Lindström, 2010)</ref>, suggesting timing cues (quantified as attack rate) contribute more to expressed emotion than mode. Finally, the commonality analyses suggest attack rate is the strongest contributor to both dimensions, Previous research suggests mode and timing cues are of high importance for the perception of emotion <ref type="bibr" target="#b23">(Eerola, Friberg, &amp; Bresin, 2013;</ref><ref type="bibr" target="#b34">Gagnon &amp; Peretz, 2003)</ref>, where mode strongly predicts emotional valence. Therefore, the dominance of timing contributions in both dimensions of Experiment 1 raises an important issue: Would better control over musical key changes improve the weight of mode in listener judgements of valence? To assess this issue, we conducted an additional experiment with musically 'resolved' excerpts.</p></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experiment 2: Musically Resolved Excerpts</head><p>Our first experiment used eight-measure excerpts for all 48 pieces. Although this approach has the benefit of consistency, some pieces modulated to different keys by the end of the excerpt (i.e., the eighth measure of the C minor prelude outlines a C major chord). In order to explore whether this affected mode's strength in Experiment 1, we ran a second experiment using excerpts ending in the piece's nominal key (e.g., C major). This required variability across stimuli length (in measures) but offers a useful complementary perspective to the strict eight-measure durations of the first experiment, allowing for better insight into the relative strength of mode within this corpus of music. We then compared these responses to revised pitch and timing information corresponding to the segment evaluated. For excerpts longer than eight measures we calculated the pitch height and timing of the additional measures; for excerpts shorter than eight measures we removed the measure in question from the pitch and timing calculations used to predict responses. For example, as this experiment used an 11-measure segment of the D minor prelude, we calculated pitch and timing information for three additional measures beyond the eight calculated previously.</p><p>METHOD We followed the same procedure as in the first experiment but used variable length (rather than eight measure) excerpts ending in the piece's nominal key. Participants included 30 nonmusicians (&lt; 1 year music training) undergraduate students (10 males, M ¼ 18.3 years, SD ¼ 0.7; 20 females, M ¼ 18.8 years, SD ¼ 1.0). They reported normal hearing and normal or correctedto-normal vision. Musical stimuli ranged from 7-52 s (M ¼ 25.4 s, SD ¼ 11.0). Participants received course credit in return for participation.</p><p>Cue quantification. Pitch and timing information corresponded to the quantification of each cue within the specific number of measures required to reach a ''resolution'' back to the home key for each excerpt. In these excerpts, pitch height values varied from 33.13-53.13, corresponding to *F3 to *C 5 (M ¼ 43.87, SD ¼ 4.15), attack rate information ranged 1.30-10.13 attacks/s (M ¼ 4.87, SD ¼ 2.22). We quantified mode the same way as in experiment 1 (0 ¼ minor, 1 ¼ major).</p><p> RESULTS Visualizations of ratings on Russell's circumplex model appear in Figure <ref type="figure" target="#fig_1">1b</ref> for ease of comparison with previous results. Similar to the first experiment, only one major prelude (B major) appeared in the lowest half of valence ratings, and only one major key fugue (C major) appeared in the lowest half of valence ratings. Similar to Experiment 2, Cronbach's alpha for listener ratings appeared as a ¼ .97 for both valence and intensity ratings, indicating high agreement across participants' ratings. Participants' valence rating ranged from 1.80-5.97 (M ¼ 4.12, SD ¼ 1.20) and intensity ratings ranged from SD ¼ 18.20).</p><p>Correlations. As we recalculated pitch and timing information for these variable length excerpts, we reran our original analysis of the acoustic cues. Despite these changes, we found similar to the first experiment a significant correlation between the cue of attack rate and mode, r(46) ¼ .44, p &lt; .001. Pitch height significantly correlated with neither attack rate, r(46) ¼ À.17, p ¼ .26, nor mode, r(46) ¼ .13, p ¼ .39. Similar to the first experiment, t-tests revealed a significant difference in attack rates, t(46) ¼ -3.27, p &lt; .05, between the major and minor key pieces, but no significant difference in pitch height, t(45) ¼ À0.86, p ¼ .39. Ratings of valence and intensity correlated significantly, r(46) ¼ .78, p &lt; .001, which suggests these dimensions functioned in a dependent manner.</p><p>Attack rate, r(46) ¼ .69, p &lt; .001, and mode, r(46) ¼ .80, p &lt; .001, significantly correlated with valence ratings. Attack rate, r(46) ¼ .72, p &lt; .001, and mode, r(46) ¼ .46, p &lt; .001, also correlated significantly with intensity ratings. In contrast, pitch height significantly correlated with neither ratings of valence, r(46) ¼ .15, p ¼ .32, nor intensity, r(46) ¼ À.09, p ¼ .55.</p><p>Regression analysis. All three cues significantly predicted participants' valence ratings. However, only attack rate predicted intensity ratings (Table <ref type="table" target="#tab_3">4</ref>). In contrast to the correlational results, mode did not predict intensity ratings. We found no significant simple correlation between pitch height and ratings of valence; however, it significantly predicted listener judgements of valence in our regression model.</p><p>The three-cue predictor model accounted for 79% of the variance in valence ratings (adjusted R 2 ¼ .789), F(3, 44) ¼ 59.73, p &lt; .001, and 51% of the variance in intensity ratings (adjusted R 2 ¼ .514), F(3, 44) ¼ 17.58, p &lt; .001. Regression models investigating interaction effects show similar predictability in variance prediction for valence (adjusted R 2 ¼ .790), F(7, 40) ¼ 26.22, p &lt; .001, and intensity (adjusted R 2 ¼ .513), F(7, 40) ¼ 8.06, p &lt; .001 (see Appendix B).</p><p>Cue contributions. As shown in Figures <ref type="figure" target="#fig_3">3</ref> and <ref type="figure" target="#fig_4">4</ref> (stripped bars), attack rate and mode accounted for the largest amount of unique variance within valence ratings (20% and 33% respectively). Attack rate remained the only important contributor of intensity ratings (58%), and mode uniquely accounted for 5% of the model's variance. Pitch height uniquely accounted for 3% of variance for valence ratings, and none for intensity ratings. Shared variance explained 45% of total valence rating and 38% of total intensity rating variance. Attack rate and mode contributed the largest proportion of shared variance to both models (45% contributed to valence and 36% to intensity ratings). Variance shared between mode and pitch height contributed 6% to the valence model, but contributed less than 1% to intensity ratings. In contrast, calculations for the relationship between attack rate and pitch height produced a À2% contribution to valence and 4% to intensity ratings. The shared variance common between all three cues accounted for approximately À3% of the variance in valence and intensity models.</p><p>DISCUSSION Similar to Experiment 1, Experiment 2 highlights the relationship between attack rate (timing) information and mode within listener ratings of emotion. Correlation and regression results followed the same trends as reported in Experiment 1. Attack rate and mode significantly correlated with valence and intensity, whereas pitch height significantly correlated with neither. Regression analyses indicated all three cues significantly  predicted listener ratings of valence; however, only attack rate predicted arousal ratings. As in Experiment 1, this finding suggests the salience of cues as emotional indicators differ for the two dimensions. Experiment 2 explored whether the influence of mode would increase when using excerpts starting and ending in the same nominal key. Although our findings here broadly mirrored those of the first experiment for valence ratings, the salience of musical mode increases when excerpts ''resolve'' (i.e., end in the same nominal key in which they began), with mode increasing in its predictive power and on attack rate decreasing in predictability (see Table <ref type="table" target="#tab_2">3</ref>). This manipulation did not affect all cues, as pitch height's contribution remained small. As such, the results of Experiment 2 suggest mode's predictive power is stronger when excerpts start and end in a consistent manner. This helps clarify mode's power in complex passages containing chords outside the target mode (i.e., major chords in nominally minor keys and vice versa)-an approach that is common in actual musical practice, although complicated to rigorously assess under controlled laboratory conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experiment 3: Arousal</head><p>The first two experiments quantified emotion employing an adaptation of <ref type="bibr" target="#b78">Russell's (1980)</ref> 2D circumplex model of affect, using dimensions of valence and intensity. The literature contains some disagreement over the best label for the non-valence dimension. For example, <ref type="bibr" target="#b89">Trainor and Schmidt (2001)</ref> use ''intensity,'' whereas ''arousal'' is more common in other models <ref type="bibr" target="#b78">(Russell, 1980;</ref><ref type="bibr" target="#b85">Schubert, 2004)</ref>. As ''intensity'' is also used to describe the power, or physical characteristic of sound, it is possible participants might have confused emotional intensity with sound intensity in our first two experiments. Therefore for the sake of thoroughness we ran a third experiment following the procedure and stimuli used in Experiment 1, but labeling the ratings scales valence and arousal rather than valence and intensity. This afforded exploration of the consequences of different approaches to labeling the dimension representative of emotional ''energy,'' and to ensure listeners' understanding of the ''energy'' dimension in the first experiment had not been conflated with sound intensity.</p><p>METHOD We used an experimental procedure and cue quantification methods identical to the first experiment (matching excerpt length at eight measures); however, here participants rated perceived emotion on a scale of valence and a scale of arousal (rather than valence and intensity). In addition, cue quantification values remained identical to values calculated for Experiment 1. Although we used the label of ''arousal'' for the second dimension, the scale explanation given to participants remained identical to that of the ''intensity'' scale in Experiment 1. Participants included 30 undergraduate nonmusician (&lt; 1 year music training) students (9 males, M ¼ 20.8 years, SD ¼ 3.0; 21 females, M ¼ 21.2 years, SD ¼ 4.0) with reported normal hearing and normal or corrected-to-normal vision. Musical stimuli ranged from 7-64 s (M ¼ 30.2 s, SD ¼13.6). Participants received course credit in return for participation. <ref type="bibr" target="#b78">Russell's (1980)</ref> circumplex model appear in Figure <ref type="figure" target="#fig_1">1c</ref> for ease of comparison with previous results. Similar to the first experiment, only one major prelude (B major) appeared in the lowest half of valence ratings, however two (C major, B major) of the major key fugues appeared in the lowest half of valence ratings. Cronbach's alpha for listener ratings demonstrated high internal consistency as in Experiment 1 and 2 (a ¼ .97) for both valence and arousal ratings. Valence ratings from participants spanned from 1.97-6.30 (M ¼ 4.09, SD ¼ 1.12) and arousal ratings ranged SD ¼ 16.95).</p><p>RESULTS Visualizations of ratings on Correlations. As the musical excerpts used in this experiment are identical to those of the first experiment, cue quantification analyses (intercue correlations and ttests) are identical to those reported in Experiment 1. In terms of their relationship to perceptual ratings, similar to previous experiments, attack rate, r(46) ¼ .67, p &lt; .001, and mode, r(46) ¼ .76, p &lt; .001, correlated with valence ratings, with listeners giving higher rating to Regression analysis. Standard linear multiple regression analysis revealed attack rate, mode, and pitch height contributed significantly towards valence ratings (Table <ref type="table" target="#tab_6">7</ref>). Analysis of arousal indicated attack rate as the only significant predictor (Table <ref type="table" target="#tab_6">7</ref>). Despite the correlation between mode and intensity, mode did not significantly predict intensity ratings in this regression analysis. However, although pitch height did not correlate significantly with valence, it significantly predicted valence ratings.</p><p>The 3-cue predictor model accounted for 48% of the variance in ratings of arousal (adjusted R 2 ¼ .478), F(3, 44) ¼ 15.33, p &lt; .001, and 75% of the variance in ratings of valence (adjusted R 2 ¼ .746), F(3, 44) ¼ 46.96, p &lt; .001. Despite a moderate correlation between attack rate and mode, r(46) ¼ .445, p &lt; .01, tolerance and VIF values do not suggest multicollinearity (attack rate, tolerance ¼ .773, VIF ¼ 1.293; mode, tolerance ¼ .772, VIF ¼ 1.295). Regression models investigating interaction effects show a small increase in variance prediction for valence (adjusted R 2 ¼ .771), F(7, 40) ¼ 23.55, p &lt; .001, and arousal (adjusted R 2 ¼ .485), F(7, 40) ¼ 7.32, p &lt; .001, models; however, no interactions reached significance (see Appendix B).</p><p>Cue contributions. Attack rate accounted for the largest amount of unique variance within both valence (23%) and arousal (60%) ratings (Figures <ref type="figure" target="#fig_3">3</ref> and <ref type="figure" target="#fig_4">4</ref>). Mode also contributed, accounting for 28% of unique valence variance, but only 4% of unique arousal variance. Uniquely, pitch height accounted for 5% of valence and less than 1% of arousal variance. The total shared variance across all cues accounted for 44% of valence and 36% of arousal ratings, primarily from the variance shared between attack rate and mode (43% for valence ratings, 34% for intensity ratings). Mode and pitch height accounted for 8% of shared variance within the valence model and less than -1% within the arousal model. The shared variance contributed from attack rate and pitch height was -4% for valence ratings and 5% for ratings of arousal. Contribution from all three cues in variance contribution remained negative across both models, with -3% contributed to valence and -3% to arousal.</p><p>DISCUSSION Our third experiment investigated the consequences of using different labels for the ''energy'' dimension of the circumplex model of emotion. Regression (Table <ref type="table" target="#tab_6">7</ref>) and commonality analyses (Tables <ref type="table" target="#tab_7">8</ref> and <ref type="table" target="#tab_8">9</ref>) indicate minimal change from participant data collected in Experiment 1, where participants rated the valence and intensity of perceived emotion. The intensity regression model in Experiment 1 accounted for 49% (Table <ref type="table" target="#tab_2">3</ref>), whereas the regression result for arousal ratings in Experiment 3 accounted for approximately 48% (Table <ref type="table" target="#tab_8">9</ref>) of listener variance. This suggests both models  similarly captured listener responses of perceived emotion within these musical excerpts. Although this label change had little consequence, we felt it important to report for the sake of comparison with a wide range of existing research as both intensity <ref type="bibr" target="#b89">(Trainor &amp; Schmidt, 2001)</ref> and arousal <ref type="bibr" target="#b78">(Russell, 1980;</ref><ref type="bibr" target="#b85">Schubert, 2004)</ref> appear in the literature. We believe this is helpful in contextualizing our results, for although some studies question the effectiveness of alternative 2D models to quantify emotion <ref type="bibr" target="#b26">(Eerola &amp; Vuoskoski, 2013;</ref><ref type="bibr" target="#b83">Schimmack &amp; Grob, 2000)</ref>, models based on valence and arousal are considered standard despite disagreement over the specifics of dimensional labels. Therefore, we simply conclude that our approach captures similar aspects of the perceived emotional ''energy'' in Experiments 1 and 3 regardless of the label used for the non-valence dimension.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>General Discussion</head><p>In this series of experiments, we explored the relationship between musical features and conveyed emotion using Bach's Well Tempered Clavier (WTC), a prominent composition by a well-respected composer. Here we build upon previous corpus analysis of Bach's timing and pitch cues <ref type="bibr" target="#b72">(Poon &amp; Schutz, 2015)</ref> by empirically assessing their perceptual consequences. Complementing past work on highly emotive compositions such as film scores <ref type="bibr" target="#b91">(Vuoskoski &amp; Eerola, 2011)</ref> and familiar popular music <ref type="bibr" target="#b98">(Yang &amp; Chen, 2012)</ref>, as well as tightly controlled manipulations to tone sequences <ref type="bibr" target="#b40">(Hailstone et al., 2009;</ref><ref type="bibr" target="#b63">Lindström, 2006;</ref><ref type="bibr" target="#b74">Quinto et al., 2013)</ref>, our results shed new light on the ways in which listeners respond to emotional cues when co-varying in a natural musical context. Cues such as attack rate and pitch height elicited affective consequences on listener judgements within musical stimuli in a manner complementing (though not always paralleling) those used in vocal expression. These findings are consistent with the view that music's power to communicate emotion may derive from our capacity to process parallel features in speech.</p><p>According to our model, attack rate, mode, and pitch height significantly predict ratings of valence, consistent with work documenting the effects of mode and articulation on valence <ref type="bibr" target="#b29">(Fabian &amp; Schubert, 2003;</ref><ref type="bibr" target="#b33">Gabrielsson &amp; Lindström, 2001)</ref>. Listeners also relied on attack rate (timing) cues to decode emotional intensity/ arousal, common to results on speech and music <ref type="bibr" target="#b51">(Ilie &amp; Thompson, 2006;</ref><ref type="bibr" target="#b85">Schubert, 2004)</ref> in a manner aligned with past findings-higher pitch heights <ref type="bibr">(Bachorowski, 1999;</ref><ref type="bibr" target="#b45">Hevner, 1937)</ref> and faster timings <ref type="bibr" target="#b10">(Breitenstein, Van Lancker, &amp; Daum, 2001;</ref><ref type="bibr" target="#b53">Juslin, 1997)</ref> are linked with positively valenced emotions in both speech and music. Our finding that attack rates predict both intensity and arousal is also consistent with previous work on music <ref type="bibr" target="#b90">(Vieillard et al., 2008)</ref>. This demonstrates that the relationships between cues and responses within unaltered passages of ecologically valid music is in some ways consistent with research using composed monophonic and polyphonic music <ref type="bibr" target="#b85">(Schubert 2004;</ref><ref type="bibr" target="#b90">Vieillard et al., 2008)</ref>. But here we document how Bach wove acoustic cues such as attack rate (timing) and mode together to shape emotional messages within complex polyphonic music.</p><p>A linear model built using only three cues derived from score-based analysis accounted for approximately 49-79% of the variance in participants' ratings. Models incorporating more features such as loudness, tempo, melodic contour, texture and spectral centroid previously predicted 33-73% of perceived emotion within Romantic era music <ref type="bibr" target="#b85">(Schubert, 2004)</ref>. Our experiments employ music from a different era of musical style (Baroque), where relationships between cues such as mode and tempo differ from those in the Romantic era <ref type="bibr" target="#b46">(Horn &amp; Huron, 2015;</ref><ref type="bibr" target="#b72">Poon &amp; Schutz, 2015)</ref>. Despite differences in cue use across compositional styles, it is evident common cues such as attack rate (timing), and mode are pivotal in predicting participants' perception of emotion within music.</p><p>Our models of emotional valence predicted more variance across experiments (approximately 75-79%) than of intensity/arousal (48-51%). This contrasts with work done on modelling listener's perceived emotion, which predicts arousal better than valence <ref type="bibr" target="#b22">(Eerola, 2011;</ref> <ref type="bibr">Eerola, Lartillot, &amp; Toiviainen, 2009;</ref><ref type="bibr" target="#b60">Korhonen et al., 2006;</ref><ref type="bibr" target="#b91">Vuoskoski &amp; Eerola, 2011)</ref>. Cross validation analyses used to compare models across various empirically tested datasets including classical, film, pop, as well as mixed genre stimuli, also show higher prediction rates for the perceived arousal than perceived valence both across (16% valence, 43% arousal) and within (43% valence, 62% arousal) genres <ref type="bibr" target="#b22">(Eerola, 2011)</ref>. There, systematic feature selection and principal components analysis selected nine orthogonal features covering dynamic, rhythmic, timbral, and tonal aspects of the stimuli. Lower predictability for the intensity/arousal model may emerge in our results due to the lack of cues or features deemed ''expressive.'' We chose to quantify only three specific cues, two of which represent structural features within the music. Previous literature has shown a number of cues to be associated with emotional arousal, such as tempo <ref type="bibr" target="#b50">(Husain, Thompson, &amp; Schellenberg, 2002)</ref>, articulation, and loudness <ref type="bibr" target="#b85">(Schubert, 2004)</ref> or sound intensity <ref type="bibr" target="#b20">(Dean, Bailes, &amp; Schubert, 2011)</ref>.</p><p>Perhaps with the inclusion of these additional cues, our model of intensity/arousal might be more predictive. Although <ref type="bibr" target="#b22">Eerola's (2011)</ref> analysis included more features, our models surprisingly demonstrated higher predictability-from essentially two cues. As mentioned above, the largest contribution occurred from the cue of attack rate, expressed as note attacks per second. Unlike that study, we extracted cues through score-based analysis, rather than via the MIRtoolbox program. Thus, even for theoretically similar features such as event density-determined from the detection of onsets from the peaks evident in the amplitude envelope with respect to attack time and slope-attack rate may capture something different. Additionally, within the datasets used in <ref type="bibr" target="#b22">Eerola (2011)</ref>, the ''Classical'' stimuli encompassed a large mix of orchestral/ ensemble recordings as well as range of Western musical styles including Baroque, Romantic, etc. Our findings reflect perceived emotion from a set of polyphonic musical examples performed on one instrument, derived from one style and one composer. Furthermore, it is important to point out model comparisons across datasets using polyphonic music indicated a genre specificity for how well features predict valence, although less so for arousal. This highlights the difference between how valence and arousal can be expressed in music, but also the importance of exploring how cues function across styles of music, as core features of expressed emotion appear more effective for particular musical stimuli.</p><p>Our results also indicate the presence of interactions between musical features such as pitch height and attack rate made only small contributions (approximately 1% to models in Experiments 1 and 3). Therefore, consistent with previous research investigating cues in monophonic stimuli <ref type="bibr" target="#b26">(Eerola &amp; Vuoskoski, 2013;</ref><ref type="bibr" target="#b56">Juslin &amp; Lindström, 2010)</ref>, the main driving effect of emotion perception appears driven by linear relationship between individual cues. However, it is possible that inclusion of other features would improve predictive power for intensity/arousal.</p><p>STRENGTH OF MUSICAL CUES To assess relative cue strength, we used commonality analysis to calculate the unique and shared variance explained by three cues included in our model. Commonality analysis offers a powerful tool for picking apart contributions from the kinds of inter-related cues found in complex, composer created multi-voice stimuli. Variance partitioning of attack rate (timing), mode, and pitch height ultimately allow us to statistically compare how much each cue contributes and gives a sense of their musical importance in this experimental context.</p><p>Timing. Attack rate remained the strongest predictor of explained variance across valence, intensity, and arousal. This is consistent with research suggesting timing to be the most salient cue for emotion in music <ref type="bibr" target="#b34">(Gagnon &amp; Peretz, 2003)</ref>, particularly for arousal <ref type="bibr" target="#b85">(Schubert, 2004;</ref><ref type="bibr" target="#b90">Vieillard et al., 2008)</ref>. The relationship observed between attack rate and arousal may stem from its general use in conveying information about energy. Attack rate describes the temporal rates of events, similar to rates of other behaviors such as speech, gait, etc. Thus, as faster speech and walking pace suggests more energy and energy expenditure from an individual <ref type="bibr" target="#b37">(Gomez &amp; Danuser, 2007)</ref>, the rate at which the musical structure unfolds can reflect the energy expenditure of a performer giving the performance, or the association between event rate with the other biologically important rate cues may provide listeners with information about communicated energy.</p><p>Unlike pitch and mode, attack rate represents a cue reflecting contributions from both composer and performer. It accounts for the structural decisions of the composer in the form of number of note attacks per measure, as well as the performer's choice of tempo for playing these rhythms. This suggests interesting future directions aimed at exploring the effect of different interpretation on musical communication. To some extent, the strength of timing here might reflect our use of musically untrained participants, who may have been less sensitive to mode, which requires specific musical knowledge or exposure to this type of music <ref type="bibr" target="#b19">(Dalla Bella et al., 2001)</ref>. Thus, it remains an open question whether cue weights would differ substantially amongst musically trained individuals Pitch height. In contrast to timing, pitch height played a smaller role (Figures <ref type="figure" target="#fig_3">3</ref> and <ref type="figure" target="#fig_4">4</ref>), contributing minimally (0%-4.1% uniquely). It is possible that when hearing complex stimuli participants rely more on timing cues such as attack rate more than pitch height. Our use of ''natural'' stimuli admittedly poses challenges given the music complexity of polyphonic music created for artistic rather than scientific purposes. However, this approach arguably assesses the role of mode in a more realistic manner, as audiences frequently encounter music with more complex uses of mode mixing chord qualities than is found in tone sequences artificially constructed to focus on one type of mode.</p><p>Music with high pitch has previously been linked to affective terms of both high and low arousal <ref type="bibr" target="#b82">(Scherer &amp; Oshinsky, 1977;</ref><ref type="bibr" target="#b95">Wedin, 1972a)</ref>. Models of listener responses to Bach's WTC indicate pitch significantly predicted ratings of valence but not arousal. This is consistent with cross-cultural work using monophonic Hindustani ragas, showing pitch information in the form of pitch range did not help listeners outside of the musical culture interpret specific, discrete emotions <ref type="bibr" target="#b6">(Balkwill &amp; Thompson, 1999)</ref>, as well as work comparing studies using multi-genre polyphonic music, revealing pitch did not fall in the top ten features predicting either dimension of affective space <ref type="bibr" target="#b22">(Eerola, 2011)</ref>.</p><p>Our results provide an interesting counterpart to a previous study by <ref type="bibr" target="#b79">Schellenberg et al. (2000)</ref> showing pitch manipulations to be more influential than rhythmic manipulations on affect perception. Their results indicate pitch as more influential than timing when using novel, monophonic melodies performed by computers without harmonic context. Our contrary outcomes may reflect in part a different approach to timing; as our measure of attack rate considers the number of note onsets within the stimuli with respect to note durations, whereas they focus on manipulations of rhythmic structure. In addition, stimuli complexity may be a factor, as we employed the use of multi-voiced, polyphonic musical stimuli. Pitch height's importance is likely greater in the context of single-lined melodies, when there are fewer voices and musical features. Therefore, our experiment provides insight as to how pitch height functions within a natural musical context. It is possible that attack density is an important aspect within conveyed musical emotion and as such, this study produces insight into how listeners disentangle communicated emotion within non-manipulated, passages containing the natural co-variation of cues.</p><p>Mode. Across all three experiments, the use of musically resolved excerpts (Experiment 2) led to the most accurate three cue model-perhaps in part due to increased predictive power of mode when ensuring excerpts started and ended in the same nominal key. <ref type="bibr" target="#b19">Dalla Bella et al. (2001)</ref> reported that adults weighted mode more strongly than tempo, in contrast to children whose ratings seemed more reflective of tempo. Our results are inconsistent with those findings, as here ratings by adults showed timing had a similar influence as mode in valence, and a much more powerful influence on arousal/intensity. However, our task differs from theirs in many ways, including the structure of stimuli. Our musical excerpts contained the kinds of complex harmonic progressions characteristic of classical music, in contrast to short melodies designed to clearly signal major vs. minor. Further research clarifying mode's role in harmonically complex passages similar to those written by great composers will help to clarify whether past findings on mode's effect may not generalize to passages of natural music with complex harmonic structure.</p><p>Most pieces in this set mixed both major and minor chords, and some begin modulate (i.e., change their home key) within a few measures. Admittedly this makes analyses of mode more difficult than in excerpts constructed to clearly articulate only major or minor keys. These distinctions matter-our resolved excerpts in Experiment 2 attempted to control for these key changes, which resulted in an increase in mode's role. There are of course, limitations in our method as it is not a perfect example of a singular mode/key; modulations and/or shifts may have occurred throughout the excerpt. Additionally, our musically resolved excerpts varied in duration from excerpts used in Experiment 1 and 2 (see Appendix C). As such, it is possible that stimuli duration played a role in the differences, and our conclusions should be interpreted in that light. Nonetheless, this trade-off is inevitable in evaluating music created for artistic rather than scientific purposes. These ''problematically complex'' passages are more representative of the kinds of progressions moving listeners in concert halls and home stereos on a regular basis. Consequently, we see our work balancing realism and control as a helpful complement to previous research on highly controlled tone sequences. For although our findings are to some degree consistent with previous demonstrations of manipulations to single line melodies lacking harmonic context, they raise interesting questions surrounding mode's role in conveying affect within complex polyphonic compositions.</p> <p>MEASURING EMOTION Two-dimensional models are frequently used to quantify emotion in research <ref type="bibr" target="#b77">(Rodà, Canazza, &amp; De Poli, 2014;</ref><ref type="bibr" target="#b37">Gomez &amp; Danuser, 2004;</ref><ref type="bibr" target="#b84">Schubert, 1999</ref><ref type="bibr" target="#b85">Schubert, , 2004))</ref>. Using this method, emotions are broken down into components of varying degrees along the two dimensions, in contrast to discretely distinguishable categories. <ref type="bibr" target="#b78">Russell's 2D circumplex model of affect (1980)</ref> is dominant in the field of emotion cognition, and considered a standard in emotional quantification. Despite general agreement on utilizing valence to evaluate musical affect <ref type="bibr" target="#b13">(Carroll, Yik, Russell, &amp; Barrett, 1999)</ref>, researchers disagree over the best practice for additional dimension(s) <ref type="bibr" target="#b83">(Schimmack &amp; Grob, 2000;</ref><ref type="bibr" target="#b90">Vieillard et al., 2008)</ref>. Previous studies use labels such as tension <ref type="bibr" target="#b51">(Ilie &amp; Thompson, 2006)</ref>, activity <ref type="bibr" target="#b62">(Leman et al., 2005)</ref> and/or strength <ref type="bibr" target="#b64">(Luck et al., 2008)</ref>.</p><p>To provide the most connection with the vast literature on musical emotion, our third experiment investigated the difference between various dimensions (arousal and intensity) as adapted from <ref type="bibr" target="#b78">Russell's (1980)</ref> 2D model. Our results show each model accounted for similar amounts of variance across both dimensions. Small variations occurred between models where the valence/arousal model (Table <ref type="table" target="#tab_7">8</ref> and <ref type="table" target="#tab_8">9</ref>) explained less of the variance within mean arousal and valence ratings than the valence/intensity model (Table <ref type="table" target="#tab_1">2</ref> and <ref type="table" target="#tab_2">3</ref>). Overall these small differences suggest our experimental definition and use of ''intensity'' captures the second or ''energetic'' dimension of the 2D circumplex space, similar to ''arousal.'' Given debate over the best measure of assessing emotion we believe this direct assessment of dimensional labeling is useful to note.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Concluding Thoughts and Broader Implications</head><p>Together our experiments demonstrate the relative importance of attack rate (timing), mode, and pitch on emotional perception within a complex, composed musical corpus. This finding contributes to a growing literature on the relationships between cues and affective perception <ref type="bibr" target="#b19">(Dalla Bella et al., 2001;</ref><ref type="bibr" target="#b23">Eerola, Friberg, &amp; Bresin, 2013)</ref>, by assessing cue contributions in a corpus of renowned musical pieces performed and heard frequently in concert halls around the world. The WTC was developed as a teaching tool for classical musicians, and is pedagogically in frequent use helping to refine a performer's expressive skills involving aspects like articulation, tempo and phrasing <ref type="bibr" target="#b67">(Paggioli de Carvalho, 2016)</ref>. Thus, a selection like the WTC affords further opportunity to explore cues expressed in its performance.</p><p>As our study focused on a corpus of music by one particular composer, future work using a broader corpus will further explore generalizations of these findings. However, this focused exploration of such a prominent set of pieces offers a unique opportunity to explore the effects of three structural cues for emotion as encountered in a natural musical context. Applying empirical scientific methods to assess emotional encoding and decoding of acoustic cues in complex, naturalistic music contributes to understanding listener perception in an everyday context. Previous literature reinforces careful consideration of mode's role in listener perception. It's significance in conveying emotion is frequently reported <ref type="bibr" target="#b34">(Gagnon &amp; Peretz, 2003;</ref><ref type="bibr" target="#b43">Hevner, 1935;</ref><ref type="bibr" target="#b48">Hunter, Schellenberg, &amp; Schimmack, 2010)</ref>; however, our results indicate mode's role is perhaps less straightforward in excerpts of natural music compared to musical cues such as attack rate. Intriguingly, this finding may help explain concerns voiced by music theorists that the view of major-as-happy is overly simplified, and is essentially an abstraction ignoring actual compositional practice <ref type="bibr" target="#b41">(Hatten, 2004)</ref>.</p><p>The results of the present study complement the relationships between perceived emotion and musical cues in the context of naturalistic musical stimuli. While the current study focused on Bach's Well-Tempered Clavier, future work could address music of other genres and time periods in order to determine whether these relationships change over centuries and continents. Insight into these changes can inform a deeper understanding between musical teaching practices and cognitive outcomes on a listener. In addition, the cues used within our models consist of predominantly composercontrolled features. Therefore, future studies should also consider performer-controlled cues and performer interpretation to further disentangle the connection between encoding and decoding within musical performances.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head/><label/><figDesc>. However, correlations amongst the cues</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 1 .</head><label>1</label><figDesc>FIGURE 1. Mean ratings for all 48 pieces in the WTC (separated by preludes and fugues) plotted across the 2D circumplex space for (a) Experiment 1, (b) Experiment 2, and (c) Experiment 3. Major key pieces are shown with a cross through the circle, minor key pieces are shown with an open circle.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 2.</head><label>2</label><figDesc>FIGURE 2. Visual representation of predictor relationships using Commonality Analysis as used here, adapted from original by <ref type="bibr" target="#b12">Capraro and Capraro (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 3 .</head><label>3</label><figDesc>FIGURE 3. Unique and shared variance of valence ratings by musical cue. The unique and shared contributions of attack rate, and mode cues explained the vast majority of variance across three experiments. The three bars for each cue depict ratings made of both (1) 8 measure excerpts (Experiment 1) and (2) variable length musically resolved excerpts using valence and intensity ratings (Experiment 2), as well as (3) 8 measure excerpts using valence and arousal ratings (Experiment 3).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 4 .</head><label>4</label><figDesc>FIGURE4. Unique and shared variance of intensity/arousal ratings by musical cue. Attack rate's unique and shared contribution with mode explained the majority of variance across perceived ratings of intensity/arousal. The three bars for each cue depict ratings made of both (1) 8 measure excerpts (Experiment 1) and (2) variable length musically resolved excerpts using valence and intensity ratings (Experiment 2), as well as (3) 8 measure excerpts using valence and arousal ratings (Experiment 3).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 .</head><label>1</label><figDesc>Regression Model for Normalized Attack Rate, Mode, Pitch Height and Valence and Intensity Ratings (Experiment 1)</figDesc><note><p>Note: Beta values indicate strength and direction of relationship between each predictor variable and valence and intensity ratings. Default state for mode is Major.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2 .</head><label>2</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Valence (Experiment 1)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 3 .</head><label>3</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Intensity (Experiment 1)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>TABLE 4 .</head><label>4</label><figDesc>Regression Model for Normalized Attack Rate, Mode, Pitch Height and Valence and Intensity Ratings (Experiment 2).</figDesc><note><p>Note: Beta values indicate strength and direction of relationship between each predictor variable and valence and intensity ratings.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE 5 .</head><label>5</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Valence (Experiment 2)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>TABLE 6 .</head><label>6</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Intensity (Experiment 2)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>TABLE 7 .</head><label>7</label><figDesc>Regression Model for Normalized Attack Rate, Mode, Pitch Height on Valence and Arousal Ratings, as well as Mode (Experiment 3)</figDesc><note><p>Note: Beta values indicate strength and direction of relationship between each predictor variable and valence and arousal ratings.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>TABLE 8 .</head><label>8</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Valence (Experiment 3)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>TABLE 9 .</head><label>9</label><figDesc>Commonality Analysis for Variance in Listener Ratings of Arousal (Experiment 3)</figDesc></figure>
+		</body>
+		<back>
+			<div type="annex">
+				<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author Note</head><p>This research is supported in part by grants from Social Sciences and Humanities Research Council of Canada (SSHRC and the Canadian Foundation for Innovation (CFI).</p><p>Correspondence concerning this article should be addressed to Aimee Battcock, Department of Psychology, Neuroscience and Behaviour, Psychology Building (PC), Room 102, McMaster University, 1280 Main Street West, Hamilton, ON, L8S 4K1, Canada. E-mail: battcoae@mcmaster.ca</p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="grey-literature" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACH</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Bach: The Well-Tempered Clavier Book I - Prelude #24 in B minor, BWV 855</title>
+		</analytic>
+		<monogr>
+			<imprint>
+				<publisher>Deutsche Grammonphon</publisher>
+				<date when="1953">1953</date>
+			</imprint>
+			<note>CD</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACH</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Bach: The Well-Tempered Clavier Book I - Prelude #10 in E minor, BWV 855</title>
+		</analytic>
+		<monogr>
+			<imprint>
+				<publisher>Sony Classical</publisher>
+				<date when="1965">1965</date>
+			</imprint>
+			<note>CD</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACH</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Bach: The Well-Tempered Clavier, Book I -</title>
+		</analytic>
+		<monogr>
+			<imprint>
+				<publisher>Decca</publisher>
+				<date when="1973">1973</date>
+			</imprint>
+			<note>CD</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACH</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Bach: The Well-Tempered Clavier, Book I - Prelude #10 in E minor, BWV 869</title>
+		</analytic>
+		<monogr>
+			<imprint>
+				<publisher>Columbia Records</publisher>
+				<date when="1971">1971</date>
+			</imprint>
+			<note>CD</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACHOROWSKI</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Vocal expression and perception of emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Current Directions in Psychological Science</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="53" to="57"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BACHOROWSKI</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>OWREN</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Vocal expression of emotion: Intensity and context</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychological Science</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="219" to="224"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BALKWILL</surname>
+					<forename>L-L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>THOMPSON</surname>
+					<forename type="first">W</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">A cross-cultural investigation of the perception of emotion in music: Psychophysical and cultural cues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="43" to="46"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b7">
+		<monogr>
+			<author>
+				<persName>
+					<surname>BEATON</surname>
+					<forename type="first">A</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="m">Commonality</title>
+			<imprint>
+				<date when="1973-03">1973, March</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BIGAND</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>VIEILLARD</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MADURELL</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MAROZEAU</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DACQUET</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Multidimensional scaling of emotional responses to music: The effect of musical expertise and the duration of the excerpts</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">19</biblScope>
+				<biblScope unit="page" from="1113" to="1139"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b9">
+		<monogr>
+			<author>
+				<persName>
+					<surname>BOROD</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="m">The neuropsychology of emotion</title>
+			<imprint>
+				<publisher>Oxford University Press</publisher>
+				<pubPlace>Oxford, UK</pubPlace>
+				<date when="2000">2000</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BREITENSTEIN</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>VAN LANCKER</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DAUM</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">The contribution of speech rate and pitch variation to the perception of vocal emotions in a German and an American sample</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="57" to="79"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>BROZE</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SHANAHAN</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Diachronic changes in jazz harmony: A cognitive perspective</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="32" to="45"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>CAPRARO</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CAPRARO</surname>
+					<forename type="first">M</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Commonality analysis: Understanding variance contributions to overall canonical correlation effects of attitude toward mathematics on geometry achievement</title>
+		</analytic>
+		<monogr>
+			<title level="j">Multiple Linear Regression Viewpoints</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">27</biblScope>
+				<biblScope unit="page" from="16" to="23"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>CARROLL</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>YIK</surname>
+					<forename type="first">M</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>RUSSELL</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BARRETT</surname>
+					<forename type="first">L</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">On the psychometric principles of affect</title>
+		</analytic>
+		<monogr>
+			<title level="j">Review of General Psychology</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="14" to="22"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b14">
+		<monogr>
+			<author>
+				<persName>
+					<surname>COHEN</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>COHEN</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="m">Applied multiple regression/correlation analysis for the behavioral sciences</title>
+			<imprint>
+				<publisher>Erlbaum</publisher>
+				<pubPlace>Hillsdale, NJ</pubPlace>
+				<date when="1983">1983</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>COLLIER</surname>
+					<forename type="first">W</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HUBBARD</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Musical scales and evaluations of happiness and awkwardness: Effects of pitch, direction, and scale mode</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Psychology</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="355" to="375"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>CORRIGALL</surname>
+					<forename type="first">K</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>TRAINOR</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Enculturation to musical pitch structure in young children: Evidence from behavioral and electrophysiological methods</title>
+		</analytic>
+		<monogr>
+			<title level="j">Developmental Science</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="142" to="158"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Costa</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fine</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Enrico</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bitti</surname>
+					<forename type="first">P</forename><forename type="middle">E</forename><forename type="last">R</forename>
+				</persName>
+			</author>
+			<title level="a">Interval distributions, mode, and tonal strength of melodies as predictors of perceived emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="1" to="14"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>CROWDER</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Perception of the major/minor distinction: III. Hedonic, musical, and affective discriminations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bulletin of the Psychonomic Society</title>
+			<imprint>
+				<date when="1985">1985</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="314" to="316"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>DALLA BELLA</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>PERETZ</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ROUSSEAU</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GOSSELIN</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">A developmental study of the affective value of tempo and mode in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">80</biblScope>
+				<biblScope unit="page" from="B1" to="B10"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>DEAN</surname>
+					<forename type="first">R</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BAILES</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHUBERT</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Acoustic intensity causes perceived changes in arousal levels in music: An experimental investigation</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS ONE</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page">e18591</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>DIBBEN</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">The role of peripheral feedback in emotional experience with music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="79" to="115"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Are the emotions expressed in music genre-specific? An audio-based evaluation of datasets spanning classical, film, pop and mixed genres</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of New Music Research</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="349" to="366"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>FRIBERG</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BRESIN</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Emotional expression in music: Contribution, linearity, and additivity of primary musical cues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Frontiers in Psychology</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="1" to="12"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LARTILLOT</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>TOIVIAINEN</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Prediction of multidimensional emotional ratings in music from audio using multivariate regression models</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the 10th International Conference on Music Information Retrieval</title>
+			<imprint>
+				<publisher>International Society for Music Information Retrieval</publisher>
+				<date when="2009">2009</date>
+				<biblScope unit="page" from="621" to="626"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>VUOSKOSKI</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">A comparison of the discrete and dimensional models of emotion in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychology of Music</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="18" to="49"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>VUOSKOSKI</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">A review of music and emotion studies: Approaches, emotion models, and stimuli</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="307" to="340"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EITAN</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>TIMMERS</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Beethoven’s last piano sonata and those who follow crocodiles: Cross-domain mappings of auditory pitch in a musical context</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="405" to="422"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>EKMAN</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">An argument for basic emotions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="162" to="200"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>FABIAN</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHUBERT</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Expressive devices and perceived musical character in 34 performances of Variation-7 from Bach’s ‘‘Goldberg Variations.’’</title>
+		</analytic>
+		<monogr>
+			<title level="j">Musicae Scientiae</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="49" to="71"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>FREDERICK</surname>
+					<forename type="first">B</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">Partitioning variance in the multivariate case: A step-by-step guide to cannonical commonality analysis</title>
+		</analytic>
+		<monogr>
+			<title level="m">Advances in social science methodology</title>
+			<editor>
+				<persName>
+					<surname>Thompson</surname>
+					<forename>B</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>JAI Press</publisher>
+				<pubPlace>Standford, CT</pubPlace>
+				<date when="1999">1999</date>
+				<biblScope unit="page" from="305" to="318"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>FRIBERG</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHOONDERWALDT</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HEDBLAD</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>FABIANI</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ELOWSSON</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Using listener-based perceptual features as intermediate representations in music information retrieval</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of the Acoustical Society of America</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">136</biblScope>
+				<biblScope unit="page" from="1951" to="1963"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GABRIELSSON</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Perceived emotion and felt emotion: same or different?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Musicae Scientiae</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="123" to="148"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GABRIELSSON</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LINDSTRÖM</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">The role of structure in the musical expression of emotions</title>
+		</analytic>
+		<monogr>
+			<title level="m">Handbook of music and emotion: Theory, research, applications</title>
+			<editor>
+				<persName>
+					<surname>Juslin</surname>
+					<forename>P</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Sloboda</surname>
+					<forename>J</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Oxford University Press</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2010">2010</date>
+				<biblScope unit="page" from="367" to="400"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GAGNON</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>PERETZ</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Mode and tempo relative contributions to "happy-sad" judgements in equitone melodies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="25" to="40"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b35">
+		<monogr>
+			<author>
+				<persName>
+					<surname>GARDNER</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="m">Multiple intelligences: The theory in practice</title>
+			<imprint>
+				<publisher>Basic Books</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="1993">1993</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GERARDI</surname>
+					<forename type="first">G</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GERKEN</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">The development of affective responses to modality and melodic contour</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="279" to="290"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GOMEZ</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DANUSER</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Affective and physiological responses to environmental noises and music</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Psychophysiology</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unit="page" from="91" to="103"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GOMEZ</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DANUSER</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Relationships between musical structure and psychophysiological measures of emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Emotion</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="377" to="387"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>GUNDLACH</surname>
+					<forename type="first">R</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Factors determining the characterization of musical phrases</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Psychology</title>
+			<imprint>
+				<date when="1935">1935</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="624" to="643"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HAILSTONE</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>OMAR</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HENLEY</surname>
+					<forename type="first">S</forename><forename type="middle">M</forename><forename type="last">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>FROST</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KENWARD</surname>
+					<forename type="first">M</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>WARREN</surname>
+					<forename type="first">J</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">It’s not what you play, it’s how you play it: Timbre affects perception of emotion in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Quarterly Journal of Experimental Psychology</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="2141" to="2155"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b41">
+		<monogr>
+			<author>
+				<persName>
+					<surname>HATTEN</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="m">Interpreting musical gestures, topics, and tropes: Mozart, Beethoven, and Schubert</title>
+			<imprint>
+				<publisher>Indiana University Press</publisher>
+				<pubPlace>Bloomington, IN</pubPlace>
+				<date when="2004">2004</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HEINLEIN</surname>
+					<forename type="first">C</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">The affective characters of the major and minor modes in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Comparative Psychology</title>
+			<imprint>
+				<date when="1928">1928</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="101" to="142"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HEVNER</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">The affective character of the major and minor modes in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Psychology</title>
+			<imprint>
+				<date when="1935">1935</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="103" to="118"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HEVNER</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Experimental studies of the elements of expression in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Psychology</title>
+			<imprint>
+				<date when="1936">1936</date>
+				<biblScope unit="volume">48</biblScope>
+				<biblScope unit="page" from="246" to="268"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HEVNER</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">The affective value of pitch and tempo in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Journal of Psychology</title>
+			<imprint>
+				<date when="1937">1937</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="621" to="630"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HORN</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HURON</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">On the changing use of the major and minor modes 1750–1900</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Theory Online</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="1" to="11"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HUNTER</surname>
+					<forename type="first">P</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHELLENBERG</surname>
+					<forename type="first">E</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHIMMACK</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="a">Mixed affective responses to music with conflicting cues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="327" to="352"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HUNTER</surname>
+					<forename type="first">P</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHELLENBERG</surname>
+					<forename type="first">E</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHIMMACK</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="a">Feelings and perceptions of happiness and sadness induced by music: Similarities, differences, and mixed emotions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychology of Aesthetics, Creativity, and the Arts</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="47" to="56"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HURON</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>YIM</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CHORDIA</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">The effect of pitch exposure on sadness judgments: An association between sadness and lower than normal pitch</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the 11th International Conference on Music Perception and Cognition</title>
+			<imprint>
+				<publisher>Causal Productions</publisher>
+				<date when="2010">2010</date>
+				<biblScope unit="page" from="63" to="66"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>HUSAIN</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>THOMPSON</surname>
+					<forename type="first">W</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHELLENBERG</surname>
+					<forename type="first">E</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Effects of musical tempo and Mode on arousal, mood, and spatial abilities</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="151" to="171"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>ILIE</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>THOMPSON</surname>
+					<forename type="first">W</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">A comparison of acoustic cues in music and speech for three dimensions of affect</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="319" to="330"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JOHNSTONE</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHERER</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Vocal communication of emotion</title>
+		</analytic>
+		<monogr>
+			<title level="m">The handbook of emotion</title>
+			<editor>
+				<persName>
+					<surname>Lewis</surname>
+					<forename>M</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Haviland</surname>
+					<forename>J</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Guilford</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2000">2000</date>
+				<biblScope unit="page" from="220" to="235"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JUSLIN</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">Emotional communication in music performance: A functionalist perspective and some data</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="383" to="418"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b54">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JUSLIN</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LAUKKA</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Communication of emotions in vocal expression and music performance: Different channels, same code?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychological Bulletin</title>
+			<imprint>
+				<date when="">2003</date>
+				<biblScope unit="volume">129</biblScope>
+				<biblScope unit="page" from="770" to="814"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JUSLIN</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LAUKKA</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Expression, perception, and induction of musical emotions: A review and a questionnaire study of everyday listening</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of New Music Research</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">33</biblScope>
+				<biblScope unit="page" from="217" to="238"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JUSLIN</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LINDSTRÖM</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Musical expression of emotions: Modelling listeners’ judgements of composed and performed features</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Analysis</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="334" to="364"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>JUSLIN</surname>
+					<forename type="first">P</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MADISON</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">The role of timing patterns in recognition of emotional expression from musical performance</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="197" to="221"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>KASTNER</surname>
+					<forename type="first">M</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CROWDER</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Perception of the major/minor distinction: IV. Emotional connotations in young children</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="189" to="202"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b59">
+		<analytic>
+			<author>
+				<persName>
+					<surname>KOELSCH</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KASPER</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SAMMLER</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHULZE</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GUNTER</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>FRIEDERICI</surname>
+					<forename type="first">A</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">Music, language and meaning: brain signatures of semantic processing</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature Neuroscience</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="302" to="307"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b60">
+		<analytic>
+			<author>
+				<persName>
+					<surname>KORHONEN</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CLAUSI</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>JERNIGAN</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Modeling emotional content of music using system identification</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Transactions on Systems, Man, and Cybernetics</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="588" to="599"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b61">
+		<analytic>
+			<author>
+				<persName>
+					<surname>LAUKKA</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>THINGUJAM</surname>
+					<forename type="first">N</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>YAMASAKI</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BELLER</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Universal and culture-specific factors in the recognition and performance of musical affect expressions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Emotion</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="434" to="449"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b62">
+		<analytic>
+			<author>
+				<persName>
+					<surname>LEMAN</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>VERMEULEN</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DE VOOGDT</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MOELANTS</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LESAFRE</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Prediction of musical affect using a combination of acoustic structural cues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of New Music Research</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="39" to="67"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b63">
+		<analytic>
+			<author>
+				<persName>
+					<surname>LINDSTRÖM</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Impact of melodic organization of melodic structure and emotional expression</title>
+		</analytic>
+		<monogr>
+			<title level="j">Musicae Scientiae</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="85" to="117"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b64">
+		<analytic>
+			<author>
+				<persName>
+					<surname>LUCK</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>TOIVIAINEN</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ERRKKILA</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LARTILLOT</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>RIIKKILA</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MAKELA</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Modelling the relationships between emotional responses to, and musical content of, music therapy improvisations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychology of Music</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="25" to="45"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b65">
+		<monogr>
+			<author>
+				<persName>
+					<surname>MEYER</surname>
+					<forename type="first">L</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="m">Emotion and meaning in music</title>
+			<imprint>
+				<publisher>University of Chicago Press</publisher>
+				<pubPlace>Chicago, IL</pubPlace>
+				<date when="1956">1956</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b66">
+		<analytic>
+			<author>
+				<persName>
+					<surname>MOTE</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">The effects of tempo and familiarity on children’s affective interpretation of music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Emotion</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="618" to="622"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b67">
+		<analytic>
+			<author>
+				<persName>
+					<surname>PAGGIOLI DE CARVALHO</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Bach’s Well-Tempered Clavier: Pedagogical approaches and the different styles of preludes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Per Musi</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">33</biblScope>
+				<biblScope unit="page" from="97" to="115"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b68">
+		<analytic>
+			<author>
+				<persName>
+					<surname>PALLESEN</surname>
+					<forename type="first">K</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BRATTICO</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BAILEY</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KORVENOJA</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KOIVISTO</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GJEDDE</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CARLSON</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Emotion processing of major, minor, and dissonant chords: A functional magnetic resonance imaging study</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annals of the New York Academy of Sciences</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">1060</biblScope>
+				<biblScope unit="page" from="450" to="453"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b69">
+		<monogr>
+			<author>
+				<persName>
+					<surname>PALMER</surname>
+					<forename type="first">W</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="m">J. S. Bach: The Well-Tempered Clavier</title>
+			<imprint>
+				<publisher>Alfred Music Publishing</publisher>
+				<pubPlace>Los Angeles, CA</pubPlace>
+				<date when="1994">1994</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b70">
+		<monogr>
+			<author>
+				<persName>
+					<surname>PEDHAZUR</surname>
+					<forename type="first">E</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="m">Multiple regression in behavioral research: Explanation and prediction</title>
+			<imprint>
+				<publisher>Harcourt Brace</publisher>
+				<pubPlace>Fort Worth, TX</pubPlace>
+				<date when="1997">1997</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b71">
+		<analytic>
+			<author>
+				<persName>
+					<surname>PEIRCE</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GRAY</surname>
+					<forename type="first">J</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SIMPSON</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MACASKILL</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HÖCHENBERGER</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SOGO</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">PsychoPy2: Experiments in behavior made easy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Behavior Research Methods</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="195" to="203"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b72">
+		<analytic>
+			<author>
+				<persName>
+					<surname>POON</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHUTZ</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Cueing musical emotions: An empirical analysis of 24-piece sets by Bach and Chopin documents parallels with emotional speech</title>
+		</analytic>
+		<monogr>
+			<title level="j">Frontiers in Psychology</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="1" to="13"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b73">
+		<analytic>
+			<author>
+				<persName>
+					<surname>POST</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HURON</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Western Classical music in the minor mode is slower (except in the Romantic period)</title>
+		</analytic>
+		<monogr>
+			<title level="j">Empirical Musicology Review</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="2" to="10"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b74">
+		<analytic>
+			<author>
+				<persName>
+					<surname>QUINTO</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>THOMPSON</surname>
+					<forename type="first">W</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KEATING</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Emotional communication in speech and music: The role of melodic and rhythmic contrasts</title>
+		</analytic>
+		<monogr>
+			<title level="j">Frontiers in Psychology</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="1" to="8"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b75">
+		<analytic>
+			<author>
+				<persName>
+					<surname>RAY-MUKHERJEE</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>NIMON</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MUKHERJEE</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>MORRIS</surname>
+					<forename type="first">D</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SLOTOW</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HAMER</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Using commonality analysis in multiple regressions: A tool to decompose regression effects in the face of multicollinearity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Methods in Ecology and Evolution</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="320" to="328"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b76">
+		<analytic>
+			<author>
+				<persName>
+					<surname>RIGG</surname>
+					<forename type="first">M</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Speed as a determiner of musical mood</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Experimental Psychology</title>
+			<imprint>
+				<date when="1940">1940</date>
+				<biblScope unit="volume">27</biblScope>
+				<biblScope unit="page" from="566" to="571"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b77">
+		<analytic>
+			<author>
+				<persName>
+					<surname>RODA`</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CANAZZA</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DE POLI</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>ROD</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Clustering affective qualities of classical music: Beyond the valence-arousal plane</title>
+		</analytic>
+		<monogr>
+			<title level="j">IEEE Transactions on Affective Computing</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="364" to="376"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b78">
+		<analytic>
+			<author>
+				<persName>
+					<surname>RUSSELL</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">A circumplex model of affect</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Personality and Social Psychology</title>
+			<imprint>
+				<date when="1980">1980</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="1161" to="1178"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b79">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHELLENBERG</surname>
+					<forename type="first">E</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KRYSCIAK</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CAMPBELL</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Perceiving emotion in melody: Interactive effects of pitch and rhythm</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="155" to="171"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b80">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHERER</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Expression of emotion in voice and music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Voice</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="235" to="248"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b81">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHERER</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Vocal communication of emotion: A review of research paradigms</title>
+		</analytic>
+		<monogr>
+			<title level="j">Speech Communication</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="227" to="256"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b82">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHERER</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>OSHINSKY</surname>
+					<forename type="first">J</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Cue utilization in emotion attribution from auditory stimuli</title>
+		</analytic>
+		<monogr>
+			<title level="j">Motivation and Emotion</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="331" to="346"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b83">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHIMMACK</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GROB</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Dimensional model of core affect: A quantitative comparison by means of structural equation modeling</title>
+		</analytic>
+		<monogr>
+			<title level="j">European Journal of Personality</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="325" to="345"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b84">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHUBERT</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Measuring emotion continuously: Validity and reliability of the two-dimensional emotion-space</title>
+		</analytic>
+		<monogr>
+			<title level="j">Australian Journal of Psychology</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="154" to="165"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b85">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHUBERT</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Modeling perceived emotion with continuous musical features</title>
+		</analytic>
+		<monogr>
+			<title level="j">Music Perception</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="561" to="585"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b86">
+		<analytic>
+			<author>
+				<persName>
+					<surname>SCHUTZ</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Acoustic constraints and musical consequences: Exploring composers’ use of cues for musical emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Frontiers in Psychology</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">8</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b87">
+		<monogr>
+			<author>
+				<persName>
+					<surname>TAN</surname>
+					<forename type="first">S</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>PFORDRESHER</surname>
+					<forename type="first">P</forename><forename type="middle">Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HARRÉ</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="m">Psychology of music: From sound to significance</title>
+			<imprint>
+				<publisher>Psychology Press</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2010">2010</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b88">
+		<analytic>
+			<author>
+				<persName>
+					<surname>TEMPERLEY</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>DE CLERCQ</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Statistical analysis of harmony and melody in rock music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of New Music Research</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="187" to="204"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b89">
+		<analytic>
+			<author>
+				<persName>
+					<surname>TRAINOR</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>SCHMIDT</surname>
+					<forename type="first">L</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Processing emotions induced by music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="487" to="500"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b90">
+		<analytic>
+			<author>
+				<persName>
+					<surname>VIEILLARD</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>PERETZ</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GOSSELIN</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>KHALFA</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>GAGNON</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>BOUCHARD</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Happy, sad, scary and peaceful musical excerpts for research on emotions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cognition and Emotion</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="720" to="752"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b91">
+		<analytic>
+			<author>
+				<persName>
+					<surname>VUOSKOSKI</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>EEROLA</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Measuring music-induced emotion: A comparison of emotion models, personality biases, and intensity of experiences</title>
+		</analytic>
+		<monogr>
+			<title level="j">Musicae Scientiae</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="159" to="173"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b92">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WATSON</surname>
+					<forename type="first">K</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="a">The nature and measurement of musical meanings</title>
+		</analytic>
+		<monogr>
+			<title level="j">Psychological Monographs</title>
+			<imprint>
+				<date when="1942">1942</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="i" to="43"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b93">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WEBSTER</surname>
+					<forename type="first">G</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>WEIR</surname>
+					<forename type="first">C</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<title level="a">Emotional responses to music: Interactive effects of mode, texture, and tempo</title>
+		</analytic>
+		<monogr>
+			<title level="j">Motivation and Emotion</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="19" to="39"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b94">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WEDIN</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Dimension analysis of emotional expression in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Swedish Journal of Musicology</title>
+			<imprint>
+				<date when="1969">1969</date>
+				<biblScope unit="volume">51</biblScope>
+				<biblScope unit="page" from="119" to="140"/>
+			</imprint>
+		</monogr>
+	</biblStruct>		
+	
+	<biblStruct type="article" xml:id="b95">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WEDIN</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">A multidimensional study of perceptual - emotional qualities in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">Scandinavian Journal of Psychology</title>
+			<imprint>
+				<date when="1972">1972a</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="241" to="257"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b96">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WEDIN</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluation of a three-dimensional model of emotional expression in music</title>
+		</analytic>
+		<monogr>
+			<title level="j">The Psychological Laboratories</title>
+			<imprint>
+				<date when="1972">1972b</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="1" to="17"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b97">
+		<analytic>
+			<author>
+				<persName>
+					<surname>WIGGINS</surname>
+					<forename type="first">G</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Music, syntax, and the meaning of "meaning."</title>
+		</analytic>
+		<monogr>
+			<title level="m">Proceedings of the First Symposium on Music and Computers</title>
+			<imprint>
+				<publisher>Ionian University</publisher>
+				<date when="1998">1998</date>
+				<biblScope unit="page" from="18" to="23"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b98">
+		<analytic>
+			<author>
+				<persName>
+					<surname>YANG</surname>
+					<forename type="first">Y</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CHEN</surname>
+					<forename type="first">H</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Machine recognition of music emotion</title>
+		</analytic>
+		<monogr>
+			<title level="j">ACM Transactions on Intelligent Systems and Technology</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="1" to="30"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+			
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

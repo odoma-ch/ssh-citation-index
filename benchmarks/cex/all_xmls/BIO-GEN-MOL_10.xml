@@ -1,0 +1,3098 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Protein Expression and Purification</title>
+				<funder ref="#_gwmw4uh">
+					<orgName type="full">CSIR</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-09-11">11 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><surname>Vandana</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Division of Protein Science and Engineering</orgName>
+								<orgName type="institution">CSIR-Institute of Microbial Technology</orgName>
+								<address>
+									<addrLine>Sector39-A</addrLine>
+									<region>Chandigarh</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Satish</forename><surname>Kantipudi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Division of Protein Science and Engineering</orgName>
+								<orgName type="institution">CSIR-Institute of Microbial Technology</orgName>
+								<address>
+									<addrLine>Sector39-A</addrLine>
+									<region>Chandigarh</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Neeraj</forename><surname>Maheshwari</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Division of Protein Science and Engineering</orgName>
+								<orgName type="institution">CSIR-Institute of Microbial Technology</orgName>
+								<address>
+									<addrLine>Sector39-A</addrLine>
+									<region>Chandigarh</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sheetal</forename><surname>Sharma</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Division of Protein Science and Engineering</orgName>
+								<orgName type="institution">CSIR-Institute of Microbial Technology</orgName>
+								<address>
+									<addrLine>Sector39-A</addrLine>
+									<region>Chandigarh</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Girish</forename><surname>Sahni</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Division of Protein Science and Engineering</orgName>
+								<orgName type="institution">CSIR-Institute of Microbial Technology</orgName>
+								<address>
+									<addrLine>Sector39-A</addrLine>
+									<region>Chandigarh</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Cloning and puriﬁcation of an anti-thrombotic, chimeric Staphylokinase in Pichia pastoris</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Protein Expression and Puriﬁcation</title>
+						<idno type="ISSN">1046-5928</idno>
+						<imprint>
+							<biblScope unit="volume">162</biblScope>
+							<biblScope unit="page" from="1" to="8"/>
+							<date type="published" when="2019-09-11">11 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">E86AF22E0DE8992E44225425A8C16BE4</idno>
+					<idno type="DOI">10.1016/j.pep.2019.05.004</idno>
+					<note type="submission">Received 3 August 2018; Received in revised form 17 April 2019; Accepted 16 May 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Staphylokinase Thrombomodulin Fusion protein Plasminogen activator Anti-thrombotic Pichia pastoris Expression Purification</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>There has been an increasing prevalence of cardiovascular diseases such as myocardial infarction and stroke in modern societies because of multiple lifestyle related issues like sedentariness and obesity, alcohol consumption and many more "life-style"factors. The FDA-approved thrombolytics such as Tissue Plasminogen Activator, Streptokinase etc. are used to lyse the clots in thrombotic disorders such as myocardial infarction, stroke etc. but re-occlusion and bleeding that are co-incident to their clinical usage are not addressed. Hence, there is need to develop thrombolytics having properties like increased fibrin clot specificity and thrombin inhibition capability to prevent re-occlusion. In the present work, a fusion protein construct containing two components i.e. Staphylokinase (SAK) and Epidermal Growth Factor (EGF) 4, 5, 6-like domains of human thrombomodulin (THBD) was expressed in Pichia pastoris after genetic optimization. SAK isolated from Staphylococcus aureus is a fibrin-specific plasminogen activator while EGF 4, 5, 6-like domains are reported to be responsible for imparting thrombin inhibition to human thrombomodulin, and therefore, expected could help prevent re-occlusion in the novel construct -SAK_EGF, which is a 43 kDa protein. After expression, it was purified (approx. 13-fold) using two-step purification protocol involving ion-exchange followed by Gel Filtration Chromatography (GFC). The functional characterization including plasminogen activation and thrombin inhibition showed that both the fusion partners viz. SAK and 4,5,6 EGF-like domains retained their respective activities after fusion, confirming it to be a bio-active construct. Thus, this engineered protein could be clinically promising due to the combinatorial effect of fibrin-specific thrombus lysis and prevention of re-occulusion.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>According to the WHO website <ref type="bibr" target="#b0">[1]</ref>, by 2016, cardiovascular diseases were the leading cause of deaths worldwide as these involve the unregulated formation of pathological thrombi (blood clots) in the vascular system that lead to diverse circulatory disorders such as myocardial infarction, ischemic strokes, and lung and leg thromboembolisms.</p><p>The USFDA-approved agents for the treatment of circulatory disorders include Urokinase, pro-urokinase, Streptokinase, and various modified and native versions of TPA such as Tenecteplase, Alteplase and Reteplase <ref type="bibr" target="#b1">[2]</ref>. All these protein drugs are plasminogen activators, and all operate through a closely similar mechanism wherein cleavage of a ''scissile'' peptide bond between Arg 561-Val 562 residues of plasminogen leads to the formation of its proteolytically activated form, namely plasmin (PN). The PN thus formed acts further on fibrin and results in dissolution of the pathological clot. Although the obstruction is removed, this also causes the release of clot-bound thrombin which, in turn, may lead to an increased level of fibrinopeptide-A and hence poses a major concern for patients who may experience bouts of reocclusion <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref>. Heparin, an anticoagulant, is therefore also used during thrombolytic therapy that acts only on free thrombin as clotbound thrombin is resistant to it <ref type="bibr" target="#b6">[7]</ref>. This clot-bound thrombin leads to activation of several factors such as factor V, factor VIII, factor XI, factor XIII, conversion of fibrinogen into fibrin, platelets activation, and activation of Thrombin Activable Fibrinolytic Inhibitor (TAFI) which leads to clot formation at some other site <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. It has been documented that human thrombomodulin (THBD) can inhibit the clotbound thrombin by forming a complex with it and converts its function from pro-coagulant to anti-coagulant <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>.</p><p>In an attempt to prevent the serious, re-occulusion problem, during thrombolytic therapy, we designed a molecule comprising two activities from two heterologous proteins by the formation of a fusion/chimeric protein. For this, a reasonably well tested fibrin-specific plasminogen activator i.e. Staphylokinase (SAK) and the 4, 5, 6 EGF-like domains of THBD were selected for fusion.</p><p>SAK, one of the well-known bacterial plasminogen activators, was originally isolated from a lysogenic strain of Staphylococcus aureus; it is fibrin specific and results in clot dissolution <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref>. SAK forms a 1:1 complex with human plasmin (HPN) which further leads to cleavage of its substrate, human plasminogen (HPG) into HPN. The α 2 antiplasmin present in circulating plasma rapidly inhibits unbound SAK.HPN complex <ref type="bibr" target="#b20">[21]</ref> whereas fibrin-bound complex is resistant to α 2 antiplasmin inhibition, leading to its fibrin specificity and fibrinogen protection <ref type="bibr" target="#b18">[19,</ref><ref type="bibr" target="#b20">21]</ref>.</p><p>Human THBD forms a 1:1 M complex with thrombin, and this complex is an activator of the Protein C pathway. It is a 72 kDa protein and is associated with endothelial cell surfaces <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b22">23]</ref> and consists of five distinct domains: N-terminal domain (1-226 residues); a cysteinerich region containing EGF (Epidermal Growth factor) 4, 5, 6-like type B repeats (residues 226-462); an O-glycosylated Ser/Thr rich region (residues 463-497); a hydrophobic transmembrane region (498-521 residues); and a C-terminal cytoplasmic "tail" (residues 522-557) <ref type="bibr" target="#b23">[24]</ref>. Earlier reports suggested that 4, 5, 6 EGF -like domains have a great therapeutic potential due to their thrombin inhibition and Protein C activation capability <ref type="bibr" target="#b24">[25,</ref><ref type="bibr" target="#b25">26]</ref>.</p><p>In the present work, the SAK DNA encoding translational Open Reading Frame (ORF) has been fused that of 4, 5, 6 Epidermal Growth Factor-like domains (EGF) of THBD co-translationally with its C-terminal so as to express a chimeric polypeptide in Pichia pastoris. The purification of SAK_EGF was optimized to a simple, two-step chromatography scheme using ion-exchange chromatography with Q-Sepharose (Fast flow) followed by Gel Filtration Chromatography (GFC) with Superdex-75.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Materials and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Reagents</head><p>QuikChange™ Site-Directed Mutagenesis Kit and DNA polymerase (Pfu) were obtained from Stratagene Inc. Restriction endonucleases, T4 DNA ligase and other DNA modifying enzymes were acquired from New England Bio labs (NEB, Beverly, MA). Ampicillin, Kanamycin, and Geneticin (G418) were obtained from Calbiochem, USA. Oligonucleotide primers were obtained from Integrated DNA Technologies (IDT) Inc., USA. DNA purification and gel extraction kits were procured from QiagenGmbH (Germany). Glu-Plasminogen and Chromozym PL were purchased from Roche-Sigma, USA. Human thrombin and human fibrinogen supplied by Calbiochem, USA. Thrombomodulin (HEK 293 cell line-derived) was purchased from American Diagnostica, MA, USA. All other reagents were of the highest analytical grade.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Plasmids, strains and culture media</head><p>Host strain vector GS115 and pPIC9K vector were obtained from Invitrogen (USA). For cloning, E.coli strain XL-1Blue was procured from Strategene Inc. (USA). pMEX SAK plasmid encoding SAK was obtained from Dr. Dikshit (IMTECH, Chandigarh). The media components were purchased from Difco (USA). Q-sepharose (Fast flow) and Superdex 75 pg were procured from GE Healthcare, Uppsala, Sweden.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Media preparation</head><p>The minimal dextrose (MD) plate supplemented with 1.34% Yeast Nitrogen Base (YNB) without amino acids, 2% dextrose, 4 × 10 -5 % biotin and 1.5% agar were prepared. The culture medium used for the growth phase was buffered glycerol-complex medium (BMGY) containing 1% yeast extract, 2% peptone, 100 mM potassium phosphate (pH 5.5), 1.34% YNB without amino acids, 4 × 10 -5 % biotin and 1% glycerol whereas for induction phase buffered methanol-complex medium (BMMY) containing 1% methanol instead of glycerol and 1% casamino acid were added in addition <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b27">28]</ref>. Concentrations of antibiotics used for propagation of clones were 100 μg/mL ampicillin, 10 μg/mL kanamycin and 0.5-3 mg/mL geneticin (G418).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Cloning of SAK_EGF in Pichia pastoris</head><p>SAK_EGF, the C-terminal fusion was amplified by Splice Overlap Extension (SOE) from pMEX_SAK using primers SAK_EGF Fp1 and SAK Rp2, while 4,5,6 EGF-like domains of THBD was custom synthesized (Gene Script Inc.), used to amplify EGF with primers EGF Fp3 and SAK Rp4.To amplify the full-length amplicon of approx 762bp, different concentrations of magnesium sulfate (MgSO 4 ) was standardized using PCR as given in Table <ref type="table" target="#tab_1">2</ref> and the amplified gene was ligated into a pET23d vector within XhoI and NotI sites. The ligated product was transformed into E.coli XL-1B cells and sequence was confirmed by DNA sequencing using Applied Biosystems 3130 xl genetic analyzer. The positive clone was subjected to site-directed mutagenesis PCR for deglycosylation of SAK using primers dSAKFp and dSAKRp as given in *Restriction sites are shown in bold. Table 1 <ref type="bibr" target="#b28">[29,</ref><ref type="bibr" target="#b29">30]</ref>. The confirmed clone was again subjected to site-directed mutagenesis PCR for oxidation-sensitive methionine 388 of the short interdomain loop between 4th and 5th EGF-like domain with primers M388LFp and M388LRp <ref type="bibr" target="#b30">[31]</ref>as given in Table <ref type="table" target="#tab_0">1</ref>. The positive clones confirmed by DNA sequencing were further ligated into pPIC9K vector digested with XhoI and NotI restriction sites. Sequences of all primers used in this study are given in table1and restriction sites are shown in bold.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Transformation of Pichia pastoris with a linearized pPIC9K-SAK_EGF and selection of a hyper -producer clone</head><p>Ten μg of BglII digested linearized recombinant DNA was transformed into GS115 competent cells of Pichia pastoris by electroporation according to the manufacturer's protocol and plated on MD agar for selection of His + phenotype. Due to the differences in expression cassette copy number or differences in the site of plasmid integration, the numbers of transformants obtained were very high <ref type="bibr" target="#b31">[32]</ref>. Further, these clones were patched on YPD (Yeast Extract Peptone Dextrose) agar supplemented with ampicillin and kanamycin and incubated for 24hr-48 h at 30 °C. As kanamycin gene confers resistance to G418 so obtained clones were further subjected to screening using a different concentration of G418 on YPD plates to isolate clones with multiple copies of the desired gene.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6.">Screening of SAK_EGF from Pichia pastoris</head><p>The primary cultures of the clones obtained on G418 were grown in falcon tubes containing BMGY culture medium for 12-16hr till the OD 600 reached between 3 and 4. The culture was harvested at 8000 rpm for 10 min at 22 °C. The cell pellet was diluted to an OD 600 of approximately 1 with BMMY culture medium. The cultures were induced with methanol to a final concentration of 1% after every 24hr and are continued till 120hr. The culture was harvested and the supernatant was used for activity assay and subjected to plate based screening (PBS) so as to isolate clone with high activity. In this assay, a fixed volume of collected culture was added to individual wells in 96-well plates containing a reaction mixture of 50 mM Tris-Cl pH 7.4, 1 μM of PG, and 0.5 mM chromozymePL and change in absorbance at 405 nm as a function of time were recorded using Biotek Power Wave X microtitre plate reader <ref type="bibr" target="#b31">[32]</ref>. Selected clones were TCA precipitated <ref type="bibr" target="#b32">[33]</ref> and run on 10% SDS PAGE <ref type="bibr" target="#b33">[34]</ref> and transferred to nitrocellulose membrane for blotting. The western blotting was performed with anti-SAK polysera antibody <ref type="bibr" target="#b34">[35]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.7.">Expression and purification of SAK_EGF</head><p>One of the clones showing high activity was selected for protein expression and purification. Single colony of the selected clone was inoculated in 125 mL BMGY media, incubated at 30 °C for 12hr with shaking. When OD 600 reached 3-4, the culture was harvested and the cell pellet was transferred to 500 mL BMMY and incubated at 25 °C with 220 rpm. For the next 72hr, the culture was induced with methanol to a final concentration of 1% (v/v) at an interval of 24hr.</p><p>Purification of SAK_EGF, the C-terminal fusion of SAK involved twostep protocol. The extracellular broth containing SAK_EGF was harvested at 8000 rpm for 10 min at room temperature, and 10 mM EDTA (final conc.) was added to the harvested supernatant. The supernatant was then filtered through 0.45-μm filter and extensively dialyzed against 20 mM Tris-Cl pH 8.0 and 1 mM EDTA at 4 °C for 16hr. The dialyzed supernatant was loaded onto a 30 ml bed volume Q-Sepharose (Fast flow) column pre-equilibrated with 20 mM Tris-Cl, pH 8.0 and 1 mM EDTA. Elution was done with a gradient of 1M NaCl. The amount of protein in each fraction was measured by using the Bradford method of protein estimation <ref type="bibr" target="#b35">[36]</ref> and quality was analyzed by SDS-PAGE <ref type="bibr" target="#b33">[34]</ref>. The pure fractions were pooled, concentrated and loaded onto a Superdex 75 pg 16/600 Hiload column pre-equilibrated with 100 mM MES buffer, pH 7.1. Protein peak was collected and the quality of the protein was checked on SDS-PAGE.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.8.">Determination of SAK activity</head><p>Plasminogen activation assay was performed to check the activity of SAK/SAK fusion. In this assay 1.5 μM HPG and 5 nM of SAK/SAK_EGF was incubated with 100 mM Tris-Cl pH 7.4 containing 0.01% Tween 20 (v/v) for 30 min at 37 °C. An aliquot of 5 μl was taken out after every 5 min and added into 96 well microtitre plate containing 100 mM Tris-Cl pH 7.4, 100 mM NaCl, 0.1% BSA, and 0.01% Tween 20. 1 mM Chromozym PL™ as substrate for PN was added at last. The change in absorbance was recorded at 405 nm at 37 °C to determine the PN generated over a period of 1 h <ref type="bibr" target="#b36">[37]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.9.">Clotting time assay for activity of EGF -like domains</head><p>In this assay, the effect of 4, 5, 6 EGF-like domains on thrombininduced clot formation was checked in 96-well plates, where different concentrations of SAK_EGF (0-100 nM) were mixed with 5.27 U of thrombin in buffer containing 20 mM Tris-Cl, 100 mM NaCl, pH 7.4, 5 mM CaCl 2 and 1.76 mg/ml PEG 8000. The reactions were incubated at 37 °C for 10 min. After that, 2 mg/ml fibrinogen (Calbiochem) was added and change in absorbance was recorded at 405 nm with 20 s time intervals <ref type="bibr" target="#b37">[38]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Construction, transformation, and screening of SAK_EGF</head><p>The schematic representation for Splice Overlap-Extension amplification of C-terminal fusion of SAK i.e. SAK_EGF is shown in Fig. <ref type="figure" target="#fig_0">1a</ref>, and size of amplified SAK_EGF DNA by PCR is shown in gel Fig. <ref type="figure" target="#fig_0">1b</ref>.</p><p>The XhoI and NotI digested SAK_EGF amplicon and the pET23d vector were ligated (Fig. <ref type="figure" target="#fig_1">2a</ref>). Positive clones confirmed by DNA sequencing were again double digested with XhoI &amp; NotI and ligated into vector pPIC9K as shown in Fig. <ref type="figure" target="#fig_1">2b</ref>.</p><p>The activity profiling of different clones for selection of a hyper producer showed that the clones A1 to A5, A7 to A12, B2 to B4, and B6 to B12 had good activity as compared to wild-type SAK used as positive control in C1 well and non-producer clone used as negative control in C2 well while some clones like A6, B1, and B5 were having lower activity (Fig. <ref type="figure" target="#fig_1">2c</ref>).</p><p>Among the 24 clones screened, a few clones with higher activity were selected for protein expression which was confirmed by Western blots (see Fig. <ref type="figure" target="#fig_1">2d</ref>). All clones showed intact protein band of molecular mass 43 kDa. From all these positive clones, one was further selected for shake flask level expression optimization and purification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Expression and purification of SAK_EGF</head><p>Anion exchange (Q-Sepharose Fast flow) purification profile is shown in Fig. <ref type="figure" target="#fig_2">3a</ref>. Fractions obtained from Q-Sepharose (Fast flow) were run on SDS-PAGE (Fig. <ref type="figure" target="#fig_2">3b</ref>). The results showed the fractions with a molecular mass of 43 kDa. These fractions corresponded to the encircled region on the main peak (see Fig. <ref type="figure" target="#fig_2">3a</ref>). These fractions were pooled and subjected to 2nd step purification using Superdex 75 pg column. In this purification, two peaks were obtained so collected separately (Fig. <ref type="figure" target="#fig_2">3 c</ref>) and fractions collected were run on SDS gel. A band at 43 kDa of SAK_EGF protein as shown in Fig. <ref type="figure">3d</ref> corresponded to peak 1 while in peak 2 fractions no protein was detected on SDS-PAGE (Fig. <ref type="figure" target="#fig_2">3 e</ref>). Approx. 13 folds of purification were obtained as shown in Table <ref type="table" target="tab_2">3</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Plasminogen activation</head><p>In this assay SAK_EGF shows the PG activation activity but is relatively slower than the wild-type SAK (Fig. <ref type="figure" target="#fig_3">4</ref>). The SAK_EGF has approximately 88% activity as compared to SAK.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Clotting time assay</head><p>The fusion construct was added in a dose-dependent manner so as to determine the anti-thrombotic activity. In this modified assay, 5.28U of thrombin corresponds to 20 s of clotting time. THBD when incubated in separate reactions with thrombin shows 60 s of clotting time at a concentration of 0.25 nM whereas at 1 nM concentration the clotting time is 100 s. In case of fusion construct, 75 nM SAK_EGF when incubated with 5.28U thrombin, it doubles the clotting time to 40 s. Similarly 100 nM of SAK_EGF corresponds to clotting time of 60 s as shown in Fig. <ref type="figure" target="#fig_4">5</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Discussion</head><p>This study shows results on the design, expression, and purification of a potentially important genetic manipulation which involves the fusion of Staphylokinase, a well-known thrombolytic which has shown promise in clinical trials <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref> with EGF-like domains of human THBD. The C-terminal fusion of SAK and 4, 5, 6 EGF-like domains of THBD was designed with the aim to target the fibrin-specific dissolution of clot and activation of Protein C anticoagulant pathway due to complex formation with activated thrombin released from the clot, respectively.</p><p>Earlier studies over the years have reported the cloning and expression of SAK in various expression systems like Bacillus subtilis, E. coli    etc. <ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b45">[46]</ref> but in our case, the fusion partner, EGF, would have presented serious oxidative refolding issues owing to its 9 disulphide bonds, when expressed in E.coli. Also, it is reported that glycosylation of SAK in Pichia pastoris resulted in attenuated activity of SAK <ref type="bibr" target="#b46">[47]</ref>. So, to overcome the lowered activity of SAK, different approaches were used for expression in Pichia. In one approach, tunicamycin antibiotic was used during induction phase to inhibit glycosylation <ref type="bibr" target="#b47">[48]</ref> and in another Pichia optimized codons of SAK were used <ref type="bibr" target="#b48">[49]</ref>. In the present study, the key residue of Thr-30, a site for N-linked glycosylation <ref type="bibr" target="#b46">[47]</ref>, was mutated to Ala, to get functional SAK in Pichia <ref type="bibr" target="#b29">[30]</ref>. While in 4, 5, 6 EGF-like domains of THBD it is reported that oxidation of Met 388 reduces the cofactor actvity of THBD <ref type="bibr" target="#b49">[50]</ref>, so to improve the anticoagulant activity of THBD domains Met was subsituted with Leu <ref type="bibr" target="#b30">[31]</ref>.</p><p>In literature, attempts to equip SAK with bifunctional property have been reported which include fusion of SAK having plasminogen-activation and other functions including thrombin inhibition <ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref><ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref><ref type="bibr" target="#b57">[58]</ref><ref type="bibr" target="#b58">[59]</ref>, antiplatelet activity <ref type="bibr" target="#b51">[52,</ref><ref type="bibr" target="#b55">56,</ref><ref type="bibr" target="#b57">[58]</ref><ref type="bibr" target="#b58">[59]</ref><ref type="bibr" target="#b59">[60]</ref><ref type="bibr" target="#b60">[61]</ref>, and increased fibrin specificity <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b55">56,</ref><ref type="bibr" target="#b57">58]</ref>. Currently, there is no report of FDA approved thromobolytic fusion protein with EGF like properties relevant to anti thrombin via both direct inhibition as well as prevention of re-occlusion through the pro-coagulant "pathway". However, in literature the FDA-approved anti-thrombin -dabigatran which is a hirudin analog, and antiplatelet drugs -Aspirin, Ticlopidine, Clopidogre etc. are mentioned to be used as adjuvants during thrombolytic therapy; however these have been reported to cause increased bleeding <ref type="bibr" target="#b61">[62]</ref><ref type="bibr" target="#b62">[63]</ref><ref type="bibr" target="#b63">[64]</ref><ref type="bibr" target="#b64">[65]</ref><ref type="bibr" target="#b65">[66]</ref><ref type="bibr" target="#b66">[67]</ref><ref type="bibr" target="#b67">[68]</ref><ref type="bibr" target="#b68">[69]</ref>. Hence, the present design of a C-terminal fusion of SAK and 4, 5, 6 EGF-like domains of THBD that results in fibrin-specific clot dissolution (derived from SAK) and ability to complex with clot bound thrombin thus inhibiting it from clot formation and also inhibiting factors like Va, VIIa involved in thrombin generation through Protein C activation pathway represents a potential opening for a new analog with promise.</p><p>The fusion of Streptokinase (SK) with 4, 5, 6 EGF-like domains of THBD has also been reported in earlier studies from our lab where it was shown that both the fusion partners retained their individual activities <ref type="bibr" target="#b69">[70]</ref>. However, the structure and functional correlations in SK which is three-domain protein different in size as well as complexity of interaction with human plasminogen than the single-domain SAK where the probability of compromising function during a fusion could be argued to be greater <ref type="bibr" target="#b70">[71,</ref><ref type="bibr" target="#b71">72]</ref>. SK, it may be mentioned, intrinsically does not possess high fibrin specificity in its action, unlike SAK <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref>. Therefore, the co-existence of fibrin specificity, low molecular size (SK is a 47 kDa, and SAK a 16 kDa protein) leading to greater penetration of clots, along with thrombin inhibition make a SAK-EGF chimeric construct of special attraction for clinical applications especially in ischemic strokes where re-occlusion can be observed in a majority of cases <ref type="bibr" target="#b72">[73]</ref><ref type="bibr" target="#b73">[74]</ref><ref type="bibr" target="#b74">[75]</ref>.</p><p>In this present study, we have shown the successful formation of a stable C-terminal chimera of 4, 5, 6 EGF-like domains of THBD with SAK. As far as the bioactivity of both fusion segments are concerned, SAK_EGF retained plasminogen activation whereas the integrated 4, 5, 6 EGF-like domains also successfully inhibited thrombin which resulted in the doubling of clotting time in presence of different concentration of SAK_EGF. This is the first report wherein SAK has been 'equipped' with an integrated anti-thrombin function by a simple fusion with 4, 5, 6 EGF-like domains of THBD without any major reduction in its core, PG activating function.</p><p>The process for a scaled-up production of the hybrid protein commensurate with pre-clinical, animal model studies so as to target clots in stroke and other circulatory diseases where re-occlusion is a major clinical issue, together with an uncompromised high fibrin-specificity of SAK represents, in our view, a major potential development for therapeutic applications in the future.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusion</head><p>In this study, we have successfully expressed and purified a novel fusion construct namely SAK_EGF to near-homogeneity. The biochemical and functional characterization of the chimeric protein shows that activity of both partners have been retained after fusion i.e. plasminogen activation activity in case of SAK, and a doubling of clotting time due to inhibition of thrombin by 4, 5, 6 EGF-like domains the THBDindicating a highly optimistic scenario for clot dissolution therapy in the future. </p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Schematic representation &amp; DNA amplification of SAK_EGF by splice overlap extension. (a) The SAK_EGF construct was amplified by three PCRs. In PCR 1, SAK was amplified with EGF overhangs. Whereas in PCR 2 EGF domain was amplified with SAK overhangs. In the 3rd PCR, full-length ORF of SAK_EGF was amplified. (b) Agarose gel showing the amplified product of SAK_EGF. Lane 1: 100bp ladder (NEB). Lane 2: amplified EGF, Lane 3: amplified SAK domain. Lane 4: reaction with no amplification using low MgSO 4 concentration. Lane 5: 762bp amplified SAK_EGF using a high concentration of MgSO 4 .</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Diagrammatic representation of amplified SAK_EGF ligated with bacterial expression vector pET23d, and pPIC9K Pichia vector, Plate-Based Screening (PBS) profiles in latter and Western blots of different levels of fusion protein expressed in isolated clones in Pichia. (a) The SAK_EGF construct and pET23d vector were double-digested with XhoI and NotI, and ligated. (b) Positive clone of SAK_EGF pET23d was double-digested again and ligated into pPIC9K. (c) SAK_EGF showing the activity of different clones. Lane C1 is a positive control. Lane C2 is negative control whereas A1 to B12 are different clones that were screened for plasminogen Activator activity. (d) By Western blotting, clones were probed with SAK polyclonal antibody. Lanes 1-3: Clones showing protein of expected size. Lane 4: SAK used as a positive control. Lane 5: Std. MW Markers. Lane 6: negative non-producer clone.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Purification profiles of SAK_EGF. (a) Chromatogram showing UV absorbance A 280 on left side Y-axis and salt gradient on right side Y-axis Vs with the volume on X-axis. The eluted protein was collected as different fractions; the encircled region in chromatogram shows the fractions with the desired protein. (b) SDS-PAGE of different fractions. Lane 1: GE LMW-SDS markers. Lanes 2-10: Different fractions of purified protein. (c) GFC Chromatogram showing the UV absorption A 280 on Y-axis with the volume on X-axis. As two peaks were obtained, each peak was collected separately and samples were run on an SDS-PAGE gel. (d) Peak1 eluted fractions in lane 1, 3-9 showing the desired protein of molecular mass 43 kDa. (e) SDS-PAGE of Peak 2 fractions in Lanes 1, 3-9. Lane 2 of both d and e figures represent GE LMW-SDS marker. This experiment was repeated three times independently closely similar results were obtained each time.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Plasminogen activation proﬁle of SAK_EGF and SAK as a function of time. In this assay, 1.5 μM PG and either 5 nM SAK ( ) or 5 nM SAK_EGF ( ) were incubated at 37 °C (n = 2, data with standard deviation). This experiment was repeated two times independently.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Clotting time assay. In this assay ( ) represents SAK_EGF and ( ) represent SAK. Results show 4,5, 6 EGF-like domain inhibit thrombin activity as evidenced in increased clotting time. The inset figure data is provided using native THBD as positive control ( ), while ( ) represents SAK used as a negative control. The experiment was performed in duplicates in two independent experiments.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>List of primers used in the study are given below.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Steps of PCR cycle used during preparation of SAK_EGF construct.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 2</head><label>3</label><figDesc>Puriﬁcation Work-up of chimeric SAK_EGF obtained from supernatant of Pichia pastoris. The total enzyme activity at each step was determined by plasminogen coupled chromogenic substrate assay (see Materials and methods).</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>We sincerely thank DNA sequencing and animal house facilities of <rs type="institution">CSIR-IMTECH</rs>. The authors acknowledge <rs type="person">Ms Sarabjeet Kour Sudan</rs> for critical reading of the manuscript, and <rs type="person">Dr. Pooja Beniwal Sawhney</rs> for help in the preparation of this manuscript and technical advice. The work was supported by <rs type="funder">CSIR</rs> grants to G.S.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Funding</head><p>This work was supported by <rs type="funder">CSIR</rs> intramural grant (No. <rs type="grantNumber">OLP0105</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_gwmw4uh">
+					<idno type="grant-number">OLP0105</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>Conceived and designed the experiments: GS, V, NM. Performed the experiments: V, SK, SS. Analyzed the data: GS, V. Contributed reagents/ materials/analysis tools: GS, V. Prepared the manuscript: GS, V.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>The authors declare no conflict of interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethical statement</head><p>In this manuscript, animal ethical guidelines of the Institute (Institute of Microbial Technology, IMTECH) were strictly followed for generation of the polyclonal antibody having Institutional Animal Ethics Committee (IAEC) vide Approval number IAEC/17/14.</p></div></div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="webpage" xml:id="b0">
+		<monogr>
+			<ref target="http://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death">http://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death</ref>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Adivitiya</surname>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Khasa</surname>
+					<forename type="first">Y</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">The evolution of recombinant thrombolytics: current status and future directions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bioengineered</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="331" to="358"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stenflos</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ohlins</surname>
+					<forename>A-K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Owen</surname>
+					<forename type="first">W</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schneidernll</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">beta-hydroxyaspartic acid or 6-hydroxyasparagine in bovine low density lipoprotein receptor and in bovine thrombomodulin*</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">263</biblScope>
+				<biblScope unit="page" from="21" to="24"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename type="first">P</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sherman</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rich</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schwartz</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schechtman</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Geltman</surname>
+					<forename type="first">E</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sobel</surname>
+					<forename type="first">B</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jaffe</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Louis</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Importance of continued activation of thrombin reflected by fibrinopeptide A to the efficacy of thrombolysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Coll. Cardiol.</title>
+			<imprint>
+				<date when="1986">1986</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="1255" to="1262"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Landi</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barbarotto</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Morabito</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Angelo</surname>
+					<forename type="first">A</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mannucci</surname>
+					<forename type="first">P</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Prognostic significance of fibrinopeptide a in survivors of cerebral infarction</title>
+		</analytic>
+		<monogr>
+			<title level="j">Stroke</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="424" to="427"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Eisenberg</surname>
+					<forename type="first">P</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sherman</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jaffe</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Louis</surname>
+					<forename type="first">Fa</forename><forename type="middle">St</forename>
+				</persName>
+			</author>
+			<title level="a">Paradoxic elevation of fibrinopeptide A after streptokinase: evidence for continued thrombosis despite intense fibrinolysis</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Coll. Cardiol.</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="527" to="529"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Angelica Merlini</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bauer</surname>
+					<forename type="first">K</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oltrona</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ardissino</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spinola</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cattaneo</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Broccolino</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mannuccio Mannucci</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rosenberg</surname>
+					<forename type="first">R</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">Thrombin generation and activity during thrombolysis and concomitant heparin therapy in patients with acute myocardial infarction</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Coll. Cardiol.</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="203" to="209"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mosesson</surname>
+					<forename type="first">M</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">The roles of fibrinogen and fibrin in hemostasis and thrombosis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Semin. Hematol.</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="177" to="188"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>DAVEY</surname>
+					<forename type="first">M</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>LÜSCHER</surname>
+					<forename type="first">E</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">Actions of thrombin and other coagulant and pro- teolytic enzymes on blood platelets</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1967">1967</date>
+				<biblScope unit="volume">216</biblScope>
+				<biblScope unit="page" from="857" to="858"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mann</surname>
+					<forename type="first">K</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jenny</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Krishnaswamy</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Cofactor proteins in the assembly and expression ofblood clotting enzyme complexes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annu. Rev. Biochem.</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">57</biblScope>
+				<biblScope unit="page" from="915" to="956"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fay</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Subunit structure of thrombin-activated human factor VIIIa</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochim. Biophys. Acta</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">952</biblScope>
+				<biblScope unit="page" from="181" to="190"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gailani</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Broze</surname>
+					<forename type="first">G</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Factor XI activation in a revised model of blood coagulation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="1991">1991</date>
+				<biblScope unit="volume">253</biblScope>
+				<biblScope unit="page" from="909" to="912"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lorand</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Konishi</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Activation of the fibrin stabilizing factor of plasma by thrombin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Arch. Biochem. Biophys.</title>
+			<imprint>
+				<date when="1964">1964</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="58" to="67"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<forename type="first">M</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bajzar Laszlo</surname>
+					<forename type="first">N</forename><forename type="middle">M</forename><forename type="last">E</forename>
+				</persName>
+			</author>
+			<title level="a">Purification and characterization of TAFI, a thrombin-activable fibrinolysis inhibitor *</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">270</biblScope>
+				<biblScope unit="page" from="14477" to="14484"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Weitz</surname>
+					<forename type="first">J</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Leslie</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hudoba</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Thrombin binds to soluble fibrin degradation products where it is protected from inhibition by heparin-antithrombin but susceptible to inactivation by antithrombin-independent inhibitors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Circulation</title>
+			<imprint>
+				<date when="1998">1998</date>
+				<biblScope unit="volume">97</biblScope>
+				<biblScope unit="page" from="544" to="552"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Weitz</surname>
+					<forename type="first">J</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maraganore</surname>
+					<forename>j</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hirsh</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Clot-bound thrombin is protected from inhibition by heparin-antithrombin III but is susceptible to inactivation by antithrombin III-independent inhibitors</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Clin. Investig.</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="385" to="385"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hogg</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jacksont</surname>
+					<forename type="first">C</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Fibrin monomer protects thrombin from inactivation by heparin-antithrombin III: implications for heparin efficacy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U.S.A.</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="3619" to="3623"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Hoef</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schlott</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hartmann</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gührs</surname>
+					<forename type="first">K</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lijnen</surname>
+					<forename type="first">H</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Mechanisms of activation of mammalian plasma fibrinolytic systems with streptokinase and with recombinant staphylokinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur. J. Biochem.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">216</biblScope>
+				<biblScope unit="page" from="307" to="314"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Roger Lijnen</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Hoef</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Cock</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okada</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ueshima</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsuo</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">On the mechanism of fibrin-specific plasminogen activation by staphylokinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1991">1991</date>
+				<biblScope unit="volume">266</biblScope>
+				<biblScope unit="page" from="11826" to="11832"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Matsuo</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okada</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fukao</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tomioka</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ueshima</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Watanuki</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sakai</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Thrombolytic properties of staphylokinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">Blood</title>
+			<imprint>
+				<date when="1990">1990</date>
+				<biblScope unit="volume">76</biblScope>
+				<biblScope unit="page" from="925" to="929"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Silence</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lijnen</surname>
+					<forename type="first">H</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">The interaction between staphylokinase, plasmin (ogen) and α2-antiplasmin. Recycling of staphylokinase after neutralization of the plasmin-staphylokinase complex by α2-antiplasmin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">268</biblScope>
+				<biblScope unit="page" from="9811" to="9816"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Esmon</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">The regulation of natural anticoagulant pathways</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">235</biblScope>
+				<biblScope unit="page" from="1348" to="1352"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Esmon</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">The roles of protein C and thrombomodulin in the regulation of blood coagulation</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">264</biblScope>
+				<biblScope unit="page" from="4743" to="4746"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Suzuki</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stenflo</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dahlbäck</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Teodorsson</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Inactivation of human coagulation factor V by activated protein C</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1983">1983</date>
+				<biblScope unit="volume">258</biblScope>
+				<biblScope unit="page" from="1914" to="2"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kurosawa</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stearns</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jackson</surname>
+					<forename type="first">K</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Esmon</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">A10-kDa cyanogen bromide fragment from the epidermal growth factor homology domain of rabbit thrombomodulin contains the primary thrombinbinding site</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1988">1988</date>
+				<biblScope unit="volume">263</biblScope>
+				<biblScope unit="page" from="5993" to="5996"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Stearns</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kurosawa</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Esmon</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">Micro-thrombomodulin Residues 310–486 from the epidermal growth factor precursor homology domain of thrombomodulin will accelerate protein activation</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">264</biblScope>
+				<biblScope unit="page" from="3352" to="3356"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="standard" xml:id="b26">
+		<monogr>
+			<author>Life Technologies</author>
+			<title level="m">Pichia Expression Kit</title>
+			<imprint>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="standard" xml:id="b27">
+		<monogr>
+			<author>
+				<persName>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Higgins</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="m">Pichia Protocols(methods in Molecular Biology)</title>
+			<imprint>
+				<date when="1998">1998</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ho</surname>
+					<forename type="first">S</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hunt</surname>
+					<forename type="first">H</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Horton</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pullen</surname>
+					<forename type="first">J</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pease</surname>
+					<forename type="first">L</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Site-directed mutagenesis by overlap extension using the polymerase chain reaction</title>
+		</analytic>
+		<monogr>
+			<title level="j">Gene</title>
+			<imprint>
+				<date when="1989">1989</date>
+				<biblScope unit="volume">77</biblScope>
+				<biblScope unit="page" from="51" to="59"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Castellino</surname>
+					<forename type="first">F</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wong</surname>
+					<forename type="first">S</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">A fast-acting, modular-structured staphylokinase fusion with Kringle-1 from human plasminogen as the fibrin-targeting domain offers improved clot lysis efficacy</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">278</biblScope>
+				<biblScope unit="page" from="18199" to="18206"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Clarke</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Light</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blasko</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parkinson</surname>
+					<forename type="first">J</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nagashima</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McLean</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vilander</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Andrews</surname>
+					<forename type="first">W</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Morser</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glaser</surname>
+					<forename type="first">C</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="a">The short loop between epidermal growth factor-like domains 4 and 5 is critical for human thrombomodulin function</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">268</biblScope>
+				<biblScope unit="page" from="6309" to="6315"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Joshi</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sahni</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Molecular cloning, expression, purification and characterization of truncated forms of human plasminogen in Pichia pastoris expression system</title>
+		</analytic>
+		<monogr>
+			<title level="j">Process Biochem.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="1251" to="1260"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sagar</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pandit</surname>
+					<forename type="first">M</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Denaturations studies on bovine pancreatic ribonuclease: effect of trichloroacetic acid</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochim. Biophys. Acta Protein Struct. Mol. Enzymol.</title>
+			<imprint>
+				<date when="1983">1983</date>
+				<biblScope unit="volume">743</biblScope>
+				<biblScope unit="page" from="303" to="309"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Laemmli</surname>
+					<forename type="first">U</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Cleavage of structural proteins during the assembly of the head of bacteriophage T4</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="1970">1970</date>
+				<biblScope unit="volume">227</biblScope>
+				<biblScope unit="page" from="680" to="685"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Towbin</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Staehelin</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gordon</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets: procedure and some applications</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. Unit. States Am.</title>
+			<imprint>
+				<date when="1979">1979</date>
+				<biblScope unit="volume">76</biblScope>
+				<biblScope unit="page" from="4350" to="4354"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bradford</surname>
+					<forename type="first">M</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding</title>
+		</analytic>
+		<monogr>
+			<title level="j">Anal. Biochem.</title>
+			<imprint>
+				<date when="1976">1976</date>
+				<biblScope unit="volume">72</biblScope>
+				<biblScope unit="page" from="248" to="254"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Icke</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schlott</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ohlenschl</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hartmann</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glusa</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Fusion proteins with anticoagulant and fibrinolytic properties: functional studies and structural considerations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Pharmacol.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="203" to="209"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lougheed</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bowman</surname>
+					<forename type="first">C</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meininger</surname>
+					<forename type="first">D</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Komives</surname>
+					<forename type="first">E</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Thrombin inhibition by cyclic peptides from thrombomodulin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Protein Sci.</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="773" to="780"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van de Werf</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Coronary thrombolysis with recombinant staphylokinase in patients with evolving myocardial infarction</title>
+		</analytic>
+		<monogr>
+			<title level="j">Circulation</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">87</biblScope>
+				<biblScope unit="page" from="1850" to="1853"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vanderschueren</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stockx</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wilms</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lacroix</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Verhaeghe</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vermylen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Thrombolytic therapy of peripheral arterial occlusion with recombinant staphylokinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">Circulation</title>
+			<imprint>
+				<date when="1995">1995</date>
+				<biblScope unit="volume">92</biblScope>
+				<biblScope unit="page" from="2050" to="2057"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Heymans</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vanderschueren</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Verhaeghe</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stockx</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lacroix</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nevelsteen</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laroche</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Outcome and one year follow-up of intra-arterial staphylo- kinase in 191 patients with peripheral arterial occlusion</title>
+		</analytic>
+		<monogr>
+			<title level="j">Thromb. Haemostasis</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">83</biblScope>
+				<biblScope unit="page" from="666" to="671"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Moreadith</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Clinical development of PEGylated recombinant staphylokinase (PEG–Sak) for bolus thrombolytic treatment of patients with acute myocardial infarction</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Drug Deliv. Rev.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">55</biblScope>
+				<biblScope unit="page" from="1337" to="1345"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Verhamme</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goossens</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maleux</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stas</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">A dose-finding clinical trial of staphylokinase SY162 in patients with long-term venous access catheter thrombotic occlusion</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Thromb. Thrombolysis</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="1" to="5"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sako</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sawaki</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sakurai</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ito</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yoshizawa</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kondo</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="a">Cloning and expression of the staphylokinase gene of Staphylococcus aureus in Escherichia coli</title>
+		</analytic>
+		<monogr>
+			<title level="j">MGG Mol. Gen. Genet.</title>
+			<imprint>
+				<date when="1983">1983</date>
+				<biblScope unit="volume">190</biblScope>
+				<biblScope unit="page" from="271" to="277"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sako</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Overproduction of staphylokinase in Escherichia coli and its characterization</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur. J. Biochem.</title>
+			<imprint>
+				<date when="1985">1985</date>
+				<biblScope unit="volume">149</biblScope>
+				<biblScope unit="page" from="557" to="563"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Behnke</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gerlach</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Cloning and expression in Escherichia coli, Bacillus subtilis, and Streptococcus sanguis of a gene for staphylokinase — a bacterial plasminogen activator</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Gen. Genet.</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">210</biblScope>
+				<biblScope unit="page" from="528" to="534"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miele</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Prorok</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Costa</surname>
+					<forename type="first">V</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Castellino</surname>
+					<forename type="first">F</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Glycosylation of asparagine-28 of recombinant staphylokinase with high-mannose-type oligosaccharides results in a protein with highly attenuated plasminogen activator activity</title>
+		</analytic>
+		<monogr>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">274</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Apte-Deshpnade</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mandal</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Soorapaneni</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Prasad</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kumar</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Padmanabhan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">High-level expression of non-glycosylated and active staphylokinase from Pichia pastoris</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biotechnol. Lett.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="811" to="817"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Faraji</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ramezani</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sadeghnia</surname>
+					<forename type="first">H</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Abnous</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Soltani</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mashkani</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">High- level expression of a biologically active staphylokinase in Pichia pastoris</title>
+		</analytic>
+		<monogr>
+			<title level="j">Prep. Biochem. Biotechnol.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="379" to="387"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Glaser</surname>
+					<forename type="first">C</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Andrews</surname>
+					<forename type="first">W</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Light</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glaser</surname>
+					<forename type="first">C</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Morser</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Clarke</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blasko</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mclean</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kuhn</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chang</surname>
+					<forename>R-J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename>J-H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vilander</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Andrews</surname>
+					<forename type="first">W</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Oxidation of a specific methionine in thrombomodulin by activated neutrophil products blocks cofactor activity. A potential rapid mechanism for modulation of coagulation</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Clin. Investig.</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">90</biblScope>
+				<biblScope unit="page" from="2565" to="2573"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Szarka</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sihota EG</surname>
+					<forename type="first">W</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Staphylokinase as a plasminogen activator component in recombinant fusion proteins</title>
+		</analytic>
+		<monogr>
+			<title level="j">Appl. Environ. Microbiol.</title>
+			<imprint>
+				<date when="1999">1999</date>
+				<biblScope unit="volume">65</biblScope>
+				<biblScope unit="page" from="506" to="513"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Van Zyl</surname>
+					<forename type="first">W</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pretorius</surname>
+					<forename type="first">G</forename><forename type="middle">H</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lamprecht</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roodt</surname>
+					<forename type="first">J</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kotzé</surname>
+					<forename type="first">H</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<title level="a">PLATSAK, a potent antithrombotic and fibrinolytic protein, inhibits arterial and venous thrombosis in a baboon model</title>
+		</analytic>
+		<monogr>
+			<title level="j">Thromb. Res.</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">98</biblScope>
+				<biblScope unit="page" from="435" to="443"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Icke</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schlott</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ohlenschl</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hartmann</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Glusa</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Fusion proteins with anticoagulant and fibrinolytic properties: functional studies and structural considerations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Pharmacol.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="203" to="209"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wirsching</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luge</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schwienhorst</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Modular design of a novel chimeric protein with combined thrombin inhibitory activity and plasminogen-activating potential</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Genet. Metab.</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">75</biblScope>
+				<biblScope unit="page" from="250" to="259"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b54">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lian</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Szarka</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ng</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename><forename type="last">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wong</surname>
+					<forename>S-L</forename>
+				</persName>
+			</author>
+			<title level="a">Engineering of a staphylokinase-based fibrinolytic agent with antithrombotic activity and targeting capability toward thrombin-rich fibrin and plasma clots*</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">278</biblScope>
+				<biblScope unit="page" from="26677" to="26686"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Szemraj</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Walkowiak</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kawecka</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Janiszewska</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">A new recombinant thrombolytic and antithrombotic agent with higher fibrin affinity - a staphylokinase variant - an in-vivo study</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Thromb. Haemost.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="2156" to="2165"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Locally activity-released bifunctional fusion protein enhances antithrombosis and alleviates bleeding risk</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Thromb. Thrombolysis</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="283" to="292"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kowalski</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brown</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bieniasz</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Oszajca</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Cloning and expression of a new recombinant thrombolytic and anthithrombotic agent - a staphylokinase variant</title>
+		</analytic>
+		<monogr>
+			<title level="j">Acta Biochim. Pol.</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">56</biblScope>
+				<biblScope unit="page" from="41" to="53"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Szemraj</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zakrzeska</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brown</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stankiewicz</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gromotowicz</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">New derivative of staphylokinase SAK-RGD-K2-Hirul exerts thrombolytic effects in the arterial thrombosis model in rats</title>
+		</analytic>
+		<monogr>
+			<title level="j">Pharmacol. Rep.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">63</biblScope>
+				<biblScope unit="page" from="1169" to="1179"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b59">
+		<analytic>
+			<author>
+				<persName>
+					<surname>CHIOU</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>WOON</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CHENG</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>HSU</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>CHERNG</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Staphylokinase-annexin XI chimera exhibited efficient in vitro thrombolytic activities</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biosci. Biotechnol. Biochem.</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">71</biblScope>
+				<biblScope unit="page" from="1122" to="1129"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b60">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pulicherla</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Seetharam</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rekha</surname>
+					<forename type="first">V</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Cloning and high level expression of recombinant heterologous fusion protein SAK RGD in methanol inducible Pichia pastoris GS115</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Res. Pharm. Biomed. Sci.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="1008" to="1013"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b61">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schulman</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Advantages and limitations of the new anticoagulants</title>
+		</analytic>
+		<monogr>
+			<title level="j">Intern. Med.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">275</biblScope>
+				<biblScope unit="page" from="1" to="11"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b62">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mekaj</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mekaj</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duci</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Miftari</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">New oral anticoagulants: their advantages and disadvantages compared with vitamin K antagonists in the prevention and treatment of patients with thromboembolic events</title>
+		</analytic>
+		<monogr>
+			<title level="j">Therapeut. Clin. Risk Manag.</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="967" to="967"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b63">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cherubini</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carrieri</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marinelli</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Advantages and disadvantages of direct oral anticoagulants in older patients</title>
+		</analytic>
+		<monogr>
+			<title level="j">Geriatr. Care</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="7227" to="7229"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b64">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Michelson</surname>
+					<forename type="first">A</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">Antiplatelet therapies for the treatment of cardiovascular disease</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Rev. Drug Discov.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="154" to="169"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b65">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yeung</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holinstat</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Newer agents in antiplatelet therapy-:a review</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Blood Med.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">2012</biblScope>
+				<biblScope unit="page" from="33" to="42"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b66">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mauri</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kereiakes</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yeh</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Driscoll-Shempp</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cutlip</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steg</surname>
+					<forename type="first">P</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Normand</surname>
+					<forename type="first">S-L</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Braunwald</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wiviott</surname>
+					<forename type="first">S</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cohen</surname>
+					<forename type="first">D</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holmes</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Krucoff</surname>
+					<forename type="first">M</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hermiller</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dauerman</surname>
+					<forename type="first">H</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Simon</surname>
+					<forename type="first">D</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kandzari</surname>
+					<forename type="first">D</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garratt</surname>
+					<forename type="first">K</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">D</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pow</surname>
+					<forename type="first">T</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ver Lee</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rinaldi</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Massaro</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Twelve or 30 Months of dual antiplatelet therapy after drug-eluting stents</title>
+		</analytic>
+		<monogr>
+			<title level="j">NEJM.Org. N Engl J Med.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="2155" to="2166"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b67">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pooria</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Teimouri</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cheraghi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baharvand Ahmadi</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Namdari</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Alipoor</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Professor</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Comparison of postoperative bleeding in patients undergoing coronary artery bypass surgery in two groups taking aspirin and aspirin plus CLS clopidogrel</title>
+		</analytic>
+		<monogr>
+			<title level="j">WORLD Fam. Med. EAST J. Fam. Med.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="17" to="23"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b68">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gremmel</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Michelson</surname>
+					<forename type="first">A</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Frelinger</surname>
+					<forename type="first">A</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhatt</surname>
+					<forename type="first">D</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Novel aspects of antiplatelet therapy in cardiovascular disease</title>
+		</analytic>
+		<monogr>
+			<title level="j">Res. Pract. Thromb. Haemost.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="439" to="449"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b69">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Maheshwari</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kantipudi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Maheshwari</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arora</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vandana</surname>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kwatra</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sahni</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Amino-terminal fusion of epidermal growth factor 4,5,6 domains of human thrombomodulin on streptokinase confers anti-reocclusion characteristics along with plasmin-mediated clot specificity</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="1" to="22"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b70">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lin</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Loy</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename type="first">X</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Crystal structure of the catalytic domain of human plasmin complexed with streptokinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="1998">1998</date>
+				<biblScope unit="volume">281</biblScope>
+				<biblScope unit="page" from="1662" to="1665"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b71">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rabijns</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Bondt</surname>
+					<forename type="first">H</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Ranter</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Three-dimensional structure of staphylokinase, a plasminogen activator with therapeutic potential</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Mol. Biol.</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="357" to="360"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b72">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Qureshi</surname>
+					<forename type="first">A</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Siddiqui</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kim</surname>
+					<forename type="first">S</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hanel</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xavier</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kirmani</surname>
+					<forename type="first">J</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fareed</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suri</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boulos</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hopkins</surname>
+					<forename type="first">L</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">Reocclusion of recanalized arteries during intra-arterial thrombolysis for acute ischemic stroke</title>
+		</analytic>
+		<monogr>
+			<title level="j">Am. J. Neuroradiol.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="322" to="328"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b73">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rubiera</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Alvarez-Sabín</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ribo</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Montaner</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Santamarina</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arenillas</surname>
+					<forename type="first">J</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huertas</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Delgado</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Purroy</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Molina</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Predictors of early arterial reocclusion after Tissue plasminogen activator-induced recanalization in acute ischemic stroke</title>
+		</analytic>
+		<monogr>
+			<title level="j">Stroke</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="1452" to="1456"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b74">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Janjua</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Alkawi</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suri</surname>
+					<forename type="first">M</forename><forename type="middle">F</forename><forename type="last">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qureshi</surname>
+					<forename type="first">A</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Impact of arterial reocclusion and distal fragmentation during thrombolysis among patients with acute ischemic stroke</title>
+		</analytic>
+		<monogr>
+			<title level="j">Am. J. Neuroradiol.</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="253" to="258"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

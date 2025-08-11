@@ -1,0 +1,2649 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Penetrating the air-liquid interface is the key to colonization and wrinkly spreader fitness</title>
+				<funder ref="#_QArpjbf">
+					<orgName type="full">Abertay University</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">European Region Action Scheme for the Mobility of University Students (Erasmus) Programme</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">British Council</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Scottish Alliance for Geoscience Environment and Society</orgName>
+					<orgName type="abbreviated">SAGES</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">International Association for the Exchange of Students for Technical Experience</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-08-22">22 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Robyn</forename><surname>Jerdan</surname></persName>
+							<idno type="ORCID">0000-0002-7045-8362</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Applied Sciences</orgName>
+								<orgName type="institution">Abertay University</orgName>
+								<address>
+									<postCode>DD1 1HG</postCode>
+									<settlement>Dundee</settlement>
+									<country>UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Anna</forename><surname>Kuśmierska</surname></persName>
+							<idno type="ORCID">0000-0003-1214-4549</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Applied Sciences</orgName>
+								<orgName type="institution">Abertay University</orgName>
+								<address>
+									<postCode>DD1 1HG</postCode>
+									<settlement>Dundee</settlement>
+									<country>UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Industrial Microbiology and Biotechnology</orgName>
+								<orgName type="department" key="dep2">Faculty of Biology and Environmental Protection</orgName>
+								<orgName type="institution">University of Łódź</orgName>
+								<address>
+									<settlement>Łódź</settlement>
+									<country key="PL">Poland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marija</forename><surname>Petric</surname></persName>
+							<idno type="ORCID">0000-0001-8588-9870</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Applied Sciences</orgName>
+								<orgName type="institution">Abertay University</orgName>
+								<address>
+									<postCode>DD1 1HG</postCode>
+									<settlement>Dundee</settlement>
+									<country>UK;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Andrew</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+							<idno type="ORCID">0000-0003-0463-8629</idno>
+							<email>a.spiers@abertay.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">School of Applied Sciences</orgName>
+								<orgName type="institution">Abertay University</orgName>
+								<address>
+									<postCode>DD1 1HG</postCode>
+									<settlement>Dundee</settlement>
+									<country>UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Penetrating the air-liquid interface is the key to colonization and wrinkly spreader fitness</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Microbiology</title>
+						<imprint>
+							<biblScope unit="volume">165</biblScope>
+							<biblScope unit="page" from="1061" to="1074"/>
+							<date type="published" when="2019-08-22">22 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2830A6CCC3E5C31B760074E2430A3779</idno>
+					<idno type="DOI">10.1099/mic.0.000844</idno>
+					<note type="submission">Received 05 April 2019; Accepted 29 July 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>ecological opportunity</term>
+					<term>experimental evolution</term>
+					<term>Goldilocks zone</term>
+					<term>microcosms</term>
+					<term>Pseudomonas fluorescens</term>
+					<term>surface tension</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In radiating populations of Pseudomonas fluorescens SBW25, adaptive wrinkly spreader (WS) mutants are able to gain access to the air-liquid (A-L) interface of static liquid microcosms and achieve a significant competitive fitness advantage over other non-biofilm-forming competitors. Aerotaxis and flagella-based swimming allows SBW25 cells to move into the high-O 2 region located at the top of the liquid column and maintain their position by countering the effects of random cell diffusion, convection and disturbance (i.e. physical displacement). However, wild-type cells showed significantly lower levels of enrichment in this region compared to the archetypal WS, indicating that WS cells employ an additional mechanism to transfer to the A-L interface where displacement is no longer an issue and a biofilm can develop at the top of the liquid column. Preliminary experiments suggest that this might be achieved through the expression of an as yet unidentified surface active agent that is weakly associated with WS cells and alters liquid surface tension, as determined by quantitative tensiometry. The effect of physical displacement on the colonization of the high-O 2 region and A-L interface was reduced through the addition of agar or polyethylene glycol to increase liquid viscosity, and under these conditions the competitive fitness of the WS was significantly reduced. These observations suggest that the ability to transfer to the A-L interface from the high-O 2 region and remain there without further expenditure of energy (through, for example, the deployment of flagella) is a key evolutionary innovation of the WS, as it allows subsequent biofilm development and significant population increase, thereby affording these adaptive mutants a competitive fitness advantage over non-biofilm-forming competitors located within the liquid column.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Adaptive radiation, a central element in evolution <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>, can be investigated by experimental evolution studies using fastgrowing bacterial populations in continuous chemostats or serially transferred cultures, where abiotic and biotic factors are readily manipulated to alter selective pressures, and where simple mutations and phenotype changes (key innovations) lead to fitness advantages in adaptive lineages <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref>. Although perhaps arcane, experimental evolution studies are relevant to medical and veterinary microbiology, agriculture, food and biotechnology, because populations radiate and communities undergo succession, and emerging adaptive lineages may have significantly altered colonization, competitive, resistance or functional characteristics.</p><p>One such experimental evolution system uses populations of Pseudomonas fluorescens SBW25 (hereafter SBW25) <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref> incubated statically in microcosms (small vials containing nutrient-rich liquid growth medium) where O 2 availability is the growth-limiting resource <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b9">10]</ref>. In these, early wild-type colonists establish an O 2 gradient dividing the liquid column into a shallow high-O 2 (top) region immediately below the air-liquid (A-L) interface (the 'Goldilocks zone' where growth is optimal <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>) above a deeper low-O 2 region where growth is limited <ref type="bibr" target="#b9">[10]</ref>. It is important to distinguish between the A-L interface, a nanometer-deep molecular layer at the surface that is difficult to break <ref type="bibr" target="#b12">[13]</ref>, and the high-O 2 region immediately below in which cells are able to move freely but are subject to random cell diffusion (Brownian motion), convection currents and disturbance (collectively referred to here as physical displacement). The wrinkly spreaders (WSs), a class of adaptive mutants, are able to produce a robust and well-attached biofilm at the A-L interface <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b13">14]</ref> (sometimes referred to as a pellicle, but see <ref type="bibr" target="#b14">[15]</ref>) with a competitive fitness advantage over the non-biofilm-forming ancestral (wild-type) SBW25 <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b15">16]</ref> (see Fig. <ref type="figure" target="#fig_0">S1</ref>, available in the online version of this article, for images of WS biofilms and the high-O 2 region in situ). Under some circumstances, wild-type SBW25 is also able to produce a fragile and poorly attached viscous mass (VM) biofilm at the A-L interface that nonetheless also provides a fitness advantage over non-biofilm-forming competitors <ref type="bibr" target="#b16">[17]</ref>.</p><p>Mutations targeting diguanylate cyclases or their cognate repressors <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref> leading to higher levels of c-di-GMP are responsible for the WS phenotype. The increase in c-di-GMP levels results in the over-expression of partially acetylated cellulose, which is the main extracellular polysaccharide (EPS) matrix material, and poly-N-acetylglucosamine (PNAG) attachment factor, which was originally thought to be a curli or pili-like fibre in early work <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b23">24]</ref>. Significantly, this and other bacterial experimental evolution studies have demonstrated that mutations affecting regulatory networks are capable of bringing about substantial shifts in phenotype with significant improvements in fitness, and that not all evolutionary innovation is the result of the acquisition of new function by gene duplication and divergence, de novo mutation of noncoding sequences or horizontal (lateral) gene transfer <ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref>.</p><p>Although the underlying molecular biology and evolutionary ecology of the WS is well-understood, we have recently questioned why these adaptive mutants employ biofilm formation to colonize the A-L interface when O 2 -directed flagella-mediated swimming (i.e. aerotaxis <ref type="bibr" target="#b27">[28]</ref>) should be sufficient to access the O 2 -rich region and maintain position by countering physical displacement. SBW25 is capable of swimming <ref type="bibr" target="#b23">[24,</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref> and is chemotaxic <ref type="bibr" target="#b30">[31]</ref>, however, aerotaxis has not been reported formally, although an aerotaxis sensor receptor is annotated in the genome <ref type="bibr" target="#b34">[35]</ref>. WS mutants are not the only strains that benefit from accessing the top layer of liquid columns, as A-L interface biofilm formation is commonplace among pseudomonads and other bacteria (e.g. <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref>), suggesting that this ability provides substantial benefits in a range of environments where O 2 gradients prevail. In particular, colonization of the surface microlayer of marine and freshwater habitats allows access to stratified organic compounds, including lipids, polysaccharides and proteins <ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref>. Similar benefits are likely to be available in partially saturated soil pore networks and transient puddles on plants and other surfaces <ref type="bibr" target="#b44">[45,</ref><ref type="bibr" target="#b45">46]</ref>.</p><p>In this work, we demonstrate that although SBW25 is aerotaxic and swimming can overcome the effects of physical displacement in static microcosms, wild-type cells are not maintained effectively in the high-O 2 region. In contrast, it appears that WS cells are able to transfer more efficiently from the high-O 2 region and penetrate the A-L interface where they can remain in place without further energy expenditure. We then further demonstrate the value of this transfer in fitness terms by modifying the viscosity of the liquid column, which reduces the impact of physical displacement and thus lowers the relative value of biofilm formation by the WS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bacteria and culture conditions</head><p>The bacterial strains used in this study included wild-type P. fluorescens SBW25 <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>, the chemotaxic-deficient but swimming cheA -mutant (SBW25 cheA::aph <ref type="bibr" target="#b30">[31]</ref>), the nonswimming flagella-deficient fleQ -mutant (SBW25 ΔfleQ <ref type="bibr" target="#b33">[34]</ref>) and the archetypal biofilm-forming WS (WS; SBW25 wspF A901C <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b17">18]</ref>). A further 25 independent WS isolates were recovered from experimental microcosms in this work (see below). Bacteria were cultured at 20 °C in King's B (KB) medium (20 g Proteose Peptone No. 3 (BD Biosciences, UK), 10 g glycerol, 5 g K 2 HPO 4 , 1.5 g MgSO 4 l -1 <ref type="bibr" target="#b46">[47]</ref>) and M9 minimal salts <ref type="bibr" target="#b47">[48]</ref> and maintained at -80 °C as 15 % (w/v) glycerol stocks. Standard KB plates contained 1.5 % (w/v) agar and soft agar used for swimming and aerotaxis assays contained 0.1× normal levels of KB nutrients and 0.3 % (w/v) agar. Overnight shaken cultures in KB were used as a source of inoculum for experiments and all assays were performed at 20 °C. Culture densities were determined by optical density (OD 600 ) measurements, and these and other absorbance (A) measurements were made using a Spectronic Helios Epsilon spectrophotometer (Thermo Fisher Scientific, UK) with 10 mm optical path disposable plastic cuvettes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental microcosms</head><p>Standard microcosms were 30 ml universal glass vials containing 6 ml KB (producing a liquid column of ~12 mm) with 20 µM 2,2-dipyridyl (Sigma, UK) and 0.1 µM Tiron (1,2-dihydroxybenzene-3,5-disulfonic acid) (Fisher Chemicals, UK) (KB-DP/T) to chelate iron and reduce unwanted VM biofilm formation by wild-type SBW25 <ref type="bibr" target="#b16">[17]</ref>. Microcosms were incubated with loose lids statically or with shaking at 150 r.p.m. using a Stuart S150 orbital incubator (Bibby Scientific Ltd, UK). Methylene blue, which is decolourized under O 2 -depleted conditions, was added to 0.0005 % (w/v) to visualize the high-O 2 region <ref type="bibr" target="#b48">[49]</ref>. The modified microcosms used to test the effects of increased viscosity contained a range of additives and after preliminary tests, low, medium and high concentrations (0.01, 0.05 and 0.1 % (w/v)) of agar (Technical No. 3, Oxoid, UK) and low, medium and high concentrations (1, 2.5 and 5 % (w/v)) of polyethylene glycol (PEG 10 000, Sigma) were used for further experiments. Microcosms were brought to a brief boil using a microwave oven to melt any gels and then equilibrated at 55 °C before inocula were added, gently mixed and allowed to cool before incubation. The toxic effect of low, medium and high concentrations of agar and PEG on growth in KB-DP/T was assessed in shaken microcosms. Replicate microcosms (n=3) were inoculated with 10 µl aliquots of overnight SBW25 cultures and incubated for 24 h with shaking before growth was determined by OD 600 measurements. Growth on PEG as the sole nutrient was measured in a similar way using shaken microcosms containing low, medium and high concentrations of PEG in M9 minimal salts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Aerotaxis</head><p>The aerotaxic behaviour of wild-type SBW25 cells was visualized in soft agar test tubes in which cells mid-way down the agar column could migrate towards the bottom or open end of the test tube over 48 h (see Supplementary Information S1 for further details of this assay). The behaviour of wild-type, fleQ -and WS cells near the A-L interface was also examined by microscopy. Samples of an overnight culture were placed onto replica microscope slides (n=5) and three sides of the coverslip were sealed with Entellan (Merk, UK) to form a chamber. These were exposed to nitrogen gas at 20 °C for 30 min and visualized using a Leica DMR microscope and a Sony EXWAVE HD 3CCD colour camera. The slides were then left under normal O 2 conditions (air) for a further 30 min to re-equilibrate and further images were taken. Cells numbers were determined within a standard polygon placed along the A-L interface in each pair of images, avoiding out-of-focus cells attached to the glass surfaces, and aerotaxis behaviour is reported as the O 2 /N 2 cell number ratio.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell behaviours and biofilm assays</head><p>The flagella-mediated swimming motility of wild-type, cheA -, fleQ -and WS cells was assessed at 20 °C using soft agar plates with replicate inoculations using overnight cultures (n=8-16) <ref type="bibr" target="#b23">[24]</ref>. KB medium and cell densities were determined by replicate (n=5) weight and volume measurements of 50 ml KB and overnight wild-type cultures. Sedimentation of fleQ -cells was observed in microcosms inoculated with resuspended cells obtained from overnight cultures after 24 h. Similarly, microcosms inoculated with wild-type cells at high concentrations were visually assessed for downward-moving plumes characteristic of bioconvection currents. Cell distributions and enrichment are reported as relative OD 600 determined by measuring 1 ml aliquots taken from undisturbed or mixed replicate microcosms (n=3-5) inoculated with 100 µl of overnight wild-type, fleQ -and WS cultures and incubated for 1-24 h before sampling. In these assays it should be noted that the measured cell densities are the result of both cell migration and growth over the period of incubation and not simply due to motility. The sampling positions and reference measurements also varied depending on the difficulty of taking samples without disturbing the rest of the microcosm for each assay, and the cell distribution ratios are always reported such that higher values indicate greater enrichment of cells in the upper regions of the microcosm. The combined biofilm assay <ref type="bibr" target="#b36">[37]</ref> was used to determine the biofilm strength (grams), attachment levels (crystal violet staining, A 570 ) and total microcosm growth (OD 600 following vigorous mixing) of the independent WS isolates recovered from experimental microcosms in replicate microcosms (n=8) after 3 days.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental evolution and competitive fitness</head><p>The evolution of WSs from developing wild-type populations was determined over 6 days using replicate standard and modified microcosms (n=5) <ref type="bibr" target="#b49">[50]</ref>. These were inoculated with 10 µl aliquots of overnight shaken wild-type cultures and incubated statically for 1, 3 and 6 days before vigorous mixing and then diluted samples were spread on KB plates to determine total viable numbers and the proportion (%) of WS cells. Randomly chosen independent WS isolates (one from each replicate microcosm, n=25 in total) were recovered from the day 3 plates for further analysis (day 3 is an arbitrary choice which originates from the isolation of the archetypal WS from a 3-day-old population <ref type="bibr" target="#b13">[14]</ref>). WS competitive fitness (W) was determined relative to wild-type cells in static and shaken microcosms <ref type="bibr" target="#b49">[50]</ref>. Microcosms (n=5) were inoculated with 60 µl aliquots of a 1 : 1 mixture of overnight wild-type and WS cultures and incubated statically or with shaking for 3 days before assay. Competitive fitness was calculated as ln(final WS numbers/initial WS numbers)/ln(final wild-type numbers/initial wild-type numbers), where the colony counts on KB plates were used to determine the cell numbers per microcosm <ref type="bibr" target="#b50">[51]</ref> (W&gt;1 indicates that the WS has an advantage compared to the wild-type). In such 3-day assays, WS competition is largely with wild-type cells and WS-WS competition is limited <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b15">16]</ref>; W&gt;1 is expected in static microcosms and W≤1 is expected in shaken microcosms where biofilms cannot form.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Viscosity and liquid surface tension measurements</head><p>The viscosity (mPa s) of standard KB-DP/T and modified media containing agar and PEG was determined at 20 °C using a DHR2 rheometer fitted with a 40 mm 1° cone and plate by the Centre for Industrial Rheology (Hampshire, UK). Briefly, following a 60 s equilibration, replicate (n=3) samples were exposed to a shear rate down-sweep, from 1000 to 1 s -1 , logarithmically scaled with 8 points per decade of shear rate, with shear applied for 30 s at each rate with viscosity calculated over the final 5 s of each step. Final viscosities for comparative purposes were determined for a shear rate of 100 s -1 . The viscosity of KB-DP/T with low concentrations of agar and PEG were interpolated assuming a simple linear relationship. The liquid surface tension (ST) (mN m -1 ) of replicate resuspended wild-type and WS cell samples, cultures and cell-free culture supernatants (n=4) (from 18 h shaken cultures) was determined at 20 °C with a K100 Mk2 tensiometer (Krüss, Germany) using an SV23 AI/PTFE conical sample vessel and platinum testing rod, following established methods <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b51">52]</ref>. Under the conditions used here, the ST of deionized water and sterile KB-DP/T was 73.1±0.2 and 43.6±1.6 mN m -1 , respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analyses</head><p>Experiments were undertaken with replicates (n) and means with standard errors (se) are reported where appropriate. Data were investigated using JMP 12 statistical software (SAS Institute, Inc., USA) and checked for quality before analysis. Means were compared by t-test and analysis of variance (ANOVA) models with the post hoc Tukey-Kramer honest significant difference (TK-HSD) (α=0.05) and Dunnett's method with a control (α=0.05) comparison between means. Outlier analyses were undertaken by the inspection of residuals and the goodness of fit of normal distributions fitted to the residuals was examined by Shapiro-Wilk W tests. Where necessary, non-parametric Kruskall-Wallis (rank sum) tests and comparisons with a control using the Dunn method for joint ranking were undertaken. A general linear modelling (GLM) approach was used to model biofilm strength, attachment and total growth as response variables with WS isolate, origin and experimental replicate as effects. However, in order to avoid singularity problems, it was necessary to nest the isolate within origin [i.e. isolate(origin)] and the final models included isolate(origin), origin and replicate as effects. Outlier analyses were undertaken and residuals were shown to be normally distributed (Shapiro-Wilk W, P&gt;0.05). All models were robust (model summary statistics: r 2 =0.4-0.8; ANOVA, P&lt;0.05) and replicate was not significant in any model (P&lt;0.05). LSMeans differences Tukey HSD tests were used to investigate differences between means (α=0.05). Means were further examined by principal component analysis (PCA) with the Bartlett test being used to confirm the significance of the two principal axes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Aerotaxis allows partial localization of cells to the high-o 2 region</head><p>The ability to migrate along an increasing O 2 gradient is an essential behaviour that would allow wild-type SBW25 cells to access the high-O 2 region of static microcosms. SBW25 is capable of flagella-mediated swimming <ref type="bibr" target="#b23">[24,</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref>, and our preliminary experiments demonstrated that wild-type cells migrated towards the open end of soft agar test tubes in a classic display of bacterial aerotaxis (Fig. <ref type="figure" target="#fig_0">1a</ref>). In order to confirm this behaviour, we quantified the distribution of wild-type and WS cells in microscope slide chambers that were first first purged with N 2 to remove O 2 and then allowed to re-equilibrate with air (Fig. <ref type="figure" target="#fig_0">1b &amp; c</ref>). In these assays, we used the flagella-deficient, non-motile fleQ -mutant cells as an aerotaxis-negative control (i.e. these cells cannot swim up an O 2 gradient), which produced an O 2 /N 2 cell number ratio of 1.1±0.1 that was not significantly greater than one (t-test, P=0.33), as expected, having confirmed that fleQ -cells were non-motile using soft agar swimming assays (see Supplementary Information S2 and Fig. <ref type="figure">S2</ref> for an analysis of the swimming characteristics of wild-type SBW25 and mutant strains). In comparison, more wild-type and WS cells localized close to the A-L interface at the edge of the chamber after re-equilibration with air, which demonstrates that these cells are aerotaxic (wild-type cells, 1.6±0.1, WS cells, 1.4±0.1 O 2 /N 2 cell number ratio; ratios are significantly different to one, t-tests, P&gt;0.05). Furthermore, as wild-type and WS cells showed a net movement towards to the A-L interface, these assays also demonstrated that under the conditions tested here cells using aerotaxis are able to overcome the effects of random cell diffusion, which would otherwise result in the slow movement of cells away from the interface.</p><p>The relative strength of aerotaxis compared to random cell diffusion should be reflected in a diffusion (effective) coefficient for motile bacteria (D B ) that is substantially greater than the corresponding diffusivity of a similarly sized but inert sphere (D S ). D B is given by (µ max 2 τ)/3, where µ max is the maximum swimming speed and τ is the mean time between tumbles or the duration of runs <ref type="bibr" target="#b52">[53,</ref><ref type="bibr" target="#b53">54]</ref>. We calculated D B for SBW25 as 2400-4200 µm 2 s -1 by taking τ as 1.2 s and µ max as 77.6-102 µm s -1 , as determined by single-cell microscopy of swimmimg wild-type SBW25 cells <ref type="bibr" target="#b32">[33]</ref>. We estimate D S as 2.9-38×10 -8 µm 2 s -1 using the mean SBW25 cell diameter of 0.9 µm and cell body length plus flagella of 11.5 µm from <ref type="bibr" target="#b32">[33]</ref> as the spherical diameters (see Supplementary Information S3 for our calculation of D S ). As D B &gt;&gt;&gt;D S , as expected, we conclude that continuous aerotaxis would be sufficient to localize cells to the high-O 2 region by countering the effects of random cell diffusion.</p><p>In order to determine the significance of swimming motility to access the high-O 2 region of static microcosms, we investigated the ability of cells to move from concentrated cell pellets placed at the bottom of microcosms into the liquid column, and from a random mixture in the liquid column up to the high-O 2 region and A-L interface. We monitored cell distributions (relative OD 600 ) over 24 h and under the conditions used here, O 2 gradients develop within 3 h of inoculation <ref type="bibr" target="#b9">[10]</ref>, and these can be visualized using methylene blue after 24 h (Fig. <ref type="figure">S1b</ref>). In a preliminary comparison, motile wild-type cells were found to rapidly access the liquid column from cell pellets within 12 h (Fig. <ref type="figure">S3</ref>), whereas no significant enrichment of the liquid column by non-aerotaxic fleQ -cells occurred after 24 h (wild-type cells, 0.92±0.04, cf. fleQ -cells, 0.16±0.01 top/bottom OD 600 ratio; t-test, P&lt;0.0001).</p><p>We then tested the ability of wild-type and WS cells to move from the liquid column up into the high-O 2 region and A-L interface, again using fleQ -cells as an aerotaxisnegative control. After inoculating microcosms with cells, we vigorously mixed them to produce a uniform cell distribution throughout the liquid column before incubation and sampling to determine cell distributions after 24 h. In these assays, wild-type cells were significantly enriched in the top 2 mm of the liquid column (corresponding to the top 1 ml) after 24 h (TK-HSD, α=0.05) (Fig. <ref type="figure" target="#fig_1">2</ref>), whereas fleQ -cells showed no enrichment in this region (TK-HSD, α=0.05) but accumulated at the bottom, where a light sedimentation was observed (our measurements confirmed that the density of wild-type cells was 1.3-fold greater than that of the growth medium; Kruskall-Wallis, P=0.01). In comparison, WS cells, also capable of swimming motility <ref type="bibr" target="#b23">[24]</ref> (see Supplementary Information S2 and Fig. <ref type="figure">S2</ref> for an analysis of the swimming characteristics of wild-type SBW25 and mutant strains), showed even greater levels of enrichment than wild-type cells (~1.5 fold higher; WS cells, 1.78±0.03, cf. wild-type cells, 1.19±0.04 top/mixed control OD 600 ratio; t-test, P=0.008), where the WS biofilm was included as part of the top 1 ml sample (Fig. <ref type="figure" target="#fig_1">2c</ref>). As FleQ is a transcriptional regulator of cellulose production in SBW25 <ref type="bibr" target="#b54">[55]</ref>, we did not use the fleQ - mutant in any further assays where pleitropic effects might confound our understanding of how WS cells associate with the A-L interface and form a biofilm.</p><p>Bioconvection currents are known to transport bacterial cells, O 2 and nutrients, etc. down from the high-O 2 region of liquid columns and are thought to be generated by cycles of swimming and rest of aerotaxic bacteria that have cell densities greater than the bulk liquid <ref type="bibr" target="#b55">[56]</ref>. We were not able to confirm the presence of bioconvection currents by visual observation, as has recently been reported for wild-type SBW25 using larger microcosms and a custom-made detection system <ref type="bibr" target="#b56">[57]</ref>. Critically, we note that, if bioconvection currents exist under the conditions tested here, they do not prevent the localization of cells to the high-O 2 region (i.e. downward plumes are countered by the constant upward aerotaxis of displaced cells), although it might partially explain why enrichment levels in this region are not higher than observed (i.e. cells are constantly removed from the high-O 2 region by these currents).</p><p>These results clearly demonstrate that SBW25 cells can partially localize at the top of the liquid column in static microcosms through O 2 -directed flagella-mediated swimming, but aerotaxis alone cannot explain the higher levels of WS cell enrichment in the high-O 2 region compared to wild-type cells. This difference suggests that WS cells have an additional capability allowing a more successful or efficient colonization of this region and the A-L interface. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PENETRATING THE A-L INTERFACE</head><p>Organic molecules collecting at the A-L interface of a liquid column are expected to alter the A-L interfacial tension (more commonly referred to as surface tension, ST). Experiments investigating the association of bacterial cells into thin organic layers overlaying water have also demonstrated a decrease in ST <ref type="bibr" target="#b57">[58]</ref> [interfacial storage G′ (elasticity) and loss modulus G′ (viscosity) are similarly affected <ref type="bibr" target="#b58">[59]</ref>]. We therefore predict that, if WS cells were more capable of associating with the A-L interface than wild-type cells, then this should be manifested by a lower ST. A significant difference in ST was observed between wild-type and WS cultures (wild-type culture, 32.9±0.4, cf. WS culture, 31.0±0.4 mN m -1 ; t-test, P=0.02), but not between cell-free culture supernatants, which would include secreted compounds (t-test, P=0.18), or between vigorously washed and resuspended cells, which would have lost weakly associated surface material (t-test, P=0.16) (Fig. <ref type="figure" target="#fig_2">3</ref>). Given the very small differences observed between mean measurements, we reanalysed these data using a nonparametric approach that is less sensitive to small sample sizes and found the same outcomes (Kruskall-Wallis; cultures, P=0.03; supernatants, P=0.14; cells, P=0.29). We interpret these results to suggest that the WS may be producing a surface-active agent (SAA) that is not secreted into the supernatant but is weakly associated with the cell surface and is not produced by wild-type cells (SAAs can be simple amphipathic compounds or polymers and include surfactants that show strong surface activity and significantly reduce ST <ref type="bibr" target="#b59">[60]</ref>). We do not believe that this SAA is viscosin, a cyclic lipopeptide surfactant known to be produced by SBW25, which, when secreted into the supernatant, reduces ST down to~33 mN m -1 within 24 h <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b60">61]</ref> (the equal ST of cell-free culture supernatants also demonstrates that wildtype and WS cultures produce the same levels of viscosin). Instead, we suggest that this is likely to be another SAA with a stronger activity that reduces the overall ST of WS cultures to ~31.0 mN m -1 (the ST of a mixture of two SAAs that do not chemically interact is the ST of the SAA with the strongest activity, i.e. the lowest ST, assuming both are present at concentrations above their critical micelle concentrations), and that this SAA allows WS cells to associate with the A-L interface far more successfully than wild-type cells.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Viscosity affects the localization of cells at the A-L interface</head><p>In order to establish an experimental system to investigate the impact of physical disturbance on cell localization in the high-O 2 region and colonization of the A-L interface, we established modified microcosms in which liquid viscosity had been increased. In these, both random cell diffusion and fluid flow will be reduced as they are affected by liquid viscosity <ref type="bibr" target="#b52">[53,</ref><ref type="bibr" target="#b55">56,</ref><ref type="bibr" target="#b61">62]</ref>. We first tested the effect of adding agar, CMC, Ficol and PEG at various concentrations on wild-type cell distributions (see Supplementary Information S4 and Table <ref type="table" target="#tab_0">S1</ref> for the effect of viscosity agents on cell distributions in modified microcosms). We chose agar, which increases viscosity by forming intermolecular networks (gels) <ref type="bibr" target="#b62">[63]</ref>, and PEG, which increases viscosity by intermolecular friction <ref type="bibr" target="#b63">[64]</ref>, for further experimentation and determined the viscosities of our modified microcosms by rheometry (Table <ref type="table" target="#tab_0">1</ref>). Our viscosity measurements are in agreement with other reports for agar and PEG, e.g. <ref type="bibr" target="#b64">[65,</ref><ref type="bibr" target="#b65">66]</ref>, and it is important to note that even at the highest concentrations of agar (0.1 % w/v) and PEG (5 % w/v) we chose, the modified KB medium still flowed like water and no gels or viscous solutions were formed. As some pseudomonads have been reported to utilize PEG as the sole carbon source <ref type="bibr" target="#b66">[67]</ref><ref type="bibr" target="#b67">[68]</ref><ref type="bibr" target="#b68">[69]</ref>, we tested this on wild-type SBW25 but saw no significant growth on PEG compared to the control (Dunnett's, α=0.05). However, we noted a minor toxic effect of PEG resulting in a 0.77-fold reduction in relative growth at higher concentrations (Dunn method, P=0.02), whereas agar had no significant effect (Dunn method, P=1.0) (Table <ref type="table" target="#tab_0">1</ref>).</p><p>By investigating cell distributions as before, we were able to confirm quantitatively that 0.05-0.1 % (w/v) agar and 2.5-5 % (w/v) PEG significantly changed wild-type and WS cell distributions compared to standard microcosms after 24 h, with proportionally more cells localized at the top of the liquid column in the modified microcosms (TK-HSD, α=0.05) (Fig. <ref type="figure" target="#fig_3">4</ref>) (we specifically note that at the concentrations of agar and PEG used here there was no visually discernible change in liquid viscosity compared to standard microcosms). In these assays a plateauing effect on wild-type cell distribution was seen when viscosity was between 3-7 mPa s -1 , suggesting that the cells are responding to viscosity similarly, regardless of whether it is caused by inter-molecular gel formation (agar) or inter-molecular friction of monomers (PEG). WS cell distributions were ~4× higher than for the corresponding wild-type cell distributions, which may reflect the increased populations WSs can achieve by biofilm formation at the A-L interface (high PEG concentrations may also have a negative impact on WS cell distributions, although this was not significant in these assays; TK-HSD, α=0.05).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Increased liquid viscosity reduces the competitive advantage of biofilm formation</head><p>We predict that WS competitive fitness should be significantly reduced as liquid viscosity is increased, to the point where wild-type cells can localize at the A-L interface in static microcosms, as under these conditions the WS loses the advantage that biofilm formation provides over non-biofilm-forming competitors. A significant decrease in fitness from 1.45±0.06 was observed in both agar and PEG microcosms (TK-HSD, α=0.05) (Fig. <ref type="figure" target="#fig_4">5a</ref>), with fitness plateauing around one in high agar microcosms and dropping to 0.70±0.04 for high PEG microcosms, where the WS was at a distinct disadvantage. In contrast, in shaken microcosms where the WS cannot form a biofilm, no significant difference in fitness was found between standard and agar microcosms, although fitness in high PEG microcosms was significantly reduced (WS fitness in standard microcosms, 0.81±0.01; high agar, 0.78±0.02; high PEG, 0.62±0.01; Dunnett's, α=0.05), perhaps reflecting the toxic effect of high levels of PEG. The effect of increasing viscosity on WS fitness is also mirrored in diversifying populations of wild-type SBW25, where the proportion of WS cells found after 3 days also decreases significantly (TK-HSD, α=0.05) (Fig. <ref type="figure" target="#fig_4">5b</ref>).</p><p>As we have previously found that WSs evolved from wildtype cells in standard microcosms or drip-feed glass-bead columns differed in terms of WS phenotype <ref type="bibr" target="#b69">[70]</ref> (wrinkleality <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b70">71]</ref>), we also compared the biofilms produced in standard microcosms by a set of independent WS isolates, recovered from standard and modified microcosms, using the combined biofilm assay <ref type="bibr" target="#b36">[37]</ref>. We found significant differences in relative strength, attachment levels and total growth between WS isolates (TK-HSD, α=0.05) (Fig. <ref type="figure" target="#fig_5">6</ref>). Further analysis using a GLM approach found significant isolate(origin) and origin effects for each of these characteristics (ANOVA, P≤0.02) and PCA was able to differentiate isolates from standard, highagar and high-PEG microcosms (see Supplementary Information Fig. <ref type="figure" target="#fig_3">S4</ref> for the PCA biplot). This suggests that these microcosms were providing slightly different environments in which WSs are selected with subtly varying phenotypes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>Considerable growth advantages are available in the high-O 2 region of static microcosms created by the ecosystem engineering of the early wild-type SBW25 colonists <ref type="bibr" target="#b9">[10]</ref>. This region, which includes the A-L interface and extends down into the liquid column for~1 mm <ref type="bibr" target="#b9">[10]</ref>, represents an ecological opportunity for adaptive lineages such as the WSs who can occupy the 'Goldilocks zone' of optimal growth <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref> (see <ref type="bibr" target="#b71">[72]</ref> for the first description of bacteria occupying a region of optimal O 2 concentration) through the development of a robust biofilm at the A-L interface. This biofilm strategy is an example of resource allocation trade-off <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b72">73,</ref><ref type="bibr" target="#b73">74]</ref>, as energy not required for aerotaxis is diverted away from direct growth to produce the EPS biofilm matrix that will retain cells in the high-O 2 region without constant swimming. However, as the biofilm matures greater benefits are realized as resident cells no longer have to expend energy in aerotaxis or further biofilm construction. The success of this strategy is confirmed by the competitive fitness advantage that the WSs have over non-biofilm-forming competitors <ref type="bibr" target="#b11">[12]</ref>, which will continue until growth is limited by depleted resources or when the biofilm sinks due to physical disturbance <ref type="bibr" target="#b11">[12]</ref>. Additional confirmation of the success of the biofilm strategy is seen in the competitive fitness advantage of other A-L interface biofilms produced by SBW25 <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22]</ref>, Bacillus subtilis NCIB3610 and Pseudomonas aeruginosa PA14 <ref type="bibr" target="#b74">[75]</ref>, and more generally by the frequency of A-L interface biofilm formation found amongst pseudomonads and other bacteria <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref>). Nonetheless, we have been interested in understanding why biofilm formation should be so successful at a physical level, when aerotaxis should be sufficient to gain access to the high-O 2 region and remain in place by countering the effects of physical displacement.</p><p>Our investigations have confirmed that wild-type SBW25 and the archetypal WS are aerotaxic, as expected, although we note that this behaviour has been reported for very few pseudomonad strains (e.g. <ref type="bibr" target="#b75">[76]</ref><ref type="bibr" target="#b76">[77]</ref><ref type="bibr" target="#b77">[78]</ref><ref type="bibr" target="#b78">[79]</ref><ref type="bibr" target="#b79">[80]</ref>), which are generally regarded as being aerobic and motile <ref type="bibr" target="#b80">[81]</ref>, and aerotaxis homologues are annotated in many genomes <ref type="bibr" target="#b81">[82]</ref>. We have also demonstrated that wild-type and WS cells are capable of accessing the high-O 2 region at the top of the liquid column of static microcosms, and the failure of fleQ -cells to do this confirms the importance of swimming in colonizing the Goldilocks zone (motility is also important for the colonization of the A-L interface by NCIB3610 and PA14 <ref type="bibr" target="#b74">[75]</ref>). SBW25 cells have one of the fastest swimming velocities yet reported for pseudomonads <ref type="bibr" target="#b32">[33]</ref> and we calculate that short periods of swimming will easily overcome the effects of random cell diffusion when they are in the high-O 2 region. The presence of bioconvection currents <ref type="bibr" target="#b56">[57]</ref> might appear to prevent the localization of wild-type and WS cells and subsequent biofilm formation, as cycles of aerotaxis and rest initiate convection through instabilities and plume formation, which may transport cells far from the high-O 2 region or lead to their sedimentation. Simulations show that currents only appear once a critical culture density has been surpassed <ref type="bibr" target="#b61">[62]</ref>, at which point we suggest that sufficient biofilm development has occurred to withstand any further significant displacement of cells or structure (similarly, these do not disrupt the formation of A-L interface biofilms by NCIB3610 and PA14 <ref type="bibr" target="#b74">[75]</ref>; we also note that evaporation and salt accumulation at the A-L interface is sufficient to generate convection patterns in bacterial cultures <ref type="bibr" target="#b82">[83]</ref>).</p><p>Our observations suggest that an aerotaxis-based strategy should be a plausible alternative to biofilm formation as a means of colonizing the A-L interface. However, the experimentally observed competitive fitness advantage of the WS (e.g. <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b49">50]</ref>) suggests that aerotaxis is not the optimal evolutionary solution and implies instead that biofilm formation offers selective advantage, possibly by requiring a lower overall energy expenditure by the growing population. Even when the cellulose biosynthesis genes are deleted, alternative A-L biofilm-forming SBW25 mutants have been isolated with competitive fitness advantages over non-biofilm-forming competitors <ref type="bibr" target="#b18">[19,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22]</ref>. We proposed that if biofilm formation is the superior strategy because the main impediment to localization in the high-O 2 region is the impact of physical displacement, WS competitive fitness relative to a non-biofilm-forming competitor should decrease as liquid viscosity is increased as random cell diffusion and fluid flow are limited by viscosity <ref type="bibr" target="#b52">[53,</ref><ref type="bibr" target="#b55">56,</ref><ref type="bibr" target="#b61">62]</ref>. A significant decrease in WS competitive fitness and evolution was found, as expected, using modified microcosms in which viscosity was up to 5.7-fold higher than in standard microcosms, but far lower than what would be required to produce a visually obvious gel or viscous solution. We also note that agar and PEG produced additional subtle effects on WS evolution, as recovered isolates exhibited distinct biofilm characteristics, suggesting that some level of local adaptation might be occurring, especially in the PEG microcosms, to reduce the impact of toxic intermediates or bottlenecks in PEG metabolism <ref type="bibr" target="#b83">[84]</ref>. The dry-looking top surface of WS biofilms <ref type="bibr" target="#b22">[23]</ref> has long suggested to the authors that WS cells are capable of penetrating the A-L interface (rather like bacterial meta-neustons colonizing the surface microlayers of marine and freshwater habitats <ref type="bibr" target="#b40">[41,</ref><ref type="bibr" target="#b41">42]</ref>), with subsequent generations pushed up above the liquid layer, and older generations gradually pushed lower down into the liquid column (resulting in an ancestor's inhibition effect <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b84">85]</ref>). Penetrating and crossing, or otherwise associating with the A-L interface, requires mechanical energy <ref type="bibr" target="#b12">[13]</ref>, resulting in altered liquid ST and viscoelasticity <ref type="bibr" target="#b40">[41,</ref><ref type="bibr" target="#b58">59]</ref>. This depends on bacterial surface charge and hydrophobic interactions that are also modified by cell surface features, including lipopolysaccharide (LPS), other polymers and appendages, and changes to the A-L interface, can in turn affect swimming behaviour through drag effects <ref type="bibr" target="#b85">[86]</ref>. In some instances, the growth of bacteria in shaken cultures leads to an increase in ST due to the accumulation of polymers, proteinaceous material and cell debris, but this can be overcome by the expression of strong SAAs, such as surfactants <ref type="bibr" target="#b12">[13]</ref>, which significantly reduce ST to a minimum of 23 mN m -1 <ref type="bibr" target="#b51">[52,</ref><ref type="bibr" target="#b85">86,</ref><ref type="bibr" target="#b86">87]</ref> (the ST of bacterial cells can also be inferred and is affected by growth conditions and physiological state <ref type="bibr" target="#b87">[88]</ref>).</p><p>Our comparison of the ST of wild-type and WS cultures, cell-free supernatants and washed cells suggests that WSs are expressing a SAA weakly associated with the cell surface, which allows better penetration of the A-L interface than for wild-type cells. Further work will be required to identify the SAA, which could be cellulose <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b22">23]</ref> or PNAG <ref type="bibr" target="#b20">[21]</ref>  attachment factor, both of which are over-expressed by WSs but expressed at low levels by wild-type cells, or possibly a completely new component not yet associated with the WS phenotype. Changes in the expression of cell surface features such as cellulose and LPS are known to affect the relative cell hydrophobicity of the WS and recruitment levels to the A-L interface <ref type="bibr" target="#b23">[24]</ref>. Various types of cellulose fibres and derivatives are known to alter ST (see e.g. <ref type="bibr" target="#b88">[89]</ref><ref type="bibr" target="#b89">[90]</ref><ref type="bibr" target="#b90">[91]</ref><ref type="bibr" target="#b91">[92]</ref>), and in earlier work we demonstrated that that cellulose expression by wildtype SBW25 could explain the reduction of ST from ~27 to 25 mN m -1 <ref type="bibr" target="#b16">[17]</ref>, but we are not aware of any publications demonstrating the same for PNAG. However, an alternative explanation is that the WS expresses another SAA that is more tightly repressed in wild-type cells. We have previously suggested that a highly hydrophobic amyloid fibre potentially expressed by fabA-F homologues (PFLU2701-2696) is a likely candidate for involvement in attachment <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b92">93,</ref><ref type="bibr" target="#b93">94]</ref> that might also allow better penetration of the A-L interface. Amyloid fibres allow the gelation of polysaccharides and result in modified matrices with different viscoelastic properties <ref type="bibr" target="#b94">[95]</ref> and these fibres need to penetrate the A-L interface in order to form a robust biofilm <ref type="bibr" target="#b95">[96]</ref>. Such fibres might explain the difference seen between the dry-looking and robust WS biofilm and the wet-looking VM biofilm produced by wild-type SBW25 <ref type="bibr" target="#b16">[17]</ref>, which readily sinks when disturbed but nonetheless is still associated with the A-L interface <ref type="bibr" target="#b58">[59]</ref>.</p><p>We have a long-term interest in understanding the underlying molecular biology and evolutionary ecology of the WS <ref type="bibr" target="#b11">[12]</ref>. Our investigation into how wild-type and WS cells access and remain in the high-O 2 region highlights the advantage biofilm formation has over aerotaxis in overcoming displacement from this Goldilocks zone of optimal growth <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>, and the difficulty in penetrating the A-L interface, which allows the development of substantially larger and more robust biofilms. Although biofilm formation has been identified as the key innovation of the WS <ref type="bibr" target="#b13">[14]</ref>, we now raise the question of whether the key is really the ability to cross the A-L interface and avoid the energetic costs involved in maintaining position in the high-O 2 region, rather than the subsequent population increase across the A-L interface in the developing biofilm.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig.1. Wild-type SBW25 and WS cells are aerotaxic. The O 2 -directed flagella-mediated swimming (i.e. aerotaxis) behaviour of wild-type cells can be visualized by monitoring cell migration in soft agar (a). After 48 hr cells have moved towards the source of O 2 (i.e. the open end of the test tube) (top arrow) following the O 2 gradient, rather than downwards to the sealed end of the test tube (tetrazolium violet has been added to help visualize live-cells; a lot of the initial inoculum remains at the mid-point and probably represents dead cells). Aerotaxis behaviour can also be quantified by determining cell distributions along an A-L interface in a microscope chamber (b). Shown here are images of the same chamber under O 2 -depleted conditions and then after 30 min re-equilibration with normal O 2 levels in which more wild-type cells are located near to the A-L interface. Cell distributions derived from microscope images can be used to quantify the aerotaxis behaviour of wild-type and WS cells compared to non-motile fleQ -cells, which are not capable of aerotaxis ipso facto (c). Cell distributions were determined from paired images taken under O 2 -depleted conditions and then after 30 min re-equilibration with normal O 2 levels and are shown as the O 2 /N 2 cell number ratio. A ratio significantly greater than one (grey line) suggests that cells are aerotaxic. Means (black circles)±se are shown (replicates are indicated by white circles). Means not linked by the same letter are significantly different (TK HSD, α=0.05). Wild-type and WS O 2 /N 2 cell number ratios are significantly different to one (t-test, P&gt;0.05), but the fleQ -ratio is not (P=0.33).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. WS cells show higher levels of enrichment in the O 2 -rich top layer of the liquid column than either wild-type or non-motile fleQ - cells. Localization at the top of the liquid column requires aerotaxis capable of overcoming random cell diffusion, microcurrents and physical disturbance, and cell sedimentation. Wild-type SBW25 cells are enriched at the top of the liquid column (a) compared to nonaerotaxic (and non-swimming) fleQ -mutant cells, which sediment at the bottom of the liquid column (b). In comparison, WS cells show even higher levels of enrichment at the top compared (c) to wild-type cells. Cell distributions were determined from OD 600 measurements of six 1 ml samples taken from the top down to the bottom of static microcosms 24 h after vigorous mixing to produce a uniform distribution of cells throughout the liquid column. Control measurements were taken from a separate set of mixed microcosms incubated for the same period but remixed before sampling. Cell distributions are shown as the cell distributions in the liquid column (sample at a particular depth/mixed control OD 600 ratio). A ratio of one suggests cells are equally distributed throughout the liquid column. Means (black circles)±se are shown (replicates are indicated by white circles). Means not linked by the same letter are significantly different (TK-HSD, α=0.05). Trend lines (dashed curves) are descriptive only.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig.3. WS cultures have lower surface tension (ST) than wild-type SBW25. ST (mM m -1 ) measurements can be used to investigate the association with and penetration of cells into and across the A-L interface through cell surface features including attached and loosely associated polymers. Shown here is a comparison of ST measurements from cultures, cell-free culture supernatants and vigorously washed and resuspended wild-type and WS cells. Means (black circles)±se are shown (replicates are indicated by white circles). Means not linked by the same letter are significantly different (TK-HSD, α=0.05). Further investigation showed a significant difference (*) between mean wildtype and WS culture ST (t-test, P=0.02), but not between washed cells (t-test, P=0.18) or supernatants (t-test, P=0.16).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig.4. Cell localization to the high-O 2 region is sensitive to liquid viscosity. Random cell diffusion, bioconvection currents and physical disturbance (i.e. displacement) all affect the distribution of wild-type (circles) and WS (squares) cells in the liquid column of static microcosms. However, the relative impact of these factors can be reduced by increasing liquid viscosity, which results in more cells being localized to the high-O 2 region at the top of the liquid column. Standard microcosms (white) were modified by the addition of agar (grey) or PEG (black) to increase viscosity. Cell distributions were determined from OD 600 measurements of samples taken from the bottom of static microcosms and after vigorous mixing and are shown as the cell distributions in the liquid column (mixed/bottom OD 600 ratio). A ratio of less than one suggests that fewer cells are at that depth compared to the mixed control. Means (large symbols)±se are shown (replicates are indicated by small symbols). Means not linked by the same letter are significantly different (TK-HSD, α=0.05). Trend lines (dashed curves) are descriptive only.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. WS fitness is affected by viscosity. The competitive fitness (W) of the archetypal WS compared to the non-biofilm-forming wildtype SBW25 decreases with increasing liquid viscosity (a). A competitive fitness of one (grey line) indicates that the WS and wild-type have no advantage over one another; higher values indicate a WS advantage and lower values a wild-type advantage. This reduction is also reflected in the percentage of WS cells found in diversifying wild-type populations after 3 days (b). Standard microcosms (white circles) were modified by the addition of agar (grey circles) or PEG (black circles) to increase viscosity. Means (large symbols)±se are shown (replicates are indicated by small symbols). Means not linked by the same letter are significantly different (TK-HSD, α=0.05). Data are jigged horizontally to avoid overlaps. Trend lines (dashed curves) are descriptive only.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. WSs evolved in modified microcosms have different biofilm characteristics. The combined biofilm assay was used to characterize the biofilms produced in standard microcosms by 25 independent WS isolates recovered from standard and modified microcosms containing low and high concentrations of agar and PEG. Shown are relative biofilm strengths measured using small galls balls (grams) (a), attachment levels measured by crystal violet staining (A 570 ) (b) and total microcosm growth (OD 600 ) (c). The relative value of one (grey line) is the mean of all measurements (n=125). Means (black circles)±SE are shown (mean data from individual WS isolates are indicated by white circles). Means not linked by the same letter are significantly different (LSMeans differences Tukey HSD, α=0.05).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Viscosity and growth characteristics of microcosms with added agar and polyethylene glycol (PEG).</figDesc><note><p>Means±se are shown for measurements of viscosity and wild-type SBW25 growth. †, viscosity for low concentrations were interpolated assuming a simple linear relationship. Visually obvious agar gelling occurred at 0.3 % (w/v) agar and PEG solutions of 20 % (w/v) were very difficult to pour. Relative growth compared to standard microcosms is shown in parentheses. Viscosity means not linked by the same letter are significantly different (TK-HSD, α=0.05). Growth means are not significantly different (Dunn method, P&gt;0.05) except where indicated (*) (P=0.02).</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>We would like to thank <rs type="institution">Neil Cunningham of the Centre for Industrial Rheology</rs> for his help in determining media viscosities, <rs type="person">Nia White</rs> for her comments on the final draft manuscript and the two anonymous referees for their critical reviews. A. J. Spiers is also member of the <rs type="funder">Scottish Alliance for Geoscience Environment and Society (SAGES)</rs>.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Funding information</head><p>This research was funded by <rs type="funder">Abertay University</rs> which is a charity registered in Scotland (no. <rs type="grantNumber">SC016040</rs>). A. K.'s visit to Abertay was supported by the <rs type="funder">European Region Action Scheme for the Mobility of University Students (Erasmus) Programme</rs>, while M. P. was supported by the <rs type="funder">International Association for the Exchange of Students for Technical Experience</rs> (<rs type="affiliation">IAESTE</rs>) Programme and the <rs type="funder">British Council</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_QArpjbf">
+					<idno type="grant-number">SC016040</idno>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supporting information and data</head><p>Supporting information is available as a Supplementary Information file. Data are available from Mendeley Data (<ref type="url" target="http://dx">http:// dx</ref>. doi. org/ 10. 17632/ rwh8vchkxg. 1).</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>ORCID Author identifiers: Robyn Jerdan, 0000-0002-7045-8362; Anna Kuśmierska, 0000-0003-1214-4549; Marija Petric, 0000-0001-8588- 9870; A. J. Spiers, 0000-0003-0463-8629. Roles undertaken: R. Jerdan: Design, experimentation, analysis and manuscript development; A. Kuśmierska: Experimentation; M. Petric: Experimentation; A. J. Spiers: Design, experimentation, analysis, manuscript development and supervision. All authors contributed to the final manuscript preparation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>The authors declare that there are no conflicts of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="book" xml:id="b0">
+				<monogr>
+					<author>
+						<persName><forename>D</forename><surname>Schulter</surname></persName>
+					</author>
+					<title level="m">The ecology of adaptive radiation</title>
+					<imprint>
+						<date when="2000">2000</date>
+						<publisher>Oxford University Press</publisher>
+						<pubPlace>Oxford</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Losos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Mahler</surname></persName>
+					</author>
+					<title level="a">Adaptive radiation: the interaction of ecological opportunity, adaptation, and speciation</title>
+				</analytic>
+				<monogr>
+					<title level="m">Evolution Since Darwin: The First 150 Years</title>
+					<editor>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Bell</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Futuyma</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Eanes</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Levinton</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Sinauer Assoc</publisher>
+						<pubPlace>Sunderland</pubPlace>
+						<date when="2010">2010</date>
+						<biblScope unit="page" from="381" to="420"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Buckling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Craig Maclean</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Brockhurst</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Colegrave</surname></persName>
+					</author>
+					<title level="a">The beagle in a bottle</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">457</biblScope>
+						<biblScope unit="page" from="824" to="829"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Kawecki</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Lenski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Ebert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Hollis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Olivieri</surname></persName>
+					</author>
+					<title level="a">Experimental evolution</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends Ecol Evol</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="547" to="560"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Dykhuizen</surname></persName>
+					</author>
+					<title level="a">Thoughts toward a theory of natural selection: the importance of microbial experimental evolution</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cold Spring Harb Perspect Biol</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">a18044</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Bachmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Molenaar</surname></persName>
+					</author>
+					<author>
+						<persName><forename/>F<surname>Branco Dos Santos</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Teusink</surname></persName>
+					</author>
+					<title level="a">Experimental evolution and the adjustment of metabolic strategies in lactic acid bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Rev</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="S201" to="S219"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bailey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">P</forename><surname>Thompson</surname></persName>
+					</author>
+					<title level="a">Detection systems for phyllosphere Pseudomonads</title>
+				</analytic>
+				<monogr>
+					<title level="m">Genetic Interactions Between Microorganisms in the Natural Environment</title>
+					<editor>
+						<persName><forename type="first">E</forename><forename type="middle">M</forename><forename type="middle">R</forename><surname>Wellington</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Van Elsas</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Pergamon Press</publisher>
+						<pubPlace>Oxford</pubPlace>
+						<date when="1992">1992</date>
+						<biblScope unit="page" from="127" to="141"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bailey</surname></persName>
+					</author>
+					<title level="a">Physical and genetic map of the Pseudomonas fluorescens SBW25 chromosome</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="521" to="533"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Travisano</surname></persName>
+					</author>
+					<title level="a">Adaptive radiation in a heterogeneous environment</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">394</biblScope>
+						<biblScope unit="page" from="69" to="72"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Koza</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Moshynets</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Otten</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Environmental modification and niche construction: developing O2 gradients drive the evolution of the Wrinkly Spreader</title>
+				</analytic>
+				<monogr>
+					<title level="j">ISME J</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="665" to="673"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Kuśmierska</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">New insights into the effects of several environmental parameters on the relative fitness of a numerically dominant class of evolved niche specialist</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Evol Biol</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="page">2016</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Koza</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Kuśmierska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Mclaughlin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Moshynets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Adaptive radiation of Pseudomonas fluorescens SBW25 in experimental microcosms provides an understanding of the evolutionary ecology and molecular biology of A-L interface biofilm formation</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Lett</title>
+					<imprint>
+						<biblScope unit="volume">364</biblScope>
+						<biblScope unit="page">fnx109</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+					</author>
+					<title level="a">Fluid interfaces and capillarity</title>
+				</analytic>
+				<monogr>
+					<editor>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+					</editor>
+					<title level="m">Introduction to Interfaces and Colloids</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<publisher>World Scientific Publishing Co</publisher>
+						<biblScope unit="page" from="23" to="106"/>
+						<pubPlace>Singapore</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Kahn</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bohannon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Travisano</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Adaptive divergence in experimental populations of Pseudomonas fluorescens. I. genetic and phenotypic bases of wrinkly spreader fitness</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genetics</title>
+					<imprint>
+						<biblScope unit="volume">161</biblScope>
+						<biblScope unit="page" from="33" to="46"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Moshynets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Viewing biofilms within the larger context of bacterial aggregations</title>
+				</analytic>
+				<monogr>
+					
+					<editor>
+						<persName><forename>D</forename><surname>Dhanasekaran</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>N</forename><surname>Thajuddin</surname></persName>
+					</editor>
+					<title level="m">Microbial biofilms</title>
+					<imprint>
+						<publisher>InTech Publishers</publisher>
+						<pubPlace>Rijeka</pubPlace>
+						<date when="2016">2016</date>
+						<biblScope unit="page" from="3" to="22"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">A mechanistic explanation linking adaptive mutation, niche change, and fitness advantage for the wrinkly spreader</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int J Evolutionary Biol</title>
+					<imprint>
+						<biblScope unit="volume">675432</biblScope>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Koza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hallett</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Moon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Characterization of a novel air-liquid interface biofilm of Pseudomonas fluorescens SBW25</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">155</biblScope>
+						<biblScope unit="page" from="1397" to="1406"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Bantinaki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Kassen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Knight</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Robinson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Adaptive divergence in experimental populations of Pseudomonas fluorescens. III. mutational origins of wrinkly spreader diversity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genetics</title>
+					<imprint>
+						<biblScope unit="volume">176</biblScope>
+						<biblScope unit="page" from="441" to="453"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Mcdonald</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Gehrig</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Meintjes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X-X</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Adaptive divergence in experimental populations of Pseudomonas fluorescens. IV. Genetic constraints guide evolutionary trajectories in a parallel adaptive radiation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genetics</title>
+					<imprint>
+						<biblScope unit="volume">183</biblScope>
+						<biblScope unit="page" from="1041" to="1053"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Mcdonald</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">F</forename><surname>Cooper</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">J</forename><forename type="last">E</forename><surname>Beaumont</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">The distribution of fitness effects of new beneficial mutations in Pseudomonas fluorescens</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biol Lett</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page" from="98" to="100"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Lind</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Farr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Experimental evolution reveals hidden diversity in evolutionary pathways</title>
+				</analytic>
+				<monogr>
+					<title level="j">eLife</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page">e07074</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Lind</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Farr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Evolutionary convergence in experimental Pseudomonas populations</title>
+				</analytic>
+				<monogr>
+					<title level="j">ISME J</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="589" to="600"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Bohannon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Gehrig</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Biofilm formation at the air-liquid interface by the Pseudomonas fluorescens SBW25 wrinkly spreader requires an acetylated form of cellulose</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="15" to="27"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">The Pseudomonas fluorescens SBW25 wrinkly spreader biofilm requires attachment factor, cellulose fibre and LPS interactions to maintain strength and integrity</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">151</biblScope>
+						<biblScope unit="page" from="2829" to="2839"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Arber</surname></persName>
+					</author>
+					<title level="a">Genetic variation: molecular mechanisms and impact on microbial evolution</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Rev</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="1" to="7"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">I</forename><surname>Andersson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Jerlström-Hultqvist</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Näsvall</surname></persName>
+					</author>
+					<title level="a">Evolution of new functions de novo and from preexisting genes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Cold Spring Harb Perspect Biol</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">a017996</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Johnson</surname></persName>
+					</author>
+					<title level="a">The rewiring of transcription circuits in evolution</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Opin Genet Dev</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="page" from="121" to="127"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Taylor</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">B</forename><surname>Zhulin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Johnson</surname></persName>
+					</author>
+					<title level="a">Aerotaxis and other energysensing behavior in bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annu Rev Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">53</biblScope>
+						<biblScope unit="page" from="103" to="128"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bailey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Lilley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">P</forename><surname>Thompson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Ellis</surname></persName>
+					</author>
+					<title level="a">Site directed chromosomal marking of a fluorescent pseudomonad isolated from the phytosphere of sugar beet; stability and potential for marker gene transfer</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Ecol</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="755" to="764"/>
+						<date when="1995">1995</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Turnbull</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><forename type="last">W</forename><surname>Morgan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Whipps</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Saunders</surname></persName>
+					</author>
+					<title level="a">The role of bacterial motility in the survival and spread of Pseudomonas fluorescens in soil and in the attachment and colonisation of wheat roots</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Ecol</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="page" from="21" to="31"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>De Weert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Vermeiren</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="frist">I</forename><forename type="frist">H</forename><forename type="frist">M</forename><surname>Mulders</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Kuiper</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Hendrickx</surname></persName>
+					</author>
+					<title level="a">Flagella-driven chemotaxis towards exudate components is an important trait for tomato root colonization by Pseudomonas fluorescens</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Plant Microbe Interact</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="1173" to="1180"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Jones</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Studholme</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Knight</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Preston</surname></persName>
+					</author>
+					<title level="a">Integrated bioinformatic and phenotypic analysis of RpoN-dependent traits in the plant growth-promoting bacterium Pseudomonas fluorescens SBW25</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="3046" to="3064"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Ping</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Birkenbeil</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Monajembashi</surname></persName>
+					</author>
+					<title level="a">Swimming behavior of the monotrichous bacterium Pseudomonas fluorescens SBW25</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Ecol</title>
+					<imprint>
+						<biblScope unit="volume">86</biblScope>
+						<biblScope unit="page" from="36" to="44"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Alsohim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Taylor</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Barrett</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Gallie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X-X</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">The biosurfactant viscosin produced by Pseudomonas fluorescens SBW25 aids spreading motility and plant growth promotion</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="2267" to="2281"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Silby</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Cerdeño-Tárraga</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Vernikos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Giddens</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Jackson</surname></persName>
+					</author>
+					<title level="a">Genomic and genetic analyses of diversity and plant interactions of Pseudomonas fluorescens</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genome Biol</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page">R51</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Ude</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Arnold</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Moon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Timms-Wilson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Biofilm formation and cellulose expression among diverse environmental Pseudomonas isolates</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page" from="1997" to="2011"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Robertson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Hapca</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Moshynets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Air-liquid interface biofilm formation by psychrotrophic pseudomonads recovered from spoilt meat</title>
+				</analytic>
+				<monogr>
+					<title level="j">Antonie van Leeuwenhoek</title>
+					<imprint>
+						<biblScope unit="volume">103</biblScope>
+						<biblScope unit="page" from="251" to="259"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Ueda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Saneoka</surname></persName>
+					</author>
+					<title level="a">Characterization of the ability to form biofilms by plant-associated Pseudomonas species</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="page" from="506" to="513"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Armitano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Méjean</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Jourlin-Castelli</surname></persName>
+					</author>
+					<title level="a">Gram-negative bacteria can also form pellicles</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Microbiol Rep</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="534" to="544"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Vlamakis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Beauregard</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Losick</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Kolter</surname></persName>
+					</author>
+					<title level="a">Sticking together: building a biofilm the Bacillus subtilis way</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nat Rev Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="157" to="168"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b40">
+				<analytic>
+					<title level="a">Mechanisms of bacterial adhesion at gas-liquid interfaces</title>
+					<author>
+						<persName><forename>S</forename><surname>Kjelleberg</surname></persName>
+					</author>
+				</analytic>
+				<monogr>
+					<title level="m">Bacterial adhesion: Mechanisms and Physiological Significance</title>
+					<editor>
+						<persName><forename>M</forename><surname>Fletcher</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Savage</surname></persName>
+					</editor>
+					<imprint>
+						<date when="1985">1985</date>
+						<publisher>Plenum Press</publisher>
+						<biblScope unit="page" from="163" to="194"/>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">G</forename><surname>Marshall</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Burchardt</surname></persName>
+					</author>
+					<title level="a">Neuston: its definition with a historical review regarding its concept and community structure</title>
+				</analytic>
+				<monogr>
+					<title level="j">Arch. Hydrobiol</title>
+					<imprint>
+						<biblScope unit="volume">164</biblScope>
+						<biblScope unit="page" from="429" to="448"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Wotton</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Preston</surname></persName>
+					</author>
+					<title level="a">Surface films: areas of water bodies that are often overlooked</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bioscience</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="137" to="145"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Cunliffe</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Upstill-Goddard</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Murrell</surname></persName>
+					</author>
+					<title level="a">Microbiology of aquatic surface microlayers</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Rev</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="233" to="246"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Arnold</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Moon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Timms-Wilson</surname></persName>
+					</author>
+					<title level="a">A survey of A-L biofilm formation and cellulose expression amongst soil and plant-associated Pseudomonas isolates</title>
+				</analytic>
+				<monogr>
+					<title level="m">Microbial Ecology of Aerial Plant Surfaces</title>
+					<editor>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bailey</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Lilley</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Timms-Wilson</surname></persName>
+					</editor>
+					<imprint>
+						<biblScope unit="page" from="121" to="132"/>
+						<date when="2006">2006</date>
+						<publisher>CABI</publisher>
+						<pubPlace>Wallingford</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Holden</surname></persName>
+					</author>
+					<title level="a">How do the microhabitats framed by soil structure impact soil bacteria and the processes they regulate?</title>
+				</analytic>
+				<monogr>
+					<title level="m">The architecture and biology of soils</title>
+					<editor>
+						<persName><forename>K</forename><surname>Ritz</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>I</forename><surname>Young</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>CABI</publisher>
+						<pubPlace>Wallingford</pubPlace>
+						<date when="2011">2011</date>
+						<biblScope unit="page" from="118" to="148"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">O</forename><surname>King</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Ward</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Raney</surname></persName>
+					</author>
+					<title level="a">Two simple media for the demonstration of pyocyanin and fluorescin</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Labor Clin Med</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="301" to="307"/>
+						<date when="1954">1954</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b47">
+				<monogr>
+					
+					<author>
+						<persName><forename>J</forename><surname>Sambrook</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Fritsch</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Maniatis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Cloning</surname></persName>
+					</author>
+					<title level="m">Laboratory Manual A. Molecular Cloning. A Laboratory Manual, 2nd Edition</title>
+					<imprint>
+						<date when="1989">1989</date>
+						<publisher>Cold Spring Harbor Laboratory Press</publisher>
+						<pubPlace>Cold Spring Harbor</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">L</forename><surname>Gates</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">K</forename><surname>Olitsky</surname></persName>
+					</author>
+					<title level="a">Factors influencing anaerobiosis, with special reference to the use of fresh tissue</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Exp Med</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="51" to="68"/>
+						<date when="1921">1921</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Green</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Koza</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Moshynets</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Pajor</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Ritchie</surname></persName>
+					</author>
+					<title level="a">Evolution in a test tube: rise of the wrinkly spreaders</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Biol Educ</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="54" to="59"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Lenski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Rose</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Simpson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Tadler</surname></persName>
+					</author>
+					<title level="a">Long-Term experimental evolution in Escherichia coli. I. adaptation and divergence during 2,000 generations</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am Nat</title>
+					<imprint>
+						<biblScope unit="volume">138</biblScope>
+						<biblScope unit="page" from="1315" to="1341"/>
+						<date when="1991">1991</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Fechtner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Koza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Sterpaio</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Hapca</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Surfactants expressed by soil pseudomonads alter local soil-water distribution, suggesting a hydrological role for these compounds</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Ecol</title>
+					<imprint>
+						<biblScope unit="volume">78</biblScope>
+						<biblScope unit="page" from="50" to="58"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+					</author>
+					<title level="a">Movement of self-propelled objects</title>
+				</analytic>
+				<monogr>
+					<title level="m">Random walks in biology, Expanded edition</title>
+					<editor>
+						<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Princetown University Press</publisher>
+						<pubPlace>Princetown</pubPlace>
+						<date when="1993">1993</date>
+						<biblScope unit="page" from="75" to="93"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Jørgensen</surname></persName>
+					</author>
+					<title level="a">Life in the diffusive boundary layer</title>
+				</analytic>
+				<monogr>
+					<title level="m">The Benthic Boundary Layer. Transport Processes and Biogeochemistry</title>
+					<editor>
+						<persName><forename type="first">B</forename><forename type="middle">P</forename><surname>Boudreau</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Jørgensen</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Oxford University Press</publisher>
+						<pubPlace>Oxford</pubPlace>
+						<date when="2001">2001</date>
+						<biblScope unit="page" from="348" to="373"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Giddens</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Jackson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Moon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Jacobs</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X-X</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Mutational activation of niche-specific genes provides insight into regulatory networks and bacterial function in a complex environment</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc Natl Acad Sci U S A</title>
+					<imprint>
+						<biblScope unit="volume">104</biblScope>
+						<biblScope unit="page" from="18247" to="18252"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Pedley</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Kessler</surname></persName>
+					</author>
+					<title level="a">Hydrodynamic phenomena in suspensions of swimming microorganisms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Annu Rev Fluid Mech</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="313" to="358"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Ardré</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Dufour</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rainey</surname></persName>
+					</author>
+					<title level="a">Causes and biophysical consequences of cellulose production by Pseudomonas fluorescens SBW25 at the air-liquid interface</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<date when="May 13 2019">May 13 2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b57">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Kjelleberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Stenström</surname></persName>
+					</author>
+					<title level="a">Lipid surface films: interaction of bacteria with free fatty acids and phospholipids at the air/water interface</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">116</biblScope>
+						<biblScope unit="page" from="417" to="423"/>
+						<date when="1980">1980</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Rühs</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Böni</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Fuller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Inglis</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Fischer</surname></persName>
+					</author>
+					<title level="a">In-situ quantification of the interfacial rheological response of bacterial biofilms to environmental stimuli</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS One</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">e78524</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b59">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">K</forename><surname>Holmberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><surname>Jönsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><surname>Kronsberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><surname>Lindman</surname></persName>
+					</author>
+					<title level="m">Surfactants and Polymers in Aqueous Solution, 2nd</title>
+					<imprint>
+						<date when="2002">2002</date>
+						<publisher>John Wiley and Sons, Ltd</publisher>
+						<pubPlace>Chichester</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b60">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>De Bruijn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><forename type="last">D</forename><surname>De Kock</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>De Waard</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Van Beek</surname></persName>
+					</author>
+					<title level="a">Genome-based discovery, structure prediction and functional analysis of cyclic lipopeptide antibiotics in Pseudomonas species</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">63</biblScope>
+						<biblScope unit="page" from="417" to="428"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b61">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Deleuze</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C-Y</forename><surname>Chiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Thiriet</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">W</forename><forename type="last">H</forename><surname>Sheu</surname></persName>
+					</author>
+					<title level="a">Numerical study of plume patterns in a chemotaxis-diffusion-convection coupling system</title>
+				</analytic>
+				<monogr>
+					<title level="j">Comput Fluids</title>
+					<imprint>
+						<biblScope unit="volume">126</biblScope>
+						<biblScope unit="page" from="58" to="70"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b62">
+				<analytic>
+					<author>
+						<persName><forename>R</forename><surname>Armisén</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Galatas</surname></persName>
+					</author>
+					<title level="a">Agar</title>
+				</analytic>
+				<monogr>
+					
+					<editor>
+						<persName><forename type="first">G</forename><forename type="middle">O</forename><surname>Phillips</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Williams</surname></persName>
+					</editor>
+					<title level="m">Handbook of hydrocolloids, 2, 2nd Ed.</title>
+					<meeting><address><addrLine> Cambridge</addrLine></address></meeting>
+					<imprint>
+						<publisher>Woodhead Publishing Ltd</publisher>
+						<pubPlace>Cambridge</pubPlace>
+						<date when="2009">2009</date>
+						<biblScope unit="page" from="82" to="203"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Ji</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Dimova</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Lipowsky</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Viscoelasticity of poly(ethylene glycol) solutions on supported lipid bilayers via quartz crystal microbalance with dissipation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Macromolecules</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="1824" to="1831"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b64">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Kirinčič</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Klofutar</surname></persName>
+					</author>
+					<title level="a">Viscosity of aqueous solutions of poly(ethylene glycol)s at 298.15 K</title>
+				</analytic>
+				<monogr>
+					<title level="j">Fluid Phase Equilib</title>
+					<imprint>
+						<biblScope unit="volume">155</biblScope>
+						<biblScope unit="page" from="311" to="325"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b65">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Asyakina</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Asyakina</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Dyshlyuk</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Dyshlyuk</surname></persName>
+					</author>
+					<title level="a">Study of viscosity of aqueous solutions of natural polysaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science Evolution</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="page" from="11" to="19"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b66">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Haines</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Alexander</surname></persName>
+					</author>
+					<title level="a">Microbial degradation of polyethylene glycols</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="621" to="625"/>
+						<date when="1975">1975</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b67">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Obradors</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Aguilar</surname></persName>
+					</author>
+					<title level="a">Efficient biodegradation of high-molecularweight polyethylene glycols by pure cultures of Pseudomonas stutzeri</title>
+				</analytic>
+				<monogr>
+					<title level="j">AEM</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="page" from="2383" to="2388"/>
+						<date when="1991">1991</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b68">
+				<analytic>
+					
+					<author>
+						<persName><forename>X</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Fukutani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kimbara</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Kawai</surname></persName>
+					</author>
+					<title level="a">Isolation of bacteria able to grow on both polyethylene glycol (PEG) and polypropylene glycol (PPG) and their PEG/PPG dehydrogenases</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Microbiol Biotechnol</title>
+					<imprint>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="page" from="1407" to="1413"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b69">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Udall</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Deeni</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Hapca</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Raikes</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">The evolution of biofilm-forming wrinkly spreaders in static microcosms and drip-fed columns selects for subtle differences in wrinkleality and fitness</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Ecol</title>
+					<imprint>
+						<biblScope unit="volume">91</biblScope>
+						<biblScope unit="page">fiv057</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b70">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Spiers</surname></persName>
+					</author>
+					<title level="a">Bacterial evolution in simple microcosms</title>
+				</analytic>
+				<monogr>
+					<editor>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Harris</surname></persName>
+					</editor>
+					<title level="m">Microcosms: Ecology, Biological Implications and Environmental Impact</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<publisher>Nova Publishers</publisher>
+						<pubPlace>Hauppauge</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b71">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Jennings</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Crosby</surname></persName>
+					</author>
+					<title level="a">Studies on reactions to stimuli in unicellular organisms.-VII. The manner in which bacteria react to stimuli, especially to chemical stimuli</title>
+				</analytic>
+				<monogr>
+					<title level="j">Amer J Physiology</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="31" to="37"/>
+						<date when="1901">1901</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b72">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Acerenza</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Constraints</surname></persName>
+					</author>
+					<title level="a">Constraints, trade-offs and the currency of fitness</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mol Evol</title>
+					<imprint>
+						<biblScope unit="volume">82</biblScope>
+						<biblScope unit="page" from="117" to="127"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b73">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Ferenci</surname></persName>
+					</author>
+					<title level="a">Trade-off mechanisms shaping the diversity of bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Trends Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="page" from="209" to="223"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b74">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Hölscher</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Bartels</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y-C</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Gallegos-Monterrosa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Price-Whelan</surname></persName>
+					</author>
+					<title level="a">Motility, chemotaxis and aerotaxis contribute to competitiveness during bacterial pellicle biofilm development</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Mol Biol</title>
+					<imprint>
+						<biblScope unit="volume">427</biblScope>
+						<biblScope unit="page" from="3695" to="3708"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b75">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Kelman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Hruschka</surname></persName>
+					</author>
+					<title level="a">The role of motility and aerotaxis in the selective increase of avirulent bacteria in still broth cultures of Pseudomonas solanacearum</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Gen Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="page" from="177" to="188"/>
+						<date when="1973">1973</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b76">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">N</forename><surname>Nichols</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Harwood</surname></persName>
+					</author>
+					<title level="a">An aerotaxis transducer gene from Pseudomonas putida</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Lett</title>
+					<imprint>
+						<biblScope unit="volume">182</biblScope>
+						<biblScope unit="page" from="177" to="183"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b77">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Shitashiro</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kato</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Fukumura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Kuroda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ikeda</surname></persName>
+					</author>
+					<title level="a">Evaluation of bacterial aerotaxis for its potential use in detecting the toxicity of chemicals to microorganisms</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Biotechnol</title>
+					<imprint>
+						<biblScope unit="volume">101</biblScope>
+						<biblScope unit="page" from="11" to="18"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b78">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Sarand</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Osterberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Holmqvist</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Holmfeldt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Skärfstad</surname></persName>
+					</author>
+					<title level="a">Metabolism-dependent taxis towards (methyl)phenols is coupled through the most abundant of three polar localized Aer-like proteins of Pseudomonas putida</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="1320" to="1334"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b79">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Muriel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Jalvo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Redondo-Nieto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Rivilla</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Martín</surname></persName>
+					</author>
+					<title level="a">Chemotactic motility of Pseudomonas fluorescens F113 under aerobic and denitrification conditions</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS One</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page">e0132242</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b80">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Brenner</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Krieg</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Staely</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Garrity</surname></persName>
+					</author>
+					<title level="m">Bergy's manual of systematic bacteriology, 2nd</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<publisher>Spinger-Verlag</publisher>
+						<biblScope unit="page" from="323" to="378"/>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b81">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Sampedro</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Parales</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Krell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Hill</surname></persName>
+					</author>
+					<title level="a">Pseudomonas chemotaxis</title>
+				</analytic>
+				<monogr>
+					<title level="j">FEMS Microbiol Rev</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="17" to="46"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b82">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Dunstan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Hwang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Goldstein</surname></persName>
+					</author>
+					<title level="a">Evaporationdriven convective flows in suspensions of nonmotile bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys Rev Fluids</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="page">123102</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b83">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Franden</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">N</forename><surname>Jayakody</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W-J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Wagner</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Cleveland</surname></persName>
+					</author>
+					<title level="a">Engineering Pseudomonas putida KT2440 for efficient ethylene glycol utilization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Metab Eng</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="197" to="207"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b84">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Xavier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Foster</surname></persName>
+					</author>
+					<title level="a">Cooperation and conflict in microbial biofilms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc Natl Acad Sci U S A</title>
+					<imprint>
+						<biblScope unit="volume">104</biblScope>
+						<biblScope unit="page" from="876" to="881"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b85">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Morse</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Maxey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">X</forename><surname>Tang</surname></persName>
+					</author>
+					<title level="a">Molecular adsorption steers bacterial swimming at the air/water interface</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biophys J</title>
+					<imprint>
+						<biblScope unit="volume">105</biblScope>
+						<biblScope unit="page" from="21" to="28"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b86">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Fechhner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cameron</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Deeni</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Hapca</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kabir</surname></persName>
+					</author>
+					<title level="a">Limitations of biosurfactant strength produced by bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="m">Biosurfactants Occurrences, applications and research</title>
+					<editor>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Upton</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>NOVA Science Publishers</publisher>
+						<pubPlace>New York</pubPlace>
+						<date when="2017">2017</date>
+						<biblScope unit="page" from="125" to="148"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b87">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Strevett</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Microbial surface thermodynamics and applications</title>
+				</analytic>
+				<monogr>
+					<title level="j">Res Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">154</biblScope>
+						<biblScope unit="page" from="329" to="335"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b88">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Ardizzone</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">S</forename><surname>Dioguardi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Quagliotto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Vercelli</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Viscardi</surname></persName>
+					</author>
+					<title level="a">Microcrystalline cellulose suspensions: effects on the surface tension at the air-water boundary</title>
+				</analytic>
+				<monogr>
+					<title level="j">Colloids Surf A Physicochem Eng Asp</title>
+					<imprint>
+						<biblScope unit="volume">176</biblScope>
+						<biblScope unit="page" from="239" to="244"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b89">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Stana-Kleinschek</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Ribitsch</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Kreze</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Fras</surname></persName>
+					</author>
+					<title level="a">Determination of the adsorption character of cellulose fibres using surface tension and surface charge</title>
+				</analytic>
+				<monogr>
+					<title level="j">Materials Research Innovations</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="13" to="18"/>
+						<date when="2002">2002</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b90">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Nasatto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Pignon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Silveira</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Duarte</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Noseda</surname></persName>
+					</author>
+					<title level="a">Interfacial properties of methylcelluloses: the influence of molar mass</title>
+				</analytic>
+				<monogr>
+					<title level="j">Polymers</title>
+					<imprint>
+						<biblScope unit="volume">6</biblScope>
+						<biblScope unit="page" from="2961" to="2973"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b91">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Jilal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>El Barkany</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Bahari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>El Idrissi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Salhi</surname></persName>
+					</author>
+					<title level="a">A new equation between surface tension and solubility parameters of cellulose derivatives depending on Ds: application on cellulose acetate</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl Envir Eng Sci</title>
+					<imprint>
+						<biblScope unit="volume">4</biblScope>
+						<biblScope unit="page" from="171" to="181"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b92">
+				<analytic>
+				
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Dueholm</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Otzen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Nielsen</surname></persName>
+					</author>
+					<title level="a">Evolutionary insight into the functional amyloids of the pseudomonads</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS One</title>
+					<imprint>
+						<biblScope unit="volume">8</biblScope>
+						<biblScope unit="page">e76630</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b93">
+				<analytic>
+				
+					<author>
+						<persName><forename>A</forename><surname>Taglialegna</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Lasa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Valle</surname></persName>
+					</author>
+					<title level="a">Amyloid structures as biofilm matrix scaffolds</title>
+				</analytic>
+				<monogr>
+					<title level="j">J Bacteriol</title>
+					<imprint>
+						<biblScope unit="volume">198</biblScope>
+						<biblScope unit="page" from="2579" to="2588"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b94">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Lembré</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Di Martino</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Vendrely</surname></persName>
+					</author>
+					<title level="a">Amyloid peptides derived from CsgA and FapC modify the viscoelastic properties of biofilm model matrices</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biofouling</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="415" to="426"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b95">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Lim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Fuller</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Cegelski</surname></persName>
+					</author>
+					<title level="a">Disruption of Escherichia coli amyloid-integrated biofilm formation at the air-liquid interface by a polysorbate surfactant</title>
+				</analytic>
+				<monogr>
+					<title level="j">Langmuir</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="920" to="926"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

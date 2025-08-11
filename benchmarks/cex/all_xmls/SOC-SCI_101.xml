@@ -1,0 +1,861 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">African Housing Renaissance: The Case of Gacuriro Valley Satellite Settlements, Kigali, Rwanda</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability>
+					<licence><p>This article is licensed under a Creative Commons Attribution 4.0 International License (CC BY).</p></licence>
+				</availability>
+				<date type="published" when="2019-09-30">30 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Manlio</forename><surname>Michieletto</surname></persName>
+							<email>manlio.michieletto@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Architecture Department</orgName>
+								<orgName type="department" key="dep2">School of Architecture and the Built Environment</orgName>
+								<orgName type="institution">University of Rwanda</orgName>
+								<address>
+									<postCode>4285</postCode>
+									<settlement>Kigali</settlement>
+									<country>Rwanda</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Olatunde</forename><surname>Adedayo</surname></persName>
+							<email>arcadedayo@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Architecture Department</orgName>
+								<orgName type="department" key="dep2">School of Architecture and the Built Environment</orgName>
+								<orgName type="institution">University of Rwanda</orgName>
+								<address>
+									<postCode>4285</postCode>
+									<settlement>Kigali</settlement>
+									<country>Rwanda</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Victor</forename><forename type="middle">Bay</forename><surname>Mukanya</surname></persName>
+							<email>victormukabay02@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Architecture Department</orgName>
+								<orgName type="department" key="dep2">School of Architecture and the Built Environment</orgName>
+								<orgName type="institution">University of Rwanda</orgName>
+								<address>
+									<postCode>4285</postCode>
+									<settlement>Kigali</settlement>
+									<country>Rwanda</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">African Housing Renaissance: The Case of Gacuriro Valley Satellite Settlements, Kigali, Rwanda</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Urban Planning</title>
+						<idno type="ISSN">2183–7635</idno>
+						<imprint>
+							<biblScope unit="volume">4</biblScope>
+							<biblScope unit="issue">3</biblScope>
+							<biblScope unit="page" from="265" to="290"/>
+							<date type="published" when="2019-09-30">30 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ED79C27BC1E3CCA74639BE08B6FA3CCF</idno>
+					<idno type="DOI">10.17645/up.v4i3.2210</idno>
+					<note type="submission">Submitted: 30 April 2019 | Accepted: 17 July 2019 |</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Africa</term>
+					<term>architecture</term>
+					<term>housing</term>
+					<term>renewal</term>
+					<term>satellite city</term>
+					<term>settlement</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This article traces an African Housing Renaissance through the Trabantenstadt (Satellite City) vision for Kigali embedded in the Gacuriro Valley Satellite, which is composed of two settlements (or umudugudu, in Kinyarwanda) : Kigali 2020 (2001-2005) and Kigali Vision (2013-2016). While the Kigali 2020 is an integrated Trabant (Satellite) which is able to interact with the existing context and trace the future built and unbuilt developments, the Kigali Vision adopts the idea of a protected compound, morphologically connected with the older settlements, but unable to tackle and solve spatial and social issues due to its 'defensive' character. The particular topography of the hillside receives an ambivalent interpretation: in the first umudugudu, the slope inspires the whole project, an organic raumplan, and in the second it has been denied, having been leveled for flat houses' foundations and consequently a flat spatial indoor distribution. Nevertheless, this article argues that despite the evident architectural differences between the two settlements, they remain in the tradition of the Neues Bauen, in which mass housing represents the physical way of accommodating different social classes, granting equal and favorable living conditions. The typological variety demonstrates the aim to inclusively target distinct segments of the population. Apartment buildings (condominiums), row houses, twin houses and single houses mixed with public facilities, schools, a church, and sports structures, make up the settlements as unique pieces of a system and, at the same time, a singular whole.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The Gacuriro's Valley Satellite Kigali represents the implementation of Kigali Master Plan 2013 <ref type="bibr" target="#b30">(Surbana International Consultants, 2013)</ref>, a vision of a green, smart city, in which housing finds its place in the Rwandan scenery. The Satellite drawing identifies the combination of two distinct settlements: Kigali 2020 and Kigali Vision, completed respectively in 2005 and 2016. In Figure <ref type="figure" target="#fig_0">1</ref>, the settlements appear as a whole, planned according to the Master Plan guidelines that assign a prominent dwelling character to the area. In the plan, other key topics such as land approach and public approach were analyzed. Even though the dwelling rows follow the contour lines like the typical terraces dominating the Rwandan countryside, the two settlements adopt different strategies on which to root themselves, and the relationship with both private and public context is opposite. The Kigali 2020 reveals an organic composite strategy with houses popped out of the ground, following its original topography, whereas the Kigali Vision highly intervenes on it, terracing the hillside for the consequent building construction, as shown in Section 2, Figure <ref type="figure" target="#fig_3">4</ref>. The Satellite reveals a precise concept of living that starts from the single-cell composed of different types, which constitute the entire settlement, and the two settlements (Imudugudu) shaped the satellite into a Satellite City design. Analogies can be identified not only with the general definition of Satellite City (Trabantenstadt) that Ernst May theorized and applied in different projects and contexts, from Breslau to Mombasa, but also in the single cell, highlighting the analogies and the differences of the application of mass housing and the consequent process of contextualization: environment, climate, materials, and traditions. Two settlements composing the Satellite, two interpretations of the same fixed scene, and two readings of May's statement, according to which mass housing represents the physical way to "create equally favorable conditions to every section of inhabitants" <ref type="bibr" target="#b14">(May, 1929)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.">Research Method</head><p>A mixed-method approach was adopted for this study by using historical data obtained from literature and archival materials of the historical development of the Kigali housing sector. The use of a case study that focuses on the descriptive nature of the housing estates and the overall settlement ensures that the findings are compared to examine the relationship between the past and current situation. The housing units within the Gacuriro Settlements were further selected for an in-depth description of the designs of the houses and how they fit into the planned vision of the developers and authorities. In examining the historical background, an analysis was carried out by a selected architect who was involved in the shaping of the housing sector in the 20th century, Ernst May. The findings are presented in figures under specific subsections, the use of maps is to provide an aerial view of the settlement and show its formal structure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Das Neue Kigali</head><p>The city is here intended as architecture, architecture as construction, the construction of the city over time <ref type="bibr" target="#b26">(Rossi, 1984, p. 21)</ref>, a process of continuous renovatio urbis that aims to transform Kigali into the "centre of urban excellence in Africa" <ref type="bibr" target="#b30">(Surbana International Consultants, 2013, p. 15)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">The Contemporary African City</head><p>The new cosmography of the African continent presents a diffuse macrocephaly <ref type="bibr" target="#b17">(Michieletto, 2013)</ref>, and contemporary African Cities like Cairo, Johannesburg, Lagos, and Kinshasa were among the fastest growing and largest cities in the world <ref type="bibr" target="#b3">(Folkers, 2010, p. 141)</ref>. The phenomenon of hypertrophism should motivate all actors involved in reinventing the African city and upgrading its physical, socio-economic, and intellectual capital in the perspective of sustainable development, and it should advocate, inevitably, for sustainable urbanization <ref type="bibr" target="#b0">(Badiene, 2013)</ref>, otherwise Die Welt Wird Stadt (the world becomes city). The growth of cities and megacities, followed by the emergence of informal settlements with their negative effects on ecology, society, health and infrastructure, is a highly discussed phenomenon. This development is caused both by rural poverty and the attraction of booming urban economies. Regarding the worldwide increase in population to nineto-ten billion people within the next fifty years, the earth will thus reach its maximum capability regarding its natural resources like soil, water and energy <ref type="bibr" target="#b24">(Ribbeck, 2005)</ref>. Within a rampant urbanization it is indispensable to think about new sustainable rural-urban-regional strategies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Kigali, a City over Time</head><p>A Rwandan proverb says, "My country is so beautiful that, although God may wander the world during the day, he returns at night to sleep in Rwanda". Rwanda is one of Africa's smallest countries, with a total land area of 26,338 km 2 , with the highest population density in Africa of approximately 400 persons per square kilometer. The country is divided into five provinces-Northern, Eastern, Southern, Western and Kigali City. Kigali's growth started fifty years ago after it was proclaimed capital, and it has further intensified since 1994 <ref type="bibr" target="#b29">(Smith &amp; Berlanda, 2018, p. 5)</ref>. It is the general belief that 9.6% of the country's population currently lives within Kigali, a number which is on the rise, as is common with every capital city in Africa. There is a need to consider Kigali's evolution in close connection with the characteristics of the Rwandan countryside and smaller urban centers. The alleged intention was to develop the polycentric territorial situation and, at the same time, rationalize the proliferation of informal settlements. The idea was to avoid the pitfalls of many other capital cities where housing is now a major challenge for the inhabitants. It is the general assumption that if the countryside was developing at the same rate as Kigali, the risk of overpopulation would be minimized. Kigali is planned in such a way that the rich culture of the people and the unique landscape of the city form the basis for the design and development of the city.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.1.">Kigali: 1907-1962</head><p>In 1907, Kigali was the site of a German resident doctor by the name of Richard Kandt, who chose it as his base in the center of Rwanda. At that time, it was a small settlement, 357 inhabitants around a fort (boma in Swahili), but it also seemed to have all the features necessary to become a colonial capital, such as the joint presence of military, commercial, and cultural activities. The Germans envisioned making Kigali an important hub, the western capital of German East Africa. The Belgians considered Kigali a peripheral location, as they even transferred the capital of Ruanda-Urundi protectorate to Astrida (Butare) in the Southern Province. This shows that Kigali could be considered as an evolving African city, the future of which had already been imagined from this period, developing over time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.2.">Kigali: 1962-1990</head><p>It was only after Rwanda's independence that Kigali was designated capital city in 1962, counting about 6,000 inhabitants. This spurred proposal for plans and projects in response to the challenges of population growth. In 1982 a Schéma Directeur d'Architecture at d'Urbanisme (SDAU) was established with the goal of planning the next 20 years of expansion. The SDAU was based on the forecast of the city reaching half a million inhabitants by 1995, as well as the idea that the census of 1981 fixed the population of the capital at 131,000 inhabitants <ref type="bibr" target="#b10">(Manirakiza, 2011)</ref>. The vision was in line with established trends of other capital cities in Africa after obtaining independence. The usual trend today is still for rapid growth in population and infrastructural development, of which housing is always a key and founding element.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.3.">Kigali after 1990</head><p>The 1990 war and genocide caused a quick reduction in terms of the population, estimated at around 50,000 inhabitants at the end of 1994. Today, Kigali's population is over one million, and the vision for its growth is to reach three million inhabitants by 2030 and realize the century-old aspiration of being an important capital city in the region. A major requirement for this envisaged population is housing, which is considered critical to the image of the city and the wellbeing of its inhabitants. The recorded demographic explosion pushed the authorities to set new city limits, and above all to plan the construction of modern settlements such as the ones in Nyarutarama, Gasabo, and Gacuriro <ref type="bibr" target="#b10">(Manirakiza, 2011)</ref>. In the development of these settlements, there was a need to ensure that they fit into the overall goal of the city, hence the development the Kigali Master Plan. The idea of the planned settlement development by the Government was to control the growth of the city and ensure that the city portrays an aesthetic value and that inhabitants are adequately taken care of.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Kigali Master Plan(s)</head><p>The City of Kigali, one of the most active and progressive City Councils of Africa <ref type="bibr" target="#b30">(Surbana International Consultants, 2013)</ref>, aspires to see Rwanda Capital develop as a competitive, safe, and clean modern city. In the recent past, the Government has undertaken the preparation of several urban development plans as well as other studies related to transport, infrastructure, housing, and environment for Kigali.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1.">Kigali Master Plan 2008</head><p>Surbana, a Singapore-based firm, developed a series of master plans and visions for Kigali built upon the Kigali Conceptual Master Plan (KCMP) of November 2007, authored by the USA-based OZ Architecture <ref type="bibr" target="#b29">(Smith &amp; Berlanda, 2018, p. 9)</ref>. In the KCMP, the proposed development approach is based both on the concept of community center, which enables the provision of shared services to a greater population in an environmentally sustainable way, and on the development of modern settlements such as the one in Gacuriro, Kigali 2020, as part of a Satellite City development, as shown in Figure <ref type="figure" target="#fig_2">3</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2.">Kigali Master Plan 2013</head><p>Upon the completion of the KCMP in 2008 and the Detailed Master Plans for Nyarugenge District in 2010, as well as various other sub-areas of Kigali, Surbana was employed by the Municipality to develop the Detailed Physical Plans for two other districts, Gasabo and Kicukiro, so as to have an integrated and detailed plan for the entire City of Kigali 2040 plan, also called the Kigali Master Plan 2013 (see Figure <ref type="figure" target="#fig_1">2</ref>). The Gacuriro Satellite has been revised and updated, now comprising a third phase that implies a commercial hub and the completion of the dwelling by a new settlement, Kigali Vision 2 (Figure <ref type="figure" target="#fig_2">3</ref>). Since 2018, Surbana has been appointed to lead the revision process of the Kigali City Master Plan 2013, extending its validity: Kigali 2050. The overall urban growth is being guided by a well-developed policy and legal framework <ref type="bibr" target="#b23">(REMA, 2017)</ref>, which includes a series of strategic documents: Vision 2020, National Human Settlement Policy 2009, National Land Use Plan 2012, National Urbanization Policy 2015 and the Informal Settlement Upgrading Strategy 2015 (draft).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Ernst May: Architect and Urban Planner in East Africa</head><p>According to Ernst May, the past, present, and future of the city is orbiting as a satellite around its history. Moving from Germany to URSS, passing through East Africa, and finally coming back to West Germany is a       voyage in space and time, but always gravitating around one specific idea, the Trabantestadt. The central nucleus can be Breslau or Mombasa, Frankfurt or Kigali, what is adapting to the context is the urban design structure of the single satellite.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">A Trabantenstadt from Breslau to Mombasa</head><p>In 1906, Ernst May was working with Unwin and was mostly occupied with the German translation of "Town Planning in practice". It was the second English stay for the architect, who had attended London University College and was completing a cycle of university studies at the Munich Technische Universität (Polytechnic) with Prof. Theodor Fischer. These travels to England were one of the specificities of May's training. In fact, his work with Unwin at that time on the construction of the Hampstead Garden Suburb influenced the idea of Satellite City in May's future work. In the seventh diagram of the series contained in the text "Garden Cities of Tomorrow", Ebenezer Howard, the precursor of the Trabantenstadt, focuses on describing the relationship between the individual Garden Cities and the growth dynamics of the urban satellite system, but his vision of single house dwelling is abandoned in favor of the Zeilenbau. The first city project composed of satellites by Ernst May dates back to the competition for the Wroclaw (Breslau) plan of 1922. This proposal is based on a fundamental political premise, namely the extension of the administrative boundaries of the city to counteract the overpopulation and promiscuity between homes and industries while at the same time not forgetting the need to rationalize com-munication routes. The proposal of May and his collaborator Böhm, also present in the "Neue Frankfurt" working group, plans to surround the central nucleus with the Trabanten, as Leobschütz (Figure <ref type="figure" target="#fig_5">6</ref>), placed beyond a narrow green belt, as it happens in the projects of garden cities by Howard and Unwin. Ernst May also provides a regional development diagram, not limiting the satellite form to municipal boundaries, but expanding the concept of Trabantenstadt far beyond these (Figure <ref type="figure" target="#fig_4">5</ref>). This vision, extended to the entire region, is visible in the National Master Plan for Rwanda, based on one capital city, Kigali and six secondary cities: Rubavu, Musanze, Nyagatare, Muhanga, Huye, and Rusizi (Figure <ref type="figure" target="#fig_1">2</ref>). The Trabantestadt designed for Wroclaw finds an application in the plan for Frankfurt (Figure <ref type="figure" target="#fig_6">7</ref>), especially in the socalled Niddatal project (Figure <ref type="figure" target="#fig_7">8</ref>), a satellite composed by three settlements: Römerstadt (Figure <ref type="figure" target="#fig_8">9</ref>), Praunheim (Figure <ref type="figure" target="#fig_9">10</ref>), and Westhausen. It is an example of a precise city development design, but above all, it is the adoption of the Zeilenbau. The Zeilenabu was a model offering a simple formula for economic democracy, with the commodities of light, air, and space equally apportioned <ref type="bibr" target="#b7">(Henderson, 2013, p. 401)</ref>, and the existenzminimum, the optimum arrangement to accommodate domestic life. The modern city became a formidable "social machine" <ref type="bibr" target="#b31">(Tafuri, 1977)</ref> and mass housing became a social utility making up different social housing types, as shown in Figure <ref type="figure" target="#fig_10">11</ref> for the Römerstadt Siedlung. From 1925 to 1930, almost 12,000 new dwellings were built, as well as 2,000 additional apartments that had not been originally planned, as a result of a ten-year program established by Ernst May, once appointed Stadtbaurat (city councilor). The Zeilenbau system composes the Siedlung, and the Siedlung becames the affordable construction settlement targeting the low income classes <ref type="bibr" target="#b19">(Michieletto, 2011b)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Kampala's Plan, the Wandegeya Satellite</head><p>May bought a farm in 1934 in Arusha, Tanzania, but soon he was sitting at the drawing board in Nairobi, the capital of the British colony of Kenya, eager to remount his town-planning horse and ride into battle <ref type="bibr" target="#b1">(Byerley, 2018, p. 2)</ref>. In 1947, Ernst May designed a project for the redevelopment of some districts in Kampala, the so-called Kampala Extension Scheme, published in his Report on the Kampala Extension Scheme, Kololo-Naguru, Prepared for the Uganda Government <ref type="bibr" target="#b9">(Kultermann, 1969, p. 91)</ref>. Hired by the British colonial authorities in January 1945 to institute a plan for the rapidly growing post-war building market, the plan will stand out for its progressive idea to include large settlements for low and middle-income Africans, one of the first in East Africa to do so <ref type="bibr" target="#b6">(Gutschow, 2009, p. 246)</ref>. May began his Kampala plan with the observation that the existing city was "a beautiful garden city" <ref type="bibr" target="#b2">(Demissie, 2012, p. 388)</ref>, and he conceptualized it as a grouping of nine separate but interrelated settlements, each on its own hill (Figure <ref type="figure" target="#fig_11">12</ref>).</p><p>Each Siedlung is based on the so-called Zielenbau (row houses) method of planning, which involves parallel rows of low-rise housing to optimize cost, density, solar orientation, and circulation, as expressed in the Nakawa settlement (Figure <ref type="figure" target="#fig_13">14</ref>). The Zielenbau pattern was the most progressive large-scale housing project realized in the 1920s, a contrast between old and new approaches cleverly captured in the Four Stages in German Block-Planning by Ernst May in 1932. This pattern seemed to offer an ideal means of providing modern housing for the masses <ref type="bibr" target="#b6">(Gutschow, 2009, p. 249)</ref>, even though the proposed matrix of architectural guidelines suggested several different-sized houses to accommodate the unique living habits and economic situations. If the European houses were by far the largest, the ones built for Africans were the smallest, revealing only undifferentiated spaces, with cooking and eating facilities on the veranda. Semi-detached and detached houses arranged on both sides of the curving green streets reveal the legacy of the traditional garden city ideals. May's Kampala expansion scheme is the result of his previous experiences and studies, starting from Ebenezer Howard's Garden City and passing through his apprenticeship with the socialist planner Raymond Unwin in Hampstead, England, and his education as a student of Theodor Fischer in Germany <ref type="bibr" target="#b18">(Michieletto, 2011a)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">The Siedlung Port Tudor, Mombasa</head><p>The port city of Mombasa, Kenya, saw its economy and population grow very quickly in the early 1950s. The first   projects of "social residence for Africans" date back to 1952 <ref type="bibr" target="#b8">(Herrel, 2001)</ref>, consisting of houses lined up with three floors. The opportunity to revive the well-known concept of Siedlung, outside downtown Mombasa, was offered to May by Shell, an oil corporation that had asked the architect's firm to design a settlement, the African Neighbourhood (Figure <ref type="figure" target="#fig_15">16</ref>), for 5,000 workers west of Mombasa in Port Tudor. Again, as seen in Figure <ref type="figure" target="#fig_14">15</ref> (and see also Figure <ref type="figure" target="#fig_16">17</ref>), in the middle of the plan there is a large green zone, on which the agglomerations overlook, divided into eight formally completed groups. These consist of three-storey apartment houses (a and b) and by terraced houses on two levels (c), interspersed with private gardens (m) and equipped with a social center (d).</p><p>The types of houses studied recall, very closely, the experiences of the 1920s, with particular reference to the results of the II CIAM congress in Frankfurt (1929) and the exhibition Die Wohnung für das Existenzminimum (the apartment for the subsistence minimum): type I-II, apartment houses for small families (Figures <ref type="figure" target="#fig_17">18</ref> and <ref type="figure" target="#fig_18">19</ref>); type III-IIIa, terraced houses for large families (Figure <ref type="figure" target="#fig_19">20</ref>); type IV, the expandable single house (Figure <ref type="figure" target="#fig_20">21</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Spatial Urban Planning Analysis</head><p>If the Kololo-Naguru (Figure <ref type="figure" target="#fig_12">13</ref>) scheme maintains the emphasis on new settlement areas for Europeans and Asians, but at the same time lays considerable stress on developing the organized civic life of the African so that it may graduate to full citizenship <ref type="bibr" target="#b4">(Göckede, 2012)</ref>, then the modern settlements in Kigali reveal a different conception from the colonial one. After the 60s, most of the African countries gained independence, starting the so-called post-colonial era as marked by inclusivity instead of retrograde segregation. Since 20s-era Europe, this problem could only be solved by large-scale planning <ref type="bibr" target="#b21">(Mumford, 2002, p. 53)</ref>, abandoning the typical pattern of filling blocks with deep, narrow buildings, and small interior courtyards in a pattern called Zielenbau.</p><p>Walter Schwagensheidt, who worked under May beginning in 1928, conducted studies to determine the correct orientation for housing blocks, concluding that the best orientation was to align the building with its long axis tilted 22-½°west of north. Between 1924 and 1930, the housing projects were mostly built in the linear Zielenbau model with a north-south row direction, among others: Weissenhofseidlung by Ludwing Mies van der Rohe, Wohnstadt Carl Legien by Bruno Taut and Franz HIllinger, Siedlung Westhausen by Ernst May, Groβsiedlung Siemestadt by Martin Wagner, Siedlung Dammerstock by Walter Gropius and Hellerhof Siedlung by Mart Stam. The parallel blocks tried to respond to the principle of getting direct sunlight, orienting row houses east-west to maximize south-facing exposure, achieving an optimum orientation for heating and energy savings, in line with the Besonnungdoktrin (doctrine of the orientation of housing towards sunlight). Therefore, this model of housing offers the advantage of every dwelling receiving its proper share of sunlight <ref type="bibr" target="#b5">(Gropius, 1929, p. 79)</ref>.</p><p>South of the equator, the building orientation is generally turned north-south and the reason behind this lies on the greater exposure to the main winds, enabling suitable cross-ventilation and reduced exposure during at sunrise and sunset. Nevertheless, the north facade is equipped with an apparatus of features selected from tropical architecture vernacular, brise-soleils, with perforated walls or revolving panels to ensure protection during the day from the solar rays coming from the north. Comparing the Gacuriro Valley Satellite with the Nittadal Project seems similar to the Zielenbau orientation of the Siedlung Römerstadt and part of Praunheim, facing the Nidda Valley with the orientation applied for Kigali 2020 and Kigali Vision disposed along the slope facing the Gacuriro Valley. The 4 typologies of twin houses of Kigali 2020 and the different types present in Kigali Vision are closer to the projects of R. Unwin or the Siedlungen of May in Breslau than the Zeilenbau system realized in Frankfurt, though both try to build the cheapest possible three-room units with rents that are affordable to the masses. In the Kigali 2020 Settlement, the targeted echelons are not the lowest ones, so they become more analogous to the experiences of Römerstadt and Praunheim I and II rather than Praunheim III and Westhausen.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">The Formal Structure: Niddatal vs Gacuriro Valley</head><p>By analyzing and comparing the formal structure of the May Siedlungen, specifically Leobschütz, Praunheim, Römestadt and Port Tudor, all designed for an overall city plan, the Trabantestadt, with the two settlements in Gacuriro, Kigali 2020 and Kigali Vision, it appears interesting that they can be read not only as mere use of the Zielenbau system but also as an application of precise ideas of urban design.</p><p>In the article Siedlungspläne, published in the pages of the first issue of Schlesishes Heim, Ernst May describes the Leobschütz Siedlung's design approach, highlighting the core element: the Anger, or central public space. Around its services, public buildings, schools, and residential blocks are set. The main road passes through the green square, also serving as the backbone for the secondary streets (Figure <ref type="figure" target="#fig_21">22</ref>). The Siedlung Römerstadt was built from 1927 to 1928 along the In der Römerstadt route, which connects the villages of Praunheim and Hedderheim and the river Nidda <ref type="bibr" target="#b22">(Panerai, Castex, Depaule, &amp; Samuels, 1997, p. 98)</ref>. It has a formal structure founded on a spine road on which facilities such as commerce and schools are grouped. May's proposal considers the spine road as a  main constitutive element, replacing the central green square (Figure <ref type="figure" target="#fig_22">23</ref>). The same pattern has been applied in the Siedlung Praunheim, where the Anger becomes the Urtyp of the formal structure <ref type="bibr" target="#b20">(Michieletto, 2011c)</ref>. The Damaschkeanger spine running from the north to the south side of the Settlement governs the architectural elements composition (Figure <ref type="figure" target="#fig_23">24</ref>). Even Westhausen follows an analog system (Figure <ref type="figure" target="#fig_24">25</ref>). It is located along Ludwig Landmanstrasse and its development offers an accomplished demonstration of rationalist principles <ref type="bibr" target="#b22">(Panerai et al., 1997, p. 102)</ref>. A completely different approach is applied by May in Port Tudor. In this case, he overturns the experimented layout that provides the main circulation spine identified by the commercial and public buildings, generating a central space. The created central space is the representative place of the residential units and their inhabitants, a place that belongs to the city, but where, compared to the square, which is the traditional one, the space is not closed off by the buildings (Figure <ref type="figure" target="#fig_25">26</ref>). The resulting road's system runs peripherally, avoiding any vehicle to cross the settlement. Harar INA-CASA Neighborhood in Milan, by <ref type="bibr">Luigi Figini, Gino Pollini and Giò Ponti (1955)</ref>, and Lafayette Park in Detroit, by <ref type="bibr">Ludwig Mies van der Rohe (1956)</ref>, are similar and contemporary patterns that revolve around a new concept of green community public space.</p><p>The first settlement realized in Gacuriro has a formal structure similar to the May Siedlung of Leobschütz. A green area-a sort of center of gravity-identified by the public services and buildings, regulates the surrounding dwelling blocks (Figure <ref type="figure" target="#fig_30">31</ref>). Mass housing formed by rows of semi-detached units faces the Gacuriro Valley sinuously following the topography and ensuring a correct sun and wind exposure. Kigali Vision revamps a pattern   used by May in his East African spatial planning projects. From east to west the settlement is dominated by a narrow green strip in which few public services are located and the community can recognize a traditional "courtyard" on large scale (Figure <ref type="figure" target="#fig_43">44</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Gacuriro Valley Satellite</head><p>The plan for Kigali 2020 included the development of an umudugudu in the Gacuriro Valley that saw its completion with the recent Kigali Vision Settlement (Figure <ref type="figure" target="#fig_26">27</ref>). Gacuriro is an area located in the north-east part of the Rwandan Capital that was previously devoted to agriculture and scattered houses (again, see Figure <ref type="figure" target="#fig_2">3</ref>). Housing the increasing masses through a rational conurbation had been seen as an urgent need since 17% of the country's total population lives in urban areas, a rate that is set to expand to 35% by 2020.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.">The Umudugudu</head><p>The Kinyarwanda words umuhana and umudugudu are both translated as "village" or "neighborhood". Umuhana defines a social group more than an agglomeration of buildings; it is an entity of families that share the ownership of the land they work, whereas umudugudu is applied mostly to groupings of houses. The national human settlement policy adopted in 1996 focuses on urban planning, restructuring of unplanned residential areas in towns, and the regrouping of the rural population. To address the emergency situation and condition after the 1994 Genocide facing the return of thousands of refugees, the new policy could afford to build between 1995 and 2001, more than 265,000 houses <ref type="bibr" target="#b25">(ROR, 2004)</ref>. Umudugudu is a planned settlement model for a range of one to two hundred houses in rural areas and, multiple imidugudu form a cell (akagari), many of which, when aggregated, form a sector (Umurenge). In recent years, umudugudu, the smallest administrative unit in Rwanda, has been included in official city documentation for development, which is a symbol of the policy put in place to redistribute and concentrate the population. Across the country, these units are grouped into thirty-three districts, known as akarere, meaning "place" or "region".</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.">Umudugudu Kigali 2020</head><p>The Vision 2020 is the result of a consultative process conducted between 1997 and 2000, successively revised in 2012. Each town has to get an updated master plan, and in this first stage, the satellite city sees the realization of one of its components in the Kigali 2020 Settlement. Kigali Gacuriro Valley's satellite settlement is basically made by two projects set up by the RSSB, Rwanda Social Security Board, and partially revisited in the Master Plan 2013, as previously mentioned (Figure <ref type="figure" target="#fig_26">27</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.1.">Compositional Structure and Circulation</head><p>In 2005, the first phase, "Belle Vue", was completed with 152 twin houses given to the RSSB beneficiaries (Figure <ref type="figure" target="#fig_30">31</ref>). Four different variations of the same type, the twin house, for four different civil servants composed the residential area surrounding the central green area with common services such as the International school, the church, and a park (Figures <ref type="figure" target="#fig_27">28</ref>, <ref type="figure" target="#fig_28">29</ref> and <ref type="figure" target="#fig_29">30</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.2.">Four Twin Houses Typologies</head><p>The houses are placed along the contour lines following the north-south orientation and facing the Gacuriro Valley. At the top of the settlements, the smallest and most affordable units, types 1 and 2 (Figure <ref type="figure" target="#fig_32">33</ref>), have been designed for the flat area, flatness visible also in the internal distribution (Figure <ref type="figure" target="#fig_35">36</ref>). In contrast, types 3 and 4 (Figure <ref type="figure" target="#fig_32">33</ref>) at the bottom dealt with a different topography, increasing the surface and the spatial relationship with the topographic context, both for the indoor and outdoor space, reaching a compositional articulation  comparable to the raumplan (Figures <ref type="figure" target="#fig_33">34</ref> and <ref type="figure" target="#fig_34">35</ref>). Type 4 is expressly conceived for accessibility from the upper side of the southern roads and type 3 for the lower side, but both provide a nice view of the landscape and valley below. Each unit has a consistent private garden split in the front yard, irembo (Figures <ref type="figure" target="#fig_34">35</ref>, <ref type="figure" target="#fig_36">37</ref>, <ref type="figure" target="#fig_38">39</ref> and <ref type="figure" target="#fig_39">40</ref>), and backyard, igikari (Figure <ref type="figure" target="#fig_37">38</ref>), the one traditionally devoted to domestic activities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.3.">Building Materials and Greenery applied</head><p>All the houses are built using local materials: granite stone foundation, fired bricks masonry, tiled/pitched roof, and features that guarantee high comfort and sustainability. The use of clay raises thermal mass and drastically decreases energy consumption. The steel frames of all openings and the steelworks above are modular and the same for all dwelling types, introducing standardization as a constructive process for housing mass production. Originally, the main gate was designed with cypress sticks to highlight the house's affordability (Figure <ref type="figure" target="#fig_41">42</ref>). Another interesting aspect is the orientation of the units, with the main elevations north-south and the east-west characterized by few and small openings as they are more exposed to the sun. An overhanging roof is able to protect from the north side heat but is not enough to shield from the heavy seasonal rains. Regarding the greenery (Figure <ref type="figure" target="#fig_40">41</ref>), each unit is provided by a front and back yard that are well-proportioned and adequate for outdoor life and activities, washing, drying, and cooking, as well as hosting all the technical facil- ities such as the tank to harvest water (Figure <ref type="figure" target="#fig_42">43</ref>). In the African Neighbourhood, Ernst May provided an adequate outdoor space on the ground floor (Figure <ref type="figure" target="#fig_16">17</ref>). Public Greenery is represented by a central park around which the public facilities have been concentrated. The use of individual gardens and greenery also constituted a major part of the overall greenery of the settlement. This allowed inhabitants to personalize their space and also ensure that the individual plots create good microclimatic conditions. The use of lawns, flowers, and trees was key towards encouraging individuals to have some form of outdoor living, which is fundamental to the inhabitants of Kigali. The general greenery within the settlement and the individual plots ensure that the quantity of energy consumed for cooling in the settlement is greatly reduced.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.">Umudugudu Kigali Vision</head><p>In 2017, the second phase completing the Gacuriro Valley Satellite, the Umudugudu Kigali Vision 2020, provided a wide range of different dwellings, from the condominium to twin houses to the single villa, seeking to cover the new spectrum of social classes' incomes. This is a new spectrum because since 2005, the national economy has grown substantially and is, in fact, the best performance in the sub-Saharan region, generating a different and improved, in terms of building typologies, real estate demand. UDL Ltd is a real estate company, fully owned by the RSSB, and it is in charge of managing the Settlement and allocating special offers for potential dwellers. Recently, a 60% discount on the available apartments has been advertised in order to attract eligible civil servants, assuring a low-rate loan that may offer the chance to have a home at a relatively reasonable price.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.1.">Compositional Structure and Circulation</head><p>The whole settlement counts 544 units, divided into different dwelling types to follow a zoning strategy with the highest building at the top of the area. They are mostly flat at the top, the height decreasing as one moves down the hill to adjust to the bottom topography (Figure <ref type="figure" target="#fig_43">44</ref>). In between the upper and lower sides, a green strip connects the east and west parts of the settlement, collecting also the common facilities: a school, the community center, and the sports courts (Figures <ref type="figure" target="#fig_46">47</ref> and <ref type="figure" target="#fig_47">48</ref>). A fence surrounds Kigali Vision, giving it a protected and segregated compound nature (Figures <ref type="figure" target="#fig_44">45</ref> and <ref type="figure" target="#fig_45">46</ref>), while at the same time rejecting a full community engagement able to set guidelines for future developments. The settlement sets on a well-structured circulation both for vehicles and pedestrians, with large parking lots provided near the condominiums.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.2.">Condominium, Townhouse, Twin Houses, and Villas</head><p>The aim of Kigali Vision City is to provide a 'modern' way of dwelling in a safe and quiet environment, allowing 'modern' people to experience 'modern' life in a wider range of housing types than before. If the Kigali 2020 Settlement makes use of just one precise type-the twin house-translated in four different solutions related to different salary incomes, the Kigali Vision City becomes an affordable building. An apartment costs less than a twin house, a twin house less than a townhouse, and a townhouse less than a villa. Starting from the villas, defined as Luxury Villas, there appears to be an absolute indifference toward the topography in the internal arrangement (Figures <ref type="figure" target="#fig_48">49,</ref><ref type="figure" target="#fig_49">50,</ref><ref type="figure" target="#fig_50">51,</ref><ref type="figure" target="#fig_51">52</ref>), which contrasts with the external layout's adaptation to the context, but at the same time questioning its functionality. While similar in layout, the Twin Houses and the Townhouses differ in name and respond differently to the contours to the site (Figures <ref type="figure" target="#fig_52">53,</ref><ref type="figure" target="#fig_53">54,</ref><ref type="figure" target="#fig_54">55,</ref><ref type="figure" target="#fig_55">56,</ref><ref type="figure" target="#fig_56">57,</ref><ref type="figure" target="#fig_57">58</ref>). The front yard, being almost non-existent (Figures <ref type="figure" target="#fig_53">54</ref> and <ref type="figure" target="#fig_56">57</ref>), is mirrored in the backyard (Figures <ref type="figure" target="#fig_54">55</ref> and <ref type="figure" target="#fig_57">58</ref>). The privacy, bwite, is here contradicted by a design that is unable to include and incorporate a social and anthropological behavior, unlike the Twin Houses in Kigali 2020. The H shape ensures a constant cross-ventilation Figure 58. The Umudugudu Kigali Vision: Twin houses; back yard. Photograph by Manlio Michieletto. to the condominium, but due to their location at the top area of the compound, it deserved a better view of the Valley and the Kacyiru Hill (Figures <ref type="figure" target="#fig_58">59</ref> and <ref type="figure" target="#fig_59">60</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.3.">Building Materials and Greenery Applied</head><p>The architectural language used in the Siedlung recalls the examples realized by the Neues Bauen, licht luft sonne!, a sort of transplanting process that has not completely achieved the expected results. In a climate dominated by the alternation of two main seasons, rainy and dry, a logical design must take into account all principles related to construction in the tropical equatorial zone. Orientation plays a key role as well, with main elevations facing the north and south sides, allowing adequate cross ventilation, enclosing the other elevations as much as possible. The orientation of the 5-bedroom Villas is wrong (Figure <ref type="figure" target="#fig_48">49</ref>), with the long facades on the eastwest axis, meaning that the orientation of the building contradicts the advised practice of following the contour lines' alignment. Regarding this point, Kigali 2020 set up all units observing the existing topography and morphology while avoiding any extra exaction work. The roof terraces, being highly spread, are not functional if not well screened from sun and rain, but they are also insulated as the heating is mostly zenithal (Figure <ref type="figure" target="#fig_3">4</ref>). Materials are also fundamental in maintaining an appropriate level of comfort and the use of cement blocks and concrete creates a high energy consumption building, especially with the installation of AC machines. Flat or pitched overhanging roofs and horizontal or vertical brises soleil have to be part of the design process and represent the tropical architectural vernacular. Regarding the greenery (Figure <ref type="figure" target="#fig_60">61</ref>), in addition to the main narrowed park seen in Figures <ref type="figure" target="#fig_46">47</ref> and <ref type="figure" target="#fig_47">48</ref>, there is a reduced outdoor space in each unit, igikari, which is very important in the daily life of the population, and becomes more of a garden in which the presence of a banana tree traditionally symbolizes a family unit dwelling, but in this case has lost its size, value, and functionality (Figures <ref type="figure" target="#fig_54">55</ref> and <ref type="figure" target="#fig_57">58</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusion</head><p>Ernst May introduced the experimented model of the Satellite City in the East African Region with the Kampala Extension Scheme, a model that Kigali has tried to reapply 60 years later through different master plan stages targeting one of the major problem of African Cities: providing mass and affordable housing for an increasing urban population. The Gacuriro Valley Satellite is an architectural piece of the city aiming to solve the mentioned issue and to reshape the development of Kigali, but it is above all an architecture interpreted and executed through two different projects, or imudigudu: Kigali 2020 and Kigali Vision. Kigali 2020 is more anchored to the morphological, topographical and geographical context, and is more Rwandan when compared to Kigali Vision, which is misleading in its interpretation of the concept of 'modern', using an architectural language that is less global and less sustainable than the local language. The construction materials used, the overall orientation related to the cross ventilation and the sun path as well as the proposition of a concept of living that is traditionally practiced in the Country are the missing elements in the Kigali Vision Settlement. The variety of housing typologies and the infrastructure provided within the design allows different categories of people to be accommodated in the Satellite becoming a valid example for a sustainable urban growth. Trabantestadt and mass housing remain effectual components in the development of a modern city.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. The Gacuriro Valley Satellite Settlements. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Proposed Satellite Regional Plan for Rwanda. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Kigali City Master Plan 2013. Drawing byManlio Michieletto, adapted from <ref type="bibr" target="#b30">Surbana International Consultants (2013)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Existing and future developments of Gacuriro Satellite, adapted from <ref type="bibr" target="#b32">Umucunguzi (2018)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Proposed Satellite Plan for Breslau. Source:<ref type="bibr" target="#b11">May (1922)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Site layout of Leobschütz Siedlung. Source:<ref type="bibr" target="#b12">May (1923)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Proposed Satellite City Plan for Frankfurt, adapted from<ref type="bibr" target="#b13">May (1928)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. Niddatal Project. Source: <ref type="bibr" target="#b15">May (1930)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Zeilenbau in Römerstadt. Source: <ref type="bibr" target="#b28">Schürmeyer (1928)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 10 .</head><label>10</label><figDesc>Figure 10. Praunheim I-II. Source: <ref type="bibr" target="#b28">Schürmeyer (1928)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 11 .</head><label>11</label><figDesc>Figure 11. The Römerstadt Siedlung housing types. Source: <ref type="bibr" target="#b27">Rudloff (1931)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 12 .</head><label>12</label><figDesc>Figure 12. Schematic Plan of Kampala. Source: <ref type="bibr" target="#b16">May (1947)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 13 .</head><label>13</label><figDesc>Figure 13. Development Kololo-Naguru green areas. Source: <ref type="bibr" target="#b16">May (1947</ref>, Appendix).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 14 .</head><label>14</label><figDesc>Figure 14. Nakawa Housing Scheme for Itinerant African Labour. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 15 .</head><label>15</label><figDesc>Figure 15. Port Tudor, African Neighbourhood. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 16 .</head><label>16</label><figDesc>Figure 16. Ernst May, African neighborhood, Satellite  Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Figure 17 .</head><label>17</label><figDesc>Figure 17. View from the green zone, Satellite Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Figure 18 .</head><label>18</label><figDesc>Figure 18. African family flats, apartment houses for small families, Satellite Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>Figure 19 .</head><label>19</label><figDesc>Figure 19. Rendering of African family flats, Satellite Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19"><head>Figure 20 .</head><label>20</label><figDesc>Figure20. African Family Flats, terraced houses for large families, Satellite Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20"><head>Figure 21 .</head><label>21</label><figDesc>Figure 21. Rendering of the African Family Flats, the expandable single house, Satellite Port Tudor. Source: <ref type="bibr" target="#b8">Herrel (2001)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21"><head>Figure 22 .</head><label>22</label><figDesc>Figure 22. Formal structure, Siedlung Leobschütz. Drawings by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_22"><head>Figure 23 .</head><label>23</label><figDesc>Figure 23. Formal structure, Siedlung Römerstadt. Drawings by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_23"><head>Figure 24 .</head><label>24</label><figDesc>Figure 24. Formal structure, Siedlung Praunheim. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_24"><head>Figure 25 .</head><label>25</label><figDesc>Figure 25. Formal structure, Siedlung Westhausen. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_25"><head>Figure 26 .</head><label>26</label><figDesc>Figure 26. Formal structure, Port Tudor Satellite. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_26"><head>Figure 27 .</head><label>27</label><figDesc>Figure 27. The Gacuriro Valley Satellite over the original situation. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_27"><head>Figure 28 .</head><label>28</label><figDesc>Figure 28. The Kigali 2020 Central Park. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_28"><head>Figure 29 .</head><label>29</label><figDesc>Figure 29. The Kigali 2020 Church. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_29"><head>Figure 30 .</head><label>30</label><figDesc>Figure 30. The Kigali 2020 International School. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_30"><head>Figure 31 .</head><label>31</label><figDesc>Figure 31. The Umudugudu Kigali 2020: 4 different twin house types. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_31"><head>Figure 32 .</head><label>32</label><figDesc>Figure 32. The Umudugudu Kigali 2020: Ground and first floor twin house types 4 and 3. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_32"><head>Figure 33 .</head><label>33</label><figDesc>Figure 33. The Umudugudu Kigali 2020: Ground and first floor twin house types 2 and 1. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_33"><head>Figure 34 .</head><label>34</label><figDesc>Figure 34. Twin House Type 4: Living room. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_34"><head>Figure 35 .</head><label>35</label><figDesc>Figure 35. Twin House Type 4: Front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_35"><head>Figure 36 .</head><label>36</label><figDesc>Figure 36. Twin House Type 1: Living room. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_36"><head>Figure 37 .</head><label>37</label><figDesc>Figure 37. Twin House Type 1: Front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_37"><head>Figure 38 .</head><label>38</label><figDesc>Figure 38. Twin House Type 3: Back yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_38"><head>Figure 39 .</head><label>39</label><figDesc>Figure 39. Twin House Type 3: front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_39"><head>Figure 40 .</head><label>40</label><figDesc>Figure 40. Twin House Type 2: Front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_40"><head>Figure 41 .</head><label>41</label><figDesc>Figure 41. Public and private gardens in Kigali 2020 Settlement. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_41"><head>Figure 42 .</head><label>42</label><figDesc>Figure 42. Typical gate. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_42"><head>Figure 43 .</head><label>43</label><figDesc>Figure 43. Backyards in between rows. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_43"><head>Figure 44 .</head><label>44</label><figDesc>Figure 44. The Umudugudu Kigali Vision: Different dwelling types. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_44"><head>Figure 45 .</head><label>45</label><figDesc>Figure 45. The Umudugudu Kigali Vision main gate. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_45"><head>Figure 46 .</head><label>46</label><figDesc>Figure 46. Umudugudu Kigali Vision: Road between the two settlements. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_46"><head>Figure 47 .</head><label>47</label><figDesc>Figure 47. The narrow central green area, west views Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_47"><head>Figure 48 .</head><label>48</label><figDesc>Figure 48. The narrow central green area, east view. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_48"><head>Figure 49 .</head><label>49</label><figDesc>Figure 49. The Umudugudu Kigali Vision: Ground and first floor, 5-bedrooms Villa. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_49"><head>Figure 50 .</head><label>50</label><figDesc>Figure 50. The Umudugudu Kigali Vision: 5-bedrooms Villa, front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_50"><head>Figure 51 .</head><label>51</label><figDesc>Figure 51. The Umudugudu Kigali Vision: 5-bedrooms Villa, back yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_51"><head>Figure 52 .</head><label>52</label><figDesc>Figure 52. The Umudugudu Kigali Vision: Ground and first floor, 4-bedrooms Villa. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_52"><head>Figure 53 .</head><label>53</label><figDesc>Figure 53. The Umudugudu Kigali Vision: Ground and first floor twin houses (3-4 Bedrooms). Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_53"><head>Figure 54 .</head><label>54</label><figDesc>Figure 54. The Umudugudu Kigali Vision: Twin houses (3-4 Bedrooms); front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_54"><head>Figure 55 .</head><label>55</label><figDesc>Figure 55. The Umudugudu Kigali Vision: Twin houses (3-4 Bedrooms); back yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_55"><head>Figure 56 .</head><label>56</label><figDesc>Figure 56. The Umudugudu Kigali Vision: Ground and first floor town houses. Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_56"><head>Figure 57 .</head><label>57</label><figDesc>Figure 57. The Umudugudu Kigali Vision: Twin houses; front yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_57"><head>Figure 58 .</head><label>57</label><figDesc>Figure 58. The Umudugudu Kigali Vision: Twin houses; back yard. Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_58"><head>Figure 59 .</head><label>59</label><figDesc>Figure 59. The Umudugudu Kigali Vision: Type floor condominium (2-4 bedrooms). Drawing by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_59"><head>Figure 60 .</head><label>60</label><figDesc>Figure 60. The Umudugudu Kigali Vision: Condominium (2-4 bedrooms). Photograph by Manlio Michieletto.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_60"><head>Figure 61 .</head><label>61</label><figDesc>Figure 61. Public and private gardens in Kigali Vision Settlement. Drawing by Manlio.</figDesc><graphic type="bitmap"/></figure>
+			
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of Interests</head><p>The authors declare no conflict of interests. </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Badiene</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Croissance Sans urbanisation durable, pas de développement durable [Growth without sustainable urbanization, no sustainable development]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Jeune Afrique</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="41" to="47"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Byerley</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Drawing white elephants in Africa? Recontextualizing Ernst May’s Kampala plans in relation to the fraught political realities of late colonial rule</title>
+		</analytic>
+		<monogr>
+			<title level="j">Planning Perspectives</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="643" to="666"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b2">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Demissie</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="m">Colonial architecture and urbanism in Africa: Intertwined and contested histories</title>
+			<imprint>
+				<publisher>Ashgate</publisher>
+				<pubPlace>Burlington</pubPlace>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Folkers</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">The contemporary African city</title>
+		</analytic>
+		<monogr>
+			<title level="m">Modern architecture in Africa</title>
+			<editor>
+				<persName>
+					<surname>Folkers</surname>
+					<forename>A</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>SUN Architecture</publisher>
+				<pubPlace>Amsterdam</pubPlace>
+				<date when="2010">2010</date>
+				<biblScope unit="page" from="140" to="141"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Göckede</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">The architect as a colonial technocrat of dependent modernisation: Ernst May’s plans for Kampala</title>
+		</analytic>
+		<monogr>
+			<title level="m">Afropolis. City, media, art</title>
+			<editor>
+				<persName>
+					<surname>Pinther</surname>
+					<forename>K</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Förster</surname>
+					<forename>L</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Hanussek</surname>
+					<forename>C</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Jacana Media</publisher>
+				<pubPlace>Auckland Park</pubPlace>
+				<date when="2012">2012</date>
+				<biblScope unit="page" from="54" to="65"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gropius</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Die Wohnformen: Flach-, Mittel-, oder Hochbau? [Housing types: Low, medium or high building]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Das Neue Berlin</title>
+			<imprint>
+				<date when="1929">1929</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="74" to="80"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Gutschow</surname>
+					<forename type="first">K</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="m">Das Neue Afrika: Ernst May’s 1947 Kampala plan as cultural program</title>
+			<imprint>
+				<publisher>Ashgate</publisher>
+				<pubPlace>London</pubPlace>
+				<date when="2009">2009</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b7">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Henderson</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="m">Building culture: Ernst May and the Frankfurt initiative, 1926–1931</title>
+			<imprint>
+				<publisher>Peter Lang</publisher>
+				<pubPlace>New York, NY</pubPlace>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b8">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Herrel</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="m">Ernst May. Architekt und Stadtplanner in Afrika 1934–1953 [Ernst May. Architect and urban planner in Africa 1934–1953]</title>
+			<imprint>
+				<publisher>Deutsches Architektur Museum</publisher>
+				<pubPlace>Frankfurt am Main</pubPlace>
+				<date when="2001">2001</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b9">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Kultermann</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="m">New directions in African architecture</title>
+			<imprint>
+				<publisher>Studio Vista Limited</publisher>
+				<pubPlace>London</pubPlace>
+				<date when="1969">1969</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="conference" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Manirakiza</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Processus d’urbanisation de la ville de Kigali, Rwanda: Relation entre la dynamique spatiale et démographique [Urbanization process of the city of Kigali, Rwanda: Relationship between spatial and demographic dynamics]</title>
+		</analytic>
+		<monogr>
+			<title level="m">Conference Urbanisation, Migrations Internes et Comportements Démographiques</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Stadterweiterung mittels Trabanten [Satellites urban development]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Schlesishes Heim</title>
+			<imprint>
+				<date when="1922">1922</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="271" to="271"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Stadterweiterungsplan für den Westteil von Leobschütz [Urban development plan for the western part of Leobschütz]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Schlesishes Heim</title>
+			<imprint>
+				<date when="1923">1923</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="194"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Der Wohnungsbau der Stadt Frankfurt am Main 1925–1928 [The housing construction of Frankfurt am Main 1925–1928]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Das Neue Frankfurt. Monatschrift für die Fragen der Groβstadtgestaltung</title>
+			<imprint>
+				<date when="1928">1928</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Die Wohnung für das Existenzminimum [The apartment for the subsistence minimum]</title>
+		</analytic>
+		<monogr>
+			<title level="j">In Das neue Frankfurt</title>
+			<imprint>
+				<date when="1929">1929</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="209" to="211"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Fünf Jahre Wohnungsbautätigkeit in Frankfurt am Main [Five years of housing construction in Frankfurt am Main]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Das Neue Frankfurt. Monatschrift für die Fragen der Groβstadtgestaltung</title>
+			<imprint>
+				<date when="1930">1930</date>
+				<biblScope unit="volume">1930</biblScope>
+				<biblScope unit="page" from="31" to="31"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b16">
+		<monogr>
+			<author>
+				<persName>
+					<surname>May</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="m">Report on the Kampala extension scheme, Kololo-Naguru (Government Report)</title>
+			<imprint>
+				<pubPlace>Nairobi</pubPlace>
+				<date when="1947">1947</date>
+			</imprint>
+		</monogr>
+	
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Michieletto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Le Caire, Lagos Kinshasa. Cosmographie de continents urbaines [Cairo, Lagos Kinshasa. Cosmography of urban continents]</title>
+		</analytic>
+		<monogr>
+			<title level="m">Conférence Internationale, Nouveau Cosmographie Africaine 2050</title>
+			<imprint>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="unpublished" xml:id="b18">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Michieletto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">Compose the Siedlung: The Niddatal project by Ernst May, Frankfurt 1925–1930</title>
+			<note>Unpublished Doctoral dissertation</note>
+			<imprint>
+				<date when="2011">2011a</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Michieletto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Von Sparsamen Bauen [On affordable housing]</title>
+		</analytic>
+		<monogr>
+			<title level="m">Peter Behrens. Maestro di maestri [Peter Behrens. Master of masters]</title>
+			<editor>
+				<persName>
+					<surname>Malcovati</surname>
+					<forename>S</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Moro</surname>
+					<forename>A</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Libraccio</publisher>
+				<pubPlace>Milano</pubPlace>
+				<date when="2011">2011b</date>
+				<biblScope unit="page" from="65" to="68"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Michieletto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Siedlung Praunheim Komponieren [Composing the Praunheim Siedlung]</title>
+		</analytic>
+		<monogr>
+			<title level="m">May-Siedlung Praunheim 1927–2011</title>
+			<editor>
+				<persName>
+					<surname>Preβler</surname>
+					<forename>H</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Böhner</surname>
+					<forename>S</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Verlagshaus Zarbock</publisher>
+				<pubPlace>Frankfurt am Main</pubPlace>
+				<date when="2011">2011c</date>
+				<biblScope unit="page" from="26" to="29"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b21">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Mumford</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="m">The CIAM discourse on urbanism, 1928–1960</title>
+			<imprint>
+				<publisher>MIT Press</publisher>
+				<pubPlace>Cambridge, MA</pubPlace>
+				<date when="2002">2002</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b22">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Panerai</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Castex</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Depaule</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Samuels</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<title level="m">Formes urbaines, de l’Îlot à la barre [Urban forms, from the block to the unit]</title>
+			<imprint>
+				<publisher>Editions Parenthèses</publisher>
+				<pubPlace>Marseilles</pubPlace>
+				<date when="1997">1997</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b23">
+		<monogr>
+			<author>REMA</author>
+			<title level="m">Rwanda state of environment and outlook report 2017. Achieving sustainable urbanization</title>
+			<imprint>
+				<publisher>Surbana</publisher>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b24">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Ribbeck</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="m">Die Welt wird Stadt, Stadtbilder aus Asien, Afrika, Lateinamerika [The world becomes city, cityscapes from Asia, Africa, Latin America]</title>
+			<imprint>
+				<publisher>Taschenbuch</publisher>
+				<pubPlace>Stuttgart</pubPlace>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b25">
+		<monogr>
+			<author>ROR</author>
+			<title level="m">National human settlement policy</title>
+			<imprint>
+				<publisher>Ministry of Infrastructure, Republic of Rwanda</publisher>
+				<pubPlace>Kigali</pubPlace>
+				<date when="2004">2004</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b26">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Rossi</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="m">The architecture of the city</title>
+			<imprint>
+				<publisher>The MIT Press</publisher>
+				<pubPlace>Cambridge, MA</pubPlace>
+				<date when="1984">1984</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rudloff</surname>
+					<forename type="first">C</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Die Siedlung Römerstadt bei Frankfurt am Main [The Römerstadt Siedlung in Frankfurt am Main]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Deutsche Bauzeitung</title>
+			<imprint>
+				<date when="1931">1931</date>
+				<biblScope unit="volume">65</biblScope>
+				<biblScope unit="page" from="649" to="649"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schürmeyer</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Siedlungspolitik und Stadterweiterung in Frankfurt am Main [Siedlung policy and urban development in Frankfurt am Main]</title>
+		</analytic>
+		<monogr>
+			<title level="j">Stadt und Siedlung</title>
+			<imprint>
+				<date when="1928">1928</date>
+				<biblScope unit="volume">1</biblScope>
+				<biblScope unit="page" from="3"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="book" xml:id="b29">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename type="first">K</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Berlanda</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="m">Interpreting Kigali, Rwanda</title>
+			<imprint>
+				<publisher>The University of Arkansas Press</publisher>
+				<pubPlace>Fayetteville</pubPlace>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b30">
+		<monogr>
+			<author>Surbana International Consultants</author>
+			<title level="m">Kigali city Masterplan report</title>
+			<imprint>
+				<publisher>Surbana</publisher>
+				<pubPlace>Kigali</pubPlace>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b31">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Tafuri</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">Kapitalismus und Architektur. Von Corbusier “Utopia” zur Trabantestadt [Capitalism and architecture. From Corbusier “Utopia” to satellite city]</title>
+			<imprint>
+				<publisher>VSA</publisher>
+				<pubPlace>Hamburg</pubPlace>
+				<date when="1977">1977</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b32">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Umucunguzi</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="m">Ibiciro by’inyubako zo muri Vision City byagabanyijweho 60% ku bakozi ba leta [Prices for Vision City homes slashed 60% for civil servants]</title>
+			<imprint>
+				<publisher>Igihe</publisher>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

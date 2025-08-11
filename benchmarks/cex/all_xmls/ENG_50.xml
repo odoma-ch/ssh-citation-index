@@ -1,0 +1,794 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">About modeling and control strategies for scheduling crop irrigation</title>
+				<funder ref="#_qecGMXQ">
+					<orgName type="full">LabEx NUMEV</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Nesrine</forename><surname>Kalboussi</surname></persName>
+							<email>nesrine.kalboussi@irstea.fr</email>
+							<affiliation key="aff0">
+								<orgName type="department">ITAP</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRSTEA</orgName>
+								<address>
+									<settlement>Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">MISTEA</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRNRA</orgName>
+								<address>
+									<settlement>Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sébastien</forename><surname>Roux</surname></persName>
+							<email>sebastien.roux@inra.fr</email>
+							<affiliation key="aff1">
+								<orgName type="department">MISTEA</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRNRA</orgName>
+								<address>
+									<settlement>Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kenza</forename><surname>Boumaza</surname></persName>
+							<email>kenza.boumaza@inra.fr</email>
+							<affiliation key="aff1">
+								<orgName type="department">MISTEA</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRNRA</orgName>
+								<address>
+									<settlement>Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Carole</forename><surname>Sinfort</surname></persName>
+							<email>carole.sinfort@supagro.fr</email>
+							<affiliation key="aff0">
+								<orgName type="department">ITAP</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRSTEA</orgName>
+								<address>
+									<settlement>Montpellier SupAgro Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alain</forename><surname>Rapaport</surname></persName>
+							<email>alain.rapaport@inra.fr</email>
+							<affiliation key="aff1">
+								<orgName type="department">MISTEA</orgName>
+								<orgName type="institution" key="instit1">Univ. Montpellier</orgName>
+								<orgName type="institution" key="instit2">IRNRA</orgName>
+								<address>
+									<settlement>Montpellier</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						
+						<title level="a" type="main">About modeling and control strategies for scheduling crop irrigation</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">IFAC-PapersOnLine</title>
+						<imprint>
+							<publisher>Elsevier</publisher>
+							<biblScope unit="volume">52</biblScope>
+							<biblScope unit="issue">23</biblScope>
+							<biblScope unit="page" from="43" to="48"/>
+							<date type="published" when="2019-01-01"/>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">FA2DD1593E09B59E346E9D1FEB28C2FC</idno>
+					<idno type="DOI">10.1016/j.ifacol.2019.11.007</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Crop irrigation</term>
+					<term>water management</term>
+					<term>optimal control</term>
+					<term>state constraint</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We propose a new simplified crop irrigation model and study the optimal control which consists in maximizing the biomass production at harvesting time, under a constraint on the total amount of water used. Under water scarcity, we show that a strategy with a singular arc can be better than a simple bang-bang control as commonly used. The gain is illustrated on numerical simulations. This result is a promising first step towards the application of control theory to the problem of optimal irrigation scheduling.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>Irrigation scheduling is the process of defining, at any time of a crop growing season, the amount of water delivered using an irrigation system. It is a major crop management issue in the context of increasing water scarcity. Dynamic crop growth models can help defining optimal strategies depending on various criteria <ref type="bibr" target="#b0">(Allen et al., 1998)</ref>. Several methodological approaches have been used so far to tackle the question of model-based irrigation scheduling:</p><p>(1) Numerical comparison of a set of predefined irrigation scenarios (which represent relatively small discrete sets of possible solutions) using complex simulation models, see <ref type="bibr" target="#b12">(Saseendran et al., 2008;</ref><ref type="bibr" target="#b16">Vico and Porporato, 2013;</ref><ref type="bibr" target="#b2">Cheviron et al., 2016)</ref> among many others.</p><p>(2) Numerical optimization of a parameterized scheduling problem (e.g. optimal 2-events scheduling with water budget) using complex simulation models <ref type="bibr" target="#b18">(Wen et al., 2017;</ref><ref type="bibr" target="#b6">Li et al., 2018)</ref></p><p>(3) Numerical optimization based on optimal control theory applied to simplified models <ref type="bibr" target="#b7">(Li et al., 2011;</ref><ref type="bibr" target="#b10">Ramanathan et al., 2013)</ref>.</p><p>Most existing approaches lack analytical insight on the theoretical properties of optimal solutions. This is probably due to the complexity of the global optimization problem when dealing with detailed simulation models. However as showed in the work of <ref type="bibr" target="#b13">(Shani et al., 2004)</ref>, a deeper analysis on optimal solutions might lead to better practical guidelines providing that the model accurately represents crop response to water stress. In this work, in the spirit <ref type="bibr" target="#b13">(Shani et al., 2004)</ref>, we introduce a theoretical model based on the simplification of some existing crop</p><p>The authors thanks #DigitAg Convergence Institute for the support of the postdoctoral grant of the first author, and the AVER-ROES program for the funding of the PhD grant of the third author models in order to study optimal irrigation scheduling. We derive a first promising analytical result on this model and illustrate numerically its implication on the shape of optimal solutions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">THE MODEL</head><p>We consider a simplified dynamical model of crop irrigation, inspired from <ref type="bibr" target="#b9">Pelak et al. (2017)</ref>, where S(t) and B(t) stand respectively for the relative soil humidity (a number between 0 and 1) and the crop biomass at time t belonging to an interval [0, T ] representing the crop growth season:</p><formula xml:id="formula_0">Ṡ = k 1 (-ϕ(t)K S (S) -(1 -ϕ(t))K R (S) + k 2 u(t))<label>(1)</label></formula><formula xml:id="formula_1">Ḃ = k 3 ϕ(t)K S (S)<label>(2)</label></formula><p>with the initial condition (at the sowing date 0)</p><formula xml:id="formula_2">S(0) = 1<label>(3)</label></formula><formula xml:id="formula_3">B(0) = 0<label>(4)</label></formula><p>and T being the harvesting date. The control variable u(t) = F (t)/F max ∈ [0, 1] is the ratio of the input water flow rate F (t) at time t over the maximal flow F max that the irrigation device allows.</p><p>On an agronomic point of view, (<ref type="formula" target="#formula_0">1</ref>) represents the variation of a vertically averaged soil moisture as influenced by three fluxes: crop transpiration, crop evaporation, and crop irrigation. Unlike <ref type="bibr" target="#b9">Pelak et al. (2017)</ref> and <ref type="bibr" target="#b13">Shani et al. (2004)</ref>, we use here the simplified hypothesis made in <ref type="bibr" target="#b1">(Bertrand et al., 2018)</ref>: transpiration and evaporation can be partitioned using a variable ϕ(t) representing the crop radiation use efficiency and independent of water stress. Both transpiration and evaporation fluxes are regulated by soil moisture as in <ref type="bibr" target="#b9">(Pelak et al., 2017)</ref> using two functions K S and K R (see Assumption 1 and Fig. <ref type="figure" target="#fig_0">1</ref> below). Equation (<ref type="formula" target="#formula_1">2</ref>) determines the amount of biomass produced per time unit. It is simply related to the transpiration flux using the water use efficiency principle <ref type="bibr" target="#b14">(Steduto et al., 2009;</ref><ref type="bibr" target="#b9">Pelak et al., 2017)</ref>. Note also that the proposed model does not consider rainfall inputs and might be better associated to greenhouse grown crops.</p><p>Assumption 1. K S (•) and K R (•) are continuous piece-wise linear functions from [0, 1] to [0, 1]:</p><formula xml:id="formula_4">K S (S) =      0 S ∈ [0, S w ] S -S w S -S w S ∈ [S w , S ] 1 S ∈ [S , 1] K R (S) = 0 S ∈ [0, S h ] S -S h 1 -S h S ∈ [S h , 1]</formula><p>where the parameters S w , S and S h are such that 0 &lt; S h &lt; S w &lt; S &lt; 1</p><p>Assumption 2. ϕ(·) is a L1 increasing function from [0, T ] to [0, 1] with ϕ(0) = 0 and ϕ(T ) = 1.</p><p>Assumption 3. k1 , k2 , k3 are positive parameters with k2 &gt; 1</p><p>One can easily check that under these assumptions, any solution S(•) of (1) with initial condition (3) verifies S(t) &gt; S h for any t ≥ 0. The condition k 2 &gt; 1 is a controllability assumption, in the sense that it allows the variable S to stay equal to 1 with the constant control u = 1/k 2 . However, the controlled system is naturally subject to the constraint</p><formula xml:id="formula_5">S(t) ≤ 1, t ∈ [0, T ]<label>(5)</label></formula><p>The set of admissible controls u(•) are measurable functions taking value in [0, 1], and such that the solution of (1), (3) verifies the constraint (5). To each such control function, we associate the total water delivered on the time interval [0, T ], and the biomass production at the harvesting date T , given respectively by</p><formula xml:id="formula_6">Q[u(•)] := F max T 0 u(t) dt, B T [u(•)] := B(T)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">THE CONTROL PROBLEM</head><p>Our objective in the present work is to study admissible strategies u(•) maximizing the biomass production B T [u(•)] under a constraint on the total water quantity</p><formula xml:id="formula_7">Q[u(•)] ≤ Q<label>(6)</label></formula><p>For convenience, we shall denote, for any t 0 ∈ [0, T ] and S 0 ∈ [0, 1], S t0,S0,0 (•), resp. S t0,S0,1 (•), for the solution of the differential equation ( <ref type="formula" target="#formula_0">1</ref>) with S(t 0 ) = S 0 and the constant control u = 0, resp. u = 1. The following definition will be useful in the following.</p><p>Definition 4. Let S(·) := S0,1,0 (·) and t := sup{t ∈ [0, T ] s.t. S(t) > S FS } Define also the number BTFS := k3 SUB T ϕ(t) dt Straightforwardly, on has the first result.</p><p>Lemma 5. (i) The inequality BT [u(·)] ≤ BTFS is fulfilled for any admissible control u(·). (ii) If t = T , then any admissible control u(·) gives BT [(·)] = BTFS .</p><p>For non trivial cases for which t &lt; T , let us consider the following singular control.</p><formula xml:id="formula_8">Definition 6. Let ũS (t) := ϕ(t) + (1 -ϕ(t))K R (S ) k 2 , t ∈ [t, T ]<label>(7)</label></formula><p>and define</p><formula xml:id="formula_9">Q := F max T t u S (t) dt</formula><p>Notice that under Assumption 3, this control is admissible as one has</p><formula xml:id="formula_10">ũS (t) &lt; 1, t ∈ [t, T ]<label>(8)</label></formula><p>One can easily check that the following statement is satisfied. Lemma 7. Assume t &lt; T .</p><p>(i) For any Q ≥ Q , the control</p><formula xml:id="formula_11">ũ(t) = 0 t ∈ [0, t) ũS (t) t ∈ [t, T ]<label>(9)</label></formula><p>is admissible with Q[ũ(•)] = Q , and gives B T [ũ(•)] = B T . (ii) For any Q &lt; Q and admissible control u(•) satisfying the constraint (6), one has B T [u(•)] &lt; B T .</p><p>Consequently, when t = T or Q ≥ Q , a simple optimal admissible control is known, giving the maximal biomass production B T . In the remaining of the paper, we shall consider the complementary cases, that is the following hypothesis. Hypothesis 8. t &lt; T and Q &lt; Q .</p><p>This hypothesis corresponds to situations of water scarcity, for which there is not any enough water available for the time horizon [0, T ] to maintain the soil humidity constantly above or equal to the level S which provides the maximal production B T at the harvesting time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">A COMPARISON RESULT</head><p>The main result given in this section is playing an important role in the satisfaction of the state constraint (5) while maximizing B T under the integral constraint (6). We introduce below the MRAP (for Most Rapid Approach Path) to S = S controls. Such kind of controls have already been considered in several optimal control problems in the plane, characterizing their optimality (e.g. <ref type="bibr" target="#b8">Miele (1962)</ref>; <ref type="bibr" target="#b5">Hermes and Lasalle (1969)</ref>; <ref type="bibr" target="#b4">Hartl and G. Feichtinger (1987)</ref> or related to the so-called "turnpike" property (see e.g. <ref type="bibr" target="#b11">Rapaport and Cartigny (2004)</ref>; <ref type="bibr" target="#b15">Trélat and Zuazua (2015)</ref>; <ref type="bibr" target="#b3">Faulwasser et al. (2017)</ref>). Here, we use it in a different way. We do not pretend that these controls are necessarily optimal (and indeed they are not), but they respect the state constraint (5) and can locally improve the cost, providing then a comparison result given in Proposition 11 below.</p><p>We begin by some definitions.</p><p>Definition 9. For (t 0 , S 0 ) ∈ [0, T ) × (S , 1], we define</p><formula xml:id="formula_12">t + (t 0 , S 0 ) = T if S t0,S0,0 (t) &gt; S , t ∈ [t 0 , T ] inf{t &gt; t 0 ; S t0,S0,0 (t) = S } otherwise For any (t 0 , S 0 ) ∈ (0, T ] × (S , 1], we define t -(t 0 , S 0 ) = 0 if S t0,S0,1 (t) &gt; S , t ∈ [0, t 0 ] sup{t &lt; t 0 ; S t0,S0,1 (t) = S } otherwise</formula><p>Definition 10. For any (t 1 , S 1 ) ∈ [0, T ) × [S , 1] and (t 2 , S 2 ) ∈ (t 1 , T ] × [S , 1] such that S 2 is attainable from (t 1 , S 1 ) at time t 2 with an admissible control, we associate the MRAP control ũ(•) on the time interval [t 1 , t 2 ]:</p><formula xml:id="formula_13">i) If t -(t 2 , S 2 ) ≥ t + (t 1 , S 1 ): ũ(t) :=    0 if t ∈ [t 1 , t + (t 1 , S 1 )) ũS (t) t ∈ [t + (t 1 , S 1 ), t -(t 2 , S 2 )] 1 if t ∈ (t -(t 2 , S 2 ), t 2 ]<label>(10)</label></formula><p>ii) If t -(t 2 , S 2 ) &lt; t + (t 1 , S 1 ):</p><formula xml:id="formula_14">ũ(t) := 0 if t ∈ [t 1 , t(t 1 , S 1 , t 2 , S 2 )) 1 if t ∈ ( t(t 1 , S 1 , t 2 , S 2 ), t 2 ]</formula><p>where t(t 1 , S 1 , t 2 , S 2 ) is the unique t ∈ [t 1 , t 2 ] such that S t1,S1,0 ( t) = S t2,S2,1 ( t) &gt; S (one can easily verify that the function I(t) := S t1,S1,0 (t) -S t2,S2,1 (t) is decreasing on [t 1 , t 2 ] with I(t 1 ) ≥ 0 and I(t 2 ) ≤ 0, which gives the existence and uniqueness of t(t 1 , S 1 , t 2 , S 2 )).</p><p>Proposition 11. Let S(•) be a solution of (1) on [t 1 , t 2 ] (with 0 ≤ t 1 &lt; t 2 ≤ T ) for an admissible control u(•) such that S(t) ≥ S for any t ∈ [t 1 , t 2 ]. Denote S 1 = S(t 1 ) and S 2 = S(t 2 ). Then, the solution S(•) of (1) on [t 1 , t 2 ] with S(t 1 ) = S 1 and the MRAP control ũ(•) (see Definition 10) satisfies the following properties:</p><formula xml:id="formula_15">S(t 2 ) = S 2<label>(11)</label></formula><formula xml:id="formula_16">S(t) ≤ S(t), t ∈ [t 1 , t 2 ]<label>(12)</label></formula><formula xml:id="formula_17">t2 t1 ũ(t) dt ≤ t2 t1 u(t) dt<label>(13)</label></formula><p>Moreover, the last inequality is strict when S(•) and S(•) are not identical.</p><p>This proposition leads to our main result.</p><p>Proposition 12. Assume that Hypothesis 8 is satisfied. One has the following properties.</p><p>(i) u(t) = 0 for t ∈ [0, t] is optimal.</p><p>(ii) Any optimal solution verifies S(t) ≤ S for any t ∈ [t, T ]. (iii) An optimal solution verifies Q[u(•)] = Q.</p><p>The proofs of Propositions 11 and 12 are given in appendix.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">OPTIMALITY OF ONE SHOT CONTROLS</head><p>One Shot (OS) controls represent a class of widely used irrigation strategies, typically when drip irrigation is not available. They consists in delivering water at maximum flow rate during a single irrigation period. The OS control u OS tS (•) is therefore defined as a bang-bang control, parameterized by the triggering time t S ∈ [0, T ].</p><p>Definition 13.</p><formula xml:id="formula_18">u OS t S (t) := 0 if t &lt; t S or t &gt; min(t S + Q/F max , T ))</formula><p>1 if t ∈ [t S , min(t S + Q/F max , T )) A triggering time t S is said to be admissible when the control u OS tS (•) is admissible i.e. such that the constraint (5) is satisfied.</p><p>However, Proposition 12 shows that a time t S below t or above T -Q/F max (the later being the very last time to allow all the water quantity Q to be delivered by the date T ) cannot be optimal. Moreover, some values of t S ∈ [t, T -Q/F max ] could conduct the humidity rate S above the value S , which cannot be optimal neither. Therefore, we introduce instead the Saturated One Shot (SOS) feedback control (t, S, V ) → ψ SOS t S (t, S, V ) which is a bang-singular-bang or bang-bang strategy, also parameterized by a triggering time t S ∈ [t, T -Q/F max ], defined as follows.</p><p>Definition 14.</p><formula xml:id="formula_19">ψ SOS t S (t, S, V ) :=    0 if t &lt; t S or V = Q ũS (t) if t ≥ t S , S = S and V &lt; Q 1 if t ≥ t S , S &lt; S and V &lt; Q</formula><p>where ũS (•) is given in (7) and V (t) denotes the volume of water consumed up to time t, that is</p><formula xml:id="formula_20">V (t) = F max t 0 u(τ ) dτ</formula><p>Note that this control is necessarily admissible.</p><p>In the next section, we have performed numerical comparisons between the OS ans SOS strategies for their respective best t S (i.e. maximizing B T ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">NUMERICAL SIMULATIONS AND DISCUSSION</head><p>We present in Fig. <ref type="figure" target="#fig_1">2</ref> the simulations performed with irrigation strategies OS and SOS and with inputs data given in Table <ref type="table" target="#tab_0">1</ref>. For illustrative purposes only, we have considered dimensionless parameters (by normalizing the units) and function ϕ in the family of t US→ (t/T )α (α &gt; 0).</p><p>The optimal OS strategy was obtained for tS = 0.697 and produced a biomass B(T ) = 0.152. The corresponding humidity dynamics is plotted in Fig. <ref type="figure" target="#fig_1">2c</ref>. It can be seen that some value of S are above S US . It can be therefore concluded from the application of Proposition 12 that an OS strategy cannot be optimal. This is further illustrated by applying the SOS strategies for the same inputs data. We find that the best SOS strategy gives a final biomass B(T ) = 0.176 which is 15% higher than what gives the best OS strategy. The associated control is a bang-singular- bang (see Fig. <ref type="figure" target="#fig_1">2b</ref>).</p><p>Under water scarcity, the OS strategy is empirically used by practitioners, even though there is no model to help deciding the best triggering time. To our knowledge, the SOS strategy and more particularly its potentially late triggering time parameter t s , is new and has not been yet tested on the field. Notice that the SOS strategy requires more knowledge or online measurements than the OS control for its real application (as the expression of the singular control (7) needs the function ϕ(•) and the values S , k 2 and K R (S )). Moreover it change gradually the input flow rate during the singular arc phase. This is why it can be considered as a more sophisticated strategy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">CONCLUSION</head><p>We have introduced a simple crop irrigation model in order to study optimal irrigation scheduling using a mathematical analysis. We have shown, using a comparison tool, that the state constraint of this model is never activated for the optimal control problem solutions. Moreover we have shown that, under water scarcity, an optimal trajectory has to reach as fast as possible the domain for which the relative humidity is below or equal to the threshold of maximal crop transpiration, and then do not leave this domain until the harvesting time. However, due to water scarcity, it has to be below the threshold at some stage. We have then compared two control strategies: the one-shot (OS), commonly used in practice and a more sophisticated one, the saturated one-shot (SOS), that could exhibit a singular arc. We have shown numerically the superiority of this last strategy. We have not been yet able to prove that no more than one "saturated shot" is optimal. We conjecture that the SOS strategy is indeed an optimal control for this model. This would be a promising result since SOS irrigation schemes are not so intuitive controls and because they can be also tested on more detailed simulation models. Moreover, other criteria such as minimizing the water consumption for a desired biomass production, or maximizing the productivity could be also of interest. This shall be the matter of a future work.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Graphs of the functions K S and K</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Comparison of OS and SOS controls strategies on one typical example. Model parameters used are given in Table <ref type="table" target="tab_0">1</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Normalized parameters used for the simulations</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>The authors warmly thank the colleagues <rs type="person">Jérôme Harmand</rs> (<rs type="affiliation">INRA LBE</rs>) and <rs type="person">Bruno Cheviron</rs> (<rs type="affiliation">IRSTEA G-EAU</rs>) for fruitful exchanges, and the support of the <rs type="programName">Euro-Mediterranean network TREASURE</rs>. This work was also supported by the <rs type="funder">LabEx NUMEV</rs> incorporated into the <rs type="institution">I-Site MUSE</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_qecGMXQ">
+					<orgName type="program" subtype="full">Euro-Mediterranean network TREASURE</orgName>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="proceeding" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Allen</surname>
+					<forename type="first">R</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pereira</surname>
+					<forename type="first">L</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raes</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Smith</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">FAO irrigation and drainage paper no. 56</title>
+		</analytic>
+		<monogr>
+			<title level="m">Rome: Food and Agriculture Organization of the United Nations</title>
+			<imprint>
+				<date when="1998">1998</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bertrand</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roux</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Forey</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Guinet</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wery</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Simulating plant water stress dynamics in a wide range of bi-specific agrosystems in a region using the BISWAT model</title>
+		</analytic>
+		<monogr>
+			<title level="j">European Journal of Agronomy</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">99</biblScope>
+				<biblScope unit="page" from="116" to="128"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cheviron</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vervoort</surname>
+					<forename type="first">R</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Albasha</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dairon</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Le Priol</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mailhol</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">A framework to use crop models for multi-objective constrained op- timization of irrigation strategies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environmental Modelling &amp; Software</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">86</biblScope>
+				<biblScope unit="page" from="145" to="157"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Faulwasser</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Korda</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bonvin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">On turnpike and disspativity properties of continuous-time optimal control problems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Automatica</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">81</biblScope>
+				<biblScope unit="page" from="297" to="304"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hartl</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Feichtinger</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">A new sufficient condition for most rapid approach paths</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Optimization Theory and Applications</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="402" to="411"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="series" xml:id="b5">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Hermes</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lasalle</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Functional analysis and time optimal control</title>
+			<imprint>
+				<publisher>Elsevier</publisher>
+				<date when="1969">1969</date>
+			</imprint>
+		</monogr>
+		<series>
+			<title level="s">Mathematics in Science and Engineering</title>
+			<biblScope unit="volume">56</biblScope>
+		</series>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shang</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Adeloye</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Optimization of irrigation schedul- ing for spring wheat based on simulation-optimization model under uncertainty</title>
+		</analytic>
+		<monogr>
+			<title level="j">Agricultural Water Management</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">208</biblScope>
+				<biblScope unit="page" from="245" to="260"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cournède</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mailhol</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Irrigation optimization by modeling of plant-soil interaction</title>
+		</analytic>
+		<monogr>
+			<title level="m">2011 Proceedings of the Conference on Applied Simula- tion and Modelling</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miele</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Extremization of linear integrals by green’s theorem</title>
+		</analytic>
+		<monogr>
+			<title level="m">Optimization Techniques</title>
+			<editor>
+				<persName>
+					<surname>Leitmann</surname>
+					<forename>G</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Academic Press</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="1962">1962</date>
+				<biblScope unit="page" from="69" to="98"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pelak</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Revellia</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Porporato</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A dynamical systems framework for crop models: Toward optimal fertilization and irrigation strategies under climatic variability</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ecological Modelling</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">365</biblScope>
+				<biblScope unit="page" from="80" to="92"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ramanathan</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cournede</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal control of crop irrigation based on the Hamilton-Jacobi-Bellman equation</title>
+		</analytic>
+		<monogr>
+			<title level="m">2013 Proceedings of the Conference on Control and its Applications</title>
+			<imprint>
+				<publisher>SIAM</publisher>
+				<date when="2013">2013</date>
+				<biblScope unit="page" from="21" to="28"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Rapaport</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cartigny</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Turnpike theorems by a value function approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">ESAIM Control, Optimizationa and Calculus of variations</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="123" to="141"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Saseendran</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ahuja</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nielsen</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Trout</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Use of crop simulation models to evaluate limited irrigation management options for corn in a semiarid environment</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resources Research</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">44</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Shani</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tsur</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zemel</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Optimal dynamic irrigation schemes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Optimal Control Applications and Methods</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">25</biblScope>
+				<biblScope unit="page" from="91" to="106"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Steduto</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hsiao</surname>
+					<forename type="first">T</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raes</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fereres</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Aquacrop - the FAO crop model to simulate yield response to water: I. concepts and underlying principles</title>
+		</analytic>
+		<monogr>
+			<title level="j">Agronomy Journal</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">101</biblScope>
+				<biblScope unit="page" from="426" to="437"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Trélat</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zuazua</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">The turnpike property in finite-dimensional nonlinear optimal control</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Differential Equations</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">258</biblScope>
+				<biblScope unit="page" from="81" to="114"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vico</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Porporato</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Probabilistic description of crop development and irrigation water requirements with stochastic rainfall</title>
+		</analytic>
+		<monogr>
+			<title level="j">Water Resources Research</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="1466" to="1482"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b17">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Walter</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="m">Ordinary differential equations</title>
+			<imprint>
+				<publisher>Springer</publisher>
+				<date when="1998">1998</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wen</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shang</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Optimization of irrigation scheduling for spring wheat with mulching and limited irrigation water in an arid climate</title>
+		</analytic>
+		<monogr>
+			<title level="j">Agricultural Water Management</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">192</biblScope>
+				<biblScope unit="page" from="33" to="44"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

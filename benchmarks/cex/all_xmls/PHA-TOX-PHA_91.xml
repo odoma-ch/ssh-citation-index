@@ -1,0 +1,1804 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Marine Catenovulum agarivorans MNH15 and Dextranase: Removing Dental Plaque</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>MDPI</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-18">18 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Xiaohua</forename><surname>Lai</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xin</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xueqin</forename><surname>Liu</surname></persName>
+							<email>xueqinliu123@163.com</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tian</forename><surname>Deng</surname></persName>
+							<email>dengtian729@163.com</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yanli</forename><surname>Feng</surname></persName>
+							<email>ylfeng0@163.com</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaopeng</forename><surname>Tian</surname></persName>
+							<email>txpxiaopeng@163.com</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mingsheng</forename><surname>Lyu</surname></persName>
+							<email>mingshenglu@hotmail.com</email>
+							<idno type="ORCID">0000-0003-4409-3766</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Collaborative Innovation Center of Modern Biological Manufacturing</orgName>
+								<orgName type="institution">Anhui University</orgName>
+								<address>
+									<postCode>230039</postCode>
+									<settlement>Hefei</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Shujun</forename><surname>Wang</surname></persName>
+							<email>shujunwang86@163.com</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Jiangsu Key Laboratory of Marine Bioresources and Environment/Jiangsu Key Laboratory of Marine Biotechnology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Co-Innovation Center of Jiangsu Marine Bio-industry Technology</orgName>
+								<orgName type="institution">Jiangsu Ocean University</orgName>
+								<address>
+									<postCode>222005</postCode>
+									<settlement>Lianyungang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Collaborative Innovation Center of Modern Biological Manufacturing</orgName>
+								<orgName type="institution">Anhui University</orgName>
+								<address>
+									<postCode>230039</postCode>
+									<settlement>Hefei</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Marine Catenovulum agarivorans MNH15 and Dextranase: Removing Dental Plaque</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Marine Drugs</title>
+						<imprint>
+							<publisher>MDPI</publisher>
+							<biblScope unit="volume">17</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="592"/>
+							<date type="published" when="2019-10-18">18 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8A641E8114D4CCF2003EB5DC39957AE7</idno>
+					<idno type="DOI">10.3390/md17100592</idno>
+					<note type="submission">Received: 29 August 2019; Accepted: 16 October 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Catenovulum agarivorans</term>
+					<term>dextranase</term>
+					<term>dental plaque</term>
+					<term>oligo-saccharides</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Dextranase, a hydrolase that specifically hydrolyzes α-1,6-glucosidic bonds, has been used in the pharmaceutical, food, and biotechnology industries. In this study, the strain of Catenovulum agarivorans MNH15 was screened from marine samples. When the temperature, initial pH, NaCl concentration, and inducer concentration were 30 • C, 8.0, 5 g/L, and 8 g/L, respectively, it yielded more dextranase. The molecular weight of the dextranase was approximately 110 kDa. The maximum enzyme activity was achieved at 40 • C and a pH of 8.0. The enzyme was stable at 30 • C and a pH of 5-9. The metal ion Sr 2+ enhanced its activity, whereas NH 4+ , Co 2+ , Cu 2+ , and Li + had the opposite effect. The dextranase effectively inhibited the formation of biofilm by Streptococcus mutans. Moreover, sodium fluoride, xylitol, and sodium benzoate, all used in dental care products, had no significant effect on dextranase activity. In addition, high-performance liquid chromatography (HPLC) showed that dextran was mainly hydrolyzed to glucose, maltose, and maltoheptaose. The results indicated that dextranase has high application potential in dental products such as toothpaste and mouthwash.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Dextran is a water-soluble polysaccharide linked by α-1,6-glucosidic bonds, which can be synthesized by bacteria such as Leuconostoc mesenteroides, Streptococcus, and Rhizopus <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>. Water-soluble exopolysaccharides of dextran mainly play a role in plaque formation <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>. In addition, microbes use sucrose to produce large amounts of dextran, which has led to a decrease in the yield and quality of sucrose in the sugar industry <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref>. So far, several methods have been used to control the formation of dextran, such as antibacterial agents, mechanical removal, and biological enzymes <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b10">11]</ref>. It has been proven that dextranase can hydrolase dextran safety and effectively.</p><p>Dextranase (α-1,6-d-glucan-6-glucanohydrolase, E.C.3.2.1.11), an inducible enzyme, is a hydrolase that catalyzes the hydrolysis of α-1,6-glucosidic bonds in dextran <ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. Bio-enzymatic hydrolysis of dextran is not only used in the preparation of dextran and its derivatives, but also plays an important role in the production of beverages and syrups in the food industry <ref type="bibr" target="#b14">[15]</ref>. In sugar industries, dextranase can hydrolyze dextran in sugar juice, which can reduce its viscosity and increase the yield of sucrose <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b15">16]</ref>. In medicine, dextranase can degrade the high molecular weight of dextran into a low molecular weight. The specific molecular weight of dextran has an antithrombotic effect and can be used as a blood substitute in emergencies <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b17">18]</ref>. Currently, dextranase produced by fungi is mainly added to oral care products such as toothpaste and mouthwash to treat oral biofilm <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref>. Larsson et al. reported on the catalytic reaction of Penicillium dextranase, the crystal structure of the enzyme, and the product complex <ref type="bibr" target="#b23">[24]</ref>. The optimum temperature of dextranase produced by fungi was higher than 50 • C and unstable under alkaline conditions <ref type="bibr" target="#b21">[22]</ref>. It has also been reported that dextranase is mainly produced by terrestrial bacteria <ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref>. Cold-adapted enzymes from the ocean can serve as a source of new marine medicines <ref type="bibr" target="#b27">[28,</ref><ref type="bibr" target="#b28">29]</ref> and have enormous biotechnology potential in dairy products, sugar, detergents, and bioremediation <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b30">31]</ref>.</p><p>Dextranase produced by marine bacteria has the characteristics of alkali resistance, salt tolerance, and high catalytic activity at moderate temperatures <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref>. Majeed et al. reported that alkaline dextranase may play an important role in the treatment of oral plaque because alkaline mouthwash products are more protective than enamel against acidic products <ref type="bibr" target="#b34">[35]</ref>. Therefore, it is desirable to explore more marine bacterial dextranases. Dextranase with better characteristics is more suitable for oral care products and is still widely in demand for preventing dental caries.</p><p>In this study, we isolated marine bacteria producing dextranase; identified their physiological and biochemical characteristics and molecular biology; and then studied bacterial growth characteristics, dextranase properties, and the effect of plaque removal. All the results indicated that the characteristics of dextranase are excellent and worth studying to identify its further application.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Screened Marine Strains Producing Dextranase</head><p>Five strains of dextran-producing strains were selected from blue dextran plates containing different marine samples. After comparing their hydrolysis abilities, the strain with highest enzyme-producing ability, MNH15 (Figure <ref type="figure" target="#fig_0">1a</ref>), was selected (Table <ref type="table" target="#tab_0">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Identification of Strain MNH15</head><p>The morphological and biochemical characteristics of strain MNH15 are shown in Table <ref type="table" target="#tab_1">2</ref>. The strain was Gram-negative, aerobic, short rod-shaped (Figure <ref type="figure" target="#fig_0">1b</ref>), grown at 37 °C, and did not grow at 4 °C. Using genomic DNA from strain MNH15 as a template, a 16S universal primer was used for polymerase chain reaction, and the amplified fragment was about 1.5 kb (Figure <ref type="figure" target="#fig_1">2a</ref>). After the PCR product was recovered, it was ligated to the pMD19-T cloning vector and transferred to E.-coli-competent cells, after which the positive clones were selected and sequenced to obtain a 1595 bp sequence. The 16S rDNA gene sequence was retrieved by GenBank and compared with its 16S rDNA sequence, and the phylogenetic tree was calculated using MEGA software ver. 5.0 and Clustal ver. 1.83. The phylogenetic tree indicated that strain MNH15 belonged to the genus Catenovulum (Figure <ref type="figure" target="#fig_1">2b</ref>). On the basis of the morphological and biochemical characteristics combined with gene sequence analysis, the selected strain was recorded as Catenovulum agarivorans MNH15.</p><p>The optimum growth temperature was 35 • C (Figure <ref type="figure" target="#fig_2">3a</ref>). The strain MNH15 could grow at a wide pH range, but a pH of 8.0 was optimum (Figure <ref type="figure" target="#fig_2">3b</ref>). The strain was grown in a medium containing 1%-7% NaCl at an optimum concentration of 2% and did not grow without NaCl (Figure <ref type="figure" target="#fig_2">3c</ref>). The logarithmic growth phase of the strain was 3-6 h, and the dextranase activity increased gradually between 24 h and 48 h (Figure <ref type="figure" target="#fig_2">3d</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Dextranase-Producing Conditions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1.">Effects of Carbon and Nitrogen Source on Dextranase Production</head><p>The effects of different carbon sources and nitrogen sources on the dextranase-producing strain MNH15 are shown in Figure <ref type="figure" target="#fig_3">4</ref>. Barley flour was the best carbon source for the production of dextranase. Soluble starch and maltose had a slight effect on the strain producing dextranase. However, potato starch, tapioca starch, lactose, corn starch, glucose, rice bran, bran, sucrose, and dextrin could promote the production of dextranase (Figure <ref type="figure" target="#fig_3">4a</ref>). Casein was the best nitrogen source (Figure <ref type="figure" target="#fig_3">4b</ref>), followed by soybean meal and peanut meal, whereas casein was costly and unsuitable for large-scale fermentation. Therefore, soybean meal was selected as the nitrogen source.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2.">Effects of Temperature, pH, and NaCl Concentration on Dextranase Production</head><p>The optimal temperature for producing dextranase from strain MNH15 was 30 • C. When the temperature was higher or lower, the dextranase-producing capacity changed sharply (Figure <ref type="figure" target="#fig_4">5a</ref>). The initial pH of the medium was adjusted to the range of 5.0-10.0, and the dextranase activity was measured after 48 h of fermentation. At a pH of 8.0, the strain was most beneficial to dextranase production (Figure <ref type="figure" target="#fig_4">5b</ref>). When the NaCl concentration was 5 g/L, the dextranase-producing capacity reached its peak (Figure <ref type="figure" target="#fig_4">5c</ref>). Moreover, the NaCl concentration had a significant effect on the growth and the enzyme-producing capacity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.3.">Effects of Inoculum Size, Aeration, and Inducer Concentration on Dextranase Production</head><p>As Figure <ref type="figure" target="#fig_4">5d</ref> shows, the inoculum size had an important effect on dextranase production. The optimal inoculum amount was 3%. When 60 mL of medium was added to a 250 mL Erlenmeyer flask, the amount of aeration was most favorable for dextranase production (Figure <ref type="figure" target="#fig_4">5e</ref>). The results clearly showed that the dextranase production needed an inducer (Figure <ref type="figure" target="#fig_4">5f</ref>). A dextran T20 concentration of 8 g/L was the most beneficial to dextranase production.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Enzymatic Characterization</head><p>The dextranase was subjected to sodium dodecyl sulfate (SDS)-polyacrylamide gel electrophoresis (PAGE). The band in the Coomassie blue-stained gel was consistent with the position of the transparent band in the blue dextran gel (Figure <ref type="figure" target="#fig_5">6</ref>). This result showed that the molecular weight of the dextranase was between 100 kDa and 130 kDa (around 110 kDa). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.1.">Effects of Temperature and pH on Dextranase Activity and Stability</head><p>The effect of temperature on dextranase activity is shown in Figure <ref type="figure" target="#fig_6">7a</ref>. Dextranase activity was very sensitive to temperature change, with the optimum temperature being 40°C. Dextranase activity peaked at a pH of 8.0, as shown in Figure <ref type="figure" target="#fig_6">7b</ref>. The dextranase maintained a high activity level in the pH range of 6.0-8.0. In addition, the dextranase was very stable in the pH range of 4.0-9.0 at 25°C (Figure <ref type="figure" target="#fig_6">7b</ref>). The thermal stability of dextranase showed that the residual activity level stayed at almost 100% following storage for 5 h at 30 °C (pH 8.0), and nearly 50% of the enzyme activity was lost following storage at 45°C for 5 h (Figure <ref type="figure" target="#fig_6">7c</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.2.">Effects of Metal Ions and Reagents on Dextranase Activity</head><p>The effect of metal ions on dextranase activity is shown in Table <ref type="table" target="#tab_2">3</ref>. In the presence of metal ions Sr 2+ , the dextranase activity increased from 100% (without adding compounds) to 128.71%, and the metal ions NH 4+ , Ni 2+ , Cd 2+ , Fe 3+ , Li + , Cu 2+ , and Co 2+ had a strong inhibitory effect on dextranase activity. Metal ions such as Ca 2+ , K + , Zn 2+ , Mg 2+ , and Ba 2+ did not have a significant inhibitory effect. Moreover, the main compounds in dental care products, such as sodium fluoride, xylitol, sodium benzoate, lauric acid, and ethanol, had no significant effect on dextranase activity. However, we found that 1 mM sodium dodecyl sulfate (SDS) had a certain inhibitory effect on dextranase activity (Table <ref type="table" target="#tab_3">4</ref>), which was similar to results reported by Ren Wei et al. <ref type="bibr" target="#b34">[35]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.3.">Substrate Specificity and Final Hydrolysis Products</head><p>The substrate specificity of dextranase was evaluated using materials with different glucosidic linkages (Table <ref type="table" target="#tab_4">5</ref>). Dextranase had high specificity for dextran containing α-1,6-glucosidic linkages. When the substrate concentration was 3%, the optimal substrate was dextran T500. However, the dextranase had poor hydrolysis ability for soluble starch, even though the soluble starch was composed of α-1,4-glucosidic bonds. Pullulan, chitin, cyclodextrin, and mannan are mainly composed of α-1,4-glucosidic bonds, and the dextranase was unable to hydrolyze them, either. High-performance liquid chromatography (HPLC) showed that maltoheptaose, glucose, and maltose were the main hydrolysates of dextranase (Figure <ref type="figure" target="#fig_7">8</ref>). Moreover, the peak area of the hydrolysate detected by HPLC was quantified using Empower GPC software (Gel Permeation Chromatography-GPC) (Table <ref type="table" target="#tab_5">6</ref>). When the hydrolysis reaction time was extended from 0.5 h to 3 h, the amount of maltotriose and maltotetraose decreased slightly, which was similar to results reported in the literature <ref type="bibr" target="#b34">[35,</ref><ref type="bibr" target="#b35">36]</ref>. This indicated that dextranase is an endotype dextranase.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Effect of Dextranase on Plaque</head><p>Streptococcus mutans is considered to be one of the important bacteria responsible for forming dental plaque and caries. To investigate the inhibition of dextranase on the biofilm formation of S. mutans, the minimally biofilm inhibitory concentration (MBIC) of this enzyme was determined (Table <ref type="table" target="#tab_6">7</ref>). The results showed that the experimental groups were significantly different from the control group, indicating that dextranase has a remarkable inhibitory effect on the formation of plaque. As the concentration of dextranase increased, the amount of plaque formed gradually decreased. When the dextranase concentration was 3 U/mL and 7 U/mL, the plaque inhibition rate was 52.3% and 91.79%, respectively.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Effect of Dextranase on Plaque</head><p>Streptococcus mutans is considered to be one of the important bacteria responsible for forming dental plaque and caries. To investigate the inhibition of dextranase on the biofilm formation of S. mutans, the minimally biofilm inhibitory concentration (MBIC) of this enzyme was determined (Table <ref type="table" target="#tab_6">7</ref>). The results showed that the experimental groups were significantly different from the control group, indicating that dextranase has a remarkable inhibitory effect on the formation of plaque. As the concentration of dextranase increased, the amount of plaque formed gradually decreased. When the dextranase concentration was 3 U/mL and 7 U/mL, the plaque inhibition rate was 52.3% and 91.79%, respectively.</p><p>The results of the scanning electron microscopy (SEM) showed that the structure of the plaque without the addition of dextranase was tight, and the extracellular polysaccharide and bacteria interweaved to form many channels (Figure <ref type="figure" target="#fig_8">9</ref>). When the concentration of dextranase was continuously increased, the adhesion of bacteria decreased, the biofilm gradually became thinner, and the structure became looser. The micro-plate crystal violet staining combined with scanning electron microscopy showed that the dextranase significantly inhibited the plaque formed by S. mutans.</p><p>The biofilm inhibitory rate was calculated at an absorbance of 595 (A 595 ) of the crystal-violet-stained biofilm without dextranase subtracted from A 595 of the biofilm with dextranase, and divided by A 595 of the biofilm without dextranase multiplied by 100%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Discussion</head><p>Dental caries is a chronic disease affecting different population groups all over the world. Moreover, plaque supports bacteria in etching the teeth <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b31">32]</ref>. Dextranase can remove plaque, but it is still a challenge to find a dextranase that is suitable for use in oral products. Compared with terrestrial-derived biological enzymes, marine enzymes are more suitable for industrial applications because of their salt tolerance, low temperature resistance, and alkali resistance <ref type="bibr" target="#b32">[33,</ref><ref type="bibr" target="#b33">34]</ref>.</p><p>Catenovulum sp. is a new type of marine bacteria found in the marine environment in recent years, so there is little information on its properties, and there are few strains that produce dextranase. Compared with fungi and actinomycetes <ref type="bibr" target="#b26">[27]</ref>, bacterial fermentation production of dextranase has the advantages of a short fermentation time and a low temperature, which can save energy, manpower, and time in industrial applications. C. agarivorans MNH15 did not grow in the broth absence of NaCl, indicating that the strain is a halophilic bacterium that grows better at a pH of 8-9, and like C. agarivorans <ref type="bibr" target="#b36">[37,</ref><ref type="bibr" target="#b37">38]</ref>. Compared with terrestrial bacteria, most marine bacteria are oligotrophic, and the enzyme-producing medium components are relatively easy to get, so C. agarivorans MNH15 has strong potential for application in industry settings <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b39">40]</ref>.</p><p>The molecular weight of dextranase of bacteria was found to be between 60 and 114 KDa <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b40">41]</ref>, and Koenig and Day found that the molecular weight of fungi was at least 23 KDa <ref type="bibr" target="#b41">[42]</ref>. In contrast, we found that the molecular weight of dextranase produced by C. agarivorans MNH15 was about 110 KDa. The bacterium of the same genus, Catenovulum sp. DP03, was found to have a molecular weight of about 75 KDa <ref type="bibr" target="#b34">[35]</ref>. Thus, further research on the structure of dextranase may contribute to a better understanding of biochemistry and biocatalysis. The optimal pH of dextranase was found to be 8.0. Moreover, the pH of the dextranase produced by most strains, such as Arthrobacter sp. Arth410 <ref type="bibr" target="#b42">[43]</ref> and T. pinophilus H6 <ref type="bibr" target="#b26">[27]</ref>, was acidic. Our dextranase also had a lower pH sensitivity, indicating that the alkaline dextranase is suitable for mouth products <ref type="bibr" target="#b31">[32,</ref><ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b44">45]</ref>. The dextranase had good catalytic activity at a temperature range of 35 • C-45 • C, which is similar to human body temperature, indicating that it can be applied to the development of oral care products.</p><p>The activity of dextranase increased to 128.71% under the treatment of 5 mM SrCl 2 , which was consistent with the results reported by Wu et al. <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b45">46]</ref>. The same concentration of SrCl 2 had little effect on the activity of dextranase produced by the same genus Catenovulum sp. DP03 bacteria, reported by <ref type="bibr" target="#b34">Ren Wei et al. [35]</ref>. Moreover, MgCl 2 , NH 4 Cl, and NiCl 2 only had a slight effect on dextranase activity, whereas CaCl , BaCl 2 , KCl, and ZnSO 4 had no significant effect on the activity of dextranase. The characteristics will benefit the application of oral care products <ref type="bibr" target="#b26">[27]</ref>. The products of MNH15-dextranase-catalyzed substrate hydrolysis were mainly glucose, maltose, maltotetraose, and maltoheptaose, which was slightly different compared with other sources of dextranases <ref type="bibr" target="#b34">[35,</ref><ref type="bibr" target="#b39">40,</ref><ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b47">48]</ref>. The main hydrolysate of Catenovulum sp. DP03 dextranase was isomalto-oligosaccharide, which produces a small amount of glucose over time <ref type="bibr" target="#b34">[35]</ref>. The hydrolysates of T. pinophilus dextranase reported by Yu-Qi Zhang et al. were isomaltose and a small amount of isomalto-oligosaccharide <ref type="bibr" target="#b26">[27]</ref>.</p><p>We found that several reagents commonly used in dental care products, such as ethanol, sodium fluoride, xylitol, lauric acid, and sodium benzoate, had no significant effect of the dextranase activity. The enzyme produced by marine microorganisms was a biologically active metabolite with excellent thermal stability, salt tolerance, and low temperature resistance <ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref>. The characteristics of dextranase imply an advantage when it is used in oral care products to remove plaque and prevent dental caries.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Materials and Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Samples and Chemicals</head><p>Sea mud, seaweed, and seawater samples were collected from Haizhou Bay in Jiangsu, China. Dextran (T20, T40, T70, T500) and blue dextran 2000 were obtained from GE Healthcare (Uppsala, Sweden). All other reagents were purchased from Sinopharm Chemical Reagent Corp. (Shanghai, China) and were of analytical grade.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Isolation of Dextranase-Producing Marine Bacterial Strains</head><p>We used a blue dextran plate to screen marine bacteria-produced dextranase. The screening medium plates contained 10 g dextran, 1 g yeast extract, 5 g peptone, 2 g blue dextran 2000, 20 g agar powder, and 1 L aged sea water, at an initial pH of 8.0. We diluted the sample suspension with an appropriate amount of sterile distilled water and spread it evenly on a blue dextran plate. After incubating it for 2 d at 25 • C, the strain producing dextranase was selected according to a transparent zone around the colony. The colony diameter and the diameter of the transparent zone of the target strain on the plate were measured, and the hydrolysis ability was determined by the square of their ratios. The selected strains were inoculated into the fermentation shake flask (excluding agar and blue dextran 2000), and after fermentation at 180 • C for 48 h at 25 • C, the dextranase activity was measured using a standard method, and the strain with the highest enzyme production rate was selected.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Identification and Characterization of Bacteria</head><p>The phenotypic characteristics of strain MNH15 were identified by observing colony morphology, light microscopy, and SEM. We then identified various physiological and biochemical reactions according to the Berger Bacterial Identification Manual (9th Edition, Baltimore: Williams &amp; Wilkins). The genome of strain MNH15 was extracted with the bacterial genome extraction kit, and the 16S-rDNA gene was amplified with primers 27F (5 -AGAGTTTGATCCTGGCTCAG-3') and 1492R (5 -GGTTACCTTGTTACGACTT-3'). The PCR product was gel-recovered, connected with pMD19-T vector (Takara Bio Inc. Japan), and transferred to DH5a-competent cells. The positive clones were then screened by blue and white spots. The extracted colony plasmids were verified using agarose gel and sent for sequencing (Sangon, Shanghai, China). The 16S-rDNA gene sequence was analyzed by BLAST analysis with the existing sequence in GenBank, and the phylogenetic tree was constructed using the neighbor-joining method to determine the taxonomic status of the strain.</p><p>After the seed was activated, the cells were cultured at different temperatures (0 • C-45 • C) to determine the optimal growth temperature. In order to prevent pH changes during the culture, different buffers (MES buffer, pH 5.0-6.0; PIPES buffer, pH 6.5-7.0; HEPES buffer, pH 9.0-11.0) with a final concentration of 10 mmol/L were added to the medium to maintain the pH range of 4.0-10.0, and the culture was carried out at the optimum temperature. The medium was prepared with a trace-salt solution (without NaCl), and the NaCl concentration ranged from 0 to 100 g/L. It was then cultured under optimum temperature and pH conditions. The logarithmic growth phase of strain MNH15 included inoculating the 3% seed solution, and the absorbance at a wavelength of 600 nm was measured every 3 h under optimal growth conditions. The optimal culture time for producing dextranase was in the range of 0 h and 72 h. After 12 h of culturing, samples were taken every 6 h, and the enzyme activity was measured under standard conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">Culture Conditions for Dextranase Production and Purification</head><p>The culture medium for producing dextranase comprised 5 g of yeast extract, 5 g of peptone, 10 g of dextran, and 1 L of aged seawater, at an initial pH of 8.0. After the strain was activated, the inoculated medium was cultured at 30 • C at 180 rpm for 48 h, the fermentation broth was centrifuged (10,000 rpm, 30 min, 4 • C), and the supernatant was taken to determine the dextranase activity. Then, the supernatant was filtered through a 0.45 µm membrane, ultra-filtered using a hollow fiber column, and a molecular weight of 30 KDa was cut off. After being purified, the freeze-dried powder was prepared using a freeze-drying machine (Labconco Corp., Kansas City, MO, USA).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5.">Enzyme Assay</head><p>Then, 50 µL of the enzyme solution was added into 150 µL of 3% dextran T20 (50 mM, pH 8.0 Tris-HCl buffer), and kept at 40 • C for 15 min. The amount of reducing sugar was determined using the 3,5-dinitrosalicylic acid (DNS) method. The enzyme activity dictated that, under the above reaction conditions, the amount of enzyme required to catalyze the release of 1 µmol of maltose per minute was one unit of activity <ref type="bibr" target="#b51">[52]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.">Conditions Needed for Producing Dextranase</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.1.">Effects of Different Carbon and Nitrogen Sources on Dextranase Production</head><p>The yeast extract and peptone in the fermentation medium were replaced by a common carbon source of 10 g/L and a common nitrogen source of 5 g/L, respectively. After being cultured at 30 • C, 180 rpm for 48 h, the supernatant of the fermentation broth was taken to determine the activity of dextranase.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.2.">Effects of Temperature, Initial pH, and NaCl Concentration on Dextranase Production</head><p>The culture medium was incubated at different temperatures (15 • C-40 • C) for 48 h under the previously mentioned optimal medium. The initial pH of the fermentation medium (5.0-10.0) was adjusted to determine the optimal initial pH of the enzyme produced by the strain and incubated at 30 • C for 48 h. Different concentrations of NaCl were added to the medium, and the fermentation was carried out at an optimal temperature, pH, and time. The enzyme activity was then measured using a standard method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.3.">Effect of Inoculum, Aeration, and Inducer Concentration on Dextranase Production</head><p>The seed solution was inoculated into the fermentation shake flask according to different amounts (1%-6%). The different volumes of medium (20-90 mL) were then added in a 250 mL Erlenmeyer flask. Dextran 20000 was used as an inducer to induce the production of dextranase, and different concentrations of dextran (0%-1.6%) were then added. Then, we detected the dextranase of the supernatant.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.">Enzyme Preparation and In-Gel Activity Assay</head><p>The supernatant was lyophilized and stored at -20 • C. The molecular mass of dextranase was visualized through SDS-polyacrylamide gel electrophoresis (PAGE). The activity level of dextranase in the gel was determined by an 8% native PAGE gel containing 0.5% blue dextran.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.1.">Effects of Temperature on Dextranase Activity and Stability</head><p>In order to evaluate the effect of temperature on the activity of the enzyme, the enzyme activity after incubation at 20 • C-60 • C was measured. The relative residual activity of dextranase was determined through a standard method after leaving the enzyme solution at different temperatures (30 • C, 40 • C, 50 • C) without adding substrate for 1-5 h to investigate the thermal stability of the enzyme. The percentage of the maximum enzyme activity indicated the relative activity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.2.">Effect of pH on Dextranase Activity and Stability</head><p>Determination of dextranase activity at different pH values ranging from 4.0 to 9.0 (acetate buffer, pH 3.0-5.5; phosphate buffer, pH 6.0-8.0; Tris-HCl, pH 7.5-9.0) and at 40 • C. To evaluate the pH stability of dextranase in the absence of substrate, the dextranase was placed in a buffer of pH 4.0-9.0 at 25 • C for 1 h. Using dextran 20000 as a substrate, we measured the residual viability of the enzyme under standard conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.3.">Effects of Metal Ions and Other Reagents on Dextranase Activity</head><p>Next, we measured the effects of the following metal ions and reagents on dextranase activity: Ca 2+ (CaCl 2 ), Ba 2+ (BaCl 2 ), Mg 2+ (MgCl 2 ), NH 4 + (NH 4 Cl), Ni 2+ (NiCl 2 ), Fe 3+ (FeCl 3 ), Co 2+ (CoCl 2 ), Cu 2+ (CuSO 4 ), K + (KCl), Zn 2+ (ZnSO 4 ), Sr 2+ (SrCl 2 ), Li + (LiCl), Cd 2+ (CdCl 2 ), sodium fluoride, xylitol, sodium benzoate, ethanol, sodium dodecyl sulfonate, and lauric acid. The metal ions were set at two different concentrations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.4.">Substrate Specificity and Analysis of Final Hydrolysis Products</head><p>The substrate of the different glucosidic linkages was reacted with dextranase at 40 • C for 15 min, and the enzyme activity was measured. The relative enzyme activity was expressed at 100% of the maximum enzyme activity.</p><p>The final hydrolysis products of dextran were analyzed using HPLC. Then, 300 µL dextranase was reacted with 900 µL 3% dextran T50 at 40 • C for 0.5 h and 3 h, respectively. Then, the solution was boiled for 5 min to denature dextranase and centrifuged at 10,000 rpm for 10 min. The supernatant was filtered through a 0.45 µm filter. The products were identified and analyzed with the Waters 600 and Waters Sugar-Pak1 (6.5 × 300 mm; Waters, Milford, MA, USA) HPLC with a differential refraction detector. The mobile phase was water at 0.4 mL/min. The column temperature was 75 • C. The injection volume was 20 µL. The standard substances were Glucose (glycarbo#GY1107-500 g 99%), Maltotriose (glycarbo#GY1063-5 g 97%), Maltotetraose (glycarbo#GY1064-50 mg 97%), Maltopentaose (glycarbo#GY1065-50 mg 97%), Maltohexaose (glycarbo#GY1066-50 mg 95%), and Maltoheptaose (glycarbo#GY1067-50 mg 95%), respectively. Quantification was based on calculation of the peak areas. Data acquisition and processing were conducted using Empower GPC software (Waters, Milford, MA, USA).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.8.">Effect of Dextranase on Plaque Formation</head><p>The effect of dextranase on the biofilms produced by S. mutans ATCC 25175 (American Type Culture Collection (ATCC), Manassas, VA, USA) was investigated using the microplate method and SEM. The S. mutans were first pre-incubated in a sucrose-free brain heart infusion (BHI) medium at 37 • C for 18 h, and then 600 µL of activated seed solution was inoculated into microplates containing a 1% sucrose BHI medium (Greiner, Frickhausen, Germany). The minimally biofilm inhibitory concentration (MBIC) of the drug was assessed. Microplates were used to measure the biofilm quality of the crystal violet stain in which the biofilm was grown, and then the medium was removed from the microplates containing 1% sucrose BHI medium (contains different concentrations of dextranase) <ref type="bibr" target="#b52">[53]</ref>. Then, we slowly added 0.2 mL of a phosphate buffer three times to each well to remove the poorly adsorbed biofilm and medium, and let it dry naturally for 1 h. Then, 0.2 mL of the 0.1% crystal violet solution was slowly added to each well for 5 min, and excess solution was removed and washed three times with a phosphate buffer. After drying, 0.2 mL of 95% ethanol was added to re-dissolve the stained biofilm. Finally, the absorbance at 595 nm was measured on a microplate reader (model 3550; Bio-Rad Laboratories, Richmond, CA, USA). The measurement was repeated three times and averaged, and then we measured the biofilm formation inhibition rate% = (1experimental group/control group) × 100 <ref type="bibr" target="#b53">[54]</ref>.</p><p>The sterile slides were placed in a 24-well cell culture plate, and 1 mL of 0.2% sterile gelatin was added for 12 h and then aspirated. The S. mutans seed solution and the brain-heart leaching solution (BHI) medium containing 1% sucrose were added to the gelatin-treated 24-well plate in a ratio of 1:9, and the final concentration of the dextranase was 0. 1, 2, 4, 5, 6 U/mL. After anaerobic incubation for 24 h at 37 • C, the slides were removed, gently washed with sterile water, fixed overnight with 2.5% glutaraldehyde, and dehydrated with different concentrations of alcohol gradient. The samples were then dried and sprayed with gold before we observed and detected them by SEM (Model JFC-1600, JSM-6390LA; JEOL, Tokyo, Japan) <ref type="bibr" target="#b42">[43,</ref><ref type="bibr" target="#b54">55]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>In summary, the dextranase-producing MNH15 strain of C. agarivorans was screened from marine samples. A higher yield of dextranase was produced when the temperature, initial pH, NaCl concentration, and inducer concentration were 30 • C, 8.0, 5 g/L, and 8 g/L, respectively. The maximum enzyme activity was performed at 40 • C and a pH of 8.0. The dextranase exhibited excellent thermostability and stability at a wide range of pH values (4.0-9.0). The molecular weight of dextranase was around 110 kDa. Sodium fluoride, xylitol, and sodium benzoate, all used in dental care products, had no significant effect on the activity of the dextranase. The result of the HPLC showed that dextran was mainly hydrolyzed to glucose, maltose, and maltoheptaose. Moreover, the dextranase effectively inhibited the formation of biofilm by S. mutans. Therefore, dextranase has strong application potential in dental products formulated to remove dental plaque.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Transparent zone formed by the strain MNH15 on the plate containing blue dextran (a) and scanning electron micrograph (b).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Agarose electrophoresis profiles of 16S rDNA PCR products M: DNA marker (Sangon, China); 1: strain MNH1516S rDNA PCR amplification product (a). Phylogenetic tree based on 16S rDNA gene sequences (b).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. The effects of temperature (a), pH (b), and NaCl concentration (c) on the growth of the strain MNH15 and dextranase producing time (d).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure4. Effect of carbon source (a) and nitrogen source (b) on dextranase-producing by strain MNH15.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Effects of temperature (a), initial pH (b), NaCl concentration (c), inoculum size (d), medium volume (e), and inducer concentration (f) on dextranase production. For each effect on dextranase activity, the values are shown as percentages of the maximum activities, which were taken as 100%.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. (A) Coomassie brilliant blue-stained 8% sodium dodecyl sulfate (SDS)-polyacrylamide gel electrophoresis (PAGE) gel showing the size of the dextranase. M Molecular weight standard (Sangon China, C610011); L1 crude fermentation broth of Catenovulum agarivorans. MNH15; L2 the crude fermentation broth of strain MNH15 was concentrated with a 30 K ultrafiltration tube (Millipore). (B) Transparent strip showing dextranase activity on an 8% native PAGE gel containing 3% (w/v) blue dextran. The numbers on the left indicate the size of the markers.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Effects of temperature (a) and pH (b) on dextranase activity and stability (c). For each effect on dextranase activity, the values are shown as percentages of the maximum activities, which were taken as 100%.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure8. The product of dextranase and 3% dextran T50 reacted at 40 °C for different times was measured by high-performance liquid chromatography (HPLC): (a) standard results (G1 to G7) were glucose, maltose, maltotriose, maltotetraose, maltopentaose, maltohexaose, and maltoheptaose standard sugar, (b) the results of dextranase hydrolyzed to 3% dextran T50 0.5 h, (c) the results of dextranase hydrolyzed to 3% dextran T50 3 h.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 .</head><label>9</label><figDesc>Figure9. Electron microscopy was used to analyze the effects of different concentrations of dextranase on the biofilm formation of Streptococcus mutans on sterile coverslips. Here, 0 U/mL represents a blank control, adding an equal amount of sterile pure water instead of dextranase, and others represent biofilms under the action of 1, 2, 4, 5, and 6 U/mL dextranase, respectively.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Strains with different hydrolysis abilities.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Morphological, physiological, and biochemical characteristics of strain MNH15.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Effect of metal ions on dextranase.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Effect of dental caries chemical treatment reagents on dextranase activity. SDS, sodium dodecyl sulfate.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 .</head><label>5</label><figDesc>Action of dextranase on diverse carbohydrates.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6 .</head><label>6</label><figDesc>Proportion of products of hydrolyzed dextran.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7 .</head><label>7</label><figDesc>Biofilm inhibitory rates at different concentrations of dextranase.</figDesc></figure>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest:</head><p>The authors confirm that there is no conflict of interests regarding this paper.</p><p>Ethical Approval: This article does not contain any studies with animals performed by any of the authors.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Monsan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Bozonnet</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Albenne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Joucla</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Willemot</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Remaud-Siméon</surname></persName>
+					</author>
+					<title level="a">Homopolysaccharides from lactic acid bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int. Dairy J.</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="675" to="685"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Robyt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S-Y</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y-M</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Dextran molecular size and degree of branching as a function of sucrose concentration, pH, and temperature of reaction of Leuconostoc mesenteroides B-512FMCM dextransucrase</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr. Res.</title>
+					<imprint>
+						<biblScope unit="volume">338</biblScope>
+						<biblScope unit="page" from="1183" to="1189"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>Q</forename><surname>Zou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Pu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Lu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Mo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Ultrasonic degradation of aqueous dextran: Effect of initial molecular weight and concentration</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr. Polym.</title>
+					<imprint>
+						<biblScope unit="volume">90</biblScope>
+						<biblScope unit="page" from="447" to="451"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Marsh</surname></persName>
+					</author>
+					<title level="a">Controlling the oral biofilm with antimicrobials</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Dent.</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="S11" to="S15"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Johansen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Falholt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Gram</surname></persName>
+					</author>
+					<title level="a">Enzymatic removal and disinfection of bacterial biofilms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl. Environ. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">63</biblScope>
+						<biblScope unit="page" from="3724" to="3728"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Sims</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Thomson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Hubl</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">G</forename><surname>Larsen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Furneaux</surname></persName>
+					</author>
+					<title level="a">Characterisation of polysaccharides synthesised by Gluconobacter oxydans NCIMB 4943</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr. Polym.</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="285" to="292"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Moriyama</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Yui</surname></persName>
+					</author>
+					<title level="a">Regulated insulin release from biodegradable dextran hydrogels containing poly(ethylene glycol)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Control. Release</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="237" to="248"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Salassi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Garcia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Breaux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>No</surname></persName>
+					</author>
+					<title level="a">Impact of Sugarcane Delivery Schedule on Product Value at Raw Sugar Factories</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Agribus.</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="47" to="54"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Brown</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Inkerman</surname></persName>
+					</author>
+					<title level="a">Specific method for quantitative measurement of the total dextran content of raw sugar</title>
+				</analytic>
+				<monogr>
+					<title level="j">JJ. Agric. Food Chem.</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="227" to="233"/>
+						<date when="1992">1992</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Mccoy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Wehler</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Rich</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">I</forename><surname>Garcia</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Miller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Jones</surname></persName>
+					</author>
+					<title level="a">Adverse events associated with chlorhexidine use: Results from the Department of Veterans Affairs Dental Diabetes Study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. Dent. Assoc.</title>
+					<imprint>
+						<biblScope unit="volume">139</biblScope>
+						<biblScope unit="page" from="178" to="183"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Grover</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Frank</surname></persName>
+					</author>
+					<title level="a">Regional Specificity of Chlorhexidine Effects on Taste Perception</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chem. Senses</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="311" to="318"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Khalikova</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Susi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Korpela</surname></persName>
+					</author>
+					<title level="a">Microbial Dextran-Hydrolyzing Enzymes: Fundamentals and Applications</title>
+				</analytic>
+				<monogr>
+					<title level="j">Microbiol. Mol. Biol. Rev.</title>
+					<imprint>
+						<biblScope unit="volume">69</biblScope>
+						<biblScope unit="page" from="306" to="325"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Reese</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Lola</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Parrish</surname></persName>
+					</author>
+					<title level="a">Modified Substrates and Modified Products as Inducers of Carbohydrases</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Bacteriol.</title>
+					<imprint>
+						<biblScope unit="volume">100</biblScope>
+						<biblScope unit="page" from="1151" to="1154"/>
+						<date when="1970">1970</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Brown</surname></persName>
+					</author>
+					<title level="a">Stimulation of dextranase production by oxidized dextran</title>
+				</analytic>
+				<monogr>
+					<title level="j">Can. J. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="841" to="844"/>
+						<date when="1970">1970</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Thitaram</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C-H</forename><surname>Chung</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Day</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Hinton</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Bailey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Siragusa</surname></persName>
+					</author>
+					<title level="a">Isomaltooligosaccharide increases cecal Bifidobacterium population in young broiler chickens</title>
+				</analytic>
+				<monogr>
+					<title level="j">Poult. Sci.</title>
+					<imprint>
+						<biblScope unit="volume">84</biblScope>
+						<biblScope unit="page" from="998" to="1003"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Eggleston</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Monge</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Montes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Stewart</surname></persName>
+					</author>
+					<title level="a">Application of dextranases in sugarcane factory: Overcoming practical problems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sugar Tech</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="135" to="141"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Eggleston</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Dilks</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Blowers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Winters</surname></persName>
+					</author>
+					<title level="a">Successful application of dextranase in sugar beet factories</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the American Society of Sugarbeet Tchnologist</title>
+					
+					<imprint>
+						<pubPlace>Albuquerque, NM, USA</pubPlace>
+						<date when="2011">2011</date>
+						<biblScope unit="page" from="1" to="16"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">Alwin</forename><surname>Erhardt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H-J</forename><surname>Jördening</surname></persName>
+					</author>
+					<title level="a">Immobilization of dextranase from Chaetomium erraticum</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biotechnol.</title>
+					<imprint>
+						<biblScope unit="volume">131</biblScope>
+						<biblScope unit="page" from="440" to="447"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Anderson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="frist">S</forename><forename type="middle">C</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="frist">Y</forename><forename type="middle">T</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Diphenylamine–Aniline–Phosphoric Acid Reagent, a Versatile Spray Reagent for Revealing Glycoconjugates on Thin-Layer Chromatography Plates</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Biochem.</title>
+					<imprint>
+						<biblScope unit="volume">287</biblScope>
+						<biblScope unit="page" from="337" to="339"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Finnegan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Brumbley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>O’shea</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Nevalainen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Bergquist</surname></persName>
+					</author>
+					<title level="a">Isolation and Characterization of Genes Encoding Thermoactive and Thermostable Dextranases from Two Thermotolerant Soil Bacteria</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">49</biblScope>
+						<biblScope unit="page" from="327" to="333"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Gan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Hu</surname></persName>
+					</author>
+					<title level="a">Biosynthesis of oligodextrans with different Mw by synergistic catalysis of dextransucrase and dextranase</title>
+				</analytic>
+				<monogr>
+					<title level="j">Carbohydr. Polym.</title>
+					<imprint>
+						<biblScope unit="volume">112</biblScope>
+						<biblScope unit="page" from="387" to="395"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Kubo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Kubota</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Ohnishi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Morita</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Matsuya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Matsushiro</surname></persName>
+					</author>
+					<title level="a">Expression and secretion of an Arthrobacter dextranase in the oral bacterium Streptococcus gordonii</title>
+				</analytic>
+				<monogr>
+					<title level="j">Infect. Immun.</title>
+					<imprint>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="page" from="4375" to="4381"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Koenig</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Day</surname></persName>
+					</author>
+					<title level="a">Induction of Lipomyces starkeyi Dextranase</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl. Environ. Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="2079" to="2081"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Larsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Andersson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ståhlberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Kenne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Jones</surname></persName>
+					</author>
+					<title level="a">Dextranase from Penicillium minioluteum: Reaction course, crystal structure, and product complex</title>
+				</analytic>
+				<monogr>
+					<title level="j">Structure</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="1111" to="1121"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Robyt</surname></persName>
+					</author>
+					<title level="a">Dextransucrase constitutive mutants of Leuconostoc mesenteroides B-1299</title>
+				</analytic>
+				<monogr>
+					<title level="j">Enzyme Microb. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="1050" to="1056"/>
+						<date when="1995">1995</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Day</surname></persName>
+					</author>
+					<title level="a">A new process for the production of clinical dextran by mixed-culture fermentation of Lipomyces starkeyi and Leuconostoc mesenteroides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Enzyme Microb. Technol</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="844" to="848"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y-Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R-H</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H-B</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X-Q</forename><surname>Hu</surname></persName>
+					</author>
+					<title level="a">Purification, characterization, and application of a thermostable dextranase from Talaromyces pinophilus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ind. Microbiol. Biotechnol.</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="317" to="327"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Gulder</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Moore</surname></persName>
+					</author>
+					<title level="a">Chasing the Treasures of the Sea-Bacterial Marine Natural Products</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Opin. Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="252" to="260"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Kalpana</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Aarthy</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Pandian</surname></persName>
+					</author>
+					<title level="a">Antibiofilm Activity of α-Amylase from Bacillus subtilis S8-18 Against Biofilm Forming Human Bacterial Pathogens</title>
+				</analytic>
+				<monogr>
+					<title level="j">Appl. Biochem. Biotechnol.</title>
+					<imprint>
+						<biblScope unit="volume">167</biblScope>
+						<biblScope unit="page" from="1778" to="1794"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Cieśliński</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kur</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Białkowska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Baran</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Makowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Turkiewicz</surname></persName>
+					</author>
+					<title level="a">Cloning, expression, and purification of a recombinant cold-adapted β-galactosidase from antarctic bacterium Pseudoalteromonas sp. 22b</title>
+				</analytic>
+				<monogr>
+					<title level="j">PProtein Expr. Purif.</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="27" to="34"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Margesin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Schinner</surname></persName>
+					</author>
+					<title level="a">Properties of cold-adapted microorganisms and their potential role in biotechnology</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biotechnol</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="1" to="14"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Purushe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Prakash</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">N</forename><surname>Nawani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Dhakephalkar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Kapadnis</surname></persName>
+					</author>
+					<title level="a">Biocatalytic potential of an alkalophilic and thermophilic dextranase as a remedial measure for dextran removal during sugar manufacture</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bioresour. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">115</biblScope>
+						<biblScope unit="page" from="2" to="7"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Papaleo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Tiberti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Invernizzi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Pasi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Ranzani</surname></persName>
+					</author>
+					<title level="a">Molecular Determinants of Enzyme Cold Adaptation: Comparative Structural and Computational Studies of Cold-and Warm-Adapted Enzymes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Protein Pept. Sci</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="657" to="683"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Majeed</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Grobler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Moola</surname></persName>
+					</author>
+					
+					<title level="a">The PH of various tooth whitening products on the south African market</title>
+				</analytic>
+				<monogr>
+					<title level="j">S. Afr. Dent. Assoc.</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="278" to="281"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Ren</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Cai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Yan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Lyu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Fang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Purification and Characterization of a Biofilm-Degradable Dextranase from a Marine Bacterium</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mar. Drugs</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page">51</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Pleszczyńska</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Rogalski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Fiedurek</surname></persName>
+					</author>
+					<title level="a">Hydrolysis of dextran by Penicillium notatum dextranase and identification of final digestion products</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mycol. Res.</title>
+					<imprint>
+						<biblScope unit="volume">101</biblScope>
+						<biblScope unit="page" from="69" to="72"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Shi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Du</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">J</forename><surname>Du</surname></persName>
+					</author>
+					<title level="a">Catenovulum sediminis sp. nov., isolated from coastal sediment</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int. Syst. Evol. Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">67</biblScope>
+						<biblScope unit="page" from="3894" to="3898"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Schachtele</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Staat</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Harlander</surname></persName>
+					</author>
+					<title level="a">Dextranases from oral bacteria: inhibition of water-insoluble glucan production and adherence to smooth surfaces by Streptococcus mutans</title>
+				</analytic>
+				<monogr>
+					<title level="j">Infect. Immun.</title>
+					<imprint>
+						<biblScope unit="volume">12</biblScope>
+						<biblScope unit="page" from="309" to="317"/>
+						<date when="19758">1975</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Arnold</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Nguyen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Mann</surname></persName>
+					</author>
+					<title level="a">Purification and characterization of a dextranase from Sporothrix schenckii</title>
+				</analytic>
+				<monogr>
+					<title level="j">Arch. Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">170</biblScope>
+						<biblScope unit="page" from="91" to="98"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Zohra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Aman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Ansari</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Haider</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><forename type="last">U</forename><surname>Qader</surname></persName>
+					</author>
+					<title level="a">Purification, characterization and end product analysis of dextran degrading endodextranase from Bacillus licheniformis KIBGE-IB25</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biol. Macromol</title>
+					<imprint>
+						<biblScope unit="volume">78</biblScope>
+						<biblScope unit="page" from="243" to="248"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">V</forename><forename type="last">A</forename><surname>Wynter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>De Jersey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Patel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Inkerman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hamilton</surname></persName>
+					</author>
+					<title level="a">Isolation and characterization of a thermostable dextranase</title>
+				</analytic>
+				<monogr>
+					<title level="j">Enzyme Microb. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page" from="242" to="247"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>D</forename><surname>Koenig</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Day</surname></persName>
+					</author>
+					<title level="a">The purification and characterization of a dextranase from Lipomyces starkeyi</title>
+				</analytic>
+				<monogr>
+					<title level="j">Eur. J.Biochem</title>
+					<imprint>
+						<biblScope unit="volume">183</biblScope>
+						<biblScope unit="page" from="161" to="167"/>
+						<date when="1989">1989</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Jiao</surname></persName>
+					</author>
+					<title level="a">Characterization of a marine-derived dextranase and its application to the prevention of dental caries</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Ind. Microbiol. Biotechnol.</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="17" to="26"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Jensen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Olsen</surname></persName>
+					</author>
+					<title level="a">Extracellular α-Glucosidase with Dextran-Hydrolyzing Activity from the Thermophilic Fungus, Thermomyces lanuginosus</title>
+				</analytic>
+				<monogr>
+					<title level="j">Curr. Microbiol</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="page" from="152" to="155"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">Q</forename><surname>Hu</surname></persName>
+					</author>
+					<title level="a">Purification and characterization of extracellular dextranase from a novel producer, Hypocrea lixii F1002, and its use in oligodextran production</title>
+				</analytic>
+				<monogr>
+					<title level="j">Process Biochem.</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="1942" to="1950"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Fukumoto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Tsuji</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Tsuru</surname></persName>
+					</author>
+					<title level="a">Studies on Mold Dextranases. I. Penicillium luteum dextranase: Its production and some enzymatic properties</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biochem.</title>
+					<imprint>
+						<biblScope unit="volume">69</biblScope>
+						<biblScope unit="page" from="1113" to="1121"/>
+						<date when="1971">1971</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Shimizu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Unno</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Ohba</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Okada</surname></persName>
+					</author>
+					<title level="a">Purification and Characterization of an Isomaltotriose-producing Endo-dextranase from a Fusarium sp.</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biosci. Biotechnol. Biochem</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="page" from="117" to="122"/>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Nam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="MIDDLE">S</forename><surname>Seo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Kim</surname></persName>
+					</author>
+					<title level="a">Biochemical characterization of dextranase from Arthrobacter oxydans and its cloning and expression in Escherichia coli</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Sci. Biotechnol</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="757" to="762"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">H</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">T</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">x</forename><surname>Zhou</surname></persName>
+					</author>
+					<title level="a">Anandins A and B, Two Rare Steroidal Alkaloids from a Marine Streptomyces anandii H41-59</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mar. Drugs</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page">355</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Hietala-Lenkkeri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Pienihäkkinen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hurme</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Alanen</surname></persName>
+					</author>
+					<title level="a">The caries-preventive effect of xylitol/maltitol and erythritol/maltitol lozenges: Results of a double-blinded, cluster-randomized clinical trial in an area of natural fluoridation</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Paediatr. Dent</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="180" to="190"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Arruda</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Senthamarai Kannan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Inglehart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Rezende</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sohn</surname></persName>
+					</author>
+					<title level="a">Effect of 5% fluoride varnish application on caries among school children in rural Brazil: a randomized controlled trial</title>
+				</analytic>
+				<monogr>
+					<title level="j">Community Dent. Oral Epidemiol.</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="267" to="276"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Miller</surname></persName>
+					</author>
+					<title level="a">Use of Dinitrosalicylic Acid Reagent for Determination of Reducing Sugar</title>
+				</analytic>
+				<monogr>
+					<title level="j">Anal. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="426" to="428"/>
+						<date when="1959">1959</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Christensen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Simpson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Younger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Baddour</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">F</forename><surname>Barrett</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Melton</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">H</forename><surname>Beachey</surname></persName>
+					</author>
+					<title level="a">Adherence of coagulase-negative staphylococci to plastic tissue culture plates: a quantitative model for the adherence of staphylococci to medical devices</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Clin. Microbiol.</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="page" from="996" to="1006"/>
+						<date when="1985">1985</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">X</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Campagna</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Bobek</surname></persName>
+					</author>
+					<title level="a">Effect of MUC7 peptides on the growth of bacteria and on Streptococcus mutans biofilm</title>
+				</analytic>
+				<monogr>
+					<title level="j">Antimicrob. Chemother.</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="page" from="1100" to="1109"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Tao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Tong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>YuYan</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Xue</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Kuang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Tian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Ni</surname></persName>
+					</author>
+					<title level="a">Antimicrobial and antibiofilm activity of pleurocidin against cariogenic microorganisms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Peptides</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="1748" to="1754"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

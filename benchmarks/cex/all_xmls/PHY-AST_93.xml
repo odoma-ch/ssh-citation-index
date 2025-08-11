@@ -1,0 +1,1687 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Asymptotic symmetries and Weinberg's soft photon theorem in Mink d+2</title>
+				<funder ref="#_C6M9zjj #_zPqzJqJ">
+					<orgName type="full">U.S. Department of Energy</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">University of California</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-21">October 21, 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Temple</forename><surname>He</surname></persName>
+							<email>tmhe@ucdavis.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Center for Quantum Mathematics and Physics (QMAP)</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>95616</postCode>
+									<settlement>Davis</settlement>
+									<region>CA</region>
+									<country key="US">U.S.A</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Prahar</forename><surname>Mitra</surname></persName>
+							<email>prahar21@ias.edu</email>
+							<affiliation key="aff1">
+								<orgName type="department">School of Natural Sciences</orgName>
+								<orgName type="institution">Institute for Advanced Study</orgName>
+								<address>
+									<postCode>08540</postCode>
+									<settlement>Princeton</settlement>
+									<region>NJ</region>
+									<country key="US">U.S.A</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Asymptotic symmetries and Weinberg's soft photon theorem in Mink d+2</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of High Energy Physics</title>
+							<imprint>
+								<publisher>Springer</publisher>
+								<biblScope unit="volume">2019</biblScope>
+								<biblScope unit="issue">10</biblScope>
+								<biblScope unit="page" from="213" to=""/>
+							<date type="published" when="2019-10-21">October 21, 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">0886D5AA508B5073DE2DFAF671F316CC</idno>
+					<idno type="DOI">10.1007/JHEP10(2019)213</idno>
+					<note type="submission">Received: July 17, 2019 Revised: September 11, 2019 Accepted: October 12, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Field Theories in Higher Dimensions</term>
+					<term>Gauge Symmetry</term>
+					<term>Scattering Amplitudes</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We show that Weinberg's leading soft photon theorem in massless abelian gauge theories implies the existence of an infinite-dimensional large gauge symmetry which acts non-trivially on the null boundaries I ± of (d + 2)-dimensional Minkowski spacetime. These symmetries are parameterized by an arbitrary function ε(x) of the d-dimensional celestial sphere living at I ± . This extends the previously established equivalence between Weinberg's leading soft theorem and asymptotic symmetries from four and higher even dimensions to all higher dimensions.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Soft theorems are equations that describe how scattering amplitudes in Minkowski spacetime involving one or many low energy, or soft, massless particles factorizes into a term involving the soft gauge particles (known as the soft factor) and one involving the amplitude without the soft particles, i.e.</p><formula xml:id="formula_0">A n m soft particles ---------→ S m A n-m ,<label>(1.1)</label></formula><p>where S m is the soft factor involving m soft particles. Such theorems were established over half a century ago in the works of Bloch, Nordseick, Low, Yennie, Frautschi, Suura <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref> and in a more modern language by Weinberg <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. A particularly interesting feature of all the soft theorems is that the soft factor is universal, i.e. it does not depend on the details of the theory under consideration. Rather, it depends only on the quantum numbers (linear momenta, angular momenta and charges) of the external particles involved in the scattering amplitude. Such universality naturally suggests that perhaps the soft theorems arise from some underlying symmetry, and indeed, it was relatively recently discovered that these theorems are precisely the Ward identities associated to the asymptotic symmetries of scattering amplitudes (see <ref type="bibr" target="#b8">[9]</ref> for a review and a comprehensive list of references).</p><p>Largely in part due to this discovery, in the last several years, there has been a resurgence of activity in the study of soft theorems, and many interesting directions have been explored. The equivalence was originally conceived for four-dimensional theories where it has been established to hold for gauge theories <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref>, gravity <ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref>, as well as their supersymmetric counterparts <ref type="bibr" target="#b19">[20]</ref>. The equivalence has proved useful in the exploration of not just the original soft theorems, but also new subleading and sub-subleading soft theorems <ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref>. Some of these were discovered by studying known asymptotic symmetries <ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> while others led to the discovery of new asymptotic symmetries <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>. Finally, this equivalence has also been extended to theories living in higher even dimensions <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref>, which is certainly relevant in the context of string theory.<ref type="foot" target="#foot_0">foot_0</ref> </p><p>The plethora of successes in these endeavors has given confidence that perhaps every soft theorem in Minkowski spacetime can be interpreted as the Ward identity for some asymptotic symmetry. However, there is a noticeable class of theories in which the bridge between soft theorems and asymptotic symmetries is missing -these are theories in odd spacetime dimensions. Soft theorems are true and have the same universal form in both even and odd dimensions.<ref type="foot" target="#foot_1">foot_1</ref> Yet, to our knowledge, there has been no successful attempt in showing the equivalence of soft theorems and asymptotic symmetries in odd dimensional theories. The fundamental issue lies in the qualitatively different properties of massless waves in even and odd dimensions. For instance, the massless Green's function is supported entirely on the light cone in even dimensions, whereas in odd dimensions it is supported everywhere inside the lightcone <ref type="bibr" target="#b51">[52,</ref><ref type="bibr" target="#b52">53]</ref>. This implies that for a complete understanding of waves in odd dimensions, one needs to study timelike infinity i ± as well as null infinity I ± . Another symptom of the same feature is that the near I ± expansions of massless fields is analytic in even dimensions (i.e. admits a Taylor series expansion in r -1 where r is the radius of the transverse sphere) and non-analytic in odd dimensions. These issues make the discussion of asymptotic symmetries particularly difficult in odd dimensions. Despite this, it would be very strange if no such relationship exists, implying that soft theorems in odd dimensions have a wholly different origin than those in even dimensions.</p><p>In this paper, we resolve the issues discussed in the previous paragraph and show that, at least in the simple example of a U(1) gauge theory with massless charged matter, the leading soft photon theorem is the Ward identity associated to large gauge symmetry in all dimensions, thereby unifying and generalizing the previous discussions from four and higher even dimensions to all dimensions. We organize the paper so that in section 2, we study U(1) gauge theories in d + 2 dimensions and discuss asymptotic fall-offs of both free and interacting gauge fields. In section 3, we impose a matching condition across spatial infinity i 0 and demonstrate that the resulting Ward identity implies the leading soft photon theorem. Finally, in section 4, we show that the matching condition implies conservation of a charge which generates large gauge transformations on the fields at I ± .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">U(1) gauge theories in d + dimensions</head><p>In this section, we introduce the conventions used in this paper and discuss the necessary background information regarding the equations of motion and the asymptotics of the U(1) gauge field.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Classical equations</head><p>We work in flat null coordinates x µ = (u, r, x a ), a = 1, . . . , d which are related to Cartesian coordinates X A by<ref type="foot" target="#foot_2">foot_2</ref> </p><formula xml:id="formula_1">X A = r 2 1 + x 2 + u r , 2x a , 1 -x 2 - u r , x 2 = δ ab x a x b .<label>(2.1)</label></formula><p>Lowercase Latin indices are raised and lowered by the Kronecker delta δ ab and δ ab , respectively. Using these coordinates, the metric of Minkowski spacetime becomes</p><formula xml:id="formula_2">ds 2 = η AB dX A dX B = -dudr + r 2 δ ab dx a dx b ,<label>(2.2)</label></formula><p>where η AB = (-1, 1, . . . , 1) is the standard Minkowski metric in Cartesian coordinates. The null boundaries I ± are located at r → ±∞ while keeping (u, x a ) fixed. On this hypersurface, x a is the stereographic coordinate on the celestial sphere. The point labeled by x a on I + is antipodal to the point with the same label on I -. The boundaries of I + (I -) are at u → ±∞ and are denoted by I + ± (I - ± ). In appendix A.1, we provide more details about this coordinate system.</p><p>A U(1) gauge theory is described by a field strength F µν and matter fields Ψ i . The matter fields couple to the field strength via a conserved U(1) current J µ . Dynamics of the field strength is described by Maxwell's equations and the Bianchi identity, given respectively by</p><formula xml:id="formula_3">e 2 J ν = ∇ µ F µν<label>(2.3)</label></formula><formula xml:id="formula_4">0 = ∂ α F µν + ∂ ν F αµ + ∂ µ F να .<label>(2.4)</label></formula><p>In flat null coordinates, ( <ref type="formula" target="#formula_3">2.3</ref>) takes the form</p><formula xml:id="formula_5">e 2 J u = 2∂ u F ur - 1 r 2 ∂ a F ua e 2 J r = -2∂ r F ur - 1 r 2 ∂ a F ra - 2d r F ur e 2 J a = -2∂ r F ua -2∂ u F ra - 2(d -2) r F ua - 1 r 2 ∂ b F ab .<label>(2.5)</label></formula><p>Furthermore, the Bianchi identity ( <ref type="formula" target="#formula_4">2.4</ref>) is solved by</p><formula xml:id="formula_6">F µν = ∂ µ A ν -∂ ν A µ , A µ ∼ A µ + ∂ µ ε, ε ∼ ε + 2π.<label>(2.6)</label></formula><p>Note that the theory is invariant under gauge transformations</p><formula xml:id="formula_7">A µ → A µ + ∂ µ ε, Ψ i → e iQ i ε Ψ i ,<label>(2.7)</label></formula><p>where Q i ∈ Z is the U(1) charge of the field Ψ i . Gauge transformations that vanish at infinity correspond to redundant descriptions of the same physical state and can be eliminated by a choice of gauge.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Asymptotics</head><p>In this section, we study the structure of the field strength near I ± . The general solution to ( <ref type="formula" target="#formula_3">2.3</ref>) and ( <ref type="formula" target="#formula_4">2.4</ref>) has the form</p><formula xml:id="formula_8">F µν = F (R) µν + F (C) µν .<label>(2.8)</label></formula><p>The radiative field F (R) µν satisfies the homogeneous Maxwell's equations (J ν = 0) and F (C) µν satisfies ( <ref type="formula" target="#formula_3">2.3</ref>). The separation of the field strength into a radiative part and a Coulombic part is fixed by either choosing a Green's function or by imposing boundary conditions on the fields. We will be interested in incoming (-) and outgoing (+) solutions to Maxwell's equations, whose radiative and Coulombic parts are denoted respectively by F (R±) µν and F (C±) µν . These fields have the following large r fall-offs near I ± :<ref type="foot" target="#foot_3">foot_3</ref> </p><formula xml:id="formula_9">F (R±) ur = O |r| -d 2 -1 + O |r| -d , F (C±) ur = O |r| -d F (R±) ra = O |r| -d 2 + O |r| -d , F (C±) ra = O |r| -d F (R±) ua = O |r| -d 2 +1 + O |r| -d+1 , F (C±) ua = O |r| -d+1 F (R±) ab = O |r| -d 2 +1 + O |r| -d+1 , F (C±) ab = O |r| -d+1 .<label>(2.9)</label></formula><p>The leading fall-offs for the radiative part are determined by noting that the electromagnetic stress tensor components T uu and T ua must fall off as |r| -d in order to have finite energymomentum and angular-momentum flux through I ± . Then, using the fact that T uu ∼ r -2 F ua F u a and T ua ∼ r -2 F ab F u b , we can determine the fall-offs for F ua and F ab . The remaining ones are then determined by Lorentz invariance. Similarly, the fall-offs for the Coulombic part are determined by Gauss's law, which also determines the fall-offs for the matter current</p><formula xml:id="formula_10">J u = O |r| -d , J a = O |r| -d , J r = O |r| -d-2 .<label>(2.10)</label></formula><p>We would now like to determine the precise large r expansion for both the radiative and the Coulombic fields.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.1">Radiative field</head><p>The radiative gauge field can be decomposed into creation and annihilation operators O (±) † a and O (±) a as follows:</p><formula xml:id="formula_11">F (R±) AB (X) = e d d+1 q (2π) d+1 1 2q 0 ε a AB ( q )O (±) a ( q )e iq•X + ε a AB ( q ) * O (±) † a ( q )e -iq•X ,<label>(2.11)</label></formula><p>where q 0 = | q | and ε a AB ( q ) are the d polarization tensors labeled by a and defined via</p><formula xml:id="formula_12">ε a AB ( q ) = i [q A ε a B ( q ) -q B ε a A ( q )] , q A ε a A ( q ) = 0, η AB ε a A ( q )ε b B ( q ) * = δ ab .<label>(2.12)</label></formula><p>In a quantum theory, the creation and annihilation modes satisfy the canonical commutation relation</p><formula xml:id="formula_13">O (±) a ( q ) , O (±) † b ( q ) = 2q 0 δ ab (2π) d+1 δ (d+1) ( q -q ).<label>(2.13)</label></formula><p>The equations in ( <ref type="formula" target="#formula_12">2.12</ref>) remain invariant under ε a A ( q ) → ε a A ( q ) + f a ( q )q A for any arbitrary functions f a . We use this to parameterize the on-shell photon momentum and polarization as<ref type="foot" target="#foot_4">foot_4</ref> </p><formula xml:id="formula_14">q A = ω qA , qA = 1 + y 2 2 , y a , 1 -y 2 2 , ε a A ( q ) = ∂ a qA = (-y a , δ a b , -y a ) .<label>(2.14)</label></formula><p>Substituting ( <ref type="formula" target="#formula_14">2.14</ref>) into ( <ref type="formula" target="#formula_11">2.11</ref>) and writing the integral over flat null coordinates, we obtain<ref type="foot" target="#foot_5">foot_5</ref> </p><formula xml:id="formula_15">F (R±) ur (u, r, x) = e 4(2π) d+1 r ∞ 0 dω d d y ω d-1 ∂ a O (±) a (ω, x + y)e -i 2 ωu-i 2 ωry 2 + c.c. .<label>(2.15)</label></formula><p>To determine the asymptotic expansion of ( <ref type="formula" target="#formula_15">2.15</ref>) at large |u| and |r|, we assume that the creation and annihilation modes admit a soft expansion of the form</p><formula xml:id="formula_16">∂ a O (±) a (ω, x + y) = ∞ n=0 ω n-1 ∂ a O (±,n) a (x + y) as ω → 0 + .<label>(2.16)</label></formula><p>This soft expansion allows for a simple pole in ω which is consistent with Weinberg's soft photon theorem. The corresponding "soft photon operator" is O (±,0) a (x).<ref type="foot" target="#foot_6">foot_6</ref> It will play a central role in the following section.</p><p>We further assume that the coefficients admit a Fourier transform</p><formula xml:id="formula_17">∂ a O (±,n) a (x + y) = d d k (2π) d e ik•(x+y) O (±) n (k) O (±) n (k) = d d y e -ik•y ∂ a O (±,n) a (y).<label>(2.17)</label></formula><p>Substituting ( <ref type="formula" target="#formula_16">2.16</ref>) and ( <ref type="formula" target="#formula_17">2.17</ref>) into ( <ref type="formula" target="#formula_15">2.15</ref>), we find</p><formula xml:id="formula_18">F (R±) ur (u, r, x) = e 2(2π) d 2 +1 ∞ n=0 d d k (2π) d k 2νn ie ik•x (ir) d+n O (±) n (k)(kz) -νn K νn (kz) + c.c. .<label>(2.18)</label></formula><p>where</p><formula xml:id="formula_19">z = √ iu √ ir , ν n = d 2 -1 + n,<label>(2.19)</label></formula><p>and K ν is the modified Bessel function of the second kind. We now consider the large |r| expansion of the field strength, or equivalently the small z limit. This takes a qualitatively different form depending on whether d is odd or even, so we consider the two cases separately.</p><p>Odd dimensions. When d ∈ 2Z+1, the order of the Bessel function is ν n = d 2 -1+n ∈ Z. For non-integer order, the asymptotic expansion near z = 0 of the Bessel function is</p><formula xml:id="formula_20">K ν (z) = π 2 csc(πν) ∞ s=0 1 Γ(s + 1) (z/2) 2s-ν Γ(1 + s -ν) - (z/2) 2s+ν Γ(1 + s + ν) , as z → 0.<label>(2.20)</label></formula><p>Substituting ( <ref type="formula" target="#formula_20">2.20</ref>) into ( <ref type="formula" target="#formula_18">2.18</ref>), we find</p><formula xml:id="formula_21">F (R±) ur (u, r, x) = e 8(2π) d 2 ∞ n=0 ∞ s=0 csc(πν n ) 2 2s-νn Γ(s + 1)Γ(1 + s -ν n ) × i(iu) s-νn (ir) d 2 +1+s d d k (2π) d k 2s O (±) n (k)e ik•x + c.c. - e 8(2π) d 2 ∞ n=0 ∞ s=0 csc(πν n ) 2 2s+νn Γ(s + 1)Γ(1 + s + ν n ) × i(iu) s (ir) d+n+s d d k (2π) d k 2(s+νn) O (±) n (k)e ik•x + c.c. .<label>(2.21)</label></formula><p>We can now use the inverse Fourier transform ( <ref type="formula" target="#formula_17">2.17</ref>) to go back to the momentum space variables. Evaluating</p><formula xml:id="formula_22">d d k (2π) d k 2κ O (±) n (k)e ik•x =          (-∂ 2 ) κ ∂ a O (±,n) a (x) κ ∈ Z 4 κ Γ d 2 + κ π d 2 Γ(-κ) d d y ∂ a O (±,n) a (y) [(x -y) 2 ] d 2 +κ κ ∈ Z<label>(2.22)</label></formula><p>where ∂ 2 = ∂ a ∂ a , and substituting into ( <ref type="formula" target="#formula_21">2.21</ref>), we obtain</p><formula xml:id="formula_23">F (R±) ur (u, r, x) = e 8(2π) d 2 ∞ n=0 ∞ s=0 2 νn-2s csc(πν n ) Γ(s + 1)Γ(1 + s -ν n ) × i(iu) s-νn (ir) d 2 +1+s (-∂ 2 ) s ∂ a O (±,n) a (x) + c.c. + e 2 d 2 +3 π d+1 ∞ n=0 ∞ s=0 (-1) s Γ d 2 + ν n + s 2 -νn Γ(s + 1) × i(iu) s (ir) d+n+s d d y ∂ a O (±,n) a (y) [(x -y) 2 ] d 2 +νn+s + c.c. .<label>(2.23)</label></formula><p>Even dimensions. When d ∈ 2Z, the order of the Bessel function is ν n = d 2 -1 + n ∈ Z. For integer order, the asymptotic expansion near z = 0 of the Bessel function is given by</p><formula xml:id="formula_24">K ν (z) = ν-1 s=0 (-1) s Γ(ν -s) z 2 2s-ν 2Γ(s + 1) + ∞ s=0 (-1) ν-1 log z 2 e γ E -1 2 (H s + H s+ν ) z 2 2s+ν Γ(s + 1)Γ(s + ν + 1) ,<label>(2.24)</label></formula><p>where γ E is the Euler-Mascheroni constant and H n is the n-th harmonic number (we define H 0 = 0). Substituting ( <ref type="formula" target="#formula_24">2.24</ref>) into ( <ref type="formula" target="#formula_18">2.18</ref>), we find</p><formula xml:id="formula_25">F (R±) ur (u, r, x) = e 2(2π) d 2 +1 ∞ n=0 νn-1 s=0 (-1) s Γ(ν n -s) 2 2s-νn+1 Γ(s + 1) i(iu) s-νn (ir) d 2 +1+s d d k (2π) d k 2s O (±) n (k)e ik•x + c.c. + e 2(2π) d 2 +1 ∞ n=0 ∞ s=0 2 -2s-νn (-1) νn-1 Γ(s + 1)Γ(s + ν n + 1) d d k (2π) d k 2(s+νn) ×   i(iu) s log k 2 √ iu √ ir e γ E -1 2 (H s + H s+νn ) (ir) d+n+s O (±) n (k)e ik•x + c.c.   .<label>(2.25)</label></formula><p>Again, we want to use the inverse Fourier transform ( <ref type="formula" target="#formula_17">2.17</ref>) to go back to the momentum space variables. Evaluating for κ ∈ Z</p><formula xml:id="formula_26">d d k (2π) d k 2κ log k O (±) n (k)e ik•x = (4π) d 2 Γ(κ + 1)Γ d 2 + κ (-1) κ+1 2 1-2κ d d y ∂ a O (±,n) a (y) [(x -y) 2 ] d 2 +κ ,<label>(2.26)</label></formula><p>we get upon substituting ( <ref type="formula" target="#formula_22">2.22</ref>) and ( <ref type="formula" target="#formula_26">2.26</ref>) into ( <ref type="formula" target="#formula_25">2.25</ref>)</p><formula xml:id="formula_27">F (R±) ur (u, r, x) = e 2(2π) d 2 +1 ∞ n=0 νn-1 s=0 (-1) s Γ(ν n -s) 2 2s-νn+1 Γ(s + 1) i(iu) s-νn (ir) d 2 +1+s (-∂ 2 ) s ∂ a O (±,n) a (x) + c.c. + e 8π ∞ n=0 ∞ s=0 (-1) s 2 d 2 +νn Γ d 2 + s + ν n Γ(s + 1) i(iu) s (ir) d+n+s d d y ∂ a O (±,n) a (y) [(x -y) 2 ] d 2 +νn+s + c.c. + e 2(2π) d 2 +1 ∞ n=0 ∞ s=0 2 -2s-νn (-1) νn-1 Γ(s + 1)Γ(s + ν n + 1) ×   i(iu) s log 1 2 √ iu √ ir e γ E -1 2 (H s + H s+νn ) (ir) d+n+s (-∂ 2 ) s+νn ∂ a O (±,n) a (x) + c.c.   .<label>(2.27)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.2">Coulombic field</head><p>Having performed the asymptotic expansion for the radiative field, we now turn to the Coulombic field. The large r expansion for this can be performed in two ways. First, we could follow strategy used in the previous section and start by writing the explicit solution for the Coulombic field using the massless scalar Green's function as</p><formula xml:id="formula_28">F (C±) AB (X) = e 2 d d+2 Y G (±) (X -Y ) [∂ A J B (Y ) -∂ B J A (Y )] ,<label>(2.28)</label></formula><p>where G (±) (X) is the retarded (-) or advanced (+) massless scalar Green's function satisfying ∂ 2 G (±) (X) = δ (d+2) (X). Explicitly,</p><formula xml:id="formula_29">G (±) (X) = 2θ(∓X 0 )Re [f d (X)], f d (X) = (-i) d+1 Γ d 2 4π d+2 2 (X 0 ) 2 -| X | 2 -i d 2 .<label>(2.29)</label></formula><p>Then, assuming an appropriate asymptotic expansion (near I ± ) for the conserved current (along with some other assumptions regarding the behaviour of the current near i ± ), we can use ( <ref type="formula" target="#formula_28">2.28</ref>) and ( <ref type="formula" target="#formula_29">2.29</ref>) to determine the large r expansion of the Coulombic field.</p><p>While possible, this is a tedious exercise and it is more convenient to determine the large r expansion of the Coulombic field as follows. We start by assuming that the Coulombic field admits a Taylor expansion of the following form near I ± (consistent with ( <ref type="formula" target="#formula_9">2.9</ref>)):</p><formula xml:id="formula_30">F (C±) ur (u, r, x) = ∞ n=0 F (C±,d+n) ur (u, x) |r| d+n , F (C±) ua (u, r, x) = ∞ n=0 F (C±,d-1+n) ua (u, x) |r| d-1+n F (C±) ra (u, r, x) = ∞ n=0 F (C±,d+n) ra (u, x) |r| d+n , F (C±) ab (u, r, x) = ∞ n=0 F (C±,d-1+n) ab (u, x) |r| d-1+n .<label>(2.30)</label></formula><p>Similarly, consistent with ( <ref type="formula" target="#formula_10">2.10</ref>), we also assume the expansion</p><formula xml:id="formula_31">J u (u, r, x) = ∞ n=0 J (±,d+n) u (u, x) |r| d+n J a (u, r, x) = ∞ n=0 J (±,d+n) a (u, x) |r| d+n J r (u, r, x) = ∞ n=0 J (±,d+2+n) r (u, x) |r| d+2+n .<label>(2.31)</label></formula><p>Substituting ( <ref type="formula" target="#formula_30">2.30</ref>) and ( <ref type="formula" target="#formula_31">2.31</ref>) into ( <ref type="formula" target="#formula_5">2.5</ref>), we can obtain equations order by order in the large r expansion. Solving these yields the full asymptotic expansion for the Coulombic field strength, though for our purposes, it suffices to obtain just the following leading order constraint equation (obtained from the u component of Maxwell's equations):</p><formula xml:id="formula_32">2∂ u F (C±,d) ur = e 2 J (±,d) u .<label>(2.32)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Weinberg's soft photon theorem</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Matching condition</head><p>As in four dimensions, we impose a matching condition on the radial electric field<ref type="foot" target="#foot_7">foot_7</ref> </p><formula xml:id="formula_34">F (+,d) ur I + - = -F (-,d) ur I - + .<label>(3.1)</label></formula><p>Recall that coordinate x labels antipodal points on the celestial spheres on I + and I -, so the above condition is an antipodal matching condition. To massage this matching condition into a more useful form, we define the "charge"</p><formula xml:id="formula_35">Q ± ε = ± 2 e 2 I ± ∓ d d x εF (±,d) ur ,<label>(3.2)</label></formula><p>where ε ≡ ε(x) is a function defined on the d-dimensional celestial sphere at I ± . As we will show in section 4 using the covariant phase space formalism, Q ± ε is the charge that generates large gauge transformations on I ± . We can therefore think of Q ± ε as measuring the local U(1) charge of the in and out state respectively. For ε = 1, this measures the total global U(1) charge. These charges can be determined in experiment by measuring the electromagnetic memory <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b45">46,</ref><ref type="bibr" target="#b56">57]</ref>.</p><p>The antipodal matching condition ( <ref type="formula" target="#formula_34">3.1</ref>) immediately implies</p><formula xml:id="formula_36">Q + ε = Q - ε .<label>(3.3)</label></formula><p>Breaking up the field strength into radiative and Coulombic pieces, we can write the charges as</p><formula xml:id="formula_37">Q ± ε = Q ±S ε + Q ±H ε ,<label>(3.4)</label></formula><p>where</p><formula xml:id="formula_38">Q ±S ε = ± 2 e 2 I ± ∓ d d x εF (R±,d) ur , Q ±H ε = ± 2 e 2 I ± ∓ d d x εF (C±,d) ur .<label>(3.5)</label></formula><p>Q ±S ε are the incoming and outgoing soft charges and Q ±H ε are the incoming and outgoing hard charges. Using ( <ref type="formula" target="#formula_32">2.32</ref>), the hard charges can be written as</p><formula xml:id="formula_39">Q ±H ε = - I ± dud d x εJ (±,d) u ± 2 e 2 I ± ± d d x εF (C±,d) ur .<label>(3.6)</label></formula><p>The second term above is the Coulombic field in the far past or far future and only receives contributions from stable massive particles. In this paper, we assume that our theory contains only stable massless states so this contribution vanishes. Thus, the hard charges become</p><formula xml:id="formula_40">Q ±H ε = - I ± dud d x εJ (±,d) u .<label>(3.7)</label></formula><p>To determine the soft charge in odd and even dimensions, we extract the coefficient of |r| -d in ( <ref type="formula" target="#formula_23">2.23</ref>) and ( <ref type="formula" target="#formula_27">2.27</ref>), respectively. In odd dimensions, we get</p><formula xml:id="formula_41">F (R±,d) ur = ± e(-1) d-1 2 Γ (d -1) 16π d+1 d d y ∂ a O (±,0) a (y) + ∂ a O (±,0) † a (y) [(x -y) 2 ] d-1 ,<label>(3.8)</label></formula><p>and for even dimensions, we get</p><formula xml:id="formula_42">F (R±,d) ur = - e (4π) d 2 +1 Γ d 2 ∞ n=1 2 n Γ(n) i(iu) -n (-∂ 2 ) d 2 -1 ∂ a O (±,n) a (x) + c.c. + ie(-1) d 2 Γ (d -1) 2 4-d π d d y ∂ a O (±,0) a (y) -∂ a O (±,0) † a (y) [(x -y) 2 ] d-1 + ie log |u|e 2γ E 4|r| -H d 2 -1 (4π) d 2 +1 Γ d 2 (-∂ 2 ) d 2 -1 ∂ a O (±,0) a (x) -∂ a O (±,0) † a (x) - e [Θ(u) -Θ(r)] 8(4π) d 2 Γ d 2 (-∂ 2 ) d 2 -1 ∂ a O (±,0) a (x) + ∂ a O (±,0) † a (x) .<label>(3.9)</label></formula><p>Notice that in even dimensions this coefficient has a logarithmic divergence, which means the soft charge is potentially ill-defined in even dimensions. To cancel this divergence, we impose<ref type="foot" target="#foot_8">foot_8</ref> </p><formula xml:id="formula_43">∂ a O (±,0) a (x) = ∂ a O (±,0) † a (x).<label>(3.10)</label></formula><p>We remark that this constraint implies that in even dimensions F (R±,d) ur I ± ± = 0, an assumption that was made previously in <ref type="bibr" target="#b9">[10]</ref>. The soft charge now takes the form</p><formula xml:id="formula_44">Q ±S ε =            1 (4π) d 2 Γ d 2 e d d x ε(x)(-∂ 2 ) d 2 -1 ∂ a O (±,0) a (x) d ∈ 2Z (-1) d-1 2 Γ (d -1) 4π d+1 e d d x ε(x) d d y ∂ a O (±,0) a (y) [(x -y) 2 ] d-1 d ∈ 2Z + 1.<label>(3.11)</label></formula><p>We conclude this section by bringing the soft charge into the same form for both odd and even dimensions by judiciously choosing ε for the remainder of the paper to be</p><formula xml:id="formula_45">ε(z) = f x (z) = (-∂ 2 ) log (x -z) 2 .<label>(3.12)</label></formula><p>Then, using the fact that in even dimensions</p><formula xml:id="formula_46">(-∂ 2 ) d 2 -1 f x (z) = (-∂ 2 ) d 2 log (x -z) 2 = -(4π) d 2 Γ d 2 δ (d) (x -z),<label>(3.13)</label></formula><p>and in odd dimensions</p><formula xml:id="formula_47">d d z f x (z) [(z -y) 2 ] d-1 = -2(d -2) d d z 1 [(z -y) 2 ] d-1 (x -z) 2 = - 4(-1) d-1 2 π d+1 Γ(d -1) δ (d) (x -y),<label>(3.14)</label></formula><p>the soft charge becomes for all spacetime dimensions<ref type="foot" target="#foot_9">foot_9</ref> </p><formula xml:id="formula_48">Q ±S fx = - 1 2e ∂ a O (±,0) a (x) + ∂ a O (±,0) † a (x) = - 1 e ∂ a O (±,0) a (x).<label>(3.15)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Ward identity</head><p>Thus far, our discussion of fields, matching conditions, and charges has been entirely classical. We now extend the discussion to a semi-classical theory and derive a Ward identity. In such a theory, the quantity of interest is the scattering amplitude, which is the overlap between the in state (living on i -∪ I -) and the out state (living on i + ∪ I + ), i.e.</p><formula xml:id="formula_49">A n = out | in ,<label>(3.16)</label></formula><p>where n is the total number of particles in the in and out state. The classical matching condition ( <ref type="formula" target="#formula_36">3.3</ref>) then translates to</p><formula xml:id="formula_50">out | Q + ε -Q - ε | in = 0.<label>(3.17)</label></formula><p>Using ( <ref type="formula" target="#formula_37">3.4</ref>), we can rewrite this as</p><formula xml:id="formula_51">out | Q +S ε -Q -S ε | in = -out | Q +H ε -Q -H ε | in .<label>(3.18)</label></formula><p>To simplify this, we evaluate the action of the hard charge on one-particle states, i.e. the right-hand-side of ( <ref type="formula" target="#formula_51">3.18</ref>). Let | Ψ i , p i , s i be a massless one-particle state with charge Q i , momentum p i , and spin s i . We may parameterize the momentum as</p><formula xml:id="formula_52">p A i = ω i 1 + x 2 i 2 , x a i , 1 -x 2 i 2 .<label>(3.19)</label></formula><p>The action of the conserved current on the bra and ket states is (see appendix B for an explicit calculation for scalar fields)</p><formula xml:id="formula_53">I - duJ (-,d) u (u, x)| Ψ i , p i , s i = | Ψ i , p i , s i Q i δ (d) (x -x i ) Ψ i , p i , s i | I + duJ (+,d) u (u, x) = Q i δ (d) (x -x i ) | Ψ i , p i , s i .<label>(3.20)</label></formula><p>It follows using ( <ref type="formula" target="#formula_40">3.7</ref>) that</p><formula xml:id="formula_54">Q -H ε | Ψ i , p i , s i = -Q i ε(x i )| Ψ i , p i , s i , Ψ i , p i |Q +H ε = -Q i ε(x i ) Ψ i , p i , s i |.<label>(3.21)</label></formula><p>Note that this is simply an infinitesimal large gauge transformation of the state. Setting ε = f x in ( <ref type="formula" target="#formula_51">3.18</ref>) and using ( <ref type="formula" target="#formula_48">3.15</ref>) and ( <ref type="formula" target="#formula_54">3.21</ref>), we derive the Ward identity</p><formula xml:id="formula_55">out | ∂ a O (+,0) a (x) -∂ a O (-,0) a (x) | in = e n i=1 η i Q i ∂ 2 log (x -x i ) 2 out | in .<label>(3.22)</label></formula><p>Here, η i = +1 for outgoing particles and η i = -1 for incoming particles.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Soft theorem</head><p>Finally, in this section we will show that the Ward identity ( <ref type="formula" target="#formula_55">3.22</ref>) is implied by Weinberg's leading soft photon theorem, which in standard momentum space variables reads</p><formula xml:id="formula_56">A out n+1 ( p γ , ε a ; p 1 , • • • , p n ) = e n i=1 η i Q i p i • ε a (p γ ) p i • p γ A n (p 1 , • • • , p n ) + O (p γ ) 0 ,<label>(3.23)</label></formula><p>where ε a is the polarization vector (not to be confused with the function ε(z) in ( <ref type="formula" target="#formula_45">3.12</ref>)). Note that the leading order term in the soft expansion is a simple pole in photon momentum p γ , and this is known as the Weinberg pole.<ref type="foot" target="#foot_10">foot_10</ref> We want to parametrize ( <ref type="formula" target="#formula_56">3.23</ref>) using the momentum space parameterization employed in the previous sections (see section A.2 for details), i.e.</p><formula xml:id="formula_57">p A γ = ω 1 + x 2 2 , x a , 1 -x 2 2 p A i = ω i 1 + x 2 i 2 , x a i , 1 -x 2 i 2 ε A a (p γ ) = x a , δ b a , -x a .<label>(3.24)</label></formula><p>In this parametrization, the soft factor corresponding to polarization a is</p><formula xml:id="formula_58">e n i=1 η i Q i p i • ε a (p γ ) p i • p γ = e ω n i=1 η i Q i ∂ a log (x -x i ) 2 .<label>(3.25)</label></formula><p>The last step is to recast the scattering amplitudes in in terms of the in and out states. The n-point amplitude on the right-hand-side is simply out | in . On the other hand, an outgoing photon corresponds to the insertion of the operator</p><formula xml:id="formula_59">O (+) a (ω, x) - O (-)</formula><p>a (ω, x) (see appendix C for details). The coefficient of ω -1 in ( <ref type="formula" target="#formula_58">3.25</ref>) is extracted by first multiplying by ω and then taking a ω → 0 limit. Using ( <ref type="formula" target="#formula_16">2.16</ref>), we find that this operator is</p><formula xml:id="formula_60">lim ω→0 ωO (+) a (ω, x) -ωO (-) a (ω, x) = O (+,0) a (x) -O (-,0) a (x).<label>(3.26)</label></formula><p>Substituting this into an S-matrix element gives precisely the left-hand-side of ( <ref type="formula" target="#formula_56">3.23</ref>), and using ( <ref type="formula" target="#formula_58">3.25</ref>), we see that the soft theorem can be written as</p><formula xml:id="formula_61">out | O (+,0) a (x) -O (-,0) a (x) | in = e n i=1 η i Q i ∂ a log (x -x i ) 2 out | in .<label>(3.27)</label></formula><p>Acting on both sides with ∂ a and using ( <ref type="formula" target="#formula_43">3.10</ref>), we immediately reproduce the Ward identity ( <ref type="formula" target="#formula_34">3.22</ref>), completing our demonstration that Weinberg's leading soft photon theorem implies the Ward identity.</p><p>We conclude this section with a few comments.</p><p>• We have shown above that Weinberg's leading soft photon theorem for an outgoing soft photon implies the Ward identity. However, we could have just as well chosen to work with an incoming soft photon, in which case the soft theorem reads</p><formula xml:id="formula_62">A in n+1 ( p γ , ε a ; p 1 , • • • , p n ) = -e n i=1 η i Q i p i • ε a (p γ ) p i • p γ A n (p 1 , • • • , p n ) + O (p γ ) 0 ,<label>(3.28)</label></formula><p>and differs from ( <ref type="formula" target="#formula_56">3.23</ref>) by only a relative sign. The left-hand-side of the above equation corresponds to the insertion of</p><formula xml:id="formula_63">O (-) † a (ω, x) -O (+) † a (ω, x)</formula><p>. Multiplying by ω, taking the ω → 0 limit, and using ( <ref type="formula" target="#formula_43">3.10</ref>), we immediately find that the outgoing soft photon theorem ( <ref type="formula" target="#formula_56">3.23</ref>) implies the incoming soft photon theorem, and vice versa.</p><p>• We have not yet demonstrated the equivalence between the Ward identity and Weinberg's leading soft photon theorem. Instead, we have only established the fact that the soft theorem implies the Ward identity. To prove the converse, we need to use the additional constraint that</p><formula xml:id="formula_64">∂ a O (±,0) b (x) -∂ b O (±,0) a (x) = 0.<label>(3.29)</label></formula><p>This constraint is obviously true from the standpoint of the soft theorem ( <ref type="formula" target="#formula_61">3.27</ref>),<ref type="foot" target="#foot_11">foot_11</ref> and is solved by</p><formula xml:id="formula_65">O (±,0) a (x) = ∂ a S (±) (x).<label>(3.30)</label></formula><p>We can then derive the Ward identity for the insertion of S (±) (x), which is given by<ref type="foot" target="#foot_12">foot_12</ref> </p><formula xml:id="formula_66">out | S (+) (x) -S (-) (x) | in = e n i=1 η i Q i log (x -x i ) 2 out | in .<label>(3.31)</label></formula><p>Acting on both sides with ∂ a and using ( <ref type="formula" target="#formula_65">3.30</ref>), we immediately reproduce the soft theorem ( <ref type="formula" target="#formula_61">3.27</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Large gauge symmetry</head><p>In the previous section, we have shown that the Ward identity corresponding to the charge Q ± ε is equivalent Weinberg's soft photon theorem. We now show that this charge generates large gauge transformations on I ± using the covariant phase space formalism <ref type="bibr" target="#b57">[58]</ref>.<ref type="foot" target="#foot_13">foot_13</ref> We have already done this for the hard charge, so it remains to show that the soft charge (i.e. the radiative field) acts on the gauge field to generate large gauge transformations. For this purpose, we can focus simply on pure U(1) gauge theory. This is described by the action</p><formula xml:id="formula_67">S[A] = - 1 2e 2 M F ∧ * F, F = dA, A ∼ A + dε.<label>(4.1)</label></formula><p>Varying this, we find</p><formula xml:id="formula_68">δS = - 1 e 2 M δA ∧ (d * F ) - 1 e 2 ∂M δA ∧ * F.<label>(4.2)</label></formula><p>The bulk term gives us the equations of motion d * F = 0. From the boundary term we can read off the canonical one-form on a Cauchy surface Σ as</p><formula xml:id="formula_69">Θ Σ (δ) = 1 e 2 Σ δA ∧ * F.<label>(4.3)</label></formula><p>If we restrict A to satisfy the equations of motion and δA to satisfy the linearized equations of motion, then Θ Σ can be understood as a one-form at the point A in the phase space Γ. The presymplectic form on Σ is</p><formula xml:id="formula_70">Ω Σ (δ, δ ) = δΘ Σ (δ ) -δ Θ Σ (δ) = 1 e 2 Σ δ A ∧ * δF -δA ∧ * δ F .<label>(4.4)</label></formula><p>At this point, we recall that the gauge field A is determined only up to a gauge choice ( <ref type="formula" target="#formula_67">4.1</ref>). To keep track of this, we separate the gauge field into two pieces</p><formula xml:id="formula_71">A = Ã + dψ,<label>(4.5)</label></formula><p>where Ã satisfies a chosen gauge-fixing condition,<ref type="foot" target="#foot_14">foot_14</ref> </p><formula xml:id="formula_72">f [ Ã] = 0,<label>(4.6)</label></formula><p>and gauge transformations simply involve</p><formula xml:id="formula_73">ψ → ψ + ε.<label>(4.7)</label></formula><p>It follows that the symplectic form is</p><formula xml:id="formula_74">Ω Σ (δ, δ ) = 1 e 2 Σ δ Ã ∧ * δ F -δ Ã ∧ * δ F + 1 e 2 ∂Σ δ ψ * δF -δψ * δ F .<label>(4.8)</label></formula><p>We note that modes for which ψ| ∂Σ = 0 cannot appear in the symplectic form and need to be fixed in order to have a non-degenerate symplectic form. We assume that this has been done, and so the remaining boundary value of ψ symplectically couples to the boundary field strength.</p><p>The charge that generates a particular transformation ∆ on the phase space satisfies</p><formula xml:id="formula_75">δQ Σ ∆ = Ω Σ (δ, ∆).<label>(4.9)</label></formula><p>In particular, for gauge transformations δ ε Ã = δ ε F = 0 and δ ε ψ = ε, we get</p><formula xml:id="formula_76">Q Σ ε = 1 e 2 ∂Σ ε * F.<label>(4.10)</label></formula><p>Note that the charge is non-zero only if ε| ∂Σ = 0, so this means Q Σ ε is the generator of large gauge transformations. To determine its form on I ± , we note that the directed area element on I ± ∓ is</p><formula xml:id="formula_77">dS ± µν = ±d d x|r| d δ r [µ δ u ν] .<label>(4.11)</label></formula><p>The ± sign arises from the outward-pointing null vector, which on I ± is ∓∂ µ r. Thus, we have</p><formula xml:id="formula_78">Q ± ε = ± 2 e 2 I ± ∓ d d x εF (±,d) ur ,<label>(4.12)</label></formula><p>which is precisely the charge ( <ref type="formula" target="#formula_35">3.2</ref>).</p></div>			
+<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0"><p>More generally, soft theorems and asymptotic symmetries are also equivalent to memory effects which have been explored in<ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref><ref type="bibr" target="#b45">[46]</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref>, but this will be beyond the scope of this paper (see<ref type="bibr" target="#b8">[9]</ref> for a review).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1"><p>The standard derivation of these theorems in perturbation theory relies largely on the fact that the free field propagator has the form p -2 , which is true in any dimension.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2"><p>These coordinates were utilized in the case of four dimensions in<ref type="bibr" target="#b19">[20]</ref> and in<ref type="bibr" target="#b53">[54]</ref> in higher dimensions.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3"><p>As we shall see in (2.23), in odd dimensions, the radiative field has an expansion in both integer and half-integer powers of |r|, as indicated in the first column of (2.9). In even dimensions, we obtain later in (2.27) that the radiative field has an expansion in integer powers of |r|, though non-analytic terms of the form log r are also present (not shown in (2.9)).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4"><p>We discuss a more general parameterization of off-shell momenta in appendix A.2.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5"><p>Similar mode expansions exist for the other components of the field strength, but we won't need them here.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6"><p>This operator was denoted by Sa(x) in<ref type="bibr" target="#b53">[54]</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_7"><p>The unusual sign is due to the coordinate choice. To see that this is correct, one can verify it for the Liénard-Wiechert potential for a static charge, given by A0( X) = c| X| 1-d and A( X) = 0. Moving to flat null coordinates, we find Fur = c 2 1 + x 2 ∂u -∂r X 1-d = 2 d-1 c(d -1)(r + rx 2 -u) [u 2 -2ur(1 -x 2 ) + r 2 (1 + x 2 ) 2 ] d+1 2 . This implies lim r→±∞ |r| d Fur = ±2 d-1 c(d -1)(1 + x 2 ) -d .For more extensive discussions on the antipodal matching condition, we refer the reader to<ref type="bibr" target="#b54">[55,</ref><ref type="bibr" target="#b55">56]</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_8"><p>Note that (3.10) also implies that we can no longer think of O (±,0) † a as a creation operator. Rather, it is an operator that shifts the vacuum. From the perspective of the path integral, this condition is equivalent to continuity of the S-matrix at ω = 0, i.e. the zero energy limit of the operators does not depend on whether we approach zero from the positive or negative real axis (see<ref type="bibr" target="#b11">[12]</ref>).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_9"><p>Although we picked ε = fx in (3.12), we can recover the soft charge Q ±S ε for general ε from (3.15) by using (3.11) to write Q ±S ε as an appropriate linear combination of Q ±S fx ∼ ∂ a O (±,0) a . This means we didn't lose any generality by choosing ε = fx, and the Ward identity we derive below is also completely general.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="11" xml:id="foot_10"><p>The first subleading term in the soft expansion is also universal and is related to an asymptotic symmetry, but this is beyond the scope of this paper.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="12" xml:id="foot_11"><p>This can be derived from a careful study of the symplectic form, which will be done in detail in forthcoming work. This constraint was also discussed in<ref type="bibr" target="#b8">[9]</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="13" xml:id="foot_12"><p>To do this, we choose ε(z) = log (x -z) 2 in the Ward identity (3.18).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="14" xml:id="foot_13"><p>A recent analysis of the charge generating large gauge transformations at spatial infinity in all dimensions d ≥ 4 is given in<ref type="bibr" target="#b58">[59]</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="15" xml:id="foot_14"><p>In our work, it is often convenient to choose f [ Ã] = Ãu.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="16" xml:id="foot_15"><p>To show this, we additionally assume that lim X 0 →±∞ ∂0Oa(X 0 , pγ) = 0 (see Schwartz <ref type="bibr" target="#b59">[60]</ref> for a discussion on this).</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>We would like to thank <rs type="person">Eduardo Casali</rs>, <rs type="person">Indranil Halder</rs>, <rs type="person">Daniel Kapec</rs>, <rs type="person">Alok Laddha</rs>, <rs type="person">Monica Pate</rs>, and <rs type="person">Kartik Prabhu</rs> for useful conversations, and especially <rs type="person">Andrew Strominger</rs> for reading a preprint and offering helpful comments. TH is grateful to be supported by <rs type="funder">U.S. Department of Energy</rs> grant <rs type="grantNumber">DE-SC0009999</rs> and by funds from the <rs type="funder">University of California</rs>. PM gratefully acknowledges support from <rs type="funder">U.S. Department of Energy</rs> grant <rs type="grantNumber">DE-SC0009988</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_C6M9zjj">
+					<idno type="grant-number">DE-SC0009999</idno>
+				</org>
+				<org type="funding" xml:id="_zPqzJqJ">
+					<idno type="grant-number">DE-SC0009988</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A Coordinate conventions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.1 Position space</head><p>In this subsection, we will gain some intuition regarding the flat null coordinates utilized throughout this paper by collecting miscellaneous facts about them. Flat null coordinates x µ = (u, x a , r) are related to Cartesian coordinates X A via</p><p>The inverse relation is</p><p>Though the coordinates are ill-defined on the hypersurface X 0 + X d+1 = 0 where r = 0, away from this point, the metric is well defined and takes the form</p><p>where η AB = (-1, 1, . . . , 1) is the usual Minkowski metric in Cartesian coordinates. The range of the coordinates is</p><p>We note</p><p>and</p><p>The volume form is</p><p>The nonvanishing metric components and its inverse are</p><p>The nonvanishing Christoffel symbols are</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.1.1 Boundaries of Minkowski spacetime</head><p>To determine the location of the boundaries of Minkowski spacetime in flat null coordinates, we relate them to Eddington-Finkelstein coordinates (U, V, λ, Θ), which are</p><p>Note that the radial distance is simply expressed as R ≡ X a X a + X d+1 2 = V -U 2 . The coordinate ranges are</p><p>Together, the coordinates (λ, Θ) parametrize S d . λ ∈ (0, 1) is the northern hemisphere and λ ∈ (-1, 0) is the southern hemisphere. λ = 0 is the equator, λ = +1 is the north pole and λ = -1 is the south pole. Let λ ap , Θ ap be the antipodal point to (λ, Θ). Then</p><p>Furthermore, in terms of the flat null coordinates, we have</p><p>We can now determine the boundaries of Minkowski spacetime in flat null coordinates.</p><p>1. Future null infinity I + : this is located at V → +∞ while keeping (U, λ, Θ) fixed. In this limit,</p><p>Thus, we find that I + is located at r → ∞. At this point, x a are the stereographic coordinates on S d . The north pole (λ = 1) is at |x a | = 0, the south pole (λ = -1) is at |x a | = ∞, and the equator (λ = 0) is on the unit circle x a x a = 1. u is the null generator of this surface.</p><p>2. Past null infinity I -: this is located at U → -∞ while keeping (V, λ, Θ) fixed. In this limit,</p><p>Thus, we find that I -is located at r → -∞. Again, x a are the stereographic coordinates on S d , but now with an antipodal identification. The north pole (λ = 1) is at |x a | = ∞, the south pole (λ = -1) is at |x a | = 0, and the equator (λ = 0) is on the unit circle x a x a = 1. u is the null generator of this surface.</p><p>3. Future timelike infinity i + : this is located at X 0 → +∞ while keeping (R, λ, Θ) fixed. In this limit,</p><p>Thus, we find that i + located at u, r → ∞ and x a → 0 while keeping u -r and rx a fixed.</p><p>4. Past timelike infinity i -: this is located at X 0 → -∞ while keeping (R, λ, Θ) fixed. In this limit,</p><p>Thus, we find that i -located at u, r → -∞ and x a → 0 while keeping u -r and rx a fixed.</p><p>5. Spatial infinity i 0 : this is located at R → +∞ while keeping (X 0 , λ, Θ) fixed. In this limit,</p><p>This limit corresponds to ur → -∞ while keeping u r and x a fixed. In particular, on the northern hemisphere, we take u → -∞ and r → +∞, whereas on the southern hemisphere, we take u → +∞ and r → -∞.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.1.2 Isometries</head><p>The isometries of R 1,d+1 are the d + 2 translations and the O(1, d + 1) rotations. The corresponding Killing vectors in flat null coordinates are</p><p>where ψ(x) = 1 d ∂ a Y a (x), and f (x) and Y a (x) satisfy the equations</p><p>This implies that Y a (x) is the conformal Killing vector of R d (which manifests the isomorphism O(1, d + 1) ∼ = conf(R d )). The explicit solutions to this are</p><p>Thus, ψ(x) = λ -2ζ • x. The O(d) rotations have ψ(x) = 0 (generated by χ a and ω a b ), whereas the boosts in O(1, d + 1) have ψ(x) = 0 (generated by λ and ζ a ). Finally, we remark that the Lie algebra of the Killing vectors (the Poincaré algebra) takes the form</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2 Momentum space</head><p>In this subsection, we observe a general parameterization of off-shell momenta and list some useful formulae.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2.1 Off-shell momentum</head><p>Following closely the relationship between flat null coordinates and Cartesian coordinates, we parameterize an off-shell momentum as</p><p>Inversely, µ = -q A q A , y a = q a (q 0 + q d+1 ) -1 , and ω = q 0 + q d+1 . This parameterization is valid everywhere except when ω = q 0 + q d+1 = 0. The range of these coordinates is µ ∈ R, y a ∈ R d and ω ∈ R \ {0}. The momentum space volume form is</p><p>This implies that the off-shell integration measure and Dirac delta function are</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2.2 On-shell momentum and polarization vectors</head><p>The on-shell condition on a momentum implies</p><p>The on-shell integration measure and Dirac delta function are</p><p>The d + 1 polarizations of a massive particle are taken to be</p><p>In the massless limit ε A ω → ω -1 q A . Thus, in this limit, this is the pure gauge mode and does not contribute to physical amplitudes. For future reference, we collect the formulae</p><p>We also require the components of the momentum and polarization vectors in flat null coordinates</p><p>For massless vectors, we note from the formulae above that our polarization choice is equivalent to the gauge choice A u = 0. The polarization tensors for the massless field strength then has the following components in flat null coordinates</p><p>where I ab (x -y) is the conformally invariant tensor</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B Action of the hard charge</head><p>In this section, we show that the hard charge generates large gauge transformations on the matter states by an explicit computation for a minimally coupled scalar field Φ with U(1) charge Q ∈ Z. The corresponding conserved current is</p><p>The product of fields is defined via normal ordering.</p><p>The mode expansion for the outgoing/incoming scalar field is</p><p>where</p><p>Moving to flat null coordinates and using ( <ref type="formula">2.14</ref>), we find</p><p>where</p><p>The leading order term in the large r expansion of the scalar field is (this is determined following precisely the method of section 2.2.1)</p><p>We then determine that</p><p>An outgoing or incoming scalar state of charge Q is</p><p>Using these definitions, we find</p><p>The action of the hard charge ( <ref type="formula">3.7</ref>) is then</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C Soft photon operator</head><p>We describe how to obtain the soft photon insertion operator in an S-matrix using the path integral approach. First, the n-point amplitude is</p><p>This is computed in the path integral formalism by computing off-shell momentum space correlators and taking an appropriate on-shell limit. For instance, for an outgoing scalar particle with momentum p, we insert</p><p>Here, Φ(X) is an operator that creates (among other things) a scalar one-particle state, and Z Φ is the corresponding wave-function renormalization factor. The amplitude involving an extra outgoing photon, i.e. A out n+1 from ( <ref type="formula">3.23</ref>), similarly corresponds to the insertion of the operator</p><p>To understand what this operator is in terms of the in and out creation/annihilation operators, we expand the gauge field A A (x) in terms of time-dependent mode coefficients:</p><p>Using this, we find iZ e lim</p><p>where lim X 0 →±∞ O a (X 0 , p γ ) = Z -1 O (±) a ( p γ ). 16 For photons with non-zero energy, the operator O (-) a ( p γ ) annihilates the in vacuum (assuming there are no other incoming photons with the same momentum, i.e. assuming no forward scattering) so that S-matrices with energetic outgoing photons correspond to insertions of O (+) a ( p γ ). On the other hand, owing to ( <ref type="formula">3.10</ref>), O (-,0) a (x) no longer annihilates the vacuum; rather, it creates an incoming soft photon (to be more precise, it produces a new vacuum state). Therefore, it follows that the operator generating the soft limit must include both terms from (C.5) and is given by</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bloch</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nordsieck</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Note on the radiation field of the electron</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="1937">1937</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="54" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nordsieck</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">The low frequency radiation of a scattered electron</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="1937">1937</date>
+				<biblScope unit="volume">52</biblScope>
+				<biblScope unit="page" from="59" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Low</surname>
+					<forename type="first">F</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Scattering of light of very low frequency by systems of spin 1/2</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="1954">1954</date>
+				<biblScope unit="volume">96</biblScope>
+				<biblScope unit="page" from="1428" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gell-Mann</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Goldberger</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Scattering of low-energy photons by particles of spin 1/2</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="1954">1954</date>
+				<biblScope unit="volume">96</biblScope>
+				<biblScope unit="page" from="1433" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Low</surname>
+					<forename type="first">F</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Bremsstrahlung of very low-energy quanta in elementary particle collisions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="1958">1958</date>
+				<biblScope unit="volume">110</biblScope>
+				<biblScope unit="page" from="974" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yennie</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Frautschi</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suura</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">The infrared divergence phenomena and high-energy processes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annals Phys.</title>
+			<imprint>
+				<date when="1961">1961</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="379" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Weinberg</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Infrared photons and gravitons</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev.</title>
+			<imprint>
+				<date when="140">140</date>
+				<biblScope unit="volume">1965</biblScope>
+				<biblScope unit="page" from="B516"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b7">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Weinberg</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="m">The quantum theory of fields. Volume 1: foundations</title>
+			<imprint>
+				<publisher>Cambridge University Press</publisher>
+				<pubPlace>Cambridge U.K.</pubPlace>
+				<date when="2005">2005</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Lectures on the infrared structure of gravity and gauge theory</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Porfyriadis</surname>
+					<forename type="first">A</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">New symmetries of massless QED</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="112" to="112"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mohd</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A note on asymptotic symmetries and soft-photon theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">060</biblScope>
+				<biblScope unit="page" from="02" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">2D Kac-Moody symmetry of 4D Yang-Mills theory</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="137" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries of QED and Weinberg’s soft photon theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">07</biblScope>
+				<biblScope unit="page" from="115" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kapec</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pate</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">New symmetries of QED</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Theor. Math. Phys.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="1769" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Magnetic corrections to the soft photon theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. Lett.</title>
+			<imprint>
+				<date when="116">116</date>
+				<biblScope unit="volume">2016</biblScope>
+				<biblScope unit="page" from="031602" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gabai</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sever</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Large gauge symmetries and asymptotic states in QED</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="095" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lysov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">BMS supertranslations and Weinberg’s soft graviton theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">05</biblScope>
+				<biblScope unit="page" from="151" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">New symmetries for the gravitational S-matrix</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">04</biblScope>
+				<biblScope unit="page" from="076" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries of gravity and soft theorems for massive particles</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="094" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dumitrescu</surname>
+					<forename type="first">T</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>He</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Infinite-dimensional fermionic symmetry in supersymmetric gauge theories</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cachazo</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Evidence for a new soft graviton theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schwab</surname>
+					<forename type="first">B</forename><forename type="middle">U</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Subleading soft factor for string disk amplitudes</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">08</biblScope>
+				<biblScope unit="page" from="062" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kalousios</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rojas</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Next to subleading soft-graviton theorem in arbitrary dimensions</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">01</biblScope>
+				<biblScope unit="page" from="107" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lüo</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mastrolia</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Torres Bobadilla</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Subleading soft behavior of QCD amplitudes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">91</biblScope>
+				<biblScope unit="page" from="065018" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Di Vecchia</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marotta</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mojaza</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Subsubleading soft theorems of gravitons and dilatons in the bosonic string</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">06</biblScope>
+				<biblScope unit="page" from="054" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sen</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Subleading soft graviton theorem for loop amplitudes</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="123" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries and subleading soft photon theorem in effective field theories</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">05</biblScope>
+				<biblScope unit="page" from="132" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hirai</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sugishita</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Conservation laws from asymptotic symmetry and subleading charges in QED</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">07</biblScope>
+				<biblScope unit="page" from="122" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="proceeding" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barnich</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Troessaert</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Supertranslations call for superrotations</title>
+		</analytic>
+		<monogr>
+			<title level="m">PoS(CNCFG2010)010</title>
+			<imprint>
+				<biblScope unit="page" from="010" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kapec</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lysov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pasterski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Semiclassical Virasoro symmetry of the quantum gravity S-matrix</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">08</biblScope>
+				<biblScope unit="page" from="058" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries and subleading soft graviton theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">90</biblScope>
+				<biblScope unit="page" from="124028" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lysov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pasterski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Low’s subleading soft theorem as a symmetry of QED</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. Lett.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">113</biblScope>
+				<biblScope unit="page" from="111601" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Sub-subleading soft gravitons: new symmetries of quantum gravity?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Lett. B</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">764</biblScope>
+				<biblScope unit="page" from="218" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Subleading soft photons and large gauge transformations</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="012" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Conde</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Remarks on asymptotic symmetries and the subleading soft photon theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">95</biblScope>
+				<biblScope unit="page" from="021701" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Sub-subleading soft gravitons and large diffeomorphisms</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">01</biblScope>
+				<biblScope unit="page" from="036" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Conde</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mao</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">BMS supertranslations and not so soft gravitons</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">05</biblScope>
+				<biblScope unit="page" from="060" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Laddha</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sen</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Sub-subleading soft graviton theorem in generic theories of quantum gravity</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="065" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Schwab</surname>
+					<forename type="first">B</forename><forename type="middle">U</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Volovich</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Subleading soft theorem in arbitrary dimensions from scattering equations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. Lett.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">113</biblScope>
+				<biblScope unit="page" from="101601" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kapec</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lysov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries of massless QED in even dimensions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Adv. Theor. Math. Phys.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="1747" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kapec</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lysov</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pasterski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Higher-dimensional supertranslations and Weinberg’s soft graviton theorem</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Thorne</surname>
+					<forename type="first">K</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Gravitational-wave bursts with memory: the Christodoulou effect</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="520" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhiboedov</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Gravitational memory, BMS supertranslations and soft theorems</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">01</biblScope>
+				<biblScope unit="page" from="086" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pasterski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries and electromagnetic memory</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">09</biblScope>
+				<biblScope unit="page" from="154" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bieri</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Garfinkle</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yau</surname>
+					<forename>S-T</forename>
+				</persName>
+			</author>
+			<title level="a">Gravitational waves and their memory in general relativity</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Susskind</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<title level="a">Electromagnetic memory</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hotta</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Trevison</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamaguchi</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Gravitational memory charges of supertranslation and superrotation on Rindler horizons</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">94</biblScope>
+				<biblScope unit="page" from="083001" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hollands</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ishibashi</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wald</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">BMS supertranslations and memory in four and higher dimensions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Class. Quant. Grav.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="155005" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pate</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raclariu</surname>
+					<forename>A-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Color memory: a Yang-Mills analog of gravitational wave memory</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. Lett.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">119</biblScope>
+				<biblScope unit="page" from="261602" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pate</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Raclariu</surname>
+					<forename>A-M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Strominger</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Gravitational memory in higher dimensions</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">06</biblScope>
+				<biblScope unit="page" from="138" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ball</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Measuring color memory in a color glass condensate at electron–ion colliders</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annals Phys.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">407</biblScope>
+				<biblScope unit="page" from="15" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Balazs</surname>
+					<forename type="first">N</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<title level="a">Wave propagation in even and odd dimensional spaces</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Phys. Soc. A</title>
+			<imprint>
+				<date when="1955">1955</date>
+				<biblScope unit="volume">68</biblScope>
+				<biblScope unit="page" from="521" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Soodak</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tiersten</surname>
+					<forename type="first">M</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">Wakes and waves in n dimensions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Amer. J. Phys.</title>
+			<imprint>
+				<date when="1993">1993</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="395" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kapec</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mitra</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">A d-dimensional stress tensor for Minkd+2 gravity</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">05</biblScope>
+				<biblScope unit="page" from="186" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b54">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Campiglia</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Eyheralde</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic U(1) charges at spatial infinity</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page" from="168" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Prabhu</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Conservation of asymptotic charges from past to future null infinity: Maxwell fields</title>
+		</analytic>
+		<monogr>
+			<title level="j">JHEP</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="113" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yoshida</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Soda</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Electromagnetic memory effect induced by axion dark matter</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">96</biblScope>
+				<biblScope unit="page" from="064005" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wald</surname>
+					<forename type="first">R</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zoupas</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">A general definition of ‘conserved quantities’ in general relativity and other theories of gravity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Phys. Rev. D</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">61</biblScope>
+				<biblScope unit="page" from="084027" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Esmaeili</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Asymptotic symmetries of maxwell theory in arbitrary dimensions at spatial infinity</title>
+		</analytic>
+		<monogr>
+			<title level="j">arXiv</title>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b59">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Schwartz</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="m">Quantum field theory and the standard model</title>
+			<imprint>
+				<publisher>Cambridge University Press</publisher>
+				<pubPlace>Cambridge U.K.</pubPlace>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

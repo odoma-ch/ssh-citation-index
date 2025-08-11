@@ -1,0 +1,1628 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Food and Cultural Traits in Coastal Northern Finnmark in the 14th-19th Centuries</title>
+
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Tailor &amp; Francis</publisher>
+				<availability status="unknown"><licence/></availability>
+
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Markus</forename><surname>Fjellström</surname></persName>
+							<email>markus.fjellstrom@arklab.su.se</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Archaeological Research Laboratory</orgName>
+								<orgName type="institution">Stockholm University</orgName>
+								<address>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Gunilla</forename><surname>Eriksson</surname></persName>
+							<email>gunilla.eriksson@arklab.su.se</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Archaeological Research Laboratory</orgName>
+								<orgName type="institution">Stockholm University</orgName>
+								<address>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kerstin</forename><surname>Lidén</surname></persName>
+							<email>kerstin.liden@arklab.su.se</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Archaeological Research Laboratory</orgName>
+								<orgName type="institution">Stockholm University</orgName>
+								<address>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Asgeir</forename><surname>Svestad</surname></persName>
+							<email>asgeir.svestad@uit.no</email>
+							<affiliation key="aff1">
+								<orgName type="institution" key="instit1">UiT</orgName>
+								<orgName type="institution" key="instit2">The Arctic University of Norway</orgName>
+								<address>
+									<settlement>Tromsø</settlement>
+									<region>Norway</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Food and Cultural Traits in Coastal Northern Finnmark in the 14th-19th Centuries</title>
+					</analytic>
+					<monogr>
+					<title level="j" type="main">Norwegian Archaeological Review</title>
+						<idno type="ISSN">0029-3652</idno>
+						<idno type="eISSN">1502-7678</idno>
+						<imprint>
+							<biblScope unit="volume">52</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<biblScope unit="page" from="20" to="40"/>
+							<date type="published" when="2019-07-06">06 Jul 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">0D7E5BCDC316CFC4D71198A2B3A90D8E</idno>
+					<idno type="DOI">10.1080/00293652.2019.1621366</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this study, we used stable isotope analysis and radiocarbon dating to study diet, mobility and chronology in two late medieval/historical coastal populations in northern Norway. We have shown that the individuals buried at Kirkegårdsøya date between 1331 and 1953 cal AD and had a homogenous marine diet, whereas the individuals buried at Gullholmen had a more heterogeneous diet, consisting of both terrestrial and marine proteins and date between 1661 and 1953 cal AD. We have demonstrated that reindeer protein was not an important part of their diet, and also discussed the importance of correcting for the marine reservoir effect in populations with a coastal subsistence. Our interpretation is that individuals buried at Kirkegårdsøya primarily belonged to a Coastal Sámi community, although Norwegians with a similar diet (and likely comprising a minor population in the area) cannot be ruled out. The more varied diet and mobility at Gullholmen could, as predicted, indicate that these individuals may have had a more diverse cultural affinity.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Northern Fennoscandia is, and has been, a culturally heterogeneous landscape since it was first settled (e.g. <ref type="bibr" target="#b15">Eidlitz 1969</ref><ref type="bibr" target="#b42">, Mulk 1995</ref><ref type="bibr" target="#b74">, Vorren 1998</ref><ref type="bibr" target="#b24">, Hedman 2003</ref><ref type="bibr" target="#b21">, Hansen and Olsen 2004</ref><ref type="bibr" target="#b22">, 2014</ref><ref type="bibr" target="#b11">, Bruun 2007</ref><ref type="bibr" target="#b69">, Svestad 2013</ref><ref type="bibr" target="#b6">, Bergman et al. 2014</ref><ref type="bibr" target="#b5">, Bergman and Edlund 2016</ref><ref type="bibr">, Hansen, Liedgren et al. 2016</ref><ref type="bibr" target="#b61">, Spangen 2016</ref><ref type="bibr" target="#b19">, Günther et al. 2018</ref><ref type="bibr" target="#b56">, Salmi et al. 2018)</ref>. In northernmost Scandinavia, indigenous Sámi have co-existed with Norse farmers since the Iron Age. From the Late Middle Ages onwards in Norway, the indigenous Sámi groups were the Mountain and Sea (or Coastal) Sámi in Finnmark, northernmost Norway and the Skolt Sámi in eastern Finnmark and on the Kola Peninsula in Russia <ref type="bibr" target="#b53">(Ruong 1982, p. 30</ref><ref type="bibr" target="#b18">, Fjellström 1986, p. 27)</ref>. Until the late 19th-early 20th century, most of them had a nomadic or semi-nomadic lifestyle combining reindeer herding or smallscale farming with hunting during winter and fishing during spring and summer. Goat/ sheep, marine fish, mammals and sea birds were particularly important food resources for Coastal Sámi. Most of the catch was done during spring and summer at the outfall of the fjords <ref type="bibr" target="#b15">(Eidlitz 1969, p. 23</ref><ref type="bibr" target="#b18">, Fjellström 1986, p. 31)</ref>. The hunt of wild reindeer as well as other terrestrial mammals was undertaken during fall in the inland. The Skolt Sámi and the Finnmark Mountain Sámi, by contrast, had small reindeer herds, which produced dairy products and were used as means of transportation <ref type="bibr" target="#b75">(Vorren and Manker 1976, p. 127)</ref>. Fishing and hunting was also important. Among the Skolt Sámi, for example, beaver was hunted both for its fur and fat <ref type="bibr" target="#b62">(Storå 1971, p. 45)</ref>. Exchange of reindeer meat and dried fish was important between Coastal and Mountain Sámi <ref type="bibr" target="#b18">(Fjellström 1986, p. 35)</ref>. Intense reindeer domestication was not practiced until later historic times (e.g., <ref type="bibr" target="#b7">Bjørklund 2013)</ref>.</p><p>Because of the different lifestyles of these various groups, their cultural expression should be visible in their diet. To identify diet in historic populations where written sources are scarce, and archaeological material culture not conclusive, stable isotope analysis of human skeletal remains is a viable approach <ref type="bibr" target="#b17">(Fjellström 2011</ref><ref type="bibr" target="#b44">, Naumann et al. 2014</ref><ref type="bibr" target="#b55">, Salmi et al. 2015</ref><ref type="bibr" target="#b2">, Bäckström et al. 2017</ref><ref type="bibr" target="#b28">, Lahtinen 2017)</ref>.</p><p>In this study, we investigate the diet of two coastal Christian burial grounds from Finnmark in northern Norway: Kirkegårdsøya and Gullholmen (Fig. <ref type="figure" target="#fig_0">1</ref>), in order to visualize their cultural affinities. The study is primarily grounded on human skeletal material recovered from archaeological excavations conducted by Asgeir Svestad within the project The Transition to Christian Sámi Burial Customs after AD 1600 in 2005-2007 <ref type="bibr" target="#b64">(Svestad 2006</ref><ref type="bibr" target="#b65">(Svestad , 2007a</ref><ref type="bibr" target="#b66">(Svestad , 2007b</ref><ref type="bibr" target="#b67">(Svestad , 2010))</ref>. Both cemeteries are registered as Sámi heritage, based on demographic studies in the region, supporting the idea of the sites as historic Sámi burial grounds <ref type="bibr" target="#b64">(Svestad 2006, p. 3-5)</ref>. These sites are situated in  Sápmi, a Lutheran Protestant area today. However, Gullholmen at the border of the Varanger peninsula neighbours a Skolt Sámi area with Greek Orthodox traditions <ref type="bibr" target="#b75">(Vorren and Manker 1976, p. 120)</ref>. The establishment of Catholic churches starting in the 13th century and market places later on in northern Norway, together with the development of cod trade, suggests a heterogeneous cultural presence, with indigenous people as well as settlers <ref type="bibr" target="#b31">(Lind 2000</ref><ref type="bibr" target="#b32">, 2003</ref><ref type="bibr" target="#b70">, Traedal 2008</ref><ref type="bibr" target="#b22">, Hansen and Olsen 2014)</ref>.</p><p>From historical records, it is evident that Coastal Sámi were buried at both cemeteries, but it is likely that people with other ethnic backgrounds (for example, Norwegians, Danes, Finns/Kvaens, Russians) were buried there to some degree as well <ref type="bibr" target="#b59">(Sivertsen 1973</ref><ref type="bibr" target="#b48">, Pedersen 1984</ref><ref type="bibr" target="#b64">, Svestad 2006)</ref>. Graves at both cemeteries were marked only by wooden crosses and no grave goods were deposited. For Kirkegårdsøya, the written sources are limited, and there is a need to establish the duration of the use of the cemetery. Radiocarbon dates exist but could be affected by a marine reservoir effect. For Gullholmen, the historical records are richer, but it is still unclear to what extent the two sites overlap chronologically. It is also unclear whether those buried at Gullholmen were local or not. To get a better grip of the lifestyle of those interred at both sites, it is also important to address changes during the lifetime of individuals, their so-called life history.</p><p>Coastal and Skolt Sámi economies were predominantly based on marine resources, which is consistent with local/regional landscape use and food traditions in northern Finnmark <ref type="bibr" target="#b62">(Storå 1971</ref><ref type="bibr" target="#b75">, Vorren and Manker 1976, p. 127</ref><ref type="bibr" target="#b18">, Fjellström 1986, p. 31, p. 68)</ref>. Accordingly, a marine diet would be expected for individuals buried on both sites, which are located within an area with various Sámi and non-Sámi traditions, displaying a heterogeneous cultural landscape. However, it is unlikely that Skolt Sámi were buried at the Lutheran cemetery of Gullholmen, given their Russian Orthodox affiliation since c. 1550, and the distinctive burial practices on separate burial grounds (cf. <ref type="bibr" target="#b20">Hallström 1922</ref><ref type="bibr" target="#b62">, Storå 1971</ref><ref type="bibr" target="#b68">, Svestad 2011</ref><ref type="bibr" target="#b69">, 2013)</ref>. In order to study this complexity, we have chosen to focus on food consumption and how carbon, nitrogen and sulphur isotope analysis on human and animal skeletal material can contribute to the understanding of this on a regional, local and individual level.</p><p>This is the first extensive study of Sámi human skeletal material from Norway employing stable isotope analyses, which will highlight the cultural diversity among the Sámi and other groups in northern Norway during late medieval/historical times.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIAL</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>KIRKEGÅRDSØYA</head><p>Kirkegårdsøya is a Sámi Christian burial site situated on an island with the same name in Hammerfest municipality, Finnmark, northern Norway. The island was 450 m long and 200 m wide, situated at the inlet of Rypefjord, but is now altered and connected with the mainland due to industrial development since the early 21st century. The cemetery is placed on a small isthmus on the middle of the island, 0-5 m a.s.l. There is no evidence for a church on the island, there are however several churches in Hammerfest that can be connected to the burial site <ref type="bibr" target="#b59">(Sivertsen 1973)</ref>. The cemetery has traditionally been dated to the 18th century and has been said to be used for people dying from illnesses and executions. In addition, German soldiers from the Second World War were allegedly buried here.</p><p>Archaeological investigations conducted in 2005 and 2006 have shown that the cemetery comprises at least 150 burials, of which only four ordinary graves and one secondary common grave have been excavated. The secondary common grave contains skeletal remains from older burials, deposited in conjunction with the construction of new burials <ref type="bibr" target="#b64">(Svestad 2006</ref><ref type="bibr" target="#b65">(Svestad , 2007a))</ref>. In addition, a sample was collected from a single grave that was not fully excavated. Direct radiocarbon dates of skeletal remains from the graves range from AD 1246-1663 (Table <ref type="table" target="#tab_2">3</ref>).</p><p>All excavated individuals were analysed with regard to stable isotopes: nine samples of bone and/or teeth from at least six individuals, including two males, one female, two indeterminate adults and one juvenile, ranging from 12 to more than 50 years old. Of these, three samples from at least two individuals from the secondary common grave were analysed. The burials were of an early Christian type, demonstrating somewhat mixed pre-Christian and Christian features. Two of the individuals from ordinary graves were buried in a coffin in NS and EW directions and two without any container in EW and WE directions, of which one on a wooden plank. All the graves were shallow.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>GULLHOLMEN</head><p>Gullholmen burial site is located on the mainland, on a plateau-like old beach and river terrace, 17-19 m a.s.l., opposite the Gullholmen Island at the mouth of Deatnu/Tana River in Deatnu gielda/Tana municipality, Finnmark. The Norwegian place name Gullholmen is a misrepresentation of Guollesuoluthe original Sámi name of the island, meaning 'The Fishing Island'. Gullholmen Island was a central market place for this region since the late 16th century and probably earlier <ref type="bibr" target="#b49">(Pedersen 1984:43)</ref>. The trade was connected to the rich salmon fisheries in Deatnu/Tana River. From the early 18th century, it is known that the priest used the merchandizer's general store as a preaching house once a year during the catch of salmon <ref type="bibr" target="#b67">(Svestad 2010)</ref>. A Sámi chapel was erected on the nearby mainland opposite of Gullholmen Island in the 1730s. The chapel was later used as the main church for the district of Tana until 1847 and was moved to Gamvik, at the outer coast of Finnmark in 1856. The churchyard probably originates from the time of the chapel or somewhat earlier related to the so-called Sámi apostle Thomas von Westen's missionary work among the Sámi in the region in 1718-1719. The cemetery was in use until 1868. Although originally believed to be a primarily Sámi burial ground, it can also be considered a multi-cultural churchyard, at least since the late 18th century.</p><p>Excavations were conducted in 2006 and 2007, and included four single graves, one double grave and one triple grave, containing in total nine individuals. All individuals were buried in rectangular coffins, W-E oriented, except for grave 1b of a newborn, which was oriented NW-SE. Some individuals seem to have been wrapped in some organic material, for example the individual from grave 2c who was shrouded in two garments. Five individuals, grave 1a-b and 2a-c, have been radiocarbon dated to between 1480 and 1660 cal AD <ref type="bibr" target="#b66">(Svestad 2007b)</ref>. Dendrochronological analyses have been performed on wooden samples from four coffins, graves 2b, 4a-b and 5, dating between 1796 and 1839 <ref type="bibr" target="#b26">(Kirchhefer 2014)</ref>. Grave markers indicate that this site was still in use until 1862. In total, 23 samples from bones, teeth and nails, representing childhood and adult age, as well as the last months of life (i.e. nails in one instance) were selected from all nine individuals for stable isotope analysis. Three women and three men, ranging in age from 20 to 50 years, and three infants, ranging from newborn to 6 months, were identified (Table <ref type="table" target="tab_0">1</ref>). Some individuals had signs of shovel-shaped teeth, common among Asian and Native American populations, and torus mandibularis common among Sámi and individuals with a marine diet <ref type="bibr" target="#b25">(Hillson 1996</ref><ref type="bibr" target="#b29">, Larsen 1997</ref><ref type="bibr" target="#b34">, Lynnerup 2006</ref><ref type="bibr" target="#b35">, 2007a</ref><ref type="bibr" target="#b36">, 2007b</ref><ref type="bibr" target="#b37">, Lynnerup et al. 2008</ref><ref type="bibr" target="#b49">, Petersen and Alexandersen 2008</ref><ref type="bibr" target="#b60">, Sjøvold 2009)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>GOLLEVÁRRI</head><p>The two burial sites, Kirkegårdsøya and Gullholmen, did not contain any animal skeletal remains except for a seal bone at the latter site. In order to study human diet and mobility, animal bones were analysed from a nearby location, Gollevárri.</p><p>Gollevárri, associated with extensive reindeer hunting, is located on a small plateau, c. 100 × 100 m in size, in the mountains of Tana municipality in Finnmark c. 50 km south of Gullholmen. The site was partly excavated in 1965 and 1966, comprising at least 16 turf hut sites (Norwegian: gammetufter) sunken into the ground with surrounding walls, and several storage units for food, i.e. meat caches. The finds were more or less typical for a Sámi economy, consisting of, for example, iron knives, arrowheads, spearheads, a spoon and a ring made of antler, fishhooks, antler and bone waste, bronze items, reindeer skeletal remains, and fish bone. Faunal remains from a range of animal species were also recovered around the huts. Artefact dating places the use of the site somewhere between the 14th to the 16th centuries. Several radiocarbon dates from hut number 5, on charcoal (665±65 BP; 780±55 BP), animal bone (235±105 BP, species not specified), and reindeer antler remains (540±45 BP), match the archaeological dating of the finds from the settlement <ref type="bibr" target="#b43">(Munch and Munch 1998, p. 106)</ref>.</p><p>The following animals were analysed: an indeterminate seal (Phocidae), salmon (Salmo salar), cod (Gadus morhua), arctic fox (Vulpes lagopus), badger (Meles meles), hazel grouse (Tetrastes bonasia), black grouse (Lyrurus tetrix), rock ptarmigan (Lagopus muta) and reindeer (Rangifer tarandus). These animals can be categorized into marine fish and mammals, terrestrial mammals, and forest birds. They are also representative of Sámi subsistence according to written sources <ref type="bibr" target="#b15">(Eidlitz 1969</ref><ref type="bibr" target="#b18">, Fjellström 1986, p. 261-299</ref><ref type="bibr" target="#b54">, Ryd 2015)</ref>.</p><p>In addition to the material from Gollevárri, previously published stable isotope data from the region have been included: seal, salmon, cod, Arctic char (Salvelinus alpinus), Arctic trout (Salmo trutta), brown bear (Ursus arctos), swan (Cygnus sp.), sheep/goat (Ovis aries/ Capra hircus). The sites are, from south to north, Björned, Laisälven, Riebnisjaure, Unna Saiva, Könkämä Sámi Siida, Målselva, Helgøy, Kongshavn and Skonsvika (Fig. <ref type="figure" target="#fig_0">1</ref>, <ref type="bibr" target="#b4">Berglund et al. 2001</ref><ref type="bibr" target="#b33">, Linderholm et al. 2008</ref><ref type="bibr" target="#b3">, Barrett et al. 2011</ref><ref type="bibr" target="#b17">, Fjellström 2011</ref><ref type="bibr" target="#b45">, Nehlich et al. 2013</ref><ref type="bibr" target="#b55">, Salmi et al. 2015</ref><ref type="bibr" target="#b14">, Dury et al. 2018)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>STABLE ISOTOPE ANALYSIS</head><p>Stable isotope analysis has been applied to archaeological skeletal remains to study diet since the 1970s. In this study, we have focused on stable carbon and nitrogen isotope analysis to study diet, and sulphur isotope analysis to study mobility.</p><p>The stable carbon isotope value (δ 13 C, expressed in per mil, ‰) is determined by the photosynthetic pathway that different plants use or by the dissolved carbonate in marine environments, resulting in detectable differences between these environments <ref type="bibr" target="#b58">(Sealy 2001, p. 270)</ref>. The most common photosynthetic pathway in Fennoscandia is C 3 , whereas C 4 plants such as maize, sugarcane or millet, thrive in tropical or subtropical environments and can therefore be disregarded in this study. The more negative δ 13 C values are found in terrestrial C 3 plants, while marine environments and C 4 plants have more positive values. Trophic level fractionation causes a c. 1‰ increase in δ 13 C values for each trophic level <ref type="bibr" target="#b13">(DeNiro and Epstein 1978)</ref>.</p><p>The nitrogen isotope value (δ 15 N) varies according to trophic level, physiology and environment <ref type="bibr" target="#b13">(DeNiro and Epstein 1978</ref><ref type="bibr" target="#b0">, Ambrose 1990</ref><ref type="bibr" target="#b48">, O'Connell and Hedges 1999)</ref>, and increases c. 3-5‰ for each trophic level <ref type="bibr" target="#b41">(Minagawa and Wada 1984</ref><ref type="bibr" target="#b8">, Bocherens and Drucker 2003)</ref>.</p><p>Sulphur isotope values (δ 34 S) vary according to the local geology of the bedrock, and between terrestrial and marine environments <ref type="bibr" target="#b27">(Krouse 1980, p. 436</ref><ref type="bibr" target="#b52">, Richards et al. 2003</ref><ref type="bibr" target="#b16">, Faure and Mensing 2005)</ref>. Due to an effect of sea spray or/and precipitation, terrestrial plants in coastal areas can have sulphur isotopic value similar to marine environments.</p><p>As we are dealing with coastal populations they are expected to have a high marine input in their diet, and a marine radiocarbon reservoir effect (MRE), causing radiocarbon ages to appear older, has to be taken into account <ref type="bibr" target="#b63">(Stuiver and Braziunas 1993)</ref>. In order to investigate whether this also is applicable to the Gullholmen material, a seal bone from Gullholmen grave 1b was radiocarbon dated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>BONE AND DENTINE COLLAGEN</head><p>Bone consists of two major components, the protein collagen, and the mineral bioapatite. Bone remodels throughout an individual's life and collagen is representative for the individual's protein intake (e.g. <ref type="bibr" target="#b1">Ambrose and Norr 1993)</ref>. The isotopic value from bone collagen reflects the diet during several years prior to death, depending on the age at death <ref type="bibr" target="#b23">(Hedges et al. 2007)</ref>. Teeth, by contrast do not remodel once formed, hence dentine collagen can tell us something about protein intake during childhood. Comparing bone collagen and dentine collagen accordingly provide individual life histories. Collagen was extracted according to <ref type="bibr" target="#b10">Brown et al. (1988)</ref>. Bone powder was soaked in 0.25 M HCl for 48 h and gelatinized in a 0.01 M HCl solution for 16 h at 58°C. The solution was ultrafiltered, and remnants larger than 30 kDa were subsequently lyophilized. Collagen was weighed into tin capsules for EA-IRMS analysis; c. 0.5 mg for δ 13 C and δ 15 N, and 3-5 mg for δ 34 S.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>NAIL KERATIN</head><p>Keratin is a fibrous structural protein that can be found in hair, nails or horn (α-keratin) or in feathers (β-keratin). Since keratin has an amino-acid composition different from collagen, the isotopic values may differ between the two. Previous studies have shown that for both δ 13 C and δ 15 N values from keratin need to be corrected for comparison with bone <ref type="bibr" target="#b48">(O'Connell and Hedges 1999</ref><ref type="bibr" target="#b47">, O'Connell et al. 2001</ref><ref type="bibr" target="#b72">, von Holstein et al. 2013)</ref>. Nail growth varies depending on the age of the individual, diet, climate, lifestyle, disease and between fingernails and toenails. Modern studies on growth rate in human nails estimate an average growth rate of 0.05-0.12 mm/day <ref type="bibr" target="#b77">(Zaias 1980</ref><ref type="bibr" target="#b76">, Yaemsiri et al. 2010)</ref>. Unlike bone collagen, nail keratin does not remodel. Accordingly, isotope analysis of nails provides data on a much narrower timespan, representing the last months prior to death.</p><p>Two nails were sampled from one individual from Gullholmen. Lipids were removed by soaking the samples in chloroform and methanol (2:1, by volume), whilst shaken for 1 h, then changing the solvent after 30 min, followed by rinsing with water, and finally dried at 60°C overnight <ref type="bibr" target="#b47">(O'Connell et al. 2001)</ref>. The larger nail was cut into four pieces perpendicular to the growth direction, each c. 2.0 mm, representing approximately 22 days, based on a growth rate of 0.09 mm/day. Each sample, c. 0.5 mg, was weighed into tin capsules for EA-IRMS analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EA-IRMS</head><p>The collagen and keratin samples were analysed at the Stable Isotope Laboratory at the Department of Geological Sciences, Stockholm University. Samples for carbon and nitrogen isotope analysis were combusted in a Finnigan DeltaV advantage connected to a CarloErba NC2500 elemental analyser through a ConfloIV with a precision of 0.15‰. For sulphur isotope analysis, human samples were combusted in a Finnigan Delta Plus connected to a CarloErba NC2500 elemental analyser through a ConfloII with a precision of 0.2‰. Sulphur isotope analysis of faunal samples was conducted for three samples at ISO-analytical (Crewe, UK) with a precision of 0.3‰, and for four samples at UC Davis Stable isotope Facility (California, USA), with a precision of 0.4‰.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>HUMAN SAMPLES</head><p>All human skeletal samples yielded enough collagen (&gt;1%) for δ 13 C and δ 15 N analysis <ref type="bibr" target="#b71">(van Klinken 1999)</ref> and complied with the quality criteria with regard to C/N ratio and carbon and nitrogen concentrations <ref type="bibr" target="#b12">(DeNiro 1985</ref><ref type="bibr" target="#b0">, Ambrose 1990</ref><ref type="bibr" target="#b71">, van Klinken 1999)</ref>. One sample (GHO 8) was excluded due to problems with lyophilization. All samples, except two from Kirkegårdsøya (KIR 4, KIR 8) and one from Gullholmen (GHO 11), complied with the quality criteria for sulphur isotope analysis with regard to sulphur concentration, C/S and N/S ratios <ref type="bibr" target="#b46">(Nehlich and Richards 2009)</ref>. For nails, four out of five nail samples complied with the quality criteria with regard to concentrations of carbon, nitrogen and sulphur and C/N ratio <ref type="bibr" target="#b47">(O'Connell et al. 2001)</ref>. Results and quality criteria are reported in Table <ref type="table" target="tab_0">1</ref> and Table <ref type="table">S1</ref>.</p><p>Carbon isotope values for Kirkegårdsøya vary between -17.0‰ and -15.3‰ with a mean value and standard deviation of -16.5 ± 0.6‰. Nitrogen values vary between 15.4‰ and 17.2‰ with a mean value and standard deviation of 16.5 ± 0.6‰. The carbon and nitrogen isotope values indicate a diet dominated by marine protein. The sulphur isotopic values range between 14.4‰ and 15.9‰ with a mean value and standard deviation of 15.2 ± 0.6‰, which is compliant with a predominantly marine diet (Figs <ref type="figure" target="#fig_1">2</ref> and <ref type="figure" target="#fig_2">3</ref>).</p><p>Carbon isotope values for Gullholmen range between -19.6‰ and -16.4‰, with a mean value and standard deviation of -17.7 ± 0.9‰. The nitrogen values range between 12.5‰ and 16.8‰ with a mean value and standard deviation of 15.2 ± 1.2‰. The δ 13 C and δ 15 N values indicate a diet dominated by marine protein, albeit to a lesser extent than for Kirkegårdsøya. The higher standard deviations suggest a more heterogeneous diet for Gullholmen. Sulphur isotope values range from 13.0‰ to 17.5‰, with a mean value and standard deviation of 15.0 ± 1.3‰, supporting the dietary heterogeneity for Gullholmen (Figs. <ref type="figure" target="#fig_1">2</ref> and <ref type="figure" target="#fig_2">3</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FAUNAL SAMPLES</head><p>Animal samples from two different sites are here used as a baseline for carbon, nitrogen and sulphur isotope data. The single seal bone from Gullholmen has δ 13 C-and δ 15 N-values of -13.3‰ and 15.9‰, respectively, and a δ 34 S-value of 16.0‰ (Table <ref type="table" target="#tab_1">2</ref> and Table <ref type="table">S2</ref>).</p><p>One sample from Gollevárri (GOL 3) did not yield enough collagen for stable isotope analysis. Eleven out of 16 samples fulfilled criteria for well-preserved collagen for carbon and nitrogen. Carbon isotope values have a mean value and standard deviation of -18.7 ± 2.9‰ varying from -21.5‰ to -13.3‰. Nitrogen isotope values with a mean value and standard deviation of 5.9 ± 5.7‰, ranging between -1.5‰ to 15.9‰, have a great variance in isotopic values due to the diversity in species (Fig. <ref type="figure" target="#fig_1">2</ref>).</p><p>Five out of 16 samples fulfilled criteria for δ 34 S analysis. The animals represented by sulphur values are the arctic fox, the badger, two reindeers and one seal. The mean and standard deviation for sulphur values are 14.6 ± 3.1‰, ranging from 10.3‰ to 17.5‰. Although the number of samples from Gollevárri is rather small, it nonetheless provides a basis for discussing mobility patterns in northernmost Fennoscandia when considered together with previously published data from the region (Fig. <ref type="figure" target="#fig_2">3</ref>).</p><p>The one seal, a marine top predator, from Gullholmen is expected to have a rather high nitrogen isotope value due to its position in the food chain and a high carbon isotope value due to the marine environment. Two salmon and two cod were also analysed. Both species feed mainly on fish and crustaceans. The bigger and older they get the more they will feed on fish. While cod is a marine species, salmon is anadromous and in need of spawning at their place of origin, somewhat complicating the isotopic interpretation. Two wild terrestrial mammals were analysed as well. The arctic fox feeds on lemmings, birds, mountain hares, and plants. One badger was also analysed. The badger, mainly found in forest and in farming landscapes, feeds on molluscs, worms, birds, insects, rodents and plants. Three different species of grouse were also present in the Gollevárri data set taken for analysis. One hazel grouse, one black grouse and a rock ptarmigan. All of them feed primarily on insects and different tree species, mostly birch but also alder and aspen. They could also be found in the same natural habitatthe forest. However, the black grouse can be found in wetlands and seashores, and the white grouse also favour mountainous environment. The last category of animals is the reindeer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RADIOCARBON</head><p>The seal bone found in connection to grave 1b at Gullholmen (a newborn dated to 275 ±35 BP, TUa-6488), was radiocarbon dated to 554±25 BP (Ua-56516). The difference of c. 280 radiocarbon years suggests that there indeed is a marine reservoir effect (MRE).</p><p>The MRE offset depends on the amount of marine protein intake. In order to calculate the marine protein consumption, we have used stable carbon isotopes to define the marine and terrestrial end values. The marine end value, -12.3‰, is based on the seal value (-13.3‰) corrected for trophic level fractionation. The terrestrial end value, -20.5‰, is based on a hazel grouse (-21.5‰) found in Gollevárri, also corrected for trophic level fractionation.</p><p>A ΔR value (2±48), defined as the regional offset from the global average surface water marine reservoir effect has been estimated for coastal Finnmark using a mean value of seven local ΔR values, all from western to eastern coastal Finnmark <ref type="bibr" target="#b38">(Mangerud 1972</ref><ref type="bibr" target="#b40">, Mangerud and Gulliksen 1975</ref><ref type="bibr" target="#b39">, Mangerud et al. 2006)</ref>. This average has been used to calculate the MRE for each individual (Table <ref type="table" target="#tab_2">3</ref>), and will be discussed later.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FOOD CONSUMPTION</head><p>In order to interpret human diet, we have calculated predictive isotopic values based on the faunal data, for humans consuming these food items. Here, we consider animal carbon and nitrogen isotope results with a trophic level fractionation of +1‰ for carbon and +3‰ for nitrogen (Fig. <ref type="figure" target="#fig_3">4</ref>) <ref type="bibr" target="#b13">(DeNiro and Epstein 1978</ref><ref type="bibr" target="#b41">, Minagawa and Wada 1984</ref><ref type="bibr" target="#b8">, Bocherens and Drucker 2003)</ref>.</p><p>According to the stable isotope analysis, Kirkegårdsøya has a strong emphasis on marine resources, with low variation, indicating a fairly homogenous marine diet. Gullholmen, on the other hand, shows a much wider diversity, ranging from almost terrestrial to completely marine protein input. Four out of 15 (c. 27%) individuals have experienced a change in their diet; three of them were buried in Gullholmen. This is also in accordance with written sources describing Gullholmen as a multi-cultural society with a wide variety of subsistence patterns. It seems that there are only two major protein sources at Gullholmen, one terrestrial (or freshwater) and one marine.</p><p>The individual that stands out most is individual 2a (Fig. <ref type="figure">S1</ref>), with low δ 13 C and δ 15 N values (Fig. <ref type="figure" target="#fig_3">4</ref>).</p><p>Any signs of intake of reindeer protein are weak. This may be surprising as reindeer is a strong cultural marker for Sámi culture and history in certain geographical areas. A high dependence on reindeer protein would result in depleted δ 13 C values and δ 15 N values of about 6‰. Gollevárri, with its many meat caches, could have been used as a site to store hides and meat for later transportation to the coastal dwelling sites as soon as there was enough snow <ref type="bibr" target="#b22">(Hansen and Olsen 2014, p. 178)</ref>. Gullholmen, even though not completely contemporaneous, situated in the same fjord system as Gollevárri, might be such a coastal dwelling site. We are not arguing that reindeer was unimportant to the individuals buried at Gullholmen and Kirkegårdsøya, only that reindeer was not a prominent part of their diet. Reindeer were most certainly a significant resource in many other ways, such as transport, hides, antler artefacts and many more <ref type="bibr" target="#b73">(Vorren 1964</ref><ref type="bibr" target="#b74">, 1998, p. 16</ref><ref type="bibr" target="#b18">, Fjellström 1986</ref><ref type="bibr" target="#b7">, Bjørklund 2013</ref><ref type="bibr" target="#b22">, Hansen and Olsen 2014)</ref>.</p><p>While written sources are inconclusive with regard to the cultural diversity of Kirkegårdsøya, the stable isotope results indicate a rather uniform subsistence, which could be linked to a rather uniform culture similar to what would be expected in a Coastal Sámi community. The one individual with intra-individual values from Kirkegårdsøya (grave 3), aged over 50 years, has a limited variation in both δ 13 C and δ 15 N (Fig. <ref type="figure">S10</ref>), further supporting this uniform subsistence pattern. An increase in δ 13 C (+0.8‰), from child-to adulthood, suggests only a slight change in diet.</p><p>For Gullholmen, on the other hand, there are five individuals with intra-individual data. Individuals from graves 2a, 2c and 4a (Figs. <ref type="figure">S5</ref>, <ref type="figure">S6</ref> and <ref type="figure">S8</ref>) demonstrate limited or no variation neither in δ 13 C nor in δ 15 N, whereas the individual in grave 2b (Fig. <ref type="figure">S2</ref>)  shows a moderate decrease in nitrogen from 16.6‰ to 15.3‰, from childhood to adulthood. The individual from grave 4b (Fig. <ref type="figure">S4</ref>) shows a pronounced decrease in δ 15 N from 16.7‰ to 14.8‰ and a moderate decrease in δ 13 C, indicating a less marine protein input with age.</p><p>Individuals from graves 1a-b are buried next to each other, although their diets differ. The adult female from grave 1a has considerably higher marine protein intake than the newborn in grave 1b, and the highest of all individuals from Gullholmen. It is difficult to elaborate on the relation between the female and the newborn, hypothetically they could be mother and child, although they have very different δ 13 C and δ 15 N values. In view of the intra-individual data for Gullholmen the 'mother' could have had a diet with less marine protein input during her pregnancy. The lack of elevated nitrogen values for the newborn suggests that it was not breastfed. The three individuals in grave 2 (a-c) are buried next to each other and contemporary. Individual 2a, an adult male, has the lowest intake of marine protein of all the analysed individuals from Gullholmen. His values are very different from individuals 2b and 2c. Based on analysis of δ 13 C and δ 15 N, it is not possible to address whether individuals 2a-c were related to each other, biologically or culturally.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MOBILITY</head><p>Predictive isotope values from faunal data were calculated in order to interpret individuals' mobility patterns. Here we used animal carbon and sulphur isotope data and considered a trophic level fractionation of +1‰ for carbon, whereas no fractionation was considered for sulphur (Fig. <ref type="figure" target="#fig_4">5</ref>) <ref type="bibr" target="#b13">(DeNiro and Epstein 1978)</ref>.</p><p>Kirkegårdsøya is more homogenous compared to Gullholmen with regard to δ 34 S values. Their mean values are similar, whereas their standard deviation differs markedly. There is no correlation between carbon and δ 34 S values for Gullholmen, indicating that this difference is not entirely caused by marine intake but actual differences in terrestrial sulphur origin.</p><p>This means that some of the individuals buried at Gullholmen came from different geographic areas. This is in line with Gullholmen Island being a market place for the region. There are however, limited longterm intra-individual changes, which suggests that the buried individuals are unlikely to have spent longer periods of time (several years) at the site before their death. Fortunately, in this study, we have access to nails from one individual (grave 2c) that provide information on short-term changes (months) (Fig. <ref type="figure">S7</ref>). In this case, four sections of a nail represent a total time period of 88 days. Here, the individual displays an increase in sulphur isotope values from 16.9‰ to 17.4‰ where the highest δ 34 S value is the closest to the time of death. The nail δ 34 S values from this individual deviate markedly from the δ 34 S values of the bone (15.4‰) as well as the tooth (15.2‰), representing several years prior to death, and early childhood, respectively. The nail δ 34 S values are considerably higher than for the rest of the buried individuals but similar to the 'local' reindeer from Gollevárri. In this respect, individual 2c would have spent her time around the area of Gullholmen/Gollevárri during the last 3 month of her life. The modern Atlantic salmon from Målselva in Troms fylke has similar δ 34 S values to the nails but should be treated with caution <ref type="bibr" target="#b14">(Dury et al. 2018)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CHRONOLOGY</head><p>Five dendrochronological dates, one from Kirkegårdsøya (AD 1775) and four from Gullholmen (AD 1796-1839), clearly demonstrate that there is a marine reservoir effect (MRE). This is obvious for grave 1 from    Kirkegårdsøya, where the earliest possible date is AD 1775, whereas the calibrated radiocarbon date, any correction, is 1410-1633 cal AD (95.4% probability).</p><p>As mentioned earlier, corrections for marine reservoir effects were individually calculated based on each individual's marine protein consumption, using a ΔR value (2 ± 48).</p><p>A calibration without any MRE correction placed the dated individuals from Kirkegårdsøya between 1246 and 1663 cal AD. However, the corrected dates using the ΔR value place the buried individuals between 1331 and 1953 cal AD (Fig. <ref type="figure" target="#fig_6">7</ref>). The corrected dates for Kirkegårdsøya comply better with the traditional dating of the cemetery to the 18th century than the uncorrected radiocarbon dates. However, two individuals (grave 2 and 3) are clearly older than the other threeboth date to the 15th or 16th centuries. Hence, the cemetery has been used before the 18th century, probably as as the 14th century. The burials at Kirkegårdsøya therefore date further back than previously thought.</p><p>The historical records define the use of the cemetery at Gullholmen from 1718-1868 (for a discussion of the cemetery´s chronology, see <ref type="bibr" target="#b67">Svestad 2010)</ref>, whereas the calibrated radiocarbon dates, without any correction, range between 1315 and 1798 cal AD. Corrected, using the ΔR value, it is dated to between 1661 and 1953 cal AD. In addition, at Gullholmen the one individual (grave 2b) with both dendrochronological (1839) and 14 C date (ΔR: 1670-1953 cal AD) clearly demonstrate the necessity to correct for an MRE (Fig. <ref type="figure" target="#fig_7">8</ref>).</p><p>Unfortunately, the calibration curve for the period 1650-1950 cal AD does not provide a good enough resolution to obtain high precision dates. However, three individuals (grave 2a-c) were buried in coffins at the same time. This gives us a TPQ date from the dendrochronological analysis to 1839 AD. Adding this information as a prior constrains the calibrated range to 1838 to 1870 cal AD. Three other coffins with dendrochronological dates, without radiocarbon dates, place them between 1796 and 1809 AD (Figs <ref type="figure" target="#fig_6">7</ref> and <ref type="figure" target="#fig_7">8</ref>), well within the expected use of the cemetery.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSION</head><p>We have shown that the individuals buried in Kirkegårdsøya date between 1331 and 1953 cal AD and had a homogenous marine diet. Whereas the individuals buried in Gullholmen had a more heterogeneous diet consisting of both terrestrial and marine proteins and date to 1661-1953 cal AD. We found very little intraindividual variation; the only individual that had any substantial variation was individual 4b from Gullholmen, with a decrease in δ 15 N. We have also demonstrated that reindeer protein has not been an important part of their diet.</p><p>Individuals buried in Kirkegårdsøya were probably quite stationary, while some of the buried individuals from Gullholmen came from different geographic areas. Here, individual 2c, originating from somewhere outside Gullholmen, presumably spent time in the area of Gullholmen/Gollevárri some months prior to death. We have also demonstrated the importance of correcting for the marine reservoir effect in populations with a coastal subsistence.</p><p>These two populations could be expected to have a strong marine predominance in their food, since they were living at the coast. However, we have shown that there is a difference between these populations in the way they utilized marine resources. Our interpretation is that individuals buried at Kirkegårdsøya primarily belonged to a Coastal Sámi community, although Norwegians with a similar diet (and likely comprising a minor population in the area) cannot be ruled out. The more varied diet and mobility in Gullholmen could, as predicted, be interpreted as if these individuals may have had a more diverse cultural affinity. This is also consistent with the fact that Gullholmen is described as a former market place.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig.1. Map of northern Fennoscandia with archaeological sites marked (cf. Figures 2-5), the background map, remodelled by the authors, was screenshot from © 2019 Google, Map data: Google, DigitalGlobe.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Carbon and nitrogen isotope values for human individuals from Gullholmen and Kirkegårdsøya as well as animal samples from Gollevárri (this study) and previously published faunal data <ref type="bibr" target="#b4">(Berglund et al. 2001</ref><ref type="bibr" target="#b33">, Linderholm et al. 2008</ref><ref type="bibr" target="#b3">, Barrett et al. 2011</ref><ref type="bibr" target="#b17">, Fjellström 2011</ref><ref type="bibr" target="#b45">, Nehlich et al. 2013</ref><ref type="bibr" target="#b55">, Salmi et al. 2015</ref><ref type="bibr" target="#b14">, Dury et al. 2018)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig.3. Carbon and sulphur isotope values for human individuals from Gullholmen and Kirkegårdsøya as well as animal samples from Gollevárri (this study) and previously published faunal data<ref type="bibr" target="#b33">(Linderholm et al. 2008</ref><ref type="bibr" target="#b17">, Fjellström 2011</ref><ref type="bibr" target="#b55">, Salmi et al. 2015</ref><ref type="bibr" target="#b14">, Dury et al. 2018)</ref>.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Prediction of dietary intake for humans, based on the faunal data from Fig. 2 with a fractionation factor of +1‰ for δ 13 C and +3‰ for δ 15 N <ref type="bibr" target="#b13">(DeNiro and Epstein 1978</ref><ref type="bibr" target="#b41">, Minagawa and Wada 1984</ref><ref type="bibr" target="#b57">, Schoeninger and DeNiro 1984)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Prediction of dietary intake for humans, based on the faunal data from Fig. 3 with a fractionation factor of +1‰ for δ 13 C and none for δ 34 S <ref type="bibr" target="#b13">(DeNiro and Epstein 1978)</ref>.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Intra-individual changes of carbon and nitrogen isotope values for the individuals from Gullholmen, grave 2c highlighted. Filled circles: bone; empty circles: tooth; crosses: nails.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. OxCal v4.3.2. <ref type="bibr" target="#b9">(Bronk Ramsey 2017)</ref> plot displaying 14 C-dates from Kirkegårdsøya calibrated using the IntCal13 and Marine13 curves <ref type="bibr" target="#b51">(Reimer et al. 2013)</ref>, corrected with ΔR 2 ± 48 <ref type="bibr" target="#b38">(Mangerud and Gulliksen 1975</ref><ref type="bibr" target="#b39">, Mangerud et al. 2006)</ref>. The percentage of marine protein intake has been calculated, based on δ 13 C, for each individual and accounted for in all calibrations (Table <ref type="table" target="tab_2">3</ref>). A dendrochronological date (TPQ 1775 AD) has been taken into account for grave 1.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. OxCal v4.3.2. <ref type="bibr" target="#b9">(Bronk Ramsey 2017)</ref> plot displaying 14 C-dates from Gullholmen calibrated using the IntCal13 and Marine13 curves<ref type="bibr" target="#b51">(Reimer et al. 2013)</ref>, corrected with ΔR 2 ± 48 <ref type="bibr" target="#b38">(Mangerud and  Gulliksen 1975</ref><ref type="bibr" target="#b39">, Mangerud et al. 2006)</ref>. The percentage of marine protein intake has been calculated, based on δ 13 C, for each individual and accounted for in all calibrations (Table <ref type="table" target="tab_2">3</ref>). Individuals from grave 1a and 1b were constrained to the interval 1718-1868 cal AD representing the time of use of the cemetery. A dendrochronological date from grave 2b narrows down the interval for the burial of individual 2a-c, of the same closed context, from 1839 to 1868 cal AD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Results from the stable carbon, nitrogen and sulphur isotope analysis of human bone and teeth material from Kirkegårdsøya (KIR) and Gullholmen (GHO). All data, including inventory number and all quality criteria (also samples which did not fulfil quality criteria) are reported in Table S1. *nail samples have been corrected by +1.41‰ for (δ 13 C and ±1.51‰ for δ 15 N)<ref type="bibr" target="#b47">(O'Connell et al. 2001)</ref></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Results from the stable carbon, nitrogen and sulphur isotope analysis of faunal bone material from Gullholmen (GHO, from grave 1b) and Gollevárri (GOL, from the waste heap). All data, including inventory number and all quality criteria (also samples which did not fulfil quality criteria) are reported in Table S2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Radiocarbon and dendrochronological dates for Kirkegårdsøya and Gullholmen (from <ref type="bibr" target="#b64">Svestad 2006</ref><ref type="bibr" target="#b65">Svestad  , 2007a</ref><ref type="bibr" target="#b66">Svestad  , 2007b</ref> and this study). Radiocarbon dates were calibrated using OxCal v.4.3.2. <ref type="bibr" target="#b9">(Bronk Ramsey 2017)</ref>. Individual marine offsets and corrections for marine reservoir using ΔR (2±48) <ref type="bibr" target="#b38">(Mangerud 1972</ref><ref type="bibr" target="#b40">, Mangerud &amp; Gulliksen 1975</ref><ref type="bibr" target="#b39">; Mangerud et al. 2006)</ref>. Dendrochronological dates and historical facts have been used as chronological restraints for some of the dated individuals: *a= TPQ 1775 cal AD; *b= interval 1718-1868 cal AD; *c= interval 1839-1868 cal AD. All samples are human, unless indicated.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>Thanks to <rs type="person">Tanja Larsen</rs> and the <rs type="affiliation">Arctic University Museum of Norway</rs> for lending us the animal reference material, to <rs type="person">Laszlo Bartosiewicz</rs> for determining the animal bones from <rs type="person">Gollevárri. Permission</rs> to collect and analyse samples from human remains used in this study is given by the <rs type="funder">Sámi Parliament of Norway</rs>, which also took part in the archaeological excavations (confirmation letter from the Sámi Parliament June 9, 2004, reference <rs type="grantNumber">04/ 3076-1</rs>). We thank two anonymous reviewers for their valuable comments.</p></div>
+			</div>
+			<div type="funding">
+<div><head>FUNDING</head><p>This work was supported by the <rs type="funder">Berit Wallenberg Foundation</rs> [<rs type="grantNumber">BWS 2015.0073</rs>].</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_MczNKR3">
+					<idno type="grant-number">04/ 3076-1</idno>
+				</org>
+				<org type="funding" xml:id="_dc2CTnn">
+					<idno type="grant-number">BWS 2015.0073</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTARY MATERIAL</head><p>Supplemental data for this article can be accessed here.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ambrose</surname></persName>
+					</author>
+					<title level="a">Preparation and characterization of bone and tooth collagen for isotopic analysis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="431" to="451"/>
+						<date when="1990">1990</date>ù
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+
+			<biblStruct type="chapter" xml:id="b1">
+				<analytic>		
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ambrose</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Norr</surname></persName>
+					</author>
+					<title level="a">Experimental evidence for the relationship of the carbon iso- tope ratios of whole diet and dietary protein to those of bone collagen and carbonate</title>
+				</analytic>
+				<monogr>
+					<editor>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Lambert</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>G</forename><surname>Grupe</surname></persName>
+					</editor>
+					<title level="m">Prehistoric human bone – archaeology at the molecular level</title>
+					<imprint>
+						<biblScope unit="page" from="1" to="37"/>
+						<date when="1993">1993</date>ù
+						<publisher>Springer</publisher>
+						<pubPlace>Berlin</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Bäckström</surname></persName>
+					</author>
+					<title level="a">Integrating isotopes and documentary evidence: dietary patterns in a late medieval and early modern mining community, Sweden</title>
+				</analytic>
+				<monogr>
+					<title level="j">Archaeological and Anthropological Sciences</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="2075" to="2094"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Barrett</surname></persName>
+					</author>
+					<title level="a">Interpreting the expansion of sea fishing in medieval Europe using stable isotope analysis of archaeological cod bones</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="1516" to="1524"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>O</forename><surname>Berglund</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Larsson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Broman</surname></persName>
+					</author>
+					<title level="a">Organochlorine accumulation and stable isotope ratios in an Atlantic salmon (Salmo salar) population from the Baltic Sea</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science of The Total Environment</title>
+					<imprint>
+						<biblScope unit="volume">281</biblScope>
+						<biblScope unit="issue">1-3</biblScope>
+						<biblScope unit="page" from="141" to="151"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Bergman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L-E</forename><surname>Edlund</surname></persName>
+					</author>
+					<title level="a">Birkarlar and Sámi – inter-cultural contacts beyond state control: reconsidering the standing of external tradesmen (birkarlar) in medieval Sámi socie- ties</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Borealia</title>
+					<imprint>
+						<biblScope unit="volume">33</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="52" to="80"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Bergman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Zackrisson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Östlund</surname></persName>
+					</author>
+					<title level="a">Travelling in boreal forests: routes of communication in pre-industrial Northern Sweden</title>
+				</analytic>
+				<monogr>
+					<title level="j">Fennoscandia Archaeologica</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="45" to="60"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Bjørklund</surname></persName>
+					</author>
+					<title level="a">Domestication, Reindeer Husbandry and the Development of Sámi Pastoralism</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Borealia</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="174" to="189"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Bocherens</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Drucker</surname></persName>
+					</author>
+					<title level="a">Trophic level isotopic enrichment of carbon and nitro- gen in bone collagen: case studies from recent and ancient terrestrial ecosystems</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Osteoarchaeology</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="46" to="53"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Bronk Ramsey</surname></persName>
+					</author>
+					<title level="a">Methods for Summarizing Radiocarbon Datasets</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">59</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="1809" to="1833"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Brown</surname></persName>
+					</author>
+					<title level="a">Improved Collagen Extraction by Modified Longin Method</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="171" to="177"/>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b11">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Bruun</surname></persName>
+					</author>
+					<title level="m">Blandede graver -blandede kulturer? En tolkning av gravskikk og etniske forhold i Nord-Norge gjennom jernalder og tidlig middelalder</title>
+					<imprint>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+				<note>Unpublished thesis. University of Tromsø</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>DeNiro</surname></persName>
+					</author>
+					<title level="a">Postmortem preservation and alteration of in vivo bone collagen isotope ratios in relation to palaeodietary reconstruction</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">317</biblScope>
+						<biblScope unit="issue">6040</biblScope>
+						<biblScope unit="page" from="806" to="809"/>
+						<date when="1985">1985</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Deniro</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Epstein</surname></persName>
+					</author>
+					<title level="a">Influence of diet on the distribution of carbon isotopes in animals</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geochimica et Cosmochimica Acta</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="495" to="506"/>
+						<date when="1978">1978</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><surname>Dury</surname></persName>
+					</author>
+					<title level="a">Consideration of Freshwater and Multiple Marine Reservoir Effects: Dating of Individuals with Mixed Diets from Northern Sweden</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1561" to="1585"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Eidlitz</surname></persName>
+					</author>
+					<title level="a">Food and emergency food in the circumpolar area</title>
+				</analytic>
+				<monogr>
+					<title level="m">Studia Ethnographica Upsaliensia</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<date when="1969">1969</date>
+						<publisher>Almqvist &amp; Wiksell</publisher>
+					</imprint>
+				</monogr>
+				<note>Thesis (PhD)</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b16">
+				<monogr>
+					<author>
+						<persName><forename>G</forename><surname>Faure</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Mensing</surname></persName>
+					</author>
+					<title level="m">Principles of isotope geology. 3rd ed.</title>
+					<imprint>
+						<publisher>John Wiley &amp; Sons</publisher>
+						<pubPlace>New York</pubPlace>
+						<date when="2005">2005</date>
+						<biblScope unit="page" from="824" to="853"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b17">
+				<monogr>
+					
+					<author>
+						<persName><forename>M</forename><surname>Fjellström</surname></persName>
+					</author>
+					<title level="m">Stable isotope analysis and ethical issues surrounding a human skeleton material from Rounala in Karesuando parish</title>
+					<imprint>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+				<note>Unpublished thesis (Master). Stockholm University, Archaeological Research Laboratory</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b18">
+				<monogr>
+					
+					<author>
+						<persName><forename>P</forename><surname>Fjellström</surname></persName>
+					</author>
+					<title level="m">Samernas samhälle i tradition och nutid</title>
+					<imprint>
+						<date when="1986">1986</date>
+						<publisher>Norstedt</publisher>
+						<pubPlace>Stockholm</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Günther</surname></persName>
+					</author>
+				<title level="a">Population genomics of Mesolithic Scandinavia: Investigating early postglacial migration routes and high-latitude adaptation</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLOS Biology</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">e2003703</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Hallström</surname></persName>
+					</author>
+					<title level="a">Gravplatser och offerplatser i ryska lappmarken</title>
+				</analytic>
+				<monogr>
+					<title level="j">RIG, Föreningen För Svensk Kulturhistoria</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="162" to="192"/>
+						<date when="1922">1922</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b21">
+				<monogr>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">I</forename><surname>Hansen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Olsen</surname></persName>
+					</author>
+					<title level="m">Samenes historie intill 1750</title>
+					<imprint>
+						<publisher>Cappelen</publisher>
+						<pubPlace>Oslo</pubPlace>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b22">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">I</forename><surname>Hansen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Olsen</surname></persName>
+					</author>
+					<title level="m">Hunters in transition. An Outline of Early Sámi History</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<publisher>Brill</publisher>
+						<pubPlace>Leiden</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename>&gt;<forename type="last">M</forename><surname>Hedges</surname></persName>
+					</author>
+					<title level="a">Collagen turnover in the adult femoral mid-shaft: modelled from anthropogenic radiocarbon tracer measurements</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Journal of Physical Anthropology</title>
+					<imprint>
+						<biblScope unit="volume">133</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="808" to="816"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>S-D</forename><surname>Hedman</surname></persName>
+					</author>
+					<title level="a">Boplatser och offerplatser. Ekonomisk strategi och boplatsmönster bland skogssamer 700–1600 AD</title>
+				</analytic>
+				<monogr>
+					<title level="m">Studia Archaeologica Universitatis Umensis</title>
+					<imprint>
+						<date when="2003">2003</date>
+						<biblScope unit="volume">17</biblScope>
+						<publisher>University of Umeå</publisher>
+					</imprint>
+				</monogr>
+				<note>Thesis (PhD)</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b25">
+				<monogr>
+					
+					<author>
+						<persName><forename>S</forename><surname>Hillson</surname></persName>
+					</author>
+					<title level="m">Dental Anthropology</title>
+					<imprint>
+						<date when="1996">1996</date>
+						<publisher>University Press</publisher>
+						<pubPlace>Cambridge</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b26">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Kirchhefer</surname></persName>
+					</author>
+					<title level="m">Dendrologisk datering av likkister fra Gullholmen kirkegård i Tana commune</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<publisher>Dendroøkologen</publisher>
+						<biblScope unit="volume">33</biblScope>
+						<pubPlace>Finnmark, Tromsø</pubPlace>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">R</forename><surname>Krouse</surname></persName>
+					</author>
+					<title level="a">Sulphur isotopes in our environment</title>
+				</analytic>
+				<monogr>
+					<title level="m">Handbook of environmental geochemistry, Vol. 1A: the terrestrial environment</title>
+					<editor>
+						<persName><forename>P</forename><surname>Fritz</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Fontes</surname></persName>
+					</editor>
+					<imprint>
+						<publisher>Elsevier</publisher>
+						<pubPlace>Amsterdam</pubPlace>
+						<date when="1980">1980</date>
+						<biblScope unit="page" from="435" to="471"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Lahtinen</surname></persName>
+					</author>
+					<title level="a">Isotopic Evidence for Environmental Adaptation in Medieval Iin Hamina, Northern Finland</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">59</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1" to="15"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b29">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Larsen</surname></persName>
+					</author>
+					<title level="m">Bioarchaeology. Interpreting Behavior from the Human skeleton</title>
+					<imprint>
+						<date when="1997">1997</date>
+						<publisher>Cambridge University Press</publisher>
+						<pubPlace>Cambridge</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Liedgren</surname></persName>
+					</author>
+					<title level="a">Hearths in the coastal areas of northernmost Sweden, from the period AD 800 to 1950</title>
+				</analytic>
+				<monogr>
+					<title level="j">Rangifer</title>
+					<imprint>
+						<biblScope unit="volume">36</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="25" to="50"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Lind</surname></persName>
+					</author>
+					<title level="a">Det europeiske felleskapet før EU: fra Roma til Nord-Norge i mellomalderen</title>
+				</analytic>
+				<monogr>
+					<title level="j">Ottar</title>
+					<imprint>
+						<biblScope unit="volume">229</biblScope>
+						<biblScope unit="page" from="42" to="47"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Lind</surname></persName>
+					</author>
+					<title level="a">Yttervær på Loppa øy</title>
+				</analytic>
+				<monogr>
+					<title level="m">Karlsøy og verden utenfor: kulturhistoriske perspektiver på nordnorske ste- der. Festskrift til professor Håvard Dahl Bratrein på 70-årsdagen 13. 02.2003. Tromsø Museums Skrifter</title>
+					<editor>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Hauan</surname></persName>
+					</editor>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<publisher>Tromsø museum, Universitetsmusset</publisher>
+						<pubPlace>Tromsø</pubPlace>
+						<biblScope unit="page" from="42" to="52"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Linderholm</surname></persName>
+					</author>
+					<title level="a">An early Christian cemetery at Björned in northern Sweden: stable isotope analyses of skeletal material</title>
+				
+				</analytic>
+				<monogr>
+					<title level="j">Fornvännen</title>
+					<imprint>
+						<biblScope unit="volume">103</biblScope>
+						<biblScope unit="page" from="176" to="189"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b34">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Lynnerup</surname></persName>
+					</author>
+					<title level="m">Rapport over skeletfund ved Kirkegårdsøya, Hammerfest kommune, Finnmark fylke, Norge -sommaren 2005</title>
+					<imprint>
+						<date when="2005">2006</date>
+						<publisher>Laboratory of Forensic Anthropology, University of Copenhagen</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b35">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Lynnerup</surname></persName>
+					</author>
+					<title level="m">Rapport over skeletfund ved Gullholmen, Tana kommune, Finnmark fylke, Norge -sommaren 2006</title>
+					<imprint>
+						<date when="2007a">2007a</date>
+						<publisher>Laboratory of Forensic Anthropology, University of Copenhagen</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b36">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Lynnerup</surname></persName>
+					</author>
+					<title level="m">Rapport over skeletfund ved Gullholmen, tana kommune, finnmark fylke, norge -sommeren 2007</title>
+					<imprint>
+						<date when="2007b">2007b</date>
+						<publisher>Laboratory of Forensic Anthropology, University of Copenhagen</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b37">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Lynnerup</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Riddersholm</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Faurskov Nielsen</surname></persName>
+					</author>
+					<title level="m">Echinicoccosis in an 18th century grave in Northern Norway</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<publisher>Laboratory of Biological Anthropology and Institute of Biochemistry, University of Copenhagen</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished poster</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Mangerud</surname></persName>
+					</author>
+					<title level="a">Radiocarbon dating of marine shells, including a discussion of apparent age of Recent shells from Norway</title>
+				</analytic>
+				<monogr>
+					<title level="j">Boreas</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="page" from="143" to="172"/>
+						<date when="1972">1972</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Mangerud</surname></persName>
+					</author>
+					<title level="a">Marine 14C reservoir ages for 19th century whales and molluscs from the North Atlantic</title>
+				</analytic>
+				<monogr>
+					<title level="j">Quaternary Science Reviews</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">23-24</biblScope>
+						<biblScope unit="page" from="3228" to="3245"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Mangerud</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Gulliksen</surname></persName>
+					</author>
+					<title level="a">Apparent Radiocarbon Ages of recent marine shells from Norway, Spitsbergen, and Arctic Canada</title>
+				</analytic>
+				<monogr>
+					<title level="j">Quaternary Research</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="263" to="273"/>
+						<date when="1975">1975</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Minagawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Wada</surname></persName>
+					</author>
+					<title level="a">Stepwise enrichment of 15N along food chains: Further evidence and the relation between δ15N and animal age</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geochimica et Cosmochimica Acta</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1135" to="1140"/>
+						<date when="1984">1984</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>I-M</forename><surname>Mulk</surname></persName>
+					</author>
+					<title level="a">Sirkas – ett samiskt fångstsamhälle i förändring Kr.f – 1600 e.Kr</title>
+				</analytic>
+				<monogr>
+					<title level="m">Studia archaeologica Universitatis Umensis</title>
+					<imprint>
+						<date when="1995">1995</date>
+						<biblScope unit="volume">6</biblScope>
+						<publisher>University of Umeå</publisher>
+					</imprint>
+				</monogr>
+				<note>Thesis (PhD)</note>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Munch</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Munch</surname></persName>
+					</author>
+					<title level="a">Utgravningene på boplassen på Gållevarri</title>
+				</analytic>
+				<monogr>
+					
+					<editor>
+						<persName><forename>Ø</forename><surname>Vorren</surname></persName>
+					</editor>
+					<title level="m">Villreinfangst i Varanger fram til 1600-1700 årener</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="106" to="133"/>
+						<date when="1998">1998</date>
+						<pubPlace>Stonglandseidet</pubPlace>
+						<publisher>Nordkalott-forlaget. Tromsø Museums skrifter</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename>E</forename><surname>Naumann</surname></persName>
+					</author>
+					<title level="a">Slaves as burial gifts in Viking Age Norway? Evidence from stable isotope and ancient DNA analyses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">41</biblScope>
+						<biblScope unit="page" from="533" to="540"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename>O</forename><surname>Nehlich</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Barrett</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Richards</surname></persName>
+					</author>
+					<title level="a">SSpatial variability in sulphur isotope values of archaeological and modern cod (Gadus morhua)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Rapid Communications in Mass Spectrometry</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">20</biblScope>
+						<biblScope unit="page" from="2255" to="2262"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b46">
+				<analytic>
+					
+					<author>
+						<persName><forename>O</forename><surname>Nehlich</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Richards</surname></persName>
+					</author>
+					<title level="a">Establishing collagen quality criteria for sulphur isotope analysis of archaeological bone collagen</title>
+				</analytic>
+				<monogr>
+					<title level="j">Archaeological and Anthropological Sciences</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="59" to="75"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>O'connell</surname></persName>
+					</author>
+					<title level="a">Isotopic Comparison of Hair, Nail and Bone: Modern Analyses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="1247" to="1255"/>
+						<date when="2001">2001</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b48">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>O’connell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">E</forename><forename type="last">M</forename><surname>Hedges</surname></persName>
+					</author>
+					<title level="a">Isotopic comparison of hair and bone: archaeolo- gical analyses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="661" to="665"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Pedersen</surname></persName>
+					</author>
+					<title level="a">Glimt fra Guollesuolu/ Gullholmen</title>
+				</analytic>
+				<monogr>
+					<title level="m">Deatnu – Teno – Tana</title>
+					<imprint>
+						<date when="1984">1984</date>
+						<biblScope unit="page" from="42" to="53"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b50">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Petersen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Alexandersen</surname></persName>
+					</author>
+					<title level="a">Non-metriske træk</title>
+				</analytic>
+				<monogr>
+					
+					<editor>
+						<persName><forename>N</forename><surname>Lynnerup</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>P</forename><surname>Bennike</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename>E</forename><surname>Iregren</surname></persName>
+					</editor>
+					<title level="m">Biologisk antropologi med human osteology</title>
+					<imprint>
+						<biblScope unit="page" from="111" to="119"/>
+						<date when="2008">2008</date>
+						<publisher>Gyldendal</publisher>
+						<pubPlace>København</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Reimer</surname></persName>
+					</author>
+					<title level="a">IntCal13 and Marine13 Radiocarbon Age Calibration Curves 0–50,000 Years cal BP</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1869" to="1887"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Richards</surname></persName>
+					</author>
+					<title level="a">Sulphur isotopes in palaeodietary studies: a review and results from a controlled feeding experiment</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Osteoarchaeology</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="issue">1-2</biblScope>
+						<biblScope unit="page" from="37" to="45"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b53">
+				<monogr>
+					<author>
+						<persName><forename>I</forename><surname>Ruong</surname></persName>
+					</author>
+					<title level="m">Samerna i historien och nutiden</title>
+					<imprint>
+						<publisher>BonnierFakta</publisher>
+						<pubPlace>Stockholm</pubPlace>
+						<date when="1982">1982</date>
+					</imprint>
+				</monogr>
+				<note>4th ed</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b54">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">L</forename><surname>Ryd</surname></persName>
+					</author>
+					<title level="m">Urfödan. Om självhushållets mat hos folk i Lappland</title>
+					<imprint>
+						<date when="2015">2015</date>
+						<publisher>Ord&amp;visor</publisher>
+						<pubPlace>Skellefteå</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A-K</forename><surname>Salmi</surname></persName>
+					</author>
+					<title level="a">Animal offerings at the Sámi offering site of Unna Saiva – Changing religious practices and human–animal relationships</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Anthropological Archaeology</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="10" to="22"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A-K</forename><surname>Salmi</surname></persName>
+					</author>
+					<title level="a">Tradition and transformation in Sámi animal-offering practices</title>
+				</analytic>
+				<monogr>
+					<title level="j">Antiquity</title>
+					<imprint>
+						<biblScope unit="volume">92</biblScope>
+						<biblScope unit="issue">362</biblScope>
+						<biblScope unit="page" from="472" to="489"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b57">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Schoeninger</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>DeNiro</surname></persName>
+					</author>
+					<title level="a">Nitrogen and carbon isotopic composition of bone collagen from marine and terrestrial animals</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geochimica et Cosmochimica Acta</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="625" to="639"/>
+						<date when="1984">1984</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chapter" xml:id="b58">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Sealy</surname></persName>
+					</author>
+					<title level="a">Body tissue chemistry and paleodiet</title>
+				</analytic>
+				<monogr>
+					<editor>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Pollard</surname></persName>
+					</editor>
+					<editor>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Brothwell</surname></persName>
+					</editor>
+					<title level="m">Handbook of archaeological sciences</title>
+					<imprint>
+						<date when="2001">2001</date>
+						<publisher>John Wiley &amp; sons</publisher>
+						<biblScope unit="page" from="269" to="279"/>
+						<pubPlace>New York</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b59">
+				<monogr>
+					
+					<author>
+						<persName><forename>J</forename><surname>Sivertsen</surname></persName>
+					</author>
+					<title level="m">Hammerfest 1789-1914</title>
+					<imprint>
+						<date when="1973">1973</date>
+						<publisher>Hammerfest kommune</publisher>
+						<pubPlace>Hammerfest</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b60">
+				<monogr>
+					<author>
+						<persName><forename>T</forename><surname>Sjøvold</surname></persName>
+					</author>
+					<title level="m">Spedbarnsskjeletter fra Gullholmen kirkegård, Tana kommune</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<publisher>Stockholm University</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b61">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Spangen</surname></persName>
+					</author>
+					<title level="a">Circling concepts. A Critical Archaeological Analysis of the Notion of Stone Circles as Sami Offering Sites</title>
+				</analytic>
+				<monogr>
+					<title level="m">Stockholm Studies in Archaeology, nr. 70</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<publisher>Stockholm University</publisher>
+					</imprint>
+				</monogr>
+				<note>Thesis (PhD)</note>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b62">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Storå</surname></persName>
+					</author>
+					<title level="m">Burial customs of the Skolt Lapps</title>
+					<imprint>
+						<date when="1971">1971</date>
+						<pubPlace>Helsinki</pubPlace>
+						<publisher>Suomalainen tiedeakatemia</publisher>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Stuiver</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">F</forename><surname>Braziunas</surname></persName>
+					</author>
+					<title level="a">Modeling atmospheric 14C influences and 14C ages of marine samples</title>
+				</analytic>
+				<monogr>
+					<title level="j">Radiocarbon</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="137" to="189"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b64">
+				<monogr>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="m">Undersøkelse av graver på Kirkegårdsøya Hammersfest kommune, Finnmark fylke</title>
+					<imprint>
+						<date when="2006">2006</date>
+						<publisher>Institutt for arkeologi, Universitetet i Tromsø</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b65">
+				<monogr>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="m">Undersøkelse av graver på Kirkegårdsøya Hammersfest kommune, Finnmark fylke</title>
+					<imprint>
+						<date when="2007a">2007a</date>
+						<publisher>Institutt for arkeologi, Universitetet i Tromsø</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b66">
+				<monogr>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="m">Arkeologisk utgraving på Gullholmen kirkegård, Deannu gielda/Tana kommune, Finnmark fylke</title>
+					<imprint>
+						<date when="2007b">2007b</date>
+						<publisher>Institutt for arkeologi, Universitetet i Tromsø</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished report</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b67">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="a">De døde skjuler mange ting – arkeologiske undersøkelser på Gullholmen kirkegård</title>
+				</analytic>
+				<monogr>
+					<title level="m">Tana-årboka/Deatnu Jahkegirji</title>
+					<imprint>
+						<date when="2010">2010</date>
+						<biblScope unit="page" from="77" to="91"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b68">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="a">The Impact of materiality on sámi burial customs and religious concepts</title>
+				</analytic>
+				<monogr>
+					<title level="j">Fennoscandia Archaeologica</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="page" from="39" to="56"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b69">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Svestad</surname></persName>
+					</author>
+					<title level="a">What Happened in Neiden? On the Question of Reburial Ethics</title>
+				</analytic>
+				<monogr>
+					<title level="j">Norwegian Archaeological Review</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="194" to="222"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b70">
+				<monogr>
+					
+					<author>
+						<persName><forename>V</forename><surname>Traedal</surname></persName>
+					</author>
+					<title level="m">Kirkesteder og kirkebygninger i Troms og Finnmark før 1800</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<publisher>University of Tromsø</publisher>
+					</imprint>
+				</monogr>
+				<note>Unpublished thesis (PhD)</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b71">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Van Klinken</surname></persName>
+					</author>
+					<title level="a">Bone Collagen Quality Indicators for Palaeodietary and Radiocarbon Measurements</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Archaeological Science</title>
+					<imprint>
+						<biblScope unit="volume">26</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="687" to="695"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b72">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">C</forename><forename type="last">C</forename><surname>Von Holstein</surname></persName>
+					</author>
+					<title level="a">Comparison of isotopic variability in proteinaceous tissues of a domesticated herbivore: a baseline for zooarchaeological investigation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Rapid Communications in Mass Spectrometry</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="issue">23</biblScope>
+						<biblScope unit="page" from="2601" to="2615"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="chaoter" xml:id="b73">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ø</forename><surname>Vorren</surname></persName>
+					</author>
+					<title level="a">Reindeer nomadism in the Island region of Helgeland. An analysis of the ecology of the reindeer industry with special reference to the Island area as winter pasture.</title>
+				</analytic>
+				<monogr>
+					
+					<editor>
+						<persName><forename>A</forename><surname>Furumark</surname></persName>
+					</editor>
+					<title level="j">Lapponica. Essays presented to Isreal Ruong 26. 5.1963</title>
+					<imprint>
+						<biblScope unit="page" from="304" to="320"/>
+						<date when="1964">1964</date>
+						<publisher>Studia Ethnogrpahica Upsaliensia</publisher>
+						<pubPlace>Uppsala</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b74">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ø</forename><surname>Vorren</surname></persName>
+					</author>
+					<title level="a">Villreinfangst i Varanger fram til 1600-1700 årene</title>
+				</analytic>
+				<monogr>
+					<title level="j">Tromsø Museums skrifter</title>
+					<imprint>
+						<biblScope unit="volume">XXVIII</biblScope>
+						<date when="1998">1998</date>
+						<publisher>Nordkalott-Forlaget</publisher>
+						<pubPlace>Stonglandseidet</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b75">
+				<monogr>
+					
+					<author>
+						<persName><forename>Ø</forename><surname>Vorren</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Manker</surname></persName>
+					</author>
+					<title level="m">Samekulturen: en kulturhistorisk oversikt. 2nd</title>
+					<imprint>
+						<date when="1976">1976</date>
+						<publisher>Universitetsforlaget</publisher>
+						<pubPlace>Tromsø</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b76">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Yaemsiri</surname></persName>
+					</author>
+					<title level="a">Growth rate of human fingernails and toenails in healthy American young adults</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of the European Academy of Dermatology and Venereology</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="420" to="423"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b77">
+				<monogr>
+					
+					<author>
+						<persName><forename>N</forename><surname>Zaias</surname></persName>
+					</author>
+					<title level="m">The nail in health and disease</title>
+					<imprint>
+						<date when="1980">1980</date>
+						<publisher>Appleton &amp; Lange</publisher>
+						<pubPlace>Norwalk, Connecticut</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

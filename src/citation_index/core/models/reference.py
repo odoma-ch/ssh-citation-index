@@ -40,12 +40,14 @@ class Reference(BaseModel):
         exclude=True,
     )
 
-    full_title: Annotated[
-        str,
-        BeforeValidator(to_str),
-        AfterValidator(empty_to_none),
-        AfterValidator(normalize),
-    ] = Field(description="The full title of the reference. This should be the same as the monographic_title or analytic_title, or a combination of the two. ")
+    full_title: Optional[
+        Annotated[
+            str,
+            BeforeValidator(to_str),
+            AfterValidator(empty_to_none),
+            AfterValidator(normalize),
+        ]
+    ] = Field(None, description="The full title of the reference. This should be the same as the monographic_title or analytic_title, or a combination of the two. ")
     
     journal_title: Optional[
         Annotated[

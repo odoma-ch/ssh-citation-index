@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Next Generation Sequencing Analysis of Wastewater Treatment Plant Process via Support Vector Regression</title>
+				<funder>
+					<orgName type="full">North Water's Wastewater Treatment Plant in Delfzijl</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">BioClear</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Elsevier</publisher>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-01-01"/>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Prawira Negara</surname></persName>
+							<email>m.a.prawira.negara@rug.nl</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Engineering and Technology Institute Groningen</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">E</forename><surname>Cornelissen</surname></persName>
+							<email>emilecornelissen@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Engineering and Technology Institute Groningen</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Geurkink</surname></persName>
+							<email>b.geurkink@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Engineering and Technology Institute Groningen</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">G</forename><forename type="middle">J</forename><forename type="last">W</forename><surname>Euverink</surname></persName>
+							<email>g.j.w.euverink@rug.nl</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Engineering and Technology Institute Groningen</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">B</forename><surname>Jayawardhana</surname></persName>
+							<email>b.jayawardhana@rug.nl</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Engineering and Technology Institute Groningen</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Engineering</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Next Generation Sequencing Analysis of Wastewater Treatment Plant Process via Support Vector Regression</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">IFAC PapersOnLine</title>
+						<imprint>
+							<biblScope unit="volume">52</biblScope>
+							<biblScope unit="issue">23</biblScope>
+							<biblScope unit="page" from="37" to="42"/>
+							<date type="published" when="2019-01-01"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">643B03E48E95F7480283E2EA874A94D2</idno>
+					<idno type="DOI">10.1016/j.ifacol.2019.11.006</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Wastewater Treatment Plant</term>
+					<term>correlation analysis</term>
+					<term>process data</term>
+					<term>NGS data</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this paper, we analyze next generation sequencing (NGS) data of wastewater treatment plant (WWTP) in the North Water facility for revealing the role of 1236 different genera of microorganisms in the aeration basin to the measured process data. Both the timeseries data of NGS and process parameters are pre-processed and analyzed using support vector regression technique and is compared with the deep neural network approach. Local sensitivity analysis is performed on the resulting models. Both machine learning analyses show the importance of a subset of genera to the WWTP process and can be used to enrich the well-studied activated sludge model (ASM).</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>It has been recognized that wastewater forms a significant part of waste from human activities and it requires treatment before it is environmentally safe to be discharged to the natural water resources (see, for example, <ref type="bibr" target="#b5">Henze and Comeau (2008)</ref>). When it is discharged untreated, it pollutes water resources and can lead to disastrous ecological, environmental, as well as, economical impacts. Wastewater comes from two major sources: human sewage systems and process waste from manufacturing industries. The biological treatment of wastewater was firstly introduced in the early twentieth century and has become the basis of wastewater treatment worldwide. It involves the deployment of confining naturally occurring bacteria at very high concentrations in tanks. These bacteria, together with some protozoa and archaea, are collectively referred to as activated sludge. The concept of biological treatment is fairly simple. The microorganisms process small organic compounds, ammonia, and phosphate by consuming them for their growth; thereby the wastewater is cleansed. After the clarification step (where the activated sludge is sedimented), the treated wastewater is discharged to natural water resources, such as river or sea.</p><p>While the concept is simple, the control of the treatment process is very complex because of a large number of variables that affects it <ref type="bibr" target="#b2">(Davies (2005)</ref>). These include changes in the composition of the bacterial flora in the treatment tanks and changes in the sewage flowing into the plant. The input can show variations in flow rate, chemical composition, pH, and temperature which in turns influence the population dynamics and metabolic process of the activated sludge. Some of the plants that treat industrial wastewater may have to cope with recalcitrant chemicals that are difficult to degrade by the activated sludge. Such industrial wastewater contains toxic chemicals and has extreme properties such as low or high pH or high salt concentration that can inhibit the functioning of the activated sludge.</p><p>There are a number of established models for describing the process dynamics in WWTP such as the well-studied Activated Sludge Models from the International Water Association (see <ref type="bibr" target="#b6">Henze et al. (2000)</ref>). These ASM models are lumped dynamical models where the influence of the activated sludge is lumped to the kinetic laws/rate of few WWTP process variables. The unknown parameters are a fusion of metabolic activities of various microorganisms and consequently they have a large degree of uncertainties. This prevents the direct use of the models for optimization and for the model-based control design of WWTP. For improving the reliability and applicability of these models, it is recognized that the knowledge and real-time information of the microorganism population are indispensable for enriching the ASM models, as concluded in <ref type="bibr" target="#b10">Muszynski et al. (2015)</ref>; <ref type="bibr" target="#b9">Liu et al. (2016)</ref>; <ref type="bibr" target="#b0">Bassin et al. (2017)</ref>. In particular, the high-throughput data of microorganisms that are obtained from the Next Generation Sequencing (NGS) or other omics tools can be used to adjust/to adapt the uncertain parameters and decrease the uncertainties of the models. The large degree of heterogeneity of microorganisms, as well as, the time-varying and highly non-linear characteristics of the WWTP process dynamics, pose some challenges in linking the real-time data on microorganisms and other relevant information to the overall process dynamics.</p><p>Towards the development of the aforementioned enriched/adaptive ASM models, we study in this paper the relation of NGS data (which are obtained from an industrial WWTP of the North Water facility located in Oosterhorn, Delfzijl, Netherlands) to the measured process variables. The analysis is based on a machine learning technique, the so-called Support Vector Regression, which can handle well high-degree of uncertainties and unstructured relation between rich set (high-degree of heterogeneity) of input and output data (with a small number of time points). Such preliminary analysis can extremely be useful to identify a subset of the microbial population that can explain most of the variations observed in the process dynamics. More importantly, a targeted low-cost and fast measurement to this population subset (such as, using the qPCR (quantitative polymerase chain reaction) technology) allows us to provide an additional feedback control loop to the process control of WWTP.</p><p>A generic schematic overview of the WWTP of North Water is shown in Fig. <ref type="figure" target="#fig_0">1</ref>. The influent of the WWTP is industrial salt wastewater and the activated sludge processes take place in the aeration tank which is indicated by 2 in Fig. <ref type="figure" target="#fig_0">1</ref>. In the sedimentation tank (which is given by 3 in Fig. <ref type="figure" target="#fig_0">1</ref>) the activated sludge is separated from the water and partly fed back to the aeration tank. We refer to Fig. <ref type="figure" target="#fig_1">2</ref> for the simplified block diagram of the system. The treated water is then discharged into the Wadden Sea.</p><p>Next Generation Sequencing (NGS) of the 16S rRNA gene from the bacteria in sludge samples is used to analyze the microbial communities. The analysis of the NGS data shows the presence and abundance of the microorganisms in the sludge based on the millions of DNA sequence data. According to <ref type="bibr" target="#b12">Xu (2014)</ref>, the DNA sequences are compared to 16S rDNA sequences in public databases to identify the microorganisms in the sludge. Based on this comparison, an overview of the microorganisms that occur in the sludge sample is created. The frequency of the occurrence of the same sequence in the NGS dataset is related to the abundance of a specific microorganism in the sludge sample.</p><p>The rest of the paper is organized as follows. In Section 2, we review the Support Vector Regression technique that we use to explain the relation between the microorganism data and the measured process variables. In Section 3, we present the data pre-processing that we have used to both dataset. We present our SVR analysis in Section 4 where we compare it with the results that are obtained using the deep neural network. Finally, in Section 5, we present the conclusions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">SUPPORT VECTOR REGRESSION</head><p>Support Vector Machines (SVM) is a supervised learning method where data can either be classified according to a pre-determined set of kernel functions or be fitted to a given set of basis functions, see also, <ref type="bibr" target="#b1">Cortes and Vapnik (1995)</ref> and <ref type="bibr" target="#b3">Drucker et al. (1996)</ref>. The latter use of SVM for regression analysis is also referred to as the Support Vector Regression (SVR) method.</p><p>In the following, we will briefly describe the SVR method where nonlinear basis functions are used. Suppose that x i ∈ R n with i = 1, 2, . . . , m are a collection of input vector sampled from the vector space of R n and m is the total number of samples. Let y i ∈ R be the corresponding samples of scalar output data. In SVR, the nonlinear regression between x i and y i assumes the following regression model</p><formula xml:id="formula_0">y i ≈ w T φ(x i ) + b,<label>(1)</label></formula><p>where φ : R n → R q is the q-dimensional kernel functions and w ∈ R q is the parameter vector to be identified.</p><p>Using the regression model (1) and for a given qdimensional kernel function φ, the SVR method looks for w and b that solve a given nonlinear programming problem. In the kernel-based regression model as in (<ref type="formula" target="#formula_0">1</ref>), we assume a linear relation between the kernel output φ(x i ) to the output scalar y i which simplifies the regression problem as we can extend tools from linear regression techniques in a straightforward manner. The kernel choice as well as the particular selection of adjustable kernel parameters have an important influence on the performance of the kernel. For some data sets, the kernel parameters in φ need to be optimized and can be done along side the regression step, see <ref type="bibr" target="#b4">Eitrich and Lang (2006)</ref>. Usually, this is done by performing a grid search, where all possible combinations of parameters are investigated according to <ref type="bibr" target="#b7">Hsu et al. (2010)</ref>.</p><p>A loss/error function is typically introduced to quantify the regression performance. It gives a distance measure between the approximated output w T φ(x i ) + b to the measured output y i . In a standard regression problem, this loss function is given by a quadratic function. However, in SVR, an -insensitive loss function is used instead. Roughly speaking, this function is equal to zero when the error is within a range of and is equal to the 1-norm of the error minus otherwise. In addition to this, in order to guarantee the feasibility of the optimization problem, two slack variables are introduced in our analysis, see for instance, <ref type="bibr" target="#b11">Scholkopf and Smola (2002)</ref>.</p><p>Thus, the corresponding nonlinear regression problem of (<ref type="formula" target="#formula_0">1</ref>) is given by the following minimization problem where both the -insensitive term and slack variables ξ, ξ are used.</p><formula xml:id="formula_1">minimize w,ξ, ξ 1 2 w 2 + C n i=1 (ξ i + ξi )<label>(2)</label></formula><p>subject to</p><formula xml:id="formula_2">     y i -w T φ(x i ) -b ≤ + ξ i i = 1, . . . , n w T φ(x i ) + b -y i ≤ + ξi i = 1, . . . , n ξ i , ξi ≥ 0 i = 1, . . . , n.<label>(3)</label></formula><p>As a dual problem to the above minimization problem, we can reformulate it by introducing Lagrange multipliers α and α * as follows</p><formula xml:id="formula_3">minimize α,α *   1 2 n i,j=1 (α * i -α i )(α * j -α j )φ(x i ) T φ(x j ) + n i=1 (α * i + α i ) - n i=1 y i (α * i -α i ) <label>(4)</label></formula><p>subject to</p><formula xml:id="formula_4">         0 ≤ α * i ≤ C 0 ≤ α i ≤ C n i=1 (α i -α * i ) = 0.<label>(5)</label></formula><p>In this case, the identified weight/parameter vector w is given by</p><formula xml:id="formula_5">w = n i=1 (α * i -α i )φ(x i ).<label>(6)</label></formula><p>Consequently, when a new data x is given, we can predict its output by computing</p><formula xml:id="formula_6">y = w T φ(x) + b <label>(7)</label></formula><p>where b is computed using the Karush-Kuhn-Tucker (KKT) complementarity conditions. The KKT complementary condition we used are</p><formula xml:id="formula_7">       α i ( + ξ i -y i + φ(x i )) = 0 α * i ( + ξ * i + y i -φ(x i )) = 0 ξ i (C -α i ) = 0 ξ * i (C -α * i ) = 0.<label>(8)</label></formula><p>Hence b can be computed as follows</p><formula xml:id="formula_8">b = y i -w T φ(x i ) - for 0 ≤ α i ≤ C b = y i -w T φ(x i ) + for 0 ≤ α * i ≤ C<label>(9)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">DATA PROCESSING</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">NGS Data</head><p>The NGS dataset, taken from the WWTP in Oosterhorn, was made available for this paper by BioClear. The NGS analysis of 32 active sludge samples was performed for 2.5 years, starting in week 42, 2014 and ending in week 6, 2017.</p><p>The dataset was arranged in multiple sheets of data, each sheet representing one hierarchical rank of taxonomy. The available taxonomical ranks in the dataset are (in hierarchical order): Class, Order, Family, and Genus. For this study, the genus rank was chosen to develop and build the models. This rank shows the highest level of detail of the four available ranks. In total, 1236 different genera were identified in the 32 samples. The dataset was imported in Python V2.7 and stored into a data-frame. However, not all genera were identified in each of the 32 samples. This resulted in an empty cell for that particular genus in the sample. These cells are filled with a value well below the detection limit of that sample. Lastly, the values were raised to the power of 10.</p><p>In the NGS dataset, samples are taken on average every four weeks, resulting in 32 total samples. Unfortunately, these samples are not spread evenly over the total period, but differ in interval time. Since the process data has a higher, weekly frequency, the NGS dataset is re-sampled into a weekly frequency as well. This was done using interpolation. The main two criteria for an interpolation technique are that it naturally approximates the missing data points and that it cannot be lower than zero. Values lower than zero are not acceptable since the occurrence of genera cannot be negative. One of the interpolation techniques that satisfies these two criteria is Piecewise Cubic Hermite Interpolating Polynomial (PCHIP). Therefore, the PCHIP interpolation technique was chosen and applied to the dataset.</p><p>A dataset with 1236 columns or features is extremely high for any machine learning model to deal with. Therefore, to reduce the number of features, Principal Component Analysis (PCA) is used for a dimensionality reduction of the dataset. The retained variance per component reduces quickly after the first components and with 28 components, the cumulative retained variance exceeds 0.99. Thus, with that number of components, 99% of the variance from the original dataset is retained. Consequently, a number of 28 principal components is chosen.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Process Data</head><p>The process data from the same WWTP consists of 108 time samples, where the first sample was taken in week 40 of 2014 and the last sample was taken in week 10 of 2017.</p><p>The process data consists of the chemical composition of the wastewater influent and effluent. In the available dataset of the process parameters, there are some missing values for certain samples. The same PCHIP technique as for the NGS data is used to fill in these values. However, the data points are not re-sampled as done with the NGS dataset, since the frequency of the data is already weekly.</p><p>The volatility of the process parameters is significantly higher than that of the NGS data. A low-pass filter was applied to overcome this difference by removing the higher frequencies in the data, leaving out a smoother graph. To smooth the process data we used the moving average filter (MA).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">SVR Model</head><p>Prior to training the regression model (<ref type="formula" target="#formula_0">1</ref>) using the WWTP data, we firstly divide the collected data into three subsets: a training, a validation, and a test set. The training set is used to fit the model to the data, and the validation set is used to tune the parameters of the model, whereas the test set will be used after the model is created to evaluate the performance of the model. Consequently, the model will not see the test set until the evaluation. In this study, 20% of the dataset is used for testing the developed models. The remaining 80% of the dataset is then further divided into a training set and validation set.</p><p>When we refer to the regression model (<ref type="formula" target="#formula_0">1</ref>), the scalar output data y i refers to each of the measured process parameters in the WWTP process data and x i corresponds to the sample of input vector data obtained from NGS, e.g., the vector of genera density/population.</p><p>In this work, we will use the following radial basis functions.</p> <formula xml:id="formula_9">φ i (x) = exp(-γ x -a i 2 ), <label>(10)</label></formula><p>where φ i is the i-th element of φ, and a i ∈ R n , γ ∈ R, i = 1, . . . , q are the kernel parameters that need to be optimized as briefly discussed before. We use the training data x i as the centre of each basis function φ i , i.e., a i = x i . This means also that the dimension of φ and w as in (<ref type="formula" target="#formula_0">1</ref>) is n.</p><p>Grid search methodology with 5-fold cross-validation on the training set is applied to retrieve the optimal values for the model parameters C (regularization cost parameter), (determining the -insensitive loss function) and γ (kernel parameter) for each of the process parameters. The search was done by using exponential sequences for C, and γ in the ranges of</p><formula xml:id="formula_10">C = [2 1 , 2 3 , 2 5 , ..., 2 15 ] γ = [2 -15 , 2 -13 , 2 -11 , ..., 2 3 ] = [2 -11 , 2 -9 , 2 -7 , ..., 2 -1 ]<label>(11)</label></formula><p>These three ranges resulted in a total of 420 different combinations. In combination with the 5-fold cross validation, this resulted in 2100 runs of the model per process parameter. After fitting the model with the optimized parameters, the test set is used as input for the model. Since the model has not known this dataset yet, it is a validation of the model. The test output is compared with the measured data using the performance criteria R 2 . Fig. <ref type="figure" target="#fig_2">3</ref> shows the comparison between SVR model and the measured data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Sensitivity Analysis</head><p>SVR is a black-box model. Thus, the intrinsic relations between the inputs of microbial communities and the predicted outputs of process parameters are not known. A sensitivity analysis (SA) was performed on all selected trained models, to show the relative importance of each genus to the prediction of the process parameters.</p><p>One Factor At a Time (OFAT) technique is used for this SA. OFAT is a local sensitivity analysis technique, only measuring the influence of a genus on a process parameter for a certain change of that genus. Thus, only a local area of the influence of each genus is explored. Algorithm 1 shows how SA works.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Model Performance</head><p>The measured process parameters where measured output is compared with predicted output of both the test set and the training set. In general, all models scored very well according to the performance criteria, since all models had an R 2 score higher than 0.85 (except for INF SO 4 with an R 2 score below 0.85). Therefore, all process parameters are selected for the sensitivity analysis.</p><p>To further prove that the performance of the model created by SVR can be used, we then compared it with a Deep Neural Network (DNN) model. The comparison of the R 2 score between SVR and DNN can be seen in Table <ref type="table" target="#tab_0">1</ref>. We can see that the SVR produced better models than DNN (70% of the models are better).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Result of Sensivity Analysis</head><p>The sensitivity analysis with OFAT showed that Thalassospira has a positive correlation with K and TOD in the effluent and Cl, COD, EC, and Na in the influent (Fig <ref type="figure" target="#fig_3">4</ref>). Thalassospira species are usually isolated from marine environments, as reported by <ref type="bibr" target="#b8">Hutz et al. (2011)</ref>. Since the influent of this WWTP contains more salt than usual these correlations with the electric conductivity (EC), NaCl, and KCl) can be explained. Furthermore, this analysis also showed that the anaerobic genera Desulfocapsa has a negative SA with the SO 4 in the influent and effluent. As this species ranked in the top 10, this means that a high number of this species in the activated sludge is correlated with the concentration of SO 4 in the effluent and influent. However, the concentration of SO 4 does not necessarily imply the presence of Desulfocapsa. The sensitivity ranking of the top 10 genera for each process parameter in the SVR model is shown in Fig 4. Both SVR and DNN show similar results for the sensitivity analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">CONCLUSION</head><p>By analyzing the (local) sensitivity of each modeled process parameter to each input (each genus), an indication of the influence of the microbial structure on process performance was found. Some of these sensitivity scores can be explained by looking at the function of a specific organism in an environment, but most of them remain unknown. It is difficult to further assess the plausibility of this sensitivity analysis, due to two reasons. First, the functions of many genera are still unknown. Second, a strong sensitivity does not automatically mean that there is a causal relation between the two factors. In a next step, we will generate NGS datasets of mRNA of the samples and determine the metabolic pathways that are active in the genus. Using this data we can optimize the SVR and SA to predict the behavior of a WWTP in relation to the influent composition.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Schematic diagram of the North Water's SalineWastewater Treatment Plant, where 1) influent 2) aeration tank 3) sedimentation tank 4) effluent. The picture is courtesy of North Water.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Block diagram of the aeration tank and clarifier.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Comparison between SVR model and the measured data, (a) Nitrogen Influent (b) Nitrogen Effluent</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>3</label><figDesc>Fig. 4. Ranking of the SA of the top 10 genera using OFAT on the trained models SVR and DNN using each process parameter</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Table 1. Comparison between SVR and DNN</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="box" xml:id="box_0"><head>Algorithm 1</head><label>1</label><figDesc>Algorithm for One Factor At a Time</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>The data used in this paper is taken from <rs type="funder">North Water's Wastewater Treatment Plant in Delfzijl</rs>. <rs type="person">North Water</rs> provided the analytical data of the chemical composition of the influent and effluent and the microbiological samples of the activated sludge compartment of the WWTP are processed by <rs type="funder">BioClear</rs> (2014-2017).</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Bassin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Rachid</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Vilela</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Peixoto</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Dezotti</surname></persName>
+					</author>
+					<title level="a">Revealing the bacterial profile of an anoxic-aerobic moving-bed biofilm reactor system treating a chemical industry wastewater</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Biodeterioration &amp; Biodegradation</title>
+					<imprint>
+						<biblScope unit="volume">120</biblScope>
+						<biblScope unit="page" from="152" to="160"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Cortes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Vapnik</surname></persName>
+					</author>
+					<title level="a">Support-vector networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Machine Learning</title>
+					<imprint>
+						<date when="1995">1995</date>
+						<biblScope unit="volume">20</biblScope>
+						<biblScope unit="page" from="273" to="297"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b2">
+				<monogr>
+					
+					<author>
+						<persName><forename>P</forename><surname>Davies</surname></persName>
+					</author>
+					<title level="m">The Biological Basis of Wastewater Treatment</title>
+					<imprint>
+						<date when="2005">2005</date>
+						<publisher>Strathkelvin Instruments Ltd</publisher>
+						<pubPlace>Motherwell</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Drucker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Burges</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Kaufman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Smola</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Vapnik</surname></persName>
+					</author>
+					<title level="a">Support vector regression machines</title>
+				</analytic>
+				<monogr>
+					<title level="j">Advances in Neural Information Processing Systems</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="155" to="161"/>
+						<date when="1996">1996</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Eitrich</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Lang</surname></persName>
+					</author>
+					<title level="a">Efficient optimization of support vector machine learning parameters for unbalanced datasets</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Computational and Applied Mathematics</title>
+					<imprint>
+						<biblScope unit="volume">196</biblScope>
+						<biblScope unit="page" from="425" to="436"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b5">
+				<monogr>
+					
+					<author>
+						<persName><forename>M</forename><surname>Henze</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Comeau</surname></persName>
+					</author>
+					<title level="m">Biological Wastewater Treatment</title>
+					<imprint>
+						<date when="2008">2008</date>
+						<publisher>IWA Publishing</publisher>
+						<pubPlace>London</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b6">
+				<monogr>
+					<author>
+						<persName><forename>M</forename><surname>Henze</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Gujer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Mino</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Van Loosdrecht</surname></persName>
+					</author>
+					<title level="m">Activated Sludge Models ASM1, ASM2, ASM2d and ASM3</title>
+					<imprint>
+						<publisher>IWA Publishing</publisher>
+						<pubPlace>London</pubPlace>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="webpage" xml:id="b7">
+				<monogr>
+					
+					<author>
+						<persName><forename>C</forename><surname>Hsu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Lin</surname></persName>
+					</author>
+					<title level="m">A practical guide to support vector classification</title>
+					<ref src="https://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf.On-line">https://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf.On-line</ref>
+					<imprint>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Hutz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Schubert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Overmann</surname></persName>
+					</author>
+					<title level="a">Thalassospira sp. isolated from the oligotrophic eastern mediterranean sea exhibits chemotaxis toward inorganic phosphate during starvation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied and Environmental Microbiology</title>
+					<imprint>
+						<biblScope unit="volume">77</biblScope>
+						<biblScope unit="page" from="4412" to="4421"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ni</surname></persName>
+					</author>
+					<title level="a">Performance assessment of full-scale wastewater treatment plants based on seasonal variability of microbial communities via high-throughput sequencing</title>
+				</analytic>
+				<monogr>
+					<title level="j">PLoS ONE</title>
+					<imprint>
+						<biblScope unit="page">11</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Muszynski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Tabernacka</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Miobedzka</surname></persName>
+					</author>
+					<title level="a">Long-term dynamics of the microbial community in a full-scale wastewater treatment plant</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Biodeterioration &amp; Biodegradation</title>
+					<imprint>
+						<biblScope unit="page" from="44" to="51"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b11">
+				<monogr>
+					
+					<author>
+						<persName><forename>B</forename><surname>Scholkopf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Smola</surname></persName>
+					</author>
+					<title level="m">Learning with kernels: support vector machines, regularization, optimization, and beyond</title>
+					<imprint>
+						<date when="2002">2002</date>
+						<publisher>MIT Press</publisher>
+						<pubPlace>Massachusetts</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Xu</surname></persName>
+					</author>
+					<title level="a">Next-Generation Sequencing</title>
+				</analytic>
+				<monogr>
+					<title level="j">IFAC CMWRS Delft</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<publisher>Caister Academic Press</publisher>
+						<pubPlace>Norfolk</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

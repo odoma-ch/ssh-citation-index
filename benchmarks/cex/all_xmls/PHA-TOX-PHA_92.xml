@@ -1,0 +1,1564 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Potential of Neoagaro-Oligosaccharides as a Treatment of Type II Diabetes in Mice</title>
+				<funder ref="#_PTwRgYf">
+					<orgName type="full">Integration of Industry and Education of Fujian Province</orgName>
+				</funder>
+				<funder ref="#_Z5WwyZq">
+					<orgName type="full">Public Science and Technology Research Fund Ocean Project</orgName>
+				</funder>
+				<funder ref="#_RqPqmvm #_HaHAZtj">
+					<orgName type="full">Huaqiao University Support Program for Science and Technology Innovation by Young Teachers</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>MDPI</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-09-20">20 September 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Fudi</forename><surname>Lin</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dongda</forename><surname>Yang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yayan</forename><surname>Huang</surname></persName>
+							<email>yyhuang@hqu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yan</forename><surname>Zhao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jing</forename><surname>Ye</surname></persName>
+							<email>yejenny@hqu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="institution">Xiamen Engineering and Technological Research Center for Comprehensive Utilization of Marine Biological Resources</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Meitian</forename><surname>Xiao</surname></persName>
+							<email>mtxiao@hqu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Chemical Engineering</orgName>
+								<orgName type="institution">Huaqiao University</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Xiamen Engineering and Technological Research Center for Comprehensive Utilization of Marine Biological Resources</orgName>
+								<address>
+									<postCode>361021</postCode>
+									<settlement>Xiamen</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Potential of Neoagaro-Oligosaccharides as a Treatment of Type II Diabetes in Mice</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Marine Drugs</title>
+						<imprint>
+							<publisher>MDPI</publisher>
+							<biblScope unit="volume">17</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="541" to=""/>
+							<date type="published" when="2019-09-20">20 September 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A7CA20990E211FC7ECD6200DD89F48C0</idno>
+					<idno type="DOI">10.3390/md17100541</idno>
+					<note type="submission">Received: 18 August 2019; Accepted: 16 September 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>type 2 diabetes mellitus</term>
+					<term>neoagaro-oligosaccharides</term>
+					<term>MAPK</term>
+					<term>Nrf2</term>
+					<term>PPARγ</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Type 2 diabetes mellitus (T2DM) accounts for more than 90% of cases of diabetes mellitus, which is harmful to human health. Herein, neoagaro-oligosaccharides (NAOs) were prepared and their potential as a treatment of T2DM was evaluated in KunMing (KM) mice. Specifically, a T2DM mice model was established by the combination of a high-fat diet (HFD) and alloxan injection. Consequently, the mice were given different doses of NAOs (100, 200, or 400 mg/kg) and the differences among groups of mice were recorded. As a result of the NAOs treatment, the fasting blood glucose (FBG) was lowered and the glucose tolerance was improved as compared with the model group. As indicated by the immunohistochemistry assay, the NAOs treatment was able to ameliorate hepatic macrovesicular steatosis and hepatocyte swelling, while it also recovered the number of pancreatic β-cells. Additionally, NAOs administration benefited the antioxidative capacity in mice as evidenced by the upregulation of both glutathione peroxidase and superoxide dismutase activity and the significant reduction of the malondialdehyde concentration. Furthermore, NAOs, as presented by Western blotting, increased the expression of p-ERK1/2, p-JNK, NQO1, HO-1, and PPARγ, via the MAPK, Nrf2, and PPARγ signaling pathways, respectively. In conclusion, NAOs can be used to treat some complications caused by T2DM, and are beneficial in controlling the level of blood glucose and ameliorating the damage of the liver and pancreatic islands.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Type 2 diabetes mellitus (T2DM) accounts for more than 90% of cases of diabetes mellitus. It is a polygenic disease characterized by insufficient insulin secretion caused by the destruction of islet β-cells and insulin resistance. A complicated syndrome is common among the individuals suffering from T2DM. Oxidative stress can be found in the patients during the development of T2DM. Particularly, the lack of balance between the levels of free radicals and the antioxidant defense system always leads to damage of tissues and β-cells <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>. Among the tissues, the liver plays a central role in lipid and glucose metabolism. Its dysregulation can result in various diseases, including diabetes <ref type="bibr" target="#b5">[6]</ref>. Moreover, T2DM is accompanied by comprehensive disorders in the metabolism of glucose, protein, and lipid <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. As one of the typical metabolism disorders, dyslipidemia is prevalent among T2DM patients, involving not only high levels of serum triglycerides (TG), total cholesterol (TC), and low-density lipoprotein cholesterol (LDL-C), but also a low concentration of high-density lipoprotein cholesterol (HDL-C). In addition, cardiovascular complications should be taken into account when treating T2DM <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>.</p><p>As the hydrolysate of agar/agarose, neoagaro-oligosaccharides (NAOs) are prepared by breaking the β-(1-4) bonds using β-agarase; they display various bioactivities including antioxidant <ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref>, anti-inflammatory <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>, whitening of melanoma cells <ref type="bibr" target="#b18">[19,</ref><ref type="bibr" target="#b19">20]</ref>, anti-obesity <ref type="bibr" target="#b20">[21]</ref>, and hypolipidemic effects <ref type="bibr" target="#b21">[22]</ref>. Two NAOs, neoagaroteraose (signed as NA4) and neoagarohexaose (signed as NA6), have been reported to be able to ameliorate obesity and the obesity-related metabolic defects, such as hyperlipidemia, steatosis, insulin resistance, and glucose intolerance in obese mice, by means of the induction of adiponectin <ref type="bibr" target="#b20">[21]</ref>. Moreover, NA4 was more effective in scavenging hydroxyl radicals when compared with neoagarobiose (signed as NA2), NA6, and neoagarooctose (signed as NA8). NA4 also inhibited the inflammation in lipopolysaccharide (LPS)-stimulated macrophages by suppressing the MAPK and nuclear factor-κB (NF-κB) pathways <ref type="bibr" target="#b22">[23]</ref>. Moreover, NAOs could stimulate the expression of A20 and COX-2 via MAPK and NF-κB-dependent pathways in septic shock <ref type="bibr" target="#b23">[24]</ref>. It is interesting that the defects mentioned above that might be treated by NAOs are also common among T2DM patients. Whether NAOs play a passive role in the treatment of T2DM deserves attention.</p><p>Although the effects of NAOs on obesity and obesity-related metabolic defects had been described, their efficacy in the treatment of diabetes mellitus and the involved molecular mechanism were still unknown. Therefore, in this study, the potential of NAOs in treating T2DM was evaluated in KM mice, while the corresponding anti-T2DM mechanism of NAOs was also investigated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Characterization of the NAOs</head><p>Agar was hydrolyzed by β-agarase and the hydrolyzate was purified by means of centrifugation, membrane separation, and gel column separation, generating the target NAOs with acceptable purity. The composition of the purified oligosaccharides was determined by using HPLC-ELSD. As shown in Figure <ref type="figure" target="#fig_0">1A</ref>, NA2 and NA4, the structures of which are also presented in the same figure, were identified. The NAOs mixture, composed of NA2 (21.6%) and NA4 (71.1%), could be well separated in the HPLC experiment. Besides, the structures of the NAOs were confirmed by using ESI-TOF-MS and 13 C-NMR. The ESI-TOF-MS results, as presented in Figure <ref type="figure" target="#fig_0">1B</ref>, exhibited the expected mass of NA2 (m/z: calculated, 324.1056 for C 12 H 20 O 10 ; found, 347.0949 for [M + Na] + ) and NA4 (m/z: calculated, 630.2007 for C 24 H 38 O 19 ; found, 653.1886 for [M + Na] + ). The 13 C-NMR results (Figure <ref type="figure" target="#fig_0">1C</ref>) showed the distinctive chemical shifts as 92.6 ppm and 96.6 ppm, of which were the signals of the αand β-anomeric forms of the galactose unit at the reducing end of the NAOs, respectively. However, sufficient NA2 and NA4 were unable to be obtained by using preparative liquid chromatography due to the high cost. Therefore, the mixture was used to perform the remaining experiments. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Effects of NAOs on Body Mass and Food Intake</head><p>Body mass and food intakes were recorded to explore the influence of NAOs on growth. During this experiment, the body weight of the mice in each group increased gradually (Figure <ref type="figure" target="#fig_1">2</ref>). The body mass of the model control (MC) group was 29.2 ± 1.3 g, much lower than that of the normal control (NC) group (p &lt; 0.05), suggesting the typical body weight loss in T2DM. After eight weeks of treatment, administration of NAOs (100, 200, or 400 mg/kg) or that of metformin (50 mg/kg) was able to recover the body weight of mice as compared with the MC group (p &lt; 0.01). Nevertheless, little difference of the food intake could be found in each group as shown in Table <ref type="table" target="#tab_0">1</ref>. These results indicate that NAOs might prevent the body weight loss caused by T2DM without any change of food intake.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Fasting Blood Glucose (FBG) Determination and Oral Glucose Tolerance Test (OGTT)</head><p>The concentration of FBG was determined to study the effects of NAOs on the glucose status of T2DM mice. As shown in Table <ref type="table" target="#tab_1">2</ref>, the level of FBG in the MC group was much higher than that in the NC group (22.24 ± 5.76 vs. 4.83 ± 0.69, p &lt; 0.01) at the end of the study, suggesting some diabetes-induced defects. Metformin (50 mg/kg) generated powerful hypoglycemic effects on mice, while NAOs could reduce the glycemia in the diabetic mice in a dose-dependent manner. The FBG levels in the M-NAO and H-NAO groups were significantly reduced by 29.0% (p &lt; 0.05, vs. MC group) and by 41.8% (p &lt; 0.01, vs. MC group), respectively. NAOs were able to protect mice from the hyperglycemia caused by T2DM.</p><p>OGTT was performed to investigate the effect of NAOs on glucose tolerance. As presented in Figure <ref type="figure" target="#fig_2">3A</ref>, the blood glucose concentration in the NC group rose to its peak within 30 min and it returned to its initial level within the next 90 min. A much higher glucose level was found in the MC group, with its peak value of 31.2 ± 3.2 mmol/L within the first 30 min, while the glucose level was still high at the end of the OGTT. However, the rise of the blood glucose caused by the glucose was inhibited by the NAOs treatment in a dose-dependent manner. The area under the curve (AUC) of the M-NAO and H-NAO groups in Figure <ref type="figure" target="#fig_2">3A</ref> was markedly lower than that of the MC group (p &lt; 0.01 and p &lt; 0.001, respectively) (Figure <ref type="figure" target="#fig_2">3B</ref>). NAOs was able to improve the glucose intolerance of the diabetic mice. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Immunohistochemistry of the Liver and Pancreatic Islets</head><p>Immunohistochemical staining revealed that the liver of mice fed with a normal diet was normal while hepatic steatosis developed in mice that were HFD-fed (Figure <ref type="figure" target="#fig_3">4A,</ref><ref type="figure" target="#fig_3">B</ref>). However, NAOs treatment ameliorated the macrovesicular steatosis and hepatocyte swelling induced by HFD in a dose-dependent manner (Figure <ref type="figure" target="#fig_3">4D-F</ref>). These results suggest that NAOs can inhibit fat deposition in the liver.</p><p>The histology of the pancreas was also studied. As shown in Figure <ref type="figure" target="#fig_4">5A,</ref><ref type="figure">B</ref>, the injection of alloxan caused pancreatic islet pathology in mice as evidenced by severe narrowness of this organ. However, metformin (as shown in Figure <ref type="figure" target="#fig_4">5C</ref>) and different doses of NAOs (as show in Figure <ref type="figure" target="#fig_4">5D-F</ref>) were capable of weakening the reduction. In addition, the number of β-cells in the pancreas was studied. As shown in Figure <ref type="figure" target="#fig_5">6</ref>, the β-cell number in the MC group (45 ± 13) was much less than that of the NC group (214 ± 22) due to the destruction of the pancreas caused by alloxan. However, the reduction of β-cells might be substantially ameliorated by either metformin or NAOs. Specifically, the number of islet cells in the L-NAO, M-NAO, and H-NAO groups were 89 ± 16, 116 ± 23, and 126 ± 27, respectively, higher than that in the MC group. There is no doubt the NAOs treatment can retard alloxan-induced islet cell destruction in mice.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Effects of NAOs on Serum Lipids</head><p>The level of serum lipids was determined in order to evaluate the anti-hyperlipidemic potential of NAOs. As presented in Table <ref type="table" target="#tab_2">3</ref>, a HFD resulted in higher concentrations of TG, TC, and LDL-C and lower levels of HDL-C when compared with a normal diet (p &lt; 0.01). Nevertheless, NAOs at medium dose or high dose might reduce the concentrations of TG, TC, and LDL-C. Interestingly, the level of HDL-C might also be recovered by NAOs in the H-NAO group. Taken together, NAOs exhibited potent anti-hyperlipidemic activity. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6.">Effects of NAOs on the Hepatic Antioxidation System</head><p>Oxidative stress plays an essential role in the development of T2DM, and antioxidant enzymes are the major bioactive substances dealing with reactive oxygen species (ROS) <ref type="bibr" target="#b24">[25]</ref>. The levels of MDA, GSH-Px, and SOD were investigated to explore the antioxidant activities of NAOs for a deeper understanding of the anti-diabetic effects of NAOs. More MDA was found in the MC group as compared with NC group, indicating the ROS damage. However, the level of MDA could be reduced by both metformin (50 mg/kg) and NAOs (200 mg/kg or 400 mg/kg). More importantly, GSH-Px and SOD, two important antioxidant enzymes, were up-regulated by NAOs at the dose no less than 200 mg/kg (p &lt; 0.01 vs. MC). It is obvious NAOs are a benefit to the antioxidant system in T2DM mice.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.7.">NAOs Regulated the MAPK-Nrf2 Pathway</head><p>The MAPK signaling pathway plays an important role in the development of T2DM. Therefore, some key proteins involved in the pathway were investigated in the presented study. First of all, the effects of NAOs treatment on the phosphorylation levels of ERK1/2, JNK, and p38 MAPK were determined. A HFD resulted in higher phosphorylation of ERK1/2 and JNK compared with the NC group. However, eight weeks of NAOs treatment significantly ameliorated the abnormal phosphorylation of ERK1/2 and JNK (Figure <ref type="figure" target="#fig_6">7A, C</ref>) with little change of p-p38MAPK (Figure <ref type="figure" target="#fig_6">7A, D</ref>). Moreover, the expression of nuclear factor erythroid-2-related factor 2 (Nrf2), oxygenase 1 (HO-1), and NAD(P)H quinone dehydrogenase 1 (NQO1) were explored. MAPK signaling also affects Nrf2, always resulting in the transcription of the genes encoding HO-1 and NQO1. As shown in Figure <ref type="figure" target="#fig_7">8</ref>, as expected, the levels of hepatic HO-1 and NQO1 in the NAOs-treated groups were markedly higher than those in the MC group. The results imly that NAOs might reverse hepatic injury in T2DM by regulating the expression of some key hepatoprotective genes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.8.">NAOs Regulated the PPARγ Pathway</head><p>For better comprehension of the hepatoprotective mechanism of NAOs in diabetic mice, PPARγ expression was also studied. The results presented in Figure <ref type="figure" target="#fig_8">9</ref> show that the PPARγ expression was potently suppressed when KM mice were treated with a HFD and alloxan in the MC group, while the suppression was weakened by using 50 mg/mL of metformin. The NAOs treatment, however, was also able to raise the expression of PPARγ. These results imply that NAOs prevent T2DM mice from hepatic damage partly by promoting the expression of PPARγ. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Discussion</head><p>NAOs are the hydrolysates of agar/agarose, and have been reported to have beneficial effects to animals subjected to metabolic diseases <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b21">22]</ref>. Herein, a NAOs mixture composed of NA2 (21.6%) and NA4 (71.1%) was prepared and its potential in treating T2DM was investigated in mice. The study indicated that NAOs can promote the growth of the mice suffering from T2DM. The mixture of NAOs also possessed potent abilities of both reducing FBG and improving glucose tolerance in a dose-dependent manner. Further investigation showed the capacities of NAOs were closely connected to their ability to recover the insulin level in T2DM mice. This was supported by the finding that NAOs was able to prevent the pancreatic tissue from the shrinking caused by T2DM and they could recover the numbers of islet cells. Apparently, NAOs might exhibit a positive influence on the glucose metabolism system of T2DM mice.</p><p>Dyslipidemia is one of the metabolic syndromes often occurring with T2DM. It can lead to severe circulatory system dysfunction. High levels of TG, TC, and LDL-C and a low level of HDL-C contribute to the development of coronary artery disease in the patients with uncontrolled T2DM <ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref>. In the present study, the high levels of TG, TC, and LDL-C induced in T2DM could be reduced by NAOs, while the mixture might also raise the concentration of HDL-C. Obviously, NAOs might be used to treat the dyslipidemia that accompanies dysglycemia, which would be very good for the treatment of T2DM.</p><p>The lack of balance between free radicals and antioxidant enzymes plays an essential role in the development of T2DM. Free radicals generated under oxidative stress can cause defects in glucose metabolism. The radicals have a detrimental impact on pancreatic β-cell function, leading to hyperglycemia. In the presented study, MDA, one of the major lipid peroxides induced by radicals, was greatly reduced by NAOs in the T2DM mice, implying the antioxidant effect of NAOs. Furthermore, the activity of antioxidant enzymes can be inhibited in T2DM, leading to cell and tissue damage <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref>. However, the abilities of the enzymes were up-regulated by NAOs in this study. SOD, an important antioxidant enzyme metabolizing the superoxide anion to form hydrogen peroxide, was found to be reduced in T2DM <ref type="bibr" target="#b24">[25,</ref><ref type="bibr" target="#b33">34]</ref>, which hinders the clearance of free radicals. Likely, the reduction of SOD can accelerate the progression of T2DM. However, the level of SOD was significantly increased by NAOs in this study (Table <ref type="table" target="#tab_3">4</ref>). Another key antioxidative enzyme, specifically GSH-Px, able to scavenge free radicals by means of transforming reduced GSH into its oxidized form <ref type="bibr" target="#b33">[34]</ref>, was investigated as well. Although little difference of GSH-Px activity was observed between T2DM patients and the normal control, the up-regulation of GSH-Px could be carried out in the T2DM mice by giving mice NAOs (Table <ref type="table" target="#tab_3">4</ref>). This suggests NAOs can retard the liver damage of T2DM mice caused by oxidative stress.</p><p>MAPK pathways are extremely important to the metabolic effects of insulin because they can convent extracellular signals into specific cellular responses through a series of phosphorylation events. Among the proteins involved in the MAPK pathway, ERK1/2, JNK, and p38 MAPK play a crucial role in activating the MAPK signaling cascades <ref type="bibr" target="#b34">[35]</ref>, the phosphorylation of which was promoted by alloxan in this study, and are involved in hepatic injury. However, NAOs treatment was able to down-regulate the phosphorylation of ERK and JNK in the presence of a HFD and alloxan. In addition, the effect of NAOs on Nrf2 was investigated due to the fact that the expression of Nrf2 was controlled by the MAPK pathways including ERK, JNK, and p38 <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>. In the presented study, the inhibition of either ERK or JNK abolished NAOs-induced up-regulation and phosphorylation of Nrf2, demonstrating the two pathways might mediate Nrf2 activation in NAOs-treated mice. Furthermore, NQO1 and HO-1, the expression of which can be increased by the release of Nrf2 and its entry into the nucleus <ref type="bibr" target="#b37">[38,</ref><ref type="bibr" target="#b38">39]</ref>, were also explored. The levels of these two enzymes might be recovered by NAOs treatment, indicating the activity of NAOs in alleviating oxidative stress in vivo. This suggests that after the treatment with NAOs, ERK/JNK and NQO1/HO-1 are primarily activated and a positive-feedback loop with each other is then formed to protect the mouse's liver from the oxidative damage induced by high blood glucose.</p><p>PPARγ is recognized as a master regulator of adipogenesis, which involved in the normal function of fat cells <ref type="bibr" target="#b38">[39]</ref>. The severe hyperglycemia presented in the individuals undergoing dominant-negative mutations in the PPARγ gene have already confirmed a genetic link between PPARγ and T2DM <ref type="bibr" target="#b39">[40]</ref>. As compared with the obese subjects with T2DM, the expression of PPARγ is higher in the non-diabetic obese patients <ref type="bibr" target="#b40">[41]</ref>. Herein, the mice fed a HFD were found to suffer from fatty livers, with weak expression of PPARγ. However, significantly higher expression of hepatic PPARγ was observed in the NAOs treatment groups as compared with the model group. This suggests that NAOs may ameliorate the abnormal lipid metabolism through modulation of PPARγ expression, which might keep the mice away from fatty liver disease. It was evident that NAOs might hinder the lipid accumulation in obese mice by regulating hepatic lipid metabolism.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Materials and Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Materials and Animals</head><p>The assay kits for measuring total protein, TG, TC, HDL-C, LDL-C, MDA, Insulin, GSH-Px, and SOD were purchased from Jiancheng Bio-engineering Institute (Nanjing, China). The primary antibodies against ERK1/2, phospho-ERK1/2 (p-ERK1/2), JNK, phospho-JNK (p-JNK), p38 MAPK, phospho-p38MAPK (p-p38 MAPK), Nrf2, NQO1, HO-1, PPAR-γ, and glyceraldehyde-3-phosphate dehydrogenase (GAPDH) were purchased from the Proteintech Group (Chicago, IL, USA), and horseradish peroxidase (HRP)-linked anti-rabbit IgG secondary antibodies were obtained from Cell Signaling Technologies (Danvers, MA, USA). Polyvinylidene fluoride (PVDF) membranes were from Millipore (Billerica, MA, USA). Biochemical grade reagents for Western blotting (WB) were purchased from Beyotime Biotechnology (Shanghai, China). The agar used, composed of agarose and agaropectin, was obtained from Fujian Jinyan Marine Biotechnology Co., Ltd. (Fujian, China), with had a purity of more than 90%. Other reagents of analytical grade were purchased from commercial suppliers. Four-week-old specific pathogen-free male KM mice of 18-22 g body mass were purchased from Shanghai SLAC Laboratory Animal Co., Ltd., with license number SCXK (Shanghai, China) 2012-0002. Mice were housed in a standard sterile animal room with controlled temperature (25 • C) and humidity (50%-60%) and a 12 h light/dark cycle. Permission was obtained to conduct the animal experiments described (approval number and date: 2017/HQU and 06 March 2017) and all the experiments followed the guidelines of the Ethics Committee of Huaqiao University.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Preparation of NAOs</head><p>Agar was added to Tris-HCl buffer at 0.3% w/v and the mixture was heated for 10 min in a boiling water bath. Crude β-agarase was added to the cooled agar solution <ref type="bibr" target="#b41">[42,</ref><ref type="bibr" target="#b42">43]</ref>, and the mixture was incubated in an incubator with shaking (120 rpm; Hunan Xiangyi Laboratory Instrument Development Co., Ltd., H1850, Hunan, China) at 45 • C for 24 h, after which the insoluble component was removed by centrifugation (Shanghai Xinrui Automation Equipment Co., Ltd., Shanghai, China) at 12,000 × g for 30 min. Membrane separation included ultrafiltration to remove proteins and nanofiltration to remove small molecules such as salts, aiming to separate and purify the NAOs, which were further purified by gel column. The solution was concentrated and freeze-dried, and the NAOs were analyzed using an HPLC-ELSD system (Waters, Milford, MA, USA). ESI-TOF-MS and NMR were utilized to explore the structure and molecular mass of the NAOs, respectively <ref type="bibr" target="#b42">[43]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Experimental Design</head><p>All mice were acclimated to their surroundings for 1 week, and then some mice were fed a normal diet while others were fed a HFD for 2 weeks. Then, T2DM was induced by alloxan in HFD-mice. All mice were divided into six groups (n = 10/group) as follows: a normal control (NC) group without diabetes; a model control group (MC) with diabetes but no treatment; a positive control group (PC) with diabetes and treatment with 50 mg/kg metformin; a low-dose NAOs group (L-NAO) with diabetes and treatment with 100 mg/kg NAOs; a medium-dose NAOs group (M-NAO) with diabetes and treatment with 200 mg/kg NAOs; a high-dose NAOs group (H-NAO) with diabetes and treatment with 400 mg/kg NAOs by gavage. Then, the MC, PC, L-NAO, M-NAO, and H-NAO groups were fed a HFD (Table <ref type="table" target="#tab_4">5</ref>), while the NC group continued to consume normal chow for 8 weeks. Oral administration of each substance was performed daily for 8 weeks. The mice were allowed free access to food and water throughout the experiment.</p><p>The body mass and food intake of the mice were recorded during the experiment. Tissue masses were measured and organ indexes were calculated and defined as the ratios of each tissue/organ mass to body mass. Portions of liver and pancreas were fixed in 10% neutral-buffered formalin (NBF) for subsequent sectioning and histological assessment, and the remaining tissues were frozen in liquid nitrogen and stored at -80 • C until analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">FBG and OGTT</head><p>Every 4 weeks, mice were fasted for 12 h and the glucose concentration in blood was obtained from the tail vein. After 8 weeks of NAOs administration, FBG was measured and OGTT was performed as described previously <ref type="bibr" target="#b20">[21]</ref>. Briefly, the mice were fasted for 12 h, FBG was determined, and then an oral dose of 2 g/kg glucose was administered. The concentrations of blood glucose at 0, 30, 60, 90, and 120 min were then measured using a blood glucose meter (Accu-check Active, Roche, Berlin, Germany). A glucose concentration-time plot was then prepared to compare the changes in glucose with time for each treatment and to calculate the integrated area under the curve (AUC) during the OGTT, using the following equation:</p><formula xml:id="formula_0">AUC = (BG 0 min + 2 × BG 30 min + 2 × BG 60 min + 2 × BG 90 min + BG 120 min ) × 0.5 h × 0.5<label>(1)</label></formula><p>where BG 0 min , BG 30 min , BG 60 min , BG 90 min , and BG 120 min are the blood glucose concentrations measured at 0, 30, 60, 90, and 120 min, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5.">Biochemical Analysis</head><p>After 8 weeks of treatment with NAOs, all the mice were fasted for 12 h and blood was collected into heparinized tubes. Serum samples were obtained by centrifugation at 3500 × g for 15 min at 4 • C. The serum concentrations of TG, TC, HDL-C, LDL-C, and insulin were then enzymatically determined using Nanjing Jiancheng Bioengineering Institute (Nanjing, China).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.">Determination of GSH-Px, SOD, and MDA</head><p>Liver samples were rinsed and homogenized (1:10, w/v) in cold 50 mM Tris buffer (pH 7.4). The homogenates were then centrifuged at 12,000 × g for 5 min at 4 • C, and GSH-Px and SOD activity and MDA concentration were measured in the supernatant, following the instructions provided in Nanjing Jiancheng Bioengineering Institute (Nanjing, China).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.">Histologic Assessment of the Liver and Pancreas</head><p>Liver and pancreas samples were washed with cold normal saline, fixed in 10% NBF, and embedded in paraffin. These paraffin blocks were sectioned, stained with hematoxylin and eosin (H&amp;E), and the histologic appearance was assessed using an optical microscope (Leica Microsystems, 090-135.002, Heidelberg, Germany).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.8.">Western Blot Analysis</head><p>Liver samples were homogenized in a cell lysis buffer containing a protease inhibitor cocktail and phenylmethylsulfonyl fluoride. The protein concentration of each lysate was measured using a protein assay kit in accordance with the manufacturer's protocol, and then equalized by addition of the appropriate volume of loading buffer, followed by denaturation by boiling for 5 min. To determine the relative protein expression of ERK1/2, p-ERK1/2, JNK, p-JNK, p38 MAPK, p-p38 MAPK, Nrf2, NQO1, HO-1, and PPAR-γ, samples containing 25 µg of protein were separated by 10% sodium dodecyl sulfate-polyacrylamide gel electrophoresis and then transferred to PVDF membranes. The membranes were blocked with 5% non-fat milk in Tris-buffered saline containing 0.1% Tween-20 (TBST) for 1 h, then washed three times with TBST, incubated with target protein-specific antibodies overnight at 4 • C, and then incubated with a secondary antibody at ambient temperature for 1 h. Specific protein bands were visualized using chemiluminescence (Peiqing JS-1075 Mini automatic chemiluminescence image analysis system; Peiqing Science and Technology Co., Ltd., Shanghai, China). GAPDH was used as a reference protein.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.9.">Statistical Analysis</head><p>Data are presented as the mean ± SD. Statistical analysis was conducted using SPSS software version 17.0 (IBM, Inc., Armonk, NY, USA). Differences were analyzed using one-way ANOVA, followed by Tukey's multiple comparison test. A p &lt; 0.05 was considered to represent statistical significance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>In conclusion, NAOs may relieve the symptoms of T2DM by improving the growth of animals, reducing the fasting blood glucose levels, enhancing glucose tolerances, ameliorating liver damage, decreasing pancreatic β-cell loss, and elevating the antioxidant abilities. The anti-diabetic effects of NAOs can be contributed to their abilities to activate the MAPK, Nrf2, and PPARγ pathways in T2DM mice. NAOs may be useful in the treatment of T2DM due to their capacity to retard some complicated syndromes that occur with T2DM.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (A) HPLC results, (B) ESIMS spectra results, and (C) 13 C NMR spectra results of the neoagaro-oligosaccharides (NAOs).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Body weight of KM mice. Normal control group (NC), model control group (MC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Plasma glucose levels of T2DM mice after the oral glucose tolerance test (OGTT) (A) and the area under the curve (AUC) (B). * * p &lt; 0.01 and * * * p &lt; 0.001 compared with the model control group (MC); normal control group (NC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Histology properties of the mice liver sections obtained from (A) the normal control group (NC), (B) model control group (MC), (C) positive control group (PC), (D) low-dose NAOs group (L-NAO), (E) medium-dose NAOs group (M-NAO), and (F) high-dose NAOs group (H-NAO). Mice were fed normal saline, HFD, metformin, or 100 mg/kg, 200 mg/kg, or 400 mg/kg NAOs, respectively. Magnification: 100×. The arrows indicate fatty hepatocytes.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Histological images of pancreatic tissue sections. (A) Normal diet. (B) Diabetes without treatment. (C) Diabetes and treatment with 50 mg/kg metformin. (D) Diabetes and treatment with 100 mg/kg NAOs. (E) Diabetes and treatment with 200 mg/kg NAOs. (F) Diabetes and treatment with 400 mg/kg NAOs. B, C, D, E, and F groups were fed a HFD. Magnification: 200×.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. The number of islet cells in pancreatic tissues. Normal control group (NC), model control group (MC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Effects of NAOs on MAPK pathways in mice liver. * p &lt; 0.05 and * * p &lt; 0.01 compared with the model control group (MC); normal control group (NC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO). (A) After pretreated with NAOs, the expression levels of ERK1/2, JNK, p38 and phosphorylated ERK1/2, JNK, p38 were detected by western blot, respectively. Blots were also probed for GAPDH as loading controls. (B) Quantification of immunoblot for the ratio of phosphorylated ERK1/2 to ERK1/2. (C) Quantification of immunoblot for the ratio of phosphorylated JNK to JNK. (D) Quantification of immunoblot for the ratio of phosphorylated p38 to p38.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. Effects of NAOs on Nrf2, HO-1, and NQO1 levels in mice liver. * p &lt; 0.05, * * p &lt; 0.01 and * * * p &lt; 0.001 compared with the model control group (MC); normal control group (NC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO). (A) After pretreated with NAOs, the expression levels of Total Nrf2, HO-1 and NQO1 were detected by western blot, respectively. Blot was also probed for GAPDH as loading controls. (B) Quantification of immunoblot for the ratio of Total Nrf2 to GAPDH (C) Quantification of immunoblot for the ratio of HO-1 to GAPDH. (D) Quantification of immunoblot for the ratio of NQO1 to GAPDH.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Effects of NAOs on the PPAR γ level in mice liver. * p &lt; 0.05, * * p &lt; 0.01, and * * * p &lt; 0.001 compared with the model control group (MC); normal control group (NC), positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO). (A) After pretreated with NAOs, the expression levels of PPAR γ was detected by western blot. Blot was also probed for GAPDH as loading controls. (B) Quantification of immunoblot for the ratio of PPAR γ to GAPDH.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Effect of NAOs on body weight and food intake of type 2</figDesc><note><p>*  p &lt; 0.05 and  *  *  p &lt; 0.01 compared with the model control group (MC); # p &lt; 0.05 and ## p &lt; 0.01 compared with the normal control group (NC); positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO); high-fat diet (HFD).</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Glucose concentration of the KM mice (mmol/L).</figDesc><note><p>*  p &lt; 0.05 and  *  *  p &lt; 0.01 compared with the model control group (MC); # p &lt; 0.05 and ## p &lt; 0.01 compared with the normal control group (NC); positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO); high-fat diet (HFD).</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Serum lipoproteins in mice.</figDesc><note><p>* p &lt; 0.05 and * * p &lt; 0.01 compared with the model control group (MC); # p &lt; 0.05 and ## p &lt; 0.01 compared with the normal control group (NC); positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO). TC: total cholesterol; TG: triglycerides; HDL-C; high-density lipoprotein cholesterol; LDL-C: low-density lipoprotein cholesterol.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Antioxidative activities of NAOs in mice liver.</figDesc><note><p>* p &lt; 0.05 and * * p &lt; 0.01 compared with the model control group (MC); # p &lt; 0.05 and ## p &lt; 0.01 compared with the normal control group (NC); positive control group (PC), low-dose NAOs group (L-NAO), medium-dose NAOs group (M-NAO), and high-dose NAOs group (H-NAO).</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 .</head><label>5</label><figDesc>Composition of high-fat diet.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><head>Funding:</head><p>This research was supported by the <rs type="funder">Public Science and Technology Research Fund Ocean Project</rs>, grant numbers <rs type="grantNumber">20130515-2</rs>, <rs type="grantNumber">201505026-5</rs>, the Major Project on the <rs type="funder">Integration of Industry and Education of Fujian Province</rs>, grant number <rs type="grantNumber">2018N5008</rs>, the <rs type="funder">Huaqiao University Support Program for Science and Technology Innovation by Young Teachers</rs>, grant number <rs type="grantNumber">ZQN-PY515</rs>, and the <rs type="institution">Subsidized Project for Postgraduate Innovation in Scientific Research of Huaqiao University</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Z5WwyZq">
+					<idno type="grant-number">20130515-2</idno>
+				</org>
+				<org type="funding" xml:id="_PTwRgYf">
+					<idno type="grant-number">201505026-5</idno>
+				</org>
+				<org type="funding" xml:id="_RqPqmvm">
+					<idno type="grant-number">2018N5008</idno>
+				</org>
+				<org type="funding" xml:id="_HaHAZtj">
+					<idno type="grant-number">ZQN-PY515</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author Contributions:</head><p>Conceptualization, J.Y. and M.X.; methodology, F.L.; software, F.L.; validation, D.Y., Y.H., Y.Z., J.Y., and M.X.; resources, M.X.; writing-original draft preparation, F.L.; writing-review and editing, J.Y. and M.X.; supervision, J.Y.; project administration, Y.H. and M.X.; funding acquisition, M.X.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of Interest:</head><p>The authors declare no conflict of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>List of Abreviations:</head><p>ERK1/2, extracellular regulated protein kinases; FBG, fasting blood glucose; GAPDH, glyceraldehyde-3-phosphate dehydrogenase; GSH-Px, glutathione peroxidase; HDL-C, high-density lipoprotein cholesterol; HE, hematoxylin and eosin; HFD, high-fat diet; H-NAO, high-dose NAOs; HO-1, hemeoxygenase-1; HRP, horseradish peroxidase; JNK, c-Jun N-terminal kinase; LDL-C, low-density lipoprotein cholesterol; L-NAO, low-dose NAOs; MAPK, mitogen-activated protein kinase; MC, model control; MDA, malondialdehyde; M-NAO, medium-dose NAOs; NA2, Neoagarobiose; NA4, Neoagaroteraose; NA6, neoagarohexaose; NA8, neoagarooctose; NAOs, Neoagaro-oligosaccharides; NBF, neutral buffered formalin; NC, normal control; NQO1, NAD(P)H dehydrogenase (quinone) 1; Nrf2, nuclear factor erythroid-2-related factor 2; OGTT, oral glucose tolerance tests; PC, positive control; PMSF, phenyl methyl sulfonyl fluoride; p-ERK1/2, phospho-ERK1/2; p-JNK, phospho-JNK; p-p38MAPK, phosphor-p38MAPK; PPAR-γ, peroxisome proliferator-activated receptor-gamma; PVDF, polyvinylidene fluoride; ROS, reactive oxygen species; SDS-PAGE, sodium dodecyl sulfate polyacrylamide gel electrophoresis; SOD, Superoxide dismutase; SPF, specific-pathogen-free; T1DM, type 1 diabetes mellitus; T2DM, Type 2 diabetes mellitus; TBST, tris buffered saline tween-20; TC, total cholesterol; TG, triglycerides; WB, Western blot.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Baynes</surname></persName>
+					</author>
+					<title level="a">Role of Oxidative Stress in Development of Complications in Diabetes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Diabetes</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="405" to="412"/>
+						<date when="1991">1991</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Kakkar</surname></persName>
+					</author>
+					<title level="a">Modulation of liver function, antioxidant responses, insulin resistance and glucose transport by Oroxylum indicum stem bark in STZ induced diabetic rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Chem. Toxicol.</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="page" from="722" to="731"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Sang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Xiu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Dong</surname></persName>
+					</author>
+					<title level="a">Synergistic effects of acarbose and an Oroxylum indicum seed extract in streptozotocin and high-fat-diet induced prediabetic mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biomed. Pharmacother.</title>
+					<imprint>
+						<biblScope unit="volume">87</biblScope>
+						<biblScope unit="page" from="160" to="170"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhuang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Xing</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Xiu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Dong</surname></persName>
+					</author>
+					<title level="a">Oroxin A from Oroxylum indicum prevents the progression from prediabetes to diabetes in streptozotocin and high-fat diet induced mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phytomedicine</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="24" to="34"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Fang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">Z</forename><surname>Ying</surname></persName>
+					</author>
+					<title level="a">Ethanol extract of Atractylodis macrocephalae Rhizoma ameliorates insulin resistance and gut microbiota in type 2 diabetic db/db mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Funct. Foods</title>
+					<imprint>
+						<biblScope unit="volume">39</biblScope>
+						<biblScope unit="page" from="139" to="151"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jing</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mei</forename><surname>Luo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Zhen</forename><surname>Luo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Guo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Xiangliang</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Minghua</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Qiong</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yanhong</forename><surname>Zhu</surname></persName>
+					</author>
+					<title level="a">Transcriptome profiling reveals the anti-diabetic molecular mechanism of Cyclocarya paliurus polysaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Funct. Foods</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="1" to="8"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Parillo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Riccardi</surname></persName>
+					</author>
+					<title level="a">Diet composition and the risk of type 2 diabetes: epidemiological and clinical evidence</title>
+				</analytic>
+				<monogr>
+					<title level="j">Br. J. Nutr.</title>
+					<imprint>
+						<biblScope unit="volume">92</biblScope>
+						<biblScope unit="page" from="7" to="19"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Long-chain bases from sea cucumber inhibits renal fibrosis and apoptosis in type 2 diabetic mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Funct. Foods</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="760" to="768"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Kannel</surname></persName>
+					</author>
+					<title level="a">Lipids, diabetes, and coronary heart disease: Insights from the Framingham Study</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. Heart J.</title>
+					<imprint>
+						<biblScope unit="volume">110</biblScope>
+						<biblScope unit="page" from="1100" to="1107"/>
+						<date when="1985">1985</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Ming</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Lv</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Li</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">The Characterization of High-Fat Diet and Multiple Low-Dose Streptozotocin Induced Type 2 Diabetes Rat Model</title>
+				</analytic>
+				<monogr>
+					<title level="j">Exp. Diabetes Res.</title>
+					<imprint>
+						<biblScope unit="volume">2008</biblScope>
+						<biblScope unit="page" from="1" to="9"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Dang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Tian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Antidiabetic effect of Lactobacillus casei CCFM0412 on mice with type 2 diabetes induced by a high-fat diet and streptozotocin</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nutrition</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="page" from="1061" to="1068"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Yan</surname></persName>
+					</author>
+					<title level="a">Antioxidant activities of agaro-oligosaccharides with different degrees of polymerization in cell-based system</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biochim. Biophys. Acta</title>
+					<imprint>
+						<biblScope unit="volume">1722</biblScope>
+						<biblScope unit="page" from="103" to="111"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Yan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Zhu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Lin</surname></persName>
+					</author>
+					<title level="a">Antioxidant activity and hepatoprotective potential of agaro-oligosaccharides in vitro and in vivo</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nutr. J.</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="31" to="42"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Wen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Pan</surname></persName>
+					</author>
+					<title level="a">Algal-oligosaccharide-lysates prepared by two bacterial agarases stepwise hydrolyzed and their anti-oxidative properties</title>
+				</analytic>
+				<monogr>
+					<title level="j">Fish. Sci.</title>
+					<imprint>
+						<biblScope unit="volume">71</biblScope>
+						<biblScope unit="page" from="1149" to="1159"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">L</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Ghani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Hassan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Rahmati</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Ramli</surname></persName>
+					</author>
+					<title level="a">Novel agaro-oligosaccharide production through enzymatic hydrolysis: Physicochemical properties and antioxidant activities</title>
+				</analytic>
+				<monogr>
+					<title level="j">Food Hydrocoll.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="304" to="308"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Enoki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Tanabe</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Shimomura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Ohnogi</surname></persName>
+					</author>
+					<title level="a">Induction Mechanism of Heme Oxygenase-1 and Anti-inflammatory Activity by Agaro-oligosaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nippon Shokuhin Kogyo Gakkaishi</title>
+					<imprint>
+						<biblScope unit="volume">57</biblScope>
+						<biblScope unit="page" from="157" to="162"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Enoki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Tominaga</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Takashima</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Ohnogi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Sagawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Kato</surname></persName>
+					</author>
+					<title level="a">Anti-tumor-Promoting Activities of Agaro-Oligosaccharides on Two-Stage Mouse Skin Carcinogenesis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biol. Pharm. Bull.</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="page" from="1145" to="1149"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Higashimura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Naito</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Takagi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Tanimura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Mizushima</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Harusato</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Fukui</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yoriki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>O</forename><surname>Handa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Ohnogi</surname></persName>
+					</author>
+					<title level="a">Preventive effect of agaro-oligosaccharides on non-steroidal anti-inflammatory drug-induced small intestinal injury in mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Gastroenterol. Hepatol.</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="310" to="317"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>Reijiro</forename><surname>Kobayashi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mikimasa</forename><surname>Takisada</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Tadashi</forename><surname>Suzuki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Kohtaro</forename><surname>Kirimura</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Shoji</forename><surname>Usamiab</surname></persName>
+					</author>
+					<title level="a">Neoagarobiose as a Novel Moisturizer with Whitening Effect</title>
+				</analytic>
+				<monogr>
+					<title level="j">Biosci. Biotechnol. Biochem.</title>
+					<imprint>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="page" from="162" to="163"/>
+						<date when="1997">1997</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Yun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Kang</surname></persName>
+					</author>
+					<title level="a">Different Levels of Skin Whitening Activity among 3,6-Anhydro-l-galactose, Agarooligosaccharides, and Neoagarooligosaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mar. Drugs</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page">321</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Hong</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Hong</surname></persName>
+					</author>
+					<title level="a">Anti-Obesity and Anti-Diabetic Effect of Neoagarooligosaccharides on High-Fat Diet-Induced Obesity in Mice</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mar. Drugs</title>
+					<imprint>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page">90</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Cho</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Eun</forename><forename type="middle">Joo</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">Y</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ki</surname></persName>
+					</author>
+					<title level="a">Neoagarooligosaccharides enhance the level and efficiency of LDL receptor and improve cholesterol homeostasis</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Funct. Foods</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="529" to="539"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Hao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Wan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Mao</surname></persName>
+					</author>
+					<title level="a">Neoagaro-oligosaccharide monomers inhibit inflammation in LPS-stimulated macrophages through suppression of MAPK and NF-κB pathways</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sci. Rep.</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">44252</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Y</forename><surname>Yoon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cho</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">K</forename><surname>Yoon</surname></persName>
+					</author>
+					<title level="a">Neoagarooligosaccharides prevent septic shock by modulating A20-and cyclooxygenase-2-mediated interleukin-10 secretion in a septic-shock mouse model</title>
+
+				</analytic>
+				<monogr>
+					<title level="j">Biochem. Biophys. Res. Commun</title>
+					<imprint>
+						<biblScope unit="volume">486</biblScope>
+						<biblScope unit="page" from="998" to="1004"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Yao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Xin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Coumarins improved type 2 diabetes induced by high-fat diet and streptozotocin in mice via antioxidation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Can. J. Physiol. Pharmacol.</title>
+					<imprint>
+						<biblScope unit="volume">96</biblScope>
+						<biblScope unit="page" from="1" to="24"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Gordon</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">P</forename><surname>Castelli</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Hjortland</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Kannel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Dawber</surname></persName>
+					</author>
+					<title level="a">High density lipoprotein as a protective factor against coronary heart disease</title>
+				</analytic>
+				<monogr>
+					<title level="j">Am. J. Med.</title>
+					<imprint>
+						<biblScope unit="volume">62</biblScope>
+						<biblScope unit="page" from="707" to="714"/>
+						<date when="1977">1977</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">P</forename><surname>Castelli</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Garrison</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Wilson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Abbott</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kalousdian</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Kannel</surname></persName>
+					</author>
+					<title level="a">Incidence of Coronary Heart Disease and Lipoprotein Cholesterol Levels. The Framingham Study.</title>
+				</analytic>
+				<monogr>
+					<title level="j">Jama</title>
+					<imprint>
+						<biblScope unit="volume">256</biblScope>
+						<biblScope unit="page" from="2835" to="2838"/>
+						<date when="1986">1986</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Lavie</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">V</forename><surname>Milani</surname></persName>
+					</author>
+					<title level="a">Obesity and cardiovascular disease: The hippocrates paradox?</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Am. Coll. Cardiol.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="677" to="679"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Carr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Brunzell</surname></persName>
+					</author>
+					<title level="a">Abdominal Obesity and Dyslipidemia in the Metabolic Syndrome: Importance of Type 2 Diabetes and Familial Combined Hyperlipidemia in Coronary Artery Disease Risk</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Clin. Endocrinol. Metab.</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="page" from="2601" to="2607"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Ansell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Watson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Fogelman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Navab</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Fonarow</surname></persName>
+					</author>
+					<title level="a">High-Density lipoprotein function recent advances</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Am. Coll. Cardiol.</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="1792" to="1798"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Robertson</surname></persName>
+					</author>
+					<title level="a">Chronic Oxidative Stress as a Central Mechanism for Glucose Toxicity in Pancreatic Islet Beta Cells in Diabetes</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Biol. Chem.</title>
+					<imprint>
+						<biblScope unit="volume">279</biblScope>
+						<biblScope unit="page" from="42351" to="42354"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Mehta</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Rasouli</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Sinha</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Molavi</surname></persName>
+					</author>
+					<title level="a">Oxidative stress in diabetes: A mechanistic overview of its effects on atherogenesis and myocardial dysfunction</title>
+				</analytic>
+				<monogr>
+					<title level="j">Int. J. Biochem. Cell Biol.</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="794" to="803"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Shah</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Iqbal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Karam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Salifu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">I</forename><surname>Mcfarlane</surname></persName>
+					</author>
+					<title level="a">Oxidative Stress, Glucose Metabolism, and the Prevention of Type 2 Diabetes: Pathophysiological Insights</title>
+				</analytic>
+				<monogr>
+					<title level="j">Antioxid. Redox Signal.</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="911" to="929"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Tang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Wei</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Effects of berberine on diabetes induced by alloxan and a high-fat/high-cholesterol diet in rats</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Ethnopharmacol.</title>
+					<imprint>
+						<biblScope unit="volume">108</biblScope>
+						<biblScope unit="page" from="109" to="115"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Shi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Wan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Shao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Ye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Protective and anti-angiopathy effects of ginsenoside Re against diabetes mellitus via the activation of p38 MAPK, ERK1/2 and JNK signaling</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Med. Rep.</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="4849" to="4856"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>DeNicola</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Karreth</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Humpton</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Gopinathan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Frese</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Mangal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Yeo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Calhoun</surname></persName>
+					</author>
+					<title level="a">Oncogene-induced Nrf2 transcription promotes ROS detoxification and tumorigenesis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">475</biblScope>
+						<biblScope unit="page" from="106" to="109"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Yuan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Pan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Yu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">O</forename><surname>Khor</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ma</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Kong</surname></persName>
+					</author>
+					<title level="a">Mechanism of action of isothiocyanates: the induction of ARE-regulated genes is associated with activation of ERK and JNK and the phosphorylation and nuclear translocation of Nrf2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mol. Cancer Ther.</title>
+					<imprint>
+						<biblScope unit="volume">5</biblScope>
+						<biblScope unit="page" from="1918" to="1926"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Yao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Nussler</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Hao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Schirmeier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Nussler</surname></persName>
+					</author>
+					<title level="a">Quercetin protects human hepatocytes from ethanol-derived oxidative stress by inducing heme oxygenase-1 via the MAPK/Nrf2 pathways</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Hepatol.</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="page" from="253" to="261"/>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Rosen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Walkey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Puigserver</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Spiegelman</surname></persName>
+					</author>
+					<title level="a">Transcriptional regulation of adipogenesis</title>
+				</analytic>
+				<monogr>
+					<title level="j">Genes Dev.</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="1293" to="1307"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Barroso</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Gurnell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">E</forename><forename type="last">F</forename><surname>Crowley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Agostini</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Schwabe</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Soos</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">Li</forename><surname>Maslen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">D</forename><forename type="last">M</forename><surname>Williams</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Lewis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Schafer</surname></persName>
+					</author>
+					<title level="a">Dominant negative mutations in human PPARγ associated with severe insulin resistance, diabetes mellitus and hypertension</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">402</biblScope>
+						<biblScope unit="page" from="880" to="883"/>
+						<date when="1999">1999</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Dubois</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">K</forename><surname>Heilbronn</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Albu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Kelley</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Ravussin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">A</forename><forename type="middle">R</forename><forename type="last">G</forename><surname>Look</surname></persName>
+					</author>
+					<title level="a">Decreased Expression of Adipogenic Genes in Obese Subjects with Type 2 Diabetes</title>
+				</analytic>
+				<monogr>
+					<title level="j">Obesity</title>
+					<imprint>
+						<biblScope unit="volume">14</biblScope>
+						<biblScope unit="page" from="1543" to="1552"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Han</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ye</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Xiao</surname></persName>
+					</author>
+					<title level="a">Screening and identification of a bacterium capable of converting agar to neoagaro oligosaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Acta Microbiol. Sin</title>
+					<imprint>
+						<biblScope unit="volume">55</biblScope>
+						<biblScope unit="page" from="1126" to="1132"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Ye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Xiao</surname></persName>
+					</author>
+					<title level="a">Simple Preparation of Diverse Neoagaro-Oligosaccharides</title>
+				</analytic>
+				<monogr>
+					<title level="j">Processes</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">267</biblScope>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

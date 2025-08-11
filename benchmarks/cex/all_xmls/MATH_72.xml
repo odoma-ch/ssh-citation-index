@@ -1,0 +1,1294 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Projective Synchronization of Nonidentical Fractional-Order Memristive Neural Networks</title>
+				<funder ref="#_Ja52rvj #_pPtnYqC">
+					<orgName type="full">National Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Wiley</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-08-01">1 August 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Chong</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Electrical and Information Engineering</orgName>
+								<orgName type="institution">Wuhan Institute of Technology</orgName>
+								<address>
+									<postCode>430205</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Zhixia</forename><surname>Ding</surname></persName>
+							<email>zxding89@163.com</email>
+							<idno type="ORCID">0000-0003-0566-9611</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Electrical and Information Engineering</orgName>
+								<orgName type="institution">Wuhan Institute of Technology</orgName>
+								<address>
+									<postCode>430205</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Projective Synchronization of Nonidentical Fractional-Order Memristive Neural Networks</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Discrete Dynamics in Nature and Society</title>
+						<imprint>
+							<publisher>Wiley</publisher>
+							<date type="published" when="2019-08-01">1 August 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">17809EFF2475243A670F70FCD0B22087</idno>
+					<idno type="DOI">10.1155/2019/8743482</idno>
+					<note type="submission">Received 15 May 2019; Revised 4 July 2019; Accepted 15 July 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper investigates projective synchronization of nonidentical fractional-order memristive neural networks (NFMNN) via sliding mode controller. Firstly, based on the sliding mode control theory, a new fractional-order integral sliding mode controller is designed to ensure the occurrence of sliding motion. Furthermore, according to fractional-order differential inequalities and fractional-order Lyapunov direct method, the trajectories of the system converge to the sliding mode surface to carry out sliding mode motion, and some sufficient criteria are obtained to achieve global projective synchronization of NFMNN. In addition, the conclusions extend and improve some previous works on the synchronization of fractional-order memristive neural networks (FMNN). Finally, a simulation example is given to verify the effectiveness and correctness of the obtained results.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>In 1971, Professor Chua theoretically predicted the existence of memristive element <ref type="bibr" target="#b0">[1]</ref>. In the following years, his team presented the basic characteristics, synthesis principles, and applications of memristor <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b2">3]</ref>. Until 2008, researchers from Hewlett-Packard Co. firstly made nanomemristor devices, which triggered an upsurge in memristor research <ref type="bibr" target="#b3">[4]</ref>. As the fourth basic circuit element, memristor has the characteristics that the other three basic components (resistance, capacitance, and inductance) cannot replicate. It can not only remember the number of charges flowing through it, but change its resistance by controlling the change of current. What is more important, these capabilities can be maintained even when power is cut off. Therefore, memristor has broadened application prospects in computer science <ref type="bibr" target="#b4">[5]</ref>, bioengineering <ref type="bibr" target="#b5">[6]</ref>, neural networks <ref type="bibr" target="#b6">[7]</ref>, electronic engineering <ref type="bibr" target="#b7">[8]</ref>, communication engineering <ref type="bibr" target="#b8">[9]</ref>, and so on.</p><p>Neural networks have the abilities of self-learning and self-adapting through training. The design of weights is crucial for neural networks. The hardware implementation of weight requires a long-term memory. With the development of memristor, it is feasible to introduce memristor into neural networks to solve the above problem. At present, the memristive neural networks (MNN) have been widely studied in information processing <ref type="bibr" target="#b9">[10]</ref>, image processing <ref type="bibr" target="#b10">[11]</ref>, artificial intelligence <ref type="bibr" target="#b11">[12]</ref>, and other fields <ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref>. As we all know, fractional-order calculus is a generalization of traditional integer-order calculus. Fractional-order calculus is not local and can describe memory property of neuron and dependence of the historical data. Meanwhile, fractionalorder models can describe and model a real system more accurately than the classical integer-order models <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b16">17]</ref>. By introducing fractional-order differential operators into integer-order MNN model, a new fractional-order memristive neural networks (FMNN) model can be established. Such systems can truly reflect the essential features of the system and extend the capability of neural networks. So far, many researchers have devoted themselves to investigating FMNN and a series of results about FMNN have appeared, such as <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref>.</p><p>It was Huygens, the inventor of pendulum, who discovered synchronization for the first time. Until 1990, Pecora and Carroll of the U.S. Naval Laboratory put forward the master-slave chaotic synchronization scheme, which realized the synchronization of two chaotic systems in the circuit and promoted the theoretical study of chaotic synchronization and chaotic control <ref type="bibr" target="#b23">[24]</ref>. So far, there are many types of synchronization, such as complete synchronization <ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref>, antisynchronization <ref type="bibr" target="#b27">[28]</ref>, lag synchronization <ref type="bibr" target="#b28">[29,</ref><ref type="bibr" target="#b29">30]</ref>, generalized synchronization <ref type="bibr" target="#b30">[31]</ref>, projective synchronization <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref>, and phase and antiphase synchronization <ref type="bibr" target="#b35">[36]</ref>. The scale factor of projective synchronization can be set flexibly, which enhances the uncertainty of slave system and improves communication security. Therefore, it is necessary to investigate projective synchronization of FMNN.</p><p>To the best of our knowledge, the existing results of projective synchronization about FMNN are identical system. In fact, functions and parameters of master-slave system are often mismatched, which is inevitable. Although various forms of control strategies have been designed to solve the problems of system's synchronization <ref type="bibr" target="#b24">[25,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b29">30,</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref>, they are difficult to deal with projective synchronization of NFMNN. In order to solve such problems, the fractionalorder sliding mode controller is introduced, which can overcome the uncertainty of systems and has strong robustness to disturbance, especially for the control of nonlinear systems. The sliding mode controller needs the following three elements: firstly, any trajectories reach the sliding mode surface in free time; secondly, there is a sliding mode region on the sliding mode surface; thirdly, the sliding mode motion is asymptotic stable.</p><p>Motivated by the above discussions, we focus on the projective synchronization of nonidentical fractional-order memristive neural networks in this paper. The main contributions of this paper are as follows: (1) In this paper, projective synchronization of NFMNN is studied by designing a new type of fractional-order integral sliding mode controller. (2) By using the fractional-order differential inequality and fractional-order Lyapunov direct method, the projective synchronization criteria of NFMNN are obtained. At the same time, the obtained criteria can realize the complete synchronization and antisynchronization of NFMNN, stability, and projective synchronization of FMNN. (3) Comparing with the conclusions in <ref type="bibr" target="#b24">[25,</ref><ref type="bibr" target="#b32">33]</ref>, our results on projective synchronization of FMNN achieve a valuable improvement and are less conservative.</p><p>The structure of this paper is summarized as follows. Some preliminaries and the system models are given in Section 2. In Section 3, some sufficient criteria are obtained to achieve global projective synchronization of NFMNN. In Section 4, the validity and correctness of the obtained results are illustrated by numerical simulation. Finally, conclusions are drawn in Section 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Preliminaries and System Description</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Caputo Fractional-Order Calculus</head><p>Definition 1 (see <ref type="bibr" target="#b40">[41]</ref>). The fractional-order integral of order 𝛼 for an integrable function 𝑓(𝑡) : [0, +∞] 󳨀→ R is defined as</p><formula xml:id="formula_0">0 𝐼 𝛼 𝑡 𝑓 (𝑡) = 1 Γ (𝛼) ∫ 𝑡 0 (𝑡 -𝜉) 𝛼-1 𝑓 (𝜉) 𝑑𝜉, 𝑡 ≥ 0,<label>(1)</label></formula><p>where 𝑡 ≥ 0, 𝛼 &gt; 0, and Γ(⋅) is the Gamma function which is defined as</p><formula xml:id="formula_1">Γ (𝑥) = ∫ ∞ 0 𝑒 -𝑡 𝑡 𝑥-1 𝑑𝑡, Re (𝑥) &gt; 0.<label>(2)</label></formula><p>Definition 2 (see <ref type="bibr" target="#b40">[41]</ref>). The Caputo fractional-order derivative of order 𝛼 for a function 𝑓(𝑡) ∈ 𝐶 𝑛+1 ([0, +∞], R) is defined by</p><formula xml:id="formula_2">𝐶 0 𝐷 𝛼 𝑡 𝑓 (𝑡) = 1 Γ (𝑛 -𝛼) ∫ 𝑡 0 𝑓 (𝑛) (𝜉) (𝑡 -𝜉) 𝛼-𝑛+1 𝑑𝜉,<label>(3)</label></formula><p>where 𝑡 ≥ 0 and 𝑛 -1 &lt; 𝛼 &lt; 𝑛 ∈ N + . Particularly, when 0 &lt; 𝛼 &lt; 1,</p><formula xml:id="formula_3">𝐶 0 𝐷 𝛼 𝑡 𝑓 (𝑡) = 1 Γ (1 -𝛼) ∫ 𝑡 0 𝑓 󸀠 (𝜉) (𝑡 -𝜉) 𝛼 𝑑𝜉.<label>(4)</label></formula><p>A series of significant properties about fractional-order calculus are listed as follows <ref type="bibr" target="#b40">[41]</ref>.</p><p>Property 3. For any constants V 1 and V 2 , the linearity of Caputo fraction-order calculus is expressed by</p><formula xml:id="formula_4">𝐶 0 𝐷 𝛼 𝑡 (V 1 ⋅ 𝑓 (𝑡) + V 2 ⋅ 𝑔 (𝑡)) = V 1 ⋅ 𝐶 0 𝐷 𝛼 𝑡 𝑓 (𝑡) + V 2 ⋅ 𝐶 0 𝐷 𝛼 𝑡 𝑔 (𝑡) .<label>(5)</label></formula><p>Property 4. If 𝑤(𝑡) ∈ 𝐶 1 [0, 𝑇], 𝑇 &gt; 0, then</p><formula xml:id="formula_5">𝐶 0 𝐷 𝛼 𝑡 𝐶 0 𝐷 𝛽 𝑡 𝑤 (𝑡) = 𝐶 0 𝐷 𝛽 𝑡 𝐶 0 𝐷 𝛼 𝑡 𝑤 (𝑡) = 𝐶 0 𝐷 𝛼+𝛽 𝑡 𝑤 (𝑡) , 𝑡 ∈ [0, 𝑇] .<label>(6)</label></formula><p>where 𝛼 &gt; 0, 𝛽 &gt; 0, and 𝛼 + 𝛽 ≤ 1.</p><p>Lemma 5 (see <ref type="bibr" target="#b31">[32]</ref>). If 𝑤(𝑡) ∈ 𝐶 1 ([0, +∞), R), then the following inequality holds almost everywhere:</p><formula xml:id="formula_6">𝐶 0 𝐷 𝛼 𝑡 |𝑤 (𝑡)| ≤ sgn (𝑤 (𝑡)) 𝐶 0 𝐷 𝛼 𝑡 𝑤 (𝑡) , 0 &lt; 𝛼 &lt; 1.<label>(7)</label></formula><p>Lemma 6 (see <ref type="bibr" target="#b41">[42]</ref>). Let 𝑥(𝑡) ∈ R be a continuous and derivable function. Then, for any 𝑡 ≥ 0, one have</p><formula xml:id="formula_7">1 2 𝐶 0 𝐷 𝛼 𝑡 𝑥 2 (𝑡) ≤ 𝑥 (𝑡) 𝐶 0 𝐷 𝛼 𝑡 𝑥 (𝑡) , 𝛼 ∈ (0, 1) .<label>(8)</label></formula><p>By applying Lemma 6, the following formula can be obtained:</p><formula xml:id="formula_8">1 2 𝐶 0 𝐷 𝛼 𝑡 𝑥 𝑇 (𝑡) 𝑥 (𝑡) ≤ 𝑥 𝑇 (𝑡) 𝐶 0 𝐷 𝛼 𝑡 𝑥 (𝑡) ,<label>(9)</label></formula><p>where 𝑥(𝑡) ∈ R 𝑛 , 𝛼 ∈ (0, 1), and 𝑡 ≥ 0.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">System Description.</head><p>In this section, we consider a class of FMNN as the master system, which is described by the following equation:</p><formula xml:id="formula_9">𝐶 0 𝐷 𝛼 𝑡 𝑥 𝑖 (𝑡) = -𝑐 𝑖 𝑥 𝑖 (𝑡) + 𝑛 ∑ 𝑖=1 𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡)) 𝑓 𝑗 (𝑥 𝑗 (𝑡)) + 𝐼 𝑖 ,<label>(10)</label></formula><p>where 𝛼 ∈ (0, 1), 𝑥(𝑡) = (𝑥 1 (𝑡), 𝑥 2 (𝑡), . . . , 𝑥 𝑛 (t)) 𝑇 ∈ R 𝑛 , 𝑥 𝑖 (𝑡) denotes the state variable associated with the 𝑖th neuron, 𝑖 ∈ N + , 𝑡 ≥ 0; 𝑐 𝑖 &gt; 0 is self-regulation parameters of neurons; 𝐼 𝑖 is a constant of the external input; 𝑓 𝑖 (𝑡) denotes nonlinear activation function; 𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡)) express connection memristive weights, defined by</p><formula xml:id="formula_10">𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡)) = { { { { { { { { { 𝑎 * 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &gt; 𝑇 𝑗 𝑐𝑜 {𝑎 * 𝑖𝑗 , 𝑎 ∘ 𝑖𝑗 } 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 = 𝑇 𝑗 𝑎 ∘ 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &lt; 𝑇 𝑗 ,<label>(11)</label></formula><p>where 𝑖 ∈ N + , 𝑇 𝑗 &gt; 0 denotes switching of memristor, and 𝑎 * 𝑖𝑗 and 𝑎 ∘ 𝑖𝑗 are any constants. And the matrix form of the master system is given by</p><formula xml:id="formula_11">𝐶 0 𝐷 𝛼 𝑡 𝑥 (𝑡) = -𝐶𝑥 (𝑡) + 𝐴𝑓 (𝑥 (𝑡)) + 𝐼,<label>(12)</label></formula><p>where 𝐶 = diag(𝑐 1 , 𝑐 2 , . . . , 𝑐 𝑛 ), 𝐴 = (𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡))) 𝑛×𝑛 , and 𝐼 = (𝐼 1 , 𝐼 2 , . . . , 𝐼 𝑛 ) 𝑇 . Similarly, the corresponding slave system is described as</p><formula xml:id="formula_12">𝐶 0 𝐷 𝛼 𝑡 𝑦 (𝑡) = -𝐷𝑦 (𝑡) + 𝐵𝑔 (𝑦 (𝑡)) + 𝐻 + 𝑢 (𝑡) ,<label>(13)</label></formula><p>where 𝑢(𝑡) is the control input; 𝐷 = diag(𝑑 1 , 𝑑 2 , . . . , 𝑑 𝑛 ), 𝑑 𝑖 &gt; 0; 𝐻 = (𝐻 1 , 𝐻 2 , . . . , 𝐻 𝑛 ) 𝑇 is the external input vector; 𝐵 = (𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡))) 𝑛×𝑛 , 𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡)) are expressed as</p><formula xml:id="formula_13">𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡)) = { { { { { { { { { 𝑏 * 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &gt; 𝑇 𝑗 𝑐𝑜 {𝑏 * 𝑖𝑗 , 𝑏 ∘ 𝑖𝑗 } 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 = 𝑇 𝑗 𝑏 ∘ 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &lt; 𝑇 𝑗 .<label>(14)</label></formula><p>Assuming that the measurement output of system (12) depends on the instantaneous state, the form is as follows:</p><formula xml:id="formula_14">𝑧 (𝑡) = 𝑀𝑥 (𝑡) ,<label>(15)</label></formula><p>where 𝑧(𝑡) ∈ R 𝑚 and 𝑀 ∈ R 𝑚×𝑛 is known constant matrix.</p><p>Compared with continuous fractional-order neural networks, the FMNN is discontinued on the right-hand side because of the introduction of memristor. To deal with this problem, we consider the concept of Filippov solution in this paper.</p><p>Definition 7 (see <ref type="bibr" target="#b42">[43]</ref>). In the Filippov sense, a function 𝑥(𝑡) = (𝑥 1 (𝑡), 𝑥 2 (𝑡), . . . , 𝑥 𝑛 (𝑡)) 𝑇 is a solution of system (12) on [0, +∞) with initial condition 𝑥(0) = (𝑥 1 (0), 𝑥 2 (0), . . ., 𝑥 𝑛 (0)) 𝑇 , if 𝑥(𝑡) is absolutely continuous on any compact interval of [0, +∞), 𝑥(0) = (𝑥 1 (0), 𝑥 2 (0), . . . , 𝑥 𝑛 (0)) 𝑇 and</p><formula xml:id="formula_15">𝐶 0 𝐷 𝛼 𝑡 𝑥 𝑖 (𝑡) ∈ -𝑐 𝑖 𝑥 𝑖 (𝑡) + 𝑛 ∑ 𝑗=1 𝑐𝑜 [𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡))] 𝑓 𝑗 (𝑥 𝑗 (𝑡)) + 𝐼 𝑖 ,<label>(16)</label></formula><p>for 𝑡 ≥ 0, 𝑖 ∈ N + , where 0 &lt; 𝛼 &lt; 1, or there exist 𝜃 𝑖𝑗 [𝑥 𝑗 (𝑡)] ∈ 𝑐𝑜[𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡))] such that</p><formula xml:id="formula_16">𝐶 0 𝐷 𝛼 𝑡 𝑥 𝑖 (𝑡) = -𝑐 𝑖 𝑥 𝑖 (𝑡) + 𝑛 ∑ 𝑗=1 𝜃 𝑖𝑗 [𝑥 𝑗 (𝑡)] 𝑓 𝑗 (𝑥 𝑗 (𝑡)) + 𝐼 𝑖 ,<label>(17)</label></formula><p>where</p><formula xml:id="formula_17">𝑐𝑜 [𝑎 𝑖𝑗 (𝑥 𝑗 (𝑡))] = { { { { { { { { { 𝑎 * 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &gt; 𝑇 𝑗 𝑐𝑜 {𝑎 * 𝑖𝑗 , 𝑎 ∘ 𝑖𝑗 } 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 = 𝑇 𝑗 𝑎 ∘ 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑥 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &lt; 𝑇 𝑗 , 𝑡 ∈ [0, +∞) , 𝑖 ∈ N + .<label>(18)</label></formula><p>And in the same way, we can obtain</p><formula xml:id="formula_18">𝐶 0 𝐷 𝛼 𝑡 𝑦 𝑖 (𝑡) ∈ -𝑑 𝑖 𝑦 𝑖 (𝑡) + 𝑛 ∑ 𝑗=1 𝑐𝑜 [𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡))] 𝑔 𝑗 (𝑦 𝑗 (𝑡)) + 𝐻 𝑖 + 𝑢 𝑖 (𝑡) ,<label>(19)</label></formula><p>where 𝑡 ≥ 0, 𝑖 ∈ N + , and 0 &lt; 𝛼 &lt; 1, or there exist 𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)] ∈ 𝑐𝑜[𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡))] such that</p><formula xml:id="formula_19">𝐶 0 𝐷 𝛼 𝑡 𝑦 𝑖 (𝑡) = -𝑑 𝑖 𝑦 𝑖 (𝑡) + 𝑛 ∑ 𝑗=1 𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)] 𝑔 𝑗 (𝑦 𝑗 (𝑡)) + 𝐻 𝑖 + 𝑢 𝑖 (𝑡) ,<label>(20)</label></formula><p>where</p><formula xml:id="formula_20">𝑐𝑜 [𝑏 𝑖𝑗 (𝑦 𝑗 (𝑡))] = { { { { { { { { { 𝑏 * 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &gt; 𝑇 𝑗 𝑐𝑜 {𝑏 * 𝑖𝑗 , 𝑏 ∘ 𝑖𝑗 } 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 = 𝑇 𝑗 𝑏 ∘ 𝑖𝑗 󵄨 󵄨 󵄨 󵄨 󵄨 𝑦 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 &lt; 𝑇 𝑗 , 𝑡 ∈ [0, +∞) , 𝑖 ∈ N + .<label>(21)</label></formula><p>In order to guarantee the existence and uniqueness of the solution of system ( <ref type="formula" target="#formula_11">12</ref>) and ( <ref type="formula" target="#formula_12">13</ref>) or fractional-order differential inclusions ( <ref type="formula" target="#formula_16">17</ref>) and ( <ref type="formula" target="#formula_19">20</ref>), the following assumptions are provided.</p><p>Assumption 8. For a.a. 𝑗 ∈ N + , there exist Lipschitz constants 𝐹 𝑗 &gt; 0, 𝐺 𝑗 &gt; 0; for any V 1 ̸ = V 2 ∈ R, the following conditions are always established:</p><formula xml:id="formula_21">󵄨 󵄨 󵄨 󵄨 󵄨 𝑓 𝑗 (V 1 ) -𝑓 𝑗 (V 2 ) 󵄨 󵄨 󵄨 󵄨 󵄨 ≤ 𝐹 𝑗 󵄨 󵄨 󵄨 󵄨 V 1 -V 2 󵄨 󵄨 󵄨 󵄨 ,<label>(22)</label></formula><p>and</p><formula xml:id="formula_22">󵄨 󵄨 󵄨 󵄨 󵄨 𝑔 𝑗 (V 1 ) -𝑔 𝑗 (V 2 ) 󵄨 󵄨 󵄨 󵄨 󵄨 ≤ 𝐺 𝑗 󵄨 󵄨 󵄨 󵄨 V 1 -V 2 󵄨 󵄨 󵄨 󵄨 .<label>(23)</label></formula><p>Assumption 9. 𝑓 𝑗 (𝑥) and 𝑔 𝑗 (𝑥) are bounded on R. Meanwhile, 𝑓 𝑗 (±𝑇 𝑗 ) = 𝑔 𝑗 (±𝑇 𝑗 ) = 0.</p><p>Definition 10 (see <ref type="bibr" target="#b31">[32]</ref>). If there exists a nonzero constant 𝜉 for any solution 𝑥(𝑡) and 𝑦(𝑡) of master system ( <ref type="formula" target="#formula_11">12</ref>) and slave system ( <ref type="formula" target="#formula_12">13</ref>), respectively, one obtains</p><formula xml:id="formula_23">lim 𝑡󳨀→+∞ 󵄩 󵄩 󵄩 󵄩 𝑦 (𝑡) -𝜉𝑥 (𝑡) 󵄩 󵄩 󵄩 󵄩 = 0,<label>(24)</label></formula><p>then the globally asymptotically projective synchronization of the master system ( <ref type="formula" target="#formula_11">12</ref>) and slave system ( <ref type="formula" target="#formula_12">13</ref>) can be realized, where ‖ ⋅ ‖ denotes the Euclidean norm and 𝜉 denotes the projective coefficient.</p><p>Remark 11. If 𝜉 = -1, the global antisynchronization of system ( <ref type="formula" target="#formula_11">12</ref>) and ( <ref type="formula" target="#formula_12">13</ref>) can be attainable. If 𝜉 = 1, system ( <ref type="formula" target="#formula_11">12</ref>) and ( <ref type="formula" target="#formula_12">13</ref>) can achieve globally asymptotically complete synchronization. If 𝜉 = 0, there is the following form: lim 𝑡󳨀→+∞ ‖ 𝑦(𝑡) ‖= 0, which shows that the slave system ( <ref type="formula" target="#formula_12">13</ref>) is globally asymptotically stabilized to the origin.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Mittag-Leffler Stability.</head><p>In this part, the Mittag-Leffler function and Mittag-Leffler stability are given by the following content.</p><p>Definition 12 (see <ref type="bibr" target="#b40">[41]</ref>). The Mittag-Leffler function with two parameters is defined as</p><formula xml:id="formula_24">𝐸 𝛼,𝛽 (𝑥) = ∞ ∑ 𝑙=0 𝑥 𝑙 Γ (𝑙𝛼 + 𝛽) , 𝛼 &gt; 0, 𝛽 &gt; 0, 𝑥 ∈ C.<label>(25)</label></formula><p>For 𝛽 = 0, we have 𝐸 𝛼 (𝑥) = 𝐸 𝛼,1 (𝑥) defined as</p><formula xml:id="formula_25">𝐸 𝛼 (𝑥) = ∞ ∑ 𝑙=0 𝑥 𝑙 Γ (𝑙𝛼 + 1) 𝛼 &gt; 0, 𝑥 ∈ C.<label>(26)</label></formula><p>Definition 13 (see <ref type="bibr" target="#b24">[25]</ref>). If 𝑥(𝑡) = 𝑥 * is an equilibrium point of the system ( <ref type="formula" target="#formula_11">12</ref>), and there are two constants Ξ &gt; 0 and Υ &gt; 0 for any solution 𝑥(𝑡) of FMNN ( <ref type="formula" target="#formula_11">12</ref>) with initial value 𝑥(0), one has</p><formula xml:id="formula_26">𝑥 󵄩 󵄩 󵄩 󵄩 (𝑡) -𝑥 * 󵄩 󵄩 󵄩 󵄩 ≤ Ξ 󵄩 󵄩 󵄩 󵄩 𝑥 (0) -𝑥 * 󵄩 󵄩 󵄩 󵄩 𝐸 𝛼 (-Υ𝑡 𝛼 ) , 𝑡 ≥ 0.<label>(27)</label></formula><p>In particular, 𝑥 * = 0, and one has</p><formula xml:id="formula_27">‖𝑥 (𝑡)‖ ≤ Ξ ‖𝑥 (0)‖ 𝐸 𝛼 (-Υ𝑡 𝛼 ) , 𝑡 ≥ 0.<label>(28)</label></formula><p>Definition 14 (see <ref type="bibr" target="#b24">[25]</ref>). System ( <ref type="formula" target="#formula_11">12</ref>) is expected to be globally Mittag-Leffler stable, if its equilibrium point is Mittag-Leffler stable.</p><p>Lemma 15 (see <ref type="bibr" target="#b31">[32]</ref>). For 𝑥 * is an equilibrium point of the FMNN ( <ref type="formula" target="#formula_11">12</ref>), if there is a Lyapunov function 𝑉(𝑡, 𝑥(𝑡)) : [0, +∞) × D ∈ R 𝑛 and class-𝜅 function 𝜗 𝑖 (𝑖 = 1, 2, 3) satisfying</p><formula xml:id="formula_28">𝜗 1 (‖𝑥 (𝑡)‖) ≤ 𝑉 (𝑡, 𝑥 (𝑡)) ≤ 𝜗 2 (‖𝑥 (𝑡)‖) , 𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡, 𝑥 (𝑡)) ≤ -𝜗 3 (‖𝑥 (𝑡)‖) ,<label>(29)</label></formula><p>where 𝛼 ∈ (0, 1) and the origin is included in a domain of D ⊆ R 𝑛 , so the equilibrium point of the FMNN ( <ref type="formula" target="#formula_11">12</ref>) is asymptotically stable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Main Results</head><p>The synchronization error is defined as 𝑒(𝑡) = 𝑦(𝑡) -𝜉𝑥(𝑡). From the master system ( <ref type="formula" target="#formula_11">12</ref>) and slave system ( <ref type="formula" target="#formula_12">13</ref>), the error system is described by</p><formula xml:id="formula_29">𝐶 0 𝐷 𝛼 𝑡 𝑒 (𝑡) = -𝐷𝑒 (𝑡) + 𝐵 * 𝑔 (𝑒 (𝑡) + 𝜉𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡)) + 𝜉 (𝐶 -𝐷) 𝑥 (𝑡) + B * 𝑔 (𝜉𝑥 (𝑡)) -𝜉𝐴 * 𝑓 (𝑥 (𝑡)) + 𝐻 -𝜉𝐼 + 𝑢 (𝑡) ,<label>(30)</label></formula><p>where 𝐵 * = (𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)]) 𝑛×𝑛 , B * = (𝜔 𝑖𝑗 [𝜉𝑥 𝑗 (𝑡)]) 𝑛×𝑛 , and 𝐴 * = (𝜃 𝑖𝑗 [𝑥 𝑗 (𝑡)]) 𝑛×𝑛 . Based on Definition 10, the problem of projective synchronization for NFMNN is transformed into the problem of asymptotic stability of error systems ( <ref type="formula" target="#formula_29">30</ref>).</p><p>In this part, a fractional-order integral sliding mode controller is designed to deal with the problem of projective synchronization of NFMNN. The sliding mode surface is defined as</p><formula xml:id="formula_30">𝑆 (𝑡) = 𝑒 (𝑡) + 0 𝐼 𝛼 𝑡 {𝐶𝑒 (𝑡) -[𝐵 * 𝑔 (𝑒 (𝑡) + 𝜉𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡))] + 𝑁 (𝑀𝑦 (𝑡) -𝜉𝑧 (𝑡))} = 𝑒 (𝑡) + 0 𝐼 𝛼 𝑡 {-[𝐵 * 𝑔 (𝑒 (𝑡) + 𝜉𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡))] + (𝐶 + 𝑁𝑀) 𝑒 (𝑡)} ,<label>(31)</label></formula><p>where 𝑆(𝑡) = (𝑆 1 (𝑡), 𝑆 2 (𝑡), . . . , 𝑆 𝑛 (𝑡)) 𝑇 ; 𝐶, 𝐵 * , and B * are defined in the master system ( <ref type="formula" target="#formula_11">12</ref>) and the slave system ( <ref type="formula" target="#formula_19">20</ref>), respectively; 𝑁 ∈ R 𝑛×𝑚 is denoted as the gain matrix which can be selected appropriately; 𝑀 ∈ R 𝑚×𝑛 is the coefficient matrix in ( <ref type="formula" target="#formula_14">15</ref>).</p><p>According to the theory of sliding mode control <ref type="bibr" target="#b43">[44]</ref>, for the sake of the error system ( <ref type="formula" target="#formula_29">30</ref>) operating on the sliding mode, the sliding surface and its derivative must satisfy 𝑆(𝑡) = 0 and Ṡ (𝑡) = 0.</p><p>Based on Property 4, one has</p><formula xml:id="formula_31">Ṡ (𝑡) = 𝐶 0 𝐷 1-𝛼 𝑡 𝐶 0 𝐷 𝛼 𝑡 𝑆 (𝑡) = 0,<label>(32)</label></formula><p>which implies that</p><formula xml:id="formula_32">𝐶 0 𝐷 𝛼 𝑡 𝑆 (𝑡) = 0,<label>(33)</label></formula><p>Assume that Assumptions 8 and 9 hold; expression ( <ref type="formula" target="#formula_30">31</ref>) can be written as</p><formula xml:id="formula_33">𝐶 0 𝐷 𝛼 𝑡 𝑆 (𝑡) = 𝐶 0 𝐷 𝛼 𝑡 𝑒 (𝑡) -[𝐵 * 𝑔 (𝑦 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡))] + (𝐶 + 𝑁𝑀) 𝑒 (𝑡) .<label>(34)</label></formula><p>Substituting ( <ref type="formula" target="#formula_29">30</ref>) into ( <ref type="formula" target="#formula_33">34</ref>) and combining ( <ref type="formula" target="#formula_32">33</ref>), then</p><formula xml:id="formula_34">𝐶 0 𝐷 𝛼 𝑡 𝑆 (𝑡) = (-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) + 𝜉 (𝐶 -𝐷) 𝑥 (𝑡) + B * 𝑔 (𝜉𝑥 (𝑡)) -𝜉𝐴 * 𝑓 (𝑥 (𝑡)) + 𝐻 -𝜉𝐼 + 𝑢 (𝑡) = 0.<label>(35)</label></formula><p>By means of ( <ref type="formula" target="#formula_34">35</ref>), an equivalent control law can be written as</p><formula xml:id="formula_35">𝑢 𝑞 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) -𝜉 (𝐶 -𝐷) 𝑥 (𝑡) -𝐻 -B * 𝑔 (𝜉𝑥 (𝑡)) + 𝜉𝐴 * 𝑓 (𝑥 (𝑡)) + 𝜉𝐼.<label>(36)</label></formula><p>Combining ( <ref type="formula" target="#formula_29">30</ref>) with ( <ref type="formula" target="#formula_35">36</ref>), the dynamics of sliding mode can be written as</p><formula xml:id="formula_36">𝐶 0 𝐷 𝛼 𝑡 𝑒 (𝑡) = -(𝐶 + 𝑁𝑀) 𝑒 (𝑡) + [𝐵 * 𝑔 (𝑒 (𝑡) + 𝜉𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡))] ,<label>(37)</label></formula><p>and obviously, 𝑒 * = 0 is an equilibrium point of the sliding mode dynamics ( <ref type="formula" target="#formula_36">37</ref>).</p><p>On account of the sliding mode control theory, a reaching law is denoted as</p><formula xml:id="formula_37">𝑢 𝑝 = -𝛿 (sgn (𝑆 (𝑡))) ,<label>(38)</label></formula><p>where</p><formula xml:id="formula_38">sgn (𝑆 𝑖 (𝑡)) = { { { { { { { { { 1, 𝑆 𝑖 (𝑡) &gt; 0 0, 𝑆 𝑖 (𝑡) = 0 -1, 𝑆 𝑖 (𝑡) &lt; 0, 𝑖 = 1, 2, . . . , 𝑛 ∈ 𝑁 + ,<label>(39)</label></formula><p>and 𝛿 &gt; 0 is the switching gain. Lastly, the sliding mode controller 𝑢(𝑡) is designed as</p><formula xml:id="formula_39">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) -𝜉 (𝐶 -𝐷) 𝑥 (𝑡) + 𝜉𝐴 * 𝑓 (𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡)) -𝐻 + 𝜉𝐼 -𝜎 sgn (𝑆 (𝑡)) .<label>(40)</label></formula><p>Remark 16. As mentioned in <ref type="bibr" target="#b44">[45,</ref><ref type="bibr" target="#b45">46]</ref>, some undesirable dynamic properties may be produced owing to the discontinuous function sgn(𝑆(𝑡)) existing in the sliding mode control system ( <ref type="formula" target="#formula_39">40</ref>). To deal with the problem of the harmful chattering, the sgn(𝑆(𝑡)) is replaced by a continuous function tanh(𝑆(𝑡)). Hence, the sliding mode control ( <ref type="formula" target="#formula_39">40</ref>) is altered as follows:</p><formula xml:id="formula_40">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) -𝜉 (𝐶 -𝐷) 𝑥 (𝑡) + 𝜉𝐴 * 𝑓 (𝑥 (𝑡)) -B * 𝑔 (𝜉𝑥 (𝑡)) -𝐻 + 𝜉𝐼 -𝜎 tanh (𝑆 (𝑡)) .<label>(41)</label></formula><p>Theorem 17. Assume that the sliding model surface is denoted by ( <ref type="formula" target="#formula_30">31</ref>) and Assumption 9 holds; the trajectories of error system ( <ref type="formula" target="#formula_29">30</ref>) can be asymptotically driven on the switching surface 𝑆(𝑡) = 0 based on the sliding model controller ( <ref type="formula" target="#formula_39">40</ref>).</p><p>Proof. Constructing the positive definite function as a Lyapunov function candidate</p><formula xml:id="formula_41">𝑉 = 1 2 𝑆 𝑇 (𝑡) 𝑆 (𝑡) ,<label>(42)</label></formula><p>in view of Lemma 6 and Definition 2, expression ( <ref type="formula" target="#formula_41">42</ref>) can be written as</p><formula xml:id="formula_42">𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡) = 𝐶 0 𝐷 𝛼 𝑡 1 2 𝑆 𝑇 (𝑡) 𝑆 (𝑡) ≤ 𝑆 𝑇 (𝑡) 𝐶 0 𝐷 𝛼 𝑡 𝑆 (𝑡) = 𝑛 ∑ 𝑖=1 𝑆 𝑖 (𝑡) ⋅ (-𝜎) ⋅ sgn (𝑆 𝑖 (𝑡)) = -𝜎 ‖𝑆 (𝑡)‖ 1 ,<label>(43)</label></formula><p>where ‖ ⋅ ‖ 1 denotes the 1-norm.</p><p>Based on Lemma 15, when 𝜎 &gt; 0 holds, the trajectories of system can asymptotically converge to 𝑆(𝑡) = 0, which means that the trajectories of the error system are driven to the designed sliding mode surface and stayed on it at any subsequent moment. This obtains the proof.</p><p>In order to analyze the stability of the sliding motion, the following assumption is given as follows.</p><p>Assumption 18. For a.a. 𝑖 ∈ N + , one has</p><formula xml:id="formula_43">-𝑐 𝑖 + 𝑛 ∑ 𝑗=1 ( 𝑚 ∑ 𝑘=1 󵄨 󵄨 󵄨 󵄨 󵄨 𝑁 𝑗𝑘 𝑀 𝑘𝑖 󵄨 󵄨 󵄨 󵄨 󵄨 ) + 𝑛 ∑ 𝑗=1 󵄨 󵄨 󵄨 󵄨 󵄨 𝑏 𝑗𝑖 ♡ 󵄨 󵄨 󵄨 󵄨 󵄨 𝐺 𝑖 &lt; 0,<label>(44)</label></formula><p>where 𝑐 𝑖 &gt; 0 is the constant in the master system ( <ref type="formula" target="#formula_16">17</ref>); 𝑁 𝑗𝑘 denotes the gain of system ( <ref type="formula" target="#formula_30">31</ref>); 𝑀 𝑘𝑖 is the coefficient of the system ( <ref type="formula" target="#formula_14">15</ref>); |𝑏 𝑗𝑖 ♡ | = max{|𝑏 * 𝑗𝑖 |, |𝑏 ∘ 𝑗𝑖 |}; and 𝐺 𝑖 is the Lipschitz constants of function 𝑔(⋅) in the Assumption 8.</p><p>Theorem 19. In the case of Assumptions 8, 9, and 18, system ( <ref type="formula" target="#formula_36">37</ref>) is globally asymptotically stable.</p><p>Proof. Firstly, expression ( <ref type="formula" target="#formula_36">37</ref>) can be written as</p><formula xml:id="formula_44">𝐶 0 𝐷 𝛼 𝑡 𝑒 𝑖 (𝑡) = -𝑐 𝑖 𝑒 𝑖 (𝑡) - 𝑛 ∑ 𝑗=1 𝑚 ∑ 𝑘=1 𝑁 𝑖𝑘 𝑀 𝑘𝑗 𝑒 𝑗 (𝑡) + 𝑛 ∑ 𝑗=1 {𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)] 𝑔 𝑗 (𝑦 𝑗 (𝑡)) -𝜔 𝑖𝑗 [𝜉𝑥 𝑗 (𝑡)] 𝑔 𝑗 (𝜉𝑥 𝑗 (𝑡))} .<label>(45)</label></formula><p>Constructing the function 𝑉(𝑡) as a Lyapunov function candidate can be written as</p><formula xml:id="formula_45">𝑉 (𝑡) = 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 .<label>(46)</label></formula><p>According to Lemma 5, the following inequality is obtained:</p><formula xml:id="formula_46">𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡) = 𝐶 0 𝐷 𝛼 𝑡 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 ≤ 𝑛 ∑ 𝑖=1 sgn (𝑒 𝑖 (𝑡)) 𝐶 0 𝐷 𝛼 𝑡 𝑒 𝑖 (𝑡) .<label>(47)</label></formula><p>And from expression ( <ref type="formula" target="#formula_44">45</ref>) to ( <ref type="formula" target="#formula_46">47</ref>), one has</p><formula xml:id="formula_47">𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡) ≤ 𝑛 ∑ 𝑖=1 sgn (𝑒 𝑖 (𝑡)) { { { -𝑐 𝑖 𝑒 𝑖 (𝑡) - 𝑛 ∑ 𝑗=1 𝑚 ∑ 𝑘=1 𝑁 𝑖𝑘 𝑀 𝑘𝑗 𝑒 𝑗 (𝑡) + 𝑛 ∑ 𝑗=1 [𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)] 𝑔 𝑗 (𝑦 𝑗 (𝑡)) -𝜔 𝑖𝑗 [𝜉𝑥 𝑗 (𝑡)] 𝑔 𝑗 (𝜉𝑥 𝑗 (𝑡))] } } } = -𝑐 𝑖 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 + 𝑛 ∑ 𝑖=1 sgn (𝑒 𝑖 (𝑡)) 𝑛 ∑ 𝑗=1 𝑚 ∑ 𝑘=1 𝑁 𝑖𝑘 𝑀 𝑘𝑗 𝑒 𝑗 (𝑡) + 𝑛 ∑ 𝑖=1 sgn (𝑒 𝑖 (𝑡)) ⋅ 𝑛 ∑ 𝑗=1 [𝜔 𝑖𝑗 [𝑦 𝑗 (𝑡)] 𝑔 𝑗 (𝑦 𝑗 (𝑡)) -𝜔 𝑖𝑗 [𝜉𝑥 𝑗 (𝑡)] ⋅ 𝑔 𝑗 (𝜉𝑥 𝑗 (𝑡))] .<label>(48)</label></formula><p>Based on Assumptions 8 and 9, expression ( <ref type="formula" target="#formula_47">48</ref>) can be written as</p><formula xml:id="formula_48">𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡) ≤ -𝑐 𝑖 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 + 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 𝑛 ∑ 𝑗=1 𝑚 ∑ 𝑘=1 󵄨 󵄨 󵄨 󵄨 󵄨 𝑁 𝑗𝑘 𝑀 𝑘𝑖 󵄨 󵄨 󵄨 󵄨 󵄨 + 𝑛 ∑ 𝑖=1 𝑛 ∑ 𝑗=1 󵄨 󵄨 󵄨 󵄨 󵄨 𝑒 𝑗 (𝑡) 󵄨 󵄨 󵄨 󵄨 󵄨 𝑏 ♡ 𝑖𝑗 𝐺 𝑗 = 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 [ [ -𝑐 𝑖 + 𝑛 ∑ 𝑗=1 𝑚 ∑ 𝑘=1 󵄨 󵄨 󵄨 󵄨 󵄨 𝑁 𝑗𝑘 𝑀 𝑘𝑖 󵄨 󵄨 󵄨 󵄨 󵄨 + 𝑏 ♡ 𝑖𝑗 𝐺 𝑗 ] ] ;<label>(49)</label></formula><formula xml:id="formula_49">from Assumption 18, |𝑏 𝑗𝑖 ♡ | = max{|𝑏 * 𝑗𝑖 |, |𝑏 ∘ 𝑗𝑖 |}; and let 𝜑 𝑖 = 𝑐 𝑖 - ∑ 𝑛 𝑗=1 ∑ 𝑚 𝑘=1 |𝑁 𝑗𝑘 𝑀 𝑘𝑖 | -𝑏 ♡ 𝑖𝑗 𝐺 𝑗 &gt; 0, 𝜑 = min{𝜑 𝑖 } &gt; 0; one has 𝐶 0 𝐷 𝛼 𝑡 𝑉 (𝑡) ≤ -𝜑 𝑖 𝑛 ∑ 𝑖=1 󵄨 󵄨 󵄨 󵄨 𝑒 𝑖 (𝑡) 󵄨 󵄨 󵄨 󵄨 ≤ -𝜑𝑉 (𝑡) ;<label>(50)</label></formula><p>based on Lemma 15, an equilibrium point 𝑒 * = 0 is the Mittag-Leffler stable, which means that system ( <ref type="formula" target="#formula_36">37</ref>) is globally Mittag-Leffler stable, i.e., lim 𝑡󳨀→∞ ‖𝑒(𝑡)‖ = 0. This completes the proof.</p><p>Remark 20. According to Theorem 19, when 𝑒(𝑡) = 𝑦(𝑡) -𝜉𝑥(𝑡), the following form can be obtained:</p><formula xml:id="formula_50">󵄩 󵄩 󵄩 󵄩 𝑦 (𝑡) -𝜉𝑥 (𝑡) 󵄩 󵄩 󵄩 󵄩 󳨀→ 0 (𝑡 󳨀→ +∞) ;<label>(51)</label></formula><p>this means that the master system ( <ref type="formula" target="#formula_16">17</ref>) and the slave system ( <ref type="formula" target="#formula_19">20</ref>) achieve globally projective synchronization on account of the controller ( <ref type="formula" target="#formula_39">40</ref>).</p><p>If 𝜉 = -1, the control input ( <ref type="formula" target="#formula_39">40</ref>) is designed as</p><formula xml:id="formula_51">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) + (𝐶 -𝐷) 𝑥 (𝑡) -𝐴 * 𝑓 (𝑥 (𝑡)) -B * 𝑔 (-𝑥 (𝑡)) -𝐻 -𝐼 -𝜎sgn (𝑆 (𝑡)) ,<label>(52)</label></formula><p>where the sliding surface 𝑆(𝑡) is designed by ( <ref type="formula" target="#formula_30">31</ref>). A special case of Theorems 17 and 19 is obtained as follows.</p><p>Corollary 21. Under Assumptions 8-18, the master system ( <ref type="formula" target="#formula_16">17</ref>) and the slave system ( <ref type="formula" target="#formula_19">20</ref>) are the globally asymptotic antisynchronization based on the controller ( <ref type="formula" target="#formula_51">52</ref>).</p><p>If 𝜉 = 1, the control input ( <ref type="formula" target="#formula_39">40</ref>) is redesigned as</p><formula xml:id="formula_52">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑒 (𝑡) -(𝐶 -𝐷) 𝑥 (𝑡) + 𝐴 * 𝑓 (𝑥 (𝑡)) -B * 𝑔 (𝑥 (𝑡)) -𝐻 + 𝐼 -𝜎sgn (𝑆 (𝑡)) .<label>(53)</label></formula><p>Corollary 22. Assume that Assumptions 8-18 hold, the master system ( <ref type="formula" target="#formula_16">17</ref>) and slave system ( <ref type="formula" target="#formula_19">20</ref>) are the global asymptotically complete synchronization on account of the controller ( <ref type="formula" target="#formula_52">53</ref>). If 𝜉 = 0, the sliding surface ( <ref type="formula" target="#formula_30">31</ref>) is rewritten as</p><formula xml:id="formula_53">𝑆 (𝑡) = 𝑦 (𝑡) + 0 𝐼 𝛼 𝑡 {-[𝐵 * 𝑔 (𝑦 (𝑡)) -B * 𝑔 (0)] + (𝐶 + 𝑁𝑀) 𝑦 (𝑡)} ,<label>(54)</label></formula><p>and the control input ( <ref type="formula" target="#formula_39">40</ref>) is redesigned as</p><formula xml:id="formula_54">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -(-𝐷 + 𝐶 + 𝑁𝑀) 𝑦 (𝑡) -B * 𝑔 (0) -𝐻 -𝜎sgn (𝑆 (𝑡)) .<label>(55)</label></formula><p>Corollary 23. Under Assumptions 8-18, the slave system ( <ref type="formula" target="#formula_19">20</ref>) is the globally asymptotically stabilized to the origin based on the controller ( <ref type="formula" target="#formula_53">54</ref>).</p><p>If the activation function and the parameters of slave system ( <ref type="formula" target="#formula_19">20</ref>) are the same as master system ( <ref type="formula" target="#formula_16">17</ref>), i.e.,</p><formula xml:id="formula_55">𝐶 𝑡 0 𝐷 𝛼 𝑡 𝑦 (𝑡) = -𝐶𝑦 (𝑡) + Ǎ * 𝑓 (𝑦 (𝑡)) + 𝐼 + 𝑢 (𝑡) ,<label>(56)</label></formula><p>where Ǎ * = (𝜃 𝑖𝑗 [𝑦 𝑗 (𝑡)]) 𝑛×𝑛 , the sliding mode surface ( <ref type="formula" target="#formula_30">31</ref>) is denoted as</p><formula xml:id="formula_56">𝑆 (𝑡) = 𝑒 (𝑡) + 0 𝐼 𝛼 𝑡 {-[ Ǎ * 𝑓 (𝑒 (𝑡) + 𝜉𝑥 (𝑡)) -Â * 𝑓 (𝜉𝑥 (𝑡))] + (𝐶 + 𝑁𝑀) 𝑒 (𝑡)} ,<label>(57)</label></formula><p>where Â * = (𝜃 𝑖𝑗 [𝜉𝑥 𝑗 (𝑡)]) 𝑛×𝑛 ; the control input ( <ref type="formula" target="#formula_39">40</ref>) is rewritten as</p><formula xml:id="formula_57">𝑢 (𝑡) = 𝑢 𝑞 (𝑡) + 𝑢 𝑝 (𝑡) = -𝑁𝑀𝑒 (𝑡) + 𝜉𝐴 * 𝑓 (𝑥 (𝑡)) -Â * 𝑓 (𝜉𝑥 (𝑡)) + (𝜉 -1) 𝐼 -𝜎sgn (𝑆 (𝑡)) .<label>(58)</label></formula><p>Similar to Theorems 17 and 19, the following inference can be given.</p><p>Corollary 24. The master system ( <ref type="formula" target="#formula_16">17</ref>) and the slave system ( <ref type="formula" target="#formula_55">56</ref>) are the globally projective synchronization based on the controller ( <ref type="formula" target="#formula_57">58</ref>) if the Assumptions 8-18 hold.</p><p>Remark 25. Chen, Zeng et al. <ref type="bibr" target="#b24">[25]</ref> discussed the synchronization of FMNN based on the linear feedback controller. Bao &amp; Cao <ref type="bibr" target="#b32">[33]</ref> discussed the projective synchronization of identical fractional-order memristive neural networks by using adaptive feedback controller. But their results were about the same system. In fact, the parameters and functions of systems are variant due to environmental changes. Thus, our systems are general. In addition, the above control scheme cannot obtain projective synchronization of NFMNN. However, the fractional-order sliding mode controller can solve such problems in this paper. In a word, our system is general and our results achieve a valuable improvement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Numerical Simulations</head><p>In this section, the results obtained in this paper are proved to be effectiveness and correctness by a numerical example.</p><p>Example 1. Consider the following three-dimensional FMNN as the master system and slave system:</p><formula xml:id="formula_58">𝐶 0 𝐷 𝛼 𝑡 𝑥 (𝑡) = -𝐶𝑥 (𝑡) + 𝐴𝑓 (𝑥 (𝑡)) + 𝐼 𝐶 0 𝐷 𝛼 𝑡 𝑦 (𝑡) = -𝐷𝑦 (𝑡) + 𝐵𝑔 (𝑦 (𝑡)) + 𝐻 + 𝑢 (𝑡) ,<label>(59)</label></formula><p>where 𝛼 = 0.98; 𝐼 = 𝐻 = [0, 0, 0] 𝑇 ; the activation function 𝑓(𝑥(𝑡)) = tanh(|𝑥(𝑡)| -1) and 𝑔(𝑦(𝑡)) = sin(|𝑦(𝑡)| -1); 𝐴 = (𝑎 𝑖𝑗 ) 𝑛×𝑛 and 𝐵 = (𝑏 𝑖𝑗 ) 𝑛×𝑛 ; 𝑖, 𝑗 = 1, 2, 3; </p><formula xml:id="formula_59">C=[1.5 0 0 0 1.5 0 0 0 1.5], D=[0.07 0 0 0 0.08 0 0 0 0.05], a11={−5∣x1∣&lt;1−3∣x1∣≥1, a12={5∣x2∣&lt;16∣x2∣≥1, a13={5∣x3∣&lt;14.5∣x3∣≥1, a21={−9∣x1∣&lt;1−7∣x1∣≥1,a22={2∣x2∣&lt;13∣x2∣≥1,a23={−1∣x3∣&lt;13∣x1∣≥1, a31={−1∣x1∣&lt;11∣x1∣≥1,a32={−9∣x2∣&lt;1−8∣x2∣≥1,a33={2∣x1∣&lt;13∣x1∣≥1, b11={0.45∣y1∣&lt;10.33∣y1∣≥1,b12={−0.22∣y2∣&lt;1−0.29∣y2∣≥1,b13={−0.2∣y3∣&lt;1−0.25∣y3∣≥1, b21={−0.5∣y1∣&lt;1−0.6∣y1∣≥1,b22={0.19∣y2∣&lt;10.25∣y2∣≥1,b23={−0.15∣y3∣&lt;10.28∣y3∣≥1, b31={−0.11∣y1∣&lt;10.11∣y1∣≥1,b32={0.7∣y2∣&lt;10.6∣y2∣≥1,b33={−0.21∣y1∣&lt;1−0.275∣y1∣≥1.<label>(60)</label></formula><p>The measured output 𝑧(𝑡) is defined as 𝑧(𝑡) = 𝑀𝑥(𝑡), where the parameter 𝑀 = [1, 1, 1]. Next, the simulation diagram is given as follows.</p><p>Figure <ref type="figure" target="#fig_0">1</ref> describes phase diagram of master system ( <ref type="formula" target="#formula_11">12</ref>) under the condition of initial value 𝑥(0) = (1.1, 1.2, -1.5) 𝑇 . Under the condition of initial value 𝑦(0) = (-0.5, 1.5, -2.5) 𝑇 , the phase trajectories of slave system ( <ref type="formula" target="#formula_12">13</ref>) is showed in Figure <ref type="figure" target="#fig_1">2</ref> without the controller ( <ref type="formula" target="#formula_40">41</ref>).</p><p>When the projective coefficient 𝜉 = -1 and the gain matrix 𝑁 = (0.5, 0.3, 0.1) 𝑇 , Figures <ref type="figure" target="#fig_2">3</ref> and <ref type="figure" target="#fig_3">4</ref> imply that the master-slave system ( <ref type="formula" target="#formula_58">59</ref>) is globally asymptotic antisynchronization from Corollary 21 under the control scheme ( <ref type="formula" target="#formula_51">52</ref>).</p><p>Similarly, based on the control scheme ( <ref type="formula" target="#formula_51">52</ref>) Figures <ref type="figure" target="#fig_4">5</ref> and <ref type="figure" target="#fig_5">6</ref> depict the simulation results for 𝜉 = 1 with the gain matrix 𝑁 = (0.3, 0, 0) 𝑇 , which indicate the master-slave ( <ref type="formula" target="#formula_58">59</ref>) is globally asymptotically complete synchronization form Corollary 22.</p><p>In the following, the slave system of the globally asymptotically stabilized to the origin is considered based on the control scheme ( <ref type="formula" target="#formula_53">54</ref>). In this case, 𝜉 = 0 and 𝑁 = (-0.1, 0.3, -0.2) 𝑇 . The Corollary 23 is illustrated in Figure <ref type="figure" target="#fig_6">7</ref>.</p><p>Similarly, when 𝜉 = -2 and the gain matrix 𝑁 = (0.4, -0.1, 0.1) 𝑇 , the master-slave system ( <ref type="formula" target="#formula_58">59</ref>) is globally  asymptotically projective synchronization on the control scheme ( <ref type="formula" target="#formula_39">40</ref>) which are showed in Figures <ref type="figure" target="#fig_7">8</ref> and <ref type="figure" target="#fig_8">9</ref>.</p><p>When 𝜉 = 3 and the gain matrix 𝑁 = (-0.1, -0.1, -0.1) 𝑇 , Figures <ref type="figure" target="#fig_9">10</ref> and <ref type="figure" target="#fig_10">11</ref> show that the master-slave system is globally asymptotically projective synchronization under the control scheme ( <ref type="formula" target="#formula_39">40</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusion</head><p>In this paper, the problem of projective synchronization of NFMNN is studied. By designing a new type of fractionalorder sliding mode controller and analyzing the reachability of sliding mode surface and the stability of sliding motion, the effective criteria for projective synchronization of NFMNN are obtained. Furthermore, the complete synchronization and antisynchronization of NFMNN, the stability of FMNN,  and the projective synchronization of the identical FMNN are special cases in this paper. In the future, we will consider the lag projective synchronization of NFMNN with delays. </p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure1: Phase plot of master system with initial condition 𝑥(0) = (1.1, 1.3, -1.5) 𝑇 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Phase plot of slave system with initial condition 𝑦(0) = (-0.5, 1.5, -2.5) 𝑇 without the controller u(t).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: State trajectories of master-slave systems with 𝜉 = -1.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Select 10 random initial conditions and state trajectories of the synchronization errors 𝑒 1 (𝑡), 𝑒 2 (𝑡), and 𝑒 3 (𝑡) with 𝜉 =-1.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: State trajectories of master-slave systems with 𝜉 = 1.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 :</head><label>6</label><figDesc>Figure 6: Select 10 random initial conditions and state trajectories of the synchronization errors 𝑒 1 (𝑡), 𝑒 2 (𝑡), and 𝑒 3 (𝑡) with 𝜉 = 1.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 :</head><label>7</label><figDesc>Figure 7: State trajectories of slave systems with 𝜉 = 0.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 :</head><label>8</label><figDesc>Figure 8: State trajectories of master-slave systems with 𝜉 = -2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 :</head><label>9</label><figDesc>Figure 9: Select 10 random initial conditions and state trajectories of the synchronization errors 𝑒 1 (𝑡), 𝑒 2 (𝑡), and 𝑒 3 (𝑡) with 𝜉 = -2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 10 :</head><label>10</label><figDesc>Figure 10: State trajectories of master-slave systems with 𝜉 = 3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 11 :</head><label>11</label><figDesc>Figure 11: Select 10 random initial conditions and state trajectories of the synchronization errors 𝑒1 (𝑡), 𝑒2 (𝑡), and 𝑒3 (𝑡) with 𝜉 = 3.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>This research is supported by <rs type="funder">National Science Foundation of China</rs> (<rs type="grantNumber">61703312</rs> and <rs type="grantNumber">61703313</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Ja52rvj">
+					<idno type="grant-number">61703312</idno>
+				</org>
+				<org type="funding" xml:id="_pPtnYqC">
+					<idno type="grant-number">61703313</idno>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data Availability</head><p>The data used to support the findings of this study are available from the corresponding author upon request.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest</head><p>The authors declare that there are no conflicts of interest regarding the publication of this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Authors' Contributions</head><p>Chong Chen carried out the main results and completed the corresponding proof. Zhixia Ding provides suggestions for the revision of the full text details. All authors read and approved the final manuscript. </p></div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">O</forename><surname>Chua</surname></persName>
+					</author>
+					<title level="a">Memristor-The missing circuit element</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Transactions on Circuit Theory</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="507" to="519"/>
+						<date when="1971">1971</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">O</forename><surname>Chua</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Kang</surname></persName>
+					</author>
+					<title level="a">Memristive devices and systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of the IEEE</title>
+					<imprint>
+						<biblScope unit="volume">64</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="209" to="223"/>
+						<date when="1976">1976</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">O</forename><surname>Chua</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Tseng</surname></persName>
+					</author>
+					<title level="a">A memristive circuit model for p-n junction diodes</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Circuit Theory and Applications</title>
+					<imprint>
+						<biblScope unit="volume">2</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="367" to="389"/>
+						<date when="1974">1974</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Strukov</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Snider</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Stewart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">Stanley</forename><surname>Williams</surname></persName>
+					</author>
+					<title level="a">The missing memristor found</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">453</biblScope>
+						<biblScope unit="page" from="80" to="83"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">HyuHn</forename><surname>Jo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Ebong</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Bhadviya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Mazumder</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Lu</surname></persName>
+					</author>
+					<title level="a">Nanoscale Memristor Device as Synapse in Neuromorphic Systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nano Letters</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1297" to="1301"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Meng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Sana</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Lim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Bioengineered Tunable Memristor Based on Protein Nanocage</title>
+				</analytic>
+				<monogr>
+					<title level="j">Small</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="277" to="283"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Adhikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">O</forename><surname>Chua</surname></persName>
+					</author>
+					<title level="a">Memristor Bridge Synapse-Based Neural Network and Its Learning</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">9</biblScope>
+						<biblScope unit="page" from="1426" to="1435"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">N</forename><surname>Joglekar</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Wolf</surname></persName>
+					</author>
+					<title level="a">The elusive memristor: properties of basic electrical circuits</title>
+				</analytic>
+				<monogr>
+					<title level="j">European Journal of Physics</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="661" to="675"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Sun</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Yin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Xu</surname></persName>
+					</author>
+					<title level="a">Compound synchronization of four memristor chaotic oscillator systems and secure communication</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chaos: An Interdisciplinary Journal of Nonlinear Science</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="1" to="11"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+				<note>Article ID 013140</note>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yang</surname></persName>
+					</author>
+					<title level="a">Training itself: Mixed-signal training acceleration for memristor-based neural network</title>
+				</analytic>
+				<monogr>
+					<title level="m">Proceedings of the Asia and South Pacific Design Automation Conference (ASP-DAC)</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="page" from="361" to="366"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>X</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Duan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Multilayer RTD-memristor-based cellular neural networks for color image processing</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">162</biblScope>
+						<biblScope unit="page" from="150" to="162"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Xie</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Wen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Jiang</surname></persName>
+					</author>
+					<title level="a">GST-memristor-based online learning neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">272</biblScope>
+						<biblScope unit="page" from="677" to="682"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>C</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yang</surname></persName>
+					</author>
+					<title level="a">Adaptive synchronization of memristor-based BAM neural networks with mixed delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied Mathematics and Computation</title>
+					<imprint>
+						<biblScope unit="volume">322</biblScope>
+						<biblScope unit="page" from="100" to="110"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">X</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Fixed-time synchronization of delayed memristor-based recurrent neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Science China Information Sciences</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+				<note>Article ID 032201</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Wen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Huang</surname></persName>
+					</author>
+					<title level="a">Global exponential synchronization of memristor-based recurrent neural networks with time-varying delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="195" to="203"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+				
+					<author>
+						<persName><forename>Z</forename><surname>Ding</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wang</surname></persName>
+					</author>
+						<title level="a">Robust Finite-Time Stabilization of Fractional-Order Neural Networks With Discontinuous and Continuous Activation Functions Under Uncertainty</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="1477" to="1490"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Ding</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">New results on passivity of fractional-order uncertain neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">351</biblScope>
+						<biblScope unit="page" from="51" to="59"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Tenreiro Machado</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Lopes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Yang</surname></persName>
+					</author>
+					<title level="a">Stability and synchronization of fractional-order memristive neural networks with multiple delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="page" from="76" to="85"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Yan</surname></persName>
+					</author>
+					<title level="a">Stability analysis of memristor-based time-delay fractional-order neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">323</biblScope>
+						<biblScope unit="page" from="117" to="127"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+				
+					<author>
+						<persName><forename>A</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+						<title level="a">Global Mittag–Leffler Stabilization of Fractional-Order Memristive Neural Networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+					<imprint>
+						<biblScope unit="volume">28</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="206" to="217"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Velmurugan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Rakkiyappan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jinde</forename><surname>Cao</surname></persName>
+					</author>
+					<title level="a">Finite-time synchronization of fractional-order memristor-based neural networks with time delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="page" from="36" to="46"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kurths</surname></persName>
+					</author>
+					<title level="a">State estimation of fractional-order delayed memristive neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">94</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="1215" to="1225"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Kurths</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Alsaedi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Ahmad</surname></persName>
+					</author>
+					<title level="a">H∞ state estimation of stochastic memristor-based neural networks with time-varying delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">99</biblScope>
+						<biblScope unit="page" from="79" to="91"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Pecora</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Carroll</surname></persName>
+					</author>
+					<title level="a">Synchronization in chaotic systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Physical Review Letters</title>
+					<imprint>
+						<biblScope unit="volume">64</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="821" to="824"/>
+						<date when="1990">1990</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Jiang</surname></persName>
+					</author>
+					<title level="a">Global Mittag-Leffler stability and synchronization of memristor-based fractional-order neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">51</biblScope>
+						<biblScope unit="page" from="1" to="8"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Razminia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Baleanu</surname></persName>
+					</author>
+					<title level="a">Complete synchronization of commensurate fractional order chaotic systems using sliding mode control</title>
+				</analytic>
+				<monogr>
+					<title level="j">Mechatronics</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="873" to="879"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cao</surname></persName>
+					</author>
+					<title level="a">Synchronization analysis of fractional-order three-neuron BAM neural networks with multiple time delays</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied Mathematics and Computation</title>
+					<imprint>
+						<biblScope unit="volume">339</biblScope>
+						<biblScope unit="page" from="441" to="450"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Srivastava</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Ansari</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Agrawal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Das</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">Y T</forename><surname>Leung</surname></persName>
+					</author>
+					<title level="a">Anti-synchronization between identical and non-identical fractional-order chaotic systems using active control method</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="905" to="914"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Wu</surname></persName>
+					</author>
+					<title level="a">Lag projective synchronization in fractional-order chaotic (hyperchaotic) systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Physics Letters A</title>
+					<imprint>
+						<biblScope unit="volume">375</biblScope>
+						<biblScope unit="issue">21</biblScope>
+						<biblScope unit="page" from="2099" to="2110"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename>L</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Wang</surname></persName>
+					</author>
+					<title level="a">Lag synchronization for fractional-order memristive neural networks via period intermittent control</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="367" to="381"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Martínez-Guerra</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Mata-Machuca</surname></persName>
+					</author>
+					<title level="a">Fractional generalized synchronization in a class of nonlinear fractional order systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">77</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1237" to="1244"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Ding</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Shen</surname></persName>
+					</author>
+					<title level="a">Projective synchronization of nonidentical fractional-order neural networks based on sliding mode controller</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="page" from="97" to="105"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>H-B</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-D</forename><surname>Cao</surname></persName>
+					</author>
+					<title level="a">Projective synchronization of fractional-order memristor-based neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neural Networks</title>
+					<imprint>
+						<biblScope unit="volume">63</biblScope>
+						<biblScope unit="page" from="1" to="9"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Niu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Fang</surname></persName>
+					</author>
+					<title level="a">Global Mittag-Leffler projective synchronization for fractional-order neural networks: an LMI-based approach</title>
+				</analytic>
+				<monogr>
+					<title level="j">Advances in Difference Equations</title>
+					<imprint>
+						<biblScope unit="volume">132</biblScope>
+						<biblScope unit="page" from="1" to="18"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Zheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Peng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Xiao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Zhao</surname></persName>
+					</author>
+					<title level="a">Finite-time projective synchronization of memristor-based delay fractional-order neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="2641" to="2655"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Yadav</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Prasad</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Srivastava</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Das</surname></persName>
+					</author>
+					<title level="a">Combination–combination phase synchronization among non-identical fractional order complex chaotic systems via nonlinear control</title>
+				</analytic>
+				<monogr>
+					<title level="j">International Journal of Dynamics and Control</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="1" to="11"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Chandrasekar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Rakkiyappan</surname></persName>
+					</author>
+					<title level="a">Impulsive controller design for exponential synchronization of delayed stochastic memristor-based recurrent neural networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">173</biblScope>
+						<biblScope unit="page" from="1348" to="1355"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Fan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Improved quasi-synchronization criteria for delayed fractional-order memristor-based neural networks via linear feedback control</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">306</biblScope>
+						<biblScope unit="page" from="68" to="79"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Bao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cao</surname></persName>
+					</author>
+					<title level="a">Adaptive synchronization of fractional-order memristor-based neural networks with time delay</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">82</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1343" to="1354"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y-H</forename><surname>Lan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H-B</forename><surname>Gu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C-X</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Zhou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y-P</forename><surname>Luo</surname></persName>
+					</author>
+					<title level="a">An indirect Lyapunov approach to the observer-based robust control for fractional-order complex dynamic networks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Neurocomputing</title>
+					<imprint>
+						<biblScope unit="volume">136</biblScope>
+						<biblScope unit="page" from="235" to="242"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Podlubny</surname></persName>
+					</author>
+					<title level="a">Other Methods for Solution of Fractional Order Equations</title>
+				</analytic>
+				<monogr>
+					<title level="m">Mathematics in Science and Engineering</title>
+					<imprint>
+						<publisher>Academic Press</publisher>
+						<pubPlace>New York, NY, USA</pubPlace>
+						<date when="1999">1999</date>
+						<biblScope unit="volume">198</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>N</forename><surname>Aguila-Camacho</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Duarte-Mermoud</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Gallegos</surname></persName>
+					</author>
+					<title level="a">Lyapunov functions for fractional order systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Communications in Nonlinear Science and Numerical Simulation</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="issue">9</biblScope>
+						<biblScope unit="page" from="2951" to="2957"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Filippov</surname></persName>
+					</author>
+					<title level="a">Differential equations with discontinuous right- hand side</title>
+				</analytic>
+				<monogr>
+					<title level="m">Control Systems</title>
+					<imprint>
+						<publisher>Kluwer, Dordrecht, The Netherlands</publisher>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="book" xml:id="b43">
+				<monogr>
+					<author>
+						<persName><forename>C</forename><surname>Edwards</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Spurgeon</surname></persName>
+					</author>
+					<title level="a">Sliding Mode Control: Theory and Applications</title>
+					<imprint>
+						<publisher>Taylor and Francis</publisher>
+						<pubPlace>London, UK</pubPlace>
+						<date when="1998">1998</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b44">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">MohMammad</forename><forename type="middle">P</forename><surname>Aghababa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Khanmohammadi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Alizadeh</surname></persName>
+					</author>
+					<title level="a">Finite-time synchronization of two different chaotic systems with unknown parameters via sliding mode technique</title>
+				</analytic>
+				<monogr>
+					<title level="j">Applied Mathematical Modelling</title>
+					<imprint>
+						<biblScope unit="volume">35</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="3080" to="3091"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b45">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Aghababa</surname></persName>
+					</author>
+					<title level="a">A novel terminal sliding mode controller for a class of non-autonomous fractional-order systems</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nonlinear Dynamics</title>
+					<imprint>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="issue">1-2</biblScope>
+						<biblScope unit="page" from="679" to="688"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

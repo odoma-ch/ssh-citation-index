@@ -1,0 +1,1352 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Quantum dynamics of atomic Rydberg excitation in strong laser fields</title>
+				<funder>
+					<orgName type="full">Key program for S&amp;T Research and Development (2016YFA0401100); Fundamental Research Fund of Sun Yat-Sen University</orgName>
+				</funder>
+				<funder ref="#_u9swVgX #_zfmKCTm #_NZSHxGD #_k3H6uaQ #_2VjeMFB">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Optica Publishing Group</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-17">17 Oct 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Shilin</forename><surname>Hu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Laboratory of Quantum Engineering and Quantum Metrology</orgName>
+								<orgName type="department">School of Physics and Astronomy</orgName>
+								<orgName type="institution">Sun Yat-Sen University (Zhuhai Campus)</orgName>
+								<address>
+									<postCode>519082</postCode>
+									<settlement>Zhuhai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaolei</forename><surname>Hao</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Institute of Theoretical Physics and Department of Physics</orgName>
+								<orgName type="department" key="dep2">State Key Laboratory of Quantum Optics and Quantum Optics Devices</orgName>
+								<orgName type="department" key="dep3">Collaborative Innovation Center of Extreme Optics</orgName>
+								<orgName type="institution">Shanxi University</orgName>
+								<address>
+									<postCode>030006</postCode>
+									<settlement>Taiyuan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hang</forename><surname>Lv</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Institute of atomic and molecular physics</orgName>
+								<orgName type="institution">Jinlin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="laboratory">Jilin Provincial Key Laboratory of Applied Atomic and Molecular Spectroscopy</orgName>
+								<orgName type="institution">Jilin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+						  	<persName><forename type="first">Mingqing</forename><surname>Liu</surname>
+						  	</persName>
+						  	<affiliation key="aff3">
+						    		<orgName type="department">Institute of Applied Physics and Computational Mathematics</orgName>
+						    		<address>
+						      			<postBox>P. O. Box 8009</postBox>
+					      				<postCode>100088</postCode>
+				     				 <settlement>Beijing</settlement>
+						      			<country key="CN">China</country>
+						    		</address>
+						  	</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tianxiang</forename><surname>Yang</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Institute of atomic and molecular physics</orgName>
+								<orgName type="institution">Jinlin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="laboratory">Jilin Provincial Key Laboratory of Applied Atomic and Molecular Spectroscopy</orgName>
+								<orgName type="institution">Jilin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Haifeng</forename><surname>Xu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Institute of atomic and molecular physics</orgName>
+								<orgName type="institution">Jinlin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="laboratory">Jilin Provincial Key Laboratory of Applied Atomic and Molecular Spectroscopy</orgName>
+								<orgName type="institution">Jilin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mingxing</forename><surname>Jin</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Institute of atomic and molecular physics</orgName>
+								<orgName type="institution">Jinlin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="laboratory">Jilin Provincial Key Laboratory of Applied Atomic and Molecular Spectroscopy</orgName>
+								<orgName type="institution">Jilin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dajun</forename><surname>Ding</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Institute of atomic and molecular physics</orgName>
+								<orgName type="institution">Jinlin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="laboratory">Jilin Provincial Key Laboratory of Applied Atomic and Molecular Spectroscopy</orgName>
+								<orgName type="institution">Jilin University</orgName>
+								<address>
+									<postCode>130012</postCode>
+									<settlement>Changchun</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Qianguang</forename><surname>Li</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">School of Physics and Electronic-information Engineering</orgName>
+								<orgName type="institution">Hubei Engineering University</orgName>
+								<address>
+									<postCode>432000</postCode>
+									<settlement>Xiaogan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Weidong</forename><surname>Li</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Institute of Theoretical Physics and Department of Physics</orgName>
+								<orgName type="department" key="dep2">State Key Laboratory of Quantum Optics and Quantum Optics Devices</orgName>
+								<orgName type="department" key="dep3">Collaborative Innovation Center of Extreme Optics</orgName>
+								<orgName type="institution">Shanxi University</orgName>
+								<address>
+									<postCode>030006</postCode>
+									<settlement>Taiyuan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wilhelm</forename><surname>Becker</surname></persName>
+							<email>wbecker@mbi-berlin.de</email>
+							<affiliation key="aff6">
+								<orgName type="institution">Max-Born-Institut</orgName>
+								<address>
+									<addrLine>Max-Born-Strasse 2a</addrLine>
+									<postCode>12489</postCode>
+									<settlement>Berlin</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff7">
+								<orgName type="institution">National Research Nuclear University MEPhI</orgName>
+								<address>
+									<postCode>115409</postCode>
+									<settlement>Moscow</settlement>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">And</forename><forename type="middle">Jing</forename><surname>Chen</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Institute of Applied Physics and Computational Mathematics</orgName>
+								<address>
+									<postBox>P. O. Box 8009</postBox>
+									<postCode>100088</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff8">
+								<orgName type="department">Center for Advanced Material Diagnostic Technology</orgName>
+								<orgName type="institution">Shenzhen Technology University</orgName>
+								<address>
+									<postCode>518118</postCode>
+									<settlement>Shenzhen</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Quantum dynamics of atomic Rydberg excitation in strong laser fields</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Optics Express</title>
+						<imprint>
+							<publisher>Optica Publishing Group</publisher>
+							<biblScope unit="volume">27</biblScope>
+							<biblScope unit="issue">22</biblScope>
+							<biblScope unit="page" from="31629" to="31643"/>
+							<date type="published" when="2019-10-17">17 Oct 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F2F9AF7B3496C2A5DAD390ADA927CF10</idno>
+					<idno type="DOI">10.1364/OE.27.031629</idno>
+					<note type="submission">Received 26 Jun 2019; revised 18 Sep 2019; accepted 19 Sep 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Neutral atoms have been observed to survive intense laser pulses in high Rydberg states with surprisingly large probability. Only with this Rydberg-state excitation (RSE) included is the picture of intense-laser-atom interaction complete. Various mechanisms have been proposed to explain the underlying physics. However, neither one can explain all the features observed in experiments and in time-dependent Schrödinger equation (TDSE) simulations. Here we propose a fully quantum-mechanical model based on the strong-field approximation (SFA). It well reproduces the intensity dependence of RSE obtained by the TDSE, which exhibits a series of modulated peaks. They are due to recapture of the liberated electron and the fact that the pertinent probability strongly depends on the position and the parity of the Rydberg state. We also present measurements of RSE in xenon at 800 nm, which display the peak structure consistent with the calculations.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>In strong-field atomic and molecular physics, Rydberg states attracted much attention in the 1990s <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> but thereafter have been ignored for a long time. This is because, in an intense laser field, the atoms or molecules are so strongly disturbed that the electrons already in the ground state of the neutral atom or even the ion can be liberated very efficiently <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref>. This appeared to imply that the weakly bound Rydberg states would lose any significance. Only recently, however, both theoretical and experimental works surprisingly found that quite a large portion of neutral atoms in Rydberg states can survive very strong laser fields <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b8">9]</ref>. This has become the object of elaborate experimental and theoretical studies in the past few years <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>. Besides atoms, Rydberg state excitation (RSE) has also been observed in atomic fragments from Coulomb explosion of dimers <ref type="bibr" target="#b22">[23]</ref> and diatomic molecules <ref type="bibr" target="#b23">[24,</ref><ref type="bibr" target="#b24">25]</ref>.</p><p>Theoretically, a semiclassical two-step model has been proposed to explain the experimental observations <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. At first, the electron is pumped into a continuum state from its initial bound state by the external field via tunneling <ref type="bibr" target="#b25">[26,</ref><ref type="bibr" target="#b26">27]</ref>. The subsequent description of the electron in the continuum follows completely classical lines <ref type="bibr" target="#b27">[28,</ref><ref type="bibr" target="#b28">29]</ref>. Owing to the presence of the attractive Coulomb field of the ion, the electron may be left with negative energy at the end of the laser pulse, which corresponds to capture into a Rydberg state <ref type="bibr" target="#b7">[8]</ref>, also known as frustrated tunneling ionization (FTI) <ref type="bibr" target="#b8">[9]</ref>. An alternative theoretical approach proceeds via the solution of the time-dependent one-electron Schrödinger equation (TDSE) <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b17">18]</ref>. This includes, of course, all quantum effects, but it is difficult to extract from it much physical insight into the details of the dynamics. In fact, two mechanisms have been proposed to explain the peak structure in the intensity dependence of the RSE population, which is clearly visible in the TDSE calculation. One is the Freeman-resonance perspective in which the Rydberg states are populated via a resonant multiphoton transition <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b11">12]</ref>. The other one suggests that RSE is just the continuation of above-threshold ionization (ATI) to negative energies in the Rydberg quasi-continuum <ref type="bibr" target="#b16">[17]</ref>. On the other hand, closer inspection shows that the peaks in the RSE population as a function of intensity alternate between comparatively low and high yield, which was not addressed in these papers <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b16">17]</ref>. Apparently, the mechanism via Freeman resonances is unable to explain this effect, and the existence of peak structures is clearly beyond the scope of the afore-mentioned semiclassical model.</p><p>In this paper, we formulate a quantum-mechanical model of the RSE process and compare its results with experiments and TDSE calculations (which are in a sense almost equivalent to real experimental data). Our quantum model well reproduces all the features observed in a TDSE simulation, including the dependence on the parities of the initial and final states and the just-mentioned fact that the peaks in the RSE intensity dependence alternate in height. The model is also applied to the investigation of RSE of He and Xe atoms. For He, we reproduce the experimentally observed distributions of the principal quantum number of the Rydberg states <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b20">21]</ref>. For Xe, we present to our knowledge the first measurements of RSE for 800-nm laser wavelength that display the peak structure. Our work provides a quantum picture of RSE in intense laser fields: first, the electron is pumped by the laser field into a continuum state. Subsequently, it evolves in the external field. Some of the electrons may be coherently captured into Rydberg states. The probability of the capture process strongly depends on the location and the parity of the final Rydberg state, resulting in all the quantum features observed. A schematic picture of the RSE process is presented in Fig. <ref type="figure" target="#fig_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Theoretical methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Quantum model</head><p>The transition amplitude of the capture process is given by (atomic units m = = e = 1 are used)</p><formula xml:id="formula_0">M nlm = lim t→∞,t →-∞ Ψ nlm (t)|U(t, t )|Ψ g (t ) ,<label>(1)</label></formula><p>where |Ψ nlm (t) denotes a field-free Rydberg state with principal quantum number n, angularmomentum quantum number l, and magnetic quantum number m. U(t, t ) denotes the time evolution operator with the Coulomb and the laser fields <ref type="bibr" target="#b5">[6]</ref>, and Ψ g (r, t) = e iI p t φ g (r) indicates the wave function of the field-free ground state with the ionization potential I p . Throughout the paper, we adopt the single-active-electron (SAE) approximation so that all electronic wave functions (and time-evolution operators) are one-electron wave functions. It is assumed that the laser field is turned off in the distant past and future. The time-evolution operator U(t, t ) satisfies the Dyson equation</p><formula xml:id="formula_1">U(t, t ) = U 0 (t, t ) -i ∫ t t dτU(t, τ)H I (τ)U 0 (τ, t ),<label>(2)</label></formula><p>where U 0 (t, t ) is the time-evolution operator for only the Coulomb field <ref type="bibr" target="#b5">[6]</ref> and (in length gauge) H I (t) = r • E(t). With the help of Eq. ( <ref type="formula" target="#formula_1">2</ref>), the transition amplitude ( <ref type="formula" target="#formula_0">1</ref>) can be rewritten as</p><formula xml:id="formula_2">M nlm = lim t→∞ Ψ nlm (t)|Ψ g (t) -i ∫ t -∞ dτ Ψ nlm (t)|U(t, τ)H I (τ)|Ψ g (τ) .<label>(3)</label></formula><p>Here, the first term on the right-hand side is zero due to the orthogonality of the Coulomb eigenstates. For the second term, we use a different form of the Dyson equation,</p><formula xml:id="formula_3">U(t, t ) = U V (t, t ) -i ∫ t t dτU(t, τ)VU V (τ, t ),<label>(4)</label></formula><p>where V is the binding (Coulomb) potential and U V (t, t ) indicates the Volkov time-evolution operator</p><formula xml:id="formula_4">U V (t, t ) = ∫ d 3 k|Ψ (V) k (t) Ψ (V) k (t )|,<label>(5)</label></formula><p>which we have expanded in terms of the Volkov states with the wave functions</p><formula xml:id="formula_5">Ψ (V) k (r, t) = 1 (2π) 3/2 exp i(k + A(t)) • r - i 2 ∫ t dt (k + A(t )) 2 ,<label>(6)</label></formula><p>where k denotes the asymptotic (drift) momentum. The coordinate-space representation of the Volkov time-evolution operator is</p><formula xml:id="formula_6">U V (rt, r t ) = i i 2π(t -t ) 3 2 e -iS(rt,r t )<label>(7)</label></formula><p>with</p><formula xml:id="formula_7">S(rt, r t ) = A(t) • r -A(t ) • r + 1 2 ∫ t t dτA 2 (τ) - 1 2(t -t ) r -r + ∫ t t dτA(τ) 2 .<label>(8)</label></formula><p>Using Eq. ( <ref type="formula" target="#formula_3">4</ref>) in Eq. ( <ref type="formula" target="#formula_2">3</ref>) we get</p><formula xml:id="formula_8">M nlm = lim t→∞ (-i) ∫ t -∞ dτ Ψ nlm (t)|U V (t, τ)H I (τ)|Ψ g (τ) + lim t→∞ (-i) 2 ∫ t -∞ dτ ∫ τ -∞ dτ Ψ nlm (t)|U(t, τ )VU V (τ , τ)H I (τ)|Ψ g (τ) .<label>(9)</label></formula><p>This is analogous to the Born expansion of the ionization amplitude for above-threshold ionization (ATI). In that case, the final state is in the continuum and is approximated by a plane wave so that Ψ nlm (t)|U V (t, τ) becomes a Volkov state Ψ V p (τ)|. The first term then describes the direct electrons and the second term accounts for single or multiple rescattering. If the exact propagator U(t, t ) is replaced by the Volkov propagator U V (t, t ), only single rescattering is included. For energies below ≈ 2U p , the first term is dominant.</p><p>However, for RSE rather than ATI the first term in Eq. ( <ref type="formula" target="#formula_4">5</ref>) goes to zero in the limit of t → ∞. This is due to the factor of (tt ) -3/2 in Eq. ( <ref type="formula" target="#formula_6">7</ref>), which accounts for wave-function spreading, and the fact that the Rydberg state |Ψ nlm (t) is localized. (Note that the values of τ in Eq. ( <ref type="formula" target="#formula_8">9</ref>) are restricted to the finite duration of the laser pulse.) Hence, for RSE we only consider the second term. In order to make further progress we replace the bra Ψ nlm (t)|U(t, τ ) in the second term by an approximate field-dressed Rydberg state with the wave function</p><formula xml:id="formula_9">Ψ d nlm (r, τ ) = φ nlm (r)e -iE n τ e ir•A(τ ) e -i ∫ τ -∞ dτA 2 (τ)/2 ,<label>(10)</label></formula><p>where φ nlm (r) is a field-free Rydberg state corresponding to the energy level E n = -1/(2n 2 ). This replacement implies that we lose processes where the electron undergoes Coulomb rescattering before the capture. This would be included by higher-order terms in the expansion, which are ignored here. The principal quantum number, angular quantum number, and magnetic quantum number are indicated by n, l, and m, respectively. The field-free Rydberg states are given by</p><formula xml:id="formula_10">φ nlm (r) = N nl R nl (r)Y lm (θ, ϕ), N nl = (2κ n ) 3/2 Γ(2l + 2) Γ(n + l + 1) 2nΓ(n -l) , R nl (r) = (2κ nr ) l e -κ nr 1 F 1 (-n + l + 1, 2l + 2, 2κ n r),<label>(11)</label></formula><p>where κ n = 1/n, Y lm (θ, ϕ) is a spherical harmonic function, and 1 F 1 (x, y, z) is the confluent hypergeometric function. The approximation ( <ref type="formula" target="#formula_9">10</ref>), called the Coulomb-Volkov state, has been frequently used to account for the Coulomb-field in noncontinuum states; see <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b30">31]</ref> and many later references. The field-dressed state ( <ref type="formula" target="#formula_9">10</ref>) does not exactly satisfy the Schrödinger equation. Namely, we have</p><formula xml:id="formula_11">i ∂ ∂t Ψ d nlm (r, t) = [E n φ nlm (r) + A 2 (t) 2 φ nlm (r) + r • E(t)φ nlm (r)]e -iE n t e ir•A(t) e -i ∫ t 0 A 2 (τ) 2 dτ ,<label>(12)</label></formula><p>and</p><formula xml:id="formula_12">[- 1 2 ∇ 2 - 1 r +r • E(t)]Ψ d nlm (r, t) = [E n φ nlm (r)-i∇φ nlm (r) • A(t) + A 2 (t) 2 φ nlm (r)+r • E(t)φ nlm (r)]e -iE n t e ir•A(t) e -i ∫ t 0 A 2 (τ) 2 dτ ,<label>(13)</label></formula><p>so that</p><formula xml:id="formula_13">i ∂ ∂t + 1 2 ∇ 2 + 1 r -r • E(t) Ψ d nlm (r, t) = ie -iE n t e ir•A(t) e -i ∫ t 0 A 2 (τ) 2 dτ A(t) • ∇φ nlm (r).<label>(14)</label></formula><p>Hence, the approximation ( <ref type="formula" target="#formula_9">10</ref>) would be exact if it were not for the term -i∇φ nlm (r) • A(t) on the right-hand side of Eq. ( <ref type="formula" target="#formula_13">14</ref>). A comparison of the four terms of Eq. ( <ref type="formula" target="#formula_12">13</ref>) is shown in Table <ref type="table" target="#tab_0">1</ref>. It can be seen that the disturbing term ∇φ nlm (r) is several orders smaller than the other three terms in the region where the Rydberg state is concentrated (see Figs. <ref type="figure" target="#fig_2">3</ref> and <ref type="figure" target="#fig_4">5</ref>) for the times of capture (for details, see the semiclassical analysis part) shown in Fig. <ref type="figure" target="#fig_1">2</ref>. Therefore, Eq. ( <ref type="formula" target="#formula_9">10</ref>) can be considered a good approximation to the dressed Rydberg state, and our final approximation to the Rydberg-capture amplitude is</p><formula xml:id="formula_14">M nlm = (-i) 2 ∫ ∞ -∞ dt ∫ t -∞ dt Ψ d nlm (t)|VU V (t, t )H I (t )|Ψ g (t ) = (-i) 2 ∫ ∞ -∞ dt ∫ t -∞ dt ∫ d 3 k Ψ d nlm (t)|V(r)|Ψ (V) k (t) Ψ (V) k (t )|r • E(t )|Ψ g (t ) .<label>(15)</label></formula><p>With the help of Eqs. ( <ref type="formula" target="#formula_6">7</ref>), ( <ref type="formula" target="#formula_9">10</ref>), and the binding potential V(r) = -1/r, the capture amplitude ( <ref type="formula" target="#formula_14">15</ref>) has the following form </p><formula xml:id="formula_15">M nlm = (-i) 2 ∫ ∞ -∞ dt ∫ t -∞ dt ∫ d 3 kV nlm,k V kg exp[iS n (t, t , k)],<label>(16)</label></formula><p>with</p><formula xml:id="formula_16">V kg = 1 (2π) 3/2 ∫ d 3 r exp{-i[k + A(t )] • r }r • E(t )ψ g (r ) = 1 (2π) 3/2 (-i ∂ ∂t ) ∫ d 3 r exp{-i[k + A(t )] • r }ψ g (r ).<label>(17)</label></formula><formula xml:id="formula_17">V nlm,k = - 1 (2π) 3/2 ∫ d 3 rφ * nlm (r) 1 r exp(ik • r),<label>(18)</label></formula><p>and the action</p><formula xml:id="formula_18">S n (t, t , k) = 1 2 ∫ t -∞ dτA 2 (τ) - 1 2 ∫ t t dτ[k + A (τ)] 2 + E n t + I p t .</formula><p>In Fig. <ref type="figure" target="#fig_2">3</ref>, the probability densities of the relevant Rydberg states are plotted for n = 6 and different values of l. It can be easily seen that for l 0 the Rydberg state has two centers at r + nlm ≡ r nlm and r - nlm = -r + nlm ≡ -r nlm . Accordingly, we decompose the Rydberg-state wave function as</p><formula xml:id="formula_19">φ nlm (r) = φ nlm+ (r) + φ nlm-(r),<label>(19)</label></formula><p>where the functions φ nlm± (r) are concentrated around r = ±r nlm . Also, φ nlm-(-r) = (-1) l φ nlm+ (r), which allows us to write</p><formula xml:id="formula_20">V nlm,k = - 1 (2π) 3/2 ∫ d 3 r r φ * nlm+ (r)e ik•r + φ * nlm-(r)e ik•r = - 1 (2π) 3/2 ∫ d 3 r r φ * nlm+ (r)e ik•r + φ * nlm-(-r)e -ik•r = - 1 (2π) 3/2 ∫ d 3 r r φ * nlm+ (r) e ik•r + (-1) l e -ik•r .<label>(20)</label></formula><p>With the abbreviation φ nlm+ (r) = φ nlm+ (rr nlm + r nlm ) ≡ φnlm (ρ), where ρ = rr nlm , we end up with</p><formula xml:id="formula_21">V nlm,k = - 1 (2π) 3/2 ∫ d 3 ρ 1 | ρ + r nlm | φ * nlm (ρ) e ik•ρ e ik•r nlm + (-1) l e -ik•ρ e -ik•r nlm .<label>(21)</label></formula><p>We can now proceed with the saddle-point evaluation as it is usually done by including the fast exponential dependence generated by the factors exp(±ik • r nlm ) into the action while treating the remaining k dependence as slow. This means that we replace</p><formula xml:id="formula_22">V nlm,k e iS n (t,t ,k) = V nlm,k+ e i S n (t,t ,k)+k•r nlm + (-1) l V nlm,k-e i S n (t,t ,k)-k•r nlm ,<label>(22)</label></formula><p>where</p><formula xml:id="formula_23">V nlm,k± = - 1 (2π) 3/2 ∫ d 3 ρ φ * nlm (ρ) 1 | ρ + r nlm | e ±ik•ρ .<label>(23)</label></formula><p>Then, we search for those values of the variables t, t , and k that render the action S n ± k • r nlm stationary, which yields, in turn,</p><formula xml:id="formula_24">[k + A(t )] 2 /2 = -I p ,<label>(24)</label></formula><formula xml:id="formula_25">[k + A(t)] 2 /2 = A 2 (t)/2 + E n ,<label>(25)</label></formula><formula xml:id="formula_26">k ± st = - 1 t -t ∫ t t dτA(τ) ± r nlm t -t = k 0 ± r nlm τ ,<label>(26)</label></formula><p>where k 0 = -1 t-t ∫ t t dτA(τ) and τ = tt . Equations ( <ref type="formula" target="#formula_24">24</ref>) and ( <ref type="formula" target="#formula_25">25</ref>) describe, respectively, energy conservation in the tunneling process and in the capture process, while Eq. ( <ref type="formula" target="#formula_26">26</ref>) determines the intermediate electron momentum. The latter takes into account that the electron is captured at one of the two positions ±r nlm . The solutions (t, t , k) of Eqs. <ref type="formula" target="#formula_24">24</ref>-<ref type="formula" target="#formula_25">25</ref>-<ref type="formula" target="#formula_26">26</ref>define the quantum orbits.</p><p>Throughout the paper, we will refer to Eq. ( <ref type="formula" target="#formula_14">15</ref>) as the quantum model (QM), and the multiple integrals are performed by numerical integration with respect to t and t and by saddle-point integration with respect to k. At the end of the pulse, the population of the nth Rydberg state is defined as P n = l,m |M nlm | 2 . In our simulation, magnetic quantum number m = 0 and (field-free) energy E n = -1/(2n 2 ) are adopted. The ten-cycle laser electric field is E(t) = E 0 sin ωtê z with the vector potential A(t) = E 0 /ω cos ωtê z (ê z is a unit polarization vector and the wavelength λ = 2πc/ω = 800 nm). The 1s atomic orbital is expressed as φ 1s (r) = 1 √ π κ 3/2 e -κr with κ = 2I p . For Xe(5p), φ 5p (r) = (2ξ) 11/2 √ 10! 3 4π r 4 e -κr cos θ with ξ = 0.65 2I p and κ = 0.94 2I p . For He, the wavefunction is hydrogenlike with κ = 2I p . The parameters of κ and ξ in the wavefunction of Xe atom are adjusted by comparing the calculation data with our experimental measurement. The ratio between the Rydberg excitation and the single ionization yields is estimated to be about 20-30% for Xe in our experiment after considering the detection efficiency and the range of Rydberg states detected (n = 20 -30 in our experiment). In our calculation of the quantum model, the maximal ratio of Xe is 21%. The ionization potential of the H, He, and Xe atoms are 0.5 a.u., 0.9 a.u., and 0.44 a.u., respectively. For the TDSE simulation, the details can be found in <ref type="bibr" target="#b16">Ref. [17]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Semiclassical model</head><p>In the simpleman picture where the ionic Coulomb potential is ignored, the equation of motion of the electron in the laser field after ionization is</p><formula xml:id="formula_27">r(t) = -E(t).<label>(27)</label></formula><p>Here the electric field is E(t) = E 0 sin ωtê z with the vector potential A(t) = E 0 /ω cos ωtê z (ê z is a unit polarization vector), and the wavelength is λ = 800 nm. The electron trajectory in the laser field starts at the tunnel exit z 0 = -I p /E(t 0 ) with zero longitudinal and nonzero initial transverse velocity v(t 0 ) = (0, v 0 ). If we integrate the equation of motion, we obtain</p><formula xml:id="formula_28">dz(t)/dt =A(t) -A(t 0 ), dx(t)/dt =v 0 .<label>(28)</label></formula><p>Integrating again we get the trajectory of the electron:</p><formula xml:id="formula_29">z(t) = z(t 0 ) -A(t 0 )(t -t 0 ) + ∫ t t 0 A(τ)dτ = - I p E 0 sin ωt 0 - E 0 ω cos ωt 0 (t-t 0 )+ E 0 ω 2 (sin ωt-sin ωt 0 ), x(t) = v 0 (t -t 0 ).<label>(29)</label></formula><p>The semiclassical physical picture of the RSE can be summarized as follows: the electron is released at the time t 0 into a continuum Volkov state. Subsequently, it evolves in the laser field and can be captured into the Rydberg state at time t provided (i) it reaches the spatial region where the Rydberg state has a high density (here we use the condition |φ| 2 &gt;0.8|φ| 2 max ) and (ii) its kinetic energy E kin is small (here we use E kin 0.05 a.u.). It should be noted that the result is not sensitive to these criteria.</p><p>In Fig. <ref type="figure" target="#fig_3">4</ref>, we show the evolution of the kinetic energy of the electron under the given initial conditions and parameters. It can be seen that there are two time intervals in each optical cycle where the kinetic energy is small enough for capture, i. e., E kin 0.05 a.u., as defined above. For Rydberg states of n = 6 and different values of l (see Fig. <ref type="figure" target="#fig_2">3</ref>), Fig. <ref type="figure" target="#fig_4">5</ref> identifies for these l the regions where the density criterion |φ| 2 &gt;0.8|φ| 2 max is satisfied. Clearly, the relevant region moves towards larger distances from the origin with increasing l.</p><p>In our calculation, each electron trajectory is released via tunneling at some instant during the laser-pulse duration (a 10-cycle pulse with constant electric amplitude is considered). Its weight, which is dependent on the ionization rate and the initial transverse velocity (from -0.3 a.u. to 0.3 a.u.), is determined as in <ref type="bibr" target="#b10">Ref. [11]</ref>. Then the electron evolves in the laser field until the end of the laser pulse. If it reaches the regions shown in Fig. <ref type="figure" target="#fig_4">5</ref> and its kinetic energy is smaller than 0.05 a.u., it is considered to be captured by the Rydberg state φ nlm . The final Rydberg excitation probabilities shown in Fig. <ref type="figure" target="#fig_6">7(d)</ref> of the paper are obtained from statistic of all the trajectories satisfying the afore-mentioned criteria of capture (about 10 4 -10 6 trajectories for each state depending on l) in overall 2×10 7 trajectories. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Experimental technique</head><p>In our experiments, we applied the delayed-static-field-ionization method to ionize the neutral Rydbergs, using a time-of-flight (ToF) mass spectrometer operated under a pulsed-electric-field mode. Experimentally, an effusive atomic or molecular beam through a leak valve interacted with a focused Ti:Sapphire femtosecond laser with a central wavelength of 800 nm and pulse duration of 50 fs. After the direct-ionized ions (Xe + ) were pushed away from the detector by an electric field, the remaining high-lying neutral Rydbergs (Xe * ) were field-ionized by another electric field with a delay time of typically 1.0 µs, and were detected by dual micro-channel plates at the end of the flight section of about 50 cm. In the case of detection of Xe + , standard dc electric fields were applied in the ToF mass spectrometer. The voltages in both cases were kept the same to ensure identical detection efficiencies for Xe + and (Xe * ) + . This allows us to detect the neutral Rydberg states with 20&lt;n&lt;30, estimated by the saddle-point model of static-field ionization [F = 1/(9n 4 )]. The laser-pulse energy was controlled by a half-wave plate and a Glan prism, before being focused into the vacuum chamber with a 250 mm lens. The peak intensity of the focused laser pulse was calibrated by comparing the measured saturation intensity of Xe with that calculated by the ADK model <ref type="bibr" target="#b25">[26]</ref>. The scanning of the laser intensity was precisely controlled by simultaneously monitoring the pulse energy using a fast photodiode while rotating the half-wave plate. Each data point was an averaged result of 10 4 laser shots with an intensity uncertainty of 1 TW/cm 2 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results and discussions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Comparison of TDSE and quantum model calculations</head><p>In Figs. <ref type="figure" target="#fig_5">6(a)</ref> and <ref type="figure" target="#fig_5">6(b)</ref>, we show the probability of Rydberg states with principal quantum numbers n&gt;3 and with opposite parities of the final Rydberg states (l even or odd) calculated by the TDSE and the quantum model for an initial 1s state of the H atom as functions of the laser intensity. (For the TDSE, the pulse envelope is given by a cosine square function with full width at half maximum of 10 fs, and the details of the 3-dimensional TDSE simulation can be found in <ref type="bibr" target="#b16">[17]</ref>). There are 853 excited states included after the diagonalization procedure of the field-free Hamiltonian matrix. Peaks separated by an intensity interval of about 25 TW/cm 2 , corresponding to a shift of the ponderomotive energy U p by the energy of a laser photon, i.e., ∆U p = ω (≈ 1.55 eV), can be clearly seen in Fig. <ref type="figure" target="#fig_5">6</ref> for both the TDSE and the quantum model calculation. The results of the quantum model are almost quantitatively consistent with the TDSE results except for a small shift of the peaks. In particular, for initial states and Rydberg states with specified parities, two consecutive peaks are separated by about ∆U p = 2 ω. These obvious quantum features can be easily understood in the multiphoton transition picture of RSE <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b11">12]</ref>. Since the energies of the Rydberg states are near the threshold so that their Stark shifts are all close to the Stark shift U p of the continuum, multiphoton resonance between the Rydberg and the initial states occurs at intensities that are separated by ∆U p = ω <ref type="bibr" target="#b0">[1]</ref>. In addition, the dipole selection rule only allows even-order (odd-order) multiphoton transitions between states of equal (opposite) parity, which gives rise to a ∆U p = 2 ω separation between consecutive peaks for a transition between two states with specified parity <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b18">19]</ref>. Apparently, these features are beyond the scope of the semiclassical picture of the RSE.</p><p>Furthermore, closer inspection shows that the peaks alternate in height as shown in Figs. <ref type="figure" target="#fig_5">6(c)</ref> and <ref type="figure" target="#fig_5">6(d)</ref>, which display the population of the Rydberg states with both parities. This can also be observed in the results of Refs. <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b17">18]</ref> though it was not addressed there. This feature is difficult, if not impossible, to understand in the multiphoton-resonance picture. For a transition from the ground state to the Rydberg state, the electron has to absorb more than ten photons under typical laser conditions as considered here ( ω = 1.55 eV and U p = 6 eV for I = 1 × 10 14 W/cm 2 ). The density of the Rydberg states does not depend on the parity. Hence, no mechanism such as a selection rule can give rise to a structure that depends on whether an even or odd number of photons is absorbed in the process.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Analysis of the quantum model</head><p>In order to elucidate these intriguing features, we classify the quantum orbits in our model according to the length of their travel time, that is, the time difference ∆t = tt between recapture and ionization. Specifically, with the number J we denote the pair of orbits where (J -1)T/2&lt;∆t&lt;JT/2 where T = 2π/ω. We call an orbit even or odd according to whether J is even or odd. Figure <ref type="figure" target="#fig_6">7(a)</ref> shows the results calculated using Eq. ( <ref type="formula" target="#formula_14">15</ref>) for the Rydberg state n = 6 and l = 5 for different electronic orbits. We take the Rydberg state n = 6, since for this state the calculated results show a maximum in our laser intensity range <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b16">17]</ref>. We notice that the intensity dependence is a straight line for the orbit with J = 20. For J = 18, an oscillatory structure is beginning to develop, which becomes more and more apparent when J becomes smaller (not shown here). Finally, for J = 1 and 2, pronounced peaks have emerged. This is because the total pulse duration used in our calculation is 10 T. Namely, for the orbit with J = 20 the electron must be freed in the earliest half cycle while for orbits with smaller J electrons liberated during more and more subsequent half cycles contribute and interfere with each other, which results in the peak structure. Hence, the peak structure in the intensity dependence of the RSE can be attributed to interference between electron wave packets generated in different optical half cycles during the laser pulse, which is in agreement with <ref type="bibr" target="#b17">Ref. [18]</ref>.</p><p>For a closer look, we consider Fig. <ref type="figure" target="#fig_0">1</ref>. For a sufficiently long (i.e., almost perodic) laser pulse, the ionization dynamics triggered by this pulse repeat themselves from one cycle to the next (see, e.g., orbits 1 and 3). Following a similar analysis in Ref. <ref type="bibr" target="#b31">[32]</ref>, if a saddle point solving Eqs. <ref type="formula" target="#formula_24">24</ref>-<ref type="formula" target="#formula_25">25</ref>-<ref type="formula" target="#formula_26">26</ref> with the Rydberg-state recombination site in the positive direction [+ sign in Eq. ( <ref type="formula" target="#formula_26">26</ref>)] is given by (k, t, t ), then the saddle point in the next optical cycle with the same Rydberg state in the same direction is (k, t + T, t + T), and the corresponding action is related by</p><formula xml:id="formula_30">S n (t + T, t + T, k) = S n (t, t , k) + (E n + I p + U p )T.<label>(30)</label></formula><p>So the contributions of these trajectories differ by the phase (U p + I p + E n )T = (U p + I p + E n )2π/ω (orbits 1 and 3). The same holds true for orbits 2 and 4, half a period later when the field has changed sign. Due to parity symmetry, a Rydberg state (except for l = 0) has two opposite density maxima in the field direction, and the electron can be captured into one or the other. In the figure, orbits 1 and 3 go into one direction and orbits 2 and 4 into the other. If a saddle point solving Eqs.  <ref type="formula" target="#formula_24">24</ref>-<ref type="formula" target="#formula_25">25</ref>-<ref type="formula" target="#formula_26">26</ref> with the Rydberg-state recombination location in the positive direction [+ sign in Eq. ( <ref type="formula" target="#formula_26">26</ref>)] is written as (k, t, t ), then the saddle point solving these equations with the same recombination location in the negative direction [-sign in Eq. ( <ref type="formula" target="#formula_26">26</ref>)] is (-k, t + T/2, t + T/2), and the corresponding action is given by</p><formula xml:id="formula_31">S n (t + T/2, t + T/2, -k) = S n (t, t , k) + (E n + I p + U p )T/2.<label>(31)</label></formula><p>So the contributions of 2 and 4 differ from those of 1 and 3 by the phase (U p + I p + E n )T/2 = (U p + I p + E n )π/ω. The interference of the contributions of orbits 1 and 2 with those of orbits 3 and 4, i. e., the contributions of two directions, gives rise to peaks in the RSE separated by ∆U p = 2 ω, while the afore-mentioned periodicity from cycle to cycle yields peaks with the separation of ∆U p = ω, which is common for all interferences in a field with period T. These two kinds of interference can be clearly seen in Fig. <ref type="figure" target="#fig_6">7(a)</ref>.</p><p>Another element to be considered are the phases due to the parities of the initial ground state and the final Rydberg state, which are (-1) p with p = ±1 the respective parities. Hence, if the initial and the final state have opposite parities, an additional phase of π occurs. We notice that the interference between quantum orbits that are recaptured in opposite directions of the same Rydberg state plays the same role in the quantum model as the selection rule does in the multiphoton transition picture.</p><p>It is noteworthy that the peaks in Figs. <ref type="figure" target="#fig_5">6(b)</ref> and <ref type="figure" target="#fig_5">6(d)</ref> also closely satisfy the channel-closing (CC) condition I p + U p = mω. For example, the two peaks at 1.16 × 10 14 W/cm 2 and 1.42 × 10 14 W/cm 2 in Fig. <ref type="figure" target="#fig_5">6(b)</ref> correspond to U p = 6.9 and 8.5 eV and, with the ionization potential I p = 13.6 eV and the negligible ionization potential of the highly excited Rydberg state, satisfy the CC condition for m = 13 and m = 14, in agreement with the Freeman resonance picture and the selection rule.</p><p>From the above analysis, as schematically illustrated in Fig. <ref type="figure" target="#fig_0">1</ref> and elaborated above, we find that there are essentially two types of interference of the quantum orbits in the excitation of a Rydberg state with specific n and l from the ground state: i) interference of wave packets released during different optical cycles and captured in one and the same half of the spatial region of the Rydberg state gives rise to peaks separated by a laser intensity difference corresponding to ∆U p = ω; ii) interference of orbits released in adjacent half cycles (and captured in opposite spatial regions of the Rydberg state) results in a peak structure with intensity difference corresponding to ∆U p = 2 ω, and the peak positions depending on the relative parity of the Rydberg and the ground states.</p><p>Figure <ref type="figure" target="#fig_6">7(b)</ref> displays the population of different orbital angular momenta l for n = 6. In the intensity range from 1 × 1014 W/cm2 to 2.5 × 1014 W/cm2 the Rydberg states with l = 4 and 5 are predominantly populated. The maximal populations of l = 4 and 5 as a function of laser intensity correspond to the low and high peaks in Figs. 6(b) and 6(d), respectively.</p><p>For a different view of these features, we now turn to a semiclassical picture. In Fig. <ref type="figure" target="#fig_6">7(c)</ref>, we present an example of an electron trajectory for ionization at ωt 0 = 92 • with zero initial longitudinal and transverse velocity. We assume that the probability of capture into the Rydberg state (n, l, m) is maximal if the electron trajectory (X(t), Z(t)) passes the spatial region where its density |φ nlm (r)| 2 is highest at a time where its kinetic energy is very low. We determine this spatial region from a graph of the Rydberg-state wave function (see Fig. <ref type="figure" target="#fig_4">5</ref> for more details). For the kinetic energy we require E kin &lt;0.05 a.u., and there are two time domains which satisfy the capture condition for every optical cycle (see Fig. <ref type="figure" target="#fig_3">4</ref> for more details). Figure <ref type="figure" target="#fig_6">7(d)</ref> displays the angular-momentum distributions obtained this way. Clearly, regardless of intensity l = 5 dominates all other angular momenta, which is in reasonable agreement with the results of the QM model in Fig. <ref type="figure" target="#fig_6">7(b)</ref>. In addition, it can be seen that the population of l = 5 for 166 TW/cm 2 is higher than that of l = 4 for 192 TW/cm 2 and also for 140 TW/cm 2 , which confirms the alternating heights of the peaks in the quantum model displayed by Fig. <ref type="figure" target="#fig_6">7(b)</ref>. Therefore, the alternating heights of the RSE peaks shown in Fig. <ref type="figure" target="#fig_5">6</ref> are already engrained in this "simple-man model". It should be noted that even though the population at 114 TW/cm 2 is higher than that of 140 TW/cm 2 in Figs. <ref type="figure" target="#fig_6">7(b)</ref> and <ref type="figure" target="#fig_6">7(d)</ref>, this is not the case for the total population shown in Figs. <ref type="figure" target="#fig_5">6(a)</ref> and <ref type="figure" target="#fig_5">6(b)</ref>. This can be attributed to the fact that the relative contributions from other Rydberg states with different n change and affect the modulation when the intensity is low.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Comparison with experiments</head><p>Experiments show that for the He atom the population of the Rydberg states peaks at about n = 9 at I = 1.8 × 10 15 W/cm 2 with a slight tendency to shift to higher n when the intensity increases to I = 2.9 × 10 15 W/cm 2 <ref type="bibr" target="#b21">[22]</ref>. For comparison, the focal average of the RSE calculated by our proposed quantum model is shown in Fig. <ref type="figure" target="#fig_7">8(a)</ref> which shows that the maximum of the RSE shifts to higher energy for increasing intensity, in qualitative agreement with the experiment. For fixed-intensity RSE yields, however, our quantum model shows a reverse intensity dependence (see Fig. <ref type="figure" target="#fig_7">8(b)</ref>), which reproduces the results of TDSE simulations <ref type="bibr" target="#b16">[17]</ref>. This apparent conflict can be resolved as follows: According to the physical picture underlying our quantum model, the electron after tunneling out from the ground state oscillates in the laser field while drifting towards the detector. When it reaches the position of the Rydberg state, provided its instantaneous kinetic energy is very low, it can be captured (see the typical orbits in Fig. <ref type="figure" target="#fig_0">1</ref>). Therefore, for small drift momentum, it can be expected that the RSE yield becomes maximal around principal quantum numbers n roughly given by n 2 ≈ 4 U p /ω, so that the yield slightly shifts with increasing intensity as shown in Fig. <ref type="figure" target="#fig_7">8(a)</ref>. The positions of the maxima of the RSE yields in the fixed-intensity results of Fig. <ref type="figure" target="#fig_7">8(b)</ref> and <ref type="bibr" target="#b16">Ref. [17]</ref> are determined by interference as was shown above. However, interference effects are largely smeared out by focal averaging, which restores agreement with the TDSE and the semiclassical calculations in <ref type="bibr" target="#b21">Ref. [22]</ref>. It should be noted that this n distribution cannot be explained by the Freeman resonance mechanism.</p><p>Moreover, we experimentally measured the single-ionization yields and the RSE of the Xe atom for principal quantum numbers between n = 20 and n = 30. The experimental setup is introduced in <ref type="bibr" target="#b24">Ref. [25]</ref> (see the experimental technique for more details). The results for Xe are presented in Figs. <ref type="figure" target="#fig_7">8(c)</ref> and <ref type="figure" target="#fig_7">8(d)</ref>. The intensity-dependent ionization yield follows a smooth curve. However, the RSE yield does display some peak structure especially in the low intensity regime below I = 1.5 × 10 14 W/cm 2 [see Fig. <ref type="figure" target="#fig_7">8(c)</ref>]. This is especially evident in the ratio Xe * /Xe + , which exhibits peaks at I 1 = 0.89 × 10 14 W/cm 2 , I 2 = 1.18 × 10 14 W/cm 2 , and I 3 = 1.45 × 10 14 W/cm 2 [see the blue arrows in Fig. <ref type="figure" target="#fig_7">8(d)</ref>]. This structure is qualitatively reproduced by the quantum model if focal averaging is included, indicating that this structure is the remainder of the peak structure after taking into account the intensity distribution in the focus.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions and perspectives</head><p>In summary, we propose a new quantum model based in the spirit of the SFA to study the RSE process in an intense infrared laser field. In this quantum model, the electron is first pumped by the laser field into the continuum where subsequently it evolves in the laser field. Most of the liberated electrons end up as free electrons (ATI); however, some may be captured into a Rydberg state. The electronic wave packets liberated in different optical half cycles are responsible for peak structures in the intensity dependence of the RSE yield. The peaks exhibit a modulation, which can be attributed to a strong dependence of the capture probability on the spatial position and the parity of the Rydberg state. Our calculation also well reproduces the experimentally observed atomic RSE distribution and the intensity dependence of RSE of atoms. The quantum picture of the RSE in an intense laser field can be understood as a coherent recapture process accompanying above-threshold ionization.</p><p>We expect similar quantum effects for molecules. For example, RSE of the O 2 molecule is suppressed compared with that of its companion atom Xe, and this suppression is stronger than the corresponding suppression of ionization of O 2 compared with that of Xe <ref type="bibr" target="#b24">[25]</ref>. Apparently, this cannot be described by the semiclassical model. Another such example will be two-center interference, which has been accepted to be essential in molecular ionization <ref type="bibr" target="#b32">[33,</ref><ref type="bibr" target="#b33">34]</ref>. With some extensions, our quantum model can be applied to investigate these intriguing phenomena and reveal the underlying physics. Work along these lines is in progress.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. The Rydberg-state excitation process: The dashed gray curve denotes the laser electric field. The valence electron is liberated through tunneling in one of the various optical cycles of the pulse, whereupon it evolves in the laser field. The electrons captured into a certain Rydberg state in one direction (orbit 1 &amp; orbit 3) or the other (orbit 2 &amp; orbit 4) have different phases and will interfere, which leads to a peak structure in the intensity dependence with interval of ∆U p = ω. Interference between the two directions leads to a peak structure with interval of ∆U p = 2 ω (see text for details).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2.A typical trajectory of the electron in the laser pulse with intensity of 1 × 10 14 W/cm 2 . The numbers indicate the instants of time t when the electron is captured by the Rydberg states of n = 6 of the hydrogen atom with different angular momenta.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3.Density distribution of the hydrogenic Rydberg state n = 6 for different angular quantum numbers l. The two numbers in each panel correspond to the principal quantum number n and the angular-momentum quantum number l.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4.Kinetic energy of the electron during its evolution in a laser pulse of 10 optical cycles. The laser intensity is 1.14 × 10 14 W/cm 2 , and the initial phase and the transverse velocity are 92 • and 0, respectively.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5.The regions in polar coordinates where the Rydberg-state densities |φ nlm (r)| 2 are larger than 80 percent of their maximal values for n = 6 and angular momenta l ≤ n -1. Different colors denote different angular momenta.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Populations of Rydberg states with even or odd parity versus laser intensity calculated via TDSE (a) and the quantum model (QM)(b) for an initial 1s state. The positions of the N-photon channel closings are indicated on the top x axis. For visual convenience, the peaks are separated by dashed lines and underlaid with alternatingly gray or pink backgrounds. Total Rydberg-state populations on a linear scale (sum over parities) as functions of the laser intensity simulated by (c): the TDSE and (d): the QM for an initial 1s state.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. (a): Interference pattern generated by orbits with different values of J as given (see text for details). (b): The population of RSE for different l for a fixed principal quantum number n = 6 in an 800-nm laser field. (c): The electron trajectory in the field E(t) = E 0 sin ωte z corresponding to ionization at the phase ωt 0 = 92 • after the field maximum. The laser intensity is 1.14 × 10 14 W/cm 2 and the transverse velocity is 0 a.u. The colored horizontal dashed lines indicate the boundaries (in the coordinate z) of those regions where the Rydberg states with n = 6 and l ≤ 5 have their highest density as shown in Fig.8below. (d): The populations of specific l within the semiclassical picture for n = 6 at four different peak intensities (see the text for details).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. (a): Focal-averaged RSE vs. principal quantum number calculated by the quantum model for the He atom, for I 0 = 10 15 W/cm 2 ; (b): Calculated electron spectra below (multiplied by a factor of 0.2) and above the continuum threshold the hydrogen atom and various fixed intensities; (c): Experimental yields of single ionization and RSE of the Xe atom; (d): Experimental and calculated ratios between the Rydberg excitation and the single ionization yields (see the text for more detail). The experimental ratios have been rescaled for comparison with the quantum model results in view of the nonperfect detection efficiency of the Rydberg states.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Table 1. Relative Amplitudes of the four terms of Eq. (<ref type="formula" target="#formula_12">13</ref>). The Quantities t and l indicate the capture moment and the Angular Momentum Number shown in Fig. <ref type="figure" target="#fig_1">2</ref>, respectively.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgment</head><p>The authors acknowledge <rs type="person">Xiaojun Liu</rs> for helpful discussions.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Funding</head><p>National <rs type="funder">Key program for S&amp;T Research and Development (2016YFA0401100); Fundamental Research Fund of Sun Yat-Sen University</rs> (18lgpy77); <rs type="funder">National Natural Science Foundation of China</rs> (<rs type="grantNumber">11425414</rs>, <rs type="grantNumber">11534004</rs>, <rs type="grantNumber">11804405</rs>, <rs type="grantNumber">11874246</rs>, <rs type="grantNumber">11874179</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_u9swVgX">
+					<idno type="grant-number">11425414</idno>
+				</org>
+				<org type="funding" xml:id="_zfmKCTm">
+					<idno type="grant-number">11534004</idno>
+				</org>
+				<org type="funding" xml:id="_NZSHxGD">
+					<idno type="grant-number">11804405</idno>
+				</org>
+				<org type="funding" xml:id="_k3H6uaQ">
+					<idno type="grant-number">11874246</idno>
+				</org>
+				<org type="funding" xml:id="_2VjeMFB">
+					<idno type="grant-number">11874179</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Freeman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Bucksbaum</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Milchberg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Darack</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Schumacher</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Geusic</surname></persName>
+					</author>
+					<title level="a">Above-threshold ionization with subpicosecond laser pulses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">59</biblScope>
+						<biblScope unit="issue">10</biblScope>
+						<biblScope unit="page" from="1092" to="1095"/>
+						<date when="1987">1987</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">G</forename><surname>Muller</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>aan Linden van den Heuvell</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Agostini</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Petite</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Antonetti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Franco</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Migus</surname></persName>
+					</author>
+					<title level="a">Multiphoton ionization of xenon with 100-fs laser pulses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">60</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="565" to="568"/>
+						<date when="1988">1988</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Jones</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Schumacher</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Bucksbaum</surname></persName>
+					</author>
+					<title level="a">Population trapping in Kr and Xe in intense laser fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="R49" to="R52"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Rottke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Wolff-Rottke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Feldmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Welge</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Dörr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Potvliege</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Shakeshaft</surname></persName>
+					</author>
+					<title level="a">Atomic hydrogen in a strong optical radiation field</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">49</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="4837" to="4851"/>
+						<date when="1994">1994</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Agostini</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Fabre</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Mainfray</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Petite</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Rahman</surname></persName>
+					</author>
+					<title level="a">Free-Free Transitions Following Six-Photon Ionization of Xenon Atoms</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="issue">17</biblScope>
+						<biblScope unit="page" from="1127" to="1130"/>
+						<date when="1979">1979</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Becker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Grasbon</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Kopold</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Milošević</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Paulus</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Walther</surname></persName>
+					</author>
+					<title level="a">Above-Threshold Ionization: From Classical Features to Quantum Effects</title>
+				</analytic>
+				<monogr>
+					<title level="j">Adv. At., Mol., Opt. Phys. </title>
+					<imprint>
+						<date when="2002">2002</date>
+						<biblScope unit="volume">48</biblScope>
+						<biblScope unit="page" from="35" to="98"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>W</forename><surname>Becker</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Ho</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Eberly</surname></persName>
+					</author>
+					<title level="a">Theories of photoelectron correlation in laser-driven multiple atomic ionization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Rev. Mod. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">84</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1011" to="1043"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Liu</surname></persName>
+					</author>
+					<title level="a">Coulomb potential recapture effect in above-barrier ionization in laser pulses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Chin. Phys. Lett</title>
+					<imprint>
+						<biblScope unit="volume">23</biblScope>
+						<biblScope unit="issue">10</biblScope>
+						<biblScope unit="page" from="2729" to="2732"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Nubbemeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Gorling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Saenz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sandner</surname></persName>
+					</author>
+					<title level="a">Strong-Field Tunneling without Ionization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">101</biblScope>
+						<biblScope unit="issue">23</biblScope>
+						<biblScope unit="page">233001</biblScope>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Nubbemeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Rottke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sandner</surname></persName>
+					</author>
+					<title level="a">Acceleration of neutral atoms in strong short-pulse laser fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Nature</title>
+					<imprint>
+						<biblScope unit="volume">461</biblScope>
+						<biblScope unit="issue">7268</biblScope>
+						<biblScope unit="page" from="1261" to="1264"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">I</forename><surname>Shvetsov-Shilovski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Goreslavski</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Popruzhenko</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Becker</surname></persName>
+					</author>
+					<title level="a">Capture into rydberg states and momentum distributions of ionized electrons</title>
+				</analytic>
+				<monogr>
+					<title level="j">Laser Phys.</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="issue">8</biblScope>
+						<biblScope unit="page" from="1550" to="1558"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b11">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Volkova</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Popov</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Tikhonova</surname></persName>
+					</author>
+					<title level="a">Ionization and stabilization of atoms in a high-intensity, low-frequency laser field</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Exp. Theor. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">113</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="394" to="406"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b12">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Emmanouilidou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Lazarou</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Staudte</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<title level="a">Routes to formation of highly excited neutral atoms in the breakup of strongly driven H2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">011402</biblScope>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Von Veltheim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Manschwetus</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Quan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Borchers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Steinmeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Rottke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sandner</surname></persName>
+					</author>
+					<title level="a">Frustrated Tunnel Ionization of Noble Gas Dimers with Rydberg-Electron Shakeoff by Electron Charge Oscillation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">110</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page">023001</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">Y</forename><surname>Huang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Z</forename><surname>Xia</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Fu</surname></persName>
+					</author>
+					<title level="a">Survival window for atomic tunneling ionization with elliptically polarized laser fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">87</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page">033415</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Azarm</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Sharifi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Sridharan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hosseini</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">Q</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Popov</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Tikhonova</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Volkova</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Chin</surname></persName>
+					</author>
+					<title level="a">Population trapping in Xe atoms</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Phys.: Conf. Ser.</title>
+					<imprint>
+						<biblScope unit="volume">414</biblScope>
+						<biblScope unit="page">012015</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Q</forename><forename type="middle">G</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">X</forename><forename type="middle">M</forename><surname>Tong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Morishita</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Wei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Lin</surname></persName>
+					</author>
+					<title level="a">Fine structures in the intensity dependence of excitation and ionization probabilities of hydrogen atoms in intense 800-nm laser pulses</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">89</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page">023421</biblScope>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Zimmermann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Patchkovskii</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Ivanov</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<title level="a">Unified Time and Frequency Picture of Ultrafast Atomic Excitation in Strong Laser Fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">118</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">013003</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Piraux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Mota-Furtado</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>O'Mahony</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Galstyan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Yu</forename><forename type="middle">V</forename><surname>Popov</surname></persName>
+					</author>
+					<title level="a">Excitation of Rydberg wave packets in the tunneling regime</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">96</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page">043403</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Popruzhenko</surname></persName>
+					</author>
+					<title level="a">Quantum theory of strong-field frustrated tunneling</title>
+				</analytic>
+				<monogr>
+					<title level="j"> J. Phys. B</title>
+					<imprint>
+						<biblScope unit="volume">51</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page">014002</biblScope>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Saenz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Eilzer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Nubbemeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sandner</surname></persName>
+					</author>
+					<title level="a">Observing Rydberg Atoms to Survive Intense Laser Fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">110</biblScope>
+						<biblScope unit="issue">20</biblScope>
+						<biblScope unit="page">203002</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Zimmermann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Buller</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Eilzer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<title level="a">Strong-Field Excitation of Helium: Bound State Distribution and Spin Effects</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">114</biblScope>
+						<biblScope unit="issue">12</biblScope>
+						<biblScope unit="page">123003</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Vredenborg</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Ulrich</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">Ph.</forename><forename type="last">H</forename><surname>Schmidt</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Meckel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Voss</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Sann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Kim</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Jahnke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Dörner</surname></persName>
+					</author>
+					<title level="a">Multiple Recapture of Electrons in Multiple Ionization of the Argon Dimer by a Strong Laser Field</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">107</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page">043003</biblScope>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Manschwetus</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Nubbemeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Gorling</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Steinmeyer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Eichmann</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Rottke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Sandner</surname></persName>
+					</author>
+					<title level="a">Strong laser field fragmentation of H2: Coulomb explosion without double ionization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">102</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page">113002</biblScope>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Lv</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Zuo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">X</forename><surname>Jin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Ding</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jing</forename><surname>Chen</surname></persName>
+					</author>
+					<title level="a">Comparative study on atomic and molecular Rydberg-state excitation in strong infrared laser fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">93</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page">033415</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Ammosov</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">B</forename><surname>Delone</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Krainov</surname></persName>
+					</author>
+					<title level="a">Tunnel Ionization Of Complex Atoms And Atomic Ions In Electromagnetic Field</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sov. Phys. JETP</title>
+					<imprint>
+						<date when="1986">1986</date>
+						<biblScope unit="volume">64</biblScope>
+						<biblScope unit="page">1191</biblScope>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">V</forename><surname>Keldysh</surname></persName>
+					</author>
+					<title level="a">Ionization in the field of a strong electromagnetic wave</title>
+				</analytic>
+				<monogr>
+					<title level="j">Zh. Eksp. Teor. Fiz</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="page">1945</biblScope>
+						<date when="1964">1964</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Schafer</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>DiMauro</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Kulander</surname></persName>
+					</author>
+					<title level="a">Above threshold ionization beyond the high harmonic cutoff</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="1599" to="1602"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Corkum</surname></persName>
+					</author>
+					<title level="a">Plasma perspective on strong field multiphoton ionization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">71</biblScope>
+						<biblScope unit="issue">13</biblScope>
+						<biblScope unit="page" from="1994" to="1997"/>
+						<date when="1993">1993</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Jones</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">R</forename><surname>Reiss</surname></persName>
+					</author>
+					<title level="a">Intense-field effects in solids</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. B</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="2466" to="2473"/>
+						<date when="1977">1977</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Jain</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Tzoar</surname></persName>
+					</author>
+					<title level="a">Compton scattering in the presence of coherent electromagnetic radiation</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="538" to="545"/>
+						<date when="1978">1978</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Milošević</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Hasović</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Busuladžić</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Gazibegović-Busuladžić</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Becker</surname></persName>
+					</author>
+					<title level="a">Intensity-dependent enhancements in high-order above-threshold ionization</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. A</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page">053410</biblScope>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Muth-Böhm</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Becker</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">F</forename><forename type="middle">H</forename><forename type="last">M</forename><surname>Faisal</surname></persName>
+					</author>
+					<title level="a">Suppressed Molecular Ionization for a Class of Diatomics in Intense Femtosecond Laser Fields</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">85</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="2280" to="2283"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Lin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Jia</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Hu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Quan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Lai</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Zeng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Chu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Yao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Xu</surname></persName>
+					</author>
+					<title level="a">Ionization Suppression of Diatomic Molecules in an Intense Midinfrared Laser Field</title>
+				</analytic>
+				<monogr>
+					<title level="j">Phys. Rev. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">108</biblScope>
+						<biblScope unit="issue">22</biblScope>
+						<biblScope unit="page">223001</biblScope>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

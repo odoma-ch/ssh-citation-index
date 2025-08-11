@@ -1,0 +1,975 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Does Regulatory Jurisdiction Affect the Quality of Investment-Adviser Regulation?</title>
+				<funder ref="#_cu8vVJG">
+					<orgName type="full">John and Serena Liew Fellowship Fund at the Fama-Miller Center for Research in Finance, University of Chicago Booth School of Business</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-01">January 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ben</forename><surname>Charoenwong</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">National University of Singapore</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alan</forename><surname>Kwan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Hong Kong University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tarik</forename><surname>Umar</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Rice University</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Does Regulatory Jurisdiction Affect the Quality of Investment-Adviser Regulation?</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2019-01">January 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F7F8344ED73507817B408C7A0787B0CA</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Financial Intermediaries</term>
+					<term>Financial Adviser</term>
+					<term>Misconduct</term>
+					<term>Financial Regulation</term>
+					<term>Policy Impact Evaluation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The Dodd-Frank Act shifted regulatory jurisdiction over "mid-size" investment advisers from the SEC to state-securities regulators. Client complaints against mid-size advisers increased relative to those continuing under SEC oversight by 30%-40% of the unconditional probability. Complaints increasingly cited fiduciary violations and rose more where state regulators had fewer resources. Advisers responding more to weaker oversight had past complaints, were located farther from regulators, faced less competition, had more conflicts of interest, and served primarily less sophisticated clients. Our results inform optimal regulatory design in markets with informational asymmetries and search frictions.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Questions of optimal regulatory capacity and design are crucial to the efficiency of complex economies, where information asymmetries and search frictions are pervasive and government intervention might be necessary. However, regulatory capacity and design rarely shift for exogenous reasons, holding laws fixed. Thus, we know little about what can be done to improve regulatory oversight. One of the myriad of quirks in the Dodd-Frank Act afforded a unique opportunity to examine such questions empirically in the large investment-advisory industry. The investment-advisory industry comprises firms called "registered investment advisers" (RIAs) that recommend financial securities such as stocks, bonds, and mutual funds to clients and may also provide financial-planning services. Examples include Morgan Stanley Wealth Management with $735 billion in assets under management (AUM) and smaller advisers such as Abens Financial Services, which employs two investment-adviser representatives (IARs) to manage $43.5 million for 73 clients. RIAs have a fiduciary duty to clients and manage over 70% of the total net worth of households and non-profit organizations in 2017. Securities and Exchange Commission (SEC)-registered RIAs alone serviced over $70 trillion for 36 million clients in 2017, almost three times the size of the U.S. housing market ($26 trillion) and over four times the total assets of all U.S. commercial banks ($17 trillion).<ref type="foot" target="#foot_0">foot_0</ref></p><p>The quirk we exploit in the Dodd-Frank Act is the transitioning of oversight of "mid-size" RIAs ($25 million to $100 million in AUM) from SEC to state oversight. The shift did not alter the fiduciary standard nor any other rules governing RIAs and was intended to free up resources at the SEC to regulate "private funds," such as hedge funds, which were newly enrolled under SEC oversight by the Act. The transition did not apply to RIAs in Wyoming and New York.<ref type="foot" target="#foot_1">foot_1</ref> This transition was announced on June 22, 2011, and implemented on January 1, 2012. The $100 million threshold was used previously in the 1996 National Securities Market Improvement Act, which shifted mid-size RIAs from state to SEC oversight.</p><p>Because the threshold used and motivations for the transition are plausibly exogenous to RIA quality, we use a difference-in-differences design to study whether the transition affected service quality. Specifically, we compare the customercomplaint rates of transitioned mid-size RIAs with those of similar RIAs remaining under SEC oversight. To increase the comparability between SEC-and stateregistered RIAs, we exclude RIAs with more than $1 billion in AUM. Customer complaints are client-initiated and relate to non-mutually exclusive topics such as excessive risk-taking, under-diversification, misrepresentation of investments, violations of the fiduciary standard, unsuitable investments, fee gauging, and fraud. For example, a client filed a complaint on August 21, 2012 against representative Bruce Martin Harada, seeking recovery of fraudulently procured funds to purchase fictitious investments in October 2011.</p><p>Customer complaints are an appropriate outcome measure for four reasons. First, complaints reflect customer satisfaction adjusted for clients' objectives and situations. Second, complaints are public and timely, appearing almost immediately in the Investment Adviser Public Disclosure database. Third, the transition did not substantively change the process of filing a complaint, which may be filed online for free through regulators' websites. Fourth, complaints are rarely redacted. FINRA handles expungement requests and calls expungement an "extraordinary measure." We use all complaints rather than condition on outcomes, because outcomes depend on the quality of the regulator.</p><p>Following the transition, complaint rates of mid-size RIAs increased by 0.3 to 0.4 percentage points per year relative to the complaint rates of RIAs continuing under SEC oversight, representing a 30%-40% increase relative to the unconditionalcomplaint rate for the sample period 2009 to 2014. Complaints increasingly cited fiduciary violations with higher alleged damages. Additionally, our empirical setting permits three alternative comparison groups: (1) advisers advising between $100 million and $1 billion in assets who remained registered with the SEC, (2) RIAs advising less than $300 million in assets, and (3) mid-size advisers in Wyoming and New York who continued under SEC oversight.<ref type="foot" target="#foot_2">foot_2</ref> These results are consistent with the transition decreasing RIA service quality, which goes against the initial idea that state regulators would have more incentives (local constituents) and maybe more bandwidth to act than the SEC. We acknowledge that the comparison groups are not control groups, because the transition may have affected both the SEC's and state regulators' capacities, so that the magnitude of the divergence is suggestive. Instead, we exploit heterogeneity in the divergence across state regulators, advisory firms, and representatives to identify determinants of regulatory effectiveness and the populations who may be bearing the costs of weaker oversight.</p><p>We cannot immediately conclude the increase in complaint rates for mid-size RIAs indicates lower service quality. Observed complaint rates are a function of service quality, the probability of detection, activity levels, and the probability of frivolous complaints. The probability of detection may increase if state regulators are better at sussing out bad actors due to a local-information advantage. Alternatively, a weaker state regulator may induce customers to monitor RIAs more if state regulators and customer complaints are external-governance substitutes. Another possibility is that normal activity levels or the probability of frivolous complaints increased (or reporting costs decreased) differentially for mid-size RIAs. Clients may perceive state regulators as more favorable when, in fact, outcomes are decided in Financial Industry Regulatory Authority (FINRA) arbitration forums, which were not affected by the Dodd-Frank Act. Finally, advisers may lower service quality if state regulators are weaker.</p><p>To disentangle these several different factors that may explain the increase in complaint rates, we take advantage of the cross-sectional richness of the data across states, RIA firms, and employed IARs to examine where increases in complaints were higher or lower. Our results rule out the reverse-causality argument that the increase in complaints is driven by more-effective state regulators eliciting complaints. We test the impact of three measures of regulatory resources: staff per adviser (from 1999 and 2012), budget growths from 2009 to 2012, and salaries. Across all three measures, we find the increase in complaints is largest in states with the weakest regulators. A standard-deviation change in regulators' budget growth can explain approximately 40% of the average effect. The increase in complaints was greater when the workload shock was greater, measured as the increase in IARs working for RIAs under state oversight. Moreover, RIAs that are costlier to supervise, namely those located farther from state regulators and in areas with fewer RIA branches, received more complaints. Lastly, on average, we find a lower incidence of state-regulator follow-up on customer complaints. If better regulators elicit more complaints, we should have found more complaints in states with more regulatory resources and for advisers closer to regulators.</p><p>Our cross-sectional results also help refute another reverse-causality argument: Perhaps, customers and regulators are substitutes in terms of external governance. More-sophisticated clients are more likely to be aware of shifts in regulatory oversight and thus be more likely to increase monitoring if oversight weakens. Instead, we find the divergence in complaint rates is largely driven by mid-size RIAs serving primarily non-accredited investors, who are likely less sophisticated.</p><p>We also rule out the possibility that normal activity levels or frivolous-complaint rates differentially increased for mid-size RIAs. We find no significant differences in asset growth between mid-and large-size investment advisers that might have led to differences in activity levels. We also find the same increase in complaints when restricting the comparison group to mid-size RIAs headquartered in Wyoming and/or New York that were not transitioned. The increase in complaints persists after the transition in oversight in 2012 through the end of our sample, suggesting our results are not driven by news or a backlog of complaints. We also find within a RIA that the increase is higher among IARs with past complaints. In addition, we find a larger effect on RIAs employing more IARs dual registered as brokers, who face greater conflicts of interests.<ref type="foot" target="#foot_3">foot_3</ref> </p><p>Overall, our results are most consistent with the statement that the transition weakened oversight of mid-size advisers, who responded by increasingly violating their fiduciary duties <ref type="bibr" target="#b5">(Becker 1968;</ref><ref type="bibr" target="#b16">Darby and Karni 1973)</ref>. Policymakers ignored the consequences of heterogeneity in states' regulatory capacities and only discussed the filing-cost burden imposed on mid-size RIAs.<ref type="foot" target="#foot_4">foot_4</ref> Our results show service quality is sensitive to enforcement quality, which encourages policymakers to assess differences in regulators' financial resources, educational attainments, and work experiences in regulatory design, such as how to divide power between local and federal regulators.</p><p>We contribute to the growing literature on financial advice. <ref type="bibr" target="#b27">Gennaioli et al. (2015)</ref> and <ref type="bibr" target="#b32">Gurun et al. (2015)</ref> highlight the importance of trust. Additional research studies conflicts of interests and misconduct in the broker-dealer industry.<ref type="foot" target="#foot_5">foot_5</ref><ref type="bibr" target="#b24">Egan (2018)</ref> documents that brokers sell more higher-commission but strictly dominated structured products relative its lower-commission but strictly superior version. <ref type="bibr" target="#b22">Dimmock et al. (2015)</ref> show misconduct spreads across brokers through mergers and <ref type="bibr" target="#b21">Dimmock and Gerken (2012)</ref> show past fraud by advisers predicts future fraud. <ref type="bibr" target="#b15">Clifford and Gerken (2017)</ref> show that allowing brokers to "own" client relationships reduces customer complaints by 29 basis points, which is comparable in magnitude to the effect of weaker regulatory oversight we document. <ref type="bibr" target="#b24">Egan et al. (2018)</ref> find 7% have some history of misconduct and 44% of brokers terminated due to the misconduct get re-employed elsewhere within one year in the same industry. These papers and our results together suggest clients can not monitor investment advisers and brokers well, suggesting a role for government oversight.</p><p>Our results also relate to the wider literature on the behavior, misconduct, and oversight of financial intermediaries such as banks, real estate agents, credit rating agencies, auditors, financial analysts, and others. <ref type="bibr" target="#b2">Agarwal et al. (2014)</ref> find commercial banks make riskier loans under state oversight and argue that local regulators are more lenient. By contrast, in a different financial services industry, we find investment advisers under state oversight see greater complaints. <ref type="bibr" target="#b1">Agarwal et al. (2019)</ref> find that real estate agents buy their own houses for 2% cheaper than comparable houses bought by others. <ref type="bibr" target="#b42">White (2010)</ref> and <ref type="bibr" target="#b28">Griffin and Tang (2011)</ref> study the market structure and conflicts of interests in credit ratings. <ref type="bibr" target="#b18">DeMarzo et al. (2005)</ref> study the tension between self-regulating organizations and government oversight, with an application to brokers. In the real estate market, <ref type="bibr" target="#b6">Ben-David (2011)</ref> provides evidence that property sellers helped buyers inflate house prices in the run-up of the financial crisis and that real estate agents, loan officers, appraisers, and real estate lawyers knew about this practice. In addition, <ref type="bibr" target="#b35">Mian and Sufi (2017)</ref> document widespread income overstate in mortgage applications from 2002 to 2005, and <ref type="bibr" target="#b0">Agarwal and Ben-David (2018)</ref> show evidence that bank loan officers incentivized to originate loans overlooked unfavorable soft information.<ref type="foot" target="#foot_6">foot_6</ref> For firms, <ref type="bibr" target="#b36">Mohliver (2018)</ref> document the role of auditors in stock-option backdating in executive compensation, and <ref type="bibr" target="#b39">Parsons et al. (2018)</ref> use SEC data to document large geographical clusters of manager misconduct and suggests it appears due to local norms.</p><p>The unintended decline in financial advice quality that we find also relates to the literature on unintended policy outcomes. <ref type="bibr" target="#b7">Benmelech and Moskowitz (2010)</ref> show usury laws in the 19th century had the unintended consequence of increasing the costs of entry for new firms into markets. <ref type="bibr" target="#b10">Blouin and Krull (2009)</ref>, <ref type="bibr" target="#b19">Dharmapala et al. (2011)</ref>, and <ref type="bibr" target="#b25">Faulkender and Petersen (2012)</ref> examine unintended outcomes of the American Jobs Creation Act of 2004, which created a temporary tax holiday for repatriations from foreign subsidiaries. <ref type="bibr" target="#b34">Jambulapati and Stavins (2014)</ref> show the Credit CARD Act of 2009, meant to limit issuer ability to change credit terms, had the unintended consequence of raising rates and fees and reducing credit limits prior to the effective date. <ref type="bibr" target="#b20">Dimitrov et al. (2015)</ref> study the impact of the Dodd-Frank act on credit rating agencies. <ref type="bibr" target="#b3">Agarwal et al. (2017)</ref> show that the Home Affordable Modification Program (HAMP) only reached one-third of the targeted households despite size-able incentives for mortgage originators because of the large heterogeneity across intermediaries in pre-HAMP renegotiation behavior.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Background on Investment Advisers</head><p>In the United States, firms known as registered-investment advisers (RIAs) employ investment-adviser representatives (IARs). The Investment Advisers Act of 1940 defines an "investment adviser" broadly as "Any person who, for compensation, engages in the business of advising others, either directly or through publications or writings, as to the value of securities or as to the advisability of investing in, purchasing, or selling securities, or, who for compensation and as part of a regular business, issues or promulgates analyses or reports concerning securities," except when "solely incidental."<ref type="foot" target="#foot_7">foot_7</ref></p><p>Investment advisers have a fiduciary duty to clients and provide customized investment advice either through direct meetings, pamphlets, seminars, or other means of direct and indirect contact. RIAs can provide financial planning and recommend different investment products, but the RIAs themselves are not investment pools like mutual funds. Rather, the investment portfolios of such funds are managed by investment advisers operating as separate entities. Common names for investment advisers include asset managers, investment counselors, investment managers, portfolio managers, and wealth managers.</p><p>Complicating the regulation of investment advisers is that approximately 87% of IARs are also registered as brokers, defined in the Securities Exchange Act of 1934 as "any person or company engaged in the business of buying and selling securities on behalf of its clients, for its own account (as dealer) or both." Brokers typically receive commissions and product fees, whereas investment advisers earn fees based on hours of service and AUM. These differences in compensation incentives may lead to conflicts of interests. Brokers are held to a weaker "suitability standard." The suitability standard requires a broker to consider a client's income and net worth, investment objectives, risk tolerance, and other security holdings but does not require a broker to put a client's interests before the broker's interests. By contrast, investment advisers have a "fiduciary duty," which mandates putting a client's interests first. A commonly expressed concern by regulators is that clients may not be able to determine whether an individual is operating as an investment adviser with a fiduciary standard or as a broker, especially because brokers are often called "financial advisers."</p><p>Investment advisers are required to file annually a Form ADV, which records firm information such as total AUM, compensation structure, and clientele composition.<ref type="foot" target="#foot_8">foot_8</ref> It is filed annually and updated during the year for material changes. Annual filings and updates must be distributed promptly to both regulators and clients. Required updates include disclosures of client complaints, personal bankruptcy, civil suits, and criminal activity. Once these disclosure events are made to regulators, the profiles of RIAs and IARs are updated in public databases.</p><p>The regulatory landscape for investment advisers has been dynamic. Prior to 1996, the SEC oversaw RIAs managing more than $100 million in assets, and state regulators oversaw RIAs managing less than $100 million in assets.<ref type="foot" target="#foot_9">foot_9</ref> Then, the National Securities Markets Improvement Act of 1996 transitioned mid-size advisers to SEC oversight as part of a collection of efforts to integrate securities regulators. Ever since the Act circumscribed state authority, state-securities regulators have been aspiring to reclaim it. Executive Director Russ Iuculano of the North American Securities Administrators Association (NASAA) stated, "The financial catastrophe of 2008 gave NASAA a great opportunity to make its case that our system of financial services regulation must be strengthened, but only through the combined efforts of state and federal regulators."</p><p>The most recent shift in oversight responsibility is due to the Dodd-Frank Wall Street Reform and Consumer Protection Act. Section 410 of the Dodd-Frank Act shifted oversight of mid-size RIAs back to the states. The Act's threshold used to distinguish mid-size RIAs is $100 million, which matches that applied in the NSMIA switch in 1996. Thus, the $100 million cutoff is likely exogenous to differences in RIA characteristics around the threshold in 2012. Although the Dodd-Frank Act was signed into law in July 2010, the transition was not publicly announced until June 22, 2011, with then SEC Commissioner Mary Jo White stating, "In acknowledging the Commission's limited examination resources -and in light of the new responsibilities for private fund advisers -the Dodd-Frank Act also reallocated regulatory responsibility for certain smaller-investment advisers to the statesecurities authorities." In other words, the primary motivation for this change was to adjust the SEC's oversight responsibilities, because Title IV of the Dodd-Frank Act replaced the "private adviser" exemption many advisers to venture capital funds, hedge funds, and private-equity funds relied on with narrower exemptions, which limited the exemption to advisers that exclusively advise venture capital funds and advisers solely to private funds with less than $150 million in AUM. The Act did not shift oversight of RIAs in Wyoming and New York away from the SEC, because Wyoming does not have any regulatory scheme for investment advisers, and New York registers investment advisers but does not subject advisers to examination. These statements from key regulators about the motivation for the transition, the use of an historic cutoff threshold of $100 million, and the quick timing further support the exogeneity of the transition.</p><note type="other">[Figure 1]</note><p>The rule applied to new registrations as of July 21, 2011. Existing SEC-registered RIAs remained with the SEC until January 1, 2012. Mid-size RIAs not eligible for SEC registration had to file Form ADV-W to withdraw their SEC registration by June 28, 2012. At the time of the law's announcement, the SEC estimated 3,200 RIAs would be delegated to examination by state law.<ref type="foot" target="#foot_10">foot_10</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Data &amp; Methodology</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Sample Construction</head><p>We incorporate complaint data into a survivorship-bias-free panel of 89,752 IARs working for 6,772 RIAs from 2009 to 2014. Our final sample is a person-year panel free of survivorship bias, and for certain tests, we aggregate the person-year panel to a firm-year panel. We construct this sample from three sources: mandatory Form ADV data acquired from the SEC and two disclosure outlets for complaints. We obtained Form ADV from a Freedom of Information Act Request. RIAs file Form ADV annually and upon material business updates. Form ADV contains a variety of details about each SEC-registered RIA, including ownership structure and details about business operations, including number of employees, client composition, locations, conflicts of interests, and a variety of disclosures such as customer complaints and regulatory actions. We received the data from 2000 to 2015. The data contain only SEC-registered advisers for the most part.<ref type="foot" target="#foot_11">foot_11</ref> We also requested Form ADV-W data, which are filed to de-register with the SEC. Two types of deregistration exist. A full de-registration indicates an RIA plans to cease operations. A partial de-registration indicates an RIA plans to continue operating but not under SEC oversight.</p><p>Data on individual IARs are combined from the BrokerCheck and Investment Adviser Public Disclosure databases. For each IAR, we gathered publicly available detailed reports from both databases, which list a profile for every individual who has worked as a broker (BrokerCheck) or IAR (IAPD) in the last 10 years. Our latest update of the data occurred in spring 2017, meaning we have all individuals who were ever registered at some point during the period May 2007 to spring 2017. We go no further back than 2008 for nearly all of our tests. The IAPD and BrokerCheck are both maintained by FINRA and based on the same data from the Central Registration Depository (CRD) maintained by FINRA since the 1970s. While BrokerCheck provides data only on brokers, because approximately 87% of IARs are also dual registered as brokers, we make use of BrokerCheck data as well. Also, the detailed reports from BrokerCheck are more suitable for parsing.</p><p>The main purpose of this dataset is to provide the public with a history of every IAR and broker. Information includes a full employment history and detailed disclosures on a number of topics preserved for at least 10 years. Preserved disclosures include client complaints, criminal actions, regulatory actions, litigations, terminations, civil suits, and other financial matters, such as liens, that might be pertinent to an adviser's ability to manage money. Often, client complaints refer to a specific product. Around 50% of complaints deal with an annuity, 20% deal with stocks and 4% deal with over-the-counter securities. Appendix B.4 provides more details about complaint types and related products. The complaint data contain unstructured text detailing the nature of allegations from the perspectives of different participants (e.g., regulator, adviser, client), as well as docket identifiers to track legal proceedings related to cases.</p><p>For both the IAPD and BrokerCheck databases, we queried all CRD numbers between 1 and 10 million to get the universe of individual brokers and IARs. This approach results in a survivorship-bias-free dataset, because CRDs are never reused, and information on brokers and IARs must be maintained for at least 10 years, even if an individual leaves the industry. We keep all complaints in either database with the date the complaint was received, which is available for the vast majority of disclosures.<ref type="foot" target="#foot_12">foot_12</ref> We also keep data on regulatory events.</p><p>The main sample is a survivorship-bias-free, annual panel of IARs. We track individuals by their "branch location." Our main analyses generally use the individualyear panel. The primary sample window is 2009-2014, and the results are similar when we extend the sample window for robustness. The implementation date of the shock was January 2012. Our post-period begins in 2012. We keep all IARs who were working for an RIA filing a Form ADV in 2011.</p><p>Finally, we hand collect data on securities regulators' budgets, staffing, and salaries where possible. The budget data vary in granularity due to differences in state organizational structures. Some states have an identifiable division devoted to adviser enforcement. In other states, oversight of investment advisers is commingled with other functions, such as oversight of banks and insurance companies. Thus, the budget data are not suitable for direct cross-sectional comparisons. Instead, we use the ratio of 2012 budgets to 2009 budgets in cross-sectional tests. We collect staffing data for 2012 directly from state regulators and for 1999 from an NASAA survey of state regulators with oversight responsibilities of investment advisers. We collect public salary data for the examiners and registration officials listed in the directory of states' investment-adviser registration and examination contacts published by the NASAA in May 2012.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Empirical Specification</head><p>Our workhorse variable is the number of complaints initiated by clients against an RIA. As discussed, clients can file complaints online for free; however, the act of complaining can be costly in other ways: Filing a complaint takes time, may damage a relationship with an existing adviser, and achieving awards for damages through arbitration, settlement, or state court requires legal and processing costs.<ref type="foot" target="#foot_13">foot_13</ref> Thus, filed complaints likely reflect meaningful perceived misconduct, and, consistent with this logic, across each year in our sample, 60% of regulatory actions are preceded by client complaints. We keep complaints that are in progress, settled, denied, or withdrawn.<ref type="foot" target="#foot_14">foot_14</ref> We include complaints of all statuses, because both the type of client and a regulator's strength may influence the outcome.<ref type="foot" target="#foot_15">foot_15</ref></p><p>We use the following empirical specification:</p><formula xml:id="formula_0">1{Complaint} ijt = ↵ i + ↵ j + ↵ st + 1 Transitioned j + 2 Post 2012 t + 3 Post 2012 t ⇥ Transitioned j + " ijt</formula><p>where i is an IAR, j is an RIA, s is the state of the RIA's headquarters, and t is the year. The outcome is an indicator for whether an IAR had one or more complaints in a given year. Transitioned j is an indicator variable that is 1 if an IAR works for a mid-size RIA that transitions to state oversight. The sample period is from 2009 to 2014, and the indicator Post 2012 t is 1 for the years 2012 to 2014. The coefficient of interest is 3 , the difference-in-differences estimate of the effect of transitioning mid-size RIAs to state oversight on the probability an IAR receives a customer complaint. We consider specifications including firm fixed effects to account for RIA characteristics, individual fixed effects to account for IAR characteristics such as skill and gender, and state-year fixed effects to account for state-specific trends. We sometimes include branch-post fixed effects to account for city-level trends. We use an annual panel for the main specification because individuals may move across RIAs, which allows us to better control for trends.<ref type="foot" target="#foot_16">foot_16</ref> We cluster standard errors by state, allowing for RIAs and representatives within the same state to experience correlated shocks. <ref type="foot" target="#foot_17">foot_17</ref></p><p>To identify RIAs that shifted to state oversight due to Dodd-Frank, we look for RIAs that filed a Form ADV-W and indicated partial de-registration due to the Dodd-Frank Act. Appendix Figure <ref type="figure" target="#fig_5">6</ref> shows a large increase in Form ADV filings in 2012. The increase in ADV-W filings drove the spike. We also require that the affected RIAs must be headquartered in affected states (excludes Wyoming and New York) as of 2011 and must have managed less than $100 million of AUM in 2011. <ref type="foot" target="#foot_18">19,</ref><ref type="foot" target="#foot_19">foot_19</ref></p><p>Originally, the SEC projected around 3,200 RIAs would be affected in June 2011. However, the subsequent bull market in equities increased the assets of RIAs. In October 2012, the SEC stated that "over 2,300" RIAs made the transition. <ref type="foot" target="#foot_20">foot_20</ref> Using our classification method, we identify 2,089 transitioned RIAs. The discrepancy in number of transitioned RIAs may be due to imperfect information since not all RIAs properly filed a form ADV-W, and thus, we also require 2011 AUM to be less than $100 million to help isolate partial de-registrations.<ref type="foot" target="#foot_21">foot_21</ref> The 2,089 transitioned RIAs represent roughly one-third of approximately 6,000 SEC-registered RIAs with less than $1 billion in assets, and employ 11% of IARs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Summary Statistics</head><p>We start with 4.6 million person-year observations, comprising any registered investment adviser from 2005 to 2015. Limiting the sample to the period 2009-2014 reduces the sample to 1,791,522 person-year observations across SEC-and stateregistered advisers. We further limit the sample to RIAs that were SEC registered in 2011 -one year before the Dodd-Frank Act -which results in 1.29 million personyear observations. Next, we reduce the sample to those with less than $1 billion in assets in 2011, which reduces the sample size to 330,451 person-year observations. The final sample has 2,089 mid-size RIAs transitioned to state regulatory oversight and 4,683 RIAs continuing under SEC oversight and 4,683 RIAs continuing under SEC oversight.</p><p>Restricting the sample to RIAs managing less than $1 billion helps address concerns that large RIAs are substantively different from mid-size RIAs. We run our main analysis using lower AUM cutoffs (e.g., $100 million and $300 million); however, we prefer the $1 billion cutoff as a balance between power and comparability. In our summary statistics table, we tabulate various characteristics from Form ADV. The state-and SEC-registered RIAs are similar along most dimensions. Table <ref type="table" target="#tab_0">1</ref>, panel B, compares various RIA characteristics across stateregistered and SEC-registered RIAs, showing similar compensation arrangements and similar amounts of discretionary authority. However, we address some dissimilarities with the tighter AUM cutoffs and a variety of fixed-effects specifications. Also, the cross-sectional tests discussed later are less sensitive to any possible unaddressed differences between the characteristics of the SEC-and state-registered RIAs, because the cross-sectional tests examine differences in the differences-indifferences estimate across transitioned RIAs.</p><note type="other">[Table 1]</note><p>Table <ref type="table" target="#tab_0">1</ref>, panel A, presents information on complaint rates during our sample period. The unconditional sample probability of receiving a complaint is 1.07% for our sample. Panel C shows complaint characteristics before and after the transition in 2012 by mid-size RIAs that transitioned and RIAs continuing under SEC oversight. Conditional on having alleged damages, the dollar amount of a complaint is significant, with a sample average of $284,322. Conditional on being awarded a settlement, the average settlement amount is $93,996. Immediately following the financial crisis (2009-2011), alleged damages were approximately $100,000 higher than in the 2012-2014 sample period.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">An Increase in Reported Customer Complaints</head><p>We now examine changes in customer complaints due to the transition. Observed complaint rates are a function of service quality, the probability of detection, activity levels, and the probability of frivolous complaints. First, complaints may have increased if service quality declined after the transition to state oversight of mid-size RIAs. Second, complaints may have increased if detection rates of lower service quality increased. Perhaps, state regulators are more effective than the SEC at helping clients detect misconduct, because state regulators may have more local knowledge, more capacity, and greater local interests. Also, better state oversight might lead clients to complain more, because better state oversight may lead to more thorough examinations and thus higher expected awards for cases arbitrated by FINRA. Third, the detection rate may also increase even if state oversight weakens. Clients may increase monitoring of their advisers to compensate for weaker state regulatory oversight, implying a substitution between customer and regulatory oversight. Fourth, alternatively, we might observe an increase in frivolous complaints. A frivolous complaint is one where a dissatisfied client may express disutility, but the adviser did nothing wrong. An example of a frivolous complaint would be a complaint about poor performance when an adviser in fact appropriately warned the client of risks. Frivolous complaints might have increased because activity increased for mid-size RIAs relative to that of large-size RIAs, resulting in more complaints for mid-size RIAs. Or perhaps, client awareness about the option of filing complaints increased because of media attention to the transition, which may be stronger in areas with more transitioned RIAs. In other words, the cost of reporting may have decreased.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Main Results</head><p>We find complaint rates of RIAs that transitioned to state oversight increased relative to those of RIAs that continued under SEC oversight. We perform our analysis at both the RIA-firm and IAR-person levels. We then perform numerous robustness checks on parallel trends, use alternative sampling choices, and use alternative comparison groups. The results are robustly similar, indicating our main effect, which shows a divergence in complaint rates between transitioned and non-transitioned RIAs, is due to the transition.</p><p>We start with the firm-level analysis in Table <ref type="table" target="#tab_1">2</ref>, panel A. After aggregating individual-level complaints to the firm level, we create four outcome variables: log(1+Complaints), the number of complaints per IAR, the log of 1 plus the number of complaints per IAR, and an indicator variable that is 1 for firms receiving one or more complaints. Because firm-level complaints are correlated with the number of employees at the firm, we control in all specifications for a third-degree polynomial of the number of IARs employed by the RIA. We also include firm fixed effects in all specifications to account for residual differences in firm size and other characteristics of the RIAs. We winsorize these variables at 1%, but the results are not sensitive to winsorizing.</p><p>Columns (1) and (2) of Panel A show log(1+Complaints) increased by about 26%-32% of the sample mean. Columns (3) and (4) show an increase in the number of complaints per IAR and the log number of complaints per IAR, which increased by 30% of the sample mean. Lastly, column (5) shows the extensive margin effect, 1{complaints}, increases by about 77 basis points, which is 50% of the unconditional, sample frequency of complaint rates for 2009 to 2014. Altogether, these results show complaints against transitioned RIAs increased.</p><note type="other">[Table 2]</note><p>In Panel B of Table <ref type="table" target="#tab_1">2</ref>, we conduct a similar analysis but at the individual-IAR level, which affords greater power and the ability to control for individual-level characteristics. Across all columns, we see a significant increase in the probability of receiving a complaint, and the point estimate is stable and meaningful across a wide variety of specifications. Column (1) shows the main effect is robust to controlling for firm and year fixed effects, which control for general trends and unobserved differences between firms. Columns (2) to (4) show the results are robust to adding state-year fixed effects and branch-post fixed effects, which control for state and city characteristics and trends. The branch-level fixed effects are important, because advisers may work in very different parts of the country within the same firm. Column (5) takes full advantage of the IAR-level panel data by adding individual-IAR fixed effects, which control for unobservable differences in the individuals. The estimates suggest a 30-to 40-basis-point increase in complaint rates for transitioned IARs, which is 30%-40% of the unconditional, sample frequency of complaint rates for 2009 to 2014.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Robustness</head><p>We next run a battery of robustness checks. We first examine the parallel-trends assumption underlying a difference-in-differences specification. Figure <ref type="figure" target="#fig_1">2</ref> presents the parallel-trends plots for the mid-size RIAs against each of the following groups: (a) SEC-registered RIAs with less than $1 billion of assets, (b) RIAs with less than $300 million of assets, and (c) mid-size RIAs that remained with the SEC because they were headquartered in New York and Wyoming. In each of these figures, transitioned mid-size RIAs and SEC-registered RIAs have similar trends in the period prior to 2012 when both groups are under SEC oversight, and the trend lines only diverge starting in 2012, which is consistent with the transition having an effect. The relative increase in complaint rates appears to be persistent from 2012 through 2015. Although parallel trends appear using individual-level data as well, the parallel-trends assumption seems better satisfied by the firm-level results.<ref type="foot" target="#foot_22">foot_22</ref> In addition, in Appendix A.4, we also report a parallel trends plot using as a comparison group broker representatives who are not investment advisers and thus not subject to SEC oversight. These brokers never work for a firm that filed a Form ADV or never appeared in IAPD.<ref type="foot" target="#foot_23">foot_23</ref></p><note type="other">[Figure 2]</note><p>We also estimate a distributed lead-lag model to study the dynamic effects around the treatment and plot the estimated difference between mid-size RIAs and those remaining under SEC oversight from 2009 to 2015 in Figure <ref type="figure" target="#fig_1">2 (d)</ref>. The leadlag model accounts for firm and state-year fixed effects. We again find the treatment effect only occurs after the implementation of Dodd-Frank and does not reverse.</p><p>In Table <ref type="table" target="#tab_2">3</ref>, we adjust our comparison groups to address a variety of possible concerns. One concern is that mid-size RIAs in New York are different and thus not a good comparison group. To resolve this concern, in column (4), we discard mid-size RIAs in New York and Wyoming from the comparison group and find no change in the main effect. In column (5), we also remove California, with little effect on the point estimate. In untabulated analysis, we repeatedly remove one state at a time to show our main effect is not sensitive to the inclusion or exclusion of any one state. At the cost of power, in columns (6) and (7), we limit the comparison group to RIAs managing less than $100 million and $300 million of assets and find no change in the effect. The $100 million threshold limits the comparison group to mid-size RIAs headquartered in New York or Wyoming. The results are similar if the comparison group only includes RIAs in New York or only RIAs in Wyoming. Column (2) shows no change in our results if we remove all RIAs with only one or two employed IARs. In Appendix A.7 Table <ref type="table" target="#tab_5">6</ref>, we also show the increase in complaints is not explained by differences in local economic conditions.</p><note type="other">[Table 3]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Complaint Severity</head><p>We now examine changes in the composition of complaints filed against newly state-registered advisers and SEC-registered advisers. We explore changes across two dimensions. First, we examine changes in the type of complaint (e.g. allegation of fraud). Second, we examine changes in complaint severity in terms of alleged damages and settlement rates.</p><p>Table <ref type="table" target="#tab_3">4</ref> examines changes in the incidence rates of various complaint types. We classify complaints using the text describing the complaint, which are available in the detailed profiles we acquired for all IARs from the IAPD database. Comparing changes in complaint types is useful for determining the cause of the increase in complaints. For example, one concern is that FINRA, which regulates brokers, changed in 2012 in an unobservable way that is correlated with the transition criteria. This concern matters because 87% of IARs we examine are dual registered as brokers. If FINRA oversight weakened for mid-size broker-dealers, broker-dealers may increase broker-related misconduct. However, column (3) shows no significant increase in churning-related complaints. Churning is the malpractice of a broker conducting excessive trading to generate more trading commissions. Since brokerdealers are more often compensated through trading commissions, they are more likely to benefit from this activity rather than RIAs who tend to be compensated based on a fixed fee schedule. Thus, the result suggests broker-related misconduct is not driving our results.</p><p>In contrast, if Dodd-Frank weakened oversight of investment-adviser functions, one would expect more alleged violations of the fiduciary standard. Consistent with that logic, column (1) reports a large and highly significant increase in the probability of a complaint alleging violations of the fiduciary standard. Relatedly, column (4) shows a highly significant and meaningful increase in complaints alleging that advisers misrepresented material information, and column (5) shows a marginally significant and meaningful increase in complaints alleging an IAR recommended unsuitable investments, usually claiming excessive risk or lack of required liquidity. These complaint types are all consistent with IARs lowering service quality and perhaps increasing misconduct. However, column (2) shows a lack of a significant increase in fraud claims, suggesting that the increase in complaints is less due to an increase in outright fraud and perhaps more due to advisers lowering service quality, making less effort to understand a client's best interests, or perhaps allowing conflicts of interests to enter decision-making more often. Overall, these results are more consistent with Dodd-Frank weakening oversight of mid-size RIAs and representatives, resulting in lower service quality and perhaps more misconduct.</p><p>We also test whether the incidence of severe complaints increased. Columns (6) and (7) show a highly significant and meaningful increase in the probability of receiving an allegation of damages above $10,000 or $100,000. The incidence of complaints alleging $10,000 or more of damages increased by 41% of the unconditional probability of 67%. The incidence of more severe complaints alleging $100,000 or more of damages increased by 55% of the unconditional probability of 27%.<ref type="foot" target="#foot_24">foot_24</ref> </p><note type="other">[Table 4]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Cross-sectional Evidence</head><p>Thus far, we have established that complaint rates increased for mid-size RIAs that transitioned to state oversight, that complaints increasingly alleged violations of the fiduciary standard, and that complaints alleging damages of greater than $10,000 and $100,000 both increased. We now exploit the large amount of heterogeneity in our sample to further support that the increase in complaints represents greater misconduct, by ruling out various alternative explanations. These tests also establish the importance of regulatory resources for deterring misconduct, identify which types of advisers responded the most to weaker oversight, and identify which types of clients were the most vulnerable to weaker oversight.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Regulatory Action Conditional on a Complaint</head><p>We first test whether regulator-initiated disciplinary actions increased for mid-size RIAs that transitioned to state oversight. Table <ref type="table" target="#tab_4">5</ref>, panel A, shows no significant evidence that regulator-initiated actions increased, despite an increase in customer complaints and an increase in the occurrence of severe complaints alleging fiduciary violations.</p><note type="other">[Table 5]</note><p>In Table <ref type="table" target="#tab_4">5</ref>, panel B, we investigate changes in the probability of regulatory actions conditional on an IAR receiving a customer complaint. Regulators cannot examine all RIAs each year and thus often employ risk measures to allocate attention. Regulators tend to perceive RIAs receiving customer complaints as more risky. This logic suggests we can examine changes in the propensity for regulators to follow up on customer complaints to get a sense of regulatory strength. Because regulatory actions may not be perfectly synchronous with customer complaints, we consider not just contemporaneous complaints occurring in the same year as the regulatory action, but also whether the adviser received a complaint in the prior one or two years.</p><p>Table <ref type="table" target="#tab_4">5</ref>, panel B, reports the results. The unconditional relation between complaints and regulatory actions is positive, which is consistent with the logic that regulators are more likely to examine RIAs with complaints. This relation appears to increase in the post period, which is likely due to regulatory capacity being more constrained in the pre period when overall complaint rates were higher due to the financial crisis. For IARs working for transitioned mid-size RIAs, we find a negative relation between regulatory actions and complaints. Column (4) suggests that, conditional on a complaint, transitioned mid-size advisers are 3.5% less likely to receive a regulatory action, an estimate that is significant at the 10% level. We control for unobserved firm characteristics, state-specific trends, and also specific branchcity trends. Column (5) shows a similar result when relaxing the branch-post fixed effects and instead including firm-post fixed effects. These results suggest that regardless of the propensity of a firm to be targeted by regulators, a regulator is less responsive to complaints under state jurisdiction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">State Regulator Budgets and Staffing</head><p>We examine whether heterogeneity across states in regulatory resources helps explain differences in the increase in complaint rates filed against mid-size RIAs that transitioned to state oversight. Our first measure of state-level regulatory resources is the number of regulatory staff per RIA. To measure staffing, we use a report compiled in 1999 by the American Association of Retired Persons on the differences across states in investment-adviser-specific regulatory staffing. Staffing information from 1999 is plausibly exogenous to the transition over a decade later. Cross-sectional variation in regulatory staffing in 1999 is also relevant to variation in staffing in 2012. We gathered 2012 staffing data with FOIA requests to each state-securities regulator. The correlation between total regulatory staff in 1999 and 2012 is 0.95, and the correlation between staff at the level of the division overseeing investment advisers in 1999 and 2012 is 0.6. In our empirical specifications, we use the 1999 data because they are predetermined and not contaminated by reverse causality.<ref type="foot" target="#foot_25">foot_25</ref> In a few states, the number of staff per adviser at the level of the division overseeing investment advisers in 1999 is not available.</p><note type="other">[Table 6]</note><p>Table <ref type="table" target="#tab_5">6</ref>, columns (1) and (2), show mid-size RIAs in states with a higher number of staff per adviser in 1999 saw a significantly smaller increase in complaint rates, consistent with more staff at securities regulators improving service quality and deterring more misconduct. This result helps rule out an alternative story for the increase in complaints. If complaints increased because state regulators were better than the SEC at sussing out bad actors, we would have expected complaints to have increased more for better staffed regulators. Column (1) shows the results dropping states with missing 1999 staffing data, and column (2) includes the missing states by coding missing staffing ratios as 0, which is a natural interpretation because states with few clear staff handling adviser matters are more likely to have not been able to respond definitively to the FOIA requests. The point estimates remain similar and significant. Both specifications include firm and state-year fixed effects. Given that the standard deviation of the number of staff per adviser is 0.24, for a state to not see an increase in complaints against mid-size advisers, the regulator must increase staffing relative to the number of advisers by 1.2 standard deviations relative to the mean.</p><p>Our second measure of regulatory resources is the salaries of examiners and registration officials at each state regulator. To identify regulatory staff focused on oversight of RIAs and IARs, we use the names of examiners and registration contacts compiled in a directory by the NASAA in May 2012 and provided to RIAs to help them navigate the transition process. This list provides us with a set of individuals who serve relatively similar roles and are thus comparable across state regulators. For each individual in the list, we gathered state-salary information. However, some states did not report historical salary information for individuals online. Table <ref type="table" target="#tab_5">6</ref>, columns (3) and (4), show the results. States where the log-average salary is higher or where the average salary exceeds $70,000 see lower complaints.</p><p>Our third measure of regulatory resources is a state regulator's budget growth from 2009 to 2012. Appendix B.2, figure <ref type="figure" target="#fig_8">9</ref>, shows state budgets over time. The figure makes two points evident. First, although state-securities regulators' workloads increased significantly with the added oversight of mid-size RIAs, on average, states did not increase regulators' budgets. This lack of a budget increase might seem puzzling, because the transition increases registration-fee revenues, but registration-fee revenues are appropriated by the state. A regulator's actual budget is determined by the governor, and thus regulators must request more resources from the governor. At the time of the transition, state governments were fiscally constrained, and the figure makes clear that governors did not increase the budgets of most state regulators. A second point made clear by the figure is the large cross-sectional variation in budget levels. One reason for the variation is that the most granular division with oversight responsibility of RIAs that we could get data for differs across states. Thus, we compare changes in the budgets between 2009 and 2012.</p><note type="other">[Table 6]</note><p>Table <ref type="table" target="#tab_5">6</ref>, columns (5) to (7), report our results. The various columns report different specifications for the analysis. Column (5) reports a winsorized ratio of 2012 to 2009 budgets. Column (6) creates an indicator for whether the 2012 budget exceeded the 2009 budget. Column (7) uses an indicator for whether a state's budget growth ranks in the top quartile (top 25%) of state-budget growths. The point estimates suggest the increase in complaints largely did not occur in states that increased regulatory resources the most (top quartile of budget increases).<ref type="foot" target="#foot_26">foot_26</ref></p><p>Altogether, the evidence thus far examining regulators' staffing, budget, and salaries as well as the tendency to follow up on customer complaints all suggest transitioned mid-size advisers saw relatively weaker oversight than similar advisers remaining SEC registered. If states experiencing a larger percentage increase in representatives are more likely to be constrained, then we would expect complaints to increase more in states with a larger workload shock. Appendix A.10 Table <ref type="table" target="#tab_8">9</ref> shows evidence consistent with this reasoning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Distance to Regulator</head><p>We next examine whether complaint rates increased more for RIAs located closer to or farther away from the local regulator. Prior research suggests travel distance from a governing body to a regulated entity affects the quality of monitoring. In a working paper, <ref type="bibr" target="#b38">Nguyen and Nguyen (2017)</ref> find insiders increase insider trading when farther away from a regional office of the SEC, and closures of these offices appear to increase insider trading by increasing the distance to the closest regulator. In our context, distance may matter because RIAs located farther away require more commute time and other costs to monitor. Anecdotal evidence based on our conversations with state regulators corroborates this reasoning. We measure the longitude and latitude of the city where each individual IAR reports to be working, acknowledging that many IARs work in branch offices far from firm headquarters. The coverage of representatives' branch office locations is about 92%.</p><p>Table <ref type="table" target="#tab_6">7</ref> reports the results. In column (1), we create a dummy for whether a regulator is farther than 50 miles from the RIA, recognizing the potential role of outliers. The specification includes branch-post fixed effects, and thus effectively compares the complaint rates of transitioned and non-transitioned RIAs in the same city and also controls for city-level trends across the pre and post periods. The triple-difference term (Post⇥Transitioned⇥Distance) captures any differences in the difference-in-differences estimate (using SEC-registered RIAs as the comparison group) for transitioned advisers within 50 miles of the regulator and those farther than 50 miles. The estimate of 0.609 on the triple-difference term suggests the increase in complaints concentrates in representatives working more than 50 miles away from the state regulator. In column (2), we rank RIAs headquartered in a particular state by their relative distances to the state's regulator to remove the effects of scale. In column (3), we use the log distance to the state regulator. In column (4), we use log distance to the closest regulator (state, SEC regional office, or FINRA regional office). Across all specifications, RIAs located farther from regulators saw a significantly bigger increase in customer complaints.<ref type="foot" target="#foot_27">foot_27</ref>,<ref type="foot" target="#foot_28">foot_28</ref></p><p>In columns (5) and (6), we use an alternative measure of distance, namely the prevalence of high-speed internet connectivity. Transitioned RIAs in locations that are more challenging to communicate with over the internet also experienced a larger increase in complaints. In untabulated results, we find these distance results are robust to including interactions of Post⇥Transitioned and local economic characteristics.</p><note type="other">[Table 7]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Client Sophistication and Bargaining Power</head><p>The results so far rule out the possibility that complaints increased because state regulators are more effective. Instead, complaints increased primarily in areas with weaker state regulators and for branch offices located farther from state regulators. However, we still cannot conclude that service quality declined, because the increase in complaints could also be due to a substitution between client oversight and regulatory oversight. In other words, clients may compensate for weaker regulatory oversight by increasing oversight of RIAs. To help resolve this alternative explanation, we explore the relation between the increase in complaints for transitioned RIAs and variation across RIAs in client composition and market power.</p><p>Less sophisticated clients are less likely to be aware of the transition and less capable of recognizing lower service quality, and thus less capable of monitoring their advisers. We construct two measures of client sophistication. First, for each RIA, we determine the proportion of clients that are non-accredited individual investors (accredited investors have incomes greater than $200,000 or a net worth in excess of $1 million) from each RIA's Form ADV filings. ADV only reports this proportion in ranges (e.g., 0%-25%, 25%-50%, etc.). We categorize RIAs with 75% or more of their clients falling into the non-accredited category as having primarily non-accredited clients. The second measure of client net worth is the assets per employee. We use the number of employees working for the RIA in 2012 and the assets managed by the RIA in 2011 (2012 assets are not available for many mid-size advisers that transitioned to state oversight).</p><p>Table <ref type="table" target="#tab_7">8</ref> shows the results on client composition. Columns (1) and (2) measure client sophistication with an indicator equal to 1 if more than 75% of clients are non-accredited investors. Column (1) uses RIA and state-year fixed effects to account for unobserved differences across firms and state trends. Column (2) goes further and controls for city-level trends pre-and post-transition, effectively comparing IARs working at branches of transitioned and non-transitioned RIAs in the same city. The point estimates suggest the increase in complaints is entirely concentrated in RIAs serving mostly non-accredited investors. Column (3) measures client sophistication using the log of the average assets managed by each IAR, and column (4) uses an indicator variable that equals 1 when the average assets managed by an IAR is in the top 25% of RIAs. We find client complaints were higher for RIAs serving primarily less sophisticated investors. Overall, these results are less consistent with the possibility that the increase in complaints is driven by increased client oversight of RIAs.</p><p>Our measure of client sophistication may also be thought of as a measure of client bargaining power, with less sophisticated clients having lower bargaining power. We now exploit cross-sectional variation in the market concentration of RIAs to further identify whether advisers with more bargaining power took more advantage of clients. Competition erodes an adviser's ability to underserve a client. Clients receiving poor service in a market with many competing RIAs can simply find a new adviser. However, RIAs in less competitive regions of the country are better able to lower service quality with less risk of losing clients. This logic suggests RIAs in less competitive markets took more advantage of weaker state oversight.</p><p>Table <ref type="table" target="#tab_7">8</ref>, panel B, reports the results. All specifications show that where RIAs have greater market power, complaints increased more. Column (1) calculates the log concentration ratio (HHI) of the number of representatives at the county level. Column (2) recomputes the concentration ratio at the city level. Our sample contains roughly twice as many cities as counties. We use branch-post fixed effects to capture unobserved, time-varying heterogeneity across branches and to control for trends between pre-and post-Dodd Frank Act reforms. The coefficients are consistent with the reasoning that higher competition reduces the increase in complaints for transitioned firms. Columns (3) and (4) take concentration ratios of AUM by state. We use a log specification because the concentration ratios are positively skewed. We use state-year fixed effects to rule out other heterogeneity at the statetime level. The results suggest the effect is concentrated in states and in cities within a state with higher concentrations of RIAs.</p><note type="other">[Table 8]</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.5">Recidivism and Conflicts of Interest</head><p>Lastly, we provide additional evidence against an alternative narrative that complaints increased because frivolous complaints increased. We first exploit heterogeneity among IARs at the same RIA. We are able to compare changes in complaint activity filed against IARs without past complaints and those with past complaints. The fraction of IARs with a past complaint is 4.2% in our sample, lower than the 7% from <ref type="bibr" target="#b24">Egan et al. 2018</ref>. We focus on investment advisers rather than brokers, and they also include other disclosure categories beyond customer complaints. Unconditionally, IARs that are dual registered as brokers have higher recidivism rates than pure IARs.</p><p>Advisers with past complaints may care less about service quality or be more inclined to misconduct. The results are presented in Table <ref type="table" target="#tab_8">9</ref>. Column (1) shows IARs with past complaints increased complaints significantly more than other IARs working at the same firm without past complaints. In fact, the effect appears to be concentrated in advisers with past complaints. Column (2) controls better for firm trends between the pre and post periods. The estimate declines only slightly.</p><p>Overall, we see evidence consistent with advisers with past complaints taking the most advantage of weaker oversight. These results are less consistent with an alternative interpretation that frivolous reporting increased, because such frivolous reporting would have to primarily have increased for advisers with past complaints working at the same firm.</p><p>We then exploit heterogeneity across RIAs in the types of IARs employed. More specifically, we ask if firms employing more IARs that are also dual registered as brokers experience a bigger increase in complaints when oversight weakens. Brokers are paid on commission, and RIAs employing more brokers place more emphasis on commission-based pay. Thus, dual-registered IARs may have more conflicts of interest and thus be more likely to violate the fiduciary standard. Table <ref type="table" target="#tab_9">10</ref> shows the results. Columns (1)-(3) use a firm-year panel and show the effect is concentrated in RIAs employing above-median numbers of brokers. Column (4) uses an individual-year panel and finds similar results. These results suggest regulatory strength matters most for advisers with greater conflicts of interest, and any narrative of an increase in frivolous complaints would have to explain why the increase is concentrated in advisers with greater conflicts of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Interpretation of Results</head><p>Our goal has been to understand why the transition of mid-size advisers to state oversight led to an increase in client complaints relative to similar advisers contin-uing under SEC oversight. We offered and discussed at the beginning of Section 4 a decomposition of the probability of a complaint to organize our discussion. The four main hypotheses for the increase in complaint rates for mid-size RIAs are (1) adviser misconduct increased, (2) regulator effectiveness increased, (3) customers increased oversight in response to weaker regulator oversight, or (4) frivolous complaints increased. We use the set of results from sections 4 and 5 to distinguish between these four competing explanations.</p><p>We first discuss the hypothesis that complaints increased because state regulators are more effective than the SEC at overseeing mid-size advisers. One motivation for this hypothesis is that policymakers discussed how the SEC does not have the capacity to allocate resources to sufficiently examine mid-size advisers, especially with new oversight responsibilities of private fund advisers (e.g., hedge funds). Another motivation is that state regulators may have a local information advantage over federal regulators. If more effective oversight drives the increase in complaints observed, the increase should be larger in states with stronger regulators (better staffing, budgets, and salaries) and for advisers closer to the regulator. The increase should be lower in areas where advisers have more market power to counteract a stronger regulator, and larger for advisers serving non-accredited investors, who depend more on regulatory oversight. Our observed cross-sectional results disagree with all of these predictions except for the last prediction of an increase for advisers with more non-accredited investors as clients.</p><p>The next hypothesis is that complaints increased because of increased customer oversight in response to weaker state-regulatory oversight of mid-size advisers. The motivation for this hypothesis is that customer complaints are a way to deter misconduct, because complaints increase the probability a regulator examines the adviser. This hypothesis predicts a larger increase in customer complaints in states with fewer resources and for advisers located farther from the state regulator. Also, complaints should increase less for advisors serving more non-accredited investors, because these clients are less capable of monitoring advisers and less likely to be aware of the transition. Our observed results agree with the predictions with respect to regulatory strength and distance to the regulator, but our results disagree with the predictions related to less sophisticated clients. Also, any narrative about frivolous complaints would need to explain why the increase in complaints is concentrated in representatives with past complaints working for the same firm and for advisers with greater conflicts of interest.</p><p>A third hypothesis is that complaint rates increased for transitioned mid-size advisers because frivolous reporting increased. Clients of mid-size RIAs may have complained more if media attention increased the saliency of complaining in a way that is correlated with treatment. Another alternative is that clients of transitioned advisers may perceive local state regulators as being more concerned with local interests. These hypotheses would predict greater complaints in areas with stronger regulators and for advisers closer to regulators. This hypothesis would also predict a stronger response among advisers serving lower-net-worth clients who are more likely to be affected by a saliency story. Our results disagree with the first set of explanations related to regulatory strength and distance to the regulator but do agree with the prediction of higher complaints in populations with more lower-net-worth clients.</p><p>Of these three alternative hypotheses, none are fully supported by the crosssectional results. Instead, the results are consistent with all of the predictions of the hypothesis that investment advisers responded to weaker oversight by lowering service quality. This hypothesis predicts larger drops in service quality in states with weaker regulators, for advisers farther from state regulators, and in areas where advisers have more market power. This hypothesis also predicts larger drops in service quality for advisers serving lower-net-worth clients, who may be easier to take advantage of. Again, our results are consistent with each of these predictions, strongly suggesting the transition resulted in a drop in service quality by transitioned advisers relative to similar advisers continuing under SEC oversight.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusion</head><p>We provide empirical evidence that the Dodd-Frank Act's transitioning of mid-size RIAs to state oversight weakened oversight of mid-size RIAs on average, resulting in lower-quality investment advice. Customer complaints against mid-size RIAs increased relative to those against RIAs continuing under SEC oversight by 30%-40% of the unconditional complaint rates in our sample period. Increases in complaints alleging fiduciary violations drove the increase in complaints. The richness of our setting allows us to take advantage of cross-sectional variation across states, firms, and individuals to identify a variety of moderating factors. We identify an important role for regulatory resources and find that complaints mostly increased in states with poorly funded state regulators.</p><p>Overall, the results show the assignment of responsibilities for the standard setter and regulator can have a large effect on implementation quality. More recently, states are considering their own implementation of a fiduciary standard for brokers as the Department of Labor Fiduciary Rule has been put on hold.<ref type="foot" target="#foot_29">foot_29</ref> Our results suggest the coordination or lack thereof between states and the division of responsibility among local and federal regulators will significantly affect outcomes for investors. Although our results do not determine precisely the comparative advantages of national versus local regulators, in our setting, the federal jurisdiction appears to be a better enforcer of the law. The challenge is we do not observe all of the costs and benefits involved, because observed complaints only represent a fraction of true misconduct. More generally, if our results indicate the average state regulator underperforms the SEC, we do not know if state regulators operate with lower levels of resources or underperform given the same resources. In either case, federal regulators may have economies-of-scale advantages and also a funding advantage through Congress and the Internal Revenue Service. This last insight generalizes to other settings, such as considering whether criminal law enforcement or medical licensing should belong to a local or federal entity. Our research highlights that one crucial factor may be the relative fiscal health and institutional design of the municipality or state entity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">Figures and Tables</head></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure1: Regulatory Landscape of RIAs and the Dodd-Frank Act The figure below depicts the changing regulatory landscape for RIAs before and after the Dodd-Frank reform transitioned oversight of mid-size RIAs ($25 million to $100 million of AUM) from SEC to state oversight. The figure shows RIAs and broker-dealers as overlapping rectangles in the middle, the governmental regulatory authorities on the left, and FINRA - a self-regulating organization - on the right. Before Dodd-Frank, the SEC regulated mid- and large-size investment advisers. After Dodd-Frank, state-securities regulators regulated mid-size advisers. Because approximately 87% of investment advisers are dual registered as brokers, the figure also includes the regulatory landscape for brokers, which did not change, especially in a way particular to mid-size advisers.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure2: Parallel Trends All the figures visually depict our difference-in-differences specification using our person-year panel. FigureAshows trends in complaint rates for our main sample using RIAs with less than $1 billion in assets under management. FigureBuses RIAs with less than $300 million in assets as the comparison group. FigureCuses unaffected mid-size RIAs in New York and Wyoming with between $25 million and $100 million in assets as the comparison group. Triangles denote the mid-sized RIAs that transitioned from the SEC to state oversight, and circles denote the comparison groups. FigureDshows the difference between average complaint rates for transitioned mid-size RIAs and the comparison groups for our main sample period from 2009 to 2015 estimated using a regression that controls for a third-order polyno mial of the number of IARs employed by the firm and both firm and state-year fixed effects. In all figures, one-standard-error bands clustered by state are shown around the estimates.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 :</head><label>1</label><figDesc>Summary Statistics The table below shows summary statistics at the firm and individual levels. Panel A shows the number of individual IARs with complaints in a given year and the associated IAR-by-year unconditional probability of receiving at least one complaint. Panel B shows characteristics of the transitioned mid-size advisers and the non-transitioned (SEC-registered) advisers managing less than $1 billion of assets. Panel C shows average complaint outcomes before and after the Dodd-Frank Act. For each complaint, we calculate the frequency of various status categories: withdrawn, closed, denied, settled, or in arbitration or litigation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc>Baseline Results This table presents the difference-in-differences estimate for the change in complaints against investment advisers using our main sample of RIAs with less than $1 billion in AUM from 2009 to 2014. In panel A, we aggregate individual representatives' complaints to the RIA-firm level. In panel B, we present the individual-level results. At the firm level, we aggregate complaints and then calculate four outcome variables: the log of 1 plus the number of complaints, the number of complaints per employed IAR, the log of 1 plus complaints per IAR, and an indicator that is 1 for firms that received one or more complaints. In all specifications in panel A, we control for a third-order polynomial of the number of IARs employed by the firm. Complaints represent the number of total complaints that an RIA or IAR receives with a reporting or filing date within that year. Post is an indicator taking the value of 1 for years 2012 to 2014, which occur after the implementation of the transition. "Transitioned" is an indicator taking the value of 1 if an RIA transitioned from the SEC to state registration, and 0 otherwise. All specifications include fixed effects as indicated below with the "FE" labels. Standard errors are clustered by state and reported in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 :</head><label>3</label><figDesc>Alternative Comparison Groups This table presents robustness for the firm-level results in Table <ref type="table" target="#tab_1">2</ref>. In column (1), we remove data in 2012, the year of the transition of mid-size advisers to state oversight from SEC oversight. In columns (2)-(7), we adjust the comparison groups. In column (2), we remove all RIAs employing only one or two representatives. In column (3), we keep only firms employing 1 to 50 representatives. In column (4), we exclude RIAs headquartered in New York and Wyoming, who were exempted from the transition. In column (5), we exclude RIAs headquartered in California as well. In column (6), we tighten the sample threshold from $1 billion of assets to $300 million of assets. In column (6), we further tighten the threshold to $100 million of assets, effectively including only RIAs in New York and Wyoming exempted from the transition. Column (8) shows the results from our main sample, transcribed from Column (2) of Panel A in Table <ref type="table" target="#tab_1">2</ref> for comparison. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the transition of oversight. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise. Fixed effects are specified under the point estimates in the model using the "FE" pre-fix and account for firm-specific characteristics and county-level trends. In all specifications, we control for a third-order polynomial of the number of IARs employed by the firm. Standard errors are clustered by state and shown in parentheses.</figDesc><table/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 :</head><label>4</label><figDesc>Complaint Types This table shows the effect of the transition of oversight on various categories of individual representatives' complaint rates using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. The outcome variables are all indicator variables scaled by 100 based on whether the IAR receives at least one complaint with the following criteria in a given year: (1) citing breach of fiduciary duty, (2) alleging fraud, (3) alleging churning, (4) alleging misrepresentation, (5) alleging a breach of the suitability standard applied to brokers (and not IARs), (6) had more than $10,000 in alleged damages, and (7) had more than $100,000 in alleged damages. The former five specifications break out the types of complaints, and the latter two specifications examine the seriousness. The breakdown of complaints into different types are not mutually exclusive. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the transition of oversight. "Transitioned" is an indicator taking the value of 1 if an IAR works for a firm that transitioned from the SEC to state registration, and 0 otherwise. Fixed effects are specified under the point estimates in the model using the "FE" pre-fix and account for firm-specific characteristics and county-level trends. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 :</head><label>5</label><figDesc>Regulatory Actions and Responses to ComplaintsThis table shows the impact of state registration on regulators' disciplinary action, which include convictions, sanctions, fines, or regulator-imposed terminations using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. The outcome variable in this table is an indicator that is 1 if the IAR is the subject of a regulatory action that year. Panel A examines regulatory actions in response to the the transition to state jurisdiction. Panel B interacts the transition with prior and contemporaneous complaints to test whether state regulators issue more regulatory actions for IARs with more complaints. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the transition of oversight. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise. 1 {Complaints&gt;0} is an indicator of whether the IAR received a complaint in the previous year or current year, inclusive. Fixed effects are specified under the point estimates in the model using the "FE" pre-fix and account for firm-specific characteristics and county-level trends. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6 :</head><label>6</label><figDesc>State Regulator's Staffing, Salaries, &amp; BudgetsThe table below shows the impact of different measures of state regulatory budgets using the amount of staffing, the average salary paid to state regulators, and their total budgets using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. Columns (1) and (2) in this table show the triple interactions on regulator staffing. Staff per RIA is the number of state employees with adviser oversight responsibilities divided by the number of RIAs under state oversight in 1999. In column (2), we impute a "0" where the data are missing. Columns (3) and (4) show the triple interactions on states' average regulator salaries of officials responsible for overseeing adviser registration and examinations listed in an NASAA compilation produced in mid-2012. Columns (5) to (7) show the triple interactions on regulator budgets. We collected budgets from relevant state regulatory authorities. Because the regulatory offices are not directly comparable (some offices are purely devoted to advisor regulation; others are not), we normalize the 2012 budget by the 2009 budget for the same office. Column (5) considers the budget in 2012 relative to the budget in 2009. Column (6) considers an indicator equal to 1 if the regulator had a higher budget in 2012 than in 2009. Column (7) considers an indicator equal to 1 if the budget increase was in the top 25% of state budget increases. The outcome variable is an indicator taking the value of 1 if a IAR receives one or more complaints with a reporting or filing date within that year, and 0 otherwise. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the Dodd-Frank Act. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise. Fixed effects are specified under the point estimates in the model using the "FE" pre-fix and account for firm-specific characteristics and county-level trends. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 7 :</head><label>7</label><figDesc>Distance to Regulator This table presents difference-in-differences estimates using annual panel data to study the impact of regulator distance and complaints using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. Columns (1) through (4) examine variation in the transition effect with distances of IAR branches to local regulators, whose addresses are retrieved from the NASAA and the SEC website as of 2015. Distances in miles are calculated using coordinates of the zip code of the firm or regulator's address. Column (1) uses an indicator of whether the raw distance is greater than 50 miles. Column (2) takes a quantile rank of how far a branch location is from the regulator among all locations of adviser representatives who work for a firm headquartered in the state. Column (3) presents log distance, controlling for distance to other regulators. Column (4) takes the distance to the closest regulator, which includes a state's securities regulator as well as FINRA and SEC regional offices. Columns (5) and (6) use internet-access measures from the Federal Communications Commission at the county level as of December 31, 2011 as an inverse measure of distance. Column (5) uses an indicator of whether at least 60% of households in a county have residential fixed high-speed connections over 200 kb/s in at least one direction. The 60% threshold is an American Community Survey bracket. Column(6) uses a count of the number of internet providers providing a 200 kb/s or faster in at least one direction. The outcome variable reflects whether the individual received a complaint that year. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the Dodd-Frank Act. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise. Fixed effects are specified under the point estimates in the model using the "FE" pre fix and deviate from our main specification of firm and state-year fixed effects mainly due to power issues. Robust standard errors clustered by state are shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 8 :</head><label>8</label><figDesc>Client Bargaining Power &amp; Sophistication Panel A in this table studies the interaction of the transition effect with a firm's client characteristics using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. We consider three client characteristics: (1) if the adviser reports that 75% or more of its clients are non-accredited investors, (2) the reported 2011 AUM divided by the number of IARs working at the RIA in 2012, and (3) whether an RIA has high AUM per IAR, where "High AUM per IAR" is defined as an indicator of being in the top 25th percentile of the distribution of firm AUM per IAR. Panel B in this table presents the effect of transitioning from SEC to state regulation interacted with concentration of the local adviser industry. Column (1) uses the Herfindahl-Hirschman index of IARs at branch offices in a county. Column (2) uses the Herfindahl-Hirschman index of IARs at branch office in a city. Column (3) uses the log total AUM from the top 4 RIAs in a state. Column (4) uses the log Herfindahl index calculated at the state level based on AUM market share.The outcome variable is an indicator of whether an RIA or IAR receives with a reporting or filing date within that year. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the Dodd-Frank Act. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise.Fixed effects are specified under the point estimates in the model using the "FE" pre fix. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 9 :</head><label>9</label><figDesc>Recidivism This table examines whether advisers with past complaints see a stronger effect of the transition in mid-size oversight on future complaint rates using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. Column (1) includes firm and year fixed effects, whereas column (2) includes firm-post fixed effects that account for differential firm characteristics before the implementation of Dodd-Frank and after. The latter fixed-effects scheme trades off power with flexibility and alleviates concerns about firm-specific trends to some extent. In untabulated results, we find our results are quantitatively unchanged with a lower statistical significance at 10% when including firm-year fixed effects. The outcome variable is an indicator variable that equals 1 if a representative receives a customer complaint with a reporting or filing date within that year. To mitigate endogeneity issues, we define the "Prior Complaint" variable as an indicator variable equal to 1 if the individual received a complaint anytime between 2006 to 2009. Post is an indicator taking the value of 1 on and after 2012, following the implementation of the Dodd-Frank Act. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 10 :</head><label>10</label><figDesc>Advisers Dual Registered as BrokersThis table examines whether RIAs employing more representatives (IARs) that are dual registered as brokers experienced larger increases in client complaints after mid-size RIAs transitioned to state oversight using our main person-year sample for advisers with less than $1 billion in assets from 2009 to 2014. Column (1) includes only RIAs employing above-median numbers of dual-registered IARs. Column (2) includes only RIAs employing below-median numbers of dual-registered IARs. Column (3) includes both above-median and below-median RIAs in the same specification. Column (4) uses a person-year panel to examine the effect at the individual level. The outcome is an indicator taking the value of 1 if an IAR receives one or more complaints in year t. "Transitioned" is an indicator taking the value of 1 if a RIA transitioned from the SEC to state registration, and 0 otherwise.Post is an indicator taking the value of 1 on and after 2012, following the implementation of the Dodd-Frank Act. Standard errors are clustered by state and shown in parentheses.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0"><p>Sources: The SEC's 2017 Evolution Revolution, the Urban Institute's March 2018 Housing Finance at a Glance, and the Board of Governors of the Federal Reserve System. Morgan Stanley Wealth Management (aka Smith Barney) and Abens Financial Services AUMs from 2017 Form ADVs filed with the Investment Adviser Public Disclosure database.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1"><p>Wyoming had no state-registration requirements for RIAs, and New York did not examine RIAs.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2"><p>In the Appendix A.2, we also find that RIAs re-registering with the SEC due to exogenous growth in AUMs experience a drop in complaint rates.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3"><p>Studies find clients are confused by the dual-registration status. The SEC responded by recently proposing to require RIAs to file a new Form CRS that specifies the standard of conduct the RIA promises to meet for various services. For a description of the studies and background on the proposed rule change see SEC Rule 34-83063.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4"><p>Source: https://www.sec.gov/rules/final/2011/ia-3221.pdf</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5"><p><ref type="bibr" target="#b17">Del Guercio and Reuter (2014)</ref> find managers of broker sold mutual funds invest less in active management and underperform index funds.<ref type="bibr" target="#b14">Christoffersen et al. (2013)</ref> show that mutual fund flows reflect the incentives of the brokers intermediating them.<ref type="bibr" target="#b26">Foerster et al. (2017)</ref> find advisers increase clients' risk-taking and limited evidence of customized advice.<ref type="bibr" target="#b33">Hoechle et al. (2018)</ref> show that bank's advisors push clients to make trades that are more profitable for the bank and their clients underperform independent clients.<ref type="bibr" target="#b12">Chang and Szydlowski (2016)</ref> suggest fees compensate for information provision, which leads to higher fees for less-sophisticated clients who have a higher marginal benefit of advice.<ref type="bibr" target="#b13">Chang et al. (2015)</ref> find requiring client suitability reduces bad advice.Additional papers showing advisers provide sub-optimal advice see<ref type="bibr" target="#b8">Bergstresser et al. (2009)</ref>,<ref type="bibr" target="#b37">Mullainathan et al. (2012)</ref>, and<ref type="bibr" target="#b11">Chalmers and Reuter (2012)</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6"><p>Since 2007, California, Nevada, New Mexico, and Washington extended fiduciary duties to mortgage brokers. Policy discussion about regulatory design: United States Government Accountability Office's report "Nonbank Mortgage Servicers: Existing Regulatory Oversight Could be Strengthened." In addition,<ref type="bibr" target="#b41">Shi and Zhang (2015)</ref>,<ref type="bibr" target="#b40">Piskorski et al. (2015)</ref>,<ref type="bibr" target="#b29">Griffin and Maturana (2016a)</ref>, and <ref type="bibr" target="#b30">Griffin and Maturana (2016b)</ref> are examples of papers that document the sale of mortgages by intermediaries with false information about borrowers in the mortgage industry.<ref type="bibr" target="#b31">Griffin et al. (2018)</ref> find that employees involved in the securitization of mortgage-backed securities with high loss and misreporting rates experienced no adverse market outcomes.<ref type="bibr" target="#b4">Ambrose et al. 2016</ref> and <ref type="bibr" target="#b43">Wong 2018</ref> study the conflict of interests of loan servicers in handling troubled loans in mortgage-backed securities.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_7"><p>"Solely incidental" means content that can be construed as investment advice without the intention of being advice. For example, finance professors do not have to register as investment advisers when teaching the capital asset pricing model.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_8"><p>For more variables, see Appendix B10.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_9"><p>For regulatory purposes and in this paper, AUM include securities portfolios for which the adviser provides continuous and regular supervisory or management services. Advisers should not include assets for which the adviser does not have direct authority to implement client trades (either with discretion or after the client accepts the advisor's recommendation). Also, we only have assets managed by a registered-investment-adviser firm and do not have assets managed at an individual representative level.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="11" xml:id="foot_10"><p>SEC Release No. IA-3221; File No. S7-36-10.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="12" xml:id="foot_11"><p>The full universe of Form ADV filings comprises firms registered with state regulators and would require issuing FOIA requests to every state regulator. For our study, the full universe of Form ADVs is not essential because we are able to track complaints filed against individual investmentadviser representatives working for either state-or SEC-registered RIAs.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="13" xml:id="foot_12"><p>Our conclusions are robust to using only IAPD complaints or only Broker-Check complaints. Also, for the few complaints without dates, we can impute the date from the date the notice process is served, and the results go through.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="14" xml:id="foot_13"><p>Figure <ref type="figure" target="#fig_7">8</ref> in Appendix B shows the electronic procedure for filing complaints for the state of New Jersey, which is broadly representative.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="15" xml:id="foot_14"><p>Complaints executed fully are often arbitrated through FINRA's arbitration process or processed by some other formal procedure such as a state court.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="16" xml:id="foot_15"><p>This variable is different from the measure of misconduct used in <ref type="bibr" target="#b24">Egan et al. (2018)</ref>, who ignore the category "Client Dispute -Denied" and use other disclosure categories. Their purpose is to identify misconduct of any kind, whereas ours is to identify service quality from the perspective of clients. Also, only using settled complaints is inappropriate in our setting, because regulatory quality is transitioning and may affect outcomes.</p></note> 
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="17" xml:id="foot_16"><p>For robustness, we also use the collapsed-three-year-window approach of <ref type="bibr" target="#b9">Bertrand et al. (2004)</ref>.The collapsed-three-year window around 2012 may have more power, because complaints may not be filed immediately when the misconduct occurs, potentially introducing serial dependence in residuals. Shortening the window to two years does not affect the results.</p></note> 
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="18" xml:id="foot_17"><p>Clustering at the RIA level does not change any results.</p></note> 
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="19" xml:id="foot_18"><p>We use the median AUM reported throughout the year in Form ADV filings and amendments, but the results are robust to taking the max or mean AUM.</p></note> 
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="20" xml:id="foot_19"><p>Most firms we classify as transitioned and de-registered from the SEC followed the above process, but some RIAs de-registered without following the process exactly. The vast majority of, but not all, firms file Form ADV-W. However, some RIAs mentioned transitioning to state registration in the description section of Form ADV-W but incorrectly indicated in the Form ADV-W the desire to perform a full de-registration. Also, some RIAs failed to file an annual Form ADV in 2012 stating that the RIA planned to terminate SEC registration. Given that firms failing to file the 2012 Form ADV with the SEC continued to operate means this omission must be a mistake. We hand-checked RIAs that defied our expectations that they would de-register based on state of incorporation and AUM in 2011, adjusting the classification to eliminate some false positives and false negatives. Our final classification is conservative. In robustness checks, we find similar results classifying firms based solely on AUM in 2011.</p></note> 
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="21" xml:id="foot_20"><p>See SEC press release 2012-214 dated October 19, 2012.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="22" xml:id="foot_21"><p>There additionally appear to be some RIAs who the SEC may have counted as de-registering, but in fact ceased operations altogether. Therefore, the set which should be available for observation in the transition period is likely lower than the SEC claims and somewhere in between our number and the SEC's. In the Appendix, we analyze a date in 2014 where we have a list of all RIAs by their current regulator jurisdiction. We confirm that complaint rates in the period 2015-2016 continue to be greater among the de-registered and we confirm this with IV tests instrumenting jurisdictional assignment with a Hausman-type instrument on AUM growth.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="23" xml:id="foot_22"><p>We also perform matching tests in which we forced a pre-trend at the individual level. For each individual working at a treated firm in 2012, we picked those not working at treated firms who had similar complaint histories prior to 2012. In this specification, we find a divergence between complaint rates starting in 2012 with a similar economic magnitude to the main reduced form analysis.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="24" xml:id="foot_23"><p>Moreover, Table <ref type="table" target="#tab_4">5</ref> in Appendix A statistically tests the parallel-trends assumptions using regressions with data at the firm and individual levels. We also see a similar plot using individual-level data in Appendix Figure <ref type="figure" target="#fig_1">2</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="25" xml:id="foot_24"><p>We do not discuss intensive-margin results that would examine whether, conditional on a complaint, alleged damages increased, because such analysis is problematic. Suppose two types of complaints exist -frivolous and severe. Suppose treatment increased both categories of complaints, but frivolous complaints increased more. On the one hand, the intensive-margin analysis might suggest complaints became less serious, but on the other hand, advisers may have actually provided lower-service quality.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="26" xml:id="foot_25"><p>We cannot rule out all omitted variables. However, that omitted variable would have the following requirement: it affects mid-size firms differently after 2012. One possible candidate might be local economic conditions, assuming that mid-size advisers are differently exposed to these conditions. In unreported tests, we horse race our resources measures against a battery of economic variables, with no meaningful. Finally, this omitted variable has to explain our other cross-sectional tests, many of which exploit variation at the level of an individual within the same firm.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="27" xml:id="foot_26"><p>One concern we resolve is that shocks that drive regulator budgets higher lead to lower complaints. If the local state economy is doing well, tax receipts and future staff budgets may be high, and customers' investment performance may be superior if they invest in local investment opportunities. The within-state-year fixed effects substantially mitigate this concern, because the transition and non-transition groups are likely affected equally.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="28" xml:id="foot_27"><p>In untabulated results, we also take the original log distance measure and include distance from the local SEC and FINRA branches. The point estimates suggest what matters is distance from the local state regulator. Our result sharpens, perhaps because adding in covariates for distance from FINRA and SEC branches may help control for non-linear correlations between a firm's location and propensity to be transitioned.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="29" xml:id="foot_28"><p>One concern raised against this analysis has been that our results are driven by the bias of where firms tend to place investment advisers in relation to the regulators. Individuals farther away may be more client-facing by nature of local demographics, whereas those closer may perform more back-office functions, thus leading to differences in complaint rates. It seems unlikely that RIAs would use investment advisers (not other service professionals) to perform back-office functions, and because, if anything, we expect areas near the regulator to be more replete with clients. Nevertheless, we argue our current empirical design addresses this issue, because our branch-post fixed effects control for city-level differences, ruling out this concern.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="30" xml:id="foot_29"><p>The Obama Administration's Department of Labor Fiduciary Rule was proposed on February  23, 2015, approved on April 6, 2016,  and scheduled to be phased in from April 10, 2017, to January 2018. However, the Trump Administration delayed implementation to July 1, 2019, and then on March 15, 2018, it was struck down in the Fifth Circuit Court of Appeals on due to "unreasonableness," stating that the implementation was "a capricious exercise of administrative power." As of December 2018, the fiduciary rule remains "pending further review."</p></note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p><rs type="person">Paper Forum</rs>, and CICF 2018 for helpful comments. This research was funded in part by the <rs type="funder">John and Serena Liew Fellowship Fund at the Fama-Miller Center for Research in Finance, University of Chicago Booth School of Business</rs>. This paper previously circulated under the title "<rs type="projectName">Who Should Regulate Investment Advisers</rs>?" and "<rs type="programName">Regulator Jurisdiction and Investment Adviser Misconduct</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_cu8vVJG">
+					<orgName type="project" subtype="full">Who Should Regulate Investment Advisers</orgName>
+					<orgName type="program" subtype="full">Regulator Jurisdiction and Investment Adviser Misconduct</orgName>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>Sumit</forename><surname>Agarwal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Itzhak</forename><surname>Ben-David</surname></persName>
+					</author>
+					<title level="a">Loan prospecting and the loss of soft information</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<biblScope unit="volume">129</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="608" to="628"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b1">
+				<analytic>
+					
+					<author>
+						<persName><forename>Sumit</forename><surname>Agarwal</surname></persName>
+					</author>
+					<title level="a">Do real estate agents have information advantages in housing markets?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+				<note>Forthcoming</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b2">
+				<analytic>
+					
+					<author>
+						<persName><forename>Sumit</forename><surname>Agarwal</surname></persName>
+					</author>
+					<title level="a">Inconsistent Regulators: Evidence from Banking</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Quarterly Journal of Economics</title>
+					<imprint>
+						<biblScope unit="volume">129</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="889" to="938"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename>Sumit</forename><surname>Agarwal</surname></persName>
+					</author>
+					<title level="a">Policy Intervention in Debt Renegotiation: Evidence from the Home Affordable Modification Program</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Political Economy</title>
+					<imprint>
+						<biblScope unit="volume">125</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="654" to="712"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Brent</forename><forename type="middle">W</forename><surname>Ambrose</surname></persName>
+					</author>
+					<title level="a">Servicers and Mortgage-Backed Securities Default: Theory and Evidence</title>
+				</analytic>
+				<monogr>
+					<title level="j">Real Estate Economics</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="462" to="489"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Gary</forename><forename type="middle">S</forename><surname>Becker</surname></persName>
+					</author>
+					<title level="a">Crime and Punishment: An Economic Approach</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Political Economy</title>
+					<imprint>
+						<biblScope unit="volume">76</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="169" to="217"/>
+						<date when="19683">1968</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename>Itzhak</forename><surname>Ben-David</surname></persName>
+					</author>
+					<title level="a">Financial Constraints and Inflated Home Prices during the Real Estate Boom</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Economic Journal: Applied Economics</title>
+					<imprint>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="55" to="87"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b7">
+				<analytic>
+					
+					<author>
+						<persName><forename>Efraim</forename><surname>Benmelech</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Tobias</forename><forename type="middle">J</forename><surname>Moskowitz</surname></persName>
+					</author>
+					<title level="a">The Political Economy of Financial Regulation: Evidence from U.S. State Usury Laws in the 19th Century</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">65</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="1029" to="1073"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					
+					<author>
+						<persName><forename>Daniel</forename><surname>Bergstresser</surname></persName>
+					</author>
+					<title level="a">Assessing the Costs and Benefits of Brokers in the Mutual Fund Industry</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">22</biblScope>
+						<biblScope unit="issue">10</biblScope>
+						<biblScope unit="page" from="4129" to="4156"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename>Marianne</forename><surname>Bertrand</surname></persName>
+					</author>
+					<title level="a">How Much Should We Trust Differences-In-Differences Estimates?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Quarterly Journal of Economics</title>
+					<imprint>
+						<biblScope unit="volume">119</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="249" to="275"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>Jennifer</forename><surname>Blouin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Linda</forename><surname>Krull</surname></persName>
+					</author>
+					<title level="a">Bringing It Home: A Study of the Incentives Surrounding the Repatriation of Foreign Earnings Under the American Jobs Creation Act of 2004</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Accounting Research</title>
+					<imprint>
+						<biblScope unit="volume">47</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1027" to="1059"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b11">
+				<monogr>
+					
+					<author>
+						<persName><forename>John</forename><surname>Chalmers</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jonathan</forename><surname>Reuter</surname></persName>
+					</author>
+					<title level="m">Is Conflicted Investment Advice Better than No Advice?</title>
+					<imprint>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b12">
+				<monogr>
+					
+					<author>
+						<persName><forename>Briana</forename><surname>Chang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Martin</forename><surname>Szydlowski</surname></persName>
+					</author>
+					<title level="m">The Market for Conflicted Advice</title>
+					<imprint>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b13">
+				<analytic>
+					<author>
+						<persName><forename type="first">Eric</forename><forename type="middle">C</forename><surname>Chang</surname></persName>
+					</author>
+					<title level="a">Suitability Checks and Household Investments in Struc- tured Products</title>
+				</analytic>
+				<monogr>
+					<title level="j"> Journal of Financial and Quantitative Analysis</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="597" to="622"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Susan</forename><forename type="middle">E</forename><forename type="last">K</forename><surname>Christoffersen</surname></persName>
+					</author>
+					<title level="a">What Do Consumers’ Fund Flows Maximize? Evidence from Their Brokers’ Incentives</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">68</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="201" to="235"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b15">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">Christopher</forename><forename type="middle">P</forename><surname>Clifford</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">William</forename><forename type="middle">Christopher</forename><surname>Gerken</surname></persName>
+					</author>
+					<title level="m">Investment in Human Capital and Labor Mobility: Evidence from a Shock to Property Rights</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b16">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Michael</forename><forename type="middle">R</forename><surname>Darby</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Edi</forename><surname>Karni</surname></persName>
+					</author>
+					<title level="a">Free Competition and the Optimal Amount of Fraud</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Law and Economics</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="67" to="88"/>
+						<date when="1973">1973</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+					
+					<author>
+						<persName><forename>Diane</forename><surname>Del Guercio</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Jonathan</forename><surname>Reuter</surname></persName>
+					</author>
+					<title level="a">Mutual fund performance and the incentive to generate alpha</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">69</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1673" to="1704"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Peter</forename><forename type="middle">M</forename><surname>Demarzo</surname></persName>
+					</author>
+					<title level="a">Self-regulation and government oversight</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Economic Studies</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="687" to="706"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename>Dhammika</forename><surname>Dharmapala</surname></persName>
+					</author>
+					<title level="a">Watch What I Do, Not What I Say: The Unintended Consequences of the Homeland Investment Act</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="753" to="787"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b20">
+				<analytic>
+					
+					<author>
+						<persName><forename>Valentin</forename><surname>Dimitrov</surname></persName>
+					</author>
+					<title level="a">Impact of the Dodd-Frank Act on Credit Ratings</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<biblScope unit="volume">115</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="505" to="520"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b21">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Stephen</forename><forename type="middle">G</forename><surname>Dimmock</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">William</forename><forename type="middle">C</forename><surname>Gerken</surname></persName>
+					</author>
+					<title level="a">Predicting fraud by investment managers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<biblScope unit="volume">105</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="153" to="173"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b22">
+				<monogr>
+					<author>
+						<persName><forename type="first">Stephen</forename><forename type="middle">G</forename><surname>Dimmock</surname></persName>
+					</author>
+					<title level="m">Is Fraud Contagious ? Career Networks and Fraud by Financial</title>
+					<imprint>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+					
+					<author>
+						<persName><forename>Mark</forename><surname>Egan</surname></persName>
+					</author>
+					<title level="a">Brokers vs. Retail Investors: Conflicting Interests and Dominated Products</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>forthcoming</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename>Mark</forename><surname>Egan</surname></persName>
+					</author>
+					<title level="a">The Market for Financial Adviser Misconduct</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Political Economy</title>
+					<imprint>
+						<biblScope unit="volume">127</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="233" to="295"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>Michael</forename><surname>Faulkender</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Mitchell</forename><surname>Petersen</surname></persName>
+					</author>
+					<title level="a">Investment and Capital Constraints: Repatriations Under the American Jobs Creation Act</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">25</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="3351" to="3388"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>Stephen</forename><surname>Foerster</surname></persName>
+					</author>
+					<title level="a">Retail Financial Advice: Does One Size Fit All?</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">72</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="1441" to="1482"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>Nicola</forename><surname>Gennaioli</surname></persName>
+					</author>
+					<title level="a">Money Doctors</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="issue">1</biblScope>
+						<biblScope unit="page" from="91" to="114"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">John</forename><forename type="middle">M</forename><surname>Griffin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Dragon</forename><forename type="middle">Yongjun</forename><surname>Tang</surname></persName>
+					</author>
+					<title level="a">Did Credit Rating Agencies Make Unbiased Assumptions on CDOs?</title>
+				</analytic>
+				<monogr>
+					<title level="j">American Economic Review Papers &amp; Proceedings</title>
+					<imprint>
+						<biblScope unit="volume">101</biblScope>
+						<biblScope unit="issue">3</biblScope>
+						<biblScope unit="page" from="125" to="130"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">John</forename><forename type="middle">M</forename><surname>Griffin</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Gonzalo</forename><surname>Maturana</surname></persName>
+					</author>
+					<title level="a">Did Dubious Mortgage Origination Practices Distort House Prices?</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">7</biblScope>
+						<biblScope unit="page" from="1671" to="1708"/>
+						<date when="2016a">2016a</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<title level="a">Who Facilitated Misreporting in Securitized Loans?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="384" to="419"/>
+						<date when="2016b">2016b</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b31">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">John</forename><forename type="middle">M</forename><surname>Griffin</surname></persName>
+					</author>
+					<title level="a">Do labor markets discipline? Evidence from RMBS bankers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Financial Economics</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+				<note>forthcoming</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b32">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">Umit</forename><forename type="middle">G</forename><surname>Gurun</surname></persName>
+					</author>
+					<title level="m">Trust Busting: The Effect of Fraud on Investor Behavior</title>
+					<imprint>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+				<note>Working Paper</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					
+					<author>
+						<persName><forename>Daniel</forename><surname>Hoechle</surname></persName>
+					</author>
+					<title level="a">Financial Advice and Bank Profits</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="issue">11</biblScope>
+						<biblScope unit="page" from="4447" to="4492"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename>Vikram</forename><surname>Jambulapati</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Joanna</forename><surname>Stavins</surname></persName>
+					</author>
+					<title level="a">Credit CARD Act of 2009: What did banks do?</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Banking &amp; Finance</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="21" to="30"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>Atif</forename><surname>Mian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Amir</forename><surname>Sufi</surname></persName>
+					</author>
+					<title level="a">Fraudulent income overstatement on mortgage applications during the credit expansion of 2002 to 2005</title>
+				</analytic>
+				<monogr>
+					<title level="j">Review of Financial Studies</title>
+					<imprint>
+						<biblScope unit="volume">30</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="1831" to="1864"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b36">
+				<analytic>
+					
+					<author>
+						<persName><forename>Aharon</forename><surname>Mohliver</surname></persName>
+					</author>
+					<title level="a">How Misconduct Spreads: Auditors’ Role in the Diffusion of Stock-option Backdating</title>
+				</analytic>
+				<monogr>
+					<title level="j">Administrative Science Quarterly</title>
+					<imprint>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b37">
+				<analytic>
+					<author>
+						<persName><forename>Sendhil</forename><surname>Mullainathan</surname></persName>
+					</author>
+					<title level="a">The Market for Financial Advice: An Audit Study</title>
+				</analytic>
+				<monogr>
+					<title level="m">National Bureau of Economic Research</title>
+					<imprint>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+				<note>Working Paper w17929</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b38">
+				<monogr>
+					<author>
+						<persName><forename type="first">Trung</forename><forename type="middle">T</forename><forename type="last">H</forename><surname>Nguyen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Quoc</forename><forename type="middle">H</forename><surname>Nguyen</surname></persName>
+					</author>
+					<title level="m">It is Easy to Be Brave from a Safe Distance: Proximity to the SEC and Insider Trading</title>
+					<imprint>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Christopher</forename><forename type="middle">A</forename><surname>Parsons</surname></persName>
+					</author>
+					<title level="a">The Geography of Financial Misconduct</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="2087" to="2137"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					
+					<author>
+						<persName><forename>Tomasz</forename><surname>Piskorski</surname></persName>
+					</author>
+					<title level="a">Asset Quality Misrepresentation by Financial Intermediaries: Evidence from the RMBS Market</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">70</biblScope>
+						<biblScope unit="issue">6</biblScope>
+						<biblScope unit="page" from="2635" to="2678"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					
+					<author>
+						<persName><forename>Lan</forename><surname>Shi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Yan</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Appraisal inflation: Evidence from the 2009 GSE HVCC intervention</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Housing Economics</title>
+					<imprint>
+						<biblScope unit="volume">27</biblScope>
+						<biblScope unit="page" from="71" to="90"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b42">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">Lawrence</forename><forename type="middle">J</forename><surname>White</surname></persName>
+					</author>
+					<title level="a">Markets: The Credit Rating Agencies</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Journal of Economic Perspectives</title>
+					<imprint>
+						<biblScope unit="volume">24</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="211" to="226"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b43">
+				<analytic>
+					
+					<author>
+						<persName><forename>Maisy</forename><surname>Wong</surname></persName>
+					</author>
+					<title level="a">CMBS and Conflicts of Interest: Evidence from Ownership Changes for Servicers</title>
+				</analytic>
+				<monogr>
+					<title level="j">Journal of Finance</title>
+					<imprint>
+						<biblScope unit="volume">73</biblScope>
+						<biblScope unit="issue">5</biblScope>
+						<biblScope unit="page" from="2425" to="2458"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>

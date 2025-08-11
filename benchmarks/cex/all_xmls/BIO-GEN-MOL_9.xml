@@ -1,0 +1,2054 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Antitumoral Effect of the S-Adenosylhomocysteine Hydrolase Inhibitor, 3-Deazaneplanocin A, is Independent of EZH2 but is Correlated with EGFR Downregulation in Chondrosarcomas</title>
+				<funder>
+					<orgName type="full">Cancéropôle Nord-Ouest</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Antonio LLOMBART-BOSH</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Conseil Régional de Basse-Normandie</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Benoit HAELEWYN and Charlotte MARIE (CURB, Unicaen)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Ligue Contre le Cancer</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">French Ministry of Research</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Région Basse-Normandie</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Cell Physiol Biochem Press GmbH&amp;Co</publisher>
+				<availability>
+					<licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+						<p>This article is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND). Usage and distribution for commercial purposes as well as any distribution of modified material requires written permission.</p>
+					</licence>
+				</availability>
+				<date type="published" when="2019-10-16">16 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Juliette</forename><surname>Aury-Landas</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nicolas</forename><surname>Girard</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Eva</forename><surname>Lhuissier</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Drifa</forename><surname>Adouane</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Raphael</forename><surname>Delépée</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">PRISMM SF4206 ICORE</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<orgName type="institution" key="instit3">Comprehensive Cancer Center F. Baclesse</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Karim</forename><surname>Boumediene</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Catherine</forename><surname>Baugé</surname></persName>
+							<email>catherine.bauge@unicaen.fr</email>
+							<affiliation key="aff0">
+								<orgName type="department">BioConnecT EA7451</orgName>
+								<orgName type="institution" key="instit1">Normandie Université</orgName>
+								<orgName type="institution" key="instit2">UNICAEN</orgName>
+								<address>
+									<settlement>Caen</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Antitumoral Effect of the S-Adenosylhomocysteine Hydrolase Inhibitor, 3-Deazaneplanocin A, is Independent of EZH2 but is Correlated with EGFR Downregulation in Chondrosarcomas</title>
+					</analytic>
+					<monogr>
+					<title level="j" type="main">Cellular Physiology and Biochemistry</title>
+					<title level="j" type="abbrev">Cell Physiol Biochem</title>
+						<idno type="ISSN">1015-8987</idno>
+						<idno type="eISSN">1421-9778</idno>
+						<imprint>
+							<biblScope unit="volume">53</biblScope>
+							<biblScope unit="page" from="731" to="745"/>
+							<date type="published" when="2019-10-16">16 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">518979C7DEA3A99E198F359B6832CE7E</idno>
+					<idno type="DOI">10.33594/000000168</idno>
+					<note type="submission">Accepted: 10 October 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Background/Aims: 3-Deazaneplanocin, DZNep, has been reported to inhibit the EZH2 histone methylase and to induce cell apoptosis in chondrosarcomas (CS). The present study aims to confirm the therapeutic potential of EZH2 inhibitors and investigate the molecular mechanisms of DZNep in chondrosarcomas. Methods: CS cell lines and primary cultures were used. Apoptosis was investigated using PARP cleavage, caspase 3/7 activity, or Apo2.7 expression. S-adenosylhomocysteine (SAH) and S-adenosylmethionine (SAM) were quantified by UHPLC-
+MS/MS. Differentially expressed genes in treated-chondrosarcomas and chondrocytes were researched by microarray analysis. Results: DZNep induced apoptosis in chondrosarcomas both in vivo and in vitro. However, this effect was not correlated to EZH2 expression nor activity, and EZH2 knock-down by siRNA did not reduce CS viability. Additionally, the reduction of H3K27me3 induced by GSK126 or tazemetostat (EPZ-6438) did not provoke chondrosarcoma death. However, as expected, DZNep induced SAH accumulation and reduced SAM:SAH ratio. Further, microarray analysis suggests a key role of EGFR in antitumoral effect of DZNep, and pharmacological inhibition of EGFR reduced chondrosarcoma survival. Conclusion: EZH2 is not an adequate target for chondrosarcoma treatment. However, DZNep induces apoptosis in chondrosarcomas in vitro and in vivo, by a mechanism likely mediated though EGFR expression. Consequently, it would be worth initiating clinical trials to evaluating efficiency
+to S-adenosylhomocysteine hydrolase or EGFR inhibitors in patients with chondrosarcomas.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Chondrosarcomas (CS) are malignant bone mesenchymal tumors that represent about 25% of bone tumors. Potentially fatal, their 10-year survival rates vary between 30% and 80% according to CS grade. Their treatment has not progressed for 30 years, mainly due to the fact that chondrosarcomas are resistant to radio-and chemo-therapy <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. Thus, to date, therapeutic strategy consists in a surgical approach, with tumor curettage or wide resection. Therefore, we still need to identify efficient therapies to improve life quality of patients with chondrosarcomas.</p><p>We previously showed that high grade chondrosarcomas express high level of the histone-lysine N-methyltransferase EZH2 (Enhancer of zeste homolog 2) compared to enchondromas or normal cartilages <ref type="bibr" target="#b2">[3]</ref>. This observation led us to assess the effect of 3-Deazaneplanocin (DZNep), an S-adenosylhomocysteine hydrolase (SAHH) inhibitor known to deplete EZH2 protein expression and reduce trimethylation of histone H3 on lysine 27 (H3K27me3), on the survival of chondrosarcomas. Using two chondrosarcoma cell lines, CH2879 and SW1353, we previously demonstrated that, in vitro, DZNep reduces EZH2 expression and H3K27me3, and induces apoptosis <ref type="bibr" target="#b2">[3]</ref>. Additionally, we showed that DZNep reduces also JJ012 chondrosarcoma growth in vitro and in vivo <ref type="bibr" target="#b3">[4]</ref>.</p><p>To validate the concept that EZH2 inhibition could be an innovative approach to treat chondrosarcomas, additional experiments are required. In particular, since it is now admitted that some tumors are resistant to DZNep <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref>, it becomes essential to test its effect on a larger number of chondrosarcomas. Besides, the mechanism of DZNep is not well known. This carbocyclic adenosine analog was initially described as an EZH2 inhibitor. This was in line with our previous results showing that DZNep reduces EZH2 protein expression, and H3K27me levels in CH2879 and SW1353 chondrosarcomas <ref type="bibr" target="#b2">[3]</ref>. However, it is now admitted that this effect is indirect, and that, actually, DZNep inhibits S-adenosylhomocysteine (SAH) hydrolase resulting in SAH accumulation and thus overall reduction of S-adenosylmethionine (SAM), causing the indirect inhibition of the EZH2 methyltransferase activity. DZNep also causes EZH2 degradation probably through the ubiquitin-proteasome system <ref type="bibr" target="#b7">[8]</ref>. In addition, several studies suggest that DZNep could induce apoptosis of tumoral cells by an EZH2 methylase independent mechanism <ref type="bibr" target="#b5">[6]</ref>.</p><p>In this context, we tested the effect of DZNep on chondrosarcoma growth in vivo using a xenograft model in immunodeficient mice, and investigated the mechanism involved in DZNep-induced death.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell culture</head><p>Human chondrosarcoma cell line SW1353 was purchased from the American Type Culture Collection (ATCC, Manassas, VA, USA). The human JJ012 and FS090 cell lines were kindly provided by Dr. J.A. Block (Rush University medical center) <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b9">10]</ref>. They were cultured in Dulbecco's Modified Eagle Medium (DMEM) supplemented with 10% fetal bovine serum (FBS) (Invitrogen) and antibiotics. CH2879 cell line was kindly provided by Pr. A. Llombart-Bosch (University of Valencia, Spain), cultured in Roswell Park Memorial Institute 1640's medium (Lonza AG) supplemented with 10% FBS (Invitrogen) and antibiotics <ref type="bibr" target="#b10">[11]</ref>. The identity of cell lines was confirmed using STR profiling with the GenePrint 10 System (Promega).</p><p>Primary chondrosarcomas and chondrocytes were obtained from biopsies of CS during resection, and from femoral heads of patients undergoing arthroplasty, respectively. Protocols have been accepted by local ethical committee (Comité de Protection des Personnes Nord Ouest III). Clinical characteristics of chondrosarcomas are in Supplementary Table <ref type="table">S1</ref> (for all supplemental material see www.cellphysiolbiochem. com). Cells were released by digestion with type I collagenase (2 mg/mL for 15 hours) (Invitrogen). After seeding, cells were incubated in DMEM supplemented with 10% FBS and antibiotics. Experiments were done between passages 2 and 4 for primary chondrosarcomas, or without passage for chondrocytes.</p><p>All cultures were done at 37°C in a humidified atmosphere containing 5% CO 2 . Cell cultures were regularly tested for mycoplasma contamination, by PCR detection of mycoplasma DNA.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Animals</head><p>Animal experimental procedures were performed according to local legislation, and procedures were approved by ethics committee (Comité d'Ethique de Normandie en Matière d'Expérimentation Animale, agreement #03968.01). Mice were provided and kept in the animal facility (Centre Universitaire de Ressources Biologiques, Caen, France) under controlled temperature and light conditions (temperature 23± 2°C, 12h reversed light-dark cycle). Animals had ad libitum access to food and water. Each animal was humanely handled throughout the experiment in accordance with internationally accepted ethical principles for laboratory animal use and care, and all efforts were made to minimize animal suffering. Euthanasia was performed using CO 2 inhalation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Xenograft of chondrosarcomas in nude mice</head><p>For first round of in vivo experiments, nude mice (11 weeks old, males) were injected subcutaneously with 100 µl of matrigel containing 10 6 CH2879 cells which had, in advance, been treated or not with DZNep (1µM, 5 days). Mice were euthanized 46 days after injection. A total of 10 mice were used (5 pre-treated and 5 controls).</p><p>For the second set of experiments, 22 nude mice (11 weeks old, males) were injected subcutaneously with 10 6 CH2879 cells (100 µl of matrigel) on their back, and separated in two groups. When the tumor volume reached 300 mm 3 , DZNep or vehicle was administered intraperitoneally three times per week at 2 mg/kg.</p><p>During all these experiments, tumors were measured three times per week by a caliper and tumoral volume calculated by the following equation (L x w²) /2 (with L corresponding to length and w to width). At the end of the experiments, tumors were resected, weighted, measured, and photographed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell growth experiments</head><p>Cells were seeded at 750 cells/cm². The day after, they were treated with inhibitors for two weeks. Regularly, adherent cells were counted. Each count was performed twice, and independent experiments were done at least three times.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein extraction and Western blot</head><p>Total proteins were extracted using RIPA buffer (50 mM Tris-HCl; pH 7.5; 1%; IGEPAL; 150 mM NaCl; 1 mM EGTA; 1 mM NaF; 0.25% Na deoxycholate) supplemented with phosphatase (10 µL/mL Na 3 VO 4 ) and protease inhibitors (1 µL/mL leupeptin, 1 µL/mL aprotinin, 1 µL/mL pepstatin and 4 µL/mL phenylmethylsulfonyl fluoride) (Sigma). Western-blot experiments were performed as previously described <ref type="bibr" target="#b2">[3]</ref>. Briefly, protein samples were loaded onto acrylamide gels for Sodium dodecyl sulfate-polyacrylamide gel electrophoresis (SDS-PAGE), and thereafter the proteins were transferred to polyvinylidene difluoride membranes (Biorad). The following primary antibodies were used: β-actin (sc-47778), GAPDH (sc-25778), EGFR (sc-71033) from Santa Cruz Biotechnology, and EZH2 (#3147), H3 (#4499), H3K27me3 (#9733) and PARP (#9542) from Cell signaling. The membranes were probed with a corresponding secondary antibody conjugated to horseradish peroxydase. Signals were revealed with Western Lightning® Plus-ECL (Perkin Elmer) and exposed to X-ray film (Santa Cruz biotechnology). β-actin, histone H3 or GAPDH were used to verify that similar amounts of proteins were loaded in all lanes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Caspase 3/7 activation</head><p>The Caspase-Glo 3/7 assay reagent (Promega, Charbonnières-les-Bains, France) was used for caspase detection. The reagent provides a proluminescent caspase-3/7 substrate, which contains the tetrapeptide sequence DEVD, in combination with luciferase and a cell-lysing agent. The addition of the Caspase-Glo 3/7 reagent directly to the assay well results in cell lysis, followed by caspase cleavage of the DEVD substrate, and the generation of luminescence. The amount of luminescence which is proportional to the amount of caspase activity in the sample, was measured using Varioskan (Thermofisher).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>γH2AX immunocytofluorescence</head><p>Cells were fixed in 4% paraformaldehyde for 15 minutes at room temperature. Then, cells were washed three times with PBS and incubated overnight at 4 °C with a solution composed by PBS, 0.25% Triton, 1% BSA and anti-γH2AX antibody (#613410, BioLegend), then with Alexa Fluor 594 Goat IgG Anti Rabbit IgG (111-585-003, Jackson) in the presence of Hoescht to stain cell nuclei. Fluorescence was evaluated using EVOS FL Auto 2 Cell Imaging System (ThermoFisher Scientific).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>S-adenosylhomocysteine quantification</head><p>S-adenosylhomocysteine (SAH) and S-adenosylmethionine (SAM) were quantified by UHPLC-MS/MS on the technical platform PRISMM of SFR 4206 (Structure Federative de Recherche 4206, Caen, France). Briefly, the first step consisted in adding tubercidin as internal standard (IS) to approx. 2.10 6 packed cells (50 µL in acetone). Then the cells were sonicated for 5 min and 50 µL of acetone were added again to the cells. The vial was then centrifuged at 10000 g for 5 min. The supernatant was injected in a Nexera X2 UHPLC interfaced with an electrospray triple quadrupole mass spectrometer (LCMS-8030Plus; Shimadzu) used in the Multiple Reaction Monitoring (MRM) acquisition mode after positive ionization and HILIC UHPLC chromatographic separation on a Waters Acquity BEH Amide column using acetonitrile and water both containing 0.1% (v/v) of acetic acid.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Apo2.7 staining</head><p>For apoptosis assay, cells were stained with phycoerythrin (PE)-conjugated antibody directed against APO2.7 (clone 2.7 7A6) according to the manufacturer's condition (Beckman Coulter) as previously reported <ref type="bibr" target="#b2">[3]</ref>. Cell fluorescence was measured using Gallios flow cytometer (Beckman Coulter) on the technical platform of SFR 146 (Structure Federative de Recherche 146, Caen, France). A minimum of 10, 000 events were analyzed in each sample using FlowJo software. At least, three independent experiments were performed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>siRNA transfection</head><p>SMARTpool ON-TARGETplus EZH2 siRNA (siRNA-EZH2) and on target plus non targeting pool siRNA (siRNA-control) were purchased from Dharmacon, and transfected in chondrosarcomas by nucleofection (Amaxa) using SE Cell line 4D-NucleofectorTM X kit (Lonza).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell survival</head><p>Cell survival was determined using Cell Titer-Glo luminescent cell viability assay kit (Promega) according to the manufacturer's instructions. The assay is based on quantitation of the ATP present, which signals the presence of metabolically active cells. The addition of the reagent results in cell lysis and generation of a luminescent signal proportional to the amount of ATP present. Luminescence was measured using Varioskan (Thermofisher).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Total RNA Isolation</head><p>Total RNA was isolated from cell cultures using NucleoSpin RNA (Macherey-Nagel), according to the manufacturer's instructions. RNA quantity and quality were measured on a MultiSkan GO spectrophotometer with a µDrop Plate (ThermoFisher Scientific).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene expression microarray analysis</head><p>RNA integrity was assessed on 2100 Bioanalyzer (Agilent Technologies) using RNA 6000 Nano (Agilent Technologies), according to the manufacturer's instructions. RNA integrity numbers above 8 were considered suitable for microarray analysis.</p><p>Two-color microarray-based gene expression analysis was performed, according to the manufacturer's instructions (Agilent Technologies). Briefly, 100 ng of total RNA were amplified and labeled using a Low input Quick Amp Labeling kit, Two-color (Agilent Technologies), and hybridized to a Human Gene Expression 4x44K v2 Microarray (design ID 026652, Agilent Technologies). Slides were scanned on a G2505C Microarray Scanner (Agilent Technologies) located at Proteogen platform (SFR ICORE, UNICAEN, Caen). Raw data were extracted and Lowess normalized using Feature Extraction software (v. 10.7.3, Agilent Technologies), and analyzed using GeneSpring GX software (v. 13.1.1, Agilent Technologies). Microarray probes with a signal that is not positive and significant or not above the background were filtered out. Genes with a p-value &lt; 0.01 and a fold-change &gt; 1.5 were considered differentially expressed (DEGs).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene Ontology (GO) and Pathway enrichment analysis</head><p>Gene enrichment among the genes showing significant differential expression was performed with the Functional annotation tool of the Database for Annotation, Visualization and Integrated Discovery (v. 6.7, DAVID) tool <ref type="bibr" target="#b11">[12]</ref> considering the biological processes option (GOTERM_BP_FAT), the cellular compartment option (GOTERM_CC_FAT), the molecular function option (GOTERM_MF_FAT) or the Pathways database (KEGG_Pathway). Enrichment with a p-value &lt; 0.05 after correction for multiple testing (according to Benjamini test) were considered as significant.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein-Protein Interaction (PPI) network construction</head><p>Protein-protein interaction network among DEGs was constructed using the Search Tool for the Retrieval of Interacting Genes/Proteins (v. 10, STRING) <ref type="bibr" target="#b12">[13]</ref> available online. Minimum required interaction score was fixed at the value 0.9.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Real-time reverse transcription-polymerase chain reaction (RT-PCR)</head><p>RNA (1 μg) were treated with DNAse-I (Invitrogen) reverse transcribed into cDNA in the presence of oligodT and Moloney murine leukemia virus reverse transcriptase (MMLV-RT). The reaction was carried out at 37°C for 1 h followed by a further 10-min step at 95°C. Amplification of the generated cDNA was performed by real-time PCR in Step One Plus Real Time PCR system (Applied Biosystems) with appropriate primers. The relative mRNA level was calculated with the 2 -ΔΔCT method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis</head><p>All data are expressed as mean ± SEM. For in vivo experiment, a two-way ANOVA with repeated measurements was performed. For in vitro experiments, at least three different experiments were performed for each condition. Statistical significances were calculated with Students-t-test. P-values ≤ 0.05 were considered as statistically significant.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pretreatment of CS cells with DZNep reduced tumor implantation and growth in xenograft mice model</head><p>We previously showed that DZNep induces apoptosis of CH2879 and SW1353 chondrosarcoma cell lines, in vitro <ref type="bibr" target="#b2">[3]</ref>, suggesting that it could be a candidate to target chondrosarcoma growth in vivo. To validate this hypothesis, we used CH2879 cell line because of its good rate of xenograft implantation and its fast growth in nude mice (data not shown). Cells were treated or not with DZNep for 5 days before being implanted in mice and tumor volume was regularly measured (Supplementary Fig. <ref type="figure">S1</ref>). Tumors from DZNep-treated-cells grew more slowly than those from untreated cells. This decrease of tumor growth was also confirmed by their lower weight at the end of the experiments.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Peritoneal injection of DZNep induced apoptosis of CS in xenograft mice</head><p>Furthermore, we tested whether DZNep treatment is able to reduce tumor growth after grafting in nude mice. For these experiments, once chondrosarcoma cells developed palpable tumors, mice were injected with DZNep (2 mg/kg) or vehicle intraperitoneally three times per week. Eight week-treatment with DZNep decreased tumor growth of about 30%. Tumoral volumes and weights in DZNep group (2789±1509 mm 3 , and 3.48±1.91 g) were significantly lower than those in the control group (4142±735 mm 3 , and 4.9±1.33 g) (Fig. <ref type="figure" target="#fig_0">1A</ref>, <ref type="figure" target="#fig_0">B</ref> and <ref type="figure" target="#fig_0">C</ref>). Interestingly, this reduction of tumor weight was, at least in part, due to tumoral cell death by apoptosis, as shown by PARP cleavage in DZNep-treated tumors (Fig. <ref type="figure" target="#fig_0">1D</ref>). No significant modification in weight of mouse body or organs (heart, lung, brain, kidney, liver) was observed (data not shown).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DZNep reduced CS growth and induced apoptosis of all tested CS cells</head><p>We have previously reported that DZNep-induced cell death in CH2879 and SW1353 <ref type="bibr" target="#b2">[3]</ref>, but since it has been shown that some tumors are resistant to DZNep, we investigated a larger number of chondrosarcomas. Cell survival was assessed in vitro by adherent cell counting, and apoptosis through observation of PARP cleavage by Western-blot, in four chondrosarcoma cell lines, and in three primary chondrosarcomas derived directly from patient biopsies (Fig. <ref type="figure" target="#fig_1">2A</ref> and <ref type="figure" target="#fig_1">B</ref>). We observed that DZNep reduced survival and induced apoptosis in all CS cells tested. In contrast, DZNep did not induce apoptosis in chondrocytes. The induction of apoptosis in CS cell lines was confirmed by DZNep-induced increase of caspase 3/7 activation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DZNep did not induce DNA damage in CS</head><p>Furthermore, we investigated whether DZNep induces DNA damage in chondrosarcomas. We studied γH2AX expression by immunofluorescence after treatment with DZNep at the dose used for the study (1 µM), or at a dose 10 time higher (10 µM). No staining was detected after DZNep, suggesting that DZNep did not induce DNA damage (Fig. <ref type="figure" target="#fig_2">3</ref>). At contrary, we were able to detect γH2AX staining in cells treated with cisplatin, condition used as a positive control.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DZNep induced S-adenosylhomocysteine accumulation but not EZH2 inhibition in CS</head><p>To elucidate the mechanism by which DZNep induces apoptosis in CS cells, we first assayed intracellular concentration of SAH by ELISA. Indeed, DZNep has been described as an inhibitor of SAH hydrolase, leading to inhibition of EZH2 methylase. Using UHPLC-MS/ MS, we showed that DZNep induced intracellular SAH accumulation, and reduced SAM:SAH ratio in all CS cell lines (Fig. <ref type="figure" target="#fig_3">4A</ref> and <ref type="figure" target="#fig_3">B</ref>). The intracellular accumulation of SAH in DZNep treated-cells was also confirmed by ELISA assay (data not shown). These data suggest that DZNep inhibited SAH hydrolase in chondrosarcomas.</p><p>However, H3K27me3 level and EZH2 expression were decreased by DZNep treatment only in CH2879 and SW1353, but not in the other cell lines (Fig. <ref type="figure" target="#fig_3">4C</ref>). This suggests that DZNep could induce apoptosis independently to its ability to inhibit EZH2 expression and H3K27 methylation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EZH2 inhibition did not provoke cell death in chondrosarcomas</head><p>Furthermore, we evaluated the effects of more recent drugs, namely GSK126 or tazemetostat (EPZ-6438) in chondrosarcomas. These inhibitors, currently being tested in clinical trials for patients with lymphomas and some other tumors, are known to reduce H3K27me3 in tumoral cells by inhibiting EZH2 methylase activity without modifying its expression. Both GSK126 and EPZ6438 strongly reduced H3K27me3 in chondrosarcomas (Fig. <ref type="figure" target="#fig_4">5A</ref>). However, they did not significantly modify the cell growth, neither induced apoptosis in CS (Fig.s <ref type="figure" target="#fig_4">5B</ref> and <ref type="figure" target="#fig_4">C</ref>). Furthermore, we knocked down EZH2 expression by transfecting siRNA. EZH2 siRNA significantly reduced EZH2 protein expression, but it did not affect cell viability compared to control siRNA, in chondrosarcomas (Fig. <ref type="figure" target="#fig_4">5D</ref> and <ref type="figure" target="#fig_4">E</ref>). These results confirm that DZNep-induced apoptosis is not reliable to regulation in chondrosarcomas, and show that EZH2 inhibition is not an efficient approach to treat these bone tumors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DZNep regulated expression of apoptosis and angiogenesis-related genes in CH2879 chondrosarcomas</head><p>Next, in order to identify genes with changed expression in response to DZNep in chondrosarcomas, genome wide expression profiles were generated for CH2879 chondrosarcomas treated with 1µM of DZNep for 24h. 1406 entities were identified, corresponding to 1194 unique differentially expressed genes (DEG) with a fold-change superior or equal to 1.5. Notably, 760 entities corresponding to 616 unique DEG were upregulated, while 646 entities (i.e. 578 unique DEG) were down-regulated (Supplementary Tables <ref type="table">S2</ref> and <ref type="table">S3</ref>). Interestingly, among the top 20 of the most regulated genes, we identified mitotic arrest deficient-like 1, MAD1L1 (also called MAD1). This regulator of cell proliferation and apoptosis was down-regulated in CH2879. Gene Ontology analysis showed that genes regulated by DZNep were enriched in numerous processes, including protein-DNA complex, nucleosome, ECM-receptor interaction, cell death, and angiogenesis (all categories with p-value &lt; 0.05) (Fig. <ref type="figure" target="#fig_5">6</ref>; Supplementary Tables <ref type="table">S4</ref> and <ref type="table">S5</ref>).</p><p>Next, when analyzing interactions among proteins encoded by these genes using STRING, we found significant enrichment for protein-protein interactions (PPI) (Fig. <ref type="figure" target="#fig_6">7</ref>) which were primary centered on JUN/EGR1 and EGFR, for up-regulated and down-regulated gene lists, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CH2879 chondrosarcoma Vs chondrocyte DEG by DZNep</head><p>Furthermore, we compared genome wide expression profiles generated by DZNep treatment in CH2879 chondrosarcomas and chondrocytes (HAC) since we found that DZNep did not induce apoptosis in HAC. Significant differential expression in chondrocytes was identified for 901 probes with a fold change superior or equal to 1.5. A weak degree of overlap was observed between DEG in chondrosarcomas and chondrocytes (Supplementary Tables <ref type="table">S6</ref> and <ref type="table">S7</ref>). Only 11% of entities were common to both cell types. This strong heterogeneity of response confirms that DZNep elicits different responses in normal and tumoral cells. Interestingly, EGFR and MAD1L1 were not found in the list of DEG from chondrocytes. In contrast, JUN and EGR1 were found in both lists.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DZNep down-regulated EGFR in all tested chondrosarcoma cells</head><p>By real-time RT-PCR, we showed that EGFR and MAD1L1 are down-regulated by DZNep in the four chondrosarcoma cell lines used in this study, but not in chondrocytes (Supplementary Fig. <ref type="figure">S2</ref>). However, the effect on MAD1L1 was very low in FS090 (Supplementary Fig. <ref type="figure">S2</ref>). The reduction of EGFR expression in chondrosarcomas were also confirmed at protein level by Western-Blot (Fig. <ref type="figure" target="#fig_7">8A</ref>). Together, these data suggest that EGFR may be one of the master genes responsible to anti-tumoral effect of DZNep. If this hypothesis is fair, we expect to observe an alteration of EGFR downstream signaling, such as RAS-RAF-MEK-ERK cascades. In coherence with that, an additional analysis from our microarray data from DZNep-treated CH2879 cells, using STRING permitted to identify functional enrichments in the DEG network in the biologic processes corresponding to "GO:0070372: regulation of ERK1 and ERK2 cascade" (False Discovery Rate = 0.0267), and "GO:0046578: regulation of Ras protein signal transduction" (FDR = 0.0375) (Supplementary Table <ref type="table">S8</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EGFR inhibition reduced chondrosarcoma viability</head><p>To confirm the role of EGFR, we assayed cell viability of chondrosarcomas treated with increased dose of gefitinib, an EGFR inhibitor. This latter reduced viability in all chondrosarcoma cells lines (Fig. <ref type="figure" target="#fig_7">8B</ref>). However, high concentrations of inhibitor (&gt;10 μM) were required to display a significant effect on cell viability. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>High grade chondrosarcomas have a poor prognosis and their treatment remains a major concern, due to their resistance to radio-and chemotherapies. In this study, we show that DZNep decreases cell and tumor growth, and induces apoptosis of chondrosarcomas both in vitro and in vivo. We also demonstrate that the induction of cell death in DZNep-treated cells is not correlated to the reduction of H3K27 trimethylation. However, it is associated to the inhibition of SAH hydrolase activity and EGFR expression.</p><p>First, we demonstrate that DZNep treatment decreases tumor growth and induces apoptosis of chondrosarcomas in a mouse xenograft model. However, the tumors did not disappear completely in the frame time of our experiment. The DZNep doses used here (2 mg/kg; 3 time a week) had proven to be effective against tumors, to reduce EZH2 expression and H3K27 trimethylation, and to be almost safe for animals <ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. A higher DZNep dose or longer time exposure may be needed for optimal antitumoral effects in chondrosarcomas. In addition, the effect of DZNep may be limited due to its poor delivery. Indeed, its half-life in mice is comprised between 1 and 3 hours <ref type="bibr" target="#b17">[18,</ref><ref type="bibr" target="#b18">19]</ref>. Therefore, pharmacokinetic of DZNep could be improved by entrapment within a pegylated liposomal carrier <ref type="bibr" target="#b17">[18]</ref>. This strategy would probably increase the therapeutic effect of DZNep on chondrosarcomas, and avoid using too high doses of drug by optimizing its delivery.</p><p>DZNep has been identified as an inhibitor of S-adenosyl-L homocysteine hydrolase (SAHH), which is required for EZH2-dependent methylation. It has been shown that DZNep depletes cellular EZH2 levels and selectively blocks the trimethylation of H3K27 in numerous tissues <ref type="bibr" target="#b19">[20]</ref>. However, it is no longer considered as a specific EZH2 inhibitor <ref type="bibr" target="#b20">[21]</ref> and it could act independently to this histone methylase. Here, we demonstrate that apoptosis induction by DZNep is correlated to SAHH inhibition (showed by the intracellular SAH accumulation), but not to the reduction of EZH2 expression nor that of H3K27 trimethylation. Additionally, EZH2 knock-down did not reduce viability of chondrosarcomas. These results confirm that DZNep is able to induce cell death independently of EZH2 methylase activity. In addition, we show that the reduction of H3K27me3 using GSK126 and tazemetostat (EPZ-6438) is not able to induce apoptosis in chondrosarcoma cell lines, indicating that EZH2 is not a good target to treat chondrosarcomas. This was unexpected because EZH2 is overexpressed in chondrosarcomas. Additionally, these EZH2 inhibitors are known to be efficient against lots of others tumors in vitro and in vivo, and several clinical trials are in process to treat patients with lymphomas but also sarcomas <ref type="bibr" target="#b19">[20]</ref>. Nonetheless, since SAH is accumulating and SAM:SAH ratio is declining in DZNep-treated cells, that are two markers of methylation status in cells <ref type="bibr" target="#b21">[22]</ref>, we believe that DZNep may act through other methyltransferases. However, which histone or DNA methyltransferase is involved remains to be determined.</p><p>Mechanistically, we demonstrated that DZNep induced apoptosis without inducing γH2AX, a biomarker for DNA damage <ref type="bibr" target="#b22">[23]</ref>. Similar observations was done in other studies <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b23">24]</ref>, while another study reported that DZNep increases γH2AX in hepatoma cells <ref type="bibr" target="#b24">[25]</ref>. Interestingly, we identified EGFR as putative mediators of DZNep induced-apoptosis. EGFR expression was decreased by DZNep in chondrosarcomas but not in chondrocytes. Interestingly, this gene is also downregulated by DZNep in oral squamous cell carcinoma SAS cell line <ref type="bibr" target="#b25">[26]</ref>. Epidermal Growth Factor Receptor is a transmembrane glycoprotein that belongs to ErbB/Her family of receptor tyrosine kinases. Binding of growth factors to EGFR leads to autophosphorylation of receptor tyrosine kinase and activates the downstream signal transduction pathways which regulates cellular proliferation, differentiation, and survival <ref type="bibr" target="#b26">[27]</ref>. EGFR is overexpressed in a variety of tumor cell lines, and has been associated with metastasis, poor prognosis, and resistance to chemotherapy <ref type="bibr" target="#b27">[28]</ref>. Particularly, EGFR has been reported to be overexpressed in 8.3% of chondrosarcomas (based on a collection of 24 cases) and in chondrosarcoma cell lines <ref type="bibr" target="#b28">[29,</ref><ref type="bibr" target="#b29">30]</ref>, and to be activated in grade II and grade III chondrosarcoma tumors <ref type="bibr" target="#b30">[31]</ref>. Beside, in the present study, genome wide expression profiles followed by protein-protein interaction analysis revealed that many proteins encoded by genes down-regulated by DZNep treatment are related to EGFR, at least in CH2879 cells, suggesting that EGFR may play a role in DZNep-induced apoptosis in CS cells. Consistent with this hypothesis, gefitinib, a direct inhibitor of EGFR already approved by FDA for the treatment of lung cancers <ref type="bibr" target="#b26">[27]</ref>, reduced cell viability in chondrosarcomas. This is in agreement with previous works of Song and collaborators which have showed that gefitinib significantly inhibits the growth, induces cell cycle arrest and decreases the migration ability of human chondrosarcoma cells <ref type="bibr" target="#b29">[30]</ref>. In addition, a recent study demonstrated that a highly potent and selective inhibitor of EGFR, the tyrphostin AG1478, reduces cell proliferation and migration, and enhances cell death by apoptosis in human chondrosarcomas <ref type="bibr" target="#b30">[31]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>Herein, we found that DZNep, an inhibitor of SAHH, induces apoptosis in chondrosarcomas in vitro and in vivo, by a mechanism, likely mediated though EGFR expression. Consequently, it would be worth initiating clinical trials to evaluate efficiency of SAHH or EGFR inhibitors in patients with chondrosarcomas. In contrast, the specific inhibition of the methylase EZH2, a strategy currently developed in clinical trials for lymphomas and some other tumors is not an adequate approach for chondrosarcoma treatment.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1.Peritoneal injection of DZNep reduced tumoral growth of CS in xenograft mice. CH2879 chondrosarcoma cell line was subcutaneously injected in the back of nude mice. When tumors were implanted and reached 300 mm 3 , DZNep was intraperitoneally injected three times per week (2 mg/kg) for 56 days. (A) Tumors were measured regularly by a caliper and tumoral volume calculated. (B-C) At the end of experiments, tumors were weighted and measured. Representative macroscopic views of the resected xenograft tumors of each group are shown. Data are expressed as means + SEM. N=9 and 7 for control and DZNep groups, respectively. *: p-value &lt; 0.05; **: p-value &lt; 0.01. (D) Proteins were extracted from tumors and PARP cleavage was analyzed by Western blot. Histograms represent the proportion of cleaved form of PARP on total PARP. Data are expressed as means +- SEM (n=4).*: p-value &lt; 0. 05.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. DZNep induced apoptosis in chondrosarcoma cells but not in chondrocytes. (A) CH2879, SW1353, JJ012, and FS090 chondrosarcomas cell lines as well as CS121030, CS141110, and CS150409 primary chondrosarcomas were treated with DZNep (1 µM) for 14 days. Treatment was renewed at each medium change (days 4, 7, 10) and adherent cells regularly counted. Data are expressed as means + SEM. (B) Chondrosarcomas and chondrocytes were treated with DZNep (1 µM) for 7 days. After treatment, proteins were extracted and PARP cleavage was analyzed by Western blot. Fig.s show a representative image of three independent experiments. (C) Chondrosarcomas were treated as previously. At the end of incubation, caspase 3/7 activity was assayed. Fig.s show a representative image of three independent experiments. Data are expressed as means + SEM (n=3).*: p-value &lt; 0.05; **: p-value &lt; 0.01; ***: p-value &lt; 0.001.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. DZNep did not induce DNA damage in CS Chondrosarcomas were treated with DZNep or cisplatin for 24h. Then, γH2AX was detected by immunocytofluorescence. Hoescht staining was used to visualize cell nucleus. For each condition, an image representative of three independent experiments is shown.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .Figure 4 C</head><label>44</label><figDesc>Fig. 4. DZNep induced SAH accumulation but not EZH2 inhibition in CS (A-B) SAH and SAM assayed in cells after 24h-treament with DZNep (1µM). SAH concentration (A) and SAM:SAH ratio (B) were are shown. Means + SEM are shown (n=3). (C) EZH2 protein expression or H3K27me3 levels were analyzed by Western blot in DZNep treated-cells. β-actin and H3 were used to compare protein loading for EZH2 and H3K27me3 respectively. Representative Fig.s of three independent experiments are shown. Histograms represent the relative quantification of EZH2/actin signals and H3K27me3/H3 signals. Data are expressed as means + SEM (n=4).*: p-value &lt; 0.05.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. EZH2 inhibition did not affect chondrosarcoma survival. (A) Chondrosarcomas were cultured with EPZ6438 or GSK126 for one week. At the end of treatments, H3K27me3 was determined by Western-blot. (B-C) Cells were cultured with DZNep, EPZ6438 or GSK126. At the end of treatments (one week), survival fraction and percentage of apoptotic cells were evaluated by counting adherent cells (B) and by Apo2.7 staining (C), respectively. Data are expressed as means + SEM (n=3). *: p-value &lt; 0.05 (D-E) Cells were transfected with siRNA-control or siRNA-EZH2 and incubated 72h. Then, EZH2 expression was determined at protein level by western-blot (D). Cell survival was assayed by ATP measure using Cell Titer Glo Assay (E).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Gene enrichment analysis. Gene ontology analysis in DAVID using the genes from tables S2 (A) and S3 (B) with at least 1.5-fold expression difference between DZNep-treated and untreated cells. *: p-value &lt; 0.05; **: p-value &lt; 0.01; ***: p-value &lt; 0,001.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .Up</head><label>7</label><figDesc>Fig. 7.Interactome. Protein-protein interaction networks between the genes with expression changes of at least 1.5-fold (tableS2andS3) as determined with STRING. The nodes represent the proteins, and the edges represent the corresponding PPI pairs.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. EGFR is down-regulated by DZNep, and its inhibition reduces cell survival in chondrosarcomas. (A) EGFR protein expression in chondrosarcomas treated with 1 µM DZNep for 72 h were analyzed by Western blot. β-actin was a loading control. (B) Chondrosarcomas were treated with gefitinib, an EGFR inhibitor, for 72 h. Then cell survival was assayed using Cell Titer-Glo luminescent cell viability assay kit. Histograms represent means + SEM (n=3). *: p-value &lt; 0.05; **: p-value &lt; 0.01; ***: p-value &lt; 0,001.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>We thank <rs type="person">Marilyne GUILLAMIN</rs> and <rs type="person">Stephanie LAGADU</rs> (<rs type="affiliation">SFR 146 ICORE, Unicaen</rs>), <rs type="funder">Benoit HAELEWYN and Charlotte MARIE (CURB, Unicaen)</rs>, and <rs type="person">Thomas FRERET</rs>, <rs type="person">Valentine BOUET</rs> (<rs type="affiliation">COMETE, Unicaen</rs>) for technical assistance and advice. We also thank <rs type="person">Joel BLOCK</rs> (<rs type="affiliation">Rush University Medical Center, Chicago, USA</rs>) and <rs type="funder">Antonio LLOMBART-BOSH</rs> (<rs type="affiliation">University of Valencia, Valencia, Spain</rs>) for chondrosarcoma cell line gift.</p><p>This project was supported by grants from <rs type="funder">Région Basse-Normandie</rs>, <rs type="funder">Ligue Contre le Cancer</rs>, and <rs type="funder">Cancéropôle Nord-Ouest</rs>. NG, JAL and EL were recipient of a fellowship from <rs type="funder">Conseil Régional de Basse-Normandie</rs> and <rs type="funder">French Ministry of Research</rs>, respectively. Funding bodies had no role in the design of the study nor collection, analysis, interpretation of data, nor writing the manuscript.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disclosure Statement</head><p>The authors declare they have no conflict of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Giuffrida</surname>
+					<forename type="first">A</forename><forename type="middle">Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Burgueno</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koniaris</surname>
+					<forename type="first">L</forename><forename type="middle">G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gutierrez</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duncan</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Scully</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Chondrosarcoma in the United States (1973 to 2003): an analysis of 2890 cases from the SEER database</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Bone Joint Surg Am</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">91</biblScope>
+				<biblScope unit="page" from="1063" to="1072"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Leddy</surname>
+					<forename type="first">L</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holmes</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Chondrosarcoma of bone</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cancer Treat Res</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">162</biblScope>
+				<biblScope unit="page" from="117" to="130"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Girard</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bazille</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lhuissier</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Benateau</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Llombart-Bosch</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boumediene</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baugé</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">3-Deazaneplanocin A (DZNep), an Inhibitor of the Histone Methyltransferase EZH2, Induces Apoptosis and Reduces Cell Migration in Chondrosarcoma Cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">PloS One</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page">e98176</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lhuissier</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bazille</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aury-Landas</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Girard</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pontin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boittin</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boumediene</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baugé</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Identification of an easy to use 3D culture model to investigate invasion and anticancer drug response in chondrosarcomas</title>
+		</analytic>
+		<monogr>
+			<title level="j">BMC Cancer</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="490" to="490"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Puppe</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Drost</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Joosse</surname>
+					<forename type="first">S</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Evers</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cornelissen-Steijger</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nederlof</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jonkers</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van Lohuizen</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pietersen</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">BRCA1-deficient mammary tumor cells are dependent on EZH2 expression and sensitive to Polycomb Repressive Complex 2-inhibitor 3-deazaneplanocin</title>
+		</analytic>
+		<monogr>
+			<title level="j">A. Breast Cancer Res</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">11</biblScope>
+				<biblScope unit="page">R63</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Xie</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bi</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cheong</surname>
+					<forename type="first">L</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename type="first">S</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhou</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename type="first">C</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chng</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Determinants of Sensitivity to DZNep Induced Apoptosis in Multiple Myeloma Cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">PLoS One</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page">e21583</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cheng</surname>
+					<forename type="first">L</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Itahana</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lei</surname>
+					<forename type="first">Z</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chia</surname>
+					<forename>N-Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename type="first">S</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Thike</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pandey</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rozen</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Voorhoeve</surname>
+					<forename type="first">P</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bay</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Itahana</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">TP53 genomic status regulates sensitivity of gastric cancer cells to the histone methylation inhibitor 3-deazaneplanocin A (DZNep)</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clin Cancer Res</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="4201" to="4212"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Martínez-Fernández</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rubio</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Segovia</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>López-Calderón</surname>
+					<forename type="first">F</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dueñas</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paramio</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">EZH2 in Bladder Cancer, a Promising Therapeutic Target</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Mol Sci</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="27107" to="27132"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jagasia</surname>
+					<forename type="first">A</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Block</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diaz</surname>
+					<forename type="first">M</forename><forename type="middle">O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nobori</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gitelis</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Inerot</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Iyer</surname>
+					<forename type="first">A</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Partial deletions of the CDKN2 and MTS2 putative tumor suppressor genes in a myxoid chondrosarcoma</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cancer Lett</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">105</biblScope>
+				<biblScope unit="page" from="77" to="90"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Scully</surname>
+					<forename type="first">S</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Berend</surname>
+					<forename type="first">K</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Toth</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename type="first">W</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qi</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Block</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Marshall Urist Award. Interstitial collagenase gene expression correlates with in vitro invasion in human chondrosarcoma</title>
+		</analytic>
+		<monogr>
+			<title level="j">Clin Orthop</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">376</biblScope>
+				<biblScope unit="page" from="291" to="303"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gil-Benso</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lopez-Gines</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>López-Guerrero</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Carda</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Callaghan</surname>
+					<forename type="first">R</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Navarro</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ferrer</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pellín</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Llombart-Bosch</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Establishment and characterization of a continuous human chondrosarcoma cell line, ch-2879: comparative histologic and genetic studies with its tumor of origin</title>
+		</analytic>
+		<monogr>
+			<title level="j">Lab Invest</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">83</biblScope>
+				<biblScope unit="page" from="877" to="887"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Huang</surname>
+					<forename type="first">D</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sherman</surname>
+					<forename type="first">B</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lempicki</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Systematic and integrative analysis of large gene lists using DAVID bioinformatics resources</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat Protoc</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="44" to="57"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Szklarczyk</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Franceschini</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wyder</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Forslund</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Heller</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Huerta-Cepas</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Simonovic</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roth</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Santos</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tsafou</surname>
+					<forename type="first">K</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kuhn</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bork</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jensen</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>von Mering</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">STRING v10: protein-protein interaction networks, integrated over the tree of life</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nucleic Acids Res</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="D447" to="D452"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fiskus</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sreekumar</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Buckley</surname>
+					<forename type="first">K</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shi</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jillella</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ustun</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rao</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernandez</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Balusu</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koul</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Atadja</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marquez</surname>
+					<forename type="first">V</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bhalla</surname>
+					<forename type="first">K</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">Combined epigenetic therapy with the histone methyltransferase EZH2 inhibitor 3-deazaneplanocin A and the histone deacetylase inhibitor panobinostat against human AML cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">Blood</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="2733" to="2743"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Chiba</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Suzuki</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Negishi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Saraya</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Miyagi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Konuma</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tanaka</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tada</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kanai</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Imazeki</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Iwama</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yokosuka</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<title level="a">3-Deazaneplanocin A is a promising therapeutic agent for the eradication of tumor-initiating hepatocellular carcinoma cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int J Cancer</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">130</biblScope>
+				<biblScope unit="page" from="2557" to="2567"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ingram</surname>
+					<forename type="first">D</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lazar</surname>
+					<forename type="first">A</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Torres</surname>
+					<forename type="first">K</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pollock</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Antitumor effects of pharmacological EZH2 inhibition on malignant peripheral nerve sheath tumor through the miR-30a and KPNB1 pathway</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol Cancer</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page">55</biblScope>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lhuissier</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aury-Landas</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bouet</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bazille</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Repesse</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Freret</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boumediene</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Baugé</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluation of the impact of S-adenosylmethionine-dependent methyltransferase inhibitor, 3-deazaneplanocin A, on tissue injury and cognitive function in mice</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oncotarget</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="20698" to="20708"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sun</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chan</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Loading 3-deazaneplanocin A into pegylated unilamellar liposomes by forming transient phenylboronic acid-drug complex and its pharmacokinetic features in Sprague-Dawley rats</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur J Pharm Biopharm</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">80</biblScope>
+				<biblScope unit="page" from="323" to="331"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Peer</surname>
+					<forename type="first">C</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rao</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Spencer</surname>
+					<forename type="first">S</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shahbazi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Steeg</surname>
+					<forename type="first">P</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schrump</surname>
+					<forename type="first">D</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Figg</surname>
+					<forename type="first">W</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="a">A rapid ultra HPLC-MS/MS method for the quantitation and pharmacokinetic analysis of 3-deazaneplanocin A in mice</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Chromatogr B Analyt Technol Biomed Life Sci</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">927</biblScope>
+				<biblScope unit="page" from="142" to="146"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Baugé</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bazille</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Girard</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lhuissier</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Boumediene</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Histone methylases as novel drug targets: developing inhibitors of EZH2</title>
+		</analytic>
+		<monogr>
+			<title level="j"> Future Med Chem</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="1943" to="1965"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miranda</surname>
+					<forename type="first">T</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cortez</surname>
+					<forename type="first">C</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yoo</surname>
+					<forename type="first">C</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liang</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Abe</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kelly</surname>
+					<forename type="first">T</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marquez</surname>
+					<forename type="first">V</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename type="first">P</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">DZNep Is a Global Histone Methylation Inhibitor that Reactivates Developmental Genes Not Silenced by DNA Methylation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol Cancer Ther</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="1579" to="1588"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Caudill</surname>
+					<forename type="first">M</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename type="first">J</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Melnyk</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pogribny</surname>
+					<forename type="first">I</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jernigan</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Collins</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Santos-Guzman</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Swendseid</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cogger</surname>
+					<forename type="first">E</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>James</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Intracellular S-adenosylhomocysteine concentrations predict global DNA hypomethylation in tissues of methyl-deficient cystathionine beta-synthase heterozygous mice</title>
+		</analytic>
+		<monogr>
+			<title level="j">J Nutr</title>
+			<imprint>
+				<date when="2001">2001</date>
+				<biblScope unit="volume">131</biblScope>
+				<biblScope unit="page" from="2811" to="2818"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mah</surname>
+					<forename type="first">L</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>El-Osta</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Karagiannis</surname>
+					<forename type="first">T</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">gammaH2AX: a sensitive molecular marker of DNA damage and repair.</title>
+		</analytic>
+		<monogr>
+			<title level="j">Leukemia</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="679" to="686"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">S</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Qiao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">P</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lee</surname>
+					<forename type="first">Y</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jiang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aau</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lim</surname>
+					<forename type="first">C</forename><forename type="middle">Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yu</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<title level="a">Polycomb protein EZH2 regulates cancer cell fate decision in response to DNA damage</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cell Death Differ</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="1771" to="1779"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Wu</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Luo</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gao</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Du</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Metabolic perturbation of epigenome by inhibiting S-adenosylhomocysteine hydrolase elicits senescence through DNA damage response in hepatoma cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">Tumor Biol</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="1" to="10"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hatta</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Naganuma</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kato</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamazaki</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">3-Deazaneplanocin A suppresses aggressive phenotype- related gene expression in an oral squamous cell carcinoma cell line</title>
+		</analytic>
+		<monogr>
+			<title level="j"> Biochem Biophys Res Commun</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">468</biblScope>
+				<biblScope unit="page" from="269" to="273"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Seshacharyulu</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ponnusamy</surname>
+					<forename type="first">M</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haridas</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jain</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ganti</surname>
+					<forename type="first">A</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Batra</surname>
+					<forename type="first">S</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">Targeting the EGFR signaling pathway in cancer therapy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Expert Opin Ther Targets</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="15" to="31"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mahipal</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kothari</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gupta</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Epidermal growth factor receptor inhibitors: coming of age</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cancer Control</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="74" to="79"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Movva</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chen</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Millis</surname>
+					<forename type="first">S</forename><forename type="middle">Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gatalica</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reddy</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>von Mehren</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Van Tine</surname>
+					<forename type="first">B</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Multi-platform profiling of over 2000 sarcomas: Identification of biomarkers and novel therapeutic targets</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oncotarget</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="12234" to="12247"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Song</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhao</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tian</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Gefitinib causes growth arrest and inhibition of metastasis in human chondrosarcoma cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">J BUON</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="894" to="901"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Qin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shaukat</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mainard</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Netter</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barré</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ouzzine</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Constitutive activation of EGFR is associated with tumor progression and plays a prominent role in malignant phenotype of chondrosarcoma</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oncotarget</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="3166" to="3182"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

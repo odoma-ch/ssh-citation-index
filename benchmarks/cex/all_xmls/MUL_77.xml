@@ -1,0 +1,1867 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Dynamic control of plant water use using designed ABA receptor agonists</title>
+				<funder ref="#_PPZpxny">
+					<orgName type="full">Tottori University</orgName>
+				</funder>
+				<funder ref="#_Pun3zEk">
+					<orgName type="full">S.R.C. (Arabidopsis)</orgName>
+				</funder>
+				<funder ref="#_kGHyqwG #_aaPJSEr #_QHUUJ6Y #_Ft5amS8 #_2DxebrW">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>American Association for the Advancement of Science</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-25">25 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Aditya</forename><forename type="middle">S</forename><surname>Vaidya</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jonathan</forename><forename type="middle">D M</forename><surname>Helander</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francis</forename><forename type="middle">C</forename><surname>Peterson</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Biochemistry</orgName>
+								<orgName type="institution">Medical College of Wisconsin</orgName>
+								<address>
+									<postCode>53226</postCode>
+									<settlement>Milwaukee</settlement>
+									<region>WI</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dezi</forename><surname>Elzinga</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wim</forename><surname>Dejonghe</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Amita</forename><surname>Kaundal</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Plants, Soils and Climate</orgName>
+								<orgName type="institution">Utah State University</orgName>
+								<address>
+									<postCode>84322</postCode>
+									<settlement>Logan</settlement>
+									<region>UT</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sang-Youl</forename><surname>Park</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zenan</forename><surname>Xing</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ryousuke</forename><surname>Mega</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Arid Land Research Center</orgName>
+								<orgName type="institution">Tottori University</orgName>
+								<address>
+									<postCode>1390 680-0001</postCode>
+									<settlement>Hamasaka Tottori</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jun</forename><surname>Takeuchi</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Faculty of Agriculture</orgName>
+								<orgName type="institution">Shizuoka University</orgName>
+								<address>
+									<postCode>422-8529</postCode>
+									<settlement>Shizuoka</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution" key="instit1">Research Institute of Green Science and Technology</orgName>
+								<orgName type="institution" key="instit2">Shizuoka University</orgName>
+								<address>
+									<postCode>422-8529</postCode>
+									<settlement>Shizuoka</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bardia</forename><surname>Khanderahoo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Steven</forename><surname>Bishay</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Brian</forename><forename type="middle">F</forename><surname>Volkman</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Biochemistry</orgName>
+								<orgName type="institution">Medical College of Wisconsin</orgName>
+								<address>
+									<postCode>53226</postCode>
+									<settlement>Milwaukee</settlement>
+									<region>WI</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yasushi</forename><surname>Todoroki</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Faculty of Agriculture</orgName>
+								<orgName type="institution">Shizuoka University</orgName>
+								<address>
+									<postCode>422-8529</postCode>
+									<settlement>Shizuoka</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff6">
+								<orgName type="institution" key="instit1">Research Institute of Green Science and Technology</orgName>
+								<orgName type="institution" key="instit2">Shizuoka University</orgName>
+								<address>
+									<postCode>422-8529</postCode>
+									<settlement>Shizuoka</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Masanori</forename><surname>Okamoto</surname></persName>
+							<affiliation key="aff7">
+								<orgName type="department">Center for Bioscience Research and Education</orgName>
+								<orgName type="institution">Utsunomiya University</orgName>
+								<address>
+									<addrLine>350 Mine</addrLine>
+									<postCode>321-8505</postCode>
+									<settlement>Utsunomiya Tochigi</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff8">
+								<orgName type="institution" key="instit1">PRESTO</orgName>
+								<orgName type="institution" key="instit2">Japan Science and Technology Agency</orgName>
+								<address>
+									<addrLine>4-1-8 Honcho</addrLine>
+									<postCode>332-0012</postCode>
+									<settlement>Kawaguchi</settlement>
+									<region>Saitama</region>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Sean</forename><forename type="middle">R</forename><surname>Cutler</surname></persName>
+							<email>sean.cutler@ucr.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Integrative Genome Biology</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Botany and Plant Sciences</orgName>
+								<orgName type="institution">University of California, Riverside</orgName>
+								<address>
+									<postCode>92521</postCode>
+									<settlement>Riverside</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Dynamic control of plant water use using designed ABA receptor agonists</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Science</title>
+						<idno type="ISSN">0036-8075</idno>
+						<idno type="eISSN">1095-9203</idno>
+						<imprint>
+							<publisher>American Association for the Advancement of Science</publisher>
+							<biblScope unit="volume">366</biblScope>
+							<date type="published" when="2019-10-25">25 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B48427BAD9E403421408B0835E2B9DFE</idno>
+					<idno type="DOI">10.1126/science.aaw8848</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Drought causes crop losses worldwide, and its impact is expected to increase as the world warms. This has motivated the development of small-molecule tools for mitigating the effects of drought on agriculture. We show here that current leads are limited by poor bioactivity in wheat, a widely grown staple crop, and in tomato. To address this limitation, we combined virtual screening, x-ray crystallography, and structure-guided design to develop opabactin (OP), an abscisic acid (ABA) mimic with up to an approximately sevenfold increase in receptor affinity relative to ABA and up to 10-fold greater activity in vivo. Studies in Arabidopsis thaliana reveal a role of the type III receptor PYRABACTIN RESISTANCE-LIKE 2 for the antitranspirant efficacy of OP. Thus, virtual screening and structure-guided optimization yielded newly discovered agonists for manipulating crop abiotic stress tolerance and water use.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION:</head><p>Climate extremes create a need to mitigate the effects of drought on agriculture. The contributions of water to crop yield vary over a growing season but peak during reproductive development. Water banking strategies, which save soil water early in a growing season, reserve water for flowering and can increase yield under modest drought. Antitranspirants based on mimics of the phytohormone abscisic acid (ABA), which controls stomatal aperture, are sought as next-generation agrochemicals for controlling water use and increasing yield during drought.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RATIONALE:</head><p>Information on the structure and function of ABA receptors has created opportunities for agrochemical development. Current lead molecules have low and short-lived bio-activity in some relevant crop species, including wheat, the world's most widely grown staple crop. This liability is likely a consequence of incomplete activation of different ABA receptor subclasses. We reasoned that the idiosyncratic activity of these molecules was due, in part, to a lack of interaction between the agonist and a conserved lysine in ABA receptors that forms a salt bridge to ABA's carboxylate. We performed virtual screening to identify candidate agonists that interact with this lysine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS:</head><p>Two ABA receptor structures were used to screen against the ZINC database, a collection of commercially available ligands, using Glide docking protocols, requiring that hits interact with the conserved lysine. Candidate agonists were obtained and tested for re-ceptor activation using in vitro assays. A family of substituted phenyl acetamido-cyclohexane carboxylic acid ABA receptor panagonists was identified. Scaffold merging was used to improve binding: We grafted an optimized headgroup of an existing sulfonamide onto our phenyl acetamido-cyclohexane carboxylic acid scaffold to yield a chimeric ligand (3CB) that displayed an improvement toward target sites of up to three orders of magnitude. Analysis of a 3CB-PYL10 crystal structure suggested that addition of appropriately situated hydrophobes to 3CB might improve activity. A 3CB derivative was synthesized, yielding an agonist that we have named opabactin (OP) for overpowered ABA receptor activation. Thermodynamic characterization of 3CB or OP receptor binding reactions indicates that the newly generated scaffold's improvements are enthalpically driven relative to sulfonamides, consistent with the salt bridge observed in our crystal structure. Biological studies show that OP is ~10-fold more active in inhibiting seed germination (a response driven by ABA) than ABA itself. Experiments in wheat, tomato, barley, Arabidopsis, and Commelina demonstrate bioactivity in vegetative tissues across diverse species. Time course experiments in wheat and tomato using thermal imaging show that OP induces a more sustained antitranspirant response than ABA, and they document poor activity of sulfonamide agonists in those two species. To understand which receptors are necessary for OP action, we used Arabidopsis mutant strains to show that OP requires the subfamily III receptors PYR1, PYL1, and PYL2 for maximal activity. Thus, our virtual screening experiments yielded an ABA receptor agonist that functions as an antitranspirant.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSION:</head><p>A newly generated ABA agonist scaffold was identified and optimized through a structure-guided approach. The chemical biology of ABA receptor agonists can be broadened by designing ligands that engage a conserved lysine residue in the binding pocket. This pharmacophoric feature results in a favorable enthalpic binding profile and lower dissociation constants than existing sulfonamide-based ligands. Our ABA agonist, opabactin, has activity in multiple monocots and eudicots and addresses the limitations of existing sulfonamide molecules being explored as tools for mitigating the effects of drought on crop yields.</p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>▪  W ater flux from soil to atmosphere occurs primarily by its movement through plants <ref type="bibr" target="#b0">(1)</ref>. Water enters the plant body through roots and exits as vapor from leaf surface stomata, small pores formed by neighboring guard cells that open and close to regulate gas exchange. The accumulation of biomass by photosynthesis requires CO 2 to access inner leaf mesophyll cells through stomata, but this comes at the cost of H 2 O loss, which is driven by the difference in water vapor pressure between the inner leaf and atmosphere. Plants, therefore, face a trade-off between water use and growth. One consequence of this trade-off is that attempts to improve water use efficiency often come at the cost of reduced growth and yield <ref type="bibr" target="#b1">(2)</ref>. Conversely, studies of highyielding wheat varieties have shown that they transpire more water than lower-yielding ones, and reduced water use efficiency has been proposed to be a consequence of selection for high grain yields in wheat <ref type="bibr" target="#b2">(3,</ref><ref type="bibr" target="#b3">4)</ref>.</p><p>It is, therefore, intrinsically challenging to create crops with both high yield and high water use efficiency. Small molecules can, in principle, address this dilemma by coaxing high-yielding plant varieties with low water use efficiency into more water-efficient states on demand <ref type="bibr" target="#b4">(5)</ref>. This strategy would also enable data streams from precision agriculture to be directed toward conserving limited water resources and responding to emergent adverse events. Moreover, given that ~11% of Earth's surface is dedicated to crop production <ref type="bibr" target="#b5">(6)</ref> (mostly nonirrigated), better tools for managing crop water use could have global effects on water usage and help to address the ~$29 billion U.S. dollars in agricultural losses attributed to drought annually <ref type="bibr" target="#b6">(7)</ref>.</p><p>The scope and global importance of water use efficiency is driving the development of next-generation agrochemicals for managing responses to drought <ref type="bibr" target="#b7">(8)</ref><ref type="bibr" target="#b8">(9)</ref><ref type="bibr" target="#b9">(10)</ref><ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref><ref type="bibr" target="#b13">(14)</ref><ref type="bibr" target="#b14">(15)</ref><ref type="bibr" target="#b15">(16)</ref><ref type="bibr" target="#b16">(17)</ref><ref type="bibr" target="#b17">(18)</ref><ref type="bibr" target="#b18">(19)</ref><ref type="bibr" target="#b19">(20)</ref>. These efforts have focused primarily on small-molecule mimics of the phytohormone abscisic acid (ABA), which coordinates plant physiology, growth, and stress responses with water availability. ABA responses are mediated by a signaling module that involves soluble Pyrabactin Resistance 1/PYR1-Like/Regulatory Component of ABA Receptor (PYL) ABA receptors, clade A type 2C protein phosphatases (PP2Cs), and subfamily three SNF1-related kinases (SnRK2s) <ref type="bibr" target="#b20">(21,</ref><ref type="bibr" target="#b21">22)</ref>. When ABA binds to its soluble receptors, PYLs, a conformational change enables the receptors to bind to PP2C active sites and inhibit phosphatase activity. This, in turn, leads to the accumulation of activated SnRK2 kinases, which phosphorylate downstream factors and trigger physiological responses such as guard cell closure. This system is thus a target for both genetic and agrochemical control of drought tolerance. Overexpression of ABA receptors can increase water use and photosynthetic efficiency in both Arabidopsis and wheat with negligible effects on growth in controlled environment studies <ref type="bibr" target="#b22">(23,</ref><ref type="bibr" target="#b23">24)</ref>, such genetic interventions can complement chemical strategies because the two can be combined for improved effects <ref type="bibr" target="#b24">(25)</ref>.</p><p>The most potent synthetic ABA receptor agonists to date are ABA analogs or molecules that share a core sulfonamide linkage related to quinabactin <ref type="bibr" target="#b17">(18,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b25">(26)</ref><ref type="bibr" target="#b26">(27)</ref><ref type="bibr" target="#b27">(28)</ref><ref type="bibr" target="#b28">(29)</ref><ref type="bibr" target="#b29">(30)</ref>. Flowering plant ABA receptors cluster into three phylogenetically distinct subfamilies <ref type="bibr" target="#b30">(31,</ref><ref type="bibr" target="#b31">32)</ref>. Genetic analyses in Arabidopsis have demonstrated that quinabactin and other sulfonamide agonists require subfamily IIIA receptors (PYR1 and PYL1) to exert their antitranspirant effects <ref type="bibr" target="#b25">(26,</ref><ref type="bibr" target="#b32">33)</ref>, but it is unclear whether activation of other ABA receptors, which in many angiosperms exceed a dozen per genome, would enhance antitranspirant effects. Although quinabactin activates PYR1 with nanomolar potency, it shows reduced or negligible activity on other receptors <ref type="bibr" target="#b25">(26)</ref>, including PYL4, one of the key receptors expressed in Arabidopsis guard cell microarray experiments <ref type="bibr" target="#b33">(34,</ref><ref type="bibr" target="#b34">35)</ref>, a liability that could potentially limit efficacy. Upon investigating the effects of quinabactin and other sulfonamides in wheat and tomato, we observed low and short-lived bioactivity, which we speculated was the result of weak affinity for necessary targets. A structure-guided ligand discovery and optimization campaign led us to opabactin (OP), a potent agonist with activity in wheat and tomato. Genetic analyses show that PYR1, PYL1, and PYL2 are key target sites necessary for OP's potent antitranspirant activity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discovery of a nonsulfonamide ABA pan agonist scaffold by virtual screening</head><p>In ABA/receptor cocrystal structures, ABA's carboxylate forms a salt bridge with a conserved lysine (K59 in PYR1) that current sulfonamide agonists are unable to form <ref type="bibr" target="#b32">(33,</ref><ref type="bibr" target="#b35">(36)</ref><ref type="bibr" target="#b36">(37)</ref><ref type="bibr" target="#b37">(38)</ref><ref type="bibr" target="#b38">(39)</ref> (Fig. <ref type="figure" target="#fig_0">1A</ref>). We reasoned that the idiosyncratic activation of different ABA receptor types was due, in part, to lack of K59 engagement. We therefore used Glide docking protocols <ref type="bibr" target="#b39">(40)</ref> to screen a collection of available ligands <ref type="bibr" target="#b40">(41)</ref> for agonists that interact with K59. A subset of the predicted binders were tested for activity in vitro, using a pool of diverse recombinant ABA receptors (Arabidopsis PYL1, PYL2, PYL4, and PYL8, and maize PYL8). This process yielded 22 hits (half maximal inhibitory concentration, IC 50 ≤ 25 mM) (Fig. <ref type="figure" target="#fig_0">1B</ref>, fig. <ref type="figure">S1</ref>, and table <ref type="table">S1</ref>), most of which could be clustered into three scaffolds: a group of sulfonamides reminiscent of pyrabactin and quinabactin, a family of substituted aminopropanediols, and a set of amino acid amide conjugates (Fig. <ref type="figure" target="#fig_0">1B</ref>, fig. <ref type="figure">S1</ref>, and table <ref type="table">S1</ref>). We focused optimization efforts on the amide scaffold because of its relatively high activity across the eleven Arabidopsis receptors tested (tables <ref type="table">S1</ref> and <ref type="table" target="#tab_1">S2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Scaffold merging yields a potent panreceptor agonist</head><p>The most active amide identified [the chemical in screening plate 3, well B4 (3B4)] displayed submicromolar IC 50 values and apparent panreceptor agonism (table <ref type="table">S2</ref>). Our virtual screening data predicted that its carboxylate could form a salt bridge to K59 but that it lacked a hydrogen bond acceptor needed to engage the tryptophan (Trp)-lock water, which interacts with ABA's ring ketone and coordinates an H-bond network that stabilizes activated receptors (Fig. <ref type="figure" target="#fig_0">1C</ref>) <ref type="bibr" target="#b41">(42)</ref><ref type="bibr" target="#b42">(43)</ref><ref type="bibr" target="#b43">(44)</ref>. In previous work, we showed that this function could be served by a nitrile in the designed ligand cyanabactin (Fig. <ref type="figure" target="#fig_0">1A</ref>) <ref type="bibr" target="#b32">(33)</ref>. We hypothesized that a chimeric ligand possessing cyanabactin's 4-cyano-3cyclopropylphenyl headgroup grafted onto the 3B4 amide scaffold would improve binding affinity by providing simultaneous interactions with K59 and the Trp lock, essentially adopting a "scaffold merging" approach that has been exploited in the design of heat shock protein 90 inhibitors <ref type="bibr" target="#b44">(45)</ref> and strigolactone mimics <ref type="bibr" target="#b45">(46)</ref>. To test this, we synthesized and characterized the chimeric 3B4-cyanabactin hybrid compound 3CB (scheme shown in fig. <ref type="figure">S2</ref> and the materials and methods). We also synthesized AMF4 (ABA mimic 1 tetrafluoro derivative), a quinabactin derivative and sulfonamide agonist with improved potency <ref type="bibr" target="#b24">(25)</ref> and tetralone ABA <ref type="bibr" target="#b28">(29,</ref><ref type="bibr" target="#b29">30)</ref>, an ABA derivative with increased potency, so that we could compare these other potent agonists to our chimeric ligand.</p><p>Our synthesized chimeric ligand (3CB) displayed an increase of up to three orders of magnitude in affinity for subfamily III receptors and low nanomolar pan agonist activity (Fig. <ref type="figure" target="#fig_1">2A</ref>, fig. <ref type="figure">S3A</ref>, and table <ref type="table" target="#tab_1">S2</ref>), validating the scaffold-merging strategy used. To establish whether the agonist was active in monocots, which diverged from the eudicot lineage ~200 million years ago and include the world's major grain crops, we tested the sensitivity of wheat ABA receptors to 3CB using a panel of subgenome D ABA receptors and a native wheat PP2C <ref type="bibr" target="#b23">(24)</ref>. These data show that 3CB is a similarly potent pan agonist of wheat receptors, unlike sulfonamide agonists (Fig. <ref type="figure" target="#fig_1">2B</ref>, fig. <ref type="figure">S3B</ref>, and table <ref type="table">S3</ref>). Moreover, we observe that the chimeric ligand is approximately twofold more active than ABA in Arabidopsis seed germination assays, indicating adequate bioavailability (Fig. <ref type="figure" target="#fig_1">2C</ref> and fig. <ref type="figure">S4</ref>). Collectively, these experiments demonstrate that the combined use of virtual screening and scaffold merging enabled us to discover and optimize an agonist that binds multiple ABA receptors and is active in both eudicots and monocots.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Structure-guided optimization of an overpowered agonist</head><p>To understand the atomic basis of 3CB's high activity, we cocrystallized it with the Arabidopsis subfamily I receptor PYL10, which was chosen because it expresses in Escherichia coli at high levels relative to other subfamily I receptors, and solved an x-ray crystal structure of a PYL10 25-183 :3CB complex using molecular replacement at a resolution of 2.4 Å (table <ref type="table">S4</ref>). The PYL10 25-183 :3CB complex crystallized in the space group P3 1 21 and contained a single protomer in the asymmetric unit. Several rounds of structural refinement were carried out before modeling 3CB into the ligandbinding pocket's unbiased electron density (fig. <ref type="figure">S5</ref>). A real-space correlation coefficient of 0.95 calculated between the unbiased electron density and 3CB indicates agreement between the model and observed electron density. These data position 3CB in the PYL10 ligand-binding pocket with its carboxylate forming a salt bridge to K56 (homologous to PYR1's K59), and its aryl ring oriented toward the gate and latch loops, mimicking ABA's cyclohexenone ring and gem-dimethyl group (Fig. <ref type="figure" target="#fig_2">3A</ref>). Direct       polar contact between N163's amide NH and 3CB's amide carbonyl, and two water-mediated contacts to E90 and F98 (Fig. <ref type="figure" target="#fig_2">3A</ref>), additionally stabilize 3CB-PYL10 interactions. 3CB's cyclohexyl ring packs against L159, V156, Y116, and I106, which line the C6 cleft, a small hydrophobic pocket that normally interacts with ABA's C6 methyl and is a ligand-binding hotspot <ref type="bibr" target="#b46">(47)</ref>.</p><p>On the basis of our prior crystallographic analyses of a PYR1-cyanabactin complex <ref type="bibr" target="#b32">(33)</ref>, we anticipated that 3CB's cyclopropyl substituent might extend into the hydrophobic 3′ tunnel, which contacts ABA's C7′ methyl (Fig. <ref type="figure" target="#fig_2">3B</ref>). Instead, our structure shows 3CB's cyclopropyl group oriented away from the 3′ tunnel, packing against the gate and latch loops (Fig. <ref type="figure" target="#fig_2">3A</ref>). The vacancy of the 3′ tunnel, therefore, suggested that we might increase 3CB's potency by adding hydrophobic substituents to interact with this pocket, a strategy used to improve other agonists <ref type="bibr" target="#b32">(33,</ref><ref type="bibr" target="#b47">48)</ref>. To test this idea, we synthesized a dicyclopropyl 3CB analog, which we have named opabactin (OP) for overpowered ABA receptor activation (synthetic details are provided in fig. <ref type="figure">S2</ref>). We tested OP activity in vitro using a receptor-agonist Nterminal deletion of HAB1 (DN-HAB1) inhibition assay and observed that it activates Arabidopsis subfamily III receptors with potencies that are up to ~10-fold greater than ABA's; in vivo, OP is ~10-fold more bioactive, as measured using Arabidopsis seed germination assays (Fig. <ref type="figure" target="#fig_1">2C</ref>), and induces an approximately fivefold stronger effect than ABA on guard cells, as measured using a Commelina guard cell closure assay (fig. <ref type="figure">S6</ref>). Although activity against subfamily III receptors improved, activity against Arabidopsis subfamily I recep-tors diminished (Fig. <ref type="figure" target="#fig_1">2A</ref>). In contrast, we observed that OP activates the wheat subfamily I receptor TaPYL8 and is thus a pan agonist of the wheat ABA receptors tested (Fig. <ref type="figure" target="#fig_1">2B</ref>). Inspection of sequence alignments reveals a single amino acid difference between Arabidopsis and wheat subfamily I ligand-binding pockets (a bulky leucine is replaced by a smaller valine in TaPYL8); moreover, this residue packs tightly against the location of the second cyclopropyl in OP and would cause steric clash in Arabidopsis receptors (Fig. <ref type="figure" target="#fig_2">3, C and D</ref>). Yeast two-hybrid assays confirm that the leucine-to-valine pocket difference determines subfamily I sensitivity to OP (Fig. <ref type="figure" target="#fig_2">3E</ref>). Thus, the 3CB-PYL10 cocrystal structure enabled us to increase its activity against subfamily III targets and yielded an agonist that is ~10-fold more potent than ABA in seeds.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>OP-PYR1 binding is enthalpically driven</head><p>The 3CB carboxylate-K56 salt bridge is likely to improve binding affinity via an enthalpic contribution. To examine this, we conducted isothermal titration calorimetry (ITC) experiments comparing 3CB-and OP-PYR1 binding isotherms (Fig. <ref type="figure" target="#fig_3">4A</ref>). Prior analyses <ref type="bibr" target="#b46">(47)</ref> revealed an apparent dissociation constant (K d ) of 4.8 mM for quinabactin-PYR1 binding and indicated that quinabactin binding is entropy driven (change in enthalpy, DH = -2.8; change in entropy, -TDS = -4.7 kcal/mol) (Fig. <ref type="figure" target="#fig_3">4A</ref>). In contrast, 3CB-and OP-PYR1 binding reactions are more enthalpic and of higher affinity relative to quinabactin and cyanabactin (OP K d = 1.9 mM; quinabactin K d = 4.8 mM) (Fig. <ref type="figure" target="#fig_3">4A</ref>). The presence of the second cyclopropyl substituent in OP relative to 3CB provides an ad-ditional -1.7 kcal/mol DH for PYR1 binding; this may indicate protein movement in response to ligand binding and/or be a consequence of van der Waals contacts, which in some systems are sufficient to create exothermic binding isotherms without conformational changes in protein structure <ref type="bibr" target="#b48">(49)</ref><ref type="bibr" target="#b49">(50)</ref><ref type="bibr" target="#b50">(51)</ref>. We additionally examined ligand-PYR1-HAB1 binding reactions, comparing ABA, quinabactin, and OP (Fig. <ref type="figure" target="#fig_3">4B</ref>). These experiments show that OP's K d for PYR1-HAB1 binding is approximately one-seventh that of ABA (28 ± 5 nM versus 201 ± 14 nM). This increase in binding affinity translates into improved potency of OP in Arabidopsis seed germination assays described above (Fig. <ref type="figure" target="#fig_1">2C</ref>). Collectively, our ITC data show that our newly identified amide scaffold provides more enthalpydriven, higher-affinity binding than previous sulfonamides, a feature of many best-in-class ligands <ref type="bibr" target="#b51">(52,</ref><ref type="bibr" target="#b52">53)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>OP has antitranspirant activity and activates ABA signaling in vegetative tissues</head><p>Our initial tests indicated that both 3CB and OP activate multiple ABA responses in Arabidopsis vegetative tissues (fig. <ref type="figure" target="#fig_6">S7</ref>) and demonstrate antitranspirant activity in the grain crop barley (fig. <ref type="figure" target="#fig_7">S8</ref>). To investigate OP's effects in other crop species, we treated tomato and wheat plants with different concentrations of ABA, quinabactin, AMF4, or OP and used thermal imaging to measure their effects on transpiration for up to 5 days after application (relative to mock-treated controls). In both tomato and wheat, ABA's effects on leaf temperature dissipate after 2 to 3 days, and sulfonamide agonist effects are no longer evident after 48 hours (Fig. <ref type="figure" target="#fig_4">5</ref>). In contrast, OP's effects          remained evident at 5 days (the latest time point for which we collected data) in both species (Fig. <ref type="figure" target="#fig_4">5</ref>). This increased bioactivity is likely the result of a combination of improved persistence and target site potency; however, metabolic studies will be required to resolve this. Whatever the case, these data show that OP has longer-lasting effects relative to ABA and other agonists in wheat, a globally important staple crop.</p><p>We next examined OP's effects on both ABA-induced transcriptional responses and drought tolerance in wheat. Using a progressive water stress regime, we observed that wheat seedlings treated with ABA, 3CB, and OP delayed wilting under water stress and retained more chlorophyll than did mock-treated plants, indicating less stress-induced senescence in treated plants relative to mock-treated controls (Fig. <ref type="figure" target="#fig_5">6, A and B</ref>). In contrast, quinabactintreated plants were only modestly protected under the same conditions, consistent with the weak activity of sulfonamide agonists described above (Fig. <ref type="figure" target="#fig_5">6</ref>) and results from direct receptorbased assays (Fig. <ref type="figure" target="#fig_1">2B</ref>). Quantitative reverse transcription polymerase chain reaction (qRT-PCR) experiments of treated seedlings for three ABA-responsive genes also demonstrate that OP shows increased activity relative to ABA and quinabactin (Fig. <ref type="figure" target="#fig_5">6, C to E</ref>). Collectively, these data show that OP's high binding affinity for ABA receptors (relative to ABA and sulfonamides) translates into bioactivities that exceed both ABA and sulfonamide agonists in planta.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Subfamily III receptors are crucial for mediating the effects of OP in planta</head><p>To examine the receptor dependence of OP's action, we examined agonist-induced responses in wild-type or mutant strains lacking the major members of the different receptor subtypes. The effects of quinabactin and cyanabactin on Arabidopsis transpiration, germination, and gene expression are mediated primarily by the subfamily III receptors PYR1 and PYL1, which form a subclade within family III <ref type="bibr" target="#b32">(33)</ref>. To examine if this subclade similarly executes OP's effects, we examined the sensitivity of wild type; pyr1,pyl1 (referred to as 0;1); pyr1, pyl1,pyl2 (0;1;2, subfamily III); pyl4,pyl5 (4;5, subfamily II); and pyl8,pyl9 (8;9, subfamily I) mutant strains to OP and other agonists. Both 3CB and OP inhibit Arabidopsis seed germination and seedling establishment, but the effects of OP are largely absent in the 0;1;2 triple mutant strain, while those of 3CB are not (Fig. <ref type="figure" target="#fig_6">7A</ref>). These genetic observations therefore suggest that OP's action on seeds is mediated by subfamily III receptors because OP-treated seeds germinate in the 0;1;2 mutant. As expected, quinabactin and AMF4 effects on seeds are absent in the 0;1 double mutant; however, OP retains bioactivity in the 0;1 mu-tant, and its effects are only greatly reduced in the 0;1;2 triple mutant (Fig. <ref type="figure" target="#fig_6">7A</ref>). This demonstrates that, in contrast to previously characterized sulfonamide agonists, PYL2 is additionally necessary for full OP action in seeds. Collectively these results further confirm the importance of subfamily III receptors for sulfonamide agonist action and illuminate an added role for PYL2 in OP's action.</p><p>To determine whether the involvement of PYL2 in OP's action also applies to vegetative responses, we examined OP's effects on leaf temperature in wild type, 0;1, 0;1;2, and pyl2 mutant seedlings. These experiments show that OP's activity in leaf tissues can be greatly reduced in the 0;1;2 triple mutant but not the 0;1 double mutant strain, paralleling our observations in seeds (Fig. <ref type="figure" target="#fig_6">7, B and C</ref>). Furthermore, both ABA and OP inhibit primary root growth and greening in Arabidopsis seedlings in a dose-dependent manner, as expected, and OP's effects in these growth assays can be greatly reduced in the 0;1;2 triple mutant (fig. <ref type="figure">S9</ref>). These genetic analyses demonstrate that PYL2, in addition to PYR1 and PYL1, is a cellular target that can be activated by synthetic agonists to manipulate plant transpiration and ABA responses.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>Synthetic ABA mimics are being investigated as tools for mitigating the impact of drought stress on crop yields. We used virtual screening to identify ABA receptor agonists in distinct chemical scaffolds, one of which we modified using scaffold merging to create 3CB and subsequently opabactin, a molecule with high bioactivity and receptor binding affinity. Our cocrystal structure of 3CB:PYL10 reveals a salt bridge to K56 and direct hydrogen bond of its amide to N163, features that likely contribute to the enthalpic binding isotherms observed, and the approximately sevenfold improvement in K d relative to ABA. Prior sulfonamide ABA mimics do not benefit from the lysine salt bridge, and our work suggests that contacts to this residue are essential for high-affinity binding and pan agonism and should be considered in future ligand design and optimization. Because the sulfonamides in quinabactin, pyrabactin, CB, and AMF4 are positioned proximally to this lysine, it should be possible to generate contacts by lowering the pK a (where K a is the acid dissociation constant) of their sulfonamide NH by the installation of adjacent electron withdrawing groups, a strategy previously used to improve sulfonamide dihydrofolate reductase and carbonic anhydrase inhibitors <ref type="bibr" target="#b53">(54,</ref><ref type="bibr" target="#b54">55)</ref>. Thus, there are likely many routes to developing more-potent ABA receptor agonists, but our development of a new amide-based scaffold broadens the current chemical space available for manipulating ABA receptor function.</p><p>OP's activity in Arabidopsis demonstrates that PYL2 contributes to OP's effects on transpiration, in addition to PYR1 and PYL1. In contrast, the effects of sulfonamide agonists require primarily PYR1 and PYL1 <ref type="bibr" target="#b25">(26,</ref><ref type="bibr" target="#b32">33)</ref>. We conclude, therefore, that PYL2 is a useful antitranspirant target site in addition to PYR1 and PYL1; this further demonstrates the relevance of subfamily III receptors as targets for the development of synthetic antitranspirants but does not preclude the activation of other receptor types for antitranspirant activity. The development of agonists selective for different receptor subfamilies could help untangle the relative importance of each subfamily to transpiration. Additionally, because increases in both water use and photosynthetic efficiency have been observed by overexpressing subfamily II receptors <ref type="bibr" target="#b22">(23,</ref><ref type="bibr" target="#b23">24)</ref>, selective agonists may provide access to the control of distinct water use-related traits not achievable by only activating subfamily III receptors.</p><p>The triple mutant pyr1,pyl1,pyl2 has a relatively modest phenotype. If subfamily III receptors are such critical mediators of OP and sulfonamide effects on transpiration, why is their multilocus loss-of-function phenotype so mild? We do not yet have a complete answer to this question, but one possibility is that other receptors may compensate for the loss of subfamily III receptors, as has been observed by systematic analyses of yeast gene families, which show compensation by paralogs <ref type="bibr" target="#b55">(56)</ref>. Alternatively, it may be that the major effects of OP and sulfonamides require both subfamily II and subfamily III receptors to be present, i.e., different subfamily II receptors than we are currently able to test genetically (pyl4 and pyl5). Given that PYL4 and PYL5 are the most highly expressed subfamily II ABA receptors, this seems unlikely, but future analyses of genetic strains lacking all members of each subfamily should help resolve this. Nonetheless, weighting a protein's relevance as a target for manipulating a biological process on the basis of only genetic studies may be misleading because of compensation. Thus, chemical interrogation of wild-type systems provides a more direct route to assessing the relevance of a protein as a target.</p><p>ABA has many effects on plant growth and development in addition to its roles in water relations, seed dormancy, and gene regulation. Although OP mimics ABA's effects, further characterization will be required to establish which of ABA's many responses are activated by OP. It will also be necessary to conduct toxicological assays and regulatory procedures before OP (or any agonist) is suited for agricultural purposes. ABA receptor overexpression can enable increases in water use efficiency without growth penalties in both Arabidopsis and wheat in controlled-environment studies <ref type="bibr" target="#b22">(23,</ref><ref type="bibr" target="#b23">24)</ref>. The application of ABA-which, like OP, inhibits growth at high concentrations-to crops in the field improves yield under modest drought conditions <ref type="bibr" target="#b56">(57)</ref><ref type="bibr" target="#b57">(58)</ref><ref type="bibr" target="#b58">(59)</ref>, so the growth inhibitory effects of ABA are not an intrinsic limitation to their other benefits. The value of chemical approaches is that they can be deployed on demand, whereas crop genetics cannot be changed dynamically in a growing season. It is likely that both genetics and chemistry will work together for maximal benefit and flexibility <ref type="bibr" target="#b24">(25)</ref>. OP is a new chemical tool for dynamically manipulating plant water use.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and methods summary</head><p>Virtual screening of the ZINC collection, a database of commercially available chemical compounds, was carried out using Protein Data Bank (PDB) IDs for PYR1 (3K3K) and PYL9 (3W9R) using Schrodinger's Glide package. Top scoring 0.1% hits were redocked against PYR1 to eliminate ligands not predicted to contact PYR1-K59. 1724 predicted agonists were purchased from Enamine (Ukraine) and tested at 25 mM in a direct receptor activation assay using a pool of recombinant ABA receptors from the three major clades (PYL1, PYL2, PYL4, PYL8, and ZmPYL8). The pooled receptor assay measures agonist dependent receptor mediated inhibition of the protein phosphatase DN-HAB1 using a fluorogenic substrate (4-methylumbelliferyl phosphate). This process yielded 25 hits (IC 50 ≤ 25 mM), one of which (3B4) was optimized by chemical synthesis to yield 3CB, a pan agonist. After optimizing one of our hits, we obtained a cocrystal structure of the lead molecule 3CB with the subfamily I ABA receptor PYL10. PYL10 25-183 :3CB crystals were grown in 33% tacsimate (pH 7.0) and flash frozen using perfluoropolyether oil. Diffraction data was processed in HKL2000, refined in Phenix.refine and validated using MolProbity; the final model was deposited in PDB (ID 6NWC). We next synthesized OP, a derivative of 3CB. 3CB and OP were synthesized from methyl (4-cyanophenyl) acetate over five steps involving (i) palladium catalyzed ortho-halogenation of the nitrile, (ii) suzuki coupling with cyclopropyl boronic acid, (iii) base-catalyzed hydrolysis of the ester, (iv) EDCI/DMAP coupling to methyl 1-aminocyclohexanoate, and (v) subsequent hydrolysis to yield OP (34 to 58% yield). The OP that we synthesized for this paper can be purchased from Kerafast (USA), a distributor of academic research reagents. The AMF4 and tetralone ABA used in our studies were synthesized according to literature protocols, using chiral chromatography to purify the bioactive (+) isomer of tetralone ABA, as previously described. To directly measure agonist-receptor interactions, we conducted isothermal titration calorimetry (ITC) experiments using low-volume Nano ITC (TA Instruments, USA). To determine which residues in PYR1 mediate OP selectivity, we used an established yeast two-hybrid assay to analyze agonist responses in wild-type PYR1, PYR1-V163, and PYR1-V163L mutants. To measure bioactivity of the agonists in adult plants, chemicals were applied to plants as aerosols in a solution supplemented with the wetting agent Silwet-77; leaf temperatures were measured by thermal imaging using a FLIR camera. To profile Arabidopsis mutant responses to agonists, we used previously described receptor mutants and a newly constructed pyr1, pyl1,pyl2 strain that we made by crossing a pyr1,pyl1,pyl2,pyl4 quadruple mutant strain to wild type (Col-0) and isolating the desired genotype amongst F 3 plants.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Virtual screening and scaffold merging enabled the design of overpowered ABA receptor agonists. (A) Structures of existing ABA receptor agonists; the gray box highlights the 4-cyano-3-cyclopropylphenyl head group used in our scaffold merging strategy. tABA, tetralone ABA; CB, cyanabactin; QB, quinabactin; R, radical. (B) Structures of representative hits (IC 50 ≤ 25 mM) belonging to the different scaffolds identified; the yellow box highlights the amide scaffold that was merged with the cyanabactin headgroup. The complete list of hits identified is provided in fig. S1 and table S1. (C) Binding modes of ABA and hit 3B4, as originally predicted by docking to PYR1; the figure illustrates that 3B4 lacks a hydrogen bond acceptor for the Trp-lock water with thin red lines representing hydrogen bonds from 2.7 to 3.1 Å. (D) Hit discovery and optimization. The ZINC collection of 18 million purchasable drug-like compounds was screened against PYR1 and PYL9 to identify candidate binders that interact with K59. Of the top 10,000 hits, 1700 were obtained and tested for activity in vitro. The best hit obtained, 3B4, lacked an H-bond acceptor for the Trp lock. We therefore installed the cyanabactin head group on the 3B4 amide scaffold. A subsequent structure of 3CB-PYL10 suggested that bioactivity could be improved through the addition of an additional hydrophobe to interact with the receptors' 3′ tunnels, which yielded the agonist opabactin (OP). IC 50 values shown on the right (in red) are for the compounds tested against subfamily III receptor PYL2 (see Fig.2and fig.S2for complete IC 50 data). Synthetic schemes for the synthesis of 3CB and OP are provided in fig.S2.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. 3CB and OP are best-in-class ABA receptor agonists. (A) Agonist potency against different Arabidopsis receptors, as measured using agonist/receptor-mediated inhibition of DN-HAB1 phosphatase activity (n = 3 replicates). A dash indicates that PP2C activity was &gt;75% control at 50 mM test chemical (the highest concentration tested). The colored boxes indicate the subfamily membership of the receptors assayed. (B) Agonist potency against different wheat receptors, using indicated receptors and TaPP2C. A dash indicates that PP2C activity was &gt;75% control at 10 mM test chemical (the highest concentration tested). We note that TaPYL9 is a pseudoreceptor with an atypical binding pocket. (C) OP shows an ~10-fold increase in in vivo potency relative to ABA. The potency of different agonists on Arabidopsis seed germination and their corresponding IC 50 values (concentrations required to inhibit germination by 50%). Photographs were taken 4 days post stratification (n = 6 replicates). The full-dose response curves used to infer IC 50 values for all three figure panels are shown in figs.S3 and S4and tables S2 and S3.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Structure of 3CB bound to PYL10. (A) Cocrystal structure of 3CB bound to PYL10, dashes representing hydrogen bonds from 2.6 to 3.3 Å. (B) Differences in orientation of the cyclopropyl group present in the 3CB:PYL10 structure versus the CB:PYR1 structure (PDB ID 5UR5). (C) Positioning of H111 and L159 in PYL10 relative to 3CB’s 3-cyclopropyl-4-cyanobenzyl headgroup. This illustrates the site of predicted steric clash that would occur between L159 and OP’s C5 cyclopropyl substituent when bound to Arabidopsis subfamily I receptors. (D) Sequence variation at the selectivity-determining residue (homologous to PYL10 L159), which is the only residue lining the 3′ tunnel that is variable between ABA receptors). (E) Genetic evidence that sequence variation at the selectivity-determining residue (L159 in PYL10) determines OP selectivity. V163 in PYR1 is homologous to L159 in PYL10. To test the role of this residue in OP selectivity, wild-type PYR1, V163I, and V163L were tested for interactions with HAB1 using an established yeast two-hybrid assay (chemicals tested at 25 mM); the bulkier leucine substitution corresponding to that present in Arabidopsis subfamily I receptors blocks OP action. Single-letter abbreviations for the amino acid residues are as follows: E, Glu; F, Phe; H, His; I, Ile; K, Lys; L, Leu; N, Asn; V, Val.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig.4. The high binding affinities of 3CB and OP are enthalpy driven, in contrast to the entropy-driven binding of sulfonamides. (A) Measured thermodynamic parameters of binding of agonists to PYR1 in the presence or absence of HAB1; the top two rows are previously published observations, and all the rest were determined in this study. The bar graphs summarize the ITC data and illustrate that sulfonamide agonist binding is driven primarily by entropy, whereas the 3CB and OP binding are more enthalpically driven. (B) Representative thermogram and binding isotherm. ITC experiments were conducted by repeated injections of 2.5 ml of OP (60 mM) into a 1:1 mixture of PYR1:DN-HAB1 (10 mM). Binding isotherms were fitted to an independent one-site binding model using NanoAnalyze software (TA Instruments, USA); n = 3 replicate experiments, standard deviations shown. The red trace is a control of buffer injections (rather than buffer + ligand) into PYR1-DN-HAB1. The data are consistent with high-affinity binding of OP to the receptor complex; however, precise K d values in the low nanomolar range are challenging to deduce.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig.5. OP has bioactivity and long-lasting effects in tomato and wheat, whereas sulfonamide agonists do not. (A) Infrared images of 6-week-old tomato seedlings (UC82) treated with 100 mM of different chemical solutions composed of 0.5% dimethyl sulfoxide (DMSO) and 0.05% Silwet-77. Graphs depict the variation in difference in temperature levels of treated plants relative to mock-treated plants up to 5 days after application (n = 18 replicates for mocks and n = 6 for chemical treatment). (B) Infrared images of 4-weekold wheat seedlings (WB-9229) sprayed with 11 mM of different chemicals solution composed of 0.5% DMSO and 0.05% Silwet-77. Graphs depict the variation in difference in temperature levels of treated plants, relative to mock-treated plants up to 5 days after application. Statistical analyses were conducted in R using a one-way analysis of variance (ANOVA) and post-hoc Dunnett tests to obtain multiplicity adjusted P values for treatment effects relative to mocktreated controls (n = 10 replicates for mocks and n = 5 for chemical treatment). 95% confidence intervals are shown.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. OP enhances drought tolerance and hyperactivates ABA transcriptional responses in wheat. (A) Effects of ABA receptor agonists in wheat. Two-week-old plants were sprayed with chemical solution containing 0.05% Tween-20 and 50 mM compounds. After 3 days of water deprivation, plants were rewatered, and stress recovery images were acquired after 12 hours. (B) Chlorophyll content of aerial parts of plants after water stress treatments was measured as described in the methods. (C to E) Comparison of transcript levels for TaPP2C6, TaLea, and TaAOS induced by individual ligands in 7-day-old wheat seedlings after a treatment of 50 mM for 12 hours. Statistics were done using a one-way ANOVA and post-hoc Dunnett tests to obtain multiplicity adjusted P values for treatment effects relative to mock-treated controls, with n = 5 replicates for chlorophyll measurements and n = 4 replicates for qRT-PCR studies. Error bars indicate standard error of mean, individual P values are shown on the graph. n.s., nonsignificant.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig.7. OP acts primarily through subfamily III receptors and demonstrates that PYL2 contributes to OP's antitranspirant activity. (A) Effects of different ABA receptors agonists on seed germination in wild type and different receptor mutant lines. Chemical effects were tested at concentrations approximately two times their IC 50 values (Fig. 2C) to normalize for differences in agonist potency (ABA, 1200 nM; QB, 1800 nM; AMF4, 1600 nM; 3CB, 440 nM; and OP, 120 nM). Photographs were taken after 4-day incubation under constant illumination. (B) Adult Col-0 and different mutant lines were sprayed with 50 mM compounds and imaged by thermography 24 hours after treatment and (C) average leaf temperatures for each treatment were quantified. Statistics done using a one-way ANOVA and post-hoc Dunnett tests to obtain multiplicity adjusted P values for treatment effects relative to mock-treated controls (n = 8 replicates). Error bars indicate standard error of mean. Individual P values for comparisons to mock-treated controls are shown on the graph.</figDesc><graphic type="bitmap"/></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>Funding: NSF IOS (grant <rs type="grantNumber">1656890</rs>) and <rs type="institution">Syngenta Crop Protection AG</rs> to <rs type="person">S.R.C. JST PRESTO</rs> (<rs type="grantNumber">JPMJPR15Q5</rs>), <rs type="institution">KAKENHI</rs> (<rs type="grantNumber">17H05009</rs>), and the <rs type="programName">Joint Research Program of Arid Land Research Center</rs>, <rs type="funder">Tottori University</rs> (<rs type="grantNumber">30C2007</rs>) to M.O. Author contributions: A.S.V. designed and synthesized 3CB and OP, with technical assistance from B.K. and S.B., and performed Arabidopsis PP2C assays, seed germination assays, luciferase imaging, and thermal imaging experiments. J.D.M.H. performed virtual screening and hit characterization. F.C.P. performed crystallographic studies in coordination with B.F.V. D.E. performed isothermal titration calorimetry studies. R.M. performed plasmid vector construction for PP2C assay. W.D. performed SEM studies, SAI, root growth, and greening measurements. A.K. and J.D.M.H. conducted small molecule screens of virtual screening hits. S.-Y.P. performed yeast two-hybrid assays. Z.X. and S.-Y.P. purified and characterized Arabidopsis PYR/PYL proteins. M.O. identified, cloned, and expressed wheat ABA receptors and performed wheat PP2C assays, qRT-PCR, and drought stress assays. J.T. and Y.T. synthesized tetralone ABA for comparison in various assays. S.R.C. conceived of the research, and A.S.V. and S.R.C. wrote the paper with contributions from all authors. Competing interests: S.R.C., J.D.M.H., and A.S.V. are inventors on a UC-owned patent application (<rs type="grantNumber">62/691</rs>,<rs type="grantNumber">534</rs>) covering OP and related structures. Data and materials availability: All data are presented in the main text and supplementary materials, the OP synthesized for this study can be obtained from Kerafast, and other biological materials may be obtained by contacting <rs type="funder">S.R.C. (Arabidopsis)</rs> or M.O. (wheat). The atomic coordinates and structure factor files for the PYL103CB structure have been deposited in Protein Data Bank (<rs type="grantNumber">ID 6NWC</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_kGHyqwG">
+					<idno type="grant-number">1656890</idno>
+				</org>
+				<org type="funding" xml:id="_aaPJSEr">
+					<idno type="grant-number">JPMJPR15Q5</idno>
+				</org>
+				<org type="funding" xml:id="_PPZpxny">
+					<idno type="grant-number">17H05009</idno>
+					<orgName type="program" subtype="full">Joint Research Program of Arid Land Research Center</orgName>
+				</org>
+				<org type="funding" xml:id="_QHUUJ6Y">
+					<idno type="grant-number">30C2007</idno>
+				</org>
+				<org type="funding" xml:id="_Ft5amS8">
+					<idno type="grant-number">62/691</idno>
+				</org>
+				<org type="funding" xml:id="_Pun3zEk">
+					<idno type="grant-number">534</idno>
+				</org>
+				<org type="funding" xml:id="_2DxebrW">
+					<idno type="grant-number">ID 6NWC</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTARY MATERIALS</head><p>science.sciencemag.org/content/366/6464/eaaw8848/suppl/DC1 Materials and Methods Figs. S1 to S9 Tables S1 to S6 NMR Spectra References (60-75)</p><p>View/request a protocol for this paper from Bio-protocol.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jasechko</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Terrestrial water fluxes dominated by transpiration</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">496</biblScope>
+				<biblScope unit="page" from="347" to="350"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nuccio</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paul</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bate</surname>
+					<forename type="first">N</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cohn</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Where are the drought tolerant crops? An assessment of more than two decades of plant biotechnology effort in crop improvement</title>
+		</analytic>
+		<monogr>
+			<title level="j">Plant Sci</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">273</biblScope>
+				<biblScope unit="page" from="110" to="119"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Amani</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fischer</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reynolds</surname>
+					<forename type="first">M</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">Canopy temperature depression association with yield of irrigated spring wheat cultivars in a hot climate</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Agron. Crop Sci.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">176</biblScope>
+				<biblScope unit="page" from="119" to="129"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fischer</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Wheat yield progress associated with higher stomatal conductance and photosynthetic rate, and cooler canopies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Crop Sci</title>
+			<imprint>
+				<date when="1998">1998</date>
+				<biblScope unit="volume">38</biblScope>
+				<biblScope unit="page" from="1467" to="1475"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Helander</surname>
+					<forename type="first">J</forename><forename type="middle">D</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vaidya</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Chemical manipulation of plant water use</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bioorg. Med. Chem.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="493" to="500"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b5">
+		<monogr>
+			<title level="m">World Agriculture: Towards 2015/2030: An FAO Perspective</title>
+			<editor>
+				<persName>
+					<surname>Bruinsma</surname>
+					<forename>J</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Earthscan</publisher>
+				<date when="2003">2003</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b6">
+		<monogr>
+			<author>Food and Agriculture Organization of the United Nations</author>
+			<title level="m">Disasters causing billions in agricultural losses, with drought leading the way</title>
+			<ref target="http://www.fao.org/news/story/en/item/1106977/icode/">http://www.fao.org/news/story/en/item/1106977/icode/</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b7">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Use of substituted isoquinolinones, isoquinolindiones, isoquinolintriones and dihydroisoquinolinones or in each case salts thereof as active agents against abiotic stress in plants</title>
+			<idno type="docNumber">6885550</idno>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b8">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wendeborn</surname>
+					<forename type="first">S</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jung</surname>
+					<forename type="first">P</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lachia</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dumeunier</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="m">Compounds that induce aba responses</title>
+			<idno type="docNumber">20160280651</idno>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b9">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">Synthetic compounds for vegetative ABA responses</title>
+			<idno type="docNumber">9345245</idno>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dejonghe</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Small molecule probes of ABA biosynthesis and signaling</title>
+		</analytic>
+		<monogr>
+			<title level="j">Plant Cell Physiol</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">59</biblScope>
+				<biblScope unit="page" from="1490" to="1499"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b11">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Lachia</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<title level="m">2-oxo-3,4-dihydroquinoline compounds as plant growth regulators</title>
+			<idno type="docNumber">20180044297</idno>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b12">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Use of substitute oxo tetrahydroquinoline sulfonamides or salts thereof for raising stress tolerance of plants</title>
+			<idno type="docNumber">20170027172</idno>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b13">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Use of substituted dihydrooxindolylsulfonamides, or the salts thereof, for increasing the stress tolerance of plants</title>
+			<idno type="docNumber">20160237035</idno>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b14">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Substituted 1-cycloalkyl-2- oxotetrahydroquinolin-6-ylsulfonamides or salts thereof and use thereof to increase stress tolerance in plants</title>
+			<idno type="docNumber">20180020662</idno>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b15">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Willms</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dittgen</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Substituted cyano cycloalkyl penta-2,4-dienes, cyano cycloalkyl pent-2-en-4-ynes, cyano heterocyclyl penta-2,4-dienes and cyano heterocyclyl pent-2-en-4-ynes as active substances</title>
+			<idno type="docNumber">20170210701A1</idno>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b16">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Aryl-and hetarylsulfonamides as active ingredients against abiotic plant stress</title>
+			<idno type="docNumber">20110230350</idno>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b17">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lachia</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wendeborn</surname>
+					<forename type="first">S</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Godfrey</surname>
+					<forename type="first">C</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sabbadin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">Carbamate quinabactin</title>
+			<idno type="docNumber">2018017490</idno>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b18">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Godfrey</surname>
+					<forename type="first">C</forename><forename type="middle">R</forename><forename type="last">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lachia</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wendeborn</surname>
+					<forename type="first">S</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sabbadin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">Plant growth regulator compounds</title>
+			<idno type="docNumber">2018007217</idno>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b19">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wendeborn</surname>
+					<forename type="first">S</forename><forename type="middle">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Loiseleur</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lachia</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sabbadin</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">Derivatives of halo quinabactin</title>
+			<idno type="docNumber">20180312470</idno>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="patent" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Weiner</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Peterson</surname>
+					<forename type="first">F</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Volkman</surname>
+					<forename type="first">B</forename><forename type="middle">F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cutler</surname>
+					<forename type="first">S</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Structural and functional insights into core ABA signaling</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr. Opin. Plant Biol.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="495" to="502"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miyakawa</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fujita</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamaguchi-Shinozaki</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tanokura</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Structure and function of abscisic acid receptors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Trends Plant Sci</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="259" to="266"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Leveraging abscisic acid receptors for efficient water use in Arabidopsis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U.S.A.</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">113</biblScope>
+				<biblScope unit="page" from="6791" to="6796"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b23">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mega</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Tuning water-use efficiency and drought tolerance in wheat using abscisic acid receptors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Plants</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="153" to="159"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cao</surname>
+					<forename>M-J</forename>
+				</persName>
+			</author>
+			<title level="a">Combining chemical and genetic approaches to increase drought resistance in plants</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Commun.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="1183" to="1183"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Okamoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Activation of dimeric ABA receptors elicits guard cell closure, ABA-regulated gene expression, and drought tolerance</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. U.S.A.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">110</biblScope>
+				<biblScope unit="page" from="12132" to="12137"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Potent analogues of abscisic acid–identifying cyano-cyclopropyl moieties as promising replacements for the cyclohexenone headgroup</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur. J. Org. Chem.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">2018</biblScope>
+				<biblScope unit="page" from="1416" to="1425"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Frackenpohl</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Insights into the in vitro and in vivo SAR of abscisic acid–exploring unprecedented variations of the side chain via cross-coupling-mediated syntheses</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eur. J. Org. Chem.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">2018</biblScope>
+				<biblScope unit="page" from="1403" to="1415"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kepka</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Action of natural abscisic acid precursors and catabolites on abscisic acid receptor complexes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Plant Physiol</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">157</biblScope>
+				<biblScope unit="page" from="2108" to="2119"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nyangulu</surname>
+					<forename type="first">J</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<title level="a">Synthesis and biological activity of tetralone abscisic acid analogues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Org. Biomol. Chem.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="1400" to="1412"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Raghavendra</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gonugunta</surname>
+					<forename type="first">V</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Christmann</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grill</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">ABA perception and signalling</title>
+		</analytic>
+		<monogr>
+			<title level="j">Trends Plant Sci</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="395" to="401"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hauser</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Waadt</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schroeder</surname>
+					<forename type="first">J</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Evolution of abscisic acid synthesis and signaling mechanisms</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr. Biol.</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">21</biblScope>
+				<biblScope unit="page" from="R346" to="R355"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Vaidya</surname>
+					<forename type="first">A</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<title level="a">A rationally designed agonist defines subfamily IIIA abscisic acid receptors as critical targets for manipulating transpiration</title>
+		</analytic>
+		<monogr>
+			<title level="j">ACS Chem. Biol</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">12</biblScope>
+				<biblScope unit="page" from="2842" to="2848"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Costa</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Leonhardt</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Siegel</surname>
+					<forename type="first">R</forename><forename type="middle">S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Schroeder</surname>
+					<forename type="first">J</forename><forename type="middle">I</forename>
+				</persName>
+			</author>
+			<title level="a">Isolation of a strong Arabidopsis guard cell promoter and its potential as a research tool</title>
+		</analytic>
+		<monogr>
+			<title level="j">Plant Methods</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="6" to=""/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pandey</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Boolean modeling of transcriptome data reveals novel modes of heterotrimeric G-protein action</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mol. Syst. Biol.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="372" to="372"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hao</surname>
+					<forename>Q</forename>
+				</persName>
+			</author>
+			<title level="a">Functional mechanism of the abscisic acid agonist pyrabactin</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Biol. Chem.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">285</biblScope>
+				<biblScope unit="page" from="28946" to="28952"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Melcher</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Identification and mechanism of ABA receptor antagonism.</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Mol. Biol.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="1102" to="1108"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Peterson</surname>
+					<forename type="first">F</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<title level="a">Structural basis for selective activation of ABA receptors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Mol. Biol.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="1109" to="1113"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b38">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cao</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">An ABA-mimicking ligand that reduces water loss and promotes drought resistance in plants</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cell Res.</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="1043" to="1054"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b39">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Halgren</surname>
+					<forename type="first">T</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Glide: A new approach for rapid, accurate docking and scoring. 2. Enrichment factors in database screening</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Med. Chem.</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">47</biblScope>
+				<biblScope unit="page" from="1750" to="1759"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Irwin</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shoichet</surname>
+					<forename type="first">B</forename><forename type="middle">K</forename>
+				</persName>
+			</author>
+			<title level="a">ZINC—A free database of commercially available compounds for virtual screening</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Chem. Inf. Model</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="177" to="182"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Melcher</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">A gate-latch-lock mechanism for hormone signalling by abscisic acid receptors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">462</biblScope>
+				<biblScope unit="page" from="602" to="608"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">Structural insights into the mechanism of abscisic acid signaling by PYL proteins</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Mol. Biol</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="1230" to="1236"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b43">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Miyazono</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Structural basis of abscisic acid signalling</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nature</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">462</biblScope>
+				<biblScope unit="page" from="609" to="614"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Davis</surname>
+					<forename type="first">R</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Blagg</surname>
+					<forename type="first">B</forename><forename type="middle">S</forename><forename type="last">J</forename>
+				</persName>
+			</author>
+			<title level="a">A scaffold merging approach to Hsp90 C-terminal inhibition: Synthesis and evaluation of a chimeric library</title>
+		</analytic>
+		<monogr>
+			<title level="j">MedChemComm</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="593" to="598"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b45">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Uraguchi</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<title level="a">A femtomolar-range suicide germination stimulant for the parasitic plant Striga hermonthica</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">362</biblScope>
+				<biblScope unit="page" from="1301" to="1305"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b46">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Elzinga</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Defining and exploiting hypersensitivity hotspots to facilitate abscisic acid receptor agonist optimization</title>
+		</analytic>
+		<monogr>
+			<title level="j">ACS Chem. Biol</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="332" to="336"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b47">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Takeuchi</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Designed abscisic acid analogs as antagonists of PYL-PP2C receptor interactions</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Chem. Biol.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">10</biblScope>
+				<biblScope unit="page" from="477" to="482"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barratt</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Van der Waals interactions dominate ligand- protein association in a protein binding site occluded from solvent water</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">127</biblScope>
+				<biblScope unit="page" from="11827" to="11834"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sharrow</surname>
+					<forename type="first">S</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Novotny</surname>
+					<forename type="first">M</forename><forename type="middle">D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Stone</surname>
+					<forename type="first">M</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Thermodynamic analysis of binding between mouse major urinary protein-I and the pheromone 2-sec-butyl-4,5-dihydrothiazole</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochemistry</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="6302" to="6309"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bingham</surname>
+					<forename type="first">R</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Thermodynamics of binding of 2-methoxy- 3-isopropylpyrazine and 2-methoxy-3-isobutylpyrazine to the major urinary protein</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Am. Chem. Soc</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">126</biblScope>
+				<biblScope unit="page" from="1675" to="1681"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b51">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Freire</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Do enthalpy and entropy distinguish first in class from best in class?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Drug Discov. Today</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="869" to="874"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b52">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ladbury</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Klebe</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Freire</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Adding calorimetric data to decision making in lead discovery: A hot tip</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Rev. Drug Discov</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="23" to="27"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b53">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Dudutienė</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Discovery and characterization of novel selective inhibitors of carbonic anhydrase IX</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Med. Chem</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">57</biblScope>
+				<biblScope unit="page" from="9435" to="9446"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b54">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Lemke</surname>
+					<forename type="first">T</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Williams</surname>
+					<forename type="first">D</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="m">Foye’s Principles of Medicinal Chemistry</title>
+			<imprint>
+				<publisher>Lippincott Williams &amp; Wilkins</publisher>
+				<date when="2008">2008</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b55">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Diss</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">Gene duplication can impart fragility, not robustness, in the yeast protein interaction network</title>
+		</analytic>
+		<monogr>
+			<title level="j">Science</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">355</biblScope>
+				<biblScope unit="page" from="630" to="634"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Travaglia</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<title level="a">Exogenous ABA increases yield in field- grown wheat with moderate water restriction</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Plant Growth Regul</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">29</biblScope>
+				<biblScope unit="page" from="366" to="374"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b57">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Zhang</surname>
+					<forename>X</forename>
+				</persName>
+			</author>
+			<title level="a">Improving winter wheat performance by foliar spray of ABA and FA under water deficit conditions</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Plant Growth Regul</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">35</biblScope>
+				<biblScope unit="page" from="83" to="96"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b58">
+		<analytic>
+			<author>
+				<persName>
+					<surname>de Souza</surname>
+					<forename type="first">C</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="a">ABA application to maize hybrids contrasting for drought tolerance: Changes in water parameters and in antioxidant enzyme activity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Plant Growth Regul</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">73</biblScope>
+				<biblScope unit="page" from="205" to="217"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

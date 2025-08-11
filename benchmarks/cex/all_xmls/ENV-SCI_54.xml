@@ -1,0 +1,1985 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The economy that runs on waste: accumulation in the circular city</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Taylor &amp; Francis Group</publisher>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-09-20"/>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Federico</forename><surname>Savini</surname></persName>
+							<email>f.savini@uva.nl</email>
+							<affiliation key="aff0">
+								<orgName type="laboratory">Department of geography, planning and international development studies</orgName>
+								<orgName type="institution">University of Amsterdam</orgName>
+								<address>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The economy that runs on waste: accumulation in the circular city</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of environmental policy &amp; planning</title>
+						<imprint>
+							<publisher>Taylor &amp; Francis Group</publisher>
+							<biblScope unit="volume">21</biblScope>
+							<biblScope unit="issue">6</biblScope>
+							<biblScope unit="page" from="675" to="691"/>
+							<date type="published" when="2019-09-20"/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">05447871F4E1E88F816338F7FF27ACDB</idno>
+					<idno type="DOI">10.1080/1523908X.2019.1670048</idno>
+					<note type="submission">Received 1 May 2018 Accepted 18 August 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Circular economy</term>
+					<term>waste</term>
+					<term>resource</term>
+					<term>logistics</term>
+					<term>cityregions</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Conventional wisdom holds that the circular economy will provide a sustainable pathway to economic growth. Advocates of circularity insist that maintaining economic growth, while simultaneously reducing both inputs of materials and outputs of waste, entails closing material streams in cities. This article examines the roots and legacy of these prescriptions in environmental policymaking. It argues that the circular economy represents a regime of eco-accumulation in which waste is main resource of production and consumption. Focusing on the legacy of circular economy policies in the Netherlands and Amsterdam, the article provides an account of the building of a nationwide green-growth urban agenda underpinned by the valorization of waste. It dissects three social, economic, and institutional processes and factors through which circularity takes shape: (a) the reconfiguration of the multi-level structure through which waste processing has been governed; (b) the promotion of a city-regional economy of micro-logistics and industrial manufacturing for waste materials; and (c) the centrality of households in producing and consuming waste in the urban environment. The article concludes by questioning the limits of an economy dependent on waste.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Questioning the circular economy</head><p>Across a variety of socio-economic sectors, policy makers, corporations, and environmental groups are increasingly putting forward notions of 'circular economy'-or just 'circularity'. These notions indicate a variegated set of practices for transitioning towards a sustainable socio-economic system. Common examples include the reuse of organic waste such as biomass or biogas; innovative product design to facilitate recycling; integrated heat infrastructure in both industrial and residential building construction; acquathermie in residential areas; repair cafés in urban neighborhoods; or digital sharing platforms <ref type="bibr" target="#b70">(Reike, Vermeulen, &amp; Witjes, 2017)</ref>. An inspirational and abstract concept, the circular economy is most clearly defined in opposition to the 'linear' economy, based on a 'make-use-dispose' consumption paradigm. Environmental economists stress that a circular economy offers a pathway to a post-extractivist society, in which the material demands of economic growth are recovered from existing human activities (see, for example, <ref type="bibr" target="#b19">Ellen MacArthur Foundation, 2015;</ref><ref type="bibr" target="#b24">Geissdoerfer, Savaget, Bocken, &amp; Hultink, 2017;</ref><ref type="bibr" target="#b25">Ghisellini, Cialani, &amp; Ulgiati, 2016;</ref><ref type="bibr" target="#b50">Mathews, 2011;</ref><ref type="bibr" target="#b62">Murray, Skene, &amp; Haynes, 2017)</ref>.</p><p>Both visionary and technically achievable, this idea has found much favor in national and local governments all over Europe. Hence, the concept of circularity is now beginning to be applied in the development of policies combining urban development, utilities reorganization, and energy policies in city-regions. Examples include the Be-Circular Brussels redevelopment plan; Copenhagen Model for circular bio-waste streams; Paris Circular Economy Plan for valorizing waste; the Dutch plan Netherlands Circular 2050; among others. Circularity is also driving urban redevelopment projects attempting to integrate waste, heat, and energy networks, such as Tampere's Eco3business park, London's old Oak and Park royal and Gent's Old Dockyard (see <ref type="bibr" target="#b75">Savini &amp; Habdank, 2018</ref>, for a complete list).</p><p>Despite its increasing prominence in city-regional governance, scholarship on the circular economy is primarily concerned with either its infrastructural and commercial realizations, or the micro-practices of sharing, living, and waste reuse among households. As Hobson and Lynch write, 'frameworks for, and analysis of, the CE [circular economy] have arguably side-stepped detailed considerations of its broader socio-economic implications, being all-but silent on what a CE society might look like' <ref type="bibr" target="#b35">(Hobson &amp; Lynch, 2016, p. 16)</ref>. More optimistic studies have argued that circular economy mobilizes initiatives promoting social reciprocity, ecologically responsible consumerism, product sharing, and eco-manufacturing in city-regions <ref type="bibr" target="#b28">(Girardet, 2014)</ref>. While underscoring the inadequacy of existing definitions of circularity in urban planning, others praise the idea's potential for addressing the problems of resource scarcity, waste, and ecosystem services <ref type="bibr" target="#b86">(Williams, 2019)</ref>. Critical works define circularity as 'the latest and most sophisticated version of the 'sustainable' fetishized commodity' <ref type="bibr" target="#b80">(Valenzuela &amp; Böhm, 2017, p. 28)</ref>. Finally, others dismiss circularity as a 'bundle of ideas' that mobilizes a new morality of ecologically-oriented economic consumption and production <ref type="bibr" target="#b31">(Gregson, Crang, Fuller, &amp; Holmes, 2015, p. 220)</ref>. Although these works have begun to question the socio-spatial implications of circularity for society and urban areas, they do so only to re-conceptualize the circular economy. We lack, therefore, evidence-based account explaining why and how this notion has been mobilized in environmental governance.</p><p>To fill this gap, this article takes a macro-perspective of the circular economy, shedding light on the concept's roots and legacy in national and local sustainable development programs. In so doing, it contends that the circular economy marks the beginning of the capitalist economy's structural adaptation to problems of waste accumulation and resource scarcity. It shows how the concept is driving a nationwide strategy to valorize waste as a resource for city-regional growth. Mobilizing the concept of 'regimes of accumulation', the article hones in on three processes: the changing multi-level governance of waste processing; the expanding market for material and waste logistics in city-regions; the centrality of households in producing and consuming urban (waste) material. The article concludes by considering the risks of constructing a paradigm for green economic growth based on waste recovery.</p><p>The article results from research carried out in the Netherlands in 2017 and 2018, focusing on the Amsterdam city-region (see methodological appendix for details). The Dutch context represents an extreme case of circular economy policy application, in which the term is increasingly used across a diffuse constellation of official policy papers, agreements, studies, and programmatic governmental papers in different sectors. Furthermore, the notion of the circular economy is centrally prominent in the current governmental debate about the climate act (which is discussed below), especially in relation to sustainability programs. Since 2008, both nationally and locally elected officials, industrial firms (in logistics, marketing, data processing, food and agriculture, water management, and other areas), banking institutions, and environmental advocacy groups have embraced circularity, incorporating it in their policies and visions. At the time of writing, all of the political parties in the Amsterdam city council present circularity as a viable approach to sustainable growth <ref type="bibr" target="#b20">(Eurocities, 2017)</ref>. Because Amsterdam is exceptional in the discourse of circularity, the following analysis refrains from making general claims. Instead, the study's purpose is to trace the genealogy of a policy idea and unpack its key social, economic, and institutional processes.</p><p>In the first section, I build on work in urban political ecology to sketch out the changing position of waste in both modern capitalism in general and existing forms of environmental governance in particular. In the second and third section, I unpack three key processes that explain waste's shifting role in circular economy policies. I then focus on the roots and legacy of circular economy policymaking in the Netherlands and Amsterdam. In so doing, I show how this idea conveys an accumulation regime that maintains economic growth while transitioning to non-fossil based energy production; reducing imports of raw materials; and promoting a material logistics sector in city-regions. Finally, I argue that these policies depend on a form of urban eco-entrepreneurialism, in which waste is beautified and households become waste 'prosumers.'</p></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head>The marginality of waste in modern (eco) accumulation</head><p>In modern capitalism, waste has become a 'negativity' <ref type="bibr" target="#b27">(Gille, 2010)</ref> of production and consumption. <ref type="endnote" target="#end_0">end_0</ref> In this context, it is posited as 'the political other of value' <ref type="bibr" target="#b26">(Gidwani &amp; Reddy, 2011, p. 1925)</ref>, the 'degree zero of value' <ref type="bibr" target="#b21">(Frow, 2003, p. 25)</ref>, or anti-value in the circulation of capital <ref type="bibr" target="#b32">(Harvey, 2018)</ref>. 'From the perspective of economics,' writes Gille, 'waste is not merely uninteresting but is rendered explicitly invisible or is explained away in theories and models that somehow marginally relate to the topic of waste' <ref type="bibr" target="#b27">(2010, p. 1053)</ref>. As Ghandy argues, the disappearance of waste from any spatial, social, and economic relation was the constitutive 'illusion' of 'hygienist' approaches to modern environmental planning <ref type="bibr" target="#b22">(Gandy, 2004)</ref>. Indeed, much planning of modern city-regions betrays this need to displace production and consumption's unwanted residues. Cities depended on zoning schemes that separate residential areas from waste treatment plants, such as landfills and incinerators. The regulation of unwanted residual materials has been increasingly centralized in national governments, thus rising above inter-municipal conflicts over waste disposal. When not incinerated or buried, inert or hazardous waste is either displaced to the very edges of urban agglomerations or globally exported to the planet's wastelands. Urban waste tends to re-emerge within the urban fabric only as 'stubborn reminders' of modern waste displacement's shortcomings <ref type="bibr" target="#b42">(Kaika &amp; Swyngedouw, 2000, p. 136)</ref>. Indeed, waste has been largely marginal in modern economic production and consumption, especially at city-regional levels of scale.</p><p>To explain waste's changing role in contemporary economic development, I use the concept of 'regimes of accumulation'. A term developed by the regulation school for analyzing the reorganization of capitalism in socio-economic crises, a regime of accumulation is a historically and geographically contingent articulation of capitalist production and consumption processes. Regime are institutionalized through modes of regulation comprising multi-layered set of institutions, social norms, values, and laws, which together valorize particular goods, materials, and practices over others <ref type="bibr" target="#b40">(Jessop, 1997;</ref><ref type="bibr" target="#b41">Jessop, Brenner, &amp; Jones, 2008)</ref>. The term 'regime' has been particularly effective in critical studies of how economic growth articulates with principles of ecological development. Specifically, it provides a framework in which to analyze how ecological states re-regulate the economy to integrate ecological priorities and economic development <ref type="bibr" target="#b83">(While &amp; Gibbs, 2004</ref><ref type="bibr" target="#b84">, 2009)</ref>.</p><p>Three dimensions of regimes of accumulation are particularly relevant in studying waste in contemporary circular economic models. First, regimes can be identified by the scales-or polity-at which the production, circulation, and realization of value are regulated. Regimes of accumulation unwind through the rescaling of the state across geo-political levels, visible in how responsibilities, governance networks and regulatory prescriptions shift to different levels of government. Second, regimes manifest in and through particular modalities of commodity production and circulation, and particular distributions of value across social and market sectors. They are defined by shifting features of commodity markets in economic growth, specific combinations of commodified goods, services, and experiences. Third, regimes are structured around distinctive compositions of productive capacity and social demand. These are evident in the articulation of the state-market systemintended as an apparatus or machinery of governingand crucially the role of individuals in economic production and consumption (for an extensive analytical framework, see <ref type="bibr" target="#b4">Boyer, 2004</ref><ref type="bibr" target="#b5">Boyer, , 2018))</ref>.</p><p>Even after sustainability became central to (inter)national policy agendas, waste was hardly accorded a central role in production and consumption processes. Until very recently, waste processing has remained anchored in a management paradigm. Although this paradigm was especially important in setting environmental quality standards, it remained marginal in economic governance <ref type="bibr" target="#b31">(Gregson et al., 2015)</ref>. Waste accumulation was increasingly politicized during the 1980s, when the European green-left waged a 'war-on-waste' <ref type="bibr" target="#b11">(Cooper, 2009)</ref>. Anti-consumerist activists pointed out waste accumulation's negative, environmentally harmful consequences. Following this, European regulations against landfilling pushed national governments to modernize waste management, develop state-of-the art waste incinerators, and strengthen waste diversion schemes to improve recycling. Waste became matter of interest for both firms operating in the waste processing sector (especially incineration and recycling) and zero-waste movements fighting against waste facilities as such <ref type="bibr" target="#b27">(Gille, 2010)</ref>.</p><p>In the early 1990s, European environmental agendas made waste an important target of eco-modernization and infrastructural investment. To facilitate the capture of valuable materials and effective recycling, waste regulation mandated rigorous management hierarchies. National governments progressively 'regionalized' waste processing. Regional authorities (or boards) undertook policies that diverted waste from landfill and incineration (at least in Western Europe, see <ref type="bibr" target="#b7">Bulkeley, Watson, &amp; Hudson, 2007;</ref><ref type="bibr" target="#b13">Davoudi, 2000)</ref>. Improving waste incineration technologies also allowed city-regional governments to control the environmental and health risks of waste-to-energy plans. Waste management begun to follow a 'self-sufficiency' paradigm <ref type="bibr" target="#b6">(Buclet &amp; Godard, 2013)</ref>, as regions came to rely on a oligopolistic chain of waste recovery <ref type="bibr" target="#b63">(OECD, 2000)</ref>. The regionalization and partial liberalization of waste management was unable to reconfigure existing conceptions of waste in economic development: recycled materials remained secondary to raw materials. In addition, hazardous materials and heavy metals required complex processing in transnational circuits. In other cases, waste was targeted by illicit economies and trans-national agreements, through which countries including the Netherlands (which incinerates the largest volume of waste per capita), Denmark, Norway, and Germany have come to import other countries' waste for disposal or management <ref type="bibr" target="#b12">(D'Alisa &amp; Armiero, 2013;</ref><ref type="bibr" target="#b30">Gregson &amp; Crang, 2015)</ref>.<ref type="endnote" target="#end_1">end_1</ref></p><p>The consolidation of sustainable growth agendas in the mid-2000s marked a change in the way cities dealt with resources, especially energy. However, this hardly changed waste's position in (green) growth regimes. European policies have addressed problems of CO 2 reduction; energy efficiency in production; housing and transport; and responsible ecological consumerism <ref type="bibr" target="#b48">(Machin, 2019)</ref>. The ecological regime of accumulation of the early 2000 builds upon the ambition of greening economic production, sustaining rises in clean industry; environmental innovation; dependency on renewables; decentered energy markets; energy efficiency in property development; and energy labeling <ref type="bibr" target="#b85">(While, Jonas, &amp; Gibbs, 2004)</ref>. This regime was driven by a coalition of actors across real-estate, green political parties, environmental activists, creative industries, hi-tech, and automation. Explicitly, this coalition combined energy efficiency with principles of smart growth <ref type="bibr" target="#b3">(Bossuyt &amp; Savini, 2017;</ref><ref type="bibr" target="#b8">Caprotti, 2014)</ref>. In this context, citizens were posited as (at least potentially) responsible consumers, ecoefficient homeowners, and environmentally concerned voters.</p><p>This historical overview has emphasized waste's marginality in the early forms of environmental and economic governance. It was secondary to the immaterial economies of finance, knowledge, and hi-tech. Waste was also kept geographically separate from residential areas, being processed in regional peripheries or transnationally. The waste market largely remained a sector of public agencies, with incineration and water companies operating at regional scale <ref type="bibr" target="#b49">(Massarutto, 2007)</ref>. Finally, waste remained alien to domestic life and consumption; households were involved only in separating glass, paper, plastic, and (in some European cities) food for recycling.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Waste valorization: raw materials beyond recycling</head><p>The contemporary popularity of circular economic models in sustainability agendas suggest emergent features of a regime of accumulation in which waste is treated as not an output to manage, but a resource for economic development. Prototypes of circular production date to the late 70s, when industrial manufacturing groups began investing in industrial symbiosis and effective industrial design to set up an economically profitable material recovery process. Concerned with raw materials and energy supply, these groups organized cradleto-cradle infrastructural and design systems that transform one company's residuals into another's input (residuals, here, might be wastewater, residual heat, and chemicals). Models of industrial synergy minimize the costs of raw materials in existing production processes <ref type="bibr" target="#b51">(McDonough &amp; Braungart, 2010)</ref>. Cost effective symbiosis required proximate industrial plants, while zoning separated waste reuse from residential areas. These approaches precipitated more recent models of circular economy. As such, they mark a redefinition of waste's (business) value, in which waste became a resource for further production <ref type="bibr" target="#b45">(Lacy &amp; Rutqvist, 2016;</ref><ref type="bibr" target="#b64">Pauli, 1999;</ref><ref type="bibr" target="#b79">Urbinati, Chiaroni, &amp; Chiesa, 2017)</ref>.</p><p>The circular economy's rising popularity in environmental policymaking builds upon the diffusion of these industrial approaches through the realm of environmental governance. These business models prescribe a 'positivized waste management' <ref type="bibr" target="#b80">(Valenzuela &amp; Böhm, 2017, p. 28)</ref>, which values waste's productive reuse as a resource across social, economic, and spatial policymaking. This paradigm shift allows governments to tackle several problems simultaneously: the rising scarcity and prices of raw materials, the consequential decrease of industrial productivity, and ever growing volumes of waste.</p><p>Governments in Europe are increasingly concerned with recycling's social, economic, and environmental limitations. While national recycling rates have increased in Europe (+13% between 2004 and 2014), recycling output remains a problem in many larger urban areas, where an average of just 19% of recyclable waste is collected <ref type="bibr" target="#b2">(BiPRO/CRI, 2015)</ref>. In comparison with the EU average of about 44% in 2014, recycling rates in Amsterdam (20%), Rotterdam (30%), Paris/Ile de France (25%) and London (33%) remain low. <ref type="endnote" target="#end_2">end_2</ref> Although city-regional governments are very concerned with the current state of solid waste recycling, this has had little effect on industrial productivity. In addition, waste recycling in city-regions has been unable to meet ambitious governmental climate targets, despite urban agglomerations being a primary focus of these policy goals. Recycled materials are of lower quality; have high environmental prescriptions in the case of chemicals, electronics, and heavy metals; and establishing the infrastructure required to produce them remains more expensive than importing raw materials. In particular, the recycling of construction and demolition waste-the second source of waste after water-is still largely underdeveloped in Europe. Finally, recycling requires the continuous enlargement of waste facilities, and permanent energy input, which produces emissions. These present significant problems for city-regional governments, especially considering that waste output in city-regions is increasing with the overall enlargement of the 'stock' of products in the economy-the amount of 'stuff' that is produced, imported, and then wasted <ref type="bibr" target="#b76">(Schmidt J.H &amp; 2.-0 Consultants, 2009)</ref>.</p><p>Given recycling's limitations, policymakers have begun experimenting with waste-as-resource approaches, primarily in North-Western Europe, where landfilling has been progressively reduced. In the mid-2000s, waste-as-resource approaches came to closely resemble current circular policymaking, especially when applied to urban areas and household practices <ref type="bibr" target="#b7">(Bulkeley et al., 2007)</ref>. These approaches addressed the limits of recycling by regulating waste as a resource for urban communities. In building of a socio-cultural program of 'environmental stewardship,' they involved non-governmental associations and households <ref type="bibr" target="#b65">(Pollans, 2017, p. 4)</ref>. The state's role, in this paradigm, is to encourage individual households to engage directly in waste processing, promoting a culture of responsible consumerism and reuse.</p><p>Governmental concern with recycling rates, and how urban areas and households manage waste, are important but ultimately insufficient factors in explaining why the circular economy has become a strategic targetboth nationally and internationally, among both states and industrial groups. Today's policy programs are shaped by the need to address resource scarcity and maintain high productivity levels in digital services, chemistry, hi-tech, and knowledge. The increasing prices of the most important raw materials, as defined by the European Commission, indicate that the continent is approaching a critical tipping point, after which key resources for the post-industrial economy will become increasingly scarce <ref type="bibr" target="#b16">(EC, 2017)</ref>. Especially rare materials include Magnesium (used in transportation); Antimony (used in batteries); Vanadium (used by the building industry and in engines); and platinum group metals, which are essential for producing solar panels, wind turbines, and ensuring energy efficiency more generally. The prices of these rare materials have tripled between 2002 and 2016. <ref type="endnote" target="#end_3">end_3</ref> These materials, which are imported from other continents (notably China), are irreplaceable in the production of energy infrastructures, smart transport networks, automated systems, and digital networks. Digitalization, automation, and electrification are strategic targets for climate programs at the EU level, and depend on cities' capacity to recover metals from existing e-waste <ref type="bibr" target="#b17">(EC, 2018)</ref>.</p><p>These trends indicate the broad context of circular economic approaches. As a socio-economic program, these approaches combine three aims: to surpass recycling as an approach to waste processing (and not simply improve it); to develop a market for recovered materials and maintain productivity; and, as I go on to show, to address CO 2 reduction targets. The following section dissects three socio-spatial and economic processes that push towards these ambitions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Urban mining, logistics and 'prosumption'</head><p>Three distinctive processes characterize an accumulation regime dependent on waste recovery. Circular economy programs redefine urban development as a process of generating-not exploiting-resources (see <ref type="bibr" target="#b69">Raworth, 2017)</ref>. Building on early analysis of urban metabolisms, cities are presented as networks of material streams, in which one activity's waste becomes another's resource <ref type="bibr" target="#b28">(Girardet, 2014;</ref><ref type="bibr" target="#b44">Kennedy, Pincetl, &amp; Bunje, 2011)</ref>. Regenerative urbanism-which encompasses design and economics-belongs to a paradigm of social, cultural, and infrastructural change in which the built environment is a source of materials, not their product. These models apply the notion of 'upcycling' waste materials-that is, their reuse before recycling -to buildings and infrastructures <ref type="bibr" target="#b28">(Girardet, 2014;</ref><ref type="bibr" target="#b47">Lyle, 1996)</ref>. Such practices include neighborhood based composting, urban agriculture, textile re-manufacturing, 3D-printing using recycled plastics, community energy trusts, and food waste coops <ref type="bibr" target="#b10">(Cities foundation, 2018)</ref>. Urban mining translates regenerative urbanism principles into industrial practice. It envisages an industry geared to recovering materials from anthropogenic activities in urban agglomerations <ref type="bibr" target="#b1">(Baccini &amp; Brunner, 2012)</ref>. A key pillar of circular economic policymaking, urban mining is regenerative urbanism's industrial counterpart. Chemical and metal sectors use it to recover materials that, although present in cities, are unlikely to be recycled. Metals are recovered from obsolete electricity networks and underground pipes, while chemicals and concrete are recovered for use in the building and regional food industries <ref type="bibr" target="#b67">(Prendeville, Cherim, &amp; Bocken, 2017)</ref>. Both urban mining and regenerative design, as I later argue, suggest a rescaling of waste and resource governance from national and international to local scales. They reflect a devolution of the governance of materials in city-regions, implemented through national-urban deals, that allows cities to better control waste recovery, collection, and reuse.</p><p>A second distinctive process of an accumulation regime dependent on waste valorization is the shortening of supply-chains that move materials recovered from waste. Historically, the circulation of waste materials-such as water, domestic waste, chemicals and metals -has been 'fragmented' and 'unbundled' in post-fordist urbanization <ref type="bibr" target="#b29">(Graham &amp; Marvin, 2001, p. 33)</ref>. This has made waste processing not only costly, but also very uncompetitive relative to raw material imports. Urban waste processing was largely unprofitable for regional companies <ref type="bibr" target="#b14">(Davoudi &amp; Sturzaker, 2017)</ref>. This resulted in a highly sectoral urban infrastructure, paralleled by a variety of semi-autonomous public, private, and semi-private firms managing specific material flows. Circular economic models target this inadequate waste supply chain, which they suggest should be replaced by a 'nexus infrastructure' able to bridge different material streams <ref type="bibr" target="#b0">(Artioli, Acuto, &amp; McArthur, 2017)</ref>.</p><p>Logistics is the prime sector advocating a networked infrastructure. As a sector, logistics governs distribution, processing, and shipment in dense urban agglomerations. In a market of mass consumption dependent on global supply chains, freight and cargo logistics are crucially important <ref type="bibr" target="#b33">(Hesse, 2008)</ref>. Current circular economy models prescriptions a greater circulation of materials, goods, and waste specifically within city-regions <ref type="bibr" target="#b68">(Ranta, Aarikka-Stenroos, Ritala, &amp; Mäkinen, 2017)</ref>. The Ellen MacArthur Foundation-a major advocate of circular economy in the corporate sector-explicitly foreground reverse logistics-logistics that connect consumed goods/waste back to producers-as a 'rationale' for circular policymaking <ref type="bibr" target="#b18">(Ellen MacArthur Foundation, 2013)</ref>. Such programs highlight potential business opportunities, such as customized consumption supply chains; local re-manufacturing; city-regional agriculture; and bio-economy. They call for investments in the infrastructures necessary for distributing products in the circuits of sharing and second-hand economies, mostly at the regional scale. This kind of regionalization puts logistics firms already positioned in the material distribution sector in a pivotal governance position. Thus, the transition towards circularity is enabled by investments in infrastructure that are primarily carried out by air-cargo providers, airports, waste and water companies, industrial consortia in chemistry, freight transporters, storage facilities providers, and network providers. As I show, these firms are some of the main advocates of circular economy in the private and utility sector.</p><p>The third distinctive process of accumulation under the circular economy is the structural re-articulation of consumption and production processes in cities. The rescaling of logistics markets characterizes a regime of accumulation in which 'one producer's wastes become another's inputs' <ref type="bibr" target="#b50">(Mathews, 2011, p. 869)</ref>. The notion of the 'prosumer' captures this shift. Individuals are 'more than users or consumers': they become makers of the resources needed for their own consumption practices <ref type="bibr" target="#b37">(Humphreys &amp; Grayson, 2008;</ref><ref type="bibr" target="#b71">Ritzer, 1983)</ref>. The 'prosumer' belongs to an economic system in which the two formerly distinct processes of production and consumption temporally and spatially overlap <ref type="bibr" target="#b72">(Ritzer, Dean, &amp; Jurgenson, 2012)</ref>. As such, the concept has been fruitfully used to explain the role of users in the search engines industry. As a material prosumer, the individual's act of consuming a particular good-such as a phone, with its electronics, or t-shirt, with its fabric-produces the necessary conditions of that consumption: in my example, reusable electronic materials or textiles. As <ref type="bibr" target="#b34">Hobson (2015)</ref> has suggested, prosumption has both social and geographical dimensions. The concept allows us to grasp the circular economy not exclusively as a technological or business program, but rather as a sociocultural shift in consumerist society. Urban households, and the consumption and lifestyle practices they involve, actively partake in production processes.</p><p>Prosumption is central to the rising commodification of waste, according to which household consumption is necessary for the production of new market commodities, which are distributed through systems of sharing platforms, repairing spaces, re-manufacturing sites, fabrication ateliers, and product re-design <ref type="bibr" target="#b36">(Hult &amp; Bradley, 2017, p. 598)</ref>. Located in dense urban environments, in close proximity with households, these activities often use digital sharing technologies. By engaging in sharing activities, households become prosumers in an economy in which consumption equals production through waste. Prosumption encompasses a broad array of individual practices: sharing leftover meals; collecting urines and feces containing phosphates for regional agriculture; exchanging used clothes at nearby pop-up stores; collecting organic waste to make compost for local neighborhood ethanol production; sending obsolete appliances to nearby repair shops; and many more. In the following sections, I reconstruct the legacy of circular economic policy programs in the Netherlands and Amsterdam.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Roots and legacy of a circular economy regime in The Netherlands</head><p>The Dutch context offers an ideal case to explore the institutional and political impacts of the circular economy model in contemporary European economies. The Netherlands, above other European countries, has undertaken comprehensive policies at all scales, explicitly combining climate targets with a national strategy for sustainable growth. These policies, moreover, are applied to a densely populated country, in which urban agglomerations are expanding and energy, raw materials, and land are increasingly scarce.</p><p>Since 2014, the Dutch government has started producing programmatic and strategic documents aimed at implementing numerous circular economy interventions, projects, pilots, and initiatives over the next 30 years. In 2014, the governmental program From Waste to Resource (VANG, van Afval naar Grondstoff) marked a shift in the national waste processing paradigm, and recognized how 'existing waste policy is targeted at mitigating the environmental stress of waste, while a circular economy requires seeing waste as a resource' (my translation). <ref type="endnote" target="#end_4">end_4</ref> This comprehensive program, developed by the Ministry of Infrastructures and Environment, combines three strategic policy sectors that have previously been institutionally discrete: the increasingly urgent need for resource self-sufficiency and effective waste disposal; a transition away from fossil-based energy sources; and smart socio-economic growth, underpinned by eco-production and consumption. The program proposes numerous interventions, including pilot projects experimenting with new production and consumption processes. These projects aim to redefine waste regulations; institute national-local partnerships; establish specialized R&amp;D for efficient product development in the food, building, and hi-tech sectors; and develop a new consumer culture by promoting reuse and sharing projects at the neighborhood level.</p><p>The VANG policy framework results from a series of parliamentary briefs and motions that appeared in national policy debates in 2010 and 2011. The inter-ministerial 'resource note' (Grondstoffenotitie) <ref type="endnote" target="#end_5">end_5</ref> and 'more value out of waste' note <ref type="bibr" target="#b52">(Ministry of IenM, 2011)</ref> signaled that the government's intended to valorize waste streams and broadly reorganize supply chains to achieve resource independence. Both documents point out at that existing recycling procedures are inadequate, given expected waste increases-especially household, electronic, and construction waste. They highlight the importance of resource efficiency in nationally strategic industries of hi-tech, agribusiness, logistics, creative industry, and construction. These sectors are identified as especially crucial in the Dutch economy, in terms of both economic added value and job units. However, these sectors are also exposed to a high degree of risk in terms of raw materials supply, for their materials are still primarily imported from abroad.</p><p>These political agreements represent stepping stones towards a national vision on the circular economy. They cut against an excessively international resource/waste cycle, which depends on global markets and fragmented logistics, but also responded to changing national waste streams in a post-industrial economy. In the Netherlands, consumer-generated waste is increasing and producer-generated waste is decreasing. Between 1985 and 2014, in light of the country's steady increase of GDP, household waste increased by 60% while industrial waste decreased by 25%, the metal and food industries producing still most waste (Figure <ref type="figure" target="#fig_0">1</ref>). <ref type="endnote" target="#end_6">end_6</ref> Early Dutch circular economy policy briefs, then, combined the urgent need to grapple with both resource scarcity and increasing consumption waste. In the Netherlands, most primary materials are employed in the food (80% of all materials used in the sector), construction (90%), and metal (85%) industries (CBS data from 2013). These materials are not provided through traditional recycling techniques, and must be processed through material-specific recovery systems, composted, or backfilled. <ref type="endnote" target="#end_7">end_7</ref></p><p>Although the VANG program had little effect on recycling rates <ref type="bibr" target="#b73">(RIVM, 2018)</ref>, it activates numerous initiatives across different sectors. Today, these constitute the policy network that has driven the fast positioning of the circular economy in national and local political agendas. In 2017 these initiatives were streamlined as part of a nationwide circular economy program, called The Netherlands Circular in 2050 <ref type="bibr" target="#b54">(Ministry of Infrastructure and Environment, 2016)</ref>. Structured around five 'task forces', this program's organizes multi-level governance around initiatives in the biomass/food, remanufacturing, consumption, and building sectors. The initiatives include adjusting packaging regulations and producer responsibility; establishing data exchange platforms that promote the material recovery before recycling in the areas of resource, design, and product development (for example, CIRCO, Business design and Platform Circular Entrepreneurs); educating children about waste's importance in primary schools; and, most importantly, the Circular Seaports program (Circulaire Zeehavens). This national partnership between Rotterdam and Amsterdam harbors connects multiple material streams (whether of food, energy, chemical, renewables, or wastewater) in existing harbors areas.</p><p>These initiatives are carried out through inter-sectoral and multi-level contracts among public governments; start-ups in the product design and energy sectors; and industrial groups in the hi-tech and energy sectors (such as Philips, shell, and energy distributors). Since 2011, the Dutch government has been developing a multi-level cross-sectoral governance strategy, geared towards experimenting with innovative projects in urban agglomerations. It has signed a total of 200 'green deals' and 18 city-deals: contracts for schemes trying out innovative solutions for green economic growth. Among these, 40 deals address the circular economy, waste reuse, integrating material streams, and developing a bio-based economy. In building national-urban-business coalitions around these issues, the deals combine approaches to supply chain management, business modeling, and urban infrastructuration <ref type="bibr" target="#b23">(Ganzevles, Potting, &amp; Hanemaaijer, 2016)</ref>. They create a form of waste governance that is more decentralized and multi-sectoral than previously. They also include partnerships with several environmental associations. Alongside promises of new certification systems and subsidies that disincentive incineration, these deals are particularly oriented to establish partnerships between start-ups in data and freight logistics, urban waste departments and infrastructural providers. <ref type="endnote" target="#end_8">end_8</ref></p><p>This expansion of policy initiatives has now been fully institutionalized in the governmental policy package on climate. The so-called Climate Agreement (Klimaatakkord) is a first attempt at streamlining all the national policies necessary for achieving the target of reducing CO 2 emissions by 49% in comparison to the 1990s by 2030. The circular economy figures as a strategic priority in three key areas: the reduction of CO 2 in the country's growing building industry; the shift from fossil-based to biomass and biogas energy sources; and the reduction of all primary raw materials used in the economy by 50% <ref type="bibr" target="#b15">(Dutch Government, 2019)</ref>. The Task Force Circular Economy-one among 6 groups designing the program-is elaborating strategies to increase food and organic waste reuse for biomass and biogas. Its key members are national chemical, electronic, and building firms, which mean to invest in a bio-based economy for electronics and chemicals <ref type="bibr" target="#b78">(Taskforce Biomass and Food, 2017)</ref>. <ref type="endnote" target="#end_9">end_9</ref> Under the name Urban Mining Collective, these firms are forming a national advocacy coalition, which aims to promote the recovery, not recycling, of construction residuals, metals, e-waste, and chemicals. <ref type="endnote" target="#end_10">end_10</ref></p><p>A major challenge faced by the Netherlands in reducing its CO 2 production is the creation of a bio-based economy, dependent on biomass and biogas. Such an economy would address the country's dependence on gas. Gas covers about 50% of all energy supply in the Netherlands, produces 11% of all CO 2, and provides heating for 95% of the country's total housing stock. Renewables constitute only 10% of total supply. The governmental strategy for realizing a circular economy in achieving its climate targets has to be placed in the context of an energy transition in which renewable energies do not adequately meet current energy demands. The circular economy would substitute the country's largest energy source-ground gas-with another: waste, above all organic waste. Together, the Netherlands' small but stable share of renewable energy; high ratios of, and capacity for incineration; and high volumes of organic waste from cities and agri-business has combined to make valorizing(organic) waste a national target (data from <ref type="bibr" target="#b9">CBS, PBL, RIVM, WUR, 2017)</ref>. <ref type="endnote" target="#end_11">end_11</ref></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Urban logistics as market for the circular economy</head><p>In redefining waste processing procedures, regulations, and infrastructures, these national programs require direct involvement from city-regional governments and waste processing firms. The national agreements described above consolidate a multi-level governance structure focused on valorizing waste streams from and within urban environments. It does so by strengthening and developing niche markets for different sorts of waste management, processing, and collection.</p><p>The city of Amsterdam formed a pioneering policy network including national programs, visions, agreements, and strategies for the circular economy. Since 2008, governing political parties in the municipal executive formed a green growth coalition around early principles of 'circularity'. This coalition addressed regional growth by tackling the effects of the global financial crisis on the city's 'real' economy, namely the building, food, and logistic sectors. The parties agreed an agenda that experimented with combining principles of environmental qualities (clean air, green energy, neighborhood approach, and smart urbanism) with a resource-based economy (grondstoffeneconomie), while protecting logistics businesses.<ref type="endnote" target="#end_12">end_12</ref> The 2011 Amsterdam Integraal Duurzaam document was the first policy package to combine priorities of resource independence, renewable energy, and real-estate development in the aftermath of the global financial crisis. It promoted concrete investments in organic waste (food) and energy streams, so as to valorize the materials produced in the city region, particularly residual heat from incineration. This document anticipated the Amsterdam circular metropolitan area policy <ref type="bibr" target="#b57">(Municipality of Amsterdam, 2014a,</ref><ref type="bibr" target="#b58">Municipality of Amsterdam, 2014b)</ref> and its follow-up, the Circular Amsterdam policy program <ref type="bibr" target="#b60">(Municipality of Amsterdam, 2016)</ref>. These programs identified those sectors in need of 'full circularity': the building industry, water circle, food circle, and biomass. The latter was defined as a sustainable (or green) energy supply for the city.</p><p>These programs' aimed to efficiently match supply and demand of (recovered) materials in the region. In the first unitary circular policy-making program in Amsterdam <ref type="bibr" target="#b60">(Municipality of Amsterdam, 2016)</ref>, city officials envisaged an increase productivity rates by 3% in the building sector and generate 1200 new jobs in the biomass and organic waste sectors (see also <ref type="bibr" target="#b60">Municipality of Amsterdam, 2016,</ref><ref type="bibr" target="#b61">Municipality of Amsterdam, 2017)</ref>.<ref type="endnote" target="#end_13">end_13</ref> To these ends, they identified two necessary interventions: improving the digital infrastructure of data servers and software platforms, so as to facilitate information sharing about material streams in the city-region; and strengthening return logistics, smart freight transportation, and electric mobility. An especially central role is accorded to the largest existing city logistic services, which, for the time being, have been formally privatized as municipally-owned companies. These are the harbor company (Havenbedrijf), which manages the harbor industrial area and its underground infrastructure, and the waste and energy company (Afval Energiebedrijf), which produces energy from incineration. As landowners and infrastructure owners, these firms are the prime advocates for the circular economy in Amsterdam. Yet they are also in coalition with a growing network of start-ups in data-logistic services, lifecycle assessment firms, material accounting, and waste processing, as I discuss in the next section.</p><p>The logistic sector is both the target and driver of the circular transition, both locally and nationally. In the notion of the circular economy, this sector espies a mode of economic development that reacts to decreasing industrial productivity and changing global consumer patterns. Defined as 'distribution country' <ref type="bibr" target="#b15">(Dutch Government, 2019)</ref>, the Netherlands aims to become a world leader in logistics performance, despite the volatility of the logistics market over the last decade, following a global economic downturn and changes in supply chains. <ref type="endnote" target="#end_14">end_14</ref> Locally, though, the logistics sector is growing. In the first quarter of 2014, most logistics start-ups provided consumers goods transportation, taxi services, and road shipments. Businesses in these sectors have long been looking for more certainty in national and regional investments <ref type="bibr" target="#b43">(Kamer van Koophandel, 2014)</ref>. Moreover, in the urban-regional logistic sector investments in eco-efficiency seem less risky and proportionally more effective in reducing CO 2 outputs <ref type="bibr" target="#b82">(Van Wee, Banister, Annema, &amp; Geurs, 2013)</ref>. At a national level, the recently published proposal for a Climate Agreement identifies the logistic sector as a prime target for efficiency investments, suggesting investment in light shipments, such as e-cargo bikes; effective waste diversion infrastructures; e-commerce and sharing; and electric freight transport <ref type="bibr" target="#b15">(Dutch Government, 2019)</ref>.</p><p>Urban and data logistics are the sectors most involved in Amsterdam's circular economic growth policies. They combine industrial groups with small-scale start-ups working in areas of third party logistics, data management, and business modeling. The Green Deal for Netherlands Hotspot for Circular Economy, which was signed in 2013, indicates how these companies partner together around waste recovery markets in Amsterdam city-region. The deal prototypes new regulations to be applied nationally. It involved Circle-Economy, a startup managing data about material flows; Amsterdam's Waste and Energy Company; the Ministry of Economic Affairs; and Ministry of Infrastructures and Environment. The document envisaged a potential profit of 7-12 billion euros in the circular economy, and devised a broad program of research and experimentation in the biobased economy, and using residual heat recovered from waste incineration. Since 2013, the Amsterdam harbor -Europe's first coal and gasoline harbor-has started to reposition its role and industrial policy, defining itself as a 'connector' for material streams, including waste-energy nexuses, construction materials, and e-waste <ref type="bibr" target="#b66">(Port of Amsterdam, 2015)</ref>. In 2015 it invested in a flagship project featuring a circular incubator (Prodock), in which start-ups in the circular sector could collaborate with larger bodies in chemical and material recovery. Two years later, in 2017, the harbor confirmed a partnership with logistic firms aiming to redevelop the underused land properties and infrastructures in the whole west side of Amsterdam region, the so called West-As. This project is a private-led planning initiative promoted by the Amsterdam Logistic Board, a lobby group bringing together Schiphol airport, data-center providers, and a number of freight transportation firms to further develop the industrial belt of Amsterdam. In the project's manifestotitled 'it all revolves around the Westas'<ref type="endnote" target="#end_15">end_15</ref> the board presents investments in the circular economy as necessary for boosting city-regional logistics. This, they stress, is the crucial sector in reconciling economic growth with ecological sustainability. These proposals identify areas prime for industrial redevelopment in the Amsterdam region, and propose building new logistic hubs in the city's periphery.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Changing consumption/production practices: prosumption of waste in Amsterdam</head><p>The spatial separation of sites where waste is generated (residential and commercial spaces) and those where waste is processed (landfill, incinerators, and recycling plants) is the structural result of a particular socio-economic system in which waste materials occupied a negative position-as dirt or externality-in both consumption and production processes. In the accumulation regime of the circular economy, by contrast, waste becomes a commodity that is produced and consumed within the city. In a consumerist economy, the household is the prime site at which goods are consumed, waste generated, and raw materials recovered. The prosumption of waste occurs through an increased proximity between those sites at which waste is generated through consumption and those at which it is recovered through processing. I use the notion of prosumption to capture urban dwellers and consumers' shifting position in justifications of the circular economy as a model of city-regional economic growth.</p><p>Circular economy programs in the Netherlands and Amsterdam began from two distinct but complementary directions. As I have described above, the national government has been producing programmatic documents about how the circular economy might address waste increase and resource dependency within its climate ambitions. At a local level, Amsterdam officials have been prototyping projects experimenting with closed-loop neighborhood infrastructures; regional supply chains; and new waste and material cultures since mid-2000s. The first uses of circularity in urban policy date back to the redevelopment of the Buiksloterham area, a mixed housingindustrial district adjoining Amsterdam's Central Station. Epitomized as a 'circular living lab', the area became a benchmark project for circularity initiatives due to its peculiar mix of residential redevelopment and industrial activities in remanufacturing and design <ref type="bibr" target="#b74">(Savini &amp; Dembski, 2016)</ref>. Having sketched the first plans for developing the underused shipyard, the project's proponents-a community of eco-activists, urban dwellers, and designersbuilt their houses from reused materials and established a closed-loop infrastructural system for water, compost, and energy. The initiative's leaders organized a community around principles of housing eco-efficiency, eco-consumption, and sustainable lifestyles. They experimented with decentered wastewater treatment, off-grid energy circles, and organic waste composting. Building on the success of these initiatives, in 2014 the city government began redeveloping a 10.000 sqm plot in collaboration with homeowners; housing corporations; and energy and water companies to experiment with closed-loop material streams. In this neighborhood, developers are now testing new types of in-house sewage filtering and composting. This so-called project City Plot became the benchmarking prototype for the circular vision of the city at large. Indeed, it is the only concrete example of circular neighborhood in the Amsterdam Circular document. It involved devising an integrated neighborhood, in which organic waste feeds energy and urban gardening; locally grown products could be purchase with local currencies; solar energy is stored and reused; and wastewater is used to store heat.<ref type="endnote" target="#end_16">end_16</ref></p><p>In these plans for circular living, households are portrayed as more than consumers (of energy efficient housing): they are also producers of resources such as energy, water, hating, compost, and buildings. This positioning of citizens is found across circular micro-projects in Amsterdam, a broad landscape of citizen-based microbusinesses and start-ups active in a 'green' repurposing, repairing, reusing, remanufacturing, and redesigning industry. Amsterdam's circular economy is anchored in the growing hype surrounding the city's so-called 'makers industry' or 'makers movement': a diffuse network of start-ups involved in customized DIY production, digitalized manufacturing, and eco-conscious consumerism <ref type="bibr" target="#b56">(Morozov, 2014)</ref>. This sector, which expanded during a period of real-estate downturn, combines start-up re-development with a (sub)culture of ecological entrepreneurialism that explicitly targets surplus materials, wasted products, and local production. In 2014, 35% of all Amsterdam firms were in the handicraft market, of which 60% produced art and consumable products such as trinkets, ornaments, accessories, parts, clothes etc. Most importantly, this was the city's fastest growing sector during the recent period of economic crisis, with growth rates of 25% (relative to the national rate of 2%). This prosperity is largely concentrated in the region's inner core <ref type="bibr" target="#b59">(Municipality of Amsterdam, 2015)</ref>. The policy framework for this local commercial sector was labeled 'Amsterdam Made,' emphasizing a vital local manufacturing and material reuse economy. This label became central in a public campaign promoting best practices in eco-manufacture, which including tenders for innovative start-ups in material reuse, such as the DAM prize for circular businesses or the CIRCO, the nationwide design program for micro-business in textile repurposing. <ref type="endnote" target="#end_17">end_17</ref></p><p>These policy prototypes engage households in circular projects that include waste products that can be effectively managed by dwellers (such as paper, plastic, textiles, diapers, and small metal items). Logistics, chemical, and waste industries are also starting to invest in processing these materials by building close links with consumers. An example is the partnership between the Amsterdam incinerator, Procter &amp; Gamble and the small firm Fater, which reuses materials from used diapers, as collected by citizens in separate public bins (EMBRACE). Similarly, the WASTED project in Amsterdam North, which, though initiated by a start-up, is now sponsored by the northern district government, requires that households monitor their paper and plastic waste and use smart bins to obtain local currency. These activities are having a visible impact on Amsterdam: recent circular plans include a new waste-to-resource hub in the same district. Here, material separation techniques, repair cafés, re-design studios, and second-hand markets will be sited together. The underlying ambition of these policies is to connect the macro scale of waste processing economies (eg. the recycling of metals or plastic) with the circuits of consumption and small-scale production by households and companies in urban areas. As the Amsterdam official states during an interview: the ideal situation is to combine the old school industry or recycling businesses with initiatives that get a grip with the urban material streams. The large companies [waste, building and logistic] are getting closer to the 'laptops' of the sharing platforms, the consumers in the city. The aim is to connect these two sectors that today are still apart. <ref type="endnote" target="#end_18">end_18</ref></p><p>This micro-industry of waste production and consumption also has social, cultural, and aesthetic dimensions. It prospers from the beautification of waste, a process in which the residue consumerism is portrayed as not only manageable and profitable, but beautiful and ecologically desirable too. The initiatives mentioned above make extensive use of public campaigns, which promote waste's positive aspects among urban dwellers. <ref type="endnote" target="#end_19">end_19</ref> The city is also becoming the stage for the visual valorization of waste. In October 2017, Amsterdam city council hosted an exhibition named 'Circular Expo', which was about circular design and material reuse. For its part, Waag Society, a major cultural institution in the city, has organized interactive urban mining workshops and 3D printing workshops featuring recycled plastic. Today, the Waag society remains at the forefront of the circular debate in Amsterdam. In Rotterdam, the Boijmans Museum's 'Change the System' exhibition featured works created entirely from plastic. Artistic artifacts made from waste are also found in Amsterdam, which sports Fatberg, an island of residual fat floating in the sea. These are more than artistic gestures: they highlight how circularity is being embedded in urban culture.</p><p>These are just few among numerous examples of urban practices that build productive relations among urban dwellers and waste. They also suggest that the beautification of waste provides a crucial backdrop against which waste is valorized in the circular economy. The significance of the socio-cultural dimension of circularity lies in how it reveals the potential-as opposed to the danger-of discarded materials. At one level, the artistic display of garbage provides allegories for the environmental, social, and political problems on the planet <ref type="bibr" target="#b46">(Lindner &amp; Meissner, 2016, p. 3)</ref>. At another, waste's beautification has come to justify its value. Within the circular economy, waste is paradoxically presented as a solution to the problem of overconsumption, not its cause.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Questioning the nature of the circular economy</head><p>This article has developed an encompassing account of the circular economy to explain why this notion has diffused so widely in environmental governance and policymaking. Deliberately refrained from theoretically redefining this volatile term, it has focused instead on questioning how circularity has been mobilized in environmental governance over the last decade. In doing so, it has sought to explain the underlying social, economic, and political drivers that are making the circular economy a policy hype across Europe. There is a broad agreement among European, national, and local government officials-as well as environmental activists, environmental scholars, and industrial firms in various sectors-that a circular mode of development, in which all anthropogenic waste is reused in new activities, might offer an alternative and achievable pathway to a sustainable economy. This agreement is grounded on the assumption that a system valorizing waste as a resource will allow a particular region or country's economy to reduce the import and extraction of raw materials and energy to almost zero. Circularity involves reorganizing consumption and production to build a waste processing and recovery market that includes a large array of interventions. Common examples include the increasing incineration of biomass; reuse of nutrients in the regional agricultural economy; reuse of light metals in cable production; promotion of digital platforms for sharing production; and extraction of energy from wastewater.</p><p>This article has taken the circular economy's new centrality in policymaking as the symptom of an emergent regime of capitalist accumulation that prospers by valorizing waste. It dissected the underlying processes by which waste is valorized in regional and national economies. Honing in on the Netherlands and Amsterdam, it has shown how the governmental need to recover material waste close to its source gave rise to early prototypes of circular economic policymaking. This occurred through three processes: first, a combined governmental and business concern with waste accumulation and raw material scarcity in a growing post-industrial consumption economy. States are seeking systemic approaches to meet demands for raw materials and simultaneously rethink the modern paradigm of waste disposal and recycling, which is failing to cope with increasing waste stock and relatively low recycling rates, especially in urban agglomerations. Circular economy provides an approach to economic development that makes one problem the solution of the other in a sustainable way. This is particularly evident in how biomass and biogas are now used to justify the value of organic waste as a longterm source of 'green' energy and bio-based raw materials.</p><p>Second, the circular economy builds on existing attempts to rejuvenate and redevelop city-regional logistics markets. In the materials and goods transportation sector, processing and storage has not fared well in the transition beyond fossil fuels, putting harbors, airports and other urban logistics hubs at the forefront of a circular transition. In this context, the adaptation of the logistics sector-which is actively seeking eco-efficiency-has become a key target in national approaches to the circular economy. As such, the logistics sector is both the driver and target of circular economic policymaking.</p><p>Finally, a regime of accumulation based on waste valorization builds on a particular social and cultural articulation of production and consumption processes. The popularity of circular economic policymaking has risen in parallel with a culture of ecological production and consumption in which households circulate and reuse (potential) waste materials. The notion of prosumption captures households' emerging role in a new economy of materials, which is centrally important in closing urban chains of waste supply and demand. Through consumption, households are both producers of waste and consumers of reprocessed waste materials, which are revalued as new (recycled or upcycled) commodities. They do so through practices of buying, discarding, separating, repairing, sharing, collecting, and repurposing consumable goods.</p><p>This article has not argued that a new capitalist accumulation regime is now fully fledged and instantiated. Neither it has questioned the urgency and virtue of the core principle of circularity, the reuse of all waste that might possibly be produced. It has aimed instead to pinpoint the policy processes through which waste materials have acquired a new centrality in sustainable economic thinking. It has shown how current realizations of the circular economy are not concerned with reducing waste through progressive anti-consumerist policies. Current policy packages are a far cry from the radical principles of the circular economy's earliest applications. As <ref type="bibr" target="#b38">Jackson (1996)</ref> emphasized years before the circular economy became a widely recognized model, any dematerialization of the economy through circularity should prioritize demand-side interventions oriented towards reducing consumption in a first place. Such interventions include both promoting an explicit anti-consumerist culture in households and true-pricing regulations in production. Current policy practice, in contrast, posits waste as the wellspring of economic production and consumption, a source of materials, a posteriori justified as a strategy for meeting climate targets in a growing post-industrial economy. These policies indicate the limits of an approach to circularity that is supposed to bring about a fundamental transition towards a dematerialized economy. Instead, they justify a vicious co-dependency, in which waste accumulation and material/energy supply bypasses the more fundamental source of ecological problems: ever-growing consumer capitalism.</p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Notes</head>
+<note type="endnote" xml:id="end_0" n="1">Waste had a different position in premodern societies, in whose urban economies and living spaces it was more central and visible.</note>
+<note type="endnote" xml:id="end_1" n="2">A further example of waste's economic marginality is the fact that economic and statistical accounting of waste has been fragmented until very recently. In the early 2000s, integrated systems of environmental economic accounting were established, along with life-cycle assessment tools and detailed categorizations (which discriminated, for instance, 'waste' from 'residue' or 'emission'.</note>
+<note type="endnote" xml:id="end_2" n="3">(<ref type="url" target="https://www.eea.europa.eu/data-and-maps/indicators/waste-recycling-1/assessment">https://www.eea.europa.eu/data-and-maps/indicators/waste-recycling-1/assessment</ref>) see also (<ref type="url" target="https://www.lwarb.gov.uk/wp-content/uploads/2016/09/LWARB-International-recycling-rate-comparison.pdf">https://www.lwarb.gov.uk/ wp-content/uploads/2016/09/LWARB-International-recycling-rate-comparison.pdf</ref>) It is important to note that the values reported here are for SMW and household waste only, and that there are discrepancies among different databases. Comparative data varies significantly, depending on accountancy models. See also <ref type="bibr" target="#b77">Seyring, Dollhofer, Weißenbacher, Bakas, &amp; McKinnon, 2016.</ref></note>
+<note type="endnote" xml:id="end_3" n="4">All prices and rates of recycling can be found in the European Comission's study of Critical Raw Material <ref type="bibr" target="#b16">(EC, 2017)</ref>. For example: Antinomy increased from 6000 to 14,000 US dollars per ton between 2009 and 2011; Platinum's price has undergone a volatile quadruple increase between 2001 and 2007; Palladium's price has doubled in the same period. These figures also reflect the fast development of mining industry in countries like China, and are susceptible to the recent uptick in protectionist economic strategies.</note> 
+<note type="endnote" xml:id="end_4" n="5">Letter to the parliament concerning the waste-to-resource approach IenM/BSK-2013/104405, page 6.</note> 
+<note type="endnote" xml:id="end_5" n="6">Vergaderjaar 2010-2011-Kamerstuk 32852 nr. 1</note>
+<note type="endnote" xml:id="end_6" n="7">The Dutch National Waste Plan <ref type="bibr" target="#b55">(Ministry of Infrastructure and Environment, 2017)</ref>.</note> 
+<note type="endnote" xml:id="end_7" n="8">See also European Environmental Agency, More from lessmaterial resource efficiency in Europe, 2016.</note>
+<note type="endnote" xml:id="end_8" n="9">This program was also a response to the UN's System of Environmental-Economic Accounting; the EU Roadmap for a Resource Efficient Europe; and 2008 EU Parliament Directive, which demanded that national governments enlarge the spectrum of wasted materials legally defined as reusable.</note> 
+<note type="endnote" xml:id="end_9" n="10">The chair of the task force biomass and food is vice-president of Unilever.</note>
+<note type="endnote" xml:id="end_10" n="11">(<ref type="url" target="https://urbanminingcollective.nl/">https://urbanminingcollective.nl/</ref>).</note>
+<note type="endnote" xml:id="end_11" n="12">The Netherlands has a very high incineration capacity in Europe, with Amsterdam being one of the largest incineration plants on the continent. The country imports waste from abroad, and biomass from other continents too. Moreover, in 2010, waste incineration was labelled a 'useful use' of waste. The share of organic waste burned in Amsterdam is about 70%. Paradoxically, this makes incineration a useful and sustainable mode of managing waste.</note> 
+<note type="endnote" xml:id="end_12" n="13">One of the very first appearances of the term circular economy was at the event organized by the central-conservative party CDU on 13 October 2009 at the Tolhuistuin. Here, the party's sustainability advisor (and briefly parliamentary member) Marieke van der Werf was invited to present the cradle-to-cradle concept for the future of the city economy. The event was described as a milestone in our interview with the city's former alderman, Maarten van Poelgeest, on 6 March 2018.</note> 
+<note type="endnote" xml:id="end_13" n="14">(<ref type="url" target="http://agendastad.nl/wp-content/uploads/2017/02/CD-Circulaire-Stad-definitief.pdf">http://agendastad.nl/wp-content/uploads/2017/02/CD-Circulaire-Stad-definitief.pdf</ref>).</note> 
+<note type="endnote" xml:id="end_14" n="15">Currently, logistic covers 3.5% of the Netherlands' total GDP <ref type="bibr" target="#b81">(van Buren, Demmers, van der Heijden, &amp; Witlox, 2016)</ref>. The largest volumes of waste-goods transferred are in the high-tech industry (6.7%) and organic-agri-food sector (5.4%), the most dynamic in terms of circular supply chains.</note> 
+<note type="endnote" xml:id="end_15" n="16">(<ref type="url" target="http://www.janrutten.com/documenten/projecten/WESTAS-MANIFEST.pdf">http://www.janrutten.com/documenten/projecten/WESTAS-MANIFEST.pdf</ref>).</note> 
+<note type="endnote" xml:id="end_16" n="17">Interview with a Senior Strategic Advisor at Waternet, 16 October 2017.</note> 
+<note type="endnote" xml:id="end_17" n="18">Similar initiatives can be found in other European cities that have politically embraced the idea of a fine grained circular economy of cities, such as the Greenbizz incubator promoted by Regional Program for Circular Economy in Bruxelles, the large Halle2 repair café in Hamburg or the Upcycle city contest in Almere, just next to Amsterdam.</note> 
+<note type="endnote" xml:id="end_18" n="19">Interview with Amsterdam Economic Board, December 2018.</note> 
+<note type="endnote" xml:id="end_19" n="20">A vivid example of the beautification of urban waste can be seen in the marketing strategy of the 'New Raw', an emerging creative company in circular urban design. In their artworks, they demonstrate how one-year's worth garbage bags can be used to produce an urban bench. See <ref type="url" target="https://thenewraw.org/Work">https://thenewraw.org/Work</ref>.</note></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure1. Relative increase of waste generated by consumers and industries (dashed lines) in The Netherlands from 1985, next to GDP growth. Source: author's adaptation from National Waste Management Plans <ref type="bibr" target="#b53">(Ministry of IenM, 2014,</ref><ref type="bibr" target="#b55">Ministry of IenM, 2017)</ref>.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>I would like to thank all the interviewees for their time and kindness in answering all my questions. I thank <rs type="person">Miriam Meissner</rs>, <rs type="person">Maria Kaika</rs>, <rs type="person">Daan Bossuyt</rs>, <rs type="person">Beatriz Pineda Revilla</rs> and <rs type="person">Mendel Giezen</rs> for giving useful comments to early versions of this paper. I am also thankful to <rs type="person">Geraint Ellis</rs> for his assistance with the review process and to the anonymous referee for the constructive comments.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disclosure statement</head><p>No potential conflict of interest was reported by the author.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Notes on contributor</head><p>Federico Savini is Assistant Professor of Environmental Planning, Institutions and Politics at the Center for Urban Studies of the University of Amsterdam.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Artioli</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Acuto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McArthur</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">The water-energy-food nexus: An integration agenda and implications for urban governance</title>
+		</analytic>
+		<monogr>
+			<title level="j">Political Geography</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="215" to="223"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="book" xml:id="b1">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Baccini</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brunner</surname>
+					<forename type="first">P</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<title level="m">Metabolism of the Anthroposhpere: Analysis, evaluation, design</title>
+			<imprint>
+				<publisher>The MIT Press</publisher>
+				<pubPlace>Cambridge</pubPlace>
+				<date when="2012">2012</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b2">
+		<monogr>
+			<author>BiPRO/CRI</author>
+			<title level="m">Assessment of separate collection schemes in the 28 capitals of the EU</title>
+			<imprint>
+				<publisher>European Commission</publisher>
+				<pubPlace>Brussels</pubPlace>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bossuyt</surname>
+					<forename type="first">D</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Savini</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Urban sustainability and political parties: Eco-development in Stockholm and Amsterdam. Environment and Planning C</title>
+		</analytic>
+		<monogr>
+			<title level="j">Politics and Space</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">36</biblScope>
+				<biblScope unit="page" from="1006" to="1026"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b4">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Boyer</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="m">Théorie de la régulation: 1. Les fondamentaux</title>
+			<imprint>
+				<publisher>La découverte</publisher>
+				<pubPlace>Paris</pubPlace>
+				<date when="2004">2004</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Boyer</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Marx’s legacy, régulation theory and contemporary capitalism</title>
+		</analytic>
+		<monogr>
+			<title level="j">Review of Political Economy</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="1" to="33"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b6">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Buclet</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Godard</surname>
+					<forename>O</forename>
+				</persName>
+			</author>
+			<title level="m">Municipal waste management in Europe: A comparative study in building regimes</title>
+			<imprint>
+				<publisher>Springer Science &amp; Business Media</publisher>
+				<pubPlace>Berlin</pubPlace>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bulkeley</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Watson</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hudson</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">Modes of governing municipal waste</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environment and Planning A</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="2733" to="2753"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Caprotti</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Eco-urbanism and the eco-city, or, denying the right to the city?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Antipode</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">46</biblScope>
+				<biblScope unit="page" from="1285" to="1303"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b9">
+		<monogr>
+			<author>CBS</author>
+			<author>PBL</author>
+			<author>RIVM</author>
+			<author>WUR</author>
+			<title level="m">Afvalproductie en wijze van verwerking, 1985–2014</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b10">
+		<monogr>
+			<author>Cities Foundation</author>
+			<title level="m">Wasted: Approaches to circular city making</title>
+			<imprint>
+				<publisher>TrancityValiz</publisher>
+				<pubPlace>Amsterdam</pubPlace>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cooper</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">War on waste?: The politics of waste and recycling in post-war Britain, 1950–1975</title>
+		</analytic>
+		<monogr>
+			<title level="j">Capitalism Nature Socialism</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">20</biblScope>
+				<biblScope unit="page" from="53" to="72"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>D’Alisa</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Armiero</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">What happened to the trash? Political miracles and real statistics in an emergency regime</title>
+		</analytic>
+		<monogr>
+			<title level="j">Capitalism Nature Socialism</title>
+			<imprint>
+				<date when="2013">2013</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="29" to="45"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Davoudi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Planning for waste management: Changing discourses and institutional relationships</title>
+		</analytic>
+		<monogr>
+			<title level="j">Progress in Planning</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">53</biblScope>
+				<biblScope unit="page" from="165" to="216"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Davoudi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sturzaker</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Urban form, policy packaging and sustainable urban metabolism</title>
+		</analytic>
+		<monogr>
+			<title level="j">Resources, Conservation and Recycling</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">120</biblScope>
+				<biblScope unit="page" from="55" to="64"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b15">
+		<monogr>
+			<author>Dutch Government</author>
+			<title level="m">Klimaatakkord - Draft</title>
+			<imprint>
+				<publisher>Rijksoverheid</publisher>
+				<pubPlace>The Hague</pubPlace>
+				<date when="2019">2019</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b16">
+		<monogr>
+			<author>EC</author>
+			<title level="m">Study on the review of the list of critical raw materials critical raw materials factsheets</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b17">
+		<monogr>
+			<author>EC</author>
+			<title level="m">Report on critical raw materials and the circular economy</title>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b18">
+		<monogr>
+			<author>Ellen Macarthur Foundation</author>
+			<title level="m">Towards the circular economy, economic and business rationale for accelerated transition</title>
+			<imprint>
+				<date when="2013">2013</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b19">
+		<monogr>
+			<author>Ellen Macarthur Foundation</author>
+			<title level="m">Why the circular economy matters. Delivering the Circular Economy: A Toolkit for Policymakers</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b20">
+		<monogr>
+			<author>Eurocities</author>
+			<title level="m">Full circle: cities and circular economy</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Frow</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Invidious distinction: Waste, difference, and classy stuff</title>
+		</analytic>
+		<monogr>
+			<title level="m">Culture and waste: The creation and destruction of value</title>
+			<editor>
+				<persName>
+					<surname>Hawkins</surname>
+					<forename>G</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Muecke</surname>
+					<forename>S</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Rowman &amp; Littlefiel</publisher>
+				<pubPlace>Oxford</pubPlace>
+				<date when="2003">2003</date>
+				<biblScope unit="page" from="25" to="38"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gandy</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Rethinking urban metabolism: Water, space and the modern city</title>
+		</analytic>
+		<monogr>
+			<title level="j">City</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="363" to="379"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="webpage" xml:id="b23">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Ganzevles</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Potting</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hanemaaijer</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="m">Evaluatie Green Deals circulaire economie</title>
+			<ref target="https://www.pbl.nl/publicaties/evaluatie-green-deals-circulaire-economie">https://www.pbl.nl/publicaties/evaluatie-green-deals-circulaire-economie</ref>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Geissdoerfer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Savaget</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bocken</surname>
+					<forename type="first">N</forename><forename type="middle">M</forename><forename type="last">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hultink</surname>
+					<forename type="first">E</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">The circular economy: A new sustainability paradigm?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Cleaner Production</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">143</biblScope>
+				<biblScope unit="page" from="757" to="768"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ghisellini</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cialani</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ulgiati</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">A review on circular economy: The expected transition to a balanced interplay of environmental and economic systems</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Cleaner Production</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">114</biblScope>
+				<biblScope unit="page" from="11" to="32"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gidwani</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reddy</surname>
+					<forename type="first">R</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<title level="a">The afterlives of “waste”: Notes from India for a minor history of capitalist surplus</title>
+		</analytic>
+		<monogr>
+			<title level="j">Antipode</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="1625" to="1658"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gille</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Actor networks, modes of production, and waste regimes: Reassembling the macro-social</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environment and Planning A</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">42</biblScope>
+				<biblScope unit="page" from="1049" to="1064"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b28">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Girardet</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="m">Creating regenerative cities</title>
+			<imprint>
+				<publisher>Routledge</publisher>
+				<pubPlace>London</pubPlace>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="book" xml:id="b29">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Graham</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Marvin</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="m">Splintering urbanism</title>
+			<imprint>
+				<publisher>Routledge</publisher>
+				<pubPlace>London</pubPlace>
+				<date when="2001">2001</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gregson</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Crang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">From waste to resource: The trade in wastes and global recycling economies</title>
+		</analytic>
+		<monogr>
+			<title level="j">Annual Review of Environment and Resources</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="151" to="176"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gregson</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Crang</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fuller</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Holmes</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Interrogating the circular economy: The moral economy of resource recovery in the EU</title>
+		</analytic>
+		<monogr>
+			<title level="j">Economy and Society</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">44</biblScope>
+				<biblScope unit="page" from="218" to="243"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b32">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Harvey</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">Marx, capital, and the madness of economic Reason</title>
+			<imprint>
+				<publisher>Oxford University Press</publisher>
+				<pubPlace>Oxford</pubPlace>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b33">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Hesse</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">The city as a terminal: The urban context of logistics and freight transport</title>
+			<imprint>
+				<publisher>Ashgate</publisher>
+				<pubPlace>Aldershot</pubPlace>
+				<date when="2008">2008</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hobson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Closing the loop or squaring the circle? Locating generative spaces for the circular economy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Progress in Human Geography</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="88" to="104"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b35">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hobson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lynch</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Diversifying and de-growing the circular economy: Radical social transformation in a resource-scarce world</title>
+		</analytic>
+		<monogr>
+			<title level="j">Futures</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">82</biblScope>
+				<biblScope unit="page" from="15" to="25"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b36">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Hult</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bradley</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Planning for sharing – Providing infrastructure for citizens to be makers and sharers</title>
+		</analytic>
+		<monogr>
+			<title level="j">Planning Theory &amp; Practice</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">18</biblScope>
+				<biblScope unit="page" from="597" to="615"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b37">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Humphreys</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Grayson</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">The intersecting roles of consumer and producer: A critical perspective on co-production, co-creation and prosumption</title>
+		</analytic>
+		<monogr>
+			<title level="j">Sociology Compass</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="963" to="980"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b38">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Jackson</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="m">Material concerns: Pollution, profit and the quality of life</title>
+			<imprint>
+				<publisher>Routledge</publisher>
+				<pubPlace>London</pubPlace>
+				<date when="1996">1996</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b39">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Jacobs</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">The economy of cities</title>
+			<imprint>
+				<publisher>Random House</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="1969">1969</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b40">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jessop</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Survey article: The regulation approach</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Political Philosophy</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">5</biblScope>
+				<biblScope unit="page" from="287" to="326"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b41">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Jessop</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brenner</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jones</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Theorizing sociospatial relations</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environment and planning D, Society and Space</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="389" to="389"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b42">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kaika</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Swyngedouw</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Fetishizing the modern city: The phantasmagoria of urban technological networks</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Urban and Regional Research</title>
+			<imprint>
+				<date when="2000">2000</date>
+				<biblScope unit="volume">24</biblScope>
+				<biblScope unit="page" from="120" to="138"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b43">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Kamer van Koophandel</surname>
+				</persName>
+			</author>
+			<title level="m">Logistieke Monitor Regionale Benchmark 1e kwartaal 2014</title>
+			<imprint>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b44">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kennedy</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pincetl</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bunje</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<title level="a">The study of urban metabolism and its applications to urban planning and design</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environmental Pollution</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">159</biblScope>
+				<biblScope unit="page" from="1965" to="1973"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b45">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Lacy</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rutqvist</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="m">Waste to wealth: The circular economy advantage</title>
+			<imprint>
+				<publisher>Palgrave Macmillan</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b46">
+		<monogr>
+			<title level="m">Global garbage: Urban imaginaries of waste, excess, and abandonment</title>
+			<editor>
+				<persName>
+					<surname>Lindner</surname>
+					<forename>C</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Meissner</surname>
+					<forename>M</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Routledge</publisher>
+				<pubPlace>Oxon</pubPlace>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b47">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Lyle</surname>
+					<forename type="first">J</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<title level="m">Regenerative design for sustainable development</title>
+			<imprint>
+				<publisher>Wiley</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="1996">1996</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b48">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Machin</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Changing the story? The discourse of ecological modernisation in the European Union</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environmental Politics</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="208" to="227"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b49">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Massarutto</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Municipal waste management as a local utility: Options for competition in an environmentally-regulated industry</title>
+		</analytic>
+		<monogr>
+			<title level="j">Utilities Policy</title>
+			<imprint>
+				<date when="2007">2007</date>
+				<biblScope unit="volume">15</biblScope>
+				<biblScope unit="page" from="9" to="19"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b50">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Mathews</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Naturalizing capitalism: The next Great Transformation</title>
+		</analytic>
+		<monogr>
+			<title level="j">Futures</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="868" to="879"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b51">
+		<monogr>
+			<author>
+				<persName>
+					<surname>McDonough</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Braungart</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="m">Cradle to cradle: Remaking the way We make Things</title>
+			<imprint>
+				<publisher>North Point Press</publisher>
+				<pubPlace>New York</pubPlace>
+				<date when="2010">2010</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b52">
+		<monogr>
+			<author>Ministry of Infrastructure and Environment</author>
+			<title level="m">Meer waarde uit afval, note to the Parliament</title>
+			<imprint>
+				<date when="2011">2011</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b53">
+		<monogr>
+			<author>Ministry of Infrastructure and Environment</author>
+			<title level="m">Landlijk Afvalbeheerplan 2</title>
+			<imprint>
+				<publisher>Rijksoverheid</publisher>
+				<pubPlace>The Hague</pubPlace>
+				<date when="2014">2014</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b54">
+		<monogr>
+			<author>Ministry of Infrastructure and Environment</author>
+			<title level="m">Netherlands Circulair in 2050</title>
+			<imprint>
+				<publisher>Rijksoverheid</publisher>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b55">
+		<monogr>
+			<author>Ministry of Infrastructure and Environment</author>
+			<title level="m">Landlijk Afvalbeheerplan 3</title>
+			<imprint>
+				<publisher>Rijksoverheid</publisher>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="newspaper" xml:id="b56">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Morozov</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<title level="a">Making it: Pick up a spot welder and join the revolution</title>
+		</analytic>
+		<monogr>
+			<title level="j">The New Yorker</title>
+			<imprint>
+				<date when="2014-01-01">2014, January 1</date>
+			</imprint>
+			<ref target="www.newyorker.com/magazine/2014/01/13/making-it-2">www.newyorker.com/magazine/2014/01/13/making-it-2</ref>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="manual" xml:id="b57">
+		<monogr>
+			<author>Municipality of Amsterdam</author>
+			<title level="m">Towards the Amsterdam Circular Economy</title>
+			<imprint>
+				<date when="2014">2014a</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b58">
+		<monogr>
+			<author>Municipality of Amsterdam</author>
+			<title level="m">De circulaire metropool Amsterdam 2014-2018</title>
+			<imprint>
+				<date when="2014">2014b</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b59">
+		<monogr>
+			<author>Municipality of Amsterdam</author>
+			<title level="m">Amsterdamse Ambachtseconomie 2010-2014</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b60">
+		<monogr>
+			<author>Municipality of Amsterdam</author>
+			<title level="m">Circular Amsterdam</title>
+			<imprint>
+				<date when="2016">2016</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b61">
+		<monogr>
+			<author>Municipality of Amsterdam</author>
+			<title level="m">Roadmap Circulaire Gronduitgifte</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b62">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Murray</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Skene</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Haynes</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">The circular economy: An interdisciplinary exploration of the concept and application in a global context</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Business Ethics</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">140</biblScope>
+				<biblScope unit="page" from="369" to="380"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="manual" xml:id="b63">
+		<monogr>
+			<author>OECD</author>
+			<title level="m">Competition in local services: Solid waste management</title>
+			<imprint>
+				<date when="2000">2000</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b64">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Pauli</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="m">Upcycling</title>
+			<imprint>
+				<publisher>Riemann Verlag</publisher>
+				<pubPlace>Munich</pubPlace>
+				<date when="1999">1999</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b65">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pollans</surname>
+					<forename type="first">L</forename><forename type="middle">B</forename>
+				</persName>
+			</author>
+			<title level="a">Trapped in trash: “modes of governing”and barriers to transitioning to sustainable waste management</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environment and Planning A</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="2300" to="2323"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b66">
+		<monogr>
+			<author>Port of Amsterdam</author>
+			<title level="m">Visie 2030: Port of Amsterdam, Port of Partnerships</title>
+			<imprint>
+				<date when="2015">2015</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b67">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Prendeville</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cherim</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bocken</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">Circular cities: Mapping six cities in transition</title>
+		</analytic>
+		<monogr>
+			<title level="j">Environmental Innovation and Societal Transitions</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">26</biblScope>
+				<biblScope unit="page" from="171" to="194"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b68">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ranta</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Aarikka-Stenroos</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ritala</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mäkinen</surname>
+					<forename type="first">S</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Exploring institutional drivers and barriers of the circular economy: A cross-regional comparison of China, the US, and Europe</title>
+		</analytic>
+		<monogr>
+			<title level="j">Resources, Conservation and Recycling</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+		<note>Online First</note>
+	</biblStruct>
+	
+	<biblStruct type="book" xml:id="b69">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Raworth</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="m">Doughnut economics: Seven ways to think like a 21st-century economist</title>
+			<imprint>
+				<publisher>Chelsea Green Publishing</publisher>
+				<pubPlace>Vermont</pubPlace>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b70">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Reike</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vermeulen</surname>
+					<forename type="first">W</forename><forename type="middle">J</forename><forename type="last">V</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Witjes</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">The circular economy: New or Refurbished as CE 3.0?</title>
+		</analytic>
+		<monogr>
+			<title level="j">Resources, Conservation and Recycling</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+			<note>Online First</note>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b71">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ritzer</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<title level="a">The “McDonaldization” of society</title>
+		</analytic>
+		<monogr>
+			<title level="j">The Journal of American Culture</title>
+			<imprint>
+				<date when="1983">1983</date>
+				<biblScope unit="volume">6</biblScope>
+				<biblScope unit="page" from="100" to="107"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b72">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Ritzer</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dean</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jurgenson</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<title level="a">The coming of age of the prosumer</title>
+		</analytic>
+		<monogr>
+			<title level="j">American Behavioral Scientist</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">56</biblScope>
+				<biblScope unit="page" from="379" to="398"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b73">
+		<monogr>
+			<author>RIVM</author>
+			<title level="m">Evaluation of From Waste to Resources (VANG) programme 2014–2016</title>
+			<imprint>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b74">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Savini</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dembski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Manufacturing the creative city: Symbols and politics of Amsterdam North</title>
+		</analytic>
+		<monogr>
+			<title level="j">Cities</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">55</biblScope>
+				<biblScope unit="page" from="139" to="147"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="online-database" xml:id="b75">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Savini</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Habdank</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="m">A database of circular economy policies and projects: Europe (A) and initial exploration worldwide (B</title>
+			<imprint>
+				<publisher>University of Amsterdam</publisher>
+				<pubPlace>Amsterdam</pubPlace>
+				<date when="2018">2018</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b76">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Schmidt</surname>
+					<forename type="first">J</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>2.-0 Consultants</author>
+			<title level="m">25-year forecasts of the cumulated physical stocks, waste generation, and environmental impacts for each scenario for EU-27 and for the case study countries</title>
+			<imprint>
+				<date when="2009">2009</date>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b77">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Seyring</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Dollhofer</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Weißenbacher</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bakas</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>McKinnon</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">Assessment of collection schemes for packaging and other recyclable waste in European Union-28 Member states and capital cities</title>
+		</analytic>
+		<monogr>
+			<title level="j">Waste Management &amp; Research</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">34</biblScope>
+				<biblScope unit="page" from="947" to="956"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="technical-report" xml:id="b78">
+		<monogr>
+			<author>Taskforce Biomass and Food</author>
+			<title level="m">Transition agenda circular Economa</title>
+			<imprint>
+				<date when="2017">2017</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b79">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Urbinati</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chiaroni</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Chiesa</surname>
+					<forename>V</forename>
+				</persName>
+			</author>
+			<title level="a">Towards a new taxonomy of circular economy business models</title>
+		</analytic>
+		<monogr>
+			<title level="j">Journal of Cleaner Production</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">168</biblScope>
+				<biblScope unit="page" from="487" to="498"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b80">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Valenzuela</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Böhm</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Against wasted politics: A critique of the circular economy</title>
+		</analytic>
+		<monogr>
+			<title level="j">Ephemera</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="23" to="60"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b81">
+		<analytic>
+			<author>
+				<persName>
+					<surname>van Buren</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Demmers</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>van der Heijden</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Witlox</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Towards a circular economy: The role of Dutch logistics industries and governments</title>
+		</analytic>
+		<monogr>
+			<title level="j">Sustainability</title>
+			<imprint>
+				<date when="2016">2016</date>
+				<biblScope unit="volume">8</biblScope>
+				<biblScope unit="page" from="647" to="647"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="chapter" xml:id="b82">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Van Wee</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Banister</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Annema</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Geurs</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Transport and the environment</title>
+		</analytic>
+		<monogr>
+			<title level="m">The transport system and transport policy: An Introduction</title>
+			<editor>
+				<persName>
+					<surname>Wee</surname>
+					<forename>B</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Annema</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</editor>
+			<editor>
+				<persName>
+					<surname>Banister</surname>
+					<forename>D</forename>
+				</persName>
+			</editor>
+			<imprint>
+				<publisher>Edward Elgar</publisher>
+				<pubPlace>Cheltenham</pubPlace>
+				<date when="2013">2013</date>
+				<biblScope unit="page" from="227" to="253"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b83">
+		<analytic>
+			<author>
+				<persName>
+					<surname>While</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gibbs</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">The environment and the entrepreneurial city: Searching for the urban “sustainability fix” in Manchester and Leeds</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Urban and Regional Research</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="549" to="569"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	 
+	<biblStruct type="article" xml:id="b84">
+		<analytic>
+			<author>
+				<persName>
+					<surname>While</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gibbs</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">From sustainable development to carbon control: Eco-state restructuring and the politics of urban and regional development</title>
+		</analytic>
+		<monogr>
+			<title level="j">Transactions of the Institute of British Geographers</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">35</biblScope>
+				<biblScope unit="page" from="76" to="93"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b85">
+		<analytic>
+			<author>
+				<persName>
+					<surname>While</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Jonas</surname>
+					<forename type="first">A</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Gibbs</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="a">The environment and the entrepreneurial city: Searching for the urban ‘sustainability fix’in Manchester and Leeds</title>
+		</analytic>
+		<monogr>
+			<title level="j">International Journal of Urban and Regional Research</title>
+			<imprint>
+				<date when="2004">2004</date>
+				<biblScope unit="volume">28</biblScope>
+				<biblScope unit="page" from="549" to="569"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b86">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Williams</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Circular cities</title>
+		</analytic>
+		<monogr>
+			<title level="j">Urban Studies</title>
+			<imprint>
+				<date when="2019">2019</date>
+			</imprint>
+			<note>Online First</note>
+		</monogr>
+	</biblStruct>
+	
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

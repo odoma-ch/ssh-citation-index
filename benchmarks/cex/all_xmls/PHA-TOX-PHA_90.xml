@@ -1,0 +1,1912 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Antiamoebic Activities of Indolocarbazole Metabolites Isolated from Streptomyces sanyensis Cultures</title>
+				<funder ref="#_957T3Rt">
+					<orgName type="full">Instituto de Salud Carlos III, Spain</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Agustín de Betancourt Programme (Cabildo de Tenerife-ULL</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Programa Redes Temáticas de Investigación Cooperativa)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">FIS (Ministerio Español de Salud, Madrid, Spain)</orgName>
+				</funder>
+				<funder ref="#_kpAATMS">
+					<orgName type="full">FEDER</orgName>
+				</funder>
+				<funder ref="#_fYQrez3">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_QHXD6fM">
+					<orgName type="full">RICET</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>MDPI AG</publisher>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-10-17">17 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName><forename type="first">Luis</forename><surname>Cartuche</surname></persName>
+							<email>lecartuche@utpl.edu.ec</email>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Investigaciones Biomédicas de Canarias (CIBICAN)</orgName>
+								<orgName type="institution" key="instit1">Instituto Universitario de Bio-Orgánica Antonio González (IUBO AG)</orgName>
+								<orgName type="institution" key="instit2">Universidad de La Laguna (ULL)</orgName>
+								<address>
+									<addrLine>Avda. Astrofísico F. Sánchez 2 38206 La Laguna</addrLine>
+									<region>Tenerife</region>
+									<country>Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Departamento de Química y Ciencias Exactas</orgName>
+								<orgName type="department" key="dep2">Sección Química Básica y Aplicada</orgName>
+								<orgName type="institution">Universidad Técnica Particular de Loja (UTPL)</orgName>
+								<address>
+									<addrLine>San Cayetano alto s/n</addrLine>
+									<postCode>A.P. 1101608</postCode>
+									<settlement>Loja</settlement>
+									<country key="EC">Ecuador</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">María</forename><surname>Reyes-Batlle</surname></persName>
+							<affiliation key="aff2">
+							  <orgName type="institution">Universidad de La Laguna</orgName>
+							  <orgName type="department">
+								Instituto Universitario de Enfermedades Tropicales y Salud Pública de Islas Canarias
+							  </orgName>
+							  <orgName type="department">
+								Departamento de Obstetricia y Ginecología, Pediatría, Medicina Preventiva y Salud Pública,
+								Toxicología, Medicina Legal y Forense y Parasitología
+							  </orgName>
+							  <address>
+								<addrLine>Avda. Astrofísico F. Sánchez s/n</addrLine>
+								<postCode>38206</postCode>
+								<settlement>La Laguna</settlement>
+								<region>Tenerife</region>
+								<country key="ES">Spain</country>
+							  </address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ines</forename><surname>Sifaoui</surname></persName>
+							<email>isifaoui@ull.edu.es</email>
+							<affiliation key="aff2">
+  <orgName type="institution">Universidad de La Laguna</orgName>
+  <orgName type="department">
+    Instituto Universitario de Enfermedades Tropicales y Salud Pública de Islas Canarias
+  </orgName>
+  <orgName type="department">
+    Departamento de Obstetricia y Ginecología, Pediatría, Medicina Preventiva y Salud Pública,
+    Toxicología, Medicina Legal y Forense y Parasitología
+  </orgName>
+  <address>
+    <addrLine>Avda. Astrofísico F. Sánchez s/n</addrLine>
+    <postCode>38206</postCode>
+    <settlement>La Laguna</settlement>
+    <region>Tenerife</region>
+    <country key="ES">Spain</country>
+  </address>
+</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Iñigo</forename><surname>Arberas-Jiménez</surname></persName>
+							<affiliation key="aff2">
+  <orgName type="institution">Universidad de La Laguna</orgName>
+  <orgName type="department">
+    Instituto Universitario de Enfermedades Tropicales y Salud Pública de Islas Canarias
+  </orgName>
+  <orgName type="department">
+    Departamento de Obstetricia y Ginecología, Pediatría, Medicina Preventiva y Salud Pública,
+    Toxicología, Medicina Legal y Forense y Parasitología
+  </orgName>
+  <address>
+    <addrLine>Avda. Astrofísico F. Sánchez s/n</addrLine>
+    <postCode>38206</postCode>
+    <settlement>La Laguna</settlement>
+    <region>Tenerife</region>
+    <country key="ES">Spain</country>
+  </address>
+</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">José</forename><forename type="middle">E</forename><surname>Piñero</surname></persName>
+							<email>jpinero@ull.edu.es</email>
+							<idno type="ORCID">0000-0001-6233-8224</idno>
+							<affiliation key="aff2">
+  <orgName type="institution">Universidad de La Laguna</orgName>
+  <orgName type="department">
+    Instituto Universitario de Enfermedades Tropicales y Salud Pública de Islas Canarias
+  </orgName>
+  <orgName type="department">
+    Departamento de Obstetricia y Ginecología, Pediatría, Medicina Preventiva y Salud Pública,
+    Toxicología, Medicina Legal y Forense y Parasitología
+  </orgName>
+  <address>
+    <addrLine>Avda. Astrofísico F. Sánchez s/n</addrLine>
+    <postCode>38206</postCode>
+    <settlement>La Laguna</settlement>
+    <region>Tenerife</region>
+    <country key="ES">Spain</country>
+  </address>
+</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">José</forename><forename type="middle">J</forename><surname>Fernández</surname></persName>
+							<idno type="ORCID">0000-0002-0805-8317</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Investigaciones Biomédicas de Canarias (CIBICAN)</orgName>
+								<orgName type="institution" key="instit1">Instituto Universitario de Bio-Orgánica Antonio González (IUBO AG)</orgName>
+								<orgName type="institution" key="instit2">Universidad de La Laguna (ULL)</orgName>
+								<address>
+									<addrLine>Avda. Astrofísico F. Sánchez 2 38206 La Laguna</addrLine>
+									<region>Tenerife</region>
+									<country>Spain;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+  <orgName type="department">Departamento de Química Orgánica</orgName>
+  <orgName type="institution">Universidad de La Laguna (ULL)</orgName>
+  <address>
+    <addrLine>Avda. Astrofísico F. Sánchez, 2</addrLine>
+    <postCode>38206</postCode>
+    <settlement>La Laguna</settlement>
+    <region>Tenerife</region>
+    <country key="ES">Spain</country>
+  </address>
+</affiliation>
+
+						</author>
+						<author>
+							<persName><forename type="first">Jacob</forename><surname>Lorenzo-Morales</surname></persName>
+							<affiliation key="aff2">
+  <orgName type="institution">Universidad de La Laguna</orgName>
+  <orgName type="department">
+    Instituto Universitario de Enfermedades Tropicales y Salud Pública de Islas Canarias
+  </orgName>
+  <orgName type="department">
+    Departamento de Obstetricia y Ginecología, Pediatría, Medicina Preventiva y Salud Pública,
+    Toxicología, Medicina Legal y Forense y Parasitología
+  </orgName>
+  <address>
+    <addrLine>Avda. Astrofísico F. Sánchez s/n</addrLine>
+    <postCode>38206</postCode>
+    <settlement>La Laguna</settlement>
+    <region>Tenerife</region>
+    <country key="ES">Spain</country>
+  </address>
+</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ana</forename><forename type="middle">R</forename><surname>Díaz-Marrero</surname></persName>
+							<idno type="ORCID">0000-0002-8886-7519</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Investigaciones Biomédicas de Canarias (CIBICAN)</orgName>
+								<orgName type="institution" key="instit1">Instituto Universitario de Bio-Orgánica Antonio González (IUBO AG)</orgName>
+								<orgName type="institution" key="instit2">Universidad de La Laguna (ULL)</orgName>
+								<address>
+									<addrLine>Avda. Astrofísico F. Sánchez 2 38206</addrLine>
+									<settlement>La Laguna</settlement>
+									<region>Tenerife</region>
+									<country>Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Antiamoebic Activities of Indolocarbazole Metabolites Isolated from Streptomyces sanyensis Cultures</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Marine Drugs</title>
+						<title level="j" type="abbrev">Marine Drugs</title>
+						<idno type="eISSN">1660-3397</idno>
+						<imprint>
+							<publisher>MDPI AG</publisher>
+							<biblScope unit="volume">17</biblScope>
+							<biblScope unit="issue">10</biblScope>
+							<biblScope unit="page" from="588" to="">588</biblScope>
+							<date type="published" when="2019-10-17">17 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2A80D238647BBC3E83530394215D3170</idno>
+					<idno type="DOI">10.3390/md17100588</idno>
+					<note type="submission">Received: 30 September 2019; Accepted: 15 October 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>indolocarbazole</term>
+					<term>staurosporine</term>
+					<term>Streptomyces sanyensis</term>
+					<term>antiparasitic activities</term>
+					<term>Acanthamoeba</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Indolocarbazoles are a family of natural alkaloids characterized by their potent protein kinase and topoisomerase I inhibitory activity. Among them, staurosporine (1) has exhibited promising inhibitory activity against parasites. Based on new insights on the activity and mechanism of action of STS in Acanthamoeba parasites, this work reports the isolation, identification, and the anti-Acanthamoeba activity of the minor metabolites 7-oxostaurosporine (2), 4 -demethylamino-4 -oxostaurosporine (3), and streptocarbazole B (4), isolated from cultures of the mangrove strain Streptomyces sanyensis.</p><p>A clear correlation between the antiparasitic activities and the structural elements and conformations of the indolocarbazoles 1-4 was observed. Also, the study reveals that 7-oxostaurosporine (2) affects membrane permeability and causes mitochondrial damages on trophozoites of A. castellanii Neff.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Indolocarbazoles (ICZs) are a large family of alkaloid natural compounds characterized by their protein kinase, particularly tyrosine kinase, inhibitory activity. These enzymes are responsible for regulating essential aspects of cell metabolism including cell cycle progression; consequently, ICZs exert potent cytotoxic effect on cancer cells <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>.</p><p>ICZs have been isolated from several sources including bacteria, slime molds, cyanobacteria, and marine invertebrates <ref type="bibr" target="#b0">[1]</ref>. The first isolated compound, staurosporine (STS), was obtained from a culture of a soil actinomycete (Streptomyces staurosporeus) in 1977 <ref type="bibr" target="#b3">[4]</ref> at the Kitasato Institute (Mizusawa City, Japan) and nine years later, its mechanism of action was discovered through non-selective protein kinase inhibition <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b5">6]</ref>. Related compounds demonstrated the same effect, thus opening the route for the discovery of a new class of antincancer drugs <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. In addition, two synthetic derivatives of the ICZ antibiotic, K252a, were proven to be potent inducers of DNA cleavage complex by interacting with topoisomerase I, increasing the interest of pharmaceutical industries in this family of compounds <ref type="bibr" target="#b8">[9]</ref>.</p><p>STS has exhibited promising inhibitory activity against parasites <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref>; since protein kinases (PKs) play critical roles in the growth and mechanism of infection of some parasites such as Trypanosoma and Leishmania spp., and parasitic PKs differ from their mammal counterparts, these antibiotics result attractive for the development of specific inhibitors <ref type="bibr" target="#b12">[13]</ref>. Additionally, it has been demonstrated that STS induced cell death in blood forms of Trypanosoma brucei in a dose-dependent manner, stimulating the activation of apoptosis by releasing EndoG from mitochondrial disruption under ROS production <ref type="bibr" target="#b13">[14]</ref>; however, to the best of our knowledge there is no information about the antiparasitic effect of streptocarbazole B, 4 -demethylamino-4 -oxostaurosporine, and 7-oxostaurosporine which are the focus of this research.</p><p>Derivative 7-oxostaurosporine (7OSTS) was first isolated from Streptomyces platensis <ref type="bibr" target="#b14">[15]</ref>. 4 -demethylamino-4 -oxostaurosporine (4 D4 OSTS) from S. longisporoflavus <ref type="bibr" target="#b15">[16]</ref> and more recently, streptocarbazoles A (SCZ A) and B (SCZ B) from Streptomyces sp. FMA strain <ref type="bibr" target="#b16">[17]</ref>, all of them exerting strong protein kinase inhibitory effects and consequently, acting as anticancer agents.</p><p>Infections caused by Acanthamoeba spp. affect millions of people worldwide as well as the deficiency of satisfactory treatments. The lack of effectiveness due to drug resistance and high toxicity are the main drawbacks of currently used chemotherapeutics, which evidence that the search for new chemical entities to fight parasitic infections remains a critical need. Recently, we have reported a detailed study on the activity and mechanism of action of STS in Acanthamoeba and the programmed cell death via mitochondrial pathway <ref type="bibr" target="#b17">[18]</ref>. The aim of this research is based on the isolation and identification of the minor metabolites 7OSTS (2), 4 D4 OSTS (3), and SCZB (4) (Figure <ref type="figure" target="#fig_0">1</ref>) from a mangrove-derived bacterium S. sanyensis PBLC04 strain collected in the coast of Ecuador, and to value their anti-Acanthamoeba activity. Mangroves are singular ecosystems, characterized for their high biodiversity and, hence, ideal for the discovery of new drugs from microbial sources. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Results and Discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Strain Isolation, Culture, and Identification of Indolocarbazol Metabolites</head><p>Streptomyces sanyensis PBLC04 strain was isolated from sediment samples collected in Jambelí mangrove at the southwest coast of Ecuador. 30 L of the strain were cultured using Fernbach bottles and seawater-based modified A1 medium. Cultures of S. sanyensis were centrifuged, and the biomass pellet was extracted using a mixture of MeOH:EtOAc:Acetone (2:7:3). Resulting extracts were combined, filtered, and dried in vacuo at 30 • C in a rotary evaporator.</p><p>The salt-free biomass extract was chromatographed by filtration on Sephadex-LH-20 with methanol as eluent. The bioassay-guided analysis of the fractions led us to the active fraction SF3 and SF4 against Acanthamoeba castellanii Neff with IC 50 values of 10.68 ± 0.41 µg/mL and 0.44 ± 0.03 µg/mL, respectively. These fractions ware further chromatographed on a RP18 prepacked cartridge applying a gradient elution system of H 2 O:MeOH, buffered with 5 mM NH 4 OAc. The active fractions exhibited characteristic signals for ICZs in the 1 H-NMR spectrum. Final purification on a silica-gel open column using CHCl 3 :MeOH (9:1) yielded pure staurosporine (1) (STS), the major compound, which represents 0.52% of the total content of the biomass extract, whereas pure minor compounds 7-oxostaurosporine (2) (7OSTS), 4 -demethylamino-4 -oxostaurosporine (3) (4 D4 OSTS), and streptocarbazole B (4) (SCZ B) required elution with n-Hex:EtOAc:MeOH (2:7:1). The NMR spectra, mass spectrometry, and optical rotation data for compounds 1-4 were compared with those previously reported in the chemical literature to confirm their structures <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. Spectral data and detailed tables with the chemical shifts and HMBC and ROESY correlations are included in the Supplementary Materials.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Anti-Acanthamoeba Activity on Parasite Trophozoites</head><p>The antiamoebic activities of natural indolocarbazole metabolites identified in Streptomyces sanyensis, compounds 1-4, were tested against trophozoites of the strains: A. castellanii Neff, A. griffini and A. polyphaga. The inhibitory concentrations (IC 50 ) were calculated in µM concentrations and are shown in Table <ref type="table" target="#tab_0">1</ref>, and compared with those of chlorhexidine and voriconazole, reference drugs for the treatment of amoebic keratitis (AK), an infection caused by Acanthamoeba sp. <ref type="bibr" target="#b18">[19]</ref>. Compound 7OSTS (2) showed to be as effective as its congener STS (1) and the reference compound voriconazole against all tested Acanthamoeba spp. Compounds 3 and 4 showed a similar activity and selectivity against the three tested strains, being more active for A. castellanii Neff.</p><p>Additionally, three commercially available indolocarbazole compounds rebeccamycin (5), K252c (6), and arcyriaflavin A (7) were tested. Compounds 5-7 showed to be less active than 1 and 2, while K252c (6) seems to be selective against A. griffini.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Cytotoxicity Assays in Murine Macrophages</head><p>On the other hand, the potential effectiveness of compounds as antiparasitics depends on their toxicity. As well established in our laboratory <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref>, the toxicity of all compounds was evaluated at the concentration that inhibits 50% of murine macrophages (Table <ref type="table" target="#tab_1">2</ref>). Compound 7OSTS 2, 7OSTS, (2) turned out to be the most cytotoxic with a CC50 of 5.20 ± 1.75 µM. Nevertheless, this CC50 value was significantly higher than the IC50 values obtained against the strains A. castellani and A. graffini. 40 D40 OSTS (3) and ICZ B (4) were the least toxic among all tested compounds against murine macrophage J774A.1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">In Vitro Activity against Acanthamoeba castellanii Neff Cysts</head><p>When 7OSTS (2) was incubated with mature cysts of A. castellanii Neff, non-viable cysts were observed after incubation up to 144 h. In Figure <ref type="figure" target="#fig_1">2</ref>, the activity of 7OSTS (2) against A. castellanii Neff cysts is observed, with an IC 50 of 0.92 ± 0.33 µM. Non-viable cysts were observed when compared to a negative control of trophozoites and not treated mature cysts. </p></div>
+			<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Evaluation of the Mechanism of Action of 7OSTS</head><p>Among minor compounds, 7OSTS (2) was the selected molecule to continue the studies on the mode of action on A. castellanii Neff based on the activity values. The search for new therapies which do not produce necrotic cell death is necessary in order to avoid an excessive inflammatory response. Therefore, events involved during programmed cell death or apoptosis-like processes are subject of study and include several morphological stages such as nuclear DNA fragmentation, chromatin condensation or damages at mitochondrial level, among others <ref type="bibr" target="#b21">[22]</ref>. Consequently, our next objective was to recognize the mechanism of action of 7OSTS (2), through the evaluation of changes in the mitochondrial membrane potential, ATP cell levels, chromatin condensation, and plasmatic membrane integrity.</p><p>A double-stain assay was performed to determine the effect on chromatin condensation. 7OSTS-treated cells at the IC 90 concentration (2.91 ± 0.67 µM) stained positive in the assay as shown by the bright-blue nuclei stain in Figure <ref type="figure" target="#fig_2">3A</ref>, which indicates 7OSTS induces chromatin condensation. Moreover, it is important to highlight that the morphology of the trophozoites treated with IC 90 of 7OSTS (2) (Figure <ref type="figure" target="#fig_2">3A</ref>) show rounded and smaller shape compared to the negative control (Figure <ref type="figure" target="#fig_2">3B</ref>). which are common events when a cell is under a programmed cell death pathway <ref type="bibr" target="#b21">[22]</ref>. </p><p>7OSTS (2) also showed an induction of mitochondrial malfunction. Figure <ref type="figure" target="#fig_3">4</ref> shows that A. castellanii Neff cells treated with 7OSTS (IC 90 ) exhibit higher green fluorescence (A) when compared with the negative control (B). The green fluorescence indicates the presence of JC-1 (5,5 ,6,6 -Tetrachloro-1,1 ,3,3 -tetraethyl-imidacarbocyanine iodide) monomers, which reveals a decrease of the mitochondrial membrane potential. In the negative control, the mitochondrial membrane potential is unaltered, showing a red fluorescence caused by JC-1 dimers.</p><p>On the other hand, after incubation of A. castellanii Neff with the IC 90 of 7OSTS (2) for 24 h, the ATP level was reduced to 45% compared to the negative control (Figure <ref type="figure" target="#fig_4">5</ref>). This result reveals that the cells maintained one half of the ATP level after treatment with 7OSTS, and confirms the mitochondrial damage.</p><p>7OSTS (2) caused plasma membrane permeability in treated cells. Membrane permeabilization experiment on A. castellanii Neff cells treated with the IC90 of 7OSTS (2), showed plasmatic membrane damage after 24 h of treatment. Nevertheless, it is also important to reference that even though the membrane was damaged, cell integrity was maintained as confirmed in Figure <ref type="figure" target="#fig_5">6</ref>.</p><p>ICZ derivatives have been the focus of numerous research groups, mainly in the area of chemotherapeutics against cancer, Alzheimer's disease, and other neurodegenerative disorders <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>. Thus, several STS analogues have advanced in clinical trials, broadly subdivided into two groups based on their target profile. The first group is represented by STS and includes compounds that are potent inhibitors of protein kinases. On the other hand, the second group are STS analogues modified in the sugar moiety and therefore do not inhibit protein kinases, but instead are used as potent stabilizers of DNA topoisomerase I. Among the natural and biosynthetically produced STS analogues, the 7-hydroxy-derivatives has been tested for clinical phase for several forms of cancer such as pancreas, breast, and lymphoma <ref type="bibr" target="#b22">[23]</ref>.</p><p>The initial studies on the STS-PK complex were directed towards the kinase models PKA and CDK2. These studies and those completed later have indicated the crucial hydrogen bond interactions between the heteroatoms of the lactam moiety of the alkaloids with a conserved glutamic acid residue (Glu). On the other side, the methyl amino group at C-4 of the sugar moiety is involved in the formation of two hydrogen bonds with amino acid residues such as Glu and aspartic acid (Asp), part of the protein catalytic site. These interactions force a boat conformation of the sugar ring of the ligand and a perpendicular orientation to the planar aromatic indolocarbazole nucleus when the ICZ-family of compounds inhibit protein kinases. Another important point is that the binding affinity of ICZs increases with the presence of hydrogen bonds between the nitrogen of the methyl amino moiety at C-4 with neighboring protein residues <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b23">24]</ref>.</p><p>Commercial ICZ compounds obtained from their natural sources are available for biochemical studies (Figure <ref type="figure" target="#fig_6">7</ref>). Rebeccamycin (5) is an indolocarbazole antibiotic produced, among other actinomycetes, by Saccharothrix aerocolonigenes <ref type="bibr" target="#b24">[25]</ref>. It is a DNA-binding molecule that inhibits topoisomerase I activity <ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref>. Rebeccamycin shows cytotoxic activity against human lung, colon, and nasopharyngeal carcinoma cell lines with IC 50 values that range from 0.4-98 µM <ref type="bibr" target="#b29">[30]</ref>. The STS aglycon is known as K252c (6). It is an efficient protein kinase C (PKC) inhibitor (IC 50 2.45 µM) compared to its inhibitory protein kinase A (PKA) activity (IC 50 25.7 µM) <ref type="bibr" target="#b25">[26]</ref>. Arcyriaflavin A (7), the 7OSTS aglycon, is an inhibitor of cyclin-dependent kinase 4 (CDK4) with an IC 50 = 140 nM, and calcium/calmodulin-dependent protein kinase II (CaMKII; IC 50 = 25 nM), showing selectivity for CDK4 and CaMKII over protein kinase A (PKA; IC 50 &gt; 2 µM) and PKC (IC 50 &gt;100 µM) <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b30">31]</ref>.</p><p>In this work, we have found a clear correlation between the antiparasitic activities observed and the structural elements and conformations of the indolocarbazole molecules under study (Figure <ref type="figure" target="#fig_7">8</ref>). Thus, both STS (1) and the 7-oxo derivative (2) showed potent activities against the tested species. This fact could be explained based on the conserved interactions reported for many protein kinases, which establish interactions between the lactam group and methyl amine at the C-4 position of both compounds. This result agrees with a similar orientation and conformation of 1 and 2. In addition, in the particular case of A. polyphaga, a difference of activity between STS (1) and 7OSTS (2) was observed, that could be justified based on the positive or negative interaction with the active site of the target PKs, due to the additional functionalization at C-7 position of 2.</p><p>On the other hand, compounds 4 D4 OSTS (3) and SCZ B (4) showed moderate antiamoebic activity compared to 1 and 2. In the case of 3, it might be consequence of the absence of the expected hydrogen bond with the methyl amine group at C-4 in the PKs inhibition mechanism by ICZs (Figure <ref type="figure" target="#fig_7">8</ref>). For compound 4, a significant structural change in the sugar ring is observed which eliminate all these conserved interactions at C-4 position. Furthermore, the different orientation of the sugar moiety could produce strong steric impediments at the active site. Similarly, this structural feature seems to be the cause of the reduced toxicity of 3 and 4 (CC 50 &gt; 40 µM), which confer these compounds a similar selective index to the active 7OSTS (2) in treatments against the A. castellanii Neff strain. The results obtained with commercial ICZs (5-7) reinforce the relevance of the interactions due to the sugar moiety of STS (1) and the 7OSTS (2) to improve the antiamoeboid activity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Materials and Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">General Experimental Procedures</head><p>NMR spectra were recorded on a Bruker AVANCE 500 MHz or 600 MHz (Bruker Biospin, Falländen, Switzerland), as required. NMR spectra were obtained dissolving samples in CDCl 3 (99.9%) and chemical shifts are reported relative to solvent (δ H 7.26 and δ C 77.0 ppm). Bruker AVANCE 600 MHz instrument is equipped with a 5 mm TCI inverse detection cryoprobe (Bruker Biospin, Falländen, Switzerland). Standard Bruker NMR pulse sequences were utilized. Optical rotations were measured in CHCl 3 on a PerkinElmer 241 polarimeter (Waltham, MA, USA) by using a Na lamp. HR-ESI-MS data were obtained on a Waters LCT Premier XE Micromass (Manchester, UK) and VG-AutoSpec Micromass spectrometers (Manchester, UK), respectively. IR spectra were recorded on a Bruker IFS66/S (Ettlingen, Germany) equipped with an ATR accessory using CHCl 3 solutions. EnSpire ® Multimode Reader (Perkin Elmer, Waltham, MA, USA) using absorbance values of alamarBlue ® reagent (Bio-Rad Laboratories, Oxford, UK). HPLC (high performance liquid chromatography) separations were carried out with an Agilent 1260 Infinity Quaternary LC equipped with a Diode Array Detector (Waldbronn, Germany). TLC (Thin layer chromatography) (Merck, Darmstadt, Germany) was visualized by UV light (254 nm) and spraying with cobalt chloride reagent (2% in sulfuric acid, 10%) and heating.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Biological Material</head><p>Streptomyces sanyensis PBLC04 strain was collected in Jambelí mangrove (3• 15 792" S, 80 • 00 739" W-03 • 17 711" S, 80 • 01 924" W), Ecuador. The strain is included in the microbial collection of Universidad Técnica Particular de Loja (UTPL, Loja-Ecuador). Samples of marine sediment were collected in 15 mL Falcon tubes from 1 to 3 m depth and put into sterile polythene bags. Stamps of pulverized samples were seeded on agar plates of a sea water-based medium (10 g starch, 4 g yeast extract, 2 g peptone, 1 g CaCO 3 , 40 mg Fe 2 (SO 4 ) 3 4H 2 O, 100 mg KB, 15 g Bacto Agar, per liter), acidic gauze medium, humic acid medium, and TCG medium, all of them containing 1% of polymyxin B and cycloheximide as inhibitors of undesired growth. The plates were incubated at 30 • C and observed periodically. Gram staining was used to identify branched filamentous Gram-positive bacteria.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Cultures and Preparation of Crude Extracts</head><p>Streptomyces sanyensis PBLC04 strain was cultured in Fernbach bottles using a modified seawater-based medium (A1) that consisting of 75% seawater containing 10 g starch, 4 g yeast extract, 2 g proteose peptone, 1 g calcium carbonate, supplemented with 5 mL/L of a solution of potassium bromide (67 mM) and ferric sulfate (20 mM). Fernbach flasks with 1 L each were maintained in an orbital shaker at 30 • C and 200 rpm for 7 days. Cultures of S. sanyensis PBLC04 were then centrifuged at 5000 rpm for 10 min at 4 • C to collect the cell biomass. Supernatant was treated by Amberlite ® XAD7-HP resin (20 g/L) addition and stirred for 3 h for the recuperation of excreted substances. After filtration, both the resin and the biomass pellet were separately extracted using a mixture of MeOH:EtOAc:Acetone (2:7:3) for 12 h at 120 rpm in an orbital shaker. Resulting extracts were filtered, dried in vacuo at 30 • C in a rotary evaporator and stored a -80 • C until used.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Isolation of Indolocarbazole Metabolites</head><p>The obtained crude extract 12.6 g was fractionated by gel filtration on Sephadex LH-20 column, eluting with methanol to yield 10 fractions that were finally gathered in four final fractions according to TLC and 1 H-NMR analysis. Thin layer chromatography (TLC) monitoring was used with cobalt chloride (2%) as spraying reagent. The bioassay-guided analysis of the Sephadex LH-20 fractions led us to an active fraction SF3 and SF4 against Acanthamoeba castellanii Neff with IC 50 values of 10.68 ± 0.41 µg/mL and 0.44 ± 0.03 µg/mL, respectively; and against Leishmania amazonensis with IC 50 values of 0.43 ± 0.07 µg/mL and 0.08 ± 0.01 µg/mL. These fractions were then chromatographed using a flash chromatography on a RP18 prepacked cartridge (25-40 µm, 70 g, Götec-Labortechnik GmbH) operating in a gradient elution protocol of H 2 O:MeOH, 5mM NH 4 OAc, (20% to 100% MeOH) at 2 mL/min flow. All process was monitored by UV detection at 254 nm. The active fractions those exhibited characteristic signals for ICZs in the 1 H-NMR spectrum and bioactivities against cited parasites were separated by elution on Si-60 open column (230-400 mesh, 60 Å) using CHCl 3 :MeOH (9:1) yielding 65.9 mg of pure staurosporine (1) (STS, 65.6 mg, 0.521%) from SF3; and n-Hex:EtOAc:MeOH (2:7:1) to obtained pure the compounds 7-oxostaurosporine (2) (1.01 mg, 0.008%), 4 -demethylamino-4-oxostaurosporine (3), (1.13 mg, 0.009%) and streptocarbazole B (4) (SCZ B, 0.91 mg, 0.007%) from SF4.</p></div> 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.1">Staurosporine, (STS), (1)</head><p>Yellow powder, [α] D 20 + 43 (c 0.3, CHCl3 ); UV (CHCl3 ) λmax (log ε) 297 (4.48) nm. IR υmax 2920, 2851, 1713, 1568, 1463, and 1318 cm−1 . HRESIMS m/z 489.1908 [M + Na]+ , calc. 489.1897 for C28 H24 N4 O3 Na. 1 H and 13 C NMR data see Table S1. 1 H and 13 C NMR spectra, see Supplementary Materials (Figures S2 and S3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.2">7-Oxostaurosporine, (7OSTS), (2)</head><p>Yellow powder, [α]D20 +32.0◦ (c 0.1, CHCl3 ); UV (CHCl3 ) λmax (log ε) 243, 265, 288, 305, 319 nm (ε 319 nm: 20513.39 L mol−1 cm−1 ) nm. IR υmax 2920, 2851, 1713, 1568, 1463, and 1318 cm−1 . HRESIMS m/z 481.1875 [M + H]+ calcd. 481.1876 for C28 H25 N4 O4 . 1 H and 13 C NMR data see Table S2. 1 H and 13 C NMR spectra, see Supplementary Materials (Figures S5 and S6).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.3">4'-Demethylamino-4 -oxostaurosporine, (4 D4 OSTS), (3)</head><p>Yellow powder, [α] 20  D 22 • (c 0.12, CHCl 3 ); UV (CHCl 3 ) λ max (log ε) 248, 268, 293, 319, 335, 352, 368  nm (ε 293nm 23106.25 cm -1 M -1 ) nm. IR υ max 2922, 2853, 2362, 1682., 1456 and 1317 cm -1. HRESIMS m/z 474.1425 [M + Na] + calcd. 474.1430 for C 27 H 21 N 3 O 4 Na. 1 H and 13 C NMR data, see Table S3. 1 H and 13 C NMR spectra, see Supplementary Materials (Figures S8 and S9).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.4">3.4.4. Streptocarbazole B, (SCZ B), (4)</head><p>Pale yellow powder, [α] 20 D -27 • (c 0.09, CHCl 3 ); UV (CHCl 3 ) λ max (log ε) Its UV spectrum show bands at 245, 268, 291, 318, 334, 348, 366 nm (ε 291nm: 22458.82 cm -1 M -1 ) nm. IR υ max 2928, 1682, and 1456 cm -1 . HRESIMS m/z 488.1513 [M + Na] + calcd. 488.1586 for C 28 H 23 N 3 O 4 Na. 1 H and 13 C NMR data see Table S4. 1 H and 13 C NMR spectra, see Supplementary Materials (Figures S11 and S12).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5.">Commercial ICZ Analogs 5-7</head><p>Indolocarbazole derivatives rebeccamycin (5) (CAS no. 93908-02-2), K252c (6) (CAS no. 85753-43-1), and arcyriaflavin A (7) (CAS no. 118458-54-1), were all acquired from Cayman Chemical (Ann Arbor, MI, USA).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6.">Cell Culture</head><p>The amoeba strain used in this study was the type strain: Acanthamoeba castellanii Neff (ATCC 30010) which was axenically grown in PYG medium (0.75% (w/v) proteose peptone, 0.75% (w/v) yeast extract and 1.5% (w/v) glucose) containing 40 µg/mL of gentamicin (Biochrom AG, Cultek, Granollers, Barcelona, Spain). The murine macrophages J774A.1 (ATCC TIB-67) cell line was cultured in RPMI 1640 medium supplemented with 10% fetal bovine serum at 37 • C and 5% CO 2 atmosphere, was used for the cytotoxicity assays. Successively, the evaluated molecules were also tested against two clinical isolates, Acanthamoeba griffini, genotype T3 obtained in a previous study <ref type="bibr" target="#b31">[32]</ref>, and Acanthamoeba polyphaga genotype T4 ATCC 30461, both axenically grown in the same medium as A. castellanii Neff.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7.">In Vitro Activity Against Acanthamoeba spp. Trophozoites</head><p>To evaluate the biological activity of the fractions and molecules, the anti-Acanthamoeba experiments were carried out using the alamarBlue ® colorimetric assay, as it was previously described <ref type="bibr" target="#b21">[22]</ref>. Briefly, Acanthamoeba strain was seeded in triplicate on 96-well microtiter plates (ThermoFisher™, Waltham, MA, USA) with 50 µL from a stock solution of 5 × 10 4 cells/mL and 50 µL of serial dilutions of the evaluated molecules in well (1% DMSO was used to dissolve the highest dose of the compounds with no effects on the parasites). Two reference treatments <ref type="bibr" target="#b32">[33]</ref> such as chlorhexidine (chlorhexidine digluconate; Alfa Aesar) and voriconazole (Sigma), were used as positive controls. Finally, the alamarBlue ® Reagent (Life Technologies, Madrid, Spain) was placed into each well at an amount equal to 10% of the final volume. Plates were incubated for 96 h at 26 • C with a slight agitation until their measurement in the EnSpire ® Multimode Plate Reader (Perkin Elmer, Madrid, Spain) using fluorescence, at 570/585 nm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.8.">In Vitro Activity against Acanthamoeba Castellanii Neff Cysts</head><p>On the other side, cysticidal activity of 7OSTS (2) was determined also using the alamarBlue™ reagent and confirmed visually by inverted microscopy. Cysts of A. castellaniii Neff were prepared as previously described <ref type="bibr" target="#b33">[34,</ref><ref type="bibr" target="#b34">35]</ref>. First of all, trophozoites were transferred from PYG medium based cultures (trophozoite medium) to Neff's encystment medium (NEM; 0.1 M KCl, 8 mM MgSO4•7H 2 O, 0.4 mM CaCl2•2H 2 O, 1 mM NaHCO 3 , 20 mM ammediol [2-amino-2-methyl-1,3-propanediol; Sigma Aldrich Chemistry Ltd., Madrid, Spain], pH 8.8, at 25 • C) and were cultured in this medium with gently shaking for a week in order to obtain mature cysts. In order to carry out the cysticidal assay, mature cysts were harvested and washed twice with PYG medium. Serial dilutions of 7OSTS (2) were made in PYG and place onto sterile 96-well microtiter plates. 5•10 4 mature cysts of Acanthamoeba/mL were added to the wells with 50 µL of 7OSTS (2) dilutions. After 7 days of incubation, the plate was centrifuged at 3000 rpm for 10 min. The supernatant was removed and replaced with 100 µL of fresh PYG medium in each well. Finally, 10 µL of the alamarBlue ® Reagent was placed into each well. The plates were then incubated for 144 h at 28 • C and the emitted fluorescence was measured with the EnSpire ® Multimode Plate Reader (Perkin Elmer, Madrid, Spain) using fluorescence, at 570/585 nm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.9.">Cytotoxicity Test</head><p>The cytotoxicity effect of active molecules was evaluated in murine macrophage J774A.1 cell line (ATCC # TIB-67) following the same protocol described above for Acanthamoeba trophozoites. Then, plates containing alamarBlue ® were incubated for 24 h at 37 • C in presence of CO 2 at 5%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.10.">Statistical Analysis</head><p>The percentage of the growth inhibition, 50% inhibitory concentration (IC 50 or CC 50 ), was calculated by nonlinear regression analysis with 95% confidence limits using Sigma Plot 12.0 statistical analysis software (Systat Software). All experiments were performed three times, and the mean values were also calculated. A paired two-tailed t-test was used for analysis of the data. Values of p &lt; 0.05 were considered significant.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.11.">Double-Stain Assay for Programmed Cell Death Determination</head><p>10 5 amoebas/well were incubated in a 24-well plate with the previously calculated IC 90 of 7OSTS for 24 h. A double-stain apoptosis detection kit (Hoechst 33342/PI) (ThermoFisher™, Waltham, MA, USA) was used to carry out the experiment following the manufacturer's recommendations. The images were obtained using the EVOS FL Cell Imaging System AMF4300, Life Technologies, USA. The double-staining pattern allows the identification of live cells with low level of fluorescence, cells undergoing PCD with a higher level of blue fluorescence (as chromatin condenses), and dead cells which will show low-blue and high-red fluorescence (as the propidium iodide stain enters the nucleus of dead cells).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.12.">Analysis of Mitochondrial Membrane Potential</head><p>The use of JC-1 mitochondrial membrane potential detection kit (Cayman Chemical) it is possible to detect the collapse of an electrochemical gradient across the mitochondrial membrane during apoptosis process. 10 5 amoebas/mL were treated with IC 90 of 7OSTS (2) for 24 h, the cells were centrifuged (1000 rpm × 10 min) and suspended in JC-1 buffer. Images were taken on the EVOS FL inverted microscope. The staining pattern allows the identification of two groups in a cellular population: live cells will show only red fluorescence, but cells with low mitochondrial potential (undergoing PCD) will show a higher level of green fluorescence.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.13.">Measurement of ATP Levels</head><p>An appropriate level of ATP is necessary to maintain the cell metabolism. The effect of the drug on the ATP production was evaluated by incubating (10 5 ) of cells/mL with the previously calculated IC 90 of 7OSTS (2) using the CellTiter-Glo Luminescent Cell Viability Assay. The luminescence of each assay was measured on the EnSpire ® .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.14.">Plasma Membrane Permeability</head><p>In order to detect alterations of the membrane permeability in treated cells, the SYTOX Green (ThermoFischer TM ) assay was performed. Briefly, 10 5 trophozoite were washed and incubated in saline solution with SYTOX Green at a final concentration of 1 µM for 15 min in darkness. After that, IC 90 of 7OSTS (2) was added to the cells and incubated for 24 h. Cells were observed and pictures were taken on the EVOS FL inverted microscope.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>It is known that infections caused by Acanthamoeba spp. affect millions of people worldwide as well as the deficiency of satisfactory treatments. The lack of effectiveness due to drug resistance, and high toxicity are the main drawbacks of currently used drugs. Current therapeutic options against AK rely on the application of biguanides (mainly chlorhexidine or polyhexamethylene biguanide (PHMB)) and azoles (voriconazole) both as eye drops and/or topical. These agents are able to eliminate the trophozoite stage, however the concentrations needed to kill the cysts are usually higher and thus toxic to the eye of the patients. Moreover, these options are lengthy and require application even each hour complicating patients' healing <ref type="bibr" target="#b27">[28]</ref>. Therefore, there is an urgent need to develop new agents to treat AK.</p><p>Based on the knowledge of indolocarbazole-type metabolites and their interactions with protein kinases, in this work we have been able to hypothesize about their response against Acanthamoeba parasites. Thus, assuming STS (1) as a leader compound, it is possible to conclude that in Acanthamoeba spp., both 1 and 2, seem to present similar interactions with the parasite PKs and, therefore, both compounds show similar ranges of inhibition. Similar structural analysis allowed to predict that, for compounds 3 and 4, minor activities should be expected. Among minor metabolites, 7OSTS (2) was the most active. The study of its mode of action on A. castellanii Neff trophozoites showed that 7OSTS (2) induced chromatin condensation and triggered important morphological changes of cells, affecting membrane permeability, and causing mitochondrial damage. This study reveals the ICZ family as potential molecules or biological tools to explore the mechanism of action and the structure of other families of protein kinases. At the moment, there are not known drugs targeting protein kinases of Acanthamoeba spp., fact that increases the value of ICZ compounds. Protein kinases could be an alternative and relevant target to fight against amoeboid infections.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure1. Chemical structures of indolocarbazole (ICZs) metabolites isolated from cultures of Streptomyces sanyensis PBLC04 strain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .Figure 2 .</head><label>2</label><figDesc>Figure 2. Effect of 7OSTS (2) on the cyst of A. castellanii Neff at 10 µ M (A), 2.6 µ M (B), 0.65 µ M (C), and negative control (D). All images (10×) are representative of the population of treated amoeba, and are based on Live Cell Imaging Microscope EVOS FL Cell Imaging System.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Effect of the IC90 concentration of 7OSTS (2) on the chromatin condensation at 24 h (A) and negative control (B) (overlay channels). All images (20×) are representative of the population of treated amoeba and are based on Live Cell Imaging Microscope EVOS FL Cell Imaging System.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Effect on the mitochondrial potential in amoeba treated with the IC90 of 7PSTS for 24 h (A) compared with the negative control (B) (overlay channels). JC-1 dye remained in the cytoplasm in its monomeric form, green fluorescence, and indicates the collapse of mitochondrial potential (A). In negative control (B) JC-1 dye accumulates in the mitochondria of healthy cells as aggregates (red fluorescence). All images (20×) are representative of the population of treated amoeba, and are based on Live Cell Imaging Microscope EVOS FL Cell Imaging System.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. ATP measurement assay with negative control and 7OSTS (2).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Permeabilization of the A. castellanii Neff plasmatic membrane to SYTOX ® Green dye caused by addition of IC90 of 7OSTS (2) (A) comparing with the negative control (B) (overlay channels). All images (20×) are representative of the population of treated amoeba, and are based on Live Cell Imaging Microscope EVOS FL Cell Imaging System.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Commercial ICZs: rebeccamycin (5), K252c (6), and arcyriaflavin A (7).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. 3D Chemical structures for (ICZs) metabolites isolated from Streptomyces sanyensis cultures. Top and perpendicular views to the indol system. Red arrows indicate the interaction sites of stauroporine (STS, 1) with protein kinase type CDK2 models. Minimized structures were obtained using Maestro, version 10.2, Schrodinger, LLC, New York, NY, 2015.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Effects of ICZ metabolites isolated from Streptomyces sanyensis against Acanthamoeba species. IC 50 are reported in µM concentrations (Mean concentration ± SD). * Reference compounds.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Toxicity of compounds 1-4 against murine macrophage J774A.1 (CC 50 ) measured by alamarBlue ® assay; and CC 50 are reported in µM concentrations (Mean concentration ± SD). *Reference compounds.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments:</head><p>IS and ARDM were funded by the <rs type="funder">Agustín de Betancourt Programme (Cabildo de Tenerife-ULL</rs>). Authors acknowledge the use of <rs type="institution">General Research Support Services of University of La Laguna (SEGAI-ULL</rs>).</p></div>
+			</div>
+			<div type="funding">
+<div><head>Funding:</head><p>This work was funded by <rs type="grantNumber">PI18/01380</rs> from <rs type="funder">Instituto de Salud Carlos III, Spain</rs> and <rs type="funder">RICET</rs> (<rs type="grantNumber">RD16/0027/0001</rs> project, from <rs type="funder">Programa Redes Temáticas de Investigación Cooperativa)</rs>, <rs type="funder">FIS (Ministerio Español de Salud, Madrid, Spain)</rs>, <rs type="funder">FEDER</rs> and <rs type="grantNumber">INTERREG-MAC/1.1b/042</rs> (<rs type="grantNumber">BIOTRANSFER2</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_957T3Rt">
+					<idno type="grant-number">PI18/01380</idno>
+				</org>
+				<org type="funding" xml:id="_QHXD6fM">
+					<idno type="grant-number">RD16/0027/0001</idno>
+				</org>
+				<org type="funding" xml:id="_kpAATMS">
+					<idno type="grant-number">INTERREG-MAC/1.1b/042</idno>
+				</org>
+				<org type="funding" xml:id="_fYQrez3">
+					<idno type="grant-number">BIOTRANSFER2</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplementary Materials:</head><p>The following are available online at <ref type="url" target="http://www.mdpi.com/1660-3397/17/10/588/s1">http://www.mdpi.com/1660-3397/17/10/588/s1</ref>, Scheme S1: Isolation and purification of metabolites from Streptomyces sanyensis; Figure S1: Chemical structure, atom carbon position numbers and physical data for staurosporine (STS) 1; Table S1: NMR data for staurosporine (STS) 1 in CD 2 Cl 2 (600 MHz, 298 K), Figure S2: 1 H NMR spectrum of staurosporine (1) in CD 2 Cl 2 (600 MHz, 298 K); Figure S3: 13 C NMR spectrum of staurosporine (1) in CD 2 Cl 2 (150 MHz, 298 K); Figure S4: Chemical structure, atom carbon position numbers and physical data for 7-oxostaurosporine (2); Table S2: NMR data for 7-oxostaurosporine (2) in CD 2 Cl 2 (600 MHz, 298 K); Figure S5: 1 H NMR spectrum of 7-oxostaurosporine (2) in CD 2 Cl 2 (600 MHz, 298 K); Figure S6: 13 C NMR spectrum of 7-oxostaurosporine (2) in CD 2 Cl 2 (150 MHz, 298 K); Figure S7: Chemical structure, atom carbon position numbers and physical data for 4 -demethylamino-4 -oxostaurosporine (3); Table S3: NMR data for 4 -demethylamino-4 -oxostaurosporine (3) in CD 2 Cl 2 (600 MHz, 298 K); Figure S8: 1 H NMR spectrum of 4 -demethylamino-4 -oxostaurosporine (3) in CD 2 Cl 2 (600 MHz, 298 K); Figure S9: 13 C NMR spectrum of 4 -demethylamino-4 -oxostaurosporine (3) in CD 2 Cl 2 (150 MHz, 298 K); Figure S10: Chemical structure, atom carbon position numbers and physical data for streptocarbazole B (SCZ B, 4); Table S4: NMR data for streptocarbazole B (SCZ B, 4) in CD2 Cl2 (600 MHz, 298 K); Figure S11: 1 H NMR spectrum of streptocarbazole B (SCZ B, 4) in CD2 Cl2 (600 MHz, 298 K); Figure S12: 13 C NMR spectrum of streptocarbazole B (SCZ B, 4) in CD2 Cl2 (150 MHz, 298 K).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author Contributions:</head><p>J.L.-M., A.R.D.-M., J.E.P., and J.J.F. conceived and designed the experiments. L.C., A.R.D.-M., and J.J.F. conducted the isolation, culturing, phytochemical and spectral analysis of the chemical compounds. J.L.M., M.R.-B., J.E.P., I.A.-J., and I.S. contributed with the amoebicidal activity and their interpretation assays, Programmed Cell Death analysis and biological data compilation. All authors contributed equally to the final version of the manuscript.</p>			</div>
+			</div>
+			<div type="references">
+
+				<listBibl>
+	
+	<biblStruct type="article" xml:id="b0">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sánchez</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mendez</surname>
+					<forename type="first">C</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salas</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Indolocarbazole natural products: Occurrence, biosynthesis, and biological activity</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Prod. Rep.</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">23</biblScope>
+				<biblScope unit="page" from="1007" to="1045"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b1">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Nakano</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Omura</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Chemical biology of natural indolocarbazole products: 30 years since the discovery of staurosporine</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Antibiot.</title>
+			<imprint>
+				<date when="2009">2009</date>
+				<biblScope unit="volume">62</biblScope>
+				<biblScope unit="page" from="17" to="26"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b2">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yanosik</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rannug</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rannug</surname>
+					<forename>U</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Whalström</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Slätt</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Chemistry and properties of Indolocarbazoles.</title>
+		</analytic>
+		<monogr>
+			<title level="j">Chem. Rev.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">118</biblScope>
+				<biblScope unit="page" from="9058" to="9128"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b3">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Omura</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Iwai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hirano</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakagawa</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Awaya</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tsuchiya</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takahashi</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Masuma</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<title level="a">A new alkaloid AM-2282 of Streptomyces origin. Taxonomy, fermentation, isolation and preliminary characterization</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Antibiot.</title>
+			<imprint>
+				<date when="1977">1977</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="275" to="282"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b4">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tamaoki</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nomoto</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takahashi</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kato</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Morimoto</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tomita</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<title level="a">Staurosporine, a potent inhibitor of phospholipid/Ca++dependent protein kinase</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochem. Biophys. Res. Commun.</title>
+			<imprint>
+				<date when="1986">1986</date>
+				<biblScope unit="volume">135</biblScope>
+				<biblScope unit="page" from="397" to="402"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b5">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lawrie</surname>
+					<forename type="first">A</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Noble</surname>
+					<forename type="first">M</forename><forename type="middle">E</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tunnah</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Brown</surname>
+					<forename type="first">N</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Johnson</surname>
+					<forename type="first">L</forename><forename type="middle">N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Endicott</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Protein kinase inhibition by staurosporine revealed in details of the molecular interaction with CDK2</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Struct. Biol.</title>
+			<imprint>
+				<date when="1997">1997</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="796" to="801"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b6">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kase</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Iwahashi</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakanishi</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matsuda</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yamada</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Takahashi</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murakata</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sato</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kaneko</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">K-252 compounds, novel and potent inhibitors of protein kinase C and cyclic nucleotide-dependent protein kinases</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochem. Biophys. Res. Commun.</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">30</biblScope>
+				<biblScope unit="page" from="436" to="440"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b7">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Tapley</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lamballe</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Barbacid</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">K252a is a selective inhibitor of the tyrosine protein kinase activity of the trk family of oncogenes and neurotrophin receptors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Oncogene</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="371" to="381"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b8">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yamashita</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fujii</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Murakata</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ashizawa</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Okabe</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nakano</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<title level="a">Induction of Mammalian DNA Topoisomerase I Mediated DNA Cleavage by Antitumor Indolocarbazole Derivatives</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochemistry</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">31</biblScope>
+				<biblScope unit="page" from="12069" to="12075"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b9">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Welburn</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Macleod</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Figarella</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duzensko</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Programmed cell death in African trypanosomes</title>
+		</analytic>
+		<monogr>
+			<title level="j">Parasitology</title>
+			<imprint>
+				<date when="2006">2006</date>
+				<biblScope unit="volume">132</biblScope>
+				<biblScope unit="page" from="S7" to="S18"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b10">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Yin</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Howe</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tan</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Staurosporine-induced programmed cell death in Blastocystis occurs independently of caspases and cathepsins and is augmented by calpain inhibition</title>
+		</analytic>
+		<monogr>
+			<title level="j">Microbiology</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">156</biblScope>
+				<biblScope unit="page" from="1284" to="1293"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b11">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bruges</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Betancourt</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>March</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sanchez</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mijares</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<title level="a">Apoptotic-like activity of staurosporine in axenic cultures of Trypanosoma evansi</title>
+		</analytic>
+		<monogr>
+			<title level="j">Rev. Inst. Med. Trop.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">54</biblScope>
+				<biblScope unit="page" from="103" to="118"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b12">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Naula</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Parsons</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mottram</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Protein kinases as drug targets in trypanosomes and Leishmania</title>
+		</analytic>
+		<monogr>
+			<title level="j">Biochim. Biophys. Acta</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">1754</biblScope>
+				<biblScope unit="page" from="151" to="159"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b13">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Barth</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bruges</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meiwes</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mogk</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Mudogo</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Duszenko</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<title level="a">Staurosporine-Induced Cell Death in Trypanosoma brucei and the Role of Endonuclease G during Apoptosis</title>
+		</analytic>
+		<monogr>
+			<title level="j">Open J. Apoptosis</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">3</biblScope>
+				<biblScope unit="page" from="16" to="31"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b14">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Osada</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Koshino</surname>
+					<forename>H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kudo</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Onose</surname>
+					<forename>R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Isono</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">A new inhibitor of protein kinase c, rk- 1409 (7-oxostaurosporine) I. Taxonomy and biological activity</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Antibiot.</title>
+			<imprint>
+				<date when="1992">1992</date>
+				<biblScope unit="volume">45</biblScope>
+				<biblScope unit="page" from="189" to="194"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b15">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cai</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fredenhagen</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hug</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meyer</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Further minor metabolites of Staurosporine produced by a Streptomyces longisporoflavus strain</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Antibiot.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">49</biblScope>
+				<biblScope unit="page" from="519" to="526"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b16">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Fu</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Yang</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Wang</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Liu</surname>
+					<forename>P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ma</surname>
+					<forename>Y</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xu</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Su</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hong</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>W</forename>
+				</persName>
+			</author>
+			<title level="a">Streptocarbazoles A and B, Two Novel Indolocarbazoles from the Marine-Derived Actinomycete Strain Streptomyces sp. FMA</title>
+		</analytic>
+		<monogr>
+			<title level="j">Org. Lett.</title>
+			<imprint>
+				<date when="2012">2012</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="2422" to="2425"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b17">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cartuche</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sifaoui</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cruz</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reyes-Batlle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lopez-Arencibia</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernández</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diaz-Marrero</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Piñero</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Staurosporine from Streptomyces sanyensis activates Programmed Cell Death in Acanthamoeba via the mitochondrial pathway and presents low cytotoxicity levels to vertebrate cells</title>
+		</analytic>
+		<monogr>
+			<title level="j">Sci. Rep.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">9</biblScope>
+				<biblScope unit="page" from="11651" to="11651"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b18">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Taravaud</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Loiseau</surname>
+					<forename type="first">P</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Pomel</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">In vitro evaluation of antimicrobial agents on Acanthamoeba sp. and evidence of a natural resilience to amphotericin B</title>
+		</analytic>
+		<monogr>
+			<title level="j">Int. J. Parasitol. Drugs Drug Resist.</title>
+			<imprint>
+				<date when="2017">2017</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="328" to="336"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b19">
+		<analytic>
+			<author>
+				<persName>
+					<surname>García-Davis</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sifaoui</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reyes-Batlle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Viveros-Valdez</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Piñero</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernández</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diaz-Marrero</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<title level="a">Anti-Acanthamoeba Activity of Brominated Sesquiterpenes from Laurencia johnstonii</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mar. Drugs</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">16</biblScope>
+				<biblScope unit="page" from="443" to="443"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b20">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Diaz-Marrero</surname>
+					<forename type="first">A</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Cen-Pacheco</surname>
+					<forename>F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sifaoui</surname>
+					<forename>I</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reyes-Batlle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Souto</surname>
+					<forename type="first">M</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Hernández Daranas</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Piñero</surname>
+					<forename type="first">J</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fernández</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<title level="a">Evaluation of Oxasqualenoids from the Red Alga Laurencia viridis against Acanthamoeba</title>
+		</analytic>
+		<monogr>
+			<title level="j">Mar. Drugs</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">17</biblScope>
+				<biblScope unit="page" from="420" to="420"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b21">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Kaczanowski</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sajid</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reece</surname>
+					<forename type="first">S</forename><forename type="middle">E</forename>
+				</persName>
+			</author>
+			<title level="a">Evolution of apoptosis-like programmed cell death in unicellular protozoan parasites</title>
+		</analytic>
+		<monogr>
+			<title level="j">Parasites Vectors</title>
+			<imprint>
+				<date when="2011">2011</date>
+				<biblScope unit="volume">4</biblScope>
+				<biblScope unit="page" from="2" to="9"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b22">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Gani</surname>
+					<forename type="first">O</forename><forename type="middle">A</forename><forename type="middle">S</forename><forename type="last">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Engh</surname>
+					<forename type="first">R</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Protein kinase inhibition of clinically important staurosporine analogues</title>
+		</analytic>
+		<monogr>
+			<title level="j">Nat. Prod. Rep.</title>
+			<imprint>
+				<date when="2010">2010</date>
+				<biblScope unit="volume">27</biblScope>
+				<biblScope unit="page" from="489" to="498"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="grey-literature" xml:id="b23">
+		<monogr>
+			<author>
+				<persName>
+					<surname>Tanramluk</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<title level="m">On the Origins of Enzyme Inhibitor Selectivity and Promiscuity: A Case of Study of Protein Kinase Binding to Staurosporine</title>
+			<note>Ph.D. Thesis</note>
+			<imprint>
+				<publisher>University of Cambridge</publisher>
+				<date when="2009">2009</date>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b24">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Long</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rose</surname>
+					<forename type="first">W</forename><forename type="middle">C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Vyas</surname>
+					<forename type="first">D</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Matson</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Forenza</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<title level="a">Discovery of antitumor indolocarbazoles: Rebeccamycin, NSC 655649, and fluoroindolocarbazoles</title>
+		</analytic>
+		<monogr>
+			<title level="j">Curr. Med. Chem. Anticancer Agents</title>
+			<imprint>
+				<date when="2002">2002</date>
+				<biblScope unit="volume">2</biblScope>
+				<biblScope unit="page" from="255" to="266"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b25">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Pereira</surname>
+					<forename type="first">E</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Belin</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sancelme</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Prudhomme</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ollier</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rapp</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Sevère</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Riou</surname>
+					<forename>F-F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Fabbro</surname>
+					<forename>D</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Meyer</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<title level="a">Structure-activity relationships in a series of substituted indolocarbazoles: Topoisomerase I and protein kinase C inhibition and antitumoral and antimicrobial properties</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Med. Chem.</title>
+			<imprint>
+				<date when="1996">1996</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="4471" to="4477"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b26">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Cinelli</surname>
+					<forename type="first">M</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Topoisomerase 1B poisons: Over a half-century of drug leads, clinical candidates and serendipitous discoveries</title>
+		</analytic>
+		<monogr>
+			<title level="j">Med. Res. Rev.</title>
+			<imprint>
+				<date when="2019">2019</date>
+				<biblScope unit="volume">39</biblScope>
+				<biblScope unit="page" from="1294" to="1337"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b27">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bhaduri</surname>
+					<forename>S</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ranjan</surname>
+					<forename>N</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Arya</surname>
+					<forename type="first">D</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<title level="a">An overview of recent advances in duplex DNA recognition by small molecules</title>
+		</analytic>
+		<monogr>
+			<title level="j">Beilstein J. Org. Chem.</title>
+			<imprint>
+				<date when="2018">2018</date>
+				<biblScope unit="volume">14</biblScope>
+				<biblScope unit="page" from="1051" to="1086"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b28">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sánchez</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Braña</surname>
+					<forename>A-F</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salas</surname>
+					<forename type="first">A</forename><forename type="middle">P</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Rohr</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Méndez</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salas</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<title level="a">Combinatorial Biosynthesis of Antitumor Indolocarbazole Compounds</title>
+		</analytic>
+		<monogr>
+			<title level="j">Proc. Natl. Acad. Sci. USA</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">102</biblScope>
+				<biblScope unit="page" from="46" to="466"/>
+			</imprint>
+		</monogr>
+	</biblStruct>	
+	
+	<biblStruct type="article" xml:id="b29">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Bush</surname>
+					<forename type="first">J</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Long</surname>
+					<forename type="first">B</forename><forename type="middle">H</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Catino</surname>
+					<forename type="first">J</forename><forename type="middle">J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Bradner</surname>
+					<forename type="first">W</forename><forename type="middle">T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Tomita</surname>
+					<forename>K</forename>
+				</persName>
+			</author>
+			<title level="a">Production and biological activity of rebeccamycin, a novel antitumor agent</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Antibiot. (Tokyo)</title>
+			<imprint>
+				<date when="1987">1987</date>
+				<biblScope unit="volume">40</biblScope>
+				<biblScope unit="page" from="668" to="678"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b30">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Sanchez-Martinez</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Shih</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Faul</surname>
+					<forename type="first">M</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Zhu</surname>
+					<forename>G</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Paal</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Somoza</surname>
+					<forename>C</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Li</surname>
+					<forename>T</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kumrich</surname>
+					<forename type="first">C</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Winneroski</surname>
+					<forename type="first">L</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Xun</surname>
+					<forename>Z</forename>
+				</persName>
+			</author>
+			<title level="a">Aryl[a]pyrrolo[3,4-c]carbazoles as selective cyclin D1-CDK4 inhibitors</title>
+		</analytic>
+		<monogr>
+			<title level="j">Bioorg. Med. Chem. Lett.</title>
+			<imprint>
+				<date when="2003">2003</date>
+				<biblScope unit="volume">13</biblScope>
+				<biblScope unit="page" from="3835" to="3839"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b31">
+		<analytic>
+			<author>
+				<persName>
+					<surname>González-Robles</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Salazar-Villatoro</surname>
+					<forename>L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Omaña-Molina</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Reyes-Batlle</surname>
+					<forename>M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martín-Navarro</surname>
+					<forename type="first">C</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">Morphological Features and In Vitro Cytopathic Effect of Acanthamoeba griffini Trophozoites Isolated from a Clinical Case</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Parasitol. Res.</title>
+			<imprint>
+				<date when="2014">2014</date>
+				<biblScope unit="volume">2014</biblScope>
+				<biblScope unit="page" from="256310" to="256310"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b32">
+		<analytic>
+			<author>
+				<persName>
+					<surname>McBride</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Ingram</surname>
+					<forename type="first">P</forename><forename type="middle">R</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Henriquez</surname>
+					<forename type="first">F</forename><forename type="middle">L</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Roberts</surname>
+					<forename type="first">C</forename><forename type="middle">W</forename>
+				</persName>
+			</author>
+			<title level="a">Development of colorimetric microtiter plate assay for assessment of antimicrobials against Acanthamoeba</title>
+		</analytic>
+		<monogr>
+			<title level="j">J. Clin. Microbiol.</title>
+			<imprint>
+				<date when="2005">2005</date>
+				<biblScope unit="volume">43</biblScope>
+				<biblScope unit="page" from="629" to="634"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b33">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Khan</surname>
+					<forename type="first">N</forename><forename type="middle">A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Walochnik</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<title level="a">An update on Acanthamoeba keratitis: Diagnosis, pathogenesis and treatment</title>
+		</analytic>
+		<monogr>
+			<title level="j">Parasite</title>
+			<imprint>
+				<date when="2015">2015</date>
+				<biblScope unit="volume">22</biblScope>
+				<biblScope unit="page" from="10" to="10"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+	
+	<biblStruct type="article" xml:id="b34">
+		<analytic>
+			<author>
+				<persName>
+					<surname>Lorenzo-Morales</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Kliescikova</surname>
+					<forename>J</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Martinez-Carretero</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>De Pablos</surname>
+					<forename type="first">L</forename><forename type="middle">M</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Profotova</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Nohynkova</surname>
+					<forename>E</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Osuna</surname>
+					<forename>A</forename>
+				</persName>
+			</author>
+			<author>
+				<persName>
+					<surname>Valladares</surname>
+					<forename>B</forename>
+				</persName>
+			</author>
+			<title level="a">Glycogen phosphorylase in Acanthamoeba spp.: Determining the role of the enzyme during the encystment process using RNA interference</title>
+		</analytic>
+		<monogr>
+			<title level="j">Eukaryot. Cell</title>
+			<imprint>
+				<date when="2008">2008</date>
+				<biblScope unit="volume">7</biblScope>
+				<biblScope unit="page" from="509" to="517"/>
+			</imprint>
+		</monogr>
+	</biblStruct>
+		
+	</listBibl>
+
+		
+	</div>
+		</back>
+	</text>
+</TEI>

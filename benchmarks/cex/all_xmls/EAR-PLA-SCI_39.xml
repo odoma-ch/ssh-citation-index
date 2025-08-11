@@ -1,0 +1,2397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Nepal emission inventory -Part I: Technologies and combustion sources (NEEMI-Tech) for 2001-2016</title>
+				<funder>
+					<orgName type="full">Brandenburg State Ministry for Science, Research and Culture (MWFK)</orgName>
+				</funder>
+				<funder ref="#_pZjAUf2">
+					<orgName type="full">German Federal Ministry for Education and Research (BMBF)</orgName>
+				</funder>
+				<funder ref="#_4yz5Kw7">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Copernicus Publications</publisher>
+				<availability>
+					<licence target="https://creativecommons.org/licenses/by/4.0/"><p>This work is distributed under the Creative Commons Attribution 4.0 License.</p></licence>
+				</availability>
+				<date type="published" when="2019-10-18">18 October 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Pankaj</forename><surname>Sadavarte</surname></persName>
+							<email>p.sadavarte@sron.nl</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Advanced Sustainability Studies (IASS)</orgName>
+								<address>
+									<addrLine>Berliner Str. 130</addrLine>
+									<postCode>14467</postCode>
+									<settlement>Potsdam</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Earth Group</orgName>
+								<orgName type="institution">SRON Netherlands Institute for Space Research</orgName>
+								<address>
+									<settlement>Utrecht</settlement>
+									<country key="NL">the Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Maheswar</forename><surname>Rupakheti</surname></persName>
+							<email>maheswar.rupakheti@iass-potsdam.de</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Advanced Sustainability Studies (IASS)</orgName>
+								<address>
+									<addrLine>Berliner Str. 130</addrLine>
+									<postCode>14467</postCode>
+									<settlement>Potsdam</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Prakash</forename><surname>Bhave</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">International Centre for Integrated Mountain Development (ICIMOD)</orgName>
+								<address>
+									<settlement>Lalitpur</settlement>
+									<country key="NP">Nepal</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kiran</forename><surname>Shakya</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">International Centre for Integrated Mountain Development (ICIMOD)</orgName>
+								<address>
+									<settlement>Lalitpur</settlement>
+									<country key="NP">Nepal</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mark</forename><surname>Lawrence</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Advanced Sustainability Studies (IASS)</orgName>
+								<address>
+									<addrLine>Berliner Str. 130</addrLine>
+									<postCode>14467</postCode>
+									<settlement>Potsdam</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+					
+						<title level="a" type="main">Nepal emission inventory -Part I: Technologies and combustion sources (NEEMI-Tech) for 2001-2016</title>
+					</analytic>
+					<monogr>
+					 	<title level="j" type="main">Atmospheric Chemistry and Physics</title>
+					 	<title level="j" type="abbrev">Atmos. Chem. Phys.</title>
+						<imprint>
+							<biblSCope unit="volume">19</biblSCope>
+							<biblSCope unit="page" from="12953" to="12973"/>						
+							<date type="published" when="2019-10-18">18 October 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">406E03C0F74E0A29D01BCA522CB69172</idno>
+					<idno type="DOI">10.5194/acp-19-12953-2019</idno>
+					<note type="submission">Received: 2 February 2019 -Discussion started: 8 March 2019 Revised: 1 September 2019 -Accepted: 6 September 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The lack of a comprehensive, up-to-date emission inventory for the Himalayan region is a major challenge in understanding the extensive regional air pollution, including its causes, impacts and mitigation pathways. This study describes a high-resolution (1 km × 1 km) present-day emission inventory for Nepal, developed with a higher-tier approach. The complete study is divided into two parts; this paper covers technologies and combustion sources in residential, industrial, commercial, agricultural diesel-use and transport sectors as Part I (NEEMI-Tech), while emissions from the open burning of municipal waste and agricultural residue in fields and fugitive emissions from waste management, paddy fields, enteric fermentation and manure management for the period 2001-2016 will be covered in Part II (NEEMI-Open). The national total energy consumption (except hydropower, solar and wind energy) estimated in the base year 2011 was 374 PJ, with the residential sector being the largest energy consumer (79 %), followed by industry (11 %) and the transport sector (7 %). Biomass is the dominant energy source, contributing to 88 % of the national total energy consumption, while the rest is from fossil fuel. A total of 8.9 Tg of CO 2 , 110 Gg of CH 4 , 2.1 Gg of N 2 O, 64 Gg of NO x , 1714 Gg of CO, 407 Gg of NMVOCs, 195 Gg of PM 2.5 , 23 Gg of BC, 83 Gg of OC and 24 Gg of SO 2 emissions were estimated in 2011 from the five energy-use sectors considered in NEEMI-Tech. The Nepal emission inventory provides, for the first time, temporal trends of fuel and energy consumption and associated emissions in Nepal for a long period, 2001-2016. The energy consumption showed an increase by a factor of 1.6 in 2016 compared to 2001, while the emissions of various species increased by a factor of 1.2-2.4. An assessment of the top polluting technologies shows particularly high emissions from traditional cookstoves and space-heating practices using biomass. In addition, high emissions were also computed from fixed-chimney Bull's trench kilns (FCBTKs) in brick production, cement kilns, two-wheeler gasoline vehicles, heavy-duty diesel freight vehicles and kerosene lamps. The monthly analysis shows December, January and February as periods of high PM 2.5 emissions from the technologybased sources considered in this study. Once the full inventory including open burning and fugitive sources (Part II) is available, a more complete picture of the strength and temporal variability in the emissions and sources will be possible. Furthermore, the large spatial variation in the emissions highlights the pockets of growing urbanization, which emphasize the importance of the detailed knowledge about the emission sources that this study provides. These emissions will be of value for further studies, especially air-quality-modeling studies focused on understanding the likely effectiveness of air pollution mitigation measures in Nepal.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Nepal, a developing country in southern Asia, is subject to the same increasing burden of air pollution seen over most of the subcontinent for the last decades <ref type="bibr" target="#b44">(MoEST, 2005)</ref>. With its complex topography, ranging from ca. 100 m a.s.l. (meters above sea level) in the south to above 8000 m a.s.l. in the north, the region is home to a population of 26.5 million (in 2011) that depends mainly on biomass and fossil fuel (imported from other countries) for its total energy needs <ref type="bibr" target="#b12">(CBS, 2012;</ref><ref type="bibr" target="#b69">WECS, 2014)</ref>. It is well established that the incomplete combustion of such biomass emits a significant amount of the fine particulate matter PM 2.5 (diameter ≤ 2.5 µm) and ozone precursor emissions, which have been linked to degrading air quality, adverse health impacts, climate change and effects on the cryosphere <ref type="bibr" target="#b23">(Fiore et al., 2015;</ref><ref type="bibr" target="#b59">Shakya et al., 2016)</ref>. In addition, studies have also shown that air pollution causes reductions in crop productivity and have identified hotspots and the air pollution linkage behind urban heat islands, altering monsoon patterns and increases in natural calamities like floods <ref type="bibr" target="#b10">(Burney and Ramanathan, 2014;</ref><ref type="bibr" target="#b61">Shastri et al., 2017;</ref><ref type="bibr" target="#b14">Collier and Zhang, 2009;</ref><ref type="bibr" target="#b22">Fan et al., 2015)</ref>.</p><p>Global studies of health effects have identified air pollution, including both household pollution and ambient particulate pollution, as the second and third leading risk factors responsible for burden of disease attributable to premature deaths in Nepal <ref type="bibr" target="#b24">(Forouzanfar, 2016)</ref>. The prolonged exposure to these pollutants has led to significant respiratory symptoms. The exposure of adults to biomass smoke in rural households of Nepal has led to prevailing respiratory symptoms, while those with prolonged exposure to ambient particulate pollution in urban households have shown evidence of high chronic phlegm <ref type="bibr" target="#b36">(Kurmi, 2014)</ref>. A study has also demonstrated exposure as high as a 165 µg m -3 respirable fraction of particulates in children from the use of biomass for residential activities in Nepal <ref type="bibr" target="#b17">(Devakumar et al., 2014)</ref>. The roadside measurements in the Kathmandu Valley have also observed an average of ca. 90 µg m -3 of PM 2.5 concentration, with higher upper bounds during the winter season <ref type="bibr" target="#b7">(Bhari, 2015;</ref><ref type="bibr" target="#b60">Shakya et al., 2017)</ref>. The ambient measurements of PM 2.5 in the Kathmandu Valley, the capital and main metropolitan region in Nepal, have shown seasonal concentrations varying from 30 µg m -3 (monsoon) to 90 µg m -3 (winter), attributed to various emission sources and meteorology <ref type="bibr" target="#b3">(Aryal et al., 2009)</ref>. Such large variations in ambient concentrations are also likely partly due to seasonality in energy consumption and emissions.</p><p>The gross domestic product (GDP) of Nepal has been increasing substantially in the past 2 decades <ref type="bibr" target="#b46">(MoF, 2017)</ref>. Similarly there has been a tremendous increase in the energyuse footprint and import of fossil fuels <ref type="bibr" target="#b48">(NOC, 2019)</ref>. Since a large fraction of available national energy is consumed in the residential sector, relying on biomass fuels, there is an urgent need to understand the demand and supply of bio-resources and explore other cleaner options. Moreover, the rapid urbanization has led to an approximately 15-fold increase in vehicle numbers over the last 2 decades, unfortunately increasing the demand for petroleum fuels <ref type="bibr" target="#b21">(DoTM, 2016)</ref>. The increasing population and commercialization also call for uninterrupted electricity. Until recently, Nepal has faced very high amounts of load shedding and diesel consumption in diesel generators for backup power generation. This has led to a significant increase in the national black carbon (BC) emissions <ref type="bibr" target="#b71">(World Bank, 2014)</ref>. In order to tackle the problem of future energy demand (though the situation has improved since 2016) and degrading air quality, synergetic work is needed that is based on an understanding of the current fuel consumption and efficient combustion technologies.</p><p>Recent studies in Nepal have attempted to characterize and quantify the energy needs and emissions from sources such as the residential and commercial sectors using the "IPCC Tier I" or "EMEP/EEA Tier I" approach (less detailed) that fails to provide complete information about the combustion technologies and control abatements <ref type="bibr" target="#b40">(Malla, 2013;</ref><ref type="bibr" target="#b8">Bhattarai and Jha, 2015)</ref>. Research studies have mainly focused on residential cooking, with the aim of promoting energy-efficient and fuel-efficient cookstoves, renewable technologies, and better indoor air quality, with a brief discussion about the cobenefits of cleaner combustion technologies <ref type="bibr" target="#b55">(Pokhrel, 2015;</ref><ref type="bibr" target="#b26">Gurung et al., 2012;</ref><ref type="bibr" target="#b64">Singh et al., 2012)</ref>. Similarly, past studies on the transport sector have only been focused on the Kathmandu Valley due to large number of vehicles registered in the Bagmati Zone, where the Kathmandu Valley is located, and subsequently higher sales of gasoline and diesel in the valley <ref type="bibr" target="#b63">(Shrestha et al., 2013)</ref>. Past studies like that of <ref type="bibr" target="#b62">Shrestha and Rajbhandari (2010)</ref> have modeled the influence of the residential, agricultural, transport, industrial and commercial sectors on reducing future carbon emissions only for the Kathmandu Valley, which takes into consideration the economics and demands of the population without a detailed classification of combustion technologies that drive the emissions.</p><p>Moreover, current Asian emission inventories tend to provide explicit details on energy-use patterns only for regions of interest while aggregating the same details on a coarser resolution for the rest of the countries <ref type="bibr" target="#b76">(Zhang et al., 2009;</ref><ref type="bibr" target="#b37">Kurokawa et al., 2013)</ref>. One such effort in segregating the energy use at a higher resolution of sectoral activities has been executed by the Water and Energy Commission Secretariat (WECS), Nepal; however, there is no clear methodology and underlying assumptions stated which can be relied on for further investigation into emission estimates <ref type="bibr" target="#b69">(WECS, 2014)</ref>. In addition to the upcoming air pollution strategies, NAMaSTE (Nepal Ambient Monitoring and Source Testing Experiment) has led to the measurements of emission factors from the different informal sources in Nepal, thereby providing Nepal-specific emission factors (EFs) that can be used in reducing the uncertainties in emissions <ref type="bibr" target="#b66">(Stockwell et al., 2016;</ref><ref type="bibr" target="#b32">Jayarathne et al., 2018)</ref>.</p><p>Analyzing the following issues, it is important to conduct a systematic and comprehensive study of all energy sectors, agriculture sources and solid-waste burning in Nepal from an emission point of view, which has not yet been done, integrating the primary information on energy production and use, combustion technologies and corresponding EFs. The Nepal emission inventory study is divided into two parts: technology-based emissions (NEEMI-Tech) as part I and open burning and fugitive emissions (NEEMI-Open) as part II. This paper discusses the development of a high-resolution (1 km × 1 km; monthly) combustion-and technology-based emission inventory from the residential, industrial, transport (on-road and off-road) and commercial sectors as well as the agricultural sector (only technologybased emissions from the use of tractors, tillers, pumps and threshers), while Part II encompasses emissions from the open burning of municipal waste and agricultural open field burning along with fugitive emissions from waste, paddy fields, enteric fermentation and manure management. At the time of writing, Part II was under preparation for publication. In both parts, total emissions of 10 species, where applicable, are estimated in this study, including greenhouse gases and short-lived climate-forcing pollutants (SLCPs). The methodology of developing emission estimates is described in Sect. 2, followed by information on activity rates, the detailed combustion technology and industrial process in practice, the region-specific EFs, spatial surrogates, and finally sectoral emissions. The analysis of our results compares our national energy and emissions with reported estimates by national authorities and regional and global inventories. Finally, the emissions from the Kathmandu Valley are compared with the rest of the Nepal to understand the relative contributions of different sources and emissions at the national level as well as in the Kathmandu Valley.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Methodology</head><p>The methodology follows a bottom-up estimation of emissions using activity rates in the form of fuel consumption and the measured EFs in Nepal wherever possible. The fuel consumption is uniquely estimated across each sub-sector using available primary data of activity rates such as fuel imports, production, registered number of vehicles, machinery units and specific energy consumption (SEC). The approach also incorporates current industrial process technologies and the spread of control measures for particulates and other species (Fig. <ref type="figure" target="#fig_0">1</ref>).</p><p>An emission E is estimated using Eq. ( <ref type="formula" target="#formula_0">1</ref>), where pollutant i from sub-sector a is calculated using the fuel consumed (FC) by its type f in combustion technology t and emission factor (EF). The emission factor considered is a function of fuel type and the combustion technology, different across each sub-sector and fuel-technology combination. Black carbon (BC) and organic carbon (OC), two key components of particulate matter, are calculated using their respective fractions of PM 2.5 (in Sect. 2.3; Eqs. <ref type="formula" target="#formula_1">2</ref> and <ref type="formula" target="#formula_2">3</ref>). Table <ref type="table" target="#tab_0">1</ref> lists the complete details about the emission sectors, pollutant species and spatial resolution considered in this study, referred to as the Nepal emission inventory (NEEMI): </p><formula xml:id="formula_0">E i,a = FC f,a,t × EF i,f,a,t ,<label>(1)</label></formula><formula xml:id="formula_1">E BC, a,f,t = E PM 2.5 ,a,f,t × f BC,a,f,t ,<label>(2)</label></formula><formula xml:id="formula_2">E OC, a,f,t = E PM 2.5 ,a,f,t × f OC,a,f,t .<label>(3)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Activity rates and technology division</head><p>Each sector considered in the study (residential, industrial, commercial, agricultural and transport) is classified into coherent sources broadly termed as sub-sectors, listed in Table <ref type="table" target="#tab_0">1</ref>. Activities and their combustion technologies pertaining to each sub-sector are identified for quantifying final energy consumption and resultant emissions. The following section describes in brief the methodological approach for estimating the fuel consumption in each sub-sector.</p><p>Residential. In residential sector, the National Population and Housing Census 2011 provides primary data on the number of households using different types of cooking fuel and sources of lighting for 3915 village development committees (VDCs) and 58 municipalities, i.e., administrative units in rural and urban regions, respectively, at the time of this study <ref type="bibr" target="#b12">(CBS, 2012)</ref>. The amounts and types of fuel consumed for cooking are based on previous studies reporting the "useful energy" required for preparing daily food in various utensil-stove-fuel combinations in different seasons <ref type="bibr" target="#b54">(Pokharel, 2004;</ref><ref type="bibr" target="#b33">Kandel et al., 2016)</ref>. For lighting, the amount of kerosene used is calculated using the average burn rate, hours of daily usage and number of lamps per household <ref type="bibr" target="#b38">(Lam et al., 2012;</ref><ref type="bibr" target="#b16">DECP, 2014)</ref>. For water heating and boiling, the specific energy required to raise the temperature from being ambient (t&lt;20 • C) to 43 • C was calculated assuming an amount of bathing water of 15 L per capita per day (average capacity of commonly used buckets in Nepal). A similar temperature threshold (t&lt;20 • C) was adopted to estimate the amount of fuel used for indoor and outdoor space heating. Space heating outdoors refers to where people gather around an open fire to keep themselves and the immediate vicinity warm by burning firewood, agricultural residue and dung cakes. Further details about each residential activity are described in the Supplement. Similarly, the National Population and Housing Census 2001 is used for activity rates in the year 2001. For years between 2001 and 2011, the data were interpolated using the compound annual growth rate (CAGR), which was further extrapolated to 2016 in order to provide trends from 2012 to 2016.</p><p>Industry. The industrial census, the National Census of Manufacturing Establishments 2011 <ref type="bibr" target="#b13">(CME 2011)</ref>, was used for fuel estimation; it collates the annual details on proprietorship, organizational structure, production, sales figures, fuel consumption, electricity consumption and details on pollution-control equipment. The CME 2011 surveyed a total of 4076 industrial units nationwide, covering small and medium industries (SMIs) and large-point industries (LPIs) <ref type="bibr" target="#b13">(CBS, 2014)</ref>. In this study, a total of 1512 industrial units, including cement manufacturing, basic iron, structural metal, brick production, grain mill, noodles, tea, coffee and pharmaceuticals are considered to be large-point sources or heavy industries, whereas the remaining 2564 industrial units are considered to be small and medium industries. The fuels in the above LPIs and SMIs of paper, sugar, beverage, dairy and soap were corrected using SEC from a survey conducted for selected industries and the production data <ref type="bibr" target="#b50">(PACE Nepal, 2012;</ref><ref type="bibr" target="#b13">CBS, 2014)</ref>. The methodology described above is followed to estimate fuel consumption for these respective years and interpolated for intermediate years.</p><p>Commercial. The commercial sector includes all serviceproviding institutions that are largely dispersed over the whole country (Table <ref type="table" target="#tab_0">1</ref>). These institutional units mainly require energy in the form of electricity (Nepal Electricity Authority -NEA -supply and diesel generators), while a few sub-sectors like hotels, restaurants and barrack canteens also consume energy for cooking and other utilities such as water boiling and space heating. The fuel consumption in each commercial sector activity is derived independently and explained in the Supplement.</p><p>Agriculture. The agricultural sector in this paper includes combustion activities of diesel use in pumps, tractors, power tillers and engines for threshing. The energy required for pumping water was estimated using the amount of water used for irrigation in Nepal, reported by the Food and Agriculture Organization (FAO), and the fraction of people relying on surface water (SW), shallow tube wells (STWs) and deep tube wells (DTWs) for irrigation <ref type="bibr" target="#b25">(Frenken and Gillet, 2012)</ref>. For mechanized farming the statistical information on Nepalese agriculture (2011-2012) from the Department of Agriculture reported the number of landholdings using tractors, tillers and threshers in 2011 <ref type="bibr" target="#b42">(MoAD, 2011)</ref>, which served as the primary information for estimating the fuel. The flowsheets explaining the fuel consumption are shown in the Supplement.</p><p>Transport. The activity rates for the transport sector include age-distributed vehicle population, fuel efficiency (FE) and vehicle kilometers traveled (VKT) for a total of eight categories of on-road and off-road vehicles <ref type="bibr" target="#b63">(Shrestha et al., 2013;</ref><ref type="bibr" target="#b20">DoTM, 2013)</ref>. The actual number of on-road vehicles is modeled using the long-term vehicle registration data (from ca. 1989 to 2016) and the survival fraction of vehi-cles in each category in every year <ref type="bibr" target="#b21">(DoTM, 2016;</ref><ref type="bibr" target="#b4">Baidya and Borken-Kleefeld, 2009;</ref><ref type="bibr" target="#b73">Yan et al., 2011)</ref>. The survival fraction was modeled using a logistic function to estimate the survival function parameters, alpha (α) and L 50 , which describes the onset of retirement and the age when 50 % of vehicles have retired <ref type="bibr" target="#b73">(Yan et al., 2011;</ref><ref type="bibr" target="#b51">Pandey and Venkataraman, 2014)</ref>. The fuel efficiency for each vehicle category was compiled from the survey-based studies conducted in Nepal <ref type="bibr" target="#b19">(Dhital and Shakya, 2014;</ref><ref type="bibr" target="#b18">Dhakal 2003;</ref><ref type="bibr" target="#b5">Bajracharya and Bhattarai, 2016;</ref><ref type="bibr" target="#b56">Pradhan et al., 2006)</ref>. The VKT was modeled using the survey study in the Kathmandu Valley for twowheelers, buses, vans and taxis by <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref>. For the remaining categories these data were taken from other literature <ref type="bibr" target="#b19">(Dhital and Shakya, 2014;</ref><ref type="bibr" target="#b18">Dhakal, 2003;</ref><ref type="bibr" target="#b5">Bajracharya and Bhattarai 2016)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Combustion technologies</head><p>Understanding the combustion technologies in each subsector and characterizing emissions at activity level are two of the principal objectives of this study. Table <ref type="table" target="#tab_1">2</ref> highlights the technologies considered in each sector and sub-sector.</p><p>In residential cooking, the type of cookstove used is mostly governed by the fuel burned. A large fraction of rural households in Nepal still rely on traditional mud cookstoves (TCSs), while there has been a drive to spread improved cookstoves (ICSs) and increase the use of biogas plants under various renewable-energy technology (RET) programs <ref type="bibr" target="#b1">(AEPC, 2012)</ref>. For water heating and boiling, the population in urban areas uses liquefied petroleum gas (LPG) stoves and kerosene stoves, whereas in rural areas they rely on firewood in traditional cookstoves <ref type="bibr" target="#b69">(WECS, 2014;</ref><ref type="bibr" target="#b12">CBS, 2012)</ref>. In the industrial sector, energy is required for thermal purposes (steam generation) and utilities through boilers, furnaces and diesel generators. The iron and steel industry in Nepal converts the imported billets into elongated rods using rolling mills that heavily consume furnace oil (FO) in a reheating furnace. The cement industries in Nepal are mostly grinding units, with 14 mine-based units equipped with rotary kilns <ref type="bibr" target="#b53">(Pandey and Banskota, 2008)</ref>. The brick kilns are mostly fixed-chimney Bull's trench kilns (FCBTKs), either with straight-firing or zigzag-firing technology, and a small fraction of clamp kilns (CKs) and the vertical-shaft brick kilns (VSBKs). A total of 609 brick kilns, whose geolocations were identified, are considered in this study, out of which 557 are FCBTKs and 52 are clamp kilns during 2011. The zigzag-firing technique is a relatively new development in Nepal. It has only been used in the brick kilns in the Kathmandu Valley, which were rebuilt after 2015 earthquake in Nepal. Kilns outside the Kathmandu Valley are slowly adopting the zigzag technique. An in-house survey of 82 brick factories in 2014 in the Kathmandu Valley showed that only 22 FCBTKs (∼ 25 %) had zigzag-firing technology compared to straight-firing technology. This fraction may be extrapolated to a national level to understand the number of zigzag-firing brick kilns in Nepal, although a thorough study is indeed required to furnish the actual numbers.</p><p>In commercial sector, since the activities involve energy use for electricity purposes, diesel generators are considered to be the prominent combustion technology in this sector. In the case of restaurants, a technology division similar to the residential sector is followed, with additional boilers required in tourism hotels for hot-water generation. The combustion technologies in the agricultural sector include diesel use in irrigation pumps, tractors, power tillers and threshers. Since insufficient information is available in terms of size for diesel pumps, tractors, power tillers and threshers, the fuel consumption estimates do not account for any additional factors that would have led to more accurate (new) fuel estimates in this study.</p><p>In transport sector, a total of eight vehicle categories are considered, including an off-road category for tractors and power tillers (Table <ref type="table" target="#tab_1">2</ref>). The tractors and tillers are attached to trailers for transportation during non-farming days. Since more than 80 % of the vehicles are imported from India, we assumed that all the vehicles comply with Bharat Stage (BS) emission standards for emission estimation. Diesel vehicles like jeeps and taxis, minibuses, microbuses, and buses are treated as public passenger vehicles, while minitrucks, pickups and trucks are treated as public freight vehicles. Around 40 % of the diesel vehicles in Nepal are categorized as superemitters or high emitters due to poor maintenance of vehicles, old vintage vehicles and a large fraction of shoddy roads <ref type="bibr" target="#b9">(Bond et al., 2004;</ref><ref type="bibr" target="#b73">Yan et al., 2011;</ref><ref type="bibr">Prakash Bhave, personal communication, 2016)</ref>. Further details about combustion technologies can be found in the Supplement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Emission factors</head><p>New country-specific emission factors measured recently during NAMaSTE were especially considered in this study for sources like motorcycles, scooters, diesel generators, diesel pumps, cookstoves and brick kilns <ref type="bibr" target="#b66">(Stockwell et al., 2016;</ref><ref type="bibr" target="#b32">Jayarathne et al., 2018)</ref>. The measured emission factors include CO 2 , CH 4 , NO x , CO, NMVOCs, PM 2.5 , BC and OC, reflecting the combustion technologies and regional practice. For residential and commercial sectors, especially cooking, space-heating and water boiling activities, the emission factors were also considered and averaged from <ref type="bibr" target="#b27">Habib et al. (2004</ref><ref type="bibr" target="#b28">Habib et al. ( , 2008))</ref>, <ref type="bibr" target="#b65">Smith et al. (2000)</ref>, <ref type="bibr" target="#b52">Pandey et al. (2017)</ref>, and <ref type="bibr" target="#b75">Zhang et al. (2000)</ref>. For kerosene lamps, the measured EFs from <ref type="bibr" target="#b38">Lam et al. (2012)</ref> were available for all pollutants except CH 4 , NMVOCs and N 2 O, which were considered to be similar to the kerosene stoves <ref type="bibr" target="#b65">(Smith et al., 2000)</ref>. Due to lack of studies on the definite number of types of lamps, it is assumed that 50 % of the population relies on kerosene wick lamps and that the rest rely on kerosene lanterns. For biogas lamps, all EFs were considered to be similar to biogas stoves (Table <ref type="table">S3</ref> in the Supplement). For the industrial sector, technology-linked EFs were used from the EPA AP-42 repository that identified the combustion and process activities for different sources and industries (Table <ref type="table">S4</ref>). The measured EFs for brick production were compiled from <ref type="bibr" target="#b70">Weyant et al. (2014)</ref>, <ref type="bibr" target="#b66">Stockwell, et al. (2016)</ref>, <ref type="bibr" target="#b32">Jayarathne et al. (2018)</ref> and <ref type="bibr" target="#b47">Nepal et al. (2019)</ref> for zigzag and straight firing in FCBTKs and clamp kilns (Table <ref type="table">S5</ref>). For diesel generators, the recently measured EFs from the NAMaSTE campaign were considered for all pollutants ex-cept CO and SO 2 (Table <ref type="table">S6</ref>). The EF for CO was averaged from data provided in <ref type="bibr" target="#b58">Shah et al. (2006)</ref>, since among the two diesel generators measured during the NAMaSTE campaign, one apparently reflected steady-state conditions and was regularly maintained, while the other one appeared to be improperly regulated, as it provided extremely high values. The SO 2 was estimated using the sulfur content of the fuel with no retention. The recently measured EFs from the irrigation pump <ref type="bibr" target="#b0">(Adhikari et al., 2019)</ref> were also considered and averaged with NAMaSTE campaign EFs (Table <ref type="table">S6</ref>). For mechanized tractors, power tillers and threshers, the EFs were compiled from a study that reported the EFs for off-road vehicles measured across different power capacities <ref type="bibr" target="#b49">(Notter and Schmied, 2015)</ref>.</p><p>In the transport sector, for categories other than twowheelers, the emission factors of N 2 O, NO x , CO and NMVOCs were taken from <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref>, who studied emissions from the on-road traffic fleet in the Kathmandu Valley using vehicle survey data and the International Vehicle Emissions (IVE) model (Table <ref type="table">S7</ref>). The NO x emission factors for heavy-duty diesel vehicles were considered from <ref type="bibr" target="#b57">Sadavarte and Venkataraman (2014)</ref>; the EFs for Indian vehicles were modeled using the MOBILEv6.2 model. These were found to be consistent with EFs from <ref type="bibr" target="#b76">Zhang et al. (2009)</ref> for Chinese vehicles. The PM 2.5 EFs for the rest of the categories were averaged from <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref>, <ref type="bibr" target="#b34">Kim Oanh et al. (2010)</ref> and <ref type="bibr" target="#b30">Jaiprakash et al. (2016)</ref>. The NMVOC emissions from <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref> also include running evaporative emissions and reflect the realworld emissions under increasing ambient temperatures. The CO 2 emission factors for all categories of vehicles other than two-wheelers were considered from a chassis dynamometer study that measured values for different vintage vehicles using an Indian driving cycle <ref type="bibr" target="#b2">(ARAI, 2007)</ref>. The fractions of BC and OC were obtained by averaging respective fractions from chassis dynamometer test results by <ref type="bibr" target="#b34">Kim Oanh et al. (2010)</ref>, <ref type="bibr" target="#b72">Wu et al. (2015)</ref>, <ref type="bibr" target="#b77">Zhang et al. (2015)</ref>, <ref type="bibr" target="#b74">Yang et al. (2019)</ref> and <ref type="bibr" target="#b30">Jaiprakash et al. (2016)</ref>. These studies reflect the regional characteristics of driving cycles and the road infrastructure, which plays an important role in tailpipe exhaust. <ref type="bibr" target="#b34">Kim Oanh et al. (2010)</ref> made a vintage-vehicle-based measurements showing the degradation of emissions and resultant high fractions of elemental carbon (EC) and OC in the oldest category of vehicles. However, <ref type="bibr" target="#b72">Wu et al. (2015)</ref> and <ref type="bibr" target="#b30">Jaiprakash et al. (2016)</ref> emphasized the importance of driving speed (on non-highways, highways and in cities) on the EC and OC fraction from diesel vehicles. SO 2 emissions were calculated using the sulfur content of BS II, BS III and BS IV fuel imported from India, with no retention assumed. Non-exhaust emissions such as brake wear and tire wear are not included in this study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Results and discussions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">National energy estimates and sectoral fuel consumption</head><p>Using the methodology described above in each sector or sub-sector and the efficiency associated with fueltechnology combination, the total national energy consumption is estimated explicitly for the base year 2011 and also for each year over the period 2001-2016.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.1">National energy trend</head><p>Figure <ref type="figure" target="#fig_1">2a</ref> and <ref type="figure" target="#fig_1">b</ref> show the proportional contributions of each sector and fuel type, respectively, to the total energy consumption in Nepal in 2011. It should be noted here that as our study focuses on technology-based emissions, we did not include the electricity (supplied by the hydropower stations) consumption in the total energy estimate. Previous studies report that the contribution of electricity to total energy in Nepal is less than 5 % <ref type="bibr" target="#b68">(WECS, 2010</ref><ref type="bibr" target="#b69">(WECS, , 2014))</ref>. We estimate that Nepal consumed 374 PJ of energy (except hydropower, solar and wind energy, which when combined equal &lt;3 %) in 2011, and it can be observed that the residential sector is the highest and most dominant consumer of total national energy consumption (79 %), followed by the industrial (11 %), transport (7 %), commercial (2 %) and agricultural sectors (1 %). Figure <ref type="figure" target="#fig_1">2c</ref> shows the trend in energy consumption at the sectoral level for each year from 2001 to 2016, with a national total energy consumption of 457 PJ in 2016, an increase by a factor of 1.61 compared to 284 PJ in 2001. The majority of the energy is derived from solid biomass (including firewood, agricultural residue and dung cakes), which accounted for 91 % of the total energy consumption in 2001; this decreased to 84 % in 2016 (Fig. <ref type="figure">S5</ref>). The imported fossil fuel contributed 9 % to the national total energy consumption in 2001, which increased to 16 % in 2016.</p><p>The energy consumed in residential sector was estimated to be 322 PJ in 2016, higher than in 2001 by a factor of 1.32. In this sector, activities of cooking, space heating and water heating contribute to 68 %, 20 % and 12 %, respectively, of the total residential energy use throughout the analysis period 2001-2016, and a small amount is contributed by kerosene lighting. The national population almost doubled (a factor of 1.8) in the same period. There was a continuous increase in the number of households (1.27 million households) using energy-efficient ICSs until 2016 <ref type="bibr" target="#b1">(AEPC, 2012)</ref>. Also, the amount of kerosene used in 2016 for lighting reduced by 50 % compared with 2001 due to an increase in the number of households with access to electricity (5.68 million in 2016) and greater distribution of renewables like solar household lighting systems (0.6 million units until 2016; <ref type="bibr" target="#b1">AEPC, 2012)</ref>. These highly energy-efficient interventions have helped to offset the emissions; this otherwise would not have been possible.</p><p>The industrial sector consumed 79 PJ of energy in 2016, a 3-fold increase since 2001. The point-source industries consumed 77 % of the industrial energy used in 2001, which further increased to 84 % in 2016. Basically, the number of manufacturing establishments in area-source industries increased from 2163 to 2564, while that in point-source industries increased from 1050 to 1512, during the period 2001-2016 <ref type="bibr" target="#b13">(CBS, 2014)</ref>. The commercial sector consumed 6.4 PJ of energy in 2016, which is almost double (a factor of 1.8) the energy used in this sector in 2001. Along with an increase in population and number of tourists, the use of diesel in captive power generators to cope with the shortage of power supply has started becoming serious since 2006. It is the foremost source that consumed one-third of the commercial energy in 2016. During 2001-2005, the load shedding in Nepal was insignificant and ranged from 1 to 8 GWh. However, this problem increased gradually after 2006, reaching a shortfall of 1000 GWh in 2010. The load shedding worsened further from 2011, reaching a shortage of 1300 GWh in 2015. During 2016, as a result of careful power-management measures implemented by the NEA, the load shedding was reduced to 474 GWh (modeled using electricity demand, actual sales and electricity that can be supplied).</p><p>The agricultural sector, which includes mechanized farming using diesel pumps, tractors, tillers and threshers, consumed 5 PJ of energy in 2016, higher than in 2001 by a factor of 2.7. There has been a tremendous increase in the use of tractors, tillers and threshers, now consuming 4 times more diesel when compared to 2001, which is not found in the case of diesel pumps. For pumps, the diesel consumption was estimated using the agricultural productivity data and also the distribution of highly efficient kerosene-based pumps along with the use of solar pumps that have reduced the diesel usage. The transport sector, comprised of both on-road vehicles and off-road tractors and tillers, consumed 45 PJ of energy in 2016, higher than in 2001 by a factor of 4.5. This increase in fuel can be attributed to continuous increase in the total number of fleets from 0.27 million to 2.23 million during the study period <ref type="bibr" target="#b21">(DoTM, 2016)</ref>, which is estimated using the vehicle registration data and the survival function for each category of vehicle.</p><p>If the trend in national fuel consumption is analyzed with respect to 2001, it can be inferred that the import of fossil fuels has increased many times more than the increase in solid biofuels in the country (Supplement Figs. <ref type="figure">S6,</ref><ref type="figure">S7</ref>; Table <ref type="table">S8</ref>). The LPG consumption in Nepal has increased by a factor of 6.5 compared to consumption in 2001 mainly because a large population shifted to a cleaner fuel for cooking in this period. Even the consumption of gasoline has steadily increased by a factor of 6 due to an increase in the import of gasoline vehicles; similarly diesel increased by a factor of 4, as it was also heavily used in power generators as well as in diesel vehicles. It is interesting to observe here that there was a jump in diesel consumption in the year 2009, when there was a policy shift equating the kerosene price with diesel. This resulted in a sharp fall in kerosene consumption in 2009, which continued to fall gradually afterwards (Fig. <ref type="figure">S7</ref>). Before this policy intervention, kerosene was used as an alternative for diesel (in fuel adulteration). A low growth (a factor of 1.1-2.1) is observed in the solid biofuel used mainly due to higher distribution of improved cookstoves and cleaner fuel such as LPG for cooking and increases in renewables (e.g., biogas).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.2">Comparison with WECS 2011 estimation</head><p>The national fuel and energy consumption in individual sectors estimated in this study for the year 2011 are compared with the national totals reported by the Water and Energy Commission Secretariat <ref type="bibr" target="#b69">(WECS, 2014)</ref>, as shown in Fig. <ref type="figure" target="#fig_2">3</ref>. According to WECS, a total of 376 PJ of energy was consumed in 2011 in all forms such as hydroelectricity, thermoelectricity and other renewables; fossil fuels; and solid biofuels. However, a 1 : 1 correspondence for each activity and type of fuel is made while comparing the energy, which shows 374 PJ of fuel energy estimated in this study against 329 PJ (energy consumed in combustion activities) by WECS. In the present study, a slightly higher amount of energy consumption in the residential sector (300 PJ) can be observed compared to the WECS estimate of 265 PJ, which can be attributed to the inclusion of agricultural residue as a fuel for cooking that was not considered in the WECS estimate.</p><p>In industrial sector, the present study estimates 41 PJ of energy consumption, which is 59 % higher than that reported in the WECS report (26 PJ). This difference is attributed to biomass in the form of rice husk being taken into account in this study as boiler fuel in the paper, sugar, alcohol, soap and noodle industries <ref type="bibr" target="#b50">(PACE Nepal, 2012)</ref> using SEC. Similarly, consumption of coal in brick production and cement manufacturing was also corrected using SEC. Apart from these fuels, the FO use in the metal industry and captive power generation was completely missing in the WECS detailed fuel and energy consumption data, which are considered in this study. Basically, the Nepal Oil Corporation (NOC) is an authorized agency to import fossil fuels (consisting of kerosene, gasoline, diesel and LPG, and FO), which are made available through public distribution system. However, in recent years, FO was also imported as an industrial fuel by private importers, without being recorded by the NOC, and was hence not reported under import statistics by the NOC. Therefore, the FO reported in this study accounts for the total import available from the foreign trade statistics report which was not accounted for by the NOC <ref type="bibr" target="#b45">(MoF, 2012)</ref> and WECS report.</p><p>The energy consumption in commercial hotels and restaurants was estimated using energy consumed per room and energy per capita, as described in Sect. 2.1. Our energy estimate was lower compared to the WECS by a factor of 0.73. This difference can be explained by higher use of firewood (factor 3.6), LPG (factor 2.4) and kerosene (factor 2.6) in the WECS estimate. The commercial sector also relies on diesel generator sets during load-shedding hours, which seems to be completely missing in the WECS estimate. An energy value of 4.6 PJ of diesel was estimated in generator sets, which accounts for 58 % of the energy consumed in the commercial sector in 2011.</p><p>In the agricultural sector, the amount of diesel consumed for irrigation pumps, tractors, power tillers and threshers is in agreement with WECS estimates. In transport sector, the energy estimated in this study was 5 % lower than the WECS estimate, especially in diesel vehicles. For gasoline vehicles, the alpha (α) and L 50 were modeled using the registered population for two-wheeler motorcycles and age distribution from <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref>, while the remaining gasoline was distributed among four-wheeler cars (due to non-availability of the age distribution) closing the annual consumption, thereby being similar to amount of gasoline reported in the WECS report. The on-road and off-road diesel vehicle fleet was modeled using a logistic function chosen that was similar to that of Indian vehicles <ref type="bibr" target="#b51">(Pandey and Venkataraman, 2014)</ref> except for buses, for which the age distribution was available from <ref type="bibr" target="#b63">Shrestha et al. (2013)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.3">Kathmandu Valley and Nepal</head><p>The Kathmandu Valley is a highly urbanized area and more advanced than the rest of the country and varies significantly in energy-use patterns and their respective emissions. The following section compares energy consumption in the Kathmandu Valley (KTM) and Nepal (NPL) during 2011 across different sectors and fuel types. Figure <ref type="figure" target="#fig_3">4a</ref> and<ref type="figure"  target="#fig_3">c</ref> show the estimated total energy consumption in KTM as 30 PJ, which is 8 % of the national energy (374 PJ). In the Kathmandu Valley, the residential sector contributes to 41 % of the total energy, followed by transport (26 %), industry (22 %) and commercial use (10 %), with a small energy fraction in the agricultural sector; in comparison, these do not resemble the national energy consumption pattern across these sectors.</p><p>The intensity of activity rates within the Kathmandu Valley is different from the whole country. If the sectors are disaggregated further, it is found that the residential sector in the Kathmandu Valley consumes 73 % solid biomass, 27 % LPG and a small fraction of kerosene, while all of Nepal consumes 98 % solid biomass and 2 % LPG. The Kathmandu Valley is home to only 10 % of the national population, where 84 % of the households use LPG for cooking versus 21 % of households nationwide. Such a high LPG consumption rate in the residential sector leads to 41 % of the national consumption in the Kathmandu Valley alone. Also in the case of light- ing sources in the Kathmandu Valley, 98 % of households use electricity as the primary source, with only 1 % kerosene users; this is different from only 67 % households using electricity and 18 % using kerosene in Nepal.</p><p>Nearly one-fourth of manufacturing establishments (947 out of 4067 industries) in Nepal are located in the valley, which includes 109 point-source industries (including 76 brick manufacturing units reported in the <ref type="bibr" target="#b13">CME 2011</ref> report) and 838 area sources. From the commercial sector, 503 tourist hotels, 363 academic campuses, 394 financial institutions and 78 hospitals are in the Kathmandu Valley out of 817 tourist hotels, 1101 academic campuses, 1245 financial institutions and 143 hospitals in Nepal. The use of diesel and LPG, especially in tourist hotels, and diesel generator sets in the Kathmandu Valley makes a huge difference in the fuel fraction. Approximately one-third of the energy in transport sector is consumed by vehicles registered in the Bagmati Zone alone. Around 30 % of the national vehicles are registered in the Bagmati Zone, which encompasses three districts in the Kathmandu Valley. This represents 50 % of the national gasoline consumption and 27 % of the national diesel consumption in the valley.</p><p>In 2016 the Kathmandu Valley consumed 51 PJ of energy, which is higher than 2011 by is a factor 1.7, with an increase in energy use mainly from the industrial and transport sector (Fig. <ref type="figure">S8</ref>). In spite of an increase in population, the residential sector saw growth in the use of energy-efficient renewable technologies and cleaner fuels (e.g., LPG); these did not cause a large increase in 2016 energy use compared to 2011. Similarly, the increase in production by point-source industries and vehicle registration led to an increase in the sectoral energy in these two sectors by a factor of 3 and 2, respectively. The energy (fuel-based) in the commercial sector reduced by 50 % due to a reduction in load shedding, ultimately decreasing the diesel consumption by small but numerous captive diesel-power generators.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Emission trends and sectoral contribution to national estimates</head><p>The emissions were estimated for 10 pollutants, namely CO 2 , CH 4 and N 2 O (GHGs); NO x , CO, NMVOCs and SO 2 (trace gases); and PM 2.5 , BC and OC (aerosols), using technologylinked EFs in each sub-sector. The following section explains the emission estimates for 2011 in each sector and sub-sectors (Fig. <ref type="figure" target="#fig_4">5a</ref>) and the emission trends (Fig. <ref type="figure" target="#fig_4">5b</ref>) in order of aerosols and their precursor, trace gases and greenhouse gases. The emissions discussed henceforth refer to the estimates from the sectors and source categories described above and do not account for the complete national totals, which will also include emissions from Part II of this work.</p><p>In 2011, 195 Gg of PM 2.5 , 23 Gg of BC and 83 Gg of OC emissions were estimated from five energy-use sectors. Similar to the total energy consumption pattern, the residential sector contributes to the highest share of particulate emissions (95 % PM 2.5 , 88 % BC and 96 % OC). Within the residential sector, the activities of cooking and space heating are responsible for ∼ 75 %-90 % emissions of PM 2.5 , BC and OC. Additionally, BC emissions are also emitted from residential kerosene lighting (4 %) that makes use of cotton-wick kerosene lamps and kerosene lanterns. Industrial sources contribute to ∼ 3 % of PM 2.5 , ∼ 5 % of BC and 1 % of OC emissions, with significant emissions from brick kilns (FCBTKs) and the use of firewood and rice husk in industrial furnace of sugar, beverages, noodles and other small industries. From the total of five sectors, the transport sector contributes to only 1.4 % of PM 2.5 , ∼ 6 % of BC and 1 % of OC emissions, largely from diesel freight and public passenger vehicles; 40 % of fleets are assumed to be superemitters or high emitters, and they contribute to 53 % PM 2.5 , 58 % BC and 44 % OC emissions from the transport sector. Their emission factors were derived by scaling the normal emission factors, as discussed in Sect. 2.3. The scaling factor was derived from <ref type="bibr" target="#b35">Klimont et al. (2017)</ref>, who provided the global values for diesel and gasoline vehicles across different emission standard vehicles, and also based on PM emission factors measured in developing countries <ref type="bibr" target="#b67">(Subramanian et al., 2009)</ref>. On average, light duty diesel vehicles are scaled by a factor of 5 to get a value of 8.1 g kg -1 , and on average heavyduty diesel vehicles are scaled by a factor of 2 to get a value of 13.3 g kg -1 for superemitter vehicles. However, there is no clear distinction for measured emission factors for a superemitter vehicle, and many contemporary studies have derived it using statistical percentile <ref type="bibr" target="#b67">(Subramanian et al., 2009;</ref><ref type="bibr" target="#b6">Ban-Weiss et al., 2009)</ref>. If a policy to identify and remove the superemitters is enforced, this would reduce ∼ 30 % of PM 2.5 , BC and OC transport-sector emissions, which can be considered to be a good and immediate policy target. The emissions from agricultural sector contributed to small fractions of 0.2 % for PM 2.5 , 0.4 % for BC and 0.3 % of OC, since the energy consumption in mechanized activities is small compared to national energy estimates.</p><p>Emissions of 24 Gg of SO 2 , 64 Gg of NO x , 1714 Gg of CO and 407 Gg of NMVOCs were estimated in 2011 from the sectors discussed in this part of the work. However the total national values will also include emissions from the second part of the study (NEEMI-Open). The SO 2 emissions were estimated using the sulfur content of the fuel with no retention in liquid and gaseous fuels. The industrial sector contributed 75 % of SO 2 emissions, especially from the coal users such as brick kilns and cement manufacturers. The residential sector is the second largest gross emitter of SO 2 , adding 24 % to the total of the five sectors and ∼ 0.5 % each from the commercial and transport sectors. In the case of NO x emissions, the residential sector overshadowed all other sectors and contributed significantly, being responsible for 53 % of NO x , 91 % of CO and 94 % of NMVOC emissions. Residential cooking, space heating and water heating are the major sources of incomplete combustion of biomass fuels and hence high CO and NMVOC emissions. After residential emissions, the transport sector contributes 23 % of NO x emissions. High NO x emissions were emitted by diesel passenger (9 %) and freight vehicles (11 %). The industrial sector was responsible for 17 % of NO x , 2 % of CO and 0.6 % of NMVOC emissions. The clinker production in cement industries has a large share of NO x emissions, which was about 60 % of the total point-source industries. The fugitives of NMVOCs from storage tanks, service stations are expected to be a small fraction compared with combustionrelated NMVOC emissions; though they might gain importance in the future, they will be considered in detail in the second part of this study. A total of 8.9 Tg of CO 2 , 110 Gg of CH 4 and 2.1 Gg of N 2 O was estimated in this work. Broadly, fossil fuels and biofuels (firewood, agriculture residue, dung cakes and biogas) contribute 73 % and 27 %, respectively, of CO 2 emissions in 2011, in contrast to only 12 % (43 PJ) of the energy coming from fossil fuels and 88 % (331 PJ) from biofuels, since fossil-fuel combustion moves CO 2 from the long-term fossil reservoir into the atmosphere, while biofuels are mostly recycled from recent biomass (though they include some long-term removal of net biomass, which is a small relative source to the atmosphere). As a sector, industry contributed to 46 % of the combustion-based CO 2 emissions, followed by the residential (32 %) and transport (15 %) sectors, with small fractions from the commercial (4 %) and agricultural (mechanized farming; 3 %) sectors. Even though the residential activities are the main drivers of the national energy, consuming 292 PJ of biofuels and 8 PJ of fossil energy, almost 92 % of the CO 2 emissions from biofuels are from recycled carbon, with the non-recycled fraction being about 10 % firewood, 10 % agricultural residue and 0 % dung cakes (see Supplement Sect. S4). The CO 2 emissions from the industries are mostly driven by fossil-fuel combustion (98 % fossil fuel and 2 % biofuel), especially coal use in the production of bricks (27 %) and process emissions (53 %) from cement manufacturing.</p><p>Figure <ref type="figure" target="#fig_4">5b</ref> shows the normalized trend in emissions with respect to 2001. Overall there is an increase in emissions by a factor ranging from 1.2 for species like CH 4 , PM 2.5 and OC to a factor of 2.3 for CO 2 and 2.2 for NO x between 2001 and 2016. The change in slope and increase in CO 2 and NO x emissions can be explained well by a sharp increase in the import of petroleum fuels like LPG, petrol and diesel after 2008. The emissions of PM 2.5 , BC, OC, NMVOCs and CO have increased by a factor of 1.2-1.7 with a steep slope. A dip in the SO 2 emissions in 2006 can be explained by low coal consumption in brick factories as reported by <ref type="bibr" target="#b11">CBS (2008)</ref> and the decreasing sulfur content in imported petrol and diesel, namely a decrease from 500 mg sulfur per kilogram of fuel (BS II norm until 2005) to 50 mg sulfur per kilogram of fuel (BS IV norm from 2011 onwards). The increasing trend in PM 2.5 , OC, NMVOCs and CO follows the increase in energy use in the residential sector with a steep slope due to less fuel consumption in improved cookstoves.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Technology-based emission estimates</head><p>The emissions are characterized for 36 different combustion technologies using their respective emission factors. The fol-lowing section describes the top six combustion technologies and their overall contribution to the 2011 emission estimates of aerosols, ozone precursors and greenhouse gases from the five energy-use sectors.</p><p>For primary particulate matter, the top six combustion technologies correspond to 95 % PM 2.5 , 91 % BC and 97 % OC. The high PM 2.5 emissions are estimated from use of firewood, dung cake and agricultural residue in traditional cookstoves; burning of wood and dung cakes for space-heating activities; and fuel in brick kilns (Fig. <ref type="figure" target="#fig_5">6</ref>). Similar combustion technologies are found with high OC emissions (Fig. <ref type="figure">S9</ref>). Various national and international organizations have promoted the use of ICSs, which are energy-efficient stoves that promote improved air quality and health co-benefits. So far, 1.26 million ICSs distributed during 2000-2011 are considered in this study, which have contributed to reductions of 13 % for PM 2.5 , 12 % for BC and 13 % for OC emissions compared to the emission scenario without ICS distribution. In the case of BC, apart from above combustion technologies, high amounts of BC are also emitted from kerosene lamps (3.5 %). The information on emission control measures used in industries is not readily available. Given poor implementation of policies in Nepal on emission control measures, we expect that most of the industries are operated without proper emission control measures. However, the installation of stack emission control technology in the power plants and industrial boilers will become a reality sooner or later. This is likely to change the emission profile, such as shares of BC and OC in PM 2.5 , and the size of particles emitted, which needs to be considered in future emission estimates.</p><p>In the case of ozone precursors, apart from residential and industrial sectors, we start to observe the increase in polluting technologies from transport sector, too. Combustion technologies using biomass emit 44 % of NO x , while heavyduty diesel passenger (buses) and freight (trucks) vehicles emit 17 % and cement kilns 9 %, which accounts for 70 % of the estimate from sources in this part of the study (Fig. <ref type="figure" target="#fig_5">6</ref>). CO, a tracer of incomplete combustion, is largely emitted from TCSs using biomass, contributing to 73 % of emissions, while 14 % is emitted from the burning of wood for space heating. Gasoline two-wheeler vehicles also contribute to 3.6 % of CO; this aggregates to 93 % of the total of the five sectors. Recent years have seen a sharp increase in use of two-wheeler vehicles, with about 1.03 million two-wheelers registered by 2011 (2.18 million by 2016) nationwide; these vehicles are estimated to consume 113 million liters of gasoline. NMVOC emissions are completely driven by the combustion of biomass in every form of fuel in TCSs, and also in ICSs, which contribute 94 % of the total NMVOCs. Replacing 1.26 million TCSs with ICSs has reduced NMVOC emissions by 15 % in the residential sector. The coal-combusting technologies like FCBTKs and cement kilns emit about 69 % of SO 2 , followed by 19 % from traditional stoves using firewood, dung cakes and agricultural residue and 2 % from oil boilers, amounting to 90 % from the top six polluting technologies.</p><p>High CO 2 emissions (considered after non-renewability factor, explained in detail in Supplement Sect. S4) are largely driven by high energy consumption in cement kilns (27 %), TCSs using wood (15 %), brick kilns (11 %), LPG stove users (6 %), diesel trucks (5 %) and wood burning in space heating and diesel trucks (5 %), making up 70 % of the total estimate. Only pyrogenic emissions are considered for analysis, and, hence, the CH 4 and N 2 O emissions follow the top polluting technological trends, similar to PM 2.5 , CO, NMVOCs and OC, i.e., in cooking and space-heating activities. For OC, SO 2 , NMVOCs, CH 4 , CO 2 and N 2 O, see Fig. <ref type="figure">S9</ref> in the Supplement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Emission comparison</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.1">Regional and global emission inventories</head><p>In the present study, NEEMI-Tech emissions are compared with the Asian anthropogenic MIX (emission source: Nepal emissions reported in <ref type="bibr" target="#b39">Li et al., 2017)</ref> emission inventory which was prepared for the Model Inter-Comparison Study for Asia (MICS-Asia) and the Task Force on Hemispheric Transport of Air Pollution (TF HTAP) projects <ref type="bibr" target="#b39">(Li et al., 2017)</ref>; 1 : 1 correspondence for sectors and activities is considered when making the comparison. Table <ref type="table" target="#tab_2">3</ref> shows the total emission ratios of NEEMI to MIX in 2010. It is observed that the NEEMI estimates lower emissions of NO x (0.75), CO (0.80), BC (0.90), OC (0.77) and SO 2 (0.78), while CH 4 (1.21), N 2 O (1.35), NMVOC (1.06) and PM 2.5 (1.38) emissions are higher than the MIX estimates. This difference in emissions can be explained by the underlying assumption of fuel allocation and the EFs in each sector. Since the MIX inventory for Nepal was reproduced using the REAS 2.1 (emission source: <ref type="url" target="https://www.nies.go.jp/REAS/">https://www.nies.go.jp/REAS/</ref>, last access: 25 August 2019), the following analyses have compared the REAS 2.1 2008 sectoral emissions with NEEMI 2008 emissions to explain the difference in emissions (Table <ref type="table">S9</ref>). In both the inventories, the residential sector dominated all the emissions, emitting more than 90 % of the total estimate, which identifies it as the single most influential sector for causing low ratios for NO x , CO, BC, OC and SO 2 . Further the EFs for biomass burning in the residential sector in MIX and NEEMI were investigated, and it was found that the ratio of NEEMI to MIX weighted average EF was 0.89 for NO x , 0.88 for CO and 0.22 for SO 2 . However, for BC the weighted average EF in NEEMI was 1.1, a factor higher than MIX, and for OC the EFs were similar. Moreover, the REAS 2.1 inventory was also compared for 2001-2007, delineating similar ratios to those found in 2008 (Fig. <ref type="figure" target="#fig_6">7</ref>). This shows the use of invariant emission factors and other underlying assumptions for different timescales in REAS 2.1, with an increase in fuel consumption from 2001 onwards, while the resultant SO 2 emission factor in NEEMI reflects the timely improved sulfur content of diesel and petrol. Apart from the difference in emission factors in biomass fuel, the contribution from the industrial sector is weakly estimated for NO x , BC and SO 2 in REAS, which is 4.5 %, 1.3 % and 20.6 % compared to 14.6 %, 7.9 % and 71.7 % in NEEMI. This concludes that the difference in emissions is not predominated by EFs only but that there is also an influence of fuel consumption and its appropriate allocation to combustion technologies. Since these factors are carefully considered in this study, the NEEMI estimates have (or are likely to have) less uncertainty in emissions.</p><p>The emissions were also compared with the global datasets of EDGAR v4.3.2 (emission source: <ref type="url" target="https://edgar.jrc.ec.europa.eu/">https://edgar.jrc.ec.europa.eu/</ref>, last access: 25 August 2019; <ref type="url" target="https://edgar.jrc.ec.europa.eu/">https://edgar.jrc.ec.europa.eu/</ref>, last access: 25 August 2019), CMIP6 (emission source: <ref type="url" target="https://www.geosci-model-dev.net/11/369/2018/">https://www.geosci-model-dev.net/11/369/2018/</ref>, last access: 25 August 2019) and ECLIPSE V5a-GAINS (emission source: author and coauthor direct communication) for the emission trends and the year 2010. The objective behind developing the CMIP6 emissions was "to combine the global estimation framework with country-level inventories, to produce reproducible, consistent over space, time and species" <ref type="bibr" target="#b29">(Hoesly et al., 2018)</ref>. Following this, the CMIP6 inventory starts with fuel consumption at the sector level from the International Energy Agency (IEA) and the emission factors, with an intention to scale their estimates by comparing them with regional emissions. For Nepal, the scaling was done with REAS 2.1, and we observe from Fig. <ref type="figure" target="#fig_6">7</ref> that the total estimates of NO x , CO, NMVOCs and SO 2 were found to be similar in both studies, while CH 4 , BC, OC and CO 2 were not. One of the reasons for the disagreement in BC and OC was the default estimates from the Speciated Pollutant Emission Wizard (SPEW), while for CO 2 it can be inferred that estimates are much closer to the NEEMI CO 2 emissions, considering the non-renewability factor. The CH 4 emissions from CMIP6 are consistent and do not vary over the time, which is completely different than REAS 2.1 and NEEMI, where the increase can be attributed to an increase in fuel consumption over the 1.5 decades. At the sectoral level, the residential activities contribute 92 %-99 % to the total emissions of the five sectors for BC, OC, NMVOCs, CH 4 , CO and ∼ 55 %-60 % to the total NO x in the CMIP6 and NEEMI inventories. Also, the CMIP6 SO 2 emissions from each sector vary a lot when compared to NEEMI, showcasing the shortcomings due to the coarser-resolution methodologies, which lack the degree of detail present in the NEEMI inventory. Like in NEEMI, SO 2 emission factors used are for a large number of fuel-technology combinations; the sulfur content of the liquid fuels changes over a period of 1.5 decades and the sulfur retention fraction in the ash content of coal depends on the combustion technology. In contrast, CMIP6 considers only eight types of fuel, with no clear distinction in biomass sources such as firewood, agricultural residue and dung cakes.  Even EDGAR v4.3.2 emissions are estimated using activity and production numbers from the IEA and emission factors from the EMEP/EEA guidebook <ref type="bibr" target="#b15">(Crippa et al., 2018)</ref>. One of the core differences between global inventories of EDGAR v4.3.2 and CMIP6 lies in the consideration of the level of detail and their integrity in each sector. For example, EDGAR covers 26 aggregated sources and 64 fuel types compared to 55 sources and 8 fuel types in CMIP6 <ref type="bibr" target="#b29">(Hoesley et al., 2018;</ref><ref type="bibr" target="#b15">Crippa et al., 2018;</ref><ref type="bibr" target="#b31">Janssens-Maenhout et al., 2019)</ref>. For the five sectors considered, emissions of PM 2.5 , BC, OC, NO x , NMVOCs and N 2 O from NEEMI are higher than EDGAR by a factor of 1.3-1.5, which is mainly due to differences in biomass consumption (especially the consideration of space-and water-heating activities in the residential sector) and differences in the new field-measured emission factors for traditional cookstoves and biomass burning <ref type="bibr">(Stockwell et al., 2015)</ref>. Also, differences arise due to the assumption of a 40 % superemitter fraction in on-road vehicles and use of technology-specific emission factors throughout the inventory. The CO 2 , CO and SO 2 emissions from NEEMI are lower than EDGAR by a factor of 0.7-0.9 due to the use of Tier II and III approaches in the methodologies and technology-specific emission factors, while there is good agreement for CH 4 emissions. Across sectors, the residential and commercial together contribute 90 %-97 % of the total estimate in EDGAR, which is consistent with NEEMI for all pollutants except CO 2 , NO x , CO and SO 2 . These differences in emissions can be explained with the underlying assumptions in each activity, type of fuel consumption and emission factor.</p><p>The emissions from the ECLIPSE V5a-GAINS model were also compared for 2005, 2010 and 2015 for PM 2.5 , BC, OC, NO x , CO, NMVOCs, CH 4 and SO 2 . One of the first inferences that can be derived is the decrease in GAINS emissions by a factor of about 0.10-0.35 for the year 2015 with respect to 2010. Since there has been an increase in fuel use over the years, the GAINS model assumes a decrease in emission factors for PM 2.5 by 15 % globally during 2005-2010 due to improvements in combustion technologies for cookstoves in the Asia <ref type="bibr" target="#b35">(Klimont et al., 2017)</ref>. Under the current legislation emission (CLE) scenarios, it continues to improve further, and the impact is visible due to higher distribution of ICSs. A large variability is observed when the GAINS emissions are compared with NEEMI for the 2005, 2010 and 2015 period. Still they are within an uncertainty ratio of 0.8-1.2 (GAINS/NEEMI) during 2005 and 2010 for PM 2.5 , OC, NO x , NMVOCs, and CH 4 . The BC, CO and SO 2 emissions from GAINS are a factor of 1.5-3.0 higher than NEEMI, anticipating the difference in high emission factors. Overall, the residential sector is the dominant source, contributing to ∼ 90 % of the total emissions, while the difference arises in NO x and SO 2 emissions. The GAINS inventory estimates 50 % NO x emissions from the transport sector compared with 19 % from NEEMI. Inclusion of a 20 % superemitter fleet fraction with a varying and high amplification factor of up to 10 across vehicles with emission standards may be one of the reasons. In the case of SO 2 , 43 % is emitted from industry and 53 % is residential, which is different from 61 % and 37 % in NEEMI due to the use of regional and technology-specific emission factors and assumptions about sulfur retention in ash.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.2">Kathmandu Valley and Nepal</head><p>The emissions from the KTM are compared with all of NPL to understand the relative contributions from different sources for year 2011. There are three administrative districts in the Kathmandu Valley, namely Kathmandu, where the capital city (Kathmandu metropolitan city, or KMC) is located, Lalitpur and Bhaktapur. Being the commercial and financial hub of the country, the population residing in the valley is about 2.5 million, ∼ 10 % of the total population of Nepal in 2011 <ref type="bibr" target="#b12">(CBS, 2012)</ref>. Table <ref type="table" target="#tab_3">4</ref> shows the emission ratio of KTM to NPL for all pollutants and sectors, which ranges from 0.03 to 0.13, with a minimum for CH 4 , PM 2.5 and OC emissions and a maximum for NO x emissions i.e., 0.13. This reflects strong sources of NO x in the Kathmandu Valley and definitively high diesel use. These ratios were also estimated for each sector to understand its relative contribution.</p><p>On a sectoral level, the emissions (all species) from the transport sector in the Kathmandu Valley are 30 % to 55 % of the total estimates. One of the important reasons for high emissions from transport is the number of vehicles registered in the Bagmati Zone (a zone of eight districts, including three districts in the Kathmandu Valley); 30 % of national fleets are registered in the Bagmati Zone, which subsequently results in a high level of fuel consumption. Next, the commercial sector is of importance, for which the emission ratio ranges from 0.10 to 0.35 for individual pollutants. This sector is comprised of the sub-sectors of hotels and restaurants and heavy use of diesel in generators during load-shedding hours (power cuts). According to the Nepal tourism statistics, there are 423 hotels registered in the Kathmandu Valley compared to 291 outside the valley <ref type="bibr" target="#b43">(MoCTCA, 2013)</ref>. Also the urban population that dines in restaurant is assumed to be 3 times higher than the rural population, which increases the fuel consumption and its emissions. The industrial-sector emission ratio for all species ranges from 0.07 to 0.17, except for that of N 2 O, which is 0.26. There are 110 large-pointsource industries within the valley (out of 1512 nationally), which especially include 76 brick production units (identified using geolocations) that tend to use biomass and coal, increasing the PM 2.5 and OC emissions. Industries that manufacture structural metal also contribute significantly. The residential sector emissions from the Kathmandu Valley are only 2 %-4 % of the total emissions for all pollutants in spite of the fact that ∼ 10 % of the population resides in the valley. Due to extensive urbanization, the population relies on cleaner sources of fuel; 84 % of the households use LPG and 10 % use electricity as their primary source of fuel for cooking <ref type="bibr" target="#b12">(CBS, 2012)</ref>. In addition, &lt; 5 % of the households use sources other than electricity for lighting. In contrast to the valley, 82 % of the households in the rest of the Nepal rely heavily on biomass (firewood, agricultural residue and dung cakes) for cooking, and nearly 35 % use sources other than electricity for lighting.</p><p>For 2016, the emissions from the Kathmandu Valley were compared with those of 2011 in order to understand the impact of the shift in technology on emissions. The total emissions from KTM during 2016 increased by a factor varying from 1.05 for OC to ∼ 2.0 for NO x and SO 2 . Table <ref type="table">S10</ref> details the emissions in 2011 and 2016 over the Kathmandu Valley. There was a major change in two main polluting sources during 2016: (i) straight-firing brick kilns in the Kathmandu Valley were changed to the zigzag-firing technology when they were rebuilt after the 2015 earthquake, and (ii) diesel generator sets were phased out due to improvements in load-shedding hours since 2016. The shift to zigzag firing has resulted in reductions of 65 % CO, 30 % PM 2.5 , 81 % BC and 19 % SO 2 emissions from brick production, while the near-complete phasing out of diesel generator sets has reduced all pollutants from diesel generator sets to effectively zero.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Spatial and temporal distribution</head><p>High-resolution emission estimates require suitable surrogates to distribute emissions spatially according to their activity locations. Each sector and sub-sector activity was tracked down and distributed as point, area and line sources. Figure <ref type="figure">S10</ref> shows the proxies considered in each sector. The emissions from residential activities were distributed using population surrogates from the Central Bureau of Statistics (CBS) for 2011. These vector data of the population that are available at each VDC, an administrative unit in rural areas, and municipalities in urban areas are processed using dasymetric-mapping techniques (in addition to census data using ancillary information like topographic maps and land-use and land-cover (LULC) data to generate population density maps) and converted into a uniform raster grid of 1 km × 1 km resolution <ref type="bibr" target="#b41">(Mennis, 2009)</ref>. Similarly, these spatial proxies were also used in space-heating and waterheating sub-sectors. Industrial emissions from point sources (Table <ref type="table" target="#tab_0">1</ref>) were distributed to approximate locations identified based on CME survey information <ref type="bibr" target="#b13">(CBS, 2014)</ref>. Similarly, for emissions from brick production, the exact geospatial locations of the individual ∼ 470 kilns were identified using web URLs (Google Earth) and CME reports (Fig. <ref type="figure">S10</ref>).</p><p>Industries categorized as area sources were aggregated, and their emissions were distributed in respective VDCs and municipalities using population surrogates. Emissions from commercial sources of hospitals, hotels, banks and academic institutions were distributed based on their locations at VDCs and municipalities. Emissions from sub-sectors of restaurants, barrack canteens and other service sectors were distributed using a population similar to the residential sector. The census of agriculture reports the irrigation and cultivation activities using tractors, pumps, power tillers and threshers at the district level. These identified districts, along with LULC maps of the agricultural area, were utilized for distributing emissions from diesel use in the agricultural sector. The emissions from mobile sources were distributed using proxies of population and road density maps. With a basic understanding of the population and its urbanization, the emissions from private cars (gasoline) were distributed using urban population densities, while for two-wheeler vehicles, these were spread across rural and urban population maps. For diesel, especially the public passenger and freight vehicles, due to insufficient information, 50 % of emissions were distributed to the population and road density network. Figure <ref type="figure" target="#fig_7">8</ref> shows the final spatial distribution of PM 2.5 , BC, NO x and CO emissions for 2011. As the residential sector dominates the whole inventory, the gradient across different parts of the country mostly reflects the population density, with a few hotspots for point sources.</p><p>Figure <ref type="figure" target="#fig_8">9</ref> shows the seasonality of various activities on a monthly resolution basis. Temporal variability in emissions was introduced in the activities of brick kiln production, where the official firing of kilns starts from December and continues for the next 5 months until May, before the onset of the monsoon. Around 87 % of the households throughout the country hire tractors and power tillers for tillage operations, which usually last for 40-45 d, including 2-3 d of usage on their own farmland. Therefore, 2 months in the pre-monsoon season and post-monsoon season are considered for distributing emissions from tractors and power tillers used on fields. Emissions from space heating and water heating are considered following the temperature profiles across each district. Diesel generators are heavily used in the nonmonsoon season during hours of load shedding (before the shift in power management). Therefore, the seasonal variability in the use of diesel generators is followed as per the trend in monthly hours of load shedding reported by the NEA. The analysis of the monthly distribution of emissions showed that December-January-February emitted the maximum amount PM 2.5 , i.e., 11 % of the annual total, followed by October-November (10 %; Fig. <ref type="figure">S11</ref>). The sectoral contribution showed peak emissions in December-January-February due to the variability in emissions mostly caused by space-and water-heating. Once a more complete inventory, including open-waste and agricultural-waste burning, is available (to be described in Part II of this work), it would be pragmatic to identify the peak emissions on a monthly scale.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Conclusions</head><p>A high-resolution 1 km × 1 km technology-linked multipollutant emission inventory was developed for Nepal for the base year 2011. The trends in energy and emissions during the period 2001-2016 were also studied. This work included all the relevant sources of energy-use sectors, such as residential, industrial, transport, commercial and agricultural sectors, and emissions were characterized by their combustion technologies. These broad sectors were further disaggregated into sub-sectors of coherent sources, and emissions were estimated for a total of 36 combustion technologies. The national energy consumption estimated for 2011 was 374 PJ, with the residential sector being the largest consumer of energy, around 79 %, followed by industry (11 %) and transport (7 %). The energy source was dominated by biomass, contributing 88 % to the total energy consumption, while 12 % was from fossil fuel. A total of 8.9 Tg of CO 2 , 110 Gg of CH 4 , 2.1 Gg of N 2 O, 64 Gg of NO x , 1714 Gg of CO, 408 Gg of NMVOCs, 195 Gg of PM 2.5 , 23 Gg of BC, 83 Gg of OC and 24 Gg of SO 2 were estimated in 2011 using regionally measured emissions factors. The sectoral contributions to emissions were mostly energy-driven, especially cookstoves using biomass and burning for spaceheating activities in the residential sectors. The assessment of top polluting technologies showed high emissions from traditional cookstoves using firewood, dung cakes, agricultural residues, and burning of firewood and dung cakes for space and water heating. In addition, high emissions were also computed from fixed-chimney Bull's trench kilns in brick production, cement kilns, two-wheeler gasoline vehicles, heavy-duty diesel freight vehicles and kerosene lamps. The estimated energy was compared with the officially reported energy by WECS for 2011. Overall the technologylinked energy consumption estimated in NEEMI was higher by a factor of 1.15 than that estimated by WECS. Comparison with the regional inventory MIX showed lower estimates of NO x , CO, BC, OC and SO 2 , while CH 4 , N 2 O, NMVOCs and PM 2.5 were estimated to be higher in the NEEMI inventory due to differences in methodologies, emission factors, and the disaggregation of energy across sources and sectors. Even the global inventory shows high uncertainties in their estimates due to the coarser resolution of the defined sec-tors (important in the local context), fuel sources from global database and use of Tier I emission factors. The energy and emissions for Nepal were also compared specifically with the Kathmandu Valley, and it was found that the valley consumed 8.2 % of the national energy in 2011, and the emissions were 3 %-6 % of the total estimates, except for the 13 % estimate of NO x , which was attributed to a high use of diesel in vehicles and diesel generators.</p><p>Activity-specific spatial proxies were used for developing the gridded spatial distribution of emissions. A wide variation in emissions distributions was achieved, highlighting the pockets of growing urbanization and the detailed knowledge about the emission sources. Emissions from brick production, the agricultural sector, space and water heating, and the use of diesel generators were apportioned across different months using information on the respective temporal variation in the activities. It was observed that December-January-February constituted the maximum PM 2.5 emissions, followed by October-November. However, with a more complete inventory after the inclusion of open-waste and agricultural-waste burning from Part II, this would provide more realistic emissions for identifying the peak months for high emissions. Though such extensive work requires a lot of crucial demographic data and statistical information for each activity, this work has made some pragmatic assumptions wherever required which identify the need to improve the information available for some of the important sectors at the national and municipal level. NEEMI has attempted to provide an insightful and detailed understanding of the energy requirements in various sectors. It has also provided implications of new energy-efficient technologies in emissions, which can be further used in modeling the atmospheric dynamics at the urban to regional scale and redesigning appropriate mitigation policies.</p></div>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1.</head><label>1</label><figDesc>Figure1. Methodology for energy and emission estimates.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. (a) National sectoral energy consumption, (b) contribution of fuel type to national energy consumption estimated for 2011 and (c) energy consumption trend for the period 2001-2016.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. National energy consumption estimated for 2011; this study compared with WECS estimates. Residential sector (on left y axis) and industrial, transport, commercial and agricultural sectors (on right y axis).</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Energy consumption comparison at sectoral level for the Kathmandu Valley and Nepal in (a) and (b) and for different fuels (c) and (d) for year 2011.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. National emission estimates for aerosols and trace gases for (a) each sector in 2011 and (b) normalized trends for the period 2001-2016.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Top six polluting technologies contributing to (a) PM 2.5 , (b) BC, (c) NO x and (d) CO emissions.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure7. Emission comparison with EDGAR, CMIP6, ECLIPSE-GAINS, REAS and MIX HTAP emission inventories. CO 2 emissions with and without non-renewability fraction for biomass (NRB) are also shown for comparison.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure8. Spatial distributions of PM 2.5 , BC, NO x and CO emissions for year 2011.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 .</head><label>9</label><figDesc>Figure9. Temporal variability calculated in activity rates from January to December.</figDesc><graphic type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Details about important features of the Nepal emission inventory (NEEMI).</figDesc><note><p>Note: open burning (municipal waste and agricultural open-field burning) and fugitive sources (waste, paddy fields, enteric fermentation and manure management) are not considered in this study.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Technology details in each sector and sub-sectors.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Comparison of NEEMI-Tech emissions with the MIX HTAP emissions for 2010.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Comparison of total and sectoral emission ratios for the Kathmandu Valley and Nepal for 2011.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements.</head><p>The authors would like to thank <rs type="person">Bhishma Pandit</rs> for his critical and expert knowledge on fuel consumption in the industrial sector; <rs type="person">Rejina Maskey Byanju</rs> (<rs type="affiliation">Tribhuvan University, Nepal</rs>), <rs type="person">Bhupendra Das</rs> (doctoral student, <rs type="affiliation">Tribhuvan University, Nepal</rs>) and <rs type="person">Pratik Singdan</rs> (research assistant, IASS Potsdam) for assisting in data collection; and <rs type="person">Ashish Singh</rs> (post-doctoral fellow, IASS Potsdam) and <rs type="person">Khadak Mahata</rs> (research assistant, IASS Potsdam) for fruitful discussions and interpreting the traditional and regional practices in energy consumption across different sectors in Nepal.</p></div>
+			</div>
+			<div type="funding">
+<div><head>Financial support.</head><p>The work is a part of the <rs type="projectName">IASS</rs> project "<rs type="projectName">A Sustainable Atmosphere for the Katmandu Valley" (SusKat)</rs> funded by the <rs type="funder">German Federal Ministry for Education and Research (BMBF)</rs> and the <rs type="funder">Brandenburg State Ministry for Science, Research and Culture (MWFK)</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_4yz5Kw7">
+					<orgName type="project" subtype="full">IASS</orgName>
+				</org>
+				<org type="funded-project" xml:id="_pZjAUf2">
+					<orgName type="project" subtype="full">A Sustainable Atmosphere for the Katmandu Valley" (SusKat)</orgName>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data availability.</head><p>The emission data generated in this study will be made public through the SusKat website of IASS. They are also available for scientific research upon direct request to Maheswar Rupakheti (maheswar.rupakheti@iasspotsdam.de) and Pankaj Sadavarte (p.sadavarte@sron.nl).</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplement.</head><p>The supplement related to this article is available online at: <ref type="url" target="https://doi.org/10.5194/acp-19-12953-2019-supplement">https://doi.org/10.5194/acp-19-12953-2019-supplement</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions.</head><p>MR and ML conceptualized the research idea. PS designed the methodology and investigated and analyzed the results. PB and KS provided inputs on spatial distribution of source sectors and crucial discussion and analysis on emission factors. PS prepared the paper, with contributions from all co-authors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests.</head><p>The authors declare that they have no conflict of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Review statement.</head><p>This paper was edited by Jason West and reviewed by Harry Vallack and one anonymous referee.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+			<biblStruct type="article" xml:id="b0">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Adhikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="second">S</forename><surname>Mahapatra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Sapkota</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="second">P</forename><surname>Puppala</surname></persName>
+					</author>
+					<title level="a">Characterizing Emissions from Agricultural Diesel Pumps in the Terai Region of Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmosphere</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="1" to="10"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b1">
+				<monogr>
+					<author>
+						AEPC
+					</author>
+					<title level="m">A Year in Review NYF 2069/70</title>
+					<imprint>
+						<publisher>Alternative Energy Promo- tion Centre, Ministry of Science, Technology and Environment, Government of Nepal</publisher>
+						<biblScope unit="page" from="1" to="74"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b2">
+				<analytic>
+					<author>
+						ARAI
+					</author>
+					<title level="a">Emission factor development for Indian vehicles</title>
+				</analytic>
+				<monogr>
+					<title level="m">Air Quality Monitoring Project-Indian Clean Air Programme</title>
+					<imprint>
+						<publisher>The Automotive Research Association Of India</publisher>
+						<biblScope unit="page" from="1" to="94"/>
+						<pubPlace>Pune</pubPlace>
+						<date when="2007">2007</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b3">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Aryal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Karki</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Gurung</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Baral</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Byeon</surname></persName>
+					</author>
+					<title level="a">Dynamics of PM2.5 concentrations in Kathmandu Valley, Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Hazard. Mater.</title>
+					<imprint>
+						<biblScope unit="volume">168</biblScope>
+						<biblScope unit="page" from="732" to="738"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b4">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Baidya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Borken-Kleefeld</surname></persName>
+					</author>
+					<title level="a">Atmospheric emissions from road transportation in India</title>0
+				</analytic>
+				<monogr>
+					<title level="j">Energ. Policy</title>
+					<imprint>
+						<biblScope unit="volume">37</biblScope>
+						<biblScope unit="page" from="3812" to="3822"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b5">
+				<analytic>
+					
+					<author>
+						<persName><forename>I</forename><surname>Bajracharya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Bhattarai</surname></persName>
+					</author>
+					<title level="a">Road Transportation Energy Demand and Environmental Emission: A Case of Kathmandu Valley</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Water Energ. Environ</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="30" to="40"/>
+						<date when="2016">2016</date>
+						<pubPlace>Hydro Nepal</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b6">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Ban-Weiss</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Lunden</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Kirchstetter</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Harley</surname></persName>
+					</author>
+					<title level="a">Measurement of Black Carbon and Particle Number Emission Factors from Individual Heavy-Duty Trucks</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ. Sci. Technol</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="page" from="1419" to="1424"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b7">
+				<monogr>
+					
+					<author>
+						<persName><forename type="first">B</forename><surname>Bhari</surname></persName>
+					</author>
+					<title level="m">Characterization of Roadside Air Pollution Levels in Kathmandu Valley</title>
+					<imprint>
+						<publisher>School of Environment, Resources and Development, Asian Institute of Technology</publisher>
+						<pubPlace>Thailand</pubPlace>
+						<date when="2015">2015</date>
+						<biblScope unit="page" from="1" to="88"/>
+					</imprint>
+				</monogr>
+				<note>Master's Thesis</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b8">
+				<analytic>
+					<author>
+						<persName><forename>N</forename><surname>Bhattarai</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Jha</surname></persName>
+					</author>
+					<title level="a">Commercial Sector Energy Demand Projections of Nepal for Sustainable Sectoral Energy Planning</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Environ. Protect. Sustain. Dev.</title>
+					<imprint>
+						<biblScope unit="volume">1</biblScope>
+						<biblScope unit="page" from="165" to="177"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b9">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Streets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Yarber</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Nelson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Woo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Klimont</surname></persName>
+					</author>
+					<title level="a">A technology-based global inventory of black and organic carbon emissions from combustion</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Geophys. Res.</title>
+					<imprint>
+						<biblScope unit="volume">109</biblScope>
+						<biblScope unit="issue">D14203</biblScope>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b10">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Burney</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Ramanathan</surname></persName>
+					</author>
+					<title level="a">Recent climate and air pollution impacts on Indian agriculture</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc. Natl. Acad. Sci. U.S.A.</title>
+					<imprint>
+						<biblScope unit="volume">111</biblScope>
+						<biblScope unit="page" from="16319" to="16324"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b11">
+				<monogr>
+					<author>
+						CBS
+					</author>
+					<title level="m">National Census of Manufacturing Establishment (CME) 2006/07</title>
+					<imprint>
+						<publisher>National Planning Commission Secretariat, Central Bureau of Statistics</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="154"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b12">
+				<monogr>
+					<author>
+						CBS
+					</author>
+					<title level="m">National Population and Housing Census, 2011, National Report</title>
+					<imprint>
+						<publisher>National Planning Commission Secretariat, Central Bureau of Statistics</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="262"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b13">
+				<monogr>
+					<author>
+						CBS
+					</author>
+					<title level="m">National Census of Manufacturing Establishment (CME) 2011/12</title>
+					<imprint>
+						<publisher>National Planning Commission Secretariat, Central Bureau of Statistics</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="7" to="126"/>
+						<date when="June 2014">June 2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b14">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Collier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Aerosol direct forcing of the summer Indian monsoon as simulated by the NCAR CAM3</title>
+				</analytic>
+				<monogr>
+					<title level="j">Clim. Dynam.</title>
+					<imprint>
+						<biblScope unit="volume">32</biblScope>
+						<biblScope unit="page" from="313" to="332"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b15">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Crippa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Guizzardi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Muntean</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Schaaf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Dentener</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Van Aardenne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Monni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Doering</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><forename type="last">J</forename><surname>Olivier</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Pagliari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Janssens-Maenhout</surname></persName>
+					</author>
+					<title level="a">Gridded emissions of air pollutants for the period 1970–2012 within EDGAR v4.3.2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Earth Syst. Sci. Data</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="1987" to="2013"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b16">
+				<monogr>
+					<author>
+						DECP
+					</author>
+					<title level="m">District Climate and Energy Plan Reports</title>
+					<imprint>
+						<publisher>Multiscope Consultancy Pvt. Ltd.</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="155"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b17">
+				<analytic>
+				
+					<author>
+						<persName><forename>D</forename><surname>Devakumar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Semple</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Osrin</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Yadav</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">P</forename><surname>Kurmi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Saville</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Manandhar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Costello</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Ayres</surname></persName>
+					</author>
+					<title level="a">Biomass fuel use and the exposure of children to particulate air pollution in southern Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ. Int.</title>
+					<imprint>
+						<biblScope unit="volume">66</biblScope>
+						<biblScope unit="page" from="79" to="87"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b18">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><surname>Dhakal</surname></persName>
+					</author>
+					<title level="a">Implications of transportation policies on energy and environment in Kathmandu Valley, Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energ. Policy</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="1493" to="1507"/>
+						<date when="2003">2003</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="proceeding" xml:id="b19">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Dhital</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Shakya</surname></persName>
+					</author>
+					<title level="a">Implication of Sustainable Low Carbon Transportation Development Strategy in Emerging City: A case of Kathmandu Valley</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proceedings of IOE Graduate Conference</title>
+					<imprint>
+						<biblScope unit="page" from="215" to="224"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b20">
+				<monogr>
+					<author>
+						DoTM
+					</author>
+					<title level="m">Details of Registration of Transport up to Fiscal Year 2046/47-070/71</title>
+					<imprint>
+						<publisher>Department of Transport Management</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page">1</biblScope>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b21">
+				<monogr>
+					<author>
+						DoTM 
+					</author>
+					<title level="m">Details of Registration of Transport up to Fiscal Year 2046/47-073/74</title>
+					<imprint>
+						<publisher>Department of Transport Management</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page">1</biblScope>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b22">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Fan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Rosenfeld</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Zhao</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Leung</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Li</surname></persName>
+					</author>
+					<title level="a">Substantial contribution of anthropogenic air pollution to catastrophic floods in Southwest China</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geophys. Res. Lett.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="6066" to="6075"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b23">
+				<analytic>
+				
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Fiore</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Naik</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Leibensperger</surname></persName>
+					</author>
+					<title level="a">Air Quality and Climate Connections</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Air Waste Manage</title>
+					<imprint>
+						<biblScope unit="volume">65</biblScope>
+						<biblScope unit="page" from="645" to="685"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b24">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Forouzanfar</surname></persName>
+					</author>
+					<title level="a">Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990-2015: a systematic analysis for the Global Burden of Disease Study 2015</title>
+				</analytic>
+				<monogr>
+					<title level="j">The Lancet</title>
+					<imprint>
+						<biblScope unit="volume">388</biblScope>
+						<biblScope unit="page" from="1659" to="1724"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b25">
+				<analytic>
+					
+					<author>
+						<persName><forename>K</forename><surname>Frenken</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Gillet</surname></persName>
+					</author>
+					<title level="a">Irrigation water requirement and water withdrawal by country</title>
+				</analytic>
+				<monogr>
+					<title level="j">FAO AQUASTAT Reports</title>
+					<imprint>
+						<biblScope unit="page" from="1" to="263"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b26">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Gurung</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Ghimeray</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><forename type="last">A</forename><surname>Hassan</surname></persName>
+					</author>
+					<title level="a">The prospects of renewable energy technologies for rural electrification: A review from Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energ. Policy</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="374" to="380"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b27">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Habib</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Shrivastava</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Banerjee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Stehr</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Dickerson</surname></persName>
+					</author>
+					<title level="a">New methodology for estimating biofuel consumption for cooking: atmospheric emissions of black carbon and sulfur dioxide from India</title>
+				</analytic>
+				<monogr>
+					<title level="j">Global Biogeochem. Cy</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page">GB3007</biblScope>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+				<note>GB</note>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b28">
+				<analytic>
+					
+					<author>
+						<persName><forename>G</forename><surname>Habib</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Schauer</surname></persName>
+					</author>
+					<title level="a">Chemical, microphysical and optical properties of primary particles from the combustion of biomass fuels</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ. Sci. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">42</biblScope>
+						<biblScope unit="page" from="8829" to="8834"/>
+						<date when="2008">2008</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b29">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Hoesly</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Feng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Klimont</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Janssens-Maenhout</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Pitkanen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Seibert</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Vu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Andres</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Bolt</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Dawidowski</surname></persName>
+					</author>
+					<author>
+						<persName><forename>N</forename><surname>Kholod</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J.-I</forename><surname>Kurokawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Lu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">C</forename><forename type="last">P</forename><surname>Moura</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>O'rourke</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<title level="a">Historical (1750-2014) anthropogenic emissions of reactive gases and aerosols from the Community Emissions Data System (CEDS)</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geosci. Model Dev</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="369" to="408"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b30">
+				<analytic>
+					<author>
+						Jaiprakash
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Gazala</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kumar</surname></persName>
+					</author>
+					<title level="a">Evaluation of portable dilution system for aerosol measurement from stationary and mobile combustion sources</title>
+				</analytic>
+				<monogr>
+					<title level="j">Aerosol Sci. Technol</title>
+					<imprint>
+						<biblScope unit="volume">50</biblScope>
+						<biblScope unit="page" from="717" to="731"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b31">
+				<analytic>
+					<title/>
+					<author>
+						<persName><forename>G</forename><surname>Janssens-Maenhout</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Crippa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Guizzardi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Muntean</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Schaaf</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Dentener</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Bergamaschi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Pagliari</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><forename type="last">J</forename><surname>Olivier</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><forename type="middle">H</forename><forename type="last">W</forename><surname>Peters</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Van Aardenne</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Monni</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Doering</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">M</forename><forename type="last">R</forename><surname>Petrescu</surname></persName>
+					</author>
+					<title level="a">A. M. R.: EDGAR v4.3.2 Global At- las of the three major Greenhouse Gas Emissions for the pe- riod 1970–2012</title>
+				</analytic>
+				<monogr>
+					<title level="j">Earth Syst. Sci. Data Discuss</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="959" to="1002"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b32">
+				<analytic>
+					
+					<author>
+						<persName><forename>T</forename><surname>Jayarathne</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Stockwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">V</forename><surname>Bhave</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Praveen</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Rathnayake</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Md</forename><forename type="middle">R</forename><surname>Islam</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Panday</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Adhikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Maharjan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Goetz</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>DeCarlo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Saikawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Yokelson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Stone</surname></persName>
+					</author>
+					<title level="a">Nepal Ambient Monitoring and Source Testing Experiment (NAMaSTE): emissions of particulate matter from wood-and dung-fueled cooking fires, garbage and crop residue burning, brick kilns, and other sources</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys</title>
+					<imprint>
+						<biblScope unit="volume">18</biblScope>
+						<biblScope unit="page" from="2259" to="2286"/>
+						<date when="2018">2018</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b33">
+				<analytic>
+					<author>
+						<persName><forename type="first">P</forename><surname>Kandel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Chapagain</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><surname>Sharma</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><surname>Vetaas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">O</forename></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename></persName>
+					</author>
+					<title level="a">Consumption Patterns of Fuelwood in Rural Households of Dolakha District, Nepal: Reflections from Community Forest User Groups</title>
+				</analytic>
+				<monogr>
+					<title level="j">Small-scale Forest.</title>
+					<imprint>
+						<date when="2016">2016</date>
+						<biblScope unit="volume">15</biblScope>
+						<biblScope unit="page" from="481" to="495"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b34">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">T</forename><surname>Kim Oanh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Thiansathit</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Subramanian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Winijkul</surname></persName>
+					</author>
+					<author>
+						Paw-Armart
+					</author>
+					<title level="a">Compositional characterization of PM2.5 emitted from in-use diesel vehicles</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">44</biblScope>
+						<biblScope unit="page" from="15" to="22"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct typer="article" xml:id="b35">
+				<analytic>
+					
+					<author>
+						<persName><forename>Z</forename><surname>Klimont</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kupiainen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Heyes</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Purohit</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Cofala</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Rafaj</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Borken-Kleefeld</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Schöpp</surname></persName>
+					</author>
+					<title level="a">Global anthropogenic emissions of particulate matter including black carbon</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="8681" to="8723"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b36">
+				<analytic>
+					<author>
+						<persName><forename type="first">O</forename><forename type="middle">P</forename><surname>Kurmi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Semple</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Devereux</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Gaihre</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>Lam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Sadhra</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Steiner</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Simkhada</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Ayres</surname></persName>
+					</author>
+					<title level="a">The effect of exposure to biomass smoke on respiratory P. Sadavarte et al.: Nepal emission inventory symptoms in adult rural and urban Nepalese populations</title>
+				</analytic>
+				<monogr>
+					<title level="m">Environ. Health</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="1" to="8"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b37">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Kurokawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ohara</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Morikawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Hanayama</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Janssens-Maenhout</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Fukui</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Kawashima</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Akimoto</surname></persName>
+					</author>
+					<title level="a">Emissions of air pollutants and greenhouse gases over Asian regions during 2000-2008: Regional Emission inventory in ASia (REAS) version 2</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys</title>
+					<imprint>
+						<biblScope unit="volume">13</biblScope>
+						<biblScope unit="page" from="11019" to="11058"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b38">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">L</forename><surname>Lam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Weyant</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Sadavarte</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Johnson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Brem</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Arineitwe</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Ellis</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<title level="a">Household light makes global heat: high black carbon emissions from kerosene wick lamps</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ. Sci. Technol</title>
+					<imprint>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="13531" to="13538"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b39">
+				<analytic>
+					
+					<author>
+						<persName><forename>M</forename><surname>Li</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-I</forename><surname>Kurokawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J-H</forename><surname>Woo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>He</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Lu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Ohara</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Song</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Streets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Carmichael</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Cheng</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Hong</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Huo</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Kang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Su</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Zheng</surname></persName>
+					</author>
+					<title level="a">MIX: a mosaic Asian anthropogenic emission inventory under the international collaboration framework of the MICS-Asia and HTAP</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="935" to="963"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b40">
+				<analytic>
+					<author>
+						<persName><forename>S</forename><surname>Malla</surname></persName>
+					</author>
+					<title level="a">Household energy consumption patterns and its environmental implications: Assessment of energy access and poverty in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energ. Policy</title>
+					<imprint>
+						<date when="2013">2013</date>
+						<biblScope unit="volume">61</biblScope>
+						<biblScope unit="page" from="990" to="1002"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b41">
+				<analytic>
+					<author>
+						<persName><forename>J</forename><surname>Mennis</surname></persName>
+					</author>
+					<title level="a">Dasymetric Mapping for Estimating Popula- tion in Small Areas,</title>
+				</analytic>
+				<monogr>
+					<title level="j">Geography Compass,</title>
+					<imprint>
+						<date when="2009">2009</date>
+						<biblScope unit="volume">3</biblScope>
+						<biblScope unit="issue">2</biblScope>
+						<biblScope unit="page" from="727" to="745"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b42">
+				<monogr>
+					<author>
+						MoAD
+					</author>
+					<title level="m">Statistical Information on Nepalese Agriculture 2011/12</title>
+					<imprint>
+						<publisher>Agri-Business Promotion and Statistics Division, Statistics Section, Ministry of Agricultural Development, Singha Durbar</publisher>
+						<pubPlace>Kathmandu, Nepal</pubPlace>
+						<biblScope unit="page" from="1" to="170"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b43">
+				<monogr>
+					<author>
+						MoCTCA
+					</author>
+					<title level="m">Nepal Tourism Statistics 2012</title>
+					<imprint>
+						<publisher>Ministry of Culture, Tourism and Civil Aviation, Planning and Evaluation Division, Statistical Section, Singha Darbar</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="117"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b44">
+				<monogr>
+					<author>
+						MoEST
+					</author>
+					<title level="m">Ambient Air Quality of Kathmandu Valley</title>
+					<imprint>
+						<publisher>Ministry of Culture, Tourism and Civil Aviation, Planning and Evaluation Division, Statistical Section, Singha Darbar</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="33"/>
+						<date when="2005">2005</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b45">
+				<monogr>
+					<author>
+						MoF
+					</author>
+					<title level="m"> Nepal Foreign Trade Statistics, Annual Report 2011/12</title>
+					<imprint>
+						<publisher>Ministry of Finance, Department of Customs</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+				<note>https://www.customs.gov.np/en/annual.html</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b46">
+				<monogr>
+					<author>
+						MoF
+					</author>
+					<title level="m">Nepal Foreign Trade Statistics, Annual Report 2016/17</title>
+					<imprint>
+						<publisher>Ministry of Finance, Department of Customs</publisher>
+						<pubPlace>Kathmandu</pubPlace>
+						<biblScope unit="page" from="1" to="550"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b47">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Nepal</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Mahapatra</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Adhikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Sharma</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Pradhan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Puppala</surname></persName>
+					</author>
+					<title level="a">A Comparative Study of Stack Emissions from Straight-Line and Zigzag Brick Kilns in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmosphere</title>
+					<imprint>
+						<biblScope unit="volume">10</biblScope>
+						<biblScope unit="page" from="1" to="19"/>
+						<date type="published" when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b48">
+				<monogr>
+					<author>
+						NOC
+					</author>
+					<title level="m">Nepal Oil Corporation</title>
+					<imprint>
+						<date when="11 January 2019">11 January 2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b49">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Notter</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Schmied</surname></persName>
+					</author>
+					<title level="a">Non-road energy consumption and pollutant emissions, Study for the period from 1980 to 2050</title>
+				</analytic>
+				<monogr>
+					<title level="m">Federal Office for the Environment, Bern, Environmental studies no. 1519</title>
+					<imprint>
+						<pubPlace>Bern</pubPlace>
+						<biblScope unit="page">237</biblScope>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+				<note>Environmental studies no. 1519, 237 pp.</note>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b50">
+				<monogr>
+					
+					<author>
+						Pace Nepal
+					</author>
+					<title level="m">Baseline Study of Selected Sector Industries to Assess the Potentials for more Efficient use of Energy</title>
+					
+					<imprint>
+						<publisher>PACE Nepal Pvt. Ltd</publisher>
+						<biblScope unit="page" from="1" to="220"/>
+						<date when="2012">2012</date>
+						<pubPlace>Kathmandu</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b51">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Pandey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<title level="a">Estimating emissions from the Indian transport sector with on-road fleet composition and traffic volume</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">98</biblScope>
+						<biblScope unit="page" from="123" to="133"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b52">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Pandey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Patel</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Pervez</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Tiwari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>G</forename><surname>Yadama</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Chow</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Watson</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Biswas</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Chakrabarty</surname></persName>
+					</author>
+					<title level="a">Aerosol emissions factors from traditional biomass cookstoves in In- dia: insights from field measurements</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="13721" to="13729"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b53">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle"/><surname>Pandey</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><surname>Banskota</surname></persName>
+					</author>
+					<title level="a">Process of cement production in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Bulletin of the Department of Geology</title>
+					<imprint>
+						<biblScope unit="volume">11</biblScope>
+						<biblScope unit="page" from="71" to="78"/>
+						<date when="2008">2008</date>
+						<publisher>Tribhuvan University</publisher>
+						<pubPlace>Kathmandu, Nepal</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b54">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Pokharel</surname></persName>
+					</author>
+					<title level="a">Energy economics of cooking in households in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">29</biblScope>
+						<biblScope unit="page" from="547" to="559"/>
+						<date when="2004">2004</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b55">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Pokhrel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">N</forename><surname>Bates</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Acharya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Valentiner-Branth</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Chandyo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Raut</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+					</author>
+					<title level="a">PM2.5 in household kitchens of Bhaktapur, Nepal, using four different cooking fuels</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">113</biblScope>
+						<biblScope unit="issue">4</biblScope>
+						<biblScope unit="page" from="159" to="168"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b56">
+				<analytic>
+					
+					<author>
+						<persName><forename>S</forename><surname>Pradhan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Alea</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">V</forename><forename type="middle">B</forename><surname>Amatya</surname></persName>
+					</author>
+					<title level="a">Mitigation potential of greenhouse gas emission and implications on fuel consumption due to clean energy vehicles as public passenger transport in Kathmandu Valley of Nepal: A case study of trolley buses in Ring Road</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy</title>
+					<imprint>
+						<biblScope unit="volume">31</biblScope>
+						<biblScope unit="page" from="1748" to="1760"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b57">
+				<analytic>
+					
+					<author>
+						<persName><forename>P</forename><surname>Sadavarte</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<title level="a">Trends in multi-pollutant emissions from a technology-linked inventory for India: I. Industry and transport sectors</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ</title>
+					<imprint>
+						<biblScope unit="volume">99</biblScope>
+						<biblScope unit="page" from="353" to="364"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b58">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Shah</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Cocker</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Johnson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Soriano</surname></persName>
+					</author>
+					<author>
+						<persName><forename>J</forename><surname>Wayne Miller</surname></persName>
+					</author>
+					<title level="a">Emissions of regulated pollutants from in-use diesel back-up generators</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ</title>
+					<imprint>
+						<biblScope unit="volume">40</biblScope>
+						<biblScope unit="page" from="4199" to="4209"/>
+						<date when="2006">2006</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b59">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Shakya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rupakheti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Aryal</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Peltier</surname></persName>
+					</author>
+					<title level="a">Respiratory effects of high levels of particulate exposure in a cohort of traffic police in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">J. Occup. Environ. Med</title>
+					<imprint>
+						<biblScope unit="volume">58</biblScope>
+						<biblScope unit="page" from="218" to="225"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b60">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Shakya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rupakheti</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Shahi</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Maskey</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Pradhan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Panday</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Puppala</surname></persName>
+					</author>
+						<author>
+						<persName><forename>M</forename><surname>Lawrence</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Richard</forename><forename type="middle">E</forename><surname>Peltier</surname></persName>
+					</author>
+					<title level="a">Near-road sampling of PM2.5, BC, and fine-particle chemical components in Kathmandu Valley, Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">JAtmos. Chem. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">17</biblScope>
+						<biblScope unit="page" from="6503" to="6516"/>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b61">
+				<analytic>
+					
+					<author>
+						<persName><forename>H</forename><surname>Shastri</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Barik</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Ghosh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>C</forename><surname>Venkataraman</surname></persName>
+					</author>
+					<author>
+						<persName><forename>P</forename><surname>Sadavarte</surname></persName>
+					</author>
+					<title level="a">Flip flop of day-night and summer-winter surface urban heat island intensity in India</title>
+				</analytic>
+				<monogr>
+					<title level="j">Sci. Rep</title>
+					<imprint>
+						<biblScope unit="volume">7</biblScope>
+						<biblScope unit="page">40178</biblScope>
+						<date when="2017">2017</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b62">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Rajbhandari</surname></persName>
+					</author>
+					<title level="a">Energy and environmental implications of carbon emission reduction targets: case of Kathmandu valley, Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energ. Policy</title>
+					<imprint>
+						<biblScope unit="volume">38</biblScope>
+						<biblScope unit="page" from="4818" to="4827"/>
+						<date when="2010">2010</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b63">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Shrestha</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">T</forename><surname>Kim Oanh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Q</forename><surname>Xu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>M</forename><surname>Rupakheti</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Lawrence</surname></persName>
+					</author>
+					<title level="a">Analysis of the vehicle fleet in the Kath- mandu Valley for estimation of environment and climate co-benefits of technology intrusions</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">81</biblScope>
+						<biblScope unit="page" from="579" to="590"/>
+						<date when="2013">2013</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b64">
+				<analytic>
+					
+					<author>
+						<persName><forename>A</forename><surname>Singh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>B</forename><surname>Tuladhar</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>Bajracharya</surname></persName>
+					</author>
+					<author>
+						<persName><forename>A</forename><surname>Pillarisetti</surname></persName>
+					</author>
+					<title level="a">Assessment of effectiveness of improved cookstoves in reducing indoor air pollution and improving health in Nepal</title>
+				</analytic>
+				<monogr>
+					<title level="j">Energy Sustain. Dev</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="406" to="414"/>
+						<date when="2012">2012</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b65">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+					</author>
+					<title level="a">National burden of disease in India from indoor air pollution</title>
+				</analytic>
+				<monogr>
+					<title level="j">Proc. Natl. Acad. Sci. U.S.A.</title>
+					<imprint>
+						<biblScope unit="volume">97</biblScope>
+						<biblScope unit="page" from="13286" to="13293"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b66">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Stockwell</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Christian</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Goetz</surname></persName>
+					</author>
+					<author>
+						<persName><forename>T</forename><surname>Jayarathne</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">V</forename><surname>Bhave</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Praveen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Adhikari</surname></persName>
+					</author>
+					<author>
+						<persName><forename>R</forename><surname>Maharjan</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>DeCarlo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Stone</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Saikawa</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Blake</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">J</forename><surname>Simpson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Yokelson</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Panday</surname></persName>
+					</author>
+					<title level="a">Nepal Ambient Monitoring and Source Testing Experiment (NAMaSTE): emissions of trace gases and light-absorbing carbon from wood and dung cooking fires, garbage and crop residue burning, brick kilns, and other sources</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys</title>
+					<imprint>
+						<biblScope unit="volume">16</biblScope>
+						<biblScope unit="page" from="11043" to="11081"/>
+						<date when="2016">2016</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b67">
+				<analytic>
+					
+					<author>
+						<persName><forename>R</forename><surname>Subramanian</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Winijkul</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Thiansathit</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">T</forename><surname>Kim Oanh</surname></persName>
+					</author>
+					<author>
+						<persName><forename>I</forename><surname>Paw-Armart</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">G</forename><surname>Duleep</surname></persName>
+					</author>
+					<title level="a">Climate-Relevant Properties of Diesel Particulate Emissions: Results from a Piggyback Study in Bangkok, Thailand</title>
+				</analytic>
+				<monogr>
+					<title level="j">Environ. Sci. Technol.</title>
+					<imprint>
+						<biblScope unit="volume">43</biblScope>
+						<biblScope unit="page" from="4213" to="4218"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b68">
+				<monogr>
+					
+					<author>
+						WECS
+					</author>
+					<title level="m">Energy Sector Synopsis Report</title>
+					
+					<imprint>
+						<publisher>Water Energy Commission Secretariat</publisher>
+						<biblScope unit="page" from="1" to="115"/>
+						<date when="2010">2010</date>
+						<pubPlace>Nepal</pubPlace>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b69">
+				<monogr>
+					
+					<author>
+						WECS
+					</author>
+					<title level="m">Energy Data Sheet</title>
+					
+					<imprint>
+						<publisher>Water Energy Commission Secretariat</publisher>
+						<biblScope unit="page" from="1" to="16"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b70">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Weyant</surname></persName>
+					</author>
+					<author>
+						<persName><forename>V</forename><surname>Athalye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Ragavan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>U</forename><surname>Rajarathnam</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Lalchandani</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Maithel</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<title level="a">Emissions from South Asian brick production</title>
+				</analytic>
+				<monogr>
+					<title level="m">Environ. Sci. Technol.</title>
+					<imprint>
+						<date when="2014">2014</date>
+						<biblScope unit="volume">46</biblScope>
+						<biblScope unit="page" from="13531" to="13538"/>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="grey-literature" xml:id="b71">
+				<monogr>
+					
+					<author>
+						World Bank
+					</author>
+					<title level="m">Diesel Power Generation: Inventories and Black Car- bon Emissions in Kathmandu Valley, Nepal</title>
+					
+					<imprint>
+						<publisher>The World Bank</publisher>
+						<biblScope unit="page" from="1" to="60"/>
+						<date when="2014">2014</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b72">
+				<analytic>
+					
+					<author>
+						<persName><forename>B</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Cao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Wu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Yao</surname></persName>
+					</author>
+					<title level="a">Carbonaceous composition of PM2.5 emitted from on-road China III diesel trucks in Beijing, China</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">116</biblScope>
+						<biblScope unit="page" from="216" to="224"/>
+						<date when="2015">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b73">
+				<analytic>
+					
+					<author>
+						<persName><forename>F</forename><surname>Yan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>E</forename><surname>Winijkul</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Jung</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Bond</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Streets</surname></persName>
+					</author>
+					<title level="a">Global emission projections of particulate matter (PM): I. Exhaust emissions from on-road vehicles</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ</title>
+					<imprint>
+						<biblScope unit="volume">45</biblScope>
+						<biblScope unit="page" from="4830" to="4844"/>
+						<date when="2011">2011</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b74">
+				<analytic>
+					
+					<author>
+						<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">N</forename><forename type="middle">B</forename><surname>Dhital</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Hsieh</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">T</forename><surname>Lee</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Y</forename><forename type="middle">T</forename><surname>Hsu</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Huang</surname></persName>
+					</author>
+					<title level="a">Chemical Characterization of Fine Particulate Matter in Gasoline and Diesel Vehicle Exhaust</title>
+				</analytic>
+				<monogr>
+					<title level="j">Aerosol Air Qual. Res.</title>
+					<imprint>
+						<biblScope unit="volume">19</biblScope>
+						<biblScope unit="page" from="1439" to="1449"/>
+						<date when="2019">2019</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b75">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Ma</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Ye</surname></persName>
+					</author>
+					<author>
+						<persName><forename>F</forename><surname>Jiang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>W</forename><surname>Qi</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Thorneloe</surname></persName>
+					</author>
+					<title level="a">Greenhouse gases and other airborne pollutants from household stoves in China: a database for emission factors</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ</title>
+					<imprint>
+						<biblScope unit="volume">34</biblScope>
+						<biblScope unit="page" from="4537" to="4549"/>
+						<date when="2000">2000</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b76">
+				<analytic>
+					
+					<author>
+						<persName><forename>J</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Streets</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Carmichael</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>He</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">H</forename><surname>Huo</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">A</forename><surname>Kannari</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><surname>Klimont</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">I</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+					</author>
+					<author>
+						<persName><forename>S</forename><surname>Reddy</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Fu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>D</forename><surname>Chen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>L</forename><surname>Duan</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Y</forename><surname>Lei</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">L</forename><forename type="middle">T</forename><surname>Wang</surname></persName>
+					</author>
+					<author>
+						<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Yao</surname></persName>
+					</author>
+					<title level="a">Asian emissions in 2006 for the NASA INTEX-B mission</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Chem. Phys.</title>
+					<imprint>
+						<biblScope unit="volume">9</biblScope>
+						<biblScope unit="page" from="5131" to="5153"/>
+						<date when="2009">2009</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+			<biblStruct type="article" xml:id="b77">
+				<analytic>
+					
+					<author>
+						<persName><forename>Y</forename><surname>Zhang</surname></persName>
+					</author>
+					<author>
+						<persName><forename>Z</forename><surname>Yao</surname></persName>
+					</author>
+					<author>
+						<persName><forename>X</forename><surname>Shen</surname></persName>
+					</author>
+					<author>
+						<persName><forename>H</forename><surname>Liu</surname></persName>
+					</author>
+					<author>
+						<persName><forename>K</forename><surname>He</surname></persName>
+					</author>
+					<title level="a">Chemical characterization of PM 2.5 emitted from on-road heavy-duty diesel trucks in China</title>
+				</analytic>
+				<monogr>
+					<title level="j">Atmos. Environ.</title>
+					<imprint>
+						<biblScope unit="volume">122</biblScope>
+						<biblScope unit="page" from="885" to="891"/>
+						<date when="2015-12">2015</date>
+					</imprint>
+				</monogr>
+			</biblStruct>
+
+		</listBibl>
+	</div>
+		</back>
+	</text>
+</TEI>
