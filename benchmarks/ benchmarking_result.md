@@ -33,7 +33,7 @@ Here the failure reason mainly because the pdf is too large for the context wind
 |-----------------------------------------|--------|--------|----------|----------|---------------|-------------|----------|-----------|---------------------|
 | Deepseek v3 (API)                       | 0.8207 | 0.7789 | 0.7817   | 0.7594   | 7             | 1612.73     |  0.7552     |     0.7700   |       0.8468           |
 | Gemma 3 27b                             | 0.8102 | 0.8094 | 0.8054   | 0.7879   | 10            | 2245.30     |    0.7693  |     0.7793    |      0.8993            |
-| Mistral-Small-3.2-24B-Instruct-2506     | 0.7923 | 0.7985 | 0.7928   | 0.7770   | 20            | 1421.17     |       |        |                  |
+| Mistral-Small-3.2-24B-Instruct-2506     | 0.7923 | 0.7985 | 0.7928   | 0.7770   | 20            | 1421.17     |   0.7699    |   0.7747     |       0.8689           |
 | Claude 4 Sonnet                         |     |     |       |       | -             |          |       |        |                  |
 
 
@@ -43,11 +43,10 @@ Here the failure reason mainly because the pdf is too large for the context wind
 
 | LLM                                  | P    | R    | micro F1   | Macro F1   | # Failed Docs | runtime (s) | Title F1 | Author F1 | publication year F1 |
 |------------------------------------------|------|------|------|--------------|---------------|-------------|----------|----------|--------------------|
-| Deepseek v3                              | 0.8543 | 0.6118 | 0.713 | 0.6371 | 24 |          |       |       |                 |
-| Gemma 3 27b                              | 0.6514 | 0.5687 | 0.5863 | 0.5393 |  9 | 3503.94 s      |       |                 |
-| Mistral-Small-3.2-24B-Instruct-2506      | 0.5077 | 0.5388 | 0.5165 | 0.4965 |   | 5817.9s     |       |       |                 |
+| Deepseek v3                              | 0.8896 | 0.8185 | 0.8213 | 0.7834 | 7 | 1658.21 s      |   0.8177    |   0.8195    |         0.8289        |
+| Gemma 3 27b                              | 0.8557 | 0.7193 | 0.7455 | 0.6755 |  9 | 3503.94 s      |   0.7373    |   0.7498    |         0.7473        |
+| Mistral-Small-3.2-24B-Instruct-2506      | 0.6134 | 0.6389 | 0.6140 | 0.5860 |  35  | 5817.9s     |   0.6170    |   0.5993    |         0.6307        |
 | Claude 4 Sonnet                          |   |   |   |           |            | -           |       |       |                 |
-
 
 
 ## CEXgoldstandard dataset
@@ -84,19 +83,18 @@ Result:
 
 | LLM                          | P      | R      | micro F1 | macro F1 | # Parsing Errors | runtime (s) | Title F1 | Author F1 | Publication Date F1 |
 |-----------------------------------------|--------|--------|----------|----------|------------------|-------------|----------|-----------|---------------------|
-| Deepseek-chat                  | 0.7584 | 0.3303 | 0.3659   | 0.3257   | 18               | 604.65      | 0.3405   | 0.3681    | 0.3798             |
-| Gemma-3-27b-it                | 0.9040 | 0.4606 | 0.5446   | 0.4523   | 0                | 2004.67     | 0.5115   | 0.5495    | 0.5545             |
 | Deepseek-chat                   | 0.7292 | 0.3805 | 0.4123   | 0.3771   | 24               | 929.94      | 0.3924   | 0.4123    | 0.4302             |
+| Gemma-3-27b-it                | 0.9040 | 0.4606 | 0.5446   | 0.4523   | 0                | 2004.67     | 0.5115   | 0.5495    | 0.5545             |
 | Mistral-Small-3.1-24B          | 0.8578 | 0.8645 | 0.8513   | 0.8397   | 0                | 4046.45     | 0.8178   | 0.8424    | 0.8904             |
 
 
 **Different methods of reference extraction_and_parsing:**
 
-Method 1: One single LLM call on the full text
-Method 2: Two separate LLM calls, one for the reference extraction and one for the reference parsing
-Method 3: Heuristic section detection without LLM, then one single LLM call for the reference parsing
-Method 4: Page-wise extraction and reference parsing with LLM  *still working on it*
-Method 5: Page-wise extraction with LLM, then one single LLM call for the reference parsing
+- Method 1: One single LLM call on the full text
+- Method 2: Two separate LLM calls, one for the reference extraction and one for the reference parsing
+- Method 3: Heuristic section detection without LLM, then one single LLM call for the reference parsing
+- Method 4: Page-wise extraction and reference parsing with LLM  
+- Method 5: Page-wise extraction with LLM, then one single LLM call for the reference parsing *still working on it*
 
 #### Methods comparison for extraction and parsing:
 
