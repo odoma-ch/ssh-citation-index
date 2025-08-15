@@ -311,10 +311,8 @@ def print_summary_statistics(dataset: str, results: Dict[str, Any]):
             print(f"\nBreakdown by {category_label}:")
             for key, stats in stats_by_category.items():
                 if stats["total_docs"] > 0:
-                    success_rate = 100 * stats["successful"] / stats["total_docs"]
                     ref_found_rate = 100 * stats["docs_with_refs"] / max(1, stats["successful"])
-                    print(f"  {key}: {stats['successful']}/{stats['total_docs']} successful ({success_rate:.1f}%), "
-                          f"{stats['docs_with_refs']} with refs ({ref_found_rate:.1f}%), "
+                    print(f"  {key}: {stats['docs_with_refs']} with refs ({ref_found_rate:.1f}%), "
                           f"{stats['total_ref_sections']} sections, {stats['total_gt_refs']} GT refs")
 
 

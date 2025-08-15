@@ -1,5 +1,5 @@
 import numpy as np
-from typing import List, Dict, Any, Union, Optional
+from typing import List, Dict, Any, Union, Optional, Tuple
 from pydantic import BaseModel
 from rapidfuzz.fuzz import ratio
 from rapidfuzz.distance import Levenshtein
@@ -60,17 +60,25 @@ class RefEvaluator:
                 total[k] += v.get(k, 0)
         micro = self._prf(total['matches'], total['predictions'], total['labels'])
 
-        # Per-class F1
-        per_class_f1 = {field: self._prf(v['matches'], v['predictions'], v['labels'])['f1'] for field, v in field_stats.items()}
+        # Per-class metrics (P, R, F1)
+        per_class_metrics = {field: self._prf(v['matches'], v['predictions'], v['labels']) for field, v in field_stats.items()}
+        per_class_f1 = {field: metrics['f1'] for field, metrics in per_class_metrics.items()}
+        per_class_precision = {field: metrics['precision'] for field, metrics in per_class_metrics.items()}
+        per_class_recall = {field: metrics['recall'] for field, metrics in per_class_metrics.items()}
 
         # Round results to 4 decimal places for readability and consistency
-        rounded_per_class = {field: round(f, 4) for field, f in per_class_f1.items()}
+        rounded_per_class_f1 = {field: round(f, 4) for field, f in per_class_f1.items()}
+        rounded_per_class_precision = {field: round(p, 4) for field, p in per_class_precision.items()}
+        rounded_per_class_recall = {field: round(r, 4) for field, r in per_class_recall.items()}
+        
         return {
             'precision': round(micro['precision'], 4),
             'recall': round(micro['recall'], 4),
             'micro_f1': round(micro['f1'], 4),
             'macro_f1': round(float(np.mean(macro_f1s)), 4),
-            'per_class_f1': rounded_per_class,
+            'per_class_f1': rounded_per_class_f1,
+            'per_class_precision': rounded_per_class_precision,
+            'per_class_recall': rounded_per_class_recall,
         }
 
     def _evaluate_single(self, preds: List[Reference], labels: List[Reference], focus_fields: Optional[List[str]] = None):
@@ -288,6 +296,365 @@ def string_reference_eval(
         'recall': round(recall, 4),
         'f1_score': round(f1_score, 4),
         'avg_similarity': round(avg_similarity, 4)
+    }
+
+
+def _canonicalize_text(text: Optional[str]) -> str:
+    """Normalize free text for robust fuzzy matching."""
+    if not text:
+        return ""
+    import re
+    t = str(text).strip().upper()
+    t = re.sub(r"\s+", " ", t)
+    t = re.sub(r"\.+$", "", t)  # trailing periods
+    return t
+
+
+def _person_to_canonical(person: Any) -> str:
+    """Convert a Person or Organization to a canonical author string.
+
+    - Person: SURNAME INITIALS (e.g., "DOE J S") if available
+    - Organization: normalized organization name
+    - Fallback: empty string
+    """
+    from citation_index.core.models.person import Person
+    from citation_index.core.models.organization import Organization
+    if isinstance(person, Person):
+        parts: List[str] = []
+        surname = _canonicalize_text(getattr(person, "surname", None))
+        if surname:
+            parts.append(surname)
+        initials: List[str] = []
+        for field_name in ("first_name", "middle_name"):
+            value = getattr(person, field_name, None)
+            if value:
+                for token in str(value).split():
+                    token = token.strip()
+                    if token:
+                        initials.append(token[0].upper())
+        if initials:
+            parts.append(" ".join(initials))
+        # If surname is missing, try using role_name or first_name as fallback
+        if not parts:
+            for fallback in ("first_name", "role_name"):
+                val = _canonicalize_text(getattr(person, fallback, None))
+                if val:
+                    parts.append(val)
+                    break
+        return " ".join(parts).strip()
+    if isinstance(person, Organization):
+        name = _canonicalize_text(getattr(person, "name", None))
+        return name
+    # Unknown type or None
+    return ""
+
+
+def _split_gt_authors(gt_author_text: str) -> List[str]:
+    """Split ground-truth author string into individual author tokens.
+
+    Improved heuristics: split on commas, semicolons, and common conjunctions (and/e/&),
+    as well as hyphen-separated lists seen in the dataset (" - ").
+    Also handles various spacing and punctuation patterns.
+    """
+    import re
+    if not gt_author_text:
+        return []
+    text = gt_author_text.strip()
+    # Normalize unusual spaces and multiple spaces
+    text = re.sub(r"\s+", " ", text)
+    
+    # Enhanced splitting patterns to handle more cases
+    # - Standard separators: comma, semicolon
+    # - Conjunctions: and, e (Italian), & 
+    # - Hyphens with surrounding spaces
+    # - "et al." patterns
+    split_pattern = r"\s*(?:,|;|\band\b|\be\b|&|\s+-\s+|\s-\s|\bet\s+al\.?)\s*"
+    parts = re.split(split_pattern, text, flags=re.IGNORECASE)
+    
+    # Clean up parts: remove empty strings, extra whitespace, trailing punctuation
+    cleaned_parts = []
+    for part in parts:
+        part = part.strip()
+        if part:
+            # Remove trailing punctuation but preserve important punctuation like initials
+            part = re.sub(r"[,;]+$", "", part)
+            if part:  # Check again after cleaning
+                cleaned_parts.append(part)
+    
+    return cleaned_parts
+
+
+def _canonicalize_author_token(token: str) -> str:
+    """Canonicalize a single author token into SURNAME INITIALS-like form.
+
+    Improved canonicalization:
+    - Uppercase and normalize spacing
+    - Remove trailing punctuation but preserve initials
+    - Handle common name patterns and abbreviations
+    """
+    import re
+    if not token:
+        return ""
+    
+    # Basic canonicalization from _canonicalize_text
+    t = str(token).strip().upper()
+    t = re.sub(r"\s+", " ", t)
+    
+    # Remove trailing periods and commas, but preserve initials like "J." within names
+    t = re.sub(r"[,;]+$", "", t)  # Remove trailing commas/semicolons
+    t = re.sub(r"\.+$", "", t)    # Remove trailing periods only at the end
+    
+    # Handle some common patterns
+    # Normalize "AA. VV." (Authors Various) pattern
+    t = re.sub(r"^AA\.\s*VV\.?$", "AA VV", t)
+    
+    # Handle bracket patterns like "[Domenico Malipiero]"
+    t = re.sub(r"^\[(.*)\]$", r"\1", t)
+    
+    # Final cleanup
+    t = t.strip()
+    return t
+
+
+def _author_list_similarity(pred_authors: List[str], gt_authors: List[str], threshold: float = 85.0) -> Tuple[float, int, int, int]:
+    """Compute matching between predicted and ground-truth author lists.
+
+    Returns a tuple: (avg_similarity, matched_pairs, n_pred, n_gt).
+    A pair counts as matched if fuzzy ratio >= threshold.
+    """
+    from rapidfuzz.fuzz import ratio as fuzz_ratio
+    import numpy as np
+    from scipy.optimize import linear_sum_assignment
+
+    n_pred, n_gt = len(pred_authors), len(gt_authors)
+    if n_pred == 0 and n_gt == 0:
+        return 1.0, 0, 0, 0
+    if n_pred == 0 or n_gt == 0:
+        return 0.0, 0, n_pred, n_gt
+
+    sim = np.zeros((n_pred, n_gt), dtype=float)
+    for i, p in enumerate(pred_authors):
+        for j, g in enumerate(gt_authors):
+            sim[i, j] = fuzz_ratio(p, g)
+    # Hungarian on cost = 100 - similarity
+    cost = 100.0 - sim
+    row_ind, col_ind = linear_sum_assignment(cost)
+    matched_pairs = 0
+    similarity_sum = 0.0
+    for i, j in zip(row_ind, col_ind):
+        s = sim[i, j]
+        if s >= threshold:
+            matched_pairs += 1
+            similarity_sum += s
+    avg_sim = similarity_sum / matched_pairs if matched_pairs else 0.0
+    return avg_sim, matched_pairs, n_pred, n_gt
+
+
+def _extract_year(text: Optional[str]) -> Optional[str]:
+    """Extract a 4-digit year when present; return None otherwise.
+
+    Looks for 4-digit numbers in a broad historical range.
+    """
+    if not text:
+        return None
+    import re
+    m = re.search(r"\b(1[5-9]\d{2}|20\d{2}|21\d{2})\b", str(text))
+    if m:
+        return m.group(1)
+    return None
+
+
+def map_linkedbook_item_to_reference_and_authors(item: Dict[str, Any]) -> Tuple[Reference, List[str]]:
+    """Map a LinkedBook JSONL item (with 'tags') to a Reference and canonical GT authors list.
+
+    Mapping policy:
+    - title            -> full_title
+    - publicationplace -> publication_place
+    - year or publicationnumber-year -> publication_date (best 4-digit extraction)
+    - archival fields (archivalreference, archive_lib, box, pagination, conjunction) are ignored for fields
+    - authors taken from tags.author and split/canonicalized for author evaluation
+    """
+    tags = (item.get('tags') or {}) if isinstance(item, dict) else {}
+
+    title = tags.get('title')
+    place = tags.get('publicationplace')
+    year = tags.get('year')
+    pubnum_year = tags.get('publicationnumber-year')
+
+    year_val = _extract_year(year) or _extract_year(pubnum_year)
+
+    ref = Reference(
+        full_title=title,
+        publication_place=place,
+        publication_date=year_val,
+    )
+
+    gt_author_text = tags.get('author', '')
+    gt_authors = [_canonicalize_author_token(a) for a in _split_gt_authors(gt_author_text)]
+
+    return ref, gt_authors
+
+
+def evaluate_linkedbook_fields_and_authors(
+    pred_batches: List[References],
+    gt_batches: List[List[Dict[str, Any]]],
+    focus_fields: Optional[List[str]] = None,
+    author_threshold: float = 85.0,
+    mode: str = 'soft_fuzzy',
+) -> Dict[str, Any]:
+    """Special evaluation for LinkedBook:
+
+    - Field-focused evaluation on title/place/year using the existing RefEvaluator
+      with Hungarian matching.
+    - Per-author list matching with canonicalization and Hungarian assignment
+      at the author level.
+
+    Args:
+        pred_batches: list of References objects, each representing a batch of predicted refs
+        gt_batches: list of batches; each batch is a list of dicts read from JSONL
+                    with at least keys 'reference' and 'tags'.
+        focus_fields: fields to evaluate on; defaults to ['full_title', 'publication_place', 'publication_date']
+        author_threshold: fuzzy ratio threshold (0–100) to consider an author match
+        mode: evaluation mode for fields ('exact' | 'fuzzy' | 'soft_fuzzy')
+
+    Returns:
+        dict containing 'field_metrics', 'author_metrics', and basic counts.
+    """
+    # Input validation
+    if not pred_batches or not gt_batches:
+        raise ValueError("pred_batches and gt_batches cannot be empty")
+    
+    if len(pred_batches) != len(gt_batches):
+        raise ValueError(f"Mismatch in batch counts: {len(pred_batches)} pred vs {len(gt_batches)} gt batches")
+    
+    if focus_fields is None:
+        focus_fields = ["full_title", "publication_place", "publication_date"]
+    
+    # Validate threshold
+    if not (0 <= author_threshold <= 100):
+        raise ValueError(f"author_threshold must be between 0 and 100, got {author_threshold}")
+
+    # Build ground-truth References (fields only) and store GT author tokens per batch
+    gt_refs_per_batch: List[References] = []
+    gt_author_tokens_per_batch: List[List[List[str]]] = []
+    for batch in gt_batches:
+        refs_list: List[Reference] = []
+        authors_list: List[List[str]] = []
+        for item in batch:
+            ref, gt_authors = map_linkedbook_item_to_reference_and_authors(item)
+            refs_list.append(ref)
+            authors_list.append(gt_authors)
+        gt_list = refs_list
+        gt_refs_per_batch.append(References(references=gt_list))
+        gt_author_tokens_per_batch.append(authors_list)
+
+    # Field-focused metrics via existing evaluator
+    evaluator = RefEvaluator(mode=mode, fuzzy_threshold=90)
+    field_metrics = evaluator.evaluate(
+        predictions=pred_batches,
+        labels=gt_refs_per_batch,
+        focus_fields=focus_fields,
+    )
+
+    # Author-level metrics
+    # We must align predicted refs to GT refs per batch using field similarity to get pairs.
+    from scipy.optimize import linear_sum_assignment
+    import numpy as np
+
+    macro_f1s: List[float] = []
+    total_matches = 0
+    total_pred = 0
+    total_gt = 0
+
+    for batch_idx, (pred_refs, gt_refs, raw_gt_batch) in enumerate(zip(pred_batches, gt_refs_per_batch, gt_batches)):
+        pred_list = list(pred_refs)
+        gt_list = list(gt_refs)
+        n_pred, n_gt = len(pred_list), len(gt_list)
+        
+        # Validation: check batch size consistency
+        if len(raw_gt_batch) != n_gt:
+            raise ValueError(f"Batch {batch_idx}: GT references count mismatch: {len(raw_gt_batch)} raw vs {n_gt} parsed")
+        
+        if batch_idx >= len(gt_author_tokens_per_batch):
+            raise ValueError(f"Batch {batch_idx}: Missing author tokens for this batch")
+        
+        if len(gt_author_tokens_per_batch[batch_idx]) != n_gt:
+            raise ValueError(f"Batch {batch_idx}: Author tokens count mismatch: {len(gt_author_tokens_per_batch[batch_idx])} vs {n_gt} refs")
+
+        # Build similarity matrix based on field F1 between refs
+        f1_matrix = np.zeros((n_pred, n_gt), dtype=float)
+        for i, p in enumerate(pred_list):
+            for j, g in enumerate(gt_list):
+                f1, _ = evaluator._reference_f1_and_stats(p, g, focus_fields=focus_fields)  # type: ignore[attr-defined]
+                f1_matrix[i, j] = f1
+        if n_pred and n_gt:
+            row_ind, col_ind = linear_sum_assignment(-f1_matrix)
+        else:
+            row_ind, col_ind = [], []
+
+        # Compute author list matching per aligned pair
+        per_ref_f1: List[float] = []
+        for i, j in zip(row_ind, col_ind):
+            pred_ref = pred_list[i]
+            # Use direct batch indexing instead of searching
+            gt_authors = gt_author_tokens_per_batch[batch_idx][j] if j < len(gt_author_tokens_per_batch[batch_idx]) else []
+
+            pred_authors_field = getattr(pred_ref, 'authors', None)
+            pred_authors_tokens = []
+            if isinstance(pred_authors_field, list):
+                pred_authors_tokens = [_canonicalize_author_token(_person_to_canonical(a)) for a in pred_authors_field]
+
+            avg_sim, matched_pairs, n_p, n_g = _author_list_similarity(pred_authors_tokens, gt_authors, threshold=author_threshold)
+            total_matches += matched_pairs
+            total_pred += n_p
+            total_gt += n_g
+
+            # Per-reference F1 for macro averaging
+            precision = matched_pairs / n_p if n_p else 0.0
+            recall = matched_pairs / n_g if n_g else 0.0
+            f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+            per_ref_f1.append(f1)
+
+        # Account for unpaired predictions or labels (all unmatched)
+        if n_pred > n_gt:
+            # Extra predicted refs: zero F1 each, and count their authors as unmatched predictions
+            per_ref_f1.extend([0.0] * (n_pred - n_gt))
+            for i in range(n_gt, n_pred):
+                if i < len(pred_list):
+                    pred_authors_field = getattr(pred_list[i], 'authors', None)
+                    if isinstance(pred_authors_field, list):
+                        total_pred += len(pred_authors_field)
+        elif n_gt > n_pred:
+            # Extra GT refs: zero F1 each, and count their authors as unmatched labels
+            per_ref_f1.extend([0.0] * (n_gt - n_pred))
+            for j in range(n_pred, n_gt):
+                if j < len(gt_author_tokens_per_batch[batch_idx]):
+                    total_gt += len(gt_author_tokens_per_batch[batch_idx][j])
+
+        if per_ref_f1:
+            macro_f1s.append(float(np.mean(per_ref_f1)))
+        else:
+            macro_f1s.append(1.0)
+
+    author_precision = total_matches / total_pred if total_pred else 0.0
+    author_recall = total_matches / total_gt if total_gt else 0.0
+    author_micro_f1 = 2 * author_precision * author_recall / (author_precision + author_recall) if (author_precision + author_recall) else 0.0
+    author_macro_f1 = float(np.mean(macro_f1s)) if macro_f1s else 1.0
+
+    author_metrics = {
+        'precision': round(author_precision, 4),
+        'recall': round(author_recall, 4),
+        'micro_f1': round(author_micro_f1, 4),
+        'macro_f1': round(author_macro_f1, 4),
+        'threshold': author_threshold,
+    }
+
+    return {
+        'field_metrics': field_metrics,
+        'author_metrics': author_metrics,
+        'counts': {
+            'num_batches': len(pred_batches),
+        },
     }
 
 

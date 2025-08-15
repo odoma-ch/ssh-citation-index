@@ -24,7 +24,9 @@ Given the provided text, parse all full reference entries and format them accord
                 "issue": "Issue number (e.g., '3')",
                 "pages": "Page range (e.g., '123-130')",
                 "publication_date": "Year or full date of publication (e.g., '2021' or '2021-05-10')",
-                "publisher": "Publisher's name (e.g., 'Springer')"
+                "publisher": "Publisher's name (e.g., 'Springer')",
+                "publication_place": "Place of publication (e.g., 'New York')",
+                ... // Other fields as needed
             }
         }
         // More references if applicable
@@ -73,9 +75,6 @@ Given the provided text, parse all full reference entries and format them accord
                 "organization": "United Nations",
                 "full_title": "World Urbanization Prospects",
                 "journal_title": "UN Publications",
-                "volume": "",
-                "issue": "",
-                "pages": "",
                 "publication_date": "2018"
             }
         }

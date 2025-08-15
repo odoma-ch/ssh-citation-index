@@ -57,6 +57,9 @@ class BenchmarkRunner:
             endpoint=self.args.api_base,
             model=self.args.model_name,
             api_key=self.args.api_key,
+            timeout = 180,
+            first_token_timeout = 60,
+            max_retries = 3,
         )
         
         # ---------------------------------------------------------------
