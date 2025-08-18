@@ -63,7 +63,7 @@ class Reference(BaseModel):
     
     authors: Optional[
             Annotated[
-                List[Person | Organization],
+                List[Person | Organization | str],
                 BeforeValidator(to_list),
                 AfterValidator(remove_empty_models),
                 AfterValidator(empty_to_none),
@@ -75,7 +75,7 @@ class Reference(BaseModel):
     
     editors: Optional[
         Annotated[
-            List[Person | Organization],
+            List[Person | Organization | str],
             BeforeValidator(to_list),
             AfterValidator(remove_empty_models),
             AfterValidator(empty_to_none),
@@ -99,7 +99,9 @@ class Reference(BaseModel):
     
     translator: Optional[
         Annotated[
-            Person,
+            List[Person | str],
+            BeforeValidator(to_list),
+            AfterValidator(remove_empty_models),
             AfterValidator(empty_to_none),
         ]
     ] = Field(
