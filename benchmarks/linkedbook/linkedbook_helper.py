@@ -64,15 +64,19 @@ def process_file(file_path, dataset_name):
 
                 token, t1, t2, t3 = parts[0], parts[1], parts[2], parts[3]
 
+                # Skip DOCSTART
+                if token == "-DOCSTART-":
+                    continue
+                
+                # skip if t2 is '*-primary' tag
+                if "primary" in t2.lower():
+                    continue
+
                 # Build Task1 vocabulary from the whole file
                 if t1 not in {"-X-", "o"}:
                     vocab.add(t1)
                     vocab_freq[t1] += 1
-
-                # Skip DOCSTART
-                if token == "-DOCSTART-":
-                    continue
-
+                
                 # Start of a reference span
                 if t3.lower() == "b-r":
                     in_ref = True
@@ -125,9 +129,9 @@ def save_outputs(refs, vocab, dataset_name):
     
     return refs_path
 
-def save_vocabulary(all_vocab):
+def save_vocabulary(all_vocab, dataset_name):
     """Save vocabulary to a single text file."""
-    vocab_path = output_dir / "tag_vocabulary.txt"
+    vocab_path = output_dir / f"tag_vocabulary_{dataset_name}.txt"
     with open(vocab_path, "w", encoding="utf-8") as out_v:
         for item in sorted(all_vocab):
             out_v.write(item + "\n")
@@ -193,6 +197,10 @@ def main():
             
             # Print statistics
             print_statistics(dataset_name, refs, vocab, vocab_freq, language_stats)
+
+            # save vocabulary to a file
+            vocab_path = save_vocabulary(vocab, dataset_name)
+            print(f"  Saved vocabulary to {vocab_path}")
             
             # Accumulate for overall statistics
             all_refs.extend(refs)
@@ -201,7 +209,7 @@ def main():
             all_language_stats.update(language_stats)
     
     # Save vocabulary to single text file
-    vocab_path = save_vocabulary(all_vocab)
+    vocab_path = save_vocabulary(all_vocab, "all")
     print(f"\nSaved vocabulary to {vocab_path}")
     
     # Overall statistics
@@ -217,8 +225,6 @@ def main():
         for lang, count in all_language_stats.most_common():
             percentage = (count / len(all_refs)) * 100
             print(f"  {lang}: {count:,} ({percentage:.1f}%)")
-    
-    print(f"\nProcessing complete! Check the 'outputs' directory for results.")
 
 if __name__ == "__main__":
     main()
