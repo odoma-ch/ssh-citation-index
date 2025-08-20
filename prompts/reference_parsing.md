@@ -36,10 +36,11 @@ Given the provided text, parse all full reference entries and format them accord
 
 #### Guidelines:
 1. If a field is missing in a reference, use an empty string or empty list as appropriate.
-2. For authors, include as many as are listed, and structure each as:
+2. For authors, translators, editors and similar tags that are people names, parse them as:
    - "first_name": string
    - "middle_name": string (empty if not present)
    - "surname": string
+  Include all authors that are listed in the reference.
 3. Ensure the output is valid JSON, with no trailing commas.
 4. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
 5. If there are no references, return an empty list.

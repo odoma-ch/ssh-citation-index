@@ -36,7 +36,7 @@ Given the provided text, parse all full reference entries and format them accord
 
 #### Guidelines:
 1. If a field is missing in a reference, use an empty string or empty list as appropriate.
-2. For authors, translators, editors and similar tags that are names, parse them as:
+2. For authors, translators, editors and similar tags that are people names, parse them as:
    - "first_name": string
    - "middle_name": string (empty if not present)
    - "surname": string
