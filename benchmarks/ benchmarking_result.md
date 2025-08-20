@@ -105,3 +105,42 @@ Result:
 | Mistral-Small-3.1-24B          | 3      | 0.4541 | 0.3203 | 0.3295   | 0.3174   | 0                | 1988.72     | 0.3096   | 0.3266    | 0.3532             |
 | Mistral-Small-3.1-24B          | 4      | 0.8485 | 0.8733 | 0.8524   | 0.8425   | 1                | 19103.29    | 0.8241   | 0.8438    | 0.8979             |
 
+
+# Linkedbook dataset
+
+Here you go—updated exactly as requested.
+
+### Run summary 
+
+Sorted by **Overall micro-F1** (descending) within each mode.
+
+| Mode    | Model                                                           | LLM Duration (s) | Overall P | Overall R | Overall micro-F1 | Overall macro-F1 | Focused P | Focused R | Focused micro-F1 | Focused macro-F1 |
+| ------- | --------------------------------------------------------------- | ---------------: | --------: | --------: | ---------------: | ---------------: | --------: | --------: | ---------------: | ---------------: |
+| single  | deepseek-chat <i>(fewshot)</i>                                  |           386.91 |    0.6730 |    0.8861 |           0.7650 |           0.7605 |    0.8656 |    0.8717 |           0.8686 |           0.8572 |
+| single  | google/gemma-3-27b-it <i>(fewshot)</i>                          |            207.8 |    0.6613 |    0.8944 |           0.7604 |           0.7650 |    0.8560 |    0.8822 |           0.8689 |           0.8667 |
+| single  | mistralai/Mistral-Small-3.1-24B-Instruct-2503 <i>(fewshot)</i>  |           128.41 |    0.6539 |    0.8823 |           0.7512 |           0.7471 |    0.8485 |    0.8677 |           0.8580 |           0.8450 |
+| single  | mistralai/Mistral-Small-3.1-24B-Instruct-2503 <i>(zeroshot)</i> |           143.93 |    0.6668 |    0.8246 |           0.7374 |           0.6918 |    0.8462 |    0.8052 |           0.8252 |           0.7723 |
+| grouped | deepseek-chat <i>(fewshot)</i>                                  |           305.61 |    0.6906 |    0.7572 |           0.7224 |           0.7161 |    0.8714 |    0.7476 |           0.8047 |           0.7999 |
+| grouped | google/gemma-3-27b-it <i>(fewshot)</i>                          |           195.15 |    0.6973 |    0.4445 |           0.5429 |           0.5210 |    0.8585 |    0.4440 |           0.5853 |           0.5812 |
+| grouped | mistralai/Mistral-Small-3.1-24B-Instruct-2503 <i>(fewshot)</i>  |           224.56 |    0.6697 |    0.8932 |           0.7655 |           0.7697 |    0.8582 |    0.8753 |           0.8666 |           0.8615 |
+
+### Per-field micro-F1 (Focused subset)
+
+| Run (model<i>(prompt)</i> • mode)                             | authors | full\_title | publication\_date |
+| ------------------------------------------------------------- | ------: | ----------: | ----------------: |
+| Mistral-24B <i>(fewshot)</i> • grouped |  0.8042 |      0.8845 |            0.9074 |
+| Gemma-27B <i>(fewshot)</i> • single    |  0.8063 |      0.8895 |            0.9082 |
+| Mistral-24B <i>(fewshot)</i> • single  |  0.7982 |      0.8724 |            0.9015 |
+| Gemma-27B <i>(fewshot)</i> • grouped   |  0.5539 |      0.5916 |            0.6078 |
+| DeepSeek <i>(fewshot)</i> • single     |  0.8048 |      0.8848 |            0.9117 |
+| DeepSeek <i>(fewshot)</i> • grouped    |  0.7640 |      0.8147 |            0.8325 |
+| Mistral-24B <i>(zeroshot)</i> • single   |  0.7675 |      0.8371 |            0.8697 |
+
+### Per-language F1 (overall) — only for runs that reported it
+
+| Run (model<i>(prompt)</i> • mode)                            |     DE |     EN |     ES |     FR |     IT |     NL |     PT |
+| ------------------------------------------------------------ | -----: | -----: | -----: | -----: | -----: | -----: | -----: |
+| Gemma-27B <i>(fewshot)</i> • single   | 0.8177 | 0.7322 | 0.7608 | 0.7858 | 0.7631 | 0.8889 | 0.7360 |
+| Mistral-24B <i>(fewshot)</i> • single | 0.8008 | 0.7299 | 0.7759 | 0.7835 | 0.7525 | 0.8889 | 0.6305 |
+| DeepSeek <i>(fewshot)</i> • single    | 0.8110 | 0.7417 | 0.7894 | 0.7803 | 0.7679 | 0.8117 | 0.7003 |
+| Mistral-24B <i>(zeroshot)</i> • single | 0.7697 | 0.7377 | 0.7166 | 0.7766 | 0.7342 | 0.7500 | 0.5287 |
