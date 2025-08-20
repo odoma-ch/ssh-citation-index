@@ -1,5 +1,6 @@
 import json
 import re
+import random
 from collections import defaultdict, Counter
 from lingua import Language, LanguageDetectorBuilder
 from pathlib import Path
@@ -176,6 +177,143 @@ def print_statistics(dataset_name, refs, vocab, vocab_freq, language_stats):
     for item, freq in vocab_freq.most_common(10):
         print(f"  {item}: {freq:,}")
 
+def generate_grouped_set_by_lang(refs, min_refs=10, max_refs=100):
+    """
+    Generate grouped version of the test set where references are grouped by language.
+    Each group contains 10-100 references in the same language.
+    
+    Args:
+        refs: List of reference dictionaries from the test set
+        min_refs: Minimum number of references per group (default: 10)
+        max_refs: Maximum number of references per group (default: 100)
+    
+    Returns:
+        List of grouped reference objects
+    """
+    print(f"\nGenerating grouped test set...")
+    
+    # Group references by language
+    refs_by_language = defaultdict(list)
+    for ref in refs:
+        if ref['dataset'] == 'test':  # Only process test set references
+            refs_by_language[ref['language']].append(ref)
+    
+    grouped_refs = []
+    group_id = 1
+    
+    for language, lang_refs in refs_by_language.items():
+        if len(lang_refs) < min_refs:
+            # if smaller than minimum, put them all in one group
+            print(f"  Language '{language}' has only {len(lang_refs)} references, grouping them together.")
+            refs_strings = [ref['reference'] for ref in lang_refs]
+            ground_truth = [ref['tags'] for ref in lang_refs]
+            
+            grouped_refs.append({
+                "id": group_id,
+                "refs": refs_strings,
+                "ground_truth": ground_truth,
+                "lang": language
+            })
+            group_id += 1
+            continue
+        print(f"  Processing language '{language}' with {len(lang_refs)} references...")
+        
+        # Shuffle references to create random groups
+        shuffled_refs = lang_refs.copy()
+        random.shuffle(shuffled_refs)
+        
+        # Create groups of references
+        i = 0
+        while i < len(shuffled_refs):
+            # Determine group size (between min_refs and max_refs)
+            remaining_refs = len(shuffled_refs) - i
+            if remaining_refs < min_refs:
+                # If remaining references are less than minimum, merge with previous group
+                if grouped_refs and grouped_refs[-1]['lang'] == language:
+                    remaining_refs_strings = [ref['reference'] for ref in shuffled_refs[i:]]
+                    remaining_ground_truth = [ref['tags'] for ref in shuffled_refs[i:]]
+                    grouped_refs[-1]['refs'].extend(remaining_refs_strings)
+                    grouped_refs[-1]['ground_truth'].extend(remaining_ground_truth)
+                break
+            
+            # Calculate group size
+            if remaining_refs <= max_refs:
+                group_size = remaining_refs
+            else:
+                # Random size between min_refs and max_refs, but ensure we can form complete groups
+                max_possible = min(max_refs, remaining_refs - min_refs + 1)
+                group_size = random.randint(min_refs, max_possible)
+            
+            # Create group
+            group_refs = shuffled_refs[i:i + group_size]
+            
+            # Create grouped reference object with the required format
+            refs_strings = [ref['reference'] for ref in group_refs]
+            ground_truth = [ref['tags'] for ref in group_refs]
+            
+            grouped_ref = {
+                "id": group_id,
+                "refs": refs_strings,
+                "ground_truth": ground_truth,
+                "lang": language
+            }
+            
+            grouped_refs.append(grouped_ref)
+            group_id += 1
+            i += group_size
+    
+    print(f"  Created {len(grouped_refs)} groups from {sum(len(g['refs']) for g in grouped_refs)} references")
+    
+    return grouped_refs
+
+def save_grouped_outputs(grouped_refs):
+    """Save grouped test set outputs."""
+    # Save grouped references
+    grouped_path = output_dir / "linkedbooks_test_grouped_references.jsonl"
+    with open(grouped_path, "w", encoding="utf-8") as out_f:
+        for group in grouped_refs:
+            out_f.write(json.dumps(group, ensure_ascii=False) + "\n")
+    
+    return grouped_path
+
+def print_grouped_statistics(grouped_refs):
+    """Print statistics for grouped test set."""
+    if not grouped_refs:
+        return
+    
+    print(f"\n{'='*60}")
+    print("GROUPED TEST SET STATISTICS")
+    print(f"{'='*60}")
+    print(f"Total groups created: {len(grouped_refs):,}")
+    
+    # Group size distribution
+    group_sizes = [len(group['refs']) for group in grouped_refs]
+    print(f"Group size statistics:")
+    print(f"  Average references per group: {sum(group_sizes) / len(group_sizes):.1f}")
+    print(f"  Smallest group: {min(group_sizes)} references")
+    print(f"  Largest group: {max(group_sizes)} references")
+    
+    # Language distribution
+    lang_counts = Counter()
+    for group in grouped_refs:
+        lang_counts[group['lang']] += 1
+    
+    print(f"\nGroups by language:")
+    for lang, count in lang_counts.most_common():
+        total_refs = sum(len(g['refs']) for g in grouped_refs if g['lang'] == lang)
+        print(f"  {lang}: {count} groups ({total_refs} total references)")
+    
+    # Tag distribution across groups
+    all_group_tags = []
+    for group in grouped_refs:
+        for gt in group['ground_truth']:
+            all_group_tags.extend(gt.keys())
+    
+    tag_counts = Counter(all_group_tags)
+    print(f"\nMost common tags across groups:")
+    for tag, count in tag_counts.most_common(10):
+        print(f"  {tag}: appears {count} times across all groups")
+
 def main():
     """Main processing function."""
     print("LinkedBook Reference Extraction and Analysis")
@@ -185,6 +323,7 @@ def main():
     all_vocab = set()
     all_vocab_freq = Counter()
     all_language_stats = Counter()
+    test_refs = []  # Store test references separately for grouping
     
     # Process each dataset
     for dataset_name, file_path in input_files.items():
@@ -202,11 +341,23 @@ def main():
             vocab_path = save_vocabulary(vocab, dataset_name)
             print(f"  Saved vocabulary to {vocab_path}")
             
+            # Store test references for grouping
+            if dataset_name == "test":
+                test_refs = refs
+            
             # Accumulate for overall statistics
             all_refs.extend(refs)
             all_vocab.update(vocab)
             all_vocab_freq.update(vocab_freq)
             all_language_stats.update(language_stats)
+    
+    # Generate grouped version of test set
+    if test_refs:
+        grouped_test_refs = generate_grouped_set_by_lang(test_refs)
+        if grouped_test_refs:
+            grouped_path = save_grouped_outputs(grouped_test_refs)
+            print(f"  Saved {len(grouped_test_refs)} grouped references to {grouped_path}")
+            print_grouped_statistics(grouped_test_refs)
     
     # Save vocabulary to single text file
     vocab_path = save_vocabulary(all_vocab, "all")
