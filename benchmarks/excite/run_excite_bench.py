@@ -384,33 +384,64 @@ class BenchmarkRunner:
 
         output_lines = []
         output_lines.append("\n--- EXCITE Benchmark Summary ---")
+        
+        # Always show overall metrics first
         if self.args.task == "extraction":
-            summary = metrics_df[['precision', 'recall', 'f1_score', 'avg_similarity']].mean().to_dict()
+            overall_summary = metrics_df[['precision', 'recall', 'f1_score', 'avg_similarity']].mean().to_dict()
         else:
-            summary = metrics_df[['precision', 'recall', 'micro_f1', 'macro_f1']].mean().to_dict()
-        summary_json = json.dumps(summary, indent=2)
-        output_lines.append(summary_json)
+            overall_summary = metrics_df[['overall_precision', 'overall_recall', 'overall_micro_f1', 'overall_macro_f1']].mean().to_dict()
+        
+        output_lines.append("Overall metrics (all fields):")
+        overall_summary_json = json.dumps(overall_summary, indent=2)
+        output_lines.append(overall_summary_json)
+        
+        # Show focused metrics if focus_fields were used
+        if self.args.task != "extraction" and self.args.focus_fields and 'focused_precision' in metrics_df.columns:
+            focused_summary = metrics_df[['focused_precision', 'focused_recall', 'focused_micro_f1', 'focused_macro_f1']].mean().to_dict()
+            output_lines.append("Focused metrics (focus fields only):")
+            focused_summary_json = json.dumps(focused_summary, indent=2)
+            output_lines.append(focused_summary_json)
+        
         output_lines.append("-------------------------\n")
 
         tqdm.write("\n--- EXCITE Benchmark Summary ---")
-        tqdm.write(summary_json)
+        tqdm.write("Overall metrics (all fields):")
+        tqdm.write(overall_summary_json)
+        if self.args.task != "extraction" and self.args.focus_fields and 'focused_precision' in metrics_df.columns:
+            tqdm.write("Focused metrics (focus fields only):")
+            tqdm.write(focused_summary_json)
         tqdm.write("-------------------------\n")
 
         if (self.args.task in ["extraction_and_parsing", "parsing"] and \
-            self.args.focus_fields and 'per_class_f1' in metrics_df.columns):
-            all_per_class_f1 = []
+            self.args.focus_fields and 'per_field_metrics' in metrics_df.columns):
+            
+            # Collect all per_field_metrics dictionaries from all documents
+            all_per_field_metrics = []
             for _, row in metrics_df.iterrows():
-                if isinstance(row['per_class_f1'], dict):
-                    all_per_class_f1.append(row['per_class_f1'])
-            if all_per_class_f1:
-                field_f1_scores = {}
+                if isinstance(row['per_field_metrics'], dict):
+                    all_per_field_metrics.append(row['per_field_metrics'])
+            
+            if all_per_field_metrics:
+                # Calculate average metrics across all documents for each field
+                field_metrics = {}
                 for field in self.args.focus_fields:
-                    field_scores = [doc_f1.get(field, 0.0) for doc_f1 in all_per_class_f1 if field in doc_f1]
-                    field_f1_scores[field] = sum(field_scores) / len(field_scores) if field_scores else 0.0
-                output_lines.append("Focused field F1 scores:")
-                tqdm.write("Focused field F1 scores:")
-                for field, f1_score in field_f1_scores.items():
-                    line = f"  {field}: {f1_score:.4f}"
+                    field_precisions = [doc_metrics.get(field, {}).get('precision', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
+                    field_recalls = [doc_metrics.get(field, {}).get('recall', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
+                    field_f1s = [doc_metrics.get(field, {}).get('f1', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
+                    
+                    if field_precisions:
+                        field_metrics[field] = {
+                            'precision': sum(field_precisions) / len(field_precisions),
+                            'recall': sum(field_recalls) / len(field_recalls),
+                            'f1': sum(field_f1s) / len(field_f1s)
+                        }
+                    else:
+                        field_metrics[field] = {'precision': 0.0, 'recall': 0.0, 'f1': 0.0}
+                
+                output_lines.append("Per-field metrics:")
+                tqdm.write("Per-field metrics:")
+                for field, metrics in field_metrics.items():
+                    line = f"  {field}: P={metrics['precision']:.4f}, R={metrics['recall']:.4f}, F1={metrics['f1']:.4f}"
                     output_lines.append(line)
                     tqdm.write(line)
                 output_lines.append("-------------------------\n")
@@ -432,7 +463,7 @@ class BenchmarkRunner:
             metric_cols = (
                 ["precision", "recall", "f1_score", "avg_similarity"]
                 if self.args.task == "extraction"
-                else ["precision", "recall", "micro_f1", "macro_f1"]
+                else ["overall_precision", "overall_recall", "overall_micro_f1", "overall_macro_f1"]
             )
             grouped = (
                 joined.groupby(["class", "lang"], dropna=True)[metric_cols]
