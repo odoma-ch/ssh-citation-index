@@ -132,6 +132,7 @@ class LLMClient:
             "messages": [{"role": "user", "content": prompt}],
             "temperature": temperature,
             "max_tokens": max_tokens,
+            "stop": ["\n\n\n\n\n"],  # Stop sequence to prevent long non-stopped responses
             "response_format": response_format
         }
         

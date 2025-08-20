@@ -84,9 +84,9 @@ class LinkedbookBenchmarkRunner:
             endpoint=self.args.api_base,
             model=self.args.model_name,
             api_key=self.args.api_key,
-            timeout = 300,  
-            first_token_timeout = 60,
-            max_retries = 3,
+            timeout=self.args.time_out,  # Use time_out from args
+            first_token_timeout=60,
+            max_retries=3,
         )
 
         # Optionally load previously saved results
@@ -994,6 +994,8 @@ def main():
                        help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var.")
     parser.add_argument("--api_base", type=str, default="http://localhost:8000/v1", 
                        help="Base URL for the LLM API endpoint.")
+    parser.add_argument("--time_out", type=int, default=300, 
+                       help="Maximum time in seconds for LLM requests. Default is 300 seconds.")
 
     # Execution configuration
     parser.add_argument("--output_path", type=str, default="benchmarks/linkedbook/outputs", 
