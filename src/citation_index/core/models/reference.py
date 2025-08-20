@@ -1,6 +1,7 @@
 """Reference data model for citation processing."""
 
-from typing import Annotated, List, Optional, Dict
+import re
+from typing import Annotated, List, Optional, Dict, Tuple, Any
 from pydantic import AfterValidator, BaseModel, BeforeValidator, Field, model_validator
 
 from .person import Person
@@ -332,6 +333,147 @@ class Reference(BaseModel):
             publisher=publisher.text if publisher is not None else None,
             publication_place=other.text if other is not None else None
         ) 
+
+    @staticmethod
+    def _extract_year(text: Optional[str]) -> Optional[str]:
+        """Extract a 4-digit year when present; return None otherwise.
+
+        Looks for 4-digit numbers in a broad historical range.
+        """
+        if not text:
+            return None
+        m = re.search(r"\b(1[5-9]\d{2}|20\d{2}|21\d{2})\b", str(text))
+        if m:
+            return m.group(1)
+        return None
+
+    @staticmethod
+    def _canonicalize_text(text: Optional[str]) -> str:
+        """Normalize free text for robust fuzzy matching."""
+        if not text:
+            return ""
+        t = str(text).strip().upper()
+        t = re.sub(r"\s+", " ", t)
+        t = re.sub(r"\.+$", "", t)  # trailing periods
+        return t
+
+    @staticmethod
+    def _split_gt_authors(gt_author_text: str) -> List[str]:
+        """Split ground-truth author string into individual author tokens.
+
+        Improved heuristics: split on commas, semicolons, and common conjunctions (and/e/&),
+        as well as hyphen-separated lists seen in the dataset (" - ").
+        Also handles various spacing and punctuation patterns.
+        """
+        if not gt_author_text:
+            return []
+        text = gt_author_text.strip()
+        # Normalize unusual spaces and multiple spaces
+        text = re.sub(r"\s+", " ", text)
+        
+        # Enhanced splitting patterns to handle more cases
+        # - Standard separators: comma, semicolon
+        # - Conjunctions: and, e (Italian), & 
+        # - Hyphens with surrounding spaces
+        # - "et al." patterns
+        split_pattern = r"\s*(?:,|;|\band\b|\be\b|&|\s+-\s+|\s-\s|\bet\s+al\.?)\s*"
+        parts = re.split(split_pattern, text, flags=re.IGNORECASE)
+        
+        # Clean up parts: remove empty strings, extra whitespace, trailing punctuation
+        cleaned_parts = []
+        for part in parts:
+            part = part.strip()
+            if part:
+                # Remove trailing punctuation but preserve important punctuation like initials
+                part = re.sub(r"[,;]+$", "", part)
+                if part:  # Check again after cleaning
+                    cleaned_parts.append(part)
+        
+        return cleaned_parts
+
+    @staticmethod
+    def _canonicalize_author_token(token: str) -> str:
+        """Canonicalize a single author token into SURNAME INITIALS-like form.
+
+        Improved canonicalization:
+        - Uppercase and normalize spacing
+        - Remove trailing punctuation but preserve initials
+        - Handle common name patterns and abbreviations
+        """
+        if not token:
+            return ""
+        
+        # Basic canonicalization from _canonicalize_text
+        t = str(token).strip().upper()
+        t = re.sub(r"\s+", " ", t)
+        
+        # Remove trailing periods and commas, but preserve initials like "J." within names
+        t = re.sub(r"[,;]+$", "", t)  # Remove trailing commas/semicolons
+        t = re.sub(r"\.+$", "", t)    # Remove trailing periods only at the end
+        
+        # Handle some common patterns
+        # Normalize "AA. VV." (Authors Various) pattern
+        t = re.sub(r"^AA\.\s*VV\.?$", "AA VV", t)
+        
+        # Handle bracket patterns like "[Domenico Malipiero]"
+        t = re.sub(r"^\[(.*)\]$", r"\1", t)
+        
+        # Final cleanup
+        t = t.strip()
+        return t
+
+    @classmethod
+    def from_linkedbook(cls, item: Dict[str, Any]) -> Tuple["Reference", List[str]]:
+        """Create a Reference from a LinkedBook JSONL item and return canonical GT authors list.
+
+        Mapping policy:
+        - title            -> full_title
+        - publicationplace -> publication_place
+        - publisher        -> publisher
+        - volume           -> volume
+        - series           -> journal_title (series treated as journal/publication series)
+        - pagination       -> pages
+        - year, date, or publicationnumber-year -> publication_date (best 4-digit extraction)
+        - archival fields (abbreviation, archive_lib, folder, numbered_ref, ref, conjunction, 
+          tomo, publicationspecifications) are ignored for structured fields
+        - authors taken from tags.author and split/canonicalized for author evaluation
+
+        Args:
+            item: LinkedBook JSONL item with 'tags' containing the reference metadata
+
+        Returns:
+            Tuple of (Reference, canonical_gt_authors_list)
+        """
+        tags = (item.get('tags') or {}) if isinstance(item, dict) else {}
+
+        title = tags.get('title')
+        place = tags.get('publicationplace')
+        publisher = tags.get('publisher')
+        volume = tags.get('volume')
+        series = tags.get('series')
+        pagination = tags.get('pagination')
+        
+        # Try multiple date sources in order of preference
+        year = tags.get('year')
+        date = tags.get('date')
+        pubnum_year = tags.get('publicationnumber-year')
+
+        year_val = cls._extract_year(year) or cls._extract_year(date) or cls._extract_year(pubnum_year)
+
+        ref = cls(
+            full_title=title,
+            publication_place=place,
+            publisher=publisher,
+            volume=volume,
+            journal_title=series,  # Series often represents publication series/journal
+            pages=pagination,
+            publication_date=year_val,
+        )
+
+        gt_author_text = tags.get('author', '')
+        gt_authors = [a for a in cls._split_gt_authors(gt_author_text)]
+
+        return ref, gt_authors
 
     @classmethod
     def schema_without_excluded(cls):

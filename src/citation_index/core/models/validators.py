@@ -48,16 +48,18 @@ def normalize(value: Any) -> Optional[Any]:
 
 
 def remove_empty_models(value: Any) -> Any:
-    """Remove empty models from a list."""
+    """Remove empty models from a list, but keep non-model objects (like strings)."""
     if not isinstance(value, list):
         return value
 
     new_value = []
     for v in value:
-        if not isinstance(v, BaseModel):
-            continue
-        if v == type(v)():
-            continue
-        new_value.append(v)
+        if isinstance(v, BaseModel):
+            # For BaseModel objects, only keep if they're not empty
+            if v != type(v)():
+                new_value.append(v)
+        else:
+            # For non-BaseModel objects (strings, etc.), keep them
+            new_value.append(v)
 
     return new_value 

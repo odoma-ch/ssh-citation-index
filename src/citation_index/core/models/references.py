@@ -1,7 +1,7 @@
 """References collection class for citation processing."""
 
 from pathlib import Path
-from typing import Dict, List, Optional, TYPE_CHECKING, Annotated
+from typing import Dict, List, Optional, TYPE_CHECKING, Annotated, Any
 from pydantic import BaseModel, Field, ConfigDict
 
 from citation_index.core.models.reference import Reference
@@ -77,6 +77,65 @@ class References(BaseModel):
                 references.append(Reference.from_dict(item['reference']))
             else:
                 references.append(Reference.from_dict(item))
+        return cls(references=references) 
+
+    @classmethod
+    def from_linkedbook(cls, linkedbook_data: List[Dict[str, Any]]) -> "References":
+        """Create References from LinkedBook format data.
+        
+        Args:
+            linkedbook_data: List of LinkedBook items with 'tags', 'language', etc.
+            
+        Returns:
+            References object with converted Reference instances.
+        """
+        references = []
+        for item in linkedbook_data:
+            # Extract tags and other metadata
+            tags = item.get("tags", {})
+            language = item.get("language", "")
+            
+            # Convert LinkedBook tags to Reference fields
+            ref_data = {}
+            
+            # Map LinkedBook fields to Reference fields
+            if "title" in tags:
+                ref_data["full_title"] = tags["title"].strip(", ")
+            
+            if "author" in tags:
+                # Split authors and clean them
+                author_str = tags["author"].strip(", ")
+                if author_str:
+                    # Simple split by common separators, could be enhanced
+                    authors = [auth.strip() for auth in author_str.split(" - ") if auth.strip()]
+                    if not authors:  # If no splits found, use the whole string
+                        authors = [author_str]
+                    ref_data["authors"] = authors
+            
+            if "publicationplace" in tags:
+                ref_data["publication_place"] = tags["publicationplace"].strip(", ")
+            
+            # Handle year - could be in 'year' or 'publicationnumber-year'
+            if "year" in tags:
+                ref_data["publication_date"] = tags["year"].strip(", .")
+            elif "publicationnumber-year" in tags:
+                ref_data["publication_date"] = tags["publicationnumber-year"].strip(", .")
+            
+            # Add language if available
+            if language:
+                ref_data["language"] = language
+            
+            # Create Reference from converted data
+            try:
+                reference = Reference.from_dict(ref_data)
+                references.append(reference)
+            except Exception as e:
+                # Log warning but continue processing
+                print(f"Warning: Could not create Reference from LinkedBook item: {e}")
+                print(f"Item data: {item}")
+                # Create minimal Reference as fallback
+                references.append(Reference())
+        
         return cls(references=references) 
 
     @classmethod

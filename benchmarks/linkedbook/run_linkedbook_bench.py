@@ -33,10 +33,11 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from citation_index.llm.client import LLMClient
 from citation_index.pipelines.reference_parsing import parse_reference_strings
 from citation_index.core.models import References
-from citation_index.evaluation.ref_metrics import evaluate_linkedbook_fields_and_authors
+from citation_index.evaluation.ref_metrics import RefEvaluator
 
 
 LINKEDBOOK_TEST_PATH = Path("benchmarks/linkedbook/linkedbooks_test_references.jsonl")
+LINKEDBOOK_GROUPED_PATH = Path("benchmarks/linkedbook/linkedbooks_test_grouped_references.jsonl")
 
 
 class LinkedbookBenchmarkRunner:
@@ -70,10 +71,14 @@ class LinkedbookBenchmarkRunner:
 
         # Load test references (raw items + strings)
         raw_items, references = self._load_test_references()
-        if self.args.limit:
+        if self.args.limit and self.args.mode == "single":
             raw_items = raw_items[: self.args.limit]
             references = references[: self.args.limit]
-        tqdm.write(f"Loaded {len(references)} reference strings from LinkedBook test set.")
+        
+        if self.args.mode == "single":
+            tqdm.write(f"Loaded {len(references)} reference strings from LinkedBook test set.")
+        else:
+            tqdm.write(f"Using pre-generated groups with {len(references)} total references.")
 
         llm_client = LLMClient(
             endpoint=self.args.api_base,
@@ -139,13 +144,17 @@ class LinkedbookBenchmarkRunner:
         # Save results and prepare for evaluation
         pred_batches, gt_batches = self._save_results_and_prepare_evaluation(results_data)
         
-        # Evaluate fields and authors
-        metrics = evaluate_linkedbook_fields_and_authors(
-            pred_batches=pred_batches,
-            gt_batches=gt_batches,
-            focus_fields=["full_title", "publication_place", "publication_date"],
-            author_threshold=self.args.author_threshold,
+        # Evaluate fields and authors using RefEvaluator
+        evaluator = RefEvaluator(
             mode=self.args.eval_mode,
+            fuzzy_threshold=self.args.fuzzy_threshold if hasattr(self.args, 'fuzzy_threshold') else 80
+        )
+        
+        # Evaluate with focus fields if specified
+        metrics = evaluator.evaluate(
+            predictions=pred_batches,
+            labels=gt_batches,
+            focus_fields=getattr(self.args, 'focus_fields', None)
         )
         
         # Add parsing error statistics
@@ -167,31 +176,26 @@ class LinkedbookBenchmarkRunner:
     # Data Loading Methods
     # ============================================================================
 
-    def _load_test_references(self) -> (List[Dict[str, Any]], List[str]):
+    def _load_test_references(self) -> tuple[List[Dict[str, Any]], List[str]]:
+        """Load test references based on mode (single or grouped)."""
+        if self.args.mode == "grouped":
+            return self._load_grouped_references()
+        else:
+            return self._load_single_references()
+
+    def _load_single_references(self) -> tuple[List[Dict[str, Any]], List[str]]:
+        """Load individual references from the main test file."""
         if not LINKEDBOOK_TEST_PATH.exists():
             raise FileNotFoundError(
                 f"LinkedBook test file not found at {LINKEDBOOK_TEST_PATH}. Make sure it exists."
             )
         raw_items: List[Dict[str, Any]] = []
         refs: List[str] = []
-        total_loaded = 0
-        excluded_count = 0
         
         with LINKEDBOOK_TEST_PATH.open("r", encoding="utf-8") as f:
             for line in f:
                 try:
                     obj = json.loads(line)
-                    total_loaded += 1
-                    
-                    # Check if we should exclude non-reference entries
-                    if getattr(self.args, "exclude_non_ref", False):
-                        # Check if this record has a title in the tags field
-                        tags = obj.get("tags", {})
-                        has_title = bool(tags.get("title"))
-                        if not has_title:
-                            excluded_count += 1
-                            continue
-                    
                     raw_items.append(obj)
                     ref = obj.get("reference")
                     if isinstance(ref, str) and ref.strip():
@@ -199,41 +203,46 @@ class LinkedbookBenchmarkRunner:
                 except json.JSONDecodeError:
                     continue
         
-        if getattr(self.args, "exclude_non_ref", False) and excluded_count > 0:
-            tqdm.write(f"Excluded {excluded_count} non-reference entries (no title in GT tags). "
-                      f"Processing {len(refs)} references out of {total_loaded} total records.")
+        return raw_items, refs
+
+    def _load_grouped_references(self) -> tuple[List[Dict[str, Any]], List[str]]:
+        """Load pre-grouped references from the grouped test file."""
+        if not LINKEDBOOK_GROUPED_PATH.exists():
+            raise FileNotFoundError(
+                f"LinkedBook grouped test file not found at {LINKEDBOOK_GROUPED_PATH}. Make sure it exists."
+            )
         
+        raw_items: List[Dict[str, Any]] = []
+        refs: List[str] = []
+        total_groups = 0
+        
+        with LINKEDBOOK_GROUPED_PATH.open("r", encoding="utf-8") as f:
+            for line in f:
+                try:
+                    group = json.loads(line)
+                    total_groups += 1
+                    
+                    group_refs = group.get("refs", [])
+                    group_gt = group.get("ground_truth", [])
+                    
+                    # Add references and ground truth
+                    refs.extend(group_refs)
+                    raw_items.extend(group_gt)
+                    
+                except json.JSONDecodeError:
+                    continue
+        
+        tqdm.write(f"Loaded {len(refs)} references from {total_groups} pre-generated groups.")
         return raw_items, refs
 
     def _load_results(self, results_path: str) -> List[Dict[str, Any]]:
-        """Load results from JSON file and apply filtering if needed."""
+        """Load results from JSON file."""
         path = Path(results_path)
         if not path.exists():
             raise FileNotFoundError(f"Results file not found: {results_path}")
         
         with path.open("r", encoding="utf-8") as f:
             results_data = json.load(f)
-        
-        # Apply the same filtering as when loading fresh data
-        if getattr(self.args, "exclude_non_ref", False):
-            original_count = len(results_data)
-            filtered_results = []
-            excluded_count = 0
-            
-            for result in results_data:
-                gt = result.get("ground_truth", {})
-                tags = gt.get("tags", {})
-                has_title = bool(tags.get("title"))
-                if has_title:
-                    filtered_results.append(result)
-                else:
-                    excluded_count += 1
-            
-            if excluded_count > 0:
-                tqdm.write(f"Excluded {excluded_count} non-reference entries from loaded results. "
-                          f"Processing {len(filtered_results)} references out of {original_count} total records.")
-            
-            return filtered_results
         
         return results_data
 
@@ -253,24 +262,53 @@ class LinkedbookBenchmarkRunner:
         return tasks
 
     def _prepare_grouped_tasks(self, references: List[str]) -> List[Dict[str, Any]]:
-        rng = random.Random(self.args.seed)
+        """Prepare tasks using pre-generated groups from the grouped file."""
+        if not LINKEDBOOK_GROUPED_PATH.exists():
+            raise FileNotFoundError(
+                f"LinkedBook grouped test file not found at {LINKEDBOOK_GROUPED_PATH}. Make sure it exists."
+            )
+        
         tasks = []
-        i = 0
-        task_id = 0
-        n = len(references)
-        min_g, max_g = self.args.min_group, self.args.max_group
-        while i < n:
-            group_size = rng.randint(min_g, max_g)
-            indices = list(range(i, min(i + group_size, n)))
-            lines = [references[j] for j in indices]
-            tasks.append({
-                "task_id": f"group_{task_id}",
-                "mode": "grouped",
-                "indices": indices,
-                "references": lines,
-            })
-            task_id += 1
-            i += group_size
+        processed_refs = 0
+        
+        with LINKEDBOOK_GROUPED_PATH.open("r", encoding="utf-8") as f:
+            for line in f:
+                try:
+                    group = json.loads(line)
+                    group_id = group.get("id")
+                    group_refs = group.get("refs", [])
+                    group_gt = group.get("ground_truth", [])
+                    
+                    indices = list(range(processed_refs, processed_refs + len(group_refs)))
+                    
+                    # Apply limit if specified
+                    if self.args.limit and processed_refs >= self.args.limit:
+                        break
+                    
+                    if self.args.limit:
+                        # Trim group if it would exceed limit
+                        remaining = self.args.limit - processed_refs
+                        if remaining < len(group_refs):
+                            group_refs = group_refs[:remaining]
+                            indices = indices[:remaining]
+                    
+                    if group_refs:  # Only add non-empty groups
+                        tasks.append({
+                            "task_id": f"group_{group_id}",
+                            "mode": "grouped",
+                            "indices": indices,
+                            "references": group_refs,
+                            "original_group_id": group_id
+                        })
+                    
+                    processed_refs += len(group_refs)
+                    
+                    if self.args.limit and processed_refs >= self.args.limit:
+                        break
+                        
+                except json.JSONDecodeError:
+                    continue
+        
         return tasks
 
     # ============================================================================
@@ -288,7 +326,7 @@ class LinkedbookBenchmarkRunner:
         )
         return json.dumps(refs_model.model_dump())
 
-    def _convert_llm_responses_to_results(self, llm_responses: List[Dict[str, Any]], raw_items: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], int]:
+    def _convert_llm_responses_to_results(self, llm_responses: List[Dict[str, Any]], raw_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
         """Convert LLM responses to final results format with reference string, LLM response, parsed result, and ground truth."""
         results_data = []
         parsing_errors = 0
@@ -358,6 +396,8 @@ class LinkedbookBenchmarkRunner:
                         "task_id": task_id,
                         "parsing_error": parsing_error
                     })
+                else:
+                    tqdm.write(f"Warning: Index mismatch in task {task_id}: ref_idx={ref_idx}, i={i}, len(raw_items)={len(raw_items)}, len(task_references)={len(task_references)}")
         
         # Log parsing error summary
         if parsing_errors > 0:
@@ -393,7 +433,7 @@ class LinkedbookBenchmarkRunner:
         
         # Prepare batches for evaluation
         pred_batches: List[References] = []
-        gt_batches: List[List[Dict[str, Any]]] = []
+        gt_batches: List[References] = []
         
         # Group results by task (for grouped mode)
         if self.args.mode == "grouped":
@@ -414,9 +454,10 @@ class LinkedbookBenchmarkRunner:
                 refs_obj = References.from_dict(parsed_refs)
                 pred_batches.append(refs_obj)
                 
-                # Extract ground truth for this group
+                # Extract ground truth for this group and convert to References
                 gt_batch = [r["ground_truth"] for r in group]
-                gt_batches.append(gt_batch)
+                gt_refs_obj = References.from_linkedbook(gt_batch)
+                gt_batches.append(gt_refs_obj)
         else:
             # For single mode, each result is its own batch
             for result in results_data:
@@ -424,8 +465,9 @@ class LinkedbookBenchmarkRunner:
                 refs_obj = References.from_dict([parsed_result] if parsed_result else [])
                 pred_batches.append(refs_obj)
                 
-                gt_batch = [result["ground_truth"]]
-                gt_batches.append(gt_batch)
+                # Convert ground truth to References
+                gt_refs_obj = References.from_linkedbook([result["ground_truth"]])
+                gt_batches.append(gt_refs_obj)
         
         return pred_batches, gt_batches
 
@@ -465,23 +507,27 @@ class LinkedbookBenchmarkRunner:
                     parsed_refs = [r["parsed_result"] for r in group]
                     gt_items = [r["ground_truth"] for r in group]
                     refs_obj = References.from_dict(parsed_refs)
+                    gt_refs_obj = References.from_linkedbook(gt_items)
                     filtered_pred_batches.append(refs_obj)
-                    filtered_gt_batches.append(gt_items)
+                    filtered_gt_batches.append(gt_refs_obj)
             else:
                 # For single mode, each result is its own batch
                 for result in lang_data:
                     parsed_result = result["parsed_result"]
                     refs_obj = References.from_dict([parsed_result] if parsed_result else [])
+                    gt_refs_obj = References.from_linkedbook([result["ground_truth"]])
                     filtered_pred_batches.append(refs_obj)
-                    filtered_gt_batches.append([result["ground_truth"]])
+                    filtered_gt_batches.append(gt_refs_obj)
             
-            # Evaluate this language subset
-            lang_metrics = evaluate_linkedbook_fields_and_authors(
-                pred_batches=filtered_pred_batches,
-                gt_batches=filtered_gt_batches,
-                focus_fields=["full_title", "publication_place", "publication_date"],
-                author_threshold=self.args.author_threshold,
+            # Evaluate this language subset using RefEvaluator
+            lang_evaluator = RefEvaluator(
                 mode=self.args.eval_mode,
+                fuzzy_threshold=self.args.fuzzy_threshold if hasattr(self.args, 'fuzzy_threshold') else 80
+            )
+            lang_metrics = lang_evaluator.evaluate(
+                predictions=filtered_pred_batches,
+                labels=filtered_gt_batches,
+                focus_fields=getattr(self.args, 'focus_fields', None)
             )
             
             # Add parsing error statistics for this language
@@ -521,7 +567,7 @@ class LinkedbookBenchmarkRunner:
                 "mode": self.args.mode,
                 "model_name": self.args.model_name,
                 "prompt_name": self.args.prompt_name,
-                "author_threshold": self.args.author_threshold,
+                "fuzzy_threshold": self.args.fuzzy_threshold,
                 "eval_mode": self.args.eval_mode,
                 "total_references": len(results_data),
                 "llm_duration_sec": round(self.llm_duration, 2) if self.llm_duration else None,
@@ -578,9 +624,10 @@ class LinkedbookBenchmarkRunner:
             
             if gt_author_text.strip() and parsed_authors:
                 # Use the same canonicalization logic from evaluation
-                from citation_index.evaluation.ref_metrics import _split_gt_authors, _canonicalize_author_token, _person_to_canonical
+                from citation_index.evaluation.ref_metrics import _person_to_canonical
+                from citation_index.core.models import Reference
                 
-                gt_authors = [_canonicalize_author_token(a) for a in _split_gt_authors(gt_author_text)]
+                gt_authors = [Reference._canonicalize_author_token(a) for a in Reference._split_gt_authors(gt_author_text)]
                 parsed_author_tokens = []
                 
                 for author in parsed_authors:
@@ -590,7 +637,7 @@ class LinkedbookBenchmarkRunner:
                     else:
                         canonical = str(author)
                     if canonical:
-                        parsed_author_tokens.append(_canonicalize_author_token(canonical))
+                        parsed_author_tokens.append(Reference._canonicalize_author_token(canonical))
                 
                 field_scores["author_count_match"] = len(gt_authors) == len(parsed_author_tokens)
                 
@@ -634,46 +681,33 @@ class LinkedbookBenchmarkRunner:
         tqdm.write("\n--- LinkedBook Parsing Benchmark Summary ---")
         tqdm.write(lines[1])
         
-        field = metrics.get('field_metrics', {}) or {}
-        author = metrics.get('author_metrics', {}) or {}
-        f_p = float(field.get('precision', 0.0))
-        f_r = float(field.get('recall', 0.0))
-        f_micro = float(field.get('micro_f1', 0.0))
-        f_macro = float(field.get('macro_f1', 0.0))
-        # Determine number of evaluated fields for weighting
-        per_field_map = (field.get('per_class_f1') or {})
-        per_field_precision = (field.get('per_class_precision') or {})
-        per_field_recall = (field.get('per_class_recall') or {})
-        n_fields = len(per_field_map) if per_field_map else 3
-        a_p = float(author.get('precision', 0.0))
-        a_r = float(author.get('recall', 0.0))
-        a_micro = float(author.get('micro_f1', 0.0))
-        a_macro = float(author.get('macro_f1', 0.0))
-        # Treat authors as one additional field among the focus fields
-        c_p = ((n_fields * f_p) + a_p) / (n_fields + 1) if (f_p or a_p) else 0.0
-        c_r = ((n_fields * f_r) + a_r) / (n_fields + 1) if (f_r or a_r) else 0.0
-        c_micro = (2 * c_p * c_r / (c_p + c_r)) if (c_p + c_r) else 0.0
-        c_macro = ((n_fields * f_macro) + a_macro) / (n_fields + 1) if (f_macro or a_macro) else 0.0
-
-        # Overall metrics (including authors)
-        tqdm.write(f"Overall: P={c_p:.4f}, R={c_r:.4f}, micro-F1={c_micro:.4f}, macro-F1={c_macro:.4f}")
+        # Use new unified metrics structure
+        f_p = float(metrics.get('overall_precision', 0.0))
+        f_r = float(metrics.get('overall_recall', 0.0))
+        f_micro = float(metrics.get('overall_micro_f1', 0.0))
+        f_macro = float(metrics.get('overall_macro_f1', 0.0))
         
-        # Fields-only metrics (excluding authors)
-        tqdm.write(f"Fields-only: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}")
+        # Extract per-field metrics
+        per_field_map = metrics.get('per_field_metrics', {}) or {}
+        per_field_precision = {}
+        per_field_recall = {}
+        if per_field_map:
+            for field_name, field_metrics in per_field_map.items():
+                per_field_precision[field_name] = field_metrics.get('precision', 0.0)
+                per_field_recall[field_name] = field_metrics.get('recall', 0.0)
+
+        # Overall metrics
+        tqdm.write(f"Overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}")
         
         # Per-field breakdown
-        tqdm.write("Fields:")
         if per_field_map:
             for field_name in sorted(per_field_map.keys()):
                 field_p = float(per_field_precision.get(field_name, 0.0))
                 field_r = float(per_field_recall.get(field_name, 0.0))
-                field_f1 = float(per_field_map.get(field_name, 0.0))
+                field_f1 = float(per_field_map.get(field_name, {}).get('f1', 0.0))
                 tqdm.write(f"  {field_name}: P={field_p:.4f}, R={field_r:.4f}, micro-F1={field_f1:.4f}")
         else:
             tqdm.write(f"  overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}")
-        
-        # Authors metrics
-        tqdm.write(f"Authors: P={a_p:.4f}, R={a_r:.4f}, micro-F1={a_micro:.4f}, macro-F1={a_macro:.4f}")
         
         # Parsing errors
         parsing_errors = metrics.get('parsing_errors', {})
@@ -687,20 +721,16 @@ class LinkedbookBenchmarkRunner:
         if per_lang_metrics:
             tqdm.write("Per-language:")
             for lang, m in sorted(per_lang_metrics.items()):
-                fm = (m.get('field_metrics') or {})
-                am = (m.get('author_metrics') or {})
+                # Use new unified metrics structure
+                lp = float(m.get('overall_precision', 0.0))
+                lr = float(m.get('overall_recall', 0.0))
+                lf1 = float(m.get('overall_micro_f1', 0.0))
                 pe = (m.get('parsing_errors') or {})
-                lp = float(fm.get('precision', 0.0)); ap = float(am.get('precision', 0.0))
-                lr = float(fm.get('recall', 0.0));    ar = float(am.get('recall', 0.0))
-                pf_map = (fm.get('per_class_f1') or {})
-                nf = len(pf_map) if pf_map else 3
-                lcp = ((nf * lp) + ap) / (nf + 1) if (lp or ap) else 0.0
-                lcr = ((nf * lr) + ar) / (nf + 1) if (lr or ar) else 0.0
-                lcf1 = (2 * lcp * lcr / (lcp + lcr)) if (lcp + lcr) else 0.0
+                
                 lang_errors = pe.get('total_errors', 0)
                 lang_tasks = pe.get('total_tasks', 0)
                 lang_error_rate = pe.get('error_rate', 0.0)
-                tqdm.write(f"  {lang}: P={lcp:.4f}, R={lcr:.4f}, F1={lcf1:.4f}, Errors={lang_errors}/{lang_tasks}({lang_error_rate}%)")
+                tqdm.write(f"  {lang}: P={lp:.4f}, R={lr:.4f}, F1={lf1:.4f}, Errors={lang_errors}/{lang_tasks}({lang_error_rate}%)")
         tqdm.write("--------------------------------------------\n")
 
         # Optionally append to a scores file
@@ -725,31 +755,24 @@ class LinkedbookBenchmarkRunner:
                     f.write('\n'.join(header + lines))
                     f.write("\n")
                     # Write structured output to file as well
-                    f.write(f"Overall: P={c_p:.4f}, R={c_r:.4f}, micro-F1={c_micro:.4f}, macro-F1={c_macro:.4f}\n")
-                    f.write(f"Fields-only: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}\n")
-                    f.write("Fields:\n")
+                    f.write(f"Overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}\n")
                     if per_field_map:
                         for field_name in sorted(per_field_map.keys()):
                             field_p = float(per_field_precision.get(field_name, 0.0))
                             field_r = float(per_field_recall.get(field_name, 0.0))
-                            field_f1 = float(per_field_map.get(field_name, 0.0))
+                            field_f1 = float(per_field_map.get(field_name, {}).get('f1', 0.0))
                             f.write(f"  {field_name}: P={field_p:.4f}, R={field_r:.4f}, micro-F1={field_f1:.4f}\n")
                     else:
                         f.write(f"  overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}\n")
-                    f.write(f"Authors: P={a_p:.4f}, R={a_r:.4f}, micro-F1={a_micro:.4f}, macro-F1={a_macro:.4f}\n")
                     if per_lang_metrics:
                         f.write("Per-language:\n")
                         for lang, m in sorted(per_lang_metrics.items()):
-                            fm = (m.get('field_metrics') or {})
-                            am = (m.get('author_metrics') or {})
-                            lp = float(fm.get('precision', 0.0)); ap = float(am.get('precision', 0.0))
-                            lr = float(fm.get('recall', 0.0));    ar = float(am.get('recall', 0.0))
-                            pf_map = (fm.get('per_class_f1') or {})
-                            nf = len(pf_map) if pf_map else 3
-                            lcp = ((nf * lp) + ap) / (nf + 1) if (lp or ap) else 0.0
-                            lcr = ((nf * lr) + ar) / (nf + 1) if (lr or ar) else 0.0
-                            lcf1 = (2 * lcp * lcr / (lcp + lcr)) if (lcp + lcr) else 0.0
-                            f.write(f"  {lang}: P={lcp:.4f}, R={lcr:.4f}, F1={lcf1:.4f}\n")
+                            # Use new unified metrics structure
+                            lp = float(m.get('overall_precision', 0.0))
+                            lr = float(m.get('overall_recall', 0.0))
+                            lf1 = float(m.get('overall_micro_f1', 0.0))
+                            
+                            f.write(f"  {lang}: P={lp:.4f}, R={lr:.4f}, F1={lf1:.4f}\n")
                 tqdm.write(f"Benchmark summary appended to: {scores_path}")
             except Exception as e:
                 logging.error(f"Failed to save summary to {self.args.save_scores}: {e}")
@@ -769,7 +792,7 @@ def main():
     # Core configuration
     parser.add_argument("--mode", type=str, choices=["single", "grouped"], default="single", 
                        help="Parsing mode: single line per call or grouped batches.")
-    parser.add_argument("--prompt_name", type=str, default="reference_parsing_zeroshot.md", 
+    parser.add_argument("--prompt_name", type=str, default="reference_parsing.md", 
                        help="Name of the prompt file in the 'prompts/' directory.")
 
     # LLM configuration
@@ -798,23 +821,17 @@ def main():
     parser.add_argument("--save_scores", type=str, default=None, 
                        help="Path to append benchmark summary")
 
-    # Grouping configuration (for grouped mode)
-    parser.add_argument("--min_group", type=int, default=10, 
-                       help="Minimum group size (grouped mode)")
-    parser.add_argument("--max_group", type=int, default=50, 
-                       help="Maximum group size (grouped mode)")
-    parser.add_argument("--seed", type=int, default=42, 
-                       help="Random seed for grouping")
     
     # Evaluation configuration
-    parser.add_argument("--author_threshold", type=float, default=85.0, 
+    parser.add_argument("--fuzzy_threshold", type=float, default=85.0, 
                        help="Fuzzy ratio threshold (0-100) for author matching")
     parser.add_argument("--eval_mode", type=str, default="soft_fuzzy", 
                        choices=["exact", "fuzzy", "soft_fuzzy"], help="Field evaluation mode")
+    parser.add_argument("--focus_fields", nargs="*", 
+                       default=["full_title", "authors", "publication_date"],
+                       help="List of fields to focus evaluation on. Available fields: full_title, publication_place, publication_date, publisher, volume, journal_title, pages")
     parser.add_argument("--per_category", action="store_true",
                        help="If set, display metrics per language (category).")
-    parser.add_argument("--exclude-non-ref", action="store_true", dest="exclude_non_ref",
-                       help="Exclude records that don't have a title in ground truth tags (non-reference entries).")
 
     args = parser.parse_args()
 
@@ -825,9 +842,7 @@ def main():
     if not args.api_key:
         raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable.")
 
-    # Basic validation
-    if args.mode == "grouped" and args.min_group > args.max_group:
-        raise ValueError("--min_group cannot be greater than --max_group")
+    # Basic validation - removed grouping checks since using pre-generated groups
 
     runner = LinkedbookBenchmarkRunner(args)
     with logging_redirect_tqdm():
