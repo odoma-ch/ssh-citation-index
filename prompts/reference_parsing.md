@@ -41,9 +41,8 @@ Given the provided text, parse all full reference entries and format them accord
    - "middle_name": string (empty if not present)
    - "surname": string
   Include all authors that are listed in the reference.
-3. Ensure the output is valid JSON, with no trailing commas.
-4. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
-5. If there are no references, return an empty list.
+1. Ensure the output is valid JSON, with no trailing commasl, and must contain only the JSON (no explanations, markdown, or extra text).
+2. If there are no references, return an empty list.
 
 ### Example
 

@@ -32,7 +32,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 
 from citation_index.llm.client import LLMClient
 from citation_index.pipelines.reference_parsing import parse_reference_strings
-from citation_index.core.models import References
+from citation_index.core.models import References, Reference
 from citation_index.evaluation.ref_metrics import RefEvaluator
 
 
@@ -84,7 +84,7 @@ class LinkedbookBenchmarkRunner:
             endpoint=self.args.api_base,
             model=self.args.model_name,
             api_key=self.args.api_key,
-            timeout = 180,
+            timeout = 300,  
             first_token_timeout = 60,
             max_retries = 3,
         )
@@ -455,7 +455,18 @@ class LinkedbookBenchmarkRunner:
                 pred_batches.append(refs_obj)
                 
                 # Extract ground truth for this group and convert to References
-                gt_batch = [r["ground_truth"] for r in group]
+                # Handle both formats: full LinkedBook format with 'tags' and flattened format
+                gt_batch = []
+                for r in group:
+                    gt_item = r["ground_truth"]
+                    if "tags" in gt_item:
+                        # Full LinkedBook format
+                        gt_batch.append(gt_item)
+                    else:
+                        # Flattened format - wrap in tags structure
+                        wrapped_gt = {"tags": gt_item, "language": "", "dataset": "test"}
+                        gt_batch.append(wrapped_gt)
+                
                 gt_refs_obj = References.from_linkedbook(gt_batch)
                 gt_batches.append(gt_refs_obj)
         else:
@@ -466,7 +477,15 @@ class LinkedbookBenchmarkRunner:
                 pred_batches.append(refs_obj)
                 
                 # Convert ground truth to References
-                gt_refs_obj = References.from_linkedbook([result["ground_truth"]])
+                # Handle both formats: full LinkedBook format with 'tags' and flattened format
+                gt_item = result["ground_truth"]
+                if "tags" in gt_item:
+                    # Full LinkedBook format
+                    gt_refs_obj = References.from_linkedbook([gt_item])
+                else:
+                    # Flattened format - wrap in tags structure
+                    wrapped_gt = {"tags": gt_item, "language": "", "dataset": "test"}
+                    gt_refs_obj = References.from_linkedbook([wrapped_gt])
                 gt_batches.append(gt_refs_obj)
         
         return pred_batches, gt_batches
@@ -505,7 +524,16 @@ class LinkedbookBenchmarkRunner:
                 for task_id in sorted_task_ids:
                     group = batch_groups[task_id]
                     parsed_refs = [r["parsed_result"] for r in group]
-                    gt_items = [r["ground_truth"] for r in group]
+                    # Handle both formats for ground truth
+                    gt_items = []
+                    for r in group:
+                        gt_item = r["ground_truth"]
+                        if "tags" in gt_item:
+                            gt_items.append(gt_item)
+                        else:
+                            wrapped_gt = {"tags": gt_item, "language": "", "dataset": "test"}
+                            gt_items.append(wrapped_gt)
+                    
                     refs_obj = References.from_dict(parsed_refs)
                     gt_refs_obj = References.from_linkedbook(gt_items)
                     filtered_pred_batches.append(refs_obj)
@@ -515,7 +543,15 @@ class LinkedbookBenchmarkRunner:
                 for result in lang_data:
                     parsed_result = result["parsed_result"]
                     refs_obj = References.from_dict([parsed_result] if parsed_result else [])
-                    gt_refs_obj = References.from_linkedbook([result["ground_truth"]])
+                    
+                    # Handle both formats for ground truth
+                    gt_item = result["ground_truth"]
+                    if "tags" in gt_item:
+                        gt_refs_obj = References.from_linkedbook([gt_item])
+                    else:
+                        wrapped_gt = {"tags": gt_item, "language": "", "dataset": "test"}
+                        gt_refs_obj = References.from_linkedbook([wrapped_gt])
+                    
                     filtered_pred_batches.append(refs_obj)
                     filtered_gt_batches.append(gt_refs_obj)
             
@@ -569,6 +605,7 @@ class LinkedbookBenchmarkRunner:
                 "prompt_name": self.args.prompt_name,
                 "fuzzy_threshold": self.args.fuzzy_threshold,
                 "eval_mode": self.args.eval_mode,
+                "focus_fields": getattr(self.args, 'focus_fields', None),
                 "total_references": len(results_data),
                 "llm_duration_sec": round(self.llm_duration, 2) if self.llm_duration else None,
             },
@@ -577,85 +614,203 @@ class LinkedbookBenchmarkRunner:
             "detailed_results": []
         }
         
-        # Add detailed results for each reference
-        for i, result in enumerate(results_data):
-            detailed_result = {
-                "index": i,
-                "task_id": result.get("task_id", "unknown"),
-                "reference_string": result.get("reference_string", ""),
-                "ground_truth": result.get("ground_truth", {}),
-                "llm_response": result.get("llm_response", ""),
-                "parsed_result": result.get("parsed_result", {}),
-                "parsing_error": result.get("parsing_error", False),
-                "language": result.get("ground_truth", {}).get("language", ""),
-            }
-            
-            # Add individual scoring if possible
-            gt = result.get("ground_truth", {})
-            tags = gt.get("tags", {})
-            parsed = result.get("parsed_result", {})
-            
-            # Simple field-by-field comparison for this individual reference
-            field_scores = {}
-            
-            # Field scoring
-            gt_title = tags.get("title", "").strip()
-            gt_place = tags.get("publicationplace", "").strip() 
-            gt_year = tags.get("year", "") or tags.get("publicationnumber-year", "")
-            
-            parsed_title = parsed.get("full_title", "")
-            parsed_place = parsed.get("publication_place", "")
-            parsed_year = parsed.get("publication_date", "")
-            
-            # Simple exact match scoring for individual reference
-            field_scores["title_exact_match"] = bool(gt_title and parsed_title and gt_title.lower().strip() == str(parsed_title).lower().strip())
-            field_scores["place_exact_match"] = bool(gt_place and parsed_place and gt_place.lower().strip() == str(parsed_place).lower().strip())
-            field_scores["year_exact_match"] = bool(gt_year and parsed_year and str(gt_year).strip() == str(parsed_year).strip())
-            
-            # Author scoring
-            gt_author_text = tags.get("author", "")
-            parsed_authors = parsed.get("authors", [])
-            
-            # Simple author comparison
-            field_scores["has_gt_author"] = bool(gt_author_text.strip())
-            field_scores["has_parsed_authors"] = bool(parsed_authors)
-            field_scores["author_count_match"] = False
-            field_scores["author_similarity"] = 0.0
-            
-            if gt_author_text.strip() and parsed_authors:
-                # Use the same canonicalization logic from evaluation
-                from citation_index.evaluation.ref_metrics import _person_to_canonical
-                from citation_index.core.models import Reference
+        # Group results by task_id for better organization
+        if self.args.mode == "grouped":
+            # Group by task_id to show all references from the same group together
+            task_groups = {}
+            for i, result in enumerate(results_data):
+                task_id = result.get("task_id", "unknown")
+                if task_id not in task_groups:
+                    task_groups[task_id] = {
+                        "task_id": task_id,
+                        "references": [],
+                        "llm_response": result.get("llm_response", ""),  # Same for all refs in group
+                        "parsing_error": result.get("parsing_error", False),  # Same for all refs in group
+                    }
                 
-                gt_authors = [Reference._canonicalize_author_token(a) for a in Reference._split_gt_authors(gt_author_text)]
-                parsed_author_tokens = []
+                # Add this reference to the group
+                task_groups[task_id]["references"].append({
+                    "index": i,
+                    "reference_string": result.get("reference_string", ""),
+                    "ground_truth": result.get("ground_truth", {}),
+                    "parsed_result": result.get("parsed_result", {}),
+                    "language": result.get("ground_truth", {}).get("language", ""),
+                })
+            
+            # Convert to list and add individual scores for each reference in the group
+            for task_id in sorted(task_groups.keys()):
+                group_data = task_groups[task_id]
                 
-                for author in parsed_authors:
-                    if isinstance(author, dict):
-                        # Handle case where authors might be dictionaries
-                        canonical = _person_to_canonical(author) if hasattr(author, 'model_fields') else str(author)
+                # Add individual scores for each reference in this group
+                for ref_data in group_data["references"]:
+                    gt = ref_data["ground_truth"]
+                    tags = gt.get("tags", {})
+                    parsed = ref_data["parsed_result"]
+                    
+                    # Create a mini-evaluator to use the same logic as the main evaluation
+                    from citation_index.evaluation.ref_metrics import RefEvaluator
+                    mini_evaluator = RefEvaluator(
+                        mode=self.args.eval_mode,
+                        fuzzy_threshold=self.args.fuzzy_threshold
+                    )
+                    
+                    # Simple field-by-field comparison for this individual reference
+                    field_scores = {}
+                    
+                    # Field scoring
+                    gt_title = tags.get("title", "").strip()
+                    gt_place = tags.get("publicationplace", "").strip() 
+                    gt_year = tags.get("year", "") or tags.get("publicationnumber-year", "")
+                    
+                    parsed_title = parsed.get("full_title", "")
+                    parsed_place = parsed.get("publication_place", "")
+                    parsed_year = parsed.get("publication_date", "")
+                    
+                    # Use the same evaluation logic as the main RefEvaluator
+                    field_scores["title_match_score"] = float(mini_evaluator._is_match(gt_title, parsed_title)) if gt_title and parsed_title else 0.0
+                    field_scores["place_match_score"] = float(mini_evaluator._is_match(gt_place, parsed_place)) if gt_place and parsed_place else 0.0
+                    field_scores["year_match_score"] = float(mini_evaluator._is_match(gt_year, parsed_year)) if gt_year and parsed_year else 0.0
+                    
+                    # Author scoring using RefEvaluator's field matching logic
+                    gt_author_text = tags.get("author", "")
+                    parsed_authors_raw = parsed.get("authors", [])
+                    
+                    # Convert raw author dictionaries to Person objects
+                    parsed_authors = []
+                    if parsed_authors_raw:
+                        from citation_index.core.models.person import Person
+                        for author_data in parsed_authors_raw:
+                            if isinstance(author_data, dict):
+                                try:
+                                    person = Person(**author_data)
+                                    parsed_authors.append(person)
+                                except Exception:
+                                    # Fallback to string representation if Person creation fails
+                                    parsed_authors.append(str(author_data))
+                            else:
+                                parsed_authors.append(author_data)
+                    
+                    # Simple author comparison metadata
+                    field_scores["has_gt_author"] = bool(gt_author_text.strip())
+                    field_scores["has_parsed_authors"] = bool(parsed_authors)
+                    
+                    # Convert ground truth authors
+                    gt_authors = Reference._split_gt_authors(gt_author_text) if gt_author_text else []
+                    
+                    # Use RefEvaluator's _field_match method for proper author comparison
+                    matches, n_pred, n_label = mini_evaluator._field_match(parsed_authors, gt_authors)
+                    
+                    # Calculate author-specific metrics
+                    field_scores["author_count_match"] = n_pred == n_label
+                    if n_label > 0:
+                        field_scores["author_similarity"] = float(matches) / float(n_label)
                     else:
-                        canonical = str(author)
-                    if canonical:
-                        parsed_author_tokens.append(Reference._canonicalize_author_token(canonical))
+                        field_scores["author_similarity"] = 0.0
+                    
+                    field_scores["author_match_count"] = int(matches) if mini_evaluator.mode != 'soft_fuzzy' else round(float(matches), 2)
+                    
+                    # Overall field match score including author similarity
+                    field_scores["field_match_score_continuous"] = (
+                        field_scores["title_match_score"] + 
+                        field_scores["place_match_score"] + 
+                        field_scores["year_match_score"] +
+                        field_scores["author_similarity"]
+                    ) / 4
+                    
+                    ref_data["individual_scores"] = field_scores
                 
-                field_scores["author_count_match"] = len(gt_authors) == len(parsed_author_tokens)
+                analysis["detailed_results"].append(group_data)
+        else:
+            # For single mode, keep the original behavior
+            for i, result in enumerate(results_data):
+                detailed_result = {
+                    "index": i,
+                    "task_id": result.get("task_id", "unknown"),
+                    "reference_string": result.get("reference_string", ""),
+                    "ground_truth": result.get("ground_truth", {}),
+                    "llm_response": result.get("llm_response", ""),
+                    "parsed_result": result.get("parsed_result", {}),
+                    "parsing_error": result.get("parsing_error", False),
+                    "language": result.get("ground_truth", {}).get("language", ""),
+                }
                 
-                # Simple author similarity (exact matches)
-                if gt_authors and parsed_author_tokens:
-                    matches = sum(1 for gt_a in gt_authors if any(gt_a == p_a for p_a in parsed_author_tokens))
-                    field_scores["author_similarity"] = matches / max(len(gt_authors), len(parsed_author_tokens))
-            
-            # Overall field match score
-            field_matches = sum([
-                field_scores["title_exact_match"],
-                field_scores["place_exact_match"], 
-                field_scores["year_exact_match"]
-            ])
-            field_scores["field_match_score"] = field_matches / 3
-            
-            detailed_result["individual_scores"] = field_scores
-            analysis["detailed_results"].append(detailed_result)
+                # Add individual scoring if possible
+                gt = result.get("ground_truth", {})
+                tags = gt.get("tags", {})
+                parsed = result.get("parsed_result", {})
+                
+                # Create a mini-evaluator to use the same logic as the main evaluation
+                from citation_index.evaluation.ref_metrics import RefEvaluator
+                mini_evaluator = RefEvaluator(
+                    mode=self.args.eval_mode,
+                    fuzzy_threshold=self.args.fuzzy_threshold
+                )
+                
+                # Simple field-by-field comparison for this individual reference
+                field_scores = {}
+                
+                # Field scoring
+                gt_title = tags.get("title", "").strip()
+                gt_place = tags.get("publicationplace", "").strip() 
+                gt_year = tags.get("year", "") or tags.get("publicationnumber-year", "")
+                
+                parsed_title = parsed.get("full_title", "")
+                parsed_place = parsed.get("publication_place", "")
+                parsed_year = parsed.get("publication_date", "")
+                
+                # Use the same evaluation logic as the main RefEvaluator
+                field_scores["title_match_score"] = float(mini_evaluator._is_match(gt_title, parsed_title)) if gt_title and parsed_title else 0.0
+                field_scores["place_match_score"] = float(mini_evaluator._is_match(gt_place, parsed_place)) if gt_place and parsed_place else 0.0
+                field_scores["year_match_score"] = float(mini_evaluator._is_match(gt_year, parsed_year)) if gt_year and parsed_year else 0.0
+                
+                # Author scoring using RefEvaluator's field matching logic
+                gt_author_text = tags.get("author", "")
+                parsed_authors_raw = parsed.get("authors", [])
+                
+                # Convert raw author dictionaries to Person objects
+                parsed_authors = []
+                if parsed_authors_raw:
+                    from citation_index.core.models.person import Person
+                    for author_data in parsed_authors_raw:
+                        if isinstance(author_data, dict):
+                            try:
+                                person = Person(**author_data)
+                                parsed_authors.append(person)
+                            except Exception:
+                                # Fallback to string representation if Person creation fails
+                                parsed_authors.append(str(author_data))
+                        else:
+                            parsed_authors.append(author_data)
+                
+                # Simple author comparison metadata
+                field_scores["has_gt_author"] = bool(gt_author_text.strip())
+                field_scores["has_parsed_authors"] = bool(parsed_authors)
+                
+                # Convert ground truth authors
+                gt_authors = Reference._split_gt_authors(gt_author_text) if gt_author_text else []
+                
+                # Use RefEvaluator's _field_match method for proper author comparison
+                matches, n_pred, n_label = mini_evaluator._field_match(parsed_authors, gt_authors)
+                
+                # Calculate author-specific metrics
+                field_scores["author_count_match"] = n_pred == n_label
+                if n_label > 0:
+                    field_scores["author_similarity"] = float(matches) / float(n_label)
+                else:
+                    field_scores["author_similarity"] = 0.0
+                
+                field_scores["author_match_count"] = int(matches) if mini_evaluator.mode != 'soft_fuzzy' else round(float(matches), 2)
+                
+                # Overall field match score including author similarity
+                field_scores["field_match_score_continuous"] = (
+                    field_scores["title_match_score"] + 
+                    field_scores["place_match_score"] + 
+                    field_scores["year_match_score"] +
+                    field_scores["author_similarity"]
+                ) / 4
+                
+                detailed_result["individual_scores"] = field_scores
+                analysis["detailed_results"].append(detailed_result)
         
         # Save the detailed analysis
         with analysis_path.open("w", encoding="utf-8") as f:
@@ -699,6 +854,15 @@ class LinkedbookBenchmarkRunner:
         # Overall metrics
         tqdm.write(f"Overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}")
         
+        # Focused metrics (if focus_fields were used)
+        if 'focused_precision' in metrics:
+            f_focused_p = float(metrics.get('focused_precision', 0.0))
+            f_focused_r = float(metrics.get('focused_recall', 0.0))
+            f_focused_micro = float(metrics.get('focused_micro_f1', 0.0))
+            f_focused_macro = float(metrics.get('focused_macro_f1', 0.0))
+            focus_fields_str = ', '.join(getattr(self.args, 'focus_fields', []))
+            tqdm.write(f"Focused ({focus_fields_str}): P={f_focused_p:.4f}, R={f_focused_r:.4f}, micro-F1={f_focused_micro:.4f}, macro-F1={f_focused_macro:.4f}")
+        
         # Per-field breakdown
         if per_field_map:
             for field_name in sorted(per_field_map.keys()):
@@ -730,7 +894,17 @@ class LinkedbookBenchmarkRunner:
                 lang_errors = pe.get('total_errors', 0)
                 lang_tasks = pe.get('total_tasks', 0)
                 lang_error_rate = pe.get('error_rate', 0.0)
+                
+                # Main language metrics
                 tqdm.write(f"  {lang}: P={lp:.4f}, R={lr:.4f}, F1={lf1:.4f}, Errors={lang_errors}/{lang_tasks}({lang_error_rate}%)")
+                
+                # Show focused metrics if available
+                if 'focused_precision' in m:
+                    l_focused_p = float(m.get('focused_precision', 0.0))
+                    l_focused_r = float(m.get('focused_recall', 0.0))
+                    l_focused_f1 = float(m.get('focused_micro_f1', 0.0))
+                    focus_fields_str = ', '.join(getattr(self.args, 'focus_fields', []))
+                    tqdm.write(f"    Focused ({focus_fields_str}): P={l_focused_p:.4f}, R={l_focused_r:.4f}, F1={l_focused_f1:.4f}")
         tqdm.write("--------------------------------------------\n")
 
         # Optionally append to a scores file
@@ -756,6 +930,16 @@ class LinkedbookBenchmarkRunner:
                     f.write("\n")
                     # Write structured output to file as well
                     f.write(f"Overall: P={f_p:.4f}, R={f_r:.4f}, micro-F1={f_micro:.4f}, macro-F1={f_macro:.4f}\n")
+                    
+                    # Write focused metrics if available
+                    if 'focused_precision' in metrics:
+                        f_focused_p = float(metrics.get('focused_precision', 0.0))
+                        f_focused_r = float(metrics.get('focused_recall', 0.0))
+                        f_focused_micro = float(metrics.get('focused_micro_f1', 0.0))
+                        f_focused_macro = float(metrics.get('focused_macro_f1', 0.0))
+                        focus_fields_str = ', '.join(getattr(self.args, 'focus_fields', []))
+                        f.write(f"Focused ({focus_fields_str}): P={f_focused_p:.4f}, R={f_focused_r:.4f}, micro-F1={f_focused_micro:.4f}, macro-F1={f_focused_macro:.4f}\n")
+                    
                     if per_field_map:
                         for field_name in sorted(per_field_map.keys()):
                             field_p = float(per_field_precision.get(field_name, 0.0))
@@ -773,6 +957,14 @@ class LinkedbookBenchmarkRunner:
                             lf1 = float(m.get('overall_micro_f1', 0.0))
                             
                             f.write(f"  {lang}: P={lp:.4f}, R={lr:.4f}, F1={lf1:.4f}\n")
+                            
+                            # Write focused metrics for this language if available
+                            if 'focused_precision' in m:
+                                l_focused_p = float(m.get('focused_precision', 0.0))
+                                l_focused_r = float(m.get('focused_recall', 0.0))
+                                l_focused_f1 = float(m.get('focused_micro_f1', 0.0))
+                                focus_fields_str = ', '.join(getattr(self.args, 'focus_fields', []))
+                                f.write(f"    Focused ({focus_fields_str}): P={l_focused_p:.4f}, R={l_focused_r:.4f}, F1={l_focused_f1:.4f}\n")
                 tqdm.write(f"Benchmark summary appended to: {scores_path}")
             except Exception as e:
                 logging.error(f"Failed to save summary to {self.args.save_scores}: {e}")

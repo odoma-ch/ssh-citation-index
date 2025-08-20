@@ -69,8 +69,8 @@ class References(BaseModel):
             references=self.references, file_path=file_path, pretty_print=pretty_print
         )
     @classmethod
-    def from_dict(cls, data: Dict) -> "References":
-        """Create References from a dictionary."""
+    def from_dict(cls, data: List[Dict[str, Any]]) -> "References":
+        """Create References from a list of dictionaries."""
         references = []
         for item in data:
             if 'reference' in item:

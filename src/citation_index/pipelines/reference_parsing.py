@@ -17,6 +17,7 @@ def parse_reference_strings(
     prompt_name: str = "prompts/reference_parsing.md",
     include_schema: bool = True,
     temperature: float = 0.0,
+    use_streaming: bool = True,
 ) -> References:
     """Parse a list of reference strings into structured References via LLM."""
     text = "\n".join(reference_lines)
@@ -28,6 +29,7 @@ def parse_reference_strings(
         json_output=True,
         json_schema=prompt_obj.json_schema,
         temperature=temperature,
+        use_streaming=use_streaming,
     )
     parsed = safe_json_parse(response)
     if isinstance(parsed, list):

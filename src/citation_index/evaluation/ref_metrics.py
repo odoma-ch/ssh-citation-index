@@ -283,7 +283,11 @@ class RefEvaluator:
             type_b = type(b).__name__ if not b_is_str else 'str'
             logging.warning(f"Type mismatch in field comparison: {type_a} vs {type_b}. Converting to strings for comparison.")
             
-            return self._is_match(a_str, b_str)
+            # For Person vs string comparison, try both name formats
+            if (a_is_person and b_is_str) or (a_is_str and b_is_person):
+                return self._match_person_vs_string(a, b, a_str, b_str)
+            else:
+                return self._is_match(a_str, b_str)
     
     def _match_person_objects(self, person_a, person_b):
         """Match two Person objects by comparing their fields."""
@@ -317,6 +321,50 @@ class RefEvaluator:
             return matches / total_fields
         else:
             return matches == total_fields
+    
+    def _match_person_vs_string(self, a, b, a_str, b_str):
+        """Handle matching between Person object and string with flexible name formats.
+        
+        Tries both "First Last" and "Last, First" formats and returns the higher similarity.
+        """
+        from citation_index.core.models.person import Person
+        
+        # Determine which is the Person and which is the string
+        if isinstance(a, Person):
+            person_obj = a
+            string_val = b_str
+        else:
+            person_obj = b
+            string_val = a_str
+        
+        # Get the standard format match (First Middle Last)
+        standard_match = self._is_match(a_str, b_str)
+        
+        # Try reversed format (Last, First Middle) if person has enough name components
+        if (hasattr(person_obj, 'surname') and person_obj.surname and 
+            (hasattr(person_obj, 'first_name') and person_obj.first_name)):
+            
+            # Create reversed format: "Surname, First [Middle]"
+            reversed_parts = [str(person_obj.surname)]
+            name_parts = []
+            if hasattr(person_obj, 'first_name') and person_obj.first_name:
+                name_parts.append(str(person_obj.first_name))
+            if hasattr(person_obj, 'middle_name') and person_obj.middle_name:
+                name_parts.append(str(person_obj.middle_name))
+            
+            if name_parts:
+                reversed_format = f"{reversed_parts[0]}, {' '.join(name_parts)}"
+                reversed_match = self._is_match(reversed_format, string_val)
+                
+                # Return the higher similarity/match
+                if self.mode == 'soft_fuzzy':
+                    return max(standard_match, reversed_match)
+                else:
+                    # For exact/fuzzy boolean modes, return True if either format matches
+                    return standard_match or reversed_match
+        
+        # If we can't create a reversed format, return the standard match
+        return standard_match
     
     def _convert_to_string(self, obj):
         """Convert Person/Organization/str to string representation."""
