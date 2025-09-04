@@ -31,10 +31,10 @@ def get_pdf_page_count(pdf_path):
 
 def parse_goldstandard_txt():
     """
-    Parse the GS_info.txt file to extract paper information (titles, categories, etc.).
+    Parse the GoldStandard.txt file to extract paper information (titles, categories, etc.).
     Returns a dictionary mapping file_id to paper info.
     """
-    goldstandard_path = Path("benchmarks/cex/GS_info.txt")
+    goldstandard_path = Path("benchmarks/cex/GoldStandard.txt")
     
     if not goldstandard_path.exists():
         print(f"Warning: {goldstandard_path} does not exist")
@@ -265,7 +265,7 @@ def process_cex_data():
     """
     Process CEX dataset to:
     1. Process all PDFs in the all_pdfs folder
-    2. Extract paper information from GS_info.txt
+    2. Extract paper information from GoldStandard.txt
     3. Load actual references from TEI XML files
     4. Match PDFs with paper information and references
     """
@@ -283,10 +283,9 @@ def process_cex_data():
     
     if all_pdfs_path.exists():
         for pdf_file in all_pdfs_path.glob("*.pdf"):
-            # Skip system files and test files
+            # Skip system files
             if (pdf_file.name.startswith('.') or 
-                pdf_file.name == "Thumbs.db" or 
-                pdf_file.name.startswith('z_notes_test')):
+                pdf_file.name == "Thumbs.db"):
                 continue
                 
             file_id = pdf_file.stem  # filename without extension
@@ -345,12 +344,12 @@ def process_cex_data():
     extra_papers = pdf_papers - gs_papers
     
     if missing_papers:
-        print(f"\nPapers in GS_info.txt but missing PDFs: {len(missing_papers)}")
+        print(f"\nPapers in GoldStandard.txt but missing PDFs: {len(missing_papers)}")
         for paper in sorted(missing_papers):
             print(f"  - {paper}")
     
     if extra_papers:
-        print(f"\nPDFs without GS_info.txt entries: {len(extra_papers)}")
+        print(f"\nPDFs without GoldStandard.txt entries: {len(extra_papers)}")
         for paper in sorted(extra_papers):
             print(f"  - {paper}")
     
