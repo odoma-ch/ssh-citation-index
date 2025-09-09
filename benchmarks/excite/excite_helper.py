@@ -343,6 +343,10 @@ def load_excite_data() -> Tuple[pd.DataFrame, Dict]:
         process_papers_folders()
 
     pdf_df = pd.read_csv(pdf_info_path)
+    
+    # Update file paths to point to consolidated all_pdfs folder
+    pdf_df['file_path'] = pdf_df['filename'].apply(lambda x: f"benchmarks/excite/all_pdfs/{x}")
+    
     with open(references_path, "r", encoding="utf-8") as f:
         references_data = json.load(f)
 

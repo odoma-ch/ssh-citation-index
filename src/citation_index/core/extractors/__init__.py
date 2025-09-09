@@ -8,6 +8,7 @@ from .base import BaseExtractor, ExtractResult
 from .pymupdf import PyMuPDFExtractor
 from .marker import MarkerExtractor
 from .mineru import MineruExtractor
+from .grobid import GrobidExtractor
 from .factory import ExtractorFactory
 
 __all__ = [
@@ -16,5 +17,6 @@ __all__ = [
     "PyMuPDFExtractor",
     "MarkerExtractor",
     "MineruExtractor",
+    "GrobidExtractor",
     "ExtractorFactory"
 ] 

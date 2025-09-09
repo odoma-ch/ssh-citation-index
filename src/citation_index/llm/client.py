@@ -7,9 +7,10 @@ import json
 import time
 import threading
 import asyncio
+import os
 from contextlib import contextmanager
-# import openai
-from langfuse.openai import openai
+import openai
+# from langfuse.openai import openai
 import aiohttp
 import concurrent.futures
 import logging
@@ -84,7 +85,8 @@ class LLMClient:
         if api_key:
             self.client = openai.OpenAI(base_url=endpoint, api_key=api_key)
         else:
-            self.client = openai.OpenAI(base_url=endpoint)
+            # For local vLLM deployments that don't require API keys
+            self.client = openai.OpenAI(base_url=endpoint, api_key="dummy-key")
     
     def _stream_with_timeout(self, **kwargs) -> Iterator[str]:
         """Stream response with first-token timeout detection."""
@@ -105,33 +107,39 @@ class LLMClient:
                 if chunk.choices[0].delta.content is not None:
                     yield chunk.choices[0].delta.content
     
+    def _get_response_format_and_prompt(self, prompt: str, json_schema: str = None, json_output: bool = False, max_tokens: int = None):
+        """Get response format and potentially modified prompt for non-DeepSeek models."""
+        response_format = None
+        modified_prompt = prompt
+        modified_max_tokens = max_tokens
+        
+        if json_schema:
+            # Use json_schema for strict schemas (vLLM/OpenAI)
+            response_format = {
+               "type": "json_schema",
+               "json_schema": json_schema
+            }
+        elif json_output:
+            # Use json_object for simple JSON (vLLM/OpenAI)
+            response_format = {"type": "json_object"}
+            
+        return response_format, modified_prompt, modified_max_tokens
+    
     def _call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.3, 
                         max_tokens: int = None, json_schema: str = None, json_output: bool = False,
                         use_streaming: bool = True) -> str:
         """Call LLM with timeout and retry logic."""
         model = model if model else self.model
         
-        response_format = None
-        is_deepseek = "api.deepseek.com" in self.endpoint
-
-        if is_deepseek and (json_schema or json_output):
-            response_format = {"type": "json_object"}
-            max_tokens = 8000
-        elif json_schema:
-            response_format = {
-               "type": "json_schema",
-               "json_schema": json_schema
-            }
-        elif json_output:
-            response_format = {
-                "type": "json_object"
-            }
+        response_format, modified_prompt, modified_max_tokens = self._get_response_format_and_prompt(
+            prompt, json_schema, json_output, max_tokens
+        )
         
         kwargs = {
             "model": model,
-            "messages": [{"role": "user", "content": prompt}],
+            "messages": [{"role": "user", "content": modified_prompt}],
             "temperature": temperature,
-            "max_tokens": max_tokens,
+            "max_tokens": modified_max_tokens,
             "stop": ["\n\n\n\n\n"],  # Stop sequence to prevent long non-stopped responses
             "response_format": response_format
         }
@@ -218,10 +226,150 @@ class LLMClient:
             json_output=bool(json_schema),
         )
     
+    
+
+
+class DeepSeekClient(LLMClient):
+    """Client for interacting with DeepSeek API with continuation support and optimized settings"""
+    
+    def __init__(self, endpoint: str = "https://api.deepseek.com/v1", api_key: str = None, model: str = "deepseek-chat"):
+        super().__init__(endpoint=endpoint, model=model, api_key=api_key)
+    
+    def _get_deepseek_response_format_and_prompt(self, prompt: str, json_schema: str = None, json_output: bool = False, max_tokens: int = None, use_continuation: bool = False):
+        """DeepSeek-specific response format and prompt handling."""
+        response_format = None
+        modified_prompt = prompt
+        modified_max_tokens = max_tokens
+        
+        if json_schema or json_output:
+            # DeepSeek: always use json_object + modify prompt + larger max_tokens
+            response_format = {"type": "json_object"}
+            modified_max_tokens = max(max_tokens or 4000, 8000)  # Ensure at least 8k tokens
+            
+            # Add JSON instruction to prompt
+            json_instruction = "\n\nPlease respond in valid JSON format."
+            if "json" not in prompt.lower():
+                modified_prompt = prompt + json_instruction
+        
+        # Add continuation tags instruction if using continuation
+        if use_continuation and (json_output or json_schema):
+            tag_instruction = " Wrap your JSON response with <start> and <end> tags."
+            if "<start>" not in modified_prompt and "<end>" not in modified_prompt:
+                modified_prompt = modified_prompt + tag_instruction
+                
+        return response_format, modified_prompt, modified_max_tokens
+    
+    def call(self, prompt: str, model: str = None, temperature: float = 1, max_tokens: int = None, 
+             json_schema: str = None, json_output: bool = False, use_streaming: bool = True, 
+             use_continuation: bool = True) -> str:
+        """Call DeepSeek API with optional continuation support.
+        
+        Args:
+            prompt: The prompt to send
+            model: Model name (uses self.model if None)
+            temperature: Temperature for generation
+            max_tokens: Maximum tokens per response
+            json_schema: JSON schema for structured output
+            json_output: Whether to request JSON output
+            use_streaming: Whether to use streaming
+            use_continuation: Whether to use continuation for complete responses (default True for JSON)
+        
+        Returns:
+            Complete response string
+        """
+        if use_continuation and (json_output or json_schema):
+            # Use continuation for reliable complete JSON responses
+            messages, response = self.call_with_continuation(
+                prompt=prompt,
+                start_tag='<start>',
+                end_tag='<end>',
+                model=model,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_schema=json_schema,
+                json_output=json_output
+            )
+            return response
+        else:
+            # Use regular call with DeepSeek optimizations
+            return self._deepseek_call_with_retry(
+                prompt=prompt,
+                model=model,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_schema=json_schema,
+                json_output=json_output,
+                use_streaming=use_streaming
+            )
+    
+    def _deepseek_call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.3, 
+                                 max_tokens: int = None, json_schema: str = None, json_output: bool = False,
+                                 use_streaming: bool = True) -> str:
+        """DeepSeek-specific call with retry logic and optimizations."""
+        model = model if model else self.model
+        
+        response_format, modified_prompt, modified_max_tokens = self._get_deepseek_response_format_and_prompt(
+            prompt, json_schema, json_output, max_tokens, use_continuation=False
+        )
+        
+        kwargs = {
+            "model": model,
+            "messages": [{"role": "user", "content": modified_prompt}],
+            "temperature": temperature,
+            "max_tokens": modified_max_tokens,
+            "stop": ["\n\n\n\n\n"],  # Stop sequence to prevent long non-stopped responses
+            "response_format": response_format
+        }
+        
+        last_exception = None
+        
+        for attempt in range(self.max_retries + 1):
+            try:
+                if use_streaming:
+                    # Use streaming for first-token timeout detection
+                    with timeout_context(self.timeout) as timeout_manager:
+                        content_parts = []
+                        for part in self._stream_with_timeout(**kwargs):
+                            timeout_manager.check_timeout()
+                            content_parts.append(part)
+                        return "".join(content_parts)
+                else:
+                    # Use regular call with full timeout
+                    with timeout_context(self.timeout) as timeout_manager:
+                        response = self.client.chat.completions.create(**kwargs)
+                        timeout_manager.check_timeout()
+                        return response.choices[0].message.content
+                        
+            except (TimeoutError, Exception) as e:
+                last_exception = e
+                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
+                
+                if isinstance(e, TimeoutError):
+                    logging.warning(f"DeepSeek timeout on {attempt_info}: {e}")
+                else:
+                    logging.warning(f"DeepSeek error on {attempt_info}: {type(e).__name__}: {e}")
+                
+                if attempt < self.max_retries:
+                    wait_time = min(2 ** attempt, 10)  # Exponential backoff with cap
+                    logging.info(f"Retrying DeepSeek call in {wait_time} seconds...")
+                    time.sleep(wait_time)
+                else:
+                    logging.error(f"All {self.max_retries + 1} DeepSeek attempts failed")
+                    break
+        
+        # If all retries failed, raise the last exception
+        if last_exception:
+            raise last_exception
+        
+        raise RuntimeError("Unexpected: no response and no exception in DeepSeek call")
+    
     def call_with_continuation(self, prompt: str, start_tag: str = "```json", end_tag: str = "```", 
                              model: str = None, temperature: float = 0.3, max_tokens: int = 8192,
                              max_continuations: int = 5, json_schema: str = None, json_output: bool = False) -> str:
-        """Call the LLM API with automatic continuation if response is incomplete.
+        """Call the DeepSeek API with automatic continuation if response is incomplete.
+        
+        This function is specifically designed for DeepSeek models that have a max_token limit of 8k.
+        It automatically continues the conversation if the response is incomplete based on start/end tags.
         
         Args:
             prompt: The initial prompt to send
@@ -229,33 +377,25 @@ class LLMClient:
             end_tag: Tag(s) that indicate the end of the response content (string or list of strings)
             model: Model name to use (uses self.model if None)
             temperature: Temperature for generation
-            max_tokens: Maximum tokens per response
+            max_tokens: Maximum tokens per response (for DeepSeek, will be set to 8k)
             max_continuations: Maximum number of continuation attempts
             json_schema: JSON schema for the response
+            json_output: Whether to request JSON output
         Returns:
-            Complete response string
+            Tuple of (conversation_messages, complete_response_string)
         """
         model = model if model else self.model
         
-        response_format = None
-        is_deepseek = "api.deepseek.com" in self.endpoint
-
-        if is_deepseek and (json_schema or json_output):
-            response_format = {"type": "json_object"}
-        elif json_schema:
-            response_format = {
-               "type": "json_schema",
-               "json_schema": json_schema
-            }
-        elif json_output:
-            response_format = {"type": "json_object"}
+        response_format, modified_prompt, modified_max_tokens = self._get_deepseek_response_format_and_prompt(
+            prompt, json_schema, json_output, max_tokens, use_continuation=True
+        )
         
         # Convert single tags to lists for consistent handling
         start_tags = [start_tag] if isinstance(start_tag, str) else start_tag
         end_tags = [end_tag] if isinstance(end_tag, str) else end_tag
             
         # Initialize conversation history
-        messages = [{"role": "user", "content": prompt}]
+        messages = [{"role": "user", "content": modified_prompt}]
         full_response = ""
         continuation_count = 0
         
@@ -269,7 +409,7 @@ class LLMClient:
                 "model": model,
                 "messages": messages,
                 "temperature": temperature,
-                "max_tokens": max_tokens,
+                "max_tokens": modified_max_tokens,
                 "response_format": response_format
             }
             
@@ -289,7 +429,6 @@ class LLMClient:
             response_complete = any(tag in full_response for tag in end_tags)
             if response_complete:
                 # Response is complete
-                messages.append({"role": "assistant", "content": full_response})
                 logging.info(f"Response completed in {call_number} call(s)")
                 break
             else:
@@ -308,18 +447,21 @@ class LLMClient:
                 messages.append({"role": "user", "content": continuation_prompt})
         
         return messages, full_response
-    
-
-
-class DeepSeekClient(LLMClient):
-    """Client for interacting with DeepSeek API"""
-    
-    def __init__(self, api_key: str):
-        super().__init__(endpoint="https://api.deepseek.com/v1", model="deepseek-chat", api_key=api_key)
         
 
 class VLLMClient(LLMClient):
-    """Client for interacting with VLLM API"""
+    """Client for interacting with vLLM API with optimized settings"""
+    
+    def __init__(self, endpoint: str, model: str, api_key: str = None, **kwargs):
+        """Initialize vLLM client with endpoint and model.
+        
+        Args:
+            endpoint: vLLM API endpoint (e.g., 'http://localhost:8000/v1')
+            model: Model name to use
+            api_key: API key if required (optional for local vLLM)
+            **kwargs: Additional arguments passed to LLMClient
+        """
+        super().__init__(endpoint=endpoint, model=model, api_key=api_key, **kwargs)
     
     def call_with_parsed_structured_output(self, prompt: str, model: str = None, temperature: float = 0.3, json_class: object = None) -> str:
         """Call the LLM API with structured output and timeout protection."""
@@ -371,4 +513,12 @@ class VLLMClient(LLMClient):
     
    
     
-  
+if __name__ == "__main__":
+#     client = openai.OpenAI(
+# 	api_key="sk-9UYVeokX2LsTjZlEGFmzVg",
+# 	base_url="https://llm.graphia-ssh.eu"
+# )
+# model="DeepSeek-V3.1"
+    client = LLMClient(endpoint="https://llm.graphia-ssh.eu", model="DeepSeek-V3.1", api_key=os.getenv("LITELLM_API_KEY"))
+    response = client.call("Hello, how are you?")
+    print(response)

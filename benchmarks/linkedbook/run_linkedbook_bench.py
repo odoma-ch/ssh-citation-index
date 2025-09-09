@@ -30,7 +30,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from citation_index.llm.client import LLMClient
+from citation_index.llm.client import LLMClient, DeepSeekClient
 from citation_index.pipelines.reference_parsing import parse_reference_strings
 from citation_index.core.models import References, Reference
 from citation_index.evaluation.ref_metrics import RefEvaluator
@@ -80,14 +80,23 @@ class LinkedbookBenchmarkRunner:
         else:
             tqdm.write(f"Using pre-generated groups with {len(references)} total references.")
 
-        llm_client = LLMClient(
-            endpoint=self.args.api_base,
-            model=self.args.model_name,
-            api_key=self.args.api_key,
-            timeout=self.args.time_out,  # Use time_out from args
-            first_token_timeout=60,
-            max_retries=3,
-        )
+        # Use DeepSeekClient for DeepSeek models, LLMClient for others
+        if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
+            llm_client = DeepSeekClient(api_key=self.args.api_key,
+                                        endpoint=self.args.api_base,
+                                        model=self.args.model_name)
+            llm_client.timeout = self.args.time_out  # Use time_out from args
+            llm_client.first_token_timeout = 60
+            llm_client.max_retries = 3
+        else:
+            llm_client = LLMClient(
+                endpoint=self.args.api_base,
+                model=self.args.model_name,
+                api_key=self.args.api_key,
+                timeout=self.args.time_out,  # Use time_out from args
+                first_token_timeout=60,
+                max_retries=3,
+            )
 
         # Optionally load previously saved results
         if self.args.results_path:

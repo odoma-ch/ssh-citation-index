@@ -14,7 +14,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from typing import List
 
 from citation_index.core.extractors import ExtractorFactory
-from citation_index.llm.client import LLMClient
+from citation_index.llm.client import LLMClient, DeepSeekClient
 from citation_index.pipelines.reference_extraction import (
     extract_text_references, extract_text_references_section_detect, extract_text_references_by_page
 )
@@ -53,14 +53,24 @@ class BenchmarkRunner:
         self.pdf_df = pdf_df
         
         extractor = ExtractorFactory.create(self.args.extractor)
-        llm_client = LLMClient(
-            endpoint=self.args.api_base,
-            model=self.args.model_name,
-            api_key=self.args.api_key,
-            timeout = 180,
-            first_token_timeout = 60,
-            max_retries = 3,
-        )
+        
+        # Use DeepSeekClient for DeepSeek models, LLMClient for others
+        if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
+            llm_client = DeepSeekClient(api_key=self.args.api_key, 
+                                        endpoint=self.args.api_base,
+                                        model=self.args.model_name)
+            llm_client.timeout = 180
+            llm_client.first_token_timeout = 60
+            llm_client.max_retries = 3
+        else:
+            llm_client = LLMClient(
+                endpoint=self.args.api_base,
+                model=self.args.model_name,
+                api_key=self.args.api_key,
+                timeout=180,
+                first_token_timeout=60,
+                max_retries=3,
+            )
         
         # ---------------------------------------------------------------
         # Optional fast-path: load previously saved LLM responses and run
@@ -96,21 +106,25 @@ class BenchmarkRunner:
                 try:
                     input_text = None
                     if self.args.task != "parsing":
-                        # Check if markdown file exists for reuse
-                        markdown_path = markdown_dir / f"{file_id}_{self.args.extractor}.md"
-                        if markdown_path.exists():
-                            with open(markdown_path, "r", encoding="utf-8") as md_file:
-                                input_text = md_file.read()
+                        # Special case for Grobid - don't extract text, just pass the file path
+                        if self.args.extractor == "grobid":
+                            input_text = None  # Not needed for Grobid
                         else:
-                            # Extract text from PDF
-                            extracted_text_result = extractor.extract(file_path)
-                            if not extracted_text_result.text.strip():
-                                logging.warning(f"No text extracted from {file_id}.pdf. Skipping.")
-                                continue
-                            input_text = extracted_text_result.text
-                            # Save extracted text to markdown file for reuse
-                            with open(markdown_path, "w", encoding="utf-8") as md_file:
-                                md_file.write(input_text)
+                            # Check if markdown file exists for reuse
+                            markdown_path = markdown_dir / f"{file_id}_{self.args.extractor}.md"
+                            if markdown_path.exists():
+                                with open(markdown_path, "r", encoding="utf-8") as md_file:
+                                    input_text = md_file.read()
+                            else:
+                                # Extract text from PDF
+                                extracted_text_result = extractor.extract(file_path)
+                                if not extracted_text_result.text.strip():
+                                    logging.warning(f"No text extracted from {file_id}.pdf. Skipping.")
+                                    continue
+                                input_text = extracted_text_result.text
+                                # Save extracted text to markdown file for reuse
+                                with open(markdown_path, "w", encoding="utf-8") as md_file:
+                                    md_file.write(input_text)
                     else: # parsing task
                         input_text = "\n".join(gt_references)
                     
@@ -118,15 +132,21 @@ class BenchmarkRunner:
                         "file_id": file_id,
                         "input_text": input_text,
                         "gt_references": gt_references,
+                        "file_path": file_path,  # Add file path for Grobid
                     }
                     llm_tasks.append(task_info)
                 except Exception as e:
                     logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
 
-            # 2. Concurrently call LLM for all tasks
+            # 2. Concurrently process all tasks
             # For method 3, use max_workers=1 since it handles parallelization internally
+            # For Grobid, we're not using LLM but still use parallel processing
             effective_max_workers = 1 if getattr(self.args, 'method', 1) == 3 else self.args.max_workers
-            tqdm.write(f"Submitting {len(llm_tasks)} tasks to LLM with {effective_max_workers} workers (method {getattr(self.args, 'method', 1)}).")
+            
+            if self.args.extractor == "grobid":
+                tqdm.write(f"Processing {len(llm_tasks)} tasks with Grobid extractor using {effective_max_workers} workers.")
+            else:
+                tqdm.write(f"Submitting {len(llm_tasks)} tasks to LLM with {effective_max_workers} workers (method {getattr(self.args, 'method', 1)}).")
             # Start timer – we only want to measure the duration of the actual
             # LLM requests (Step 2).
             start_llm_timer = time.time()
@@ -137,7 +157,8 @@ class BenchmarkRunner:
                     for task in llm_tasks
                 }
                 
-                for future in tqdm(as_completed(future_to_task), total=len(llm_tasks), desc="Executing LLM calls"):
+                progress_desc = "Processing with Grobid" if self.args.extractor == "grobid" else "Executing LLM calls"
+                for future in tqdm(as_completed(future_to_task), total=len(llm_tasks), desc=progress_desc):
                     task = future_to_task[future]
                     file_id = task["file_id"]
                     logging.debug(f"Processing response for file_id: {file_id}")
@@ -201,15 +222,20 @@ class BenchmarkRunner:
             return "\n".join(lines)
 
         elif self.args.task == "extraction_and_parsing":
-            include_schema = "pydantic" in self.args.prompt_name
-            refs = run_pdf_one_step(
-                text_or_pdf=input_text,
-                llm_client=llm_client,
-                extractor=None,
-                prompt_name=str(prompt_path),
-                include_schema=include_schema,
-            )
-            return json.dumps(refs.model_dump())
+            # Special case for Grobid extractor - bypass LLM and use Grobid directly
+            if self.args.extractor == "grobid":
+                refs = self._execute_grobid_extraction(task_info)
+                return json.dumps(refs.model_dump())
+            else:
+                include_schema = "pydantic" in self.args.prompt_name
+                refs = run_pdf_one_step(
+                    text_or_pdf=input_text,
+                    llm_client=llm_client,
+                    extractor=None,
+                    prompt_name=str(prompt_path),
+                    include_schema=include_schema,
+                )
+                return json.dumps(refs.model_dump())
 
         elif self.args.task == "parsing":
             include_schema = "pydantic" in self.args.prompt_name
@@ -263,6 +289,61 @@ class BenchmarkRunner:
         else:
             raise ValueError(f"Unsupported extraction method: {method}. Must be 1, 2, or 3.")
 
+    def _execute_grobid_extraction(self, task_info) -> References:
+        """
+        Execute Grobid extraction directly from PDF file.
+        
+        This method bypasses LLM processing entirely and uses Grobid service
+        to extract structured references directly from the PDF.
+        
+        Args:
+            task_info: Dictionary containing file_id and file_path
+            
+        Returns:
+            References object containing extracted references
+        """
+        from citation_index.core.extractors.grobid import GrobidExtractor
+        
+        file_id = task_info["file_id"]
+        pdf_path = Path(task_info["file_path"])
+        
+        if not pdf_path.exists():
+            logging.error(f"PDF file not found: {pdf_path}")
+            return References(references=[])
+        
+        # Initialize Grobid extractor with specified endpoint
+        grobid_extractor = GrobidExtractor(endpoint=self.args.grobid_endpoint)
+        
+        try:
+            # Set up XML save directory if flag is enabled
+            save_dir = None
+            if getattr(self.args, 'save_grobid_xml', False):
+                save_dir = Path("benchmarks/excite/all_grobid_xml")
+                save_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Extract references using Grobid
+            result = grobid_extractor.extract(
+                filepath=str(pdf_path),
+                save_dir=str(save_dir) if save_dir else None,
+                mode="references",
+                parse_references=True,
+                consolidate_references=True,
+                include_raw_references=True
+            )
+            
+            # Parse XML content to References object
+            if result.text:
+                references = References.from_xml(xml_str=result.text)
+                logging.info(f"Grobid extracted {len(references)} references from {file_id}")
+                return references
+            else:
+                logging.warning(f"Grobid returned empty XML for {file_id}")
+                return References(references=[])
+                
+        except Exception as e:
+            logging.error(f"Grobid extraction failed for {file_id}: {e}", exc_info=True)
+            return References(references=[])
+
     def _evaluate_extraction_task(self, response_data):
         """Evaluate a plain text extraction response."""
         file_id = response_data["file_id"]
@@ -296,7 +377,13 @@ class BenchmarkRunner:
 
             llm_response_str = llm_response_str.strip()
 
-            json_match = json.loads(llm_response_str)
+            # Parse JSON response using safe parser (same max_attempts as pipeline functions)
+            from citation_index.utils.json_helper import safe_json_parse
+            json_match = safe_json_parse(llm_response_str)
+            
+            # Check if parsing failed
+            if json_match is None:
+                raise json.JSONDecodeError("Failed to parse JSON after all attempts", llm_response_str, 0)
 
             # Flexible handling: the LLM may return a list of references directly
             # or a dict without the expected top-level key.
@@ -539,7 +626,13 @@ def main():
     parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")
 
     # Extractor Configuration
-    parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru"], help="The PDF text extractor to use.")
+    parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru", "grobid"], help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task.")
+    parser.add_argument(
+        "--grobid_endpoint",
+        type=str,
+        default="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl",
+        help="Grobid service endpoint URL. Only used when --extractor grobid is specified."
+    )
 
     # Evaluation Configuration
     parser.add_argument("--fuzzy_threshold", type=float, default=90, help="Fuzzy threshold for reference parsing. If ≤1, treated as proportion (e.g., 0.95 → 95).")
@@ -580,6 +673,11 @@ def main():
         default=None,
         help="Path to save the final benchmark scores summary. If provided, the summary will be saved to this file in addition to being printed.",
     )
+    parser.add_argument(
+        "--save_grobid_xml",
+        action="store_true",
+        help="Save Grobid XML outputs to 'all_grobid_xml' folder. Only applies when using --extractor grobid.",
+    )
 
     args = parser.parse_args()
 
@@ -600,6 +698,10 @@ def main():
 
     if not args.api_key:
         raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable.")
+
+    # Validate grobid extractor is only used with extraction_and_parsing task
+    if args.extractor == "grobid" and args.task != "extraction_and_parsing":
+        raise ValueError("The 'grobid' extractor can only be used with the 'extraction_and_parsing' task.")
 
     runner = BenchmarkRunner(args)
     with logging_redirect_tqdm():

@@ -104,7 +104,7 @@ def _fix_unclosed_brackets(json_string: str) -> str:
     
     return json_string
 
-def safe_json_parse(json_string: str, max_attempts: int = 3) -> Union[dict, list, None]:
+def safe_json_parse(json_string: str, max_attempts: int = 1) -> Union[dict, list, None]:
     """
     Safely parse JSON string with multiple fix attempts.
     

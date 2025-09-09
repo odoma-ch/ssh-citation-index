@@ -483,7 +483,7 @@ def load_cex_data() -> Tuple[pd.DataFrame, Dict]:
     """
     base_path = Path("benchmarks/cex")
     pdf_info_path = base_path / "pdf_files_info.csv"
-    references_path = base_path / "all_references.json"
+    references_path = base_path / "all_references_sliver.json"
 
     if not pdf_info_path.exists() or not references_path.exists():
         print("Data files not found. Running pre-processing step...")

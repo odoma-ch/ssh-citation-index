@@ -1,238 +1,420 @@
+"""
+CEX Benchmark Runner for Citation Extraction and Parsing
+
+This module provides a comprehensive benchmarking framework for evaluating citation
+extraction and parsing methods on the CEX (Citation Extraction) dataset. It supports
+multiple extraction methods including LLM-based approaches and Grobid.
+
+Key Features:
+- Multiple extraction tasks: extraction, extraction_and_parsing, parsing
+- Support for different extraction methods (1-5) with various strategies
+- Grobid integration for direct PDF reference extraction
+- Parallel processing for efficient batch evaluation
+- Comprehensive metrics and error analysis
+- Results persistence and reusability
+"""
+
+# Standard library imports
 import argparse
-import os
+import datetime
 import json
+import logging
+import os
+import pickle
+import re
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+# Third-party imports
 import pandas as pd
 from tqdm import tqdm
-from pathlib import Path
-import pickle
-import logging
-import datetime
-import time
-import re  # Added for regex operations when cleaning model responses
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm.contrib.logging import logging_redirect_tqdm
 
+# Local imports - citation_index modules
 from citation_index.core.extractors import ExtractorFactory
-from citation_index.llm.client import LLMClient
+from citation_index.core.models import References
+from citation_index.evaluation.ref_metrics import RefEvaluator, string_reference_eval
+from citation_index.llm.client import LLMClient, DeepSeekClient
 from citation_index.pipelines.reference_extraction import extract_text_references
 from citation_index.pipelines.reference_extraction_and_parsing import (
-    run_pdf_one_step, run_pdf_two_step, run_pdf_section_detect_and_parse,
-    run_pdf_one_step_by_page, run_pdf_two_step_by_page
+    run_pdf_one_step,
+    run_pdf_one_step_by_page,
+    run_pdf_section_detect_and_parse,
+    run_pdf_two_step,
+    run_pdf_two_step_by_page,
 )
 from citation_index.pipelines.reference_parsing import parse_reference_strings
-from citation_index.pipelines.text_extraction import split_pages, extract_text
-from citation_index.evaluation.ref_metrics import string_reference_eval, RefEvaluator
+from citation_index.pipelines.text_extraction import extract_text, split_pages
+
+# Local imports - benchmark specific
 from cex_helper import load_cex_data
-from citation_index.core.models import References
 
 
 class CEXBenchmarkRunner:
-    """Orchestrates the benchmarking process for citation extraction and parsing on CEX dataset."""
+    """
+    Orchestrates the benchmarking process for citation extraction and parsing on CEX dataset.
+    
+    This class manages the complete benchmark workflow including:
+    - Task preparation and data loading
+    - Parallel execution of extraction/parsing methods
+    - Evaluation and metrics calculation
+    - Results persistence and summarization
+    """
 
     def __init__(self, args):
+        """
+        Initialize the benchmark runner with configuration arguments.
+        
+        Args:
+            args: Parsed command line arguments containing all configuration
+        """
         self.args = args
         self.output_dir = Path(args.output_path)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Results storage
         self.results = []
         self.metrics = []
-        # Will store the duration (in seconds) of the LLM call phase (Step 2)
-        self.llm_duration = 0.0
-        # Counters for error tracking
-        self.parse_errors = 0  # JSON or format errors while reading model output
-        self.eval_errors = 0   # Any failure during evaluation phase
-        # Store reference counts for comparison between GT and response
-        self.reference_counts = []
+        
+        # Performance tracking
+        self.llm_duration = 0.0  # Duration of LLM call phase in seconds
+        
+        # Error counters
+        self.parse_errors = 0   # JSON or format errors while reading model output
+        self.eval_errors = 0    # Any failure during evaluation phase
+        
         tqdm.write(f"Results will be saved to: {self.output_dir}")
 
     def run(self):
-        """Main entry point for running the benchmark."""
+        """
+        Main entry point for running the benchmark.
+        
+        This method orchestrates the complete benchmark workflow:
+        1. Load CEX dataset and prepare tasks
+        2. Execute extraction/parsing (LLM or Grobid)
+        3. Evaluate results against ground truth
+        4. Save results and generate summary
+        """
         logging.debug("Starting CEX benchmark run with the following arguments:")
         logging.debug(json.dumps(vars(self.args), indent=2))
         
+        # Load CEX dataset
         pdf_df, papers_data = load_cex_data()
-
-        # Keep a copy for later per-category summaries
-        self.pdf_df = pdf_df
+        self.pdf_df = pdf_df  # Keep for per-category summaries
         
+        # Initialize extractors and clients
         extractor = ExtractorFactory.create(self.args.extractor)
-        llm_client = LLMClient(
-            endpoint=self.args.api_base,
-            model=self.args.model_name,
-            api_key=self.args.api_key,
-            timeout = 180,
-            first_token_timeout = 60,
-            max_retries = 3,
-        )
         
-        # ---------------------------------------------------------------
-        # Optional fast-path: load previously saved LLM responses and run
-        # only the evaluation phase. This allows users to reuse costly
-        # generations without repeating them.
-        # ---------------------------------------------------------------
+        # Use DeepSeekClient for DeepSeek models, LLMClient for others
+        if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
+            llm_client = DeepSeekClient(api_key=self.args.api_key, 
+                                        endpoint=self.args.api_base,
+                                        model=self.args.model_name)
+            llm_client.timeout = 1200
+            llm_client.first_token_timeout = 180
+            llm_client.max_retries = 2
+        else:
+            llm_client = LLMClient(
+                endpoint=self.args.api_base,
+                model=self.args.model_name,
+                api_key=self.args.api_key,
+                timeout=1200,
+                first_token_timeout=180,
+                max_retries=2,
+            )
+        
+        # Check for pre-saved responses (fast-path for evaluation-only runs)
         if self.args.responses_path:
             with open(self.args.responses_path, "rb") as f:
                 llm_responses = pickle.load(f)
             tqdm.write(
-                f"Loaded {len(llm_responses)} LLM responses from {self.args.responses_path}. Skipping LLM calls."
+                f"Loaded {len(llm_responses)} responses from {self.args.responses_path}. "
+                "Skipping extraction phase."
             )
         else:
-            # Create all_markdown directory if it doesn't exist
-            markdown_dir = Path("benchmarks/cex/all_markdown")
-            markdown_dir.mkdir(parents=True, exist_ok=True)
-            
-            if self.args.limit:
-                pdf_df = pdf_df.head(self.args.limit)
-            
-            # 1. Prepare all inputs for LLM calls
-            llm_tasks = []
-            for _, row in tqdm(pdf_df.iterrows(), total=len(pdf_df), desc="Preparing tasks"):
-                file_id = str(row["file_id"])
-                file_path = row["file_path"]
-                logging.debug(f"Preparing task for file_id: {file_id}")
-                
-                gt_references = papers_data.get(file_id, {}).get("references", [])
-                if not gt_references:
-                    logging.warning(f"No ground truth references found for {file_id}. Skipping.")
-                    continue
+            llm_responses = self._execute_extraction_phase(
+                pdf_df, papers_data, extractor, llm_client
+            )
 
-                try:
-                    input_text = None
-                    if self.args.task != "parsing":
-                        # Check if markdown file exists for reuse
-                        markdown_path = markdown_dir / f"{file_id}_{self.args.extractor}.md"
-                        if markdown_path.exists():
-                            with open(markdown_path, "r", encoding="utf-8") as md_file:
-                                input_text = md_file.read()
-                        else:
-                            # Extract text from PDF
-                            extracted_text_result = extractor.extract(file_path)
-                            if not extracted_text_result.text.strip():
-                                logging.warning(f"No text extracted from {file_id}.pdf. Skipping.")
-                                continue
-                            input_text = extracted_text_result.text
-                            # Save extracted text to markdown file for reuse
-                            with open(markdown_path, "w", encoding="utf-8") as md_file:
-                                md_file.write(input_text)
-                    else: # parsing task
-                        input_text = "\n".join(gt_references)
-                    
-                    task_info = {
-                        "file_id": file_id,
-                        "input_text": input_text,
-                        "gt_references": gt_references,
-                    }
-                    llm_tasks.append(task_info)
-                except Exception as e:
-                    logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
-
-            # 2. Concurrently call LLM for all tasks
-            # For methods 4&5, use max_workers=1 since they handle parallelization internally
-            effective_max_workers = 1 if self.args.method in [4, 5] else self.args.max_workers
-            tqdm.write(f"Submitting {len(llm_tasks)} tasks to LLM with {effective_max_workers} workers (method {self.args.method}).")
-            # Start timer – we only want to measure the duration of the actual
-            # LLM requests (Step 2).
-            start_llm_timer = time.time()
-            llm_responses = []
-            with ThreadPoolExecutor(max_workers=effective_max_workers) as executor:
-                future_to_task = {
-                    executor.submit(self._execute_llm_call, llm_client, task): task
-                    for task in llm_tasks
-                }
-                
-                for future in tqdm(as_completed(future_to_task), total=len(llm_tasks), desc="Executing LLM calls"):
-                    task = future_to_task[future]
-                    file_id = task["file_id"]
-                    logging.debug(f"Processing response for file_id: {file_id}")
-                    try:
-                        response_str = future.result()
-                        if response_str:
-                            logging.debug(f"Received response for file_id: {file_id}")
-                            llm_responses.append({
-                                "file_id": task["file_id"],
-                                "response": response_str,
-                                "gt_references": task["gt_references"]
-                            })
-                        else:
-                            logging.warning(f"No response received for file_id: {file_id}")
-                    except Exception as exc:
-                        logging.error(f'Task for {file_id} generated an exception: {exc}', exc_info=True)
-                
-                # Persist raw LLM responses so they can be reused later without
-                # re-issuing expensive model calls.
-                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
-                method = getattr(self.args, 'method', 1)
-                run_name = f"{self.args.task}_m{method}_{model_name_slug}_{self.args.extractor}_{timestamp}"
-                responses_path = self.output_dir / f"{run_name}_responses.pkl"
-                with open(responses_path, "wb") as f:
-                    pickle.dump(llm_responses, f)
-                tqdm.write(f"Saved LLM responses to {responses_path}")
-            # End timer for LLM calls
-            self.llm_duration = time.time() - start_llm_timer
-
-        # 3. Process all responses and evaluate
-        tqdm.write(f"Evaluating {len(llm_responses)} responses.")
-        for response_data in tqdm(llm_responses, desc="Evaluating responses"):
-            try:
-                if self.args.task == "extraction":
-                    self._evaluate_extraction_task(response_data)
-                elif self.args.task in ["extraction_and_parsing", "parsing"]:
-                    self._evaluate_structured_task(response_data)
-            except Exception as e:
-                logging.error(f"Error evaluating response for document {response_data['file_id']}: {e}", exc_info=True)
-                self.eval_errors += 1
-
+        # Evaluation phase
+        self._execute_evaluation_phase(llm_responses)
+        
+        # Results processing
         self._save_results()
         self._summarize_results()
 
-    def _execute_llm_call(self, llm_client, task_info):
-        """Execute a single LLM task using pipeline functions."""
+    def _execute_extraction_phase(self, pdf_df, papers_data, extractor, llm_client):
+        """
+        Execute the extraction/parsing phase for all documents.
+        
+        Args:
+            pdf_df: DataFrame containing PDF file information
+            papers_data: Dictionary containing ground truth references
+            extractor: Text extractor instance
+            llm_client: LLM client for API calls
+            
+        Returns:
+            List of response dictionaries containing extraction results
+        """
+        # Create markdown cache directory
+        markdown_dir = Path("benchmarks/cex/all_markdown")
+        markdown_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Limit documents if specified
+        if self.args.limit:
+            pdf_df = pdf_df.head(self.args.limit)
+        
+        # Prepare tasks for parallel execution
+        llm_tasks = self._prepare_tasks(pdf_df, papers_data, extractor, markdown_dir)
+        
+        # Execute tasks in parallel
+        return self._execute_parallel_tasks(llm_tasks, llm_client)
+
+    def _prepare_tasks(self, pdf_df, papers_data, extractor, markdown_dir):
+        """
+        Prepare all tasks for parallel execution.
+        
+        Args:
+            pdf_df: DataFrame containing PDF file information
+            papers_data: Dictionary containing ground truth references
+            extractor: Text extractor instance
+            markdown_dir: Directory for caching extracted text
+            
+        Returns:
+            List of task dictionaries ready for parallel execution
+        """
+        llm_tasks = []
+        
+        for _, row in tqdm(pdf_df.iterrows(), total=len(pdf_df), desc="Preparing tasks"):
+            file_id = str(row["file_id"])
+            file_path = row["file_path"]
+            logging.debug(f"Preparing task for file_id: {file_id}")
+            
+            # Check for ground truth references
+            gt_references = papers_data.get(file_id, {}).get("references", [])
+            if not gt_references:
+                logging.warning(f"No ground truth references found for {file_id}. Skipping.")
+                continue
+
+            try:
+                input_text = self._prepare_input_text(
+                    file_id, file_path, extractor, markdown_dir
+                )
+                
+                task_info = {
+                    "file_id": file_id,
+                    "input_text": input_text,
+                    "gt_references": gt_references,
+                    "file_path": file_path,  # Required for Grobid
+                }
+                llm_tasks.append(task_info)
+                
+            except Exception as e:
+                logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
+
+        return llm_tasks
+
+    def _prepare_input_text(self, file_id, file_path, extractor, markdown_dir):
+        """
+        Prepare input text for a single document based on task type and extractor.
+        
+        Args:
+            file_id: Unique identifier for the document
+            file_path: Path to the PDF file
+            extractor: Text extractor instance
+            markdown_dir: Directory for caching extracted text
+            
+        Returns:
+            Input text string or None for Grobid
+        """
+        if self.args.task == "parsing":
+            # For parsing task, input is ground truth references
+            # This will be handled separately in the calling function
+            return None
+        
+        # Special handling for Grobid - no text extraction needed
+        if self.args.extractor == "grobid":
+            return None
+        
+        # Check for cached extracted text
+        markdown_path = markdown_dir / f"{file_id}_{self.args.extractor}.md"
+        if markdown_path.exists():
+            with open(markdown_path, "r", encoding="utf-8") as md_file:
+                return md_file.read()
+        
+        # Extract text from PDF
+        extracted_text_result = extractor.extract(file_path)
+        if not extracted_text_result.text.strip():
+            raise ValueError(f"No text extracted from {file_id}.pdf")
+        
+        # Cache extracted text
+        with open(markdown_path, "w", encoding="utf-8") as md_file:
+            md_file.write(extracted_text_result.text)
+        
+        return extracted_text_result.text
+
+    def _execute_parallel_tasks(self, llm_tasks, llm_client):
+        """
+        Execute all tasks in parallel using ThreadPoolExecutor.
+        
+        Args:
+            llm_tasks: List of prepared task dictionaries
+            llm_client: LLM client for API calls
+            
+        Returns:
+            List of response dictionaries containing results
+        """
+        # Adjust worker count for different methods
+        effective_max_workers = (
+            1 if self.args.method in [4, 5] else self.args.max_workers
+        )
+        
+        # Display appropriate progress message
+        if self.args.extractor == "grobid":
+            tqdm.write(
+                f"Processing {len(llm_tasks)} tasks with Grobid extractor "
+                f"using {effective_max_workers} workers."
+            )
+        else:
+            tqdm.write(
+                f"Submitting {len(llm_tasks)} tasks to LLM with {effective_max_workers} "
+                f"workers (method {self.args.method})."
+            )
+
+        # Execute tasks with timing
+        start_time = time.time()
+        llm_responses = []
+        
+        with ThreadPoolExecutor(max_workers=effective_max_workers) as executor:
+            future_to_task = {
+                executor.submit(self._execute_single_task, llm_client, task): task
+                for task in llm_tasks
+            }
+            
+            progress_desc = (
+                "Processing with Grobid" if self.args.extractor == "grobid" 
+                else "Executing LLM calls"
+            )
+            
+            for future in tqdm(
+                as_completed(future_to_task), total=len(llm_tasks), desc=progress_desc
+            ):
+                task = future_to_task[future]
+                file_id = task["file_id"]
+                
+                try:
+                    response_str = future.result()
+                    if response_str:
+                        llm_responses.append({
+                            "file_id": file_id,
+                            "response": response_str,
+                            "gt_references": task["gt_references"]
+                        })
+                    else:
+                        logging.warning(f"No response received for file_id: {file_id}")
+                        
+                except Exception as exc:
+                    logging.error(f'Task for {file_id} generated an exception: {exc}', exc_info=True)
+            
+            # Save responses for future reuse
+            self._save_responses(llm_responses)
+        
+        self.llm_duration = time.time() - start_time
+        return llm_responses
+
+    def _execute_single_task(self, llm_client, task_info):
+        """
+        Execute a single extraction/parsing task.
+        
+        Args:
+            llm_client: LLM client for API calls
+            task_info: Dictionary containing task information
+            
+        Returns:
+            String representation of the extraction result
+        """
         file_id = task_info["file_id"]
         input_text = task_info["input_text"]
         prompt_path = Path("prompts") / self.args.prompt_name
-        logging.debug(f"Executing LLM call for file_id: {file_id} with task: {self.args.task}, method: {self.args.method}")
+        
+        logging.debug(
+            f"Executing task for file_id: {file_id} with task: {self.args.task}, "
+            f"method: {self.args.method}"
+        )
 
-        # Route to pipeline functions and normalize outputs to strings for downstream evaluation
+        # Route to appropriate processing method based on task type
         if self.args.task == "extraction":
-            # Returns list[str] → normalize to newline-delimited string
-            lines = extract_text_references(
-                text=input_text,
-                llm_client=llm_client,
-                prompt_name=str(prompt_path),
-            )
-            return "\n".join(lines)
-
+            return self._execute_extraction_task(input_text, llm_client, prompt_path)
+        
         elif self.args.task == "extraction_and_parsing":
-            # Returns References → normalize to JSON string
-            include_schema = "pydantic" in self.args.prompt_name
-            refs = self._execute_extraction_and_parsing_method(
-                input_text=input_text,
-                llm_client=llm_client,
-                prompt_path=str(prompt_path),
-                include_schema=include_schema,
-                file_id=file_id,
+            return self._execute_extraction_and_parsing_task(
+                task_info, llm_client, prompt_path
             )
-            return json.dumps(refs.model_dump())
-
+        
         elif self.args.task == "parsing":
-            # Input was created via "\n".join(gt_references) earlier → split back to list[str]
-            include_schema = "pydantic" in self.args.prompt_name
-            reference_lines = [ln for ln in str(input_text).splitlines() if ln.strip()]
-            refs = parse_reference_strings(
-                reference_lines=reference_lines,
-                llm_client=llm_client,
-                prompt_name=str(prompt_path),
-                include_schema=include_schema,
-            )
-            return json.dumps(refs.model_dump())
-
+            return self._execute_parsing_task(task_info, llm_client, prompt_path)
+        
         return None
+
+    def _execute_extraction_task(self, input_text, llm_client, prompt_path):
+        """Execute plain text extraction task."""
+        lines = extract_text_references(
+            text=input_text,
+            llm_client=llm_client,
+            prompt_name=str(prompt_path),
+        )
+        return "\n".join(lines)
+
+    def _execute_extraction_and_parsing_task(self, task_info, llm_client, prompt_path):
+        """Execute extraction and parsing task (structured output)."""
+        # Special case for Grobid - bypass LLM entirely
+        if self.args.extractor == "grobid":
+            refs = self._execute_grobid_extraction(task_info)
+            return json.dumps(refs.model_dump())
+        
+        # Regular LLM-based extraction and parsing
+        include_schema = "pydantic" in self.args.prompt_name
+        refs = self._execute_extraction_and_parsing_method(
+            input_text=task_info["input_text"],
+            llm_client=llm_client,
+            prompt_path=str(prompt_path),
+            include_schema=include_schema,
+            file_id=task_info["file_id"],
+        )
+        return json.dumps(refs.model_dump())
+
+    def _execute_parsing_task(self, task_info, llm_client, prompt_path):
+        """Execute parsing-only task on ground truth reference strings."""
+        include_schema = "pydantic" in self.args.prompt_name
+        gt_references = task_info["gt_references"]
+        reference_lines = [ln.strip() for ln in gt_references if ln.strip()]
+        
+        refs = parse_reference_strings(
+            reference_lines=reference_lines,
+            llm_client=llm_client,
+            prompt_name=str(prompt_path),
+            include_schema=include_schema,
+        )
+        return json.dumps(refs.model_dump())
 
     def _execute_extraction_and_parsing_method(
         self, input_text: str, llm_client, prompt_path: str, include_schema: bool, file_id: str
     ) -> References:
-        """Execute the appropriate extraction and parsing method based on self.args.method."""
-        method = getattr(self.args, 'method', 1)  # Default to method 1 for backwards compatibility
+        """
+        Execute the appropriate extraction and parsing method based on configuration.
+        
+        Args:
+            input_text: Extracted text from PDF
+            llm_client: LLM client for API calls
+            prompt_path: Path to prompt file
+            include_schema: Whether to include Pydantic schema in prompt
+            file_id: Document identifier for logging
+            
+        Returns:
+            References object containing extracted references
+        """
+        method = getattr(self.args, 'method', 1)
         
         if method == 1:
             # Method 1: One-step extraction+parsing on full text
@@ -264,7 +446,6 @@ class CEXBenchmarkRunner:
         
         elif method == 4:
             # Method 4: Page-wise one-step extraction+parsing, then aggregate
-            # Calculate optimal max_workers: min(benchmark max_workers, number of pages)
             pages = split_pages(input_text, extractor_type=self.args.extractor)
             optimal_workers = min(self.args.max_workers, len(pages))
             logging.debug(f"Method 4 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
@@ -280,7 +461,6 @@ class CEXBenchmarkRunner:
         
         elif method == 5:
             # Method 5: Page-wise extraction of strings, concatenate, then parse once
-            # Calculate optimal max_workers: min(benchmark max_workers, number of pages)
             pages = split_pages(input_text, extractor_type=self.args.extractor)
             optimal_workers = min(self.args.max_workers, len(pages))
             logging.debug(f"Method 5 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
@@ -296,405 +476,489 @@ class CEXBenchmarkRunner:
         else:
             raise ValueError(f"Unsupported method: {method}. Must be 1, 2, 3, 4, or 5.")
 
-    def _evaluate_extraction_task(self, response_data):
-        """Evaluate a plain text extraction response.
-        
-        NOTE: For extraction task, instead of computing precision/recall metrics,
-        we compare reference counts between ground truth and response to analyze
-        over/under extraction patterns.
+    def _execute_grobid_extraction(self, task_info) -> References:
         """
-        file_id = response_data["file_id"]
-        logging.debug(f"Evaluating extraction for {file_id}")
-        llm_response = response_data["response"]
-        gt_references = response_data["gt_references"]
+        Execute Grobid extraction directly from PDF file.
         
-        pred_references = [ref.strip() for ref in llm_response.split("\n") if ref.strip()]
+        This method bypasses LLM processing entirely and uses Grobid service
+        to extract structured references directly from the PDF.
         
-        # Store reference counts for comparison
-        gt_count = len(gt_references)
-        pred_count = len(pred_references)
-        self.reference_counts.append({
-            "file_id": file_id,
-            "gt_count": gt_count,
-            "pred_count": pred_count,
-            "difference": pred_count - gt_count
-        })
+        Args:
+            task_info: Dictionary containing file_id and file_path
+            
+        Returns:
+            References object containing extracted references
+        """
+        from citation_index.core.extractors.grobid import GrobidExtractor
         
-        self.results.append({"id": file_id, "response": llm_response})
+        file_id = task_info["file_id"]
+        pdf_path = Path(task_info["file_path"])
         
-        # Original evaluation code - commented out as requested
-        # metric = string_reference_eval(gt_references, pred_references)
-        # metric["file_id"] = file_id
-        # self.metrics.append(metric)
-
-    def _evaluate_structured_task(self, response_data):
-        """Evaluate a structured extraction and/or parsing response."""
-        file_id = response_data["file_id"]
-        logging.debug(f"Evaluating structured task for {file_id}")
-        llm_response_str = response_data["response"]
-
-        json_match = {} # Initialize to an empty dict
+        if not pdf_path.exists():
+            logging.error(f"PDF file not found: {pdf_path}")
+            return References(references=[])
+        
+        # Initialize Grobid extractor with specified endpoint
+        grobid_extractor = GrobidExtractor(endpoint=self.args.grobid_endpoint)
+        
         try:
-            # Remove common wrapping markers the LLM might include
-            llm_response_str = re.sub(r"```(?:json)?\s*", "", llm_response_str, flags=re.IGNORECASE)  # opening fence
-            llm_response_str = re.sub(r"\s*```", "", llm_response_str)  # closing fence
-
-            # Remove custom <start> / <end> style tags (case-insensitive)
-            llm_response_str = re.sub(r"<\/?\s*start\s*>", "", llm_response_str, flags=re.IGNORECASE)
-            llm_response_str = re.sub(r"<\/?\s*end\s*>", "", llm_response_str, flags=re.IGNORECASE)
-
-            llm_response_str = llm_response_str.strip()
-
-            json_match = json.loads(llm_response_str)
-
-            # Flexible handling: the LLM may return a list of references directly
-            # or a dict without the expected top-level key.
-            refs_raw = None
-
-            if isinstance(json_match, list):
-                # Already a list of reference dicts
-                refs_raw = json_match
-            elif isinstance(json_match, dict):
-                # Try common keys
-                for key in ("references", "parsed_references", "refs"):
-                    if key in json_match:
-                        refs_raw = json_match[key]
-                        break
-                # Fallback: maybe the whole dict is actually a single reference
-                if refs_raw is None and all(k in json_match for k in ("title", "full_title", "authors")):
-                    refs_raw = [json_match]
-
-            if refs_raw:
-                pred_references = References.from_dict(refs_raw)
-            else:
-                logging.warning(
-                    f"No reference list found in JSON for {file_id}; treating as empty prediction."
-                )
-                self.parse_errors += 1
-                pred_references = References(references=[])
-        except (json.JSONDecodeError, KeyError) as e:
-            logging.error(f"Error parsing JSON for {file_id}: {e}", exc_info=True)
-            self.parse_errors += 1
-            pred_references = References(references=[])
-
-        self.results.append({"id": file_id, "references": json_match})
-
-        gt_references_xml_path = f"benchmarks/cex/all_xmls/{file_id}.xml"
-        if os.path.exists(gt_references_xml_path):
-            gt_struct_references = References.from_xml(file_path=gt_references_xml_path)
-            evaluator = RefEvaluator(mode=self.args.mode, fuzzy_threshold=self.args.fuzzy_threshold)
-            metric = evaluator.evaluate(
-                [pred_references],
-                [gt_struct_references],
-                focus_fields=self.args.focus_fields,
+            # Set up XML save directory if flag is enabled
+            save_dir = None
+            if getattr(self.args, 'save_grobid_xml', False):
+                save_dir = Path("benchmarks/cex/all_grobid_xml")
+                save_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Extract references using Grobid
+            result = grobid_extractor.extract(
+                filepath=str(pdf_path),
+                save_dir=str(save_dir) if save_dir else None,
+                mode="references",
+                parse_references=True,
+                consolidate_references=True,
+                include_raw_references=True
             )
-            metric["file_id"] = file_id
-            self.metrics.append(metric)
-        else:
-            logging.warning(f"Warning: No XML ground truth for {file_id}, skipping structured evaluation.")
+            
+            # Parse XML content to References object
+            if result.text:
+                references = References.from_xml(xml_str=result.text)
+                logging.info(f"Grobid extracted {len(references)} references from {file_id}")
+                return references
+            else:
+                logging.warning(f"Grobid returned empty XML for {file_id}")
+                return References(references=[])
+                
+        except Exception as e:
+            logging.error(f"Grobid extraction failed for {file_id}: {e}", exc_info=True)
+            return References(references=[])
 
-    def _save_results(self):
-        """Save the raw results and metrics to files."""
-
-        # Respect --skip_save flag
-        if getattr(self.args, "skip_save", False):
-            tqdm.write("Skipping saving results & metrics (--skip_save enabled).")
-            return
-
+    def _save_responses(self, llm_responses):
+        """Save LLM responses to pickle file for future reuse."""
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
         method = getattr(self.args, 'method', 1)
         run_name = f"{self.args.task}_m{method}_{model_name_slug}_{self.args.extractor}_{timestamp}"
         
+        responses_path = self.output_dir / f"{run_name}_responses.pkl"
+        with open(responses_path, "wb") as f:
+            pickle.dump(llm_responses, f)
+        tqdm.write(f"Saved responses to {responses_path}")
+
+    def _execute_evaluation_phase(self, llm_responses):
+        """
+        Execute the evaluation phase for all responses.
+        
+        Args:
+            llm_responses: List of response dictionaries from extraction phase
+        """
+        tqdm.write(f"Evaluating {len(llm_responses)} responses.")
+        
+        for response_data in tqdm(llm_responses, desc="Evaluating responses"):
+            try:
+                if self.args.task == "extraction":
+                    self._evaluate_extraction_task(response_data)
+                elif self.args.task in ["extraction_and_parsing", "parsing"]:
+                    self._evaluate_structured_task(response_data)
+            except Exception as e:
+                logging.error(
+                    f"Error evaluating response for document {response_data['file_id']}: {e}", 
+                    exc_info=True
+                )
+                self.eval_errors += 1
+
+    def _evaluate_extraction_task(self, response_data):
+        """
+        Evaluate a plain text extraction response.
+        
+        For extraction tasks, we calculate precision, recall, and F1 metrics
+        using fuzzy string matching to compare predicted vs ground truth references.
+        
+        Args:
+            response_data: Dictionary containing response and ground truth
+        """
+        file_id = response_data["file_id"]
+        llm_response = response_data["response"]
+        gt_references = response_data["gt_references"]
+        
+        # Parse predicted references
+        pred_references = [ref.strip() for ref in llm_response.split("\n") if ref.strip()]
+        
+        # Calculate evaluation metrics using string-based comparison
+        try:
+            metric = string_reference_eval(
+                references_data=gt_references,
+                response_list=pred_references,
+                similarity_mode='fuzzy',
+                similarity_threshold=0.8
+            )
+            metric["file_id"] = file_id
+            self.metrics.append(metric)
+            logging.debug(f"Extraction metrics for {file_id}: {metric}")
+        except Exception as e:
+            logging.error(f"Error calculating metrics for {file_id}: {e}", exc_info=True)
+            self.eval_errors += 1
+        
+        self.results.append({"id": file_id, "response": llm_response})
+
+    def _evaluate_structured_task(self, response_data):
+        """
+        Evaluate a structured extraction and/or parsing response.
+        
+        Args:
+            response_data: Dictionary containing response and ground truth
+        """
+        file_id = response_data["file_id"]
+        llm_response_str = response_data["response"]
+
+        # Parse and clean LLM response
+        try:
+            pred_references = self._parse_llm_response(llm_response_str, file_id)
+        except Exception as e:
+            logging.error(f"Error parsing response for {file_id}: {e}", exc_info=True)
+            self.parse_errors += 1
+            pred_references = References(references=[])
+
+        self.results.append({"id": file_id, "references": pred_references.model_dump()})
+
+        # Evaluate against ground truth if available
+        gt_references_xml_path = f"benchmarks/cex/all_xmls/{file_id}.xml"
+        if os.path.exists(gt_references_xml_path):
+            try:
+                gt_struct_references = References.from_xml(file_path=gt_references_xml_path)
+                evaluator = RefEvaluator(
+                    mode=self.args.mode, 
+                    fuzzy_threshold=self.args.fuzzy_threshold
+                )
+                metric = evaluator.evaluate(
+                    [pred_references],
+                    [gt_struct_references],
+                    focus_fields=self.args.focus_fields,
+                )
+                metric["file_id"] = file_id
+                self.metrics.append(metric)
+            except Exception as e:
+                logging.error(f"Error evaluating {file_id}: {e}", exc_info=True)
+                self.eval_errors += 1
+        else:
+            logging.warning(f"No XML ground truth for {file_id}, skipping structured evaluation.")
+
+    def _parse_llm_response(self, llm_response_str, file_id):
+        """
+        Parse and clean LLM response string into References object.
+        
+        Args:
+            llm_response_str: Raw response string from LLM
+            file_id: Document identifier for logging
+            
+        Returns:
+            References object containing parsed references
+        """
+        # Clean common LLM response artifacts
+        llm_response_str = re.sub(r"```(?:json)?\s*", "", llm_response_str, flags=re.IGNORECASE)
+        llm_response_str = re.sub(r"\s*```", "", llm_response_str)
+        llm_response_str = re.sub(r"<\/?\s*start\s*>", "", llm_response_str, flags=re.IGNORECASE)
+        llm_response_str = re.sub(r"<\/?\s*end\s*>", "", llm_response_str, flags=re.IGNORECASE)
+        llm_response_str = llm_response_str.strip()
+
+        # Parse JSON response using safe parser
+        from citation_index.utils.json_helper import safe_json_parse
+        json_match = safe_json_parse(llm_response_str)
+        
+        # Check if parsing failed
+        if json_match is None:
+            raise json.JSONDecodeError("Failed to parse JSON after all attempts", llm_response_str, 0)
+
+        # Handle different response formats
+        refs_raw = None
+        if isinstance(json_match, list):
+            refs_raw = json_match
+        elif isinstance(json_match, dict):
+            # Try common keys
+            for key in ("references", "parsed_references", "refs"):
+                if key in json_match:
+                    refs_raw = json_match[key]
+                    break
+            # Fallback: single reference object
+            if refs_raw is None and all(k in json_match for k in ("title", "full_title", "authors")):
+                refs_raw = [json_match]
+
+        if refs_raw:
+            return References.from_dict(refs_raw)
+        else:
+            logging.warning(f"No reference list found in JSON for {file_id}")
+            return References(references=[])
+
+    def _save_results(self):
+        """Save the raw results and metrics to files."""
+        if getattr(self.args, "skip_save", False):
+            tqdm.write("Skipping saving results & metrics (--skip_save enabled).")
+            return
+
+        # Generate run identifier
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
+        method = getattr(self.args, 'method', 1)
+        run_name = f"{self.args.task}_m{method}_{model_name_slug}_{self.args.extractor}_{timestamp}"
+        
+        # Save raw results
         results_path = self.output_dir / f"{run_name}_results.pkl"
         with open(results_path, "wb") as f:
             pickle.dump(self.results, f)
         tqdm.write(f"Saved raw results to {results_path}")
 
-        if not self.metrics:
+        # Save metrics if available
+        if self.metrics:
+            metrics_df = pd.DataFrame(self.metrics)
+            metrics_path = self.output_dir / f"{run_name}_metrics.csv"
+            metrics_df.to_csv(metrics_path, index=False)
+            tqdm.write(f"Saved metrics to {metrics_path}")
+        else:
             logging.warning("No metrics to save.")
-            return
-
-        metrics_df = pd.DataFrame(self.metrics)
-        metrics_path = self.output_dir / f"{run_name}_metrics.csv"
-        metrics_df.to_csv(metrics_path, index=False)
-        tqdm.write(f"Saved metrics to {metrics_path}")
 
     def _summarize_results(self):
-        """Print a summary of the benchmark metrics."""
-        # For extraction task, we might not have metrics but we have reference counts
-        if self.args.task == "extraction":
-            if not self.reference_counts:
-                logging.warning("No reference counts were generated for extraction task.")
-                return
-        elif not self.metrics:
+        """Print and optionally save a comprehensive summary of benchmark results."""
+        # Validate we have results to summarize
+        if not self.metrics:
             logging.warning("No metrics were generated.")
             return
 
-        # For extraction task, skip the metrics summary since we commented out evaluation
-        if self.args.task != "extraction":
-            metrics_df = pd.DataFrame(self.metrics)
-            # Ensure file_id is str for merging
-            metrics_df["file_id"] = metrics_df["file_id"].astype(str)
-            if hasattr(self, "pdf_df"):
-                self.pdf_df["file_id"] = self.pdf_df["file_id"].astype(str)
-            
-            # Collect all output lines for potential saving
-            output_lines = []
-            
-            output_lines.append("\n--- CEX Benchmark Summary ---")
-            
-            # Always show overall metrics first
-            overall_summary = metrics_df[['overall_precision', 'overall_recall', 'overall_micro_f1', 'overall_macro_f1']].mean().to_dict()
+        output_lines = []
+        
+        # Generate metrics summary for all tasks
+        self._generate_metrics_summary(output_lines)
+        
+        
+        # Generate per-field metrics if applicable
+        if (self.args.task in ["extraction_and_parsing", "parsing"] and 
+            self.args.focus_fields and self.metrics):
+            self._generate_per_field_metrics(output_lines)
+        
+        # Generate error statistics
+        self._generate_error_statistics(output_lines)
+        
+        # Generate per-category breakdown if requested
+        if self.args.per_category and hasattr(self, "pdf_df"):
+            self._generate_per_category_breakdown(output_lines)
+        
+        # Save summary to file if requested
+        if self.args.save_scores:
+            self._save_scores_summary(output_lines)
+
+    def _generate_metrics_summary(self, output_lines):
+        """Generate overall metrics summary for all task types."""
+        metrics_df = pd.DataFrame(self.metrics)
+        metrics_df["file_id"] = metrics_df["file_id"].astype(str)
+        if hasattr(self, "pdf_df"):
+            self.pdf_df["file_id"] = self.pdf_df["file_id"].astype(str)
+        
+        output_lines.append("\n--- CEX Benchmark Summary ---")
+        
+        # Determine which metrics to use based on task type
+        if self.args.task == "extraction":
+            # For extraction task, use string-based metrics
+            metric_cols = ['precision', 'recall', 'f1_score', 'avg_similarity']
+            overall_summary = metrics_df[metric_cols].mean().to_dict()
+            output_lines.append("Overall extraction metrics:")
+            overall_summary_json = json.dumps(overall_summary, indent=2)
+            output_lines.append(overall_summary_json)
+        else:
+            # For structured tasks, use structured metrics
+            metric_cols = ['overall_precision', 'overall_recall', 'overall_micro_f1', 'overall_macro_f1']
+            overall_summary = metrics_df[metric_cols].mean().to_dict()
             output_lines.append("Overall metrics (all fields):")
             overall_summary_json = json.dumps(overall_summary, indent=2)
             output_lines.append(overall_summary_json)
             
-            # Show focused metrics if focus_fields were used
+            # Focused metrics if available for structured tasks
             if self.args.focus_fields and 'focused_precision' in metrics_df.columns:
-                focused_summary = metrics_df[['focused_precision', 'focused_recall', 'focused_micro_f1', 'focused_macro_f1']].mean().to_dict()
+                focused_summary = metrics_df[
+                    ['focused_precision', 'focused_recall', 'focused_micro_f1', 'focused_macro_f1']
+                ].mean().to_dict()
                 output_lines.append("Focused metrics (focus fields only):")
                 focused_summary_json = json.dumps(focused_summary, indent=2)
                 output_lines.append(focused_summary_json)
-            
-            output_lines.append("-------------------------\n")
-            
-            # Print the summary
-            tqdm.write("\n--- CEX Benchmark Summary ---")
-            tqdm.write("Overall metrics (all fields):")
-            tqdm.write(overall_summary_json)
-            if self.args.focus_fields and 'focused_precision' in metrics_df.columns:
-                tqdm.write("Focused metrics (focus fields only):")
-                tqdm.write(focused_summary_json)
-            tqdm.write("-------------------------\n")
-        else:
-            # For extraction task, initialize output_lines
-            output_lines = []
         
-        # ----------------------------------------------------------
-        # Reference Count Comparison (for extraction task)
-        # ----------------------------------------------------------
-        if self.args.task == "extraction" and self.reference_counts:
-            output_lines.append("Reference Count Comparison:")
-            tqdm.write("Reference Count Comparison:")
-            
-            # Calculate statistics
-            gt_counts = [rc["gt_count"] for rc in self.reference_counts]
-            pred_counts = [rc["pred_count"] for rc in self.reference_counts]
-            differences = [rc["difference"] for rc in self.reference_counts]
-            
-            avg_gt_count = sum(gt_counts) / len(gt_counts)
-            avg_pred_count = sum(pred_counts) / len(pred_counts)
-            avg_difference = sum(differences) / len(differences)
-            
-            # Additional statistics
-            min_gt = min(gt_counts)
-            max_gt = max(gt_counts)
-            min_pred = min(pred_counts)
-            max_pred = max(pred_counts)
-            min_diff = min(differences)
-            max_diff = max(differences)
-            
-            # Calculate percentage differences
-            percentage_diffs = [(rc["difference"] / rc["gt_count"] * 100) if rc["gt_count"] > 0 else 0 for rc in self.reference_counts]
-            avg_percentage_diff = sum(percentage_diffs) / len(percentage_diffs)
-            
-            count_summary = {
-                "avg_gt_count": round(avg_gt_count, 2),
-                "avg_pred_count": round(avg_pred_count, 2),
-                "avg_difference": round(avg_difference, 2),
-                "avg_percentage_difference": round(avg_percentage_diff, 2),
-                "gt_count_range": f"{min_gt}-{max_gt}",
-                "pred_count_range": f"{min_pred}-{max_pred}",
-                "difference_range": f"{min_diff}-{max_diff}",
-                "total_documents": len(self.reference_counts)
-            }
-            
-            count_summary_json = json.dumps(count_summary, indent=2)
-            output_lines.append(count_summary_json)
-            tqdm.write(count_summary_json)
-            
-            # Show some examples of differences
-            output_lines.append("Sample reference count differences:")
-            tqdm.write("Sample reference count differences:")
-            for i, rc in enumerate(self.reference_counts[:5]):  # Show first 5
-                percentage = (rc["difference"] / rc["gt_count"] * 100) if rc["gt_count"] > 0 else 0
-                diff_line = f"  {rc['file_id']}: GT={rc['gt_count']}, Pred={rc['pred_count']}, Diff={rc['difference']} ({percentage:+.1f}%)"
-                output_lines.append(diff_line)
-                tqdm.write(diff_line)
-            
-            # Summary of over/under extraction
-            over_extracted = sum(1 for rc in self.reference_counts if rc["difference"] > 0)
-            under_extracted = sum(1 for rc in self.reference_counts if rc["difference"] < 0)
-            exact_match = sum(1 for rc in self.reference_counts if rc["difference"] == 0)
-            
-            extraction_summary = f"Extraction Summary: {over_extracted} over-extracted, {under_extracted} under-extracted, {exact_match} exact matches"
-            output_lines.append(extraction_summary)
-            tqdm.write(extraction_summary)
-            
-            output_lines.append("-------------------------\n")
-            tqdm.write("-------------------------\n")
+        output_lines.append("-------------------------\n")
+        
+        # Print to console
+        tqdm.write("\n--- CEX Benchmark Summary ---")
+        if self.args.task == "extraction":
+            tqdm.write("Overall extraction metrics:")
+        else:
+            tqdm.write("Overall metrics (all fields):")
+        tqdm.write(overall_summary_json)
+        
+        if (self.args.task != "extraction" and 
+            self.args.focus_fields and 'focused_precision' in metrics_df.columns):
+            tqdm.write("Focused metrics (focus fields only):")
+            tqdm.write(focused_summary_json)
+        tqdm.write("-------------------------\n")
 
-        # ----------------------------------------------------------
-        # Per-field F1 scores (for structured tasks with focus_fields)
-        # ----------------------------------------------------------
-        if (self.args.task in ["extraction_and_parsing", "parsing"] and 
-            self.args.focus_fields and 
-            'per_field_metrics' in metrics_df.columns):
+    def _generate_per_field_metrics(self, output_lines):
+        """Generate per-field metrics analysis."""
+        metrics_df = pd.DataFrame(self.metrics)
+        
+        if 'per_field_metrics' not in metrics_df.columns:
+            return
+        
+        # Collect all per-field metrics
+        all_per_field_metrics = []
+        for _, row in metrics_df.iterrows():
+            if isinstance(row['per_field_metrics'], dict):
+                all_per_field_metrics.append(row['per_field_metrics'])
+        
+        if not all_per_field_metrics:
+            return
+        
+        # Calculate average metrics for each field
+        field_metrics = {}
+        for field in self.args.focus_fields:
+            field_precisions = [
+                doc_metrics.get(field, {}).get('precision', 0.0) 
+                for doc_metrics in all_per_field_metrics if field in doc_metrics
+            ]
+            field_recalls = [
+                doc_metrics.get(field, {}).get('recall', 0.0) 
+                for doc_metrics in all_per_field_metrics if field in doc_metrics
+            ]
+            field_f1s = [
+                doc_metrics.get(field, {}).get('f1', 0.0) 
+                for doc_metrics in all_per_field_metrics if field in doc_metrics
+            ]
             
-            # Collect all per_field_metrics dictionaries from all documents
-            all_per_field_metrics = []
-            for _, row in metrics_df.iterrows():
-                if isinstance(row['per_field_metrics'], dict):
-                    all_per_field_metrics.append(row['per_field_metrics'])
-            
-            if all_per_field_metrics:
-                # Calculate average metrics across all documents for each field
-                field_metrics = {}
-                for field in self.args.focus_fields:
-                    field_precisions = [doc_metrics.get(field, {}).get('precision', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
-                    field_recalls = [doc_metrics.get(field, {}).get('recall', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
-                    field_f1s = [doc_metrics.get(field, {}).get('f1', 0.0) for doc_metrics in all_per_field_metrics if field in doc_metrics]
-                    
-                    if field_precisions:
-                        field_metrics[field] = {
-                            'precision': sum(field_precisions) / len(field_precisions),
-                            'recall': sum(field_recalls) / len(field_recalls),
-                            'f1': sum(field_f1s) / len(field_f1s)
-                        }
-                    else:
-                        field_metrics[field] = {'precision': 0.0, 'recall': 0.0, 'f1': 0.0}
-                
-                output_lines.append("Per-field metrics:")
-                tqdm.write("Per-field metrics:")
-                for field, metrics in field_metrics.items():
-                    field_line = f"  {field}: P={metrics['precision']:.4f}, R={metrics['recall']:.4f}, F1={metrics['f1']:.4f}"
-                    output_lines.append(field_line)
-                    tqdm.write(field_line)
-                output_lines.append("-------------------------\n")
-                tqdm.write("-------------------------\n")
+            if field_precisions:
+                field_metrics[field] = {
+                    'precision': sum(field_precisions) / len(field_precisions),
+                    'recall': sum(field_recalls) / len(field_recalls),
+                    'f1': sum(field_f1s) / len(field_f1s)
+                }
+            else:
+                field_metrics[field] = {'precision': 0.0, 'recall': 0.0, 'f1': 0.0}
+        
+        output_lines.append("Per-field metrics:")
+        tqdm.write("Per-field metrics:")
+        for field, metrics in field_metrics.items():
+            field_line = (
+                f"  {field}: P={metrics['precision']:.4f}, "
+                f"R={metrics['recall']:.4f}, F1={metrics['f1']:.4f}"
+            )
+            output_lines.append(field_line)
+            tqdm.write(field_line)
+        output_lines.append("-------------------------\n")
+        tqdm.write("-------------------------\n")
 
-        # ----------------------------------------------------------
-        # Error statistics
-        # ----------------------------------------------------------
+    def _generate_error_statistics(self, output_lines):
+        """Generate error statistics summary."""
         output_lines.append("Error statistics:")
         tqdm.write("Error statistics:")
         error_stats_line1 = f"  Parsing errors:   {self.parse_errors}"
         error_stats_line2 = f"  Evaluation errors: {self.eval_errors}"
-        output_lines.append(error_stats_line1)
-        output_lines.append(error_stats_line2)
+        output_lines.extend([error_stats_line1, error_stats_line2])
         tqdm.write(error_stats_line1)
         tqdm.write(error_stats_line2)
 
-        # ----------------------------------------------------------
-        # Optional per-category breakdown
-        # ----------------------------------------------------------
-        if self.args.per_category and hasattr(self, "pdf_df"):
+    def _generate_per_category_breakdown(self, output_lines):
+        """Generate per-category performance breakdown."""
+        if self.metrics:
+            metrics_df = pd.DataFrame(self.metrics)
+            joined = metrics_df.merge(
+                self.pdf_df[["file_id", "category"]], on="file_id", how="left"
+            )
+
+            # Choose appropriate metric columns based on task type
             if self.args.task == "extraction":
-                # For extraction task, use reference counts for per-category analysis
-                if self.reference_counts:
-                    # Create a DataFrame from reference counts
-                    ref_counts_df = pd.DataFrame(self.reference_counts)
-                    joined = ref_counts_df.merge(
-                        self.pdf_df[["file_id", "category"]], on="file_id", how="left"
-                    )
-                    
-                    # Calculate per-category reference count statistics
-                    grouped = (
-                        joined.groupby(["category"], dropna=True)[["gt_count", "pred_count", "difference"]]
-                        .agg({
-                            "gt_count": ["mean", "std"],
-                            "pred_count": ["mean", "std"], 
-                            "difference": ["mean", "std"]
-                        })
-                        .reset_index()
-                    )
-                    
-                    # Flatten column names
-                    grouped.columns = ["category", "avg_gt_count", "std_gt_count", "avg_pred_count", "std_pred_count", "avg_difference", "std_difference"]
-                    
-                    output_lines.append("Per-category reference count statistics:")
-                    tqdm.write("Per-category reference count statistics:")
-                    for _, row in grouped.iterrows():
-                        category = row["category"]
-                        stats_str = f"GT: {row['avg_gt_count']:.2f}±{row['std_gt_count']:.2f}, Pred: {row['avg_pred_count']:.2f}±{row['std_pred_count']:.2f}, Diff: {row['avg_difference']:.2f}±{row['std_difference']:.2f}"
-                        category_line = f"  {category}: {stats_str}"
-                        output_lines.append(category_line)
-                        tqdm.write(category_line)
+                metric_cols = ["precision", "recall", "f1_score", "avg_similarity"]
+                output_lines.append("Per-category extraction metrics:")
+                tqdm.write("Per-category extraction metrics:")
             else:
-                # For other tasks, use the original metrics-based approach
-                joined = metrics_df.merge(
-                    self.pdf_df[["file_id", "category"]], on="file_id", how="left"
-                )
-
-                metric_cols = (
-                    ["precision", "recall", "f1_score", "avg_similarity"]
-                    if self.args.task == "extraction"
-                    else ["overall_precision", "overall_recall", "overall_micro_f1", "overall_macro_f1"]
-                )
-
-                grouped = (
-                    joined.groupby(["category"], dropna=True)[metric_cols]
-                    .mean()
-                    .reset_index()
-                )
-
+                metric_cols = ["overall_precision", "overall_recall", "overall_micro_f1", "overall_macro_f1"]
                 output_lines.append("Per-category metrics:")
                 tqdm.write("Per-category metrics:")
-                for _, row in grouped.iterrows():
-                    category = row["category"]
-                    metrics_str = ", ".join(
-                        f"{col}: {row[col]:.4f}" for col in metric_cols if col in row
-                    )
-                    category_line = f"  {category}: {metrics_str}"
-                    output_lines.append(category_line)
-                    tqdm.write(category_line)
-        
-        # Save output to file if --save_scores is provided
-        if self.args.save_scores:
-            try:
-                scores_path = Path(self.args.save_scores)
-                scores_path.parent.mkdir(parents=True, exist_ok=True)
-                
-                # Prepare run information header
-                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                documents_processed = len(self.metrics) if self.args.task != "extraction" else len(self.reference_counts)
-                run_info = [
-                    f"\n{'='*80}",
-                    f"CEX Benchmark Run - {timestamp}",
-                    f"{'='*80}",
-                    f"Task: {self.args.task}",
-                    f"Method: {getattr(self.args, 'method', 1)}",
-                    f"Model: {self.args.model_name}",
-                    f"Extractor: {self.args.extractor}",
-                    f"Prompt: {self.args.prompt_name}",
-                    f"Mode: {self.args.mode}",
-                    f"Fuzzy Threshold: {self.args.fuzzy_threshold}",
-                    f"Focus Fields: {', '.join(self.args.focus_fields) if self.args.focus_fields else 'None'}",
-                    f"Documents Processed: {documents_processed}",
-                    f"LLM Duration: {self.llm_duration:.2f}s" if self.llm_duration else "LLM Duration: N/A (loaded from file)",
-                    f"{'='*80}\n"
-                ]
-                
-                # Append to existing file or create new one
-                mode = 'a' if scores_path.exists() else 'w'
-                with open(scores_path, mode, encoding='utf-8') as f:
-                    f.write('\n'.join(run_info + output_lines))
-                
-                tqdm.write(f"Benchmark scores summary appended to: {scores_path}")
-            except Exception as e:
-                logging.error(f"Failed to save scores to {self.args.save_scores}: {e}")
-                tqdm.write(f"Warning: Failed to save scores to {self.args.save_scores}: {e}")
+            
+            grouped = (
+                joined.groupby(["category"], dropna=True)[metric_cols]
+                .mean()
+                .reset_index()
+            )
+
+            for _, row in grouped.iterrows():
+                category = row["category"]
+                metrics_str = ", ".join(
+                    f"{col}: {row[col]:.4f}" for col in metric_cols if col in row
+                )
+                category_line = f"  {category}: {metrics_str}"
+                output_lines.append(category_line)
+                tqdm.write(category_line)
+
+    def _save_scores_summary(self, output_lines):
+        """Save benchmark scores summary to file."""
+        try:
+            scores_path = Path(self.args.save_scores)
+            scores_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Prepare run information header
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            documents_processed = len(self.metrics)
+            
+            run_info = [
+                f"\n{'='*80}",
+                f"CEX Benchmark Run - {timestamp}",
+                f"{'='*80}",
+                f"Task: {self.args.task}",
+                f"Method: {getattr(self.args, 'method', 1)}",
+                f"Model: {self.args.model_name}",
+                f"Extractor: {self.args.extractor}",
+                f"Prompt: {self.args.prompt_name}",
+                f"Mode: {self.args.mode}",
+                f"Fuzzy Threshold: {self.args.fuzzy_threshold}",
+                f"Focus Fields: {', '.join(self.args.focus_fields) if self.args.focus_fields else 'None'}",
+                f"Documents Processed: {documents_processed}",
+                f"LLM Duration: {self.llm_duration:.2f}s" if self.llm_duration else "LLM Duration: N/A (loaded from file)",
+                f"{'='*80}\n"
+            ]
+            
+            # Append to existing file or create new one
+            mode = 'a' if scores_path.exists() else 'w'
+            with open(scores_path, mode, encoding='utf-8') as f:
+                f.write('\n'.join(run_info + output_lines))
+            
+            tqdm.write(f"Benchmark scores summary appended to: {scores_path}")
+            
+        except Exception as e:
+            logging.error(f"Failed to save scores to {self.args.save_scores}: {e}")
+            tqdm.write(f"Warning: Failed to save scores to {self.args.save_scores}: {e}")
 
 
 def main():
-    """Main function to parse arguments and run the benchmark."""
+    """
+    Main function to parse arguments and run the benchmark.
+    
+    This function handles argument parsing, validation, and orchestrates
+    the complete benchmark execution workflow.
+    """
     parser = argparse.ArgumentParser(
-        description="Run citation extraction and parsing benchmarks on CEX dataset."
+        description="Run citation extraction and parsing benchmarks on CEX dataset.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Run LLM-based extraction and parsing
+  python run_cex_bench.py --task extraction_and_parsing --method 1 --model_name gpt-4 --api_key YOUR_KEY
+
+  # Run Grobid-based extraction and parsing with XML saving
+  python run_cex_bench.py --task extraction_and_parsing --extractor grobid --save_grobid_xml --model_name dummy --api_key dummy
+
+  # Run with limited documents for testing
+  python run_cex_bench.py --task extraction --limit 10 --model_name gpt-3.5-turbo --api_key YOUR_KEY
+        """
     )
 
     # Task Configuration
-    parser.add_argument("--task", type=str, required=True, choices=["extraction", "extraction_and_parsing", "parsing"], help="The evaluation task to run.")
+    parser.add_argument(
+        "--task", 
+        type=str, 
+        required=True, 
+        choices=["extraction", "extraction_and_parsing", "parsing"], 
+        help="The evaluation task to run."
+    )
     parser.add_argument(
         "--method", 
         type=int, 
@@ -703,26 +967,69 @@ def main():
         help="Reference extraction and parsing method: "
              "1=One-step full text (default), "
              "2=Two-step full text, "
-             "3=Section detection + parsing, "
+             "3=RAG-based reference section detection + parsing, "
              "4=Page-wise one-step, "
              "5=Page-wise two-step. "
              "Methods 4&5 use internal parallelization."
     )
 
     # LLM Configuration
-    parser.add_argument("--model_name", type=str, default="google/gemma-3-27b-it", help="Name of the LLM model to use.")
-    parser.add_argument("--api_key", type=str, default=os.environ.get("DEEPSEEK_API_KEY"), help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var.")
-    parser.add_argument("--api_base", type=str, default="http://localhost:8000/v1", help="Base URL for the LLM API endpoint.")
+    parser.add_argument(
+        "--model_name", 
+        type=str, 
+        default="google/gemma-3-27b-it", 
+        help="Name of the LLM model to use."
+    )
+    parser.add_argument(
+        "--api_key", 
+        type=str, 
+        default=os.environ.get("DEEPSEEK_API_KEY"), 
+        help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var."
+    )
+    parser.add_argument(
+        "--api_base", 
+        type=str, 
+        default="http://localhost:8000/v1", 
+        help="Base URL for the LLM API endpoint."
+    )
 
     # Prompt Configuration
-    parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")
+    parser.add_argument(
+        "--prompt_name", 
+        type=str, 
+        default="reference_extraction.md", 
+        help="Name of the prompt file in the 'prompts/' directory."
+    )
 
     # Extractor Configuration
-    parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru"], help="The PDF text extractor to use.")
+    parser.add_argument(
+        "--extractor", 
+        type=str, 
+        default="marker", 
+        choices=["pymupdf", "marker", "mineru", "grobid"], 
+        help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task."
+    )
+    parser.add_argument(
+        "--grobid_endpoint",
+        type=str,
+        default="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl",
+        help="Grobid service endpoint URL. Only used when --extractor grobid is specified."
+    )
 
     # Evaluation Configuration
-    parser.add_argument("--fuzzy_threshold", type=float, default=90, help="Fuzzy threshold for reference parsing. If ≤1, treated as proportion (e.g., 0.95 → 95).")
-    parser.add_argument("--mode", type=str, default="soft_fuzzy", choices=["exact", "fuzzy", "soft_fuzzy"], help="Mode for reference parsing.")
+    parser.add_argument(
+        "--fuzzy_threshold", 
+        type=float, 
+        default=90, 
+        help="Fuzzy threshold for reference parsing. If ≤1, treated as proportion (e.g., 0.95 → 95)."
+    )
+    parser.add_argument(
+        "--mode", 
+        type=str, 
+        default="soft_fuzzy", 
+        choices=["exact", "fuzzy", "soft_fuzzy"], 
+        help="Mode for reference parsing."
+    )
     parser.add_argument(
         "--focus_fields",
         type=str,
@@ -731,20 +1038,41 @@ def main():
     )
 
     # I/O and Execution Configuration
-    parser.add_argument("--output_path", type=str, default="benchmarks/cex/outputs", help="Directory to save the evaluation results.")
-    parser.add_argument("--limit", type=int, default=None, help="Limit the number of documents to process for a quick test run.")
-    parser.add_argument("--max_workers", type=int, default=25, help="Maximum number of concurrent requests to the LLM.")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging for debugging.")
-    parser.add_argument("--responses_path", type=str, default=None, help="Path to a pre-saved pickle file containing LLM responses to load for evaluation-only runs.")
+    parser.add_argument(
+        "--output_path", 
+        type=str, 
+        default="benchmarks/cex/outputs", 
+        help="Directory to save the evaluation results."
+    )
+    parser.add_argument(
+        "--limit", 
+        type=int, 
+        default=None, 
+        help="Limit the number of documents to process for a quick test run."
+    )
+    parser.add_argument(
+        "--max_workers", 
+        type=int, 
+        default=25, 
+        help="Maximum number of concurrent requests to the LLM."
+    )
+    parser.add_argument(
+        "-v", "--verbose", 
+        action="store_true", 
+        help="Enable verbose logging for debugging."
+    )
+    parser.add_argument(
+        "--responses_path", 
+        type=str, 
+        default=None, 
+        help="Path to a pre-saved pickle file containing LLM responses to load for evaluation-only runs."
+    )
 
     # Output Configuration
     parser.add_argument(
         "--per_category",
         action="store_true",
-        help=(
-            "If set, additionally display evaluation metrics broken down by document "
-            "category (e.g., AGR-BIO-SCI, ART-HUM, etc.)."
-        ),
+        help="If set, additionally display evaluation metrics broken down by document category.",
     )
 
     # Persistence Configuration
@@ -759,37 +1087,47 @@ def main():
         default=None,
         help="Path to save the final benchmark scores summary. If provided, the summary will be saved to this file in addition to being printed.",
     )
+    parser.add_argument(
+        "--save_grobid_xml",
+        action="store_true",
+        help="Save Grobid XML outputs to 'all_grobid_xml' folder. Only applies when using --extractor grobid.",
+    )
 
     args = parser.parse_args()
 
-    # Parse and normalize focus_fields -> List[str] or None
+    # Parse and normalize focus_fields
     if args.focus_fields:
         if isinstance(args.focus_fields, str):
             args.focus_fields = [f.strip() for f in args.focus_fields.split(",") if f.strip()]
         elif not isinstance(args.focus_fields, list):
-            # Unexpected type; fallback to None
             args.focus_fields = None
 
     # Configure logging
-    log_level = logging.DEBUG if args.verbose else tqdm.write
+    log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(
         level=log_level,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
+    # Validate required arguments
     if not args.api_key:
         raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable.")
 
+    # Validate grobid extractor usage
+    if args.extractor == "grobid" and args.task != "extraction_and_parsing":
+        raise ValueError("The 'grobid' extractor can only be used with the 'extraction_and_parsing' task.")
+
+    # Run benchmark
     runner = CEXBenchmarkRunner(args)
     with logging_redirect_tqdm():
         runner.run()
     
-    # Report only the duration spent on LLM calls (Step 2)
+    # Report execution time
     if runner.llm_duration:
-        print(f"LLM call execution time: {runner.llm_duration:.2f} seconds")
+        print(f"Processing execution time: {runner.llm_duration:.2f} seconds")
     else:
-        print("LLM calls were skipped (responses loaded from file).")
+        print("Processing was skipped (responses loaded from file).")
 
 
 if __name__ == "__main__":
-    main() 
+    main()

@@ -7,6 +7,8 @@ setup(
     package_dir={"": "src"},
     install_requires=[
         "pydantic",
+        "requests",
+        "lxml",
     ],
     python_requires=">=3.8",
 ) 
