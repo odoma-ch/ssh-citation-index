@@ -84,6 +84,12 @@ class GrobidClient:
                         if not xml_content.strip():
                             raise GrobidError("GROBID returned empty response")
                         return xml_content
+                    elif response.status_code == 204:
+                        # Process completed but no content could be extracted - don't retry
+                        raise GrobidError(f"GROBID could not extract content (HTTP 204): Process completed but no content could be extracted and structured")
+                    elif response.status_code == 500:
+                        # Server error - cannot process this document - don't retry
+                        raise GrobidError(f"GROBID cannot process document (HTTP 500): Server error, document cannot be processed")
                     else:
                         error_msg = f"GROBID service error (HTTP {response.status_code}): {response.text}"
                         raise GrobidError(error_msg)
@@ -92,19 +98,32 @@ class GrobidClient:
                 last_exception = e
                 attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
                 
+                # Check if this is a non-retryable error
+                is_non_retryable = (
+                    isinstance(e, GrobidError) and 
+                    ("HTTP 204" in str(e) or "HTTP 500" in str(e))
+                )
+                
                 if isinstance(e, requests.Timeout):
                     logging.warning(f"GROBID timeout on {attempt_info}: {e}")
                 elif isinstance(e, GrobidError):
-                    logging.warning(f"GROBID service error on {attempt_info}: {e}")
+                    if is_non_retryable:
+                        logging.error(f"GROBID non-retryable error: {e}")
+                        break  # Don't retry for 204/500 errors
+                    else:
+                        logging.warning(f"GROBID service error on {attempt_info}: {e}")
                 else:
                     logging.warning(f"GROBID request error on {attempt_info}: {type(e).__name__}: {e}")
                 
-                if attempt < self.max_retries:
-                    wait_time = min(2 ** attempt, 10)  # Exponential backoff with cap
+                if attempt < self.max_retries and not is_non_retryable:
+                    # Use fixed retry delays: 10s, 30s, 60s
+                    retry_delays = [10, 30, 60]
+                    wait_time = retry_delays[min(attempt, len(retry_delays) - 1)]
                     logging.info(f"Retrying GROBID request in {wait_time} seconds...")
                     time.sleep(wait_time)
                 else:
-                    logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
+                    if not is_non_retryable:
+                        logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
                     break
         
         # If all retries failed, raise the last exception
@@ -168,6 +187,12 @@ class GrobidClient:
                         if not xml_content.strip():
                             raise GrobidError("GROBID returned empty response")
                         return xml_content
+                    elif response.status_code == 204:
+                        # Process completed but no content could be extracted - don't retry
+                        raise GrobidError(f"GROBID could not extract content (HTTP 204): Process completed but no content could be extracted and structured")
+                    elif response.status_code == 500:
+                        # Server error - cannot process this document - don't retry
+                        raise GrobidError(f"GROBID cannot process document (HTTP 500): Server error, document cannot be processed")
                     else:
                         error_msg = f"GROBID service error (HTTP {response.status_code}): {response.text}"
                         raise GrobidError(error_msg)
@@ -176,38 +201,72 @@ class GrobidClient:
                 last_exception = e
                 attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
                 
+                # Check if this is a non-retryable error
+                is_non_retryable = (
+                    isinstance(e, GrobidError) and 
+                    ("HTTP 204" in str(e) or "HTTP 500" in str(e))
+                )
+                
                 if isinstance(e, requests.Timeout):
                     logging.warning(f"GROBID timeout on {attempt_info}: {e}")
                 elif isinstance(e, GrobidError):
-                    logging.warning(f"GROBID service error on {attempt_info}: {e}")
+                    if is_non_retryable:
+                        logging.error(f"GROBID non-retryable error: {e}")
+                        break  # Don't retry for 204/500 errors
+                    else:
+                        logging.warning(f"GROBID service error on {attempt_info}: {e}")
                 else:
                     logging.warning(f"GROBID request error on {attempt_info}: {type(e).__name__}: {e}")
                 
-                if attempt < self.max_retries:
-                    wait_time = min(2 ** attempt, 10)
+                if attempt < self.max_retries and not is_non_retryable:
+                    # Use fixed retry delays: 10s, 30s, 60s
+                    retry_delays = [10, 30, 60]
+                    wait_time = retry_delays[min(attempt, len(retry_delays) - 1)]
                     logging.info(f"Retrying GROBID request in {wait_time} seconds...")
                     time.sleep(wait_time)
                 else:
-                    logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
+                    if not is_non_retryable:
+                        logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
                     break
         
         if last_exception:
             raise last_exception
     
-    def health_check(self) -> bool:
-        """Check if GROBID service is available and responding.
+    def health_check(self, max_retries: int = 2) -> bool:
+        """Check if GROBID service is available and responding with retry logic.
+        
+        Args:
+            max_retries: Maximum number of retry attempts (default: 2)
         
         Returns:
             True if service is healthy, False otherwise
         """
-        try:
-            response = self.session.get(
-                f"{self.endpoint}/api/isalive", 
-                timeout=10.0
-            )
-            return response.status_code == 200
-        except requests.RequestException:
-            return False
+        retry_delays = [30, 60]  # 30s for first retry, 60s for second retry
+        
+        for attempt in range(max_retries + 1):
+            try:
+                response = self.session.get(
+                    f"{self.endpoint}/api/isalive", 
+                    timeout=10.0
+                )
+                if response.status_code == 200:
+                    if attempt > 0:
+                        logging.info(f"GROBID health check succeeded on attempt {attempt + 1}")
+                    return True
+                else:
+                    logging.warning(f"GROBID health check failed with status {response.status_code} on attempt {attempt + 1}")
+                    
+            except requests.RequestException as e:
+                logging.warning(f"GROBID health check request failed on attempt {attempt + 1}: {type(e).__name__}: {e}")
+            
+            # If not the last attempt, wait before retrying
+            if attempt < max_retries:
+                delay = retry_delays[attempt]
+                logging.info(f"Retrying GROBID health check in {delay} seconds...")
+                time.sleep(delay)
+        
+        logging.error(f"GROBID health check failed after {max_retries + 1} attempts")
+        return False
     
     def __enter__(self):
         """Context manager entry."""
