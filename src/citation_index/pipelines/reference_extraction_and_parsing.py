@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import List, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from citation_index.core.segmenters.references_locator import extract_all_reference_sections
 from citation_index.llm.client import LLMClient
 from citation_index.llm.prompt_loader import ReferenceExtractionAndParsingPrompt
 from citation_index.utils.json_helper import safe_json_parse
 from citation_index.core.models import References
+from citation_index.core.segmenters.semantic_reference_locator import locate_reference_sections_semantic
 from .reference_parsing import parse_reference_strings
 from .reference_extraction import extract_text_references, extract_text_references_by_page
 from .text_extraction import split_pages, extract_text
@@ -75,29 +75,6 @@ def run_pdf_two_step(
     return parse_reference_strings(lines, llm_client=llm_client, temperature=temperature, include_schema=include_schema)
 
 
-def run_pdf_section_detect_and_parse(
-    text_or_pdf: str | Path,
-    llm_client: LLMClient,
-    extractor: Optional[str] = None,
-    section_locator=extract_all_reference_sections,
-    include_schema: bool = False,
-    temperature: float = 0.3,
-) -> References:
-    """Method 3: Detect references section, then parse lines to structured refs (current)."""
-    if extractor is not None and isinstance(text_or_pdf, (str, Path)) and Path(text_or_pdf).exists():
-        input_text = extract_text(text_or_pdf, extractor=extractor).text
-    else:
-        input_text = str(text_or_pdf)
-
-    sections = section_locator(input_text)
-    section_texts = [section["text"] for section in sections]
-    return parse_reference_strings(
-        section_texts,
-        llm_client=llm_client,
-        include_schema=include_schema,
-        temperature=temperature,
-    )
-
 
 def run_pdf_one_step_by_page(
     text_or_pdf: str | Path,
@@ -155,12 +132,76 @@ def run_pdf_two_step_by_page(
     return parse_reference_strings(all_lines, llm_client=llm_client, temperature=temperature, include_schema=include_schema)
 
 
+def run_pdf_semantic_one_step(
+    text_or_pdf: str | Path,
+    llm_client: LLMClient,
+    chunker,
+    extractor: Optional[str] = None,
+    embedding_model: str = "intfloat/multilingual-e5-large-instruct",
+    embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
+    prompt_name: str = "prompts/reference_extraction_and_parsing.md",
+    temperature: float = 0.3,
+    include_schema: bool = True,
+    top_k: int = 5,
+    top_percentile: float = 0.9,
+    fast_path: bool = False,
+) -> References:
+    """Method 3: Semantic section detection + one-step extraction and parsing.
+    
+    Uses embedding-based semantic search to locate reference sections, then
+    applies one-step LLM-based extraction and parsing to those sections.
+    
+    Args:
+        text_or_pdf: Input text or PDF path
+        llm_client: LLM client for extraction and parsing
+        chunker: Text chunker object with chunk() method
+        extractor: Text extractor type (if PDF input)
+        embedding_model: Model for semantic embeddings
+        embedding_endpoint: API endpoint for embedding service
+        prompt_name: Prompt template for extraction and parsing
+        temperature: LLM temperature
+        include_schema: Include JSON schema in prompt
+        top_k: Minimum chunks to consider for reference sections
+        top_percentile: Percentile threshold for chunk selection
+        fast_path: Try regex matching first
+        
+    Returns:
+        References object containing parsed references
+    """
+    # Extract text if PDF input
+    if extractor is not None and isinstance(text_or_pdf, (str, Path)) and Path(text_or_pdf).exists():
+        input_text = extract_text(text_or_pdf, extractor=extractor).text
+    else:
+        input_text = str(text_or_pdf)
+    
+    # Locate reference sections using semantic search
+    reference_sections = locate_reference_sections_semantic(
+        input_text,
+        chunker=chunker,
+        embedding_model=embedding_model,
+        embedding_endpoint=embedding_endpoint,
+        top_k=top_k,
+        top_percentile=top_percentile,
+        fast_path=fast_path
+    )
+    
+    if not reference_sections.strip():
+        return References(references=[])
+    
+    # One-step extraction and parsing on the located sections
+    prompt = ReferenceExtractionAndParsingPrompt(
+        prompt=prompt_name, input_text=reference_sections, include_json_schema=include_schema
+    )
+    response = llm_client.call(prompt.prompt, json_output=True, temperature=temperature, json_schema=prompt.json_schema)
+    return _parse_json_to_references(response)
+
+
+
 # Backwards-compatible alias (previous default behavior matched method 1)
 def run_pdf_extract_and_parse(
     text_or_pdf: str | Path,
     llm_client: LLMClient,
     extractor: Optional[str] = None,
-    section_locator=extract_all_reference_sections,
     include_schema: bool = True,
     temperature: float = 0.3,
     prompt_name: str = "prompts/reference_extraction_and_parsing.md",

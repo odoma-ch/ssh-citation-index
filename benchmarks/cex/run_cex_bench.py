@@ -36,16 +36,16 @@ from citation_index.core.extractors import ExtractorFactory
 from citation_index.core.models import References
 from citation_index.evaluation.ref_metrics import RefEvaluator, string_reference_eval
 from citation_index.llm.client import LLMClient, DeepSeekClient
-from citation_index.pipelines.reference_extraction import extract_text_references
+from citation_index.pipelines.reference_extraction import extract_text_references, extract_text_references_semantic_sections
 from citation_index.pipelines.reference_extraction_and_parsing import (
     run_pdf_one_step,
     run_pdf_one_step_by_page,
-    run_pdf_section_detect_and_parse,
+    run_pdf_semantic_one_step,
     run_pdf_two_step,
     run_pdf_two_step_by_page,
 )
 from citation_index.pipelines.reference_parsing import parse_reference_strings
-from citation_index.pipelines.text_extraction import extract_text, split_pages
+from citation_index.pipelines.text_extraction import split_pages
 
 # Local imports - benchmark specific
 from cex_helper import load_cex_data
@@ -83,6 +83,19 @@ class CEXBenchmarkRunner:
         # Error counters
         self.parse_errors = 0   # JSON or format errors while reading model output
         self.eval_errors = 0    # Any failure during evaluation phase
+        
+        # Initialize chunker once for methods that need it
+        self.chunker = None
+        method = getattr(self.args, 'method', 1)
+        if method in [2, 3]:  # Methods that use semantic section detection
+            try:
+                from chonkie import LateChunker
+                # Create chunker once - we'll handle threading issues by using max_workers=1
+                self.chunker = LateChunker.from_recipe("markdown", lang="en")
+                tqdm.write(f"Initialized chunker for method {method}")
+            except ImportError as e:
+                raise ImportError(f"Method {method} requires chonkie package but it's not available. "
+                                f"Please install chonkie: pip install chonkie") from e
         
         tqdm.write(f"Results will be saved to: {self.output_dir}")
 
@@ -266,8 +279,11 @@ class CEXBenchmarkRunner:
             List of response dictionaries containing results
         """
         # Adjust worker count for different methods
+        # Methods 2, 3 use shared chunker instance, so need max_workers=1 to avoid threading issues
+        # Methods 4, 5 handle parallelization internally
+        method = getattr(self.args, 'method', 1)
         effective_max_workers = (
-            1 if self.args.method in [4, 5] else self.args.max_workers
+            1 if method in [2, 3, 4, 5] else self.args.max_workers
         )
         
         # Display appropriate progress message
@@ -358,13 +374,49 @@ class CEXBenchmarkRunner:
         return None
 
     def _execute_extraction_task(self, input_text, llm_client, prompt_path):
-        """Execute plain text extraction task."""
-        lines = extract_text_references(
-            text=input_text,
-            llm_client=llm_client,
-            prompt_name=str(prompt_path),
-        )
-        return "\n".join(lines)
+        """Execute plain text extraction task using the specified method."""
+        method = getattr(self.args, 'method', 1)
+        
+        if method == 1:
+            # Method 1: Standard LLM-based extraction on full text
+            lines = extract_text_references(
+                text=input_text,
+                llm_client=llm_client,
+                prompt_name=str(prompt_path),
+            )
+            return "\n".join(lines)
+        
+        elif method == 2:
+            # Method 2: Semantic section detection with LLM
+            lines = extract_text_references_semantic_sections(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                chunker=self.chunker,
+                extractor=None,
+                prompt_name=str(prompt_path),
+                fast_path=True,
+            )
+            return "\n".join(lines)
+            
+        
+        elif method == 3:
+            # Method 3: Page-wise extraction with LLM
+            from citation_index.pipelines.reference_extraction import extract_text_references_by_page
+            pages = split_pages(input_text, extractor_type=self.args.extractor)
+            optimal_workers = min(self.args.max_workers, len(pages))
+            logging.debug(f"Method 3 extraction: {len(pages)} pages, using {optimal_workers} workers")
+            
+            lines = extract_text_references_by_page(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                prompt_name=str(prompt_path),
+                max_workers=optimal_workers,
+            )
+            return "\n".join(lines)
+        
+        else:
+            raise ValueError(f"Unsupported extraction method: {method}. Must be 1, 2, or 3.")
 
     def _execute_extraction_and_parsing_task(self, task_info, llm_client, prompt_path):
         """Execute extraction and parsing task (structured output)."""
@@ -436,13 +488,15 @@ class CEXBenchmarkRunner:
             )
         
         elif method == 3:
-            # Method 3: Detect references section, then parse lines to structured refs
-            return run_pdf_section_detect_and_parse(
+            # Method 3: Semantic section detection + one-step extraction and parsing
+            return run_pdf_semantic_one_step(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
+                chunker=self.chunker,
                 extractor=None,
                 include_schema=include_schema,
             )
+            
         
         elif method == 4:
             # Method 4: Page-wise one-step extraction+parsing, then aggregate
@@ -964,13 +1018,13 @@ Examples:
         type=int, 
         default=1, 
         choices=[1, 2, 3, 4, 5], 
-        help="Reference extraction and parsing method: "
-             "1=One-step full text (default), "
-             "2=Two-step full text, "
-             "3=RAG-based reference section detection + parsing, "
-             "4=Page-wise one-step, "
-             "5=Page-wise two-step. "
-             "Methods 4&5 use internal parallelization."
+        help="Reference extraction/parsing method: "
+             "For extraction task: 1=Standard LLM-based extraction on full text (default), "
+             "2=Semantic section detection with LLM, 3=Page-wise extraction with LLM. "
+             "For extraction_and_parsing task: 1=One-step full text (default), "
+             "2=Two-step full text, 3=Semantic section detection + parsing, "
+             "4=Page-wise one-step, 5=Page-wise two-step. "
+             "Methods 2, 3, 4, 5 use max_workers=1 (methods 2&3 due to shared chunker, methods 4&5 due to internal parallelization)."
     )
 
     # LLM Configuration

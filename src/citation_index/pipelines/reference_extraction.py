@@ -8,9 +8,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 
 from citation_index.core.extractors import ExtractorFactory
-from citation_index.core.segmenters.references_locator import extract_all_reference_sections
 from citation_index.llm.client import LLMClient
 from citation_index.llm.prompt_loader import ReferenceExtractionPrompt
+from citation_index.core.segmenters.semantic_reference_locator import locate_reference_sections_semantic
 from .text_extraction import split_pages, extract_text
 
 
@@ -18,7 +18,7 @@ def extract_text_references(
     text: str,
     llm_client: LLMClient,
     prompt_name: str = "prompts/reference_extraction.md",
-    temperature: float = 0.0,
+    temperature: float = 0.3,
 ) -> List[str]:
     """Extract reference strings (one per line) from raw text via LLM.
 
@@ -35,45 +35,7 @@ def extract_text_references(
     return [ln for ln in lines if ln]
 
 
-def extract_pdf_references(
-    text_or_pdf: str | Path,
-    llm_client: LLMClient,
-    extractor: str = "pymupdf",
-    section_locator=extract_all_reference_sections,
-    prompt_name: str = "prompts/reference_extraction.md",
-    temperature: float = 0.0,
-) -> List[str]:
-    """Method 1: Extract reference strings from a PDF using an LLM."""
-    if isinstance(text_or_pdf, (str, Path)) and Path(text_or_pdf).exists():
-        input_text = extract_text(text_or_pdf, extractor=extractor).text
-    else:
-        input_text = str(text_or_pdf)
-    return extract_text_references_section_detect(input_text, extractor, section_locator)
 
-
-def extract_text_references_section_detect(
-    text_or_pdf: str | Path,
-    extractor: Optional[str] = None,
-    section_locator=extract_all_reference_sections,
-) -> List[str]:
-    """Method 2: Extract reference strings from text by detecting the reference section without using an LLM.
-    
-    - If `extractor` is provided and `text_or_pdf` is a valid file path, extract text first.
-    - Otherwise, treat `text_or_pdf` as raw text.
-    - Uses section detection to locate reference sections and returns raw text lines.
-    """
-    if extractor is not None and isinstance(text_or_pdf, (str, Path)) and Path(text_or_pdf).exists():
-        input_text = extract_text(text_or_pdf, extractor=extractor).text
-    else:
-        input_text = str(text_or_pdf)
-
-    sections = section_locator(input_text, prefer_tokens=False)
-    section_texts = [section["text"] for section in sections]
-    
-    # Combine all section texts and split into lines
-    all_text = "\n".join(section_texts)
-    lines = [ln.strip() for ln in all_text.splitlines()]
-    return [ln for ln in lines if ln]
 
 
 def extract_text_references_by_page(
@@ -115,5 +77,68 @@ def extract_text_references_by_page(
             except Exception:
                 continue
     return results
+
+
+def extract_text_references_semantic_sections(
+    text_or_pdf: str | Path,
+    llm_client: LLMClient,
+    chunker,
+    extractor: Optional[str] = None,
+    embedding_model: str = "intfloat/multilingual-e5-large-instruct",
+    embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
+    prompt_name: str = "prompts/reference_extraction.md",
+    temperature: float = 0.3,
+    top_k: int = 5,
+    top_percentile: float = 0.9,
+    fast_path: bool = False,
+) -> List[str]:
+    """Method 2: Semantic reference section detection followed by LLM extraction.
+    
+    Uses embedding-based semantic search to locate reference sections, then
+    applies LLM-based extraction to those sections only.
+    
+    Args:
+        text_or_pdf: Input text or PDF path
+        llm_client: LLM client for reference extraction
+        chunker: Text chunker object with chunk() method
+        extractor: Text extractor type (if PDF input)
+        embedding_model: Model for semantic embeddings
+        embedding_endpoint: API endpoint for embedding service
+        prompt_name: Prompt template for reference extraction
+        temperature: LLM temperature
+        top_k: Minimum chunks to consider for reference sections
+        top_percentile: Percentile threshold for chunk selection
+        fast_path: Try regex matching first
+        
+    Returns:
+        List of extracted reference strings
+    """
+    # Extract text if PDF input
+    if isinstance(text_or_pdf, (str, Path)) and extractor is not None and Path(text_or_pdf).exists():
+        input_text = extract_text(text_or_pdf, extractor=extractor).text
+    else:
+        input_text = str(text_or_pdf)
+    
+    # Locate reference sections using semantic search
+    reference_sections = locate_reference_sections_semantic(
+        input_text,
+        chunker=chunker,
+        embedding_model=embedding_model,
+        embedding_endpoint=embedding_endpoint,
+        top_k=top_k,
+        top_percentile=top_percentile,
+        fast_path=fast_path
+    )
+    
+    if not reference_sections.strip():
+        return []
+    
+    # Extract references from the located sections
+    return extract_text_references(
+        reference_sections,
+        llm_client=llm_client,
+        prompt_name=prompt_name,
+        temperature=temperature
+    )
 
 

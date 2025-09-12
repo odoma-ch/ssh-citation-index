@@ -16,7 +16,7 @@ from typing import List
 from citation_index.core.extractors import ExtractorFactory
 from citation_index.llm.client import LLMClient, DeepSeekClient
 from citation_index.pipelines.reference_extraction import (
-    extract_text_references, extract_text_references_section_detect, extract_text_references_by_page
+    extract_text_references, extract_text_references_semantic_sections, extract_text_references_by_page
 )
 from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step
 from citation_index.pipelines.reference_parsing import parse_reference_strings
@@ -40,6 +40,20 @@ class BenchmarkRunner:
         # Counters for error tracking
         self.parse_errors = 0  # JSON or format errors while reading model output
         self.eval_errors = 0   # Any failure during evaluation phase
+        
+        # Initialize chunker once for methods that need it
+        self.chunker = None
+        method = getattr(self.args, 'method', 1)
+        if method in [2, 3]:  # Methods that use semantic section detection
+            try:
+                from chonkie import LateChunker
+                # Create chunker once - we'll handle threading issues by using max_workers=1
+                self.chunker = LateChunker.from_recipe("markdown", lang="en")
+                tqdm.write(f"Initialized chunker for method {method}")
+            except ImportError as e:
+                raise ImportError(f"Method {method} requires chonkie package but it's not available. "
+                                f"Please install chonkie: pip install chonkie") from e
+        
         tqdm.write(f"Results will be saved to: {self.output_dir}")
 
     def run(self):
@@ -67,8 +81,8 @@ class BenchmarkRunner:
                 endpoint=self.args.api_base,
                 model=self.args.model_name,
                 api_key=self.args.api_key,
-                timeout=180,
-                first_token_timeout=60,
+                timeout=800,
+                first_token_timeout=120,
                 max_retries=3,
             )
         
@@ -139,9 +153,11 @@ class BenchmarkRunner:
                     logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
 
             # 2. Concurrently process all tasks
-            # For method 3, use max_workers=1 since it handles parallelization internally
+            # Methods 2, 3 use shared chunker instance, so need max_workers=1 to avoid threading issues
+            # Methods 4, 5 handle parallelization internally
             # For Grobid, we're not using LLM but still use parallel processing
-            effective_max_workers = 1 if getattr(self.args, 'method', 1) == 3 else self.args.max_workers
+            method = getattr(self.args, 'method', 1)
+            effective_max_workers = 1 if method in [2, 3, 4, 5] else self.args.max_workers
             
             if self.args.extractor == "grobid":
                 tqdm.write(f"Processing {len(llm_tasks)} tasks with Grobid extractor using {effective_max_workers} workers.")
@@ -228,12 +244,12 @@ class BenchmarkRunner:
                 return json.dumps(refs.model_dump())
             else:
                 include_schema = "pydantic" in self.args.prompt_name
-                refs = run_pdf_one_step(
-                    text_or_pdf=input_text,
+                refs = self._execute_extraction_and_parsing_method(
+                    input_text=input_text,
                     llm_client=llm_client,
-                    extractor=None,
-                    prompt_name=str(prompt_path),
+                    prompt_path=str(prompt_path),
                     include_schema=include_schema,
+                    file_id=file_id,
                 )
                 return json.dumps(refs.model_dump())
 
@@ -265,11 +281,16 @@ class BenchmarkRunner:
             )
         
         elif method == 2:
-            # Method 2: Section detection without LLM (non-LLM method)
-            return extract_text_references_section_detect(
+            # Method 2: Semantic section detection with LLM
+            return extract_text_references_semantic_sections(
                 text_or_pdf=input_text,
+                llm_client=llm_client,
+                chunker=self.chunker,
                 extractor=None,
+                prompt_name=prompt_path,
+                fast_path=True,  # Try regex first for efficiency
             )
+            
         
         elif method == 3:
             # Method 3: Page-wise extraction with LLM
@@ -288,6 +309,79 @@ class BenchmarkRunner:
         
         else:
             raise ValueError(f"Unsupported extraction method: {method}. Must be 1, 2, or 3.")
+
+    def _execute_extraction_and_parsing_method(
+        self, input_text: str, llm_client, prompt_path: str, include_schema: bool, file_id: str
+    ) -> References:
+        """Execute the appropriate extraction and parsing method based on configuration."""
+        method = getattr(self.args, 'method', 1)
+        
+        if method == 1:
+            # Method 1: One-step extraction+parsing on full text
+            return run_pdf_one_step(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                prompt_name=prompt_path,
+                include_schema=include_schema,
+            )
+        
+        elif method == 2:
+            # Method 2: Two-step – extract reference strings, then parse to structured refs
+            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_two_step
+            return run_pdf_two_step(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                include_schema=include_schema,
+            )
+        
+        elif method == 3:
+            # Method 3: Semantic section detection + one-step extraction and parsing
+            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_semantic_one_step
+            return run_pdf_semantic_one_step(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                chunker=self.chunker,
+                extractor=None,
+                prompt_name=prompt_path,
+                include_schema=include_schema,
+                fast_path=True,
+            )
+        
+        elif method == 4:
+            # Method 4: Page-wise one-step extraction+parsing, then aggregate
+            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step_by_page
+            pages = split_pages(input_text, extractor_type=self.args.extractor)
+            optimal_workers = min(self.args.max_workers, len(pages))
+            logging.debug(f"Method 4 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
+            
+            return run_pdf_one_step_by_page(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                prompt_name=prompt_path,
+                include_schema=include_schema,
+                max_workers=optimal_workers,
+            )
+        
+        elif method == 5:
+            # Method 5: Page-wise extraction of strings, concatenate, then parse once
+            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_two_step_by_page
+            pages = split_pages(input_text, extractor_type=self.args.extractor)
+            optimal_workers = min(self.args.max_workers, len(pages))
+            logging.debug(f"Method 5 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
+            
+            return run_pdf_two_step_by_page(
+                text_or_pdf=input_text,
+                llm_client=llm_client,
+                extractor=None,
+                include_schema=include_schema,
+                max_workers=optimal_workers,
+            )
+        
+        else:
+            raise ValueError(f"Unsupported method: {method}. Must be 1, 2, 3, 4, or 5.")
 
     def _execute_grobid_extraction(self, task_info) -> References:
         """
@@ -610,11 +704,13 @@ def main():
         "--method", 
         type=int, 
         default=1, 
-        choices=[1, 2, 3], 
-        help="Reference extraction method (only applies to extraction task): "
-             "1=Standard LLM-based extraction on full text (default), "
-             "2=Section detection without LLM, "
-             "3=Page-wise extraction with LLM."
+        choices=[1, 2, 3, 4, 5], 
+        help="Reference extraction/parsing method: "
+             "For extraction task: 1=Standard LLM-based extraction on full text (default), "
+             "2=Semantic section detection with LLM, 3=Page-wise extraction with LLM. "
+             "For extraction_and_parsing task: 1=One-step full text, 2=Two-step full text, "
+             "3=Semantic section detection + parsing, 4=Page-wise one-step, 5=Page-wise two-step. "
+             "Methods 2, 3, 4, 5 use max_workers=1 (methods 2&3 due to shared chunker, methods 4&5 due to internal parallelization)."
     )
 
     # LLM Configuration
@@ -690,7 +786,7 @@ def main():
             args.focus_fields = None
 
     # Configure logging
-    log_level = logging.DEBUG if args.verbose else tqdm.write
+    log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(
         level=log_level,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
