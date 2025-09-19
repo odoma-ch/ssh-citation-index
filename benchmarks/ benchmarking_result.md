@@ -51,8 +51,8 @@ Here the failure reason mainly because the pdf is too large for the context wind
 
 ## CEXgoldstandard dataset
 
-Total documents:  107
-Total references:   5008
+Total documents:  112
+Total references:   5160
 
 
 Result:  
