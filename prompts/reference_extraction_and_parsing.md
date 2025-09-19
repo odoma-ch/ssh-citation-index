@@ -48,8 +48,7 @@ Given the provided text, extract all full reference entries and format them acco
    - "middle_name": string (empty if not present)
    - "surname": string
 4. Ensure the output is valid JSON, with no trailing commas.
-5. Your entire response must be wrapped with <start> and <end> tags, and must contain only the JSON (no explanations, markdown, or extra text).
-6. If there are no references, return an empty list.
+5. If there are no references, return an empty list.
 
 ### Example
 
@@ -61,7 +60,6 @@ References:
 2. United Nations. (2018). World Urbanization Prospects. UN Publications.
 
 #### Expected Output:
-<start>
 {
     "references": [
         {
@@ -92,7 +90,6 @@ References:
         }
     ]
 }
-<end>
 
 ### Input Text:
 {{INPUT_TEXT}}

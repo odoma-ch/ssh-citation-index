@@ -82,14 +82,13 @@ def extract_text_references_by_page(
 def extract_text_references_semantic_sections(
     text_or_pdf: str | Path,
     llm_client: LLMClient,
-    chunker,
+    chunker=None,
+    chunks=None,
     extractor: Optional[str] = None,
     embedding_model: str = "intfloat/multilingual-e5-large-instruct",
     embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
     prompt_name: str = "prompts/reference_extraction.md",
     temperature: float = 0.3,
-    top_k: int = 5,
-    top_percentile: float = 0.9,
     fast_path: bool = False,
 ) -> List[str]:
     """Method 2: Semantic reference section detection followed by LLM extraction.
@@ -100,7 +99,8 @@ def extract_text_references_semantic_sections(
     Args:
         text_or_pdf: Input text or PDF path
         llm_client: LLM client for reference extraction
-        chunker: Text chunker object with chunk() method
+        chunker: Text chunker object with chunk() method. Ignored if chunks parameter is provided.
+        chunks: Pre-computed chunks from the text. If provided, chunker is ignored.
         extractor: Text extractor type (if PDF input)
         embedding_model: Model for semantic embeddings
         embedding_endpoint: API endpoint for embedding service
@@ -109,6 +109,8 @@ def extract_text_references_semantic_sections(
         top_k: Minimum chunks to consider for reference sections
         top_percentile: Percentile threshold for chunk selection
         fast_path: Try regex matching first
+        gap_size_threshold: Minimum gap size to trigger gap-based candidate selection
+        drop_tolerance: Maximum score drop allowed during contiguous expansion
         
     Returns:
         List of extracted reference strings
@@ -123,22 +125,30 @@ def extract_text_references_semantic_sections(
     reference_sections = locate_reference_sections_semantic(
         input_text,
         chunker=chunker,
+        chunks=chunks,
         embedding_model=embedding_model,
         embedding_endpoint=embedding_endpoint,
-        top_k=top_k,
-        top_percentile=top_percentile,
         fast_path=fast_path
     )
     
     if not reference_sections.strip():
-        return []
+        reference_sections = input_text
     
     # Extract references from the located sections
-    return extract_text_references(
+    references = extract_text_references(
         reference_sections,
         llm_client=llm_client,
         prompt_name=prompt_name,
         temperature=temperature
     )
+    # if references is empty, use method 1 as fallback
+    if not references:
+        return extract_text_references(
+            input_text,
+            llm_client=llm_client,
+            prompt_name=prompt_name,
+            temperature=temperature
+        )
+    return references
 
 

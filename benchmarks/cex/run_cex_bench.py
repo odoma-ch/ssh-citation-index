@@ -87,10 +87,10 @@ class CEXBenchmarkRunner:
         # Initialize chunker once for methods that need it
         self.chunker = None
         method = getattr(self.args, 'method', 1)
-        if method in [2, 3]:  # Methods that use semantic section detection
+        if (method == 2 and self.args.task == "extraction") or (method == 3 and self.args.task == "extraction_and_parsing"):  # Methods that use semantic section detection
             try:
                 from chonkie import LateChunker
-                # Create chunker once - we'll handle threading issues by using max_workers=1
+                # Create chunker once for pre-chunking texts
                 self.chunker = LateChunker.from_recipe("markdown", lang="en")
                 tqdm.write(f"Initialized chunker for method {method}")
             except ImportError as e:
@@ -215,11 +215,19 @@ class CEXBenchmarkRunner:
                     file_id, file_path, extractor, markdown_dir
                 )
                 
+                # Pre-chunk text for methods that need it (2, 3)
+                chunks = None
+                method = getattr(self.args, 'method', 1)
+                if method in [2, 3] and self.chunker is not None:
+                    from citation_index.core.segmenters.semantic_reference_locator import pre_chunk_text
+                    chunks = pre_chunk_text(input_text, self.chunker)
+                
                 task_info = {
                     "file_id": file_id,
                     "input_text": input_text,
                     "gt_references": gt_references,
                     "file_path": file_path,  # Required for Grobid
+                    "chunks": chunks,  # Pre-computed chunks for semantic methods
                 }
                 llm_tasks.append(task_info)
                 
@@ -279,11 +287,10 @@ class CEXBenchmarkRunner:
             List of response dictionaries containing results
         """
         # Adjust worker count for different methods
-        # Methods 2, 3 use shared chunker instance, so need max_workers=1 to avoid threading issues
         # Methods 4, 5 handle parallelization internally
         method = getattr(self.args, 'method', 1)
         effective_max_workers = (
-            1 if method in [2, 3, 4, 5] else self.args.max_workers
+            1 if method in [4, 5] else self.args.max_workers
         )
         
         # Display appropriate progress message
@@ -361,7 +368,7 @@ class CEXBenchmarkRunner:
 
         # Route to appropriate processing method based on task type
         if self.args.task == "extraction":
-            return self._execute_extraction_task(input_text, llm_client, prompt_path)
+            return self._execute_extraction_task(task_info, llm_client, prompt_path)
         
         elif self.args.task == "extraction_and_parsing":
             return self._execute_extraction_and_parsing_task(
@@ -373,8 +380,9 @@ class CEXBenchmarkRunner:
         
         return None
 
-    def _execute_extraction_task(self, input_text, llm_client, prompt_path):
+    def _execute_extraction_task(self, task_info, llm_client, prompt_path):
         """Execute plain text extraction task using the specified method."""
+        input_text = task_info["input_text"]
         method = getattr(self.args, 'method', 1)
         
         if method == 1:
@@ -388,10 +396,12 @@ class CEXBenchmarkRunner:
         
         elif method == 2:
             # Method 2: Semantic section detection with LLM
+            chunks = task_info.get("chunks")  # Use pre-computed chunks
             lines = extract_text_references_semantic_sections(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
                 chunker=self.chunker,
+                chunks=chunks,
                 extractor=None,
                 prompt_name=str(prompt_path),
                 fast_path=True,
@@ -428,11 +438,10 @@ class CEXBenchmarkRunner:
         # Regular LLM-based extraction and parsing
         include_schema = "pydantic" in self.args.prompt_name
         refs = self._execute_extraction_and_parsing_method(
-            input_text=task_info["input_text"],
+            task_info=task_info,
             llm_client=llm_client,
             prompt_path=str(prompt_path),
             include_schema=include_schema,
-            file_id=task_info["file_id"],
         )
         return json.dumps(refs.model_dump())
 
@@ -451,21 +460,22 @@ class CEXBenchmarkRunner:
         return json.dumps(refs.model_dump())
 
     def _execute_extraction_and_parsing_method(
-        self, input_text: str, llm_client, prompt_path: str, include_schema: bool, file_id: str
+        self, task_info: dict, llm_client, prompt_path: str, include_schema: bool
     ) -> References:
         """
         Execute the appropriate extraction and parsing method based on configuration.
         
         Args:
-            input_text: Extracted text from PDF
+            task_info: Task dictionary containing input_text, file_id, chunks, etc.
             llm_client: LLM client for API calls
             prompt_path: Path to prompt file
             include_schema: Whether to include Pydantic schema in prompt
-            file_id: Document identifier for logging
             
         Returns:
             References object containing extracted references
         """
+        input_text = task_info["input_text"]
+        file_id = task_info["file_id"]
         method = getattr(self.args, 'method', 1)
         
         if method == 1:
@@ -489,10 +499,12 @@ class CEXBenchmarkRunner:
         
         elif method == 3:
             # Method 3: Semantic section detection + one-step extraction and parsing
+            chunks = task_info.get("chunks")  # Use pre-computed chunks
             return run_pdf_semantic_one_step(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
                 chunker=self.chunker,
+                chunks=chunks,
                 extractor=None,
                 include_schema=include_schema,
             )
@@ -1024,14 +1036,14 @@ Examples:
              "For extraction_and_parsing task: 1=One-step full text (default), "
              "2=Two-step full text, 3=Semantic section detection + parsing, "
              "4=Page-wise one-step, 5=Page-wise two-step. "
-             "Methods 2, 3, 4, 5 use max_workers=1 (methods 2&3 due to shared chunker, methods 4&5 due to internal parallelization)."
+             "Methods 4, 5 use max_workers=1 due to internal parallelization."
     )
 
     # LLM Configuration
     parser.add_argument(
         "--model_name", 
         type=str, 
-        default="google/gemma-3-27b-it", 
+        default="mistralai/Mistral-Small-3.2-24B-Instruct-2506", 
         help="Name of the LLM model to use."
     )
     parser.add_argument(
@@ -1043,7 +1055,7 @@ Examples:
     parser.add_argument(
         "--api_base", 
         type=str, 
-        default="http://localhost:8000/v1", 
+        default="http://localhost:8001/v1", 
         help="Base URL for the LLM API endpoint."
     )
 

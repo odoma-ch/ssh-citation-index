@@ -226,7 +226,8 @@ class TestDeepSeekClient:
             )
             
             assert mock_create.call_count == 2
-            assert 'BEGIN' in response and 'END' in response
+            assert 'BEGIN' not in response and 'END' not in response
+            assert json.loads(response) == {"items": [1, 2, 3]}
             assert len(messages) == 3  # user -> assistant -> user
 
 

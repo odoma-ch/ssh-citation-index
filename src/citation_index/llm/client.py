@@ -9,8 +9,9 @@ import threading
 import asyncio
 import os
 from contextlib import contextmanager
-import openai
-# from langfuse.openai import openai
+from numpy import full
+# import openai
+from langfuse.openai import openai
 import aiohttp
 import concurrent.futures
 import logging
@@ -244,7 +245,7 @@ class DeepSeekClient(LLMClient):
         if json_schema or json_output:
             # DeepSeek: always use json_object + modify prompt + larger max_tokens
             response_format = {"type": "json_object"}
-            modified_max_tokens = max(max_tokens or 4000, 8000)  # Ensure at least 8k tokens
+            modified_max_tokens = 8000 # Ensure at least 8k tokens
             
             # Add JSON instruction to prompt
             json_instruction = "\n\nPlease respond in valid JSON format."
@@ -252,14 +253,18 @@ class DeepSeekClient(LLMClient):
                 modified_prompt = prompt + json_instruction
         
         # Add continuation tags instruction if using continuation
-        if use_continuation and (json_output or json_schema):
-            tag_instruction = " Wrap your JSON response with <start> and <end> tags."
-            if "<start>" not in modified_prompt and "<end>" not in modified_prompt:
-                modified_prompt = modified_prompt + tag_instruction
+        if use_continuation :
+            if json_output or json_schema:
+                tag_instruction = "Make sure you wrap your JSON response with <start> and <end> tags."
+            else:
+                tag_instruction ='\n\n Wrap your answer with <start> and <end> tags.'
+            
+            modified_prompt = modified_prompt + tag_instruction
+        
                 
         return response_format, modified_prompt, modified_max_tokens
     
-    def call(self, prompt: str, model: str = None, temperature: float = 1, max_tokens: int = None, 
+    def call(self, prompt: str, model: str = None, temperature: float = 1, max_tokens: int = 8000, 
              json_schema: str = None, json_output: bool = False, use_streaming: bool = True, 
              use_continuation: bool = True) -> str:
         """Call DeepSeek API with optional continuation support.
@@ -277,7 +282,7 @@ class DeepSeekClient(LLMClient):
         Returns:
             Complete response string
         """
-        if use_continuation and (json_output or json_schema):
+        if use_continuation:
             # Use continuation for reliable complete JSON responses
             messages, response = self.call_with_continuation(
                 prompt=prompt,
@@ -286,8 +291,7 @@ class DeepSeekClient(LLMClient):
                 model=model,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                json_schema=json_schema,
-                json_output=json_output
+                json_output=False
             )
             return response
         else:
@@ -303,7 +307,7 @@ class DeepSeekClient(LLMClient):
             )
     
     def _deepseek_call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.3, 
-                                 max_tokens: int = None, json_schema: str = None, json_output: bool = False,
+                                 max_tokens: int = 8000, json_schema: str = None, json_output: bool = False,
                                  use_streaming: bool = True) -> str:
         """DeepSeek-specific call with retry logic and optimizations."""
         model = model if model else self.model
@@ -393,7 +397,9 @@ class DeepSeekClient(LLMClient):
         # Convert single tags to lists for consistent handling
         start_tags = [start_tag] if isinstance(start_tag, str) else start_tag
         end_tags = [end_tag] if isinstance(end_tag, str) else end_tag
-            
+        
+        start_tags = start_tags + ['```json']
+        end_tags = end_tags + ['```']
         # Initialize conversation history
         messages = [{"role": "user", "content": modified_prompt}]
         full_response = ""
@@ -446,7 +452,18 @@ class DeepSeekClient(LLMClient):
                 continuation_prompt = f"Please continue your response from where you left off. Make sure to include one of the following end tags when you finish: {end_tags_str}"
                 messages.append({"role": "user", "content": continuation_prompt})
         
-        return messages, full_response
+        # remove start and end tag
+        # print(full_response[:200])
+        # print(full_response[-200:])
+        clean_response = full_response
+
+        for t in start_tags:
+            clean_response = clean_response.replace(t,'')
+        
+        for t in end_tags:
+            clean_response = clean_response.replace(t,'')
+        # print(clean_response[:200])
+        return messages, clean_response
         
 
 class VLLMClient(LLMClient):

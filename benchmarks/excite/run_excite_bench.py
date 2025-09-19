@@ -44,10 +44,10 @@ class BenchmarkRunner:
         # Initialize chunker once for methods that need it
         self.chunker = None
         method = getattr(self.args, 'method', 1)
-        if method in [2, 3]:  # Methods that use semantic section detection
+        if (method == 2 and self.args.task == "extraction") or (method == 3 and self.args.task == "extraction_and_parsing"):  # Methods that use semantic section detection
             try:
                 from chonkie import LateChunker
-                # Create chunker once - we'll handle threading issues by using max_workers=1
+                # Create chunker once for pre-chunking texts
                 self.chunker = LateChunker.from_recipe("markdown", lang="en")
                 tqdm.write(f"Initialized chunker for method {method}")
             except ImportError as e:
@@ -73,8 +73,8 @@ class BenchmarkRunner:
             llm_client = DeepSeekClient(api_key=self.args.api_key, 
                                         endpoint=self.args.api_base,
                                         model=self.args.model_name)
-            llm_client.timeout = 180
-            llm_client.first_token_timeout = 60
+            llm_client.timeout = 800
+            llm_client.first_token_timeout = 120
             llm_client.max_retries = 3
         else:
             llm_client = LLMClient(
@@ -142,22 +142,29 @@ class BenchmarkRunner:
                     else: # parsing task
                         input_text = "\n".join(gt_references)
                     
+                    # Pre-chunk text for methods that need it (2, 3)
+                    chunks = None
+                    method = getattr(self.args, 'method', 1)
+                    if method in [2, 3] and self.chunker is not None and self.args.task != "parsing":
+                        from citation_index.core.segmenters.semantic_reference_locator import pre_chunk_text
+                        chunks = pre_chunk_text(input_text, self.chunker)
+                    
                     task_info = {
                         "file_id": file_id,
                         "input_text": input_text,
                         "gt_references": gt_references,
                         "file_path": file_path,  # Add file path for Grobid
+                        "chunks": chunks,  # Pre-computed chunks for semantic methods
                     }
                     llm_tasks.append(task_info)
                 except Exception as e:
                     logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
 
             # 2. Concurrently process all tasks
-            # Methods 2, 3 use shared chunker instance, so need max_workers=1 to avoid threading issues
             # Methods 4, 5 handle parallelization internally
             # For Grobid, we're not using LLM but still use parallel processing
             method = getattr(self.args, 'method', 1)
-            effective_max_workers = 1 if method in [2, 3, 4, 5] else self.args.max_workers
+            effective_max_workers = 1 if method in [4, 5] else self.args.max_workers
             
             if self.args.extractor == "grobid":
                 tqdm.write(f"Processing {len(llm_tasks)} tasks with Grobid extractor using {effective_max_workers} workers.")
@@ -230,10 +237,9 @@ class BenchmarkRunner:
 
         if self.args.task == "extraction":
             lines = self._execute_extraction_method(
-                input_text=input_text,
+                task_info=task_info,
                 llm_client=llm_client,
                 prompt_path=str(prompt_path),
-                file_id=file_id,
             )
             return "\n".join(lines)
 
@@ -245,11 +251,10 @@ class BenchmarkRunner:
             else:
                 include_schema = "pydantic" in self.args.prompt_name
                 refs = self._execute_extraction_and_parsing_method(
-                    input_text=input_text,
+                    task_info=task_info,
                     llm_client=llm_client,
                     prompt_path=str(prompt_path),
                     include_schema=include_schema,
-                    file_id=file_id,
                 )
                 return json.dumps(refs.model_dump())
 
@@ -267,9 +272,11 @@ class BenchmarkRunner:
         return None
 
     def _execute_extraction_method(
-        self, input_text: str, llm_client, prompt_path: str, file_id: str
+        self, task_info: dict, llm_client, prompt_path: str
     ) -> List[str]:
         """Execute the appropriate extraction method based on self.args.method."""
+        input_text = task_info["input_text"]
+        file_id = task_info["file_id"]
         method = getattr(self.args, 'method', 1)  # Default to method 1 for backwards compatibility
         
         if method == 1:
@@ -282,10 +289,12 @@ class BenchmarkRunner:
         
         elif method == 2:
             # Method 2: Semantic section detection with LLM
+            chunks = task_info.get("chunks")  # Use pre-computed chunks
             return extract_text_references_semantic_sections(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
                 chunker=self.chunker,
+                chunks=chunks,
                 extractor=None,
                 prompt_name=prompt_path,
                 fast_path=True,  # Try regex first for efficiency
@@ -311,9 +320,11 @@ class BenchmarkRunner:
             raise ValueError(f"Unsupported extraction method: {method}. Must be 1, 2, or 3.")
 
     def _execute_extraction_and_parsing_method(
-        self, input_text: str, llm_client, prompt_path: str, include_schema: bool, file_id: str
+        self, task_info: dict, llm_client, prompt_path: str, include_schema: bool
     ) -> References:
         """Execute the appropriate extraction and parsing method based on configuration."""
+        input_text = task_info["input_text"]
+        file_id = task_info["file_id"]
         method = getattr(self.args, 'method', 1)
         
         if method == 1:
@@ -339,10 +350,12 @@ class BenchmarkRunner:
         elif method == 3:
             # Method 3: Semantic section detection + one-step extraction and parsing
             from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_semantic_one_step
+            chunks = task_info.get("chunks")  # Use pre-computed chunks
             return run_pdf_semantic_one_step(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
                 chunker=self.chunker,
+                chunks=chunks,
                 extractor=None,
                 prompt_name=prompt_path,
                 include_schema=include_schema,
@@ -710,13 +723,13 @@ def main():
              "2=Semantic section detection with LLM, 3=Page-wise extraction with LLM. "
              "For extraction_and_parsing task: 1=One-step full text, 2=Two-step full text, "
              "3=Semantic section detection + parsing, 4=Page-wise one-step, 5=Page-wise two-step. "
-             "Methods 2, 3, 4, 5 use max_workers=1 (methods 2&3 due to shared chunker, methods 4&5 due to internal parallelization)."
+             "Methods 4, 5 use max_workers=1 due to internal parallelization."
     )
 
     # LLM Configuration
-    parser.add_argument("--model_name", type=str, default="google/gemma-3-27b-it", help="Name of the LLM model to use.")
+    parser.add_argument("--model_name", type=str, default="mistralai/Mistral-Small-3.2-24B-Instruct-2506", help="Name of the LLM model to use.")
     parser.add_argument("--api_key", type=str, default=os.environ.get("DEEPSEEK_API_KEY"), help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var.")
-    parser.add_argument("--api_base", type=str, default="http://localhost:8000/v1", help="Base URL for the LLM API endpoint.")
+    parser.add_argument("--api_base", type=str, default="http://localhost:8001/v1", help="Base URL for the LLM API endpoint.")
 
     # Prompt Configuration
     parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")

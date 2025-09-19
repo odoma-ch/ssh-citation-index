@@ -135,15 +135,14 @@ def run_pdf_two_step_by_page(
 def run_pdf_semantic_one_step(
     text_or_pdf: str | Path,
     llm_client: LLMClient,
-    chunker,
+    chunker=None,
+    chunks=None,
     extractor: Optional[str] = None,
     embedding_model: str = "intfloat/multilingual-e5-large-instruct",
     embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
     prompt_name: str = "prompts/reference_extraction_and_parsing.md",
     temperature: float = 0.3,
     include_schema: bool = True,
-    top_k: int = 5,
-    top_percentile: float = 0.9,
     fast_path: bool = False,
 ) -> References:
     """Method 3: Semantic section detection + one-step extraction and parsing.
@@ -154,16 +153,17 @@ def run_pdf_semantic_one_step(
     Args:
         text_or_pdf: Input text or PDF path
         llm_client: LLM client for extraction and parsing
-        chunker: Text chunker object with chunk() method
+        chunker: Text chunker object with chunk() method. Ignored if chunks parameter is provided.
+        chunks: Pre-computed chunks from the text. If provided, chunker is ignored.
         extractor: Text extractor type (if PDF input)
         embedding_model: Model for semantic embeddings
         embedding_endpoint: API endpoint for embedding service
         prompt_name: Prompt template for extraction and parsing
         temperature: LLM temperature
         include_schema: Include JSON schema in prompt
-        top_k: Minimum chunks to consider for reference sections
-        top_percentile: Percentile threshold for chunk selection
         fast_path: Try regex matching first
+        gap_size_threshold: Minimum gap size to trigger gap-based candidate selection
+        drop_tolerance: Maximum score drop allowed during contiguous expansion
         
     Returns:
         References object containing parsed references
@@ -178,22 +178,32 @@ def run_pdf_semantic_one_step(
     reference_sections = locate_reference_sections_semantic(
         input_text,
         chunker=chunker,
+        chunks=chunks,
         embedding_model=embedding_model,
         embedding_endpoint=embedding_endpoint,
-        top_k=top_k,
-        top_percentile=top_percentile,
         fast_path=fast_path
     )
     
     if not reference_sections.strip():
-        return References(references=[])
+        reference_sections = input_text
     
     # One-step extraction and parsing on the located sections
     prompt = ReferenceExtractionAndParsingPrompt(
         prompt=prompt_name, input_text=reference_sections, include_json_schema=include_schema
     )
     response = llm_client.call(prompt.prompt, json_output=True, temperature=temperature, json_schema=prompt.json_schema)
-    return _parse_json_to_references(response)
+    references = _parse_json_to_references(response)
+    # if references is empty, use method 1 as fallback
+    if not references:
+        references = run_pdf_one_step(
+            input_text,
+            llm_client=llm_client,
+            extractor=extractor,
+            prompt_name=prompt_name,
+            temperature=temperature,
+            include_schema=include_schema
+        )
+    return references
 
 
 

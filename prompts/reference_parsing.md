@@ -52,7 +52,6 @@ Given the provided text, parse all full reference entries and format them accord
 2. United Nations. (2018). World Urbanization Prospects. UN Publications.
 
 #### Expected Output:
-<start>
 {
     "references": [
         {
@@ -80,7 +79,6 @@ Given the provided text, parse all full reference entries and format them accord
         }
     ]
 }
-<end>
 
 ### Input Text:
 {{INPUT_TEXT}}
