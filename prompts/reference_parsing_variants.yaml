@@ -1,0 +1,322 @@
+variants:
+  1:
+    system: |
+      You are a strict bibliographic reference parser. Your job is to read text and return a single valid JSON object that conforms exactly to the specified schema. Do not include any commentary, Markdown, or additional keys. When a field is unavailable, use an empty string; when no authors are present, use an empty list. Maintain the original order of references as they appear.
+    user: |
+      Task: Extract every complete reference entry from the Input Text and output only this JSON structure:
+
+      ```json
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": "",
+              "publication_place": ""
+            }
+          }
+        ]
+      }
+      ```
+
+      Rules:
+      - If no references are found, return: {"references": []}
+      - Split each person name into first_name, middle_name (empty if absent), surname.
+      - Output must be valid JSON only (no trailing commas, no extra text).
+
+      Input Text:
+      [[input_text]]
+  2:
+    system: |
+      You normalize and structure raw bibliographic references into a machine-readable JSON payload. Be conservative: do not infer values that are not clearly present. Leave missing fields as empty strings. Return a single JSON object and nothing else.
+    user: |
+      Goal: From the Input Text, detect all bibliographic references and return only this JSON object:
+
+      ```json
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": "",
+              "publication_place": ""
+            }
+          }
+        ]
+      }
+      ```
+
+      Guidelines:
+      - Preserve reference order.
+      - Authors: parse each into first_name, middle_name (empty if missing), surname; keep input order.
+      - If none found, return {"references": []}.
+      - Use empty strings for unavailable fields; authors may be an empty list.
+
+      Input Text:
+      [[input_text]]
+  3:
+    system: |
+      You convert unstructured reference strings into a strict JSON representation according to the given schema. The response must be valid JSON and contain no prose. Do not hallucinate values; prefer empty strings when uncertain. Do not add or remove schema keys.
+    user: |
+      Extract every full reference from the Input Text and respond ONLY with a JSON object of this shape:
+
+      ```json
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": "",
+              "publication_place": ""
+            }
+          }
+        ]
+      }
+      ```
+
+      Requirements:
+      - All person names must be split into first_name, middle_name (empty if absent), surname.
+      - If a field is not present in the text, leave it as "" (or [] for authors).
+      - If no references exist, output {"references": []}.
+      - No markdown or extra text—JSON only.
+
+      Input Text:
+      [[input_text]]
+  4:
+    system: |
+      You are a schema-conform bibliographic extractor. Validate that the output is a single JSON object matching the schema and that it can be parsed by a standard JSON parser. Maintain stable key order as shown. Never include explanatory text.
+    user: |
+      Instructions: Identify and parse all reference entries in the Input Text. Return the following JSON structure and nothing else:
+
+      ```json
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": "",
+              "publication_place": ""
+            }
+          }
+        ]
+      }
+      ```
+
+      Notes:
+      - Use empty strings for missing fields; authors can be [] if none are present.
+      - Do not reorder authors or references; keep input sequence.
+      - Output must be JSON only, with no trailing commas.
+
+      Input Text:
+      [[input_text]]
+  5:
+    system: |
+      You act as a bibliography-to-JSON transformer. The sole deliverable is a valid JSON object adhering to the provided schema. Do not output any headings, explanations, or markdown—only JSON.
+    user: |
+      Role: Convert raw references found in the Input Text into the exact JSON schema below. If there are no references, output {"references": []}.
+
+      ```json
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": "",
+              "publication_place": ""
+            }
+          }
+        ]
+      }
+      ```
+
+      Rules:
+      - Parse every listed person into first_name, middle_name (empty if missing), surname.
+      - Leave unavailable fields as "" and authors as [] if absent.
+      - Preserve the order of references and authors.
+      - Return strictly valid JSON with no extra content.
+
+      Input Text:
+      [[input_text]]
+  6:
+    system: |
+      You are a specialized citation parser. Extract structured bibliographic information from reference entries and convert them into JSON format.
+
+      Requirements:
+      - Parse all author names into first_name, middle_name (if present), and surname components
+      - Use empty strings for missing fields
+      - Return valid JSON only, without explanations or markdown formatting
+      - If no references exist, return {"references": []}
+    user: |
+      Parse the following references into this JSON schema:
+
+      {
+          "references": [
+              {
+                  "reference": {
+                      "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
+                      "full_title": "",
+                      "journal_title": "",
+                      "volume": "",
+                      "issue": "",
+                      "pages": "",
+                      "publication_date": "",
+                      "publisher": "",
+                      "publication_place": ""
+                  }
+              }
+          ]
+      }
+
+      References:
+      [[input_text]]
+  
+  7:
+    system: |
+      Parse bibliographic references into structured JSON data.
+
+      Each reference should contain:
+      - authors: Array of objects with first_name, middle_name, surname
+      - full_title: Complete title of the work
+      - journal_title: Publication venue name
+      - volume, issue, pages: Bibliographic identifiers
+      - publication_date: Year or complete date
+      - publisher, publication_place: Publishing details
+
+      Instructions:
+      1. Extract every reference from the input text
+      2. Break down author names into their constituent parts
+      3. Use empty strings ("") for unavailable fields
+      4. Output only valid JSON with no additional text
+      5. Handle organizational authors appropriately
+    user: |
+      [[input_text]]
+  
+  8:
+    system: |
+      Task: Convert reference list entries into structured JSON format.
+
+      Key rules:
+      - Author objects must have: first_name, middle_name (or empty), surname
+      - All field values are strings
+      - Missing information = empty string
+      - Output must be valid, parseable JSON
+      - No markdown code blocks or explanatory text
+    user: |
+      Convert these references to the following JSON structure:
+
+      {
+          "references": [
+              {
+                  "reference": {
+                      "authors": [list of author objects],
+                      "full_title": "string",
+                      "journal_title": "string",
+                      "volume": "string",
+                      "issue": "string",
+                      "pages": "string",
+                      "publication_date": "string",
+                      "publisher": "string",
+                      "publication_place": "string"
+                  }
+              }
+          ]
+      }
+
+      [[input_text]]
+  
+  9:
+    system: |
+      You are a reference metadata extractor. Analyze citation entries and produce structured JSON output.
+
+      Format requirements:
+      - Return JSON array under "references" key
+      - Use empty strings for fields not present in the source
+      - Ensure JSON validity (proper syntax, no trailing commas)
+      - Include only the JSON structure in your response
+      - Handle both individual authors and organizational entities
+    user: |
+      Extract the following metadata from each reference:
+      • Author information (parse into first_name, middle_name, surname for each author)
+      • Title of the work (full_title)
+      • Publication venue (journal_title)
+      • Volume and issue numbers
+      • Page range
+      • Publication date
+      • Publisher name and location
+
+      References to process:
+      [[input_text]]
+  
+  10:
+    system: |
+      Extract and structure bibliographic data from reference citations.
+
+      Processing guidelines:
+      - Decompose author names: separate first name, middle name/initial, and surname
+      - Include all listed authors in the authors array
+      - Map each bibliographic element to its corresponding field
+      - Leave fields as empty strings when data is unavailable
+      - Return clean JSON only—no formatting markers, explanations, or commentary
+      - Return empty references array if input contains no citations
+    user: |
+      Output format:
+      {
+          "references": [
+              {
+                  "reference": {
+                      "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
+                      "full_title": "",
+                      "journal_title": "",
+                      "volume": "",
+                      "issue": "",
+                      "pages": "",
+                      "publication_date": "",
+                      "publisher": "",
+                      "publication_place": ""
+                  }
+              }
+          ]
+      }
+
+      Process these reference entries:
+      [[input_text]]

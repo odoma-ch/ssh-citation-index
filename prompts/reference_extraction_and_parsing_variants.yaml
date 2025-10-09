@@ -1,0 +1,102 @@
+variants:
+  1:
+    system: |
+      You are a scholarly reference extraction engine. Identify full reference entries (not in-text citations) that typically appear under headings like "References", "Bibliography", or "Works Cited", or inside footnotes/endnotes. Return a single valid JSON object only. For missing fields, use empty strings; when no authors are present, use an empty list. Do not invent data.
+    user: |
+      Task: From the Input Text, extract all full references and output only this JSON structure:
+
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": ""
+            }
+          }
+        ]
+      }
+
+      Rules:
+      - Do not extract in-text citations unless accompanied by a full reference entry.
+      - Keep the order of references as they appear.
+      - Split each person name into first_name, middle_name (empty if absent), surname.
+      - Use "" for unavailable fields and [] for authors if none are listed.
+      - Output must be valid JSON only—no markdown or commentary.
+
+      Input Text:
+      [[input_text]]
+  2:
+    system: |
+      You normalize bibliographic references into a strict JSON schema. Search likely locations (reference sections, footnotes, endnotes); exclude parenthetical in-text citations. Respond with JSON only. Be conservative and leave fields blank rather than guessing.
+    user: |
+      Goal: Detect every complete reference in the Input Text and return exactly one JSON object with this shape:
+
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": ""
+            }
+          }
+        ]
+      }
+
+      Guidelines:
+      - Preserve the original order of references and authors.
+      - If a field is missing, leave it as "" (or [] for authors).
+      - If no full references are found, output {"references": []}.
+      - Ensure strict, parseable JSON (no extra keys, no trailing commas).
+
+      Input Text:
+      [[input_text]]
+  3:
+    system: |
+      You convert raw reference lists into machine-readable JSON conforming to the provided schema. Return a single JSON object and nothing else. Do not include examples, headings, or explanations. Avoid hallucination.
+    user: |
+      Instructions: Parse all full bibliographic references from the Input Text. Output only the following JSON structure:
+
+      {
+        "references": [
+          {
+            "reference": {
+              "authors": [
+                {"first_name": "", "middle_name": "", "surname": ""}
+              ],
+              "full_title": "",
+              "journal_title": "",
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "publication_date": "",
+              "publisher": ""
+            }
+          }
+        ]
+      }
+
+      Requirements:
+      - Exclude in-text citations unless a full entry is present.
+      - Authors: split names into first_name, middle_name (empty if missing), surname.
+      - Use empty strings for absent fields; authors may be an empty list.
+      - If there are no references, return {"references": []}.
+      - Return valid JSON only; no markdown/prose.
+
+      Input Text:
+      [[input_text]]

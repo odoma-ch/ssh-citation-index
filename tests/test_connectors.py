@@ -172,28 +172,36 @@ class ConnectorTestSuite:
         try:
             connector = WikidataConnector()
             
-            # Test various search methods
+            # Test title search using unified interface (elastic method - default)
             title_ref = Reference(full_title="The Great Gatsby")
-            title_results = connector.search(title_ref, top_k=3)
+            title_results = connector.lookup_ref(title_ref, top_k=3)
             title_count = len(title_results.references)
             
+            # Test SPARQL method
+            sparql_results = connector.lookup_ref(title_ref, top_k=3, method="sparql")
+            sparql_count = len(sparql_results.references)
+            
+            # Test author search
             author_results = connector.search_books_by_author("Virginia Woolf", top_k=3)
             author_count = len(author_results.references)
             
+            # Test ISBN search
             isbn_results = connector.search_by_isbn("978-0-7432-7356-5", top_k=3)
             isbn_count = len(isbn_results.references)
             
-            fuzzy_results = connector.search_by_title_fuzzy("Pride Prejudice", top_k=3)
-            fuzzy_count = len(fuzzy_results.references)
+            # Test DOI search
+            doi_result = connector.search_by_doi("10.1007/978-1-4020-9632-7")
+            doi_count = 1 if doi_result else 0
             
-            total_results = title_count + author_count + isbn_count + fuzzy_count
+            total_results = title_count + sparql_count + author_count + isbn_count + doi_count
             
             self.results[connector_name] = {
                 "status": "PASSED",
                 "title_search_count": title_count,
+                "sparql_search_count": sparql_count,
                 "author_search_count": author_count,
                 "isbn_search_count": isbn_count,
-                "fuzzy_search_count": fuzzy_count,
+                "doi_search_count": doi_count,
                 "total_results": total_results,
             }
             
