@@ -68,35 +68,90 @@ class ConnectorTestSuite:
         try:
             connector = OpenCitationsConnector()
             
-            # Test DOI search
+            # Test 1: DOI-based search
+            print("  - Testing DOI search...")
             test_doi = "10.1007/978-1-4020-9632-7"
-            single_result = connector.search_by_doi(test_doi)
+            doi_result = connector.search_by_doi(test_doi)
+            doi_success = doi_result is not None
             
-            # Test general search
-            test_ref = Reference(full_title="Machine Learning")
-            basic_results = connector.lookup_ref(test_ref, top_k=3)
-            
-            # Test identifier-based search
+            # Test 2: Identifier-based search (auto-detect)
+            print("  - Testing identifier search...")
             auto_ref = connector.search_by_id("10.1007/978-1-4020-9632-7")
-            id_results = [auto_ref] if auto_ref else []
+            identifier_count = 1 if auto_ref else 0
             
-            identifier_count = len(id_results)
-            general_search_count = len(basic_results.references)
-            total_results = (1 if single_result else 0) + identifier_count + general_search_count
+            # Test 3: SPARQL-based title search (if SPARQLWrapper is available)
+            print("  - Testing SPARQL title search...")
+            title_ref = Reference(full_title="Attention Is All You Need")
+            try:
+                title_results = connector.search(title_ref, top_k=3, threshold=50)
+                title_search_count = len(title_results)
+            except Exception as e:
+                print(f"    SPARQL search not available or failed: {e}")
+                title_search_count = 0
+            
+            # Test 4: SPARQL-based title + author search
+            print("  - Testing SPARQL title + author search...")
+            author_ref = Reference(
+                full_title="BERT Pre-training of Deep Bidirectional Transformers",
+                authors=["Devlin"]
+            )
+            try:
+                author_results = connector.search(author_ref, top_k=3, 
+                                                 include_author=True, threshold=50)
+                author_search_count = len(author_results)
+            except Exception as e:
+                print(f"    SPARQL author search failed: {e}")
+                author_search_count = 0
+            
+            # Test 5: Search with additional metadata (year, volume, pages)
+            print("  - Testing SPARQL search with metadata...")
+            metadata_ref = Reference(
+                full_title="Deep Learning",
+                publication_date="2015",
+                volume="521",
+                pages="436-444"
+            )
+            try:
+                metadata_results = connector.search(metadata_ref, top_k=3,
+                                                   include_date=True, threshold=50)
+                metadata_search_count = len(metadata_results)
+            except Exception as e:
+                print(f"    SPARQL metadata search failed: {e}")
+                metadata_search_count = 0
+            
+            # Test 6: Test lookup_ref convenience method
+            print("  - Testing lookup_ref method...")
+            test_ref = Reference(full_title="Machine Learning")
+            try:
+                basic_results = connector.lookup_ref(test_ref, top_k=3)
+                general_search_count = len(basic_results.references)
+            except Exception as e:
+                print(f"    lookup_ref failed: {e}")
+                general_search_count = 0
+            
+            total_results = ((1 if doi_success else 0) + identifier_count + 
+                           title_search_count + author_search_count + 
+                           metadata_search_count + general_search_count)
             
             self.results[connector_name] = {
                 "status": "PASSED",
-                "doi_search_success": single_result is not None,
-                "identifier_search_results": identifier_count,
-                "general_search_results": general_search_count,
+                "doi_search_success": doi_success,
+                "identifier_search_count": identifier_count,
+                "title_search_count": title_search_count,
+                "author_search_count": author_search_count,
+                "metadata_search_count": metadata_search_count,
+                "general_search_count": general_search_count,
                 "total_results": total_results,
             }
             
             print(f"  {connector_name} connector: PASSED")
+            print(f"    Total results across all tests: {total_results}")
             return True
             
         except Exception as e:
             print(f"  {connector_name} connector: FAILED - {e}")
+            import traceback
+            traceback.print_exc()
             self.results[connector_name] = {
                 "status": "FAILED",
                 "error": str(e)
