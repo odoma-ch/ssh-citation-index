@@ -1,17 +1,18 @@
-"""
-Wikidata SPARQL connector for reference search and disambiguation.
-Focuses on books and publications not covered by academic databases.
-"""
+"""Wikidata SPARQL connector for reference search and disambiguation."""
 
-import requests
+import logging
 import re
 import time
-from typing import Dict, List, Any, Optional
-from urllib.parse import quote
+from typing import Any, Dict, List, Optional
+
+import requests
 
 from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
+
+
+logger = logging.getLogger(__name__)
 
 
 class WikidataConnector(BaseConnector):
@@ -63,6 +64,31 @@ class WikidataConnector(BaseConnector):
             return self._search_sparql(reference, top_k, **kwargs)
         else:
             raise ValueError(f"Unknown search method: {method}. Use 'elastic' or 'sparql'")
+
+    def search_by_id(
+        self,
+        identifier: str,
+        identifier_type: Optional[str] = None,
+        **kwargs: Any,
+    ) -> List[Dict[str, Any]]:
+        if not identifier:
+            return []
+
+        inferred = identifier_type or self._guess_identifier_type(identifier)
+        if not inferred:
+            logger.warning("Could not determine identifier type for %s", identifier)
+            return []
+
+        limit = kwargs.get("top_k") or kwargs.get("limit") or 10
+        query = self._build_identifier_query(inferred.lower(), identifier, limit)
+        if not query:
+            logger.warning("Unsupported identifier type for Wikidata: %s", inferred)
+            return []
+
+        result = self._execute_sparql(query)
+        if not result:
+            return []
+        return result.get("results", {}).get("bindings", [])
     
     def _search_elastic(self, reference: Reference, top_k: int, **kwargs) -> List[Dict[str, Any]]:
         """
@@ -132,14 +158,14 @@ class WikidataConnector(BaseConnector):
             scored_rows = self._score_results(rows, reference)
             return scored_rows[:top_k]
             
-        except requests.RequestException as e:
-            print(f"Warning: Wikidata elastic search failed: {e}")
+        except requests.RequestException as exc:
+            logger.warning("Wikidata elastic search failed: %s", exc)
             return []
     
     def _search_sparql(self, reference: Reference, top_k: int, **kwargs) -> List[Dict[str, Any]]:
         """
         Use WDQS with SERVICE wikibase:mwapi Search to find candidates.
-        
+
         This method does everything in one SPARQL query but may be slower.
         """
         if not reference.full_title:
@@ -167,6 +193,13 @@ class WikidataConnector(BaseConnector):
                 """
         
         sparql = f"""
+        PREFIX wd: <http://www.wikidata.org/entity/>
+        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+        PREFIX wikibase: <http://wikiba.se/ontology#>
+        PREFIX bd: <http://www.bigdata.com/rdf#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX schema: <http://schema.org/>
+
         SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
                (GROUP_CONCAT(DISTINCT ?authName; separator="; ") AS ?authors)
                (COALESCE(?yearHit, 0) AS ?yScore)
@@ -217,10 +250,10 @@ class WikidataConnector(BaseConnector):
             scored_rows = self._score_results(rows, reference)
             return scored_rows[:top_k]
             
-        except requests.RequestException as e:
-            print(f"Warning: Wikidata SPARQL search failed: {e}")
+        except requests.RequestException as exc:
+            logger.warning("Wikidata SPARQL search failed: %s", exc)
             return []
-    
+
     def _execute_sparql(self, query: str) -> Dict[str, Any]:
         """Execute SPARQL query against Wikidata."""
         try:
@@ -232,9 +265,159 @@ class WikidataConnector(BaseConnector):
             )
             response.raise_for_status()
             return response.json()
-        except requests.RequestException as e:
-            print(f"Error executing SPARQL query: {e}")
+        except requests.RequestException as exc:
+            logger.error("Error executing SPARQL query: %s", exc)
             return {"results": {"bindings": []}}
+
+    def _build_identifier_query(self, id_type: str, identifier: str, limit: int) -> Optional[str]:
+        try:
+            limit_value = max(1, min(int(limit), 50))
+        except (TypeError, ValueError):
+            limit_value = 10
+
+        filter_clause = self._identifier_filter_clause(id_type, identifier)
+        if not filter_clause:
+            return None
+
+        return f"""
+        PREFIX wd: <http://www.wikidata.org/entity/>
+        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX schema: <http://schema.org/>
+
+        SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
+               (GROUP_CONCAT(DISTINCT ?authName; separator="; ") AS ?authors)
+        WHERE {{
+          {filter_clause}
+          OPTIONAL {{ ?item wdt:P1476 ?title. }}
+          OPTIONAL {{ ?item wdt:P577 ?date. BIND(YEAR(?date) AS ?year) }}
+          OPTIONAL {{ ?item wdt:P1433 ?container. ?container rdfs:label ?containerLabel FILTER(LANG(?containerLabel) = "en") }}
+          OPTIONAL {{ ?item wdt:P356 ?doi. }}
+          OPTIONAL {{ ?item wdt:P212 ?isbn13. }}
+          OPTIONAL {{ ?item wdt:P957 ?isbn10. }}
+          OPTIONAL {{ ?item wdt:P698 ?pmid. }}
+          OPTIONAL {{ ?item wdt:P932 ?pmcid. }}
+          OPTIONAL {{ ?item wdt:P818 ?arxiv. }}
+          OPTIONAL {{ ?item wdt:P236 ?issn. }}
+          OPTIONAL {{
+            {{ ?item wdt:P50 ?auth. ?auth rdfs:label ?authName FILTER(LANG(?authName) = "en") }}
+            UNION
+            {{ ?item wdt:P2093 ?authName }}
+          }}
+          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
+        }}
+        GROUP BY ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
+        LIMIT {limit_value}
+        """
+
+    def _identifier_filter_clause(self, id_type: str, identifier: str) -> Optional[str]:
+        literal = identifier.strip()
+
+        if id_type == "doi":
+            clean = self._clean_doi(literal)
+            if not clean:
+                return None
+            escaped = self._escape_literal(clean)
+            return f'?item wdt:P356 "{escaped}".'
+
+        if id_type == "isbn":
+            clean = self._clean_isbn(literal)
+            if not clean:
+                return None
+            escaped = self._escape_literal(clean)
+            return f"""
+          {{
+            ?item wdt:P212 ?isbn13Value.
+            BIND(REPLACE(STR(?isbn13Value), "-", "") AS ?isbn13Clean)
+            FILTER(?isbn13Clean = "{escaped}")
+          }}
+          UNION
+          {{
+            ?item wdt:P957 ?isbn10Value.
+            BIND(REPLACE(STR(?isbn10Value), "-", "") AS ?isbn10Clean)
+            FILTER(?isbn10Clean = "{escaped}")
+          }}
+        """
+
+        if id_type == "issn":
+            clean = self._clean_issn(literal)
+            if not clean:
+                return None
+            escaped = self._escape_literal(clean)
+            return f"""
+          ?item wdt:P236 ?issnValue.
+          BIND(REPLACE(STR(?issnValue), "-", "") AS ?issnClean)
+          FILTER(?issnClean = "{escaped}")
+        """
+
+        property_map = {
+            "pmid": "P698",
+            "pmcid": "P932",
+            "arxiv": "P818",
+        }
+        if id_type in property_map:
+            escaped = self._escape_literal(literal)
+            return f'?item wdt:{property_map[id_type]} "{escaped}".'
+
+        if id_type in {"wikidata", "qid"}:
+            qid = literal.upper()
+            if not qid.startswith("Q"):
+                return None
+            return f"VALUES ?item {{ wd:{qid} }}"
+
+        return None
+
+    @staticmethod
+    def _guess_identifier_type(identifier: str) -> Optional[str]:
+        token = identifier.strip()
+        lower = token.lower()
+        digits = re.sub(r"[^0-9xX]", "", token)
+
+        if lower.startswith("10.") or lower.startswith("doi:") or "doi.org" in lower:
+            return "doi"
+        if token.upper().startswith("Q") and token[1:].isdigit():
+            return "wikidata"
+        if re.match(r"^\d{4}\.[0-9]{4,5}$", lower) or "arxiv" in lower:
+            return "arxiv"
+        if lower.startswith("pmcid") or lower.startswith("pmc"):
+            return "pmcid"
+        if lower.startswith("pmid"):
+            return "pmid"
+        if digits.isdigit() and len(digits) in {13, 10}:
+            return "isbn"
+        if digits and len(digits) == 8:
+            return "issn"
+        if digits.isdigit() and 5 <= len(digits) <= 8:
+            return "pmid"
+        return None
+
+    @staticmethod
+    def _clean_doi(doi: str) -> str:
+        cleaned = doi.strip()
+        prefixes = [
+            "https://doi.org/",
+            "http://doi.org/",
+            "http://dx.doi.org/",
+            "doi:",
+        ]
+        for prefix in prefixes:
+            if cleaned.lower().startswith(prefix):
+                cleaned = cleaned[len(prefix) :]
+                break
+        return cleaned
+
+    @staticmethod
+    def _clean_isbn(isbn: str) -> str:
+        return re.sub(r"[^0-9Xx]", "", isbn)
+
+    @staticmethod
+    def _clean_issn(issn: str) -> str:
+        digits = re.sub(r"[^0-9Xx]", "", issn)
+        return digits
+
+    @staticmethod
+    def _escape_literal(value: str) -> str:
+        return value.replace('"', '\\"')
     
     def _score_results(self, rows: List[Dict[str, Any]], reference: Reference) -> List[Dict[str, Any]]:
         """Score and sort search results based on relevance."""
@@ -379,136 +562,14 @@ class WikidataConnector(BaseConnector):
                 
                 references.append(reference)
                 
-            except Exception as e:
-                print(f"Warning: Could not map Wikidata result to Reference: {e}")
+            except Exception as exc:
+                logger.warning("Could not map Wikidata result: %s", exc)
                 continue
         
         return references
     
-    def search_by_isbn(self, isbn: str, top_k: int = 10) -> References:
-        """
-        Search for books by ISBN.
-        
-        Args:
-            isbn: ISBN to search (10 or 13 digits)
-            top_k: Maximum number of results
-            
-        Returns:
-            References object containing search results
-        """
-        isbn_clean = isbn.replace("-", "").replace(" ", "")
-        
-        sparql = f"""
-        SELECT DISTINCT ?item ?itemLabel ?isbn ?authorLabel ?publisherLabel ?publicationDate ?description
-        WHERE {{
-          {{ ?item wdt:P31 wd:Q571 }} UNION {{ ?item wdt:P31 wd:Q47461344 }} .
-          {{ ?item wdt:P212 ?isbn }} UNION {{ ?item wdt:P957 ?isbn }} .
-          FILTER(CONTAINS(?isbn, "{isbn_clean}")) .
-         
-          OPTIONAL {{ ?item wdt:P50 ?author }} .
-          OPTIONAL {{ ?item wdt:P123 ?publisher }} .
-          OPTIONAL {{ ?item wdt:P577 ?publicationDate }} .
-          OPTIONAL {{ ?item schema:description ?description . FILTER(LANG(?description) = 'en') }} .
-         
-          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }} .
-        }}
-        LIMIT {top_k}
-        """
-        
-        result = self._execute_sparql(sparql)
-        rows = result.get("results", {}).get("bindings", [])
-        return self.map_to_references(rows)
-    
-    def search_by_doi(self, doi: str) -> Optional[Reference]:
-        """
-        Search for a work by DOI.
-        
-        Args:
-            doi: DOI to search for
-            
-        Returns:
-            Reference object if found, None otherwise
-        """
-        if not doi:
-            return None
-        
-        # Clean DOI format
-        clean_doi = doi.replace("https://doi.org/", "").replace("http://dx.doi.org/", "")
-        
-        sparql = f"""
-        SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10
-               (GROUP_CONCAT(DISTINCT ?authName; separator="; ") AS ?authors)
-        WHERE {{
-          ?item wdt:P356 "{clean_doi}" .
-          
-          OPTIONAL {{ ?item wdt:P1476 ?title. }}
-          OPTIONAL {{ ?item wdt:P577 ?date. BIND(YEAR(?date) AS ?year) }}
-          OPTIONAL {{ ?item wdt:P1433 ?container. ?container rdfs:label ?containerLabel FILTER(LANG(?containerLabel)="en") }}
-          OPTIONAL {{ ?item wdt:P212 ?isbn13. }}
-          OPTIONAL {{ ?item wdt:P957 ?isbn10. }}
-          OPTIONAL {{
-            {{ ?item wdt:P50 ?a. ?a rdfs:label ?authName FILTER(LANG(?authName)="en") }}
-            UNION
-            {{ ?item wdt:P2093 ?authName }}
-          }}
-          
-          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-        }}
-        GROUP BY ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10
-        LIMIT 1
-        """
-        
-        try:
-            result = self._execute_sparql(sparql)
-            rows = result.get("results", {}).get("bindings", [])
-            
-            if rows:
-                mapped = self.map_to_references(rows)
-                return mapped.references[0] if mapped.references else None
-                
-        except Exception as e:
-            print(f"Warning: Wikidata DOI search failed: {e}")
-        
-        return None
-    
-    def search_books_by_author(self, author: str, top_k: int = 10) -> References:
-        """
-        Search for books by a specific author.
-        
-        Args:
-            author: Author name to search
-            top_k: Maximum number of results
-            
-        Returns:
-            References object containing search results
-        """
-        author_escaped = author.replace('"', '\\"')
-        
-        sparql = f"""
-        SELECT DISTINCT ?item ?itemLabel ?isbn ?authorLabel ?publisherLabel ?publicationDate ?description
-        WHERE {{
-          {{ ?item wdt:P31 wd:Q571 }} UNION {{ ?item wdt:P31 wd:Q47461344 }} .
-          ?item wdt:P50 ?author .
-          ?author rdfs:label ?authorLabel .
-          FILTER(CONTAINS(LCASE(?authorLabel), LCASE("{author_escaped}"))) .
-         
-          OPTIONAL {{ ?item wdt:P212 ?isbn }} .
-          OPTIONAL {{ ?item wdt:P123 ?publisher }} .
-          OPTIONAL {{ ?item wdt:P577 ?publicationDate }} .
-          OPTIONAL {{ ?item schema:description ?description . FILTER(LANG(?description) = 'en') }} .
-         
-          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }} .
-        }}
-        ORDER BY ?itemLabel
-        LIMIT {top_k}
-        """
-        
-        result = self._execute_sparql(sparql)
-        rows = result.get("results", {}).get("bindings", [])
-        return self.map_to_references(rows)
-    
     # Utility methods
-    
+
     @staticmethod
     def _extract_value(binding: Dict[str, Any], key: str) -> Optional[str]:
         """Extract value from SPARQL binding."""
@@ -549,26 +610,11 @@ class WikidataConnector(BaseConnector):
 # Example usage:
 # connector = WikidataConnector()
 # 
-# # Search by title (elastic method - faster)
-# reference = Reference(full_title="The Great Gatsby")
-# results = connector.lookup_ref(reference, top_k=5)
+# # Search by title
+# query = Reference(full_title="The Great Gatsby")
+# raw = connector.search(query, top_k=5)
+# mapped = connector.map_to_references(raw)
 # 
-# # Search using SPARQL method
-# results = connector.lookup_ref(reference, top_k=5, method="sparql")
-# 
-# # Search by ISBN
-# isbn_results = connector.search_by_isbn("978-0-7432-7356-5")
-# 
-# # Search by author
-# author_results = connector.search_books_by_author("F. Scott Fitzgerald")
-# 
-# # Search by DOI
-# doi_ref = connector.search_by_doi("10.1234/example")
-# 
-# for ref in results.references:
-#     print(f"Title: {ref.full_title}")
-#     print(f"Authors: {ref.authors}")
-#     print(f"Year: {ref.publication_date}")
-#     print(f"ISBN: {ref.isbn}")
-#     print(f"Wikidata ID: {ref.wikidata_id}")
-#     print("---")
+# # Identifier lookup (e.g. DOI)
+# doi_rows = connector.search_by_id("10.1234/example", "doi")
+# doi_refs = connector.map_to_references(doi_rows)

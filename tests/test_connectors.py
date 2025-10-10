@@ -1,338 +1,184 @@
 #!/usr/bin/env python3
-"""
-Test script for all citation index connectors.
-"""
+"""Ad-hoc harness for exercising connector integrations."""
 
-import sys
+from __future__ import annotations
+
 import os
-from typing import Dict, Any, List
+import sys
+from typing import Any, Dict, List
 
-# Add the src directory to the Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+# Ensure the runtime package is importable when executed directly
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from citation_index.core.connectors import (
-    OpenAlexConnector, 
-    OpenCitationsConnector,
     MatildaConnector,
-    WikidataConnector
+    OpenAlexConnector,
+    OpenCitationsConnector,
+    WikidataConnector,
 )
-from citation_index.core.models import Reference, References
+from citation_index.core.models import Reference
 
 
 class ConnectorTestSuite:
-    """Test suite for all citation index connectors."""
-    
-    def __init__(self):
-        self.test_references = [
+    """Lightweight smoke tests for each connector interface."""
+
+    def __init__(self) -> None:
+        self.results: Dict[str, Dict[str, Any]] = {}
+        self.sample_refs: List[Reference] = [
             Reference(full_title="Attention Is All You Need"),
-            Reference(full_title="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"),
             Reference(full_title="Deep Learning"),
         ]
-        self.results: Dict[str, Dict[str, Any]] = {}
-    
-    def test_openalex_connector(self) -> bool:
-        """Test the OpenAlex connector."""
-        print("\nTesting OpenAlex Connector...")
-        connector_name = "OpenAlex"
-        
+
+    def test_openalex(self) -> bool:
+        name = "OpenAlex"
+        print(f"\nTesting {name} connector…")
+
         try:
             connector = OpenAlexConnector()
-            test_ref = self.test_references[0]
-            
-            raw_results = connector.search(test_ref, top_k=3)
-            mapped_results = connector.map_to_references(raw_results)
-            
-            self.results[connector_name] = {
+            raw = connector.search(self.sample_refs[0], top_k=3)
+            mapped = connector.map_to_references(raw)
+
+            doi_rows = connector.search_by_id("10.48550/arXiv.1706.03762", "doi")
+            doi_refs = connector.map_to_references(doi_rows)
+
+            self.results[name] = {
                 "status": "PASSED",
-                "raw_results_count": len(raw_results),
-                "mapped_results_count": len(mapped_results.references),
-                "sample_title": mapped_results.references[0].full_title if mapped_results.references else None
+                "search_results": len(raw),
+                "mapped_results": len(mapped.references),
+                "doi_results": len(doi_refs.references),
             }
-            
-            print(f"  {connector_name} connector: PASSED")
+            print(f"  {name} connector: PASSED")
             return True
-            
-        except Exception as e:
-            print(f"  {connector_name} connector: FAILED - {e}")
-            self.results[connector_name] = {
-                "status": "FAILED",
-                "error": str(e)
-            }
+        except Exception as exc:  # pragma: no cover - diagnostic harness
+            print(f"  {name} connector: FAILED - {exc}")
+            self.results[name] = {"status": "FAILED", "error": str(exc)}
             return False
-    
-    def test_opencitations_connector(self) -> bool:
-        """Test the OpenCitations connector."""
-        print("\nTesting OpenCitations Connector...")
-        connector_name = "OpenCitations"
-        
+
+    def test_opencitations(self) -> bool:
+        name = "OpenCitations"
+        print(f"\nTesting {name} connector…")
+
         try:
             connector = OpenCitationsConnector()
-            
-            # Test 1: DOI-based search
-            print("  - Testing DOI search...")
-            test_doi = "10.1007/978-1-4020-9632-7"
-            doi_result = connector.search_by_doi(test_doi)
-            doi_success = doi_result is not None
-            
-            # Test 2: Identifier-based search (auto-detect)
-            print("  - Testing identifier search...")
-            auto_ref = connector.search_by_id("10.1007/978-1-4020-9632-7")
-            identifier_count = 1 if auto_ref else 0
-            
-            # Test 3: SPARQL-based title search (if SPARQLWrapper is available)
-            print("  - Testing SPARQL title search...")
-            title_ref = Reference(full_title="Attention Is All You Need")
-            try:
-                title_results = connector.search(title_ref, top_k=3, threshold=50)
-                title_search_count = len(title_results)
-            except Exception as e:
-                print(f"    SPARQL search not available or failed: {e}")
-                title_search_count = 0
-            
-            # Test 4: SPARQL-based title + author search
-            print("  - Testing SPARQL title + author search...")
-            author_ref = Reference(
-                full_title="BERT Pre-training of Deep Bidirectional Transformers",
-                authors=["Devlin"]
-            )
-            try:
-                author_results = connector.search(author_ref, top_k=3, 
-                                                 include_author=True, threshold=50)
-                author_search_count = len(author_results)
-            except Exception as e:
-                print(f"    SPARQL author search failed: {e}")
-                author_search_count = 0
-            
-            # Test 5: Search with additional metadata (year, volume, pages)
-            print("  - Testing SPARQL search with metadata...")
-            metadata_ref = Reference(
-                full_title="Deep Learning",
-                publication_date="2015",
-                volume="521",
-                pages="436-444"
-            )
-            try:
-                metadata_results = connector.search(metadata_ref, top_k=3,
-                                                   include_date=True, threshold=50)
-                metadata_search_count = len(metadata_results)
-            except Exception as e:
-                print(f"    SPARQL metadata search failed: {e}")
-                metadata_search_count = 0
-            
-            # Test 6: Test lookup_ref convenience method
-            print("  - Testing lookup_ref method...")
-            test_ref = Reference(full_title="Machine Learning")
-            try:
-                basic_results = connector.lookup_ref(test_ref, top_k=3)
-                general_search_count = len(basic_results.references)
-            except Exception as e:
-                print(f"    lookup_ref failed: {e}")
-                general_search_count = 0
-            
-            total_results = ((1 if doi_success else 0) + identifier_count + 
-                           title_search_count + author_search_count + 
-                           metadata_search_count + general_search_count)
-            
-            self.results[connector_name] = {
+
+            doi_rows = connector.search_by_id("10.1007/978-1-4020-9632-7", "doi")
+            doi_refs = connector.map_to_references(doi_rows)
+
+            title_raw = connector.search(self.sample_refs[0], top_k=3, threshold=50)
+            title_refs = connector.map_to_references(title_raw)
+
+            self.results[name] = {
                 "status": "PASSED",
-                "doi_search_success": doi_success,
-                "identifier_search_count": identifier_count,
-                "title_search_count": title_search_count,
-                "author_search_count": author_search_count,
-                "metadata_search_count": metadata_search_count,
-                "general_search_count": general_search_count,
-                "total_results": total_results,
+                "doi_results": len(doi_refs.references),
+                "title_results": len(title_refs.references),
             }
-            
-            print(f"  {connector_name} connector: PASSED")
-            print(f"    Total results across all tests: {total_results}")
+            print(f"  {name} connector: PASSED")
             return True
-            
-        except Exception as e:
-            print(f"  {connector_name} connector: FAILED - {e}")
-            import traceback
-            traceback.print_exc()
-            self.results[connector_name] = {
-                "status": "FAILED",
-                "error": str(e)
-            }
+        except Exception as exc:  # pragma: no cover - diagnostic harness
+            print(f"  {name} connector: FAILED - {exc}")
+            self.results[name] = {"status": "FAILED", "error": str(exc)}
             return False
-    
-    def test_matilda_connector(self) -> bool:
-        """Test the Matilda connector."""
-        print("\nTesting Matilda Connector...")
-        connector_name = "Matilda"
-        
+
+    def test_matilda(self) -> bool:
+        name = "Matilda"
+        print(f"\nTesting {name} connector…")
+
         try:
             connector = MatildaConnector()
-            
-            # Test title search
-            title_ref = Reference(full_title="F1 Scores")
-            title_results = connector.lookup_ref(title_ref, top_k=3)
-            
-            # Test author search
-            author_ref = Reference(authors=["Charles Darwin"])
-            author_results = connector.lookup_ref(author_ref, top_k=3)
-            
-            # Test general query search
-            general_ref = Reference(full_title="machine learning")
-            general_results = connector.lookup_ref(general_ref, top_k=3)
-            
-            # Test advanced search with kwargs
-            advanced_ref = Reference(full_title="neural networks")
-            advanced_results = connector.lookup_ref(
-                advanced_ref,
-                top_k=3,
-                work_type="journal-article",
-                sort_by="created"
-            )
-            
-            # Test DOI search
-            doi_result = connector.search_by_doi("10.1007/978-1-4020-9632-7")
-            doi_success = doi_result is not None
-            
-            # Collect results
-            total_results = (len(title_results.references) + 
-                           len(author_results.references) + 
-                           len(general_results.references) + 
-                           len(advanced_results.references) + 
-                           (1 if doi_success else 0))
-            
-            self.results[connector_name] = {
+
+            query = Reference(full_title="Machine learning")
+            raw = connector.search(query, top_k=3)
+            mapped = connector.map_to_references(raw)
+
+            doi_rows = connector.search_by_id("10.1007/978-1-4020-9632-7", "doi")
+            doi_refs = connector.map_to_references(doi_rows)
+
+            self.results[name] = {
                 "status": "PASSED",
-                "title_search_count": len(title_results.references),
-                "author_search_count": len(author_results.references),
-                "general_search_count": len(general_results.references),
-                "advanced_search_count": len(advanced_results.references),
-                "doi_search_success": doi_success,
-                "total_results": total_results,
+                "search_results": len(raw),
+                "mapped_results": len(mapped.references),
+                "doi_results": len(doi_refs.references),
             }
-            
-            print(f"  {connector_name} connector: PASSED")
+            print(f"  {name} connector: PASSED")
             return True
-            
-        except Exception as e:
-            print(f"  {connector_name} connector: FAILED - {e}")
-            self.results[connector_name] = {
-                "status": "FAILED",
-                "error": str(e)
-            }
+        except Exception as exc:  # pragma: no cover - diagnostic harness
+            print(f"  {name} connector: FAILED - {exc}")
+            self.results[name] = {"status": "FAILED", "error": str(exc)}
             return False
-    
-    def test_wikidata_connector(self) -> bool:
-        """Test the Wikidata connector."""
-        print("\nTesting Wikidata Connector...")
-        connector_name = "Wikidata"
-        
+
+    def test_wikidata(self) -> bool:
+        name = "Wikidata"
+        print(f"\nTesting {name} connector…")
+
         try:
             connector = WikidataConnector()
-            
-            # Test title search using unified interface (elastic method - default)
-            title_ref = Reference(full_title="The Great Gatsby")
-            title_results = connector.lookup_ref(title_ref, top_k=3)
-            title_count = len(title_results.references)
-            
-            # Test SPARQL method
-            sparql_results = connector.lookup_ref(title_ref, top_k=3, method="sparql")
-            sparql_count = len(sparql_results.references)
-            
-            # Test author search
-            author_results = connector.search_books_by_author("Virginia Woolf", top_k=3)
-            author_count = len(author_results.references)
-            
-            # Test ISBN search
-            isbn_results = connector.search_by_isbn("978-0-7432-7356-5", top_k=3)
-            isbn_count = len(isbn_results.references)
-            
-            # Test DOI search
-            doi_result = connector.search_by_doi("10.1007/978-1-4020-9632-7")
-            doi_count = 1 if doi_result else 0
-            
-            total_results = title_count + sparql_count + author_count + isbn_count + doi_count
-            
-            self.results[connector_name] = {
+
+            title_raw = connector.search(Reference(full_title="The Great Gatsby"), top_k=3)
+            title_refs = connector.map_to_references(title_raw)
+
+            sparql_raw = connector.search(
+                Reference(full_title="The Great Gatsby"),
+                top_k=3,
+                method="sparql",
+            )
+            sparql_refs = connector.map_to_references(sparql_raw)
+
+            doi_rows = connector.search_by_id("10.1007/978-1-4020-9632-7", "doi", top_k=1)
+            doi_refs = connector.map_to_references(doi_rows)
+
+            isbn_rows = connector.search_by_id("9780743273565", "isbn", top_k=3)
+            isbn_refs = connector.map_to_references(isbn_rows)
+
+            self.results[name] = {
                 "status": "PASSED",
-                "title_search_count": title_count,
-                "sparql_search_count": sparql_count,
-                "author_search_count": author_count,
-                "isbn_search_count": isbn_count,
-                "doi_search_count": doi_count,
-                "total_results": total_results,
+                "title_results": len(title_refs.references),
+                "sparql_results": len(sparql_refs.references),
+                "doi_results": len(doi_refs.references),
+                "isbn_results": len(isbn_refs.references),
             }
-            
-            print(f"  {connector_name} connector: PASSED")
+            print(f"  {name} connector: PASSED")
             return True
-            
-        except Exception as e:
-            print(f"  {connector_name} connector: FAILED - {e}")
-            self.results[connector_name] = {
-                "status": "FAILED",
-                "error": str(e)
-            }
+        except Exception as exc:  # pragma: no cover - diagnostic harness
+            print(f"  {name} connector: FAILED - {exc}")
+            self.results[name] = {"status": "FAILED", "error": str(exc)}
             return False
-    
-    def run_all_tests(self) -> bool:
-        """Run all connector tests."""
-        print("Running Citation Index Connector Tests")
-        print("=" * 50)
-        
-        test_methods = [
-            self.test_openalex_connector,
-            self.test_opencitations_connector,
-            self.test_matilda_connector,
-            self.test_wikidata_connector,
+
+    def run(self) -> bool:
+        print("Running Citation Index connector checks")
+        print("=" * 60)
+
+        checks = [
+            self.test_openalex,
+            self.test_opencitations,
+            self.test_matilda,
+            self.test_wikidata,
         ]
-        
-        all_passed = True
-        for test_method in test_methods:
-            try:
-                result = test_method()
-                if not result:
-                    all_passed = False
-            except Exception as e:
-                print(f"  Unexpected error in {test_method.__name__}: {e}")
-                all_passed = False
-        
-        self.print_summary()
-        return all_passed
-    
-    def print_summary(self):
-        """Print test results summary."""
-        print("\n" + "=" * 50)
-        print("Test Results Summary")
-        print("=" * 50)
-        
-        for connector_name, result in self.results.items():
-            status = result["status"]
-            print(f"{connector_name:20} | {status}")
-            
-            if "error" in result:
-                print(f"{'':20} | Error: {result['error']}")
-            elif "mapped_results_count" in result:
-                print(f"{'':20} | Found {result['mapped_results_count']} results")
-            elif "total_results" in result:
-                print(f"{'':20} | Found {result['total_results']} total results")
-        
-        print("=" * 50)
-        
-        passed_count = sum(1 for r in self.results.values() if "PASSED" in r["status"])
-        failed_count = sum(1 for r in self.results.values() if "FAILED" in r["status"])
-        
-        print(f"Total: {len(self.results)} connectors")
-        print(f"Passed: {passed_count}")
-        print(f"Failed: {failed_count}")
-        
-        if failed_count == 0:
-            print("\nAll tests passed")
-        else:
-            print(f"\n{failed_count} connector(s) failed")
+
+        success = True
+        for check in checks:
+            success &= check()
+
+        self._print_summary()
+        return success
+
+    def _print_summary(self) -> None:
+        print("\n" + "=" * 60)
+        print("Summary")
+        print("=" * 60)
+        for name, details in self.results.items():
+            status = details.get("status", "UNKNOWN")
+            print(f"{name:20} | {status}")
+            for key, value in details.items():
+                if key == "status":
+                    continue
+                print(f"{'':20} | {key.replace('_', ' ')}: {value}")
+        print("=" * 60)
 
 
-def main():
-    """Main test function."""
-    test_suite = ConnectorTestSuite()
-    success = test_suite.run_all_tests()
-    sys.exit(0 if success else 1)
+def main() -> None:
+    suite = ConnectorTestSuite()
+    ok = suite.run()
+    sys.exit(0 if ok else 1)
 
 
 if __name__ == "__main__":

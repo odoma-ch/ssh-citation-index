@@ -1,205 +1,230 @@
-"""
-OpenAlex API connector for reference search and disambiguation.
-"""
+"""OpenAlex API connector for reference search and disambiguation."""
+
+import logging
+from typing import Any, Dict, List, Optional
 
 import requests
-from typing import Dict, List, Any, Optional
 
 from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
 
+logger = logging.getLogger(__name__)
+
 
 class OpenAlexConnector(BaseConnector):
-    """Connector for OpenAlex API."""
-    
-    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None):
-        """Initialize OpenAlex connector.
-        
-        Args:
-            api_key: Optional API key for higher rate limits
-            base_url: Base URL for OpenAlex API (defaults to official API)
-        """
+    """Connector for the OpenAlex API."""
+
+    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
         super().__init__(api_key, base_url)
         self.base_url = base_url or "https://api.openalex.org"
         self.session = requests.Session()
-        
-        # Set headers for API requests
+
         headers = {
-            "User-Agent": "citation-index/1.0 (mailto:your-email@domain.com)"
+            "User-Agent": "citation-index/1.0 (mailto:your-email@domain.com)",
         }
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
-        
+
         self.session.headers.update(headers)
-    
-    def search(self, reference: Reference, top_k: int = 10, **kwargs) -> List[Dict[str, Any]]:
-        """Search for works using OpenAlex API.
-        
-        Args:
-            reference: Reference object containing search criteria (title is mandatory)
-            top_k: Maximum number of results to return (default: 10)
-            
-        Returns:
-            List of raw OpenAlex API response data
-            
-        Raises:
-            ValueError: If reference title is missing
-            Exception: If API call fails
-        """
+
+    def search(self, reference: Reference, top_k: int = 10, **kwargs: Any) -> List[Dict[str, Any]]:
         self._validate_reference(reference)
-        
-        # Build search query using title
+
         title = reference.full_title.strip()
-        
-        # Construct API URL and parameters
         url = f"{self.base_url}/works"
-        params = {
-            "filter": f"title.search:{title}",  # Don't quote here, let requests handle it
-            "per-page": min(top_k, 200),  # OpenAlex max is 200 per page
-            "sort": "relevance_score:desc"
+        params: Dict[str, Any] = {
+            "filter": f"title.search:{title}",
+            "per-page": min(top_k, 200),
+            "sort": "relevance_score:desc",
         }
-        
-        # Add additional filters if available
+
+        search_terms = [title]
+        author_name = self._first_author(reference)
+        if author_name:
+            search_terms.append(author_name)
+
+        params["search"] = " ".join(search_terms)
+
+        year = None
         if reference.publication_date:
-            # Extract year from publication_date if possible
-            year = reference._extract_year(reference.publication_date)
-            if year:
-                params["filter"] += f",publication_year:{year}"
-        
+            year = Reference._extract_year(reference.publication_date)  # type: ignore[attr-defined]
+        if year:
+            params["filter"] += f",publication_year:{year}"
+
         try:
-            response = self.session.get(url, params=params)
+            response = self.session.get(url, params=params, timeout=30)
             response.raise_for_status()
-            
-            data = response.json()
-            results = data.get("results", [])
-            
-            return results[:top_k]  # Ensure we don't exceed requested top_k
-            
-        except requests.RequestException as e:
-            raise Exception(f"OpenAlex API request failed: {e}")
-        except KeyError as e:
-            raise Exception(f"Unexpected OpenAlex API response format: {e}")
-    
+        except requests.RequestException as exc:
+            logger.error("OpenAlex search failed: %s", exc)
+            return []
+
+        payload = response.json()
+        results = payload.get("results", [])
+        if not isinstance(results, list):
+            logger.warning("Unexpected OpenAlex response structure")
+            return []
+
+        return results[: top_k or len(results)]
+
+    def search_by_id(
+        self,
+        identifier: str,
+        identifier_type: Optional[str] = None,
+        **kwargs: Any,
+    ) -> List[Dict[str, Any]]:
+        if not identifier:
+            return []
+
+        id_type = (identifier_type or self._infer_identifier_type(identifier)).lower()
+        if id_type == "doi":
+            url = f"{self.base_url}/works/doi:{self._normalize_doi(identifier)}"
+        elif id_type in {"openalex", "openalex_id"}:
+            normalized = self._normalize_openalex_id(identifier)
+            if not normalized:
+                return []
+            url = f"{self.base_url}/works/{normalized}"
+        else:
+            logger.warning("Unsupported identifier type for OpenAlex: %s", id_type)
+            return []
+
+        try:
+            response = self.session.get(url, timeout=30)
+            response.raise_for_status()
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if status == 404:
+                return []
+            logger.error("OpenAlex identifier lookup failed: %s", exc)
+            return []
+        except requests.RequestException as exc:
+            logger.error("OpenAlex identifier lookup failed: %s", exc)
+            return []
+
+        record = response.json()
+        if not isinstance(record, dict):
+            return []
+        return [record]
+
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
-        """Transform OpenAlex API results to Reference objects.
-        
-        Args:
-            raw_results: List of raw OpenAlex API response data
-            
-        Returns:
-            References object containing mapped Reference instances
-        """
-        references = []
-        
+        references = References()
+
         for result in raw_results:
             try:
-                # Extract basic information
-                title = result.get("title")
-                publication_year = result.get("publication_year")
-                
-                # Extract authors as strings (Reference model expects List[Person | Organization | str])
-                authors = []
-                authorship = result.get("authorships", [])
-                for auth in authorship:
-                    author_info = auth.get("author", {})
-                    display_name = author_info.get("display_name")
-                    if display_name:
-                        authors.append(display_name)
-                
-                # Extract publication venue information
-                primary_location = result.get("primary_location", {})
-                source = primary_location.get("source", {}) if primary_location else {}
-                
-                # Map OpenAlex fields to Reference model fields
-                journal_title = source.get("display_name") if source else None
-                publisher = source.get("host_organization_name") if source else None
-                
-                # Extract additional publication details
-                volume = result.get("biblio", {}).get("volume") if result.get("biblio") else None
-                issue = result.get("biblio", {}).get("issue") if result.get("biblio") else None
-                
-                # Extract page information
-                first_page = result.get("biblio", {}).get("first_page") if result.get("biblio") else None
-                last_page = result.get("biblio", {}).get("last_page") if result.get("biblio") else None
-                pages = None
-                if first_page and last_page:
-                    pages = f"{first_page}-{last_page}"
-                elif first_page:
-                    pages = first_page
-                
-                # Create Reference object with proper field mapping
-                reference = Reference(
-                    full_title=title,
-                    authors=authors if authors else None,
-                    journal_title=journal_title,
-                    publisher=publisher,
-                    publication_date=str(publication_year) if publication_year else None,
-                    volume=volume,
-                    issue=issue,
-                    pages=pages
-                )
-                
-                references.append(reference)
-                
-            except Exception as e:
-                # Log warning but continue processing other results
-                print(f"Warning: Could not map OpenAlex result to Reference: {e}")
+                ref = self._map_single_result(result)
+            except Exception as exc:
+                logger.warning("Could not map OpenAlex result: %s", exc)
                 continue
-        
-        # Create References object using append method to avoid constructor validation issues
-        result = References()
-        for ref in references:
-            result.append(ref)
-        return result
-    
-    def search_by_doi(self, doi: str) -> Optional[Reference]:
-        """Search for a specific work by DOI.
-        
-        Args:
-            doi: DOI of the work to search for
-            
-        Returns:
-            Reference object if found, None otherwise
-        """
-        if not doi:
+
+            if ref:
+                references.append(ref)
+
+        return references
+
+    @staticmethod
+    def _first_author(reference: Reference) -> Optional[str]:
+        if not reference.authors:
             return None
-            
-        # Clean DOI format
-        clean_doi = doi.replace("https://doi.org/", "").replace("http://dx.doi.org/", "")
-        
-        url = f"{self.base_url}/works"
-        params = {
-            "filter": f"doi:{clean_doi}"
-        }
-        
-        try:
-            response = self.session.get(url, params=params)
-            response.raise_for_status()
-            
-            data = response.json()
-            results = data.get("results", [])
-            
-            if results:
-                mapped = self.map_to_references([results[0]])
-                return mapped.references[0] if mapped.references else None
-                
-        except Exception as e:
-            print(f"Warning: DOI search failed: {e}")
-            
+
+        first = reference.authors[0]
+        if isinstance(first, str):
+            return first.strip() or None
+
+        display_name = getattr(first, "display_name", None)
+        if display_name:
+            return str(display_name).strip() or None
+
+        name_parts = [
+            getattr(first, "first_name", "") or "",
+            getattr(first, "surname", "") or "",
+        ]
+        author_name = " ".join(part for part in name_parts if part).strip()
+        return author_name or None
+
+    @staticmethod
+    def _normalize_doi(doi: str) -> str:
+        clean = doi.strip()
+        prefixes = [
+            "https://doi.org/",
+            "http://doi.org/",
+            "http://dx.doi.org/",
+            "doi:",
+        ]
+        for prefix in prefixes:
+            if clean.lower().startswith(prefix):
+                clean = clean[len(prefix) :]
+                break
+        return clean
+
+    @staticmethod
+    def _normalize_openalex_id(identifier: str) -> Optional[str]:
+        token = identifier.rsplit("/", 1)[-1].upper()
+        if token.startswith("W"):
+            return token
         return None
+
+    @staticmethod
+    def _infer_identifier_type(identifier: str) -> str:
+        trimmed = identifier.strip()
+        if trimmed.lower().startswith("10.") or "doi" in trimmed.lower():
+            return "doi"
+        if trimmed.upper().startswith("W") or "openalex" in trimmed.lower():
+            return "openalex"
+        return "doi"
+
+    @staticmethod
+    def _map_single_result(result: Dict[str, Any]) -> Optional[Reference]:
+        title = result.get("title")
+        if not title:
+            return None
+
+        publication_year = result.get("publication_year")
+
+        authors: List[str] = []
+        for authorship in result.get("authorships", []) or []:
+            author_info = authorship.get("author", {})
+            display_name = author_info.get("display_name")
+            if display_name:
+                authors.append(display_name)
+
+        primary_location = result.get("primary_location") or {}
+        source = primary_location.get("source") or {}
+
+        journal_title = source.get("display_name")
+        publisher = source.get("host_organization_name")
+
+        biblio = result.get("biblio") or {}
+        volume = biblio.get("volume")
+        issue = biblio.get("issue")
+
+        pages = None
+        first_page = biblio.get("first_page")
+        last_page = biblio.get("last_page")
+        if first_page and last_page:
+            pages = f"{first_page}-{last_page}"
+        elif first_page:
+            pages = first_page
+
+        ids = result.get("ids") or {}
+        doi = ids.get("doi")
+
+        return Reference(
+            full_title=title,
+            authors=authors or None,
+            journal_title=journal_title,
+            publisher=publisher,
+            publication_date=str(publication_year) if publication_year else None,
+            volume=volume,
+            issue=issue,
+            pages=pages,
+            doi=doi,
+        )
 
 
 # Example usage:
 # connector = OpenAlexConnector()
-# reference = Reference(full_title="Your Paper Title")
-# results = connector.lookup_ref(reference, top_k=5)
-# for ref in results.references:
-#     print(f"Title: {ref.full_title}")
-#     print(f"Authors: {ref.authors}")
-#     print(f"Year: {ref.publication_date}")
-#     print("---")
-#
-# To test all connectors: python tests/test_connectors.py
-
-
+# query = Reference(full_title="Your Paper Title")
+# raw_results = connector.search(query, top_k=5)
+# mapped = connector.map_to_references(raw_results)
+# for ref in mapped.references:
+#     print(ref.full_title)

@@ -7,7 +7,8 @@ using title-based queries.
 
 import base64
 import logging
-from typing import Optional, Dict, Any, List
+from typing import Any, Dict, List, Optional
+
 import requests
 
 from .base import BaseConnector
@@ -37,10 +38,10 @@ class MatildaConnector(BaseConnector):
             'User-Agent': 'CitationIndex/1.0'
         })
     
-    def search(self, reference: Reference, top_k: int = 10, **kwargs) -> List[Dict[str, Any]]:
+    def search(self, reference: Reference, top_k: int = 10, **kwargs: Any) -> List[Dict[str, Any]]:
         """
         Search for works using the Matilda API with comprehensive query support.
-        
+
         Supports the following search capabilities:
         - Title search (query.title)
         - Author search (query.author) 
@@ -68,110 +69,31 @@ class MatildaConnector(BaseConnector):
         Returns:
             List of raw API response data
         """
-        # Build query parameters
-        params = {}
-        
-        # Title-based search (primary)
-        if reference.full_title:
-            params['query.title'] = reference.full_title
-        
-        # Author-based search
-        if reference.authors and len(reference.authors) > 0:
-            # Use the first author for query, or combine multiple authors
-            if isinstance(reference.authors[0], str):
-                author_name = reference.authors[0]
-            else:
-                # Handle Person objects if they exist
-                author_obj = reference.authors[0]
-                if hasattr(author_obj, 'surname') and hasattr(author_obj, 'first_name'):
-                    author_name = f"{author_obj.first_name or ''} {author_obj.surname or ''}".strip()
-                else:
-                    author_name = str(author_obj)
-            
-            if author_name:
-                params['query.author'] = author_name
-        
-        # Publication date filtering
-        if reference.publication_date:
-            year = self._extract_year_from_date(reference.publication_date)
-            if year:
-                # Search for works published in that year
-                params['filter.fromPublishedDate'] = f"{year}-01-01"
-                params['filter.untilPublishedDate'] = f"{year}-12-31"
-        
-        # Publisher search
-        if reference.publisher:
-            params['query.publisher'] = reference.publisher
-        elif reference.journal_title:
-            # Use journal as publisher query
-            params['query.publisher'] = reference.journal_title
-        
-        # Additional parameters from kwargs
-        if 'general_query' in kwargs:
-            params['query'] = kwargs['general_query']
-        
-        if 'author_query' in kwargs:
-            params['query.author'] = kwargs['author_query']
-            
-        if 'publisher_query' in kwargs:
-            params['query.publisher'] = kwargs['publisher_query']
-        
-        # Date filtering
-        if 'from_date' in kwargs:
-            params['filter.fromPublishedDate'] = kwargs['from_date']
-        if 'until_date' in kwargs:
-            params['filter.untilPublishedDate'] = kwargs['until_date']
-        
-        # Work type filtering
-        if 'work_type' in kwargs:
-            params['filter.type'] = kwargs['work_type']
-        
-        # Sorting
-        if 'sort_by' in kwargs:
-            params['sort'] = kwargs['sort_by']
-        if 'sort_order' in kwargs:
-            params['order'] = kwargs['sort_order']
-        
-        # Pagination
-        if top_k:
-            params['size'] = min(top_k, 100)  # Matilda might have limits
-        if 'offset' in kwargs:
-            params['from'] = kwargs['offset']
-        
-        # If no search criteria provided, return empty
-        if not any(key.startswith('query') for key in params.keys()) and 'query' not in params:
-            logger.warning("Matilda search requires at least one search parameter (title, author, or general query)")
-            return []
-        
+        self._validate_reference(reference)
+
+        params = self._build_search_params(reference, top_k, kwargs)
+
         try:
-            # Make the API request
-            url = f"{self.base_url}/works/query"
-            logger.info(f"Matilda API request: {url} with params: {params}")
-            
-            response = self.session.get(url, params=params, timeout=30)
-            
-            if response.status_code == 401:
-                logger.error("Matilda API authentication failed")
-                return []
-            elif response.status_code != 200:
-                logger.error(f"Matilda API error: {response.status_code} - {response.text}")
-                return []
-            
-            data = response.json()
-            works_count = len(data.get('works', []))
-            total_count = data.get('total', works_count)
-            logger.info(f"Matilda API returned {works_count} works (total: {total_count})")
-            
-            # Return the raw data for mapping
-            return [data]
-            
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Matilda API request failed: {e}")
+            response = self.session.get(
+                f"{self.base_url}/works/query",
+                params=params,
+                timeout=30,
+            )
+            response.raise_for_status()
+        except requests.exceptions.RequestException as exc:
+            logger.error("Matilda API request failed: %s", exc)
             return []
-        except Exception as e:
-            logger.error(f"Error processing Matilda API response: {e}")
+
+        data = response.json()
+        works = data.get("works", [])
+
+        if not isinstance(works, list):
+            logger.warning("Unexpected Matilda response shape: 'works' missing")
             return []
-    
+
+        logger.debug("Matilda returned %d works", len(works))
+        return works[: top_k or len(works)]
+
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
         """
         Map Matilda API response to References object.
@@ -183,23 +105,17 @@ class MatildaConnector(BaseConnector):
             References object with mapped data
         """
         references = References()
-        
-        for api_response in raw_results:
-            # Handle different response structures
-            works = api_response.get('works', api_response.get('content', []))
-            if not isinstance(works, list):
-                logger.warning("Unexpected Matilda API response structure")
+
+        for work in self._iter_works(raw_results):
+            try:
+                ref = self._convert_work_to_reference(work)
+            except Exception as exc:
+                logger.warning("Failed to map Matilda work: %s", exc)
                 continue
-            
-            for work in works:
-                try:
-                    ref = self._convert_work_to_reference(work)
-                    if ref:
-                        references.append(ref)
-                except Exception as e:
-                    logger.warning(f"Failed to convert Matilda work to reference: {e}")
-                    continue
-        
+
+            if ref:
+                references.append(ref)
+
         return references
     
     def _convert_work_to_reference(self, work: Dict[str, Any]) -> Optional[Reference]:
@@ -295,50 +211,58 @@ class MatildaConnector(BaseConnector):
             reference = Reference(
                 full_title=title,
                 authors=authors if authors else None,
-                journal_title=publisher,  # Use publisher as journal for now
+                journal_title=publisher,
                 publication_date=pub_date,
-                publisher=publisher
+                publisher=publisher,
+                doi=doi,
             )
-            
+
             return reference
-            
+
         except Exception as e:
             logger.error(f"Error converting Matilda work to reference: {e}")
             return None
-    
-    def search_by_doi(self, doi: str) -> Optional[Reference]:
-        """
-        Search for a work by DOI.
-        
-        Args:
-            doi: DOI to search for
-            
-        Returns:
-            Reference object if found, None otherwise
-        """
+
+    def search_by_id(
+        self,
+        identifier: str,
+        identifier_type: Optional[str] = None,
+        **kwargs: Any,
+    ) -> List[Dict[str, Any]]:
+        if not identifier:
+            return []
+
+        id_type = (identifier_type or "doi").lower()
+        if id_type != "doi":
+            logger.warning("Matilda only supports DOI lookups (requested %s)", id_type)
+            return []
+
+        params = {"query.doi": identifier}
         try:
-            # Try searching by DOI if the API supports it
-            params = {'query.doi': doi}
-            
             response = self.session.get(
                 f"{self.base_url}/works/query",
                 params=params,
-                timeout=30
+                timeout=30,
             )
-            
-            if response.status_code != 200:
-                logger.warning(f"Matilda DOI search failed: {response.status_code}")
-                return None
-            
-            data = response.json()
-            references = self.map_to_references(data)
-            
-            return references.references[0] if references.references else None
-            
-        except Exception as e:
-            logger.error(f"Error in Matilda DOI search: {e}")
-            return None
-    
+            response.raise_for_status()
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if status == 400:
+                fallback = self._fallback_identifier_search(identifier)
+                if fallback is not None:
+                    return fallback
+            logger.warning("Matilda identifier lookup failed: %s", exc)
+            return []
+        except requests.exceptions.RequestException as exc:
+            logger.warning("Matilda identifier lookup failed: %s", exc)
+            return []
+
+        data = response.json()
+        works = data.get("works", [])
+        if not isinstance(works, list):
+            return []
+        return works
+
     def _extract_year_from_date(self, date_str: str) -> Optional[str]:
         """Extract a 4-digit year from a date string."""
         if not date_str:
@@ -348,5 +272,123 @@ class MatildaConnector(BaseConnector):
         # Look for 4-digit year patterns
         match = re.search(r'\b(19|20)\d{2}\b', str(date_str))
         return match.group(0) if match else None
+
+    def _build_search_params(
+        self,
+        reference: Reference,
+        top_k: int,
+        extra: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        params: Dict[str, Any] = {
+            "query.title": reference.full_title,
+        }
+
+        author_name = self._pick_author(reference)
+        if author_name:
+            params["query.author"] = author_name
+
+        year = self._extract_year_from_date(reference.publication_date or "")
+        if year:
+            params["filter.fromPublishedDate"] = f"{year}-01-01"
+            params["filter.untilPublishedDate"] = f"{year}-12-31"
+
+        publisher = reference.publisher or reference.journal_title
+        if publisher:
+            params["query.publisher"] = publisher
+
+        if top_k:
+            params["size"] = min(top_k, 100)
+
+        allowed_keys = {
+            "general_query": "query",
+            "author_query": "query.author",
+            "publisher_query": "query.publisher",
+            "from_date": "filter.fromPublishedDate",
+            "until_date": "filter.untilPublishedDate",
+            "work_type": "filter.type",
+            "sort_by": "sort",
+            "sort_order": "order",
+            "offset": "from",
+        }
+
+        for key, target in allowed_keys.items():
+            if key in extra and extra[key] is not None:
+                params[target] = extra[key]
+
+        return params
+
+    @staticmethod
+    def _pick_author(reference: Reference) -> Optional[str]:
+        if not reference.authors:
+            return None
+
+        first = reference.authors[0]
+        if isinstance(first, str):
+            return first.strip() or None
+
+        first_name = getattr(first, "first_name", "") or ""
+        surname = getattr(first, "surname", "") or ""
+        author_name = f"{first_name} {surname}".strip()
+        return author_name or None
+
+    @staticmethod
+    def _iter_works(raw_results: List[Dict[str, Any]]):
+        for entry in raw_results:
+            if isinstance(entry, dict) and "works" in entry:
+                works = entry.get("works", [])
+                if isinstance(works, list):
+                    for work in works:
+                        if isinstance(work, dict):
+                            yield work
+                continue
+
+            if isinstance(entry, dict) and "content" in entry:
+                content = entry.get("content", [])
+                if isinstance(content, list):
+                    for work in content:
+                        if isinstance(work, dict):
+                            yield work
+                continue
+
+            if isinstance(entry, dict):
+                yield entry
+
+    def _fallback_identifier_search(self, identifier: str) -> Optional[List[Dict[str, Any]]]:
+        candidate_params = [
+            {"query": identifier},
+            {"query": f"doi:{self._normalize_identifier(identifier)}"},
+        ]
+
+        for params in candidate_params:
+            try:
+                response = self.session.get(
+                    f"{self.base_url}/works/query",
+                    params=params,
+                    timeout=30,
+                )
+                response.raise_for_status()
+                data = response.json()
+                works = data.get("works", [])
+                if isinstance(works, list):
+                    logger.info("Matilda identifier fallback succeeded with params %s", params)
+                    return works
+            except requests.RequestException:
+                continue
+        return None
+
+    @staticmethod
+    def _normalize_identifier(identifier: str) -> str:
+        cleaned = identifier.strip()
+        prefixes = [
+            "https://doi.org/",
+            "http://doi.org/",
+            "http://dx.doi.org/",
+            "doi:",
+        ]
+        for prefix in prefixes:
+            if cleaned.lower().startswith(prefix):
+                cleaned = cleaned[len(prefix) :]
+                break
+        return cleaned
 
  

@@ -1,15 +1,12 @@
-"""
-OpenCitations Meta API connector for reference search and disambiguation.
+"""OpenCitations Meta API connector for reference search and disambiguation."""
 
-Supports both REST API (identifier-based lookups) and SPARQL endpoint 
-(title/author-based search).
-"""
-
-import requests
+import logging
+import re
 import time
 from random import uniform
-from typing import Dict, List, Any, Optional, Tuple
-import re
+from typing import Any, Dict, List, Optional, Tuple
+
+import requests
 
 try:
     from SPARQLWrapper import SPARQLWrapper, JSON
@@ -21,11 +18,13 @@ from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
 from ...utils.reference_matching import (
-    normalize_title,
+    calculate_matching_score,
     extract_year,
-    calculate_title_similarity,
-    calculate_matching_score
+    normalize_title,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 class OpenCitationsConnector(BaseConnector):
@@ -64,10 +63,16 @@ class OpenCitationsConnector(BaseConnector):
             self.sparql.setReturnFormat(JSON)
             self.sparql.setTimeout(30)
     
-    def search(self, reference: Reference, top_k: int = 10, include_author: bool = True, 
-               include_date: bool = True, threshold: int = 50) -> List[Dict[str, Any]]:
+    def search(
+        self,
+        reference: Reference,
+        top_k: int = 10,
+        include_author: bool = True,
+        include_date: bool = True,
+        threshold: int = 50,
+    ) -> List[Dict[str, Any]]:
         """Search for works using OpenCitations SPARQL endpoint.
-        
+
         This method uses the SPARQL endpoint to search by title, author, and other metadata.
         Falls back to identifier-based lookup if SPARQL is not available.
         
@@ -84,21 +89,18 @@ class OpenCitationsConnector(BaseConnector):
         Raises:
             ValueError: If reference title is missing and no DOI is provided
         """
-        # If SPARQL is not available, try identifier-based lookup
+        self._validate_reference(reference)
+
         if not SPARQL_AVAILABLE or self.sparql is None:
-            print("Warning: SPARQLWrapper not available. Trying identifier-based lookup...")
-            if hasattr(reference, 'doi') and reference.doi:
-                result = self.search_by_doi(reference.doi)
-                if result:
-                    return [self._reference_to_dict(result)]
+            logger.warning(
+                "SPARQLWrapper not available for OpenCitations. Falling back to identifier lookup."
+            )
+            if getattr(reference, "doi", None):
+                return self.search_by_id(reference.doi, "doi")
             return []
-        
-        # Validate reference has searchable fields
-        if not reference.full_title and not (hasattr(reference, 'doi') and reference.doi):
-            raise ValueError("Reference title or DOI is required for search")
-        
+
         results_with_scores = []
-        
+
         # Try multiple query strategies
         query_strategies = self._build_query_strategies(reference, include_author, include_date)
         
@@ -108,12 +110,11 @@ class OpenCitationsConnector(BaseConnector):
                 
             raw_results = self._execute_sparql_query(query)
             if raw_results:
-                # Score and filter results
                 for result in raw_results:
                     score = self._score_result(reference, result)
                     if score >= threshold:
-                        result['match_score'] = score
-                        result['query_strategy'] = strategy_name
+                        result["match_score"] = score
+                        result["query_strategy"] = strategy_name
                         results_with_scores.append(result)
         
         # Deduplicate by DOI and keep highest score
@@ -137,20 +138,25 @@ class OpenCitationsConnector(BaseConnector):
         
         return sorted_results[:top_k]
     
-    def search_by_id(self, identifier: str, identifier_type: str = None) -> Optional[Reference]:
+    def search_by_id(
+        self,
+        identifier: str,
+        identifier_type: Optional[str] = None,
+        **kwargs: Any,
+    ) -> List[Dict[str, Any]]:
         """Search for a specific work by identifier.
-        
+
         Args:
             identifier: The identifier value (e.g., "10.1000/123" for DOI)
             identifier_type: Type of identifier ("doi", "issn", "isbn", "omid"). 
                            If None, will try to auto-detect from identifier format.
-            
+
         Returns:
-            Reference object if found, None otherwise
+            List of raw metadata records matching the identifier
         """
         if not identifier:
-            return None
-        
+            return []
+
         # Auto-detect identifier type if not provided
         if identifier_type is None:
             if identifier.startswith(("10.", "DOI:", "doi:")):
@@ -162,9 +168,9 @@ class OpenCitationsConnector(BaseConnector):
             elif identifier.startswith("br/") or identifier.startswith("omid:"):
                 identifier_type = "omid"
             else:
-                print(f"Warning: Could not auto-detect identifier type for '{identifier}'")
-                return None
-        
+                logger.warning("Could not infer identifier type for %s", identifier)
+                return []
+
         # Clean and format identifier
         clean_id = identifier
         if identifier_type == "doi":
@@ -174,34 +180,28 @@ class OpenCitationsConnector(BaseConnector):
         elif identifier_type in ["issn", "isbn", "omid"]:
             if not clean_id.startswith(f"{identifier_type}:"):
                 clean_id = f"{identifier_type}:{clean_id}"
-        
+
         url = f"{self.base_url}/metadata/{clean_id}"
-        
+
         try:
-            response = self.session.get(url)
+            response = self.session.get(url, timeout=30)
             response.raise_for_status()
-            
-            data = response.json()
-            
-            if data and len(data) > 0:
-                mapped = self.map_to_references(data)
-                return mapped.references[0] if mapped.references else None
-                
-        except Exception as e:
-            print(f"Warning: {identifier_type.upper()} search failed: {e}")
-            
-        return None
-    
-    def search_by_doi(self, doi: str) -> Optional[Reference]:
-        """Search for a specific work by DOI.
-        
-        Args:
-            doi: DOI of the work to search for
-            
-        Returns:
-            Reference object if found, None otherwise
-        """
-        return self.search_by_id(doi, "doi")
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if status == 404:
+                return []
+            logger.error("OpenCitations %s lookup failed: %s", identifier_type, exc)
+            return []
+        except requests.RequestException as exc:
+            logger.error("OpenCitations %s lookup failed: %s", identifier_type, exc)
+            return []
+
+        data = response.json()
+        if isinstance(data, list):
+            return data
+        if isinstance(data, dict):
+            return [data]
+        return []
     
     def _build_query_strategies(self, reference: Reference, include_author: bool, 
                                 include_date: bool) -> List[Tuple[str, Optional[str]]]:
@@ -427,19 +427,23 @@ class OpenCitationsConnector(BaseConnector):
             try:
                 results = self.sparql.query().convert()
                 return results['results']['bindings']
-            except Exception as e:
-                error_message = str(e)
-                
-                if "503" in error_message:
+            except Exception as exc:
+                message = str(exc)
+
+                if "503" in message:
                     wait_time = 2 ** attempt + uniform(0, 1)
-                    print(f"503 Error: Retry {attempt + 1}/{self.max_retries}. "
-                          f"Waiting {wait_time:.2f} seconds...")
+                    logger.warning(
+                        "OpenCitations SPARQL 503 (retry %s/%s). Waiting %.2f seconds...",
+                        attempt + 1,
+                        self.max_retries,
+                        wait_time,
+                    )
                     time.sleep(wait_time)
                 else:
-                    print(f"SPARQL query error: {e}")
+                    logger.error("OpenCitations SPARQL query error: %s", exc)
                     break
-        
-        print("Maximum retry attempts reached. Query failed.")
+
+        logger.error("Maximum retry attempts reached for OpenCitations SPARQL query")
         return None
     
     def _score_result(self, reference: Reference, result: Dict) -> int:
@@ -470,109 +474,155 @@ class OpenCitationsConnector(BaseConnector):
         
         return calculate_matching_score(ref_data, result_data)
     
-    def _reference_to_dict(self, reference: Reference) -> Dict[str, Any]:
-        """Convert a Reference object to dictionary format.
-        
-        Args:
-            reference: Reference object
-            
-        Returns:
-            Dictionary representation
-        """
-        return {
-            'title': {'value': reference.full_title or ''},
-            'pub_date': {'value': getattr(reference, 'publication_date', '') or ''},
-            'doi': {'value': getattr(reference, 'doi', '') or ''},
-            'match_score': 100  # Perfect match for direct lookups
-        }
-
-    
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
-        """Transform OpenCitations Meta API results to Reference objects.
-        
-        Args:
-            raw_results: List of raw OpenCitations API response data
-            
-        Returns:
-            References object containing mapped Reference instances
-        """
-        references = []
-        
+        """Transform OpenCitations Meta API results to Reference objects."""
+
+        references = References()
+
         for result in raw_results:
             try:
-                # Extract basic information
-                title = result.get("title")
-                pub_date = result.get("pub_date")
-                
-                # Parse authors from semicolon-separated string
-                authors = []
-                author_str = result.get("author", "")
-                if author_str:
-                    # Split by semicolon and clean up
-                    author_parts = [a.strip() for a in author_str.split(";") if a.strip()]
-                    for author_part in author_parts:
-                        # Extract just the name part (before any bracketed identifiers)
-                        name_match = re.match(r"^([^[]+)", author_part)
-                        if name_match:
-                            authors.append(name_match.group(1).strip())
-                
-                # Parse editors similarly
-                editors = []
-                editor_str = result.get("editor", "")
-                if editor_str:
-                    editor_parts = [e.strip() for e in editor_str.split(";") if e.strip()]
-                    for editor_part in editor_parts:
-                        name_match = re.match(r"^([^[]+)", editor_part)
-                        if name_match:
-                            editors.append(name_match.group(1).strip())
-                
-                # Extract venue information
-                venue = result.get("venue", "")
-                journal_title = None
-                if venue:
-                    # Extract venue name (before any bracketed identifiers)
-                    venue_match = re.match(r"^([^[]+)", venue)
-                    if venue_match:
-                        journal_title = venue_match.group(1).strip()
-                
-                # Extract publisher
-                publisher_str = result.get("publisher", "")
-                publisher = None
-                if publisher_str:
-                    publisher_match = re.match(r"^([^[]+)", publisher_str)
-                    if publisher_match:
-                        publisher = publisher_match.group(1).strip()
-                
-                # Extract other fields
-                volume = result.get("volume")
-                issue = result.get("issue")
-                pages = result.get("page")
-                
-                # Create Reference object with proper field mapping
-                reference = Reference(
-                    full_title=title,
-                    authors=authors if authors else None,
-                    editors=editors if editors else None,
-                    journal_title=journal_title,
-                    publisher=publisher,
-                    publication_date=pub_date,
-                    volume=volume,
-                    issue=issue,
-                    pages=pages
-                )
-                
-                references.append(reference)
-                
-            except Exception as e:
-                # Log warning but continue processing other results
-                print(f"Warning: Could not map OpenCitations result to Reference: {e}")
+                if self._is_sparql_binding(result):
+                    ref = self._map_sparql_binding(result)
+                else:
+                    ref = self._map_metadata_record(result)
+            except Exception as exc:
+                logger.warning("Could not map OpenCitations result: %s", exc)
                 continue
-        
-        # Create References object using append method to avoid constructor validation issues
-        result = References()
-        for ref in references:
-            result.append(ref)
-        return result
+
+            if ref:
+                references.append(ref)
+
+        return references
+
+    @staticmethod
+    def _is_sparql_binding(result: Dict[str, Any]) -> bool:
+        value = result.get("title")
+        return isinstance(value, dict) and "value" in value
+
+    @staticmethod
+    def _binding_value(binding: Dict[str, Any], key: str) -> Optional[str]:
+        value = binding.get(key)
+        if isinstance(value, dict):
+            return value.get("value")
+        return value
+
+    def _map_sparql_binding(self, binding: Dict[str, Any]) -> Optional[Reference]:
+        title = self._binding_value(binding, "title") or self._binding_value(binding, "br")
+        if not title:
+            return None
+
+        pub_date = self._binding_value(binding, "pub_date")
+        doi = self._binding_value(binding, "doi")
+
+        authors = self._split_semi_colon(self._binding_value(binding, "author"))
+        editors = self._split_semi_colon(self._binding_value(binding, "editor"))
+
+        venue = self._binding_value(binding, "venue")
+        journal_title = self._strip_bracketed(venue) if venue else None
+
+        publisher_text = self._binding_value(binding, "publisher")
+        publisher = self._strip_bracketed(publisher_text) if publisher_text else None
+
+        volume = self._binding_value(binding, "volume") or self._binding_value(binding, "volume_num")
+        issue = self._binding_value(binding, "issue")
+        pages = self._binding_value(binding, "page") or self._binding_value(binding, "start_page")
+
+        return Reference(
+            full_title=title,
+            authors=authors or None,
+            editors=editors or None,
+            journal_title=journal_title,
+            publisher=publisher,
+            publication_date=pub_date,
+            volume=volume,
+            issue=issue,
+            pages=pages,
+            doi=doi,
+        )
+
+    def _map_metadata_record(self, record: Dict[str, Any]) -> Optional[Reference]:
+        title = record.get("title") or record.get("title_str")
+        if not title:
+            return None
+
+        pub_date = record.get("pub_date") or record.get("year") or record.get("publication_date")
+
+        authors = self._normalise_people(record.get("author"))
+        editors = self._normalise_people(record.get("editor"))
+
+        venue = record.get("venue") or record.get("journal")
+        if isinstance(venue, str):
+            journal_title = self._strip_bracketed(venue)
+        else:
+            journal_title = venue
+
+        publisher = record.get("publisher")
+        if isinstance(publisher, str):
+            publisher = self._strip_bracketed(publisher)
+
+        volume = record.get("volume")
+        issue = record.get("issue")
+        pages = record.get("page") or record.get("pages")
+
+        doi = record.get("doi")
+
+        return Reference(
+            full_title=title,
+            authors=authors or None,
+            editors=editors or None,
+            journal_title=journal_title,
+            publisher=publisher,
+            publication_date=str(pub_date) if pub_date else None,
+            volume=volume,
+            issue=issue,
+            pages=pages,
+            doi=doi,
+        )
+
+    @staticmethod
+    def _split_semi_colon(value: Optional[str]) -> List[str]:
+        if not value:
+            return []
+        names = []
+        for chunk in value.split(";"):
+            chunk = chunk.strip()
+            if not chunk:
+                continue
+            names.append(OpenCitationsConnector._strip_bracketed(chunk))
+        return names
+
+    @staticmethod
+    def _strip_bracketed(value: str) -> str:
+        match = re.match(r"^([^[]+)", value)
+        return match.group(1).strip() if match else value.strip()
+
+    @staticmethod
+    def _normalise_people(raw: Any) -> List[str]:
+        people: List[str] = []
+        if isinstance(raw, str):
+            return OpenCitationsConnector._split_semi_colon(raw)
+
+        if isinstance(raw, list):
+            for entry in raw:
+                name: Optional[str] = None
+                if isinstance(entry, dict):
+                    name = (
+                        entry.get("name")
+                        or " ".join(
+                            part
+                            for part in [entry.get("given"), entry.get("family")]
+                            if part
+                        ).strip()
+                    )
+                elif isinstance(entry, str):
+                    name = entry
+
+                if name:
+                    cleaned = OpenCitationsConnector._strip_bracketed(name)
+                    if cleaned:
+                        people.append(cleaned)
+
+        return people
 
 
 # Example usage:
@@ -580,14 +630,12 @@ class OpenCitationsConnector(BaseConnector):
 # # Initialize connector (optional API key for higher rate limits)
 # connector = OpenCitationsConnector(api_key="your-access-token")
 # 
-# # Method 1: Search by DOI or other identifiers
-# doi_ref = connector.search_by_doi("10.1007/978-1-4020-9632-7")
-# isbn_ref = connector.search_by_id("9781402096327", "isbn")
-# issn_ref = connector.search_by_id("0138-9130", "issn")
-# omid_ref = connector.search_by_id("br/0612058700", "omid")
-# auto_ref = connector.search_by_id("10.1007/978-1-4020-9632-7")  # Auto-detects as DOI
+# # Identifier lookup examples
+# doi_results = connector.search_by_id("10.1007/978-1-4020-9632-7", "doi")
+# isbn_results = connector.search_by_id("9781402096327", "isbn")
+# mapped = connector.map_to_references(doi_results)
 # 
-# # Method 2: SPARQL-based search by title/author/metadata (requires SPARQLWrapper)
+# # SPARQL-based search by title/author/metadata (requires SPARQLWrapper)
 # from citation_index.core.models import Reference
 # 
 # # Search by title only
@@ -609,13 +657,3 @@ class OpenCitationsConnector(BaseConnector):
 #     pages="436-444"
 # )
 # results3 = connector.search(ref3, top_k=5, include_date=True, threshold=70)
-# 
-# # Method 3: Use convenience method (combines search + mapping)
-# ref4 = Reference(full_title="Machine Learning")
-# mapped_results = connector.lookup_ref(ref4, top_k=3)
-# for result_ref in mapped_results.references:
-#     print(f"Title: {result_ref.full_title}")
-#     print(f"DOI: {result_ref.doi if hasattr(result_ref, 'doi') else 'N/A'}")
-# 
-# To test all connectors: python tests/test_connectors.py
-# To test reference matching utilities: pytest tests/test_reference_matching.py
