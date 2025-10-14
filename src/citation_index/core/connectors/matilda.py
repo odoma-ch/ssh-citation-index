@@ -229,15 +229,42 @@ class MatildaConnector(BaseConnector):
         identifier_type: Optional[str] = None,
         **kwargs: Any,
     ) -> List[Dict[str, Any]]:
+        """
+        Search for works by identifier using Matilda API.
+        
+        Supported identifier types: doi, isbn, arxiv, repec, pmid, eid, nlmuniqueid,
+        rid, pii, pmcid, pmc, mid, bookaccession, versionId, version, medline, pmpid, hal
+        
+        Args:
+            identifier: The identifier value to search for
+            identifier_type: Type of identifier (defaults to 'doi')
+            **kwargs: Additional search parameters
+            
+        Returns:
+            List of works matching the identifier
+        """
         if not identifier:
             return []
 
+        # Supported identifier types from Matilda API
+        supported_types = {
+            "doi", "isbn", "arxiv", "repec", "pmid", "eid", "nlmuniqueid",
+            "rid", "pii", "pmcid", "pmc", "mid", "bookaccession", 
+            "versionid", "version", "medline", "pmpid", "hal"
+        }
+        
         id_type = (identifier_type or "doi").lower()
-        if id_type != "doi":
-            logger.warning("Matilda only supports DOI lookups (requested %s)", id_type)
+        if id_type not in supported_types:
+            logger.warning(
+                "Matilda does not support '%s' identifier type. Supported types: %s",
+                id_type,
+                ", ".join(sorted(supported_types))
+            )
             return []
 
-        params = {"query.doi": identifier}
+        # Use query.identifier format (Matilda API expects this format)
+        params = {"query.identifier": identifier}
+        
         try:
             response = self.session.get(
                 f"{self.base_url}/works/query",
@@ -246,11 +273,6 @@ class MatildaConnector(BaseConnector):
             )
             response.raise_for_status()
         except requests.HTTPError as exc:
-            status = exc.response.status_code if exc.response is not None else None
-            if status == 400:
-                fallback = self._fallback_identifier_search(identifier)
-                if fallback is not None:
-                    return fallback
             logger.warning("Matilda identifier lookup failed: %s", exc)
             return []
         except requests.exceptions.RequestException as exc:
@@ -353,28 +375,6 @@ class MatildaConnector(BaseConnector):
             if isinstance(entry, dict):
                 yield entry
 
-    def _fallback_identifier_search(self, identifier: str) -> Optional[List[Dict[str, Any]]]:
-        candidate_params = [
-            {"query": identifier},
-            {"query": f"doi:{self._normalize_identifier(identifier)}"},
-        ]
-
-        for params in candidate_params:
-            try:
-                response = self.session.get(
-                    f"{self.base_url}/works/query",
-                    params=params,
-                    timeout=30,
-                )
-                response.raise_for_status()
-                data = response.json()
-                works = data.get("works", [])
-                if isinstance(works, list):
-                    logger.info("Matilda identifier fallback succeeded with params %s", params)
-                    return works
-            except requests.RequestException:
-                continue
-        return None
 
     @staticmethod
     def _normalize_identifier(identifier: str) -> str:
