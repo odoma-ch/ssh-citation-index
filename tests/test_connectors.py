@@ -25,7 +25,16 @@ class ConnectorTestSuite:
     def __init__(self) -> None:
         self.results: Dict[str, Dict[str, Any]] = {}
         self.sample_refs: List[Reference] = [
-            Reference(full_title="Attention Is All You Need"),
+            Reference(
+                full_title="A neuromorphic cortical-layer microchip for spike-based event processing vision systems",
+                authors=["Gotarredona, R."],
+                publication_date="2006"
+            ),
+            Reference(
+                full_title="A Globally Coherent Fingerprint Of Climate Change Impacts Across Natural Systems",
+                authors=["Parmesan, Camille", "Yohe, Gary"],
+                publication_date="2003"
+            ),
             Reference(full_title="Deep Learning"),
         ]
 
@@ -113,30 +122,29 @@ class ConnectorTestSuite:
         try:
             connector = WikidataConnector()
 
+            # Test elastic search by title
             title_raw = connector.search(Reference(full_title="The Great Gatsby"), top_k=3)
             title_refs = connector.map_to_references(title_raw)
 
-            sparql_raw = connector.search(
-                Reference(full_title="The Great Gatsby"),
-                top_k=3,
-                method="sparql",
-            )
-            sparql_refs = connector.map_to_references(sparql_raw)
-
-            doi_rows = connector.search_by_id("10.1007/978-1-4020-9632-7", "doi", top_k=1)
+            # Test identifier search using haswbstatement with CirrusSearch
+            # Note: Using a known DOI that exists in Wikidata
+            doi_rows = connector.search_by_id("10.1038/nature01286", "doi", top_k=1)
             doi_refs = connector.map_to_references(doi_rows)
 
+            # Test ISBN search (may return 0 results if ISBN not in Wikidata)
             isbn_rows = connector.search_by_id("9780743273565", "isbn", top_k=3)
             isbn_refs = connector.map_to_references(isbn_rows)
 
             self.results[name] = {
                 "status": "PASSED",
                 "title_results": len(title_refs.references),
-                "sparql_results": len(sparql_refs.references),
                 "doi_results": len(doi_refs.references),
                 "isbn_results": len(isbn_refs.references),
             }
             print(f"  {name} connector: PASSED")
+            print(f"    Title search: {len(title_refs.references)} results")
+            print(f"    DOI search: {len(doi_refs.references)} results")
+            print(f"    ISBN search: {len(isbn_refs.references)} results")
             return True
         except Exception as exc:  # pragma: no cover - diagnostic harness
             print(f"  {name} connector: FAILED - {exc}")

@@ -7,12 +7,14 @@ using title-based queries.
 
 import base64
 import logging
+import os
 from typing import Any, Dict, List, Optional
 
 import requests
 
 from .base import BaseConnector
 from ..models import Reference, References
+from ...utils.reference_matching import extract_family_name, normalize_title
 
 logger = logging.getLogger(__name__)
 
@@ -20,15 +22,22 @@ logger = logging.getLogger(__name__)
 class MatildaConnector(BaseConnector):
     """Connector for Matilda Science API."""
     
-    def __init__(self, username: str = "matilda_graphia", password: str = "WBXN2948qndi"):
+    def __init__(self, username: Optional[str] = None, password: Optional[str] = None):
         super().__init__()
         self.base_url = "https://matilda.science/api"
-        self.username = username
-        self.password = password
-        # TODO: Securely handle credentials in production
+        
+        # Load credentials from environment variables if not provided
+        self.username = username or os.getenv("MATILDA_USERNAME")
+        self.password = password or os.getenv("MATILDA_PASSWORD")
+        
+        if not self.username or not self.password:
+            raise ValueError(
+                "Matilda credentials not found. Please set MATILDA_USERNAME and "
+                "MATILDA_PASSWORD environment variables, or pass them as arguments."
+            )
 
         # Set up authentication headers
-        credentials = f"{username}:{password}"
+        credentials = f"{self.username}:{self.password}"
         encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
         
         self.session = requests.Session()
@@ -70,7 +79,7 @@ class MatildaConnector(BaseConnector):
             List of raw API response data
         """
         self._validate_reference(reference)
-
+        # title = normalize_title(reference.full_title or "")
         params = self._build_search_params(reference, top_k, kwargs)
 
         try:
@@ -117,6 +126,13 @@ class MatildaConnector(BaseConnector):
                 references.append(ref)
 
         return references
+    
+    def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
+        """Convert Matilda API result to Reference object."""
+        ref = self._convert_work_to_reference(result)
+        if ref is None:
+            return Reference(full_title="")
+        return ref
     
     def _convert_work_to_reference(self, work: Dict[str, Any]) -> Optional[Reference]:
         """
@@ -301,22 +317,12 @@ class MatildaConnector(BaseConnector):
         top_k: int,
         extra: Dict[str, Any],
     ) -> Dict[str, Any]:
+        title = normalize_title(reference.full_title or "")
+        # Use title only for search to maximize recall
+        # Author and year constraints can filter out valid results due to name variations
         params: Dict[str, Any] = {
-            "query.title": reference.full_title,
+            "query.title": title,
         }
-
-        author_name = self._pick_author(reference)
-        if author_name:
-            params["query.author"] = author_name
-
-        year = self._extract_year_from_date(reference.publication_date or "")
-        if year:
-            params["filter.fromPublishedDate"] = f"{year}-01-01"
-            params["filter.untilPublishedDate"] = f"{year}-12-31"
-
-        publisher = reference.publisher or reference.journal_title
-        if publisher:
-            params["query.publisher"] = publisher
 
         if top_k:
             params["size"] = min(top_k, 100)
@@ -341,17 +347,33 @@ class MatildaConnector(BaseConnector):
 
     @staticmethod
     def _pick_author(reference: Reference) -> Optional[str]:
+        """Extract first author's family name for search.
+        
+        Uses the extract_family_name utility to handle various name formats.
+        Returns only the family name for better matching consistency.
+        """
         if not reference.authors:
             return None
 
         first = reference.authors[0]
+        
+        # Handle string author names
         if isinstance(first, str):
-            return first.strip() or None
+            return extract_family_name(first)
 
+        # Handle object with surname attribute
+        surname = getattr(first, "surname", None)
+        if surname:
+            return str(surname).strip() or None
+        
+        # Try full name if surname not available
         first_name = getattr(first, "first_name", "") or ""
-        surname = getattr(first, "surname", "") or ""
-        author_name = f"{first_name} {surname}".strip()
-        return author_name or None
+        if first_name:
+            # If we have first_name but no surname, this might be a display name
+            # Try to extract family name from it
+            return extract_family_name(first_name)
+
+        return None
 
     @staticmethod
     def _iter_works(raw_results: List[Dict[str, Any]]):

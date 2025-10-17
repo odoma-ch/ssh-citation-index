@@ -8,6 +8,7 @@ import requests
 from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
+from ...utils.reference_matching import extract_family_name, normalize_title
 
 logger = logging.getLogger(__name__)
 
@@ -15,13 +16,15 @@ logger = logging.getLogger(__name__)
 class OpenAlexConnector(BaseConnector):
     """Connector for the OpenAlex API."""
 
-    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
+    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, email: Optional[str] = None) -> None:
         super().__init__(api_key, base_url)
         self.base_url = base_url or "https://api.openalex.org"
         self.session = requests.Session()
 
+        # Use provided email or default
+        user_agent_email = email or "your-email@domain.com"
         headers = {
-            "User-Agent": "citation-index/1.0 (mailto:your-email@domain.com)",
+            "User-Agent": f"citation-index/1.0 (mailto:{user_agent_email})",
         }
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
@@ -32,25 +35,16 @@ class OpenAlexConnector(BaseConnector):
         self._validate_reference(reference)
 
         title = reference.full_title.strip()
+        title = normalize_title(title)
         url = f"{self.base_url}/works"
+        
+        # Use title only for search to maximize recall
+        # Author and year constraints can filter out valid results due to name variations
         params: Dict[str, Any] = {
-            "filter": f"title.search:{title}",
+            "search": title,
             "per-page": min(top_k, 200),
             "sort": "relevance_score:desc",
         }
-
-        search_terms = [title]
-        author_name = self._first_author(reference)
-        if author_name:
-            search_terms.append(author_name)
-
-        params["search"] = " ".join(search_terms)
-
-        year = None
-        if reference.publication_date:
-            year = Reference._extract_year(reference.publication_date)  # type: ignore[attr-defined]
-        if year:
-            params["filter"] += f",publication_year:{year}"
 
         try:
             response = self.session.get(url, params=params, timeout=30)
@@ -123,23 +117,30 @@ class OpenAlexConnector(BaseConnector):
 
     @staticmethod
     def _first_author(reference: Reference) -> Optional[str]:
+        """Extract first author's last name for search.
+        
+        Uses the extract_family_name utility to handle various name formats.
+        """
         if not reference.authors:
             return None
 
         first = reference.authors[0]
+        
+        # Handle string author names
         if isinstance(first, str):
-            return first.strip() or None
+            return extract_family_name(first)
 
+        # Handle object with display_name attribute
         display_name = getattr(first, "display_name", None)
         if display_name:
-            return str(display_name).strip() or None
+            return extract_family_name(str(display_name))
 
-        name_parts = [
-            getattr(first, "first_name", "") or "",
-            getattr(first, "surname", "") or "",
-        ]
-        author_name = " ".join(part for part in name_parts if part).strip()
-        return author_name or None
+        # Try to get surname directly
+        surname = getattr(first, "surname", None)
+        if surname:
+            return str(surname).strip() or None
+
+        return None
 
     @staticmethod
     def _normalize_doi(doi: str) -> str:
@@ -171,6 +172,14 @@ class OpenAlexConnector(BaseConnector):
         if trimmed.upper().startswith("W") or "openalex" in trimmed.lower():
             return "openalex"
         return "doi"
+
+    def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
+        """Convert OpenAlex API result to Reference object."""
+        ref = self._map_single_result(result)
+        if ref is None:
+            # Return an empty Reference if mapping fails
+            return Reference(full_title="")
+        return ref
 
     @staticmethod
     def _map_single_result(result: Dict[str, Any]) -> Optional[Reference]:

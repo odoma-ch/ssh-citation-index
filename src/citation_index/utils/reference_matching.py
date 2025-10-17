@@ -68,6 +68,54 @@ def normalize_title(title: str) -> str:
     return text
 
 
+def extract_family_name(author_name: str) -> Optional[str]:
+    """Extract family name (last name) from author string.
+    
+    Handles multiple author name formats commonly found in academic databases:
+    - "LastName, FirstName" (e.g., "Parmesan, Camille")
+    - "FirstName LastName" (e.g., "Camille Parmesan")
+    - "LastName, FirstName MiddleInitial" (e.g., "Smith, John A.")
+    - "FirstName MiddleName LastName" (e.g., "John Allen Smith")
+    
+    The function prioritizes comma-separated formats (common in citations)
+    and extracts the part before the comma as the family name.
+    
+    Args:
+        author_name: Author name string in various formats
+        
+    Returns:
+        Family name (last name) if found, None otherwise
+        
+    Examples:
+        >>> extract_family_name("Parmesan, Camille")
+        'Parmesan'
+        >>> extract_family_name("John Smith")
+        'Smith'
+        >>> extract_family_name("von Neumann, John")
+        'von Neumann'
+    """
+    if not author_name or not isinstance(author_name, str):
+        return None
+    
+    author_str = author_name.strip()
+    if not author_str:
+        return None
+    
+    # Handle "LastName, FirstName" format (most common in citations)
+    if ',' in author_str:
+        # Take everything before the first comma as family name
+        family_name = author_str.split(',')[0].strip()
+        return family_name if family_name else None
+    
+    # Handle "FirstName LastName" format
+    # Take the last word as family name
+    parts = author_str.split()
+    if parts:
+        return parts[-1]
+    
+    return None
+
+
 def extract_year(year_str: str) -> Optional[int]:
     """Extract year from various date string formats.
     

@@ -1,8 +1,7 @@
-"""Wikidata SPARQL connector for reference search and disambiguation."""
+"""Wikidata elastic search connector for reference search and disambiguation."""
 
 import logging
 import re
-import time
 from typing import Any, Dict, List, Optional
 
 import requests
@@ -10,13 +9,22 @@ import requests
 from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
+from ...utils.reference_matching import extract_family_name, normalize_title
 
 
 logger = logging.getLogger(__name__)
 
+# Language detection
+try:
+    from lingua import Language, LanguageDetectorBuilder
+    LINGUA_AVAILABLE = True
+except ImportError:
+    LINGUA_AVAILABLE = False
+    logger.warning("lingua library not available, will default to English for Wikidata searches")
+
 
 class WikidataConnector(BaseConnector):
-    """Connector for Wikidata SPARQL query service."""
+    """Connector for Wikidata elastic search API."""
     
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, timeout: int = 30):
         """
@@ -24,31 +32,42 @@ class WikidataConnector(BaseConnector):
         
         Args:
             api_key: Not used for Wikidata (kept for interface compatibility)
-            base_url: Base URL for Wikidata SPARQL endpoint
+            base_url: Base URL for Wikidata API (default: https://www.wikidata.org/w/api.php)
             timeout: Request timeout in seconds
         """
         super().__init__(api_key, base_url)
-        self.base_url = base_url or "https://query.wikidata.org/sparql"
-        self.api_url = "https://www.wikidata.org/w/api.php"
+        self.api_url = base_url or "https://www.wikidata.org/w/api.php"
         self.timeout = timeout
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": "CitationIndex/1.0 (https://github.com/citation-index) wikidata-connector",
             "Accept": "application/json"
         })
+        
+        # Initialize language detector if available
+        if LINGUA_AVAILABLE:
+            languages = [
+                Language.ENGLISH, Language.FRENCH, Language.GERMAN, Language.SPANISH,
+                Language.ITALIAN, Language.PORTUGUESE, Language.DUTCH, Language.RUSSIAN,
+                Language.CHINESE, Language.JAPANESE, Language.KOREAN, Language.ARABIC
+            ]
+            self.language_detector = LanguageDetectorBuilder.from_languages(*languages).build()
+        else:
+            self.language_detector = None
     
-    def search(self, reference: Reference, top_k: int = 10, method: str = "elastic", **kwargs) -> List[Dict[str, Any]]:
+    def search(self, reference: Reference, top_k: int = 10, **kwargs) -> List[Dict[str, Any]]:
         """
-        Search for books and publications on Wikidata.
+        Search for books and publications on Wikidata using elastic search.
+        
+        Language is automatically detected from the reference title using the lingua
+        library. If lingua is not available, defaults to English.
         
         Args:
             reference: Reference object with search criteria (title is mandatory)
             top_k: Maximum number of results to return
-            method: Search method - "elastic" (default) or "sparql"
             **kwargs: Additional search parameters:
-                - book_only: Search only for books (Q571)
-                - written_work_only: Search only for written works (Q47461344)
-                - language: Language filter (default: 'en')
+                - language: Language code override (e.g., 'en', 'fr', 'de')
+                  If not provided, language is auto-detected from title
         
         Returns:
             List of raw API response data
@@ -57,13 +76,7 @@ class WikidataConnector(BaseConnector):
             ValueError: If reference title is missing
         """
         self._validate_reference(reference)
-        
-        if method == "elastic":
-            return self._search_elastic(reference, top_k, **kwargs)
-        elif method == "sparql":
-            return self._search_sparql(reference, top_k, **kwargs)
-        else:
-            raise ValueError(f"Unknown search method: {method}. Use 'elastic' or 'sparql'")
+        return self._search_elastic(reference, top_k, **kwargs)
 
     def search_by_id(
         self,
@@ -71,6 +84,22 @@ class WikidataConnector(BaseConnector):
         identifier_type: Optional[str] = None,
         **kwargs: Any,
     ) -> List[Dict[str, Any]]:
+        """
+        Search Wikidata for items by identifier using haswbstatement with CirrusSearch.
+        
+        Note: haswbstatement only works with the MediaWiki query API (action=query&list=search),
+        not with wbsearchentities. We use the query API and then fetch entity details.
+        
+        Args:
+            identifier: The identifier value (e.g., DOI, ISBN, PMID)
+            identifier_type: Type of identifier (e.g., "doi", "isbn", "pmid")
+            **kwargs: Additional parameters including:
+                - top_k or limit: Maximum number of results (default: 10)
+                - language: Language for labels (default: "en")
+        
+        Returns:
+            List of entity details (similar to wbsearchentities format)
+        """
         if not identifier:
             return []
 
@@ -80,33 +109,131 @@ class WikidataConnector(BaseConnector):
             return []
 
         limit = kwargs.get("top_k") or kwargs.get("limit") or 10
-        query = self._build_identifier_query(inferred.lower(), identifier, limit)
-        if not query:
+        language = kwargs.get("language", "en")
+        
+        property_id = self._get_property_id(inferred.lower())
+        if not property_id:
             logger.warning("Unsupported identifier type for Wikidata: %s", inferred)
             return []
-
-        result = self._execute_sparql(query)
-        if not result:
+        
+        # Clean the identifier based on type
+        cleaned_id = self._clean_identifier(inferred.lower(), identifier)
+        if not cleaned_id:
+            logger.warning("Invalid identifier value: %s", identifier)
             return []
-        return result.get("results", {}).get("bindings", [])
+        
+        # Use haswbstatement search with MediaWiki query API
+        search_expr = f"haswbstatement:{property_id}={cleaned_id}"
+        params = {
+            "action": "query",
+            "list": "search",
+            "srsearch": search_expr,
+            "srnamespace": "0",  # Main namespace (Wikidata items)
+            "format": "json",
+            "srlimit": min(max(1, limit), 50),
+        }
+        
+        try:
+            response = self.session.get(self.api_url, params=params, timeout=self.timeout)
+            response.raise_for_status()
+            data = response.json()
+            
+            search_results = data.get("query", {}).get("search", [])
+            
+            if not search_results:
+                return []
+            
+            # Extract Q IDs from titles and get entity details
+            qids = [result.get("title") for result in search_results if result.get("title", "").startswith("Q")]
+            
+            if not qids:
+                return []
+            
+            # Fetch entity details using wbgetentities or return simplified format
+            return self._get_entity_details(qids, language)
+            
+        except requests.RequestException as exc:
+            logger.warning("Wikidata identifier search failed: %s", exc)
+            return []
+    
+    def _get_entity_details(self, qids: List[str], language: str = "en") -> List[Dict[str, Any]]:
+        """
+        Fetch entity details for a list of QIDs using wbgetentities.
+        
+        Args:
+            qids: List of Wikidata QIDs (e.g., ["Q123", "Q456"])
+            language: Language for labels and descriptions
+            
+        Returns:
+            List of entity details in a format compatible with wbsearchentities
+        """
+        if not qids:
+            return []
+        
+        # Batch request up to 50 entities at once (Wikidata API limit)
+        params = {
+            "action": "wbgetentities",
+            "ids": "|".join(qids[:50]),  # Limit to 50 entities
+            "props": "labels|descriptions",
+            "languages": language,
+            "format": "json",
+        }
+        
+        try:
+            response = self.session.get(self.api_url, params=params, timeout=self.timeout)
+            response.raise_for_status()
+            data = response.json()
+            
+            entities = data.get("entities", {})
+            results = []
+            
+            for qid in qids:
+                if qid in entities:
+                    entity = entities[qid]
+                    
+                    # Extract label and description
+                    labels = entity.get("labels", {})
+                    descriptions = entity.get("descriptions", {})
+                    
+                    label = labels.get(language, {}).get("value", qid)
+                    description = descriptions.get(language, {}).get("value", "")
+                    
+                    # Format similar to wbsearchentities results
+                    results.append({
+                        "id": qid,
+                        "label": label,
+                        "description": description,
+                        "match": {"type": "identifier", "language": language}
+                    })
+            
+            return results
+            
+        except requests.RequestException as exc:
+            logger.warning("Failed to fetch entity details: %s", exc)
+            return []
     
     def _search_elastic(self, reference: Reference, top_k: int, **kwargs) -> List[Dict[str, Any]]:
         """
-        Use wbsearchentities to get top QIDs for the title, then hydrate with SPARQL.
+        Use wbsearchentities to search for entities by title.
         
-        This is generally faster and more reliable than pure SPARQL search.
+        Returns basic entity information from the elastic search API.
         """
         if not reference.full_title:
             return []
         
-        # Step 1: Get candidate QIDs using elastic search
+        title = normalize_title(reference.full_title or "")
+        # Detect language from title if not provided
+        language = kwargs.get("language")
+        if not language:
+            language = self._detect_language(reference.full_title)
+        
         params = {
             "action": "wbsearchentities",
             "format": "json",
-            "language": kwargs.get("language", "en"),
+            "language": language,
             "type": "item",
             "limit": max(1, min(top_k, 50)),
-            "search": reference.full_title,
+            "search": title,
         }
         
         try:
@@ -115,256 +242,36 @@ class WikidataConnector(BaseConnector):
             data = response.json()
             hits = data.get("search", [])
             
-            qids = [h["id"] for h in hits if h.get("id", "").startswith("Q")]
-            if not qids:
-                return []
-            
-            # Step 2: Hydrate properties for those QIDs via SPARQL
-            values_block = " ".join(f"wd:{qid}" for qid in qids)
-            
-            sparql = f"""
-            SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
-                   (GROUP_CONCAT(DISTINCT ?authLabel; separator="; ") AS ?authorsLinked)
-                   (GROUP_CONCAT(DISTINCT ?authStr;   separator="; ") AS ?authorsString)
-            WHERE {{
-              VALUES ?item {{ {values_block} }}
-              OPTIONAL {{ ?item wdt:P1476 ?title. }}
-              OPTIONAL {{ ?item wdt:P577 ?date. BIND(YEAR(?date) AS ?year) }}
-              OPTIONAL {{ ?item wdt:P1433 ?container. ?container rdfs:label ?containerLabel FILTER(LANG(?containerLabel) = "en") }}
-              OPTIONAL {{ ?item wdt:P356 ?doi. }}
-              OPTIONAL {{ ?item wdt:P212 ?isbn13. }}
-              OPTIONAL {{ ?item wdt:P957 ?isbn10. }}
-              OPTIONAL {{ ?item wdt:P698 ?pmid. }}
-              OPTIONAL {{ ?item wdt:P932 ?pmcid. }}
-              OPTIONAL {{ ?item wdt:P818 ?arxiv. }}
-              OPTIONAL {{ ?item wdt:P236 ?issn. }}
-              OPTIONAL {{ ?item wdt:P50 ?a. ?a rdfs:label ?authLabel FILTER(LANG(?authLabel) = "en") }}
-              OPTIONAL {{ ?item wdt:P2093 ?authStr. }}
-              SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-            }}
-            GROUP BY ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
-            """
-            
-            hydrated = self._execute_sparql(sparql)
-            rows = hydrated.get("results", {}).get("bindings", [])
-            
-            # Attach search rank for sorting
-            rank_by_qid = {h["id"]: i for i, h in enumerate(hits)}
-            for row in rows:
-                qid = row.get("item", {}).get("value", "").rsplit("/", 1)[-1]
-                row["wbsearch_rank"] = rank_by_qid.get(qid, 999)
-            
             # Score and sort results
-            scored_rows = self._score_results(rows, reference)
-            return scored_rows[:top_k]
+            scored_hits = self._score_elastic_results(hits, reference)
+            return scored_hits[:top_k]
             
         except requests.RequestException as exc:
             logger.warning("Wikidata elastic search failed: %s", exc)
             return []
     
-    def _search_sparql(self, reference: Reference, top_k: int, **kwargs) -> List[Dict[str, Any]]:
-        """
-        Use WDQS with SERVICE wikibase:mwapi Search to find candidates.
-
-        This method does everything in one SPARQL query but may be slower.
-        """
-        if not reference.full_title:
-            return []
-        
-        title_escaped = reference.full_title.replace('"', '\\"')
-        limit = max(1, min(top_k, 50))
-        
-        # Build optional filters
-        year_filter = ""
-        if reference.publication_date:
-            year = self._extract_year(reference.publication_date)
-            if year:
-                year_filter = f"""
-                BIND( IF(BOUND(?year) && (?year = {year} || ?year = {year-1} || ?year = {year+1}), 1, 0) AS ?yearHit )
-                """
-        
-        author_filter = ""
-        if reference.authors:
-            surnames = self._extract_surnames(reference.authors)
-            if surnames:
-                pattern = "|".join(re.escape(s) for s in surnames)
-                author_filter = f"""
-                BIND( IF(BOUND(?authNameLower) && REGEX(?authNameLower, "(?:{pattern})"), 1, 0) AS ?authHit )
-                """
-        
-        sparql = f"""
-        PREFIX wd: <http://www.wikidata.org/entity/>
-        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-        PREFIX wikibase: <http://wikiba.se/ontology#>
-        PREFIX bd: <http://www.bigdata.com/rdf#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX schema: <http://schema.org/>
-
-        SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
-               (GROUP_CONCAT(DISTINCT ?authName; separator="; ") AS ?authors)
-               (COALESCE(?yearHit, 0) AS ?yScore)
-               (COALESCE(?authHit, 0) AS ?aScore)
-        WHERE {{
-          # Candidate generation via Elastic search
-          SERVICE wikibase:mwapi {{
-            bd:serviceParam wikibase:endpoint "www.wikidata.org";
-                             wikibase:api "Search";
-                             mwapi:search "{title_escaped}";
-                             mwapi:language "en".
-            ?item wikibase:apiOutputItem mwapi:item .
-          }}
-
-          # Pull bibliographic fields
-          OPTIONAL {{ ?item wdt:P1476 ?title. }}
-          OPTIONAL {{ ?item wdt:P577 ?date. BIND(YEAR(?date) AS ?year) }}
-          OPTIONAL {{ ?item wdt:P1433 ?container. ?container rdfs:label ?containerLabel FILTER(LANG(?containerLabel)="en") }}
-          OPTIONAL {{ ?item wdt:P356 ?doi. }}
-          OPTIONAL {{ ?item wdt:P212 ?isbn13. }}
-          OPTIONAL {{ ?item wdt:P957 ?isbn10. }}
-          OPTIONAL {{ ?item wdt:P698 ?pmid. }}
-          OPTIONAL {{ ?item wdt:P932 ?pmcid. }}
-          OPTIONAL {{ ?item wdt:P818 ?arxiv. }}
-          OPTIONAL {{ ?item wdt:P236 ?issn. }}
-          OPTIONAL {{
-            {{ ?item wdt:P50 ?a. ?a rdfs:label ?authName FILTER(LANG(?authName)="en") }}
-            UNION
-            {{ ?item wdt:P2093 ?authName }}
-          }}
-          BIND(LCASE(COALESCE(?authName, "")) AS ?authNameLower)
-
-          # Soft signals
-          {author_filter}
-          {year_filter}
-
-          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-        }}
-        GROUP BY ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn ?yScore ?aScore
-        LIMIT {limit}
-        """
-        
-        try:
-            result = self._execute_sparql(sparql)
-            rows = result.get("results", {}).get("bindings", [])
-            
-            # Score results
-            scored_rows = self._score_results(rows, reference)
-            return scored_rows[:top_k]
-            
-        except requests.RequestException as exc:
-            logger.warning("Wikidata SPARQL search failed: %s", exc)
-            return []
-
-    def _execute_sparql(self, query: str) -> Dict[str, Any]:
-        """Execute SPARQL query against Wikidata."""
-        try:
-            response = self.session.post(
-                self.base_url,
-                data={"query": query},
-                headers={"Accept": "application/sparql-results+json"},
-                timeout=self.timeout
-            )
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as exc:
-            logger.error("Error executing SPARQL query: %s", exc)
-            return {"results": {"bindings": []}}
-
-    def _build_identifier_query(self, id_type: str, identifier: str, limit: int) -> Optional[str]:
-        try:
-            limit_value = max(1, min(int(limit), 50))
-        except (TypeError, ValueError):
-            limit_value = 10
-
-        filter_clause = self._identifier_filter_clause(id_type, identifier)
-        if not filter_clause:
-            return None
-
-        return f"""
-        PREFIX wd: <http://www.wikidata.org/entity/>
-        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX schema: <http://schema.org/>
-
-        SELECT ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
-               (GROUP_CONCAT(DISTINCT ?authName; separator="; ") AS ?authors)
-        WHERE {{
-          {filter_clause}
-          OPTIONAL {{ ?item wdt:P1476 ?title. }}
-          OPTIONAL {{ ?item wdt:P577 ?date. BIND(YEAR(?date) AS ?year) }}
-          OPTIONAL {{ ?item wdt:P1433 ?container. ?container rdfs:label ?containerLabel FILTER(LANG(?containerLabel) = "en") }}
-          OPTIONAL {{ ?item wdt:P356 ?doi. }}
-          OPTIONAL {{ ?item wdt:P212 ?isbn13. }}
-          OPTIONAL {{ ?item wdt:P957 ?isbn10. }}
-          OPTIONAL {{ ?item wdt:P698 ?pmid. }}
-          OPTIONAL {{ ?item wdt:P932 ?pmcid. }}
-          OPTIONAL {{ ?item wdt:P818 ?arxiv. }}
-          OPTIONAL {{ ?item wdt:P236 ?issn. }}
-          OPTIONAL {{
-            {{ ?item wdt:P50 ?auth. ?auth rdfs:label ?authName FILTER(LANG(?authName) = "en") }}
-            UNION
-            {{ ?item wdt:P2093 ?authName }}
-          }}
-          SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-        }}
-        GROUP BY ?item ?itemLabel ?title ?date ?year ?containerLabel ?doi ?isbn13 ?isbn10 ?pmid ?pmcid ?arxiv ?issn
-        LIMIT {limit_value}
-        """
-
-    def _identifier_filter_clause(self, id_type: str, identifier: str) -> Optional[str]:
-        literal = identifier.strip()
-
-        if id_type == "doi":
-            clean = self._clean_doi(literal)
-            if not clean:
-                return None
-            escaped = self._escape_literal(clean)
-            return f'?item wdt:P356 "{escaped}".'
-
-        if id_type == "isbn":
-            clean = self._clean_isbn(literal)
-            if not clean:
-                return None
-            escaped = self._escape_literal(clean)
-            return f"""
-          {{
-            ?item wdt:P212 ?isbn13Value.
-            BIND(REPLACE(STR(?isbn13Value), "-", "") AS ?isbn13Clean)
-            FILTER(?isbn13Clean = "{escaped}")
-          }}
-          UNION
-          {{
-            ?item wdt:P957 ?isbn10Value.
-            BIND(REPLACE(STR(?isbn10Value), "-", "") AS ?isbn10Clean)
-            FILTER(?isbn10Clean = "{escaped}")
-          }}
-        """
-
-        if id_type == "issn":
-            clean = self._clean_issn(literal)
-            if not clean:
-                return None
-            escaped = self._escape_literal(clean)
-            return f"""
-          ?item wdt:P236 ?issnValue.
-          BIND(REPLACE(STR(?issnValue), "-", "") AS ?issnClean)
-          FILTER(?issnClean = "{escaped}")
-        """
-
+    def _get_property_id(self, id_type: str) -> Optional[str]:
+        """Map identifier type to Wikidata property ID."""
         property_map = {
+            "doi": "P356",
+            "isbn": "P212",  # ISBN-13 (we'll search for both ISBN-13 and ISBN-10)
+            "issn": "P236",
             "pmid": "P698",
             "pmcid": "P932",
             "arxiv": "P818",
         }
-        if id_type in property_map:
-            escaped = self._escape_literal(literal)
-            return f'?item wdt:{property_map[id_type]} "{escaped}".'
-
-        if id_type in {"wikidata", "qid"}:
-            qid = literal.upper()
-            if not qid.startswith("Q"):
-                return None
-            return f"VALUES ?item {{ wd:{qid} }}"
-
+        return property_map.get(id_type)
+    
+    def _clean_identifier(self, id_type: str, identifier: str) -> Optional[str]:
+        """Clean identifier value based on type."""
+        if id_type == "doi":
+            return self._clean_doi(identifier)
+        elif id_type == "isbn":
+            return self._clean_isbn(identifier)
+        elif id_type == "issn":
+            return self._clean_issn(identifier)
+        elif id_type in {"pmid", "pmcid", "arxiv"}:
+            return identifier.strip()
         return None
 
     @staticmethod
@@ -414,13 +321,18 @@ class WikidataConnector(BaseConnector):
     def _clean_issn(issn: str) -> str:
         digits = re.sub(r"[^0-9Xx]", "", issn)
         return digits
-
-    @staticmethod
-    def _escape_literal(value: str) -> str:
-        return value.replace('"', '\\"')
     
-    def _score_results(self, rows: List[Dict[str, Any]], reference: Reference) -> List[Dict[str, Any]]:
-        """Score and sort search results based on relevance."""
+    def _score_elastic_results(self, hits: List[Dict[str, Any]], reference: Reference) -> List[Dict[str, Any]]:
+        """Score and sort elastic search results based on relevance.
+        
+        Elastic search results have structure:
+        {
+            "id": "Q...",
+            "label": "Title",
+            "description": "...",
+            "match": {"type": "label", "language": "en", "text": "..."}
+        }
+        """
         want_year = None
         if reference.publication_date:
             want_year = self._extract_year(reference.publication_date)
@@ -429,133 +341,80 @@ class WikidataConnector(BaseConnector):
         if reference.authors:
             want_surnames = self._extract_surnames(reference.authors)
         
-        for row in rows:
+        for hit in hits:
             score = 0.0
             
             # Title similarity
-            title = self._extract_value(row, "title") or self._extract_value(row, "itemLabel")
-            if title and reference.full_title:
+            label = hit.get("label", "")
+            if label and reference.full_title:
                 query_tokens = set(self._normalize(reference.full_title).lower().split())
-                item_tokens = set(self._normalize(title).lower().split())
+                item_tokens = set(self._normalize(label).lower().split())
                 if query_tokens and item_tokens:
                     overlap = len(query_tokens & item_tokens)
                     score += min(1.0, overlap / max(3, len(query_tokens))) * 0.55
             
-            # Year proximity
+            # Check description for year hints
             if want_year:
-                year_str = self._extract_value(row, "year")
-                if year_str:
-                    try:
-                        year = int(year_str)
-                        dy = abs(want_year - year)
+                description = hit.get("description", "")
+                if description:
+                    year_match = self._extract_year(description)
+                    if year_match:
+                        dy = abs(want_year - year_match)
                         score += (1.0 if dy == 0 else 0.6 if dy == 1 else 0.0) * 0.15
-                    except (ValueError, TypeError):
-                        pass
             
-            # Author match
+            # Check description for author hints
             if want_surnames:
-                authors_linked = self._extract_value(row, "authorsLinked") or ""
-                authors_string = self._extract_value(row, "authorsString") or ""
-                authors_all = self._extract_value(row, "authors") or ""
-                author_text = " ".join([authors_linked, authors_string, authors_all]).lower()
-                
-                surname_hits = sum(1 for s in want_surnames if s in author_text)
+                description = hit.get("description", "").lower()
+                surname_hits = sum(1 for s in want_surnames if s in description)
                 if surname_hits > 0:
                     score += min(1.0, surname_hits / max(1, len(want_surnames))) * 0.2
             
-            # Use SPARQL scores if available
-            y_score = self._extract_value(row, "yScore")
-            if y_score:
-                try:
-                    score += float(y_score) * 0.05
-                except (ValueError, TypeError):
-                    pass
-            
-            a_score = self._extract_value(row, "aScore")
-            if a_score:
-                try:
-                    score += float(a_score) * 0.05
-                except (ValueError, TypeError):
-                    pass
-            
-            row["score_hint"] = round(score, 3)
+            hit["score_hint"] = round(score, 3)
         
-        # Sort by score (desc), then by wbsearch_rank (asc) if available
-        rows.sort(key=lambda x: (-x.get("score_hint", 0), x.get("wbsearch_rank", 999)))
-        return rows
+        # Sort by score descending
+        hits.sort(key=lambda x: -x.get("score_hint", 0))
+        return hits
     
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
         """
-        Transform Wikidata SPARQL results to Reference objects.
+        Transform Wikidata elastic search results to Reference objects.
         
         Args:
-            raw_results: List of SPARQL binding results
+            raw_results: List of elastic search results from wbsearchentities
             
         Returns:
             References object containing mapped Reference instances
         """
         references = References()
         
-        for binding in raw_results:
+        for hit in raw_results:
             try:
                 # Extract QID
-                qid = self._extract_value(binding, "item")
-                if qid:
-                    qid = qid.rsplit("/", 1)[-1]
+                qid = hit.get("id", "")
+                if not qid or not qid.startswith("Q"):
+                    continue
                 
-                # Extract title
-                title = self._extract_value(binding, "title") or self._extract_value(binding, "itemLabel")
+                # Extract title from label
+                title = hit.get("label", "")
                 if not title:
                     continue
                 
-                # Extract authors
-                authors = []
-                authors_linked = self._extract_value(binding, "authorsLinked") or ""
-                authors_string = self._extract_value(binding, "authorsString") or ""
-                authors_all = self._extract_value(binding, "authors") or ""
+                # Extract description (may contain author/year hints)
+                description = hit.get("description", "")
                 
-                for auth_field in [authors_linked, authors_string, authors_all]:
-                    if auth_field:
-                        for author in auth_field.split(";"):
-                            author = author.strip()
-                            if author and author not in authors:
-                                authors.append(author)
-                
-                # Extract publication info
-                year_str = self._extract_value(binding, "year")
-                date_str = self._extract_value(binding, "date")
+                # Try to extract year from description
                 pub_date = None
-                if year_str:
-                    pub_date = str(year_str)
-                elif date_str:
-                    try:
-                        pub_date = date_str[:4] if len(date_str) >= 4 else date_str
-                    except:
-                        pub_date = date_str
+                if description:
+                    year = self._extract_year(description)
+                    if year:
+                        pub_date = str(year)
                 
-                # Extract venue/container
-                container = self._extract_value(binding, "containerLabel")
-                
-                # Extract identifiers
-                doi = self._extract_value(binding, "doi")
-                isbn13 = self._extract_value(binding, "isbn13")
-                isbn10 = self._extract_value(binding, "isbn10")
-                pmid = self._extract_value(binding, "pmid")
-                pmcid = self._extract_value(binding, "pmcid")
-                arxiv = self._extract_value(binding, "arxiv")
-                issn = self._extract_value(binding, "issn")
-                
-                # Prefer ISBN-13 over ISBN-10
-                isbn = isbn13 or isbn10
-                
-                # Create Reference object
+                # Create Reference object with basic info
+                # Note: elastic search doesn't provide full metadata,
+                # so we only have QID, title, and hints from description
                 reference = Reference(
                     full_title=title,
-                    authors=authors if authors else None,
-                    journal_title=container,
                     publication_date=pub_date,
-                    isbn=isbn,
-                    doi=doi,
                     source="wikidata",
                     wikidata_id=qid
                 )
@@ -568,12 +427,66 @@ class WikidataConnector(BaseConnector):
         
         return references
     
+    def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
+        """Convert Wikidata elastic search result to Reference object."""
+        try:
+            # Extract QID
+            qid = result.get("id", "")
+            if not qid or not qid.startswith("Q"):
+                return Reference(full_title="")
+            
+            # Extract title
+            title = result.get("label", "")
+            if not title:
+                return Reference(full_title="")
+            
+            # Extract description
+            description = result.get("description", "")
+            
+            # Try to extract year from description
+            pub_date = None
+            if description:
+                year = self._extract_year(description)
+                if year:
+                    pub_date = str(year)
+            
+            # Create Reference object
+            return Reference(
+                full_title=title,
+                publication_date=pub_date,
+                source="wikidata",
+                wikidata_id=qid
+            )
+            
+        except Exception:
+            return Reference(full_title="")
+    
     # Utility methods
-
-    @staticmethod
-    def _extract_value(binding: Dict[str, Any], key: str) -> Optional[str]:
-        """Extract value from SPARQL binding."""
-        return binding.get(key, {}).get("value")
+    
+    def _detect_language(self, text: str) -> str:
+        """
+        Detect language of the given text using lingua library.
+        
+        Args:
+            text: Text to detect language from
+            
+        Returns:
+            Two-letter ISO 639-1 language code (e.g., "en", "fr", "de")
+            Defaults to "en" if detection fails or lingua is not available
+        """
+        if not text or not self.language_detector:
+            return "en"
+        
+        try:
+            detected = self.language_detector.detect_language_of(text)
+            if detected:
+                # Get ISO 639-1 code (e.g., "EN" -> "en")
+                lang_code = detected.iso_code_639_1.name.lower()
+                return lang_code
+        except Exception as exc:
+            logger.debug("Language detection failed: %s", exc)
+        
+        return "en"  # Default to English
     
     @staticmethod
     def _normalize(s: str) -> str:
@@ -595,26 +508,36 @@ class WikidataConnector(BaseConnector):
     
     @staticmethod
     def _extract_surnames(authors: List[str]) -> set:
-        """Extract surnames from author list for matching."""
+        """Extract surnames from author list for matching.
+        
+        Uses the extract_family_name utility to properly handle various name formats.
+        """
         surnames = set()
         for author in authors:
             if isinstance(author, str):
-                author = WikidataConnector._normalize(author)
-                # Heuristic: take last token that has letters
-                parts = [p for p in re.split(r"[\s\-]", author) if p]
-                if parts:
-                    surnames.add(parts[-1].lower())
+                # Use utility function to extract family name (handles comma format properly)
+                family_name = extract_family_name(author)
+                if family_name:
+                    # Normalize and add to set
+                    normalized = WikidataConnector._normalize(family_name)
+                    if normalized:
+                        surnames.add(normalized.lower())
         return surnames
 
 
 # Example usage:
 # connector = WikidataConnector()
 # 
-# # Search by title
+# # Search by title using elastic search (language auto-detected)
 # query = Reference(full_title="The Great Gatsby")
 # raw = connector.search(query, top_k=5)
 # mapped = connector.map_to_references(raw)
 # 
-# # Identifier lookup (e.g. DOI)
-# doi_rows = connector.search_by_id("10.1234/example", "doi")
-# doi_refs = connector.map_to_references(doi_rows)
+# # Search with explicit language override
+# query_fr = Reference(full_title="Le Petit Prince")
+# raw_fr = connector.search(query_fr, top_k=5, language="fr")
+# mapped_fr = connector.map_to_references(raw_fr)
+# 
+# # Identifier lookup using haswbstatement (e.g. DOI)
+# doi_results = connector.search_by_id("10.1234/example", "doi")
+# doi_refs = connector.map_to_references(doi_results)

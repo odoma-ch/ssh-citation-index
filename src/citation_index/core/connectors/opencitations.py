@@ -19,6 +19,7 @@ from ..models.reference import Reference
 from ..models.references import References
 from ...utils.reference_matching import (
     calculate_matching_score,
+    extract_family_name,
     extract_year,
     normalize_title,
 )
@@ -31,7 +32,8 @@ class OpenCitationsConnector(BaseConnector):
     """Connector for OpenCitations Meta API."""
     
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, 
-                 sparql_endpoint: Optional[str] = None, max_retries: int = 5):
+                 sparql_endpoint: Optional[str] = None, max_retries: int = 5,
+                 default_timeout: int = 60, title_only_timeout: int = 180):
         """Initialize OpenCitations connector.
         
         Args:
@@ -39,11 +41,15 @@ class OpenCitationsConnector(BaseConnector):
             base_url: Base URL for OpenCitations Meta API (defaults to official API)
             sparql_endpoint: SPARQL endpoint URL (defaults to OpenCitations Meta SPARQL)
             max_retries: Maximum number of retries for SPARQL queries (default: 5)
+            default_timeout: Timeout in seconds for primary queries (default: 60s = 1 minute)
+            title_only_timeout: Timeout in seconds for title-only fallback queries (default: 180s = 3 minutes)
         """
         super().__init__(api_key, base_url)
         self.base_url = base_url or "https://api.opencitations.net/meta/v1"
         self.sparql_endpoint = sparql_endpoint or "https://opencitations.net/meta/sparql"
         self.max_retries = max_retries
+        self.default_timeout = default_timeout
+        self.title_only_timeout = title_only_timeout
         self.session = requests.Session()
         
         # Set headers for API requests
@@ -61,7 +67,7 @@ class OpenCitationsConnector(BaseConnector):
         if SPARQL_AVAILABLE:
             self.sparql = SPARQLWrapper(self.sparql_endpoint)
             self.sparql.setReturnFormat(JSON)
-            self.sparql.setTimeout(30)
+            # Note: Timeout is set per query in _execute_sparql_query
     
     def search(
         self,
@@ -107,8 +113,12 @@ class OpenCitationsConnector(BaseConnector):
         for strategy_name, query in query_strategies:
             if not query:
                 continue
-                
-            raw_results = self._execute_sparql_query(query)
+            
+            # Set timeout based on strategy type
+            # Title-only queries need more time as they're less selective
+            timeout = self.title_only_timeout if strategy_name == "title_only" else self.default_timeout
+            
+            raw_results = self._execute_sparql_query(query, timeout=timeout)
             if raw_results:
                 for result in raw_results:
                     score = self._score_result(reference, result)
@@ -116,6 +126,16 @@ class OpenCitationsConnector(BaseConnector):
                         result["match_score"] = score
                         result["query_strategy"] = strategy_name
                         results_with_scores.append(result)
+                
+                # If we got good results from this strategy, don't try fallback strategies
+                # This avoids unnecessary timeouts on slower queries
+                if results_with_scores:
+                    logger.info(
+                        "Found %d results with strategy '%s', skipping remaining strategies",
+                        len(results_with_scores),
+                        strategy_name
+                    )
+                    break
         
         # Deduplicate by DOI and keep highest score
         unique_results = {}
@@ -205,7 +225,11 @@ class OpenCitationsConnector(BaseConnector):
     
     def _build_query_strategies(self, reference: Reference, include_author: bool, 
                                 include_date: bool) -> List[Tuple[str, Optional[str]]]:
-        """Build multiple SPARQL query strategies based on available metadata.
+        """Build simplified SPARQL query strategies.
+        
+        Strategy:
+        1. If author and year available: Title + Author + Year
+        2. Otherwise: Title only
         
         Args:
             reference: Reference object with search metadata
@@ -218,202 +242,111 @@ class OpenCitationsConnector(BaseConnector):
         strategies = []
         
         # Extract metadata
-        doi = getattr(reference, 'doi', None)
         title = reference.full_title
+        title = normalize_title(title)
+        if not title:
+            return strategies
+        
         year = getattr(reference, 'publication_date', None) or getattr(reference, 'year', None)
-        volume = getattr(reference, 'volume', None)
-        pages = getattr(reference, 'pages', None)
-        first_page = pages.split('-')[0].strip() if pages else getattr(reference, 'first_page', None)
-        
-        # Get first author last name
-        first_author_lastname = None
-        if include_author and reference.authors and len(reference.authors) > 0:
-            # Try to extract last name from first author
-            author = reference.authors[0]
-            if isinstance(author, str):
-                parts = author.split()
-                first_author_lastname = parts[-1] if parts else None
-        
-        # Extract year as integer
         year_int = None
         if include_date and year:
             year_int = extract_year(str(year))
         
-        # Strategy 1: DOI + Year (if available)
-        if doi and year_int:
-            query = self._build_doi_year_query(doi, year_int)
-            if query:
-                strategies.append(("doi_year", query))
+        # Get first author last name
+        first_author_lastname = None
+        if include_author and reference.authors and len(reference.authors) > 0:
+            # Extract family name from first author using utility function
+            author = reference.authors[0]
+            if isinstance(author, str):
+                first_author_lastname = extract_family_name(author)
         
-        # Strategy 2: Author + Title (if available)
-        if first_author_lastname and title:
-            query = self._build_author_title_query(first_author_lastname, title)
+        # Strategy 1: Title + Author + Year (if author and year available)
+        if first_author_lastname and year_int:
+            query = self._build_title_author_year_query(title, first_author_lastname, year_int)
             if query:
-                strategies.append(("author_title", query))
+                strategies.append(("title_author_year", query))
         
-        # Strategy 3: Year + Volume + Page (if available)
-        if year_int and volume and first_page:
-            query = self._build_year_volume_page_query(year_int, volume, first_page)
-            if query:
-                strategies.append(("year_volume_page", query))
-        
-        # Strategy 4: Year + Author + Page (if available)
-        if year_int and first_author_lastname and first_page:
-            query = self._build_year_author_page_query(year_int, first_author_lastname, first_page)
-            if query:
-                strategies.append(("year_author_page", query))
-        
-        # Strategy 5: Title only (fallback)
-        if title:
-            query = self._build_title_only_query(title)
-            if query:
-                strategies.append(("title_only", query))
+        # Strategy 2: Title only (fallback)
+        query = self._build_title_only_query(title)
+        if query:
+            strategies.append(("title_only", query))
         
         return strategies
     
-    def _build_doi_year_query(self, doi: str, year: int) -> Optional[str]:
-        """Build SPARQL query for DOI + Year matching."""
-        return f"""
-        PREFIX datacite: <http://purl.org/spar/datacite/>
-        PREFIX dcterms: <http://purl.org/dc/terms/>
-        PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-        PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        SELECT DISTINCT ?br ?title ?pub_date ?doi {{
-            ?identifier literal:hasLiteralValue "{doi}".
-            ?br datacite:hasIdentifier ?identifier;
-            dcterms:title ?title;
-            prism:publicationDate ?publicationDate;
-            datacite:hasIdentifier ?doi_id.
-            
-            ?doi_id datacite:usesIdentifierScheme datacite:doi;
-                    literal:hasLiteralValue ?doi.
-
-            BIND(STR(?publicationDate) AS ?pub_date)
-            FILTER(STRSTARTS(?pub_date, "{year}") || 
-                STRSTARTS(?pub_date, "{year-1}") || 
-                STRSTARTS(?pub_date, "{year+1}"))
-        }}
-        LIMIT 20
+    def _build_title_author_year_query(self, title: str, author_lastname: str, year: int) -> Optional[str]:
+        """Build SPARQL query for Title + Author + Year matching.
+        
+        This is the primary search strategy when author and year are available.
+        Uses REGEX for fuzzy title matching and filters by author first for performance.
+        DOI requirement removed to avoid filtering out valid results.
         """
-    
-    def _build_author_title_query(self, author_lastname: str, title: str) -> Optional[str]:
-        """Build SPARQL query for Author + Title matching."""
-        # Use a substring of the title for broader matching
+        # Build REGEX pattern from title - extract key words
+        # Take first 50 chars and create flexible pattern
         title_substr = title[:50] if len(title) > 50 else title
+        # Create regex pattern: extract significant words and join with .*
+        words = [w.strip().lower() for w in title_substr.split() if len(w.strip()) > 3]
+        regex_pattern = ".*".join(words[:4]) if len(words) > 1 else title_substr.lower()
+        # Escape special regex characters
+        regex_pattern = regex_pattern.replace('"', '\\"').replace('(', '\\(').replace(')', '\\)')
+        
         return f"""
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX pro: <http://purl.org/spar/pro/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        PREFIX datacite: <http://purl.org/spar/datacite/>
-        PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
         PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        SELECT DISTINCT ?br ?title ?pub_date ?first_author ?doi {{
-            ?first_author foaf:familyName "{author_lastname}".
-            ?role pro:isHeldBy ?first_author.
-            ?br pro:isDocumentContextFor ?role;
-            dcterms:title ?title;
-            prism:publicationDate ?publicationDate;
-            datacite:hasIdentifier ?doi_id.
-
-            ?doi_id datacite:usesIdentifierScheme datacite:doi;
-            literal:hasLiteralValue ?doi.
-
-            BIND(STR(?publicationDate) AS ?pub_date)
-            FILTER(CONTAINS(LCASE(?title), LCASE("{title_substr}")))
-        }}
-        LIMIT 20
-        """
-    
-    def _build_year_volume_page_query(self, year: int, volume: str, page: str) -> Optional[str]:
-        """Build SPARQL query for Year + Volume + Page matching."""
-        return f"""
-        PREFIX datacite: <http://purl.org/spar/datacite/>
-        PREFIX dcterms: <http://purl.org/dc/terms/>
-        PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-        PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        PREFIX frbr: <http://purl.org/vocab/frbr/core#>
-        PREFIX fabio: <http://purl.org/spar/fabio/>
-        SELECT DISTINCT ?br ?title ?pub_date ?volume_num ?start_page ?doi {{
+        SELECT DISTINCT ?br ?title ?pub_date ?first_author {{
             ?br dcterms:title ?title;
                 prism:publicationDate ?publicationDate;
-                frbr:embodiment ?embodiment;
-                frbr:partOf ?issue;
-                datacite:hasIdentifier ?doi_id.
-
-            ?doi_id datacite:usesIdentifierScheme datacite:doi;
-                    literal:hasLiteralValue ?doi.
-
-            BIND(STR(?publicationDate) AS ?pub_date)
-            FILTER(STRSTARTS(?pub_date, "{year}") || 
-                STRSTARTS(?pub_date, "{year-1}") || 
-                STRSTARTS(?pub_date, "{year+1}"))
-            ?embodiment prism:startingPage "{page}".
-            ?issue frbr:partOf ?volume.
-            ?volume fabio:hasSequenceIdentifier "{volume}".
-            BIND(STR(?volume) AS ?volume_num)
-        }}
-        LIMIT 20
-        """
-    
-    def _build_year_author_page_query(self, year: int, author_lastname: str, page: str) -> Optional[str]:
-        """Build SPARQL query for Year + Author + Page matching."""
-        return f"""
-        PREFIX datacite: <http://purl.org/spar/datacite/>
-        PREFIX dcterms: <http://purl.org/dc/terms/>
-        PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-        PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        PREFIX frbr: <http://purl.org/vocab/frbr/core#>
-        PREFIX pro: <http://purl.org/spar/pro/>
-        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        SELECT DISTINCT ?br ?title ?pub_date ?first_author ?start_page ?doi {{
-            ?first_author foaf:familyName "{author_lastname}".
+                pro:isDocumentContextFor ?role.
+            
             ?role pro:isHeldBy ?first_author.
-            ?br pro:isDocumentContextFor ?role;
-                dcterms:title ?title;
-                prism:publicationDate ?publicationDate;
-                frbr:embodiment ?embodiment;
-                datacite:hasIdentifier ?doi_id.
-
-            ?doi_id datacite:usesIdentifierScheme datacite:doi;
-            literal:hasLiteralValue ?doi.
-
+            ?first_author foaf:familyName "{author_lastname}".
+            
             BIND(STR(?publicationDate) AS ?pub_date)
-            FILTER(STRSTARTS(?pub_date, "{year}") || 
-                STRSTARTS(?pub_date, "{year-1}") || 
-                STRSTARTS(?pub_date, "{year+1}"))
-            ?embodiment prism:startingPage "{page}".
+            
+            # Optimize: Year filter first (fast), then REGEX (slow)
+            # Year filtering eliminates most candidates before expensive pattern matching
+            FILTER((STRSTARTS(?pub_date, "{year}") || 
+                    STRSTARTS(?pub_date, "{year-1}") || 
+                    STRSTARTS(?pub_date, "{year+1}")) &&
+                   REGEX(?title, "{regex_pattern}", "i"))
         }}
         LIMIT 20
         """
     
     def _build_title_only_query(self, title: str) -> Optional[str]:
-        """Build SPARQL query for Title-only matching (fallback)."""
-        # Use a substring for broader matching
+        """Build SPARQL query for Title-only matching (fallback).
+        
+        Note: This query may timeout for common terms without author filtering.
+        Uses REGEX for fuzzy matching. DOI requirement removed.
+        """
+        # Build REGEX pattern from title - extract key words
         title_substr = title[:50] if len(title) > 50 else title
+        # Create regex pattern: extract significant words and join with .*
+        words = [w.strip().lower() for w in title_substr.split() if len(w.strip()) > 3]
+        regex_pattern = ".*".join(words[:4]) if len(words) > 1 else title_substr.lower()
+        # Escape special regex characters
+        regex_pattern = regex_pattern.replace('"', '\\"').replace('(', '\\(').replace(')', '\\)')
+        
         return f"""
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        PREFIX datacite: <http://purl.org/spar/datacite/>
-        PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-        SELECT DISTINCT ?br ?title ?pub_date ?doi {{
+        SELECT DISTINCT ?br ?title ?pub_date {{
             ?br dcterms:title ?title;
-                prism:publicationDate ?publicationDate;
-                datacite:hasIdentifier ?doi_id.
-            
-            ?doi_id datacite:usesIdentifierScheme datacite:doi;
-                    literal:hasLiteralValue ?doi.
+                prism:publicationDate ?publicationDate.
             
             BIND(STR(?publicationDate) AS ?pub_date)
-            FILTER(CONTAINS(LCASE(?title), LCASE("{title_substr}")))
+            FILTER(REGEX(?title, "{regex_pattern}", "i"))
         }}
         LIMIT 20
         """
     
-    def _execute_sparql_query(self, query: str) -> Optional[List[Dict]]:
+    def _execute_sparql_query(self, query: str, timeout: int = 60) -> Optional[List[Dict]]:
         """Execute a SPARQL query with retry mechanism for 503 errors.
         
         Args:
             query: SPARQL query string
+            timeout: Timeout in seconds (default: 60)
             
         Returns:
             List of result bindings, or None if query fails
@@ -421,6 +354,8 @@ class OpenCitationsConnector(BaseConnector):
         if not self.sparql:
             return None
         
+        # Set timeout for this query
+        self.sparql.setTimeout(timeout)
         self.sparql.setQuery(query)
         
         for attempt in range(self.max_retries):
@@ -493,6 +428,20 @@ class OpenCitationsConnector(BaseConnector):
                 references.append(ref)
 
         return references
+
+    def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
+        """Convert OpenCitations API result to Reference object."""
+        try:
+            if self._is_sparql_binding(result):
+                ref = self._map_sparql_binding(result)
+            else:
+                ref = self._map_metadata_record(result)
+            
+            if ref is None:
+                return Reference(full_title="")
+            return ref
+        except Exception:
+            return Reference(full_title="")
 
     @staticmethod
     def _is_sparql_binding(result: Dict[str, Any]) -> bool:

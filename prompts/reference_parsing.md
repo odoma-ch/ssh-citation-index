@@ -26,6 +26,7 @@ Given the provided text, parse all full reference entries and format them accord
                 "publication_date": "Year or full date of publication (e.g., '2021' or '2021-05-10')",
                 "publisher": "Publisher's name (e.g., 'Springer')",
                 "publication_place": "Place of publication (e.g., 'New York')",
+                "identifier": "DOI or other identifier (ISBN, etc.) of the referenced work (e.g., '10.1016/j.x.2018.01.001')",
                 ... // Other fields as needed
             }
         }

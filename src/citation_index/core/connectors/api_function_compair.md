@@ -8,7 +8,7 @@ This document provides a comprehensive comparison of the available API connector
 |-----|-------------|-------------------|---------------------|---------------|-------------------|
 | **Matilda** | ✅ `query.title` | ✅ Author, Publisher, Date, Type, Sort | ✅ `query.identifier` (17 types: doi, isbn, arxiv, repec, pmid, eid, nlmuniqueid, rid, pii, pmcid, pmc, mid, bookaccession, versionId, version, medline, pmpid, hal) | ❌ | OrcId search, Description search |
 | **OpenAlex** | ✅ `title.search` | ✅ Author(but need author id), Year, Type, Sort | ✅ DOI, ISBN, PMID, PMCID, ArXiv | ❌ | Citation counts, Open access info, Concepts |
-| **Wikidata** | ✅ Elastic search | ✅ Author, Year, Type filtering | ✅ DOI, ISBN, PMID, ArXiv | ✅ SPARQL queries | Entity relationships, Multilingual support |
+| **Wikidata** | ✅ Elastic search | ✅ Author, Year, Type filtering | ✅ DOI, ISBN, PMID, ArXiv | Not Implemented | Entity relationships, Multilingual support |
 | **OpenCitations** | ❌ | ❌ | ✅ DOI, PMID, PMCID | ✅ SPARQL queries |- |
 
 ## Detailed API Specifications
