@@ -339,26 +339,26 @@ def main():
     parser.add_argument(
         "--cex-categories",
         type=int,
-        default=10,
-        help="Number of CEX categories to sample (default: 10)"
+        default=12,
+        help="Number of CEX categories to sample (default: 12, ~490 refs)"
     )
     parser.add_argument(
         "--excite-sample-rate-de",
         type=float,
-        default=0.01,
-        help="Percentage to sample from EXCITE German PDFs (default: 0.01 = 1%%)"
+        default=0.02,
+        help="Percentage to sample from EXCITE German PDFs (default: 0.01 = 1%%, ~2-3 PDFs)"
     )
     parser.add_argument(
         "--excite-sample-rate-en",
         type=float,
         default=0.01,
-        help="Percentage to sample from EXCITE English PDFs (default: 0.01 = 1%%)"
+        help="Percentage to sample from EXCITE English PDFs (default: 0.01 = 1%%, ~1 PDF)"
     )
     parser.add_argument(
         "--linkedbook-sample-rate",
         type=float,
-        default=0.05,
-        help="Percentage to sample from LinkedBook test set (default: 0.15 = 15%%)"
+        default=0.09,
+        help="Percentage to sample from LinkedBook test set (default: 0.09 = 9%%, ~107 refs)"
     )
     parser.add_argument(
         "--output",

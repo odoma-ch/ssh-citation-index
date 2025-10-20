@@ -136,12 +136,20 @@ def create_reference_from_data(ref_data: Dict[str, Any]) -> Reference:
         return Reference(full_title=original[:200])
 
 
-def extract_simplified_result(result: Dict[str, Any], connector_name: str) -> Dict[str, Any]:
+def extract_simplified_result(
+    result: Dict[str, Any], 
+    connector: Any,
+    connector_name: str
+) -> Dict[str, Any]:
     """Extract simplified result with only essential fields and IDs.
+    
+    Uses the connector's _result_to_reference() method to leverage existing
+    parsing logic, then extracts only the fields we need for output.
     
     Args:
         result: Raw API result
-        connector_name: Name of the connector
+        connector: Connector instance (to use its mapping method)
+        connector_name: Name of the connector (for ID extraction)
         
     Returns:
         Dictionary with simplified fields: title, first_author, year, journal, ids
@@ -155,111 +163,82 @@ def extract_simplified_result(result: Dict[str, Any], connector_name: str) -> Di
     }
     
     try:
-        if connector_name == "openalex":
-            # Extract title
-            simplified["title"] = result.get("title")
-            
-            # Extract first author
-            authorships = result.get("authorships", [])
-            if authorships and len(authorships) > 0:
-                author_data = authorships[0].get("author", {})
-                author_name = author_data.get("display_name")
+        # Use connector's mapping to convert to Reference object
+        ref = connector._result_to_reference(result)
+        
+        # Extract fields from Reference object
+        simplified["title"] = ref.full_title
+        
+        # Extract first author
+        if hasattr(ref, 'authors') and ref.authors:
+            first_author = ref.authors[0]
+            if isinstance(first_author, str):
+                simplified["first_author"] = extract_family_name(first_author) or first_author
+            elif isinstance(first_author, dict):
+                author_name = first_author.get('name') or first_author.get('display_name')
                 if author_name:
                     simplified["first_author"] = extract_family_name(author_name) or author_name
-            
-            # Extract year
-            simplified["year"] = result.get("publication_year")
-            
-            # Extract journal
-            primary_location = result.get("primary_location", {})
-            if primary_location:
-                source = primary_location.get("source", {})
-                simplified["journal"] = source.get("display_name")
-            if not simplified["journal"]:
-                host_venue = result.get("host_venue", {})
-                simplified["journal"] = host_venue.get("display_name")
-            
-            # Extract IDs
+            elif hasattr(first_author, 'display_name'):
+                author_name = str(first_author.display_name)
+                simplified["first_author"] = extract_family_name(author_name) or author_name
+            elif hasattr(first_author, 'surname'):
+                simplified["first_author"] = str(first_author.surname)
+        
+        # Extract year
+        if hasattr(ref, 'publication_date') and ref.publication_date:
+            year = extract_year(str(ref.publication_date))
+            simplified["year"] = year
+        elif hasattr(ref, 'year') and ref.year:
+            year = extract_year(str(ref.year))
+            simplified["year"] = year
+        
+        # Extract journal
+        if hasattr(ref, 'journal') and ref.journal:
+            simplified["journal"] = ref.journal
+        elif hasattr(ref, 'journal_title') and ref.journal_title:
+            simplified["journal"] = ref.journal_title
+        
+        # Extract IDs - prefer from Reference object when available, else from raw result
+        if connector_name == "openalex":
             simplified["ids"]["openalex_id"] = result.get("id")
             simplified["ids"]["doi"] = result.get("doi")
             ids_dict = result.get("ids", {})
             if isinstance(ids_dict, dict):
                 simplified["ids"]["isbn"] = ids_dict.get("isbn")
-            
+        
         elif connector_name == "wikidata":
-            # Extract title from Wikidata format
-            if "label" in result:
-                simplified["title"] = result.get("label", {}).get("value")
-            elif "title" in result:
-                simplified["title"] = result.get("title", {}).get("value")
+            # Extract Wikidata ID from Reference object (connector stores it there)
+            if hasattr(ref, 'wikidata_id') and ref.wikidata_id:
+                simplified["ids"]["wikidata_id"] = ref.wikidata_id
+            else:
+                # Fallback: extract from raw result's "id" field
+                qid = result.get("id")
+                if qid and qid.startswith("Q"):
+                    simplified["ids"]["wikidata_id"] = qid
             
-            # Extract author - Wikidata has different formats
-            if "author" in result:
-                author_value = result.get("author", {}).get("value")
-                if author_value:
-                    simplified["first_author"] = extract_family_name(author_value) or author_value
+            # DOI and ISBN (if present in raw result)
+            # Helper to safely extract value (handles both dict with "value" key and direct values)
+            def safe_get_value(data, key):
+                val = data.get(key)
+                if val is None:
+                    return None
+                if isinstance(val, dict):
+                    return val.get("value")
+                return val
             
-            # Extract year from publication date
-            pub_date = result.get("publicationDate", {}).get("value") or result.get("pub_date", {}).get("value")
-            if pub_date:
-                year = extract_year(pub_date)
-                simplified["year"] = year
-            
-            # Extract journal/venue
-            if "venue" in result:
-                simplified["journal"] = result.get("venue", {}).get("value")
-            elif "venueLabel" in result:
-                simplified["journal"] = result.get("venueLabel", {}).get("value")
-            
-            # Extract IDs
-            item_uri = result.get("item", {}).get("value", "")
-            if item_uri:
-                qid = item_uri.rsplit("/", 1)[-1]
-                simplified["ids"]["wikidata_id"] = qid
-            
-            # DOI from Wikidata properties
-            if "doi" in result:
-                simplified["ids"]["doi"] = result.get("doi", {}).get("value")
-            if "isbn" in result:
-                simplified["ids"]["isbn"] = result.get("isbn", {}).get("value")
-            
+            doi_value = safe_get_value(result, "doi")
+            if doi_value:
+                simplified["ids"]["doi"] = doi_value
+            isbn_value = safe_get_value(result, "isbn")
+            if isbn_value:
+                simplified["ids"]["isbn"] = isbn_value
+        
         elif connector_name == "matilda":
-            # Matilda has nested texts structure
+            simplified["ids"]["matilda_id"] = result.get("id")
+            # Extract DOI and ISBN from nested structure
             texts = result.get("texts", [])
             if texts and len(texts) > 0:
-                first_text = texts[0]
-                
-                # Extract title
-                title_list = first_text.get("title", [])
-                if title_list:
-                    simplified["title"] = title_list[0]
-                
-                # Extract first author
-                authors = first_text.get("author", [])
-                if authors and len(authors) > 0:
-                    first_author = authors[0]
-                    full_name = first_author.get("fullName")
-                    last_name = first_author.get("lastName", [])
-                    if full_name:
-                        simplified["first_author"] = extract_family_name(full_name) or full_name
-                    elif last_name:
-                        simplified["first_author"] = last_name[0] if isinstance(last_name, list) else last_name
-                
-                # Extract year
-                pub_date = first_text.get("publicationDate")
-                if pub_date:
-                    year = extract_year(pub_date)
-                    simplified["year"] = year
-                
-                # Extract journal
-                support = first_text.get("support", [])
-                if support and len(support) > 0:
-                    support_type = support[0].get("type")
-                    if support_type == "title":
-                        simplified["journal"] = support[0].get("value")
-                
-                # Extract IDs - DOI
-                identifiers = first_text.get("identifier", [])
+                identifiers = texts[0].get("identifier", [])
                 for identifier in identifiers:
                     if "doi" in identifier:
                         doi_list = identifier.get("doi", [])
@@ -269,32 +248,24 @@ def extract_simplified_result(result: Dict[str, Any], connector_name: str) -> Di
                         isbn_list = identifier.get("isbn", [])
                         if isbn_list:
                             simplified["ids"]["isbn"] = isbn_list[0]
-            
-            # Matilda work ID
-            simplified["ids"]["matilda_id"] = result.get("id")
-            
+        
         elif connector_name == "opencitations":
-            # OpenCitations SPARQL binding format
-            simplified["title"] = result.get("title", {}).get("value")
+            # Helper to safely extract value
+            def safe_get_value(data, key):
+                val = data.get(key)
+                if val is None:
+                    return None
+                if isinstance(val, dict):
+                    return val.get("value")
+                return val
             
-            # Extract author
-            author_value = result.get("author", {}).get("value")
-            if author_value:
-                simplified["first_author"] = extract_family_name(author_value) or author_value
+            omid_direct = result.get("omid")
+            br_value = safe_get_value(result, "br")
+            simplified["ids"]["omid"] = omid_direct or br_value
             
-            # Extract year
-            pub_date = result.get("pub_date", {}).get("value")
-            if pub_date:
-                year = extract_year(pub_date)
-                simplified["year"] = year
-            
-            # Extract journal
-            simplified["journal"] = result.get("venue", {}).get("value")
-            
-            # Extract IDs
-            simplified["ids"]["omid"] = result.get("omid") or result.get("br", {}).get("value")
-            if "doi" in result:
-                simplified["ids"]["doi"] = result.get("doi", {}).get("value")
+            doi_value = safe_get_value(result, "doi")
+            if doi_value:
+                simplified["ids"]["doi"] = doi_value
     
     except Exception as e:
         logger.warning(f"Error extracting simplified result from {connector_name}: {e}")
@@ -420,12 +391,6 @@ def search_with_connector(
             "num_results": 0,
             "top_result": None,
             "error": None
-        },
-        "id_search": {
-            "success": False,
-            "num_results": 0,
-            "top_result": None,
-            "error": None
         }
     }
     
@@ -439,8 +404,8 @@ def search_with_connector(
         if raw_results:
             top_result = raw_results[0]
             
-            # Extract simplified result
-            result_simplified = extract_simplified_result(top_result, connector_name)
+            # Extract simplified result using connector's mapping
+            result_simplified = extract_simplified_result(top_result, connector, connector_name)
             
             # Evaluate match using custom matching logic
             is_match, match_details = custom_match(reference, result_simplified)
@@ -591,8 +556,7 @@ def process_single_reference(
             except Exception as e:
                 logger.error(f"Error searching {api_name}: {e}")
                 search_results[api_name] = {
-                    "metadata_search": {"success": False, "error": str(e)},
-                    "id_search": {"success": False, "error": str(e)}
+                    "metadata_search": {"success": False, "error": str(e)}
                 }
     
     # Compile results
@@ -713,7 +677,7 @@ def save_results(
     # Generate filename with metadata if final save
     if is_final and metadata:
         # Extract metadata for filename
-        timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         limit = metadata.get("limit", "all")
         apis = "_".join(metadata.get("apis_used", []))
         

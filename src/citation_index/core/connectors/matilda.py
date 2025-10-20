@@ -212,16 +212,30 @@ class MatildaConnector(BaseConnector):
                             doi = doi_list[0]
                             break
             
-            # Extract date from timestamp or created date
+            # Extract publication date (prioritize actual publication date over record creation date)
             pub_date = None
-            if 'createdDate' in best_text:
-                date_str = best_text['createdDate']
-                if isinstance(date_str, str) and len(date_str) >= 4:
-                    pub_date = date_str[:4]  # Extract year
-            elif 'timestamp' in best_text:
-                date_str = best_text['timestamp']
-                if isinstance(date_str, str) and len(date_str) >= 4:
-                    pub_date = date_str[:4]  # Extract year
+            # Try various publication date fields first
+            for date_field in ['publishedDate', 'publicationDate', 'published', 'date', 'issued']:
+                if date_field in best_text:
+                    date_value = best_text[date_field]
+                    # Handle list format (some Matilda fields are lists)
+                    if isinstance(date_value, list) and date_value:
+                        date_value = date_value[0]
+                    # Extract year from the date string
+                    if date_value:
+                        year = self._extract_year_from_date(str(date_value))
+                        if year:
+                            pub_date = year
+                            break
+            
+            # Fallback to record metadata dates only if no publication date found
+            if not pub_date:
+                for date_field in ['createdDate', 'timestamp']:
+                    if date_field in best_text:
+                        date_str = best_text[date_field]
+                        if isinstance(date_str, str) and len(date_str) >= 4:
+                            pub_date = date_str[:4]  # Extract year
+                            break
             
             # Create reference
             reference = Reference(
