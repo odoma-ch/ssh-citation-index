@@ -4,6 +4,7 @@ import random
 import yaml
 import pandas as pd
 import pymupdf
+import argparse
 from pathlib import Path
 from collections import defaultdict
 from typing import List, Dict, Any
@@ -49,26 +50,11 @@ def extract_pdf_text(pdf_path: Path, max_chars: int = 100000) -> str:
 
 def convert_linkedbook_tags_to_json(tags: Dict) -> Dict:
     """Convert linkedbook tags to the expected JSON format."""
-    # Parse author names
-    authors = []
+    from citation_index.utils import parse_author_high_precision
+    
+    # Use high-precision author parser
     author_str = tags.get('author', '')
-    if author_str:
-        # Split by common separators and parse each author
-        # This is a simplified version - linkedbook has complex author formats
-        author_parts = author_str.replace(',', '').strip()
-        if author_parts:
-            # Try to parse into first, middle, surname
-            parts = author_parts.split()
-            if len(parts) == 1:
-                authors.append({"first_name": "", "middle_name": "", "surname": parts[0]})
-            elif len(parts) == 2:
-                authors.append({"first_name": parts[0], "middle_name": "", "surname": parts[1]})
-            else:
-                authors.append({
-                    "first_name": parts[0],
-                    "middle_name": " ".join(parts[1:-1]),
-                    "surname": parts[-1]
-                })
+    authors = parse_author_high_precision(author_str)
     
     reference = {
         "authors": authors,
@@ -327,14 +313,27 @@ def process_dataset(linkedbook_groups: List[Dict],
                     excite_data: Dict,
                     excite_pdf_dir: Path,
                     excite_xml_dir: Path,
+                    excite_pdf_df: pd.DataFrame,
                     parsing_variants: Dict,
                     extraction_variants: Dict,
-                    output_file: Path):
-    """Process all data and create conversation-style training examples."""
+                    output_file: Path,
+                    include_pdf: bool = True):
+    """Process all data and create conversation-style training examples.
+    
+    Args:
+        include_pdf: If True, include CEX and EXCITE PDF-based examples.
+                     If False, only include linkedbook reference-only examples.
+    """
     
     all_examples = []
     parsing_variant_list = list(parsing_variants['variants'].values())
     extraction_variant_list = list(extraction_variants['variants'].values())
+    
+    # Create language lookup for EXCITE files
+    excite_lang_lookup = dict(zip(
+        excite_pdf_df['file_id'].astype(str),
+        excite_pdf_df['lang']
+    ))
     
     # Process linkedbook groups
     print(f"Processing {len(linkedbook_groups)} linkedbook groups...")
@@ -359,64 +358,100 @@ def process_dataset(linkedbook_groups: List[Dict],
     # Process CEX samples
     print(f"Processing {len(cex_file_ids)} CEX file_ids...")
     for file_id in cex_file_ids:
-        # Get PDF path
-        pdf_path = cex_pdf_dir / f"{file_id}.pdf"
-        if not pdf_path.exists():
-            print(f"Warning: CEX PDF {file_id} not found. Skipping.")
-            continue
-        
-        # Extract PDF text
-        pdf_text = extract_pdf_text(pdf_path)
-        if not pdf_text:
-            print(f"Warning: CEX {file_id} PDF text extraction failed. Skipping.")
-            continue
-        
         # Load parsed references from XML
         parsed_refs = load_cex_parsed_references(file_id, cex_xml_dir)
         if not parsed_refs:
             print(f"Warning: CEX {file_id} has no parsed references. Skipping.")
             continue
         
-        output_json = {"references": parsed_refs}
+        if include_pdf:
+            # Get PDF path and extract full text
+            pdf_path = cex_pdf_dir / f"{file_id}.pdf"
+            if not pdf_path.exists():
+                print(f"Warning: CEX PDF {file_id} not found. Skipping.")
+                continue
+            
+            # Extract PDF text
+            pdf_text = extract_pdf_text(pdf_path)
+            if not pdf_text:
+                print(f"Warning: CEX {file_id} PDF text extraction failed. Skipping.")
+                continue
+            
+            input_text = pdf_text
+            # Use extraction+parsing variants for full PDF
+            variant = random.choice(extraction_variant_list)
+        else:
+            # Use reference strings from the data
+            if file_id not in cex_data:
+                print(f"Warning: CEX {file_id} not in reference data. Skipping.")
+                continue
+            
+            ref_strings = cex_data[file_id].get('references', [])
+            if not ref_strings:
+                print(f"Warning: CEX {file_id} has no reference strings. Skipping.")
+                continue
+            
+            # Concatenate reference strings
+            input_text = "\n".join(ref_strings)
+            # Use parsing variants for reference strings only
+            variant = random.choice(parsing_variant_list)
         
-        # Use extraction+parsing variants for CEX
-        variant = random.choice(extraction_variant_list)
-        example = create_conversation(pdf_text, output_json, variant)
+        output_json = {"references": parsed_refs}
+        example = create_conversation(input_text, output_json, variant)
         example['source'] = 'cex'
         example['category'] = cex_data[file_id].get('category', 'UNKNOWN')
         example['file_id'] = file_id
         example['ref_count'] = len(parsed_refs)
+        example['language'] = 'en'  # CEX is all English
         all_examples.append(example)
     
     # Process EXCITE samples
     print(f"Processing {len(excite_file_ids)} EXCITE file_ids...")
     for file_id in excite_file_ids:
-        # Get PDF path
-        pdf_path = excite_pdf_dir / f"{file_id}.pdf"
-        if not pdf_path.exists():
-            print(f"Warning: EXCITE PDF {file_id} not found. Skipping.")
-            continue
-        
-        # Extract PDF text
-        pdf_text = extract_pdf_text(pdf_path)
-        if not pdf_text:
-            print(f"Warning: EXCITE {file_id} PDF text extraction failed. Skipping.")
-            continue
-        
         # Load parsed references from XML
         parsed_refs = load_excite_parsed_references(file_id, excite_xml_dir)
         if not parsed_refs:
             print(f"Warning: EXCITE {file_id} has no parsed references. Skipping.")
             continue
         
-        output_json = {"references": parsed_refs}
+        if include_pdf:
+            # Get PDF path and extract full text
+            pdf_path = excite_pdf_dir / f"{file_id}.pdf"
+            if not pdf_path.exists():
+                print(f"Warning: EXCITE PDF {file_id} not found. Skipping.")
+                continue
+            
+            # Extract PDF text
+            pdf_text = extract_pdf_text(pdf_path)
+            if not pdf_text:
+                print(f"Warning: EXCITE {file_id} PDF text extraction failed. Skipping.")
+                continue
+            
+            input_text = pdf_text
+            # Use extraction+parsing variants for full PDF
+            variant = random.choice(extraction_variant_list)
+        else:
+            # Use reference strings from the data
+            if file_id not in excite_data:
+                print(f"Warning: EXCITE {file_id} not in reference data. Skipping.")
+                continue
+            
+            ref_strings = excite_data[file_id].get('references', [])
+            if not ref_strings:
+                print(f"Warning: EXCITE {file_id} has no reference strings. Skipping.")
+                continue
+            
+            # Concatenate reference strings
+            input_text = "\n".join(ref_strings)
+            # Use parsing variants for reference strings only
+            variant = random.choice(parsing_variant_list)
         
-        # Use extraction+parsing variants for EXCITE
-        variant = random.choice(extraction_variant_list)
-        example = create_conversation(pdf_text, output_json, variant)
+        output_json = {"references": parsed_refs}
+        example = create_conversation(input_text, output_json, variant)
         example['source'] = 'excite'
         example['file_id'] = file_id
         example['ref_count'] = len(parsed_refs)
+        example['language'] = excite_lang_lookup.get(str(file_id), 'UNKNOWN')
         all_examples.append(example)
     
     # Shuffle examples
@@ -444,6 +479,16 @@ def process_dataset(linkedbook_groups: List[Dict],
 
 
 def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description='Generate finetuning dataset with grouped references')
+    parser.add_argument('--include-pdf', action='store_true', default=True,
+                        help='Include PDF-based examples (CEX and EXCITE). Default: True')
+    parser.add_argument('--no-pdf', dest='include_pdf', action='store_false',
+                        help='Exclude PDF-based examples, only use linkedbook references')
+    parser.add_argument('--output-suffix', type=str, default='',
+                        help='Suffix to add to output filenames (e.g., "_nopdf")')
+    args = parser.parse_args()
+    
     # Set random seed for reproducibility
     random.seed(42)
     
@@ -534,8 +579,9 @@ def main():
     
     # Create training dataset
     print("\n" + "="*60)
-    print("Creating TRAINING dataset...")
+    print(f"Creating TRAINING dataset (include_pdf={args.include_pdf})...")
     print("="*60)
+    train_output_file = output_dir / f'finetuning_train_group{args.output_suffix}.json'
     process_dataset(
         linkedbook_train_groups,
         cex_train_file_ids,
@@ -546,15 +592,18 @@ def main():
         excite_data,
         excite_pdf_dir,
         excite_xml_dir,
+        excite_pdf_df,
         parsing_variants,
         extraction_variants,
-        output_dir / 'finetuning_train_group.json'
+        train_output_file,
+        include_pdf=args.include_pdf
     )
     
     # Create validation dataset
     print("\n" + "="*60)
-    print("Creating VALIDATION dataset...")
+    print(f"Creating VALIDATION dataset (include_pdf={args.include_pdf})...")
     print("="*60)
+    valid_output_file = output_dir / f'finetuning_valid_group{args.output_suffix}.json'
     process_dataset(
         linkedbook_valid_groups,
         cex_valid_file_ids,
@@ -565,9 +614,11 @@ def main():
         excite_data,
         excite_pdf_dir,
         excite_xml_dir,
+        excite_pdf_df,
         parsing_variants,
         extraction_variants,
-        output_dir / 'finetuning_valid_group.json'
+        valid_output_file,
+        include_pdf=args.include_pdf
     )
     
     print("\n" + "="*60)

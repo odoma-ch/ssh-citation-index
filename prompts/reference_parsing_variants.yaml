@@ -11,7 +11,7 @@ variants:
           {
             "reference": {
               "authors": [
-                {"first_name": "", "middle_name": "", "surname": ""}
+                {"first_name": "", "middle_name": "", "surname": ""} | "original string"
               ],
               "full_title": "",
               "journal_title": "",
@@ -29,7 +29,7 @@ variants:
 
       Rules:
       - If no references are found, return: {"references": []}
-      - Split each person name into first_name, middle_name (empty if absent), surname.
+      - Split each person name into first_name, middle_name (empty if absent), surname. Or if not parsed, use the original string 
       - Output must be valid JSON only (no trailing commas, no extra text).
 
       Input Text:
@@ -46,7 +46,7 @@ variants:
           {
             "reference": {
               "authors": [
-                {"first_name": "", "middle_name": "", "surname": ""}
+                {"first_name": "", "middle_name": "", "surname": ""} | "original string"
               ],
               "full_title": "",
               "journal_title": "",
@@ -64,7 +64,7 @@ variants:
 
       Guidelines:
       - Preserve reference order.
-      - Authors: parse each into first_name, middle_name (empty if missing), surname; keep input order.
+      - Authors: parse each into first_name, middle_name (empty if missing), surname. Or if not parsed, use the original string ; keep input order.
       - If none found, return {"references": []}.
       - Use empty strings for unavailable fields; authors may be an empty list.
 
@@ -82,7 +82,7 @@ variants:
           {
             "reference": {
               "authors": [
-                {"first_name": "", "middle_name": "", "surname": ""}
+                {"first_name": "", "middle_name": "", "surname": ""} | "original string"
               ],
               "full_title": "",
               "journal_title": "",
@@ -99,7 +99,7 @@ variants:
       ```
 
       Requirements:
-      - All person names must be split into first_name, middle_name (empty if absent), surname.
+      - All person names must be split into first_name, middle_name (empty if absent), surname. Or if not parsed, use the original string 
       - If a field is not present in the text, leave it as "" (or [] for authors).
       - If no references exist, output {"references": []}.
       - No markdown or extra text—JSON only.
@@ -118,7 +118,7 @@ variants:
           {
             "reference": {
               "authors": [
-                {"first_name": "", "middle_name": "", "surname": ""}
+                {"first_name": "", "middle_name": "", "surname": ""} | "original string"
               ],
               "full_title": "",
               "journal_title": "",
@@ -153,7 +153,7 @@ variants:
           {
             "reference": {
               "authors": [
-                {"first_name": "", "middle_name": "", "surname": ""}
+                {"first_name": "", "middle_name": "", "surname": ""} | "original string"
               ],
               "full_title": "",
               "journal_title": "",
@@ -170,7 +170,7 @@ variants:
       ```
 
       Rules:
-      - Parse every listed person into first_name, middle_name (empty if missing), surname.
+      - Parse every listed person into first_name, middle_name (empty if missing), surname. Or if not parsed, use the original string 
       - Leave unavailable fields as "" and authors as [] if absent.
       - Preserve the order of references and authors.
       - Return strictly valid JSON with no extra content.
@@ -182,7 +182,7 @@ variants:
       You are a specialized citation parser. Extract structured bibliographic information from reference entries and convert them into JSON format.
 
       Requirements:
-      - Parse all author names into first_name, middle_name (if present), and surname components
+      - Parse all author names into first_name, middle_name (if present), and surname components. Or if not parsed, use the original string 
       - Use empty strings for missing fields
       - Return valid JSON only, without explanations or markdown formatting
       - If no references exist, return {"references": []}
@@ -193,7 +193,7 @@ variants:
           "references": [
               {
                   "reference": {
-                      "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
+                      "authors": [{"first_name": "", "middle_name": "", "surname": ""} | "original string"],
                       "full_title": "",
                       "journal_title": "",
                       "volume": "",
@@ -215,7 +215,7 @@ variants:
       Parse bibliographic references into structured JSON data.
 
       Each reference should contain:
-      - authors: Array of objects with first_name, middle_name, surname
+      - authors: Array of objects with first_name, middle_name, surname. Or if not parsed, use the original string in the surname field.
       - full_title: Complete title of the work
       - journal_title: Publication venue name
       - volume, issue, pages: Bibliographic identifiers
@@ -236,7 +236,7 @@ variants:
       Task: Convert reference list entries into structured JSON format.
 
       Key rules:
-      - Author objects must have: first_name, middle_name (or empty), surname
+      - Author objects must have: first_name, middle_name (or empty), surname. Or if not parsed, use the original string 
       - All field values are strings
       - Missing information = empty string
       - Output must be valid, parseable JSON
@@ -248,7 +248,7 @@ variants:
           "references": [
               {
                   "reference": {
-                      "authors": [list of author objects],
+                      "authors": [list of author objects | "original string"],
                       "full_title": "string",
                       "journal_title": "string",
                       "volume": "string",
@@ -276,7 +276,7 @@ variants:
       - Handle both individual authors and organizational entities
     user: |
       Extract the following metadata from each reference:
-      • Author information (parse into first_name, middle_name, surname for each author)
+      • Author information (parse into first_name, middle_name, surname for each author. Or if not parsed, use the original string )
       • Title of the work (full_title)
       • Publication venue (journal_title)
       • Volume and issue numbers
@@ -292,7 +292,7 @@ variants:
       Extract and structure bibliographic data from reference citations.
 
       Processing guidelines:
-      - Decompose author names: separate first name, middle name/initial, and surname
+      - Decompose author names: separate first name, middle name/initial, and surname. Or if not parsed, use the original string 
       - Include all listed authors in the authors array
       - Map each bibliographic element to its corresponding field
       - Leave fields as empty strings when data is unavailable
@@ -304,7 +304,7 @@ variants:
           "references": [
               {
                   "reference": {
-                      "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
+                      "authors": [{"first_name": "", "middle_name": "", "surname": ""} | "original string"],
                       "full_title": "",
                       "journal_title": "",
                       "volume": "",

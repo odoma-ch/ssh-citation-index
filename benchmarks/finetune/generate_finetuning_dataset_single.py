@@ -33,26 +33,11 @@ def load_variants(file_path: Path) -> Dict:
 
 def convert_linkedbook_tags_to_json(tags: Dict) -> Dict:
     """Convert linkedbook tags to the expected JSON format."""
-    # Parse author names
-    authors = []
+    from citation_index.utils import parse_author_high_precision
+    
+    # Use high-precision author parser
     author_str = tags.get('author', '')
-    if author_str:
-        # Split by common separators and parse each author
-        # This is a simplified version - linkedbook has complex author formats
-        author_parts = author_str.replace(',', '').strip()
-        if author_parts:
-            # Try to parse into first, middle, surname
-            parts = author_parts.split()
-            if len(parts) == 1:
-                authors.append({"first_name": "", "middle_name": "", "surname": parts[0]})
-            elif len(parts) == 2:
-                authors.append({"first_name": parts[0], "middle_name": "", "surname": parts[1]})
-            else:
-                authors.append({
-                    "first_name": parts[0],
-                    "middle_name": " ".join(parts[1:-1]),
-                    "surname": parts[-1]
-                })
+    authors = parse_author_high_precision(author_str)
     
     reference = {
         "authors": authors,
@@ -219,12 +204,19 @@ def process_dataset(linkedbook_data: List[Dict],
                     excite_file_ids: List[str],
                     excite_data: Dict,
                     excite_xml_dir: Path,
+                    excite_pdf_df: pd.DataFrame,
                     variants: Dict,
                     output_file: Path):
     """Process all data and create conversation-style training examples."""
     
     all_examples = []
     variant_list = list(variants['variants'].values())
+    
+    # Create language lookup for EXCITE files
+    excite_lang_lookup = dict(zip(
+        excite_pdf_df['file_id'].astype(str),
+        excite_pdf_df['lang']
+    ))
     
     # Process linkedbook data
     print(f"Processing {len(linkedbook_data)} linkedbook examples...")
@@ -263,6 +255,7 @@ def process_dataset(linkedbook_data: List[Dict],
             example['source'] = 'cex'
             example['category'] = cex_entry.get('category', 'UNKNOWN')
             example['file_id'] = file_id
+            example['language'] = 'en'  # CEX is all English
             all_examples.append(example)
     
     # Process EXCITE samples
@@ -288,6 +281,7 @@ def process_dataset(linkedbook_data: List[Dict],
             example = create_conversation(raw_ref, output_json, variant)
             example['source'] = 'excite'
             example['file_id'] = file_id
+            example['language'] = excite_lang_lookup.get(str(file_id), 'UNKNOWN')
             all_examples.append(example)
     
     # Shuffle examples
@@ -402,6 +396,7 @@ def main():
         excite_train_file_ids,
         excite_data,
         excite_xml_dir,
+        excite_pdf_df,
         variants,
         output_dir / 'finetuning_train_single.json'
     )
@@ -418,6 +413,7 @@ def main():
         excite_valid_file_ids,
         excite_data,
         excite_xml_dir,
+        excite_pdf_df,
         variants,
         output_dir / 'finetuning_valid_single.json'
     )
