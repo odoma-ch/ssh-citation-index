@@ -33,7 +33,7 @@ class OpenCitationsConnector(BaseConnector):
     
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, 
                  sparql_endpoint: Optional[str] = None, max_retries: int = 5,
-                 default_timeout: int = 60, title_only_timeout: int = 180):
+                 default_timeout: int = 240, title_only_timeout: int = 300):
         """Initialize OpenCitations connector.
         
         Args:
