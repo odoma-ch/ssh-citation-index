@@ -294,7 +294,8 @@ class OpenCitationsConnector(BaseConnector):
         PREFIX pro: <http://purl.org/spar/pro/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        SELECT DISTINCT ?br ?title ?pub_date ?first_author {{
+        PREFIX fabio: <http://purl.org/spar/fabio/>
+        SELECT DISTINCT ?br ?title ?pub_date ?author ?doi ?venue ?publisher {{
             ?br dcterms:title ?title;
                 prism:publicationDate ?publicationDate;
                 pro:isDocumentContextFor ?role.
@@ -302,7 +303,24 @@ class OpenCitationsConnector(BaseConnector):
             ?role pro:isHeldBy ?first_author.
             ?first_author foaf:familyName "{author_lastname}".
             
+            # Extract author full name (given + family)
+            OPTIONAL {{ ?first_author foaf:givenName ?given_name.
+                        ?first_author foaf:familyName ?family_name. }}
+            BIND(CONCAT(COALESCE(?given_name, ""), " ", COALESCE(?family_name, "")) AS ?author)
+            
+            # Optional DOI
+            OPTIONAL {{ ?br dcterms:identifier ?doi_val.
+                        FILTER(CONTAINS(LCASE(STR(?doi_val)), "doi:")) }}
+            
+            # Optional journal/venue
+            OPTIONAL {{ ?br fabio:isPartOf ?venue_entity.
+                        ?venue_entity dcterms:title ?venue. }}
+            
+            # Optional publisher
+            OPTIONAL {{ ?br dcterms:publisher ?publisher. }}
+            
             BIND(STR(?publicationDate) AS ?pub_date)
+            BIND(COALESCE(?doi_val, "") AS ?doi)
             
             # Optimize: Year filter first (fast), then REGEX (slow)
             # Year filtering eliminates most candidates before expensive pattern matching
@@ -331,11 +349,33 @@ class OpenCitationsConnector(BaseConnector):
         return f"""
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
-        SELECT DISTINCT ?br ?title ?pub_date {{
+        PREFIX fabio: <http://purl.org/spar/fabio/>
+        PREFIX pro: <http://purl.org/spar/pro/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        SELECT DISTINCT ?br ?title ?pub_date ?doi ?venue ?publisher ?author {{
             ?br dcterms:title ?title;
                 prism:publicationDate ?publicationDate.
             
+            # Optional first author with name extraction
+            OPTIONAL {{ ?br pro:isDocumentContextFor ?role.
+                        ?role pro:isHeldBy ?first_author.
+                        OPTIONAL {{ ?first_author foaf:givenName ?given_name.
+                                    ?first_author foaf:familyName ?family_name. }} }}
+            BIND(CONCAT(COALESCE(?given_name, ""), " ", COALESCE(?family_name, "")) AS ?author)
+            
+            # Optional DOI
+            OPTIONAL {{ ?br dcterms:identifier ?doi_val.
+                        FILTER(CONTAINS(LCASE(STR(?doi_val)), "doi:")) }}
+            
+            # Optional journal/venue
+            OPTIONAL {{ ?br fabio:isPartOf ?venue_entity.
+                        ?venue_entity dcterms:title ?venue. }}
+            
+            # Optional publisher
+            OPTIONAL {{ ?br dcterms:publisher ?publisher. }}
+            
             BIND(STR(?publicationDate) AS ?pub_date)
+            BIND(COALESCE(?doi_val, "") AS ?doi)
             FILTER(REGEX(?title, "{regex_pattern}", "i"))
         }}
         LIMIT 20
