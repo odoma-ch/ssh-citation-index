@@ -84,7 +84,7 @@ citation_index/
 ### Infrastructure
 - [x] Core data models (Reference, Person, Organization)
 - [x] LLM client with retry logic
-- [x] CLI interface
+- [ ] CLI interface
 - [x] Test suite
 - [ ] REST API module
 - [ ] API documentation
