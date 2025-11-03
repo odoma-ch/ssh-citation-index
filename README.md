@@ -39,14 +39,6 @@ citation_index/
 └── scripts/                     # Utility scripts for data processing and benchmarking
 ```
 
-### Key Components
-
-- **Extractors**: Integrate with multiple PDF parsing engines (Grobid, Marker, MinerU, PyMuPDF) to extract reference sections from academic papers
-- **Parsers**: Parse extracted references into structured data models using TEI-XML parsing or LLM-based approaches
-- **Connectors**: Link parsed references to external knowledge bases (OpenAlex, OpenCitations, Wikidata, Matilda) for disambiguation
-- **Pipelines**: Orchestrate end-to-end workflows from PDF to parsed and disambiguated references
-- **CLI**: Command-line tools for running extraction, parsing, and evaluation tasks
-
 ## Current Deployment Status
 
 ### Text Extraction 
