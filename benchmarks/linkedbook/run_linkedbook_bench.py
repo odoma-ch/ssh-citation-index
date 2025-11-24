@@ -332,6 +332,7 @@ class LinkedbookBenchmarkRunner:
             llm_client=llm_client,
             prompt_name=str(prompt_path),
             include_schema=include_schema,
+            temperature=self.args.temperature if hasattr(self.args, 'temperature') else 0.15,
         )
         return json.dumps(refs_model.model_dump())
 

@@ -1055,7 +1055,7 @@ Examples:
     parser.add_argument(
         "--api_base", 
         type=str, 
-        default="http://localhost:8001/v1", 
+        default="http://localhost:8000/v1", 
         help="Base URL for the LLM API endpoint."
     )
 

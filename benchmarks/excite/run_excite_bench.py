@@ -75,7 +75,7 @@ class BenchmarkRunner:
                                         model=self.args.model_name)
             llm_client.timeout = 800
             llm_client.first_token_timeout = 120
-            llm_client.max_retries = 3
+            llm_client.max_retries = 1
         else:
             llm_client = LLMClient(
                 endpoint=self.args.api_base,
@@ -83,7 +83,7 @@ class BenchmarkRunner:
                 api_key=self.args.api_key,
                 timeout=800,
                 first_token_timeout=120,
-                max_retries=3,
+                max_retries=1,
             )
         
         # ---------------------------------------------------------------
@@ -729,7 +729,7 @@ def main():
     # LLM Configuration
     parser.add_argument("--model_name", type=str, default="mistralai/Mistral-Small-3.2-24B-Instruct-2506", help="Name of the LLM model to use.")
     parser.add_argument("--api_key", type=str, default=os.environ.get("DEEPSEEK_API_KEY"), help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var.")
-    parser.add_argument("--api_base", type=str, default="http://localhost:8001/v1", help="Base URL for the LLM API endpoint.")
+    parser.add_argument("--api_base", type=str, default="http://localhost:8000/v1", help="Base URL for the LLM API endpoint.")
 
     # Prompt Configuration
     parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")

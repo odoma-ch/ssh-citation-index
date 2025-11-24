@@ -38,7 +38,7 @@ def run_pdf_one_step(
     llm_client: LLMClient,
     extractor: Optional[str] = None,
     prompt_name: str = "prompts/reference_extraction_and_parsing.md",
-    temperature: float = 0.3,
+    temperature: float = 0.1,
     include_schema: bool = True,
 ) -> References:
     """Method 1: One-step extraction+parsing on full text using a single prompt.
