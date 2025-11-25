@@ -35,8 +35,8 @@ citation_index/
 │   ├── excite/                  # EXCITE dataset
 │   ├── linkedbook/              # LinkedBooks dataset
 │   └── finetune/                # Fine-tuning datasets for LLM models
+│   └── citation_linking/        # Citation linking scripts and test sets
 ├── prompts/                     # LLM prompt templates (YAML and Markdown)
-└── scripts/                     # Utility scripts for data processing and benchmarking
 ```
 
 ## Current Deployment Status

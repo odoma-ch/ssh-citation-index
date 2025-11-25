@@ -363,7 +363,7 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="scripts/api_search_test_set.jsonl",
+        default="benchmarks/citation_linking/api_search_test_set.jsonl",
         help="Output JSONL file path"
     )
     parser.add_argument(

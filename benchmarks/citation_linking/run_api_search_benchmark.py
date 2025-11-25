@@ -703,7 +703,7 @@ def main():
         "--test-set",
         type=str,
         required=True,
-        default="scripts/api_search_test_set.jsonl",
+        default="benchmarks/citation_linking/api_search_test_set.jsonl",
         help="Path to test set file (.json or .jsonl)"
     )
     parser.add_argument(
@@ -715,7 +715,7 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="scripts/api_search_benchmark_results.json",
+        default="benchmarks/citation_linking/api_search_benchmark_results.json",
         help="Output JSON file path"
     )
     parser.add_argument(
