@@ -1,11 +1,11 @@
 """
-GROBID-based PDF reference extractor.
+GROBID-based PDF reference extractor and citation parser.
 """
 
 import os
 import logging
 from pathlib import Path
-from typing import Optional, Dict
+from typing import List, Optional, Dict
 
 from lxml import etree
 from .base import BaseExtractor, ExtractResult
@@ -274,4 +274,74 @@ class GrobidExtractor(BaseExtractor):
             # References are stored in the XML, need to re-parse
             return self._extract_references_from_xml(result.text)
         else:
+            return []
+    
+    def parse_citation_list(
+        self,
+        citations: List[str],
+        include_raw: bool = False
+    ) -> str:
+        """Parse raw citation strings using GROBID (no PDF required).
+        
+        This is a convenience wrapper around GrobidClient.process_citation_list() that
+        allows parsing of citations without needing to work with PDFs.
+        
+        Args:
+            citations: List of raw bibliographical reference strings
+            include_raw: Include raw citation strings in output
+            
+        Returns:
+            Parsed citations in TEI XML format
+            
+        Raises:
+            GrobidError: If GROBID service fails
+            
+        Example:
+            >>> extractor = GrobidExtractor(endpoint="http://localhost:8070")
+            >>> refs = ["Smith, J. (2020). Article.", "Doe, A. (2019). Book."]
+            >>> xml = extractor.parse_citation_list(refs)
+        """
+        return self.grobid_client.process_citation_list(
+            citations=citations,
+            include_raw_citations=include_raw
+        )
+    
+    def parse_citations_to_references(
+        self,
+        citations: List[str],
+        include_raw: bool = False
+    ) -> list:
+        """Parse citation strings and return structured Reference objects.
+        
+        This provides end-to-end parsing from raw citation strings to structured
+        Reference objects, similar to extract_references_only() but for citations
+        instead of PDFs.
+        
+        Args:
+            citations: List of raw bibliographical reference strings
+            include_raw: Include raw citation strings in output
+            
+        Returns:
+            List of Reference objects
+            
+        Raises:
+            GrobidError: If GROBID service fails
+            
+        Example:
+            >>> extractor = GrobidExtractor(endpoint="http://localhost:8070")
+            >>> refs = ["Smith, J. (2020). Article. Journal, 10, 1-5."]
+            >>> references = extractor.parse_citations_to_references(refs)
+            >>> print(references[0].full_title)
+        """
+        # Get TEI XML from GROBID
+        xml_content = self.parse_citation_list(
+            citations=citations,
+            include_raw=include_raw
+        )
+        
+        # Parse XML into Reference objects
+        try:
+            return self._extract_references_from_xml(xml_content)
+        except Exception as e:
+            logging.error(f"Failed to parse GROBID citation XML: {e}")
             return []

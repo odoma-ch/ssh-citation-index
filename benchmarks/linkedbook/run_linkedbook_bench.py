@@ -31,7 +31,8 @@ from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from citation_index.llm.client import LLMClient, DeepSeekClient
-from citation_index.pipelines.reference_parsing import parse_reference_strings
+from citation_index.llm.grobid_client import GrobidClient
+from citation_index.pipelines.reference_parsing import parse_reference_strings, parse_reference_strings_grobid
 from citation_index.core.models import References, Reference
 from citation_index.evaluation.ref_metrics import RefEvaluator
 
@@ -80,23 +81,35 @@ class LinkedbookBenchmarkRunner:
         else:
             tqdm.write(f"Using pre-generated groups with {len(references)} total references.")
 
-        # Use DeepSeekClient for DeepSeek models, LLMClient for others
-        if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
-            llm_client = DeepSeekClient(api_key=self.args.api_key,
-                                        endpoint=self.args.api_base,
-                                        model=self.args.model_name)
-            llm_client.timeout = self.args.time_out  # Use time_out from args
-            llm_client.first_token_timeout = 60
-            llm_client.max_retries = 3
-        else:
-            llm_client = LLMClient(
-                endpoint=self.args.api_base,
-                model=self.args.model_name,
-                api_key=self.args.api_key,
-                timeout=self.args.time_out,  # Use time_out from args
-                first_token_timeout=60,
-                max_retries=3,
+        # Initialize parser client based on --parser argument
+        if self.args.parser == "grobid":
+            llm_client = GrobidClient(
+                endpoint=self.args.grobid_endpoint,
+                timeout=self.args.grobid_timeout,
+                max_retries=3
             )
+            # Verify GROBID service is available
+            if not llm_client.health_check():
+                raise RuntimeError(f"GROBID service is not available at {self.args.grobid_endpoint}")
+            tqdm.write(f"Using GROBID parser at {self.args.grobid_endpoint}")
+        else:
+            # Use DeepSeekClient for DeepSeek models, LLMClient for others
+            if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
+                llm_client = DeepSeekClient(api_key=self.args.api_key,
+                                            endpoint=self.args.api_base,
+                                            model=self.args.model_name)
+                llm_client.timeout = self.args.time_out  # Use time_out from args
+                llm_client.first_token_timeout = 60
+                llm_client.max_retries = 3
+            else:
+                llm_client = LLMClient(
+                    endpoint=self.args.api_base,
+                    model=self.args.model_name,
+                    api_key=self.args.api_key,
+                    timeout=self.args.time_out,  # Use time_out from args
+                    first_token_timeout=60,
+                    max_retries=3,
+                )
 
         # Optionally load previously saved results
         if self.args.results_path:
@@ -126,15 +139,17 @@ class LinkedbookBenchmarkRunner:
             else:
                 raise ValueError("Unsupported mode. Use 'single' or 'grouped'.")
 
-            # Execute LLM calls concurrently
-            tqdm.write(f"Submitting {len(tasks)} tasks to LLM with {self.args.max_workers} workers (mode: {self.args.mode}).")
+            # Execute parsing tasks concurrently
+            parser_name = "GROBID" if self.args.parser == "grobid" else "LLM"
+            tqdm.write(f"Submitting {len(tasks)} tasks to {parser_name} with {self.args.max_workers} workers (mode: {self.args.mode}).")
             start_llm_timer = time.time()
             llm_responses = []
             with ThreadPoolExecutor(max_workers=self.args.max_workers) as executor:
                 future_to_task = {
                     executor.submit(self._execute_llm_call, llm_client, task): task for task in tasks
                 }
-                for future in tqdm(as_completed(future_to_task), total=len(future_to_task), desc="Executing LLM calls"):
+                parser_desc = "Processing with GROBID" if self.args.parser == "grobid" else "Executing LLM calls"
+                for future in tqdm(as_completed(future_to_task), total=len(future_to_task), desc=parser_desc):
                     task = future_to_task[future]
                     try:
                         resp_str = future.result()
@@ -324,16 +339,24 @@ class LinkedbookBenchmarkRunner:
     # LLM Execution Methods  
     # ============================================================================
 
-    def _execute_llm_call(self, llm_client: LLMClient, task: Dict[str, Any]) -> str:
-        prompt_path = Path("prompts") / self.args.prompt_name
-        include_schema = "pydantic" in self.args.prompt_name
-        refs_model: References = parse_reference_strings(
-            reference_lines=task["references"],
-            llm_client=llm_client,
-            prompt_name=str(prompt_path),
-            include_schema=include_schema,
-            temperature=self.args.temperature if hasattr(self.args, 'temperature') else 0.15,
-        )
+    def _execute_llm_call(self, llm_client, task: Dict[str, Any]) -> str:
+        # Route to GROBID or LLM parser
+        if self.args.parser == "grobid":
+            refs_model: References = parse_reference_strings_grobid(
+                reference_lines=task["references"],
+                grobid_client=llm_client,
+                batch_mode=True
+            )
+        else:
+            prompt_path = Path("prompts") / self.args.prompt_name
+            include_schema = "pydantic" in self.args.prompt_name
+            refs_model: References = parse_reference_strings(
+                reference_lines=task["references"],
+                llm_client=llm_client,
+                prompt_name=str(prompt_path),
+                include_schema=include_schema,
+                temperature=self.args.temperature if hasattr(self.args, 'temperature') else 0.15,
+            )
         return json.dumps(refs_model.model_dump())
 
     def _convert_llm_responses_to_results(self, llm_responses: List[Dict[str, Any]], raw_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
@@ -423,23 +446,28 @@ class LinkedbookBenchmarkRunner:
         """Save results to JSON file and prepare data for evaluation."""
         if not getattr(self.args, "skip_save", False):
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
-            run_name = f"linkedbook_{self.args.mode}_{model_name_slug}_{timestamp}"
+            if self.args.parser == "grobid":
+                run_name = f"linkedbook_{self.args.mode}_grobid_{timestamp}"
+            else:
+                model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
+                run_name = f"linkedbook_{self.args.mode}_{model_name_slug}_{timestamp}"
             results_path = self.output_dir / f"{run_name}_results.json"
             
             with results_path.open("w", encoding="utf-8") as f:
                 json.dump(results_data, f, ensure_ascii=False, indent=2)
             tqdm.write(f"Saved results to {results_path}")
             
-            # Store paths for detailed analysis later
-            self._results_path = results_path
+            # Store run name for detailed analysis later
             self._run_name = run_name
         else:
             # If skipping save, still set run_name for potential detailed analysis
             if not hasattr(self, '_run_name'):
                 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
-                self._run_name = f"linkedbook_{self.args.mode}_{model_name_slug}_{timestamp}"
+                if self.args.parser == "grobid":
+                    self._run_name = f"linkedbook_{self.args.mode}_grobid_{timestamp}"
+                else:
+                    model_name_slug = self.args.model_name.replace('/', '_').replace('-', '_')
+                    self._run_name = f"linkedbook_{self.args.mode}_{model_name_slug}_{timestamp}"
         
         # Prepare batches for evaluation
         pred_batches: List[References] = []
@@ -607,18 +635,24 @@ class LinkedbookBenchmarkRunner:
         analysis_path = self.output_dir / f"{self._run_name}_detailed_analysis.json"
         
         # Create detailed analysis structure
+        metadata = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "mode": self.args.mode,
+            "parser": self.args.parser,
+            "fuzzy_threshold": self.args.fuzzy_threshold,
+            "eval_mode": self.args.eval_mode,
+            "focus_fields": getattr(self.args, 'focus_fields', None),
+            "total_references": len(results_data),
+            "llm_duration_sec": round(self.llm_duration, 2) if self.llm_duration else None,
+        }
+        if self.args.parser == "llm":
+            metadata["model_name"] = self.args.model_name
+            metadata["prompt_name"] = self.args.prompt_name
+        else:
+            metadata["grobid_endpoint"] = self.args.grobid_endpoint
+        
         analysis = {
-            "metadata": {
-                "timestamp": datetime.datetime.now().isoformat(),
-                "mode": self.args.mode,
-                "model_name": self.args.model_name,
-                "prompt_name": self.args.prompt_name,
-                "fuzzy_threshold": self.args.fuzzy_threshold,
-                "eval_mode": self.args.eval_mode,
-                "focus_fields": getattr(self.args, 'focus_fields', None),
-                "total_references": len(results_data),
-                "llm_duration_sec": round(self.llm_duration, 2) if self.llm_duration else None,
-            },
+            "metadata": metadata,
             "overall_metrics": metrics,
             "per_language_metrics": per_lang_metrics,
             "detailed_results": []
@@ -832,14 +866,20 @@ class LinkedbookBenchmarkRunner:
         total_tasks = len(results_data)
         lines = []
         lines.append("\n--- LinkedBook Parsing Benchmark Summary ---")
-        lines.append(json.dumps({
+        summary_data = {
             "mode": self.args.mode,
+            "parser": self.args.parser,
             "total_inputs": total_inputs,
             "total_tasks": total_tasks,
             "llm_duration_sec": round(self.llm_duration, 2) if self.llm_duration else None,
-            "model": self.args.model_name,
-            "prompt": self.args.prompt_name,
-        }, indent=2))
+        }
+        if self.args.parser == "llm":
+            summary_data["model"] = self.args.model_name
+            summary_data["prompt"] = self.args.prompt_name
+        else:
+            summary_data["grobid_endpoint"] = self.args.grobid_endpoint
+        
+        lines.append(json.dumps(summary_data, indent=2))
         lines.append("--------------------------------------------\n")
 
         # Print structured summary
@@ -927,13 +967,22 @@ class LinkedbookBenchmarkRunner:
                     f"LinkedBook Benchmark Run - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
                     f"{'='*80}",
                     f"Mode: {self.args.mode}",
-                    f"Model: {self.args.model_name}",
-                    f"Prompt: {self.args.prompt_name}",
-                    f"Inputs: {total_inputs}",
-                    f"Tasks: {total_tasks}",
-                    f"LLM Duration: {round(self.llm_duration, 2) if self.llm_duration else 'N/A (loaded)'}s",
-                    f"{'='*80}\n",
+                    f"Parser: {self.args.parser}",
                 ]
+                if self.args.parser == "llm":
+                    header.extend([
+                        f"Model: {self.args.model_name}",
+                        f"Prompt: {self.args.prompt_name}",
+                    ])
+                else:
+                    header.append(f"GROBID Endpoint: {self.args.grobid_endpoint}")
+                
+                header.extend([
+                    f"References: {total_inputs}",
+                    f"Tasks: {total_tasks}",
+                    f"Processing Duration: {round(self.llm_duration, 2) if self.llm_duration else 'N/A (loaded)'}s",
+                    f"{'='*80}\n",
+                ])
                 mode = 'a' if scores_path.exists() else 'w'
                 with scores_path.open(mode, encoding='utf-8') as f:
                     f.write('\n'.join(header + lines))
@@ -997,15 +1046,25 @@ def main():
     parser.add_argument("--prompt_name", type=str, default="reference_parsing.md", 
                        help="Name of the prompt file in the 'prompts/' directory.")
 
+    # Parser configuration
+    parser.add_argument("--parser", type=str, default="llm", choices=["llm", "grobid"],
+                       help="Parser to use: 'llm' for LLM-based parsing (default), 'grobid' for GROBID-based parsing")
+    
     # LLM configuration
     parser.add_argument("--model_name", type=str, default="mistralai/Mistral-Small-3.2-24B-Instruct-2506", 
-                       help="LLM model name")
+                       help="LLM model name (only used when --parser llm)")
     parser.add_argument("--api_key", type=str, default=os.environ.get("DEEPSEEK_API_KEY"), 
                        help="API key for the LLM endpoint. Defaults to DEEPSEEK_API_KEY env var.")
     parser.add_argument("--api_base", type=str, default="http://localhost:8001/v1", 
                        help="Base URL for the LLM API endpoint.")
     parser.add_argument("--time_out", type=int, default=300, 
                        help="Maximum time in seconds for LLM requests. Default is 300 seconds.")
+    
+    # GROBID configuration
+    parser.add_argument("--grobid_endpoint", type=str, default="http://localhost:8070",
+                       help="GROBID service endpoint URL (only used when --parser grobid)")
+    parser.add_argument("--grobid_timeout", type=float, default=180.0,
+                       help="Timeout for GROBID requests in seconds (only used when --parser grobid)")
 
     # Execution configuration
     parser.add_argument("--output_path", type=str, default="benchmarks/linkedbook/outputs", 
@@ -1043,8 +1102,9 @@ def main():
     log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(level=log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    if not args.api_key:
-        raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable.")
+    # Validate arguments based on parser type
+    if args.parser == "llm" and not args.api_key:
+        raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable when using LLM parser.")
 
     # Basic validation - removed grouping checks since using pre-generated groups
 

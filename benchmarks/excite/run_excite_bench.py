@@ -15,15 +15,53 @@ from typing import List
 
 from citation_index.core.extractors import ExtractorFactory
 from citation_index.llm.client import LLMClient, DeepSeekClient
+from citation_index.llm.grobid_client import GrobidClient
 from citation_index.pipelines.reference_extraction import (
     extract_text_references, extract_text_references_semantic_sections, extract_text_references_by_page
 )
 from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step
-from citation_index.pipelines.reference_parsing import parse_reference_strings
+from citation_index.pipelines.reference_parsing import parse_reference_strings, parse_reference_strings_grobid
 from citation_index.pipelines.text_extraction import split_pages, extract_text
 from citation_index.evaluation.ref_metrics import string_reference_eval, RefEvaluator
 from excite_helper import load_excite_data
 from citation_index.core.models import References
+
+
+def load_skip_ids(skip_ids_arg: str) -> set:
+    """
+    Load IDs to skip from a file or comma-separated string.
+    
+    Args:
+        skip_ids_arg: Path to a file (one ID per line) or comma-separated IDs.
+                     Empty string means no IDs to skip.
+    
+    Returns:
+        Set of IDs to skip.
+    """
+    if not skip_ids_arg or skip_ids_arg.strip() == "":
+        return set()
+    
+    skip_ids = set()
+    skip_path = Path(skip_ids_arg)
+    
+    if skip_path.exists():
+        # Load from file
+        with open(skip_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    skip_ids.add(line)
+        tqdm.write(f"Loaded {len(skip_ids)} IDs to skip from {skip_path}")
+    else:
+        # Treat as comma-separated list
+        for id_str in skip_ids_arg.split(","):
+            id_str = id_str.strip()
+            if id_str:
+                skip_ids.add(id_str)
+        if skip_ids:
+            tqdm.write(f"Skipping {len(skip_ids)} IDs from command line")
+    
+    return skip_ids
 
 
 class BenchmarkRunner:
@@ -68,8 +106,18 @@ class BenchmarkRunner:
         
         extractor = ExtractorFactory.create(self.args.extractor)
         
+        # Initialize parser client based on parser argument for parsing task
+        if self.args.task == "parsing" and getattr(self.args, 'parser', 'llm') == "grobid":
+            llm_client = GrobidClient(
+                endpoint=self.args.grobid_endpoint,
+                timeout=self.args.grobid_timeout,
+                max_retries=3
+            )
+            if not llm_client.health_check():
+                raise RuntimeError(f"GROBID service is not available at {self.args.grobid_endpoint}")
+            tqdm.write(f"Using GROBID parser at {self.args.grobid_endpoint}")
         # Use DeepSeekClient for DeepSeek models, LLMClient for others
-        if "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
+        elif "deepseek" in self.args.model_name.lower() or "api.deepseek.com" in self.args.api_base:
             llm_client = DeepSeekClient(api_key=self.args.api_key, 
                                         endpoint=self.args.api_base,
                                         model=self.args.model_name)
@@ -105,12 +153,22 @@ class BenchmarkRunner:
             if self.args.limit:
                 pdf_df = pdf_df.head(self.args.limit)
             
+            # Load skip IDs
+            skip_ids = load_skip_ids(getattr(self.args, 'skip_ids', ''))
+            skipped_count = 0
+            
             # 1. Prepare all inputs for LLM calls
             llm_tasks = []
             for _, row in tqdm(pdf_df.iterrows(), total=len(pdf_df), desc="Preparing tasks"):
                 file_id = str(row["file_id"])
                 file_path = row["file_path"]
                 logging.debug(f"Preparing task for file_id: {file_id}")
+                
+                # Skip if ID is in skip list
+                if file_id in skip_ids:
+                    logging.debug(f"Skipping {file_id} (in skip_ids list)")
+                    skipped_count += 1
+                    continue
                 
                 gt_references = references_data.get(file_id, {}).get("references", [])
                 if not gt_references:
@@ -159,6 +217,9 @@ class BenchmarkRunner:
                     llm_tasks.append(task_info)
                 except Exception as e:
                     logging.error(f"Error preparing task for document {file_id}: {e}", exc_info=True)
+
+            if skipped_count > 0:
+                tqdm.write(f"Skipped {skipped_count} documents from skip_ids list")
 
             # 2. Concurrently process all tasks
             # Methods 4, 5 handle parallelization internally
@@ -259,14 +320,23 @@ class BenchmarkRunner:
                 return json.dumps(refs.model_dump())
 
         elif self.args.task == "parsing":
-            include_schema = "pydantic" in self.args.prompt_name
             reference_lines = [ln for ln in str(input_text).splitlines() if ln.strip()]
-            refs = parse_reference_strings(
-                reference_lines=reference_lines,
-                llm_client=llm_client,
-                prompt_name=str(prompt_path),
-                include_schema=include_schema,
-            )
+            
+            # Route to GROBID or LLM parser
+            if getattr(self.args, 'parser', 'llm') == "grobid":
+                refs = parse_reference_strings_grobid(
+                    reference_lines=reference_lines,
+                    grobid_client=llm_client,
+                    batch_mode=True
+                )
+            else:
+                include_schema = "pydantic" in self.args.prompt_name
+                refs = parse_reference_strings(
+                    reference_lines=reference_lines,
+                    llm_client=llm_client,
+                    prompt_name=str(prompt_path),
+                    include_schema=include_schema,
+                )
             return json.dumps(refs.model_dump())
 
         return None
@@ -736,11 +806,26 @@ def main():
 
     # Extractor Configuration
     parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru", "grobid"], help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task.")
+    
+    # Parser Configuration (for parsing task)
+    parser.add_argument(
+        "--parser",
+        type=str,
+        default="llm",
+        choices=["llm", "grobid"],
+        help="Parser to use for parsing task: 'llm' for LLM-based parsing (default), 'grobid' for GROBID-based parsing. Only applies to parsing task."
+    )
     parser.add_argument(
         "--grobid_endpoint",
         type=str,
-        default="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl",
-        help="Grobid service endpoint URL. Only used when --extractor grobid is specified."
+        default="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/",
+        help="GROBID service endpoint URL. Used when --extractor grobid or --parser grobid is specified."
+    )
+    parser.add_argument(
+        "--grobid_timeout",
+        type=float,
+        default=180.0,
+        help="Timeout for GROBID requests in seconds."
     )
 
     # Evaluation Configuration
@@ -787,6 +872,13 @@ def main():
         action="store_true",
         help="Save Grobid XML outputs to 'all_grobid_xml' folder. Only applies when using --extractor grobid.",
     )
+    parser.add_argument(
+        "--skip_ids",
+        type=str,
+        default="benchmarks/finetune/excite_skip_ids.txt",
+        help="Path to a file containing IDs to skip (one per line), or a comma-separated list of IDs. "
+             "Set to empty string to disable skipping. Default: benchmarks/finetune/excite_skip_ids.txt",
+    )
 
     args = parser.parse_args()
 
@@ -805,7 +897,11 @@ def main():
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
-    if not args.api_key:
+    # Validate required arguments
+    if args.task == "parsing" and getattr(args, 'parser', 'llm') == "grobid":
+        # For GROBID parsing, we don't need API key
+        pass
+    elif not args.api_key:
         raise ValueError("API key must be provided via --api_key or DEEPSEEK_API_KEY environment variable.")
 
     # Validate grobid extractor is only used with extraction_and_parsing task

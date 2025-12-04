@@ -5,7 +5,7 @@ GROBID client for processing PDFs and extracting references.
 import logging
 import time
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 import requests
 
@@ -229,6 +229,121 @@ class GrobidClient:
                         logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
                     break
         
+        if last_exception:
+            raise last_exception
+    
+    def process_citation_list(
+        self,
+        citations: List[str],
+        include_raw_citations: bool = False
+    ) -> str:
+        """Parse raw bibliographical references using GROBID processCitationList service.
+        
+        Handles both single and multiple citations by converting single citations to a list.
+        
+        Args:
+            citations: List of raw bibliographical reference strings to parse
+            include_raw_citations: Include raw reference strings in output
+            
+        Returns:
+            Parsed references in TEI XML format
+            
+        Raises:
+            GrobidError: If GROBID service fails or returns an error
+            ValueError: If invalid parameters are provided
+        """
+        if not citations:
+            raise ValueError("Citations list cannot be empty")
+        
+        # Filter out empty strings
+        citations = [c.strip() for c in citations if c and c.strip()]
+        if not citations:
+            raise ValueError("Citations list contains no valid citation strings")
+        
+        url = f"{self.endpoint}/api/processCitationList"
+        
+        # Always request TEI XML format
+        headers = {'Accept': 'application/xml'}
+        
+        last_exception = None
+        for attempt in range(self.max_retries + 1):
+            try:
+                # Send each citation as a separate form field with the same key
+                # This is the proper way to send multiple values in form data
+                data = [
+                    ('consolidateCitations', '0'),  # Always 0 - no consolidation
+                    ('includeRawCitations', '1' if include_raw_citations else '0'),
+                ]
+                # Add each citation as a separate 'citations' field
+                for citation in citations:
+                    data.append(('citations', citation))
+                
+                response = self.session.post(
+                    url,
+                    data=data,
+                    headers=headers,
+                    timeout=self.timeout
+                )
+                
+                if response.status_code == 200:
+                    content = response.text
+                    if not content.strip():
+                        raise GrobidError("GROBID returned empty response")
+                    return content
+                elif response.status_code == 204:
+                    # Process completed but no content could be extracted - don't retry
+                    raise GrobidError(f"GROBID could not extract content (HTTP 204): Process completed but no content could be extracted and structured")
+                elif response.status_code == 400:
+                    # Bad request - don't retry
+                    raise GrobidError(f"GROBID bad request (HTTP 400): {response.text}")
+                elif response.status_code == 500:
+                    # Server error - don't retry
+                    raise GrobidError(f"GROBID server error (HTTP 500): {response.text}")
+                elif response.status_code == 503:
+                    # Service unavailable - should retry
+                    error_msg = f"GROBID service unavailable (HTTP 503): All threads are currently busy"
+                    raise GrobidError(error_msg)
+                else:
+                    error_msg = f"GROBID service error (HTTP {response.status_code}): {response.text}"
+                    raise GrobidError(error_msg)
+                    
+            except (requests.RequestException, GrobidError) as e:
+                last_exception = e
+                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
+                
+                # Check if this is a non-retryable error
+                is_non_retryable = (
+                    isinstance(e, GrobidError) and 
+                    ("HTTP 204" in str(e) or "HTTP 400" in str(e) or "HTTP 500" in str(e))
+                )
+                
+                if isinstance(e, requests.Timeout):
+                    logging.warning(f"GROBID timeout on {attempt_info}: {e}")
+                elif isinstance(e, GrobidError):
+                    if is_non_retryable:
+                        logging.error(f"GROBID non-retryable error: {e}")
+                        break  # Don't retry for 204/400/500 errors
+                    else:
+                        logging.warning(f"GROBID service error on {attempt_info}: {e}")
+                else:
+                    logging.warning(f"GROBID request error on {attempt_info}: {type(e).__name__}: {e}")
+                
+                if attempt < self.max_retries and not is_non_retryable:
+                    # For 503 errors, use shorter retry delays: 1s, 3s, 5s
+                    # For other retryable errors, use longer delays: 10s, 30s, 60s
+                    if isinstance(e, GrobidError) and "HTTP 503" in str(e):
+                        retry_delays = [1, 3, 5]
+                    else:
+                        retry_delays = [10, 30, 60]
+                    wait_time = retry_delays[min(attempt, len(retry_delays) - 1)]
+                    logging.info(f"Retrying GROBID request in {wait_time} seconds...")
+                    time.sleep(wait_time)
+                else:
+                    if not is_non_retryable:
+                        logging.error(f"All {self.max_retries + 1} GROBID attempts failed")
+                    break
+        
+        # If all retries failed, raise the last exception
         if last_exception:
             raise last_exception
     

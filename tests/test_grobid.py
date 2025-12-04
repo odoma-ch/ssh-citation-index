@@ -1,103 +1,164 @@
 #!/usr/bin/env python3
 """
-Example script demonstrating GROBID integration with citation-index.
-
-This script shows how to:
-1. Use GROBID client directly
-2. Use GROBID extractor through the factory
-3. Use GROBID via CLI commands
-
-Prerequisites:
-- GROBID server running (e.g., via Docker: docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0)
-- PDF file to process
+Tests for GROBID client functionality.
 """
 
 import sys
 from pathlib import Path
+from unittest.mock import Mock, patch
+import pytest
 
 # Add the src directory to the path so we can import citation_index
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from citation_index import GrobidClient, GrobidExtractor, ExtractorFactory
+from citation_index.llm.grobid_client import GrobidClient, GrobidError
 
-
-def example_grobid_client():
-    """Example using GROBID client directly."""
-    print("=== GROBID Client Example ===")
+class TestGrobidCitationParsing:
+    """Tests for GROBID citation parsing functionality."""
     
-    # Initialize client
-    client = GrobidClient(endpoint="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/", timeout=120.0)
+    @pytest.fixture
+    def grobid_client(self):
+        """Create a GROBID client for testing."""
+        return GrobidClient(endpoint="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/", timeout=30.0, max_retries=2)
     
-    # Check if GROBID service is available
-    if not client.health_check():
-        print("❌ GROBID service is not available at https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/")
-        print("   Please start GROBID server first:")
-        print("   docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0")
-        return
+    @pytest.fixture
+    def sample_citation(self):
+        """Sample citation for testing."""
+        return "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113"
     
-    print("✅ GROBID service is available")
+    @pytest.fixture
+    def sample_citations_list(self):
+        """Sample list of citations for testing."""
+        return [
+            "Smith, J. (2020). Title of Article. Journal Name, 10(2), 45-67.",
+            "Doe, A. (2019). Book Title. Publisher.",
+            "Brown, C., & Green, D. (2021). Another Article. Science, 123, 456-789."
+        ]
     
-    # Process a PDF (replace with your PDF path)
-    pdf_path = "/Users/alex/docs/code/Odoma/citation_index/benchmarks/cex/all_pdfs/PSY_100.pdf"
-    if not Path(pdf_path).exists():
-        print(f"❌ PDF file not found: {pdf_path}")
-        print("   Please provide a valid PDF file path")
-        return
+    @pytest.fixture
+    def sample_tei_xml_response(self):
+        """Sample TEI XML response from GROBID."""
+        return """<?xml version="1.0" encoding="UTF-8"?>
+<biblStruct>
+    <analytic>
+        <title/>
+        <author>
+            <persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Graff</surname></persName>
+        </author>
+    </analytic>
+    <monogr>
+        <title level="j">Expert. Opin. Ther. Targets</title>
+        <imprint>
+            <biblScope unit="volume">6</biblScope>
+            <biblScope unit="issue">1</biblScope>
+            <biblScope unit="page" from="103" to="113" />
+            <date type="published" when="2002" />
+        </imprint>
+    </monogr>
+</biblStruct>"""
     
-    try:
-        # Extract references only
-        xml_content = client.process_references(pdf_path)
-        print(f"✅ Extracted references XML ({len(xml_content)} characters)")
-        
-        # Save XML to file
-        output_path = Path(pdf_path).stem + "_grobid_references.xml"
-        Path(output_path).write_text(xml_content, encoding='utf-8')
-        print(f"💾 Saved references XML to: {output_path}")
-        
-    except Exception as e:
-        print(f"❌ Error processing PDF: {e}")
-
-
-def example_grobid_extractor():
-    """Example using GROBID extractor."""
-    print("\n=== GROBID Extractor Example ===")
-    
-    # Initialize extractor
-    extractor = GrobidExtractor(endpoint="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/")
-    
-    # Or create via factory
-    extractor = ExtractorFactory.create("grobid", grobid_endpoint="https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/")
-    
-    pdf_path = "/Users/alex/docs/code/Odoma/citation_index/benchmarks/cex/all_pdfs/PSY_100.pdf"
-    if not Path(pdf_path).exists():
-        print(f"❌ PDF file not found: {pdf_path}")
-        return
-    
-    try:
-        # Extract references as structured objects
-        references = extractor.extract_references_only(pdf_path)
-        print(f"✅ Extracted {len(references)} structured references")
-        
-        # Print first few references
-        for i, ref in enumerate(references[:3]):
-            # Get the best available title from the reference
-            title = (ref.full_title or ref.analytic_title or ref.monographic_title or 
-                    ref.journal_title or ref.raw_reference or 'No title')
-            print(f"  {i+1}. {title}...")
-        
-        if len(references) > 3:
-            print(f"  ... and {len(references) - 3} more references")
+    def test_process_citation_list_single_citation(self, grobid_client, sample_citation, sample_tei_xml_response):
+        """Test parsing single citation."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_response = Mock()
+            mock_response.status_code = 200
+            mock_response.text = sample_tei_xml_response
+            mock_post.return_value = mock_response
             
-    except Exception as e:
-        print(f"❌ Error extracting references: {e}")
-
-  
-
-if __name__ == "__main__":
-    print("🔬 GROBID Integration Examples")
-    print("=" * 40)
+            result = grobid_client.process_citation_list([sample_citation])
+            
+            assert result == sample_tei_xml_response
+            assert mock_post.called
     
-    # Run examples
-    example_grobid_client()
-    example_grobid_extractor()
+    def test_process_citation_list_with_raw_citations(self, grobid_client, sample_citation, sample_tei_xml_response):
+        """Test parsing with raw citations included."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_response = Mock()
+            mock_response.status_code = 200
+            mock_response.text = sample_tei_xml_response
+            mock_post.return_value = mock_response
+            
+            result = grobid_client.process_citation_list(
+                [sample_citation],
+                include_raw_citations=True
+            )
+            
+            assert result == sample_tei_xml_response
+            assert mock_post.called
+    
+    def test_error_204_no_content(self, grobid_client, sample_citation):
+        """Test 204 No Content error."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=204, text="")
+            
+            with pytest.raises(GrobidError, match="HTTP 204"):
+                grobid_client.process_citation_list([sample_citation])
+    
+    def test_error_400_bad_request(self, grobid_client, sample_citation):
+        """Test 400 Bad Request error."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=400, text="Invalid")
+            
+            with pytest.raises(GrobidError, match="HTTP 400"):
+                grobid_client.process_citation_list([sample_citation])
+    
+    def test_error_500_server_error(self, grobid_client, sample_citation):
+        """Test 500 Server Error."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=500, text="Error")
+            
+            with pytest.raises(GrobidError, match="HTTP 500"):
+                grobid_client.process_citation_list([sample_citation])
+    
+    def test_503_retry_then_success(self, grobid_client, sample_citation, sample_tei_xml_response):
+        """Test 503 triggers retry and then succeeds."""
+        with patch.object(grobid_client.session, 'post') as mock_post, \
+             patch('time.sleep'):
+            mock_post.side_effect = [
+                Mock(status_code=503, text="Unavailable"),
+                Mock(status_code=200, text=sample_tei_xml_response)
+            ]
+            
+            result = grobid_client.process_citation_list([sample_citation])
+            
+            assert result == sample_tei_xml_response
+            assert mock_post.call_count == 2
+    
+    def test_batch_multiple_citations(self, grobid_client, sample_citations_list, sample_tei_xml_response):
+        """Test parsing multiple citations."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=200, text=sample_tei_xml_response)
+            
+            result = grobid_client.process_citation_list(sample_citations_list)
+            
+            assert result == sample_tei_xml_response
+            assert mock_post.called
+    
+    def test_empty_list_raises_error(self, grobid_client):
+        """Test empty list raises ValueError."""
+        with pytest.raises(ValueError, match="cannot be empty"):
+            grobid_client.process_citation_list([])
+    
+    def test_all_empty_strings_raises_error(self, grobid_client):
+        """Test all empty strings raises ValueError."""
+        with pytest.raises(ValueError, match="no valid citation"):
+            grobid_client.process_citation_list(["", "  ", "\n"])
+    
+    def test_filters_empty_strings(self, grobid_client, sample_tei_xml_response):
+        """Test empty strings are filtered out."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=200, text=sample_tei_xml_response)
+            
+            citations = ["Smith, J. (2020).", "", "Doe, A. (2019).", "  "]
+            result = grobid_client.process_citation_list(citations)
+            
+            assert result == sample_tei_xml_response
+    
+    def test_empty_response_raises_error(self, grobid_client, sample_citation):
+        """Test empty response raises error."""
+        with patch.object(grobid_client.session, 'post') as mock_post:
+            mock_post.return_value = Mock(status_code=200, text="   ")
+            
+            with pytest.raises(GrobidError, match="empty response"):
+                grobid_client.process_citation_list([sample_citation])
     
