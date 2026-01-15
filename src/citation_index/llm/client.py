@@ -126,7 +126,7 @@ class LLMClient:
             
         return response_format, modified_prompt, modified_max_tokens
     
-    def _call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.3, 
+    def _call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.1, 
                         max_tokens: int = None, json_schema: str = None, json_output: bool = False,
                         use_streaming: bool = True) -> str:
         """Call LLM with timeout and retry logic."""
@@ -187,7 +187,7 @@ class LLMClient:
         
         raise RuntimeError("Unexpected: no response and no exception")
 
-    def call(self, prompt: str, model: str = None, temperature: float = 0.3, max_tokens: int = None, json_schema: str = None, json_output: bool = False, use_streaming: bool = True) -> str:
+    def call(self, prompt: str, model: str = None, temperature: float = 0.1, max_tokens: int = None, json_schema: str = None, json_output: bool = False, use_streaming: bool = True) -> str:
         """Call the LLM API with timeout and retry logic.
         
         Args:
@@ -214,7 +214,7 @@ class LLMClient:
         prompt: str,
         json_schema: dict | None = None,
         model: str | None = None,
-        temperature: float = 0.3,
+        temperature: float = 0.1,
         max_tokens: int | None = None,
     ) -> str:
         """Thin wrapper to request structured JSON output when schema is provided."""
@@ -264,7 +264,7 @@ class DeepSeekClient(LLMClient):
                 
         return response_format, modified_prompt, modified_max_tokens
     
-    def call(self, prompt: str, model: str = None, temperature: float = 1, max_tokens: int = 8000, 
+    def call(self, prompt: str, model: str = None, temperature: float = 0.1, max_tokens: int = 8000, 
              json_schema: str = None, json_output: bool = False, use_streaming: bool = True, 
              use_continuation: bool = True) -> str:
         """Call DeepSeek API with optional continuation support.
@@ -306,7 +306,7 @@ class DeepSeekClient(LLMClient):
                 use_streaming=use_streaming
             )
     
-    def _deepseek_call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.3, 
+    def _deepseek_call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.1, 
                                  max_tokens: int = 8000, json_schema: str = None, json_output: bool = False,
                                  use_streaming: bool = True) -> str:
         """DeepSeek-specific call with retry logic and optimizations."""
@@ -368,7 +368,7 @@ class DeepSeekClient(LLMClient):
         raise RuntimeError("Unexpected: no response and no exception in DeepSeek call")
     
     def call_with_continuation(self, prompt: str, start_tag: str = "```json", end_tag: str = "```", 
-                             model: str = None, temperature: float = 0.3, max_tokens: int = 8192,
+                             model: str = None, temperature: float = 0.1, max_tokens: int = 8192,
                              max_continuations: int = 5, json_schema: str = None, json_output: bool = False) -> str:
         """Call the DeepSeek API with automatic continuation if response is incomplete.
         
@@ -480,7 +480,7 @@ class VLLMClient(LLMClient):
         """
         super().__init__(endpoint=endpoint, model=model, api_key=api_key, **kwargs)
     
-    def call_with_parsed_structured_output(self, prompt: str, model: str = None, temperature: float = 0.3, json_class: object = None) -> str:
+    def call_with_parsed_structured_output(self, prompt: str, model: str = None, temperature: float = 0.1, json_class: object = None) -> str:
         """Call the LLM API with structured output and timeout protection."""
         model = model if model else self.model
         if json_class is None:

@@ -121,16 +121,16 @@ class BenchmarkRunner:
             llm_client = DeepSeekClient(api_key=self.args.api_key, 
                                         endpoint=self.args.api_base,
                                         model=self.args.model_name)
-            llm_client.timeout = 800
-            llm_client.first_token_timeout = 120
+            llm_client.timeout = 600
+            llm_client.first_token_timeout = 60
             llm_client.max_retries = 1
         else:
             llm_client = LLMClient(
                 endpoint=self.args.api_base,
                 model=self.args.model_name,
                 api_key=self.args.api_key,
-                timeout=800,
-                first_token_timeout=120,
+                timeout=600,
+                first_token_timeout=60,
                 max_retries=1,
             )
         
@@ -841,7 +841,7 @@ def main():
     # I/O and Execution Configuration
     parser.add_argument("--output_path", type=str, default="benchmarks/excite/outputs", help="Directory to save the evaluation results.")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of documents to process for a quick test run.")
-    parser.add_argument("--max_workers", type=int, default=25, help="Maximum number of concurrent requests to the LLM.")
+    parser.add_argument("--max_workers", type=int, default=20, help="Maximum number of concurrent requests to the LLM.")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging for debugging.")
     parser.add_argument("--responses_path", type=str, default=None, help="Path to a pre-saved pickle file containing LLM responses to load for evaluation-only runs.")
 
@@ -875,9 +875,9 @@ def main():
     parser.add_argument(
         "--skip_ids",
         type=str,
-        default="benchmarks/finetune/excite_skip_ids.txt",
+        default="",
         help="Path to a file containing IDs to skip (one per line), or a comma-separated list of IDs. "
-             "Set to empty string to disable skipping. Default: benchmarks/finetune/excite_skip_ids.txt",
+             "If not specified, no IDs are skipped. Example: benchmarks/finetune/excite_skip_ids.txt",
     )
 
     args = parser.parse_args()

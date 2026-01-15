@@ -162,7 +162,7 @@ class CEXBenchmarkRunner:
             llm_client = GrobidClient(
                 endpoint=self.args.grobid_endpoint,
                 timeout=self.args.grobid_timeout,
-                max_retries=3
+                max_retries=1
             )
             if not llm_client.health_check():
                 raise RuntimeError(f"GROBID service is not available at {self.args.grobid_endpoint}")
@@ -172,17 +172,17 @@ class CEXBenchmarkRunner:
             llm_client = DeepSeekClient(api_key=self.args.api_key, 
                                         endpoint=self.args.api_base,
                                         model=self.args.model_name)
-            llm_client.timeout = 1200
-            llm_client.first_token_timeout = 180
-            llm_client.max_retries = 2
+            llm_client.timeout = 600
+            llm_client.first_token_timeout = 60
+            llm_client.max_retries = 1
         else:
             llm_client = LLMClient(
                 endpoint=self.args.api_base,
                 model=self.args.model_name,
                 api_key=self.args.api_key,
-                timeout=1200,
-                first_token_timeout=180,
-                max_retries=2,
+                timeout=600,
+                first_token_timeout=60,
+                max_retries=1,
             )
         
         # Check for pre-saved responses (fast-path for evaluation-only runs)
@@ -1203,7 +1203,7 @@ Examples:
     parser.add_argument(
         "--max_workers", 
         type=int, 
-        default=25, 
+        default=10, 
         help="Maximum number of concurrent requests to the LLM."
     )
     parser.add_argument(
@@ -1245,9 +1245,9 @@ Examples:
     parser.add_argument(
         "--skip_ids",
         type=str,
-        default="benchmarks/finetune/cex_skip_ids.txt",
+        default="",
         help="Path to a file containing IDs to skip (one per line), or a comma-separated list of IDs. "
-             "Set to empty string to disable skipping. Default: benchmarks/finetune/cex_skip_ids.txt",
+             "If not specified, no IDs are skipped. Example: benchmarks/finetune/cex_skip_ids.txt",
     )
 
     args = parser.parse_args()
