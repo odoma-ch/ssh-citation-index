@@ -33,6 +33,7 @@ Given the provided text, extract all full reference entries and format them acco
                 "pages": "Page range (e.g., '123-130')",
                 "publication_date": "Year or full date of publication (e.g., '2021' or '2021-05-10')",
                 "publisher": "Publisher's name (e.g., 'Springer')"
+                ... // Other fields as needed
             }
         }
         // More references if applicable

@@ -257,8 +257,20 @@ class BenchmarkRunner:
                             })
                         else:
                             logging.warning(f"No response received for file_id: {file_id}")
+                            # Log empty response as structural error
+                            llm_responses.append({
+                                "file_id": task["file_id"],
+                                "response": "",  # Empty response indicates failure
+                                "gt_references": task["gt_references"]
+                            })
                     except Exception as exc:
                         logging.error(f'Task for {file_id} generated an exception: {exc}', exc_info=True)
+                        # Log exception as structural error with error message
+                        llm_responses.append({
+                            "file_id": task["file_id"],
+                            "response": f"ERROR: {str(exc)}",  # Error message as response
+                            "gt_references": task["gt_references"]
+                        })
                 
                 # Persist raw LLM responses so they can be reused later without
                 # re-issuing expensive model calls.

@@ -3,10 +3,6 @@ Factory for creating PDF extractors.
 """
 
 from .base import BaseExtractor
-from .pymupdf import PyMuPDFExtractor
-from .marker import MarkerExtractor
-from .mineru import MineruExtractor
-from .grobid import GrobidExtractor
 
 
 class ExtractorFactory:
@@ -25,16 +21,21 @@ class ExtractorFactory:
             
         Raises:
             ValueError: If extractor type is not supported
+            ImportError: If required dependencies for the extractor are not installed
         """
         extractor_type = extractor_type.lower()
         
         if extractor_type == 'pymupdf':
+            from .pymupdf import PyMuPDFExtractor
             return PyMuPDFExtractor()
         elif extractor_type == 'marker':
+            from .marker import MarkerExtractor
             return MarkerExtractor()
         elif extractor_type == 'mineru':
+            from .mineru import MineruExtractor
             return MineruExtractor()
         elif extractor_type == 'grobid':
+            from .grobid import GrobidExtractor
             # Extract GROBID-specific parameters
             grobid_kwargs = {}
             if 'grobid_endpoint' in kwargs:
