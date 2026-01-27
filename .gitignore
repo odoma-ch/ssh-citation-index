@@ -188,8 +188,10 @@ benchmarks/cex/all_markdown/
 benchmarks/linkedbook/outputs/
 benchmarks/citation_linking/*.json
 benchmarks/citation_linking/*.jsonl
+
+error_analysis/
 *.txt
-run_jobs.sh
+*.sh
 logs*/
 .done_*
 
