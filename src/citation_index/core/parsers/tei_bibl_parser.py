@@ -7,6 +7,8 @@ from typing import Dict, List, Literal, Optional
 from lxml import etree
 
 from ..models import Reference, Person, Organization
+from ...utils.identifier_parser import parse_identifier
+from ...utils.reference_matching import extract_year
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -96,16 +98,38 @@ class TeiBiblParser:
         footnote_number = bibl_struct.attrib.get("source", "")[2:]
 
         refs = self._find_and_join_all_refs(bibl_struct)
+        
+        # Extract identifiers from <idno> elements
+        identifiers = self._extract_identifiers(bibl_struct)
+        
+        # Extract publication year as integer
+        publication_year = None
+        if publication_date:
+            year_int = extract_year(publication_date)
+            if year_int:
+                publication_year = year_int
+        
+        # Set full_title from analytic or monographic
+        full_title = analytic_title or monographic_title
+        
+        # Preserve original TEI title structure in raw dict
+        raw = {}
+        if analytic_title or monographic_title:
+            raw["tei"] = {}
+            if analytic_title:
+                raw["tei"]["analytic_title"] = analytic_title
+            if monographic_title:
+                raw["tei"]["monographic_title"] = monographic_title
 
         reference = Reference(
-            analytic_title=analytic_title,
+            full_title=full_title,
             authors=authors,
-            monographic_title=monographic_title,
             journal_title=journal_title,
             editors=editors,
             publisher=publisher,
             translator=translator,
-            publication_date=publication_date,
+            publication_date_raw=publication_date,
+            publication_year=publication_year,
             publication_place=publication_place,
             volume=volume,
             issue=issue,
@@ -113,6 +137,8 @@ class TeiBiblParser:
             cited_range=cited_range,
             footnote_number=footnote_number,
             refs=refs,
+            identifiers=identifiers,
+            raw=raw,
         )
         if reference == Reference():
             _LOGGER.debug("Empty Reference")
@@ -228,6 +254,33 @@ class TeiBiblParser:
             return separator.join(texts).strip()
         return None
 
+    def _extract_identifiers(self, element: etree._Element) -> List:
+        """Extract identifiers from <idno> elements.
+        
+        Handles both:
+        - Typed: <idno type="doi">10.1234/abc</idno>
+        - Inline: <idno>DOI: 10.1234/abc</idno>
+        
+        Args:
+            element: The XML element to search for idno tags
+            
+        Returns:
+            List of Identifier objects
+        """
+        identifiers = []
+        idno_elements = element.findall(".//idno", namespaces=self._namespaces)
+        
+        for idno in idno_elements:
+            if idno.text and idno.text.strip():
+                # Get type attribute if present
+                type_attr = idno.get("type") or idno.get("scheme")
+                # Parse the identifier
+                identifier = parse_identifier(idno.text.strip(), type_attr)
+                if identifier:
+                    identifiers.append(identifier)
+        
+        return identifiers
+
     def from_xml(
         self,
         file_path: Optional[str | Path] = None,
@@ -238,7 +291,7 @@ class TeiBiblParser:
 
         Args:
             file_path: Path to XML file
-            xml_str: XML string to parse
+            xml_str: XML string or bytes to parse
             n: Maximum number of references to parse
 
         Returns:
@@ -247,6 +300,10 @@ class TeiBiblParser:
         if file_path is not None:
             tree = etree.parse(str(file_path))
         elif xml_str is not None:
+            # Handle both strings and bytes
+            if isinstance(xml_str, str):
+                # Convert to bytes to handle XML declaration
+                xml_str = xml_str.encode('utf-8')
             tree = etree.fromstring(xml_str)
         else:
             raise ValueError("Either file_path or xml_str must be provided")
@@ -305,22 +362,30 @@ class TeiBiblParser:
             for ref in refs:
                 bibl_struct = etree.SubElement(list_bibl, "biblStruct")
 
+                # Try to get original TEI structure from raw dict, otherwise infer from current state
+                analytic_title = ref.raw.get("tei", {}).get("analytic_title") if ref.raw else None
+                monographic_title = ref.raw.get("tei", {}).get("monographic_title") if ref.raw else None
+                
+                # Fallback: if raw not available, use full_title as monographic
+                if not analytic_title and not monographic_title:
+                    monographic_title = ref.full_title
+
                 # Analytic (article in a journal or part of monograph)
-                if ref.analytic_title:
+                if analytic_title:
                     analytic = etree.SubElement(bibl_struct, "analytic")
                     title_a = etree.SubElement(analytic, "title")
                     title_a.set("level", "a")
-                    title_a.text = ref.analytic_title
+                    title_a.text = analytic_title
                     if ref.authors:
                         for author in ref.authors:
                             _append_author_or_org(analytic, author)
 
                 # Monographic (book/journal issue)
                 monogr = etree.SubElement(bibl_struct, "monogr")
-                if ref.monographic_title:
+                if monographic_title:
                     title_m = etree.SubElement(monogr, "title")
                     title_m.set("level", "m")
-                    title_m.text = ref.monographic_title
+                    title_m.text = monographic_title
                 if ref.journal_title:
                     title_j = etree.SubElement(monogr, "title")
                     title_j.set("level", "j")
@@ -340,11 +405,12 @@ class TeiBiblParser:
                     _append_author_or_org(monogr, ref.translator, tag="editor", role="translator")
 
                 # Imprint / issuance details
-                if any([ref.publication_date, ref.volume, ref.issue, ref.pages]):
+                publication_date_text = ref.publication_date_raw or (str(ref.publication_year) if ref.publication_year else None)
+                if any([publication_date_text, ref.volume, ref.issue, ref.pages]):
                     imprint = etree.SubElement(monogr, "imprint")
-                    if ref.publication_date:
+                    if publication_date_text:
                         date = etree.SubElement(imprint, "date")
-                        date.text = ref.publication_date
+                        date.text = publication_date_text
                     if ref.volume:
                         vol = etree.SubElement(imprint, "biblScope")
                         vol.set("unit", "volume")
@@ -357,6 +423,13 @@ class TeiBiblParser:
                         pgs = etree.SubElement(imprint, "biblScope")
                         pgs.set("unit", "page")
                         pgs.text = ref.pages
+
+                # Add identifiers as <idno> elements
+                if ref.identifiers:
+                    for identifier in ref.identifiers:
+                        idno = etree.SubElement(bibl_struct, "idno")
+                        idno.set("type", identifier.scheme)
+                        idno.text = identifier.value
 
                 if ref.cited_range:
                     cr = etree.SubElement(bibl_struct, "citedRange")

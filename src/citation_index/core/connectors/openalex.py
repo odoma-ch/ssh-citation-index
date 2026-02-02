@@ -183,6 +183,8 @@ class OpenAlexConnector(BaseConnector):
 
     @staticmethod
     def _map_single_result(result: Dict[str, Any]) -> Optional[Reference]:
+        from ...utils.identifier_parser import Identifier
+        
         title = result.get("title")
         if not title:
             return None
@@ -214,19 +216,56 @@ class OpenAlexConnector(BaseConnector):
         elif first_page:
             pages = first_page
 
+        # Extract identifiers
+        identifiers = []
         ids = result.get("ids") or {}
+        
+        # DOI
         doi = ids.get("doi")
+        if doi:
+            doi_normalized = OpenAlexConnector._normalize_doi(doi)
+            identifiers.append(Identifier(
+                scheme="doi",
+                value=doi,
+                normalized=doi_normalized
+            ))
+        
+        # OpenAlex ID
+        openalex_id = ids.get("openalex")
+        if openalex_id:
+            identifiers.append(Identifier(
+                scheme="openalex",
+                value=openalex_id,
+                normalized=openalex_id
+            ))
+        
+        # PMID
+        pmid = ids.get("pmid")
+        if pmid:
+            identifiers.append(Identifier(
+                scheme="pmid",
+                value=str(pmid),
+                normalized=str(pmid).replace("https://pubmed.ncbi.nlm.nih.gov/", "")
+            ))
+        
+        # Get reference type from OpenAlex
+        ref_type = result.get("type")  # OpenAlex uses types like "article", "book", etc.
+        
+        # Get publication date if available, otherwise fall back to year
+        publication_date_raw = result.get("publication_date") or (str(publication_year) if publication_year else None)
 
         return Reference(
             full_title=title,
             authors=authors or None,
             journal_title=journal_title,
             publisher=publisher,
-            publication_date=str(publication_year) if publication_year else None,
+            publication_year=publication_year,
+            publication_date_raw=publication_date_raw,
             volume=volume,
             issue=issue,
             pages=pages,
-            doi=doi,
+            identifiers=identifiers,
+            ref_type=ref_type,
         )
 
 
