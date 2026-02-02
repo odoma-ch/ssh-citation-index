@@ -45,16 +45,47 @@ def run_pdf_one_step(
 
     - If `extractor` is provided and `text_or_pdf` is a valid file path, extract text first.
     - Otherwise, treat `text_or_pdf` as raw text.
+    
+    Args:
+        prompt_name: Use "file.md" for legacy or "file.yaml:namespace.key" for YAML
+    
+    Examples:
+        # Old way: run_pdf_one_step(pdf, client, prompt_name="prompts/file.md")
+        # New way: run_pdf_one_step(pdf, client, prompt_name="prompts/prompts.yaml:extraction_and_parsing.default")
     """
     if extractor is not None and isinstance(text_or_pdf, (str, Path)) and Path(text_or_pdf).exists():
         input_text = extract_text(text_or_pdf, extractor=extractor).text
     else:
         input_text = str(text_or_pdf)
 
-    prompt = ReferenceExtractionAndParsingPrompt(
-        prompt=prompt_name, input_text=input_text, include_json_schema=include_schema
-    )
-    response = llm_client.call(prompt.prompt, json_output=True, temperature=temperature, json_schema=prompt.json_schema)
+    # Auto-detect format: YAML uses "path.yaml:namespace.key" syntax
+    if ":" in prompt_name and prompt_name.split(":")[0].endswith((".yaml", ".yml")):
+        # NEW WAY: YAML format with system/user separation
+        yaml_path, prompt_key = prompt_name.split(":", 1)
+        prompt = ReferenceExtractionAndParsingPrompt(
+            prompt=yaml_path,
+            prompt_key=prompt_key,
+            input_text=input_text,
+            include_json_schema=include_schema
+        )
+        response = llm_client.call(
+            messages=prompt.messages,
+            json_output=True,
+            temperature=temperature,
+            json_schema=prompt.json_schema
+        )
+    else:
+        # OLD WAY: Legacy .md format
+        prompt = ReferenceExtractionAndParsingPrompt(
+            prompt=prompt_name, input_text=input_text, include_json_schema=include_schema
+        )
+        response = llm_client.call(
+            prompt.prompt,
+            json_output=True,
+            temperature=temperature,
+            json_schema=prompt.json_schema
+        )
+    
     return _parse_json_to_references(response)
 
 
@@ -93,10 +124,34 @@ def run_pdf_one_step_by_page(
         pages = split_pages(str(text_or_pdf), extractor_type=extractor)
 
     def _worker(page_text: str) -> Optional[List[dict]]:
-        prompt = ReferenceExtractionAndParsingPrompt(
-            prompt=prompt_name, input_text=page_text, include_json_schema=include_schema
-        )
-        response = llm_client.call(prompt.prompt, json_output=True, temperature=temperature, json_schema=prompt.json_schema)
+        # Auto-detect format for parallel processing
+        if ":" in prompt_name and prompt_name.split(":")[0].endswith((".yaml", ".yml")):
+            # NEW WAY: YAML format
+            yaml_path, prompt_key = prompt_name.split(":", 1)
+            prompt = ReferenceExtractionAndParsingPrompt(
+                prompt=yaml_path,
+                prompt_key=prompt_key,
+                input_text=page_text,
+                include_json_schema=include_schema
+            )
+            response = llm_client.call(
+                messages=prompt.messages,
+                json_output=True,
+                temperature=temperature,
+                json_schema=prompt.json_schema
+            )
+        else:
+            # OLD WAY: Legacy .md format
+            prompt = ReferenceExtractionAndParsingPrompt(
+                prompt=prompt_name, input_text=page_text, include_json_schema=include_schema
+            )
+            response = llm_client.call(
+                prompt.prompt,
+                json_output=True,
+                temperature=temperature,
+                json_schema=prompt.json_schema
+            )
+        
         refs = _parse_json_to_references(response)
         return [r.model_dump() for r in refs]
 
@@ -188,10 +243,33 @@ def run_pdf_semantic_one_step(
         reference_sections = input_text
     
     # One-step extraction and parsing on the located sections
-    prompt = ReferenceExtractionAndParsingPrompt(
-        prompt=prompt_name, input_text=reference_sections, include_json_schema=include_schema
-    )
-    response = llm_client.call(prompt.prompt, json_output=True, temperature=temperature, json_schema=prompt.json_schema)
+    if ":" in prompt_name and prompt_name.split(":")[0].endswith((".yaml", ".yml")):
+        # NEW WAY: YAML format
+        yaml_path, prompt_key = prompt_name.split(":", 1)
+        prompt = ReferenceExtractionAndParsingPrompt(
+            prompt=yaml_path,
+            prompt_key=prompt_key,
+            input_text=reference_sections,
+            include_json_schema=include_schema
+        )
+        response = llm_client.call(
+            messages=prompt.messages,
+            json_output=True,
+            temperature=temperature,
+            json_schema=prompt.json_schema
+        )
+    else:
+        # OLD WAY: Legacy .md format
+        prompt = ReferenceExtractionAndParsingPrompt(
+            prompt=prompt_name, input_text=reference_sections, include_json_schema=include_schema
+        )
+        response = llm_client.call(
+            prompt.prompt,
+            json_output=True,
+            temperature=temperature,
+            json_schema=prompt.json_schema
+        )
+    
     references = _parse_json_to_references(response)
     # if references is empty, use method 1 as fallback
     if not references:
@@ -226,3 +304,140 @@ def run_pdf_extract_and_parse(
     )
 
 
+if __name__ == "__main__":
+    """Simple test demonstrating both old and new prompt formats."""
+    print("=" * 80)
+    print("EXTRACTION AND PARSING PIPELINE - Test Both Prompt Formats")
+    print("=" * 80)
+    
+    # ============================================================
+    # CONFIGURATION - Replace with your actual values
+    # ============================================================
+    API_KEY = "your-api-key-here"  # TODO: Replace with actual API key
+    ENDPOINT = "https://api.openai.com/v1"  # TODO: Replace with your LLM endpoint
+    MODEL = "gpt-4"  # TODO: Replace with your model name
+    
+    print("\n⚠️  Configuration (update before running):")
+    print(f"  API_KEY: {API_KEY}")
+    print(f"  ENDPOINT: {ENDPOINT}")
+    print(f"  MODEL: {MODEL}")
+    
+    # Test data - sample text with references
+    test_text = """
+    This paper discusses recent advances in machine learning.
+    
+    References
+    
+    1. Smith, J., & Brown, A. (2020). Deep Learning in NLP. AI Journal, 15(3), 100-120.
+    2. Jones, M. (2019). Machine Translation Systems. MIT Press.
+    3. Chen, L., Wang, X., & Li, Y. (2021). Transformer Models for Sequence Processing. Nature, 567, 45-50.
+    """
+    
+    print(f"\n📄 Test text (excerpt):")
+    print(f"  {test_text[:150]}...")
+    
+    # Initialize client
+    try:
+        client = LLMClient(endpoint=ENDPOINT, model=MODEL, api_key=API_KEY)
+        print(f"\n✓ LLM Client initialized: {MODEL} at {ENDPOINT}")
+        print("  (Will fail on actual API call with placeholder credentials)")
+        can_call_api = False  # Set to True if you have real credentials
+    except Exception as e:
+        print(f"\n✗ Client initialization failed: {e}")
+        client = None
+        can_call_api = False
+    
+    # ============================================================
+    # Example 1: OLD WAY - Legacy .md prompts
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 1: OLD WAY - Using legacy .md prompts")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  result = run_pdf_one_step(
+      text,
+      client,
+      prompt_name="prompts/reference_extraction_and_parsing.md",
+      include_schema=True
+  )""")
+    
+    if can_call_api and client:
+        try:
+            result = run_pdf_one_step(
+                test_text,
+                client,
+                prompt_name="prompts/reference_extraction_and_parsing.md",
+                include_schema=True
+            )
+            print(f"\n✓ Extracted and parsed {len(result.references)} references")
+            for i, ref in enumerate(result.references[:2], 1):
+                print(f"  {i}. {ref.full_title}")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 2: NEW WAY - YAML prompts
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 2: NEW WAY - Using YAML prompts with system/user separation")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  result = run_pdf_one_step(
+      text,
+      client,
+      prompt_name="prompts/prompts.yaml:extraction_and_parsing.default",
+      include_schema=True
+  )""")
+    
+    if can_call_api and client:
+        try:
+            result = run_pdf_one_step(
+                test_text,
+                client,
+                prompt_name="prompts/prompts.yaml:extraction_and_parsing.default",
+                include_schema=True
+            )
+            print(f"\n✓ Extracted and parsed {len(result.references)} references")
+            for i, ref in enumerate(result.references[:2], 1):
+                print(f"  {i}. {ref.full_title}")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 3: Show prompt differences (no API call needed)
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 3: Prompt structure comparison (no API call needed)")
+    print("-" * 80)
+    
+    test_input = "Test text with references."
+    
+    # Legacy prompt
+    print("\nLegacy .md prompt:")
+    legacy_prompt = ReferenceExtractionAndParsingPrompt(
+        prompt="prompts/reference_extraction_and_parsing.md",
+        input_text=test_input,
+        include_json_schema=False
+    )
+    print(f"  Format: markdown")
+    print(f"  Type: {type(legacy_prompt.prompt).__name__}")
+    print(f"  Length: {len(legacy_prompt.prompt)} chars")
+    
+    # YAML prompt
+    print("\nYAML prompt:")
+    yaml_prompt = ReferenceExtractionAndParsingPrompt(
+        prompt="prompts/prompts.yaml",
+        prompt_key="extraction_and_parsing.default",
+        input_text=test_input,
+        include_json_schema=False
+    )
+    messages = yaml_prompt.messages
+    print(f"  Format: yaml")
+    print(f"  Type: {type(messages).__name__}")
+    print(f"  System length: {len(messages['system'])} chars")
+    print(f"  User length: {len(messages['user'])} chars")
+    

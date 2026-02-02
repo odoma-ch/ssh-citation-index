@@ -23,9 +23,40 @@ def extract_text_references(
     """Extract reference strings (one per line) from raw text via LLM.
 
     Returns a list of non-empty trimmed lines as reference candidates.
+    
+    Args:
+        text: Input text containing references
+        llm_client: LLM client for API calls
+        prompt_name: Use "file.md" for legacy or "file.yaml:namespace.key" for YAML
+        temperature: LLM temperature parameter
+    
+    Examples:
+        # Old way: extract_text_references(text, client, "prompts/file.md")
+        # New way: extract_text_references(text, client, "prompts/prompts.yaml:extraction.default")
     """
-    prompt = ReferenceExtractionPrompt(prompt=prompt_name, input_text=text).prompt
-    response = llm_client.call(prompt, json_output=False, temperature=temperature)
+    # Auto-detect format: YAML uses "path.yaml:namespace.key" syntax
+    if ":" in prompt_name and prompt_name.split(":")[0].endswith((".yaml", ".yml")):
+        # NEW WAY: YAML format with system/user separation
+        yaml_path, prompt_key = prompt_name.split(":", 1)
+        prompt_obj = ReferenceExtractionPrompt(
+            prompt=yaml_path,
+            prompt_key=prompt_key,
+            input_text=text
+        )
+        response = llm_client.call(
+            messages=prompt_obj.messages,
+            json_output=False,
+            temperature=temperature
+        )
+    else:
+        # OLD WAY: Legacy .md format
+        prompt_obj = ReferenceExtractionPrompt(prompt=prompt_name, input_text=text)
+        response = llm_client.call(
+            prompt_obj.prompt,
+            json_output=False,
+            temperature=temperature
+        )
+    
     # remove <start>/<start> and <end>/</end> tags
     response = re.sub(r"<\/?\s*start\s*>", "", response, flags=re.IGNORECASE)
     response = re.sub(r"<\/?\s*end\s*>", "", response, flags=re.IGNORECASE)
@@ -152,3 +183,141 @@ def extract_text_references_semantic_sections(
     return references
 
 
+if __name__ == "__main__":
+    """Simple test demonstrating both old and new prompt formats."""
+    print("=" * 80)
+    print("REFERENCE EXTRACTION PIPELINE - Test Both Prompt Formats")
+    print("=" * 80)
+    
+    # ============================================================
+    # CONFIGURATION - Replace with your actual values
+    # ============================================================
+    API_KEY = "your-api-key-here"  # TODO: Replace with actual API key
+    ENDPOINT = "https://api.openai.com/v1"  # TODO: Replace with your LLM endpoint
+    MODEL = "gpt-4"  # TODO: Replace with your model name
+    
+    print("\n⚠️  Configuration (update before running):")
+    print(f"  API_KEY: {API_KEY}")
+    print(f"  ENDPOINT: {ENDPOINT}")
+    print(f"  MODEL: {MODEL}")
+    
+    # Test data - sample text with references
+    test_text = """
+    This paper discusses recent advances in machine learning and natural language processing.
+    
+    References
+    
+    1. Smith, J., & Brown, A. (2020). Deep Learning in NLP. AI Journal, 15(3), 100-120.
+    2. Jones, M. (2019). Machine Translation Systems. MIT Press.
+    3. Chen, L., Wang, X., & Li, Y. (2021). Transformer Models. Nature, 567, 45-50.
+    4. Davis, R. (2018). Neural Networks for Language Understanding. Springer.
+    """
+    
+    print(f"\n📄 Test text (excerpt):")
+    print(f"  {test_text[:150]}...")
+    
+    # Initialize client
+    try:
+        client = LLMClient(endpoint=ENDPOINT, model=MODEL, api_key=API_KEY)
+        print(f"\n✓ LLM Client initialized: {MODEL} at {ENDPOINT}")
+        print("  (Will fail on actual API call with placeholder credentials)")
+        can_call_api = False  # Set to True if you have real credentials
+    except Exception as e:
+        print(f"\n✗ Client initialization failed: {e}")
+        client = None
+        can_call_api = False
+    
+    # ============================================================
+    # Example 1: OLD WAY - Legacy .md prompts
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 1: OLD WAY - Using legacy .md prompts")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  refs = extract_text_references(
+      text,
+      client,
+      prompt_name="prompts/reference_extraction.md",
+      temperature=0.3
+  )""")
+    
+    if can_call_api and client:
+        try:
+            refs = extract_text_references(
+                test_text,
+                client,
+                prompt_name="prompts/reference_extraction.md",
+                temperature=0.3
+            )
+            print(f"\n✓ Extracted {len(refs)} reference strings")
+            for i, ref in enumerate(refs[:3], 1):
+                print(f"  {i}. {ref[:80]}...")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 2: NEW WAY - YAML prompts
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 2: NEW WAY - Using YAML prompts with system/user separation")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  refs = extract_text_references(
+      text,
+      client,
+      prompt_name="prompts/prompts.yaml:extraction.default",
+      temperature=0.3
+  )""")
+    
+    if can_call_api and client:
+        try:
+            refs = extract_text_references(
+                test_text,
+                client,
+                prompt_name="prompts/prompts.yaml:extraction.default",
+                temperature=0.3
+            )
+            print(f"\n✓ Extracted {len(refs)} reference strings")
+            for i, ref in enumerate(refs[:3], 1):
+                print(f"  {i}. {ref[:80]}...")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 3: Show prompt differences (no API call needed)
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 3: Prompt structure comparison (no API call needed)")
+    print("-" * 80)
+    
+    test_input = "Test text with references section."
+    
+    # Legacy prompt
+    print("\nLegacy .md prompt:")
+    legacy_prompt = ReferenceExtractionPrompt(
+        prompt="prompts/reference_extraction.md",
+        input_text=test_input
+    )
+    print(f"  Format: markdown")
+    print(f"  Type: {type(legacy_prompt.prompt).__name__}")
+    print(f"  Length: {len(legacy_prompt.prompt)} chars")
+    print(f"  Preview: {legacy_prompt.prompt[:100]}...")
+    
+    # YAML prompt
+    print("\nYAML prompt:")
+    yaml_prompt = ReferenceExtractionPrompt(
+        prompt="prompts/prompts.yaml",
+        prompt_key="extraction.default",
+        input_text=test_input
+    )
+    messages = yaml_prompt.messages
+    print(f"  Format: yaml")
+    print(f"  Type: {type(messages).__name__}")
+    print(f"  System ({len(messages['system'])} chars): {messages['system'][:80]}...")
+    print(f"  User ({len(messages['user'])} chars): {messages['user'][:80]}...")
+    
+   

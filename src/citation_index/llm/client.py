@@ -15,7 +15,7 @@ from langfuse.openai import openai
 import aiohttp
 import concurrent.futures
 import logging
-from typing import Dict, List, Tuple, Optional, Iterator
+from typing import Dict, List, Tuple, Optional, Iterator, Union
 from .prompt_loader import PromptLoader
 
 
@@ -126,19 +126,48 @@ class LLMClient:
             
         return response_format, modified_prompt, modified_max_tokens
     
-    def _call_with_retry(self, prompt: str, model: str = None, temperature: float = 0.1, 
+    def _call_with_retry(self, prompt: Union[str, Dict[str, str]] = None, model: str = None, temperature: float = 0.1, 
                         max_tokens: int = None, json_schema: str = None, json_output: bool = False,
-                        use_streaming: bool = True) -> str:
-        """Call LLM with timeout and retry logic."""
+                        use_streaming: bool = True, messages: Optional[Dict[str, str]] = None) -> str:
+        """Call LLM with timeout and retry logic.
+        
+        Args:
+            prompt: Legacy parameter - prompt string (deprecated, use messages instead)
+            messages: Dict with 'system' and 'user' keys for structured messages
+            model: Model name to use (uses self.model if None)
+            temperature: Temperature for generation
+            max_tokens: Maximum tokens in response
+            json_schema: JSON schema for structured output
+            json_output: Whether to request JSON output
+            use_streaming: Whether to use streaming for first-token timeout detection
+            
+        Returns:
+            Generated text response
+        """
         model = model if model else self.model
         
+        # Handle backward compatibility: accept either prompt string or messages dict
+        if messages is None:
+            if isinstance(prompt, dict):
+                # If prompt is a dict, treat it as messages
+                messages = prompt
+            else:
+                # Legacy behavior: wrap prompt string as user message
+                messages = {"system": "", "user": prompt}
+        
         response_format, modified_prompt, modified_max_tokens = self._get_response_format_and_prompt(
-            prompt, json_schema, json_output, max_tokens
+            messages["user"], json_schema, json_output, max_tokens
         )
+        
+        # Build messages list for API call
+        message_list = []
+        if messages.get("system"):
+            message_list.append({"role": "system", "content": messages["system"]})
+        message_list.append({"role": "user", "content": modified_prompt})
         
         kwargs = {
             "model": model,
-            "messages": [{"role": "user", "content": modified_prompt}],
+            "messages": message_list,
             "temperature": temperature,
             "max_tokens": modified_max_tokens,
             "stop": ["\n\n\n\n\n"],  # Stop sequence to prevent long non-stopped responses
@@ -187,11 +216,12 @@ class LLMClient:
         
         raise RuntimeError("Unexpected: no response and no exception")
 
-    def call(self, prompt: str, model: str = None, temperature: float = 0.1, max_tokens: int = None, json_schema: str = None, json_output: bool = False, use_streaming: bool = True) -> str:
+    def call(self, prompt: Union[str, Dict[str, str]] = None, model: str = None, temperature: float = 0.1, max_tokens: int = None, json_schema: str = None, json_output: bool = False, use_streaming: bool = True, messages: Optional[Dict[str, str]] = None) -> str:
         """Call the LLM API with timeout and retry logic.
         
         Args:
-            prompt: The prompt to send to the LLM
+            prompt: The prompt to send to the LLM (string or dict with system/user keys)
+            messages: Dict with 'system' and 'user' keys (alternative to prompt parameter)
             model: Model name to use (uses self.model if None)
             temperature: Temperature for generation
             max_tokens: Maximum tokens in response
@@ -201,6 +231,7 @@ class LLMClient:
         """
         return self._call_with_retry(
             prompt=prompt,
+            messages=messages,
             model=model,
             temperature=temperature,
             max_tokens=max_tokens,
