@@ -331,6 +331,10 @@ def process_cex_data():
     with open(output_path / "all_references.json", "w", encoding="utf-8") as f:
         json.dump(papers_data, f, indent=2, ensure_ascii=False)
     
+    # Also save as sliver version (subset) for benchmarking
+    with open(output_path / "all_references_sliver.json", "w", encoding="utf-8") as f:
+        json.dump(papers_data, f, indent=2, ensure_ascii=False)
+    
     # Print summary
     print(f"\n=== CEX PROCESSING SUMMARY ===")
     print(f"Total PDFs processed: {len(pdf_df)}")

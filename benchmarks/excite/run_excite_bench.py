@@ -902,6 +902,14 @@ def main():
             # Unexpected type; fallback to None
             args.focus_fields = None
 
+    # Set default prompt based on task if not explicitly provided
+    if args.prompt_name == "reference_extraction.md":  # Using default
+        if args.task == "parsing":
+            args.prompt_name = "reference_parsing.md"
+        elif args.task == "extraction_and_parsing":
+            args.prompt_name = "reference_extraction_and_parsing.md"
+        # else keep "reference_extraction.md" for extraction task
+
     # Configure logging
     log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(
