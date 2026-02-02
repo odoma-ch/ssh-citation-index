@@ -244,8 +244,8 @@ def load_references_from_xml(file_id, xml_dir):
             if ref.journal_title:
                 ref_parts.append(ref.journal_title)
             
-            if ref.publication_date:
-                ref_parts.append(ref.publication_date)
+            if ref.publication_date_raw or ref.publication_year:
+                ref_parts.append(str(ref.publication_date_raw or ref.publication_year))
             
             if ref.volume:
                 ref_parts.append(f"Vol. {ref.volume}")

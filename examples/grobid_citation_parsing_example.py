@@ -164,7 +164,7 @@ def example_5_structured_references():
                 author = ref.authors[0]
                 if hasattr(author, 'surname'):
                     print(f"   First author: {author.surname}")
-            print(f"   Year: {ref.publication_date or 'N/A'}")
+            print(f"   Year: {ref.publication_date_raw or ref.publication_year or 'N/A'}")
             print(f"   Volume: {ref.volume or 'N/A'}")
             print(f"   Pages: {ref.pages or 'N/A'}")
             print()
@@ -204,8 +204,8 @@ def example_6_pipeline_integration():
         print(f"\n✅ Parsed {len(references)} references using GROBID pipeline:\n")
         for i, ref in enumerate(references, 1):
             print(f"{i}. {ref.full_title or 'No title'}")
-            if ref.publication_date:
-                print(f"   Year: {ref.publication_date}")
+            if ref.publication_date_raw or ref.publication_year:
+                print(f"   Year: {ref.publication_date_raw or ref.publication_year}")
             print()
         
     except Exception as e:

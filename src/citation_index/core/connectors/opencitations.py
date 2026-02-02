@@ -247,7 +247,7 @@ class OpenCitationsConnector(BaseConnector):
         if not title:
             return strategies
         
-        year = getattr(reference, 'publication_date', None) or getattr(reference, 'year', None)
+        year = reference.publication_year or reference.publication_date_raw or getattr(reference, 'year', None)
         year_int = None
         if include_date and year:
             year_int = extract_year(str(year))
@@ -522,7 +522,7 @@ class OpenCitationsConnector(BaseConnector):
             editors=editors or None,
             journal_title=journal_title,
             publisher=publisher,
-            publication_date=pub_date,
+            publication_date_raw=pub_date,
             volume=volume,
             issue=issue,
             pages=pages,
@@ -561,7 +561,7 @@ class OpenCitationsConnector(BaseConnector):
             editors=editors or None,
             journal_title=journal_title,
             publisher=publisher,
-            publication_date=str(pub_date) if pub_date else None,
+            publication_date_raw=str(pub_date) if pub_date else None,
             volume=volume,
             issue=issue,
             pages=pages,

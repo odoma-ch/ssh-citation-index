@@ -317,7 +317,7 @@ def load_cex_parsed_references(file_id: str, xml_dir: Path) -> List[Dict]:
                 "volume": ref.volume or "",
                 "issue": ref.issue or "",
                 "pages": ref.pages or "",
-                "publication_date": ref.publication_date or "",
+                "publication_date": ref.publication_date_raw or str(ref.publication_year) if ref.publication_year else "",
                 "publisher": ref.publisher or "",
                 "publication_place": ref.publication_place or ""
             }
@@ -360,7 +360,7 @@ def load_excite_parsed_references(file_id: str, xml_dir: Path) -> List[Dict]:
                 "volume": ref.volume or "",
                 "issue": ref.issue or "",
                 "pages": ref.pages or "",
-                "publication_date": ref.publication_date or "",
+                "publication_date": ref.publication_date_raw or str(ref.publication_year) if ref.publication_year else "",
                 "publisher": ref.publisher or "",
                 "publication_place": ref.publication_place or ""
             }

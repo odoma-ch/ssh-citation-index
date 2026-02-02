@@ -182,7 +182,7 @@ for idx, row in tqdm(df.iterrows(), total=len(df), desc="Parsing references"):
                     "editors": None,
                     "publisher": ref.publisher or None,
                     "translator": None,
-                    "publication_date": ref.publication_date or None,
+                    "publication_date": ref.publication_date_raw or str(ref.publication_year) if ref.publication_year else None,
                     "publication_place": ref.publication_place or None,
                     "volume": ref.volume or None,
                     "issue": ref.issue or None,

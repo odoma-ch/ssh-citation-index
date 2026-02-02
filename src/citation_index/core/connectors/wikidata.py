@@ -153,7 +153,8 @@ class WikidataConnector(BaseConnector):
                 reference = Reference(
                     full_title=title,
                     authors=metadata["authors"] if metadata["authors"] else None,
-                    publication_date=metadata["pub_date"],
+                    publication_date_raw=metadata["pub_date"],
+                    publication_year=int(metadata["pub_date"]) if metadata["pub_date"] and metadata["pub_date"].isdigit() else None,
                     journal_title=metadata["journal"],
                     volume=metadata["volume"],
                     issue=metadata["issue"],
@@ -192,7 +193,8 @@ class WikidataConnector(BaseConnector):
             return Reference(
                 full_title=title,
                 authors=metadata["authors"] if metadata["authors"] else None,
-                publication_date=metadata["pub_date"],
+                publication_date_raw=metadata["pub_date"],
+                publication_year=int(metadata["pub_date"]) if metadata["pub_date"] and metadata["pub_date"].isdigit() else None,
                 journal_title=metadata["journal"],
                 volume=metadata["volume"],
                 issue=metadata["issue"],
@@ -332,7 +334,7 @@ class WikidataConnector(BaseConnector):
     
     def _score_elastic_results(self, hits: List[Dict[str, Any]], reference: Reference) -> List[Dict[str, Any]]:
         """Score and sort elastic search results based on relevance."""
-        want_year = self._extract_year(reference.publication_date) if reference.publication_date else None
+        want_year = reference.publication_year or (self._extract_year(reference.publication_date_raw) if reference.publication_date_raw else None)
         want_surnames = self._extract_surnames(reference.authors) if reference.authors else set()
         
         for hit in hits:
