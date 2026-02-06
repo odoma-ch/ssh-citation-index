@@ -1,0 +1,151 @@
+version: '3.8'
+
+services:
+  # Redis - Message broker and job metadata store
+  redis:
+    image: redis:7-alpine
+    container_name: citation-index-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - citation-net
+
+  # FastAPI - API server
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: citation-index-api
+    command: uvicorn citation_index.api:app --host 0.0.0.0 --port 8000 --workers 2
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - STORAGE_ROOT=/app/storage
+      - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
+      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
+      - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
+    volumes:
+      - ./storage:/app/storage
+      - ./prompts:/app/prompts
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - citation-net
+    restart: unless-stopped
+
+  # RQ Workers - Default queue (text extraction, GROBID parsing)
+  # Fast tasks (~30s-2min), low replica count
+  worker-default:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -m citation_index.worker --queues default --name worker-default
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - STORAGE_ROOT=/app/storage
+      - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
+      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
+      - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
+    volumes:
+      - ./storage:/app/storage
+      - ./prompts:/app/prompts
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - citation-net
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+
+  # RQ Workers - LLM tasks (reference extraction/parsing)
+  # Slow tasks (~10-15min), HIGH replica count to drain queue
+  # Semaphore (LLM_MAX_CONCURRENT=4) limits concurrent vLLM calls
+  # Rule: replicas = semaphore_limit × 1.5-2 (6-8 workers with semaphore=4)
+  worker-llm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -m citation_index.worker --queues llm-tasks --name worker-llm
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - STORAGE_ROOT=/app/storage
+      - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
+      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
+      - EMBEDDING_ENDPOINT=${EMBEDDING_ENDPOINT:-http://localhost:7997/embeddings}
+    volumes:
+      - ./storage:/app/storage
+      - ./prompts:/app/prompts
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - citation-net
+    restart: unless-stopped
+    deploy:
+      replicas: 6  # Increased for slow tasks! (was 2)
+
+  # RQ Workers - Citation linking
+  # Medium tasks (~1-3min), moderate replica count
+  worker-linking:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -m citation_index.worker --queues linking --name worker-linking
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - STORAGE_ROOT=/app/storage
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - citation-net
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+
+  # RQ Dashboard - Web UI for monitoring queues
+  rq-dashboard:
+    image: eoranged/rq-dashboard:latest
+    container_name: citation-index-dashboard
+    ports:
+      - "9181:9181"
+    environment:
+      - RQ_DASHBOARD_REDIS_URL=redis://redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - citation-net
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  citation-net:
+    driver: bridge
