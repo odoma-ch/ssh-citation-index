@@ -105,7 +105,7 @@ class BaseConnector(ABC):
                 parts.append(authors)
         
         # Add year
-        year = reference.publication_date or ""
+        year = reference.publication_year or reference.publication_date_raw or ""
         year = re.sub(r"[^\d]", "", str(year))  # Extract digits only
         if year and len(year) >= 4:
             parts.append(year[:4])  # Take first 4 digits (year)

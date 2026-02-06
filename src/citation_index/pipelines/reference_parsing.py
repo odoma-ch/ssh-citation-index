@@ -20,18 +20,61 @@ def parse_reference_strings(
     temperature: float = 0.0,
     use_streaming: bool = True,
 ) -> References:
-    """Parse a list of reference strings into structured References via LLM."""
+    """Parse a list of reference strings into structured References via LLM.
+    
+    Supports both legacy .md prompts and new YAML prompts with system/user separation.
+    
+    Args:
+        reference_lines: List of reference strings to parse
+        llm_client: LLM client for API calls
+        prompt_name: Prompt file path. Use "file.md" for legacy or "file.yaml:namespace.key" for YAML
+        include_schema: Whether to include JSON schema in prompt
+        temperature: LLM temperature parameter
+        use_streaming: Whether to use streaming for responses
+    
+    Returns:
+        Parsed References object
+    
+    Examples:
+        # Old way (legacy .md prompts, still works):
+        parse_reference_strings(refs, client, "prompts/reference_parsing.md")
+        
+        # New way (YAML with system/user separation):
+        parse_reference_strings(refs, client, "prompts/prompts.yaml:parsing.default")
+    """
     text = "\n".join(reference_lines)
-    prompt_obj = ReferenceParsingPrompt(
-        prompt=prompt_name, input_text=text, include_json_schema=include_schema
-    )
-    response = llm_client.call(
-        prompt_obj.prompt,
-        json_output=True,
-        json_schema=prompt_obj.json_schema,
-        temperature=temperature,
-        use_streaming=use_streaming,
-    )
+    
+    # Auto-detect format: YAML uses "path.yaml:namespace.key" syntax
+    if ":" in prompt_name and prompt_name.split(":")[0].endswith((".yaml", ".yml")):
+        # NEW WAY: YAML format with system/user message separation
+        yaml_path, prompt_key = prompt_name.split(":", 1)
+        prompt_obj = ReferenceParsingPrompt(
+            prompt=yaml_path,
+            prompt_key=prompt_key,
+            input_text=text,
+            include_json_schema=include_schema
+        )
+        # Use structured messages for better LLM API usage
+        response = llm_client.call(
+            messages=prompt_obj.messages,
+            json_output=True,
+            json_schema=prompt_obj.json_schema,
+            temperature=temperature,
+            use_streaming=use_streaming,
+        )
+    else:
+        # OLD WAY: Legacy .md format (backward compatible)
+        prompt_obj = ReferenceParsingPrompt(
+            prompt=prompt_name, input_text=text, include_json_schema=include_schema
+        )
+        response = llm_client.call(
+            prompt_obj.prompt,
+            json_output=True,
+            json_schema=prompt_obj.json_schema,
+            temperature=temperature,
+            use_streaming=use_streaming,
+        )
+    
     parsed = safe_json_parse(response)
     if isinstance(parsed, list):
         data = parsed
@@ -211,3 +254,138 @@ def _combine_bibl_structs(xml_parts: List[str]) -> str:
     return xml_bytes.decode('utf-8')
 
 
+if __name__ == "__main__":
+    """Simple test demonstrating both old and new prompt formats."""
+    print("=" * 80)
+    print("REFERENCE PARSING PIPELINE - Test Both Prompt Formats")
+    print("=" * 80)
+    
+    # ============================================================
+    # CONFIGURATION - Replace with your actual values
+    # ============================================================
+    API_KEY = "your-api-key-here"  # TODO: Replace with actual API key
+    ENDPOINT = "https://api.openai.com/v1"  # TODO: Replace with your LLM endpoint  
+    MODEL = "gpt-4"  # TODO: Replace with your model name
+    
+    print("\n⚠️  Configuration (update before running):")
+    print(f"  API_KEY: {API_KEY}")
+    print(f"  ENDPOINT: {ENDPOINT}")
+    print(f"  MODEL: {MODEL}")
+    
+    # Test data
+    test_references = [
+        "1. Smith, J., & Brown, A. (2020). Deep Learning in NLP. AI Journal, 15(3), 100-120.",
+        "2. Jones, M. (2019). Machine Translation Systems. MIT Press.",
+        "3. Chen, L. et al. (2021). Transformer Models. Nature, 567, 45-50."
+    ]
+    
+    print(f"\n📝 Test references ({len(test_references)} refs):")
+    for ref in test_references:
+        print(f"  {ref}")
+    
+    # Initialize client (will use placeholder values)
+    try:
+        client = LLMClient(endpoint=ENDPOINT, model=MODEL, api_key=API_KEY)
+        print(f"\n✓ LLM Client initialized: {MODEL} at {ENDPOINT}")
+        print("  (Will fail on actual API call with placeholder credentials)")
+        can_call_api = False  # Set to True if you have real credentials
+    except Exception as e:
+        print(f"\n✗ Client initialization failed: {e}")
+        client = None
+        can_call_api = False
+    
+    # ============================================================
+    # Example 1: OLD WAY - Legacy .md prompts
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 1: OLD WAY - Using legacy .md prompts")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  prompt_obj = ReferenceParsingPrompt(
+      prompt="prompts/reference_parsing.md",
+      input_text=text,
+      include_json_schema=True
+  )
+  response = llm_client.call(prompt_obj.prompt, json_output=True, ...)""")
+    
+    if can_call_api and client:
+        try:
+            result = parse_reference_strings(
+                test_references,
+                client,
+                prompt_name="prompts/reference_parsing.md",
+                include_schema=True
+            )
+            print(f"\n✓ Parsed {len(result.references)} references")
+            for i, ref in enumerate(result.references[:2], 1):
+                print(f"  {i}. {ref.full_title}")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 2: NEW WAY - YAML prompts with system/user
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 2: NEW WAY - Using YAML prompts with system/user separation")
+    print("-" * 80)
+    print("\nCode:")
+    print("""  prompt_obj = ReferenceParsingPrompt(
+      prompt="prompts/prompts.yaml",
+      prompt_key="parsing.default",
+      input_text=text,
+      include_json_schema=True
+  )
+  response = llm_client.call(messages=prompt_obj.messages, json_output=True, ...)""")
+    
+    if can_call_api and client:
+        try:
+            result = parse_reference_strings(
+                test_references,
+                client,
+                prompt_name="prompts/prompts.yaml:parsing.default",
+                include_schema=True
+            )
+            print(f"\n✓ Parsed {len(result.references)} references")
+            for i, ref in enumerate(result.references[:2], 1):
+                print(f"  {i}. {ref.full_title}")
+        except Exception as e:
+            print(f"\n✗ Error: {e}")
+    else:
+        print("\n⚠️  Skipped (requires valid API credentials)")
+    
+    # ============================================================
+    # Example 3: Show prompt structure differences
+    # ============================================================
+    print("\n" + "-" * 80)
+    print("Example 3: Prompt structure comparison (no API call needed)")
+    print("-" * 80)
+    
+    # Legacy prompt
+    print("\nLegacy .md prompt:")
+    legacy_prompt = ReferenceParsingPrompt(
+        prompt="prompts/reference_parsing.md",
+        input_text="Test reference (2020). Title.",
+        include_json_schema=False
+    )
+    print(f"  Format: markdown")
+    print(f"  Type: {type(legacy_prompt.prompt).__name__} (single string)")
+    print(f"  Length: {len(legacy_prompt.prompt)} chars")
+    print(f"  Preview: {legacy_prompt.prompt[:100]}...")
+    
+    # YAML prompt
+    print("\nYAML prompt with namespace:")
+    yaml_prompt = ReferenceParsingPrompt(
+        prompt="prompts/prompts.yaml",
+        prompt_key="parsing.default",
+        input_text="Test reference (2020). Title.",
+        include_json_schema=False
+    )
+    messages = yaml_prompt.messages
+    print(f"  Format: yaml")
+    print(f"  Type: {type(messages).__name__} (dict with system/user)")
+    print(f"  Keys: {list(messages.keys())}")
+    print(f"  System ({len(messages['system'])} chars): {messages['system'][:80]}...")
+    print(f"  User ({len(messages['user'])} chars): {messages['user'][:80]}...")
+    

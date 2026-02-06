@@ -244,8 +244,8 @@ def load_references_from_xml(file_id, xml_dir):
             if ref.journal_title:
                 ref_parts.append(ref.journal_title)
             
-            if ref.publication_date:
-                ref_parts.append(ref.publication_date)
+            if ref.publication_date_raw or ref.publication_year:
+                ref_parts.append(str(ref.publication_date_raw or ref.publication_year))
             
             if ref.volume:
                 ref_parts.append(f"Vol. {ref.volume}")
@@ -329,6 +329,10 @@ def process_cex_data():
     
     # Save papers data as JSON (for compatibility with excite format)
     with open(output_path / "all_references.json", "w", encoding="utf-8") as f:
+        json.dump(papers_data, f, indent=2, ensure_ascii=False)
+    
+    # Also save as sliver version (subset) for benchmarking
+    with open(output_path / "all_references_sliver.json", "w", encoding="utf-8") as f:
         json.dump(papers_data, f, indent=2, ensure_ascii=False)
     
     # Print summary

@@ -242,7 +242,8 @@ class MatildaConnector(BaseConnector):
                 full_title=title,
                 authors=authors if authors else None,
                 journal_title=publisher,
-                publication_date=pub_date,
+                publication_date_raw=pub_date,
+                publication_year=int(pub_date) if pub_date and pub_date.isdigit() else None,
                 publisher=publisher,
                 doi=doi,
             )

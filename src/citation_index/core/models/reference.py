@@ -7,6 +7,7 @@ from pydantic import AfterValidator, BaseModel, BeforeValidator, Field, model_va
 from .person import Person
 from .organization import Organization
 from .validators import to_str, to_list, empty_to_none, normalize, remove_empty_models
+from ...utils.identifier_parser import Identifier
 
 
 class Reference(BaseModel):
@@ -15,6 +16,7 @@ class Reference(BaseModel):
     See: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html
     """
 
+    # DEPRECATED: Use raw dict to preserve original TEI title structure
     analytic_title: Optional[
         Annotated[
             str,
@@ -24,10 +26,11 @@ class Reference(BaseModel):
         ]
     ] = Field(
         None,
-        description="This title applies to an analytic item, such as an article, poem, or other work published as part of a larger item.",
+        description="DEPRECATED: This title applies to an analytic item, such as an article, poem, or other work published as part of a larger item. Use full_title and store original in raw dict.",
         exclude=True,
     )
     
+    # DEPRECATED: Use raw dict to preserve original TEI title structure
     monographic_title: Optional[
         Annotated[
             str,
@@ -37,7 +40,7 @@ class Reference(BaseModel):
         ]
     ] = Field(
         None,
-        description="This title applies to a monograph such as a book or other item considered to be a distinct publication, including single volumes of multi-volume works.",
+        description="DEPRECATED: This title applies to a monograph such as a book or other item considered to be a distinct publication, including single volumes of multi-volume works. Use full_title and store original in raw dict.",
         exclude=True,
     )
 
@@ -110,6 +113,7 @@ class Reference(BaseModel):
         description="Contains the name of the translator of a work.",
     )
     
+    # DEPRECATED: Use publication_year (int) and publication_date_raw (str) instead
     publication_date: Optional[
         Annotated[
             str,
@@ -117,7 +121,11 @@ class Reference(BaseModel):
             AfterValidator(empty_to_none),
             AfterValidator(normalize),
         ]
-    ] = Field(None, description="Contains the date of publication in any format.")
+    ] = Field(
+        None,
+        description="DEPRECATED: Contains the date of publication in any format. Use publication_year and publication_date_raw instead.",
+        exclude=True,
+    )
     
     publication_place: Optional[
         Annotated[
@@ -129,6 +137,39 @@ class Reference(BaseModel):
     ] = Field(
         None,
         description="Contains the name of the place where a bibliographic item was published.",
+    )
+    
+    # New fields for improved data modeling
+    publication_year: Optional[int] = Field(
+        None,
+        description="Year of publication as an integer, extracted from publication_date_raw for queryability.",
+    )
+    
+    publication_date_raw: Optional[
+        Annotated[
+            str,
+            BeforeValidator(to_str),
+            AfterValidator(empty_to_none),
+            AfterValidator(normalize),
+        ]
+    ] = Field(
+        None,
+        description="Raw publication date string in any format, preserving original data.",
+    )
+    
+    identifiers: List[Identifier] = Field(
+        default_factory=list,
+        description="List of bibliographic identifiers (DOI, ISBN, ISSN, PMID, arXiv, URL, etc.).",
+    )
+    
+    ref_type: Optional[str] = Field(
+        None,
+        description="Reference type following FaBiO/CSL vocabulary: journal-article, book, book-chapter, proceedings-paper, preprint, etc. Only set when explicitly provided, not inferred.",
+    )
+    
+    raw: Dict[str, Any] = Field(
+        default_factory=dict,
+        description="Raw data preservation for provenance and debugging. Stores original extracted values before normalization.",
     )
     
     volume: Optional[
@@ -205,28 +246,36 @@ class Reference(BaseModel):
     )
 
     @model_validator(mode="after")
-    def _set_full_title(self) -> "Reference":
-        if self.full_title is None:
-            if self.monographic_title is not None:
-                self.full_title = self.monographic_title
-            elif self.analytic_title is not None:
-                self.full_title = self.analytic_title
-        return self
-
-    @model_validator(mode="after")
-    def _avoid_empty_monograph_title(self) -> "Reference":
-        """TEI biblStructs require a monograph title.
-
-        We make the life easier for the extraction model by moving the analytic title if necessary.
-        """
-        if (
-            self.monographic_title is None
-            and self.journal_title is None
-            and self.analytic_title is not None
-        ):
-            self.monographic_title = self.analytic_title
-            self.analytic_title = None
-
+    def _migrate_deprecated_fields(self) -> "Reference":
+        """Handle backward compatibility by migrating deprecated fields to raw dict and new fields."""
+        # Preserve deprecated title fields in raw dict
+        if self.analytic_title or self.monographic_title:
+            if "tei" not in self.raw:
+                self.raw["tei"] = {}
+            if self.analytic_title:
+                self.raw["tei"]["analytic_title"] = self.analytic_title
+            if self.monographic_title:
+                self.raw["tei"]["monographic_title"] = self.monographic_title
+            
+            # Set full_title from deprecated fields if not already set
+            if self.full_title is None:
+                if self.monographic_title is not None:
+                    self.full_title = self.monographic_title
+                elif self.analytic_title is not None:
+                    self.full_title = self.analytic_title
+        
+        # Migrate deprecated publication_date to new fields if they're not set
+        if self.publication_date and not self.publication_date_raw:
+            self.publication_date_raw = self.publication_date
+            # Try to extract year
+            if not self.publication_year:
+                year_str = self._extract_year(self.publication_date)
+                if year_str:
+                    try:
+                        self.publication_year = int(year_str)
+                    except (ValueError, TypeError):
+                        pass
+        
         return self 
     
     @classmethod
@@ -320,13 +369,21 @@ class Reference(BaseModel):
             pages = f"{fpage.text}-{lpage.text}"
         elif fpage is not None:
             pages = fpage.text
-        # print(f"DEBUG: full_title = {full_title} | authors = {authors} | editors = {editors}")
+        
+        # Extract publication year as integer
+        year_text = year.text if year is not None else None
+        publication_year = None
+        if year_text:
+            from ...utils.reference_matching import extract_year
+            publication_year = extract_year(year_text)
+        
         return cls(
             authors=authors if authors else None,
             editors=editors if editors else None,
             full_title=full_title,
             journal_title=source.text if source is not None else None,
-            publication_date=year.text if year is not None else None,
+            publication_date_raw=year_text,
+            publication_year=publication_year,
             volume=volume.text if volume is not None else None,
             issue=issue.text if issue is not None else None,
             pages=pages,
@@ -458,7 +515,15 @@ class Reference(BaseModel):
         date = tags.get('date')
         pubnum_year = tags.get('publicationnumber-year')
 
-        year_val = cls._extract_year(year) or cls._extract_year(date) or cls._extract_year(pubnum_year)
+        year_str = cls._extract_year(year) or cls._extract_year(date) or cls._extract_year(pubnum_year)
+        
+        # Convert year string to integer
+        publication_year = None
+        if year_str:
+            try:
+                publication_year = int(year_str)
+            except (ValueError, TypeError):
+                pass
 
         ref = cls(
             full_title=title,
@@ -467,7 +532,8 @@ class Reference(BaseModel):
             volume=volume,
             journal_title=series,  # Series often represents publication series/journal
             pages=pagination,
-            publication_date=year_val,
+            publication_date_raw=year_str,
+            publication_year=publication_year,
         )
 
         gt_author_text = tags.get('author', '')

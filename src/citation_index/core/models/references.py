@@ -117,9 +117,15 @@ class References(BaseModel):
             
             # Handle year - could be in 'year' or 'publicationnumber-year'
             if "year" in tags:
-                ref_data["publication_date"] = tags["year"].strip(", .")
+                year_str = tags["year"].strip(", .")
+                ref_data["publication_date_raw"] = year_str
+                if year_str.isdigit():
+                    ref_data["publication_year"] = int(year_str)
             elif "publicationnumber-year" in tags:
-                ref_data["publication_date"] = tags["publicationnumber-year"].strip(", .")
+                year_str = tags["publicationnumber-year"].strip(", .")
+                ref_data["publication_date_raw"] = year_str
+                if year_str.isdigit():
+                    ref_data["publication_year"] = int(year_str)
             
             # Add language if available
             if language:
