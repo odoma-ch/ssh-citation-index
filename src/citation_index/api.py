@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Optional
 
 import redis
-from fastapi import FastAPI, File, HTTPException, UploadFile, Query
+from fastapi import FastAPI, File, HTTPException, UploadFile, Query, Body
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from rq import Queue
@@ -82,9 +82,14 @@ class TextExtractionOptions(BaseModel):
 
 class ReferenceExtractionOptions(BaseModel):
     """Options for reference extraction."""
-    method: str = Field(default="semantic", description="Extraction method")
+    method: str = Field(default="full_text", description="Extraction method")
     prompt_name: str = Field(default="prompts/reference_extraction.md", description="Prompt template")
     temperature: float = Field(default=0.3, description="LLM temperature")
+
+
+class ReferenceExtractionRequest(BaseModel):
+    """Request body for reference extraction - accepts markdown text directly."""
+    text: str = Field(..., description="Markdown text to extract references from")
 
 
 class ReferenceParsingOptions(BaseModel):
@@ -296,54 +301,38 @@ async def enqueue_text_extraction(
 
 @app.post("/extract/references", response_model=JobResponse)
 async def enqueue_reference_extraction(
-    file: UploadFile = File(...),
-    extractor: str = Query(default="pymupdf", description="Text extractor"),
-    method: str = Query(default="semantic", description="Extraction method"),
+    body: ReferenceExtractionRequest = Body(...),
+    method: str = Query(default="full_text", description="Extraction method"),
     prompt_name: str = Query(default="prompts/reference_extraction.md", description="Prompt template"),
     temperature: float = Query(default=0.3, description="LLM temperature")
 ):
-    """Extract references from a PDF (two-stage: text extraction → reference extraction)."""
-    if not file.filename.endswith('.pdf'):
-        raise HTTPException(status_code=400, detail="Only PDF files are supported")
-    
+    """Extract references from markdown text using LLM (single stage)."""
     job_id = create_job_id()
-    
-    # Save upload (as input.pdf so task can find it)
-    file_content = await file.read()
-    storage.save_upload(job_id, file_content, "input.pdf")
-    
+
+    # Save provided text as intermediate so extract_references_task can load it
+    text_data = {
+        "text": body.text,
+        "metadata": {},
+        "extractor": "provided",
+        "markdown": True,
+    }
+    storage.save_intermediate(job_id, "text_extraction", text_data, atomic=False)
+
     # Initialize metadata
     initialize_job_metadata(
         job_id,
-        job_type="reference_extraction_pipeline",
-        filename=file.filename
+        job_type="reference_extraction",
     )
-    
-    # Stage 1: Text extraction
-    text_job = queue_default.enqueue_call(
-        extract_text_task,
-        args=(job_id,),
-        kwargs={"extractor": extractor},
-        job_id=f"{job_id}_stage1",
-    )
-    
-    # Stage 2: Reference extraction (depends on stage 1)
-    ref_job = queue_llm.enqueue_call(
+
+    # Single stage: reference extraction (uses provided text)
+    queue_llm.enqueue_call(
         extract_references_task,
         kwargs={"job_id": job_id, "method": method, "prompt_name": prompt_name, "temperature": temperature},
-        job_id=f"{job_id}_stage2",
-        depends_on=text_job,
+        job_id=job_id,
     )
-    
-    # Store stage job IDs in metadata
-    redis_conn.hset(
-        f"job:{job_id}",
-        "stage_job_ids",
-        json.dumps([text_job.id, ref_job.id])
-    )
-    
-    logger.info(f"Enqueued reference extraction pipeline {job_id}")
-    return format_job_response(job_id, message="Reference extraction pipeline enqueued")
+
+    logger.info(f"Enqueued reference extraction job {job_id}")
+    return format_job_response(job_id, message="Reference extraction job enqueued")
 
 
 # ========================

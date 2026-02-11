@@ -66,12 +66,16 @@ paths:
           $ref: '#/components/responses/PayloadTooLarge'
   /extract/references:
     post:
-      summary: Extract references text from PDF
-      description: Extract machine readable text from PDF
+      summary: Extract references from markdown text
+      description: Extract reference strings from markdown text using LLM (single stage)
       tags:
         - Reference Processing
       requestBody:
-        $ref: '#/components/requestBodies/PDFInput'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceExtractionRequest'
       responses:
         '202':
           description: Processing started
@@ -859,6 +863,15 @@ components:
       required:
         - error_code
         - message
+
+    ReferenceExtractionRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Markdown text to extract references from
+      required:
+        - text
 
     ReferenceParsingRequest:
       type: object
