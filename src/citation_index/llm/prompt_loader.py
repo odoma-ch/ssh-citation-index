@@ -315,7 +315,7 @@ class ReferenceExtractionAndParsingPrompt(PromptLoader):
 
     def __init__(
         self,
-        prompt: str = "prompts/reference_extraction_and_parsing.md",
+        prompt: str = "prompts/end_to_end_parsing.md",
         examples: str = "",
         input_text: str = "",
         include_json_schema: bool = True,

@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Optional
 
-from pydantic import Field
+from pydantic import AliasChoices, Field, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -51,9 +51,14 @@ class Settings(BaseSettings):
         default="http://localhost:8000/v1",
         description="vLLM API endpoint"
     )
-    llm_model: str = Field(
+    llm_model_medium_intelligence: str = Field(
         default="your-model-name",
-        description="LLM model name"
+        description="LLM model for medium intelligence tasks (default)",
+        validation_alias=AliasChoices("llm_model_medium_intelligence", "llm_model"),
+    )
+    llm_model_high_intelligence: str = Field(
+        default="your-model-name",
+        description="LLM model for high intelligence tasks"
     )
     llm_api_key: Optional[str] = Field(
         default=None,
@@ -70,6 +75,29 @@ class Settings(BaseSettings):
     llm_max_concurrent: int = Field(
         default=4,
         description="Maximum concurrent LLM requests (semaphore limit)"
+    )
+    
+    @computed_field
+    def llm_model(self) -> str:
+        """Active model used by default; currently medium intelligence."""
+        return self.llm_model_medium_intelligence
+    
+    # Task-specific first token timeouts
+    llm_first_token_timeout_reference_parsing: float = Field(
+        default=30.0,
+        description="Short FTT for reference parsing (model starts quickly)"
+    )
+    llm_first_token_timeout_reference_extraction: float = Field(
+        default=90.0,
+        description="Long FTT for reference extraction"
+    )
+    llm_first_token_timeout_end_to_end: float = Field(
+        default=90.0,
+        description="Long FTT for end-to-end parsing"
+    )
+    llm_timeout_reference_parsing: float = Field(
+        default=300.0,
+        description="Longer timeout for reference parsing (vs default llm_timeout)"
     )
     
     # ========================

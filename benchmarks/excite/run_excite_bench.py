@@ -19,7 +19,7 @@ from citation_index.llm.grobid_client import GrobidClient
 from citation_index.pipelines.reference_extraction import (
     extract_text_references, extract_text_references_semantic_sections, extract_text_references_by_page
 )
-from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step
+from citation_index.pipelines.end_to_end_parsing import run_pdf_one_step
 from citation_index.pipelines.reference_parsing import parse_reference_strings, parse_reference_strings_grobid
 from citation_index.pipelines.text_extraction import split_pages, extract_text
 from citation_index.evaluation.ref_metrics import string_reference_eval, RefEvaluator
@@ -421,7 +421,7 @@ class BenchmarkRunner:
         
         elif method == 2:
             # Method 2: Two-step – extract reference strings, then parse to structured refs
-            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_two_step
+            from citation_index.pipelines.end_to_end_parsing import run_pdf_two_step
             return run_pdf_two_step(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
@@ -431,7 +431,7 @@ class BenchmarkRunner:
         
         elif method == 3:
             # Method 3: Semantic section detection + one-step extraction and parsing
-            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_semantic_one_step
+            from citation_index.pipelines.end_to_end_parsing import run_pdf_semantic_one_step
             chunks = task_info.get("chunks")  # Use pre-computed chunks
             return run_pdf_semantic_one_step(
                 text_or_pdf=input_text,
@@ -446,7 +446,7 @@ class BenchmarkRunner:
         
         elif method == 4:
             # Method 4: Page-wise one-step extraction+parsing, then aggregate
-            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_one_step_by_page
+            from citation_index.pipelines.end_to_end_parsing import run_pdf_one_step_by_page
             pages = split_pages(input_text, extractor_type=self.args.extractor)
             optimal_workers = min(self.args.max_workers, len(pages))
             logging.debug(f"Method 4 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
@@ -462,7 +462,7 @@ class BenchmarkRunner:
         
         elif method == 5:
             # Method 5: Page-wise extraction of strings, concatenate, then parse once
-            from citation_index.pipelines.reference_extraction_and_parsing import run_pdf_two_step_by_page
+            from citation_index.pipelines.end_to_end_parsing import run_pdf_two_step_by_page
             pages = split_pages(input_text, extractor_type=self.args.extractor)
             optimal_workers = min(self.args.max_workers, len(pages))
             logging.debug(f"Method 5 for {file_id}: {len(pages)} pages, using {optimal_workers} workers")
@@ -907,7 +907,7 @@ def main():
         if args.task == "parsing":
             args.prompt_name = "reference_parsing.md"
         elif args.task == "extraction_and_parsing":
-            args.prompt_name = "reference_extraction_and_parsing.md"
+            args.prompt_name = "end_to_end_parsing.md"
         # else keep "reference_extraction.md" for extraction task
 
     # Configure logging

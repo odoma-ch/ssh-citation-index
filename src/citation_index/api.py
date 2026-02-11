@@ -97,7 +97,7 @@ class ReferenceParsingOptions(BaseModel):
 class CombinedPipelineOptions(BaseModel):
     """Options for combined extraction and parsing."""
     method: str = Field(default="one_step", description="Method (one_step or semantic_one_step)")
-    prompt_name: str = Field(default="prompts/reference_extraction_and_parsing.md", description="Prompt template")
+    prompt_name: str = Field(default="prompts/end_to_end_parsing.md", description="Prompt template")
     temperature: float = Field(default=0.3, description="LLM temperature")
 
 
@@ -266,9 +266,9 @@ async def enqueue_text_extraction(
     # Create job
     job_id = create_job_id()
     
-    # Save uploaded file
+    # Save uploaded file (as input.pdf so task can find it)
     file_content = await file.read()
-    storage.save_upload(job_id, file_content, file.filename)
+    storage.save_upload(job_id, file_content, "input.pdf")
     
     # Initialize metadata
     initialize_job_metadata(
@@ -278,14 +278,12 @@ async def enqueue_text_extraction(
         extractor=extractor
     )
     
-    # Enqueue task (job_id is both the RQ job ID and first arg to task)
-    queue_default.enqueue(
+    # Enqueue task (timeout is set by @job decorator on the task)
+    queue_default.enqueue_call(
         extract_text_task,
-        job_id,  # First positional arg to task function
-        extractor=extractor,
-        markdown=markdown,
-        job_id=job_id,  # RQ job ID (unified with pipeline job ID)
-        timeout=settings.timeout_text_extraction
+        args=(job_id,),
+        kwargs={"extractor": extractor, "markdown": markdown},
+        job_id=job_id,
     )
     
     logger.info(f"Enqueued text extraction job {job_id}")
@@ -310,9 +308,9 @@ async def enqueue_reference_extraction(
     
     job_id = create_job_id()
     
-    # Save upload
+    # Save upload (as input.pdf so task can find it)
     file_content = await file.read()
-    storage.save_upload(job_id, file_content, file.filename)
+    storage.save_upload(job_id, file_content, "input.pdf")
     
     # Initialize metadata
     initialize_job_metadata(
@@ -322,23 +320,19 @@ async def enqueue_reference_extraction(
     )
     
     # Stage 1: Text extraction
-    text_job = queue_default.enqueue(
+    text_job = queue_default.enqueue_call(
         extract_text_task,
-        job_id,
-        extractor=extractor,
+        args=(job_id,),
+        kwargs={"extractor": extractor},
         job_id=f"{job_id}_stage1",
-        timeout=settings.timeout_text_extraction
     )
     
     # Stage 2: Reference extraction (depends on stage 1)
-    ref_job = queue_llm.enqueue(
+    ref_job = queue_llm.enqueue_call(
         extract_references_task,
-        job_id=job_id,
-        method=method,
-        prompt_name=prompt_name,
-        temperature=temperature,
+        kwargs={"job_id": job_id, "method": method, "prompt_name": prompt_name, "temperature": temperature},
+        job_id=f"{job_id}_stage2",
         depends_on=text_job,
-        timeout=settings.timeout_reference_extraction
     )
     
     # Store stage job IDs in metadata
@@ -382,13 +376,10 @@ def parse_reference_strings_endpoint(
     
     # Enqueue parsing task
     queue = queue_llm if parser == "llm" else queue_default
-    queue.enqueue(
+    queue.enqueue_call(
         parse_references_task,
+        kwargs={"job_id": job_id, "parser": parser, "prompt_name": prompt_name, "temperature": temperature},
         job_id=job_id,
-        parser=parser,
-        prompt_name=prompt_name,
-        temperature=temperature,
-        timeout=settings.timeout_reference_parsing
     )
     
     logger.info(f"Enqueued reference parsing job {job_id}")
@@ -399,59 +390,54 @@ def parse_reference_strings_endpoint(
 # Full Reference Pipeline
 # ========================
 
-@app.post("/process/references", response_model=JobResponse)
-async def enqueue_full_reference_pipeline(
-    file: UploadFile = File(...),
-    extractor: str = Query(default="pymupdf", description="Text extractor"),
-    method: str = Query(default="one_step", description="Processing method"),
-    prompt_name: str = Query(default="prompts/reference_extraction_and_parsing.md", description="Prompt template"),
-    temperature: float = Query(default=0.3, description="LLM temperature")
-):
-    """Full reference pipeline: extract text → extract and parse references."""
-    if not file.filename.endswith('.pdf'):
-        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+# @app.post("/process/references", response_model=JobResponse)
+# async def enqueue_end_to_end_reference_pipeline(
+#     file: UploadFile = File(...),
+#     extractor: str = Query(default="pymupdf", description="Text extractor"),
+#     method: str = Query(default="one_step", description="Processing method"),
+#     prompt_name: str = Query(default="prompts/end_to_end_parsing.md", description="Prompt template"),
+#     temperature: float = Query(default=0.3, description="LLM temperature")
+# ):
+#     """end-to-end reference pipeline: extract text → extract and parse references."""
+#     if not file.filename.endswith('.pdf'):
+#         raise HTTPException(status_code=400, detail="Only PDF files are supported")
     
-    job_id = create_job_id()
+#     job_id = create_job_id()
     
-    # Save upload
-    file_content = await file.read()
-    storage.save_upload(job_id, file_content, file.filename)
+#     # Save upload
+#     file_content = await file.read()
+#     storage.save_upload(job_id, file_content, file.filename)
     
-    # Initialize metadata
-    initialize_job_metadata(
-        job_id,
-        job_type="full_reference_pipeline",
-        filename=file.filename
-    )
+#     # Initialize metadata
+#     initialize_job_metadata(
+#         job_id,
+#         job_type="end_to_end_reference_pipeline",
+#         filename=file.filename
+#     )
     
-    # Stage 1: Text extraction
-    text_job = queue_default.enqueue(
-        extract_text_task,
-        job_id=job_id,
-        extractor=extractor,
-        timeout=settings.timeout_text_extraction
-    )
+#     # Stage 1: Text extraction
+#     text_job = queue_default.enqueue_call(
+#         extract_text_task,
+#         args=(job_id,),
+#         kwargs={"extractor": extractor},
+#     )
     
-    # Stage 2: Combined extraction + parsing (depends on stage 1)
-    combined_job = queue_llm.enqueue(
-        extract_and_parse_references_task,
-        job_id=job_id,
-        method=method,
-        prompt_name=prompt_name,
-        temperature=temperature,
-        depends_on=text_job,
-        timeout=settings.timeout_reference_extraction
-    )
+#     # Stage 2: end-to-end extraction + parsing (depends on stage 1)
+#     combined_job = queue_llm.enqueue_call(
+#         extract_and_parse_references_task,
+#         kwargs={"job_id": job_id, "method": method, "prompt_name": prompt_name, "temperature": temperature},
+#         depends_on=text_job,
+#     )
     
-    # Store stage job IDs
-    redis_conn.hset(
-        f"job:{job_id}",
-        "stage_job_ids",
-        json.dumps([text_job.id, combined_job.id])
-    )
+#     # Store stage job IDs
+#     redis_conn.hset(
+#         f"job:{job_id}",
+#         "stage_job_ids",
+#         json.dumps([text_job.id, combined_job.id])
+#     )
     
-    logger.info(f"Enqueued full reference pipeline {job_id}")
-    return format_job_response(job_id, message="Full reference pipeline enqueued")
+#     logger.info(f"Enqueued full reference pipeline {job_id}")
+#     return format_job_response(job_id, message="Full reference pipeline enqueued")
 
 
 # ========================

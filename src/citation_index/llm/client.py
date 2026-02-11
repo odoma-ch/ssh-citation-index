@@ -313,7 +313,7 @@ class DeepSeekClient(LLMClient):
         Returns:
             Complete response string
         """
-        if use_continuation:
+        if use_continuation and (json_output or json_schema):
             # Use continuation for reliable complete JSON responses
             messages, response = self.call_with_continuation(
                 prompt=prompt,

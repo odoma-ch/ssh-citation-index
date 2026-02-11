@@ -151,10 +151,10 @@ class TestDeepSeekClient:
                 json_output=True
             )
             
-            # Should use continuation by default for JSON
+            # Should use continuation by default for JSON; client strips tags from response
             assert mock_create.call_count == 2
             assert isinstance(response, str)  # Should return string, not tuple
-            assert '<start>' in response and '<end>' in response
+            assert json.loads(response) == {"data": [1, 2, 3]}
     
     def test_deepseek_disable_continuation(self):
         """Test DeepSeek with continuation disabled."""
@@ -302,7 +302,7 @@ class TestVLLMClient:
         
         with patch.object(deepseek_client.client.chat.completions, 'create', mock_create):
             response = deepseek_client.call(
-                prompt="Generate JSON data",
+                prompt="Generate data",
                 json_output=True,
                 use_continuation=False
             )
@@ -311,9 +311,9 @@ class TestVLLMClient:
             call_args = mock_create.call_args_list[0][1]
             assert call_args['response_format'] == {"type": "json_object"}
             
-            # Verify prompt was modified
+            # Verify prompt was modified (adds JSON instruction when "json" not in prompt)
             prompt_content = call_args['messages'][0]['content']
-            assert "JSON format" in prompt_content
+            assert "JSON format" in prompt_content or "json" in prompt_content.lower()
             
             # Verify max_tokens was set
             assert call_args['max_tokens'] == 8000

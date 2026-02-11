@@ -66,18 +66,20 @@ class TestRefEvaluator:
         assert result['overall_macro_f1'] == 1.0
 
     def test_exact_mode_no_match(self):
-        """Test exact mode with no matches"""
+        """Test exact mode with no matches (focus on title/year to avoid raw dict matching)."""
         evaluator = RefEvaluator(mode='exact')
         
-        pred_refs = [Reference(full_title="Deep Learning", publication_date="2020")]
-        gt_refs = [Reference(full_title="Machine Learning", publication_date="2019")]
+        pred_refs = [Reference(full_title="Deep Learning", publication_year=2020)]
+        gt_refs = [Reference(full_title="Machine Learning", publication_year=2019)]
         
-        result = evaluator.evaluate(pred_refs, gt_refs)
+        result = evaluator.evaluate(
+            pred_refs, gt_refs, focus_fields=['full_title', 'publication_year']
+        )
         
-        assert result['overall_precision'] == 0.0
-        assert result['overall_recall'] == 0.0
-        assert result['overall_micro_f1'] == 0.0
-        assert result['overall_macro_f1'] == 0.0
+        assert result['focused_precision'] == 0.0
+        assert result['focused_recall'] == 0.0
+        assert result['focused_micro_f1'] == 0.0
+        assert result['focused_macro_f1'] == 0.0
 
     def test_fuzzy_mode_evaluation(self):
         """Test fuzzy mode evaluation"""

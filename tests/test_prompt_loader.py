@@ -82,7 +82,7 @@ class TestLegacyMarkdownFormat:
         input_text = "Test document with references."
         
         prompt_obj = ReferenceExtractionAndParsingPrompt(
-            prompt="prompts/reference_extraction_and_parsing.md",
+            prompt="prompts/end_to_end_parsing.md",
             input_text=input_text,
             include_json_schema=True
         )
@@ -537,7 +537,7 @@ class TestSubclassSpecificBehavior:
         prompt_obj = ReferenceExtractionAndParsingPrompt(input_text="test")
         
         # Should default to .md file
-        assert "reference_extraction_and_parsing" in prompt_obj.prompt_path
+        assert "end_to_end_parsing" in prompt_obj.prompt_path
     
     def test_json_schema_loading(self):
         """Test that JSON schema is properly loaded from References model."""

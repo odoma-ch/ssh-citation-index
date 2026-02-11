@@ -38,7 +38,7 @@ from citation_index.evaluation.ref_metrics import RefEvaluator, string_reference
 from citation_index.llm.client import LLMClient, DeepSeekClient
 from citation_index.llm.grobid_client import GrobidClient
 from citation_index.pipelines.reference_extraction import extract_text_references, extract_text_references_semantic_sections
-from citation_index.pipelines.reference_extraction_and_parsing import (
+from citation_index.pipelines.end_to_end_parsing import (
     run_pdf_one_step,
     run_pdf_one_step_by_page,
     run_pdf_semantic_one_step,
@@ -1276,7 +1276,7 @@ Examples:
         if args.task == "parsing":
             args.prompt_name = "reference_parsing.md"
         elif args.task == "extraction_and_parsing":
-            args.prompt_name = "reference_extraction_and_parsing.md"
+            args.prompt_name = "end_to_end_parsing.md"
         # else keep "reference_extraction.md" for extraction task
     
     # Configure logging

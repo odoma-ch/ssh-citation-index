@@ -8,7 +8,7 @@ from typing import Optional
 from .. import ExtractorFactory, TeiBiblParser, __version__
 from ..core.models import References
 from ..pipelines.reference_parsing import parse_reference_file
-from ..pipelines.reference_extraction_and_parsing import run_pdf_extract_and_parse
+from ..pipelines.end_to_end_parsing import run_pdf_extract_and_parse
 from ..llm.client import LLMClient
 
 
@@ -227,7 +227,7 @@ def main(argv: Optional[list] = None):
     parse_text_parser = subparsers.add_parser("parse-text", help="Parse citations from text using LLM")
     parse_text_parser.add_argument("input", type=Path, help="Input text/markdown file")
     parse_text_parser.add_argument("--output", type=Path, help="Output file")
-    parse_text_parser.add_argument("--prompt", type=Path, default=Path("prompts/reference_extraction_and_parsing_pydantic.md"))
+    parse_text_parser.add_argument("--prompt", type=Path, default=Path("prompts/end_to_end_parsing.md"))
     parse_text_parser.add_argument("--api-base", type=str, required=True)
     parse_text_parser.add_argument("--model", type=str, required=True)
     parse_text_parser.add_argument("--api-key-env", type=str, default=None, help="Env var that holds API key (optional)")

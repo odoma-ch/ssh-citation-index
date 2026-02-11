@@ -23,15 +23,16 @@ from rq.decorators import job
 from .config import settings
 from .llm.client import LLMClient
 from .llm.grobid_client import GrobidClient
-from .pipelines import (
-    extract_text,
+from .pipelines.end_to_end_parsing import run_pdf_one_step, run_pdf_semantic_one_step
+from .pipelines.reference_extraction import (
     extract_text_references,
     extract_text_references_semantic_sections,
+)
+from .pipelines.reference_parsing import (
     parse_reference_strings,
     parse_reference_strings_grobid,
-    run_pdf_one_step,
-    run_pdf_semantic_one_step,
 )
+from .pipelines.text_extraction import extract_text
 from .utils.storage import StorageManager
 
 logger = logging.getLogger(__name__)
@@ -109,7 +110,7 @@ def get_completed_stages(job_id: str) -> list:
 # Text Extraction Tasks
 # ========================
 
-@job('default', timeout=settings.timeout_text_extraction, result_ttl=settings.worker_result_ttl)
+@job('default', connection=redis_conn, timeout=settings.timeout_text_extraction, result_ttl=settings.worker_result_ttl)
 def extract_text_task(
     job_id: str,
     extractor: str = "pymupdf",
@@ -163,12 +164,15 @@ def extract_text_task(
         
         # Save to storage
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
         
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
             job_id,
+            status="completed",
             completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
             **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
         )
         log_job_event(job_id, "stage_completed", stage=stage)
@@ -197,7 +201,7 @@ def extract_text_task(
 # Reference Extraction Tasks
 # ========================
 
-@job('llm-tasks', timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
+@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
 def extract_references_task(
     job_id: str,
     method: str = "semantic",
@@ -230,13 +234,14 @@ def extract_references_task(
         text_data = storage.load_intermediate(job_id, "text_extraction")
         text = text_data["text"]
         
-        # Initialize LLM client
+        # Initialize LLM client (long FTT for extraction)
         llm_client = LLMClient(
             endpoint=settings.llm_endpoint,
             model=settings.llm_model,
             api_key=settings.llm_api_key,
             timeout=settings.llm_timeout,
-            max_retries=settings.llm_max_retries
+            max_retries=settings.llm_max_retries,
+            first_token_timeout=settings.llm_first_token_timeout_reference_extraction
         )
         
         # Extract references with semaphore rate limiting
@@ -265,12 +270,15 @@ def extract_references_task(
             "count": len(references)
         }
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
         
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
             job_id,
+            status="completed",
             completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
             **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
         )
         log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(references))
@@ -299,7 +307,7 @@ def extract_references_task(
 # Reference Parsing Tasks
 # ========================
 
-@job('llm-tasks', timeout=settings.timeout_reference_parsing, result_ttl=settings.worker_result_ttl)
+@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_parsing, result_ttl=settings.worker_result_ttl)
 def parse_references_task(
     job_id: str,
     parser: str = "llm",
@@ -343,13 +351,14 @@ def parse_references_task(
                 grobid_client=grobid_client
             )
         else:
-            # Use LLM parser with semaphore
+            # Use LLM parser with semaphore (short FTT, long timeout for parsing)
             llm_client = LLMClient(
                 endpoint=settings.llm_endpoint,
                 model=settings.llm_model,
                 api_key=settings.llm_api_key,
-                timeout=settings.llm_timeout,
-                max_retries=settings.llm_max_retries
+                timeout=settings.llm_timeout_reference_parsing,
+                max_retries=settings.llm_max_retries,
+                first_token_timeout=settings.llm_first_token_timeout_reference_parsing
             )
             
             with llm_semaphore.acquire():
@@ -367,12 +376,15 @@ def parse_references_task(
             "count": len(parsed_refs)
         }
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
         
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
             job_id,
+            status="completed",
             completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
             **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
         )
         log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs))
@@ -401,14 +413,14 @@ def parse_references_task(
 # Combined Pipeline Tasks
 # ========================
 
-@job('llm-tasks', timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
+@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
 def extract_and_parse_references_task(
     job_id: str,
     method: str = "one_step",
-    prompt_name: str = "prompts/reference_extraction_and_parsing.md",
+    prompt_name: str = "prompts/end_to_end_parsing.md",
     temperature: float = 0.3
 ) -> Dict[str, Any]:
-    """Extract and parse references in one LLM call.
+    """Extract and parse references in one LLM call (end-to-end parsing).
     
     Args:
         job_id: Unique job identifier
@@ -419,7 +431,7 @@ def extract_and_parse_references_task(
     Returns:
         Small metadata dict
     """
-    stage = "reference_extraction_and_parsing"
+    stage = "end_to_end_parsing"
     
     update_job_metadata(job_id, status="processing", current_stage=stage)
     log_job_event(job_id, "stage_started", stage=stage)
@@ -434,13 +446,14 @@ def extract_and_parse_references_task(
         text_data = storage.load_intermediate(job_id, "text_extraction")
         text = text_data["text"]
         
-        # Initialize LLM client
+        # Initialize LLM client (long FTT for end-to-end parsing)
         llm_client = LLMClient(
             endpoint=settings.llm_endpoint,
             model=settings.llm_model,
             api_key=settings.llm_api_key,
             timeout=settings.llm_timeout,
-            max_retries=settings.llm_max_retries
+            max_retries=settings.llm_max_retries,
+            first_token_timeout=settings.llm_first_token_timeout_end_to_end
         )
         
         # Run combined extraction + parsing with semaphore
@@ -469,12 +482,15 @@ def extract_and_parse_references_task(
             "count": len(parsed_refs)
         }
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
         
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
             job_id,
+            status="completed",
             completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
             **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
         )
         log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs))
