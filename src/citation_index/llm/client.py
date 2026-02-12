@@ -1,63 +1,56 @@
 """
-LLM client utilities
+LLM client utilities.
+
+Timeout hierarchy (innermost to outermost):
+    1. first_token_timeout → httpx per-chunk read timeout.
+       Enforced at the TCP socket level by httpx.  If the server stops
+       sending data (e.g. model finishes but connection hangs), the read
+       is aborted after this many seconds.
+    2. timeout → total wall-clock limit per attempt.
+       For streaming: checked between chunks in _stream_with_timeout.
+       For non-streaming: used as the httpx read timeout.
+    3. Queue timeout (RQ job timeout, set in config.py / api.py).
+       Hard-kills the worker process.  Must be larger than
+       timeout × (max_retries + 1) + buffer.
 """
 
-import re
 import json
-import time
-import threading
-import asyncio
+import logging
 import os
-from contextlib import contextmanager
-from numpy import full
+import re
+import time
+from typing import Dict, List, Optional, Iterator, Tuple, Union
+
+import httpx
 import numpy as np
 import openai
-import aiohttp
-import concurrent.futures
-import logging
-from typing import Dict, List, Tuple, Optional, Iterator, Union
+
 from .prompt_loader import PromptLoader
 
 
-class TimeoutError(Exception):
-    """Raised when an operation times out."""
+# ========================
+# Timeout helpers
+# ========================
+
+# Fixed httpx timeout values (seconds) for non-read phases
+CONNECT_TIMEOUT = 15.0   # TCP + TLS handshake
+WRITE_TIMEOUT = 30.0     # sending the request body
+POOL_TIMEOUT = 15.0      # acquiring a connection from the pool
+
+
+class LLMTimeoutError(Exception):
+    """Raised when an LLM operation exceeds its wall-clock timeout."""
     pass
 
 
-class ThreadSafeTimeout:
-    """Thread-safe timeout mechanism using threading.Timer."""
-    
-    def __init__(self, seconds: float):
-        self.seconds = seconds
-        self.timer = None
-        self.timed_out = threading.Event()
-        
-    def __enter__(self):
-        def timeout_handler():
-            self.timed_out.set()
-            
-        self.timer = threading.Timer(self.seconds, timeout_handler)
-        self.timer.start()
-        return self
-        
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.timer:
-            self.timer.cancel()
-            
-    def check_timeout(self):
-        """Check if timeout occurred and raise exception if so."""
-        if self.timed_out.is_set():
-            raise TimeoutError(f"Operation timed out after {self.seconds} seconds")
-
-
-@contextmanager
-def timeout_context(seconds: float):
-    """Thread-safe context manager for timing out operations."""
-    with ThreadSafeTimeout(seconds) as timeout_manager:
-        try:
-            yield timeout_manager
-        finally:
-            timeout_manager.check_timeout()
+# Exceptions that are safe to retry with exponential back-off
+RETRYABLE_EXCEPTIONS = (
+    LLMTimeoutError,
+    openai.APITimeoutError,
+    openai.APIConnectionError,
+    openai.RateLimitError,
+    openai.InternalServerError,
+)
 
 
 class LLMClient:
@@ -71,9 +64,14 @@ class LLMClient:
             endpoint: LLM API endpoint
             model: Model name to use
             api_key: API key for authentication
-            timeout: Maximum time to wait for complete response (seconds)
-            max_retries: Maximum number of retry attempts for failed calls
-            first_token_timeout: Maximum time to wait for first token (seconds)
+            timeout: Total wall-clock timeout for one LLM attempt (seconds).
+            max_retries: Maximum number of retry attempts for failed calls.
+            first_token_timeout: Per-chunk httpx read timeout (seconds).
+                Controls how long to wait for each chunk of data from the
+                server, including the very first token.  This is enforced at
+                the TCP socket level by httpx and is the primary defence
+                against hung connections (server stops sending but TCP stays
+                open).
         """
         self.endpoint = endpoint
         self.model = model
@@ -82,31 +80,98 @@ class LLMClient:
         self.max_retries = max_retries
         self.first_token_timeout = first_token_timeout
         
-        # Initialize OpenAI client
-        if api_key:
-            self.client = openai.OpenAI(base_url=endpoint, api_key=api_key)
-        else:
-            # For local vLLM deployments that don't require API keys
-            self.client = openai.OpenAI(base_url=endpoint, api_key="dummy-key")
+        # Client-level timeout is generous; per-call overrides give
+        # precise control for streaming vs non-streaming paths.
+        default_timeout = httpx.Timeout(
+            connect=CONNECT_TIMEOUT,
+            read=timeout,
+            write=WRITE_TIMEOUT,
+            pool=POOL_TIMEOUT,
+        )
+        self.client = openai.OpenAI(
+            base_url=endpoint,
+            api_key=api_key or "dummy-key",
+            timeout=default_timeout,
+        )
     
+    # ------------------------------------------------------------------
+    # httpx.Timeout helpers (called per-request to override client default)
+    # ------------------------------------------------------------------
+
+    def _streaming_httpx_timeout(self) -> httpx.Timeout:
+        """Per-chunk timeout for streaming requests.
+        
+        Uses first_token_timeout as the read timeout.  If the server
+        stops sending data for longer than this, httpx raises ReadTimeout
+        (surfaced as openai.APITimeoutError).
+        """
+        return httpx.Timeout(
+            connect=CONNECT_TIMEOUT,
+            read=self.first_token_timeout,
+            write=WRITE_TIMEOUT,
+            pool=POOL_TIMEOUT,
+        )
+
+    def _non_streaming_httpx_timeout(self) -> httpx.Timeout:
+        """Timeout for non-streaming requests.
+        
+        Uses total timeout as the read timeout since the entire
+        response body must arrive in one go.
+        """
+        return httpx.Timeout(
+            connect=CONNECT_TIMEOUT,
+            read=self.timeout,
+            write=WRITE_TIMEOUT,
+            pool=POOL_TIMEOUT,
+        )
+
+    # ------------------------------------------------------------------
+    # Streaming with timeout
+    # ------------------------------------------------------------------
+
     def _stream_with_timeout(self, **kwargs) -> Iterator[str]:
-        """Stream response with first-token timeout detection."""
-        stream = self.client.chat.completions.create(stream=True, **kwargs)
+        """Stream response with per-chunk *and* total wall-clock timeouts.
         
-        first_token_received = False
+        Per-chunk timeout: enforced by httpx read timeout at the socket
+        level.  Catches stuck connections where the server stops sending
+        data (the exact scenario where the model finishes but HTTP hangs).
+        
+        Total timeout: checked between chunks.  Catches slow-but-steady
+        responses that exceed the overall time budget.
+        """
         start_time = time.time()
+        first_token_received = False
         
-        with ThreadSafeTimeout(self.first_token_timeout) as first_token_timer:
+        # Override the client-level timeout for this streaming call
+        stream = self.client.chat.completions.create(
+            stream=True,
+            timeout=self._streaming_httpx_timeout(),
+            **kwargs,
+        )
+        
+        try:
             for chunk in stream:
-                if not first_token_received:
-                    # Check if first token timeout occurred
-                    first_token_timer.check_timeout()
-                    elapsed = time.time() - start_time
-                    first_token_received = True
-                    logging.info(f"First token received after {elapsed:.1f} seconds")
+                elapsed = time.time() - start_time
                 
-                if chunk.choices[0].delta.content is not None:
+                if not first_token_received:
+                    first_token_received = True
+                    logging.info(f"First token received after {elapsed:.1f}s")
+                
+                # Check total wall-clock timeout between chunks
+                if elapsed > self.timeout:
+                    raise LLMTimeoutError(
+                        f"Total wall-clock timeout ({self.timeout}s) exceeded "
+                        f"after {elapsed:.1f}s of streaming"
+                    )
+                
+                if chunk.choices and chunk.choices[0].delta.content is not None:
                     yield chunk.choices[0].delta.content
+        finally:
+            # Always close the stream to release the HTTP connection
+            try:
+                stream.close()
+            except Exception:
+                pass
     
     def _get_response_format_and_prompt(self, prompt: str, json_schema: str = None, json_output: bool = False, max_tokens: int = None):
         """Get response format and potentially modified prompt for non-DeepSeek models."""
@@ -177,34 +242,39 @@ class LLMClient:
         last_exception = None
         
         for attempt in range(self.max_retries + 1):
+            attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
             try:
                 if use_streaming:
-                    # Use streaming for first-token timeout detection
-                    with timeout_context(self.timeout) as timeout_manager:
-                        content_parts = []
-                        for part in self._stream_with_timeout(**kwargs):
-                            timeout_manager.check_timeout()
-                            content_parts.append(part)
-                        return "".join(content_parts)
+                    # Streaming: httpx read timeout catches stuck connections,
+                    # wall-clock check in _stream_with_timeout catches overall timeout
+                    content_parts = []
+                    for part in self._stream_with_timeout(**kwargs):
+                        content_parts.append(part)
+                    return "".join(content_parts)
                 else:
-                    # Use regular call with full timeout
-                    with timeout_context(self.timeout) as timeout_manager:
-                        response = self.client.chat.completions.create(**kwargs)
-                        timeout_manager.check_timeout()
-                        return response.choices[0].message.content
+                    # Non-streaming: httpx read timeout = total timeout
+                    response = self.client.chat.completions.create(
+                        timeout=self._non_streaming_httpx_timeout(),
+                        **kwargs,
+                    )
+                    return response.choices[0].message.content
                         
-            except (TimeoutError, Exception) as e:
+            except Exception as e:
                 last_exception = e
-                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
                 
-                if isinstance(e, TimeoutError):
+                # Classify the error for logging and retry decisions
+                if isinstance(e, (LLMTimeoutError, openai.APITimeoutError)):
                     logging.warning(f"Timeout on {attempt_info}: {e}")
+                elif isinstance(e, RETRYABLE_EXCEPTIONS):
+                    logging.warning(f"Retryable error on {attempt_info}: {type(e).__name__}: {e}")
                 else:
-                    logging.warning(f"Error on {attempt_info}: {type(e).__name__}: {e}")
+                    # Non-retryable error (bad request, auth, etc.) – fail immediately
+                    logging.error(f"Non-retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    raise
                 
                 if attempt < self.max_retries:
-                    wait_time = min(2 ** attempt, 10)  # Exponential backoff with cap
-                    logging.info(f"Retrying in {wait_time} seconds...")
+                    wait_time = min(2 ** attempt, 10)  # Exponential backoff capped at 10s
+                    logging.info(f"Retrying in {wait_time}s...")
                     time.sleep(wait_time)
                 else:
                     logging.error(f"All {self.max_retries + 1} attempts failed")
@@ -359,40 +429,39 @@ class DeepSeekClient(LLMClient):
         last_exception = None
         
         for attempt in range(self.max_retries + 1):
+            attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
             try:
                 if use_streaming:
-                    # Use streaming for first-token timeout detection
-                    with timeout_context(self.timeout) as timeout_manager:
-                        content_parts = []
-                        for part in self._stream_with_timeout(**kwargs):
-                            timeout_manager.check_timeout()
-                            content_parts.append(part)
-                        return "".join(content_parts)
+                    content_parts = []
+                    for part in self._stream_with_timeout(**kwargs):
+                        content_parts.append(part)
+                    return "".join(content_parts)
                 else:
-                    # Use regular call with full timeout
-                    with timeout_context(self.timeout) as timeout_manager:
-                        response = self.client.chat.completions.create(**kwargs)
-                        timeout_manager.check_timeout()
-                        return response.choices[0].message.content
+                    response = self.client.chat.completions.create(
+                        timeout=self._non_streaming_httpx_timeout(),
+                        **kwargs,
+                    )
+                    return response.choices[0].message.content
                         
-            except (TimeoutError, Exception) as e:
+            except Exception as e:
                 last_exception = e
-                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
                 
-                if isinstance(e, TimeoutError):
+                if isinstance(e, (LLMTimeoutError, openai.APITimeoutError)):
                     logging.warning(f"DeepSeek timeout on {attempt_info}: {e}")
+                elif isinstance(e, RETRYABLE_EXCEPTIONS):
+                    logging.warning(f"DeepSeek retryable error on {attempt_info}: {type(e).__name__}: {e}")
                 else:
-                    logging.warning(f"DeepSeek error on {attempt_info}: {type(e).__name__}: {e}")
+                    logging.error(f"DeepSeek non-retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    raise
                 
                 if attempt < self.max_retries:
-                    wait_time = min(2 ** attempt, 10)  # Exponential backoff with cap
-                    logging.info(f"Retrying DeepSeek call in {wait_time} seconds...")
+                    wait_time = min(2 ** attempt, 10)
+                    logging.info(f"Retrying DeepSeek call in {wait_time}s...")
                     time.sleep(wait_time)
                 else:
                     logging.error(f"All {self.max_retries + 1} DeepSeek attempts failed")
                     break
         
-        # If all retries failed, raise the last exception
         if last_exception:
             raise last_exception
         
@@ -451,14 +520,12 @@ class DeepSeekClient(LLMClient):
             }
             
             try:
-                with timeout_context(self.timeout) as timeout_manager:
-                    content_parts = []
-                    for part in self._stream_with_timeout(**kwargs):
-                        timeout_manager.check_timeout()
-                        content_parts.append(part)
-                    current_response = "".join(content_parts)
-            except (TimeoutError, Exception) as e:
-                logging.error(f"Continuation call #{call_number} failed: {e}")
+                content_parts = []
+                for part in self._stream_with_timeout(**kwargs):
+                    content_parts.append(part)
+                current_response = "".join(content_parts)
+            except Exception as e:
+                logging.error(f"Continuation call #{call_number} failed: {type(e).__name__}: {e}")
                 raise
             full_response += current_response
             
@@ -521,35 +588,36 @@ class VLLMClient(LLMClient):
         last_exception = None
         
         for attempt in range(self.max_retries + 1):
+            attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
             try:
-                with timeout_context(self.timeout) as timeout_manager:
-                    response = self.client.beta.chat.completions.parse(
-                        model=model,
-                        messages=[{"role": "user", "content": prompt}],
-                        temperature=temperature,
-                        response_format=response_format
-                    )
-                    timeout_manager.check_timeout()
-                    return response.choices[0].message.parsed
+                response = self.client.beta.chat.completions.parse(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=temperature,
+                    response_format=response_format,
+                    timeout=self._non_streaming_httpx_timeout(),
+                )
+                return response.choices[0].message.parsed
                     
-            except (TimeoutError, Exception) as e:
+            except Exception as e:
                 last_exception = e
-                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
                 
-                if isinstance(e, TimeoutError):
+                if isinstance(e, (LLMTimeoutError, openai.APITimeoutError)):
                     logging.warning(f"Structured output timeout on {attempt_info}: {e}")
+                elif isinstance(e, RETRYABLE_EXCEPTIONS):
+                    logging.warning(f"Structured output retryable error on {attempt_info}: {type(e).__name__}: {e}")
                 else:
-                    logging.warning(f"Structured output error on {attempt_info}: {type(e).__name__}: {e}")
+                    logging.error(f"Structured output non-retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    raise
                 
                 if attempt < self.max_retries:
-                    wait_time = min(2 ** attempt, 10)  # Exponential backoff with cap
-                    logging.info(f"Retrying structured output in {wait_time} seconds...")
+                    wait_time = min(2 ** attempt, 10)
+                    logging.info(f"Retrying structured output in {wait_time}s...")
                     time.sleep(wait_time)
                 else:
                     logging.error(f"All {self.max_retries + 1} structured output attempts failed")
                     break
         
-        # If all retries failed, raise the last exception
         if last_exception:
             raise last_exception
         
@@ -562,7 +630,7 @@ class EmbedClient(LLMClient):
     Inherits from LLMClient to reuse:
     - OpenAI client initialization with API key handling
     - Retry logic with exponential backoff
-    - Timeout context management
+    - httpx-based timeout management
     """
     
     def __init__(self, endpoint: str, model: str, api_key: Optional[str] = None, 
@@ -599,38 +667,46 @@ class EmbedClient(LLMClient):
             numpy array of shape (len(texts), embedding_dim)
         """
         model = model if model else self.model
-        timeout = timeout if timeout else self.timeout
+        effective_timeout = timeout if timeout else self.timeout
+        
+        embed_timeout = httpx.Timeout(
+            connect=CONNECT_TIMEOUT,
+            read=effective_timeout,
+            write=WRITE_TIMEOUT,
+            pool=POOL_TIMEOUT,
+        )
         
         last_exception = None
         
         for attempt in range(self.max_retries + 1):
+            attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
             try:
-                with timeout_context(timeout) as timeout_manager:
-                    response = self.client.embeddings.create(
-                        model=model,
-                        input=texts,
-                        timeout=timeout
-                    )
-                    timeout_manager.check_timeout()
-                    
-                    embeddings = np.array(
-                        [data.embedding for data in response.data], 
-                        dtype=np.float64
-                    )
-                    return embeddings
-                    
-            except (TimeoutError, Exception) as e:
-                last_exception = e
-                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
+                response = self.client.embeddings.create(
+                    model=model,
+                    input=texts,
+                    timeout=embed_timeout,
+                )
                 
-                if isinstance(e, TimeoutError):
+                embeddings = np.array(
+                    [data.embedding for data in response.data], 
+                    dtype=np.float64
+                )
+                return embeddings
+                    
+            except Exception as e:
+                last_exception = e
+                
+                if isinstance(e, (LLMTimeoutError, openai.APITimeoutError)):
                     logging.warning(f"Embedding timeout on {attempt_info}: {e}")
+                elif isinstance(e, RETRYABLE_EXCEPTIONS):
+                    logging.warning(f"Embedding retryable error on {attempt_info}: {type(e).__name__}: {e}")
                 else:
-                    logging.warning(f"Embedding error on {attempt_info}: {type(e).__name__}: {e}")
+                    logging.error(f"Embedding non-retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    raise
                 
                 if attempt < self.max_retries:
                     wait_time = min(2 ** attempt, 10)
-                    logging.info(f"Retrying embeddings in {wait_time} seconds...")
+                    logging.info(f"Retrying embeddings in {wait_time}s...")
                     time.sleep(wait_time)
                 else:
                     logging.error(f"All {self.max_retries + 1} embedding attempts failed")

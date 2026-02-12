@@ -16,7 +16,7 @@ graph TB
     W2 -->|Read/Write Files| Storage
     W3 -->|Read/Write Files| Storage
     
-    W2 -->|Rate-Limited Calls| LLM[vLLM Server]
+    W2 -->|LLM Calls| LLM[vLLM Server]
     W1 -->|Parse References| GROBID[GROBID Server]
     W3 -->|Link Citations| APIs[External APIs<br/>OpenAlex, Wikidata, etc.]
     
@@ -68,8 +68,7 @@ Redis Keys:
 ├── rq:queue:llm-tasks        # Queue: LLM-based jobs
 ├── rq:queue:linking          # Queue: citation linking jobs
 ├── job:{job_id}              # HASH: job metadata
-├── job:{job_id}:events       # STREAM: job events (optional)
-└── llm:semaphore             # Counter: LLM rate limiting
+└── job:{job_id}:events       # STREAM: job events (optional)
 ```
 
 **Job Metadata (Redis HASH)**:
@@ -117,11 +116,10 @@ graph TD
 | worker-linking | `linking` | Medium (~1-3min) | 2 | External API calls |
 
 **Key Insight**: 
-- `worker-llm` has 6 replicas but semaphore limit is 4
-- Workers 1-4: Call vLLM
-- Workers 5-6: Wait for semaphore (have jobs ready!)
-- When Worker 1 finishes → Worker 5 starts immediately (no gap!)
-- This maximizes throughput while protecting vLLM
+- `worker-llm` has 6 replicas — each picks a job and calls vLLM directly
+- vLLM handles concurrent requests internally via continuous batching
+- No application-level semaphore needed; worker replica count is the natural concurrency limit
+- Scale replicas up/down based on GPU capacity and queue depth
 
 ### 4. Storage Manager (`utils/storage.py`)
 
@@ -161,8 +159,7 @@ def extract_references_task(job_id: str, **params):
     text = storage.load_intermediate(job_id, 'text_extraction')
     
     # 2. Call existing pipeline function (no changes needed!)
-    with llm_semaphore.acquire():
-        refs = extract_text_references(text, llm_client, **params)
+    refs = extract_text_references(text, llm_client, **params)
     
     # 3. Save output to storage
     storage.save_intermediate(job_id, 'reference_extraction', refs)
@@ -270,50 +267,35 @@ graph LR
 
 **Rationale**:
 - **default**: Fast, CPU-bound tasks (text extraction)
-- **llm-tasks**: LLM calls (rate-limited, GPU-bound)
+- **llm-tasks**: LLM calls (GPU-bound, concurrent via vLLM batching)
 - **linking**: External API calls (I/O-bound, many retries)
 
-### Worker Count vs Semaphore (Critical!)
+### Worker Count & Concurrency
 
-**Why 6 workers but semaphore=4?**
+**Why 6 LLM workers?**
 
 ```
 6 LLM Workers (worker-llm replicas=6)
 │
-├─ Worker 1-4: Acquired semaphore → Calling vLLM
-│              (4 concurrent vLLM requests - max capacity!)
-│
-└─ Worker 5-6: Have jobs, waiting for semaphore slots
-               When Worker 1 finishes → Worker 5 starts IMMEDIATELY!
-               (No gap, maximizes throughput)
+├─ Each worker picks one job at a time from the llm-tasks queue
+├─ All 6 can call vLLM concurrently
+└─ vLLM batches concurrent requests internally (continuous batching)
 ```
 
 **Purpose**:
-- **Worker count (6)**: How many jobs "in flight" (some waiting)
-- **Semaphore (4)**: Max concurrent vLLM calls (protects server)
-- **Result**: Fast queue draining + vLLM protection
+- **Worker count (6)**: Directly controls max concurrent vLLM requests
+- **vLLM**: Handles request queuing and GPU scheduling internally
+- **Result**: Simple architecture, no application-level rate limiting needed
 
-**Rule of thumb**: `workers = semaphore × 1.5 to 2`
+**Rule of thumb**: Set `replicas` based on GPU capacity and queue depth.
+Typical: 4–8 workers per GPU for medium-sized models.
 
-### LLM Semaphore Implementation
-
-```python
-# In tasks.py - all LLM tasks use this
-with llm_semaphore.acquire():
-    result = llm_client.call(...)  # Max 4 workers here at once
-```
-
-**Algorithm** (Redis-based):
-```python
-# Atomic increment
-current = redis.incr("llm:semaphore")
-if current <= max_concurrent:  # Got a slot!
-    do_llm_call()
-    redis.decr("llm:semaphore")  # Release
-else:
-    redis.decr("llm:semaphore")  # Give back
-    time.sleep(0.1)  # Retry
-```
+> **Note**: An application-level semaphore (`LLMSemaphore` in `tasks.py`) was
+> previously used to limit concurrent vLLM calls. It was removed because:
+> (1) vLLM handles concurrency natively, (2) the semaphore ate into RQ job
+> timeouts while workers blocked waiting, and (3) leaked slots on worker
+> crashes caused progressive throughput degradation. The commented-out
+> implementation is preserved in `tasks.py` if needed in the future.
 
 ## Data Flow: Full Pipeline Example
 
@@ -322,9 +304,7 @@ graph LR
     Upload[PDF Upload] --> Q1[Queue: default]
     Q1 --> W1[Extract Text]
     W1 --> Q2[Queue: llm-tasks]
-    Q2 --> Sem{Semaphore?}
-    Sem -->|Wait| Sem
-    Sem -->|Acquired| W2[Extract & Parse Refs]
+    Q2 --> W2[Extract & Parse Refs]
     W2 --> Done[Result Ready]
 ```
 
@@ -339,7 +319,7 @@ graph LR
 
 **Key Settings**:
 - **Redis**: `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD`
-- **LLM**: `LLM_ENDPOINT`, `LLM_MODEL`, `LLM_MAX_CONCURRENT` (semaphore limit)
+- **LLM**: `LLM_ENDPOINT`, `LLM_MODEL`, `LLM_TIMEOUT`, `LLM_MAX_RETRIES`
 - **Storage**: `STORAGE_ROOT` (filesystem path, e.g., `/mnt/pvc` in K8s)
 - **Timeouts**: Per-stage timeouts in `config.py` (higher than app-level retries)
 
@@ -435,7 +415,7 @@ Tasks check for existing output before executing:
 | Queue length | Redis `LLEN rq:queue:*` | Backlog monitoring |
 | Active workers | RQ Dashboard | Worker health |
 | Job success rate | Redis job metadata | Success tracking |
-| LLM semaphore | Redis `GET llm:semaphore` | Concurrency usage |
+| LLM worker count | RQ Dashboard active workers | Concurrency usage |
 | Storage size | Filesystem `du -sh storage/` | Disk usage |
 
 ## Performance Tuning
@@ -447,7 +427,7 @@ Tasks check for existing output before executing:
 | High API latency | Too few API pods | Scale API replicas |
 | Growing queue | Not enough workers | Scale worker replicas |
 | Workers idle | Dependency blocking | Check job dependencies |
-| LLM timeouts | Semaphore too high | Decrease `LLM_MAX_CONCURRENT` |
+| LLM timeouts | Too many concurrent reqs | Reduce worker-llm replicas or increase GPU capacity |
 | Slow I/O | Storage bottleneck | Faster disk or caching |
 
 ### Scaling Guide
@@ -456,9 +436,9 @@ Tasks check for existing output before executing:
 |-----------|----------|-------------|-----------|
 | API replicas | 1 | 2 | 4 |
 | worker-llm | 2 | 6 | 12 |
-| LLM_MAX_CONCURRENT | 2 | 4 | 8 |
 
-**Rule**: `worker-llm replicas = LLM_MAX_CONCURRENT × 1.5-2`
+**Rule**: Scale `worker-llm` replicas based on GPU capacity and queue depth.
+Typical: 4-8 workers per GPU for medium-sized models.
 
 ## Security Considerations
 
@@ -497,9 +477,6 @@ docker-compose exec redis redis-cli KEYS rq:worker:*
 
 # Check job metadata
 docker-compose exec redis redis-cli HGETALL job:YOUR_JOB_ID
-
-# Check LLM semaphore usage
-docker-compose exec redis redis-cli GET llm:semaphore
 
 # Worker logs
 docker-compose logs -f worker-llm

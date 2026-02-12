@@ -11,7 +11,6 @@ import json
 import logging
 import socket
 import time
-from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -43,38 +42,90 @@ storage = StorageManager(settings.storage_root)
 
 
 # ========================
-# LLM Semaphore for Rate Limiting
+# LLM Semaphore for Rate Limiting (DISABLED)
 # ========================
-
-class LLMSemaphore:
-    """Redis-based semaphore for limiting concurrent LLM requests."""
-    
-    def __init__(self, redis_conn, max_concurrent: int = 4):
-        self.redis = redis_conn
-        self.max_concurrent = max_concurrent
-        self.semaphore_key = "llm:semaphore"
-    
-    @contextmanager
-    def acquire(self):
-        """Acquire a semaphore slot (blocks until available)."""
-        acquired = False
-        try:
-            while True:
-                current = self.redis.incr(self.semaphore_key)
-                if current <= self.max_concurrent:
-                    acquired = True
-                    break
-                self.redis.decr(self.semaphore_key)
-                time.sleep(0.1)
-            
-            yield
-            
-        finally:
-            if acquired:
-                self.redis.decr(self.semaphore_key)
-
-
-llm_semaphore = LLMSemaphore(redis_conn, max_concurrent=settings.llm_max_concurrent)
+# Semaphore removed: vLLM handles concurrent requests internally via
+# continuous batching.  Worker replica count (docker-compose replicas)
+# is the natural concurrency limit.  The semaphore added complexity,
+# ate into RQ job timeouts while blocking, and leaked slots on crash.
+#
+# To re-enable, uncomment the class below and the `with llm_semaphore.acquire():`
+# blocks in extract_references_task, parse_references_task, and
+# extract_and_parse_references_task.
+#
+# import threading, uuid
+# from contextlib import contextmanager
+#
+# class LLMSemaphore:
+#     """Redis-based semaphore for limiting concurrent LLM requests.
+#
+#     Uses a Redis sorted-set of per-slot tokens with expiry timestamps
+#     instead of a plain INCR/DECR counter.  This makes the semaphore
+#     **crash-safe**: if a worker is killed (SIGKILL, OOM, Docker restart)
+#     without running the ``finally`` block, its slot automatically expires
+#     after ``slot_ttl`` seconds and is reclaimed by the next caller.
+#     """
+#
+#     def __init__(self, redis_conn, max_concurrent: int = 4, slot_ttl: int = 300):
+#         self.redis = redis_conn
+#         self.max_concurrent = max_concurrent
+#         self.semaphore_key = "llm:semaphore:slots"
+#         self.slot_ttl = slot_ttl
+#
+#     def _prune_expired(self):
+#         now = time.time()
+#         self.redis.zremrangebyscore(self.semaphore_key, "-inf", now)
+#
+#     @contextmanager
+#     def acquire(self):
+#         slot_token = f"{socket.gethostname()}:{uuid.uuid4().hex[:12]}"
+#         acquired = False
+#         try:
+#             while True:
+#                 self._prune_expired()
+#                 expiry = time.time() + self.slot_ttl
+#                 pipe = self.redis.pipeline(True)
+#                 try:
+#                     pipe.watch(self.semaphore_key)
+#                     current_count = pipe.zcard(self.semaphore_key)
+#                     if current_count < self.max_concurrent:
+#                         pipe.multi()
+#                         pipe.zadd(self.semaphore_key, {slot_token: expiry})
+#                         pipe.execute()
+#                         acquired = True
+#                         break
+#                     else:
+#                         pipe.unwatch()
+#                 except redis.WatchError:
+#                     continue
+#                 time.sleep(0.5)
+#
+#             stop_event = threading.Event()
+#             refresh_thread = threading.Thread(
+#                 target=self._refresh_loop,
+#                 args=(slot_token, stop_event),
+#                 daemon=True,
+#             )
+#             refresh_thread.start()
+#             try:
+#                 yield
+#             finally:
+#                 stop_event.set()
+#                 refresh_thread.join(timeout=2)
+#         finally:
+#             if acquired:
+#                 self.redis.zrem(self.semaphore_key, slot_token)
+#
+#     def _refresh_loop(self, slot_token, stop_event):
+#         interval = self.slot_ttl / 3
+#         while not stop_event.wait(timeout=interval):
+#             try:
+#                 new_expiry = time.time() + self.slot_ttl
+#                 self.redis.zadd(self.semaphore_key, {slot_token: new_expiry})
+#             except Exception:
+#                 break
+#
+# llm_semaphore = LLMSemaphore(redis_conn, max_concurrent=settings.llm_max_concurrent)
 
 
 # ========================
@@ -253,24 +304,24 @@ def extract_references_task(
             max_retries=settings.llm_max_retries
         )
         
-        # Extract references with semaphore rate limiting
-        with llm_semaphore.acquire():
-            if method == "semantic":
-                references = extract_text_references_semantic_sections(
-                    text_or_pdf=text,
-                    llm_client=llm_client,
-                    embed_client=embed_client,
-                    embedding_model=settings.embedding_model,
-                    prompt_name=prompt_name,
-                    temperature=temperature
-                )
-            else:
-                references = extract_text_references(
-                    text=text,
-                    llm_client=llm_client,
-                    prompt_name=prompt_name,
-                    temperature=temperature
-                )
+        # Semaphore removed – vLLM handles concurrency internally.
+        # with llm_semaphore.acquire():
+        if method == "semantic":
+            references = extract_text_references_semantic_sections(
+                text_or_pdf=text,
+                llm_client=llm_client,
+                embed_client=embed_client,
+                embedding_model=settings.embedding_model,
+                prompt_name=prompt_name,
+                temperature=temperature
+            )
+        else:
+            references = extract_text_references(
+                text=text,
+                llm_client=llm_client,
+                prompt_name=prompt_name,
+                temperature=temperature
+            )
         
         # Save output
         output = {
@@ -360,7 +411,8 @@ def parse_references_task(
                 grobid_client=grobid_client
             )
         else:
-            # Use LLM parser with semaphore (short FTT, long timeout for parsing)
+            # Use LLM parser (short FTT, long timeout for parsing)
+            # Semaphore removed – vLLM handles concurrency internally.
             llm_client = LLMClient(
                 endpoint=settings.llm_endpoint,
                 model=settings.llm_model,
@@ -370,13 +422,13 @@ def parse_references_task(
                 first_token_timeout=settings.llm_first_token_timeout_reference_parsing
             )
             
-            with llm_semaphore.acquire():
-                parsed_refs = parse_reference_strings(
-                    reference_lines=reference_lines,
-                    llm_client=llm_client,
-                    prompt_name=prompt_name,
-                    temperature=temperature
-                )
+            # with llm_semaphore.acquire():
+            parsed_refs = parse_reference_strings(
+                reference_lines=reference_lines,
+                llm_client=llm_client,
+                prompt_name=prompt_name,
+                temperature=temperature
+            )
         
         # Save output
         output = {
@@ -474,24 +526,24 @@ def extract_and_parse_references_task(
             max_retries=settings.llm_max_retries
         )
         
-        # Run combined extraction + parsing with semaphore
-        with llm_semaphore.acquire():
-            if method == "semantic_one_step":
-                parsed_refs = run_pdf_semantic_one_step(
-                    text_or_pdf=text,
-                    llm_client=llm_client,
-                    embed_client=embed_client,
-                    embedding_model=settings.embedding_model,
-                    prompt_name=prompt_name,
-                    temperature=temperature
-                )
-            else:
-                parsed_refs = run_pdf_one_step(
-                    text_or_pdf=text,
-                    llm_client=llm_client,
-                    prompt_name=prompt_name,
-                    temperature=temperature
-                )
+        # Semaphore removed – vLLM handles concurrency internally.
+        # with llm_semaphore.acquire():
+        if method == "semantic_one_step":
+            parsed_refs = run_pdf_semantic_one_step(
+                text_or_pdf=text,
+                llm_client=llm_client,
+                embed_client=embed_client,
+                embedding_model=settings.embedding_model,
+                prompt_name=prompt_name,
+                temperature=temperature
+            )
+        else:
+            parsed_refs = run_pdf_one_step(
+                text_or_pdf=text,
+                llm_client=llm_client,
+                prompt_name=prompt_name,
+                temperature=temperature
+            )
         
         # Save output
         output = {

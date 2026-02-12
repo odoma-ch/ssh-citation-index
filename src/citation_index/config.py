@@ -1,10 +1,13 @@
 """Configuration settings for Citation Index API and workers."""
 
+import logging
 from pathlib import Path
 from typing import Optional
 
-from pydantic import AliasChoices, Field, computed_field
+from pydantic import AliasChoices, Field, computed_field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+logger = logging.getLogger(__name__)
 
 
 class Settings(BaseSettings):
@@ -124,11 +127,18 @@ class Settings(BaseSettings):
         description="Default job timeout in seconds"
     )
     
-    # Queue-specific timeouts
-    timeout_text_extraction: int = Field(default=300, description="Text extraction timeout")
-    timeout_reference_extraction: int = Field(default=900, description="Reference extraction timeout")
-    timeout_reference_parsing: int = Field(default=900, description="Reference parsing timeout")
-    timeout_citation_linking: int = Field(default=600, description="Citation linking timeout")
+    # Queue-specific timeouts (RQ job timeout – hard-kills worker process).
+    #
+    # IMPORTANT – Timeout hierarchy:
+    #   queue_timeout  >  llm_timeout × (llm_max_retries + 1) + buffer
+    #
+    # The queue timeout MUST be larger than the worst-case LLM retry
+    # cycle, otherwise RQ will kill the worker before the LLM client
+    # has a chance to exhaust its retries and report a clean error.
+    timeout_text_extraction: int = Field(default=300, description="Text extraction queue timeout (no LLM)")
+    timeout_reference_extraction: int = Field(default=1200, description="Reference extraction queue timeout")
+    timeout_reference_parsing: int = Field(default=1800, description="Reference parsing queue timeout")
+    timeout_citation_linking: int = Field(default=600, description="Citation linking queue timeout (no LLM)")
     
     # ========================
     # API Configuration
@@ -161,6 +171,48 @@ class Settings(BaseSettings):
         default=None,
         description="Embedding API key (optional for local services)"
     )
+    
+    # ------------------------------------------------------------------
+    # Timeout hierarchy validation
+    # ------------------------------------------------------------------
+    @model_validator(mode="after")
+    def _warn_on_short_queue_timeouts(self) -> "Settings":
+        """Log a warning when queue timeouts are too small for LLM retries.
+        
+        The RQ queue timeout hard-kills the worker process.  If it fires
+        before the LLM client finishes its retry cycle, the job dies with
+        an opaque "job timed out" error instead of a clean LLM error.
+        
+        Formula: queue_timeout >= llm_timeout × (max_retries + 1) + buffer
+        """
+        buffer = 120  # seconds of overhead for task setup / teardown
+        checks = [
+            (
+                "timeout_reference_extraction",
+                self.timeout_reference_extraction,
+                self.llm_timeout,
+                self.llm_max_retries,
+            ),
+            (
+                "timeout_reference_parsing",
+                self.timeout_reference_parsing,
+                self.llm_timeout_reference_parsing,
+                self.llm_max_retries,
+            ),
+        ]
+        for name, queue_timeout, llm_timeout, retries in checks:
+            min_required = llm_timeout * (retries + 1) + buffer
+            if queue_timeout < min_required:
+                logger.warning(
+                    "Queue timeout %s=%ds is smaller than the worst-case "
+                    "LLM retry cycle (%.0f × %d + %d = %.0fs).  "
+                    "The RQ worker may be killed before retries complete.  "
+                    "Increase %s or decrease LLM_TIMEOUT / LLM_MAX_RETRIES.",
+                    name, queue_timeout,
+                    llm_timeout, retries + 1, buffer, min_required,
+                    name.upper(),
+                )
+        return self
 
 
 # Global settings instance

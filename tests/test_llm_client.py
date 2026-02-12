@@ -502,7 +502,9 @@ class TestEmbedClient:
             assert call_args['input'] == texts
     
     def test_get_embeddings_with_retry(self):
-        """Test retry logic on embedding failures."""
+        """Test retry logic on retryable embedding failures."""
+        from src.citation_index.llm.client import LLMTimeoutError
+        
         client = EmbedClient(
             endpoint=self.mock_endpoint,
             model=self.mock_model,
@@ -510,13 +512,13 @@ class TestEmbedClient:
             max_retries=2
         )
         
-        # Mock: fail twice, succeed third time
+        # Mock: fail twice with retryable errors, succeed third time
         mock_response = Mock()
         mock_response.data = [Mock(embedding=[0.1, 0.2])]
         
         mock_create = Mock(side_effect=[
-            Exception("API error"),
-            Exception("Network error"),
+            LLMTimeoutError("Timeout"),
+            LLMTimeoutError("Timeout again"),
             mock_response
         ])
         
@@ -529,7 +531,9 @@ class TestEmbedClient:
                 assert embeddings.shape == (1, 2)
     
     def test_get_embeddings_max_retries_exceeded(self):
-        """Test that max retries are respected."""
+        """Test that max retries are respected for retryable errors."""
+        from src.citation_index.llm.client import LLMTimeoutError
+        
         client = EmbedClient(
             endpoint=self.mock_endpoint,
             model=self.mock_model,
@@ -537,19 +541,38 @@ class TestEmbedClient:
             max_retries=1
         )
         
-        mock_create = Mock(side_effect=Exception("Persistent error"))
+        mock_create = Mock(side_effect=LLMTimeoutError("Persistent timeout"))
         
         with patch.object(client.client.embeddings, 'create', mock_create):
             with patch('time.sleep'):
-                with pytest.raises(Exception, match="Persistent error"):
+                with pytest.raises(LLMTimeoutError, match="Persistent timeout"):
                     client.get_embeddings(texts=["test"])
                 
                 # Should try: initial + 1 retry = 2 total
                 assert mock_create.call_count == 2
     
+    def test_get_embeddings_non_retryable_error_fails_immediately(self):
+        """Test that non-retryable errors fail immediately without retry."""
+        client = EmbedClient(
+            endpoint=self.mock_endpoint,
+            model=self.mock_model,
+            api_key=self.mock_api_key,
+            max_retries=3
+        )
+        
+        mock_create = Mock(side_effect=ValueError("Bad input"))
+        
+        with patch.object(client.client.embeddings, 'create', mock_create):
+            with patch('time.sleep'):
+                with pytest.raises(ValueError, match="Bad input"):
+                    client.get_embeddings(texts=["test"])
+                
+                # Should fail on first attempt - no retries
+                assert mock_create.call_count == 1
+    
     def test_get_embeddings_timeout_handling(self):
         """Test timeout handling for embeddings."""
-        from src.citation_index.llm.client import TimeoutError
+        from src.citation_index.llm.client import LLMTimeoutError
         
         client = EmbedClient(
             endpoint=self.mock_endpoint,
@@ -558,11 +581,11 @@ class TestEmbedClient:
             timeout=5.0
         )
         
-        mock_create = Mock(side_effect=TimeoutError("Request timed out"))
+        mock_create = Mock(side_effect=LLMTimeoutError("Request timed out"))
         
         with patch.object(client.client.embeddings, 'create', mock_create):
             with patch('time.sleep'):
-                with pytest.raises(TimeoutError):
+                with pytest.raises(LLMTimeoutError):
                     client.get_embeddings(texts=["test"])
     
     def test_get_embeddings_custom_model(self):
