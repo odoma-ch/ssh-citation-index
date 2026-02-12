@@ -297,7 +297,7 @@ def extract_references_task(
         
         # Initialize EmbedClient for semantic extraction
         embed_client = EmbedClient(
-            endpoint=settings.llm_endpoint,
+            endpoint=settings.embedding_endpoint,
             model=settings.embedding_model,
             api_key=settings.embedding_api_key or settings.llm_api_key,
             timeout=settings.llm_timeout,
@@ -519,7 +519,7 @@ def extract_and_parse_references_task(
         
         # Initialize EmbedClient for semantic extraction
         embed_client = EmbedClient(
-            endpoint=settings.llm_endpoint,
+            endpoint=settings.embedding_endpoint,
             model=settings.embedding_model,
             api_key=settings.embedding_api_key or settings.llm_api_key,
             timeout=settings.llm_timeout,

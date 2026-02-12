@@ -407,7 +407,7 @@ def parse_reference_strings_endpoint(
     
     # Enqueue parsing task
     queue = queue_llm if parser == "llm" else queue_default
-    timeout = settings.timeout_reference_parsing if parser == "llm" else settings.timeout_reference_parsing
+    timeout = settings.timeout_reference_parsing if parser == "llm" else settings.timeout_text_extraction
     queue.enqueue_call(
         parse_references_task,
         kwargs={"job_id": job_id, "parser": parser, "prompt_name": prompt_name, "temperature": temperature},
