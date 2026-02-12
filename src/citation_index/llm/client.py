@@ -17,7 +17,6 @@ Timeout hierarchy (innermost to outermost):
 import json
 import logging
 import os
-import re
 import time
 from typing import Dict, List, Optional, Iterator, Tuple, Union
 
