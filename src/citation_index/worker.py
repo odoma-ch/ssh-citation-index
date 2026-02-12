@@ -39,10 +39,10 @@ class GracefulWorker(Worker):
         super().__init__(*args, **kwargs)
         self.shutdown_requested = False
     
-    def handle_warm_shutdown_request(self):
+    def handle_warm_shutdown_request(self, signum, frame):
         """Handle graceful shutdown signal."""
         logger.info("Warm shutdown requested, finishing current job...")
-        self.request_stop(signum=signal.SIGTERM)
+        self.request_stop(signum=signum, frame=frame)
     
     def register_signal_handlers(self):
         """Register signal handlers for graceful shutdown."""
@@ -50,8 +50,8 @@ class GracefulWorker(Worker):
         super().register_signal_handlers()
         
         # Override with our graceful handlers
-        signal.signal(signal.SIGTERM, lambda s, f: self.handle_warm_shutdown_request())
-        signal.signal(signal.SIGINT, lambda s, f: self.handle_warm_shutdown_request())
+        signal.signal(signal.SIGTERM, lambda s, f: self.handle_warm_shutdown_request(s, f))
+        signal.signal(signal.SIGINT, lambda s, f: self.handle_warm_shutdown_request(s, f))
 
 
 def parse_args() -> argparse.Namespace:

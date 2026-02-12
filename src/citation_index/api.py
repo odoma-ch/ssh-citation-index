@@ -205,10 +205,46 @@ def root():
 
 @app.get("/jobs/{job_id}/status", response_model=JobStatus)
 def get_job_status(job_id: str):
-    """Get job status."""
+    """Get job status, checking both metadata and RQ job state."""
+    from rq.job import Job
+    from rq.registry import FailedJobRegistry, FinishedJobRegistry
+    
     metadata = get_job_metadata(job_id)
     if not metadata:
         raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
+    
+    # Check actual RQ job status to catch failed/killed jobs
+    try:
+        rq_job = Job.fetch(job_id, connection=redis_conn)
+        
+        # If RQ says the job failed but our metadata doesn't reflect it, update metadata
+        if rq_job.is_failed and metadata.get("status") not in ["failed", "completed"]:
+            error_msg = str(rq_job.exc_info) if rq_job.exc_info else "Job was killed or failed"
+            redis_conn.hset(f"job:{job_id}", mapping={
+                "status": "failed",
+                "error": error_msg,
+                "finished_at": datetime.utcnow().isoformat()
+            })
+            metadata["status"] = "failed"
+            metadata["error"] = error_msg
+            
+        # Check if job is in failed registry
+        elif metadata.get("status") == "processing":
+            for queue_name in ["default", "llm-tasks", "linking"]:
+                failed_registry = FailedJobRegistry(queue_name, connection=redis_conn)
+                if job_id in failed_registry.get_job_ids():
+                    redis_conn.hset(f"job:{job_id}", mapping={
+                        "status": "failed",
+                        "error": "Job was moved to failed registry",
+                        "finished_at": datetime.utcnow().isoformat()
+                    })
+                    metadata["status"] = "failed"
+                    metadata["error"] = "Job was moved to failed registry"
+                    break
+                    
+    except Exception as e:
+        logger.warning(f"Could not fetch RQ job {job_id}: {e}")
+        # If we can't fetch the job from RQ but have metadata, continue with metadata
     
     return JobStatus(**metadata)
 
@@ -288,12 +324,14 @@ async def enqueue_text_extraction(
         extractor=extractor
     )
     
-    # Enqueue task (timeout is set by @job decorator on the task)
+    # Enqueue task (timeout and result_ttl must be set explicitly on enqueue_call)
     queue_default.enqueue_call(
         extract_text_task,
         args=(job_id,),
         kwargs={"extractor": extractor, "markdown": markdown},
         job_id=job_id,
+        timeout=settings.timeout_text_extraction,
+        result_ttl=settings.worker_result_ttl,
     )
     
     logger.info(f"Enqueued text extraction job {job_id}")
@@ -334,6 +372,8 @@ async def enqueue_reference_extraction(
         extract_references_task,
         kwargs={"job_id": job_id, "method": method, "prompt_name": prompt_name, "temperature": temperature},
         job_id=job_id,
+        timeout=settings.timeout_reference_extraction,
+        result_ttl=settings.worker_result_ttl,
     )
 
     logger.info(f"Enqueued reference extraction job {job_id}")
@@ -367,10 +407,13 @@ def parse_reference_strings_endpoint(
     
     # Enqueue parsing task
     queue = queue_llm if parser == "llm" else queue_default
+    timeout = settings.timeout_reference_parsing if parser == "llm" else settings.timeout_reference_parsing
     queue.enqueue_call(
         parse_references_task,
         kwargs={"job_id": job_id, "parser": parser, "prompt_name": prompt_name, "temperature": temperature},
         job_id=job_id,
+        timeout=timeout,
+        result_ttl=settings.worker_result_ttl,
     )
     
     logger.info(f"Enqueued reference parsing job {job_id}")
