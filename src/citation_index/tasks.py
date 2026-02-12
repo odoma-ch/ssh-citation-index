@@ -21,7 +21,7 @@ from rq import get_current_job
 from rq.decorators import job
 
 from .config import settings
-from .llm.client import LLMClient
+from .llm.client import LLMClient, EmbedClient
 from .llm.grobid_client import GrobidClient
 from .pipelines.end_to_end_parsing import run_pdf_one_step, run_pdf_semantic_one_step
 from .pipelines.reference_extraction import (
@@ -244,14 +244,23 @@ def extract_references_task(
             first_token_timeout=settings.llm_first_token_timeout_reference_extraction
         )
         
+        # Initialize EmbedClient for semantic extraction
+        embed_client = EmbedClient(
+            endpoint=settings.llm_endpoint,
+            model=settings.embedding_model,
+            api_key=settings.embedding_api_key or settings.llm_api_key,
+            timeout=settings.llm_timeout,
+            max_retries=settings.llm_max_retries
+        )
+        
         # Extract references with semaphore rate limiting
         with llm_semaphore.acquire():
             if method == "semantic":
                 references = extract_text_references_semantic_sections(
                     text_or_pdf=text,
                     llm_client=llm_client,
+                    embed_client=embed_client,
                     embedding_model=settings.embedding_model,
-                    embedding_endpoint=settings.embedding_endpoint,
                     prompt_name=prompt_name,
                     temperature=temperature
                 )
@@ -456,14 +465,23 @@ def extract_and_parse_references_task(
             first_token_timeout=settings.llm_first_token_timeout_end_to_end
         )
         
+        # Initialize EmbedClient for semantic extraction
+        embed_client = EmbedClient(
+            endpoint=settings.llm_endpoint,
+            model=settings.embedding_model,
+            api_key=settings.embedding_api_key or settings.llm_api_key,
+            timeout=settings.llm_timeout,
+            max_retries=settings.llm_max_retries
+        )
+        
         # Run combined extraction + parsing with semaphore
         with llm_semaphore.acquire():
             if method == "semantic_one_step":
                 parsed_refs = run_pdf_semantic_one_step(
                     text_or_pdf=text,
                     llm_client=llm_client,
+                    embed_client=embed_client,
                     embedding_model=settings.embedding_model,
-                    embedding_endpoint=settings.embedding_endpoint,
                     prompt_name=prompt_name,
                     temperature=temperature
                 )

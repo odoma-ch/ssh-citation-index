@@ -157,6 +157,10 @@ class Settings(BaseSettings):
         default="http://0.0.0.0:7997/embeddings",
         description="Embedding service endpoint"
     )
+    embedding_api_key: Optional[str] = Field(
+        default=None,
+        description="Embedding API key (optional for local services)"
+    )
 
 
 # Global settings instance

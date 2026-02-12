@@ -92,6 +92,11 @@ class ReferenceExtractionRequest(BaseModel):
     text: str = Field(..., description="Markdown text to extract references from")
 
 
+class ReferenceParsingRequest(BaseModel):
+    """Request body for reference parsing - accepts list of reference strings."""
+    references: list[str] = Field(..., description="List of reference strings to parse")
+
+
 class ReferenceParsingOptions(BaseModel):
     """Options for reference parsing."""
     parser: str = Field(default="llm", description="Parser to use (llm or grobid)")
@@ -341,26 +346,23 @@ async def enqueue_reference_extraction(
 
 @app.post("/parse/references", response_model=JobResponse)
 def parse_reference_strings_endpoint(
-    references: list[str],
+    body: ReferenceParsingRequest = Body(...),
     parser: str = Query(default="llm", description="Parser (llm or grobid)"),
     prompt_name: str = Query(default="prompts/reference_parsing.md", description="Prompt template"),
     temperature: float = Query(default=0.0, description="LLM temperature")
 ):
-    """Parse a list of reference strings (synchronous for now)."""
-    # This endpoint is synchronous since it doesn't need file upload
-    # Could be made async if needed
-    
+    """Parse a list of reference strings into structured data."""
     job_id = create_job_id()
     
     # Save references as intermediate data
-    ref_data = {"references": references, "count": len(references)}
+    ref_data = {"references": body.references, "count": len(body.references)}
     storage.save_intermediate(job_id, "reference_extraction", ref_data)
     
     # Initialize metadata
     initialize_job_metadata(
         job_id,
         job_type="reference_parsing",
-        reference_count=len(references)
+        reference_count=len(body.references)
     )
     
     # Enqueue parsing task

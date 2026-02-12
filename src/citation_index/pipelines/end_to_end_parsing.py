@@ -190,11 +190,11 @@ def run_pdf_two_step_by_page(
 def run_pdf_semantic_one_step(
     text_or_pdf: str | Path,
     llm_client: LLMClient,
+    embed_client,
     chunker=None,
     chunks=None,
     extractor: Optional[str] = None,
     embedding_model: str = "intfloat/multilingual-e5-large-instruct",
-    embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
     prompt_name: str = "prompts/end_to_end_parsing.md",
     temperature: float = 0.3,
     include_schema: bool = True,
@@ -208,17 +208,15 @@ def run_pdf_semantic_one_step(
     Args:
         text_or_pdf: Input text or PDF path
         llm_client: LLM client for extraction and parsing
+        embed_client: EmbedClient for getting embeddings
         chunker: Text chunker object with chunk() method. Ignored if chunks parameter is provided.
         chunks: Pre-computed chunks from the text. If provided, chunker is ignored.
         extractor: Text extractor type (if PDF input)
         embedding_model: Model for semantic embeddings
-        embedding_endpoint: API endpoint for embedding service
         prompt_name: Prompt template for extraction and parsing
         temperature: LLM temperature
         include_schema: Include JSON schema in prompt
         fast_path: Try regex matching first
-        gap_size_threshold: Minimum gap size to trigger gap-based candidate selection
-        drop_tolerance: Maximum score drop allowed during contiguous expansion
         
     Returns:
         References object containing parsed references
@@ -232,10 +230,10 @@ def run_pdf_semantic_one_step(
     # Locate reference sections using semantic search
     reference_sections = locate_reference_sections_semantic(
         input_text,
+        embed_client=embed_client,
+        embedding_model=embedding_model,
         chunker=chunker,
         chunks=chunks,
-        embedding_model=embedding_model,
-        embedding_endpoint=embedding_endpoint,
         fast_path=fast_path
     )
     

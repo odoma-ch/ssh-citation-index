@@ -10,8 +10,8 @@ import asyncio
 import os
 from contextlib import contextmanager
 from numpy import full
-# import openai
-from langfuse.openai import openai
+import numpy as np
+import openai
 import aiohttp
 import concurrent.futures
 import logging
@@ -556,11 +556,92 @@ class VLLMClient(LLMClient):
         raise RuntimeError("Unexpected: no response and no exception in structured output")
 
 
+class EmbedClient(LLMClient):
+    """Client for embedding APIs using OpenAI SDK.
     
+    Inherits from LLMClient to reuse:
+    - OpenAI client initialization with API key handling
+    - Retry logic with exponential backoff
+    - Timeout context management
+    """
+    
+    def __init__(self, endpoint: str, model: str, api_key: Optional[str] = None, 
+                 timeout: float = 120.0, max_retries: int = 3):
+        """Initialize embedding client.
+        
+        Args:
+            endpoint: Embedding API base URL (e.g., 'https://api.example.com/v1')
+            model: Embedding model name
+            api_key: API key for authentication (optional for local services)
+            timeout: Request timeout in seconds
+            max_retries: Maximum retry attempts
+        """
+        # Initialize parent to set up OpenAI client and retry configuration
+        super().__init__(
+            endpoint=endpoint,
+            model=model,
+            api_key=api_key,
+            timeout=timeout,
+            max_retries=max_retries,
+            first_token_timeout=timeout  # Not used for embeddings
+        )
+    
+    def get_embeddings(self, texts: List[str], model: str = None, 
+                      timeout: float = None) -> np.ndarray:
+        """Get embeddings with retry logic.
+        
+        Args:
+            texts: List of texts to embed
+            model: Model name (defaults to self.model)
+            timeout: Timeout in seconds (defaults to self.timeout)
+        
+        Returns:
+            numpy array of shape (len(texts), embedding_dim)
+        """
+        model = model if model else self.model
+        timeout = timeout if timeout else self.timeout
+        
+        last_exception = None
+        
+        for attempt in range(self.max_retries + 1):
+            try:
+                with timeout_context(timeout) as timeout_manager:
+                    response = self.client.embeddings.create(
+                        model=model,
+                        input=texts,
+                        timeout=timeout
+                    )
+                    timeout_manager.check_timeout()
+                    
+                    embeddings = np.array(
+                        [data.embedding for data in response.data], 
+                        dtype=np.float64
+                    )
+                    return embeddings
+                    
+            except (TimeoutError, Exception) as e:
+                last_exception = e
+                attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
+                
+                if isinstance(e, TimeoutError):
+                    logging.warning(f"Embedding timeout on {attempt_info}: {e}")
+                else:
+                    logging.warning(f"Embedding error on {attempt_info}: {type(e).__name__}: {e}")
+                
+                if attempt < self.max_retries:
+                    wait_time = min(2 ** attempt, 10)
+                    logging.info(f"Retrying embeddings in {wait_time} seconds...")
+                    time.sleep(wait_time)
+                else:
+                    logging.error(f"All {self.max_retries + 1} embedding attempts failed")
+                    break
+        
+        if last_exception:
+            raise last_exception
+        
+        raise RuntimeError("Unexpected: no embeddings response and no exception")
 
-    
-   
-    
+
 if __name__ == "__main__":
 #     client = openai.OpenAI(
 # 	api_key="sk-9UYVeokX2LsTjZlEGFmzVg",
