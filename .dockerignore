@@ -1,0 +1,71 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Large data directories
+benchmarks/
+storage/
+logs/
+
+# Documentation
+*.md
+!README.md
+!ARCHITECTURE.md
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Other
+*.log
+.env.local
+.env.*.local
+docker-compose.override.yml
+*.sqlite
+*.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Build artifacts
+*.whl
+*.tar.gz

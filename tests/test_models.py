@@ -75,13 +75,12 @@ class TestReference:
         assert ref.publication_date == "2023"
     
     def test_reference_validation(self):
-        """Test Reference validation logic."""
-        # Test the monograph title validation
+        """Test Reference validation logic (migrate deprecated fields to full_title)."""
         ref = Reference(analytic_title="Article Title")
         
-        # Should move analytic to monographic when monographic is None
-        assert ref.monographic_title == "Article Title"
-        assert ref.analytic_title is None
+        # Validator sets full_title from analytic_title when full_title is None
+        assert ref.full_title == "Article Title"
+        assert ref.analytic_title == "Article Title"
     
     def test_empty_reference(self):
         """Test creating an empty Reference."""
@@ -99,7 +98,7 @@ class TestReferences:
         ref1 = Reference(monographic_title="Book One")
         ref2 = Reference(monographic_title="Book Two")
         
-        refs = References([ref1, ref2])
+        refs = References(references=[ref1, ref2])
         
         assert len(refs) == 2
         assert refs[0].monographic_title == "Book One"

@@ -35,10 +35,10 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from citation_index.core.extractors import ExtractorFactory
 from citation_index.core.models import References
 from citation_index.evaluation.ref_metrics import RefEvaluator, string_reference_eval
-from citation_index.llm.client import LLMClient, DeepSeekClient
+from citation_index.llm.client import LLMClient, DeepSeekClient, EmbedClient
 from citation_index.llm.grobid_client import GrobidClient
 from citation_index.pipelines.reference_extraction import extract_text_references, extract_text_references_semantic_sections
-from citation_index.pipelines.reference_extraction_and_parsing import (
+from citation_index.pipelines.end_to_end_parsing import (
     run_pdf_one_step,
     run_pdf_one_step_by_page,
     run_pdf_semantic_one_step,
@@ -122,8 +122,9 @@ class CEXBenchmarkRunner:
         self.parse_errors = 0   # JSON or format errors while reading model output
         self.eval_errors = 0    # Any failure during evaluation phase
         
-        # Initialize chunker once for methods that need it
+        # Initialize chunker and embed_client for methods that need semantic section detection
         self.chunker = None
+        self.embed_client = None
         method = getattr(self.args, 'method', 1)
         if (method == 2 and self.args.task == "extraction") or (method == 3 and self.args.task == "extraction_and_parsing"):  # Methods that use semantic section detection
             try:
@@ -134,6 +135,14 @@ class CEXBenchmarkRunner:
             except ImportError as e:
                 raise ImportError(f"Method {method} requires chonkie package but it's not available. "
                                 f"Please install chonkie: pip install chonkie") from e
+            
+            # Initialize EmbedClient for semantic section detection
+            self.embed_client = EmbedClient(
+                endpoint=self.args.embedding_endpoint,
+                model=self.args.embedding_model,
+                api_key=self.args.api_key,
+            )
+            tqdm.write(f"Initialized EmbedClient (model={self.args.embedding_model})")
         
         tqdm.write(f"Results will be saved to: {self.output_dir}")
 
@@ -473,6 +482,7 @@ class CEXBenchmarkRunner:
             lines = extract_text_references_semantic_sections(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
+                embed_client=self.embed_client,
                 chunker=self.chunker,
                 chunks=chunks,
                 extractor=None,
@@ -584,6 +594,7 @@ class CEXBenchmarkRunner:
             return run_pdf_semantic_one_step(
                 text_or_pdf=input_text,
                 llm_client=llm_client,
+                embed_client=self.embed_client,
                 chunker=self.chunker,
                 chunks=chunks,
                 extractor=None,
@@ -1140,6 +1151,20 @@ Examples:
         help="Base URL for the LLM API endpoint."
     )
 
+    # Embedding Configuration (for semantic methods 2/3)
+    parser.add_argument(
+        "--embedding_endpoint",
+        type=str,
+        default=os.environ.get("EMBEDDING_ENDPOINT", "http://localhost:7997/embeddings"),
+        help="Embedding service endpoint URL (used by semantic methods 2/3)."
+    )
+    parser.add_argument(
+        "--embedding_model",
+        type=str,
+        default=os.environ.get("EMBEDDING_MODEL", "intfloat/multilingual-e5-large-instruct"),
+        help="Embedding model name (used by semantic methods 2/3)."
+    )
+
     # Prompt Configuration
     parser.add_argument(
         "--prompt_name", 
@@ -1276,7 +1301,7 @@ Examples:
         if args.task == "parsing":
             args.prompt_name = "reference_parsing.md"
         elif args.task == "extraction_and_parsing":
-            args.prompt_name = "reference_extraction_and_parsing.md"
+            args.prompt_name = "end_to_end_parsing.md"
         # else keep "reference_extraction.md" for extraction task
     
     # Configure logging

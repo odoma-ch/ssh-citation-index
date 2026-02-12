@@ -4,14 +4,10 @@ from __future__ import annotations
 
 import re
 import logging
-import threading
 import time
 from pathlib import Path
 from typing import List, Optional, Union
 import numpy as np
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 from sklearn.metrics.pairwise import cosine_similarity
 
 from citation_index.pipelines.text_extraction import split_pages
@@ -46,34 +42,9 @@ CUE_RX = re.compile(
     re.IGNORECASE
 )
 
-# Thread-local storage for HTTP sessions
-_thread_local = threading.local()
 
-def _get_session():
-    """Get a thread-local HTTP session for embedding requests with retry logic."""
-    if not hasattr(_thread_local, 'session'):
-        _thread_local.session = requests.Session()
-        
-        # Configure retry strategy
-        retry_strategy = Retry(
-            total=3,  # Total number of retries
-            backoff_factor=1,  # Wait 1, 2, 4 seconds between retries
-            status_forcelist=[429, 500, 502, 503, 504],  # HTTP status codes to retry on
-            allowed_methods=["POST"]  # Only retry POST requests
-        )
-        
-        # Mount adapter with retry strategy
-        adapter = HTTPAdapter(max_retries=retry_strategy)
-        _thread_local.session.mount("http://", adapter)
-        _thread_local.session.mount("https://", adapter)
-        
-        # Configure session for better performance
-        _thread_local.session.headers.update({'Content-Type': 'application/json'})
-    return _thread_local.session
-
-
-def _get_embeddings(texts: List[str], model: str, endpoint: str, batch_size: int = 50, max_timeout: int = 120) -> np.ndarray:
-    """Get embeddings for texts using the specified model and endpoint with batching and adaptive timeout."""
+def _get_embeddings(texts: List[str], embed_client, model: str, batch_size: int = 50, max_timeout: int = 120) -> np.ndarray:
+    """Get embeddings using EmbedClient with batching support."""
     if not texts:
         return np.array([])
     
@@ -92,8 +63,10 @@ def _get_embeddings(texts: List[str], model: str, endpoint: str, batch_size: int
                 batch_texts = texts[i:i + batch_size]
                 logging.debug(f"Processing batch {i//batch_size + 1}/{(len(texts) + batch_size - 1)//batch_size}")
                 
-                batch_embeddings = _get_embeddings_single_batch(
-                    batch_texts, model, endpoint, timeout
+                batch_embeddings = embed_client.get_embeddings(
+                    texts=batch_texts,
+                    model=model,
+                    timeout=timeout
                 )
                 all_embeddings.append(batch_embeddings)
                 
@@ -103,67 +76,15 @@ def _get_embeddings(texts: List[str], model: str, endpoint: str, batch_size: int
             
             return np.vstack(all_embeddings)
         else:
-            return _get_embeddings_single_batch(texts, model, endpoint, timeout)
+            return embed_client.get_embeddings(
+                texts=texts,
+                model=model,
+                timeout=timeout
+            )
             
     except Exception as e:
         logging.error(f"Error getting embeddings for {len(texts)} texts: {e}")
         raise
-
-
-def _get_embeddings_single_batch(texts: List[str], model: str, endpoint: str, timeout: int) -> np.ndarray:
-    """Get embeddings for a single batch of texts."""
-    session = _get_session()
-    
-    # Retry logic with exponential backoff
-    max_retries = 3
-    base_delay = 1
-    
-    for attempt in range(max_retries + 1):
-        try:
-            r = session.post(
-                endpoint, 
-                json={"model": model, "input": texts}, 
-                timeout=timeout
-            )
-            r.raise_for_status()
-            data = r.json()["data"]
-            
-            if all("index" in d for d in data):
-                data = sorted(data, key=lambda x: x["index"])
-            
-            embeddings = np.array([d["embedding"] for d in data], dtype=np.float64)
-            
-            # Check for invalid values and log warnings
-            if np.any(np.isnan(embeddings)):
-                logging.warning(f"NaN values found in embeddings for {len(texts)} texts")
-            if np.any(np.isinf(embeddings)):
-                logging.warning(f"Infinite values found in embeddings for {len(texts)} texts")
-                
-            return embeddings
-            
-        except requests.exceptions.Timeout as e:
-            if attempt < max_retries:
-                delay = base_delay * (2 ** attempt)  # Exponential backoff
-                logging.warning(f"Timeout on attempt {attempt + 1}/{max_retries + 1}, retrying in {delay}s...")
-                time.sleep(delay)
-                continue
-            else:
-                logging.error(f"Final timeout after {max_retries + 1} attempts for {len(texts)} texts")
-                raise
-                
-        except requests.exceptions.RequestException as e:
-            if attempt < max_retries:
-                delay = base_delay * (2 ** attempt)
-                logging.warning(f"Request error on attempt {attempt + 1}/{max_retries + 1}: {e}, retrying in {delay}s...")
-                time.sleep(delay)
-                continue
-            else:
-                logging.error(f"Final request error after {max_retries + 1} attempts: {e}")
-                raise
-                
-        except Exception as e:
-            logging.error(f"Unexpected error getting embeddings: {e}")
-            raise
 
 
 def _lexical_bonus(chunk_texts: List[str], bonus_per_hit: float = 0.02, max_bonus: float = 0.1) -> np.ndarray:
@@ -179,10 +100,10 @@ def _lexical_bonus(chunk_texts: List[str], bonus_per_hit: float = 0.02, max_bonu
 # drop_tolerance: float = 0.03,
 def locate_reference_sections_semantic(
     text_or_path: Union[str, Path],
+    embed_client,
+    embedding_model: str = "intfloat/multilingual-e5-large-instruct",
     chunker=None,
     chunks=None,
-    embedding_model: str = "intfloat/multilingual-e5-large-instruct",
-    embedding_endpoint: str = "http://0.0.0.0:7997/embeddings",
     fast_path: bool = False,
     gap_size_threshold: float = 0.1,   
     drop_tolerance: float = 0.03,
@@ -198,11 +119,11 @@ def locate_reference_sections_semantic(
     
     Args:
         text_or_path: Input text string or path to markdown file
+        embed_client: EmbedClient instance for getting embeddings
+        embedding_model: Model name for embeddings
         chunker: Text chunker object with chunk() method. Ignored if chunks parameter is provided.
         chunks: Pre-computed chunks from the text. If provided, chunker is ignored.
                 Each chunk should have a .text attribute.
-        embedding_model: Model name for embeddings
-        embedding_endpoint: API endpoint for embedding service
         fast_path: If True, try simple regex matching first
         gap_size_threshold: Minimum gap size to trigger gap-based candidate selection (default: 0.1)
         drop_tolerance: Maximum score drop allowed during contiguous expansion (default: 0.03)
@@ -253,13 +174,13 @@ def locate_reference_sections_semantic(
     # Get embeddings for document chunks
     logging.debug(f"Getting embeddings for {len(chunk_texts)} chunks...")
     try:
-        doc_emb = _get_embeddings(chunk_texts, embedding_model, embedding_endpoint, batch_size, max_timeout)
+        doc_emb = _get_embeddings(chunk_texts, embed_client, embedding_model, batch_size, max_timeout)
         logging.debug(f"Document embeddings shape: {doc_emb.shape}")
 
         # 4) Create task-specific queries and get embeddings
         task_prefix = 'Find in the document that follows the pattern of the query'
         queries = [task_prefix + ': ' + q for q in REF_QUERIES]
-        q_emb = _get_embeddings(queries, embedding_model, embedding_endpoint, batch_size, max_timeout)
+        q_emb = _get_embeddings(queries, embed_client, embedding_model, batch_size, max_timeout)
         
     except Exception as e:
         logging.error(f"Failed to get embeddings after all retries: {e}")
