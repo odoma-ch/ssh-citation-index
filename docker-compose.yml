@@ -33,7 +33,9 @@ services:
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
+      - LLM_API_KEY=${LLM_API_KEY}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
       - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
     volumes:
@@ -52,14 +54,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python -m citation_index.worker --queues default --name worker-default
+    command: python -m citation_index.worker --queues default
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
+      - LLM_API_KEY=${LLM_API_KEY}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
       - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
     volumes:
@@ -82,15 +86,18 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python -m citation_index.worker --queues llm-tasks --name worker-llm
+    command: python -m citation_index.worker --queues llm-tasks
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL=${LLM_MODEL:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
+      - LLM_API_KEY=${LLM_API_KEY}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-intfloat/multilingual-e5-large-instruct}
       - EMBEDDING_ENDPOINT=${EMBEDDING_ENDPOINT:-http://localhost:7997/embeddings}
     volumes:
       - ./storage:/app/storage
@@ -110,7 +117,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python -m citation_index.worker --queues linking --name worker-linking
+    command: python -m citation_index.worker --queues linking
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -130,6 +137,7 @@ services:
   # RQ Dashboard - Web UI for monitoring queues
   rq-dashboard:
     image: eoranged/rq-dashboard:latest
+    platform: linux/amd64  # Specify platform for Apple Silicon compatibility
     container_name: citation-index-dashboard
     ports:
       - "9181:9181"
