@@ -1,0 +1,472 @@
+# ==========================================================
+# Citation Index – Full OKD / K8s deployment
+#
+# Apply after Redis is deployed via Helm (see README.md).
+# Before applying, search-replace IMAGE_REGISTRY and update
+# configmap values marked with "# <-- UPDATE".
+#
+#   kubectl apply -f deployment/citation-index.yaml
+# ==========================================================
+
+# ==========================================================
+# 1. ConfigMap – non-secret environment variables
+# ==========================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: citation-index-config
+  labels:
+    app: citation-index
+data:
+  # Redis (service name from helm chart)
+  REDIS_HOST: "citation-index-redis-redis-simple-master"
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
+
+  # Storage
+  STORAGE_ROOT: "/app/storage"
+  STORAGE_CLEANUP_AGE_HOURS: "24"
+
+  # LLM
+  LLM_ENDPOINT: "https://llm.graphia-ssh.eu/v1"          # <-- UPDATE
+  LLM_MODEL_MEDIUM_INTELLIGENCE: "Mistral-Small-3.2-24B-Instruct-2506"          # <-- UPDATE
+  LLM_MODEL_HIGH_INTELLIGENCE: "DeepSeek-V3.1-vLLM"            # <-- UPDATE
+  LLM_TIMEOUT: "300.0"
+  LLM_MAX_RETRIES: "3"
+  # LLM_MAX_CONCURRENT: "4"
+  LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING: "30.0"
+  LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION: "90.0"
+  LLM_FIRST_TOKEN_TIMEOUT_END_TO_END: "90.0"
+  LLM_TIMEOUT_REFERENCE_PARSING: "600.0"
+
+  # GROBID
+  GROBID_ENDPOINT: "https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/"                      # <-- UPDATE if external
+  GROBID_TIMEOUT: "180.0"
+
+  # Worker / Queue timeouts
+  WORKER_RESULT_TTL: "3600"
+  WORKER_DEFAULT_TIMEOUT: "600"
+  TIMEOUT_TEXT_EXTRACTION: "300"
+  TIMEOUT_REFERENCE_EXTRACTION: "1500"
+  TIMEOUT_REFERENCE_PARSING: "2700"
+  TIMEOUT_CITATION_LINKING: "600"
+
+  # API
+  API_HOST: "0.0.0.0"
+  API_PORT: "8000"
+  API_RELOAD: "False"
+  API_WORKERS: "2"
+
+  # Job metadata
+  JOB_METADATA_TTL: "7200"
+
+  # Embedding service
+  EMBEDDING_MODEL: "hosted_vllm/Qwen/Qwen3-Embedding-0.6B"
+  EMBEDDING_ENDPOINT: "https://llm.graphia-ssh.eu/v1/embeddings"  # <-- UPDATE
+---
+# ==========================================================
+# 2. PersistentVolumeClaim – shared storage for job files
+# ==========================================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: citation-index-storage
+  labels:
+    app: citation-index
+spec:
+  accessModes:
+    - ReadWriteMany          # Required: shared across API + all worker pods
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: manila-share
+---
+# ==========================================================
+# 3. API – Deployment
+# ==========================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citation-index-api
+  labels:
+    app: citation-index
+    component: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: citation-index
+      component: api
+  template:
+    metadata:
+      labels:
+        app: citation-index
+        component: api
+    spec:
+      imagePullSecrets:
+        - name: registry-paas-psnc
+      containers:
+        - name: api
+          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          command:
+            - uvicorn
+            - citation_index.api:app
+            - --host
+            - "0.0.0.0"
+            - --port
+            - "8000"
+            - --workers
+            - "2"
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: citation-index-config
+            - secretRef:
+                name: citation-index-secret
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-redis-secret
+                  key: redis-password
+          volumeMounts:
+            - name: storage
+              mountPath: /app/storage
+          resources:
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 30
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: citation-index-storage
+---
+# ==========================================================
+# 4. API – Service
+# ==========================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: citation-index-api
+  labels:
+    app: citation-index
+    component: api
+spec:
+  selector:
+    app: citation-index
+    component: api
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================================
+# 5. API – Route (OKD / OpenShift; replace with Ingress for vanilla K8s)
+# ==========================================================
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: citation-index-api
+  labels:
+    app: citation-index
+    component: api
+  annotations:
+    haproxy.router.openshift.io/ip_whitelist: "0.0.0.0/0"
+spec:
+  to:
+    kind: Service
+    name: citation-index-api
+    weight: 100
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+---
+# ==========================================================
+# 6. Worker – default queue (text extraction, GROBID parsing)
+#    Fast tasks (~30s-2min), low replica count
+# ==========================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citation-index-worker-default
+  labels:
+    app: citation-index
+    component: worker-default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: citation-index
+      component: worker-default
+  template:
+    metadata:
+      labels:
+        app: citation-index
+        component: worker-default
+    spec:
+      imagePullSecrets:
+        - name: registry-paas-psnc
+      containers:
+        - name: worker
+          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          command:
+            - python
+            - -m
+            - citation_index.worker
+            - --queues
+            - default
+          envFrom:
+            - configMapRef:
+                name: citation-index-config
+            - secretRef:
+                name: citation-index-secret
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-redis-secret
+                  key: redis-password
+          volumeMounts:
+            - name: storage
+              mountPath: /app/storage
+          resources:
+            requests:
+              cpu: "1"
+              memory: "2Gi"
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: citation-index-storage
+---
+# ==========================================================
+# 7. Worker – llm-tasks queue (reference extraction / parsing)
+#    Slow tasks (~10-15 min), high replica count
+#    Rule of thumb: replicas >= LLM_MAX_CONCURRENT × 1.5-2
+# ==========================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citation-index-worker-llm
+  labels:
+    app: citation-index
+    component: worker-llm
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: citation-index
+      component: worker-llm
+  template:
+    metadata:
+      labels:
+        app: citation-index
+        component: worker-llm
+    spec:
+      imagePullSecrets:
+        - name: registry-paas-psnc
+      containers:
+        - name: worker
+          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          command:
+            - python
+            - -m
+            - citation_index.worker
+            - --queues
+            - llm-tasks
+          envFrom:
+            - configMapRef:
+                name: citation-index-config
+            - secretRef:
+                name: citation-index-secret
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-redis-secret
+                  key: redis-password
+          volumeMounts:
+            - name: storage
+              mountPath: /app/storage
+          resources:
+            requests:
+              cpu: "1"
+              memory: "2Gi"
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: citation-index-storage
+# ---
+# # ==========================================================
+# # 8. Worker – linking queue (citation linking)  [WIP]
+# #    Medium tasks (~1-3 min), moderate replica count
+# # ==========================================================
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: citation-index-worker-linking
+#   labels:
+#     app: citation-index
+#     component: worker-linking
+# spec:
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       app: citation-index
+#       component: worker-linking
+#   template:
+#     metadata:
+#       labels:
+#         app: citation-index
+#         component: worker-linking
+#     spec:
+#       imagePullSecrets:
+#         - name: registry-paas-psnc
+#       containers:
+#         - name: worker
+#           image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+#           command:
+#             - python
+#             - -m
+#             - citation_index.worker
+#             - --queues
+#             - linking
+#           envFrom:
+#             - configMapRef:
+#                 name: citation-index-config
+#             - secretRef:
+#                 name: citation-index-secret
+#           env:
+#             - name: REDIS_PASSWORD
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: citation-index-redis-secret
+#                   key: redis-password
+#           volumeMounts:
+#             - name: storage
+#               mountPath: /app/storage
+#           resources:
+#             requests:
+#               cpu: "1"
+#               memory: "2Gi"
+#             limits:
+#               cpu: "2"
+#               memory: "4Gi"
+#       volumes:
+#         - name: storage
+#           persistentVolumeClaim:
+#             claimName: citation-index-storage
+---
+# ==========================================================
+# 9. RQ Dashboard – Deployment
+# ==========================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citation-index-rq-dashboard
+  labels:
+    app: citation-index
+    component: rq-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: citation-index
+      component: rq-dashboard
+  template:
+    metadata:
+      labels:
+        app: citation-index
+        component: rq-dashboard
+    spec:
+      imagePullSecrets:
+        - name: registry-paas-psnc
+      containers:
+        - name: dashboard
+          image: eoranged/rq-dashboard:latest
+          ports:
+            - containerPort: 9181
+              protocol: TCP
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-redis-secret
+                  key: redis-password
+            - name: RQ_DASHBOARD_REDIS_URL
+              value: "redis://:$(REDIS_PASSWORD)@citation-index-redis-redis-simple-master:6379/0"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+---
+# ==========================================================
+# 10. RQ Dashboard – Service
+# ==========================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: citation-index-rq-dashboard
+  labels:
+    app: citation-index
+    component: rq-dashboard
+spec:
+  selector:
+    app: citation-index
+    component: rq-dashboard
+  ports:
+    - port: 9181
+      targetPort: 9181
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================================
+# 11. RQ Dashboard – Route (OKD / OpenShift)
+# ==========================================================
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: citation-index-rq-dashboard
+  labels:
+    app: citation-index
+    component: rq-dashboard
+spec:
+  to:
+    kind: Service
+    name: citation-index-rq-dashboard
+    weight: 100
+  port:
+    targetPort: 9181
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
