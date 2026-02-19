@@ -62,7 +62,7 @@ Create the password secret first, then install the Helm chart:
 ```bash
 # Create Redis auth secret
 kubectl create secret generic citation-index-redis-secret \
-  --from-literal=redis-password='cb5ffbc48d166d9209b623e838997485cd246b4cd082a0f0d172807151288972'
+  --from-literal=redis-password='...'
 
 # Install Redis
 helm upgrade -i citation-index-redis \
