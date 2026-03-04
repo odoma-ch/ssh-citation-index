@@ -58,7 +58,7 @@ data:
   API_WORKERS: "2"
 
   # Job metadata
-  JOB_METADATA_TTL: "7200"
+  JOB_METADATA_TTL: "86400"
 
   # Embedding service
   EMBEDDING_MODEL: "hosted_vllm/Qwen/Qwen3-Embedding-0.6B"
