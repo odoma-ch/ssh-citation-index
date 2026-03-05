@@ -1,0 +1,4238 @@
+<dataset xmlns="https://gitlab.mpcdf.mpg.de/dcfidalgo/llamore"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://gitlab.mpcdf.mpg.de/dcfidalgo/llamore ../../schema/xsd/dataset.xsd http://www.tei-c.org/ns/1.0 ../../schema/xsd/document.xsd"
+         source="https://doi.org/10.1111/1467-6478.00080">
+   <title>English-language socio-legal article with footnotes</title>
+   <description content-type="text/html"><![CDATA[ 
+    <p>Source: Bradney, A. (1998) ‘Law as a Parasitic Discipline’, Journal of Law and Society, 25(1), pp. 71–84, 
+    DOI 10.1111/1467-6478.00080</p>
+  ]]></description>
+   <instance xml:id="instance-1">
+      <input type="raw"><![CDATA[1 For a contrary view, see G. Jones, ‘“Traditional” Legal Scholarship: a Personal View’ in What Are Law Schools For?, ed. P. Birks (1996) 14.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="1"
+               type="footnote"
+               place="bottom">
+            <label>1</label>
+            <note>For a contrary view, see</note>
+            <bibl>G. Jones, ‘“Traditional” Legal Scholarship: a Personal View’ in What Are Law Schools For?, ed. P. Birks (1996) 14.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="1"
+               type="footnote"
+               place="bottom">
+            <label>1</label>
+            <note type="signal">For a contrary view, see</note>
+            <bibl xml:id="bibl-1">
+               <author>
+                  <persName>
+                     <forename>G.</forename>
+                     <surname>Jones</surname>
+                  </persName>
+               </author>,
+              ‘<title level="a">“Traditional” Legal Scholarship: a Personal View</title>’ in
+              <title level="m">What Are Law Schools For?</title>, ed.
+              <editor>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Birks</surname>
+                  </persName>
+               </editor>
+              (<date when="1996">1996</date>)
+              <biblScope unit="page" from="14">14</biblScope>.
+            </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-1">
+               <analytic source="#bibl-1">
+                  <title level="a">“Traditional” Legal Scholarship: a Personal View</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Jones</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-1">
+                  <title level="m">What Are Law Schools For?</title>
+                  <editor>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="page" from="14">14</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-1">
+               <analytic source="#bibl-1">
+                  <title level="a">“Traditional” Legal Scholarship: a Personal View</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Jones</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-1">
+                  <title level="m">What Are Law Schools For?</title>
+                  <editor>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="page" from="14">14</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-2">
+      <input type="raw"><![CDATA[3 R. Goff, ‘The Search for Principle’ (1983) Proceeedings of the British Academy 169, at 171. This is an amplification of Dicey’s remark that ‘[b]y adequate study and careful thought whole departments of law can . . . be reduced to order and exhibited under the form of a few principles which sum up the effect of a hundred cases . . .’. A. Dicey, Can English Law be taught at the Universities? (1883) 20.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="3"
+               type="footnote"
+               place="bottom">
+            <label>3</label>
+            <bibl>R. Goff, ‘The Search for Principle’ (1983) Proceeedings of the British Academy 169, at 171.</bibl>
+            <note>This is an amplification of Dicey’s remark that ‘[b]y adequate study and careful thought whole departments of law can. .. be reduced to order and exhibited under the form of a few principles which sum up the effect of a hundred cases. . .’.</note>
+            <bibl>A. Dicey, Can English Law be taught at the Universities? (1883) 20.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="3"
+               type="footnote"
+               place="bottom">
+            <label>3</label>
+            <bibl xml:id="bibl-2">
+               <author>
+                  <persName>
+                     <forename>R.</forename>
+                     <surname>Goff</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">The Search for Principle</title>’
+                    (<date when="1983">1983</date>)
+                    <title level="j">Proceeedings of the British Academy</title>
+               <biblScope unit="volume" from="169" to="169">169</biblScope>,
+                    <citedRange unit="page" from="171" to="171">at 171</citedRange>.
+                </bibl>
+            <note type="comment">This is an amplification of Dicey’s remark that ‘[b]y adequate study and careful
+                        thought whole departments of law can . . . be reduced to order and exhibited under the form of a
+                        few principles which sum up the effect of a hundred cases . . .’.
+                  </note>
+            <bibl xml:id="bibl-3">
+               <author>
+                  <persName>
+                     <forename>A.</forename>
+                     <surname>Dicey</surname>
+                  </persName>
+               </author>,
+                    <title level="m">Can English Law be taught at the Universities?</title>
+                    (<date when="1883">1883</date>)
+                    <citedRange unit="page" from="20" to="20">20</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-2">
+               <analytic source="#bibl-2">
+                  <title level="a">The Search for Principle</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Goff</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-2">
+                  <title level="j">Proceeedings of the British Academy</title>
+                  <imprint>
+                     <date when="1983">1983</date>
+                  </imprint>
+                  <biblScope unit="volume" from="169" to="169">169</biblScope>
+               </monogr>
+               <citedRange unit="page" from="171" to="171">at 171</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-3">
+               <monogr source="#bibl-3">
+                  <title level="m">Can English Law be taught at the Universities?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Dicey</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1883">1883</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="20" to="20">20</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-2">
+               <analytic source="#bibl-2">
+                  <title level="a">The Search for Principle</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Goff</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-2">
+                  <title level="j">Proceeedings of the British Academy</title>
+                  <imprint>
+                     <date when="1983">1983</date>
+                  </imprint>
+                  <biblScope unit="volume" from="169" to="169">169</biblScope>
+               </monogr>
+               <citedRange unit="page" from="171" to="171">at 171</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-3">
+               <monogr source="#bibl-3">
+                  <title level="m">Can English Law be taught at the Universities?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Dicey</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1883">1883</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="20" to="20">20</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-3">
+      <input type="raw"><![CDATA[4 J. Smith, The Law of Contract (1989)]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="4"
+               type="footnote"
+               place="bottom">
+            <label>4</label>
+            <bibl>J. Smith, The Law of Contract (1989)</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="4"
+               type="footnote"
+               place="bottom">
+            <label>4</label>
+            <bibl xml:id="bibl-4">
+               <author>
+                  <persName>
+                     <forename>J.</forename>
+                     <surname>Smith</surname>
+                  </persName>
+               </author>,
+                    <title level="m">The Law of Contract</title>
+                    (<date when="1989">1989</date>)
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-4">
+               <monogr source="#bibl-4">
+                  <title level="m">The Law of Contract</title>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>Smith</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1989">1989</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-4">
+               <monogr source="#bibl-4">
+                  <title level="m">The Law of Contract</title>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>Smith</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1989">1989</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-4">
+      <input type="raw"><![CDATA[6 See, for example, D. Kennedy, ‘Form and substance in Private Law Ajudication’ (1976) 89 Harvard Law Rev. 1685.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="6"
+               type="footnote"
+               place="bottom">
+            <label>6</label>
+            <note>See, for example,</note>
+            <bibl>D. Kennedy, ‘Form and substance in Private Law Ajudication’ (1976) 89 Harvard Law Rev. 1685.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="6"
+               type="footnote"
+               place="bottom">
+            <label>6</label>
+            <note type="signal">See, for example,</note>
+            <bibl xml:id="bibl-5">
+               <author>
+                  <persName>
+                     <forename>D.</forename>
+                     <surname>Kennedy</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Form and substance in Private Law Ajudication</title>’
+                    (<date when="1976">1976</date>)
+                    <biblScope unit="volume" from="89" to="89">89</biblScope>
+               <title level="j">Harvard Law Rev.</title>
+               <biblScope unit="page" from="1685">1685</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-5">
+               <analytic source="#bibl-5">
+                  <title level="a">Form and substance in Private Law Ajudication</title>
+                  <author>
+                     <persName>
+                        <forename>D.</forename>
+                        <surname>Kennedy</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-5">
+                  <title level="j">Harvard Law Rev.</title>
+                  <imprint>
+                     <date when="1976">1976</date>
+                  </imprint>
+                  <biblScope unit="volume" from="89" to="89">89</biblScope>
+                  <biblScope unit="page" from="1685">1685</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-5">
+               <analytic source="#bibl-5">
+                  <title level="a">Form and substance in Private Law Ajudication</title>
+                  <author>
+                     <persName>
+                        <forename>D.</forename>
+                        <surname>Kennedy</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-5">
+                  <title level="j">Harvard Law Rev.</title>
+                  <imprint>
+                     <date when="1976">1976</date>
+                  </imprint>
+                  <biblScope unit="volume" from="89" to="89">89</biblScope>
+                  <biblScope unit="page" from="1685">1685</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-5">
+      <input type="raw"><![CDATA[7 B. Hepple, ‘The Renewal of the Liberal Law Degree’ (1996) Cambridge Law J. 470 at 485 and 481.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="7"
+               type="footnote"
+               place="bottom">
+            <label>7</label>
+            <bibl>B. Hepple, ‘The Renewal of the Liberal Law Degree’ (1996) Cambridge Law J. 470 at 485 and 481.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="7"
+               type="footnote"
+               place="bottom">
+            <label>7</label>
+            <bibl xml:id="bibl-6">
+               <author>
+                  <persName>
+                     <forename>B.</forename>
+                     <surname>Hepple</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">The Renewal of the Liberal Law Degree</title>’
+                    (<date when="1996">1996</date>)
+                    <title level="j">Cambridge Law J</title>.
+                    <biblScope unit="page" from="470">470</biblScope>
+               <citedRange unit="page" from="at">at 485 and 481</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-6">
+               <analytic source="#bibl-6">
+                  <title level="a">The Renewal of the Liberal Law Degree</title>
+                  <author>
+                     <persName>
+                        <forename>B.</forename>
+                        <surname>Hepple</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-6">
+                  <title level="j">Cambridge Law J</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="page" from="470">470</biblScope>
+               </monogr>
+               <citedRange unit="page" from="at">at 485 and 481</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-6">
+               <analytic source="#bibl-6">
+                  <title level="a">The Renewal of the Liberal Law Degree</title>
+                  <author>
+                     <persName>
+                        <forename>B.</forename>
+                        <surname>Hepple</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-6">
+                  <title level="j">Cambridge Law J</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="page" from="470">470</biblScope>
+               </monogr>
+               <citedRange unit="page" from="at">at 485 and 481</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-6">
+      <input type="raw"><![CDATA[8 P.A. Thomas, ‘Introduction’ in Socio-Legal Studies, ed. P.A. Thomas (1997) 19.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="8"
+               type="footnote"
+               place="bottom">
+            <label>8</label>
+            <bibl>P.A. Thomas, ‘Introduction’ in Socio-Legal Studies, ed. P.A. Thomas (1997) 19.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="8"
+               type="footnote"
+               place="bottom">
+            <label>8</label>
+            <bibl xml:id="bibl-7">
+               <author>
+                  <persName>
+                     <forename>P.A.</forename>
+                     <surname>Thomas</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Introduction</title>’ in
+                    <title level="m">Socio-Legal Studies</title>, ed.
+                    <editor>
+                  <persName>
+                     <forename>P.A.</forename>
+                     <surname>Thomas</surname>
+                  </persName>
+               </editor>
+                    (<date when="1997">1997</date>)
+                    <biblScope unit="page" from="19">19</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-7">
+               <analytic source="#bibl-7">
+                  <title level="a">Introduction</title>
+                  <author>
+                     <persName>
+                        <forename>P.A.</forename>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-7">
+                  <title level="m">Socio-Legal Studies</title>
+                  <editor>
+                     <persName>
+                        <forename>P.A.</forename>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="page" from="19">19</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-7">
+               <analytic source="#bibl-7">
+                  <title level="a">Introduction</title>
+                  <author>
+                     <persName>
+                        <forename>P.A.</forename>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-7">
+                  <title level="m">Socio-Legal Studies</title>
+                  <editor>
+                     <persName>
+                        <forename>P.A.</forename>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="page" from="19">19</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-7">
+      <input type="raw"><![CDATA[9 R. Cotterrell, Law’s Community (1995) 296.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="9"
+               type="footnote"
+               place="bottom">
+            <label>9</label>
+            <bibl>R. Cotterrell, Law’s Community (1995) 296.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="9"
+               type="footnote"
+               place="bottom">
+            <label>9</label>
+            <bibl xml:id="bibl-8">
+               <author>
+                  <persName>
+                     <forename>R.</forename>
+                     <surname>Cotterrell</surname>
+                  </persName>
+               </author>,
+                    <title level="m">Law’s Community</title>
+                    (<date when="1995">1995</date>)
+                    <biblScope unit="page" from="296">296</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-8">
+               <monogr source="#bibl-8">
+                  <title level="m">Law’s Community</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Cotterrell</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+                  <biblScope unit="page" from="296">296</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-8">
+               <monogr source="#bibl-8">
+                  <title level="m">Law’s Community</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Cotterrell</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+                  <biblScope unit="page" from="296">296</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-8">
+      <input type="raw"><![CDATA[10 Socio-legal studies has been defined in many different ways. In this essay the term is taken to indicate the use of ideas ‘from other disciplines primarily but not exclusively from within the social science and humanities fields’. S. Wheeler, ‘Company Law’ in Thomas, op. cit., n. 8, at p. 285.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="10"
+               type="footnote"
+               place="bottom">
+            <label>10</label>
+            <note>Socio-legal studies has been defined in many different ways. In this essay the term is taken to indicate the use of ideas ‘from other disciplines primarily but not exclusively from within the social science and humanities fields’.</note>
+            <bibl>S. Wheeler, ‘Company Law’ in Thomas, op. cit., n. 8, at p. 285.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="10"
+               type="footnote"
+               place="bottom">
+            <label>10</label>
+            <note type="comment">Socio-legal studies has been defined in many different ways. In this essay the
+                        term is taken to indicate the use of ideas ‘from other disciplines primarily but not exclusively
+                        from within the social science and humanities fields’.
+                  </note>
+            <bibl xml:id="bibl-9">
+               <author>
+                  <persName>
+                     <forename>S.</forename>
+                     <surname>Wheeler</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Company Law</title>’ in
+                    <editor>
+                  <persName>
+                     <surname>Thomas</surname>
+                  </persName>
+               </editor>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="8">n. 8</ref>,
+                    <citedRange unit="page" from="285" to="285">at p. 285</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-9">
+               <analytic source="#bibl-9">
+                  <title level="a">Company Law</title>
+                  <author>
+                     <persName>
+                        <forename>S.</forename>
+                        <surname>Wheeler</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-9">
+                  <editor>
+                     <persName>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </editor>
+                  <imprint/>
+               </monogr>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="8">n. 8</ref>
+               <citedRange unit="page" from="285" to="285">at p. 285</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-9">
+               <analytic source="#bibl-9">
+                  <title level="a">Company Law</title>
+                  <author>
+                     <persName>
+                        <forename>S.</forename>
+                        <surname>Wheeler</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-7">
+                  <title level="m">Socio-Legal Studies</title>
+                  <editor>
+                     <persName>
+                        <forename>P.A.</forename>
+                        <surname>Thomas</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="page" from="19">19</biblScope>
+               </monogr>
+               <citedRange unit="page" from="285" to="285">at p. 285</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-9">
+      <input type="raw"><![CDATA[11 Some fail wholly. It is difficult to see any effect on academic legal education that resulted from Lady Marre’s report A Time for Change (1988). The Jarratt report on universities produced for the Committee of Vice-Chancellors and Principals (CVCP), Report of the Steering Committee for Efficiency studies in Universities (1988), produced much comment but little action. Even those that are thought of as being a success are not wholly implemented. Despite Ormrod’s recommendations no Institute of Profesional Legal Studies was set up and the universities and colleges of higher education did not take sole responsibility for vocational legal training (Report of the Committee on Legal Education (1971; Cmnd 4595) ch. 9 recs. 40 and 23). There were also other recommendations that were not implemented. The Robbins report on higher education, Higher Education (1963; Cmnd 2154) took it is axiomatic that ‘courses of higher education should be available for all those who are qualified by ability and attainment to pursue them and wish to do so. (para. 31). This has yet to happen.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="11"
+               type="footnote"
+               place="bottom">
+            <label>11</label>
+            <note>Some fail wholly. It is difficult to see any effect on academic legal education that resulted from</note>
+            <bibl>Lady Marre’s report A Time for Change (1988).</bibl>
+            <note>The Jarratt report on universities produced for the Committee of Vice-Chancellors and Principals (CVCP),</note>
+            <bibl>Report of the Steering Committee for Efficiency studies in Universities (1988),</bibl>
+            <note>produced much comment but little action. Even those that are thought of as being a success are not wholly implemented. Despite Ormrod’s recommendations no Institute of Profesional Legal Studies was set up and the universities and colleges of higher education did not take sole responsibility for vocational legal training</note>
+            <bibl>Report of the Committee on Legal Education (1971; Cmnd 4595) ch. 9 recs. 40 and 23</bibl>
+            <note>There were also other recommendations that were not implemented.</note>
+            <bibl>The Robbins report on higher education, Higher Education (1963; Cmnd 2154) took it is axiomatic that ‘courses of higher education should be available for all those who are qualified by ability and attainment to pursue them and wish to do so. (para. 31).</bibl>
+            <note>This has yet to happen.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="11"
+               type="footnote"
+               place="bottom">
+            <label>11</label>
+            <note type="comment">
+                    Some fail wholly. It is difficult to see any effect on academic legal education that resulted from
+              </note>
+            <bibl xml:id="bibl-10">
+               <author>
+                  <persName>
+                     <roleName type="honorific">Lady</roleName>
+                     <surname>Marre</surname>’s
+                        </persName>
+               </author>
+               <note type="document-type">report</note>
+               <title level="m">A Time for Change</title>
+                    (<date when="1988">1988</date>).
+                </bibl>
+            <note type="comment">The Jarratt report on universities produced for the Committee of
+                    Vice-Chancellors and Principals (CVCP),
+              </note>
+            <bibl xml:id="bibl-11">
+               <title level="m">Report of the Steering Committee for Efficiency studies in Universities</title>
+                    (<date when="1988">1988</date>),
+                </bibl>
+            <note type="comment">produced much comment but little action. Even those that are thought of as being a 
+                    success are not wholly implemented. Despite Ormrod’s recommendations no Institute of Profesional 
+                    Legal Studies was set up and the universities and colleges of higher education did not take sole 
+                    responsibility for vocational legal training
+              </note>
+                (<bibl xml:id="bibl-12">
+               <title level="m">Report of the Committee on Legal Education</title>
+                    (<date when="1971">1971</date>;
+                    <title level="s">Cmnd</title>
+               <biblScope unit="volume" from="4595" to="4595">4595</biblScope>)
+                    <citedRange unit="chapter" from="9" to="9">ch. 9</citedRange>
+               <citedRange unit="entry" from="40" to="40">recs. 40</citedRange>
+                    and
+                    <citedRange unit="entry" from="23" to="23">23</citedRange>
+            </bibl>).
+                <note type="comment">There were also other recommendations that were not implemented.</note>
+            <bibl xml:id="bibl-13">
+               <title level="m">The Robbins report on higher education, Higher Education</title>
+                    (<date when="1963">1963</date>;
+                    <title level="s">Cmnd</title>
+               <biblScope unit="volume" from="2154" to="2154">2154</biblScope>)
+                    <note type="comment">
+                        took it is axiomatic that ‘courses of higher education should be available for
+                        all those who are qualified by ability and attainment to pursue them and wish to do so.
+                  </note>
+                    (<citedRange unit="para" from="31">para. 31</citedRange>).
+                </bibl>
+            <note type="comment">This has yet to happen.</note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-10">
+               <monogr source="#bibl-10">
+                  <title level="m">A Time for Change</title>
+                  <author>
+                     <persName>
+                        <roleName type="honorific">Lady</roleName>
+                        <surname>Marre</surname>’s
+                        </persName>
+                  </author>
+                  <imprint>
+                     <date when="1988">1988</date>
+                  </imprint>
+               </monogr>
+               <note type="document-type">report</note>
+            </biblStruct>
+            <biblStruct source="#bibl-11">
+               <monogr source="#bibl-11">
+                  <title level="m">Report of the Steering Committee for Efficiency studies in Universities</title>
+                  <imprint>
+                     <date when="1988">1988</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <biblStruct source="#bibl-12">
+               <monogr source="#bibl-12">
+                  <title level="m">Report of the Committee on Legal Education</title>
+                  <title level="s">Cmnd</title>
+                  <imprint>
+                     <date when="1971">1971</date>
+                  </imprint>
+                  <biblScope unit="volume" from="4595" to="4595">4595</biblScope>
+               </monogr>
+               <citedRange unit="chapter" from="9" to="9">ch. 9</citedRange>
+               <citedRange unit="entry" from="40" to="40">recs. 40</citedRange>
+               <citedRange unit="entry" from="23" to="23">23</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-13">
+               <monogr source="#bibl-13">
+                  <title level="m">The Robbins report on higher education, Higher Education</title>
+                  <title level="s">Cmnd</title>
+                  <imprint>
+                     <date when="1963">1963</date>
+                  </imprint>
+                  <biblScope unit="volume" from="2154" to="2154">2154</biblScope>
+               </monogr>
+               <citedRange unit="para" from="31">para. 31</citedRange>
+               <note type="comment">
+                        took it is axiomatic that ‘courses of higher education should be available for
+                        all those who are qualified by ability and attainment to pursue them and wish to do so.
+                  </note>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-10">
+               <monogr source="#bibl-10">
+                  <title level="m">A Time for Change</title>
+                  <author>
+                     <persName>
+                        <roleName type="honorific">Lady</roleName>
+                        <surname>Marre</surname>’s
+                        </persName>
+                  </author>
+                  <imprint>
+                     <date when="1988">1988</date>
+                  </imprint>
+               </monogr>
+               <note type="document-type">report</note>
+            </biblStruct>
+            <biblStruct source="#bibl-11">
+               <monogr source="#bibl-11">
+                  <title level="m">Report of the Steering Committee for Efficiency studies in Universities</title>
+                  <imprint>
+                     <date when="1988">1988</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <biblStruct source="#bibl-12">
+               <monogr source="#bibl-12">
+                  <title level="m">Report of the Committee on Legal Education</title>
+                  <title level="s">Cmnd</title>
+                  <imprint>
+                     <date when="1971">1971</date>
+                  </imprint>
+                  <biblScope unit="volume" from="4595" to="4595">4595</biblScope>
+               </monogr>
+               <citedRange unit="chapter" from="9" to="9">ch. 9</citedRange>
+               <citedRange unit="entry" from="40" to="40">recs. 40</citedRange>
+               <citedRange unit="entry" from="23" to="23">23</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-13">
+               <monogr source="#bibl-13">
+                  <title level="m">The Robbins report on higher education, Higher Education</title>
+                  <title level="s">Cmnd</title>
+                  <imprint>
+                     <date when="1963">1963</date>
+                  </imprint>
+                  <biblScope unit="volume" from="2154" to="2154">2154</biblScope>
+               </monogr>
+               <citedRange unit="para" from="31">para. 31</citedRange>
+               <note type="comment">
+                        took it is axiomatic that ‘courses of higher education should be available for
+                        all those who are qualified by ability and attainment to pursue them and wish to do so.
+                  </note>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-10">
+      <input type="raw"><![CDATA[12 Committee of Inquiry into Higher Education, Higher Education in the learning society (1997) (the Dearing report); ACLEC, First Report on Legal Education and Training (1996). The Government’s White Paper on further and higher education had not been published at the time of writing this essay.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="12"
+               type="footnote"
+               place="bottom">
+            <label>12</label>
+            <bibl>Committee of Inquiry into Higher Education, Higher Education in the learning society (1997) (the Dearing report);</bibl>
+            <bibl>ACLEC, First Report on Legal Education and Training (1996).</bibl>
+            <note>The Government’s White Paper on further and higher education had not been published at the time of writing this essay.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="12"
+               type="footnote"
+               place="bottom">
+            <label>12</label>
+            <bibl xml:id="bibl-14">
+               <author>
+                  <orgName>Committee of Inquiry into Higher Education</orgName>
+               </author>,
+              <title level="m">Higher Education in the learning society</title>
+              (<date when="1997">1997</date>)
+              (<note type="comment">the <surname>Dearing</surname> report</note>);
+            </bibl>
+            <bibl xml:id="bibl-15">
+               <author>
+                  <orgName>ACLEC</orgName>
+               </author>,
+              <title level="m">First Report on Legal Education and Training</title>
+              (<date when="1996">1996</date>).
+            </bibl>
+            <note type="comment">The Government’s White Paper on further and higher education had not been
+                    published at the time of writing this essay.
+            </note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-14">
+               <monogr source="#bibl-14">
+                  <title level="m">Higher Education in the learning society</title>
+                  <author>
+                     <orgName>Committee of Inquiry into Higher Education</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <note type="comment">the <surname>Dearing</surname> report</note>
+            </biblStruct>
+            <biblStruct source="#bibl-15">
+               <monogr source="#bibl-15">
+                  <title level="m">First Report on Legal Education and Training</title>
+                  <author>
+                     <orgName>ACLEC</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-14">
+               <monogr source="#bibl-14">
+                  <title level="m">Higher Education in the learning society</title>
+                  <author>
+                     <orgName>Committee of Inquiry into Higher Education</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <note type="comment">the <surname>Dearing</surname> report</note>
+            </biblStruct>
+            <biblStruct source="#bibl-15">
+               <monogr source="#bibl-15">
+                  <title level="m">First Report on Legal Education and Training</title>
+                  <author>
+                     <orgName>ACLEC</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-11">
+      <input type="raw"><![CDATA[13 ACLEC, id., para 4.6.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               type="footnote"
+               n="13"
+               place="bottom">
+            <label>13</label>
+            <bibl>ACLEC, id., para 4.6.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               type="footnote"
+               n="13"
+               place="bottom">
+            <label>13</label>
+            <bibl xml:id="bibl-16">
+               <author>
+                  <orgName>ACLEC</orgName>
+               </author>,
+              <ref type="op-cit">id.</ref>,
+              <citedRange unit="para" from="4.6">para 4.6</citedRange>.
+            </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-16">
+               <ref>
+                  <orgName>ACLEC</orgName>
+               </ref>
+               <ref type="op-cit">id.</ref>
+               <citedRange unit="para" from="4.6">para 4.6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-16">
+               <monogr source="#bibl-15">
+                  <title level="m">First Report on Legal Education and Training</title>
+                  <author>
+                     <orgName>ACLEC</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="para" from="4.6">para 4.6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-12">
+      <input type="raw"><![CDATA[14 ACLEC’s proposal is part of an historical process which has gradually seen English university law schools distance themselves from the legal professions and the legal professions propose decreasing degrees of control over the content of law degrees. (See A. Bradney and F. Cownie, ‘Working on the Chain Gang?’ (1996) 2 Contemporary Issues in Law 15 at 24–6).]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="14"
+               type="footnote"
+               place="bottom">
+            <label>14</label>
+            <note>ACLEC’s proposal is part of an historical process which has gradually seen English university law schools distance themselves from the legal professions and the legal professions propose decreasing degrees of control over the content of law degrees.</note>
+            <note>See</note>
+            <bibl>A. Bradney and F. Cownie, ‘Working on the Chain Gang?’ (1996) 2 Contemporary Issues in Law 15 at 24–6).</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="14"
+               type="footnote"
+               place="bottom">
+            <label>14</label>
+            <note type="comment">ACLEC’s proposal is part of an historical process which has gradually seen
+                        English university law schools distance themselves from the legal professions and the legal
+                        professions propose decreasing degrees of control over the content of law degrees.
+              </note>
+                (<note type="signal">See</note>
+            <bibl xml:id="bibl-18">
+               <author>
+                  <persName>
+                     <forename>A.</forename>
+                     <surname>Bradney</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>F.</forename>
+                     <surname>Cownie</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Working on the Chain Gang?</title>’
+                    (<date when="1996">1996</date>)
+                    <biblScope unit="volume" from="2" to="2">2</biblScope>
+               <title level="j">Contemporary Issues in Law</title>
+               <biblScope unit="page" from="15">15</biblScope>
+               <citedRange unit="page" from="24" to="26">at 24–6</citedRange>).
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-18">
+               <analytic source="#bibl-18">
+                  <title level="a">Working on the Chain Gang?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Bradney</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>F.</forename>
+                        <surname>Cownie</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-18">
+                  <title level="j">Contemporary Issues in Law</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="volume" from="2" to="2">2</biblScope>
+                  <biblScope unit="page" from="15">15</biblScope>
+               </monogr>
+               <citedRange unit="page" from="24" to="26">at 24–6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-18">
+               <analytic source="#bibl-18">
+                  <title level="a">Working on the Chain Gang?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Bradney</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>F.</forename>
+                        <surname>Cownie</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-18">
+                  <title level="j">Contemporary Issues in Law</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="volume" from="2" to="2">2</biblScope>
+                  <biblScope unit="page" from="15">15</biblScope>
+               </monogr>
+               <citedRange unit="page" from="24" to="26">at 24–6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-13">
+      <input type="raw"><![CDATA[15 M. Jeeves, J. MacFarlane and A. Boon, ‘Education for Life or for Work?’ (1987) 137 New Law J. 835 at 836.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="15"
+               type="footnote"
+               place="bottom">
+            <label>15</label>
+            <bibl>M. Jeeves, J. MacFarlane and A. Boon, ‘Education for Life or for Work?’ (1987) 137 New Law J. 835 at 836.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="15"
+               type="footnote"
+               place="bottom">
+            <label>15</label>
+            <bibl xml:id="bibl-19">
+               <author>
+                  <persName>
+                     <forename>M.</forename>
+                     <forename>Jeeves</forename>
+                  </persName>
+               </author>,
+                    <author>
+                  <persName>
+                     <forename>J.</forename>
+                     <surname>MacFarlane</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>A.</forename>
+                     <surname>Boon</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Education for Life or for Work?</title>’
+                    (<date when="1987">1987</date>)
+                    <biblScope unit="volume" from="137" to="137">137</biblScope>
+               <title level="j">New Law J.</title>
+               <biblScope unit="page" from="835">835</biblScope>
+               <citedRange unit="page" from="836" to="836">at 836</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-19">
+               <analytic source="#bibl-19">
+                  <title level="a">Education for Life or for Work?</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <forename>Jeeves</forename>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>MacFarlane</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Boon</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-19">
+                  <title level="j">New Law J.</title>
+                  <imprint>
+                     <date when="1987">1987</date>
+                  </imprint>
+                  <biblScope unit="volume" from="137" to="137">137</biblScope>
+                  <biblScope unit="page" from="835">835</biblScope>
+               </monogr>
+               <citedRange unit="page" from="836" to="836">at 836</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-19">
+               <analytic source="#bibl-19">
+                  <title level="a">Education for Life or for Work?</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <forename>Jeeves</forename>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>MacFarlane</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Boon</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-19">
+                  <title level="j">New Law J.</title>
+                  <imprint>
+                     <date when="1987">1987</date>
+                  </imprint>
+                  <biblScope unit="volume" from="137" to="137">137</biblScope>
+                  <biblScope unit="page" from="835">835</biblScope>
+               </monogr>
+               <citedRange unit="page" from="836" to="836">at 836</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-14">
+      <input type="raw"><![CDATA[16 T.H. Huxley, ‘Universities: Actual and Ideal’ in T.H. Huxley, Collected Essays: Volume III (1905) 215.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="16"
+               type="footnote"
+               place="bottom">
+            <label>16</label>
+            <bibl>T.H. Huxley, ‘Universities: Actual and Ideal’ in T.H. Huxley, Collected Essays: Volume III (1905) 215.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="16"
+               type="footnote"
+               place="bottom">
+            <label>16</label>
+            <bibl xml:id="bibl-20">
+               <author>
+                  <persName>
+                     <forename>T.H.</forename>
+                     <surname>Huxley</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Universities: Actual and Ideal</title>’ in
+                    <title level="m">T.H. Huxley, Collected Essays</title>:
+                    <biblScope unit="volume" from="III" to="III">Volume III</biblScope>
+                    (<date when="1905">1905</date>)
+                    <biblScope unit="page" from="215">215</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-20">
+               <analytic source="#bibl-20">
+                  <title level="a">Universities: Actual and Ideal</title>
+                  <author>
+                     <persName>
+                        <forename>T.H.</forename>
+                        <surname>Huxley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-20">
+                  <title level="m">T.H. Huxley, Collected Essays</title>
+                  <imprint>
+                     <date when="1905">1905</date>
+                  </imprint>
+                  <biblScope unit="volume" from="III" to="III">Volume III</biblScope>
+                  <biblScope unit="page" from="215">215</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-20">
+               <analytic source="#bibl-20">
+                  <title level="a">Universities: Actual and Ideal</title>
+                  <author>
+                     <persName>
+                        <forename>T.H.</forename>
+                        <surname>Huxley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-20">
+                  <title level="m">T.H. Huxley, Collected Essays</title>
+                  <imprint>
+                     <date when="1905">1905</date>
+                  </imprint>
+                  <biblScope unit="volume" from="III" to="III">Volume III</biblScope>
+                  <biblScope unit="page" from="215">215</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-15">
+      <input type="raw"><![CDATA[17 J.S. Mill, ‘Inaugural address to the University of St Andrews’ in Collected Work of John Stuart Mill: Volume XXI, ed. J.M. Robson (1984) 218.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="17"
+               type="footnote"
+               place="bottom">
+            <label>17</label>
+            <bibl>J.S. Mill, ‘Inaugural address to the University of St Andrews’ in Collected Work of John Stuart Mill: Volume XXI, ed. J.M. Robson (1984) 218.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="17"
+               type="footnote"
+               place="bottom">
+            <label>17</label>
+            <bibl xml:id="bibl-21">
+               <author>
+                  <persName>
+                     <forename>J.S.</forename>
+                     <surname>Mill</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Inaugural address to the University of St Andrews</title>’ in
+                    <title level="m">Collected Work of John Stuart Mill: Volume</title>
+               <biblScope unit="volume" from="XXI" to="XXI">XXI</biblScope>, ed.
+                    <editor>
+                  <persName>
+                     <forename>J.M.</forename>
+                     <surname>Robson</surname>
+                  </persName>
+               </editor>
+                    (<date when="1984">1984</date>)
+                    <citedRange unit="page" from="218" to="218">218</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-21">
+               <analytic source="#bibl-21">
+                  <title level="a">Inaugural address to the University of St Andrews</title>
+                  <author>
+                     <persName>
+                        <forename>J.S.</forename>
+                        <surname>Mill</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-21">
+                  <title level="m">Collected Work of John Stuart Mill: Volume</title>
+                  <editor>
+                     <persName>
+                        <forename>J.M.</forename>
+                        <surname>Robson</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1984">1984</date>
+                  </imprint>
+                  <biblScope unit="volume" from="XXI" to="XXI">XXI</biblScope>
+               </monogr>
+               <citedRange unit="page" from="218" to="218">218</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-21">
+               <analytic source="#bibl-21">
+                  <title level="a">Inaugural address to the University of St Andrews</title>
+                  <author>
+                     <persName>
+                        <forename>J.S.</forename>
+                        <surname>Mill</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-21">
+                  <title level="m">Collected Work of John Stuart Mill: Volume</title>
+                  <editor>
+                     <persName>
+                        <forename>J.M.</forename>
+                        <surname>Robson</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1984">1984</date>
+                  </imprint>
+                  <biblScope unit="volume" from="XXI" to="XXI">XXI</biblScope>
+               </monogr>
+               <citedRange unit="page" from="218" to="218">218</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-16">
+      <input type="raw"><![CDATA[18 Dearing, op. cit., n. 12, para. 9.32.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="18"
+               type="footnote"
+               place="bottom">
+            <label>18</label>
+            <bibl>Dearing, op. cit., n. 12, para. 9.32.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="18"
+               type="footnote"
+               place="bottom">
+            <label>18</label>
+            <bibl xml:id="bibl-22">
+               <author>
+                  <persName>
+                     <surname>Dearing</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="12">n. 12</ref>,
+                    <citedRange unit="para" from="9.32" to="9.32">para. 9.32</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-22">
+               <ref>
+                  <persName>
+                     <surname>Dearing</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="12">n. 12</ref>
+               <citedRange unit="para" from="9.32" to="9.32">para. 9.32</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-22">
+               <monogr source="#bibl-14">
+                  <title level="m">Higher Education in the learning society</title>
+                  <author>
+                     <orgName>Committee of Inquiry into Higher Education</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="para" from="9.32" to="9.32">para. 9.32</citedRange>
+               <note type="comment">the <surname>Dearing</surname> report</note>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-17">
+      <input type="raw"><![CDATA[19 id., para. 5.11.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="19"
+               type="footnote"
+               place="bottom">
+            <label>19</label>
+            <bibl>id., para. 5.11.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="19"
+               type="footnote"
+               place="bottom">
+            <label>19</label>
+            <bibl xml:id="bibl-23">
+               <ref type="op-cit">id.</ref>,
+                    <citedRange unit="para" from="5.11" to="5.11">para. 5.11</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-23">
+               <ref type="op-cit">id.</ref>
+               <citedRange unit="para" from="5.11" to="5.11">para. 5.11</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-23">
+               <ref>
+                  <persName>
+                     <surname>Dearing</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="12">n. 12</ref>
+               <citedRange unit="para" from="5.11" to="5.11">para. 5.11</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-18">
+      <input type="raw"><![CDATA[20 F.R. Leavis, Education and the University (1948) 28. Leavis’s view was narrowly nationalistic. For ‘centre’ it would be better to substitute ‘centres’.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="20"
+               type="footnote"
+               place="bottom">
+            <label>20</label>
+            <bibl>F.R. Leavis, Education and the University (1948) 28.</bibl>
+            <note>Leavis’s view was narrowly nationalistic. For ‘centre’ it would be better to substitute ‘centres’.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="20"
+               type="footnote"
+               place="bottom">
+            <label>20</label>
+            <bibl xml:id="bibl-24">
+               <author>
+                  <persName>
+                     <forename>F.R.</forename>
+                     <surname>Leavis</surname>
+                  </persName>
+               </author>,
+                    <title level="m">Education and the University</title>
+                    (<date when="1948">1948</date>)
+                    <citedRange unit="page" from="28" to="28">28</citedRange>.
+                </bibl>
+            <note type="comment">Leavis’s view was narrowly nationalistic. For ‘centre’ it would be better to
+                        substitute ‘centres’.
+              </note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-24">
+               <monogr source="#bibl-24">
+                  <title level="m">Education and the University</title>
+                  <author>
+                     <persName>
+                        <forename>F.R.</forename>
+                        <surname>Leavis</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1948">1948</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="28" to="28">28</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-24">
+               <monogr source="#bibl-24">
+                  <title level="m">Education and the University</title>
+                  <author>
+                     <persName>
+                        <forename>F.R.</forename>
+                        <surname>Leavis</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1948">1948</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="28" to="28">28</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-19">
+      <input type="raw"><![CDATA[21 See, further, A. Bradney, ‘Liberalising Legal Education’ in The Law School: Global Issues, Local Questions, ed. F. Cownie (forthcoming).]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="21"
+               type="footnote"
+               place="bottom">
+            <label>21</label>
+            <note>See, further,</note>
+            <bibl>A. Bradney, ‘Liberalising Legal Education’ in The Law School: Global Issues, Local Questions, ed. F. Cownie (forthcoming).</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="21"
+               type="footnote"
+               place="bottom">
+            <label>21</label>
+            <note type="signal">See, further,</note>
+            <bibl xml:id="bibl-25">
+               <author>
+                  <persName>
+                     <forename>A.</forename>
+                     <surname>Bradney</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Liberalising Legal Education</title>’ in
+                    <title level="m">The Law School: Global Issues, Local Questions</title>, ed.
+                    <editor>
+                  <forename type="first" full="init">F.</forename>
+                  <surname>Cownie</surname>
+               </editor>
+                    (<date>forthcoming</date>).
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-25">
+               <analytic source="#bibl-25">
+                  <title level="a">Liberalising Legal Education</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Bradney</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-25">
+                  <title level="m">The Law School: Global Issues, Local Questions</title>
+                  <editor>
+                     <forename type="first" full="init">F.</forename>
+                     <surname>Cownie</surname>
+                  </editor>
+                  <imprint>
+                     <date>forthcoming</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-25">
+               <analytic source="#bibl-25">
+                  <title level="a">Liberalising Legal Education</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Bradney</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-25">
+                  <title level="m">The Law School: Global Issues, Local Questions</title>
+                  <editor>
+                     <forename type="first" full="init">F.</forename>
+                     <surname>Cownie</surname>
+                  </editor>
+                  <imprint>
+                     <date>forthcoming</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-20">
+      <input type="raw"><![CDATA[22 P. Goodrich ‘Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School’ in Birks op. cit., n. 1, p. 59.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="22"
+               type="footnote"
+               place="bottom">
+            <label>22</label>
+            <bibl>P. Goodrich ‘Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School’ in Birks op. cit., n. 1, p. 59.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="22"
+               type="footnote"
+               place="bottom">
+            <label>22</label>
+            <bibl xml:id="bibl-26">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Goodrich</surname>
+                  </persName>
+               </author>
+                    ‘<title level="a">Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School
+                    </title>’ in
+                    <editor>
+                  <persName>
+                     <surname>Birks</surname>
+                  </persName>
+               </editor>
+               <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="1">n. 1</ref>,
+                    <citedRange unit="page" from="59" to="59">p. 59</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-26">
+               <analytic source="#bibl-26">
+                  <title level="a">Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School
+                    </title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Goodrich</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-26">
+                  <editor>
+                     <persName>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint/>
+               </monogr>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="1">n. 1</ref>
+               <citedRange unit="page" from="59" to="59">p. 59</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-26">
+               <analytic source="#bibl-26">
+                  <title level="a">Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School
+                    </title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Goodrich</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-1">
+                  <title level="m">What Are Law Schools For?</title>
+                  <editor>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="page" from="14">14</biblScope>
+               </monogr>
+               <citedRange unit="page" from="59" to="59">p. 59</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-21">
+      <input type="raw"><![CDATA[23 S. Turow, One L (1977) 106.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="23"
+               type="footnote"
+               place="bottom">
+            <label>23</label>
+            <bibl>S. Turow, One L (1977) 106.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="23"
+               type="footnote"
+               place="bottom">
+            <label>23</label>
+            <bibl xml:id="bibl-27">
+               <author>
+                  <persName>
+                     <forename>S.</forename>
+                     <surname>Turow</surname>
+                  </persName>
+               </author>,
+                    <title level="m">One L</title>
+                    (<date when="1977">1977</date>)
+                    <biblScope unit="page" from="106">106</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-27">
+               <monogr source="#bibl-27">
+                  <title level="m">One L</title>
+                  <author>
+                     <persName>
+                        <forename>S.</forename>
+                        <surname>Turow</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1977">1977</date>
+                  </imprint>
+                  <biblScope unit="page" from="106">106</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-27">
+               <monogr source="#bibl-27">
+                  <title level="m">One L</title>
+                  <author>
+                     <persName>
+                        <forename>S.</forename>
+                        <surname>Turow</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1977">1977</date>
+                  </imprint>
+                  <biblScope unit="page" from="106">106</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-22">
+      <input type="raw"><![CDATA[24 O. Kahn-Freund, ‘Reflections on Legal Education’ (1966) 29 Modern Law Rev. 121 at 129.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="24"
+               type="footnote"
+               place="bottom">
+            <label>24</label>
+            <bibl>O. Kahn-Freund, ‘Reflections on Legal Education’ (1966) 29 Modern Law Rev. 121 at 129.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="24"
+               type="footnote"
+               place="bottom">
+            <label>24</label>
+            <bibl xml:id="bibl-28">
+               <author>
+                  <persName>
+                     <forename>O.</forename>
+                     <surname>Kahn-Freund</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="m">Reflections on Legal Education</title>’
+                    (<date when="1966">1966</date>)
+                    <biblScope unit="volume" from="29" to="29">29</biblScope>
+               <title level="j">Modern Law Rev.</title>
+               <biblScope unit="page" from="121">121</biblScope>
+               <citedRange unit="page" from="129" to="129">at 129</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-28">
+               <monogr source="#bibl-28">
+                  <title level="m">Reflections on Legal Education</title>
+                  <title level="j">Modern Law Rev.</title>
+                  <author>
+                     <persName>
+                        <forename>O.</forename>
+                        <surname>Kahn-Freund</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1966">1966</date>
+                  </imprint>
+                  <biblScope unit="volume" from="29" to="29">29</biblScope>
+                  <biblScope unit="page" from="121">121</biblScope>
+               </monogr>
+               <citedRange unit="page" from="129" to="129">at 129</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-28">
+               <monogr source="#bibl-28">
+                  <title level="m">Reflections on Legal Education</title>
+                  <title level="j">Modern Law Rev.</title>
+                  <author>
+                     <persName>
+                        <forename>O.</forename>
+                        <surname>Kahn-Freund</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1966">1966</date>
+                  </imprint>
+                  <biblScope unit="volume" from="29" to="29">29</biblScope>
+                  <biblScope unit="page" from="121">121</biblScope>
+               </monogr>
+               <citedRange unit="page" from="129" to="129">at 129</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-23">
+      <input type="raw"><![CDATA[25 Kahn-Freund believed that both doctrinal and non-doctrinal learning were possible together though he did concede that in the doctrinal method there was ‘the danger that the discussion gets stuck in the perhaps intellectually very fascinating game of legal argument . . .’ (Kahn-Freund, id.).]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="25"
+               type="footnote"
+               place="bottom">
+            <label>25</label>
+            <note>Kahn-Freund believed that both doctrinal and non-doctrinal learning were possible together though he did concede that in the doctrinal method there was ‘the danger that the discussion gets stuck in the perhaps intellectually very fascinating game of legal argument. . .’</note>
+            <bibl>Kahn-Freund, id.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="25"
+               type="footnote"
+               place="bottom">
+            <label>25</label>
+            <note type="comment">Kahn-Freund believed that both doctrinal and non-doctrinal learning were
+                        possible together though he did concede that in the doctrinal method there was ‘the danger that
+                        the discussion gets stuck in the perhaps intellectually very fascinating game of legal
+                        argument . . .’
+              </note>
+                (<bibl xml:id="bibl-29">
+               <author>
+                  <persName>
+                     <surname>Kahn-Freund</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">id.</ref>
+            </bibl>).
+          </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-29">
+               <ref>
+                  <persName>
+                     <surname>Kahn-Freund</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">id.</ref>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-29">
+               <monogr source="#bibl-28">
+                  <title level="m">Reflections on Legal Education</title>
+                  <title level="j">Modern Law Rev.</title>
+                  <author>
+                     <persName>
+                        <forename>O.</forename>
+                        <surname>Kahn-Freund</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1966">1966</date>
+                  </imprint>
+                  <biblScope unit="volume" from="29" to="29">29</biblScope>
+                  <biblScope unit="page" from="121">121</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-24">
+      <input type="raw"><![CDATA[26 Leavis, op. cit., n. 20, p. 120.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="26"
+               type="footnote"
+               place="bottom">
+            <label>26</label>
+            <bibl>Leavis, op. cit., n. 20, p. 120.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="26"
+               type="footnote"
+               place="bottom">
+            <label>26</label>
+            <bibl xml:id="bibl-30">
+               <author>
+                  <persName>
+                     <surname>Leavis</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="20">n. 20</ref>,
+                    <citedRange unit="page" from="120" to="120">p. 120</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-30">
+               <ref>
+                  <persName>
+                     <surname>Leavis</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="20">n. 20</ref>
+               <citedRange unit="page" from="120" to="120">p. 120</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-30">
+               <monogr source="#bibl-24">
+                  <title level="m">Education and the University</title>
+                  <author>
+                     <persName>
+                        <forename>F.R.</forename>
+                        <surname>Leavis</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1948">1948</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="120" to="120">p. 120</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-25">
+      <input type="raw"><![CDATA[29 Leavis has, of course, been widely criticized for the cultural and gender assumptions that lie behind his selection of material to be studied. (See, for example, M. King, The New English Literatures (1980) at 216–17.) Whatever the accuracy of these criticisms, they are criticisms of the application of the method rather than the method itself.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="29"
+               type="footnote"
+               place="bottom">
+            <label>29</label>
+            <note>Leavis has, of course, been widely criticized for the cultural and gender assumptions that lie behind his selection of material to be studied.</note>
+            <note>(See, for example,</note>
+            <bibl>M. King, The New English Literatures (1980) at 216–17.)</bibl>
+            <note>Whatever the accuracy of these criticisms, they are criticisms of the application of the method rather than the method itself.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="29"
+               type="footnote"
+               place="bottom">
+            <label>29</label>
+            <note type="comment">
+                    Leavis has, of course, been widely criticized for the cultural and gender
+                    assumptions that lie behind his selection of material to be studied.
+              </note>
+            <note type="signal">(See, for example,</note>
+            <bibl xml:id="bibl-32">
+               <author>
+                  <persName>
+                     <forename>M.</forename>
+                     <surname>King</surname>
+                  </persName>
+               </author>,
+                    <title level="m">The New English Literatures</title>
+                    (<date when="1980">1980</date>)
+                    <citedRange unit="page" from="216" to="217">at 216–17</citedRange>.)
+                </bibl>
+            <note type="comment">
+                    Whatever the accuracy of these criticisms, they are criticisms of the
+                    application of the method rather than the method itself.
+              </note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-32">
+               <monogr source="#bibl-32">
+                  <title level="m">The New English Literatures</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>King</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1980">1980</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="216" to="217">at 216–17</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-32">
+               <monogr source="#bibl-32">
+                  <title level="m">The New English Literatures</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>King</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1980">1980</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="216" to="217">at 216–17</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-26">
+      <input type="raw"><![CDATA[30 Jurisprudence by Sir John Salmond, ed. G. Willliams (10th ed., 1947) at 256 and 257.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="30"
+               type="footnote"
+               place="bottom">
+            <label>30</label>
+            <bibl>Jurisprudence by Sir John Salmond, ed. G. Willliams (10th ed., 1947) at 256 and 257.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="30"
+               type="footnote"
+               place="bottom">
+            <label>30</label>
+            <bibl xml:id="bibl-33">
+               <title level="m">Jurisprudence by Sir John Salmond</title>, ed.
+                    <editor>
+                  <persName>
+                     <forename>G.</forename>
+                     <surname>Willliams</surname>
+                  </persName>
+               </editor>
+                    (<edition n="10">10th ed.</edition>,
+                    <date when="1947">1947</date>)
+                    <citedRange unit="page" from="256" to="257">at 256 and 257</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-33">
+               <monogr source="#bibl-33">
+                  <title level="m">Jurisprudence by Sir John Salmond</title>
+                  <editor>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Willliams</surname>
+                     </persName>
+                  </editor>
+                  <edition n="10">10th ed.</edition>
+                  <imprint>
+                     <date when="1947">1947</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="256" to="257">at 256 and 257</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-33">
+               <monogr source="#bibl-33">
+                  <title level="m">Jurisprudence by Sir John Salmond</title>
+                  <editor>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Willliams</surname>
+                     </persName>
+                  </editor>
+                  <edition n="10">10th ed.</edition>
+                  <imprint>
+                     <date when="1947">1947</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="256" to="257">at 256 and 257</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-27">
+      <input type="raw"><![CDATA[31 So much so that when other disciplines engage with law they must develop their own concepts to analyse law rather than rely on the concepts already developed in law. See, for example, E. Durkheim The Division of Labour in Society (1933) 68.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="31"
+               type="footnote"
+               place="bottom">
+            <label>31</label>
+            <note>So much so that when other disciplines engage with law they must develop their own concepts to analyse law rather than rely on the concepts already developed in law.</note>
+            <note>See, for example,</note>
+            <bibl>E. Durkheim The Division of Labour in Society (1933) 68.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="31"
+               type="footnote"
+               place="bottom">
+            <label>31</label>
+            <note type="comment">
+                    So much so that when other disciplines engage with law they must develop their
+                    own concepts to analyse law rather than rely on the concepts already developed in law.
+              </note>
+            <note type="signal">See, for example,</note>
+            <bibl xml:id="bibl-35">
+               <author>
+                  <persName>
+                     <forename>E.</forename>
+                     <surname>Durkheim</surname>
+                  </persName>
+               </author>
+               <title level="m">The Division of Labour in Society</title>
+                    (<date when="1933">1933</date>)
+                    <citedRange unit="page" from="68" to="68">68</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-35">
+               <monogr source="#bibl-35">
+                  <title level="m">The Division of Labour in Society</title>
+                  <author>
+                     <persName>
+                        <forename>E.</forename>
+                        <surname>Durkheim</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1933">1933</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="68" to="68">68</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-35">
+               <monogr source="#bibl-35">
+                  <title level="m">The Division of Labour in Society</title>
+                  <author>
+                     <persName>
+                        <forename>E.</forename>
+                        <surname>Durkheim</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1933">1933</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="68" to="68">68</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-28">
+      <input type="raw"><![CDATA[32 M. Le Brun and R. Johnstone, The Quiet Revolution: Improving Student Learning in Law (1994) 65. On the effect on women students, see ‘Define and Empower: Women Students Consider Feminist Learning’ (1990) I Law and Critique 47 at pp. 54–55. For a survey of CLS and feminist literature on this general point, see W. Conklin, ‘The Invisible Author of Legal Authority’ (1996) VII Law and Critique 173 at pp. 173–6.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="32"
+               type="footnote"
+               place="bottom">
+            <label>32</label>
+            <bibl>M. Le Brun and R. Johnstone, The Quiet Revolution: Improving Student Learning in Law (1994) 65.</bibl>
+            <note>On the effect on women students, see</note>
+            <bibl>‘Define and Empower: Women Students Consider Feminist Learning’ (1990) I Law and Critique 47 at pp. 54–55.</bibl>
+            <note>For a survey of CLS and feminist literature on this general point, see</note>
+            <bibl>W. Conklin, ‘The Invisible Author of Legal Authority’ (1996) VII Law and Critique 173 at pp. 173–6.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="32"
+               type="footnote"
+               place="bottom">
+            <label>32</label>
+            <bibl xml:id="bibl-36">
+               <author>
+                  <persName>
+                     <forename>M.</forename>
+                     <surname>Le Brun</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>R.</forename>
+                     <surname>Johnstone</surname>
+                  </persName>
+               </author>,
+                    <title level="m">The Quiet Revolution: Improving Student Learning in Law</title>
+                    (<date when="1994">1994</date>)
+                    <citedRange unit="page" from="65" to="65">65</citedRange>.
+                </bibl>
+            <note type="signal">On the effect on women students, see</note>
+            <bibl xml:id="bibl-37">
+                    ‘<title level="a">Define and Empower: Women Students Consider Feminist Learning</title>’
+                    (<date when="1990">1990</date>)
+                    <biblScope unit="volume" from="I" to="I">I</biblScope>
+               <title level="j">Law and Critique</title>
+               <biblScope unit="page" from="47">47</biblScope>
+               <citedRange unit="page" from="54" to="55">at pp. 54–55</citedRange>.
+                </bibl>
+            <note type="signal">For a survey of CLS and feminist literature on this general point, see</note>
+            <bibl xml:id="bibl-38">
+               <author>
+                  <persName>
+                     <forename>W.</forename>
+                     <surname>Conklin</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">The Invisible Author of Legal Authority</title>’
+                    (<date when="1996">1996</date>)
+                    <biblScope unit="volume" from="VII" to="VII">VII</biblScope>
+               <title level="j">Law and Critique</title>
+               <biblScope unit="page" from="173">173</biblScope>
+               <citedRange unit="page" from="173" to="176">at pp. 173–6</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-36">
+               <monogr source="#bibl-36">
+                  <title level="m">The Quiet Revolution: Improving Student Learning in Law</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Le Brun</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Johnstone</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="65" to="65">65</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-37">
+               <analytic source="#bibl-37">
+                  <title level="a">Define and Empower: Women Students Consider Feminist Learning</title>
+               </analytic>
+               <monogr source="#bibl-37">
+                  <title level="j">Law and Critique</title>
+                  <imprint>
+                     <date when="1990">1990</date>
+                  </imprint>
+                  <biblScope unit="volume" from="I" to="I">I</biblScope>
+                  <biblScope unit="page" from="47">47</biblScope>
+               </monogr>
+               <citedRange unit="page" from="54" to="55">at pp. 54–55</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-38">
+               <analytic source="#bibl-38">
+                  <title level="a">The Invisible Author of Legal Authority</title>
+                  <author>
+                     <persName>
+                        <forename>W.</forename>
+                        <surname>Conklin</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-38">
+                  <title level="j">Law and Critique</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="volume" from="VII" to="VII">VII</biblScope>
+                  <biblScope unit="page" from="173">173</biblScope>
+               </monogr>
+               <citedRange unit="page" from="173" to="176">at pp. 173–6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-36">
+               <monogr source="#bibl-36">
+                  <title level="m">The Quiet Revolution: Improving Student Learning in Law</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Le Brun</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Johnstone</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="65" to="65">65</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-37">
+               <analytic source="#bibl-37">
+                  <title level="a">Define and Empower: Women Students Consider Feminist Learning</title>
+               </analytic>
+               <monogr source="#bibl-37">
+                  <title level="j">Law and Critique</title>
+                  <imprint>
+                     <date when="1990">1990</date>
+                  </imprint>
+                  <biblScope unit="volume" from="I" to="I">I</biblScope>
+                  <biblScope unit="page" from="47">47</biblScope>
+               </monogr>
+               <citedRange unit="page" from="54" to="55">at pp. 54–55</citedRange>
+            </biblStruct>
+            <biblStruct source="#bibl-38">
+               <analytic source="#bibl-38">
+                  <title level="a">The Invisible Author of Legal Authority</title>
+                  <author>
+                     <persName>
+                        <forename>W.</forename>
+                        <surname>Conklin</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-38">
+                  <title level="j">Law and Critique</title>
+                  <imprint>
+                     <date when="1996">1996</date>
+                  </imprint>
+                  <biblScope unit="volume" from="VII" to="VII">VII</biblScope>
+                  <biblScope unit="page" from="173">173</biblScope>
+               </monogr>
+               <citedRange unit="page" from="173" to="176">at pp. 173–6</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-29">
+      <input type="raw"><![CDATA[33 R. Collier, ‘Masculinism, Law and Law Teaching’ (1991) 19 International J. of the Sociology of Law 427 at 429.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="33"
+               type="footnote"
+               place="bottom">
+            <label>33</label>
+            <bibl>R. Collier, ‘Masculinism, Law and Law Teaching’ (1991) 19 International J. of the Sociology of Law 427 at 429.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="33"
+               type="footnote"
+               place="bottom">
+            <label>33</label>
+            <bibl xml:id="bibl-39">
+               <author>
+                  <persName>
+                     <forename>R.</forename>
+                     <surname>Collier</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Masculinism, Law and Law Teaching</title>’
+                    (<date when="1991">1991</date>)
+                    <biblScope unit="volume" from="19" to="19">19</biblScope>
+               <title level="j">International J. of the Sociology of Law</title>
+               <biblScope unit="page" from="427">427</biblScope>
+               <biblScope unit="page" from="429" to="429">at 429</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-39">
+               <analytic source="#bibl-39">
+                  <title level="a">Masculinism, Law and Law Teaching</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Collier</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-39">
+                  <title level="j">International J. of the Sociology of Law</title>
+                  <imprint>
+                     <date when="1991">1991</date>
+                  </imprint>
+                  <biblScope unit="volume" from="19" to="19">19</biblScope>
+                  <biblScope unit="page" from="427">427</biblScope>
+                  <biblScope unit="page" from="429" to="429">at 429</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-39">
+               <analytic source="#bibl-39">
+                  <title level="a">Masculinism, Law and Law Teaching</title>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Collier</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-39">
+                  <title level="j">International J. of the Sociology of Law</title>
+                  <imprint>
+                     <date when="1991">1991</date>
+                  </imprint>
+                  <biblScope unit="volume" from="19" to="19">19</biblScope>
+                  <biblScope unit="page" from="427">427</biblScope>
+                  <biblScope unit="page" from="429" to="429">at 429</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-30">
+      <input type="raw"><![CDATA[34 P. McAuslan, ‘Administrative Law, Collective Consumption and Judicial Policy’ (1983) 46 Modern Law Rev. 1 at 8.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="34"
+               type="footnote"
+               place="bottom">
+            <label>34</label>
+            <bibl>P. McAuslan, ‘Administrative Law, Collective Consumption and Judicial Policy’ (1983) 46 Modern Law Rev. 1 at 8.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="34"
+               type="footnote"
+               place="bottom">
+            <label>34</label>
+            <bibl xml:id="bibl-40">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>McAuslan</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="m">Administrative Law, Collective Consumption and Judicial Policy</title>’
+                    (<date when="1983">1983</date>)
+                    <biblScope unit="volume" from="46" to="46">46</biblScope>
+               <title level="j">Modern Law Rev.</title>
+               <biblScope unit="page" from="1">1</biblScope>
+               <citedRange unit="page" from="8" to="8">at 8</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-40">
+               <monogr source="#bibl-40">
+                  <title level="m">Administrative Law, Collective Consumption and Judicial Policy</title>
+                  <title level="j">Modern Law Rev.</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>McAuslan</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1983">1983</date>
+                  </imprint>
+                  <biblScope unit="volume" from="46" to="46">46</biblScope>
+                  <biblScope unit="page" from="1">1</biblScope>
+               </monogr>
+               <citedRange unit="page" from="8" to="8">at 8</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-40">
+               <monogr source="#bibl-40">
+                  <title level="m">Administrative Law, Collective Consumption and Judicial Policy</title>
+                  <title level="j">Modern Law Rev.</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>McAuslan</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1983">1983</date>
+                  </imprint>
+                  <biblScope unit="volume" from="46" to="46">46</biblScope>
+                  <biblScope unit="page" from="1">1</biblScope>
+               </monogr>
+               <citedRange unit="page" from="8" to="8">at 8</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-31">
+      <input type="raw"><![CDATA[35 Le Brun and Johnstone, op. cit., n. 32, pp. 71–5.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="35"
+               type="footnote"
+               place="bottom">
+            <label>35</label>
+            <bibl>Le Brun and Johnstone, op. cit., n. 32, pp. 71–5.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="35"
+               type="footnote"
+               place="bottom">
+            <label>35</label>
+            <bibl xml:id="bibl-41">
+               <author>
+                  <persName>
+                     <surname>Le Brun</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <surname>Johnstone</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="32">n. 32</ref>,
+                    <citedRange unit="page" from="71" to="75">pp. 71–5</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-41">
+               <ref>
+                  <persName>
+                     <surname>Le Brun</surname>
+                  </persName>
+                  <persName>
+                     <surname>Johnstone</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="32">n. 32</ref>
+               <citedRange unit="page" from="71" to="75">pp. 71–5</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-41">
+               <monogr source="#bibl-36">
+                  <title level="m">The Quiet Revolution: Improving Student Learning in Law</title>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Le Brun</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>R.</forename>
+                        <surname>Johnstone</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="71" to="75">pp. 71–5</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-32">
+      <input type="raw"><![CDATA[38 Goodrich, op. cit., n. 22.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="38"
+               type="footnote"
+               place="bottom">
+            <label>38</label>
+            <bibl>Goodrich, op. cit., n. 22.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="38"
+               type="footnote"
+               place="bottom">
+            <label>38</label>
+            <bibl xml:id="bibl-42">
+               <author>
+                  <persName>
+                     <surname>Goodrich</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="22">n. 22</ref>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-42">
+               <ref>
+                  <persName>
+                     <surname>Goodrich</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="22">n. 22</ref>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-42">
+               <analytic source="#bibl-26">
+                  <title level="a">Of Blackstone’s Tower: Metephors of Distance and Histories of the English Law School
+                    </title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Goodrich</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-26">
+                  <editor>
+                     <persName>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint/>
+               </monogr>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="1">n. 1</ref>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-33">
+      <input type="raw"><![CDATA[39 P. Samuelson, ‘The Convergence of the Law School and the University’ (1975) 44 The Am. Scholar 256 at 258.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="39"
+               type="footnote"
+               place="bottom">
+            <label>39</label>
+            <bibl>P. Samuelson, ‘The Convergence of the Law School and the University’ (1975) 44 The Am. Scholar 256 at 258.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="39"
+               type="footnote"
+               place="bottom">
+            <label>39</label>
+            <bibl xml:id="bibl-43">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Samuelson</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="m">The Convergence of the Law School and the University</title>’
+                    (<date when="1975">1975</date>)
+                    <biblScope unit="volume" from="44" to="44">44</biblScope>
+               <title level="j">The Am. Scholar</title>
+               <biblScope unit="page" from="256">256</biblScope>
+               <citedRange unit="page" from="258" to="258">at 258</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-43">
+               <monogr source="#bibl-43">
+                  <title level="m">The Convergence of the Law School and the University</title>
+                  <title level="j">The Am. Scholar</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Samuelson</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1975">1975</date>
+                  </imprint>
+                  <biblScope unit="volume" from="44" to="44">44</biblScope>
+                  <biblScope unit="page" from="256">256</biblScope>
+               </monogr>
+               <citedRange unit="page" from="258" to="258">at 258</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-43">
+               <monogr source="#bibl-43">
+                  <title level="m">The Convergence of the Law School and the University</title>
+                  <title level="j">The Am. Scholar</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Samuelson</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1975">1975</date>
+                  </imprint>
+                  <biblScope unit="volume" from="44" to="44">44</biblScope>
+                  <biblScope unit="page" from="256">256</biblScope>
+               </monogr>
+               <citedRange unit="page" from="258" to="258">at 258</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-34">
+      <input type="raw"><![CDATA[40 P. Harris and M. Jones ‘A Survey of Law Schools in the United Kingdom, 1996’ (1997) 31 The Law Teacher 38 at 46.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="40"
+               type="footnote"
+               place="bottom">
+            <label>40</label>
+            <bibl>P. Harris and M. Jones ‘A Survey of Law Schools in the United Kingdom, 1996’ (1997) 31 The Law Teacher 38 at 46.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="40"
+               type="footnote"
+               place="bottom">
+            <label>40</label>
+            <bibl xml:id="bibl-44">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Harris</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>M.</forename>
+                     <surname>Jones</surname>
+                  </persName>
+               </author>
+                    ‘<title level="a">A Survey of Law Schools in the United Kingdom, 1996</title>’
+                    (<date when="1997">1997</date>)
+                    <biblScope unit="volume" from="31" to="31">31</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="38">38</biblScope>
+               <citedRange unit="page" from="46" to="46">at 46</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-44">
+               <analytic source="#bibl-44">
+                  <title level="a">A Survey of Law Schools in the United Kingdom, 1996</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Harris</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Jones</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-44">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="volume" from="31" to="31">31</biblScope>
+                  <biblScope unit="page" from="38">38</biblScope>
+               </monogr>
+               <citedRange unit="page" from="46" to="46">at 46</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-44">
+               <analytic source="#bibl-44">
+                  <title level="a">A Survey of Law Schools in the United Kingdom, 1996</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Harris</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Jones</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-44">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="volume" from="31" to="31">31</biblScope>
+                  <biblScope unit="page" from="38">38</biblScope>
+               </monogr>
+               <citedRange unit="page" from="46" to="46">at 46</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-35">
+      <input type="raw"><![CDATA[41 J. Wilson, ‘A third survey of university legal education’ (1993) 13 Legal Studies 143 at 152.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="41"
+               type="footnote"
+               place="bottom">
+            <label>41</label>
+            <bibl>J. Wilson, ‘A third survey of university legal education’ (1993) 13 Legal Studies 143 at 152.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="41"
+               type="footnote"
+               place="bottom">
+            <label>41</label>
+            <bibl xml:id="bibl-45">
+               <author>
+                  <persName>
+                     <forename>J.</forename>
+                     <surname>Wilson</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">A third survey of university legal education</title>’
+                    (<date when="1993">1993</date>)
+                    <biblScope unit="volume" from="13" to="13">13</biblScope>
+               <title level="j">Legal Studies</title>
+               <biblScope unit="page" from="143">143</biblScope>
+               <citedRange unit="page" from="152" to="152">at 152</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-45">
+               <analytic source="#bibl-45">
+                  <title level="a">A third survey of university legal education</title>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>Wilson</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-45">
+                  <title level="j">Legal Studies</title>
+                  <imprint>
+                     <date when="1993">1993</date>
+                  </imprint>
+                  <biblScope unit="volume" from="13" to="13">13</biblScope>
+                  <biblScope unit="page" from="143">143</biblScope>
+               </monogr>
+               <citedRange unit="page" from="152" to="152">at 152</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-45">
+               <analytic source="#bibl-45">
+                  <title level="a">A third survey of university legal education</title>
+                  <author>
+                     <persName>
+                        <forename>J.</forename>
+                        <surname>Wilson</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-45">
+                  <title level="j">Legal Studies</title>
+                  <imprint>
+                     <date when="1993">1993</date>
+                  </imprint>
+                  <biblScope unit="volume" from="13" to="13">13</biblScope>
+                  <biblScope unit="page" from="143">143</biblScope>
+               </monogr>
+               <citedRange unit="page" from="152" to="152">at 152</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-36">
+      <input type="raw"><![CDATA[42 Thus, for example, Harris and Jones reported that 59.2 per cent of all particpating institutions offered foriegn language tuition as part of their standard LLB programme. (Harris and Jones, op. cit., n. 40, at p. 54).]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="42"
+               type="footnote"
+               place="bottom">
+            <label>42</label>
+            <note>Thus, for example, Harris and Jones reported that 59.2 per cent of all particpating institutions offered foriegn language tuition as part of their standard LLB programme.</note>
+            <bibl>Harris and Jones, op. cit., n. 40, at p. 54</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="42"
+               type="footnote"
+               place="bottom">
+            <label>42</label>
+            <note type="comment">
+                    Thus, for example, Harris and Jones reported that 59.2 per cent of all
+                    particpating institutions offered foriegn language tuition as part of their standard LLB
+                    programme.
+              </note>
+                (<bibl xml:id="bibl-47">
+               <author>
+                  <persName>
+                     <surname>Harris</surname>
+                  </persName>
+               </author>
+                    and      
+                    <author>
+                  <persName>
+                     <surname>Jones</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="40">n. 40</ref>,
+                    <citedRange unit="page" from="54" to="54">at p. 54</citedRange>
+            </bibl>).
+          </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-47">
+               <ref>
+                  <persName>
+                     <surname>Harris</surname>
+                  </persName>
+                  <persName>
+                     <surname>Jones</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="40">n. 40</ref>
+               <citedRange unit="page" from="54" to="54">at p. 54</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-47">
+               <analytic source="#bibl-44">
+                  <title level="a">A Survey of Law Schools in the United Kingdom, 1996</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Harris</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>M.</forename>
+                        <surname>Jones</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-44">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+                  <biblScope unit="volume" from="31" to="31">31</biblScope>
+                  <biblScope unit="page" from="38">38</biblScope>
+               </monogr>
+               <citedRange unit="page" from="54" to="54">at p. 54</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-37">
+      <input type="raw"><![CDATA[43 T. Mortimer, P. Leighton and N. Whatley, Law Teachers: Lawyers or Academics? (1995). This would include teaching both non-law degree students and sub-degree students.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="43"
+               type="footnote"
+               place="bottom">
+            <label>43</label>
+            <bibl>T. Mortimer, P. Leighton and N. Whatley, Law Teachers: Lawyers or Academics? (1995).</bibl>
+            <note>This would include teaching both non-law degree students and sub-degree students.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="43"
+               type="footnote"
+               place="bottom">
+            <label>43</label>
+            <bibl xml:id="bibl-48">
+               <author>
+                  <persName>
+                     <forename>T.</forename>
+                     <surname>Mortimer</surname>
+                  </persName>
+               </author>,
+                    <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Leighton</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>N.</forename>
+                     <surname>Whatley</surname>
+                  </persName>
+               </author>,
+                    <title level="m">Law Teachers: Lawyers or Academics?</title>
+                    (<date when="1995">1995</date>).
+                </bibl>
+            <note type="comment">This would include teaching both non-law degree students and sub-degree students.</note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-48">
+               <monogr source="#bibl-48">
+                  <title level="m">Law Teachers: Lawyers or Academics?</title>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Mortimer</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Leighton</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>N.</forename>
+                        <surname>Whatley</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-48">
+               <monogr source="#bibl-48">
+                  <title level="m">Law Teachers: Lawyers or Academics?</title>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Mortimer</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Leighton</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>N.</forename>
+                        <surname>Whatley</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-38">
+      <input type="raw"><![CDATA[44 id., p 35]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="44"
+               type="footnote"
+               place="bottom">
+            <label>44</label>
+            <bibl>id., p 35</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="44"
+               type="footnote"
+               place="bottom">
+            <label>44</label>
+            <bibl xml:id="bibl-49">
+               <ref type="op-cit">id.</ref>,
+                    <citedRange unit="page" from="35" to="35">p 35</citedRange>
+            </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-49">
+               <ref type="op-cit">id.</ref>
+               <citedRange unit="page" from="35" to="35">p 35</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-49">
+               <monogr source="#bibl-48">
+                  <title level="m">Law Teachers: Lawyers or Academics?</title>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Mortimer</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Leighton</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>N.</forename>
+                        <surname>Whatley</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="35" to="35">p 35</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-39">
+      <input type="raw"><![CDATA[45 L. Skwarok, ‘Business Law for Non-Lawyers: Setting the Stage for Teaching, Learning and Assessment at Hong Kong Polytechnic University’ (1995) 29 The Law Teacher 189 at 189.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="45"
+               type="footnote"
+               place="bottom">
+            <label>45</label>
+            <bibl>L. Skwarok, ‘Business Law for Non-Lawyers: Setting the Stage for Teaching, Learning and Assessment at Hong Kong Polytechnic University’ (1995) 29 The Law Teacher 189 at 189.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="45"
+               type="footnote"
+               place="bottom">
+            <label>45</label>
+            <bibl xml:id="bibl-50">
+               <author>
+                  <persName>
+                     <forename>L.</forename>
+                     <surname>Skwarok</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Business Law for Non-Lawyers: Setting the Stage for Teaching, Learning and
+                        Assessment at Hong Kong Polytechnic University</title>’
+                    (<date when="1995">1995</date>)
+                    <biblScope unit="volume" from="29" to="29">29</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="189">189</biblScope>
+               <citedRange unit="page" from="189" to="189">at 189</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-50">
+               <analytic source="#bibl-50">
+                  <title level="a">Business Law for Non-Lawyers: Setting the Stage for Teaching, Learning and
+                        Assessment at Hong Kong Polytechnic University</title>
+                  <author>
+                     <persName>
+                        <forename>L.</forename>
+                        <surname>Skwarok</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-50">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+                  <biblScope unit="volume" from="29" to="29">29</biblScope>
+                  <biblScope unit="page" from="189">189</biblScope>
+               </monogr>
+               <citedRange unit="page" from="189" to="189">at 189</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-50">
+               <analytic source="#bibl-50">
+                  <title level="a">Business Law for Non-Lawyers: Setting the Stage for Teaching, Learning and
+                        Assessment at Hong Kong Polytechnic University</title>
+                  <author>
+                     <persName>
+                        <forename>L.</forename>
+                        <surname>Skwarok</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-50">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1995">1995</date>
+                  </imprint>
+                  <biblScope unit="volume" from="29" to="29">29</biblScope>
+                  <biblScope unit="page" from="189">189</biblScope>
+               </monogr>
+               <citedRange unit="page" from="189" to="189">at 189</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-40">
+      <input type="raw"><![CDATA[46 N. Bastin, ‘Law, Law Staff and CNAA Business Studies Degree Courses’ (1985) 19 The Law Teacher 12 at 13.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="46"
+               type="footnote"
+               place="bottom">
+            <label>46</label>
+            <bibl>N. Bastin, ‘Law, Law Staff and CNAA Business Studies Degree Courses’ (1985) 19 The Law Teacher 12 at 13.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="46"
+               type="footnote"
+               place="bottom">
+            <label>46</label>
+            <bibl xml:id="bibl-51">
+               <author>
+                  <persName>
+                     <forename>N.</forename>
+                     <surname>Bastin</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Law, Law Staff and CNAA Business Studies Degree Courses</title>’
+                    (<date when="1985">1985</date>)
+                    <biblScope unit="volume" from="19" to="19">19</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="12">12</biblScope>
+               <citedRange unit="page" from="13" to="13">at 13</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-51">
+               <analytic source="#bibl-51">
+                  <title level="a">Law, Law Staff and CNAA Business Studies Degree Courses</title>
+                  <author>
+                     <persName>
+                        <forename>N.</forename>
+                        <surname>Bastin</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-51">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1985">1985</date>
+                  </imprint>
+                  <biblScope unit="volume" from="19" to="19">19</biblScope>
+                  <biblScope unit="page" from="12">12</biblScope>
+               </monogr>
+               <citedRange unit="page" from="13" to="13">at 13</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-51">
+               <analytic source="#bibl-51">
+                  <title level="a">Law, Law Staff and CNAA Business Studies Degree Courses</title>
+                  <author>
+                     <persName>
+                        <forename>N.</forename>
+                        <surname>Bastin</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-51">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1985">1985</date>
+                  </imprint>
+                  <biblScope unit="volume" from="19" to="19">19</biblScope>
+                  <biblScope unit="page" from="12">12</biblScope>
+               </monogr>
+               <citedRange unit="page" from="13" to="13">at 13</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-41">
+      <input type="raw"><![CDATA[47 A. Ridley, ‘Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?’ (1994) 28 The Law Teacher 281 at 282.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="47"
+               type="footnote"
+               place="bottom">
+            <label>47</label>
+            <bibl>A. Ridley, ‘Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?’ (1994) 28 The Law Teacher 281 at 282.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="47"
+               type="footnote"
+               place="bottom">
+            <label>47</label>
+            <bibl xml:id="bibl-52">
+               <author>
+                  <persName>
+                     <forename>A.</forename>
+                     <surname>Ridley</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?</title>’
+                    (<date when="1994">1994</date>)
+                    <biblScope unit="volume" from="28" to="28">28</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="281">281</biblScope>
+               <citedRange unit="page" from="282" to="282">at 282</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-52">
+               <analytic source="#bibl-52">
+                  <title level="a">Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Ridley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-52">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="volume" from="28" to="28">28</biblScope>
+                  <biblScope unit="page" from="281">281</biblScope>
+               </monogr>
+               <citedRange unit="page" from="282" to="282">at 282</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-52">
+               <analytic source="#bibl-52">
+                  <title level="a">Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Ridley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-52">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="volume" from="28" to="28">28</biblScope>
+                  <biblScope unit="page" from="281">281</biblScope>
+               </monogr>
+               <citedRange unit="page" from="282" to="282">at 282</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-42">
+      <input type="raw"><![CDATA[48 G. Cartan and T. Vilkinas, ‘Legal Literacy for Managers: The Role of the Educator’ (1990) 24 The Law Teacher 246 at 248.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="48"
+               type="footnote"
+               place="bottom">
+            <label>48</label>
+            <bibl>G. Cartan and T. Vilkinas, ‘Legal Literacy for Managers: The Role of the Educator’ (1990) 24 The Law Teacher 246 at 248.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="48"
+               type="footnote"
+               place="bottom">
+            <label>48</label>
+            <bibl xml:id="bibl-53">
+               <author>
+                  <persName>
+                     <forename>G.</forename>
+                     <surname>Cartan</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <forename>T.</forename>
+                     <surname>Vilkinas</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Legal Literacy for Managers: The Role of the Educator</title>’
+                    (<date when="1990">1990</date>)
+                    <biblScope unit="volume" from="24" to="24">24</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="246">246</biblScope>
+               <citedRange unit="page" from="248" to="248">at 248</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-53">
+               <analytic source="#bibl-53">
+                  <title level="a">Legal Literacy for Managers: The Role of the Educator</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Cartan</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Vilkinas</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-53">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1990">1990</date>
+                  </imprint>
+                  <biblScope unit="volume" from="24" to="24">24</biblScope>
+                  <biblScope unit="page" from="246">246</biblScope>
+               </monogr>
+               <citedRange unit="page" from="248" to="248">at 248</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-53">
+               <analytic source="#bibl-53">
+                  <title level="a">Legal Literacy for Managers: The Role of the Educator</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Cartan</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Vilkinas</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-53">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1990">1990</date>
+                  </imprint>
+                  <biblScope unit="volume" from="24" to="24">24</biblScope>
+                  <biblScope unit="page" from="246">246</biblScope>
+               </monogr>
+               <citedRange unit="page" from="248" to="248">at 248</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-43">
+      <input type="raw"><![CDATA[49 Ridley, op. cit., n. 47, at p. 284.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="49"
+               type="footnote"
+               place="bottom">
+            <label>49</label>
+            <bibl>Ridley, op. cit., n. 47, at p. 284.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="49"
+               type="footnote"
+               place="bottom">
+            <label>49</label>
+            <bibl xml:id="bibl-54">
+               <author>
+                  <persName>
+                     <surname>Ridley</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="47">n. 47</ref>,
+                    <citedRange unit="page" from="284" to="284">at p. 284</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-54">
+               <ref>
+                  <persName>
+                     <surname>Ridley</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="47">n. 47</ref>
+               <citedRange unit="page" from="284" to="284">at p. 284</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-54">
+               <analytic source="#bibl-52">
+                  <title level="a">Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Ridley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-52">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="volume" from="28" to="28">28</biblScope>
+                  <biblScope unit="page" from="281">281</biblScope>
+               </monogr>
+               <citedRange unit="page" from="284" to="284">at p. 284</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-44">
+      <input type="raw"><![CDATA[50 This, of course, is not always the case. For example, the BA Economics and Law degree at Leicester has a special course in each year given over to the consideration of the relationship between economics and law.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="50"
+               type="footnote"
+               place="bottom">
+            <label>50</label>
+            <note>This, of course, is not always the case. For example, the BA Economics and Law degree at Leicester has a special course in each year given over to the consideration of the relationship between economics and law.</note>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="50"
+               type="footnote"
+               place="bottom">
+            <label>50</label>
+            <note type="comment">
+                    This, of course, is not always the case. For example, the BA Economics and Law
+                    degree at Leicester has a special course in each year given over to the consideration of the
+                    relationship between economics and law.
+              </note>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0"/>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0"/>
+      </output>
+   </instance>
+   <instance xml:id="instance-45">
+      <input type="raw"><![CDATA[51 P. Birks, ‘Short Cuts’ in Pressing Problems in the Law, ed. P. Birks (1994) 10–24.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="51"
+               type="footnote"
+               place="bottom">
+            <label>51</label>
+            <bibl>P. Birks, ‘Short Cuts’ in Pressing Problems in the Law, ed. P. Birks (1994) 10–24.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="51"
+               type="footnote"
+               place="bottom">
+            <label>51</label>
+            <bibl xml:id="bibl-56">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Birks</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Short Cuts</title>’ in
+                    <title level="m">Pressing Problems in the Law</title>, ed.
+                    <editor>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Birks</surname>
+                  </persName>
+               </editor>
+                    (<date when="1994">1994</date>)
+                    <biblScope unit="page" from="10" to="24">10–24</biblScope>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-56">
+               <analytic source="#bibl-56">
+                  <title level="a">Short Cuts</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-56">
+                  <title level="m">Pressing Problems in the Law</title>
+                  <editor>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="page" from="10" to="24">10–24</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-56">
+               <analytic source="#bibl-56">
+                  <title level="a">Short Cuts</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-56">
+                  <title level="m">Pressing Problems in the Law</title>
+                  <editor>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Birks</surname>
+                     </persName>
+                  </editor>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="page" from="10" to="24">10–24</biblScope>
+               </monogr>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-46">
+      <input type="raw"><![CDATA[52 Ridley, op. cit., n. 47, p. 283.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="52"
+               type="footnote"
+               place="bottom">
+            <label>52</label>
+            <bibl>Ridley, op. cit., n. 47, p. 283.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="52"
+               type="footnote"
+               place="bottom">
+            <label>52</label>
+            <bibl xml:id="bibl-57">
+               <author>
+                  <persName>
+                     <surname>Ridley</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="47">n. 47</ref>,
+                    <citedRange unit="page" from="283" to="283">p. 283</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-57">
+               <ref>
+                  <persName>
+                     <surname>Ridley</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="47">n. 47</ref>
+               <citedRange unit="page" from="283" to="283">p. 283</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-57">
+               <analytic source="#bibl-52">
+                  <title level="a">Legal Skills for Non-Law Students: Added Value or Irrelevant Diversion?</title>
+                  <author>
+                     <persName>
+                        <forename>A.</forename>
+                        <surname>Ridley</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-52">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1994">1994</date>
+                  </imprint>
+                  <biblScope unit="volume" from="28" to="28">28</biblScope>
+                  <biblScope unit="page" from="281">281</biblScope>
+               </monogr>
+               <citedRange unit="page" from="283" to="283">p. 283</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-47">
+      <input type="raw"><![CDATA[53 Cartan and Vilkinas, op. cit., n. 48, p. 248.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="53"
+               type="footnote"
+               place="bottom">
+            <label>53</label>
+            <bibl>Cartan and Vilkinas, op. cit., n. 48, p. 248.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="53"
+               type="footnote"
+               place="bottom">
+            <label>53</label>
+            <bibl xml:id="bibl-58">
+               <author>
+                  <persName>
+                     <surname>Cartan</surname>
+                  </persName>
+               </author>
+                    and
+                    <author>
+                  <persName>
+                     <surname>Vilkinas</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="48">n. 48</ref>,
+                    <citedRange unit="page" from="248" to="248">p. 248</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-58">
+               <ref>
+                  <persName>
+                     <surname>Cartan</surname>
+                  </persName>
+                  <persName>
+                     <surname>Vilkinas</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="48">n. 48</ref>
+               <citedRange unit="page" from="248" to="248">p. 248</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-58">
+               <analytic source="#bibl-53">
+                  <title level="a">Legal Literacy for Managers: The Role of the Educator</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Cartan</surname>
+                     </persName>
+                  </author>
+                  <author>
+                     <persName>
+                        <forename>T.</forename>
+                        <surname>Vilkinas</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-53">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1990">1990</date>
+                  </imprint>
+                  <biblScope unit="volume" from="24" to="24">24</biblScope>
+                  <biblScope unit="page" from="246">246</biblScope>
+               </monogr>
+               <citedRange unit="page" from="248" to="248">p. 248</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-48">
+      <input type="raw"><![CDATA[54 P. Harris, ‘Curriculum Development in Legal Studies’ (1986) 20 The Law Teacher 110 at 112.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="54"
+               type="footnote"
+               place="bottom">
+            <label>54</label>
+            <bibl>P. Harris, ‘Curriculum Development in Legal Studies’ (1986) 20 The Law Teacher 110 at 112.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="54"
+               type="footnote"
+               place="bottom">
+            <label>54</label>
+            <bibl xml:id="bibl-59">
+               <author>
+                  <persName>
+                     <forename>P.</forename>
+                     <surname>Harris</surname>
+                  </persName>
+               </author>,
+                    ‘<title level="a">Curriculum Development in Legal Studies</title>’
+                    (<date when="1986">1986</date>)
+                    <biblScope unit="volume" from="20" to="20">20</biblScope>
+               <title level="j">The Law Teacher</title>
+               <biblScope unit="page" from="110">110</biblScope>
+               <citedRange unit="page" from="112" to="112">at 112</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-59">
+               <analytic source="#bibl-59">
+                  <title level="a">Curriculum Development in Legal Studies</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Harris</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-59">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1986">1986</date>
+                  </imprint>
+                  <biblScope unit="volume" from="20" to="20">20</biblScope>
+                  <biblScope unit="page" from="110">110</biblScope>
+               </monogr>
+               <citedRange unit="page" from="112" to="112">at 112</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-59">
+               <analytic source="#bibl-59">
+                  <title level="a">Curriculum Development in Legal Studies</title>
+                  <author>
+                     <persName>
+                        <forename>P.</forename>
+                        <surname>Harris</surname>
+                     </persName>
+                  </author>
+               </analytic>
+               <monogr source="#bibl-59">
+                  <title level="j">The Law Teacher</title>
+                  <imprint>
+                     <date when="1986">1986</date>
+                  </imprint>
+                  <biblScope unit="volume" from="20" to="20">20</biblScope>
+                  <biblScope unit="page" from="110">110</biblScope>
+               </monogr>
+               <citedRange unit="page" from="112" to="112">at 112</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-49">
+      <input type="raw"><![CDATA[55 Dearing, op. cit., n. 12, para 9.3.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="55"
+               type="footnote"
+               place="bottom">
+            <label>55</label>
+            <bibl>Dearing, op. cit., n. 12, para 9.3.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="55"
+               type="footnote"
+               place="bottom">
+            <label>55</label>
+            <bibl xml:id="bibl-60">
+               <author>
+                  <persName>
+                     <surname>Dearing</surname>
+                  </persName>
+               </author>,
+                    <ref type="op-cit">op. cit.</ref>,
+                    <ref type="footnote" n="12">n. 12</ref>,
+                    <citedRange unit="para" from="9.3" to="9.3">para 9.3</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-60">
+               <ref>
+                  <persName>
+                     <surname>Dearing</surname>
+                  </persName>
+               </ref>
+               <ref type="op-cit">op. cit.</ref>
+               <ref type="footnote" n="12">n. 12</ref>
+               <citedRange unit="para" from="9.3" to="9.3">para 9.3</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-60">
+               <monogr source="#bibl-14">
+                  <title level="m">Higher Education in the learning society</title>
+                  <author>
+                     <orgName>Committee of Inquiry into Higher Education</orgName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="para" from="9.3" to="9.3">para 9.3</citedRange>
+               <note type="comment">the <surname>Dearing</surname> report</note>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+   <instance xml:id="instance-50">
+      <input type="raw"><![CDATA[57 G. Steiner, Errata: An Examined Life (1997) 20.]]></input>
+      <output type="segmented-instance">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="57"
+               type="footnote"
+               place="bottom">
+            <label>57</label>
+            <bibl>G. Steiner, Errata: An Examined Life (1997) 20.</bibl>
+         </note>
+      </output>
+      <output type="bibl">
+         <note xmlns="http://www.tei-c.org/ns/1.0"
+               n="57"
+               type="footnote"
+               place="bottom">
+            <label>57</label>
+            <bibl xml:id="bibl-61">
+               <author>
+                  <persName>
+                     <forename>G.</forename>
+                     <surname>Steiner</surname>
+                  </persName>
+               </author>,
+                    <title level="m">Errata: An Examined Life</title>
+                    (<date when="1997">1997</date>)
+                    <citedRange unit="page" from="20" to="20">20</citedRange>.
+                </bibl>
+         </note>
+      </output>
+      <output type="biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-61">
+               <monogr source="#bibl-61">
+                  <title level="m">Errata: An Examined Life</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Steiner</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="20" to="20">20</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+      <output type="resolved-biblstruct">
+         <listBibl xmlns="http://www.tei-c.org/ns/1.0">
+            <biblStruct source="#bibl-61">
+               <monogr source="#bibl-61">
+                  <title level="m">Errata: An Examined Life</title>
+                  <author>
+                     <persName>
+                        <forename>G.</forename>
+                        <surname>Steiner</surname>
+                     </persName>
+                  </author>
+                  <imprint>
+                     <date when="1997">1997</date>
+                  </imprint>
+               </monogr>
+               <citedRange unit="page" from="20" to="20">20</citedRange>
+            </biblStruct>
+         </listBibl>
+      </output>
+   </instance>
+</dataset>
