@@ -670,7 +670,7 @@ class CEXBenchmarkRunner:
             result = grobid_extractor.extract(
                 filepath=str(pdf_path),
                 save_dir=str(save_dir) if save_dir else None,
-                mode="references",
+                mode="full_text",
                 parse_references=True,
                 consolidate_references=True,
                 include_raw_references=True
