@@ -27,6 +27,9 @@ import openai
 from .prompt_loader import PromptLoader
 
 
+logger = logging.getLogger(__name__)
+
+
 # ========================
 # Timeout helpers
 # ========================
@@ -42,9 +45,16 @@ class LLMTimeoutError(Exception):
     pass
 
 
+class LLMEmptyResponseError(Exception):
+    """Raised when an LLM request succeeds but contains no answer text."""
+
+    pass
+
+
 # Exceptions that are safe to retry with exponential back-off
 RETRYABLE_EXCEPTIONS = (
     LLMTimeoutError,
+    LLMEmptyResponseError,
     openai.APITimeoutError,
     openai.APIConnectionError,
     openai.RateLimitError,
@@ -140,6 +150,8 @@ class LLMClient:
         """
         start_time = time.time()
         first_token_received = False
+        content_chars = 0
+        reasoning_chars = 0
         
         # Override the client-level timeout for this streaming call
         stream = self.client.chat.completions.create(
@@ -154,7 +166,7 @@ class LLMClient:
                 
                 if not first_token_received:
                     first_token_received = True
-                    logging.info(f"First token received after {elapsed:.1f}s")
+                    logger.info("LLM first token received after %.1fs", elapsed)
                 
                 # Check total wall-clock timeout between chunks
                 if elapsed > self.timeout:
@@ -163,8 +175,24 @@ class LLMClient:
                         f"after {elapsed:.1f}s of streaming"
                     )
                 
-                if chunk.choices and chunk.choices[0].delta.content is not None:
-                    yield chunk.choices[0].delta.content
+                if chunk.choices:
+                    delta = chunk.choices[0].delta
+                    reasoning = getattr(delta, "reasoning_content", None)
+                    if not isinstance(reasoning, str):
+                        reasoning = getattr(delta, "reasoning", None)
+                    if isinstance(reasoning, str) and reasoning:
+                        reasoning_chars += len(reasoning)
+                    if delta.content is not None:
+                        content_chars += len(delta.content)
+                        yield delta.content
+
+            if content_chars == 0:
+                detail = (
+                    f"; received {reasoning_chars} reasoning characters but no answer text"
+                    if reasoning_chars
+                    else ""
+                )
+                raise LLMEmptyResponseError(f"LLM returned an empty response{detail}")
         finally:
             # Always close the stream to release the HTTP connection
             try:
@@ -242,41 +270,80 @@ class LLMClient:
         
         for attempt in range(self.max_retries + 1):
             attempt_info = f"attempt {attempt + 1}/{self.max_retries + 1}"
+            attempt_started = time.monotonic()
             try:
+                logger.info(
+                    "LLM request started: model=%s, streaming=%s, %s",
+                    model,
+                    use_streaming,
+                    attempt_info,
+                )
                 if use_streaming:
                     # Streaming: httpx read timeout catches stuck connections,
                     # wall-clock check in _stream_with_timeout catches overall timeout
                     content_parts = []
                     for part in self._stream_with_timeout(**kwargs):
                         content_parts.append(part)
-                    return "".join(content_parts)
+                    content = "".join(content_parts)
                 else:
                     # Non-streaming: httpx read timeout = total timeout
                     response = self.client.chat.completions.create(
                         timeout=self._non_streaming_httpx_timeout(),
                         **kwargs,
                     )
-                    return response.choices[0].message.content
+                    message = response.choices[0].message
+                    content = message.content or ""
+                    if not content.strip():
+                        reasoning = getattr(message, "reasoning_content", None)
+                        if not isinstance(reasoning, str):
+                            reasoning = getattr(message, "reasoning", None)
+                        detail = (
+                            f"; received {len(reasoning)} reasoning characters but no answer text"
+                            if isinstance(reasoning, str) and reasoning
+                            else ""
+                        )
+                        raise LLMEmptyResponseError(
+                            f"LLM returned an empty response{detail}"
+                        )
+
+                logger.info(
+                    "LLM request completed: model=%s, chars=%d, elapsed=%.1fs, %s",
+                    model,
+                    len(content),
+                    time.monotonic() - attempt_started,
+                    attempt_info,
+                )
+                return content
                         
             except Exception as e:
                 last_exception = e
                 
                 # Classify the error for logging and retry decisions
                 if isinstance(e, (LLMTimeoutError, openai.APITimeoutError)):
-                    logging.warning(f"Timeout on {attempt_info}: {e}")
+                    logger.warning("LLM timeout on %s: %s", attempt_info, e)
                 elif isinstance(e, RETRYABLE_EXCEPTIONS):
-                    logging.warning(f"Retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    logger.warning(
+                        "LLM retryable error on %s after %.1fs: %s: %s",
+                        attempt_info,
+                        time.monotonic() - attempt_started,
+                        type(e).__name__,
+                        e,
+                    )
                 else:
                     # Non-retryable error (bad request, auth, etc.) – fail immediately
-                    logging.error(f"Non-retryable error on {attempt_info}: {type(e).__name__}: {e}")
+                    logger.exception(
+                        "LLM non-retryable error on %s: %s",
+                        attempt_info,
+                        type(e).__name__,
+                    )
                     raise
                 
                 if attempt < self.max_retries:
                     wait_time = min(2 ** attempt, 10)  # Exponential backoff capped at 10s
-                    logging.info(f"Retrying in {wait_time}s...")
+                    logger.info("Retrying LLM request in %ss", wait_time)
                     time.sleep(wait_time)
                 else:
-                    logging.error(f"All {self.max_retries + 1} attempts failed")
+                    logger.error("All %d LLM attempts failed", self.max_retries + 1)
                     break
         
         # If all retries failed, raise the last exception

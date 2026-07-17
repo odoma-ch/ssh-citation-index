@@ -131,10 +131,19 @@ def safe_json_parse(json_string: str, max_attempts: int = 1) -> Union[dict, list
             return json.loads(fixed_json)
         except json.JSONDecodeError as e:
             logging.warning(f"JSON parse attempt {attempt + 1} failed: {e}")
-            if attempt < max_attempts - 1:
-                # For subsequent attempts, try more aggressive fixes
-                json_string = _apply_aggressive_fixes(json_string)
             continue
+
+    # Models may wrap otherwise valid JSON in reasoning text, tags, or prose.
+    # This must run even with the default max_attempts=1.
+    extracted_json = _apply_aggressive_fixes(json_string)
+    if extracted_json != json_string:
+        try:
+            return json.loads(extracted_json)
+        except json.JSONDecodeError:
+            try:
+                return json.loads(fix_json_formatting(extracted_json))
+            except json.JSONDecodeError as e:
+                logging.warning("Extracted JSON parse failed: %s", e)
     
     return None
 

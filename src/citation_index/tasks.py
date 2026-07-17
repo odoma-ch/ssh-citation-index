@@ -458,7 +458,7 @@ def parse_references_task(
         }
         
     except Exception as e:
-        logger.error(f"Task {stage} failed for job {job_id}: {e}")
+        logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(
             job_id,
             status="failed",

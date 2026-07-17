@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 from typing import List, Optional
 
@@ -10,6 +11,18 @@ from citation_index.llm.client import LLMClient
 from citation_index.llm.grobid_client import GrobidClient
 from citation_index.llm.prompt_loader import ReferenceParsingPrompt
 from citation_index.utils.json_helper import safe_json_parse
+
+
+logger = logging.getLogger(__name__)
+
+
+class ReferenceParsingError(ValueError):
+    """Raised when the LLM output cannot produce structured references."""
+
+
+def _response_preview(response: str, limit: int = 500) -> str:
+    """Return a single-line, bounded response preview for worker logs."""
+    return response[:limit].replace("\n", "\\n")
 
 
 def parse_reference_strings(
@@ -76,15 +89,64 @@ def parse_reference_strings(
         )
     
     parsed = safe_json_parse(response)
+    if parsed is None:
+        logger.error(
+            "Could not parse LLM reference response as JSON: chars=%d, preview=%r",
+            len(response),
+            _response_preview(response),
+        )
+        raise ReferenceParsingError("LLM returned invalid JSON for reference parsing")
+
     if isinstance(parsed, list):
         data = parsed
     elif isinstance(parsed, dict):
-        data = parsed.get("references") or parsed.get("parsed_references") or parsed.get("refs")
-        if data is None:
+        wrapper_key = next(
+            (
+                key
+                for key in ("references", "parsed_references", "refs")
+                if key in parsed
+            ),
+            None,
+        )
+        if wrapper_key is None:
             data = [parsed]
+        else:
+            data = parsed[wrapper_key]
     else:
-        data = []
-    return References.from_dict(data) if data else References(references=[])
+        raise ReferenceParsingError(
+            f"LLM returned unsupported JSON type: {type(parsed).__name__}"
+        )
+
+    if not data:
+        logger.error(
+            "LLM returned no parsed references for %d input lines: chars=%d, preview=%r",
+            len(reference_lines),
+            len(response),
+            _response_preview(response),
+        )
+        if reference_lines:
+            raise ReferenceParsingError(
+                "LLM returned no references for non-empty reference input"
+            )
+        return References(references=[])
+
+    try:
+        references = References.from_dict(data)
+    except Exception:
+        logger.exception(
+            "LLM reference JSON failed schema validation: items=%d, preview=%r",
+            len(data),
+            _response_preview(response),
+        )
+        raise
+
+    logger.info(
+        "Parsed %d references from %d input lines (response chars=%d)",
+        len(references),
+        len(reference_lines),
+        len(response),
+    )
+    return references
 
 
 def parse_reference_file(
