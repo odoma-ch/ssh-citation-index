@@ -1,0 +1,124 @@
+# Built from MinerU's official 3.2.1 Dockerfile; see deployment instructions.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mineru-api
+  labels:
+    app: mineru
+    component: api
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: mineru
+      component: api
+  template:
+    metadata:
+      labels:
+        app: mineru
+        component: api
+    spec:
+      imagePullSecrets:
+        - name: registry-paas-psnc
+      containers:
+        - name: mineru-api
+          image: registry.paas.psnc.pl/graphia/mineru:3.2.1
+          imagePullPolicy: Always
+          command:
+            - mineru-api
+          args:
+            - --host
+            - 0.0.0.0
+            - --port
+            - "8000"
+            - --enable-vlm-preload
+            - "true"
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          env:
+            - name: MINERU_MODEL_SOURCE
+              value: local
+            - name: MINERU_TOOLS_CONFIG_JSON
+              value: /opt/mineru/mineru.json
+            - name: HF_HOME
+              value: /opt/mineru/huggingface
+            - name: HOME
+              value: /opt/mineru/runtime
+            - name: XDG_CACHE_HOME
+              value: /opt/mineru/runtime/cache
+            - name: MINERU_API_MAX_CONCURRENT_REQUESTS
+              value: "1"
+            - name: MINERU_API_ENABLE_FASTAPI_DOCS
+              value: "false"
+            - name: MINERU_API_OUTPUT_ROOT
+              value: /data/output
+            - name: MINERU_PDF_RENDER_THREADS
+              value: "2"
+            - name: MINERU_PROCESSING_WINDOW_SIZE
+              value: "16"
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+              ephemeral-storage: 2Gi
+              nvidia.com/mig-1g.24gb: "1"
+            limits:
+              cpu: "2"
+              memory: 10Gi
+              ephemeral-storage: 7Gi
+              nvidia.com/mig-1g.24gb: "1"
+          volumeMounts:
+            - name: output
+              mountPath: /data/output
+            - name: shared-memory
+              mountPath: /dev/shm
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 120
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+      volumes:
+        - name: output
+          emptyDir: {}
+        - name: shared-memory
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mineru-api
+  labels:
+    app: mineru
+    component: api
+spec:
+  type: ClusterIP
+  selector:
+    app: mineru
+    component: api
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+      protocol: TCP

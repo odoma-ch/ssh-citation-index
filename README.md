@@ -21,7 +21,7 @@ citation_index/
 │   ├── cli/                     # Command-line interface entry points
 │   ├── core/                    # Domain logic and data models
 │   │   ├── connectors/          # External API integrations for citation linking(OpenAlex, OpenCitations, Wikidata, Matilda)
-│   │   ├── extractors/          # PDF extraction engines (Grobid, Marker, MinerU, PyMuPDF)
+│   │   ├── extractors/          # PDF extraction engines (Grobid, MinerU, PyMuPDF)
 │   │   ├── models/              # Pydantic data models for references
 │   │   ├── parsers/             # TEI-XML and bibliographic parsing
 │   │   └── segmenters/          # Reference segmentation and localization
@@ -43,8 +43,7 @@ citation_index/
 
 ### Text Extraction 
 - [x] Grobid integration
-- [x] Marker PDF integration
-- [x] MinerU integration
+- [x] MinerU external API integration
 - [x] PyMuPDF integration
 - [x] Extractor comparison and benchmarking
 

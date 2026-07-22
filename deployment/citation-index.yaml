@@ -33,6 +33,7 @@ data:
   LLM_MODEL_HIGH_INTELLIGENCE: "DeepSeek-V3.1-vLLM"            # <-- UPDATE
   LLM_TIMEOUT: "300.0"
   LLM_MAX_RETRIES: "3"
+  LLM_ENABLE_THINKING: "false"
   # LLM_MAX_CONCURRENT: "4"
   LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING: "30.0"
   LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION: "90.0"
@@ -43,10 +44,15 @@ data:
   GROBID_ENDPOINT: "https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/"                      # <-- UPDATE if external
   GROBID_TIMEOUT: "180.0"
 
+  # MinerU (internal ClusterIP service from deployment/mineru.yaml)
+  MINERU_ENDPOINT: "http://mineru-api:8000"
+  MINERU_TIMEOUT: "1200.0"
+  MINERU_BACKEND: "vlm-auto-engine"
+
   # Worker / Queue timeouts
   WORKER_RESULT_TTL: "3600"
   WORKER_DEFAULT_TIMEOUT: "600"
-  TIMEOUT_TEXT_EXTRACTION: "300"
+  TIMEOUT_TEXT_EXTRACTION: "1500"
   TIMEOUT_REFERENCE_EXTRACTION: "1500"
   TIMEOUT_REFERENCE_PARSING: "2700"
   TIMEOUT_CITATION_LINKING: "600"
