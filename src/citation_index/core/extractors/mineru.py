@@ -1,71 +1,129 @@
-"""
-Mineru-based PDF content extractor.
-"""
+"""MinerU API-based PDF content extractor."""
 
-import os
-from magic_pdf.data.data_reader_writer import FileBasedDataWriter, FileBasedDataReader
-from magic_pdf.data.dataset import PymuDocDataset
-from magic_pdf.model.doc_analyze_by_custom_model import doc_analyze
+import logging
+import time
+from pathlib import Path
+from typing import Any
+
+import requests
+
 from .base import BaseExtractor, ExtractResult
+
+logger = logging.getLogger(__name__)
+
+
+class MineruAPIError(RuntimeError):
+    """Raised when the external MinerU service cannot return Markdown."""
 
 
 class MineruExtractor(BaseExtractor):
-    """PDF content extractor using Mineru backend."""
-    
-    def __init__(self):
-        """Initialize the MineruExtractor."""
-        self.reader = FileBasedDataReader("")
+    """PDF content extractor using a remote MinerU service."""
+
+    def __init__(
+        self,
+        endpoint: str = "http://localhost:8000",
+        timeout: float = 1200.0,
+        backend: str = "vlm-auto-engine",
+    ):
+        self.endpoint = endpoint.rstrip("/")
+        self.timeout = timeout
+        self.backend = backend
+        self.session = requests.Session()
 
     def extract(
         self,
         filepath: str,
-        save_dir: str = "output",
-        page_split: bool = True,
-        **kwargs
+        save_dir: str = None,
+        **kwargs,
     ) -> ExtractResult:
-        """Extract content using Mineru.
-        
-        Args:
-            filepath: Path to the PDF file
-            save_dir: Directory to save extracted content
-            page_split: Whether to split pages
-            **kwargs: Additional extraction parameters
-            
-        Returns:
-            ExtractResult containing the extracted text
-            
-        Raises:
-            RuntimeError: If extraction fails
-        """
+        """Upload a PDF to MinerU and return its Markdown output."""
+        pdf_path = Path(filepath)
+        if not pdf_path.exists():
+            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+
+        started_at = time.monotonic()
+        logger.info(
+            "MinerU request started: file=%s, backend=%s, endpoint=%s",
+            pdf_path.name,
+            self.backend,
+            self.endpoint,
+        )
         try:
-            base_name = os.path.basename(filepath).rsplit(".", 1)[0]
-            image_dir = os.path.join(save_dir, "images")
-            
-            os.makedirs(image_dir, exist_ok=True)
-            
-            image_writer = FileBasedDataWriter(image_dir)
-            md_writer = FileBasedDataWriter(save_dir)
-            
-            pdf_bytes = self.reader.read(filepath)
-            dataset = PymuDocDataset(pdf_bytes)
-            result = dataset.apply(doc_analyze, ocr=False, formula_enable=False)
-            
-            # Process results and save
-            text_content = ""
-            for page_id, page_data in result.items():
-                if 'md_content' in page_data:
-                    text_content += page_data['md_content'] + "\n\n"
-                    
-                # Save images if any
-                if 'images' in page_data:
-                    for img_name, img_data in page_data['images'].items():
-                        image_writer.write(img_data, img_name)
-            
-            # Save markdown content
-            md_filename = f"{base_name}_mineru.md"
-            md_writer.write(text_content, md_filename)
-            
-            return ExtractResult(text=text_content)
-            
-        except Exception as e:
-            raise RuntimeError(f"Mineru extraction failed: {str(e)}") from e 
+            with pdf_path.open("rb") as pdf_file:
+                response = self.session.post(
+                    f"{self.endpoint}/file_parse",
+                    files={
+                        "files": (pdf_path.name, pdf_file, "application/pdf"),
+                    },
+                    data={
+                        "backend": self.backend,
+                        "return_md": "true",
+                        "return_images": "false",
+                    },
+                    timeout=self.timeout,
+                )
+
+            if not response.ok:
+                raise MineruAPIError(
+                    f"MinerU API returned HTTP {response.status_code}: "
+                    f"{response.text[:1000]}"
+                )
+
+            try:
+                payload = response.json()
+            except ValueError as exc:
+                raise MineruAPIError("MinerU API returned invalid JSON") from exc
+
+            if not isinstance(payload, dict):
+                raise MineruAPIError("MinerU API returned a non-object response")
+
+            result = self._first_result(payload.get("results"))
+            text = result.get("md_content")
+            if not isinstance(text, str) or not text.strip():
+                raise MineruAPIError("MinerU API response does not contain Markdown")
+
+            if save_dir:
+                output_dir = Path(save_dir)
+                output_dir.mkdir(parents=True, exist_ok=True)
+                (output_dir / f"{pdf_path.stem}_mineru.md").write_text(
+                    text, encoding="utf-8"
+                )
+
+            extract_result = ExtractResult(
+                text=text,
+                metadata={
+                    "extractor": "mineru",
+                    "backend": payload.get("backend", self.backend),
+                    "version": payload.get("version"),
+                    "task_id": payload.get("task_id"),
+                },
+            )
+            logger.info(
+                "MinerU request completed: file=%s, chars=%d, elapsed=%.1fs",
+                pdf_path.name,
+                len(text),
+                time.monotonic() - started_at,
+            )
+            return extract_result
+        except (requests.RequestException, MineruAPIError) as exc:
+            logger.exception(
+                "MinerU request failed: file=%s, backend=%s, endpoint=%s",
+                pdf_path.name,
+                self.backend,
+                self.endpoint,
+            )
+            raise MineruAPIError(f"MinerU extraction failed: {exc}") from exc
+
+    @staticmethod
+    def _first_result(results: Any) -> dict:
+        """Return the first file result from supported MinerU response shapes."""
+        if isinstance(results, dict) and results:
+            result = next(iter(results.values()))
+        elif isinstance(results, list) and results:
+            result = results[0]
+        else:
+            raise MineruAPIError("MinerU API response does not contain results")
+
+        if not isinstance(result, dict):
+            raise MineruAPIError("MinerU API result has an invalid shape")
+        return result

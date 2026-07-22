@@ -3,6 +3,10 @@ from unittest.mock import Mock, patch
 import pytest
 
 from citation_index.llm.client import LLMClient, LLMEmptyResponseError
+from citation_index.pipelines.end_to_end_parsing import (
+    EndToEndParsingError,
+    run_pdf_one_step,
+)
 from citation_index.pipelines.reference_parsing import (
     ReferenceParsingError,
     parse_reference_strings,
@@ -36,13 +40,11 @@ def test_safe_json_parse_extracts_json_from_reasoning_wrapper():
 
 def test_parse_reference_strings_accepts_wrapped_valid_json():
     response = (
-        '<think>done</think>\n'
+        "<think>done</think>\n"
         '{"references": [{"reference": {"full_title": "A title"}}]}'
     )
 
-    result = parse_reference_strings(
-        ["Author. A title."], StubLLMClient(response)
-    )
+    result = parse_reference_strings(["Author. A title."], StubLLMClient(response))
 
     assert len(result) == 1
     assert result[0].full_title == "A title"
@@ -96,3 +98,32 @@ def test_llm_client_raises_after_empty_responses():
     ):
         with pytest.raises(LLMEmptyResponseError, match="empty response"):
             client.call("hello")
+
+
+def test_llm_client_disables_qwen_thinking_for_vllm():
+    client = LLMClient(
+        endpoint="http://localhost:8000/v1",
+        model="Qwen3.6-27B-FP8",
+        api_key="test-key",
+        max_retries=0,
+        enable_thinking=False,
+    )
+
+    with patch.object(
+        client.client.chat.completions,
+        "create",
+        return_value=_stream(content='{"references": []}'),
+    ) as create:
+        client.call("hello")
+
+    assert create.call_args.kwargs["extra_body"] == {
+        "chat_template_kwargs": {"enable_thinking": False}
+    }
+
+
+def test_end_to_end_pipeline_rejects_invalid_llm_json():
+    with pytest.raises(EndToEndParsingError, match="invalid JSON"):
+        run_pdf_one_step(
+            "References\nAuthor. A title.",
+            StubLLMClient("the server generated text but no JSON"),
+        )

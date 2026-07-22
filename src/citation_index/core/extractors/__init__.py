@@ -14,11 +14,6 @@ except ImportError:
     PyMuPDFExtractor = None
 
 try:
-    from .marker import MarkerExtractor
-except ImportError:
-    MarkerExtractor = None
-
-try:
     from .mineru import MineruExtractor
 except ImportError:
     MineruExtractor = None
@@ -32,10 +27,9 @@ from .factory import ExtractorFactory
 
 __all__ = [
     "BaseExtractor",
-    "ExtractResult", 
+    "ExtractResult",
     "PyMuPDFExtractor",
-    "MarkerExtractor",
     "MineruExtractor",
     "GrobidExtractor",
-    "ExtractorFactory"
-] 
+    "ExtractorFactory",
+]

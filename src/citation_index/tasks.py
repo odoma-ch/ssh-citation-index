@@ -10,13 +10,10 @@ All tasks follow the pattern:
 import json
 import logging
 import socket
-import time
 from datetime import datetime
-from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 import redis
-from rq import get_current_job
 from rq.decorators import job
 
 from .config import settings
@@ -132,6 +129,7 @@ storage = StorageManager(settings.storage_root)
 # Job Metadata Helpers
 # ========================
 
+
 def update_job_metadata(job_id: str, **fields):
     """Update job metadata in Redis HASH."""
     redis_conn.hset(f"job:{job_id}", mapping=fields)
@@ -144,7 +142,7 @@ def log_job_event(job_id: str, event: str, **extra):
         "event": event,
         "timestamp": datetime.utcnow().isoformat(),
         "worker": socket.gethostname(),
-        **extra
+        **extra,
     }
     redis_conn.xadd(f"job:{job_id}:events", event_data)
 
@@ -161,62 +159,63 @@ def get_completed_stages(job_id: str) -> list:
 # Text Extraction Tasks
 # ========================
 
-@job('default', connection=redis_conn, timeout=settings.timeout_text_extraction, result_ttl=settings.worker_result_ttl)
+
+@job(
+    "default",
+    connection=redis_conn,
+    timeout=settings.timeout_text_extraction,
+    result_ttl=settings.worker_result_ttl,
+)
 def extract_text_task(
-    job_id: str,
-    extractor: str = "pymupdf",
-    markdown: bool = True
+    job_id: str, extractor: str = "pymupdf", markdown: bool = True
 ) -> Dict[str, Any]:
     """Extract text from uploaded PDF.
-    
+
     Args:
         job_id: Unique job identifier
-        extractor: Extractor to use (pymupdf, marker, mineru, grobid)
+        extractor: Extractor to use (pymupdf, mineru, grobid)
         markdown: Whether to extract as markdown
-        
+
     Returns:
         Small metadata dict (actual result saved to storage)
     """
-    current_job = get_current_job()
     stage = "text_extraction"
-    
+
     update_job_metadata(
         job_id,
         status="processing",
         current_stage=stage,
-        started_at=datetime.utcnow().isoformat()
+        started_at=datetime.utcnow().isoformat(),
     )
     log_job_event(job_id, "stage_started", stage=stage)
-    
+
     try:
         # Check if already completed (idempotency)
         if storage.intermediate_exists(job_id, stage):
             logger.info(f"Stage {stage} already completed for job {job_id}")
             result_path = storage.intermediate_dir / job_id / stage / "output.json"
             return {"result_path": str(result_path), "cached": True, "stage": stage}
-        
+
         # Load uploaded PDF
         pdf_path = storage.get_upload_path(job_id)
-        
+
         # Call existing pipeline function
         extract_result = extract_text(
-            pdf_path=pdf_path,
-            extractor=extractor,
-            markdown=markdown
+            pdf_path=pdf_path, extractor=extractor, markdown=markdown
         )
-        
+
         # Prepare output
         output = {
             "text": extract_result.text,
             "metadata": extract_result.metadata,
             "extractor": extractor,
-            "markdown": markdown
+            "markdown": markdown,
         }
-        
+
         # Save to storage
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
         storage.save_result(job_id, output)
-        
+
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
@@ -224,25 +223,25 @@ def extract_text_task(
             status="completed",
             completed_stages=json.dumps(completed_stages),
             completed_at=datetime.utcnow().isoformat(),
-            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
         )
         log_job_event(job_id, "stage_completed", stage=stage)
-        
+
         return {
             "result_path": str(result_path),
             "cached": False,
             "stage": stage,
-            "text_length": len(extract_result.text)
+            "text_length": len(extract_result.text),
         }
-        
+
     except Exception as e:
-        logger.error(f"Task {stage} failed for job {job_id}: {e}")
+        logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(
             job_id,
             status="failed",
             error=str(e),
             failed_stage=stage,
-            failed_at=datetime.utcnow().isoformat()
+            failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
         raise
@@ -252,39 +251,45 @@ def extract_text_task(
 # Reference Extraction Tasks
 # ========================
 
-@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
+
+@job(
+    "llm-tasks",
+    connection=redis_conn,
+    timeout=settings.timeout_reference_extraction,
+    result_ttl=settings.worker_result_ttl,
+)
 def extract_references_task(
     job_id: str,
     method: str = "semantic",
     prompt_name: str = "prompts/reference_extraction.md",
-    temperature: float = 0.3
+    temperature: float = 0.3,
 ) -> Dict[str, Any]:
     """Extract reference strings from text using LLM.
-    
+
     Args:
         job_id: Unique job identifier
         method: Extraction method ('semantic', 'full_text', 'page_by_page')
         prompt_name: Prompt template to use
         temperature: LLM temperature
-        
+
     Returns:
         Small metadata dict
     """
     stage = "reference_extraction"
-    
+
     update_job_metadata(job_id, status="processing", current_stage=stage)
     log_job_event(job_id, "stage_started", stage=stage)
-    
+
     try:
         if storage.intermediate_exists(job_id, stage):
             logger.info(f"Stage {stage} already completed for job {job_id}")
             result_path = storage.intermediate_dir / job_id / stage / "output.json"
             return {"result_path": str(result_path), "cached": True, "stage": stage}
-        
+
         # Load text from previous stage
         text_data = storage.load_intermediate(job_id, "text_extraction")
         text = text_data["text"]
-        
+
         # Initialize LLM client (long FTT for extraction)
         llm_client = LLMClient(
             endpoint=settings.llm_endpoint,
@@ -292,18 +297,19 @@ def extract_references_task(
             api_key=settings.llm_api_key,
             timeout=settings.llm_timeout,
             max_retries=settings.llm_max_retries,
-            first_token_timeout=settings.llm_first_token_timeout_reference_extraction
+            first_token_timeout=settings.llm_first_token_timeout_reference_extraction,
+            enable_thinking=settings.llm_enable_thinking,
         )
-        
+
         # Initialize EmbedClient for semantic extraction
         embed_client = EmbedClient(
             endpoint=settings.embedding_endpoint,
             model=settings.embedding_model,
             api_key=settings.embedding_api_key or settings.llm_api_key,
             timeout=settings.llm_timeout,
-            max_retries=settings.llm_max_retries
+            max_retries=settings.llm_max_retries,
         )
-        
+
         # Semaphore removed – vLLM handles concurrency internally.
         # with llm_semaphore.acquire():
         if method == "semantic":
@@ -313,25 +319,21 @@ def extract_references_task(
                 embed_client=embed_client,
                 embedding_model=settings.embedding_model,
                 prompt_name=prompt_name,
-                temperature=temperature
+                temperature=temperature,
             )
         else:
             references = extract_text_references(
                 text=text,
                 llm_client=llm_client,
                 prompt_name=prompt_name,
-                temperature=temperature
+                temperature=temperature,
             )
-        
+
         # Save output
-        output = {
-            "references": references,
-            "method": method,
-            "count": len(references)
-        }
+        output = {"references": references, "method": method, "count": len(references)}
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
         storage.save_result(job_id, output)
-        
+
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
@@ -339,25 +341,27 @@ def extract_references_task(
             status="completed",
             completed_stages=json.dumps(completed_stages),
             completed_at=datetime.utcnow().isoformat(),
-            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
         )
-        log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(references))
-        
+        log_job_event(
+            job_id, "stage_completed", stage=stage, reference_count=len(references)
+        )
+
         return {
             "result_path": str(result_path),
             "cached": False,
             "stage": stage,
-            "reference_count": len(references)
+            "reference_count": len(references),
         }
-        
+
     except Exception as e:
-        logger.error(f"Task {stage} failed for job {job_id}: {e}")
+        logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(
             job_id,
             status="failed",
             error=str(e),
             failed_stage=stage,
-            failed_at=datetime.utcnow().isoformat()
+            failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
         raise
@@ -367,48 +371,52 @@ def extract_references_task(
 # Reference Parsing Tasks
 # ========================
 
-@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_parsing, result_ttl=settings.worker_result_ttl)
+
+@job(
+    "llm-tasks",
+    connection=redis_conn,
+    timeout=settings.timeout_reference_parsing,
+    result_ttl=settings.worker_result_ttl,
+)
 def parse_references_task(
     job_id: str,
     parser: str = "llm",
     prompt_name: str = "prompts/reference_parsing.md",
-    temperature: float = 0.0
+    temperature: float = 0.0,
 ) -> Dict[str, Any]:
     """Parse reference strings into structured data.
-    
+
     Args:
         job_id: Unique job identifier
         parser: Parser to use ('llm' or 'grobid')
         prompt_name: Prompt template (for LLM parser)
         temperature: LLM temperature
-        
+
     Returns:
         Small metadata dict
     """
     stage = "reference_parsing"
-    
+
     update_job_metadata(job_id, status="processing", current_stage=stage)
     log_job_event(job_id, "stage_started", stage=stage)
-    
+
     try:
         if storage.intermediate_exists(job_id, stage):
             logger.info(f"Stage {stage} already completed for job {job_id}")
             result_path = storage.intermediate_dir / job_id / stage / "output.json"
             return {"result_path": str(result_path), "cached": True, "stage": stage}
-        
+
         # Load references from previous stage
         ref_data = storage.load_intermediate(job_id, "reference_extraction")
         reference_lines = ref_data["references"]
-        
+
         if parser == "grobid":
             # Use GROBID parser
             grobid_client = GrobidClient(
-                endpoint=settings.grobid_endpoint,
-                timeout=settings.grobid_timeout
+                endpoint=settings.grobid_endpoint, timeout=settings.grobid_timeout
             )
             parsed_refs = parse_reference_strings_grobid(
-                reference_lines=reference_lines,
-                grobid_client=grobid_client
+                reference_lines=reference_lines, grobid_client=grobid_client
             )
         else:
             # Use LLM parser (short FTT, long timeout for parsing)
@@ -419,26 +427,27 @@ def parse_references_task(
                 api_key=settings.llm_api_key,
                 timeout=settings.llm_timeout_reference_parsing,
                 max_retries=settings.llm_max_retries,
-                first_token_timeout=settings.llm_first_token_timeout_reference_parsing
+                first_token_timeout=settings.llm_first_token_timeout_reference_parsing,
+                enable_thinking=settings.llm_enable_thinking,
             )
-            
+
             # with llm_semaphore.acquire():
             parsed_refs = parse_reference_strings(
                 reference_lines=reference_lines,
                 llm_client=llm_client,
                 prompt_name=prompt_name,
-                temperature=temperature
+                temperature=temperature,
             )
-        
+
         # Save output
         output = {
             "references": [ref.model_dump() for ref in parsed_refs],
             "parser": parser,
-            "count": len(parsed_refs)
+            "count": len(parsed_refs),
         }
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
         storage.save_result(job_id, output)
-        
+
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
@@ -446,17 +455,19 @@ def parse_references_task(
             status="completed",
             completed_stages=json.dumps(completed_stages),
             completed_at=datetime.utcnow().isoformat(),
-            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
         )
-        log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs))
-        
+        log_job_event(
+            job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs)
+        )
+
         return {
             "result_path": str(result_path),
             "cached": False,
             "stage": stage,
-            "reference_count": len(parsed_refs)
+            "reference_count": len(parsed_refs),
         }
-        
+
     except Exception as e:
         logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(
@@ -464,7 +475,7 @@ def parse_references_task(
             status="failed",
             error=str(e),
             failed_stage=stage,
-            failed_at=datetime.utcnow().isoformat()
+            failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
         raise
@@ -474,39 +485,45 @@ def parse_references_task(
 # Combined Pipeline Tasks
 # ========================
 
-@job('llm-tasks', connection=redis_conn, timeout=settings.timeout_reference_extraction, result_ttl=settings.worker_result_ttl)
+
+@job(
+    "llm-tasks",
+    connection=redis_conn,
+    timeout=settings.timeout_reference_extraction,
+    result_ttl=settings.worker_result_ttl,
+)
 def extract_and_parse_references_task(
     job_id: str,
     method: str = "one_step",
     prompt_name: str = "prompts/end_to_end_parsing.md",
-    temperature: float = 0.3
+    temperature: float = 0.3,
 ) -> Dict[str, Any]:
     """Extract and parse references in one LLM call (end-to-end parsing).
-    
+
     Args:
         job_id: Unique job identifier
         method: Method to use ('one_step' or 'semantic_one_step')
         prompt_name: Prompt template
         temperature: LLM temperature
-        
+
     Returns:
         Small metadata dict
     """
     stage = "end_to_end_parsing"
-    
+
     update_job_metadata(job_id, status="processing", current_stage=stage)
     log_job_event(job_id, "stage_started", stage=stage)
-    
+
     try:
         if storage.intermediate_exists(job_id, stage):
             logger.info(f"Stage {stage} already completed for job {job_id}")
             result_path = storage.intermediate_dir / job_id / stage / "output.json"
             return {"result_path": str(result_path), "cached": True, "stage": stage}
-        
+
         # Load text from previous stage
         text_data = storage.load_intermediate(job_id, "text_extraction")
         text = text_data["text"]
-        
+
         # Initialize LLM client (long FTT for end-to-end parsing)
         llm_client = LLMClient(
             endpoint=settings.llm_endpoint,
@@ -514,18 +531,19 @@ def extract_and_parse_references_task(
             api_key=settings.llm_api_key,
             timeout=settings.llm_timeout,
             max_retries=settings.llm_max_retries,
-            first_token_timeout=settings.llm_first_token_timeout_end_to_end
+            first_token_timeout=settings.llm_first_token_timeout_end_to_end,
+            enable_thinking=settings.llm_enable_thinking,
         )
-        
+
         # Initialize EmbedClient for semantic extraction
         embed_client = EmbedClient(
             endpoint=settings.embedding_endpoint,
             model=settings.embedding_model,
             api_key=settings.embedding_api_key or settings.llm_api_key,
             timeout=settings.llm_timeout,
-            max_retries=settings.llm_max_retries
+            max_retries=settings.llm_max_retries,
         )
-        
+
         # Semaphore removed – vLLM handles concurrency internally.
         # with llm_semaphore.acquire():
         if method == "semantic_one_step":
@@ -535,25 +553,25 @@ def extract_and_parse_references_task(
                 embed_client=embed_client,
                 embedding_model=settings.embedding_model,
                 prompt_name=prompt_name,
-                temperature=temperature
+                temperature=temperature,
             )
         else:
             parsed_refs = run_pdf_one_step(
                 text_or_pdf=text,
                 llm_client=llm_client,
                 prompt_name=prompt_name,
-                temperature=temperature
+                temperature=temperature,
             )
-        
+
         # Save output
         output = {
             "references": [ref.model_dump() for ref in parsed_refs],
             "method": method,
-            "count": len(parsed_refs)
+            "count": len(parsed_refs),
         }
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
         storage.save_result(job_id, output)
-        
+
         # Update metadata
         completed_stages = get_completed_stages(job_id) + [stage]
         update_job_metadata(
@@ -561,25 +579,27 @@ def extract_and_parse_references_task(
             status="completed",
             completed_stages=json.dumps(completed_stages),
             completed_at=datetime.utcnow().isoformat(),
-            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()}
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
         )
-        log_job_event(job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs))
-        
+        log_job_event(
+            job_id, "stage_completed", stage=stage, reference_count=len(parsed_refs)
+        )
+
         return {
             "result_path": str(result_path),
             "cached": False,
             "stage": stage,
-            "reference_count": len(parsed_refs)
+            "reference_count": len(parsed_refs),
         }
-        
+
     except Exception as e:
-        logger.error(f"Task {stage} failed for job {job_id}: {e}")
+        logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(
             job_id,
             status="failed",
             error=str(e),
             failed_stage=stage,
-            failed_at=datetime.utcnow().isoformat()
+            failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
         raise
