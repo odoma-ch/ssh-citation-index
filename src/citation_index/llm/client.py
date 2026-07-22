@@ -913,11 +913,6 @@ class EmbedClient(LLMClient):
 
 
 if __name__ == "__main__":
-    #     client = openai.OpenAI(
-    # 	api_key="sk-9UYVeokX2LsTjZlEGFmzVg",
-    # 	base_url="https://llm.graphia-ssh.eu"
-    # )
-    # model="DeepSeek-V3.1"
     client = LLMClient(
         endpoint="https://llm.graphia-ssh.eu",
         model="DeepSeek-V3.1",
