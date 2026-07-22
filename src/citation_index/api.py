@@ -19,6 +19,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from rq import Queue
 
+from . import __version__
 from .config import settings
 from .tasks import (
     extract_text_task,
@@ -37,7 +38,7 @@ logger = logging.getLogger(__name__)
 app = FastAPI(
     title="Citation Index API",
     description="Extract and parse citations from academic PDFs",
-    version="0.1.0"
+    version=__version__
 )
 
 redis_conn = redis.from_url(settings.redis_url)
@@ -184,7 +185,7 @@ def health_check():
         "status": status,
         "redis": "ok" if redis_ok else "error",
         "storage": "ok" if storage_ok else "error",
-        "version": "0.1.0"
+        "version": __version__
     }
 
 
@@ -193,7 +194,7 @@ def root():
     """Root endpoint with API information."""
     return {
         "name": "Citation Index API",
-        "version": "0.1.0",
+        "version": __version__,
         "docs": "/docs",
         "health": "/health"
     }

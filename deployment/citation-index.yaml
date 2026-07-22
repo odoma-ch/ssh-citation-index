@@ -2,8 +2,7 @@
 # Citation Index – Full OKD / K8s deployment
 #
 # Apply after Redis is deployed via Helm (see README.md).
-# Before applying, search-replace IMAGE_REGISTRY and update
-# configmap values marked with "# <-- UPDATE".
+# Before applying, review configmap values marked with "# <-- UPDATE".
 #
 #   kubectl apply -f deployment/citation-index.yaml
 # ==========================================================
@@ -113,7 +112,7 @@ spec:
         - name: registry-paas-psnc
       containers:
         - name: api
-          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          image: registry.paas.psnc.pl/graphia/citation-index:0.2.0
           command:
             - uvicorn
             - citation_index.api:app
@@ -221,7 +220,7 @@ metadata:
     app: citation-index
     component: worker-default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: citation-index
@@ -236,7 +235,7 @@ spec:
         - name: registry-paas-psnc
       containers:
         - name: worker
-          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          image: registry.paas.psnc.pl/graphia/citation-index:0.2.0
           command:
             - python
             - -m
@@ -271,8 +270,7 @@ spec:
 ---
 # ==========================================================
 # 7. Worker – llm-tasks queue (reference extraction / parsing)
-#    Slow tasks (~10-15 min), high replica count
-#    Rule of thumb: replicas >= LLM_MAX_CONCURRENT × 1.5-2
+#    vLLM handles batching; worker replicas set request concurrency.
 # ==========================================================
 apiVersion: apps/v1
 kind: Deployment
@@ -282,7 +280,7 @@ metadata:
     app: citation-index
     component: worker-llm
 spec:
-  replicas: 6
+  replicas: 2
   selector:
     matchLabels:
       app: citation-index
@@ -297,7 +295,7 @@ spec:
         - name: registry-paas-psnc
       containers:
         - name: worker
-          image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+          image: registry.paas.psnc.pl/graphia/citation-index:0.2.0
           command:
             - python
             - -m
@@ -357,7 +355,7 @@ spec:
 #         - name: registry-paas-psnc
 #       containers:
 #         - name: worker
-#           image: registry.paas.psnc.pl/graphia/citation-index:latest   # <-- UPDATE
+#           image: registry.paas.psnc.pl/graphia/citation-index:0.2.0
 #           command:
 #             - python
 #             - -m
