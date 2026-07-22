@@ -24,18 +24,20 @@ services:
     container_name: citation-index-api
     command: uvicorn citation_index.api:app --host 0.0.0.0 --port 8000 --workers 2
     ports:
-      - "8000:8000"
+      # Host port 8000 is reserved for the MinerU oc port-forward.
+      - "${CITATION_INDEX_PORT:-8001}:8000"
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-Qwen3.6-27B-FP8}
       - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
       - LLM_API_KEY=${LLM_API_KEY}
       - LLM_TIMEOUT=${LLM_TIMEOUT:-180.0}
       - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-3}
+      - LLM_ENABLE_THINKING=${LLM_ENABLE_THINKING:-false}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING:-30.0}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION:-90.0}
@@ -43,9 +45,12 @@ services:
       - LLM_TIMEOUT_REFERENCE_PARSING=${LLM_TIMEOUT_REFERENCE_PARSING:-300.0}
       - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
       - GROBID_TIMEOUT=${GROBID_TIMEOUT:-180.0}
+      - MINERU_ENDPOINT=${MINERU_DOCKER_ENDPOINT:-http://host.docker.internal:8000}
+      - MINERU_TIMEOUT=${MINERU_TIMEOUT:-1200.0}
+      - MINERU_BACKEND=${MINERU_BACKEND:-vlm-auto-engine}
       - WORKER_RESULT_TTL=${WORKER_RESULT_TTL:-3600}
       - JOB_METADATA_TTL=${JOB_METADATA_TTL:-86400}
-      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-300}
+      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_EXTRACTION=${TIMEOUT_REFERENCE_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_PARSING=${TIMEOUT_REFERENCE_PARSING:-2700}
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-600}
@@ -55,8 +60,20 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
     networks:
       - citation-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
 
   # RQ Workers - Default queue (text extraction, GROBID parsing)
@@ -72,11 +89,12 @@ services:
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-Qwen3.6-27B-FP8}
       - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
       - LLM_API_KEY=${LLM_API_KEY}
       - LLM_TIMEOUT=${LLM_TIMEOUT:-180.0}
       - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-3}
+      - LLM_ENABLE_THINKING=${LLM_ENABLE_THINKING:-false}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING:-30.0}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION:-90.0}
@@ -84,9 +102,12 @@ services:
       - LLM_TIMEOUT_REFERENCE_PARSING=${LLM_TIMEOUT_REFERENCE_PARSING:-300.0}
       - GROBID_ENDPOINT=${GROBID_ENDPOINT:-http://grobid:8070}
       - GROBID_TIMEOUT=${GROBID_TIMEOUT:-180.0}
+      - MINERU_ENDPOINT=${MINERU_DOCKER_ENDPOINT:-http://host.docker.internal:8000}
+      - MINERU_TIMEOUT=${MINERU_TIMEOUT:-1200.0}
+      - MINERU_BACKEND=${MINERU_BACKEND:-vlm-auto-engine}
       - WORKER_RESULT_TTL=${WORKER_RESULT_TTL:-3600}
       - JOB_METADATA_TTL=${JOB_METADATA_TTL:-86400}
-      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-300}
+      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_EXTRACTION=${TIMEOUT_REFERENCE_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_PARSING=${TIMEOUT_REFERENCE_PARSING:-2700}
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-600}
@@ -98,14 +119,15 @@ services:
         condition: service_healthy
     networks:
       - citation-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
     deploy:
       replicas: 2
 
   # RQ Workers - LLM tasks (reference extraction/parsing)
   # Slow tasks (~10-15min), HIGH replica count to drain queue
-  # Semaphore (LLM_MAX_CONCURRENT=4) limits concurrent vLLM calls
-  # Rule: replicas = semaphore_limit × 1.5-2 (6-8 workers with semaphore=4)
+  # vLLM handles request batching; worker replicas are the concurrency limit.
   worker-llm:
     build:
       context: .
@@ -117,11 +139,12 @@ services:
       - REDIS_DB=0
       - STORAGE_ROOT=/app/storage
       - LLM_ENDPOINT=${LLM_ENDPOINT:-http://localhost:8001/v1}
-      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-your-model-name}
+      - LLM_MODEL_MEDIUM_INTELLIGENCE=${LLM_MODEL_MEDIUM_INTELLIGENCE:-Qwen3.6-27B-FP8}
       - LLM_MODEL_HIGH_INTELLIGENCE=${LLM_MODEL_HIGH_INTELLIGENCE:-your-model-name}
       - LLM_API_KEY=${LLM_API_KEY}
       - LLM_TIMEOUT=${LLM_TIMEOUT:-180.0}
       - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-3}
+      - LLM_ENABLE_THINKING=${LLM_ENABLE_THINKING:-false}
       - LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-4}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_PARSING:-30.0}
       - LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION=${LLM_FIRST_TOKEN_TIMEOUT_REFERENCE_EXTRACTION:-90.0}
@@ -131,7 +154,7 @@ services:
       - GROBID_TIMEOUT=${GROBID_TIMEOUT:-180.0}
       - WORKER_RESULT_TTL=${WORKER_RESULT_TTL:-3600}
       - JOB_METADATA_TTL=${JOB_METADATA_TTL:-86400}
-      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-300}
+      - TIMEOUT_TEXT_EXTRACTION=${TIMEOUT_TEXT_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_EXTRACTION=${TIMEOUT_REFERENCE_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_PARSING=${TIMEOUT_REFERENCE_PARSING:-2700}
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-600}

@@ -17,7 +17,7 @@ Timeout hierarchy (innermost to outermost):
 import logging
 import os
 import time
-from typing import Dict, List, Optional, Iterator, Union
+from typing import Any, Dict, List, Optional, Iterator, Union
 
 import httpx
 import numpy as np
@@ -214,7 +214,7 @@ class LLMClient:
     def _get_response_format_and_prompt(
         self,
         prompt: str,
-        json_schema: str = None,
+        json_schema: Optional[Dict[str, Any]] = None,
         json_output: bool = False,
         max_tokens: int = None,
     ):
@@ -224,8 +224,17 @@ class LLMClient:
         modified_max_tokens = max_tokens
 
         if json_schema:
-            # Use json_schema for strict schemas (vLLM/OpenAI)
-            response_format = {"type": "json_schema", "json_schema": json_schema}
+            # OpenAI-compatible servers expect the actual schema under a named
+            # ``json_schema.schema`` wrapper. Passing a raw schema here is
+            # accepted by the SDK but reaches vLLM as an empty constraint.
+            schema_name = str(json_schema.get("title") or "structured_response")
+            response_format = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": schema_name,
+                    "schema": json_schema,
+                },
+            }
         elif json_output:
             # Use json_object for simple JSON (vLLM/OpenAI)
             response_format = {"type": "json_object"}
@@ -238,7 +247,7 @@ class LLMClient:
         model: str = None,
         temperature: float = 0.1,
         max_tokens: int = None,
-        json_schema: str = None,
+        json_schema: Optional[Dict[str, Any]] = None,
         json_output: bool = False,
         use_streaming: bool = True,
         messages: Optional[Dict[str, str]] = None,
@@ -390,7 +399,7 @@ class LLMClient:
         model: str = None,
         temperature: float = 0.1,
         max_tokens: int = None,
-        json_schema: str = None,
+        json_schema: Optional[Dict[str, Any]] = None,
         json_output: bool = False,
         use_streaming: bool = True,
         messages: Optional[Dict[str, str]] = None,

@@ -44,6 +44,7 @@ logs/
 *.md
 !README.md
 !ARCHITECTURE.md
+!prompts/*.md
 
 # Test files
 tests/
@@ -56,6 +57,9 @@ test_*.py
 
 # Other
 *.log
+.env
+.env.*
+!.env.example
 .env.local
 .env.*.local
 docker-compose.override.yml

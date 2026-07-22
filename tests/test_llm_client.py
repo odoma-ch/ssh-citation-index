@@ -80,7 +80,13 @@ class TestLLMClient:
             json_schema=schema
         )
         
-        expected_format = {"type": "json_schema", "json_schema": schema}
+        expected_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "structured_response",
+                "schema": schema,
+            },
+        }
         assert response_format == expected_format
         assert prompt == "Generate data"  # Should not be modified
 
@@ -383,7 +389,13 @@ class TestClientComparison:
             json_schema=schema
         )
         
-        expected_format = {"type": "json_schema", "json_schema": schema}
+        expected_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "structured_response",
+                "schema": schema,
+            },
+        }
         assert response_format == expected_format
         assert prompt == "Generate person data"  # Unchanged
         

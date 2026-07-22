@@ -156,7 +156,9 @@ class TestGrobidCitationParsing:
     
     def test_empty_response_raises_error(self, grobid_client, sample_citation):
         """Test empty response raises error."""
-        with patch.object(grobid_client.session, 'post') as mock_post:
+        with patch.object(grobid_client.session, 'post') as mock_post, patch(
+            "time.sleep"
+        ):
             mock_post.return_value = Mock(status_code=200, text="   ")
             
             with pytest.raises(GrobidError, match="empty response"):
