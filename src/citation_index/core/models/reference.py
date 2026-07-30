@@ -1,7 +1,7 @@
 """Reference data model for citation processing."""
 
 import re
-from typing import Annotated, List, Optional, Dict, Tuple, Any
+from typing import Annotated, Any, ClassVar, Dict, List, Optional, Tuple
 from pydantic import AfterValidator, BaseModel, BeforeValidator, Field, model_validator
 
 from .person import Person
@@ -15,6 +15,10 @@ class Reference(BaseModel):
     
     See: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html
     """
+
+    # Free-form fields kept optional in the guided-decoding schema; see
+    # schema_without_excluded(). Everything else is required.
+    OPTIONAL_SCHEMA_FIELDS: ClassVar[Tuple[str, ...]] = ("raw", "identifiers")
 
     # DEPRECATED: Use raw dict to preserve original TEI title structure
     analytic_title: Optional[
@@ -554,14 +558,17 @@ class Reference(BaseModel):
         if 'properties' in schema:
             for field in excluded_fields:
                 schema['properties'].pop(field, None)
-        
-        if 'required' in schema:
-            schema['required'] = [
-                req for req in schema['required'] if req not in excluded_fields
-            ]
-            if not schema['required']:
-                schema.pop('required')
-        
+
+            # Guided decoding lets the model skip any key that is not required, and Qwen
+            # then drops whole fields: with nothing required it omitted every title
+            # (0/63 on a footnote-style PDF), and with only the titles required it omitted
+            # every author instead. Requiring the concrete fields keeps both.
+            # `raw` and `identifiers` stay optional deliberately — requiring those made
+            # the model emit a malformed string for `raw`, breaking JSON parsing outright.
+            schema['required'] = sorted(
+                set(schema['properties']) - set(cls.OPTIONAL_SCHEMA_FIELDS)
+            )
+
         schema['name'] = cls.__name__
                 
         return schema 
