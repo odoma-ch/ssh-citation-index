@@ -52,7 +52,7 @@ class Settings(BaseSettings):
         default="http://localhost:8000/v1", description="vLLM API endpoint"
     )
     llm_model_medium_intelligence: str = Field(
-        default="Qwen3.6-27B-FP8",
+        default="Qwen3.6-27B",
         description="LLM model for medium intelligence tasks (default)",
         validation_alias=AliasChoices("llm_model_medium_intelligence", "llm_model"),
     )

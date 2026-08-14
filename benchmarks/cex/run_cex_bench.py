@@ -1177,7 +1177,7 @@ Examples:
     parser.add_argument(
         "--extractor", 
         type=str, 
-        default="marker", 
+        default="pymupdf", 
         choices=["pymupdf", "marker", "mineru", "grobid"], 
         help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task."
     )

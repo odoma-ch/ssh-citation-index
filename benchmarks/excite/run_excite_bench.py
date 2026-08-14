@@ -138,9 +138,14 @@ class BenchmarkRunner:
                 endpoint=self.args.api_base,
                 model=self.args.model_name,
                 api_key=self.args.api_key,
-                timeout=600,
+                timeout=self.args.llm_timeout,
                 first_token_timeout=60,
                 max_retries=1,
+                # Same as the production tasks: Qwen must answer in `content`, not in
+                # the reasoning channel, or structured output comes back empty.
+                # None sends no chat_template_kwargs (non-vLLM endpoints).
+                enable_thinking={"off": False, "on": True, "unset": None}[self.args.thinking],
+                guided_decoding=self.args.schema == "guided",
             )
         
         # ---------------------------------------------------------------
@@ -295,6 +300,17 @@ class BenchmarkRunner:
             self.llm_duration = time.time() - start_llm_timer
 
         # 3. Process all responses and evaluate
+        failed = [r for r in llm_responses if not r["response"] or r["response"].startswith("ERROR: ")]
+        if llm_responses and len(failed) == len(llm_responses):
+            # Every call failed (bad prompt path, dead endpoint, bad key). Reporting
+            # 0.0 metrics here would look like a model result instead of a broken run.
+            raise RuntimeError(
+                f"All {len(failed)} tasks failed before producing a model response; "
+                f"refusing to report metrics. First: {failed[0]['response'][:200] or 'empty'}"
+            )
+        if failed:
+            tqdm.write(f"WARNING: {len(failed)}/{len(llm_responses)} calls failed; scored as zeros.")
+
         tqdm.write(f"Evaluating {len(llm_responses)} responses.")
         for response_data in tqdm(llm_responses, desc="Evaluating responses"):
             try:
@@ -331,7 +347,7 @@ class BenchmarkRunner:
                 refs = self._execute_grobid_extraction(task_info)
                 return json.dumps(refs.model_dump())
             else:
-                include_schema = "pydantic" in self.args.prompt_name
+                include_schema = self.args.schema in ("guided", "prompt")
                 refs = self._execute_extraction_and_parsing_method(
                     task_info=task_info,
                     llm_client=llm_client,
@@ -351,7 +367,7 @@ class BenchmarkRunner:
                     batch_mode=True
                 )
             else:
-                include_schema = "pydantic" in self.args.prompt_name
+                include_schema = self.args.schema in ("guided", "prompt")
                 refs = parse_reference_strings(
                     reference_lines=reference_lines,
                     llm_client=llm_client,
@@ -842,7 +858,18 @@ def main():
     parser.add_argument("--prompt_name", type=str, default="reference_extraction.md", help="Name of the prompt file in the 'prompts/' directory.")
 
     # Extractor Configuration
-    parser.add_argument("--extractor", type=str, default="marker", choices=["pymupdf", "marker", "mineru", "grobid"], help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task.")
+    parser.add_argument("--extractor", type=str, default="pymupdf", choices=["pymupdf", "marker", "mineru", "grobid"], help="The PDF text extractor to use. Note: 'grobid' is only available for extraction_and_parsing task.")
+    parser.add_argument(
+        "--schema",
+        choices=["guided", "prompt", "off"],
+        default="guided",
+        help="How the Reference JSON schema is used. 'guided' (default): schema in the prompt "
+             "and sent as response_format=json_schema so vLLM constrains decoding. 'prompt': "
+             "schema in the prompt only, response_format=json_object. 'off': no schema anywhere, "
+             "response_format=json_object.",
+    )
+    parser.add_argument("--thinking", choices=["off", "on", "unset"], default="off", help="Qwen thinking mode via the vLLM chat template. 'off' (default) is required for structured output; 'unset' sends no chat_template_kwargs at all, for endpoints that reject unknown body params.")
+    parser.add_argument("--llm_timeout", type=int, default=600, help="Per-request wall-clock timeout in seconds. Raise it when many workers share one GPU and per-request decoding is slow.")
     
     # Parser Configuration (for parsing task)
     parser.add_argument(
@@ -941,6 +968,18 @@ def main():
         level=log_level,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
+
+    # Fail fast on a bad --prompt_name instead of letting every task raise
+    # FileNotFoundError in its worker and reporting the run as 0.0 F1.
+    if args.extractor != "grobid" and getattr(args, "parser", "llm") != "grobid":
+        # YAML prompts are addressed as "file.yaml:namespace.key" — only the
+        # path before the colon is a real file.
+        prompt_file = args.prompt_name.split(":", 1)[0]
+        if not (Path("prompts") / prompt_file).exists():
+            available = ", ".join(sorted(p.name for p in Path("prompts").iterdir()))
+            raise FileNotFoundError(
+                f"Prompt file not found: prompts/{args.prompt_name}. Available: {available}"
+            )
 
     # Validate required arguments
     if args.task == "parsing" and getattr(args, 'parser', 'llm') == "grobid":

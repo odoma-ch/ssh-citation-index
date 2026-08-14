@@ -28,7 +28,7 @@ data:
 
   # LLM
   LLM_ENDPOINT: "https://llm.graphia-ssh.eu/v1"          # <-- UPDATE
-  LLM_MODEL_MEDIUM_INTELLIGENCE: "Qwen3.6-27B-FP8"          # <-- UPDATE
+  LLM_MODEL_MEDIUM_INTELLIGENCE: "Qwen3.6-27B"              # <-- UPDATE
   LLM_MODEL_HIGH_INTELLIGENCE: "DeepSeek-V3.1-vLLM"            # <-- UPDATE
   LLM_TIMEOUT: "300.0"
   LLM_MAX_RETRIES: "3"
