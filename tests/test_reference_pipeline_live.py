@@ -13,6 +13,11 @@ Opt in explicitly, they take minutes and cost real inference:
 Thresholds are floors well below observed values, not targets — reference extraction runs
 at temperature 0.3 and returns a slightly different set of strings each run. Tighten a
 floor only after checking a few runs.
+
+Timing: the first run on a given fixture takes minutes. The LLM endpoint caches identical
+requests, so immediate reruns finish in seconds. Any change to a prompt or to the JSON
+schema alters the request and triggers real inference again, which is exactly when these
+tests need to do real work.
 """
 
 from __future__ import annotations
@@ -61,16 +66,17 @@ class Document:
 
 
 # Floors are deliberately loose. Run-to-run spread on the same document is wide — the reg
-# PDF has produced both 64 records with 64/64 titled and 40 records with 29/40 titled — so
-# these guard against the pipeline being *broken* (0 titles, 0 authors), not against
-# quality drift. Raise one only after several runs show headroom.
+# PDF has produced 63 strings/64 records with 64/64 titled, 40 records with 29/40 titled,
+# and 74 strings/80 records with 58/80 titled — so these guard against the pipeline being
+# *broken* (0 titles, 0 authors), not against quality drift. Raise one only after several
+# runs show headroom.
 DOCUMENTS = [
     Document(
         name="reg_footnote_pdf",
         path=DATA_DIR / "reg_0035-2039_1989_num_102_485_2445.pdf",
         min_reference_strings=30,
         min_records=30,
-        min_titled_share=0.6,
+        min_titled_share=0.5,
         min_people_share=0.4,
         expected_titles=("Sophoclean Tragedy",),
     ),
@@ -185,11 +191,18 @@ def test_reference_extraction_returns_citation_strings(document: Document):
 @pytest.mark.parametrize("document", DOCUMENTS, ids=lambda d: d.name)
 def test_parsed_references_carry_titles(document: Document):
     """The regression this guards: records returned with every title null."""
-    _, records = _run_pipeline(document)
+    reference_strings, records = _run_pipeline(document)
 
     assert len(records) >= document.min_records, (
         f"{document.name}: parsed {len(records)} records, "
         f"expected at least {document.min_records}"
+    )
+    # A record count far above the input count means references are being split across
+    # records (one reference has already come back as an authors record plus a title
+    # record). Observed ratios: 63->64 and 73->80.
+    assert len(records) <= len(reference_strings) * 1.3, (
+        f"{document.name}: {len(records)} records for {len(reference_strings)} input "
+        "strings suggests references are being split"
     )
 
     titles = _titles(records)

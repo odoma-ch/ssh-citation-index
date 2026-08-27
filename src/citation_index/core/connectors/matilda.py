@@ -89,9 +89,9 @@ class MatildaConnector(BaseConnector):
                 timeout=30,
             )
             response.raise_for_status()
-        except requests.exceptions.RequestException as exc:
-            logger.error("Matilda API request failed: %s", exc)
-            return []
+        except requests.exceptions.RequestException:
+            logger.exception("Matilda API request failed")
+            raise
 
         data = response.json()
         works = data.get("works", [])
@@ -304,11 +304,14 @@ class MatildaConnector(BaseConnector):
             )
             response.raise_for_status()
         except requests.HTTPError as exc:
-            logger.warning("Matilda identifier lookup failed: %s", exc)
-            return []
-        except requests.exceptions.RequestException as exc:
-            logger.warning("Matilda identifier lookup failed: %s", exc)
-            return []
+            status = exc.response.status_code if exc.response is not None else None
+            if status == 404:
+                return []
+            logger.exception("Matilda identifier lookup failed")
+            raise
+        except requests.exceptions.RequestException:
+            logger.exception("Matilda identifier lookup failed")
+            raise
 
         data = response.json()
         works = data.get("works", [])

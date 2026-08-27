@@ -49,9 +49,9 @@ class OpenAlexConnector(BaseConnector):
         try:
             response = self.session.get(url, params=params, timeout=30)
             response.raise_for_status()
-        except requests.RequestException as exc:
-            logger.error("OpenAlex search failed: %s", exc)
-            return []
+        except requests.RequestException:
+            logger.exception("OpenAlex search failed")
+            raise
 
         payload = response.json()
         results = payload.get("results", [])
@@ -89,11 +89,11 @@ class OpenAlexConnector(BaseConnector):
             status = exc.response.status_code if exc.response is not None else None
             if status == 404:
                 return []
-            logger.error("OpenAlex identifier lookup failed: %s", exc)
-            return []
-        except requests.RequestException as exc:
-            logger.error("OpenAlex identifier lookup failed: %s", exc)
-            return []
+            logger.exception("OpenAlex identifier lookup failed")
+            raise
+        except requests.RequestException:
+            logger.exception("OpenAlex identifier lookup failed")
+            raise
 
         record = response.json()
         if not isinstance(record, dict):

@@ -103,7 +103,7 @@ def test_llm_client_raises_after_empty_responses():
 def test_llm_client_disables_qwen_thinking_for_vllm():
     client = LLMClient(
         endpoint="http://localhost:8000/v1",
-        model="Qwen3.6-27B-FP8",
+        model="Qwen3.6-27B",
         api_key="test-key",
         max_retries=0,
         enable_thinking=False,

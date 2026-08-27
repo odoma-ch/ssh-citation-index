@@ -26,7 +26,9 @@ from .tasks import (
     extract_references_task,
     parse_references_task,
     extract_and_parse_references_task,
+    link_references_task,
 )
+from .pipelines.citation_linking import parse_targets, split_references
 from .utils.storage import StorageManager
 
 # ========================
@@ -96,6 +98,15 @@ class ReferenceExtractionRequest(BaseModel):
 class ReferenceParsingRequest(BaseModel):
     """Request body for reference parsing - accepts list of reference strings."""
     references: list[str] = Field(..., description="List of reference strings to parse")
+
+
+class CitationLinkingRequest(BaseModel):
+    """Raw reference text for a single or newline-delimited linking request."""
+
+    reference: str = Field(
+        ...,
+        description="One reference, or newline-delimited references when batched=true",
+    )
 
 
 class ReferenceParsingOptions(BaseModel):
@@ -419,6 +430,57 @@ def parse_reference_strings_endpoint(
     
     logger.info(f"Enqueued reference parsing job {job_id}")
     return format_job_response(job_id, message="Reference parsing job enqueued")
+
+
+# ========================
+# Citation Linking
+# ========================
+
+
+@app.post("/link/references", response_model=JobResponse)
+def enqueue_citation_linking(
+    body: CitationLinkingRequest = Body(...),
+    batched: bool = Query(
+        default=False,
+        description="Split the reference value into newline-delimited references",
+    ),
+    target: str = Query(
+        default="all",
+        description="openalex, matilda, wikidata, all, or a comma-separated list",
+    ),
+):
+    """Queue citation linking for one reference or a newline-delimited batch."""
+    try:
+        references = split_references(body.reference, batched)
+        targets = parse_targets(target)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    job_id = create_job_id()
+    input_data = {
+        "references": references,
+        "targets": targets,
+        "count": len(references),
+    }
+    storage.save_intermediate(
+        job_id, "citation_linking_input", input_data, atomic=False
+    )
+    initialize_job_metadata(
+        job_id,
+        job_type="citation_linking",
+        reference_count=len(references),
+        targets=json.dumps(targets),
+    )
+    queue_linking.enqueue_call(
+        link_references_task,
+        kwargs={"job_id": job_id},
+        job_id=job_id,
+        timeout=settings.timeout_citation_linking,
+        result_ttl=settings.worker_result_ttl,
+    )
+
+    logger.info("Enqueued citation linking job %s", job_id)
+    return format_job_response(job_id, message="Citation linking job enqueued")
 
 
 # ========================

@@ -72,6 +72,7 @@ class LLMClient:
         max_retries: int = 3,
         first_token_timeout: float = 30.0,
         enable_thinking: Optional[bool] = None,
+        guided_decoding: bool = True,
     ):
         """Initialize the LLM client.
 
@@ -91,6 +92,11 @@ class LLMClient:
                 ``False`` for citation tasks so the final answer is returned in
                 ``content`` instead of consuming the output budget in the
                 reasoning channel. Leave as ``None`` for non-vLLM endpoints.
+            guided_decoding: When False, a ``json_schema`` passed to ``call()``
+                is only used for the prompt text; the request falls back to
+                ``response_format={"type": "json_object"}`` so the server does
+                not compile a grammar. Lets benchmarks A/B schema-constrained
+                decoding against prompt-only JSON.
         """
         self.endpoint = endpoint
         self.model = model
@@ -99,6 +105,7 @@ class LLMClient:
         self.max_retries = max_retries
         self.first_token_timeout = first_token_timeout
         self.enable_thinking = enable_thinking
+        self.guided_decoding = guided_decoding
 
         # Client-level timeout is generous; per-call overrides give
         # precise control for streaming vs non-streaming paths.
@@ -223,7 +230,7 @@ class LLMClient:
         modified_prompt = prompt
         modified_max_tokens = max_tokens
 
-        if json_schema:
+        if json_schema and self.guided_decoding:
             # OpenAI-compatible servers expect the actual schema under a named
             # ``json_schema.schema`` wrapper. Passing a raw schema here is
             # accepted by the SDK but reaches vLLM as an empty constraint.
@@ -235,7 +242,7 @@ class LLMClient:
                     "schema": json_schema,
                 },
             }
-        elif json_output:
+        elif json_output or json_schema:
             # Use json_object for simple JSON (vLLM/OpenAI)
             response_format = {"type": "json_object"}
 

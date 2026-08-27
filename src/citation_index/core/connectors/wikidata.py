@@ -111,9 +111,9 @@ class WikidataConnector(BaseConnector):
             qids = [r.get("title") for r in search_results if r.get("title", "").startswith("Q")]
             return self._get_entity_details(qids, language) if qids else []
             
-        except requests.RequestException as exc:
-            logger.warning(f"Wikidata identifier search failed: {exc}")
-            return []
+        except requests.RequestException:
+            logger.exception("Wikidata identifier search failed")
+            raise
     
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
         """Transform Wikidata elastic search results to Reference objects."""
@@ -245,9 +245,9 @@ class WikidataConnector(BaseConnector):
             
             return results
             
-        except requests.RequestException as exc:
-            logger.warning(f"Failed to fetch entity details: {exc}")
-            return []
+        except requests.RequestException:
+            logger.exception("Failed to fetch Wikidata entity details")
+            raise
     
     def _get_labels_for_qids(self, qids: List[str], language: str = "en") -> Dict[str, str]:
         """Fetch labels for multiple QIDs in batch."""
@@ -328,9 +328,9 @@ class WikidataConnector(BaseConnector):
             
             return top_hits
             
-        except requests.RequestException as exc:
-            logger.warning(f"Wikidata elastic search failed: {exc}")
-            return []
+        except requests.RequestException:
+            logger.exception("Wikidata elastic search failed")
+            raise
     
     def _score_elastic_results(self, hits: List[Dict[str, Any]], reference: Reference) -> List[Dict[str, Any]]:
         """Score and sort elastic search results based on relevance."""
@@ -669,4 +669,3 @@ class WikidataConnector(BaseConnector):
                     if normalized:
                         surnames.add(normalized.lower())
         return surnames
-

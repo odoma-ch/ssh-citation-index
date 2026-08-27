@@ -28,6 +28,7 @@ from .pipelines.reference_parsing import (
     parse_reference_strings,
     parse_reference_strings_grobid,
 )
+from .pipelines.citation_linking import link_references
 from .pipelines.text_extraction import extract_text
 from .utils.storage import StorageManager
 
@@ -478,6 +479,70 @@ def parse_references_task(
             failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
+        raise
+
+
+# ========================
+# Citation Linking Tasks
+# ========================
+
+
+@job(
+    "linking",
+    connection=redis_conn,
+    timeout=settings.timeout_citation_linking,
+    result_ttl=settings.worker_result_ttl,
+)
+def link_references_task(job_id: str) -> Dict[str, Any]:
+    """Link raw reference strings through the requested external indexes."""
+    stage = "citation_linking"
+    update_job_metadata(job_id, status="processing", current_stage=stage)
+    log_job_event(job_id, "stage_started", stage=stage)
+
+    try:
+        if storage.intermediate_exists(job_id, stage):
+            result_path = storage.intermediate_dir / job_id / stage / "output.json"
+            return {"result_path": str(result_path), "cached": True, "stage": stage}
+
+        input_data = storage.load_intermediate(job_id, "citation_linking_input")
+        references = input_data["references"]
+        targets = input_data["targets"]
+        results = link_references(references, targets)
+        output = {
+            "results": results,
+            "count": len(results),
+            "targets": targets,
+        }
+
+        result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
+        completed_stages = get_completed_stages(job_id) + [stage]
+        update_job_metadata(
+            job_id,
+            status="completed",
+            completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
+        )
+        log_job_event(
+            job_id, "stage_completed", stage=stage, reference_count=len(results)
+        )
+        return {
+            "result_path": str(result_path),
+            "cached": False,
+            "stage": stage,
+            "reference_count": len(results),
+        }
+    except Exception as exc:
+        logger.exception("Task %s failed for job %s", stage, job_id)
+        update_job_metadata(
+            job_id,
+            status="failed",
+            error=str(exc),
+            failed_stage=stage,
+            failed_at=datetime.utcnow().isoformat(),
+        )
+        log_job_event(job_id, "stage_failed", stage=stage, error=str(exc))
         raise
 
 

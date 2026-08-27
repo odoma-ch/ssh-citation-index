@@ -90,6 +90,23 @@ class TestLLMClient:
         assert response_format == expected_format
         assert prompt == "Generate data"  # Should not be modified
 
+    def test_guided_decoding_disabled_falls_back_to_json_object(self):
+        """guided_decoding=False keeps JSON mode but sends no grammar."""
+        client = LLMClient(
+            endpoint=self.mock_endpoint,
+            model="test-model",
+            api_key=self.mock_api_key,
+            guided_decoding=False,
+        )
+
+        schema = {"type": "object", "properties": {"name": {"type": "string"}}}
+        response_format, _, _ = client._get_response_format_and_prompt(
+            prompt="Generate data",
+            json_schema=schema,
+        )
+
+        assert response_format == {"type": "json_object"}
+
 
 class TestDeepSeekClient:
     """Test cases for DeepSeekClient functionality."""
