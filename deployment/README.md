@@ -20,7 +20,7 @@ Deploy the Citation Index queue system on a Kubernetes (OKD) PaaS.
                    │               │              │
           ┌────────▼───┐  ┌───────▼────┐  ┌──────▼──────┐
           │ worker     │  │ worker     │  │ worker      │
-          │ default ×2 │  │ llm    ×6  │  │ linking ×2  │
+          │ default ×1 │  │ llm    ×2  │  │ linking ×1  │
           └────────────┘  └────────────┘  └─────────────┘
                    │               │              │
                    └───────────────┼──────────────┘
@@ -85,7 +85,9 @@ Create the secret with your real API keys (never store these in Git):
 ```bash
 kubectl create secret generic citation-index-secret \
   --from-literal=LLM_API_KEY='' \
-  --from-literal=EMBEDDING_API_KEY='your-embedding-api-key'
+  --from-literal=EMBEDDING_API_KEY='your-embedding-api-key' \
+  --from-literal=MATILDA_USERNAME='your-matilda-username' \
+  --from-literal=MATILDA_PASSWORD='your-matilda-password'
 ```
 
 ### 4. Edit the ConfigMap and image references
@@ -97,7 +99,7 @@ Before applying, open `citation-index.yaml` and update:
   - `LLM_MODEL_MEDIUM_INTELLIGENCE` / `LLM_MODEL_HIGH_INTELLIGENCE`
   - `GROBID_ENDPOINT` – if GROBID runs elsewhere in the cluster
   - `EMBEDDING_ENDPOINT`
-- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.2.0`
+- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.3.0`
   with your actual image path
 
 ### 5. Apply everything
@@ -121,7 +123,7 @@ ROUTE=$(kubectl get route citation-index-api -o jsonpath='{.spec.host}')
 
 # Health check
 curl -s https://${ROUTE}/health
-# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.2.0"}
+# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.3.0"}
 
 # Submit a test job
 curl -X POST https://${ROUTE}/extract/text -F "file=@test.pdf"
@@ -130,15 +132,15 @@ curl -X POST https://${ROUTE}/extract/text -F "file=@test.pdf"
 kubectl get route citation-index-rq-dashboard
 ```
 
-Expected pods: 1 API + 2 default + 6 llm + 1 dashboard = **10 total** (linking worker is WIP, commented out).
+Expected pods: 1 API + 1 default + 2 llm + 1 linking + 1 dashboard = **6 total**.
 
 ## Scaling
 
 | Worker | Queue | Default replicas | Guidance |
 |--------|-------|-----------------|----------|
-| `worker-default` | `default` | 2 | Fast tasks; scale if text extraction queues build up |
-| `worker-llm` | `llm-tasks` | 6 | Slow LLM tasks; `replicas >= LLM_MAX_CONCURRENT × 1.5` |
-| `worker-linking` | `linking` | 2 | WIP -- commented out in YAML for now |
+| `worker-default` | `default` | 1 | Fast tasks; scale if text extraction queues build up |
+| `worker-llm` | `llm-tasks` | 2 | Slow LLM tasks; scale with model-serving capacity |
+| `worker-linking` | `linking` | 1 | External index requests; scale if linking jobs queue up |
 
 ```bash
 kubectl scale deployment citation-index-worker-llm --replicas=8

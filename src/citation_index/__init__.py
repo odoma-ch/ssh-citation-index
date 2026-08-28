@@ -13,7 +13,7 @@ from .pipelines.end_to_end_parsing import (
 )
 from .llm.grobid_client import GrobidClient
 
-__version__ = "0.2.2"
+__version__ = "0.3.0"
 
 __all__ = [
     "Reference",
