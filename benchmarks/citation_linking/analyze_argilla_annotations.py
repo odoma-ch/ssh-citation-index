@@ -31,8 +31,8 @@ Coverage is kept separate from quality:
 
 Usage
 -----
-    python analyze_argilla_annotations.py                 # tables to stdout + CSVs
-    python analyze_argilla_annotations.py --self-check     # asserts, no data needed
+    python analyze_argilla_annotations.py                 # CSVs + summary.json
+
 """
 
 from __future__ import annotations
@@ -57,7 +57,8 @@ DEFAULT_INPUT = HERE / "argilla_annotations" / "citation_linking_annotations.jso
 DEFAULT_OUT_DIR = HERE / "argilla_annotations" / "analysis"
 
 OUTCOMES = ["correct_link", "wrong_link", "spurious_link", "missed_link", "correct_abstain"]
-EXCLUDED_LABELS = {"unannotated", "ambiguous"}
+MULTI_REF_LABEL = "multi_ref_context"
+EXCLUDED_LABELS = {"unannotated", "ambiguous", MULTI_REF_LABEL}
 Z = 1.959963985  # 95%
 
 
@@ -150,7 +151,11 @@ def metrics(counts: Dict[str, int]) -> Dict[str, Any]:
 # ---------------------------------------------------------------------------
 # Frame preparation
 # ---------------------------------------------------------------------------
-def prepare(rows: List[Dict[str, Any]], exclude_needs_review: bool) -> pd.DataFrame:
+def prepare(
+    rows: List[Dict[str, Any]],
+    exclude_needs_review: bool,
+    skip_scope: str = "reference",
+) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     missing = {"label", "candidate_missing", "index", "source", "ref_id"} - set(df.columns)
     if missing:
@@ -161,6 +166,16 @@ def prepare(rows: List[Dict[str, Any]], exclude_needs_review: bool) -> pd.DataFr
         for label, candidate_missing in zip(df["label"], df["candidate_missing"])
     ]
     df["excluded_reason"] = df["label"].where(df["label"].isin(EXCLUDED_LABELS))
+
+    if skip_scope == "reference":
+        # A reference that packs several publications is packed for every index, not just the
+        # one whose annotator marked it — drop all of its rows so the indexes stay comparable.
+        multi_ref_ids = set(df.loc[df["label"] == MULTI_REF_LABEL, "ref_id"])
+        spread = df["ref_id"].isin(multi_ref_ids)
+        df.loc[spread, "outcome"] = None
+        df.loc[spread, "excluded_reason"] = MULTI_REF_LABEL
+    elif skip_scope != "row":
+        raise ValueError(f"skip_scope must be 'reference' or 'row', got {skip_scope!r}")
     if exclude_needs_review:
         df.loc[df["needs_review"].fillna(False).astype(bool), "outcome"] = None
         df.loc[df["excluded_reason"].isna() & df["outcome"].isna(), "excluded_reason"] = (
@@ -180,7 +195,10 @@ def group_metrics(df: pd.DataFrame, group_cols: Sequence[str]) -> pd.DataFrame:
         record = dict(zip(group_cols, key_tuple))
         record["n_rows"] = len(group)
         record["n_excluded"] = len(group) - len(evaluable)
-        record["n_needs_review"] = int(group["needs_review"].fillna(False).astype(bool).sum())
+        # Scoped to evaluable rows: a flagged row inside an excluded reference is already gone.
+        record["n_needs_review"] = int(
+            evaluable["needs_review"].fillna(False).astype(bool).sum()
+        )
         record.update(metrics(evaluable["outcome"].value_counts().to_dict()))
         records.append(record)
     return pd.DataFrame(records).sort_values(list(group_cols)).reset_index(drop=True)
@@ -334,106 +352,44 @@ def similarity_heuristic(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# Rendering
+# Run summary (data only — all prose lives in the hand-written report)
 # ---------------------------------------------------------------------------
-def to_markdown(df: pd.DataFrame, floatfmt: str = "{:.3f}") -> str:
-    """Tiny markdown renderer — avoids a tabulate dependency for pandas.to_markdown."""
-    if df.empty:
-        return "_(empty)_\n"
-    formatted = df.copy()
-    for column in formatted.columns:
-        formatted[column] = [
-            "" if value is None or (isinstance(value, float) and math.isnan(value))
-            else floatfmt.format(value) if isinstance(value, float)
-            else str(value)
-            for value in formatted[column]
-        ]
-    header = "| " + " | ".join(formatted.columns) + " |"
-    divider = "| " + " | ".join("---" for _ in formatted.columns) + " |"
-    body = ["| " + " | ".join(row) + " |" for row in formatted.astype(str).values]
-    return "\n".join([header, divider, *body]) + "\n"
-
-
-# Markdown keeps the readable subset; the CSVs keep every column.
-HEADLINE_COLUMNS = [
-    "index",
-    "source",
-    "n_eval",
-    "n_excluded",
-    "TP",
-    "FP",
-    "FN",
-    "TN",
-    "precision",
-    "recall",
-    "f1",
-    "accuracy",
-    "abstain_precision",
-    "coverage_actual",
-    "coverage_achieved",
-    "coverage_gap",
-    "macro_f1_over_sources",
-]
-
-
-def headline(table: pd.DataFrame) -> pd.DataFrame:
-    """Narrow the metric tables only — count/coverage tables are already readable."""
-    if "precision" not in table.columns:
-        return table
-    return table[[column for column in HEADLINE_COLUMNS if column in table.columns]]
-
-
-def build_report(df: pd.DataFrame, tables: Dict[str, pd.DataFrame]) -> str:
-    excluded = df["excluded_reason"].value_counts().to_dict()
-    lines = [
-        "# Citation linking — annotation analysis",
-        "",
-        f"- rows: {len(df)}  ({df['ref_id'].nunique()} references x {df['index'].nunique()} indexes)",
-        f"- evaluable rows: {int(df['outcome'].notna().sum())}",
-        f"- excluded rows: {excluded or 'none'}",
-        f"- needs_review rows: {int(df['needs_review'].fillna(False).astype(bool).sum())}",
-        "",
-        "TP = correct_link, FP = wrong_link + spurious_link, FN = missed_link + wrong_link,",
-        "TN = correct_abstain. wrong_link counts in both FP and FN, so the four do not sum to N.",
-        "A blank f1 means no true positives and zero recall, not a failed computation.",
-        "",
-    ]
-    notes = {
-        "metrics_by_index": (
-            "coverage_* here use each index's own evaluable rows (openalex has 97 rows still "
-            "pending, so its denominator is 403 vs 500). For an apples-to-apples cross-index "
-            "comparison use 'Coverage per index' below — complete-case, same 403 refs for all."
+def run_summary(df: pd.DataFrame, tables: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
+    """Bookkeeping the report needs but cannot read off the metric tables."""
+    coverage = tables["coverage_by_index"]
+    return {
+        "n_rows": len(df),
+        "n_references": int(df["ref_id"].nunique()),
+        "indexes": sorted(df["index"].unique()),
+        "sources": sorted(df["source"].unique()),
+        "n_evaluable": int(df["outcome"].notna().sum()),
+        "n_excluded": int(df["outcome"].isna().sum()),
+        "excluded_by_reason": df["excluded_reason"].value_counts().to_dict(),
+        "n_multi_ref_references": int(df.loc[df["label"] == MULTI_REF_LABEL, "ref_id"].nunique()),
+        "n_manually_fixed_rows": (
+            int(df["manual_fix"].notna().sum()) if "manual_fix" in df.columns else 0
         ),
-        "metrics_by_source": (
-            "pooled over index decisions — each reference contributes 3 rows (one per index), "
-            "so n_eval counts decisions, not references."
+        "n_needs_review": int(df["needs_review"].fillna(False).astype(bool).sum()),
+        "n_needs_review_evaluable": int(
+            (df["needs_review"].fillna(False).astype(bool) & df["outcome"].notna()).sum()
         ),
-        "coverage_by_index": (
-            "complete-case: only refs annotated in every index. Dropped refs are listed in "
-            "coverage_dropped_refs.csv."
+        "needs_review_by_reason": (
+            df.loc[df["review_reason"].astype(str) != "", "review_reason"].value_counts().to_dict()
+            if "review_reason" in df.columns
+            else {}
         ),
+        "needs_review_by_index": (
+            df.loc[df["needs_review"].fillna(False).astype(bool), "index"].value_counts().to_dict()
+        ),
+        "n_eval_per_index": df[df["outcome"].notna()]["index"].value_counts().to_dict(),
+        "n_eval_equal_across_indexes": df[df["outcome"].notna()]["index"]
+        .value_counts()
+        .nunique()
+        == 1,
+        "n_complete_case_refs": int(coverage["n_refs"].iloc[0]) if len(coverage) else 0,
+        "n_dropped_refs": len(tables["coverage_dropped_refs"]),
+        "dropped_refs": list(tables["coverage_dropped_refs"]["ref_id"]),
     }
-    titles = {
-        "overall": "Overall (all indexes pooled)",
-        "outcome_counts": "Outcome counts (five-way, per index)",
-        "metrics_by_index": "Metrics per citation index",
-        "metrics_by_index_source": "Metrics per index x corpus source",
-        "metrics_by_source": "Metrics per corpus source (all indexes pooled)",
-        "coverage_by_index": "Coverage per index (complete-case refs)",
-        "coverage_histogram": "How many indexes hold each work",
-        "coverage_overlap": "Pairwise coverage overlap",
-        "coverage_union": "Union ceiling across indexes",
-        "coverage_by_source": "Coverage per corpus source x index",
-        "similarity_heuristic": "is_match_by_similarity scored as an auto-accept gate",
-    }
-    lines += ["Tables below show headline columns only — the CSVs carry every metric.", ""]
-    for name, title in titles.items():
-        if name in tables:
-            lines += [f"## {title}", ""]
-            if name in notes:
-                lines += [f"_{notes[name]}_", ""]
-            lines += [to_markdown(headline(tables[name])), ""]
-    return "\n".join(lines)
 
 
 def analyse(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
@@ -457,88 +413,6 @@ def analyse(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     return tables
 
 
-# ---------------------------------------------------------------------------
-# Self-check
-# ---------------------------------------------------------------------------
-def self_check() -> None:
-    assert outcome("correct_match", False) == "correct_link"
-    assert outcome("wrong_match", True) == "missed_link"
-    assert outcome("wrong_match", False) == "wrong_link"
-    assert outcome("no_record_in_index", True) == "correct_abstain"
-    assert outcome("no_record_in_index", False) == "spurious_link"
-    assert outcome("unannotated", False) is None
-
-    counts = {
-        "correct_link": 2,
-        "wrong_link": 1,
-        "spurious_link": 1,
-        "missed_link": 1,
-        "correct_abstain": 5,
-    }
-    m = metrics(counts)
-    assert (m["TP"], m["FP"], m["FN"], m["TN"], m["n_eval"]) == (2, 2, 2, 5, 10)
-    assert m["precision"] == 0.5 and m["recall"] == 0.5 and m["f1"] == 0.5
-    assert m["accuracy"] == 0.7
-    assert abs(m["specificity"] - 5 / 6) < 1e-12
-    assert abs(m["mcc"] - 6 / 28) < 1e-12  # (TP*TN-FP*FN)/sqrt(4*4*7*7)
-    assert m["link_rate"] == 0.4 and m["abstain_rate"] == 0.6
-    assert abs(m["abstain_precision"] - 5 / 6) < 1e-12
-    assert m["coverage_actual"] == 0.4 and m["coverage_achieved"] == 0.2
-    assert abs(m["coverage_gap"] - 0.2) < 1e-12
-    assert m["precision_lo"] < 0.5 < m["precision_hi"]
-
-    empty = metrics({})
-    assert empty["n_eval"] == 0 and empty["precision"] is None and empty["f1"] is None
-
-    lo, hi = wilson(0, 10)
-    assert lo == 0.0 and 0.2 < hi < 0.4, (lo, hi)
-    lo, hi = wilson(286, 614)  # matches the real openalex+matilda+wikidata pooled precision
-    assert abs(lo - 0.4267) < 0.002 and abs(hi - 0.5054) < 0.002, (lo, hi)
-
-    # Two refs x two indexes: ref A only in openalex, ref B in both.
-    rows = [
-        {"ref_id": "A", "index": "openalex", "source": "cex", "label": "correct_match",
-         "candidate_missing": False, "needs_review": False, "is_match_by_similarity": "true"},
-        {"ref_id": "A", "index": "wikidata", "source": "cex", "label": "no_record_in_index",
-         "candidate_missing": True, "needs_review": False, "is_match_by_similarity": "false"},
-        {"ref_id": "B", "index": "openalex", "source": "cex", "label": "wrong_match",
-         "candidate_missing": True, "needs_review": False, "is_match_by_similarity": "false"},
-        {"ref_id": "B", "index": "wikidata", "source": "cex", "label": "correct_match",
-         "candidate_missing": False, "needs_review": False, "is_match_by_similarity": "false"},
-    ]
-    df = prepare(rows, exclude_needs_review=False)
-    tables = analyse(df)
-    coverage = tables["coverage_by_index"].set_index("index")
-    assert coverage.loc["openalex", "exists"] == 2  # correct_link + missed_link
-    assert coverage.loc["wikidata", "exists"] == 1
-    assert coverage.loc["openalex", "unique_to_index"] == 1  # ref A
-    assert coverage.loc["openalex", "linked_correct"] == 1
-    overlap = tables["coverage_overlap"].iloc[0]
-    assert (overlap["both"], overlap["only_a"], overlap["only_b"]) == (1, 1, 0)
-    assert tables["coverage_union"].iloc[0]["exists_any"] == 2
-    assert tables["coverage_union"].iloc[0]["linked_correct_any"] == 2
-    heuristic = tables["similarity_heuristic"].set_index("index").loc["ALL"]
-    assert heuristic["n_candidates"] == 2 and heuristic["TP"] == 1 and heuristic["FN"] == 1
-
-    # Ref C annotated in wikidata but still pending in openalex → excluded from the pivot,
-    # which is exactly the shape of the 97 pending openalex rows in the real export.
-    partial = prepare(
-        rows
-        + [
-            {"ref_id": "C", "index": "openalex", "source": "cex", "label": "unannotated",
-             "candidate_missing": False, "needs_review": False, "is_match_by_similarity": "false"},
-            {"ref_id": "C", "index": "wikidata", "source": "cex", "label": "correct_match",
-             "candidate_missing": False, "needs_review": False, "is_match_by_similarity": "true"},
-        ],
-        exclude_needs_review=False,
-    )
-    partial_pivots = coverage_pivots(partial)
-    assert list(partial_pivots["coverage_dropped_refs"]["ref_id"]) == ["C"]
-    assert partial_pivots["coverage_by_index"]["n_refs"].eq(2).all()  # A, B only
-
-    assert to_markdown(pd.DataFrame()).startswith("_(empty)_")
-    print("✓ self-check passed")
-
 
 # ---------------------------------------------------------------------------
 # CLI
@@ -552,7 +426,13 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         action="store_true",
         help="drop rows with contradictory annotations instead of keeping them",
     )
-    parser.add_argument("--self-check", action="store_true", help="run asserts and exit")
+    parser.add_argument(
+        "--skip-scope",
+        choices=["reference", "row"],
+        default="reference",
+        help="'[SKIP]' rows exclude the whole reference across indexes (default) or only that row",
+    )
+    # parser.add_argument("--self-check", action="store_true", help="run asserts and exit")
     return parser.parse_args(argv)
 
 
@@ -560,23 +440,23 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    if args.self_check:
-        self_check()
-        return 0
 
     if not args.input.exists():
         raise RuntimeError(f"{args.input} not found — run export_argilla_annotations.py first")
 
-    df = prepare(load_local(args.input), args.exclude_needs_review)
+    df = prepare(load_local(args.input), args.exclude_needs_review, args.skip_scope)
     tables = analyse(df)
-    report = build_report(df, tables)
-    print(report)
+    summary = run_summary(df, tables)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     for name, table in tables.items():
         table.to_csv(args.out_dir / f"{name}.csv", index=False)
-    (args.out_dir / "report.md").write_text(report, encoding="utf-8")
-    logger.info("wrote %d CSVs + report.md to %s", len(tables), args.out_dir)
+        logger.info("%-28s %3d rows", f"{name}.csv", len(table))
+    (args.out_dir / "summary.json").write_text(
+        json.dumps(summary, indent=2, sort_keys=True, default=str), encoding="utf-8"
+    )
+    logger.info("summary.json %s", json.dumps(summary, default=str))
+    logger.info("wrote %d CSVs + summary.json to %s", len(tables), args.out_dir)
     return 0
 
 

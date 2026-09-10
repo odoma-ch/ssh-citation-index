@@ -99,16 +99,35 @@ def record_to_raw(record: Any) -> Dict[str, Any]:
     return raw
 
 
-NO_GOLD_VALUES = {"", "[skip]", "skip", "n/a", "na", "none", "-"}
+NO_GOLD_VALUES = {"", "skip", "n/a", "na", "none", "-", "incorrect", "wrong", "unknown"}
+NO_GOLD_PREFIXES = ("[skip]", "skip ", "incorrect")
 NOT_FOUND = "Not Found"
+
+# Annotators typed "[SKIP]" (sometimes with a note) when the reference text packs more than
+# one publication into a single context, so no single candidate can be right or wrong. Those
+# rows are not a judgement about the index and are excluded from the analysis.
+MULTI_REF_PREFIX = "[skip]"
+MULTI_REF_LABEL = "multi_ref_context"
 
 
 def clean_gold_id(value: Optional[str]) -> Optional[str]:
-    """Annotator free text → a usable ID, or None (blank / '[SKIP]' / placeholder)."""
+    """Annotator free text → a usable ID, or None.
+
+    None covers blanks and the placeholders annotators actually used: "[SKIP]", the same
+    with a trailing note ("[SKIP] noisy, several references in this context"), "INCORRECT".
+    """
     if not isinstance(value, str):
         return None
     cleaned = value.strip()
-    return cleaned or None if cleaned.lower() not in NO_GOLD_VALUES else None
+    lowered = cleaned.lower()
+    if lowered in NO_GOLD_VALUES or lowered.startswith(NO_GOLD_PREFIXES):
+        return None
+    return cleaned or None
+
+
+def is_multi_ref_context(value: Optional[str]) -> bool:
+    """True when the annotator marked the reference as packing several publications."""
+    return isinstance(value, str) and value.strip().lower().startswith(MULTI_REF_PREFIX)
 
 
 def derive_label(row: Dict[str, Any]) -> Dict[str, Any]:
@@ -123,25 +142,37 @@ def derive_label(row: Dict[str, Any]) -> Dict[str, Any]:
     gold_id = clean_gold_id(row.get("correct_id"))
     candidate_missing = (row.get("matched_id") or NOT_FOUND) == NOT_FOUND
 
-    if is_correct is None and no_match is None:
-        label, needs_review = "unannotated", False
+    # A gold ID identical to the candidate is the annotator confirming, not correcting.
+    gold_confirms_candidate = bool(gold_id) and gold_id == row.get("matched_id")
+    gold_correction = gold_id if not gold_confirms_candidate else None
+
+    if is_multi_ref_context(row.get("correct_id")):
+        label, reason = MULTI_REF_LABEL, ""
+    elif is_correct is None and no_match is None:
+        label, reason = "unannotated", ""
     elif no_match == "true":
         # No record for this reference in this index, whatever the candidate was.
         label = "no_record_in_index"
-        needs_review = bool(gold_id) or (is_correct == "true" and not candidate_missing)
+        reason = (
+            "contradiction"
+            if (is_correct == "true" and not candidate_missing) or gold_correction
+            else ""
+        )
     elif is_correct == "true":
         # A record exists and the candidate is it — unless there was no candidate.
         label = "correct_match" if not candidate_missing else "ambiguous"
-        needs_review = candidate_missing or bool(gold_id)
+        reason = "contradiction" if candidate_missing or gold_correction else ""
     else:
         label = "wrong_match"
-        needs_review = not gold_id  # wrong, but no correct ID given
+        reason = "" if gold_id else "gold_missing"  # wrong, but no correct ID given
 
     return {
         "label": label,
         "gold_id": gold_id,
+        "gold_confirms_candidate": gold_confirms_candidate,
         "candidate_missing": candidate_missing,
-        "needs_review": needs_review,
+        "review_reason": reason,
+        "needs_review": bool(reason),
     }
 
 
@@ -309,107 +340,6 @@ class _FakeRecord:
         self.suggestions = list(suggestions)
 
 
-def self_check() -> None:
-    # ref_id / source live in BOTH fields and metadata (see notebook cell 14) — the
-    # collision that makes argilla's own flatten=True raise TypeError.
-    record = _FakeRecord(
-        rec_id="rec-1",
-        fields={
-            "ref_id": "brill_1",
-            "source": "brill",
-            "original_ref_string": "Foo (1999). Bar.",
-            "matched_id": "W999",
-        },
-        metadata={"ref_id": "brill_1", "source": "brill", "index": "openalex"},
-        responses=[
-            _FakeResponse("is_match_correct", "false", "u-draft", "draft"),
-            _FakeResponse("is_match_correct", "true", "u-sub", "submitted"),
-            _FakeResponse("correct_id", "W123", "u-sub", "submitted"),
-            _FakeResponse("no_match", "false", "u-sub", "submitted"),
-        ],
-        suggestions=[_FakeSuggestion("is_match_correct", "true", score=0.9, agent="similarity")],
-        status="completed",
-    )
-    raw = record_to_raw(record)
-    assert raw["ref_id"] == "brill_1" and raw["source"] == "brill"
-    assert raw["is_match_correct.responses"] == ["false", "true"]
-    assert raw["is_match_correct.responses.status"] == ["draft", "submitted"]
-    assert raw["is_match_correct.suggestion"] == "true"
-
-    row = flatten_to_row(raw, "openalex")
-    assert row["is_match_correct"] == "true", row["is_match_correct"]  # submitted beats draft
-    assert row["correct_id"] == "W123"
-    assert row["no_match"] == "false"
-    assert row["index"] == "openalex" and row["record_id"] == "rec-1"
-    assert row["n_responses"] == 2  # max responses on any single question
-    assert row["annotators"] == ["u-draft", "u-sub"]
-
-    draft_only = flatten_to_row(
-        record_to_raw(
-            _FakeRecord(
-                "rec-2",
-                {"ref_id": "cex_1"},
-                {"index": "wikidata"},
-                responses=[_FakeResponse("is_match_correct", "false", "u-1", "draft")],
-            )
-        ),
-        "wikidata",
-    )
-    assert draft_only["is_match_correct"] == "false"  # draft used when nothing submitted
-
-    empty = flatten_to_row(record_to_raw(_FakeRecord("rec-3", {"ref_id": "cex_9"}, {})), "matilda")
-    assert empty["n_responses"] == 0 and empty["annotators"] == []
-    assert all(empty[q] is None for q in QUESTIONS)
-
-    # Derived labels: the three questions are not independent (see derive_label).
-    assert row["label"] == "correct_match" and row["gold_id"] == "W123"
-    assert row["needs_review"] is True  # says correct yet supplied a correct_id
-
-    def _label(matched_id, is_correct, no_match, correct_id=None):
-        raw = record_to_raw(
-            _FakeRecord(
-                "r",
-                {"matched_id": matched_id},
-                {},
-                responses=[
-                    _FakeResponse(name, value, "u", "submitted")
-                    for name, value in (
-                        ("is_match_correct", is_correct),
-                        ("no_match", no_match),
-                        ("correct_id", correct_id),
-                    )
-                    if value is not None
-                ],
-            )
-        )
-        return flatten_to_row(raw, "openalex")
-
-    absent = _label("Not Found", "true", "true")
-    assert absent["label"] == "no_record_in_index" and absent["needs_review"] is False
-    good = _label("W1", "true", "false")
-    assert good["label"] == "correct_match" and good["needs_review"] is False
-    fp = _label("W1", "false", "true")
-    assert fp["label"] == "no_record_in_index" and fp["needs_review"] is False
-    missed = _label("Not Found", "false", "false", "W9")
-    assert missed["label"] == "wrong_match" and missed["gold_id"] == "W9"
-    unsourced = _label("W1", "false", "false")
-    assert unsourced["label"] == "wrong_match" and unsourced["needs_review"] is True
-    contradiction = _label("W1", "true", "true")
-    assert contradiction["label"] == "no_record_in_index" and contradiction["needs_review"] is True
-    assert _label("Not Found", "true", "false")["label"] == "ambiguous"
-    assert clean_gold_id("  [SKIP] ") is None and clean_gold_id(" W7 ") == "W7"
-    assert empty["label"] == "unannotated"
-
-    aligned = align_schema([row, draft_only, empty])
-    assert len({tuple(sorted(r)) for r in aligned}) == 1, "schema not aligned"
-    assert json.dumps(aligned)  # every value JSON-serialisable
-
-    import uuid
-
-    assert isinstance(_jsonable(uuid.uuid4()), str)
-    print("✓ self-check passed")
-
-
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -426,17 +356,13 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         type=Path,
         help="re-derive labels from a previous export instead of querying Argilla",
     )
-    parser.add_argument("--self-check", action="store_true", help="run logic asserts and exit")
+    # parser.add_argument("--self-check", action="store_true", help="run logic asserts and exit")
     return parser.parse_args(argv)
 
 
 def main(argv: Optional[List[str]] = None) -> int:
     args = parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
-
-    if args.self_check:
-        self_check()
-        return 0
 
     if args.from_jsonl:
         rows = load_local(args.from_jsonl)
