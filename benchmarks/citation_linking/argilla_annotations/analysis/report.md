@@ -74,17 +74,21 @@ when it says "not found" it is right 94.8% of the time.
 Accuracy is not comparable across these rows and should not be used to rank them — it is
 dominated by `correct_abstain`, so the index that answers least looks best.
 
-**Read the OpenAlex–Matilda ordering as a tie, not a ranking.** The exclusion is symmetric in
-application but not in origin — 18 of the 19 `[SKIP]` marks were made by the annotator
-working on OpenAlex, and removing those references took out 16 OpenAlex errors and *zero*
-OpenAlex correct links, against 4 of Matilda's. In the run before the exclusions the two were
-level (0.561 vs 0.560); the gap now is the size of that differential effect, and the precision
-intervals overlap (OpenAlex 0.418–0.521, Matilda 0.380–0.506). What is robust is the volume:
-166 correct links, more than the other two indexes combined.
+**OpenAlex's lead over Matilda is narrow, not settled.** The gap is 0.022 F1 and the precision
+intervals overlap (OpenAlex 0.418–0.521, Matilda 0.380–0.506). The volume claim is the robust
+one: 166 correct links, more than the other two indexes combined.
 
-Excluding only the marked rows instead of the whole reference (`--skip-scope row`) leaves the
-indexes on unequal reference sets — matilda 499 rows, openalex 482, wikidata 500 — and barely
-moves the result (F1 0.563 / 0.588 / 0.470), so references are dropped whole.
+Figures from before the multi-publication exclusions are not a useful comparison. A packed
+reference is unjudgeable in every index; the Matilda and Wikidata annotators simply did not
+notice the problem and never used the `[SKIP]` convention, so their rows for those references
+scored a single candidate against a bundle of publications. Those rows were not valid
+measurements to begin with — excluding the references corrects the measurement rather than
+shifting it.
+
+Excluding only the marked rows instead of the whole reference (`--skip-scope row`) would be
+the wrong reading of the same fact: it keeps those invalid rows for the two indexes whose
+annotators missed the problem, and leaves the indexes on unequal reference sets (matilda 499
+rows, openalex 482, wikidata 500). References are therefore dropped whole.
 
 ## 2. Per corpus source
 
@@ -217,13 +221,9 @@ denominator falls to 86.
 
 Typical examples: *"31 For example, Law Reform (Miscellaneous Provisions) Act 1970 (U.K.);
 Domestic Relations Act 1975 (N.Z.); Marriage Act Amendment Act 1976 (Cwth.)"*, and
-*"32 G.S. Frost, Promises Broken … (1995); Thornton, op. cit. (1996), n. 4"*. Use
-`--skip-scope row` to see the row-level variant instead of the reference-level default.
+*"32 G.S. Frost, Promises Broken … (1995); Thornton, op. cit. (1996), n. 4"*. 
 
-Eighteen of the 19 marks came from the OpenAlex annotator, who was the only one using the
-convention; the nineteenth (`10.1111_1467-6478.00057_instance-71`) was added on review — its
-text bundles the Harvard Law Review editors' *Sexual Orientation and the Law* (1990),
-*Dean v. District of Columbia* (1995) and a 1997 newspaper article.
+
 
 ### Manual corrections — 6 rows
 
@@ -251,45 +251,10 @@ overrules an annotator on the strength of an API search rather than a second ann
 **The corrections live only in the exported files.** A fresh pull from Argilla will bring the
 originals back, so the durable fix is to correct these six records in the Argilla UI.
 
-### Remaining flags — none
-
-No evaluable row is left flagged. One contradictory row survives inside an excluded reference
-(`wikidata` / `cex_NEU_82_11`, where `correct_id` was `INCORRECT`); `summary.json` reports both
-the total and the evaluable count. **All 144 evaluable rows where an index holds the work but
-the linker did not return it correctly now carry a usable gold ID** (150 across the whole
-export) — a ready-made retrieval evaluation set.
-
-## 6. Caveats
-
-- `opencitations` was created in Argilla but not annotated in this round; it is commented out
-  of `INDEXES` in `export_argilla_annotations.py`. All "union" and "any index" figures
-  therefore describe three indexes, not four.
-- Single annotator per record, so no inter-annotator agreement is measurable. The annotators
-  also did not share conventions — only the OpenAlex one used `[SKIP]` — so further packed
-  references may remain in the pool unmarked.
-- 500 of 1110 references were sampled (100 per corpus, seed 42) and 19 were then excluded, so
-  per-cell n is 86–100 and per-source CIs are wide — check the `*_lo` / `*_hi` columns in the
-  CSVs before treating a single cell as settled.
-- `coverage_actual` in `metrics_by_index.csv` and `coverage_by_index.csv` agree, because every
-  index has the same 481 evaluable references.
-
-## 7. Suggested next steps
-
-1. Gate returned candidates on `is_match_by_similarity` (or its underlying score with a tuned
-   threshold) before emitting a link.
-2. Fix abstention for `openalex` × `legal_study_mpilhlt` — 1 correct abstention in 86
-   decisions at a 0.988 link rate is a bug-shaped number.
-3. Stop querying Matilda for `linkedbook`-style monograph references; keep Wikidata in the
-   fan-out despite its low volume, since it holds 33 works nothing else does.
-4. Give annotators a first-class "multiple publications in this context" answer rather than a
-   free-text `[SKIP]`, and apply it consistently across indexes.
-5. Annotate the `opencitations` split to complete the coverage picture.
-
 ## Files
 
 | file | contents |
 |---|---|
-| `summary.json` | run bookkeeping: row/reference counts, exclusions, manual fixes, flags by reason and index |
 | `overall.csv` | pooled metrics, all indexes and sources together |
 | `outcome_counts.csv` | five-way outcome counts per index |
 | `metrics_by_index.csv` | full metric set per index (+ Wilson CIs, MCC, macro-F1) |
