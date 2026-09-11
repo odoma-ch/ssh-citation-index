@@ -6,8 +6,11 @@ for fuzzy matching, title normalization, and score calculation.
 """
 
 import re
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, TYPE_CHECKING
 from fuzzywuzzy import fuzz
+
+if TYPE_CHECKING:
+    from ..core.models import Reference
 
 
 def normalize_title(title: str) -> str:
@@ -313,3 +316,47 @@ def calculate_matching_score(
     
     return score
 
+
+def reference_match_fields(reference: "Reference") -> Dict[str, Any]:
+    """Extract title, first-author family name, and year from a Reference."""
+    author = (reference.authors or [None])[0]
+    if isinstance(author, str):
+        author = extract_family_name(author)
+    elif author is not None:
+        author = getattr(author, "surname", None) or getattr(author, "name", None)
+    year = reference.publication_year
+    if year is None:
+        date = reference.publication_date_raw or reference.publication_date
+        year = extract_year(str(date)) if date else None
+    return {"title": reference.full_title, "first_author": author, "year": year}
+
+
+def custom_match(
+    reference: "Reference", result_simplified: Dict[str, Any]
+) -> tuple[bool, Dict[str, Any]]:
+    """Require title similarity >=90 and either author >=70 or year within one."""
+    source = reference_match_fields(reference)
+    title_similarity = calculate_title_similarity(
+        source["title"] or "", result_simplified.get("title") or ""
+    )
+    author = source["first_author"]
+    candidate_author = result_simplified.get("first_author")
+    author_similarity = (
+        fuzz.ratio(author.lower().strip(), candidate_author.lower().strip())
+        if author and candidate_author
+        else 0.0
+    )
+    year_diff = None
+    if source["year"] is not None and result_simplified.get("year") is not None:
+        try:
+            year_diff = abs(int(source["year"]) - int(result_simplified["year"]))
+        except (TypeError, ValueError):
+            pass
+    year_match = year_diff is not None and year_diff <= 1
+    details = {
+        "title_similarity": title_similarity,
+        "author_similarity": author_similarity,
+        "year_match": year_match,
+        "year_diff": year_diff,
+    }
+    return title_similarity >= 90 and (author_similarity >= 70 or year_match), details

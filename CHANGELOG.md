@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## [0.3.1] - 2026-09-11
+
+### Changed
+- Citation linking accepts parsed reference objects with required `full_title`, `authors`, and `publication_year` fields. Batches use a JSON array with `batched=true`; raw reference strings are no longer accepted.
+- Linking searches with parsed fields and filters candidates with the shared `custom_match()` function in the main package: title similarity at least 90 plus either author similarity at least 70 or year within one year.
+- The API example notebook links the parsing stage's output and validates the v0.3.1 request contract.
+
 ## [0.3.0] - 2026-08-28
 
 Covers `d63858b..e204f40` (2026-08-27).

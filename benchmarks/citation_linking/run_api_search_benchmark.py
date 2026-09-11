@@ -29,12 +29,9 @@ from citation_index.core.connectors import (
 )
 from citation_index.core.models.reference import Reference
 from citation_index.utils.reference_matching import (
-    calculate_title_similarity,
-    extract_family_name,
-    extract_year,
-    normalize_title
+    custom_match,
+    reference_match_fields,
 )
-from fuzzywuzzy import fuzz
 
 # Configure logging
 logging.basicConfig(
@@ -166,32 +163,8 @@ def extract_simplified_result(
         # Use connector's mapping to convert to Reference object
         ref = connector._result_to_reference(result)
         
-        # Extract fields from Reference object
-        simplified["title"] = ref.full_title
-        
-        # Extract first author
-        if hasattr(ref, 'authors') and ref.authors:
-            first_author = ref.authors[0]
-            if isinstance(first_author, str):
-                simplified["first_author"] = extract_family_name(first_author) or first_author
-            elif isinstance(first_author, dict):
-                author_name = first_author.get('name') or first_author.get('display_name')
-                if author_name:
-                    simplified["first_author"] = extract_family_name(author_name) or author_name
-            elif hasattr(first_author, 'display_name'):
-                author_name = str(first_author.display_name)
-                simplified["first_author"] = extract_family_name(author_name) or author_name
-            elif hasattr(first_author, 'surname'):
-                simplified["first_author"] = str(first_author.surname)
-        
-        # Extract year
-        if hasattr(ref, 'publication_date') and ref.publication_date:
-            year = extract_year(str(ref.publication_date))
-            simplified["year"] = year
-        elif hasattr(ref, 'year') and ref.year:
-            year = extract_year(str(ref.year))
-            simplified["year"] = year
-        
+        simplified.update(reference_match_fields(ref))
+
         # Extract journal
         if hasattr(ref, 'journal') and ref.journal:
             simplified["journal"] = ref.journal
@@ -271,97 +244,6 @@ def extract_simplified_result(
         logger.warning(f"Error extracting simplified result from {connector_name}: {e}")
     
     return simplified
-
-
-def custom_match(
-    reference: Reference,
-    result_simplified: Dict[str, Any]
-) -> tuple[bool, Dict[str, Any]]:
-    """Custom matching logic comparing title, first author, and year separately.
-    
-    Matching criteria:
-    - Title similarity >= 90 (on 0-100 scale)
-    - First author similarity >= 70 (on 0-100 scale) 
-    - Year within ±1 year
-    
-    A match is declared if:
-    - Title matches AND (author matches OR year matches)
-    
-    Args:
-        reference: Reference object to match against
-        result_simplified: Simplified result dictionary
-        
-    Returns:
-        Tuple of (is_match: bool, match_details: Dict)
-    """
-    match_details = {
-        "title_similarity": 0.0,
-        "author_similarity": 0.0,
-        "year_match": False,
-        "year_diff": None
-    }
-    
-    # Extract reference fields
-    ref_title = reference.full_title or ""
-    ref_year = None
-    ref_first_author = None
-    
-    # Get year from reference
-    if hasattr(reference, 'publication_date') and reference.publication_date:
-        ref_year = extract_year(str(reference.publication_date))
-    elif hasattr(reference, 'year') and reference.year:
-        ref_year = extract_year(str(reference.year))
-    
-    # Get first author from reference
-    if hasattr(reference, 'authors') and reference.authors:
-        first_author = reference.authors[0]
-        if isinstance(first_author, str):
-            ref_first_author = extract_family_name(first_author)
-        elif isinstance(first_author, dict):
-            author_name = first_author.get('name') or first_author.get('display_name')
-            if author_name:
-                ref_first_author = extract_family_name(author_name)
-        elif hasattr(first_author, 'display_name'):
-            ref_first_author = extract_family_name(str(first_author.display_name))
-        elif hasattr(first_author, 'surname'):
-            ref_first_author = str(first_author.surname)
-    
-    # Extract result fields
-    result_title = result_simplified.get("title") or ""
-    result_year = result_simplified.get("year")
-    result_first_author = result_simplified.get("first_author") or ""
-    
-    # Calculate title similarity (returns 0-100)
-    if ref_title and result_title:
-        match_details["title_similarity"] = calculate_title_similarity(ref_title, result_title)
-    
-    # Calculate author similarity (returns 0-100)
-    if ref_first_author and result_first_author:
-        # Normalize author names for comparison
-        ref_author_norm = ref_first_author.lower().strip()
-        result_author_norm = result_first_author.lower().strip()
-        match_details["author_similarity"] = fuzz.ratio(ref_author_norm, result_author_norm)
-    
-    # Calculate year match
-    if ref_year and result_year:
-        try:
-            ref_year_int = int(ref_year) if not isinstance(ref_year, int) else ref_year
-            result_year_int = int(result_year) if not isinstance(result_year, int) else result_year
-            year_diff = abs(ref_year_int - result_year_int)
-            match_details["year_diff"] = year_diff
-            match_details["year_match"] = year_diff <= 1
-        except (ValueError, TypeError):
-            match_details["year_match"] = False
-    
-    # Determine if it's a match
-    # Title must match AND (author OR year must match)
-    title_matches = match_details["title_similarity"] >= 90.0
-    author_matches = match_details["author_similarity"] >= 70.0
-    year_matches = match_details["year_match"]
-    
-    is_match = title_matches and (author_matches or year_matches)
-    
-    return is_match, match_details
 
 
 def search_with_connector(

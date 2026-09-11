@@ -99,7 +99,7 @@ Before applying, open `citation-index.yaml` and update:
   - `LLM_MODEL_MEDIUM_INTELLIGENCE` / `LLM_MODEL_HIGH_INTELLIGENCE`
   - `GROBID_ENDPOINT` – if GROBID runs elsewhere in the cluster
   - `EMBEDDING_ENDPOINT`
-- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.3.0`
+- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.3.1`
   with your actual image path
 
 ### 5. Apply everything
@@ -123,7 +123,7 @@ ROUTE=$(kubectl get route citation-index-api -o jsonpath='{.spec.host}')
 
 # Health check
 curl -s https://${ROUTE}/health
-# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.3.0"}
+# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.3.1"}
 
 # Submit a test job
 curl -X POST https://${ROUTE}/extract/text -F "file=@test.pdf"

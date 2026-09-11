@@ -16,7 +16,7 @@ from typing import Optional
 import redis
 from fastapi import FastAPI, File, HTTPException, UploadFile, Query, Body
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from rq import Queue
 
 from . import __version__
@@ -28,7 +28,9 @@ from .tasks import (
     extract_and_parse_references_task,
     link_references_task,
 )
-from .pipelines.citation_linking import parse_targets, split_references
+from .pipelines.citation_linking import parse_targets
+from .core.models import Reference, Person, Organization
+from .utils.reference_matching import reference_match_fields
 from .utils.storage import StorageManager
 
 # ========================
@@ -100,13 +102,24 @@ class ReferenceParsingRequest(BaseModel):
     references: list[str] = Field(..., description="List of reference strings to parse")
 
 
-class CitationLinkingRequest(BaseModel):
-    """Raw reference text for a single or newline-delimited linking request."""
+class LinkingReference(Reference):
+    """Parsed reference with the bibliographic fields required for linking."""
 
-    reference: str = Field(
-        ...,
-        description="One reference, or newline-delimited references when batched=true",
-    )
+    full_title: str = Field(..., min_length=1)
+    authors: list[Person | Organization | str] = Field(..., min_length=1)
+    publication_year: int = Field(..., ge=1, le=9999)
+
+    @model_validator(mode="after")
+    def require_linking_fields(self) -> "LinkingReference":
+        if not self.full_title.strip() or not reference_match_fields(self)["first_author"]:
+            raise ValueError("A non-empty title and first author are required")
+        return self
+
+
+class CitationLinkingRequest(BaseModel):
+    """One parsed reference or an array when batched=true."""
+
+    reference: LinkingReference | list[LinkingReference]
 
 
 class ReferenceParsingOptions(BaseModel):
@@ -442,16 +455,24 @@ def enqueue_citation_linking(
     body: CitationLinkingRequest = Body(...),
     batched: bool = Query(
         default=False,
-        description="Split the reference value into newline-delimited references",
+        description="Accept an array of parsed reference objects",
     ),
     target: str = Query(
         default="all",
         description="openalex, matilda, wikidata, all, or a comma-separated list",
     ),
 ):
-    """Queue citation linking for one reference or a newline-delimited batch."""
+    """Queue citation linking for parsed reference objects."""
     try:
-        references = split_references(body.reference, batched)
+        if batched != isinstance(body.reference, list):
+            raise ValueError("Use a reference object, or an array with batched=true")
+        entries = body.reference if batched else [body.reference]
+        if not entries:
+            raise ValueError("At least one parsed reference is required")
+        references = [
+            entry.model_dump(mode="json", exclude_none=True, exclude_unset=True)
+            for entry in entries
+        ]
         targets = parse_targets(target)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

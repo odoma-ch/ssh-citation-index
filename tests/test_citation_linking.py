@@ -2,35 +2,32 @@ from fastapi.testclient import TestClient
 import pytest
 
 from citation_index.pipelines import citation_linking
+from citation_index.core.models import Reference
+from citation_index.core.connectors import (
+    OpenAlexConnector,
+    MatildaConnector,
+    WikidataConnector,
+)
 from citation_index.utils.storage import StorageManager
 
 
-class FakeOpenAlexConnector:
-    def search_by_id(self, identifier, identifier_type=None, **kwargs):
-        if identifier:
-            return [
-                {
-                    "id": "https://openalex.org/W1",
-                    "title": "A linked paper",
-                    "doi": "https://doi.org/10.1234/example",
-                }
-            ]
-        return []
+def parsed(title="A linked paper", year=2024):
+    return {"full_title": title, "authors": ["Smith"], "publication_year": year}
 
+
+class FakeOpenAlexConnector(OpenAlexConnector):
     def search(self, reference, top_k=10, **kwargs):
         return [
             {
                 "id": "https://openalex.org/W2",
                 "title": "A linked paper",
+                "publication_year": 2024,
                 "doi": "https://doi.org/10.1234/title-match",
             }
         ]
 
 
-class FakeMatildaConnector:
-    def search_by_id(self, identifier, identifier_type=None, **kwargs):
-        return []
-
+class FakeMatildaConnector(MatildaConnector):
     def search(self, reference, top_k=10, **kwargs):
         return [
             {
@@ -38,6 +35,8 @@ class FakeMatildaConnector:
                 "texts": [
                     {
                         "title": ["A linked paper"],
+                        "date": ["2024"],
+                        "author": ["Smith"],
                         "identifier": [{"doi": ["10.1234/matilda"]}],
                     }
                 ],
@@ -45,17 +44,25 @@ class FakeMatildaConnector:
         ]
 
 
-class FakeWikidataConnector:
-    def search_by_id(self, identifier, identifier_type=None, **kwargs):
-        return []
-
+class FakeWikidataConnector(WikidataConnector):
     def search(self, reference, top_k=10, **kwargs):
         return [
             {
                 "id": "Q1",
                 "label": "A linked paper",
                 "claims": {
-                    "P356": [{"mainsnak": {"datavalue": {"value": "10.1234/WIKIDATA"}}}]
+                    "P577": [
+                        {"mainsnak": {
+                            "snaktype": "value",
+                            "datavalue": {"value": {"time": "+2024-01-01T00:00:00Z"}},
+                        }}
+                    ],
+                    "P356": [
+                        {"mainsnak": {
+                            "snaktype": "value",
+                            "datavalue": {"value": "10.1234/WIKIDATA"},
+                        }}
+                    ],
                 },
             }
         ]
@@ -71,15 +78,8 @@ def test_parse_targets_and_batch_input():
         "wikidata",
         "openalex",
     ]
-    assert citation_linking.split_references("first\n\n second ", True) == [
-        "first",
-        "second",
-    ]
-
     with pytest.raises(ValueError, match="Unsupported linking target"):
         citation_linking.parse_targets("opencitations")
-    with pytest.raises(ValueError, match="non-empty reference"):
-        citation_linking.split_references(" \n ", True)
 
 
 def test_link_references_returns_ids_and_normalized_dois(monkeypatch):
@@ -94,13 +94,13 @@ def test_link_references_returns_ids_and_normalized_dois(monkeypatch):
     )
 
     results = citation_linking.link_references(
-        ["Authors. A linked paper. 2024."],
+        [parsed()],
         ["openalex", "matilda", "wikidata"],
     )
 
     assert results == [
         {
-            "reference": "Authors. A linked paper. 2024.",
+            "reference": parsed(),
             "links": {
                 "openalex": {
                     "id": "https://openalex.org/W2",
@@ -113,21 +113,6 @@ def test_link_references_returns_ids_and_normalized_dois(monkeypatch):
     ]
 
 
-def test_link_references_prefers_exact_doi(monkeypatch):
-    monkeypatch.setattr(
-        citation_linking, "CONNECTOR_TYPES", {"openalex": FakeOpenAlexConnector}
-    )
-
-    result = citation_linking.link_references(
-        ["A citation. doi:10.1234/example."], ["openalex"]
-    )
-
-    assert result[0]["links"]["openalex"] == {
-        "id": "https://openalex.org/W1",
-        "doi": "10.1234/example",
-    }
-
-
 def test_link_references_rejects_weak_title_match(monkeypatch):
     class WeakConnector(FakeOpenAlexConnector):
         def search(self, reference, top_k=10, **kwargs):
@@ -138,7 +123,7 @@ def test_link_references_rejects_weak_title_match(monkeypatch):
     )
 
     result = citation_linking.link_references(
-        ["Authors. A linked paper. 2024."], ["openalex"]
+        [parsed()], ["openalex"]
     )
 
     assert result[0]["links"]["openalex"] == {"id": None, "doi": None}
@@ -154,7 +139,7 @@ def test_link_references_propagates_connector_failures(monkeypatch):
     )
 
     with pytest.raises(RuntimeError, match="service unavailable"):
-        citation_linking.link_references(["A reference"], ["openalex"])
+        citation_linking.link_references([parsed()], ["openalex"])
 
 
 def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
@@ -164,7 +149,7 @@ def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
     test_storage.save_intermediate(
         "job-1",
         "citation_linking_input",
-        {"references": ["A reference"], "targets": ["openalex"]},
+        {"references": [parsed()], "targets": ["openalex"]},
     )
     metadata_updates = []
 
@@ -193,7 +178,7 @@ def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
     assert test_storage.get_result("job-1") == {
         "results": [
             {
-                "reference": "A reference",
+                "reference": parsed(),
                 "links": {"openalex": {"id": "W1", "doi": "10.1234/example"}},
             }
         ],
@@ -214,6 +199,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
                 {
                     "id": f"https://openalex.org/{'W1' if first else 'W2'}",
                     "title": "First linked paper" if first else "Second linked paper",
+                    "publication_year": reference.publication_year,
                     "doi": f"https://doi.org/10.1234/{'first' if first else 'second'}",
                 }
             ]
@@ -255,10 +241,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
     submitted = client.post(
         "/link/references?batched=true&target=openalex",
         json={
-            "reference": (
-                "Authors. First linked paper. 2024.\n"
-                "Authors. Second linked paper. 2025."
-            )
+            "reference": [parsed("First linked paper"), parsed("Second linked paper", 2025)]
         },
     )
 
@@ -270,7 +253,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
     assert result.json() == {
         "results": [
             {
-                "reference": "Authors. First linked paper. 2024.",
+                "reference": parsed("First linked paper"),
                 "links": {
                     "openalex": {
                         "id": "https://openalex.org/W1",
@@ -279,7 +262,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
                 },
             },
             {
-                "reference": "Authors. Second linked paper. 2025.",
+                "reference": parsed("Second linked paper", 2025),
                 "links": {
                     "openalex": {
                         "id": "https://openalex.org/W2",
@@ -300,7 +283,7 @@ def test_linking_task_marks_failures_and_does_not_write_result(monkeypatch, tmp_
     test_storage.save_intermediate(
         "job-failed",
         "citation_linking_input",
-        {"references": ["A reference"], "targets": ["openalex"]},
+        {"references": [parsed()], "targets": ["openalex"]},
     )
     metadata_updates = []
 
@@ -333,8 +316,80 @@ def test_api_rejects_unsupported_target():
 
     response = TestClient(api.app).post(
         "/link/references?target=opencitations",
-        json={"reference": "A reference"},
+        json={"reference": parsed()},
     )
 
     assert response.status_code == 400
     assert "Unsupported linking target" in response.json()["detail"]
+
+
+@pytest.mark.parametrize("patch", [
+    {"full_title": None}, {"full_title": "  "}, {"authors": []},
+    {"authors": [" "]}, {"authors": [{}]}, {"publication_year": None},
+])
+def test_api_rejects_incomplete_parsed_reference(patch):
+    from citation_index import api
+    response = TestClient(api.app).post(
+        "/link/references", json={"reference": {**parsed(), **patch}}
+    )
+    assert response.status_code == 422
+
+
+@pytest.mark.parametrize("field", ["full_title", "authors", "publication_year"])
+def test_api_requires_linking_fields(field):
+    from citation_index import api
+    reference = parsed()
+    del reference[field]
+    assert TestClient(api.app).post(
+        "/link/references", json={"reference": reference}
+    ).status_code == 422
+
+
+@pytest.mark.parametrize("title,author,year,expected", [
+    ("A linked paper", "Jones", 2025, True),
+    ("A linked paper", "Smith", 1990, True),
+    ("A linked paper", "Jones", 1990, False),
+    ("Unrelated work", "Smith", 2024, False),
+    ("A linked paper", None, None, False),
+])
+def test_custom_match(title, author, year, expected):
+    from citation_index.utils.reference_matching import custom_match
+    assert custom_match(Reference(**parsed()), {
+        "title": title, "first_author": author, "year": year
+    })[0] is expected
+
+
+def test_filters_before_selecting_candidate(monkeypatch):
+    class Connector(FakeOpenAlexConnector):
+        def search(self, reference, **kwargs):
+            assert reference.authors == ["Smith"]
+            assert reference.publication_year == 2024
+            return [
+                {"id": "wrong", "title": reference.full_title, "publication_year": 1990},
+                {"id": "correct", "title": reference.full_title, "publication_year": 2024},
+            ]
+    monkeypatch.setattr(citation_linking, "CONNECTOR_TYPES", {"openalex": Connector})
+    assert citation_linking.link_references([parsed()], ["openalex"])[0]["links"]["openalex"]["id"] == "correct"
+
+
+@pytest.mark.parametrize("reference,query,status", [
+    ("Smith. A linked paper. 2024.", "", 422),
+    ([], "?batched=true", 400),
+    ([parsed()], "", 400),
+    (parsed(), "?batched=true", 400),
+])
+def test_api_rejects_invalid_linking_shape(reference, query, status):
+    from citation_index import api
+    assert TestClient(api.app).post(
+        "/link/references" + query, json={"reference": reference}
+    ).status_code == status
+
+
+@pytest.mark.parametrize("author", ["Smith, John", {"surname": "Smith", "first_name": "John"}])
+def test_match_accepts_parsed_author_formats(author):
+    from citation_index.api import LinkingReference
+    from citation_index.utils.reference_matching import custom_match
+    reference = LinkingReference(**{**parsed(), "authors": [author]})
+    assert custom_match(reference, {
+        "title": "A linked paper", "first_author": "Smith", "year": 1990
+    })[0]

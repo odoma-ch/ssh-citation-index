@@ -251,6 +251,32 @@ overrules an annotator on the strength of an API search rather than a second ann
 **The corrections live only in the exported files.** A fresh pull from Argilla will bring the
 originals back, so the durable fix is to correct these six records in the Argilla UI.
 
+## 8. Sizing the OpenCitations round
+
+OpenCitations has no free-text search, so a reference can only be checked there if we already
+hold an identifier. Of the 481 in-scope references:
+
+| route | refs | share |
+|---|---|---|
+| DOI confirmed by an annotator → query OpenCitations directly | 143 | 29.7% |
+| DOI obtained by resolving a confirmed OpenAlex/Wikidata id | 32 | 6.7% |
+| **DOI in hand (subtotal)** | **175** | **36.4%** |
+| confirmed id exists but the record carries no DOI | 78 | 16.2% |
+| Matilda id only (no public id→DOI route) | 6 | 1.2% |
+| no identifier at all — expert must search the endpoint | 222 | 46.2% |
+
+The 222 with nothing are exactly the references no index holds (§3), so they are also the most
+interesting: OpenCitations may cover works the other three miss. The 84 with an id but no DOI
+are overwhelmingly monographs — resolving them further would need an ISBN or title route, not
+a DOI one.
+
+By corpus, the share with a DOI in hand: `cex` 75.5%, `brill` 40.4%, `legal_study_mpilhlt`
+37.2%, `excite` 26.0%, `linkedbook` 3.1%. Monograph-heavy corpora need almost all of the
+manual effort.
+
+Per-reference detail is in `opencitations_prep.csv` (`oc_route` column plus every confirmed
+id), produced by a one-off script, not by the analysis pipeline.
+
 ## Files
 
 | file | contents |

@@ -6,7 +6,7 @@ from typing import Any, Dict, Iterable, List, Type
 from ..core.connectors import MatildaConnector, OpenAlexConnector, WikidataConnector
 from ..core.connectors.base import BaseConnector
 from ..core.models import Reference
-from ..utils.reference_matching import calculate_title_similarity
+from ..utils.reference_matching import custom_match, reference_match_fields
 
 SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata")
 CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
@@ -14,7 +14,6 @@ CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
     "matilda": MatildaConnector,
     "wikidata": WikidataConnector,
 }
-DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.IGNORECASE)
 
 
 def parse_targets(value: str) -> List[str]:
@@ -34,98 +33,43 @@ def parse_targets(value: str) -> List[str]:
     return list(dict.fromkeys(requested))
 
 
-def split_references(value: str, batched: bool) -> List[str]:
-    """Return one reference or non-empty newline-delimited batch entries."""
-    references = (
-        [line.strip() for line in value.splitlines() if line.strip()]
-        if batched
-        else [value.strip()]
-    )
-    if not references or not references[0]:
-        raise ValueError("At least one non-empty reference is required")
-    return references
-
-
 def link_references(
-    reference_strings: Iterable[str], targets: Iterable[str], top_k: int = 10
+    references: Iterable[Dict[str, Any]], targets: Iterable[str], top_k: int = 10
 ) -> List[Dict[str, Any]]:
-    """Link raw reference strings and return IDs from each requested target."""
-    target_list = list(targets)
-    connectors = {name: CONNECTOR_TYPES[name]() for name in target_list}
+    """Search parsed references and filter candidates using bibliographic fields."""
+    connectors = {name: CONNECTOR_TYPES[name]() for name in targets}
     results = []
-
-    for reference_string in reference_strings:
+    for parsed_reference in references:
+        reference = Reference.model_validate(parsed_reference)
         links = {
-            name: _link_one(reference_string, name, connector, top_k)
+            name: _link_one(reference, name, connector, top_k)
             for name, connector in connectors.items()
         }
-        results.append({"reference": reference_string, "links": links})
-
+        results.append({"reference": parsed_reference, "links": links})
     return results
 
 
 def _link_one(
-    reference_string: str,
+    reference: Reference,
     target: str,
     connector: BaseConnector,
     top_k: int,
 ) -> Dict[str, Any]:
-    doi = _extract_doi(reference_string)
-    raw_results = connector.search_by_id(doi, "doi", top_k=top_k) if doi else []
-    matched_by_doi = bool(raw_results)
-
-    if not raw_results:
-        raw_results = connector.search(
-            Reference(full_title=reference_string), top_k=top_k
-        )
-
-    if not raw_results:
+    matches = []
+    for candidate in connector.search(reference, top_k=top_k):
+        fields = reference_match_fields(connector._result_to_reference(candidate))
+        is_match, details = custom_match(reference, fields)
+        if is_match:
+            matches.append((details["title_similarity"], candidate))
+    if not matches:
         return {"id": None, "doi": None}
-
-    candidate = max(
-        raw_results,
-        key=lambda item: calculate_title_similarity(
-            reference_string, _candidate_title(target, item)
-        ),
-    )
-    if (
-        not matched_by_doi
-        and calculate_title_similarity(
-            reference_string, _candidate_title(target, candidate)
-        )
-        < 90
-    ):
-        return {"id": None, "doi": None}
-
-    return {
-        "id": _candidate_id(candidate),
-        "doi": _candidate_doi(target, candidate),
-    }
-
-
-def _extract_doi(value: str) -> str | None:
-    match = DOI_PATTERN.search(value)
-    return match.group(0).rstrip(".,;)") if match else None
+    candidate = max(matches, key=lambda item: item[0])[1]
+    return {"id": _candidate_id(candidate), "doi": _candidate_doi(target, candidate)}
 
 
 def _candidate_id(candidate: Dict[str, Any]) -> str | None:
     value = candidate.get("id")
     return str(value) if value else None
-
-
-def _candidate_title(target: str, candidate: Dict[str, Any]) -> str:
-    if target == "openalex":
-        return candidate.get("title") or ""
-    if target == "wikidata":
-        return candidate.get("label") or ""
-
-    for text in candidate.get("texts", []) or []:
-        title = text.get("title") if isinstance(text, dict) else None
-        if isinstance(title, list) and title:
-            return str(title[0])
-        if isinstance(title, str):
-            return title
-    return ""
 
 
 def _candidate_doi(target: str, candidate: Dict[str, Any]) -> str | None:

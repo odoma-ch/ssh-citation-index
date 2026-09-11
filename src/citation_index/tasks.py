@@ -494,7 +494,7 @@ def parse_references_task(
     result_ttl=settings.worker_result_ttl,
 )
 def link_references_task(job_id: str) -> Dict[str, Any]:
-    """Link raw reference strings through the requested external indexes."""
+    """Link parsed references through the requested external indexes."""
     stage = "citation_linking"
     update_job_metadata(job_id, status="processing", current_stage=stage)
     log_job_event(job_id, "stage_started", stage=stage)
