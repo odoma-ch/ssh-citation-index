@@ -375,6 +375,12 @@ spec:
                 secretKeyRef:
                   name: citation-index-secret
                   key: MATILDA_USERNAME
+            - name: OPENALEX_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-secret
+                  key: OPENALEX_API_KEY
+                  optional: true
             - name: MATILDA_PASSWORD
               valueFrom:
                 secretKeyRef:

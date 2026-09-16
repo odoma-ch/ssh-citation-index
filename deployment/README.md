@@ -86,6 +86,7 @@ Create the secret with your real API keys (never store these in Git):
 kubectl create secret generic citation-index-secret \
   --from-literal=LLM_API_KEY='' \
   --from-literal=EMBEDDING_API_KEY='your-embedding-api-key' \
+  --from-literal=OPENALEX_API_KEY='your-openalex-api-key' \
   --from-literal=MATILDA_USERNAME='your-matilda-username' \
   --from-literal=MATILDA_PASSWORD='your-matilda-password'
 ```

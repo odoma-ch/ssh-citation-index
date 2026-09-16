@@ -189,6 +189,7 @@ services:
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-600}
       - MATILDA_USERNAME=${MATILDA_USERNAME}
       - MATILDA_PASSWORD=${MATILDA_PASSWORD}
+      - OPENALEX_API_KEY=${OPENALEX_API_KEY:-}
     volumes:
       - ./storage:/app/storage
     depends_on:

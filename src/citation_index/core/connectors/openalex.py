@@ -1,6 +1,7 @@
 """OpenAlex API connector for reference search and disambiguation."""
 
 import logging
+import os
 from typing import Any, Dict, List, Optional
 
 import requests
@@ -17,7 +18,7 @@ class OpenAlexConnector(BaseConnector):
     """Connector for the OpenAlex API."""
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, email: Optional[str] = None) -> None:
-        super().__init__(api_key, base_url)
+        super().__init__(api_key or os.getenv("OPENALEX_API_KEY"), base_url)
         self.base_url = base_url or "https://api.openalex.org"
         self.session = requests.Session()
 
