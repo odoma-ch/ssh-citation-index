@@ -628,7 +628,7 @@ def main():
         "--email",
         type=str,
         default=None,
-        help="Email address for OpenAlex polite pool access (highly recommended to avoid rate limiting)"
+        help="Contact email for the OpenAlex User-Agent; authentication uses OPENALEX_API"
     )
     
     args = parser.parse_args()
@@ -665,7 +665,7 @@ def main():
         if args.email:
             logger.info(f"Initialized OpenAlex connector with email: {args.email}")
         else:
-            logger.warning("OpenAlex connector initialized without email - may experience rate limiting. Use --email to avoid this.")
+            logger.info("OpenAlex authentication uses OPENALEX_API (legacy fallback: OPENALEX_API_KEY)")
         logger.info("Initialized OpenAlex connector")
     
     if "opencitations" not in skip_apis:
@@ -716,4 +716,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

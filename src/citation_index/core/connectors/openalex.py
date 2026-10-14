@@ -2,6 +2,9 @@
 
 import logging
 import os
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from typing import Any, Dict, List, Optional
 
 import requests
@@ -17,8 +20,25 @@ logger = logging.getLogger(__name__)
 class OpenAlexConnector(BaseConnector):
     """Connector for the OpenAlex API."""
 
-    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, email: Optional[str] = None) -> None:
-        super().__init__(api_key or os.getenv("OPENALEX_API_KEY"), base_url)
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        base_url: Optional[str] = None,
+        email: Optional[str] = None,
+    ) -> None:
+        key = next(
+            (
+                value.strip()
+                for value in (
+                    api_key,
+                    os.getenv("OPENALEX_API"),
+                    os.getenv("OPENALEX_API_KEY"),
+                )
+                if value and value.strip()
+            ),
+            None,
+        )
+        super().__init__(key, base_url)
         self.base_url = base_url or "https://api.openalex.org"
         self.session = requests.Session()
 
@@ -32,33 +52,123 @@ class OpenAlexConnector(BaseConnector):
 
         self.session.headers.update(headers)
 
-    def search(self, reference: Reference, top_k: int = 10, **kwargs: Any) -> List[Dict[str, Any]]:
+    def _get(self, url: str, **kwargs: Any) -> requests.Response:
+        """Make a bounded GET request, preserving budget and transport failures."""
+        for attempt in range(3):
+            response = None
+            try:
+                response = self.session.get(url, timeout=30, **kwargs)
+            except (requests.Timeout, requests.ConnectionError):
+                if attempt == 2:
+                    try:
+                        raise requests.ConnectionError(
+                            "OpenAlex transport failed after 3 attempts"
+                        ) from None
+                    except requests.RequestException:
+                        logger.exception("OpenAlex transport failed; attempts=3")
+                        raise
+            except requests.RequestException:
+                raise requests.RequestException("OpenAlex request failed") from None
+            else:
+                status = response.status_code
+                remaining = response.headers.get("X-RateLimit-Remaining")
+                reset = response.headers.get("X-RateLimit-Reset")
+                exhausted = False
+                if status == 429:
+                    try:
+                        exhausted = (
+                            float(remaining) <= 0 if remaining is not None else False
+                        )
+                    except (ValueError, TypeError):
+                        pass
+                    try:
+                        exhausted |= (
+                            response.json().get("error") == "not_enough_credits"
+                        )
+                    except (ValueError, AttributeError):
+                        pass
+                if exhausted or (status != 429 and not 500 <= status < 600):
+                    if status >= 400:
+                        message = (
+                            f"OpenAlex daily budget exhausted; remaining={remaining}; reset_seconds={reset}"
+                            if exhausted
+                            else f"OpenAlex request failed; HTTP {status}"
+                        )
+                        try:
+                            raise requests.HTTPError(
+                                message, response=response
+                            ) from None
+                        except requests.HTTPError:
+                            logger.exception(
+                                "OpenAlex request failed; status=%s; budget_exhausted=%s",
+                                status,
+                                exhausted,
+                            )
+                            raise
+                    return response
+                if attempt == 2:
+                    try:
+                        raise requests.HTTPError(
+                            f"OpenAlex request failed after 3 attempts; HTTP {status}",
+                            response=response,
+                        ) from None
+                    except requests.HTTPError:
+                        logger.exception(
+                            "OpenAlex retries exhausted; status=%s", status
+                        )
+                        raise
+
+            delay = 2**attempt
+            if response is not None:
+                retry_after = response.headers.get("Retry-After")
+                if retry_after:
+                    try:
+                        delay = max(delay, float(retry_after))
+                    except ValueError:
+                        try:
+                            retry_at = parsedate_to_datetime(retry_after)
+                            delay = max(
+                                delay,
+                                (retry_at - datetime.now(timezone.utc)).total_seconds(),
+                            )
+                        except (ValueError, TypeError, OverflowError):
+                            pass
+                if delay > 60:
+                    raise requests.HTTPError(
+                        f"OpenAlex retry deferred; retry_after_seconds={delay}",
+                        response=response,
+                    ) from None
+            logger.warning(
+                "OpenAlex transient request failure; attempt=%s; retry_seconds=%s",
+                attempt + 1,
+                delay,
+            )
+            time.sleep(delay)
+        raise AssertionError("Unreachable retry state")
+
+    def search(
+        self, reference: Reference, top_k: int = 10, **kwargs: Any
+    ) -> List[Dict[str, Any]]:
         self._validate_reference(reference)
 
         title = reference.full_title.strip()
         title = normalize_title(title)
         url = f"{self.base_url}/works"
-        
+
         # Use title only for search to maximize recall
         # Author and year constraints can filter out valid results due to name variations
         params: Dict[str, Any] = {
             "search": title,
-            "per-page": min(top_k, 200),
+            "per_page": max(1, min(top_k or 100, 100)),
             "sort": "relevance_score:desc",
         }
 
-        try:
-            response = self.session.get(url, params=params, timeout=30)
-            response.raise_for_status()
-        except requests.RequestException:
-            logger.exception("OpenAlex search failed")
-            raise
+        response = self._get(url, params=params)
 
         payload = response.json()
         results = payload.get("results", [])
         if not isinstance(results, list):
-            logger.warning("Unexpected OpenAlex response structure")
-            return []
+            raise ValueError("Unexpected OpenAlex search response structure")
 
         return results[: top_k or len(results)]
 
@@ -84,21 +194,16 @@ class OpenAlexConnector(BaseConnector):
             return []
 
         try:
-            response = self.session.get(url, timeout=30)
-            response.raise_for_status()
+            response = self._get(url)
         except requests.HTTPError as exc:
             status = exc.response.status_code if exc.response is not None else None
             if status == 404:
                 return []
-            logger.exception("OpenAlex identifier lookup failed")
-            raise
-        except requests.RequestException:
-            logger.exception("OpenAlex identifier lookup failed")
             raise
 
         record = response.json()
         if not isinstance(record, dict):
-            return []
+            raise ValueError("Unexpected OpenAlex identifier response structure")
         return [record]
 
     def map_to_references(self, raw_results: List[Dict[str, Any]]) -> References:
@@ -119,14 +224,14 @@ class OpenAlexConnector(BaseConnector):
     @staticmethod
     def _first_author(reference: Reference) -> Optional[str]:
         """Extract first author's last name for search.
-        
+
         Uses the extract_family_name utility to handle various name formats.
         """
         if not reference.authors:
             return None
 
         first = reference.authors[0]
-        
+
         # Handle string author names
         if isinstance(first, str):
             return extract_family_name(first)
@@ -185,7 +290,7 @@ class OpenAlexConnector(BaseConnector):
     @staticmethod
     def _map_single_result(result: Dict[str, Any]) -> Optional[Reference]:
         from ...utils.identifier_parser import Identifier
-        
+
         title = result.get("title")
         if not title:
             return None
@@ -220,40 +325,44 @@ class OpenAlexConnector(BaseConnector):
         # Extract identifiers
         identifiers = []
         ids = result.get("ids") or {}
-        
+
         # DOI
         doi = ids.get("doi")
         if doi:
             doi_normalized = OpenAlexConnector._normalize_doi(doi)
-            identifiers.append(Identifier(
-                scheme="doi",
-                value=doi,
-                normalized=doi_normalized
-            ))
-        
+            identifiers.append(
+                Identifier(scheme="doi", value=doi, normalized=doi_normalized)
+            )
+
         # OpenAlex ID
         openalex_id = ids.get("openalex")
         if openalex_id:
-            identifiers.append(Identifier(
-                scheme="openalex",
-                value=openalex_id,
-                normalized=openalex_id
-            ))
-        
+            identifiers.append(
+                Identifier(scheme="openalex", value=openalex_id, normalized=openalex_id)
+            )
+
         # PMID
         pmid = ids.get("pmid")
         if pmid:
-            identifiers.append(Identifier(
-                scheme="pmid",
-                value=str(pmid),
-                normalized=str(pmid).replace("https://pubmed.ncbi.nlm.nih.gov/", "")
-            ))
-        
+            identifiers.append(
+                Identifier(
+                    scheme="pmid",
+                    value=str(pmid),
+                    normalized=str(pmid).replace(
+                        "https://pubmed.ncbi.nlm.nih.gov/", ""
+                    ),
+                )
+            )
+
         # Get reference type from OpenAlex
-        ref_type = result.get("type")  # OpenAlex uses types like "article", "book", etc.
-        
+        ref_type = result.get(
+            "type"
+        )  # OpenAlex uses types like "article", "book", etc.
+
         # Get publication date if available, otherwise fall back to year
-        publication_date_raw = result.get("publication_date") or (str(publication_year) if publication_year else None)
+        publication_date_raw = result.get("publication_date") or (
+            str(publication_year) if publication_year else None
+        )
 
         return Reference(
             full_title=title,

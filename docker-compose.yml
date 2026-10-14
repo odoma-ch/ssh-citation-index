@@ -190,6 +190,7 @@ services:
       - MATILDA_USERNAME=${MATILDA_USERNAME}
       - MATILDA_PASSWORD=${MATILDA_PASSWORD}
       - OPENALEX_API_KEY=${OPENALEX_API_KEY:-}
+      - OPENALEX_API=${OPENALEX_API:-}
     volumes:
       - ./storage:/app/storage
     depends_on:

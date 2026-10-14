@@ -86,10 +86,15 @@ Create the secret with your real API keys (never store these in Git):
 kubectl create secret generic citation-index-secret \
   --from-literal=LLM_API_KEY='' \
   --from-literal=EMBEDDING_API_KEY='your-embedding-api-key' \
-  --from-literal=OPENALEX_API_KEY='your-openalex-api-key' \
+  --from-literal=OPENALEX_API='your-openalex-api-key' \
   --from-literal=MATILDA_USERNAME='your-matilda-username' \
   --from-literal=MATILDA_PASSWORD='your-matilda-password'
 ```
+
+OpenAlex uses `OPENALEX_API`, with `OPENALEX_API_KEY` as a legacy fallback.
+The linking connector sends the key as a bearer token, retries transient errors
+with bounded backoff, and raises an error when the daily budget is exhausted.
+For local benchmarks, export `OPENALEX_API` in the shell running the script.
 
 ### 4. Edit the ConfigMap and image references
 
