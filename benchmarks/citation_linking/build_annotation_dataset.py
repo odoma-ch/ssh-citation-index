@@ -46,6 +46,18 @@ SOURCE_FILES = (
 # gold_id entries are keyed by target index. cex_ENV-SCI_54_63 needs no entry:
 # both DOIs are valid, so its gold_doi stays null and the conflict stays listed.
 REVIEW_OVERRIDES = {
+    "10.1111_1467-6478.00057_instance-38": {"gold_id": {"openalex": None}},
+    "excite_32211_33": {"gold_id": {"openalex": None}},
+    "linkedbook_26": {"gold_id": {"openalex": None}},
+    "linkedbook_5": {"gold_id": {"openalex": None}},
+    "linkedbook_73": {"gold_id": {"openalex": None}},
+    "linkedbook_94": {"gold_id": {"openalex": "W7019729045"}},
+    "cex_PHY-AST_96_10": {
+        "gold_id": {"openalex": "W1968542656"},
+    },
+    "excite_9543_52": {
+        "gold_id": {"openalex": "W4233971661"},
+    },
     # Same book under two DOIs; keep the older record (original 1989 date).
     "10.1111_1467-6478.00057_instance-63": {
         "gold_doi": "10.1515/9780691215983",
@@ -256,20 +268,27 @@ def prepare_rows(
             target = None
             if row["label"] != "no_record_in_index":
                 target = normalize_id(
-                    row["matched_id"]
-                    if row["label"] == "correct_match"
-                    else row["gold_id"],
+                    (
+                        row["matched_id"]
+                        if row["label"] == "correct_match"
+                        else row["gold_id"]
+                    ),
                     row["index"],
                 )
             if row["index"] in fix.get("gold_id", {}):
-                target = normalize_id(fix["gold_id"][row["index"]], row["index"])
+                corrected = fix["gold_id"][row["index"]]
+                target = (
+                    normalize_id(corrected, row["index"])
+                    if corrected is not None
+                    else None
+                )
             output.append(
                 {
                     "ref_id": ref_id,
                     "source": source,
-                    "document_id": str(document_id)
-                    if document_id is not None
-                    else None,
+                    "document_id": (
+                        str(document_id) if document_id is not None else None
+                    ),
                     "reference": reference,
                     "parsed_reference": parsed,
                     "index": row["index"],
@@ -472,6 +491,43 @@ def split_statistics(
     return result
 
 
+def preserve_splits(
+    rows: list[dict[str, Any]], config: str, source: Path
+) -> tuple[dict[str, list[int]], dict[str, Any]]:
+    """Keep existing row order and assignments when correcting gold labels."""
+    import pyarrow.parquet as pq
+
+    positions = {(r["ref_id"], r["index"]): i for i, r in enumerate(rows)}
+    if len(positions) != len(rows):
+        raise ValueError("Duplicate current task keys")
+    partitions, seen, files = {}, set(), []
+    for split in SPLITS:
+        path = source / config / f"{split}.parquet"
+        keys = [(r["ref_id"], r["index"]) for r in pq.read_table(path).to_pylist()]
+        if len(set(keys)) != len(keys) or seen.intersection(keys):
+            raise ValueError("Duplicate parent task keys")
+        if any(key not in positions for key in keys):
+            raise ValueError("Parent and current task keys differ")
+        seen.update(keys)
+        partitions[split] = [positions[key] for key in keys]
+        files.append(
+            {
+                "file": f"{config}/{split}.parquet",
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+        )
+    if seen != set(positions):
+        raise ValueError("Parent and current task keys differ")
+    groups = reference_groups(rows) if config == CONFIGS[0] else list(range(len(rows)))
+    group_sets = [{groups[i] for i in partitions[s]} for s in SPLITS]
+    if any(group_sets[a] & group_sets[b] for a, b in ((0, 1), (0, 2), (1, 2))):
+        raise ValueError("Corrected identity crosses preserved split boundaries")
+    return partitions, {
+        "method": "Preserved parent release row order and split assignments",
+        "parent_files": files,
+    }
+
+
 def write_release(
     rows: list[dict[str, Any]],
     review: dict[str, Any],
@@ -479,6 +535,7 @@ def write_release(
     seed: int,
     inputs: list[Path],
     card_path: Path,
+    split_from: Path | None = None,
 ) -> dict[str, Any]:
     import pyarrow
     import pyarrow.parquet as pq
@@ -487,7 +544,14 @@ def write_release(
     if output.exists() and any(output.iterdir()):
         raise ValueError(f"Output directory must be empty: {output}")
     table = arrow_table(rows)
-    assignments = {config: split_rows(rows, config, seed) for config in CONFIGS}
+    assignments = {
+        config: (
+            preserve_splits(rows, config, split_from)
+            if split_from is not None
+            else split_rows(rows, config, seed)
+        )
+        for config in CONFIGS
+    }
     card = card_path.read_text(encoding="utf-8")
     output.mkdir(parents=True, exist_ok=True)
     summary = {
@@ -503,6 +567,7 @@ def write_release(
             for path in inputs
         ],
         "review": review,
+        "target_overrides": REVIEW_OVERRIDES,
         "configurations": {},
     }
     yaml = ["---", "pretty_name: Citation Linking", "configs:"]
@@ -558,6 +623,11 @@ def main() -> None:
         "--output-dir", type=Path, default=ROOT / "logs/citation_linking_release"
     )
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--split-from",
+        type=Path,
+        help="Parent release directory whose row order and splits must be preserved",
+    )
     args = parser.parse_args()
     rows, review = prepare_rows(
         load_local(args.annotations), read_sources(args.source_dir)
@@ -569,7 +639,13 @@ def main() -> None:
         HERE / "DATASET_CARD.md",
     ]
     summary = write_release(
-        rows, review, args.output_dir, args.seed, inputs, HERE / "DATASET_CARD.md"
+        rows,
+        review,
+        args.output_dir,
+        args.seed,
+        inputs,
+        HERE / "DATASET_CARD.md",
+        args.split_from,
     )
     print(
         f"Built {summary['references']} references / {summary['rows']} rows in {args.output_dir}"

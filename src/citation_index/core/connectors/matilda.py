@@ -14,22 +14,22 @@ import requests
 
 from .base import BaseConnector
 from ..models import Reference, References
-from ...utils.reference_matching import extract_family_name, normalize_title
+from ...utils.reference_matching import extract_family_name
 
 logger = logging.getLogger(__name__)
 
 
 class MatildaConnector(BaseConnector):
     """Connector for Matilda Science API."""
-    
+
     def __init__(self, username: Optional[str] = None, password: Optional[str] = None):
         super().__init__()
         self.base_url = "https://matilda.science/api"
-        
+
         # Load credentials from environment variables if not provided
         self.username = username or os.getenv("MATILDA_USERNAME")
         self.password = password or os.getenv("MATILDA_PASSWORD")
-        
+
         if not self.username or not self.password:
             raise ValueError(
                 "Matilda credentials not found. Please set MATILDA_USERNAME and "
@@ -39,17 +39,17 @@ class MatildaConnector(BaseConnector):
         # Set up authentication headers
         credentials = f"{self.username}:{self.password}"
         encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
-        
+
         self.session = requests.Session()
         self.session.headers.update({
             'Authorization': f'Basic {encoded_credentials}',
             'Accept': 'application/json',
             'User-Agent': 'CitationIndex/1.0'
         })
-    
+
     def search(self, reference: Reference, top_k: int = 10, **kwargs: Any) -> List[Dict[str, Any]]:
         """
-        Search for works using the Matilda API with comprehensive query support.
+        Interleave normalized, raw, and opening-title searches with shared filters.
 
         Supports the following search capabilities:
         - Title search (query.title)
@@ -79,9 +79,14 @@ class MatildaConnector(BaseConnector):
             List of raw API response data
         """
         self._validate_reference(reference)
-        # title = normalize_title(reference.full_title or "")
         params = self._build_search_params(reference, top_k, kwargs)
+        return self._combine_results([
+            self._search_query({**params, "query.title": title}, top_k)
+            for title in self._title_queries(reference)
+        ], top_k)
 
+    def _search_query(self, params: Dict[str, Any], top_k: int) -> List[Dict[str, Any]]:
+        """Fetch one title variant with the caller's filters and pagination."""
         try:
             response = self.session.get(
                 f"{self.base_url}/works/query",
@@ -94,11 +99,10 @@ class MatildaConnector(BaseConnector):
             raise
 
         data = response.json()
-        works = data.get("works", [])
+        works = data.get("works", []) if data.get("total") == 0 else data.get("works")
 
-        if not isinstance(works, list):
-            logger.warning("Unexpected Matilda response shape: 'works' missing")
-            return []
+        if "error" in data or not isinstance(works, list):
+            raise ValueError("Unexpected Matilda search response structure")
 
         logger.debug("Matilda returned %d works", len(works))
         return works[: top_k or len(works)]
@@ -126,14 +130,14 @@ class MatildaConnector(BaseConnector):
                 references.append(ref)
 
         return references
-    
+
     def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
         """Convert Matilda API result to Reference object."""
         ref = self._convert_work_to_reference(result)
         if ref is None:
             return Reference(full_title="")
         return ref
-    
+
     def _convert_work_to_reference(self, work: Dict[str, Any]) -> Optional[Reference]:
         """
         Convert a single Matilda work to a Reference object.
@@ -152,17 +156,17 @@ class MatildaConnector(BaseConnector):
             texts = work.get('texts', [])
             if not texts:
                 return None
-            
+
             # Find the best text entry (prefer ones with more complete data)
             best_text = None
             for text in texts:
                 if isinstance(text, dict) and text.get('title'):
                     best_text = text
                     break
-            
+
             if not best_text:
                 best_text = texts[0]  # Fallback to first text
-            
+
             # Extract title from the best text
             title_data = best_text.get('title', [])
             if isinstance(title_data, list) and title_data:
@@ -171,13 +175,13 @@ class MatildaConnector(BaseConnector):
                 title = title_data.strip()
             else:
                 return None
-            
+
             if not title:
                 return None
-            
+
             # Clean up HTML entities in title
             title = title.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
-            
+
             # Extract authors if available
             authors = []
             author_data = best_text.get('author', best_text.get('authors', []))
@@ -192,7 +196,7 @@ class MatildaConnector(BaseConnector):
                             authors.append(name)
                     elif isinstance(author, str):
                         authors.append(author.strip())
-            
+
             # Extract publisher
             publisher_data = best_text.get('publisher', [])
             publisher = None
@@ -200,7 +204,7 @@ class MatildaConnector(BaseConnector):
                 publisher = publisher_data[0]
             elif isinstance(publisher_data, str):
                 publisher = publisher_data
-            
+
             # Extract DOI
             doi = None
             identifier_data = best_text.get('identifier', [])
@@ -211,7 +215,7 @@ class MatildaConnector(BaseConnector):
                         if isinstance(doi_list, list) and doi_list:
                             doi = doi_list[0]
                             break
-            
+
             # Extract publication date (prioritize actual publication date over record creation date)
             pub_date = None
             # Try various publication date fields first
@@ -227,7 +231,7 @@ class MatildaConnector(BaseConnector):
                         if year:
                             pub_date = year
                             break
-            
+
             # Fallback to record metadata dates only if no publication date found
             if not pub_date:
                 for date_field in ['createdDate', 'timestamp']:
@@ -236,7 +240,7 @@ class MatildaConnector(BaseConnector):
                         if isinstance(date_str, str) and len(date_str) >= 4:
                             pub_date = date_str[:4]  # Extract year
                             break
-            
+
             # Create reference
             reference = Reference(
                 full_title=title,
@@ -283,7 +287,7 @@ class MatildaConnector(BaseConnector):
             "rid", "pii", "pmcid", "pmc", "mid", "bookaccession", 
             "versionid", "version", "medline", "pmpid", "hal"
         }
-        
+
         id_type = (identifier_type or "doi").lower()
         if id_type not in supported_types:
             logger.warning(
@@ -295,7 +299,7 @@ class MatildaConnector(BaseConnector):
 
         # Use query.identifier format (Matilda API expects this format)
         params = {"query.identifier": identifier}
-        
+
         try:
             response = self.session.get(
                 f"{self.base_url}/works/query",
@@ -323,7 +327,7 @@ class MatildaConnector(BaseConnector):
         """Extract a 4-digit year from a date string."""
         if not date_str:
             return None
-        
+
         import re
         # Look for 4-digit year patterns
         match = re.search(r'\b(19|20)\d{2}\b', str(date_str))
@@ -335,7 +339,7 @@ class MatildaConnector(BaseConnector):
         top_k: int,
         extra: Dict[str, Any],
     ) -> Dict[str, Any]:
-        title = normalize_title(reference.full_title or "")
+        title = self._search_title(reference)
         # Use title only for search to maximize recall
         # Author and year constraints can filter out valid results due to name variations
         params: Dict[str, Any] = {
@@ -374,7 +378,7 @@ class MatildaConnector(BaseConnector):
             return None
 
         first = reference.authors[0]
-        
+
         # Handle string author names
         if isinstance(first, str):
             return extract_family_name(first)
@@ -383,7 +387,7 @@ class MatildaConnector(BaseConnector):
         surname = getattr(first, "surname", None)
         if surname:
             return str(surname).strip() or None
-        
+
         # Try full name if surname not available
         first_name = getattr(first, "first_name", "") or ""
         if first_name:
@@ -415,7 +419,6 @@ class MatildaConnector(BaseConnector):
             if isinstance(entry, dict):
                 yield entry
 
-
     @staticmethod
     def _normalize_identifier(identifier: str) -> str:
         cleaned = identifier.strip()
@@ -430,5 +433,3 @@ class MatildaConnector(BaseConnector):
                 cleaned = cleaned[len(prefix) :]
                 break
         return cleaned
-
- 

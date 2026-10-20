@@ -12,7 +12,7 @@ import requests
 from .base import BaseConnector
 from ..models.reference import Reference
 from ..models.references import References
-from ...utils.reference_matching import extract_family_name, normalize_title
+from ...utils.reference_matching import extract_family_name
 
 logger = logging.getLogger(__name__)
 
@@ -149,28 +149,38 @@ class OpenAlexConnector(BaseConnector):
     def search(
         self, reference: Reference, top_k: int = 10, **kwargs: Any
     ) -> List[Dict[str, Any]]:
+        """Interleave full-title, opening-title phrase, and title-author results."""
         self._validate_reference(reference)
+        lists = []
+        for params in self._search_queries(reference, top_k):
+            payload = self._get(f"{self.base_url}/works", params=params).json()
+            if "error" in payload or not isinstance(payload.get("results"), list):
+                raise ValueError("Unexpected OpenAlex search response structure")
+            lists.append(payload["results"][: top_k or 100])
+        return self._combine_results(lists, top_k)
 
-        title = reference.full_title.strip()
-        title = normalize_title(title)
-        url = f"{self.base_url}/works"
-
-        # Use title only for search to maximize recall
-        # Author and year constraints can filter out valid results due to name variations
-        params: Dict[str, Any] = {
-            "search": title,
+    def _search_queries(self, reference: Reference, top_k: int) -> List[Dict[str, Any]]:
+        """Build queries from citation metadata, reusing an absent-author title query."""
+        title = self._search_title(reference)
+        common = {
+            "corpus": "all",
             "per_page": max(1, min(top_k or 100, 100)),
             "sort": "relevance_score:desc",
         }
-
-        response = self._get(url, params=params)
-
-        payload = response.json()
-        results = payload.get("results", [])
-        if not isinstance(results, list):
-            raise ValueError("Unexpected OpenAlex search response structure")
-
-        return results[: top_k or len(results)]
+        queries = [
+            {**common, "search": title},
+            {**common, "search.title": '"' + self._opening_title(reference) + '"'},
+        ]
+        first = (reference.authors or [None])[0]
+        surname = (
+            extract_family_name(first)
+            if isinstance(first, str)
+            else getattr(first, "surname", None) or getattr(first, "name", None)
+        )
+        if surname and any(char.isalnum() for char in surname):
+            author = self._search_title(Reference(full_title=surname))
+            queries.append({**common, "search": title + " " + author})
+        return queries
 
     def search_by_id(
         self,

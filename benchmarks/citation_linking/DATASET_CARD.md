@@ -40,7 +40,7 @@ appears in multiple rows with a shared `ref_id` and index-specific gold targets.
 | `reference` | string | Original reference text. |
 | `parsed_reference` | struct or null | Provided structured reference, such as title, authors, and year; parsing provenance is documented separately. |
 | `index` | string | Target index: `openalex`, `matilda`, or `wikidata`. |
-| `gold_id` | string or null | Verified target ID in this index. Null means no matching record was found during annotation. |
+| `gold_id` | string or null | Reviewed target ID in this index. Null means no match was found during annotation, or an unavailable target was cleared during review. |
 | `gold_doi` | string or null | DOI from metadata of a human-confirmed match, reconciled across indexes. Conflicting or unknown values are null; null does not imply that the work has no DOI. |
 
 `(ref_id, index)` uniquely identifies a row. Unresolved annotations and references
@@ -141,8 +141,8 @@ experiment to make its results reproducible. All candidates for a row inherit
 that row's split.
 
 A non-null gold target missing from the candidate list is a retrieval miss.
-This differs from a null gold target: no matching record was found in that index
-during annotation. Distinguish these cases when reporting retrieval and linking
+This differs from a null gold target: no usable target was retained in that index
+after annotation and review. Distinguish these cases when reporting retrieval and linking
 performance; null annotations do not establish that no record exists in the index.
 
 ## 5. Other information

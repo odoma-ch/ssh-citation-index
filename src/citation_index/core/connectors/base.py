@@ -1,7 +1,9 @@
 """Base classes for data source API connectors."""
 
 import re
+import unicodedata
 from abc import ABC, abstractmethod
+from itertools import zip_longest
 from typing import Any, Dict, List, Optional, Tuple
 
 from ..models.reference import Reference
@@ -46,6 +48,68 @@ class BaseConnector(ABC):
         if not title:
             raise ValueError("Reference title is required for search")
 
+    @staticmethod
+    def _search_title(reference: Reference) -> str:
+        """Preserve Unicode letters and word boundaries in metadata queries."""
+        title = unicodedata.normalize("NFC", reference.full_title or "").lower()
+        text = "".join(
+            (
+                char
+                if char.isalnum() or unicodedata.category(char).startswith("M")
+                else " "
+            )
+            for char in title
+        )
+        query = " ".join(text.split())
+        if not query:
+            raise ValueError("Reference title must contain searchable text")
+        return query
+
+    @classmethod
+    def _opening_title(cls, reference: Reference) -> str:
+        """Use the first clause only when it has at least three searchable tokens."""
+        full = cls._search_title(reference)
+        clause = re.split(r"[.:!?]", reference.full_title, maxsplit=1)[0]
+        if not any(char.isalnum() for char in clause):
+            return full
+        clean = cls._search_title(reference.model_copy(update={"full_title": clause}))
+        return clean if len(clean.split()) >= 3 else full
+
+    @classmethod
+    def _title_queries(cls, reference: Reference) -> List[str]:
+        """Return distinct normalized, raw, and opening-title queries in that order."""
+        return list(
+            dict.fromkeys(
+                [
+                    cls._search_title(reference),
+                    reference.full_title.strip(),
+                    cls._opening_title(reference),
+                ]
+            )
+        )
+
+    @staticmethod
+    def _combine_results(
+        lists: List[List[Dict[str, Any]]], top_k: int
+    ) -> List[Dict[str, Any]]:
+        """Interleave provider results, retaining the first payload for each ID."""
+        result, seen = [], set()
+        for group in zip_longest(*lists):
+            for candidate in group:
+                if candidate is None:
+                    continue
+                identifier = candidate.get("id")
+                if not isinstance(identifier, str) or not identifier.strip():
+                    raise ValueError("Search result requires a nonempty string ID")
+                identifier = identifier.rstrip("/").rsplit("/", 1)[-1]
+                if identifier in seen:
+                    continue
+                seen.add(identifier)
+                result.append(candidate)
+                if top_k and len(result) == top_k:
+                    return result
+        return result
+
     @abstractmethod
     def _result_to_reference(self, result: Dict[str, Any]) -> Reference:
         """Convert a raw API result dictionary to a Reference object.
@@ -73,14 +137,14 @@ class BaseConnector(ABC):
             Normalized string representation
         """
         parts = []
-        
+
         # Add title
         title = (reference.full_title or "").strip()
         if title:
             title = re.sub(r"\s+", " ", title.lower())
             title = re.sub(r"[^\w\s]", "", title)  # Remove punctuation
             parts.append(title)
-        
+
         # Add authors (concatenate all author names)
         if reference.authors:
             author_strs = []
@@ -97,26 +161,26 @@ class BaseConnector(ABC):
                         author_strs.append(" ".join(name_parts))
                 elif hasattr(author, "name"):
                     author_strs.append(str(author.name))
-            
+
             if author_strs:
                 authors = " ".join(author_strs)
                 authors = re.sub(r"\s+", " ", authors.lower())
                 authors = re.sub(r"[^\w\s]", "", authors)
                 parts.append(authors)
-        
+
         # Add year
         year = reference.publication_year or reference.publication_date_raw or ""
         year = re.sub(r"[^\d]", "", str(year))  # Extract digits only
         if year and len(year) >= 4:
             parts.append(year[:4])  # Take first 4 digits (year)
-        
+
         # Add publisher
         publisher = (reference.publisher or "").strip()
         if publisher:
             publisher = re.sub(r"\s+", " ", publisher.lower())
             publisher = re.sub(r"[^\w\s]", "", publisher)
             parts.append(publisher)
-        
+
         # Add pages
         pages = (reference.pages or "").strip()
         if pages:
@@ -124,7 +188,7 @@ class BaseConnector(ABC):
             pages = re.sub(r"[^\d\-]", "", pages)  # Keep only digits and hyphens
             if pages:
                 parts.append(pages)
-        
+
         return " | ".join(parts) if parts else ""
 
     def match(
@@ -155,12 +219,12 @@ class BaseConnector(ABC):
                 "rapidfuzz is required for fuzzy matching. "
                 "Install it with: pip install rapidfuzz"
             )
-        
+
         # Convert query reference to string
         query_str = self._reference_to_string(query_ref)
         if not query_str:
             return False, 0.0
-        
+
         # Convert result to Reference, then to string
         try:
             result_ref = self._result_to_reference(result)
@@ -170,9 +234,9 @@ class BaseConnector(ABC):
         except Exception:
             # If we can't parse the result, it's not a match
             return False, 0.0
-        
+
         # Compute similarity (rapidfuzz returns 0-100, convert to 0-1)
         similarity = fuzz.ratio(query_str, result_str) / 100.0
         is_match = similarity >= threshold
-        
+
         return is_match, similarity
