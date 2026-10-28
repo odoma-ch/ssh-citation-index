@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Added
+- OpenCitations linking target (`target=opencitations`, also part of `all`). The connector looks up the reference's DOI through the Meta REST API, then falls back to a SPARQL title-prefix / family-name + year search on `sparql.opencitations.net/meta`. Candidate IDs are OMIDs (`br/...`). Optional `OPENCITATIONS_ACCESS_TOKEN`.
+
+### Changed
+- `TIMEOUT_CITATION_LINKING` default raised from 600 to 3600 seconds: the OpenCitations SPARQL fallback averages ~6s per reference and can take minutes for common surnames.
+- OpenCitations connector failures raise `OpenCitationsError` instead of returning an empty list; the connector no longer needs SPARQLWrapper.
+
 ## [0.3.1] - 2026-09-11
 
 ### Changed
