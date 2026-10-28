@@ -149,7 +149,9 @@ class Settings(BaseSettings):
         default=1800, description="Reference parsing queue timeout"
     )
     timeout_citation_linking: int = Field(
-        default=600, description="Citation linking queue timeout (no LLM)"
+        default=3600,
+        description="Citation linking queue timeout (no LLM; OpenCitations SPARQL fallback "
+        "averages ~6s per reference, up to ~3 min for common surnames)",
     )
 
     # ========================

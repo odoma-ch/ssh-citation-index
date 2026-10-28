@@ -3,16 +3,22 @@
 import re
 from typing import Any, Dict, Iterable, List, Type
 
-from ..core.connectors import MatildaConnector, OpenAlexConnector, WikidataConnector
+from ..core.connectors import (
+    MatildaConnector,
+    OpenAlexConnector,
+    OpenCitationsConnector,
+    WikidataConnector,
+)
 from ..core.connectors.base import BaseConnector
 from ..core.models import Reference
 from ..utils.reference_matching import custom_match, reference_match_fields
 
-SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata")
+SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata", "opencitations")
 CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
     "openalex": OpenAlexConnector,
     "matilda": MatildaConnector,
     "wikidata": WikidataConnector,
+    "opencitations": OpenCitationsConnector,
 }
 
 
@@ -77,6 +83,8 @@ def _candidate_doi(target: str, candidate: Dict[str, Any]) -> str | None:
         value = candidate.get("doi") or (candidate.get("ids") or {}).get("doi")
     elif target == "wikidata":
         value = _wikidata_claim(candidate.get("claims") or {}, "P356")
+    elif target == "opencitations":
+        value = candidate.get("doi")
     else:
         value = None
         for text in candidate.get("texts", []) or []:

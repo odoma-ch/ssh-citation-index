@@ -73,13 +73,14 @@ def test_parse_targets_and_batch_input():
         "openalex",
         "matilda",
         "wikidata",
+        "opencitations",
     ]
     assert citation_linking.parse_targets("wikidata, openalex,wikidata") == [
         "wikidata",
         "openalex",
     ]
     with pytest.raises(ValueError, match="Unsupported linking target"):
-        citation_linking.parse_targets("opencitations")
+        citation_linking.parse_targets("scopus")
 
 
 def test_link_references_returns_ids_and_normalized_dois(monkeypatch):
@@ -315,7 +316,7 @@ def test_api_rejects_unsupported_target():
     from citation_index import api
 
     response = TestClient(api.app).post(
-        "/link/references?target=opencitations",
+        "/link/references?target=scopus",
         json={"reference": parsed()},
     )
 

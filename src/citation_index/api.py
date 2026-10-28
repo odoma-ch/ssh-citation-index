@@ -459,7 +459,9 @@ def enqueue_citation_linking(
     ),
     target: str = Query(
         default="all",
-        description="openalex, matilda, wikidata, all, or a comma-separated list",
+        description=(
+            "openalex, matilda, wikidata, opencitations, all, or a comma-separated list"
+        ),
     ),
 ):
     """Queue citation linking for parsed reference objects."""
