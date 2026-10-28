@@ -14,10 +14,11 @@ from pathlib import Path
 from typing import Optional
 
 import redis
-from fastapi import FastAPI, File, HTTPException, UploadFile, Query, Body
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile, Query, Body
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, model_validator
 from rq import Queue
+from starlette.datastructures import UploadFile as FormUploadFile
 
 from . import __version__
 from .config import settings
@@ -28,6 +29,7 @@ from .tasks import (
     extract_and_parse_references_task,
     link_references_task,
     classify_citations_task,
+    extract_references_grobid_task,
 )
 from .llm.cec_client import CEC_MODES
 from .pipelines.citation_linking import parse_targets
@@ -382,14 +384,110 @@ async def enqueue_text_extraction(
 # Reference Extraction
 # ========================
 
-@app.post("/extract/references", response_model=JobResponse)
+async def _enqueue_grobid_extraction(
+    file: UploadFile | FormUploadFile,
+    include_parsed: bool,
+    include_context: bool,
+    job_type: str,
+) -> JobResponse:
+    """Save an uploaded PDF and queue GROBID reference extraction for it."""
+    if not (file.filename or "").lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+
+    job_id = create_job_id()
+    storage.save_upload(job_id, await file.read(), "input.pdf")
+    initialize_job_metadata(
+        job_id, job_type=job_type, filename=file.filename, extractor="grobid"
+    )
+    queue_default.enqueue_call(
+        extract_references_grobid_task,
+        kwargs={
+            "job_id": job_id,
+            "include_parsed": include_parsed,
+            "include_context": include_context,
+        },
+        job_id=job_id,
+        timeout=settings.timeout_text_extraction,
+        result_ttl=settings.worker_result_ttl,
+    )
+    logger.info("Enqueued GROBID reference extraction job %s (%s)", job_id, job_type)
+    return format_job_response(job_id, message="GROBID reference extraction job enqueued")
+
+
+@app.post(
+    "/extract/references",
+    response_model=JobResponse,
+    openapi_extra={
+        "requestBody": {
+            "required": True,
+            "content": {
+                "application/json": {
+                    "schema": ReferenceExtractionRequest.model_json_schema()
+                },
+                "multipart/form-data": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {"file": {"type": "string", "format": "binary"}},
+                        "required": ["file"],
+                    }
+                },
+            },
+        }
+    },
+)
 async def enqueue_reference_extraction(
-    body: ReferenceExtractionRequest = Body(...),
-    method: str = Query(default="full_text", description="Extraction method"),
+    request: Request,
+    method: Optional[str] = Query(
+        default=None,
+        description=(
+            "LLM methods (JSON body with text): full_text (default), semantic, "
+            "page_by_page. 'grobid' (multipart PDF upload in field 'file'): default "
+            "for uploads."
+        ),
+    ),
     prompt_name: str = Query(default="prompts/reference_extraction.md", description="Prompt template"),
-    temperature: float = Query(default=0.3, description="LLM temperature")
+    temperature: float = Query(default=0.3, description="LLM temperature"),
+    include_parsed: bool = Query(
+        default=False, description="grobid only: also return parsed_references"
+    ),
+    include_context: bool = Query(
+        default=False,
+        description="grobid only: also return the citing sentences of each reference",
+    ),
 ):
-    """Extract references from markdown text using LLM (single stage)."""
+    """Extract references from markdown text (LLM) or from a PDF (GROBID).
+
+    JSON body ``{"text": ...}`` uses the LLM. A multipart PDF upload uses GROBID
+    and can add ``parsed_references`` and per-reference ``contexts``.
+    """
+    is_upload = request.headers.get("content-type", "").startswith("multipart/form-data")
+    method = method or ("grobid" if is_upload else "full_text")
+
+    if method == "grobid":
+        if not is_upload:
+            raise HTTPException(
+                status_code=400,
+                detail="method=grobid needs a multipart PDF upload in field 'file'",
+            )
+        file = (await request.form()).get("file")
+        if not isinstance(file, FormUploadFile):
+            raise HTTPException(status_code=400, detail="Missing PDF in form field 'file'")
+        return await _enqueue_grobid_extraction(
+            file, include_parsed, include_context, "reference_extraction"
+        )
+
+    if is_upload or include_parsed or include_context:
+        raise HTTPException(
+            status_code=400,
+            detail="PDF upload, include_parsed and include_context require method=grobid",
+        )
+    try:
+        body = ReferenceExtractionRequest.model_validate(await request.json())
+    except ValueError as exc:  # bad JSON or missing "text"
+        raise HTTPException(
+            status_code=422, detail=f"Body must be JSON with a 'text' string: {exc}"
+        ) from exc
+
     job_id = create_job_id()
 
     # Save provided text as intermediate so extract_references_task can load it
@@ -569,6 +667,30 @@ def enqueue_citation_classification(
 
     logger.info("Enqueued citation classification job %s", job_id)
     return format_job_response(job_id, message="Citation classification job enqueued")
+
+
+# ========================
+# GROBID End-to-End (PDF -> parsed references)
+# ========================
+
+
+@app.post("/process/references/grobid", response_model=JobResponse)
+async def enqueue_grobid_reference_pipeline(
+    file: UploadFile = File(...),
+    include_context: bool = Query(
+        default=False,
+        description="Also return the citing sentences (section + sentence) of each reference",
+    ),
+):
+    """PDF -> raw and parsed references with GROBID, optionally with citing contexts.
+
+    Result: ``references`` (raw strings), ``parsed_references`` and, when asked,
+    ``contexts`` — all index-aligned. Each context is ``{section, citation, ...}``
+    and can be sent to ``/classify/citations``.
+    """
+    return await _enqueue_grobid_extraction(
+        file, True, include_context, "grobid_reference_pipeline"
+    )
 
 
 # ========================

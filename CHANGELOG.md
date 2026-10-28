@@ -5,7 +5,13 @@ All notable changes to this project are documented here.
 ## [Unreleased]
 
 ### Added
+- `POST /classify/citations`: queues citation-intent classification (method / background / result) with the external CEC classifier (`CEC_ENDPOINT`, `CEC_TIMEOUT`; `mode` is `WS`, `WoS` or `M`). Runs on the `default` queue with its own `timeout_cec_classification`. CEC serves one request at a time and rebuilds its predictor per call, so send a paper's citations in one request.
+- `POST /process/references/grobid`: PDF to raw and parsed references with GROBID fulltext. `include_context=true` adds, per reference, the citing sentences as `{section, citation, marker, ref_id}`; these can be posted as-is to `/classify/citations`.
+- `POST /extract/references` accepts a multipart PDF with `method=grobid` (the default for uploads), plus `include_parsed` and `include_context`. Results stay index-aligned: `references` (raw strings), `parsed_references`, `contexts`. The JSON `text` body (LLM) is unchanged; mismatched combinations return 400.
 - OpenCitations linking target (`target=opencitations`, also part of `all`). The connector looks up the reference's DOI through the Meta REST API, then falls back to a SPARQL title-prefix / family-name + year search on `sparql.opencitations.net/meta`. Candidate IDs are OMIDs (`br/...`). Optional `OPENCITATIONS_ACCESS_TOKEN`.
+
+### Fixed
+- `GrobidClient.process_full_text` sent `consolidateReferences` / `includeRawReferences`, which GROBID ignores; it now sends `consolidateCitations` / `includeRawCitations`. Raw reference strings are now actually returned and the `consolidate_references` flag now takes effect. `process_references` still uses the old names.
 
 ### Changed
 - `TIMEOUT_CITATION_LINKING` default raised from 600 to 3600 seconds: the OpenCitations SPARQL fallback averages ~6s per reference and can take minutes for common surnames.

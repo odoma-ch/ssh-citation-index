@@ -168,8 +168,10 @@ class GrobidClient:
                 with open(pdf_path, 'rb') as pdf_file:
                     files = {'input': (pdf_path.name, pdf_file, 'application/pdf')}
                     data = {
-                        'consolidateReferences': '1' if consolidate_references else '0',
-                        'includeRawReferences': '1' if include_raw_references else '0',
+                        # processFulltextDocument ignores unknown form fields, so the
+                        # names must be exactly these (not *References)
+                        'consolidateCitations': '1' if consolidate_references else '0',
+                        'includeRawCitations': '1' if include_raw_references else '0',
                         'teiCoordinates': '1' if tei_coordinates else '0',
                         'consolidateHeader': '1' if consolidate_header else '0',
                         'segmentSentences': '1' if segment_sentences else '0',

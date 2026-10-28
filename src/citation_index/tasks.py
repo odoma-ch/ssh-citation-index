@@ -30,6 +30,7 @@ from .pipelines.reference_parsing import (
     parse_reference_strings_grobid,
 )
 from .pipelines.citation_linking import link_references
+from .pipelines.grobid_references import extract_references_grobid
 from .pipelines.text_extraction import extract_text
 from .utils.storage import StorageManager
 
@@ -366,6 +367,65 @@ def extract_references_task(
             failed_at=datetime.utcnow().isoformat(),
         )
         log_job_event(job_id, "stage_failed", stage=stage, error=str(e))
+        raise
+
+
+@job(
+    "default",
+    connection=redis_conn,
+    timeout=settings.timeout_text_extraction,
+    result_ttl=settings.worker_result_ttl,
+)
+def extract_references_grobid_task(
+    job_id: str,
+    include_parsed: bool = False,
+    include_context: bool = False,
+) -> Dict[str, Any]:
+    """PDF -> references with GROBID fulltext, optionally parsed and with citing contexts."""
+    stage = "reference_extraction"
+    update_job_metadata(job_id, status="processing", current_stage=stage)
+    log_job_event(job_id, "stage_started", stage=stage)
+
+    try:
+        grobid_client = GrobidClient(
+            endpoint=settings.grobid_endpoint, timeout=settings.grobid_timeout
+        )
+        output = extract_references_grobid(
+            storage.get_upload_path(job_id),
+            grobid_client,
+            include_parsed=include_parsed,
+            include_context=include_context,
+        )
+
+        result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
+        completed_stages = get_completed_stages(job_id) + [stage]
+        update_job_metadata(
+            job_id,
+            status="completed",
+            completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
+        )
+        log_job_event(
+            job_id, "stage_completed", stage=stage, reference_count=output["count"]
+        )
+        return {
+            "result_path": str(result_path),
+            "cached": False,
+            "stage": stage,
+            "reference_count": output["count"],
+        }
+    except Exception as exc:
+        logger.exception("Task %s failed for job %s", stage, job_id)
+        update_job_metadata(
+            job_id,
+            status="failed",
+            error=str(exc),
+            failed_stage=stage,
+            failed_at=datetime.utcnow().isoformat(),
+        )
+        log_job_event(job_id, "stage_failed", stage=stage, error=str(exc))
         raise
 
 
