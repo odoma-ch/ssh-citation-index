@@ -18,6 +18,7 @@ from rq.decorators import job
 
 from .config import settings
 from .llm.client import LLMClient, EmbedClient
+from .llm.cec_client import classify_citations
 from .llm.grobid_client import GrobidClient
 from .pipelines.end_to_end_parsing import run_pdf_one_step, run_pdf_semantic_one_step
 from .pipelines.reference_extraction import (
@@ -533,6 +534,51 @@ def link_references_task(job_id: str) -> Dict[str, Any]:
             "stage": stage,
             "reference_count": len(results),
         }
+    except Exception as exc:
+        logger.exception("Task %s failed for job %s", stage, job_id)
+        update_job_metadata(
+            job_id,
+            status="failed",
+            error=str(exc),
+            failed_stage=stage,
+            failed_at=datetime.utcnow().isoformat(),
+        )
+        log_job_event(job_id, "stage_failed", stage=stage, error=str(exc))
+        raise
+
+
+@job(
+    "default",
+    connection=redis_conn,
+    timeout=settings.timeout_cec_classification,
+    result_ttl=settings.worker_result_ttl,
+)
+def classify_citations_task(job_id: str) -> Dict[str, Any]:
+    """Classify citation intent with the external CEC classifier."""
+    stage = "citation_classification"
+    update_job_metadata(job_id, status="processing", current_stage=stage)
+    log_job_event(job_id, "stage_started", stage=stage)
+
+    try:
+        input_data = storage.load_intermediate(job_id, "citation_classification_input")
+        items = [(c["section"], c["citation"]) for c in input_data["citations"]]
+        results = classify_citations(
+            settings.cec_endpoint, items, input_data["mode"], settings.cec_timeout
+        )
+        output = {"results": results, "count": len(results), "mode": input_data["mode"]}
+
+        result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
+        completed_stages = get_completed_stages(job_id) + [stage]
+        update_job_metadata(
+            job_id,
+            status="completed",
+            completed_stages=json.dumps(completed_stages),
+            completed_at=datetime.utcnow().isoformat(),
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
+        )
+        log_job_event(job_id, "stage_completed", stage=stage, citation_count=len(results))
+        return {"result_path": str(result_path), "stage": stage, "citation_count": len(results)}
     except Exception as exc:
         logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(

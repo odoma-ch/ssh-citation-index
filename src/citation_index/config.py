@@ -109,6 +109,17 @@ class Settings(BaseSettings):
     )
 
     # ========================
+    # CEC Classifier Configuration
+    # ========================
+    cec_endpoint: str = Field(
+        default="http://localhost:5000", description="CEC classifier base URL"
+    )
+    cec_timeout: float = Field(
+        default=800.0,
+        description="CEC request timeout in seconds (server and Route cut at 900s)",
+    )
+
+    # ========================
     # MinerU Configuration
     # ========================
     mineru_endpoint: str = Field(
@@ -147,6 +158,9 @@ class Settings(BaseSettings):
     )
     timeout_reference_parsing: int = Field(
         default=1800, description="Reference parsing queue timeout"
+    )
+    timeout_cec_classification: int = Field(
+        default=1000, description="CEC classification queue timeout (> cec_timeout)"
     )
     timeout_citation_linking: int = Field(
         default=3600,

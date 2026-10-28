@@ -1,0 +1,151 @@
+# This is a Kubernetes Deployment for the CEC Classifier service from https://github.com/opencitations/cec/tree/main/classifier
+# The service is a REST API that classifies citation contexts using an ensemble of SciBERT and XLNet models. The deployment uses a single replica with a single worker to avoid exceeding memory limits, and it includes readiness and liveness probes to ensure the service is available. The deployment also defines a ClusterIP service and an OpenShift route for external access.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cec-classifier
+  labels:
+    app: cec-classifier
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: cec-classifier
+  template:
+    metadata:
+      labels:
+        app: cec-classifier
+    spec:
+      # No fsGroup / runAsUser (OpenShift arbitrary UID)
+      imagePullSecrets:
+        - name: reg-paas-cred
+      containers:
+        - name: cec-classifier
+          # Mirror of docker.io/opencitations/oc_cec_classifier:V2_full, same
+          # repo name and tag so the copy stays traceable. V2_full bundles the
+          # ensemble weights (~8GB image), so no Zenodo download, PVC or
+          # initContainer is needed. The plain 1.2.2_V2 tag expects models
+          # mounted at cic/src/models.
+          image: registry.paas.psnc.pl/graphia/oc_cec_classifier:V2_full
+          imagePullPolicy: IfNotPresent
+          # Upstream CMD is --workers 4. cic_api.classify() builds a fresh
+          # Predictor per request (~12 SciBERT/XLNet models, ~5GB fp32), so
+          # four workers that have each served a request blow the 10Gi
+          # namespace LimitRange maximum. One worker = one copy at a time.
+          command:
+            - gunicorn
+            - "--workers"
+            - "1"
+            - "--bind"
+            - "0.0.0.0:5000"
+            - "--timeout"
+            - "900"
+            - "--chdir"
+            - "/app/classifier"
+            - "--access-logfile"
+            - "-"
+            - "--error-logfile"
+            - "-"
+            - "--log-level"
+            - "info"
+            - "cic.main:app"
+          ports:
+            - containerPort: 5000
+              name: http
+          env:
+            # Arbitrary UID has no home dir; from_pretrained() fetches
+            # allenai/scibert_scivocab_cased + xlnet-base-cased on the first
+            # request and would otherwise try to write /.cache
+            - name: HOME
+              value: /tmp
+            - name: HF_HOME
+              value: /tmp/hf
+            - name: XDG_CACHE_HOME
+              value: /tmp/.cache
+            - name: TMPDIR
+              value: /tmp
+            # No passwd entry for the random UID; getpass.getuser() reads these
+            - name: USER
+              value: cic
+            - name: LOGNAME
+              value: cic
+            - name: SRC_PATH
+              value: /app/classifier/cic/src
+            - name: URL_PREFIX
+              value: /cic
+            # Torch sizes its intra-op pool from the node's core count, not the
+            # cgroup quota, so without this it spawns dozens of threads on a
+            # big node and gets CFS-throttled against the 8-core limit
+            - name: OMP_NUM_THREADS
+              value: "8"
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          # tcpSocket, not httpGet: with a single sync worker a classify run
+          # holds the worker for minutes, so an HTTP probe would hang and
+          # liveness would kill the pod mid-job. The master still accepts TCP.
+          readinessProbe:
+            tcpSocket:
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            tcpSocket:
+              port: 5000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            failureThreshold: 10
+          # CPU only: the namespace's mig-1g.12gb quota is fully used (6/6),
+          # and the one free mig-3g.47gb is the only spare large slice. To run
+          # on GPU, add nvidia.com/mig-3g.47gb: "1" to both requests and limits
+          # — the code auto-selects CUDA, no other change needed.
+          resources:
+            requests:
+              cpu: "8"
+              memory: "8Gi"
+            limits:
+              # 10Gi is the resource-limits LimitRange Pod maximum, not a choice
+              cpu: "8"
+              memory: "10Gi"
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cec-classifier
+  labels:
+    app: cec-classifier
+spec:
+  selector:
+    app: cec-classifier
+  ports:
+    - name: http
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: cec-classifier
+  labels:
+    app: cec-classifier
+  annotations:
+    # Match gunicorn --timeout 900; grobid's 360s would 504 on bigger batches
+    haproxy.router.openshift.io/timeout: "900s"
+spec:
+  to:
+    kind: Service
+    name: cec-classifier
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+  wildcardPolicy: None

@@ -43,6 +43,10 @@ data:
   GROBID_ENDPOINT: "https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/"                      # <-- UPDATE if external
   GROBID_TIMEOUT: "180.0"
 
+  # CEC classifier (in-cluster Service from deployment/cec-classifier.yaml)
+  CEC_ENDPOINT: "http://cec-classifier:5000"
+  CEC_TIMEOUT: "800.0"
+
   # MinerU (internal ClusterIP service from deployment/mineru.yaml)
   MINERU_ENDPOINT: "http://mineru-api:8000"
   MINERU_TIMEOUT: "1200.0"
@@ -54,7 +58,7 @@ data:
   TIMEOUT_TEXT_EXTRACTION: "1500"
   TIMEOUT_REFERENCE_EXTRACTION: "1500"
   TIMEOUT_REFERENCE_PARSING: "2700"
-  TIMEOUT_CITATION_LINKING: "600"
+  TIMEOUT_CITATION_LINKING: "3600"
 
   # API
   API_HOST: "0.0.0.0"

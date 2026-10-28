@@ -27,7 +27,9 @@ from .tasks import (
     parse_references_task,
     extract_and_parse_references_task,
     link_references_task,
+    classify_citations_task,
 )
+from .llm.cec_client import CEC_MODES
 from .pipelines.citation_linking import parse_targets
 from .core.models import Reference, Person, Organization
 from .utils.reference_matching import reference_match_fields
@@ -120,6 +122,19 @@ class CitationLinkingRequest(BaseModel):
     """One parsed reference or an array when batched=true."""
 
     reference: LinkingReference | list[LinkingReference]
+
+
+class CitationContext(BaseModel):
+    """One citing sentence; section is "" when unknown."""
+
+    section: str = Field(default="", description="Section title, or empty if unknown")
+    citation: str = Field(..., min_length=1, description="Citation sentence")
+
+
+class CitationClassificationRequest(BaseModel):
+    """Citation sentences for the CEC classifier."""
+
+    citations: list[CitationContext] = Field(..., min_length=1)
 
 
 class ReferenceParsingOptions(BaseModel):
@@ -504,6 +519,56 @@ def enqueue_citation_linking(
 
     logger.info("Enqueued citation linking job %s", job_id)
     return format_job_response(job_id, message="Citation linking job enqueued")
+
+
+# ========================
+# Citation Classification (CEC)
+# ========================
+
+
+@app.post("/classify/citations", response_model=JobResponse)
+def enqueue_citation_classification(
+    body: CitationClassificationRequest = Body(...),
+    mode: str = Query(
+        default="M",
+        description=(
+            "WS (with sections), WoS (without), or M (per item: with section "
+            "if non-empty). Prefer WS/WoS when uniform; M loads both model sets."
+        ),
+    ),
+):
+    """Queue citation-intent classification (method / background / result) via CEC."""
+    if mode not in CEC_MODES:
+        raise HTTPException(
+            status_code=400, detail=f"mode must be one of {', '.join(CEC_MODES)}"
+        )
+
+    job_id = create_job_id()
+    storage.save_intermediate(
+        job_id,
+        "citation_classification_input",
+        {
+            "citations": [c.model_dump() for c in body.citations],
+            "mode": mode,
+        },
+        atomic=False,
+    )
+    initialize_job_metadata(
+        job_id,
+        job_type="citation_classification",
+        citation_count=len(body.citations),
+        mode=mode,
+    )
+    queue_default.enqueue_call(
+        classify_citations_task,
+        kwargs={"job_id": job_id},
+        job_id=job_id,
+        timeout=settings.timeout_cec_classification,
+        result_ttl=settings.worker_result_ttl,
+    )
+
+    logger.info("Enqueued citation classification job %s", job_id)
+    return format_job_response(job_id, message="Citation classification job enqueued")
 
 
 # ========================
