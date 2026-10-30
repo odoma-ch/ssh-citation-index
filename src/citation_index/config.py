@@ -35,6 +35,14 @@ class Settings(BaseSettings):
         return f"redis://{self.redis_host}:{self.redis_port}/{self.redis_db}"
 
     # ========================
+    # API Authentication
+    # ========================
+    api_key: Optional[str] = Field(
+        default=None,
+        description="Global API key clients send as X-API-Key (auth disabled if unset)",
+    )
+
+    # ========================
     # Storage Configuration
     # ========================
     storage_root: Path = Field(

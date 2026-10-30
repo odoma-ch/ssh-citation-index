@@ -27,6 +27,7 @@ services:
       # Host port 8000 is reserved for the MinerU oc port-forward.
       - "${CITATION_INDEX_PORT:-8001}:8000"
     environment:
+      - API_KEY=${API_KEY:?API_KEY must be set}
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_DB=0

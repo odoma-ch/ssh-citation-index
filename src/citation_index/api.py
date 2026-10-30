@@ -8,14 +8,26 @@ Provides endpoints for:
 
 import json
 import logging
+import secrets
 import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
 import redis
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile, Query, Body
+from fastapi import (
+    Body,
+    Depends,
+    FastAPI,
+    File,
+    HTTPException,
+    Query,
+    Request,
+    Security,
+    UploadFile,
+)
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field, model_validator
 from rq import Queue
 from starlette.datastructures import UploadFile as FormUploadFile
@@ -43,10 +55,38 @@ from .utils.storage import StorageManager
 
 logger = logging.getLogger(__name__)
 
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+PUBLIC_PATHS = {"/health"}  # liveness probes carry no key
+
+
+def verify_api_key(
+    request: Request, provided: Optional[str] = Security(api_key_header)
+) -> None:
+    """Require the global API key (``API_KEY`` setting) on every route.
+
+    Auth is disabled when ``API_KEY`` is unset (local dev, tests).
+    """
+    expected = settings.api_key
+    if not expected or request.url.path in PUBLIC_PATHS:
+        return
+    if not provided or not secrets.compare_digest(
+        provided.encode(), expected.encode()
+    ):
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing API key",
+            headers={"WWW-Authenticate": "ApiKey"},
+        )
+
+
+if not settings.api_key:
+    logger.warning("API_KEY is not set: API authentication is DISABLED")
+
 app = FastAPI(
     title="Citation Index API",
     description="Extract and parse citations from academic PDFs",
-    version=__version__
+    version=__version__,
+    dependencies=[Depends(verify_api_key)],
 )
 
 redis_conn = redis.from_url(settings.redis_url)
