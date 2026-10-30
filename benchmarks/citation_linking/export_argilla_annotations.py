@@ -206,14 +206,16 @@ def align_schema(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 # ---------------------------------------------------------------------------
 # Argilla → rows
 # ---------------------------------------------------------------------------
-def fetch_rows(indexes: List[str], api_url: str, api_token: str) -> List[Dict[str, Any]]:
+def fetch_rows(
+    indexes: List[str], api_url: str, api_token: str, name_template: str = DATASET_NAME_TEMPLATE
+) -> List[Dict[str, Any]]:
     import argilla as rg
 
     client = rg.Argilla(api_key=api_token, api_url=api_url)
     rows: List[Dict[str, Any]] = []
 
     for index in indexes:
-        name = DATASET_NAME_TEMPLATE.format(index=index)
+        name = name_template.format(index=index)
         dataset = client.datasets(name=name)
         if dataset is None:
             raise RuntimeError(f"Argilla dataset '{name}' not found at {api_url}")
@@ -347,6 +349,11 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--indexes", nargs="+", default=INDEXES, choices=INDEXES)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument(
+        "--name-template",
+        default=DATASET_NAME_TEMPLATE,
+        help="Argilla dataset name per index, e.g. citation_linking_dasi_ebda_{index}",
+    )
     parser.add_argument("--hf-repo", default=DEFAULT_HF_REPO)
     parser.add_argument("--no-hf", action="store_true", help="skip the HuggingFace push")
     parser.add_argument("--public", action="store_true", help="push as a public dataset")
@@ -367,7 +374,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     if args.from_jsonl:
         rows = load_local(args.from_jsonl)
     else:
-        rows = fetch_rows(args.indexes, args.argilla_url, ARGILLA_API_TOKEN)
+        rows = fetch_rows(args.indexes, args.argilla_url, ARGILLA_API_TOKEN, args.name_template)
     log_summary(rows)
     write_local(rows, args.out_dir)
 

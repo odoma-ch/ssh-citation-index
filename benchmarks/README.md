@@ -133,20 +133,22 @@ First build the test set from the three corpora, then run the API search benchma
 
 ```bash
 # Build test set
-python benchmarks/citation_linking/build_test_set.py
+python benchmarks/citation_linking/run_benchmarks.py build-test-set
 
 # Run search benchmark against OpenAlex, OpenCitations, Wikidata, Matilda
-python benchmarks/citation_linking/run_api_search_benchmark.py \
+python benchmarks/citation_linking/run_benchmarks.py api-search \
     --test-set benchmarks/citation_linking/api_search_test_set.jsonl \
     --email your@email.com \
     --top-k 3 \
     --limit 50
 
 # Legal study benchmark (LLaMoRe XML data)
-python benchmarks/citation_linking/run_legal_study_benchmark.py
+python benchmarks/citation_linking/run_benchmarks.py legal-study
 ```
 
 Use `--skip-apis` to exclude specific APIs (e.g. `--skip-apis opencitations matilda`).
+`run_benchmarks.py dasi-ebda {prepare,search,publish}` runs the DASI/EBDA bibliography benchmark, and
+`publish_datasets.py {opencitations-prep,opencitations-upload,dasi-ebda-upload}` builds and publishes the baseline datasets.
 
 ---
 
