@@ -88,7 +88,7 @@ spec:
     - ReadWriteMany          # Required: shared across API + all worker pods
   resources:
     requests:
-      storage: 20Gi
+      storage: 50Gi
   storageClassName: manila-share
 ---
 # ==========================================================

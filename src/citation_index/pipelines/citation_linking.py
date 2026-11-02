@@ -1,5 +1,6 @@
 """Citation linking through external scholarly indexes."""
 
+import logging
 import re
 from typing import Any, Dict, Iterable, List, Type
 
@@ -12,6 +13,8 @@ from ..core.connectors import (
 from ..core.connectors.base import BaseConnector
 from ..core.models import Reference
 from ..utils.reference_matching import custom_match, reference_match_fields
+
+logger = logging.getLogger(__name__)
 
 SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata", "opencitations")
 CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
@@ -42,16 +45,28 @@ def parse_targets(value: str) -> List[str]:
 def link_references(
     references: Iterable[Dict[str, Any]], targets: Iterable[str], top_k: int = 10
 ) -> List[Dict[str, Any]]:
-    """Search parsed references and filter candidates using bibliographic fields."""
+    """Search parsed references and filter candidates using bibliographic fields.
+
+    A failing source is reported per link as ``{"id": None, "doi": None,
+    "error": ...}`` so the other sources' links survive. If every lookup
+    fails, the first error is re-raised instead of returning an empty success.
+    """
     connectors = {name: CONNECTOR_TYPES[name]() for name in targets}
     results = []
+    errors: List[Exception] = []
     for parsed_reference in references:
         reference = Reference.model_validate(parsed_reference)
-        links = {
-            name: _link_one(reference, name, connector, top_k)
-            for name, connector in connectors.items()
-        }
+        links = {}
+        for name, connector in connectors.items():
+            try:
+                links[name] = _link_one(reference, name, connector, top_k)
+            except Exception as exc:
+                logger.exception("Linking via %s failed", name)
+                errors.append(exc)
+                links[name] = {"id": None, "doi": None, "error": str(exc)}
         results.append({"reference": parsed_reference, "links": links})
+    if errors and len(errors) == sum(len(result["links"]) for result in results):
+        raise errors[0]
     return results
 
 

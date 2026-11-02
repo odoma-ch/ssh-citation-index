@@ -191,6 +191,7 @@ benchmarks/citation_linking/*.jsonl
 
 benchmarks/error_analysis/
 *.txt
+!requirements.txt
 *.sh
 logs*/
 .done_*

@@ -12,7 +12,7 @@ import secrets
 import uuid
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Literal, Optional
 
 import redis
 from fastapi import (
@@ -57,6 +57,22 @@ logger = logging.getLogger(__name__)
 
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 PUBLIC_PATHS = {"/health"}  # liveness probes carry no key
+PROMPTS_DIR = Path("prompts").resolve()  # workers resolve prompt paths from the same cwd
+
+
+def validate_prompt_name(prompt_name: str) -> str:
+    """Allow only existing files under ``prompts/`` (``file.yaml:key`` included).
+
+    The worker opens this path and sends its content to the LLM, so an
+    arbitrary path (e.g. ``/proc/self/environ``) could leak server secrets.
+    """
+    path = Path(prompt_name.split(":", 1)[0]).resolve()
+    if not path.is_relative_to(PROMPTS_DIR) or not path.is_file():
+        raise HTTPException(
+            status_code=400,
+            detail="prompt_name must be an existing file under prompts/",
+        )
+    return prompt_name
 
 
 def verify_api_key(
@@ -383,7 +399,9 @@ def get_job_result(
 @app.post("/extract/text", response_model=JobResponse)
 async def enqueue_text_extraction(
     file: UploadFile = File(...),
-    extractor: str = Query(default="pymupdf", description="Extractor to use"),
+    extractor: Literal["pymupdf", "mineru", "grobid"] = Query(
+        default="pymupdf", description="Extractor to use"
+    ),
     markdown: bool = Query(default=True, description="Extract as markdown")
 ):
     """Extract text from a PDF."""
@@ -477,16 +495,15 @@ async def _enqueue_grobid_extraction(
 )
 async def enqueue_reference_extraction(
     request: Request,
-    method: Optional[str] = Query(
+    method: Optional[Literal["full_text", "semantic", "grobid"]] = Query(
         default=None,
         description=(
-            "LLM methods (JSON body with text): full_text (default), semantic, "
-            "page_by_page. 'grobid' (multipart PDF upload in field 'file'): default "
-            "for uploads."
+            "LLM methods (JSON body with text): full_text (default), semantic. "
+            "'grobid' (multipart PDF upload in field 'file'): default for uploads."
         ),
     ),
     prompt_name: str = Query(default="prompts/reference_extraction.md", description="Prompt template"),
-    temperature: float = Query(default=0.3, description="LLM temperature"),
+    temperature: float = Query(default=0.3, ge=0.0, le=2.0, description="LLM temperature"),
     include_parsed: bool = Query(
         default=False, description="grobid only: also return parsed_references"
     ),
@@ -521,6 +538,7 @@ async def enqueue_reference_extraction(
             status_code=400,
             detail="PDF upload, include_parsed and include_context require method=grobid",
         )
+    validate_prompt_name(prompt_name)
     try:
         body = ReferenceExtractionRequest.model_validate(await request.json())
     except ValueError as exc:  # bad JSON or missing "text"
@@ -565,11 +583,12 @@ async def enqueue_reference_extraction(
 @app.post("/parse/references", response_model=JobResponse)
 def parse_reference_strings_endpoint(
     body: ReferenceParsingRequest = Body(...),
-    parser: str = Query(default="llm", description="Parser (llm or grobid)"),
+    parser: Literal["llm", "grobid"] = Query(default="llm", description="Parser (llm or grobid)"),
     prompt_name: str = Query(default="prompts/reference_parsing.md", description="Prompt template"),
-    temperature: float = Query(default=0.0, description="LLM temperature")
+    temperature: float = Query(default=0.0, ge=0.0, le=2.0, description="LLM temperature")
 ):
     """Parse a list of reference strings into structured data."""
+    validate_prompt_name(prompt_name)
     job_id = create_job_id()
     
     # Save references as intermediate data

@@ -271,7 +271,7 @@ def extract_references_task(
 
     Args:
         job_id: Unique job identifier
-        method: Extraction method ('semantic', 'full_text', 'page_by_page')
+        method: Extraction method ('semantic' or 'full_text')
         prompt_name: Prompt template to use
         temperature: LLM temperature
 
