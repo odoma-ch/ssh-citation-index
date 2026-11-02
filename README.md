@@ -10,7 +10,7 @@ SSH Citation Index modules are a collection of AI modules for extracting, parsin
 
 ## Installation
 
-Current version: **v0.3.1**. See the [changelog](CHANGELOG.md) for release details.
+Current version: **v0.4.0**. See the [changelog](CHANGELOG.md) for release details.
 
 For local Python development, use Python 3.10+:
 

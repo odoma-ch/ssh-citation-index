@@ -32,7 +32,6 @@ class OpenAlexConnector(BaseConnector):
                 for value in (
                     api_key,
                     os.getenv("OPENALEX_API"),
-                    os.getenv("OPENALEX_API_KEY"),
                 )
                 if value and value.strip()
             ),

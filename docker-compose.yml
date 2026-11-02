@@ -55,6 +55,7 @@ services:
       - TIMEOUT_REFERENCE_EXTRACTION=${TIMEOUT_REFERENCE_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_PARSING=${TIMEOUT_REFERENCE_PARSING:-2700}
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-3600}
+      - TIMEOUT_CEC_CLASSIFICATION=${TIMEOUT_CEC_CLASSIFICATION:-1000}
     volumes:
       - ./storage:/app/storage
       - ./prompts:/app/prompts
@@ -114,6 +115,7 @@ services:
       - TIMEOUT_REFERENCE_EXTRACTION=${TIMEOUT_REFERENCE_EXTRACTION:-1500}
       - TIMEOUT_REFERENCE_PARSING=${TIMEOUT_REFERENCE_PARSING:-2700}
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-3600}
+      - TIMEOUT_CEC_CLASSIFICATION=${TIMEOUT_CEC_CLASSIFICATION:-1000}
     volumes:
       - ./storage:/app/storage
       - ./prompts:/app/prompts
@@ -176,7 +178,7 @@ services:
       replicas: 6  # Increased for slow tasks! (was 2)
 
   # RQ Workers - Citation linking
-  # Medium tasks (~1-3min), moderate replica count
+  # Slow tasks (OpenCitations SPARQL fallback ~6s/reference, minutes for common surnames)
   worker-linking:
     build:
       context: .
@@ -192,8 +194,8 @@ services:
       - TIMEOUT_CITATION_LINKING=${TIMEOUT_CITATION_LINKING:-3600}
       - MATILDA_USERNAME=${MATILDA_USERNAME}
       - MATILDA_PASSWORD=${MATILDA_PASSWORD}
-      - OPENALEX_API_KEY=${OPENALEX_API_KEY:-}
       - OPENALEX_API=${OPENALEX_API:-}
+      - OPENCITATIONS_API=${OPENCITATIONS_API:-}
     volumes:
       - ./storage:/app/storage
     depends_on:

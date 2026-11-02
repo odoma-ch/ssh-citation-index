@@ -1,0 +1,867 @@
+openapi: 3.1.0
+info:
+  title: Citation Index API
+  description: Extract and parse citations from academic PDFs
+  version: 0.4.0
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Health check endpoint.
+      operationId: health_check_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - APIKeyHeader: []
+  /:
+    get:
+      summary: Root
+      description: Root endpoint with API information.
+      operationId: root__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - APIKeyHeader: []
+  /jobs/{job_id}/status:
+    get:
+      summary: Get Job Status
+      description: Get job status, checking both metadata and RQ job state.
+      operationId: get_job_status_jobs__job_id__status_get
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Job Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /jobs/{job_id}:
+    get:
+      summary: Get Job Result
+      description: Get job result.
+      operationId: get_job_result_jobs__job_id__get
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Job Id
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Output format (json or xml)
+          default: json
+          title: Format
+        description: Output format (json or xml)
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /extract/text:
+    post:
+      summary: Enqueue Text Extraction
+      description: Extract text from a PDF.
+      operationId: enqueue_text_extraction_extract_text_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: extractor
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Extractor to use
+          default: pymupdf
+          title: Extractor
+        description: Extractor to use
+      - name: markdown
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Extract as markdown
+          default: true
+          title: Markdown
+        description: Extract as markdown
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_enqueue_text_extraction_extract_text_post'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /extract/references:
+    post:
+      summary: Enqueue Reference Extraction
+      description: 'Extract references from markdown text (LLM) or from a PDF (GROBID).
+
+
+        JSON body ``{"text": ...}`` uses the LLM. A multipart PDF upload uses GROBID
+
+        and can add ``parsed_references`` and per-reference ``contexts``.'
+      operationId: enqueue_reference_extraction_extract_references_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: method
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: 'LLM methods (JSON body with text): full_text (default), semantic,
+            page_by_page. ''grobid'' (multipart PDF upload in field ''file''): default
+            for uploads.'
+          title: Method
+        description: 'LLM methods (JSON body with text): full_text (default), semantic,
+          page_by_page. ''grobid'' (multipart PDF upload in field ''file''): default
+          for uploads.'
+      - name: prompt_name
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Prompt template
+          default: prompts/reference_extraction.md
+          title: Prompt Name
+        description: Prompt template
+      - name: temperature
+        in: query
+        required: false
+        schema:
+          type: number
+          description: LLM temperature
+          default: 0.3
+          title: Temperature
+        description: LLM temperature
+      - name: include_parsed
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: 'grobid only: also return parsed_references'
+          default: false
+          title: Include Parsed
+        description: 'grobid only: also return parsed_references'
+      - name: include_context
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: 'grobid only: also return the citing sentences of each reference'
+          default: false
+          title: Include Context
+        description: 'grobid only: also return the citing sentences of each reference'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              description: Request body for reference extraction - accepts markdown
+                text directly.
+              properties:
+                text:
+                  description: Markdown text to extract references from
+                  title: Text
+                  type: string
+              required:
+              - text
+              title: ReferenceExtractionRequest
+              type: object
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+              required:
+              - file
+  /parse/references:
+    post:
+      summary: Parse Reference Strings Endpoint
+      description: Parse a list of reference strings into structured data.
+      operationId: parse_reference_strings_endpoint_parse_references_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: parser
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Parser (llm or grobid)
+          default: llm
+          title: Parser
+        description: Parser (llm or grobid)
+      - name: prompt_name
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Prompt template
+          default: prompts/reference_parsing.md
+          title: Prompt Name
+        description: Prompt template
+      - name: temperature
+        in: query
+        required: false
+        schema:
+          type: number
+          description: LLM temperature
+          default: 0.0
+          title: Temperature
+        description: LLM temperature
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceParsingRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /link/references:
+    post:
+      summary: Enqueue Citation Linking
+      description: Queue citation linking for parsed reference objects.
+      operationId: enqueue_citation_linking_link_references_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: batched
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Accept an array of parsed reference objects
+          default: false
+          title: Batched
+        description: Accept an array of parsed reference objects
+      - name: target
+        in: query
+        required: false
+        schema:
+          type: string
+          description: openalex, matilda, wikidata, opencitations, all, or a comma-separated
+            list
+          default: all
+          title: Target
+        description: openalex, matilda, wikidata, opencitations, all, or a comma-separated
+          list
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CitationLinkingRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /classify/citations:
+    post:
+      summary: Enqueue Citation Classification
+      description: Queue citation-intent classification (method / background / result)
+        via CEC.
+      operationId: enqueue_citation_classification_classify_citations_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: mode
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'WS (with sections), WoS (without), or M (per item: with section
+            if non-empty). Prefer WS/WoS when uniform; M loads both model sets.'
+          default: M
+          title: Mode
+        description: 'WS (with sections), WoS (without), or M (per item: with section
+          if non-empty). Prefer WS/WoS when uniform; M loads both model sets.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CitationClassificationRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /process/references/grobid:
+    post:
+      summary: Enqueue Grobid Reference Pipeline
+      description: 'PDF -> raw and parsed references with GROBID, optionally with
+        citing contexts.
+
+
+        Result: ``references`` (raw strings), ``parsed_references`` and, when asked,
+
+        ``contexts`` — all index-aligned. Each context is ``{section, citation, ...}``
+
+        and can be sent to ``/classify/citations``.'
+      operationId: enqueue_grobid_reference_pipeline_process_references_grobid_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: include_context
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Also return the citing sentences (section + sentence) of each
+            reference
+          default: false
+          title: Include Context
+        description: Also return the citing sentences (section + sentence) of each
+          reference
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_enqueue_grobid_reference_pipeline_process_references_grobid_post'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    Body_enqueue_grobid_reference_pipeline_process_references_grobid_post:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_enqueue_grobid_reference_pipeline_process_references_grobid_post
+    Body_enqueue_text_extraction_extract_text_post:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_enqueue_text_extraction_extract_text_post
+    CitationClassificationRequest:
+      properties:
+        citations:
+          items:
+            $ref: '#/components/schemas/CitationContext'
+          type: array
+          minItems: 1
+          title: Citations
+      type: object
+      required:
+      - citations
+      title: CitationClassificationRequest
+      description: Citation sentences for the CEC classifier.
+    CitationContext:
+      properties:
+        section:
+          type: string
+          title: Section
+          description: Section title, or empty if unknown
+          default: ''
+        citation:
+          type: string
+          minLength: 1
+          title: Citation
+          description: Citation sentence
+      type: object
+      required:
+      - citation
+      title: CitationContext
+      description: One citing sentence; section is "" when unknown.
+    CitationLinkingRequest:
+      properties:
+        reference:
+          anyOf:
+          - $ref: '#/components/schemas/LinkingReference'
+          - items:
+              $ref: '#/components/schemas/LinkingReference'
+            type: array
+          title: Reference
+      type: object
+      required:
+      - reference
+      title: CitationLinkingRequest
+      description: One parsed reference or an array when batched=true.
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    Identifier:
+      properties:
+        scheme:
+          type: string
+          title: Scheme
+        value:
+          type: string
+          title: Value
+        normalized:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Normalized
+      type: object
+      required:
+      - scheme
+      - value
+      title: Identifier
+      description: "A bibliographic identifier with scheme, value, and normalized\
+        \ form.\n\nExamples:\n    - DOI: scheme=\"doi\", value=\"10.1234/abc\", normalized=\"\
+        10.1234/abc\"\n    - ISBN: scheme=\"isbn\", value=\"978-0-123-45678-9\", normalized=\"\
+        9780123456789\"\n    - arXiv: scheme=\"arxiv\", value=\"1234.5678\", normalized=\"\
+        1234.5678\""
+    JobResponse:
+      properties:
+        job_id:
+          type: string
+          title: Job Id
+          description: Unique job identifier
+        status:
+          type: string
+          title: Status
+          description: Job status (queued, processing, completed, failed)
+        created_at:
+          type: string
+          title: Created At
+          description: ISO 8601 timestamp
+        message:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Message
+          description: Additional information
+      type: object
+      required:
+      - job_id
+      - status
+      - created_at
+      title: JobResponse
+      description: Response when a job is enqueued.
+    JobStatus:
+      properties:
+        job_id:
+          type: string
+          title: Job Id
+        status:
+          type: string
+          title: Status
+        created_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Created At
+        started_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Started At
+        completed_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Completed At
+        current_stage:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Current Stage
+        completed_stages:
+          anyOf:
+          - items: {}
+            type: array
+          - type: 'null'
+          title: Completed Stages
+        error:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+        progress:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Progress
+      type: object
+      required:
+      - job_id
+      - status
+      title: JobStatus
+      description: Job status information.
+    LinkingReference:
+      properties:
+        analytic_title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Analytic Title
+          description: 'DEPRECATED: This title applies to an analytic item, such as
+            an article, poem, or other work published as part of a larger item. Use
+            full_title and store original in raw dict.'
+        monographic_title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Monographic Title
+          description: 'DEPRECATED: This title applies to a monograph such as a book
+            or other item considered to be a distinct publication, including single
+            volumes of multi-volume works. Use full_title and store original in raw
+            dict.'
+        full_title:
+          type: string
+          minLength: 1
+          title: Full Title
+        journal_title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Journal Title
+          description: This title applies to any serial or periodical publication
+            such as a journal, magazine, or newspaper.
+        authors:
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Person'
+            - $ref: '#/components/schemas/Organization'
+            - type: string
+          type: array
+          minItems: 1
+          title: Authors
+        editors:
+          anyOf:
+          - items:
+              anyOf:
+              - $ref: '#/components/schemas/Person'
+              - $ref: '#/components/schemas/Organization'
+              - type: string
+            type: array
+          - type: 'null'
+          title: Editors
+          description: Contains a secondary statement of responsibility for a bibliographic
+            item, for example the name of an individual, institution or organization,
+            (or of several such) acting as editor, compiler, etc.
+        publisher:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Publisher
+          description: Contains the name of the organization responsible for the publication
+            or distribution of a bibliographic item.
+        translator:
+          anyOf:
+          - items:
+              anyOf:
+              - $ref: '#/components/schemas/Person'
+              - type: string
+            type: array
+          - type: 'null'
+          title: Translator
+          description: Contains the name of the translator of a work.
+        publication_date:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Publication Date
+          description: 'DEPRECATED: Contains the date of publication in any format.
+            Use publication_year and publication_date_raw instead.'
+        publication_place:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Publication Place
+          description: Contains the name of the place where a bibliographic item was
+            published.
+        publication_year:
+          type: integer
+          maximum: 9999.0
+          minimum: 1.0
+          title: Publication Year
+        publication_date_raw:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Publication Date Raw
+          description: Raw publication date string in any format, preserving original
+            data.
+        identifiers:
+          items:
+            $ref: '#/components/schemas/Identifier'
+          type: array
+          title: Identifiers
+          description: List of bibliographic identifiers (DOI, ISBN, ISSN, PMID, arXiv,
+            URL, etc.).
+        ref_type:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Ref Type
+          description: 'Reference type following FaBiO/CSL vocabulary: journal-article,
+            book, book-chapter, proceedings-paper, preprint, etc. Only set when explicitly
+            provided, not inferred.'
+        raw:
+          additionalProperties: true
+          type: object
+          title: Raw
+          description: Raw data preservation for provenance and debugging. Stores
+            original extracted values before normalization.
+        volume:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Volume
+          description: Defines the scope of a bibliographic reference in terms of
+            the volume of a larger work.
+        issue:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Issue
+          description: Defines the scope of a bibliographic reference in terms of
+            an issue number, or issue numbers.
+        pages:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Pages
+          description: Defines the scope of a bibliographic reference in terms of
+            page numbers.
+        cited_range:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cited Range
+          description: Defines the range of cited content, often represented by pages
+            or other units.
+        footnote_number:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Footnote Number
+          description: Contains the number of the footnote in which the reference
+            occurs.
+        refs:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Refs
+          description: Defines references to another location, possibly modified by
+            additional text or comment.
+      type: object
+      required:
+      - full_title
+      - authors
+      - publication_year
+      title: LinkingReference
+      description: Parsed reference with the bibliographic fields required for linking.
+    Organization:
+      properties:
+        name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name
+          description: Contains an organizational name.
+      type: object
+      title: Organization
+      description: 'Contains information about an identifiable organization.
+
+
+        This includes businesses, tribes, or any other grouping of people.'
+    Person:
+      properties:
+        first_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: First Name
+          description: Contains a first name, given or baptismal name.
+        middle_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Middle Name
+          description: Contains a middle name, written between a person's first and
+            surname. It is often abbreviated.
+        surname:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Surname
+          description: Contains a family (inherited) name of a person, as opposed
+            to a given, baptismal, or nick name.
+        name_link:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name Link
+          description: Contains a connecting phrase or link used within a name but
+            not regarded as part of it, such as 'van der' or 'of'.
+        role_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Role Name
+          description: Contains a name component which indicates that the referent
+            has a particular role or position in society, such as an official title
+            or rank.
+      type: object
+      title: Person
+      description: "Contains a proper noun or proper-noun phrase referring to a person.\n\
+        \nThis includes one or more of the person's forenames, surnames, \nhonorifics,\
+        \ added names, etc."
+    ReferenceParsingRequest:
+      properties:
+        references:
+          items:
+            type: string
+          type: array
+          title: References
+          description: List of reference strings to parse
+      type: object
+      required:
+      - references
+      title: ReferenceParsingRequest
+      description: Request body for reference parsing - accepts list of reference
+        strings.
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-API-Key

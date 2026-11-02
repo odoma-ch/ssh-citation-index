@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 
 REST_BASE = "https://api.opencitations.net/meta/v1"
 SPARQL_ENDPOINT = "https://sparql.opencitations.net/meta"
-TOKEN_ENV = "OPENCITATIONS_ACCESS_TOKEN"
+TOKEN_ENV = "OPENCITATIONS_API"
 
 PREFIX_WORDS = (10, 6, 4)  # longest, most selective prefix first
 MIN_PREFIX_CHARS = 12
@@ -235,7 +235,7 @@ class OpenCitationsConnector(BaseConnector):
     ):
         """
         Args:
-            api_key: OpenCitations access token (defaults to ``OPENCITATIONS_ACCESS_TOKEN``).
+            api_key: OpenCitations access token (defaults to ``OPENCITATIONS_API``).
             sparql_timeout: Per-request timeout for title-prefix queries (they answer in <1s).
             author_timeout: Per-request timeout for family-name + year queries, which take
                 0.4-35s depending on how common the surname is.

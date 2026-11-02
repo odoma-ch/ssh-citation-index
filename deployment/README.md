@@ -84,14 +84,21 @@ Create the secret with your real API keys (never store these in Git):
 
 ```bash
 kubectl create secret generic citation-index-secret \
+  --from-literal=API_KEY="$(openssl rand -hex 32)" \
   --from-literal=LLM_API_KEY='' \
   --from-literal=EMBEDDING_API_KEY='your-embedding-api-key' \
   --from-literal=OPENALEX_API='your-openalex-api-key' \
   --from-literal=MATILDA_USERNAME='your-matilda-username' \
-  --from-literal=MATILDA_PASSWORD='your-matilda-password'
+  --from-literal=MATILDA_PASSWORD='your-matilda-password' \
+  --from-literal=OPENCITATIONS_API='your-opencitations-token'
 ```
 
-OpenAlex uses `OPENALEX_API`, with `OPENALEX_API_KEY` as a legacy fallback.
+`API_KEY` is the key clients send in the `X-API-Key` header (`/health` is exempt).
+If it is missing from the secret, the API starts with auth disabled, so create it
+before the first deploy. Read it back later with
+`kubectl get secret citation-index-secret -o jsonpath='{.data.API_KEY}' | base64 -d`.
+
+OpenAlex uses `OPENALEX_API`.
 The linking connector sends the key as a bearer token, retries transient errors
 with bounded backoff, and raises an error when the daily budget is exhausted.
 For local benchmarks, export `OPENALEX_API` in the shell running the script.
@@ -105,7 +112,7 @@ Before applying, open `citation-index.yaml` and update:
   - `LLM_MODEL_MEDIUM_INTELLIGENCE` / `LLM_MODEL_HIGH_INTELLIGENCE`
   - `GROBID_ENDPOINT` – if GROBID runs elsewhere in the cluster
   - `EMBEDDING_ENDPOINT`
-- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.3.1`
+- **image:** fields (4 occurrences) – pin the release tag, for example `registry.paas.psnc.pl/graphia/citation-index:0.4.0`
   with your actual image path
 
 ### 5. Apply everything
@@ -129,7 +136,7 @@ ROUTE=$(kubectl get route citation-index-api -o jsonpath='{.spec.host}')
 
 # Health check
 curl -s https://${ROUTE}/health
-# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.3.1"}
+# → {"status":"healthy","redis":"ok","storage":"ok","version":"0.4.0"}
 
 # Submit a test job
 curl -X POST https://${ROUTE}/extract/text -F "file=@test.pdf"
