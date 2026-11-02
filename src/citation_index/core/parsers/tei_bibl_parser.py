@@ -160,13 +160,22 @@ class TeiBiblParser:
     def _find_scope(
         self, element: etree._Element, unit: str = "volume"
     ) -> Optional[str]:
-        """Extract a bibliographic scope with a given 'unit' attribute from an Element"""
-        scope = getattr(
-            element.find(f".//biblScope[@unit='{unit}']", namespaces=self._namespaces),
-            "text",
-            None,
+        """Extract a bibliographic scope with a given 'unit' attribute from an Element.
+
+        GROBID writes ranges as attributes only (``<biblScope unit="page"
+        from="221" to="234"/>``), so fall back to ``from``/``to`` when the text is empty.
+        """
+        scope = element.find(
+            f".//biblScope[@unit='{unit}']", namespaces=self._namespaces
         )
-        return scope
+        if scope is None:
+            return None
+        if scope.text and scope.text.strip():
+            return scope.text
+        start, end = scope.get("from"), scope.get("to")
+        if start and end and start != end:
+            return f"{start}-{end}"
+        return start or end
 
     def _find_persons_and_organizations(
         self,

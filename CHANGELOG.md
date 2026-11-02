@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [0.4.2] - 2026-11-02
+
+### Fixed
+- GROBID page ranges were dropped from `parsed_references`. GROBID writes them as `<biblScope unit="page" from="221" to="234"/>` with no text, and `TeiBiblParser` read only the text. It now falls back to `from`/`to` (`"221-234"`, or one page when only `from` is set or both are equal); volume and issue use the same path. On six test papers 154 page ranges were lost before; field-by-field comparison with the raw TEI now matches on every field. The CLI and benchmarks share this parser, so gold TEI page ranges are read too.
+
+### Added
+- `api_0.4.1.yml` regenerated as `api_0.4.2.yml` (version only).
+- Tests for the 0.4.1 request validation (`tests/test_api_validation.py`) and for per-source linking errors.
+
+### Known issues
+- Citation linking: the match rule accepts title >= 90 plus author or year, and the title score counts containment as 100. Reviews of a book and duplicate records can be linked instead of the work, and a different edition is linked without a flag. About 61 s per reference with `target=all` when the OpenCitations SPARQL fallback times out.
+- MinerU (`vlm-auto-engine`) drops footnotes and garbles Greek on footnote-style humanities papers; prefer PyMuPDF there.
+- The LLM parser copies the page span into `cited_range` as well as `pages`.
+
 ## [0.4.1] - 2026-11-02
 
 ### Fixed

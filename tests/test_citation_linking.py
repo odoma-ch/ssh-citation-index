@@ -394,3 +394,23 @@ def test_match_accepts_parsed_author_formats(author):
     assert custom_match(reference, {
         "title": "A linked paper", "first_author": "Smith", "year": 1990
     })[0]
+
+
+def test_link_references_keeps_other_sources_when_one_fails(monkeypatch):
+    class FailingConnector(FakeOpenAlexConnector):
+        def search(self, reference, top_k=10, **kwargs):
+            raise RuntimeError("HTTP 504")
+
+    monkeypatch.setattr(
+        citation_linking,
+        "CONNECTOR_TYPES",
+        {"openalex": FailingConnector, "wikidata": FakeWikidataConnector},
+    )
+
+    links = citation_linking.link_references([parsed()], ["openalex", "wikidata"])[0][
+        "links"
+    ]
+
+    assert links["openalex"] == {"id": None, "doi": None, "error": "HTTP 504"}
+    assert links["wikidata"] == {"id": "Q1", "doi": "10.1234/WIKIDATA"}
+

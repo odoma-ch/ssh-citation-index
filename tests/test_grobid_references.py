@@ -89,6 +89,35 @@ def test_real_grobid_sample():
     assert beedie["section"] == "Dispositional Affect, Mood, and Emotion"
 
 
+def test_real_grobid_sample_keeps_page_ranges():
+    parsed = parse_grobid_fulltext(SAMPLE.read_text(encoding="utf-8"), True)[
+        "parsed_references"
+    ]
+
+    # GROBID writes ranges as <biblScope unit="page" from="243" to="260"/>
+    assert parsed[0]["pages"] == "243-260"
+    assert sum(1 for p in parsed if p["pages"]) == 20
+
+
+@pytest.mark.parametrize(
+    "scope,expected",
+    [
+        ('<biblScope unit="page" from="221" to="234"/>', "221-234"),
+        ('<biblScope unit="page" from="12" to="12"/>', "12"),
+        ('<biblScope unit="page" from="7"/>', "7"),
+        ('<biblScope unit="page">p. 199</biblScope>', "p. 199"),
+    ],
+)
+def test_page_scope_text_or_from_to(scope, expected):
+    tei = TEI.replace(
+        '<date type="published" when="2019"/>',
+        f'<date type="published" when="2019"/>{scope}',
+    )
+    parsed = parse_grobid_fulltext(tei, include_parsed=True)["parsed_references"]
+
+    assert parsed[1]["pages"] == expected
+
+
 def test_fulltext_request_uses_grobid_parameter_names():
     client = GrobidClient(endpoint="http://grobid", max_retries=0)
     resp = Mock(status_code=200, text="<TEI/>")
