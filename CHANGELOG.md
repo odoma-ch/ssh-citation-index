@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here.
 
+## [0.4.1] - 2026-11-02
+
+### Fixed
+- `POST /extract/text` (PyMuPDF) failed with `No module named 'pymupdf4llm'`: `pymupdf4llm>=0.0.27` resolved to 2.0, an empty shim for `pymupdf>=2` (which needs Python >= 3.11; the image runs 3.10). Pinned `pymupdf4llm<2.0`.
+- `requirements.txt` was ignored by the `*.txt` rule in `.gitignore` and never committed; it is now tracked.
+- Citation linking: one failing source (e.g. an OpenAlex 504) no longer fails the whole job. Its link is returned as `{"id": null, "doi": null, "error": "..."}` and the other sources keep their links. The job still fails when every lookup fails.
+- `prompt_name` on `/extract/references` and `/parse/references` must now be an existing file under `prompts/` (400 otherwise). Before, the worker opened any path, so a caller could send server files such as `/proc/self/environ` to the LLM.
+
+### Changed
+- Unknown query values are rejected with 422 before a job is queued: `parser` (`llm`, `grobid`), `extractor` (`pymupdf`, `mineru`, `grobid`), `method` (`full_text`, `semantic`, `grobid`), and `temperature` outside 0–2. Unknown `parser` / `method` values used to run silently as the LLM / `full_text` path; `page_by_page` was documented but never implemented and is no longer listed.
+- `api_0.4.0.yml` regenerated as `api_0.4.1.yml`.
+
 ## [0.4.0] - 2026-11-02
 
 ### Added

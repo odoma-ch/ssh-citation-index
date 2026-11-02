@@ -117,7 +117,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: api
-          image: registry.paas.psnc.pl/graphia/citation-index:0.4.0
+          image: registry.paas.psnc.pl/graphia/citation-index:0.4.1
           command:
             - uvicorn
             - citation_index.api:app
@@ -240,7 +240,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: worker
-          image: registry.paas.psnc.pl/graphia/citation-index:0.4.0
+          image: registry.paas.psnc.pl/graphia/citation-index:0.4.1
           command:
             - python
             - -m
@@ -300,7 +300,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: worker
-          image: registry.paas.psnc.pl/graphia/citation-index:0.4.0
+          image: registry.paas.psnc.pl/graphia/citation-index:0.4.1
           command:
             - python
             - -m
@@ -359,7 +359,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: worker
-          image: registry.paas.psnc.pl/graphia/citation-index:0.4.0
+          image: registry.paas.psnc.pl/graphia/citation-index:0.4.1
           command:
             - python
             - -m

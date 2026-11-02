@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Citation Index API
   description: Extract and parse citations from academic PDFs
-  version: 0.4.0
+  version: 0.4.1
 paths:
   /health:
     get:
@@ -104,6 +104,10 @@ paths:
         in: query
         required: false
         schema:
+          enum:
+          - pymupdf
+          - mineru
+          - grobid
           type: string
           description: Extractor to use
           default: pymupdf
@@ -155,15 +159,17 @@ paths:
         required: false
         schema:
           anyOf:
-          - type: string
+          - enum:
+            - full_text
+            - semantic
+            - grobid
+            type: string
           - type: 'null'
-          description: 'LLM methods (JSON body with text): full_text (default), semantic,
-            page_by_page. ''grobid'' (multipart PDF upload in field ''file''): default
-            for uploads.'
+          description: 'LLM methods (JSON body with text): full_text (default), semantic.
+            ''grobid'' (multipart PDF upload in field ''file''): default for uploads.'
           title: Method
-        description: 'LLM methods (JSON body with text): full_text (default), semantic,
-          page_by_page. ''grobid'' (multipart PDF upload in field ''file''): default
-          for uploads.'
+        description: 'LLM methods (JSON body with text): full_text (default), semantic.
+          ''grobid'' (multipart PDF upload in field ''file''): default for uploads.'
       - name: prompt_name
         in: query
         required: false
@@ -178,6 +184,8 @@ paths:
         required: false
         schema:
           type: number
+          maximum: 2.0
+          minimum: 0.0
           description: LLM temperature
           default: 0.3
           title: Temperature
@@ -250,6 +258,9 @@ paths:
         in: query
         required: false
         schema:
+          enum:
+          - llm
+          - grobid
           type: string
           description: Parser (llm or grobid)
           default: llm
@@ -269,6 +280,8 @@ paths:
         required: false
         schema:
           type: number
+          maximum: 2.0
+          minimum: 0.0
           description: LLM temperature
           default: 0.0
           title: Temperature
