@@ -4,32 +4,6 @@ All notable changes to this project are documented here.
 
 ## [0.4.2] - 2026-11-02
 
-### Fixed
-- GROBID page ranges were dropped from `parsed_references`. GROBID writes them as `<biblScope unit="page" from="221" to="234"/>` with no text, and `TeiBiblParser` read only the text. It now falls back to `from`/`to` (`"221-234"`, or one page when only `from` is set or both are equal); volume and issue use the same path. On six test papers 154 page ranges were lost before; field-by-field comparison with the raw TEI now matches on every field. The CLI and benchmarks share this parser, so gold TEI page ranges are read too.
-
-### Added
-- `api_0.4.1.yml` regenerated as `api_0.4.2.yml` (version only).
-- Tests for the 0.4.1 request validation (`tests/test_api_validation.py`) and for per-source linking errors.
-
-### Known issues
-- Citation linking: the match rule accepts title >= 90 plus author or year, and the title score counts containment as 100. Reviews of a book and duplicate records can be linked instead of the work, and a different edition is linked without a flag. About 61 s per reference with `target=all` when the OpenCitations SPARQL fallback times out.
-- MinerU (`vlm-auto-engine`) drops footnotes and garbles Greek on footnote-style humanities papers; prefer PyMuPDF there.
-- The LLM parser copies the page span into `cited_range` as well as `pages`.
-
-## [0.4.1] - 2026-11-02
-
-### Fixed
-- `POST /extract/text` (PyMuPDF) failed with `No module named 'pymupdf4llm'`: `pymupdf4llm>=0.0.27` resolved to 2.0, an empty shim for `pymupdf>=2` (which needs Python >= 3.11; the image runs 3.10). Pinned `pymupdf4llm<2.0`.
-- `requirements.txt` was ignored by the `*.txt` rule in `.gitignore` and never committed; it is now tracked.
-- Citation linking: one failing source (e.g. an OpenAlex 504) no longer fails the whole job. Its link is returned as `{"id": null, "doi": null, "error": "..."}` and the other sources keep their links. The job still fails when every lookup fails.
-- `prompt_name` on `/extract/references` and `/parse/references` must now be an existing file under `prompts/` (400 otherwise). Before, the worker opened any path, so a caller could send server files such as `/proc/self/environ` to the LLM.
-
-### Changed
-- Unknown query values are rejected with 422 before a job is queued: `parser` (`llm`, `grobid`), `extractor` (`pymupdf`, `mineru`, `grobid`), `method` (`full_text`, `semantic`, `grobid`), and `temperature` outside 0–2. Unknown `parser` / `method` values used to run silently as the LLM / `full_text` path; `page_by_page` was documented but never implemented and is no longer listed.
-- `api_0.4.0.yml` regenerated as `api_0.4.1.yml`.
-
-## [0.4.0] - 2026-11-02
-
 ### Added
 - `POST /classify/citations`: queues citation-intent classification (method / background / result) with the external CEC classifier (`CEC_ENDPOINT`, `CEC_TIMEOUT`; `mode` is `WS`, `WoS` or `M`). Runs on the `default` queue with its own `timeout_cec_classification`. CEC serves one request at a time and rebuilds its predictor per call, so send a paper's citations in one request.
 - `POST /process/references/grobid`: PDF to raw and parsed references with GROBID fulltext. `include_context=true` adds, per reference, the citing sentences as `{section, citation, marker, ref_id}`; these can be posted as-is to `/classify/citations`.
@@ -41,7 +15,7 @@ All notable changes to this project are documented here.
 
 ### Changed
 - Version bumped to 0.4.0 (package, image tags in `deployment/`). `TIMEOUT_CEC_CLASSIFICATION` is now set in `docker-compose.yml`, the ConfigMap and `.env.example`.
-- `api_0.0.1.yml` (hand-written, listed endpoints that do not exist) replaced by `api_0.4.0.yml`, generated from the FastAPI app; it includes `/link/references`, `/classify/citations`, `/process/references/grobid` and the `X-API-Key` scheme.
+- `api_0.0.1.yml` (hand-written, listed endpoints that do not exist) replaced by `api_0.4.2.yml`, generated from the FastAPI app; it includes `/link/references`, `/classify/citations`, `/process/references/grobid` and the `X-API-Key` scheme.
 - `TIMEOUT_CITATION_LINKING` default raised from 600 to 3600 seconds: the OpenCitations SPARQL fallback averages ~6s per reference and can take minutes for common surnames.
 - OpenCitations connector failures raise `OpenCitationsError` instead of returning an empty list; the connector no longer needs SPARQLWrapper.
 
