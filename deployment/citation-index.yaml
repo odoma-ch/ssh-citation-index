@@ -24,7 +24,7 @@ data:
 
   # Storage
   STORAGE_ROOT: "/app/storage"
-  STORAGE_CLEANUP_AGE_HOURS: "24"
+  STORAGE_CLEANUP_AGE_HOURS: "72"
 
   # LLM
   LLM_ENDPOINT: "https://llm.graphia-ssh.eu/v1"          # <-- UPDATE
@@ -498,3 +498,64 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
+---
+# ==========================================================
+# 12. Storage cleanup – CronJob
+#     Deletes job dirs under STORAGE_ROOT older than
+#     STORAGE_CLEANUP_AGE_HOURS (StorageManager.cleanup_old_jobs).
+# ==========================================================
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: citation-index-storage-cleanup
+  labels:
+    app: citation-index
+    component: storage-cleanup
+spec:
+  schedule: "0 * * * *"            # hourly
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      activeDeadlineSeconds: 1800
+      template:
+        metadata:
+          labels:
+            app: citation-index
+            component: storage-cleanup
+        spec:
+          restartPolicy: Never
+          imagePullSecrets:
+            - name: reg-paas-cred
+          containers:
+            - name: cleanup
+              image: registry.paas.psnc.pl/graphia/citation-index:0.4.2
+              command:
+                - python
+                - -c
+                - |
+                  import logging
+                  logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+                  from citation_index.config import settings
+                  from citation_index.utils.storage import StorageManager
+                  n = StorageManager(settings.storage_root).cleanup_old_jobs(settings.storage_cleanup_age_hours)
+                  logging.info("Removed %d job directories older than %dh", n, settings.storage_cleanup_age_hours)
+              envFrom:
+                - configMapRef:
+                    name: citation-index-config
+              volumeMounts:
+                - name: storage
+                  mountPath: /app/storage
+              resources:
+                requests:
+                  cpu: "100m"
+                  memory: "256Mi"
+                limits:
+                  cpu: "500m"
+                  memory: "512Mi"
+          volumes:
+            - name: storage
+              persistentVolumeClaim:
+                claimName: citation-index-storage
