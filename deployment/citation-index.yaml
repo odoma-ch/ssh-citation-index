@@ -214,6 +214,49 @@ spec:
     insecureEdgeTerminationPolicy: Redirect
 ---
 # ==========================================================
+# 5b. API – public domain citation-index.graphia-ssh.eu
+#     cert-manager issues the Let's Encrypt cert into the secret;
+#     cert-utils-operator copies it into the Route's spec.tls.
+#     The default *.apps route above stays for existing clients.
+# ==========================================================
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: citation-index-tls
+  labels:
+    app: citation-index
+    component: api
+spec:
+  dnsNames:
+    - citation-index.graphia-ssh.eu
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  secretName: citation-index-tls
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: citation-index-graphia
+  labels:
+    app: citation-index
+    component: api
+  annotations:
+    haproxy.router.openshift.io/ip_whitelist: "0.0.0.0/0"
+    cert-utils-operator.redhat-cop.io/certs-from-secret: citation-index-tls
+spec:
+  host: citation-index.graphia-ssh.eu
+  to:
+    kind: Service
+    name: citation-index-api
+    weight: 100
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+---
+# ==========================================================
 # 6. Worker – default queue (text extraction, GROBID parsing)
 #    Fast tasks (~30s-2min), low replica count
 # ==========================================================
