@@ -20,6 +20,38 @@ By the end of this module you can:
 
 The examples below target API **v0.4.2**. The examples use the hosted instance at `https://citation-index.graphia-ssh.eu`. Interactive documentation is at [https://citation-index.graphia-ssh.eu/docs](https://citation-index.graphia-ssh.eu/docs).
 
+## Why SSH publications need their own tooling
+
+Commercial citation indexes are designed for the sciences, and their coverage of the humanities and social sciences is uneven. Colavizza, Peroni and Romanello ([2023](https://doi.org/10.1007/s00799-022-00327-0)) argue for an open Humanities Citation Index built around the specificities of the humanities. Among the requirements they discuss are comprehensive coverage of publication types, including books and citations to primary sources, and rich context for each citation, such as the excerpt in which it appears. They also stress multilingualism: scholarship in national languages abounds in most humanities fields, yet digital resources often fail to capture it.
+
+The SSH Citation Index API is a step towards that goal. It extracts references from SSH publications, parses them into structured records, and links them to open scholarly databases. Its design follows from the challenges below. The method names mentioned here (`semantic`, GROBID, MinerU) are explained in Section 1.
+
+### SSH-specific challenges
+
+STM papers usually end with one Latin-script bibliography. SSH publications often do not. Two cases show up throughout this pipeline.
+
+#### Multilingual sources
+
+Bibliography headings and reference strings appear in the language of the publication: *Bibliographie*, *Literaturverzeichnis*, *Referencias*, *参考文献*, and many others. Author names, titles, and transliteration vary with the citation style and the script.
+
+The `semantic` extraction method does not look for a single heading string. It embeds each page and compares it with example headings and example references in several languages, using the multilingual embedding model `intfloat/multilingual-e5-large-instruct`. Pages that resemble those examples, or that contain lexical cues such as a DOI, ISBN, or a four-digit year, are the ones sent to the LLM.
+
+Parsing itself is done by the LLM (or by GROBID), so a German, French, or Italian reference string can be split into the same fields as an English one. Linking then compares normalized titles and family names, which is what makes a match possible when the local citation abbreviates a given name or punctuates a title differently from the index record.
+
+The project evaluates this behaviour on SSH corpora that are not English-only, including EXCITE (German and English, including footnote bibliographies), CEX, and LinkedBooks.
+
+#### Footnote citations
+
+In many SSH genres the full reference is in a footnote or an endnote, not in a section called “References”. An in-text marker such as `(Smith et al., 2020)` is not a reference and should not be extracted; the note that contains the author, title, and year should.
+
+Three parts of the pipeline are built for that layout:
+
+- **Layout-aware text extraction.** MinerU and GROBID keep footnote text that a plain text dump often merges into the paragraph or drops. GROBID’s TEI records a footnote number on the bibliographic structure, and the parser copies it onto `footnote_number`.
+- **Where the model is told to look.** The end-to-end extraction prompt lists footnotes, endnotes, and captions alongside the terminal bibliography, and it tells the model to ignore bare in-text citations. The default `full_text` prompt is shorter: it asks for one reference string per line and relies on the model to recognise a reference wherever it sits. For a long footnote-style article, `method=semantic` or `method=grobid` is the more reliable choice.
+- **A schema that refuses empty records.** On a footnote-style PDF, guided decoding with no required fields returned references whose titles were all null. Requiring the bibliographic fields stops that silent drop. Check `count` and spot-check `full_title` and `authors` before linking; a completed job can still contain a reference that is too thin to link.
+
+GROBID with `include_context=true` also returns the citing sentence and its section. That context is the input to `POST /classify/citations` (citation intent: method, background, or result). Intent classification is outside the two core endpoints of this module.
+
 ## How a request works
 
 Every processing route is asynchronous. A successful `POST` does not return the bibliography. It returns a job:
@@ -322,34 +354,9 @@ A completed job returns one entry per input reference:
 
 Each connector retrieves a small set of candidates. A candidate is accepted when its normalized title is similar to the query and the first author family name and publication year line up. The response keeps the single best accepted candidate per index.
 
-## SSH-specific challenges
-
-STM papers usually end with one Latin-script bibliography. SSH publications often do not. Two cases show up throughout this pipeline.
-
-### Multilingual sources
-
-Bibliography headings and reference strings appear in the language of the publication: *Bibliographie*, *Literaturverzeichnis*, *Referencias*, *参考文献*, and many others. Author names, titles, and transliteration vary with the citation style and the script.
-
-The `semantic` extraction method does not look for a single heading string. It embeds each page and compares it with example headings and example references in several languages, using the multilingual embedding model `intfloat/multilingual-e5-large-instruct`. Pages that resemble those examples, or that contain lexical cues such as a DOI, ISBN, or a four-digit year, are the ones sent to the LLM.
-
-Parsing itself is done by the LLM (or by GROBID), so a German, French, or Italian reference string can be split into the same fields as an English one. Linking then compares normalized titles and family names, which is what makes a match possible when the local citation abbreviates a given name or punctuates a title differently from the index record.
-
-The project evaluates this behaviour on SSH corpora that are not English-only, including EXCITE (German and English, including footnote bibliographies), CEX, and LinkedBooks.
-
-### Footnote citations
-
-In many SSH genres the full reference is in a footnote or an endnote, not in a section called “References”. An in-text marker such as `(Smith et al., 2020)` is not a reference and should not be extracted; the note that contains the author, title, and year should.
-
-Three parts of the pipeline are built for that layout:
-
-- **Layout-aware text extraction.** MinerU and GROBID keep footnote text that a plain text dump often merges into the paragraph or drops. GROBID’s TEI records a footnote number on the bibliographic structure, and the parser copies it onto `footnote_number`.
-- **Where the model is told to look.** The end-to-end extraction prompt lists footnotes, endnotes, and captions alongside the terminal bibliography, and it tells the model to ignore bare in-text citations. The default `full_text` prompt is shorter: it asks for one reference string per line and relies on the model to recognise a reference wherever it sits. For a long footnote-style article, `method=semantic` or `method=grobid` is the more reliable choice.
-- **A schema that refuses empty records.** On a footnote-style PDF, guided decoding with no required fields returned references whose titles were all null. Requiring the bibliographic fields stops that silent drop. Check `count` and spot-check `full_title` and `authors` before linking; a completed job can still contain a reference that is too thin to link.
-
-GROBID with `include_context=true` also returns the citing sentence and its section. That context is the input to `POST /classify/citations` (citation intent: method, background, or result). Intent classification is outside the two core endpoints of this module.
-
 ## References
 
+- Colavizza, G., Peroni, S., Romanello, M. (2023). The case for the Humanities Citation Index (HuCI): a citation index by the humanities, for the humanities. *International Journal on Digital Libraries* 24, 191–204. [https://doi.org/10.1007/s00799-022-00327-0](https://doi.org/10.1007/s00799-022-00327-0)
 - Boulanger, C., Fejzo, D., Rimmert, C. (2025). *Law Doesn’t Count? Measuring Bibliometric Coverage of German Law Journals.* [https://doi.org/10.2139/ssrn.5350481](https://doi.org/10.2139/ssrn.5350481)
 - Kokash, N., Romanello, M., Suyver, E., Colavizza, G. (2024). “The Brill Knowledge Graph: A Database of Bibliographic References and Index Terms Extracted from Books in Humanities and Social Sciences”. *Research Data Journal for the Humanities and Social Sciences.* [https://doi.org/10.1163/24523666-bja10036](https://doi.org/10.1163/24523666-bja10036)
 
