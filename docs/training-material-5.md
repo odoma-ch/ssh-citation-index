@@ -12,12 +12,13 @@
 
 By the end of this module you can:
 
-1. Submit a publication’s text to the API and retrieve a list of raw bibliographic references.
-2. Parse those strings into structured reference records (authors, title, year, venue, pages, identifiers).
-3. Link a parsed record to OpenAlex, Matilda, Wikidata, and OpenCitations.
-4. Explain why SSH publications need a pipeline that looks beyond a single English “References” section at the end of the PDF.
+1. Authenticate with an API key and submit requests to the API, both with `curl` and with the Python client, following the asynchronous job pattern (submit, poll, fetch the result).
+2. Convert a PDF to Markdown and extract the raw bibliographic references from it, choosing between the `full_text`, `semantic`, and GROBID methods.
+3. Parse reference strings into structured records (authors, title, year, venue, pages, identifiers), and check that a record has the fields needed for linking.
+4. Link parsed records to OpenAlex, Matilda, Wikidata, and OpenCitations, and interpret the results, including a null link.
+5. Explain why linking against several databases is necessary for SSH publications, and why they need a pipeline that looks beyond a single English “References” section at the end of the PDF.
 
-The examples below target API **v0.4.2**. Interactive documentation for a running instance is at `/docs` (locally, [http://localhost:8001/docs](http://localhost:8001/docs)).
+The examples below target API **v0.4.2**. The examples use the hosted instance at `https://citation-index.graphia-ssh.eu`. Interactive documentation is at [https://citation-index.graphia-ssh.eu/docs](https://citation-index.graphia-ssh.eu/docs).
 
 ## How a request works
 
@@ -34,13 +35,54 @@ Every processing route is asynchronous. A successful `POST` does not return the 
 
 Poll `GET /jobs/{job_id}/status` until `status` is `completed` or `failed`. A failed job includes an `error` string. When the status is `completed`, `GET /jobs/{job_id}` returns the result. While the job is still running, that same URL responds with HTTP 202.
 
-When the deployment sets `API_KEY`, send it on every request except `GET /health`:
+With `curl`, you poll by hand:
 
 ```bash
--H "X-API-Key: $API_KEY"
+curl -s "https://citation-index.graphia-ssh.eu/jobs/$JOB_ID/status" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY"
+
+curl -s "https://citation-index.graphia-ssh.eu/jobs/$JOB_ID" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY"
 ```
 
-Locally the API listens on port **8001**. Port 8000 is reserved for MinerU, the optional PDF-to-Markdown extractor.
+With the Python client, `wait_for_result` does the polling for you and returns the result once the job completes. It raises `JobFailedError` if the job fails and `JobTimeoutError` if it takes longer than `timeout` seconds (default 600).
+
+```python
+status = client.get_job_status(job.job_id)   # a single status check
+result = client.wait_for_result(job.job_id)  # poll, then fetch the result
+```
+
+When the deployment requires an API key, send it on every request except `GET /health`. To request a key for the hosted instance, send an email to [graphia@odoma.ch](mailto:graphia@odoma.ch). This procedure may change in the future. Store your key in the environment variable `CITATION_INDEX_API_KEY` rather than pasting it into commands or notebooks:
+
+```bash
+export CITATION_INDEX_API_KEY="your-key-here"
+```
+
+Every example below is shown twice: as a `curl` command for the terminal, and as a Python snippet that uses the [SSH Citation Index API client](https://github.com/odoma-ch/ssh-citation-index-api-client). The `curl` examples pass the key as a header:
+
+```bash
+-H "X-API-Key: $CITATION_INDEX_API_KEY"
+```
+
+To use the Python client, install it and create a client once. The Python snippets below all reuse this `client` object. The client reads the key from `CITATION_INDEX_API_KEY` automatically. Pass `base_url` explicitly, because the client's default points at a staging deployment.
+
+```bash
+pip install "git+https://github.com/odoma-ch/ssh-citation-index-api-client.git"
+```
+
+The hosted API only accepts TLS 1.3, so you need a Python build linked against OpenSSL 1.1.1 or newer. Use Python 3.10 or later from python.org, Homebrew, or pyenv. The system Python 3.9 on macOS uses LibreSSL 2.8.3 and fails every call with `TLSV1_ALERT_PROTOCOL_VERSION`.
+
+```python
+from citation_index_api_client import CitationIndexClient
+
+client = CitationIndexClient(
+    "https://citation-index.graphia-ssh.eu",
+    timeout=120,  # per-request HTTP timeout in seconds
+)
+print(client.health())
+```
+
+If you run your own instance instead, replace the base URL in the examples with your own. By default a local install listens on port **8001**, and port 8000 is reserved for MinerU, the optional PDF-to-Markdown extractor.
 
 The combined `POST /process/references` route is not enabled. Compose the stages yourself: text, then extraction, then parsing, then linking.
 
@@ -53,9 +95,14 @@ Extraction and parsing are two jobs. Extraction finds the bibliographic strings.
 `POST /extract/references` reads Markdown, unless you choose the GROBID method and upload a PDF. To obtain Markdown first:
 
 ```bash
-curl -s -X POST "http://localhost:8001/extract/text?extractor=mineru&markdown=true" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/extract/text?extractor=mineru&markdown=true" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -F "file=@paper.pdf"
+```
+
+```python
+job = client.extract_text("paper.pdf", extractor="mineru", markdown=True)
+text = client.wait_for_result(job.job_id)["text"]
 ```
 
 `extractor` is `pymupdf` (default), `mineru`, or `grobid`. MinerU and GROBID preserve more of the page layout than PyMuPDF, which matters when citations live in footnotes rather than in a terminal bibliography. Read the completed job and keep the `text` field for the next call.
@@ -63,11 +110,23 @@ curl -s -X POST "http://localhost:8001/extract/text?extractor=mineru&markdown=tr
 ### Extract the reference strings
 
 ```bash
-curl -s -X POST "http://localhost:8001/extract/references?method=full_text" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/extract/references?method=full_text" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"text": "# References\n\nSmith, J. (2020). Machine learning approaches. Journal of AI Research, 15(3), 245-267."}'
 ```
+
+```python
+markdown = (
+    "# References\n\n"
+    "Smith, J. (2020). Machine learning approaches. Journal of AI Research, 15(3), 245-267."
+)
+job = client.extract_references(markdown, method="full_text")
+result = client.wait_for_result(job.job_id)
+references = result["references"]
+```
+
+In a real run, pass the `text` you got from `/extract/text` instead of the toy `markdown` string above.
 
 `method` is `full_text` (default) or `semantic`.
 
@@ -89,26 +148,57 @@ A completed extraction job looks like this:
 To skip the LLM and let GROBID read the PDF directly, upload the file and set `method=grobid`. Add `include_parsed=true` when you also want structured records in the same job, and `include_context=true` when you want the citing sentence of each reference.
 
 ```bash
-curl -s -X POST "http://localhost:8001/extract/references?method=grobid&include_parsed=true" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/extract/references?method=grobid&include_parsed=true" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -F "file=@paper.pdf"
 ```
 
+```python
+job = client.extract_references_from_pdf(
+    "paper.pdf", include_parsed=True, include_context=False
+)
+result = client.wait_for_result(job.job_id)
+references = result["references"]
+parsed = result["parsed_references"]
+```
+
 `POST /process/references/grobid` is the same GROBID path with parsing always turned on.
+
+```bash
+curl -s -X POST "https://citation-index.graphia-ssh.eu/process/references/grobid?include_context=true" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
+  -F "file=@paper.pdf"
+```
+
+```python
+job = client.process_references_grobid("paper.pdf", include_context=True)
+result = client.wait_for_result(job.job_id)
+references, parsed, contexts = (
+    result["references"], result["parsed_references"], result["contexts"]
+)
+```
 
 ### Parse the strings
 
 Pass the extracted lines to `POST /parse/references`. The default parser is the LLM (`parser=llm`, temperature `0.0`). `parser=grobid` parses the same strings with GROBID instead.
 
 ```bash
-curl -s -X POST "http://localhost:8001/parse/references?parser=llm" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/parse/references?parser=llm" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "references": [
       "Smith, J. (2020). Machine learning approaches. Journal of AI Research, 15(3), 245-267."
     ]
   }'
+```
+
+```python
+job = client.parse_references(
+    ["Smith, J. (2020). Machine learning approaches. Journal of AI Research, 15(3), 245-267."],
+    parser="llm",
+)
+records = client.wait_for_result(job.job_id)["references"]
 ```
 
 The result is a list of reference objects. Fields follow a TEI-like bibliographic record: `full_title`, `authors` (each with `first_name`, `middle_name`, `surname`), `journal_title`, `volume`, `issue`, `pages`, `publication_year`, `publisher`, `publication_place`, and `identifiers` (DOI, ISBN, ISSN, and similar). Empty fields are omitted. `publication_year` is an integer taken from the date string so later stages can filter on it.
@@ -121,11 +211,33 @@ Linking takes a **parsed** reference, not a raw string. `POST /link/references` 
 
 The body must include a non-empty `full_title`, at least one author, and `publication_year`. A reference that failed to parse those three fields cannot be linked; fix or drop it before this call.
 
+### Supported publication databases
+
+Linking is only as good as the databases it searches. The endpoint queries four of them, and you choose which ones with the `target` parameter.
+
+| Target | Database | Size (approximate) | What the link points at |
+|---|---|---|---|
+| `openalex` | [OpenAlex](https://openalex.org), an open catalogue of scholarly works | 240M works (June 2025) | An OpenAlex work, plus its DOI when the record has one |
+| `matilda` | Matilda, which includes CrossRef data | 155M works (*œuvres*) | A Matilda record; the DOI is read from the record’s text identifiers |
+| `wikidata` | [Wikidata](https://www.wikidata.org), the open knowledge base | 38.7M scholarly articles (October 2020) | A Wikidata item; the DOI is claim P356 when present |
+| `opencitations` | [OpenCitations](https://opencitations.net), open bibliographic and citation data | 91M bibliographic resources (July 2024) | An OpenCitations entity, plus its DOI when the record has one |
+
+These sizes date from earlier counts and have probably grown since, so read them as orders of magnitude.
+
+Why query several databases instead of one? Existing databases cover the Social Sciences and Humanities unevenly:
+
+- Some SSH disciplines have century-long publishing traditions, so many of their publications have no persistent identifier (PID) such as a DOI to match on.
+- Some publication forms, such as book chapters, are under-indexed.
+- Published evidence points the same way. A study of classics ([Kokash et al., 2024](https://doi.org/10.1163/24523666-bja10036)) found about 60% of references unmatched against CrossRef and Google Books. A study of German law journals ([Boulanger et al., 2025](https://doi.org/10.2139/ssrn.5350481)) found about 60% missing from OpenAlex. In a sample of about 5,000 GoTriple documents, fewer than 60% were in OpenAlex.
+- There is no existing benchmark dataset for citation linking in SSH publications.
+
+So a null link is an ordinary result, not an error, and combining indexes raises the chance of a match. Other sources exist that this endpoint does not use: national-library aggregator APIs (BnF, GND, ICCU, British Library), OCLC WorldCat (commercial), and the Google Books API.
+
 One reference:
 
 ```bash
-curl -s -X POST "http://localhost:8001/link/references?target=all" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/link/references?target=all" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "reference": {
@@ -136,11 +248,24 @@ curl -s -X POST "http://localhost:8001/link/references?target=all" \
   }'
 ```
 
+```python
+job = client.link_references(
+    {
+        "full_title": "Machine learning approaches",
+        "authors": [{"first_name": "J.", "surname": "Smith"}],
+        "publication_year": 2020,
+    },
+    target="all",
+)
+for item in client.wait_for_links(job.job_id):
+    print(item.reference["full_title"], item.links["openalex"].id)
+```
+
 Several references: send an array and set `batched=true`.
 
 ```bash
-curl -s -X POST "http://localhost:8001/link/references?batched=true&target=openalex,wikidata" \
-  -H "X-API-Key: $API_KEY" \
+curl -s -X POST "https://citation-index.graphia-ssh.eu/link/references?batched=true&target=openalex,wikidata" \
+  -H "X-API-Key: $CITATION_INDEX_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "reference": [
@@ -153,14 +278,21 @@ curl -s -X POST "http://localhost:8001/link/references?batched=true&target=opena
   }'
 ```
 
-`target` accepts `openalex`, `matilda`, `wikidata`, `opencitations`, the keyword `all`, or a comma-separated list. The default is `all`.
+The Python client sets `batched=true` for you whenever you pass a list. Filter the parsed records with `is_linkable` first, because the endpoint rejects the whole batch if any record lacks a title, author, or year:
 
-| Target | What the link points at |
-|---|---|
-| `openalex` | An OpenAlex work, plus its DOI when the record has one |
-| `matilda` | A Matilda record; the DOI is read from the record’s text identifiers |
-| `wikidata` | A Wikidata item; the DOI is claim P356 when present |
-| `opencitations` | An OpenCitations entity, plus its DOI when the record has one |
+```python
+from citation_index_api_client import is_linkable
+
+job = client.link_references(
+    [r for r in records if is_linkable(r)],
+    target=["openalex", "wikidata"],
+)
+for item in client.wait_for_links(job.job_id):
+    for target, link in item.links.items():
+        print(target, link.id, link.doi, link.is_linked)
+```
+
+`target` accepts the names listed in the table above, the keyword `all`, or a comma-separated list. The default is `all`.
 
 A completed job returns one entry per input reference:
 
@@ -216,16 +348,10 @@ Three parts of the pipeline are built for that layout:
 
 GROBID with `include_context=true` also returns the citing sentence and its section. That context is the input to `POST /classify/citations` (citation intent: method, background, or result). Intent classification is outside the two core endpoints of this module.
 
-## Suggested exercise
+## References
 
-Run one SSH article that has a footnote bibliography, and one that has a conventional reference list, through the same four calls.
-
-1. `POST /extract/text` with MinerU, and keep the Markdown.
-2. `POST /extract/references` twice on that Markdown: once with `method=full_text`, once with `method=semantic`. Compare the two lists. Then run `method=grobid` on the original PDF and compare again.
-3. `POST /parse/references` on the list you trust. Confirm that `full_title`, the first author’s surname, and `publication_year` are present.
-4. `POST /link/references?target=all` on two or three of those records. Note which indexes return an `id`, which return only a DOI, and which return null. A null link is an ordinary outcome for a local-language monograph that none of the four indexes hold.
-
-The executable walkthrough in `examples/citation_index_api_guide.ipynb` runs this sequence against a live stack and fails if a stage returns an invalid result.
+- Boulanger, C., Fejzo, D., Rimmert, C. (2025). *Law Doesn’t Count? Measuring Bibliometric Coverage of German Law Journals.* [https://doi.org/10.2139/ssrn.5350481](https://doi.org/10.2139/ssrn.5350481)
+- Kokash, N., Romanello, M., Suyver, E., Colavizza, G. (2024). “The Brill Knowledge Graph: A Database of Bibliographic References and Index Terms Extracted from Books in Humanities and Social Sciences”. *Research Data Journal for the Humanities and Social Sciences.* [https://doi.org/10.1163/24523666-bja10036](https://doi.org/10.1163/24523666-bja10036)
 
 ## Further reading in this repository
 
