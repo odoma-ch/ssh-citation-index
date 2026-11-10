@@ -47,7 +47,7 @@ In many SSH genres the full reference is in a footnote or an endnote, not in a s
 Three parts of the pipeline are built for that layout:
 
 - **Layout-aware text extraction.** MinerU and GROBID keep footnote text that a plain text dump often merges into the paragraph or drops. GROBID’s TEI records a footnote number on the bibliographic structure, and the parser copies it onto `footnote_number`.
-- **Where the model is told to look.** The end-to-end extraction prompt lists footnotes, endnotes, and captions alongside the terminal bibliography, and it tells the model to ignore bare in-text citations. The default `full_text` prompt is shorter: it asks for one reference string per line and relies on the model to recognise a reference wherever it sits. For a long footnote-style article, `method=semantic` or `method=grobid` is the more reliable choice.
+- **Where the model is told to look.** The end-to-end extraction prompt lists footnotes, endnotes, and captions alongside the terminal bibliography, and it tells the model to ignore bare in-text citations. The default `full_text` prompt is shorter: it asks for one reference string per line and relies on the model to recognise a reference wherever it sits. For a footnote-style article, the LLM route on MinerU text is the safer choice. GROBID does find the notes, but on this kind of article it often merges two references into one string and mis-splits author names, so many of its records cannot be linked.
 - **A schema that refuses empty records.** On a footnote-style PDF, guided decoding with no required fields returned references whose titles were all null. Requiring the bibliographic fields stops that silent drop. Check `count` and spot-check `full_title` and `authors` before linking; a completed job can still contain a reference that is too thin to link.
 
 GROBID with `include_context=true` also returns the citing sentence and its section. That context is the input to `POST /classify/citations` (citation intent: method, background, or result). Intent classification is outside the two core endpoints of this module.
@@ -177,7 +177,9 @@ A completed extraction job looks like this:
 }
 ```
 
-To skip the LLM and let GROBID read the PDF directly, upload the file and set `method=grobid`. Add `include_parsed=true` when you also want structured records in the same job, and `include_context=true` when you want the citing sentence of each reference.
+LLM extraction is not deterministic. Two runs over the same text can return noticeably different numbers of references; on one footnote-heavy article we saw 34 in one run and 50 in another. Compare `count` with what the document suggests, and when completeness matters, run the extraction twice and look at which references differ.
+
+To skip the LLM and let GROBID read the PDF directly, upload the file and set `method=grobid`. This route is fast and deterministic, and it is the only one that returns the citing sentences. It works best on conventionally laid-out articles with a bibliography at the end; for footnote-style articles, prefer the LLM route above. Add `include_parsed=true` when you also want structured records in the same job, and `include_context=true` when you want the citing sentence of each reference.
 
 ```bash
 curl -s -X POST "https://citation-index.graphia-ssh.eu/extract/references?method=grobid&include_parsed=true" \
@@ -353,6 +355,41 @@ A completed job returns one entry per input reference:
 `id` and `doi` are `null` when that index has no accepted match. If one index errors, its entry is `{"id": null, "doi": null, "error": "..."}` and the other indexes are still returned. The job fails only when every lookup fails.
 
 Each connector retrieves a small set of candidates. A candidate is accepted when its normalized title is similar to the query and the first author family name and publication year line up. The response keeps the single best accepted candidate per index.
+
+## 3. Doing the same with a skill
+
+Everything above can also be done by an AI assistant that knows the API. This works through a **skill**: a folder of instructions, and optionally helper scripts, that an assistant such as Claude loads when a task matches. Think of it as a how-to guide for one job. You describe what you want in plain language, and the assistant follows the guide to do it.
+
+The [SSH Citation Index skill](https://github.com/odoma-ch/ssh-citation-index-skill) is such a guide for this API. It does not add new capabilities: the assistant makes the same calls you made by hand (`/extract/references`, `/parse/references`, `/link/references`) with the same `CITATION_INDEX_API_KEY`, through a small script that wraps the Python client. What it adds is the judgement the previous sections taught:
+
+- It picks a route for your document: the LLM route on MinerU text for footnote-style or non-English publications, GROBID for conventionally laid-out articles, or only parsing and linking if you start from reference strings.
+- It filters out records that cannot be linked (no title, author, or year) and reports them as skipped, instead of letting the whole batch fail.
+- It treats a null link as "not found in these indexes", never as an error, and never invents an identifier.
+- It warns you when two indexes return different DOIs for the same reference, for example a book and a review of it.
+- It saves the results to files, including a CSV table you can open in a spreadsheet, and gives you a short summary of coverage.
+
+### Install and use
+
+Skills are supported by Claude Code and by Claude on the web and desktop, and by some other assistants. To install it in Claude Code, clone the repository and copy the skill folder:
+
+```bash
+git clone https://github.com/odoma-ch/ssh-citation-index-skill.git
+cp -r ssh-citation-index-skill/ssh-citation-index ~/.claude/skills/
+```
+
+For Claude on the web or desktop, zip the `ssh-citation-index` folder and upload it under Settings, then Capabilities, then Skills. The skill needs the same setup as the Python client: `CITATION_INDEX_API_KEY` in your environment, and either [`uv`](https://docs.astral.sh/uv/) or Python 3.10 or later (see the TLS note in Section 1).
+
+Then ask in plain language, for example:
+
+> Extract the references from `paper.pdf`, parse them, and link them to OpenAlex and Wikidata. Give me a CSV.
+
+or:
+
+> Here are twenty reference strings. Find their DOIs.
+
+### Check what it did
+
+The skill is a convenience layer, not an oracle. Extraction is still done by an LLM, so check the results as you would after the manual calls: compare the number of references with what the document suggests, and spot-check a few parsed records against their raw strings. The skill's output folder holds the intermediate files (`references.json`, `parsed.json`, `links.json`), so every stage can be compared with what the `curl` or Python calls return.
 
 ## References
 
