@@ -122,6 +122,12 @@ The combined `POST /process/references` route is not enabled. Compose the stages
 
 Extraction and parsing are two jobs. Extraction finds the bibliographic strings. Parsing turns each string into fields a linker can search on.
 
+The choice of model behind these two jobs was informed by a benchmark. Zhu, Colavizza and Romanello ([2026](https://ceur-ws.org/Vol-4187/full-02.pdf)) compared GROBID with several recent LLMs on reference extraction, reference parsing, and end-to-end document parsing. They used three datasets that reflect SSH conditions: CEX (English journal articles), EXCITE (German and English documents, with end-of-document, footnote-only, and mixed citation layouts), and LinkedBooks (humanities references with strong stylistic and linguistic variation). Their main findings explain several choices in this lesson:
+
+- Extraction is comparatively stable: beyond a moderate model capability, most LLMs score similarly. Parsing is harder, mainly because the model must return consistent structured output on noisy layouts. This is why parsing uses a schema with required fields.
+- GROBID is typically the fastest option and does well on documents close to its training data, such as English articles with a bibliography at the end. It degrades more on other languages and on footnote or mixed layouts, where LLMs are more robust.
+- The authors therefore propose routing: send well-structured documents to GROBID and escalate multilingual or footnote-heavy ones to LLMs. In this lesson you make that choice yourself, by selecting the extraction method.
+
 ### From a PDF to Markdown
 
 `POST /extract/references` reads Markdown, unless you choose the GROBID method and upload a PDF. To obtain Markdown first:
@@ -396,6 +402,7 @@ The skill is a convenience layer, not an oracle. Extraction is still done by an 
 - Colavizza, G., Peroni, S., Romanello, M. (2023). The case for the Humanities Citation Index (HuCI): a citation index by the humanities, for the humanities. *International Journal on Digital Libraries* 24, 191–204. [https://doi.org/10.1007/s00799-022-00327-0](https://doi.org/10.1007/s00799-022-00327-0)
 - Boulanger, C., Fejzo, D., Rimmert, C. (2025). *Law Doesn’t Count? Measuring Bibliometric Coverage of German Law Journals.* [https://doi.org/10.2139/ssrn.5350481](https://doi.org/10.2139/ssrn.5350481)
 - Kokash, N., Romanello, M., Suyver, E., Colavizza, G. (2024). “The Brill Knowledge Graph: A Database of Bibliographic References and Index Terms Extracted from Books in Humanities and Social Sciences”. *Research Data Journal for the Humanities and Social Sciences.* [https://doi.org/10.1163/24523666-bja10036](https://doi.org/10.1163/24523666-bja10036)
+- Zhu, Y., Colavizza, G., Romanello, M. (2026). *Benchmarking Large Language Models on Reference Extraction and Parsing in the Social Sciences and Humanities.* In: SCOLIA ’26, Second International Workshop on Scholarly Information Access, CEUR Workshop Proceedings, vol. 4187. [https://ceur-ws.org/Vol-4187/full-02.pdf](https://ceur-ws.org/Vol-4187/full-02.pdf)
 
 ## Further reading in this repository
 
