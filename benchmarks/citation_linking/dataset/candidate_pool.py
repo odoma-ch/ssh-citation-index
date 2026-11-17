@@ -4,13 +4,11 @@ Helper of ``build_annotation_dataset.py``, not a script. One store file holds, f
 ``(ref_id, index)`` task, the candidates a metadata-only search returned and, where
 the search missed the gold record, that record's metadata (the oracle candidate).
 
-The published searches are frozen and are normally only read back from the store:
-OpenAlex was queried on 16-17 October 2026, Matilda and Wikidata on 19 October and
-OpenCitations on 13-16 November. ``search`` runs the same metadata-only search again
-for the indexes it is given and replaces their rows, which moves that cut-off date
-and, because the indexes change, the candidates. The October pools are labelled
-``combined_v1`` and were assembled in the notebook; a new search uses the connectors
-as they are now and will not reproduce them exactly.
+Stored searches are frozen and only read back: each row keeps its own
+``retrieved_on`` date. ``search`` fills in tasks that have no stored row yet (new
+references or a new index) and never replaces one. The October pools of the first
+1,443 tasks are labelled ``combined_v1`` and were assembled in the notebook; a new
+search uses the connectors as they are now.
 """
 
 from __future__ import annotations
@@ -188,14 +186,26 @@ SEARCHES = {
 }
 
 
+# Seconds between tasks; Wikidata answers bursts with 429 (Nov 2026).
+PAUSE = {"wikidata": 2.0}
+
+
 def search(tasks: list[dict[str, Any]], store: dict[Key, dict], index: str) -> None:
     """Live metadata-only search of one index; identifiers and gold never enter a query.
 
+    Only tasks without a stored search are searched, so frozen searches are never
+    replaced; to search an index again, remove its rows from the store first.
     Resumable: finished searches are read back from their checkpoint, so only missing
     ones reach the index. ``store`` is updated in place once every task has an answer.
     """
     version, connector = SEARCHES[index]
-    frame = pd.DataFrame([task for task in tasks if task["index"] == index])[
+    todo = [
+        t for t in tasks if t["index"] == index and (t["ref_id"], index) not in store
+    ]
+    if not todo:
+        logger.info("%s: every task already has a stored search", index)
+        return
+    frame = pd.DataFrame(todo)[
         ["ref_id", "source", "reference", "parsed_reference", "index"]
     ]
     done = {
@@ -226,6 +236,7 @@ def search(tasks: list[dict[str, Any]], store: dict[Key, dict], index: str) -> N
                         CHECKPOINTS,
                         top_k=TOP_K,
                         retrieval_version=version,
+                        pause_seconds=PAUSE.get(index, 0.1),
                     )
                 )
             except RuntimeError as exc:
@@ -251,22 +262,47 @@ def search(tasks: list[dict[str, Any]], store: dict[Key, dict], index: str) -> N
         }
 
 
-def opencitations_record(gold_id: str, connector: OpenCitationsConnector) -> dict:
-    """Exact gold record for the oracle pool, in the shape the search returns."""
+def fetch_record(index: str, gold_id: str, doi: str | None, connectors: dict) -> dict:
+    """Exact gold record for the oracle pool, looked up by ID; fails if it is gone.
+
+    Matilda has no lookup by work ID, so its record is found through the gold DOI.
+    """
     from benchmarks.citation_linking.dataset.build_annotation_dataset import (
         normalize_id,
     )
 
-    records = connector.fetch_metadata([f"omid:{gold_id}"])
-    if len(records) != 1:
-        raise ValueError(f"Expected one Meta record for {gold_id}, got {len(records)}")
-    scored = {"score": None, "title_similarity": None}
-    candidate = connector._candidate(records[0], scored, "gold_injection")
-    if normalize_id(candidate["id"], OPENCITATIONS) != gold_id:
+    if index == OPENCITATIONS:
+        connector = connectors.setdefault(index, OpenCitationsConnector())
+        records = connector.fetch_metadata([f"omid:{gold_id}"])
+        records = [
+            connector._candidate(r, {"score": None, "title_similarity": None}, "lookup")
+            for r in records
+        ]
+    elif index == "openalex":
+        connector = connectors.setdefault(index, OpenAlexConnector())
+        records = connector.search_by_id(gold_id, identifier_type="openalex")
+    elif index == "wikidata":
+        connector = connectors.setdefault(index, WikidataConnector())
+        records = connector._get_entity_details([gold_id])
+    else:
+        connector = connectors.setdefault(index, MatildaConnector())
+        records = connector.search_by_id(doi, identifier_type="doi") if doi else []
+    found = [
+        r for r in records if r.get("id") and normalize_id(r["id"], index) == gold_id
+    ]
+    if len(found) != 1:  # dead, merged or (Matilda) not reachable by DOI
         raise ValueError(
-            f"Meta returned {candidate['id']} for {gold_id} (merged record?)"
+            f"{index} lookup of gold {gold_id} returned {len(found)} records"
         )
-    return candidate
+    return found[0]
+
+
+LOOKUP_SOURCE = {
+    OPENCITATIONS: "opencitations_meta_rest",
+    "openalex": "openalex_id_lookup",
+    "wikidata": "wikidata_id_lookup",
+    "matilda": "matilda_doi_lookup",
+}
 
 
 def attach(
@@ -275,10 +311,9 @@ def attach(
     """One candidate row per release row, with the oracle record its gold needs.
 
     The oracle record is kept only while it is the gold and the search missed it. A
-    missing OpenCitations record is fetched from Meta and cached in ``store``; for the
-    other indexes it must already be stored.
+    missing one is looked up by ID and cached in ``store``.
     """
-    connector = None
+    connectors: dict = {}
     output = []
     for row in rows:
         key = (row["ref_id"], row["index"])
@@ -290,13 +325,11 @@ def attach(
         if gold and gold not in {c["candidate_id"] for c in found["candidates"]}:
             oracle = found.get("oracle")
             if not oracle or oracle["candidate_id"] != gold:
-                if row["index"] != OPENCITATIONS:
-                    raise ValueError(f"No stored metadata for gold {gold} of {key}")
-                connector = connector or OpenCitationsConnector()
+                index = row["index"]
                 oracle = {
                     "candidate_id": gold,
-                    "metadata": opencitations_record(gold, connector),
-                    "metadata_source": "opencitations_meta_rest",
+                    "metadata": fetch_record(index, gold, row["gold_doi"], connectors),
+                    "metadata_source": LOOKUP_SOURCE[index],
                 }
                 found["oracle"] = oracle
         output.append(
@@ -305,11 +338,26 @@ def attach(
     return output
 
 
+# Fields a search adds to a record and an ID lookup does not: the search's own scores
+# and our connector's ranking. Published, they would mark the oracle record
+# (relevance_score null, search_route "gold_injection"), so they are dropped from
+# every published candidate. ``content_urls`` was never fetched for oracle records;
+# ``is_authors_truncated`` comes only with OpenAlex search results (Nov 2026).
+SEARCH_ARTEFACTS = {
+    "openalex": {"relevance_score", "content_urls", "is_authors_truncated"},
+    OPENCITATIONS: {"match_score", "title_similarity", "search_route"},
+}
+
+
 def candidates_table(candidates: list[dict[str, Any]]) -> Any:
     """Published form: provider metadata as JSON text, since its fields differ by index."""
     import pyarrow as pa
 
-    text = lambda value: json.dumps(value, ensure_ascii=False, sort_keys=True)
+    def text(metadata: dict, index: str) -> str:
+        drop = SEARCH_ARTEFACTS.get(index, set())
+        kept = {k: v for k, v in metadata.items() if k not in drop}
+        return json.dumps(kept, ensure_ascii=False, sort_keys=True)
+
     record = [("candidate_id", pa.string()), ("metadata", pa.string())]
     schema = pa.schema(
         [
@@ -330,10 +378,14 @@ def candidates_table(candidates: list[dict[str, Any]]) -> Any:
             **row,
             "n_candidates": len(row["candidates"]),
             "candidates": [
-                {**c, "metadata": text(c["metadata"])} for c in row["candidates"]
+                {**c, "metadata": text(c["metadata"], row["index"])}
+                for c in row["candidates"]
             ],
             "oracle_candidate": row["oracle"]
-            and {**row["oracle"], "metadata": text(row["oracle"]["metadata"])},
+            and {
+                **row["oracle"],
+                "metadata": text(row["oracle"]["metadata"], row["index"]),
+            },
         }
         for row in candidates
     ]

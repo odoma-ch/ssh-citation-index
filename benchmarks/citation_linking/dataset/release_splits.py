@@ -180,9 +180,10 @@ def preserve_splits(
 ) -> tuple[dict[str, list[int]], dict[str, Any]]:
     """Keep existing row order and assignments; append tasks the parent lacks.
 
-    New tasks (a newly annotated index) follow their reference's split in
-    ``reference_disjoint`` and get the usual seeded stratified allocation, among
-    themselves, in ``reference_index_disjoint``.
+    New tasks of a known reference (a newly annotated index) follow their
+    reference's split in ``reference_disjoint``. Everything else, whole new
+    references included, gets the usual seeded stratified allocation among the new
+    rows only, so the parent's assignments never move.
     """
     import pyarrow.parquet as pq
 
@@ -206,16 +207,17 @@ def preserve_splits(
             }
         )
     added = [i for key, i in positions.items() if key not in seen]
-    if added and config == CONFIGS[0]:
+    fresh = added
+    if config == CONFIGS[0]:
         split_of = {rows[i]["ref_id"]: s for s in SPLITS for i in partitions[s]}
-        if any(rows[i]["ref_id"] not in split_of for i in added):
-            raise ValueError("New tasks must belong to references of the parent")
         for i in added:
-            partitions[split_of[rows[i]["ref_id"]]].append(i)
-    elif added:
-        extra, _ = split_rows([rows[i] for i in added], config, seed)
+            if rows[i]["ref_id"] in split_of:
+                partitions[split_of[rows[i]["ref_id"]]].append(i)
+        fresh = [i for i in added if rows[i]["ref_id"] not in split_of]
+    if fresh:
+        extra, _ = split_rows([rows[i] for i in fresh], config, seed)
         for split, chosen in extra.items():
-            partitions[split] += [added[i] for i in chosen]
+            partitions[split] += [fresh[i] for i in chosen]
     groups = reference_groups(rows) if config == CONFIGS[0] else list(range(len(rows)))
     group_sets = [{groups[i] for i in partitions[s]} for s in SPLITS]
     # Parent assignments are frozen, so a new gold ID/DOI can reveal that two
@@ -233,7 +235,7 @@ def preserve_splits(
         raise ValueError("Corrected identity crosses preserved split boundaries")
     return partitions, {
         "method": "Preserved parent release row order and split assignments"
-        + ("; appended new index tasks" if added else ""),
+        + ("; appended new tasks" if added else ""),
         "parent_files": files,
         "added_rows": len(added),
         "same_work_across_splits": crossing,

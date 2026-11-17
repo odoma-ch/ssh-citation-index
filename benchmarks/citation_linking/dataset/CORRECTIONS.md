@@ -6,8 +6,8 @@ change. The raw annotations are never edited; all corrections are applied in
 `build_annotation_dataset.py` (`ANNOTATION_FIXES` and `REVIEW_OVERRIDES`).
 
 Sources: [issue #49](https://github.com/odoma-ch/ssh-citation-index/issues/49)
-(October 2026) and the cross-index review that followed the OpenCitations annotation
-round (November 2026).
+(October 2026), the cross-index review that followed the OpenCitations annotation
+round, and the DOI review of the DASI/EBDA references (both November 2026).
 
 **Rule applied throughout.** A gold record is the cited publication itself. A review
 of it, another edition or version of the same text, or a record whose authors or year
@@ -16,10 +16,11 @@ publication, `gold_id` is null.
 
 | Round | What | References | Tasks changed |
 |---|---|---:|---:|
-| 1 | Contradictory annotation answers | 6 | 7 |
+| 1 | Contradictory annotation answers | 7 | 8 |
 | 2 | Conflicting DOI evidence, OpenAlex vs. Matilda (issue #49) | 4 | 3 gold IDs, 3 DOIs |
 | 3 | OpenAlex gold IDs that no longer resolve (issue #49) | 8 | 8 |
 | 4 | Same DOI judged differently across indexes (after OpenCitations) | 13 | 11 gold IDs, 6 DOIs |
+| 5 | DASI/EBDA references checked against their printed DOI | 3 | 3 gold IDs, 1 DOI |
 
 ## 1. Contradictory annotation answers
 
@@ -34,6 +35,7 @@ had no corrected ID. One answer was corrected and the label derived again.
 | `cex_COM-SCI_28_20` | Wikidata | `is_match_correct`: true → false | Candidate `Q18351488` is Magic Leap the company, not a publication. |
 | `10.1515_zfrs-1980-0104_instance-7` | Matilda | `is_match_correct`: true → false | Candidate is an unrelated volume on the China-Pakistan Economic Corridor. |
 | `brill_7b98252c-c219-491b-8a44-3e4286c9ca47_2` ("ms lat. 8589") | OpenCitations | `is_match_correct`: true → false | Candidate `br/06020233318` is a 2011 catalogue of Hebrew manuscripts, not the cited Latin manuscript. The annotator also set `no_match`; the other three indexes read "not found". |
+| `dasi_Brunner2001` | OpenAlex | `is_match_correct`: true → false | Candidate `W2750627499` is an unrelated 2017 work (Linke, "Gender - Bilder - Sanaa"). The annotator also set `no_match`; Matilda and Wikidata read "not found". |
 | `10.1111_1467-6478.00057_instance-71` | Matilda | `correct_id` → `[SKIP]` | The reference text bundles three publications, like the 18 references the OpenAlex annotator skipped. The reference is excluded. |
 
 ## 2. Conflicting DOI evidence (issue #49)
@@ -85,10 +87,28 @@ are not listed.
 | `brill_e1cc5ffe-700b-439c-bd5c-33c91446abab_670` (Rius-Camps, "Le substrat grec…") | Accepted in OpenAlex and Matilda, rejected in OpenCitations | No change | Same: an OpenCitations record without metadata. |
 | `brill_869d8a52-85bf-4144-b44e-bc5686aef65c_63` (Boeckh, *Die Staatshaushaltung der Athener*, 1851) | Accepted in Matilda, rejected in OpenAlex and OpenCitations | No change | The DOI belongs to a 2023 reprint; the OpenCitations record has no metadata. |
 
+## 5. DASI/EBDA references checked against their printed DOI (November 2026)
+
+The 200 DASI/EBDA references are rendered from the projects' BibTeX bibliographies, and
+72 of them print a DOI. That DOI was looked up in OpenAlex, Matilda and OpenCitations
+for every confirmed match whose DOI differed from it, and for every task the
+annotator marked as having no record. Wikidata, which lacks most of these articles,
+was not checked this way. Every gold ID was also resolved again.
+
+| Reference | Finding | Decision | Reason |
+|---|---|---|---|
+| `dasi_Yule2002` ("Mapping Ḥimyarite Ẓafār", 2002) | OpenAlex `W4245260361` redirects to `W3112109909` | OpenAlex gold → `W3112109909` | OpenAlex merged the annotated record into another one. |
+| `dasi_Wellsted1837` ("Narrative of a Journey from the Tower of Ba-'l-haff…", 1837) | OpenCitations match carries `10.2307/1797516`, the reference `10.2307/1797510` | OpenCitations gold `br/06260917783` → null; `gold_doi` = `10.2307/1797510` | The accepted record is another article by Wellsted in the same volume (p. 102). The cited DOI is not in OpenCitations. |
+| `ebda_DalleyTeissier1992` ("Tablets from the Vicinity of Emar and Elsewhere", 1992) | Marked absent in Matilda; its printed DOI finds the article there | Matilda gold → `7847d2f3-385d-497b-a716-8e030d4d3a56` | Title, year and journal match. No candidate had been shown to the annotator. The article has two DOIs (Cambridge and JSTOR); OpenAlex and OpenCitations hold it under the Cambridge one. |
+
+The other lookups confirmed the annotations. Where a DOI resolved, it named the whole
+book for a cited chapter, another chapter, or an OpenCitations record without
+metadata; most found nothing.
+
 ## Cleared gold targets are unresolved
 
 A gold cleared in review is not evidence that the index holds no record of the work,
-only that the accepted record was wrong. The 13 tasks cleared in rounds 2 to 4 are
+only that the accepted record was wrong. The 14 tasks cleared in rounds 2 to 5 are
 therefore neither positives nor confirmed negatives: the benchmark code leaves them
 out of abstention scoring and out of the training export (`UNRESOLVED` in
 `linking_eval.py`, derived from `REVIEW_OVERRIDES`).
@@ -96,17 +116,6 @@ out of abstention scoring and out of the training export (`UNRESOLVED` in
 | Index | Cleared tasks |
 |---|---|
 | OpenAlex | `10.1111_1467-6478.00057_instance-38`, `excite_32211_33`, `linkedbook_26`, `linkedbook_5`, `linkedbook_73` |
-| OpenCitations | `10.1515_zfrs-1980-0104_instance-43`, `cex_SOC-SCI_102_13`, `excite_9543_36`, `linkedbook_85` |
+| OpenCitations | `10.1515_zfrs-1980-0104_instance-43`, `cex_SOC-SCI_102_13`, `dasi_Wellsted1837`, `excite_9543_36`, `linkedbook_85` |
 | Wikidata | `10.1515_zfrs-1980-0104_instance-43`, `cex_SOC-SCI_102_13`, `excite_9543_36` |
 | Matilda | `brill_20f2caaa-677a-42c1-8857-19e196f8c74e_331` |
-
-## Dataset changes
-
-| Date | Change | Reason |
-|---|---|---|
-| 2026-10-20 | Rounds 1 to 3 applied (revision `93ed9c3d`) | Issue #49. |
-| 2026-11-13 | OpenCitations Meta added as a fourth index: 481 tasks appended, existing rows, order and splits unchanged (revision `6484aea9`) | Annotation of the fourth index finished. |
-| 2026-11-16 | Round 4 applied; the Matilda gold of McKitterick cleared | Cross-index review; a decision of issue #49 that the October build had only half applied. |
-| 2026-11-16 | Search candidates published as the `candidates` configuration | Experiments can share one candidate pool instead of repeating the searches, which are not reproducible once the indexes change. |
-| 2026-11-16 | OpenCitations candidates raised from at most 5 to at most 10 per task; 100 tasks searched again | The connector kept five records for rescoring while the other indexes return ten. |
-| 2026-11-16 | A merged OpenCitations record is listed once per task | Two OMIDs resolved to the same record and appeared twice in one candidate list. |

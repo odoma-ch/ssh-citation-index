@@ -499,8 +499,11 @@ def main() -> None:
     export.add_argument(
         "--annotations",
         type=Path,
-        default=Path(__file__).parents[1]
-        / "data/annotations/corrected/annotations.jsonl",
+        nargs="+",
+        default=[
+            Path(__file__).parents[1] / "data/annotations/corrected" / name
+            for name in ("annotations.jsonl", "dasi_ebda.jsonl")
+        ],
         help="Corrected annotations written by dataset/build_annotation_dataset.py",
     )
     export.add_argument("--output-dir", type=Path, required=True)
@@ -520,7 +523,7 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "export":
         manifest = export_training_data(
-            args.pool, [args.annotations], args.output_dir, seed=args.seed
+            args.pool, args.annotations, args.output_dir, seed=args.seed
         )
         print(json.dumps(manifest["summary"], indent=2))
     elif args.command == "full":

@@ -58,6 +58,7 @@ SOURCE_FILES = (
     "api_search_test_set.jsonl",
     "brillkg_sample_200_parsed.jsonl",
     "legal_study_data_mpilhlt/legal_study_parsed.json",
+    "DASI_EBDA/references.json",
 )
 HF_REPO = "yurui983/citation_linking"
 # Contradictory or incomplete answers, corrected after review. Each entry replaces one
@@ -98,6 +99,11 @@ ANNOTATION_FIXES = {
         "is_match_correct",
         "false",
         "is_match_correct: true -> false (candidate br/06020233318 is Barco, a 2011 catalogue of the BnF Hebrew manuscripts 1-32, not the cited Latin manuscript 'ms lat. 8589'; annotator also marked no_match=true and the openalex/matilda/wikidata rows for this reference read correctly-not-found, so this is a spurious link)",
+    ),
+    ("dasi_Brunner2001", "openalex"): (
+        "is_match_correct",
+        "false",
+        "is_match_correct: true -> false (candidate W2750627499 is Linke, 'Gender - Bilder - Sanaa' (2017), an unrelated work; annotator also marked no_match=true and the matilda/wikidata rows for this reference read correctly-not-found, so this is a spurious link)",
     ),
 }
 # Reviewed corrections (2026-10, 2026-11) that override raw annotation evidence.
@@ -167,6 +173,19 @@ REVIEW_OVERRIDES = {
     "cex_SOC-SCI_102_13": {
         "gold_doi": None,
         "gold_id": {"opencitations": None, "wikidata": None},
+    },
+    # DASI/EBDA review (2026-11): these references print their DOI, which was looked
+    # up in each index. OpenAlex merged the annotated record into another one.
+    "dasi_Yule2002": {"gold_id": {"openalex": "W3112109909"}},
+    # The accepted OpenCitations record is another article by Wellsted in the same
+    # volume (p. 102, DOI 10.2307/1797516); the cited DOI is not in OpenCitations.
+    "dasi_Wellsted1837": {
+        "gold_doi": "10.2307/1797510",
+        "gold_id": {"opencitations": None},
+    },
+    # Matilda holds the article (found by its printed DOI); no candidate was shown.
+    "ebda_DalleyTeissier1992": {
+        "gold_id": {"matilda": "7847d2f3-385d-497b-a716-8e030d4d3a56"}
     },
 }
 PARSED_TEXT_FIELDS = (
@@ -285,16 +304,13 @@ def read_raw_file(path: Path) -> list[dict[str, Any]]:
 
 def corrected_annotations(raw: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Raw export rows with ``ANNOTATION_FIXES`` applied and labels derived again."""
-    pending = dict(ANNOTATION_FIXES)
     rows = []
     for row in raw:
-        fix = pending.pop((row["ref_id"], row["index"]), None)
+        fix = ANNOTATION_FIXES.get((row["ref_id"], row["index"]))
         if fix:
             question, answer, reason = fix
             row = {**row, question: answer, f"{question}.responses": [answer]}
-        rows.append({**flatten_to_row(row, row["index"]), "manual_fix": fix and reason})
-    if pending:
-        raise ValueError(f"Fixes for unknown annotations: {sorted(pending)}")
+        rows.append({**flatten_to_row(row, row["index"]), "manual_fix": fix and fix[2]})
     return align_schema(rows)
 
 
@@ -611,7 +627,11 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
-        "--annotations", type=Path, default=RAW / "annotations.jsonl", help="raw export"
+        "--annotations",
+        type=Path,
+        nargs="+",
+        default=[RAW / "annotations.jsonl", RAW / "dasi_ebda.jsonl"],
+        help="raw exports",
     )
     parser.add_argument("--source-dir", type=Path, default=DATA / "sources")
     parser.add_argument(
@@ -633,6 +653,9 @@ def main() -> None:
         default=[],
         help="Search these indexes again before building (live, resumable)",
     )
+    parser.add_argument(
+        "--search-only", action="store_true", help="Stop after --search, build nothing"
+    )
     parser.add_argument("--candidates", type=Path, default=candidate_pool.STORE)
     parser.add_argument("--pool-dir", type=Path, default=candidate_pool.POOL_DIR)
     parser.add_argument("--repo", default=HF_REPO)
@@ -640,18 +663,27 @@ def main() -> None:
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    annotations = corrected_annotations(read_raw_file(args.annotations))
-    # Corrected copy of the raw export: input of the analysis and the training export.
-    working = DATA / "annotations/corrected/annotations.jsonl"
-    working.write_text(
-        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in annotations),
-        encoding="utf-8",
-    )
+    # Corrected copies of the raw exports: input of the analysis and the training export.
+    annotations = []
+    for path in args.annotations:
+        corrected = corrected_annotations(read_raw_file(path))
+        (DATA / "annotations/corrected" / path.name).write_text(
+            "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in corrected),
+            encoding="utf-8",
+        )
+        annotations += corrected
+    unknown = set(ANNOTATION_FIXES) - {(r["ref_id"], r["index"]) for r in annotations}
+    if unknown:
+        raise ValueError(f"Fixes for unknown annotations: {sorted(unknown)}")
+    annotations = align_schema(annotations)
     rows, review = prepare_rows(annotations, read_sources(args.source_dir))
 
     store = candidate_pool.read_store(args.candidates)
     for index in args.search:
         candidate_pool.search(rows, store, index)
+        candidate_pool.write_store(store, args.candidates)  # keep finished indexes
+    if args.search_only:
+        return
     candidates = candidate_pool.attach(rows, store)
     candidate_pool.write_store(store, args.candidates)
 
@@ -659,7 +691,7 @@ def main() -> None:
     if split_from is None and not args.new_splits:
         split_from = published_splits(args.repo)
     inputs = [
-        args.annotations,
+        *args.annotations,
         *(args.source_dir / name for name in SOURCE_FILES),
         Path(__file__),
         HERE / "candidate_pool.py",

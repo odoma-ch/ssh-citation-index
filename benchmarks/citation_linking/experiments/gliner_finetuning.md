@@ -49,26 +49,29 @@ examples pass GLiNER schema validation and tokenization (maximum 2,110 tokens, n
 truncation). The shared baseline formatter still clips individual fields at 1,000
 characters.
 
-### Fourth index: OpenCitations
+### Fourth index and DASI/EbDA references
 
 The numbers above describe the three-index export `data_v2`, which the final model was
-trained on. `dataset/build_annotation_dataset.py` writes four-index pools to
-`logs/citation_link_tryings/four_index/` (at most ten candidates per task in every
-index), and `export` now reads that pool by default:
+trained on. `dataset/build_annotation_dataset.py` writes the pools of all four indexes
+and all 681 references to `logs/citation_link_tryings/four_index/` (at most ten
+candidates per task), and `export` reads that pool and both corrected annotation files
+by default:
 
 ```bash
 python -m benchmarks.citation_linking.experiments.gliner_data export \
-  --output-dir logs/citation_link_tryings/finetuning/gliner_listwise/data_v3_4index
+  --output-dir logs/citation_link_tryings/finetuning/gliner_listwise/data_v4_dasi_ebda
 ```
 
 Pass `--pool logs/citation_link_tryings/search_top10.jsonl` for the three-index pool.
 Splits come from `reference_index_disjoint` of dataset revision
-`1acff359b935f018a4084fd35b603183c54eae04`. For `official`, use the `reference_disjoint`
-files of that revision; the older official split has no OpenCitations tasks.
+`1ab236ab82829dbcd29e1add5e80bccb3fc64ee1`. For `official`, use the `reference_disjoint`
+files of that revision; the older official split has no OpenCitations or DASI/EbDA
+tasks.
 
-The four-index export holds 1,249 eligible tasks (train 743, validation 259, test 247;
-620 with a retrieved gold, 629 `none`). The 13 tasks whose gold was cleared in review
-are withheld (`dataset/CORRECTIONS.md`).
+The export holds 1,655 eligible tasks (train 983, validation 341, test 331; 801 with
+a retrieved gold, 854 `none`). The 14 tasks whose gold was cleared in review are
+withheld (`dataset/CORRECTIONS.md`). The previous four-index export without DASI/EbDA
+is kept as `data_v3_4index` (1,249 tasks).
 
 ## Training
 
