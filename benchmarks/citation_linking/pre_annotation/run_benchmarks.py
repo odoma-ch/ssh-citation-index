@@ -28,7 +28,7 @@ from urllib.parse import unquote
 
 from lxml import etree
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "src"))
 
 from citation_index.core.connectors import (
     MatildaConnector,
@@ -385,7 +385,7 @@ def build_test_set_main():
     parser.add_argument(
         "--output",
         type=str,
-        default="benchmarks/citation_linking/api_search_test_set.jsonl",
+        default="benchmarks/citation_linking/data/sources/api_search_test_set.jsonl",
         help="Output JSONL file path",
     )
     parser.add_argument(
@@ -1006,7 +1006,7 @@ def api_search_main():
         "--test-set",
         type=str,
         required=True,
-        default="benchmarks/citation_linking/api_search_test_set.jsonl",
+        default="benchmarks/citation_linking/data/sources/api_search_test_set.jsonl",
         help="Path to test set file (.json or .jsonl)",
     )
     parser.add_argument(
@@ -1018,7 +1018,7 @@ def api_search_main():
     parser.add_argument(
         "--output",
         type=str,
-        default="benchmarks/citation_linking/api_search_benchmark_results.json",
+        default="logs/citation_linking_pre_annotation/api_search_benchmark_results.json",
         help="Output JSON file path",
     )
     parser.add_argument(
@@ -1089,7 +1089,7 @@ def api_search_main():
             logger.info(f"Initialized OpenAlex connector with email: {args.email}")
         else:
             logger.info(
-                "OpenAlex authentication uses OPENALEX_API (legacy fallback: OPENALEX_API_KEY)"
+                "OpenAlex authentication uses OPENALEX_API"
             )
         logger.info("Initialized OpenAlex connector")
 
@@ -1150,7 +1150,9 @@ TEI_NS = "http://www.tei-c.org/ns/1.0"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
 
 
-_DEFAULT_DATA_DIR = Path(__file__).parent / "legal_study_data_mpilhlt"
+_DEFAULT_DATA_DIR = (
+    Path(__file__).resolve().parents[1] / "data/sources/legal_study_data_mpilhlt"
+)
 
 
 def parse_xml_file(xml_path: Path, tei_parser: TeiBiblParser) -> List[Dict[str, Any]]:
@@ -1416,7 +1418,7 @@ def build_output_path(
     limit_str = str(limit) if limit else "None"
     apis_str = "_".join(apis)
     filename = f"legal_study_results_{timestamp}_limit{limit_str}_{apis_str}.json"
-    return str(Path(__file__).parent / filename)
+    return str(Path(__file__).resolve().parents[3] / "logs/citation_linking_pre_annotation" / filename)
 
 
 def save_parsed_instances(
@@ -1442,7 +1444,9 @@ def save_parsed_instances(
     if output_path is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = str(
-            Path(__file__).parent / f"legal_study_parsed_{timestamp}.json"
+            Path(__file__).resolve().parents[3]
+            / "logs/citation_linking_pre_annotation"
+            / f"legal_study_parsed_{timestamp}.json"
         )
 
     records = []
@@ -1489,7 +1493,7 @@ def legal_study_main() -> None:
         type=str,
         default=str(_DEFAULT_DATA_DIR),
         help="Path to the folder containing LLaMoRe XML files "
-        "(default: legal_study_data_mpilhlt/ next to this script)",
+        "(default: data/sources/legal_study_data_mpilhlt/)",
     )
     parser.add_argument(
         "--output",
@@ -1603,10 +1607,7 @@ def legal_study_main() -> None:
         if args.email:
             logger.info(f"OpenAlex connector initialised (email: {args.email})")
         else:
-            logger.warning(
-                "OpenAlex authentication uses OPENALEX_API "
-                "(legacy fallback: OPENALEX_API_KEY)."
-            )
+            logger.warning("OpenAlex authentication uses OPENALEX_API.")
 
     if "opencitations" not in skip_apis:
         connectors["opencitations"] = OpenCitationsConnector()
@@ -1652,7 +1653,7 @@ def legal_study_main() -> None:
     logger.info("=" * 60)
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 
 LOGGER = logging.getLogger(__name__)
@@ -1664,7 +1665,7 @@ INDEXES = ("openalex", "matilda", "wikidata")
 DEFAULT_OUTPUT = ROOT / "logs/citation_linking/dasi_ebda"
 
 
-DEFAULT_INPUT = Path(__file__).parent / "DASI_EBDA"
+DEFAULT_INPUT = Path(__file__).resolve().parents[1] / "data/sources/DASI_EBDA"
 
 
 HF_REPO = "yurui983/citation_linking_baseline"

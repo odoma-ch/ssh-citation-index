@@ -2,115 +2,38 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import hashlib
 import json
 import logging
 import math
 from pathlib import Path
 import random
+import re
 import time
 from typing import Any, Callable
 
 import pandas as pd
 
-from benchmarks.citation_linking.analyze_argilla_annotations import metrics, safe_div
-from benchmarks.citation_linking.build_annotation_dataset import normalize_id
-from citation_index.core.models import Reference
+from benchmarks.citation_linking.annotation.analyze_argilla_annotations import (
+    metrics,
+    safe_div,
+)
+from benchmarks.citation_linking.dataset.build_annotation_dataset import (
+    REVIEW_OVERRIDES,
+    normalize_id,
+)
+from benchmarks.citation_linking.dataset.candidate_pool import (  # noqa: F401  (notebook imports)
+    retrieve_candidates,
+    search_reference,
+)
 
 logger = logging.getLogger(__name__)
 KEY = ["ref_id", "index"]
 
 
-def search_reference(row: dict[str, Any]) -> tuple[Reference, str]:
-    """Use supplied parsing, falling back to the reference text when title is absent."""
-    reference = Reference.model_validate(row.get("parsed_reference") or {})
-    mode = "parsed_title"
-    if not (reference.full_title or "").strip():
-        reference.full_title = row["reference"].strip()
-        mode = "raw_reference"
-    if not reference.full_title:
-        raise ValueError("A nonempty reference or parsed title is required")
-    # Identifiers and gold labels must not influence metadata-only retrieval.
-    reference.identifiers = []
-    return reference, mode
-
-
 def _check_keys(frame: pd.DataFrame) -> None:
     if frame[KEY].isna().any().any() or frame.duplicated(KEY).any():
         raise ValueError("Expected unique, non-null (ref_id, index) keys")
-
-
-def retrieve_candidates(
-    tasks: pd.DataFrame,
-    connectors: dict[str, Any],
-    cache_dir: Path,
-    *,
-    top_k: int = 10,
-    retrieval_version: str = "metadata-v1",
-    pause_seconds: float = 0.1,
-) -> pd.DataFrame:
-    """Checkpoint each successful search atomically; failed searches remain retryable."""
-    _check_keys(tasks)
-    if not 1 <= top_k <= 50:
-        raise ValueError("top_k must be between 1 and 50 for all three connectors")
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    records = []
-    for position, row in enumerate(tasks.to_dict("records"), start=1):
-        reference, query_mode = search_reference(row)
-        query = reference.model_dump(mode="json", exclude_none=True)
-        request = {
-            "ref_id": row["ref_id"],
-            "index": row["index"],
-            "query": query,
-            "query_mode": query_mode,
-            "top_k": top_k,
-            "retrieval_version": retrieval_version,
-        }
-        digest = hashlib.sha256(
-            json.dumps(request, sort_keys=True).encode()
-        ).hexdigest()
-        path = cache_dir / f"{digest}.json"
-        if path.exists():
-            result = json.loads(path.read_text())
-        else:
-            try:
-                raw = connectors[row["index"]].search(reference, top_k=top_k)
-                if not isinstance(raw, list):
-                    raise ValueError("Connector search must return a list")
-                candidates = [
-                    {
-                        "rank": rank,
-                        "candidate_id": normalize_id(candidate["id"], row["index"]),
-                        "metadata": candidate,
-                    }
-                    for rank, candidate in enumerate(raw[:top_k], start=1)
-                ]
-                result = {
-                    **request,
-                    "retrieved_at": datetime.now(timezone.utc).isoformat(),
-                    "status": "ok",
-                    "n_candidates": len(candidates),
-                    "candidates": candidates,
-                }
-                temporary = path.with_suffix(".tmp")
-                temporary.write_text(json.dumps(result, ensure_ascii=False))
-                temporary.replace(path)
-            except Exception as exc:
-                logger.exception(
-                    "Candidate retrieval failed; ref_id=%s index=%s",
-                    row["ref_id"],
-                    row["index"],
-                )
-                raise RuntimeError(
-                    f"Retrieval failed for {row['ref_id']} / {row['index']}; "
-                    f"{type(exc).__name__}. Successful tasks are checkpointed."
-                ) from None
-            time.sleep(pause_seconds)
-        records.append(result)
-        if position % 50 == 0 or position == len(tasks):
-            print(f"Candidates ready: {position}/{len(tasks)}", flush=True)
-    return pd.DataFrame(records)
 
 
 def _optional_id(value: Any, index: str) -> str | None:
@@ -194,13 +117,22 @@ class InferenceError(RuntimeError):
     """Adapter-generated diagnostic containing no request or response content."""
 
 
-UNRESOLVED_OPENALEX = {
-    "10.1111_1467-6478.00057_instance-38",
-    "excite_32211_33",
-    "linkedbook_26",
-    "linkedbook_5",
-    "linkedbook_73",
+# Tasks whose gold was cleared in review. The accepted record was wrong, but nobody
+# checked that the index holds no other record of the work, so they are neither
+# positives nor confirmed negatives and are left out of scoring and training.
+UNRESOLVED = {
+    (ref_id, index)
+    for ref_id, fix in REVIEW_OVERRIDES.items()
+    for index, gold in fix.get("gold_id", {}).items()
+    if gold is None
 }
+
+
+def unresolved(tasks: pd.DataFrame) -> pd.Series:
+    keys = zip(tasks.ref_id, tasks["index"])
+    return pd.Series([key in UNRESOLVED for key in keys], index=tasks.index)
+
+
 FIELDS = {
     "full_title": "Title",
     "authors": "Authors",
@@ -362,6 +294,24 @@ def candidate_fields(index: str, metadata: dict) -> dict:
             "issue": _claim_text(claims, "P433"),
             "pages": _claim_text(claims, "P304"),
             "description": metadata.get("description"),
+        }
+    if index == "opencitations":
+        # Meta REST record: people are "Family, Given [omid:ra/..]; ..." strings.
+        def people(value: Any) -> list[str]:
+            text = re.sub(r"\s*\[[^\]]*\]", "", str(value or ""))
+            return [name for part in text.split(";") if (name := part.strip())]
+
+        return {
+            "full_title": metadata.get("title"),
+            "authors": people(metadata.get("author")),
+            "editors": people(metadata.get("editor")),
+            "publication_date_raw": metadata.get("pub_date"),
+            "ref_type": metadata.get("type"),
+            "journal_title": people(metadata.get("venue")),
+            "publisher": people(metadata.get("publisher")),
+            "volume": metadata.get("volume"),
+            "issue": metadata.get("issue"),
+            "pages": metadata.get("page"),
         }
     raise ValueError(f"Unsupported index: {index}")
 
@@ -696,11 +646,7 @@ def evaluate_reranking(
         )
     predictions = pd.DataFrame(predictions)
     diagnostics = pd.DataFrame(diagnostics)
-    excluded = (
-        tasks["index"].eq("openalex")
-        & tasks.ref_id.isin(UNRESOLVED_OPENALEX)
-        & tasks.gold_id.isna()
-    )
+    excluded = unresolved(tasks) & tasks.gold_id.isna()
     eligible = tasks.loc[~excluded]
     scored_tasks = score_predictions(
         eligible, predictions.merge(eligible[KEY], on=KEY, validate="one_to_one")

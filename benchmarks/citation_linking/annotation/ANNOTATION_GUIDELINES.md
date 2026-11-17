@@ -68,4 +68,4 @@ Wikidata may contain separate entries for an **original work** and a **review** 
 - Check the item's "instance of" (`P31`) property to confirm: look for values like "scholarly article", "book", "review article", etc.
 
 ## Decision FLow you should follow: 
-![Decision Flow](https://raw.githubusercontent.com/odoma-ch/ssh-citation-index/refs/heads/main/benchmarks/citation_linking/argilla-decision-flow-TD.png " Decision Flow")
+![Decision Flow](https://raw.githubusercontent.com/odoma-ch/ssh-citation-index/refs/heads/main/benchmarks/citation_linking/annotation/argilla-decision-flow-TD.png " Decision Flow")

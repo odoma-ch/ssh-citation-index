@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 
 import requests
 
-from benchmarks.citation_linking.linking_eval import digest, InferenceError
+from benchmarks.citation_linking.experiments.linking_eval import digest, InferenceError
 
 RERANKERS = {
     "gte": "Alibaba-NLP/gte-multilingual-reranker-base",

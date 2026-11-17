@@ -52,11 +52,18 @@ from export_argilla_annotations import load_local  # noqa: E402
 
 logger = logging.getLogger("analyze_argilla_annotations")
 
-HERE = Path(__file__).parent
-DEFAULT_INPUT = HERE / "argilla_annotations" / "citation_linking_annotations.jsonl"
-DEFAULT_OUT_DIR = HERE / "argilla_annotations" / "analysis"
+ANNOTATIONS = Path(__file__).resolve().parents[1] / "data/annotations"
+# The corrected copy written by dataset/build_annotation_dataset.py.
+DEFAULT_INPUT = ANNOTATIONS / "corrected/annotations.jsonl"
+DEFAULT_OUT_DIR = ANNOTATIONS / "analysis/annotations"
 
-OUTCOMES = ["correct_link", "wrong_link", "spurious_link", "missed_link", "correct_abstain"]
+OUTCOMES = [
+    "correct_link",
+    "wrong_link",
+    "spurious_link",
+    "missed_link",
+    "correct_abstain",
+]
 MULTI_REF_LABEL = "multi_ref_context"
 EXCLUDED_LABELS = {"unannotated", "ambiguous", MULTI_REF_LABEL}
 Z = 1.959963985  # 95%
@@ -69,13 +76,17 @@ def safe_div(numerator: float, denominator: float) -> Optional[float]:
     return numerator / denominator if denominator else None
 
 
-def wilson(successes: int, total: int, z: float = Z) -> tuple[Optional[float], Optional[float]]:
+def wilson(
+    successes: int, total: int, z: float = Z
+) -> tuple[Optional[float], Optional[float]]:
     """Wilson score interval — honest on the n=100 per-source cells, unlike normal approx."""
     if not total:
         return None, None
     denominator = total + z**2
     center = (successes + z**2 / 2) / denominator
-    half = z * math.sqrt(successes * (total - successes) / total + z**2 / 4) / denominator
+    half = (
+        z * math.sqrt(successes * (total - successes) / total + z**2 / 4) / denominator
+    )
     return max(0.0, center - half), min(1.0, center + half)
 
 
@@ -134,7 +145,9 @@ def metrics(counts: Dict[str, int]) -> Dict[str, Any]:
         "accuracy": safe_div(tp + tn, n),
         "specificity": specificity,
         "balanced_accuracy": (
-            (recall + specificity) / 2 if recall is not None and specificity is not None else None
+            (recall + specificity) / 2
+            if recall is not None and specificity is not None
+            else None
         ),
         "mcc": safe_div(tp * tn - fp * fn, mcc_denominator),
         "link_rate": safe_div(correct + wrong + spurious, n),
@@ -157,7 +170,9 @@ def prepare(
     skip_scope: str = "reference",
 ) -> pd.DataFrame:
     df = pd.DataFrame(rows)
-    missing = {"label", "candidate_missing", "index", "source", "ref_id"} - set(df.columns)
+    missing = {"label", "candidate_missing", "index", "source", "ref_id"} - set(
+        df.columns
+    )
     if missing:
         raise RuntimeError(f"input is missing required columns: {sorted(missing)}")
 
@@ -178,9 +193,9 @@ def prepare(
         raise ValueError(f"skip_scope must be 'reference' or 'row', got {skip_scope!r}")
     if exclude_needs_review:
         df.loc[df["needs_review"].fillna(False).astype(bool), "outcome"] = None
-        df.loc[df["excluded_reason"].isna() & df["outcome"].isna(), "excluded_reason"] = (
-            "needs_review"
-        )
+        df.loc[
+            df["excluded_reason"].isna() & df["outcome"].isna(), "excluded_reason"
+        ] = "needs_review"
     df["exists"] = df["outcome"].isin(["correct_link", "wrong_link", "missed_link"])
     df["linked_correct"] = df["outcome"] == "correct_link"
     return df
@@ -206,7 +221,9 @@ def group_metrics(df: pd.DataFrame, group_cols: Sequence[str]) -> pd.DataFrame:
 
 def add_macro_f1(by_index: pd.DataFrame, by_index_source: pd.DataFrame) -> pd.DataFrame:
     """Macro-F1 = unweighted mean over corpus sources, so big sources cannot dominate."""
-    macro = by_index_source.groupby("index")["f1"].mean().rename("macro_f1_over_sources")
+    macro = (
+        by_index_source.groupby("index")["f1"].mean().rename("macro_f1_over_sources")
+    )
     return by_index.merge(macro, on="index", how="left")
 
 
@@ -288,7 +305,9 @@ def coverage_pivots(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
 
     source_by_ref = evaluable.drop_duplicates("ref_id").set_index("ref_id")["source"]
     by_source = []
-    for source, refs in source_by_ref.loc[complete].groupby(source_by_ref.loc[complete]):
+    for source, refs in source_by_ref.loc[complete].groupby(
+        source_by_ref.loc[complete]
+    ):
         subset_exists = exists.loc[refs.index]
         subset_achieved = achieved.loc[refs.index]
         row = {"source": source, "n_refs": len(subset_exists)}
@@ -365,21 +384,29 @@ def run_summary(df: pd.DataFrame, tables: Dict[str, pd.DataFrame]) -> Dict[str, 
         "n_evaluable": int(df["outcome"].notna().sum()),
         "n_excluded": int(df["outcome"].isna().sum()),
         "excluded_by_reason": df["excluded_reason"].value_counts().to_dict(),
-        "n_multi_ref_references": int(df.loc[df["label"] == MULTI_REF_LABEL, "ref_id"].nunique()),
+        "n_multi_ref_references": int(
+            df.loc[df["label"] == MULTI_REF_LABEL, "ref_id"].nunique()
+        ),
         "n_manually_fixed_rows": (
             int(df["manual_fix"].notna().sum()) if "manual_fix" in df.columns else 0
         ),
         "n_needs_review": int(df["needs_review"].fillna(False).astype(bool).sum()),
         "n_needs_review_evaluable": int(
-            (df["needs_review"].fillna(False).astype(bool) & df["outcome"].notna()).sum()
+            (
+                df["needs_review"].fillna(False).astype(bool) & df["outcome"].notna()
+            ).sum()
         ),
         "needs_review_by_reason": (
-            df.loc[df["review_reason"].astype(str) != "", "review_reason"].value_counts().to_dict()
+            df.loc[df["review_reason"].astype(str) != "", "review_reason"]
+            .value_counts()
+            .to_dict()
             if "review_reason" in df.columns
             else {}
         ),
         "needs_review_by_index": (
-            df.loc[df["needs_review"].fillna(False).astype(bool), "index"].value_counts().to_dict()
+            df.loc[df["needs_review"].fillna(False).astype(bool), "index"]
+            .value_counts()
+            .to_dict()
         ),
         "n_eval_per_index": df[df["outcome"].notna()]["index"].value_counts().to_dict(),
         "n_eval_equal_across_indexes": df[df["outcome"].notna()]["index"]
@@ -397,7 +424,9 @@ def analyse(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     tables: Dict[str, pd.DataFrame] = {
         "outcome_counts": (
             df[df["outcome"].notna()]
-            .pivot_table(index="index", columns="outcome", values="ref_id", aggfunc="count")
+            .pivot_table(
+                index="index", columns="outcome", values="ref_id", aggfunc="count"
+            )
             .reindex(columns=OUTCOMES)
             .fillna(0)
             .astype(int)
@@ -411,7 +440,6 @@ def analyse(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     tables.update(coverage_pivots(df))
     tables["overall"] = group_metrics(df.assign(all="all"), ["all"])
     return tables
-
 
 
 # ---------------------------------------------------------------------------
@@ -440,9 +468,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-
     if not args.input.exists():
-        raise RuntimeError(f"{args.input} not found — run export_argilla_annotations.py first")
+        raise RuntimeError(
+            f"{args.input} not found — run dataset/build_annotation_dataset.py first"
+        )
 
     df = prepare(load_local(args.input), args.exclude_needs_review, args.skip_scope)
     tables = analyse(df)

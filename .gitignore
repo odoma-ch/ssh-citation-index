@@ -186,8 +186,10 @@ benchmarks/cex/outputs/
 benchmarks/cex/all_markdown/
 
 benchmarks/linkedbook/outputs/
-benchmarks/citation_linking/*.json
-benchmarks/citation_linking/*.jsonl
+# citation linking: only the original reference inputs (data/sources) are tracked;
+# annotations and everything derived from them stay local
+benchmarks/citation_linking/data/*
+!benchmarks/citation_linking/data/sources/
 
 benchmarks/error_analysis/
 *.txt

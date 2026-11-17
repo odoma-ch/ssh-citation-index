@@ -36,7 +36,7 @@ from typing import Any, Iterable
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+ROOT = HERE.parents[2]
 for _path in (ROOT, ROOT / "src"):
     if str(_path) not in sys.path:
         sys.path.insert(0, str(_path))
@@ -57,9 +57,10 @@ from citation_index.core.connectors.opencitations import (  # noqa: E402
 
 logger = logging.getLogger("opencitations_linking")
 
-PREP_CSV = HERE / "argilla_annotations/analysis/opencitations_prep.csv"
+ARCHIVE = ROOT / "logs/citation_linking_pre_annotation"  # baseline search results are kept out of the repo
+PREP_CSV = ARCHIVE / "opencitations_prep.csv"
 SEARCH_JSONL = ROOT / "logs/citation_link_tryings/search_top10.jsonl"
-OUT_DIR = HERE / "opencitations_baseline"
+OUT_DIR = ARCHIVE / "opencitations_baseline"
 
 REST_BATCH = 20
 TOP_N = 5  # candidates kept per ref

@@ -1,9 +1,11 @@
-"""Dataset preparation and publishing as one CLI.
+"""Set-up of the OpenCitations annotation round (finished November 2026).
+
+Kept for the record; the dataset pipeline is ``export_argilla_annotations.py`` and
+``build_annotation_dataset.py``.
 
 Subcommands:
   opencitations-prep    build the OpenCitations routing table from annotations
   opencitations-upload  publish the OpenCitations baseline to Hugging Face and/or Argilla
-  dasi-ebda-upload      add the DASI/EBDA annotations as a split of the HF annotations dataset
 """
 
 from __future__ import annotations
@@ -16,10 +18,7 @@ from pathlib import Path
 import sys
 from typing import Any
 
-from huggingface_hub import CommitOperationAdd, hf_hub_download, HfApi
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
 import requests
 
 ID_COLUMNS = {
@@ -208,7 +207,7 @@ def opencitations_prep_main() -> None:
     ]
     session = requests.Session()
     session.headers["User-Agent"] = "citation-index/1.0 (mailto:yurui.zhu@odoma.ch)"
-    if key := os.environ.get("OPENALEX_API_KEY") or os.environ.get("OPENALEX_API"):
+    if key := os.environ.get("OPENALEX_API"):
         session.headers["Authorization"] = f"Bearer {key}"
     prep = build_prep(rows, session)
     prep.to_csv(args.out, index=False)
@@ -218,7 +217,10 @@ def opencitations_prep_main() -> None:
 HERE = Path(__file__).resolve().parent
 
 
-ROWS = HERE / "opencitations_baseline/rows.jsonl"
+ARCHIVE = HERE.parents[2] / "logs/citation_linking_pre_annotation"  # baseline search results are kept out of the repo
+
+
+ROWS = ARCHIVE / "opencitations_baseline/rows.jsonl"
 
 
 HF_REPO = "yurui983/citation_linking_baseline"
@@ -292,7 +294,7 @@ def push_hf(
     import pyarrow.parquet as pq
     from huggingface_hub import HfApi
 
-    local = HERE / "opencitations_baseline/opencitations.parquet"
+    local = ARCHIVE / "opencitations_baseline/opencitations.parquet"
     pq.write_table(parquet_table(rows), local)
     api = HfApi(token=os.environ["HF_TOKEN"])
     exists = api.file_exists(repo, path_in_repo, repo_type="dataset")
@@ -433,101 +435,9 @@ def opencitations_upload_main() -> None:
         print("ARGILLA_API_TOKEN unset: skipping Argilla")
 
 
-SRC = HERE / "argilla_annotations/dasi_ebda"
-
-
-REPO = "yurui983/citation_linking_annotations"
-
-
-SPLIT = "dasi_ebda"
-
-
-PARQUET = f"data/{SPLIT}-00000-of-00001.parquet"
-
-
-ANALYSIS_FILES = [
-    "overall",
-    "metrics_by_index",
-    "metrics_by_source",
-    "metrics_by_index_source",
-    "outcome_counts",
-]
-
-
-def build_parquet(out: Path) -> int:
-    old_schema = pq.read_schema(
-        hf_hub_download(
-            REPO, "data/annotations-00000-of-00001.parquet", repo_type="dataset"
-        )
-    )
-    rows = [
-        json.loads(line)
-        for line in (SRC / "citation_linking_annotations.jsonl")
-        .read_text()
-        .splitlines()
-        if line
-    ]
-    table = pa.Table.from_pylist(
-        [{k: r.get(k) for k in old_schema.names} for r in rows], schema=old_schema
-    )
-    pq.write_table(table, out)
-    return len(rows)
-
-
-def patched_readme(n_rows: int, n_bytes: int) -> str:
-    readme = Path(hf_hub_download(REPO, "README.md", repo_type="dataset")).read_text()
-    if f"name: {SPLIT}" in readme:
-        return readme
-    readme = readme.replace(
-        "    num_examples: 1500\n",
-        f"    num_examples: 1500\n  - name: {SPLIT}\n    num_bytes: {n_bytes}\n    num_examples: {n_rows}\n",
-    )
-    readme = readme.replace(
-        "    path: data/annotations-*\n",
-        f"    path: data/annotations-*\n  - split: {SPLIT}\n    path: data/{SPLIT}-*\n",
-    )
-    return readme + (
-        f"\n## Splits\n\n- `annotations`: 500 references x 3 indexes (openalex, matilda, wikidata) from cex, excite, "
-        f"linkedbook, brill, legal_study_mpilhlt (1500 rows).\n- `{SPLIT}`: 200 references x 3 indexes from the DASI and "
-        f"EBDA bibliographies (600 rows), same schema. Argilla datasets `citation_linking_dasi_ebda_{{index}}`. "
-        f"One row carries a `manual_fix` note.\n"
-    )
-
-
-def dasi_ebda_upload_main() -> None:
-    parser = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
-    )
-    parser.add_argument("--push", action="store_true")
-    args = parser.parse_args()
-    local = SRC / "dasi_ebda.parquet"
-    n_rows = build_parquet(local)
-    readme = patched_readme(n_rows, local.stat().st_size)
-    ops = [
-        CommitOperationAdd(PARQUET, str(local)),
-        CommitOperationAdd("README.md", readme.encode()),
-        *[
-            CommitOperationAdd(
-                f"analysis/{SPLIT}/{n}.csv", str(SRC / f"analysis/{n}.csv")
-            )
-            for n in ANALYSIS_FILES
-        ],
-    ]
-    print(f"{n_rows} rows -> {REPO}:{PARQUET}; files: {[o.path_in_repo for o in ops]}")
-    if args.push:
-        HfApi(token=os.environ["HF_TOKEN"]).create_commit(
-            REPO,
-            ops,
-            repo_type="dataset",
-            commit_message=f"add {SPLIT} split ({n_rows} rows) + analysis",
-        )
-        print("pushed")
-
-
 COMMANDS = {
     "opencitations-prep": opencitations_prep_main,
     "opencitations-upload": opencitations_upload_main,
-    "dasi-ebda-upload": dasi_ebda_upload_main,
 }
 
 

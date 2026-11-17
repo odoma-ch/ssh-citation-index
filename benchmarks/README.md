@@ -29,7 +29,7 @@ benchmarks/
 ├── excite/              # EXCITE corpus (SSH, German/English)
 ├── cex/                 # CEX corpus (multi-category SSH)
 ├── linkedbook/          # LinkedBook corpus (multilingual CoNLL-derived)
-├── citation_linking/    # API search benchmarks (OpenAlex, Wikidata, …)
+├── citation_linking/    # Citation-linking benchmark: annotation tasks, gold dataset, experiments
 ├── finetune/            # Finetuning dataset generation
 ├── brill/               # Brill Knowledge Graph sampling + LLM parse (used for citation linking)
 ├── error_analysis/      # Stored outputs for manual error inspection
@@ -133,17 +133,17 @@ First build the test set from the three corpora, then run the API search benchma
 
 ```bash
 # Build test set
-python benchmarks/citation_linking/run_benchmarks.py build-test-set
+python benchmarks/citation_linking/pre_annotation/run_benchmarks.py build-test-set
 
 # Run search benchmark against OpenAlex, OpenCitations, Wikidata, Matilda
-python benchmarks/citation_linking/run_benchmarks.py api-search \
-    --test-set benchmarks/citation_linking/api_search_test_set.jsonl \
+python benchmarks/citation_linking/pre_annotation/run_benchmarks.py api-search \
+    --test-set benchmarks/citation_linking/data/sources/api_search_test_set.jsonl \
     --email your@email.com \
     --top-k 3 \
     --limit 50
 
 # Legal study benchmark (LLaMoRe XML data)
-python benchmarks/citation_linking/run_benchmarks.py legal-study
+python benchmarks/citation_linking/pre_annotation/run_benchmarks.py legal-study
 ```
 
 Use `--skip-apis` to exclude specific APIs (e.g. `--skip-apis opencitations matilda`).

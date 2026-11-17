@@ -42,7 +42,7 @@ MIN_PREFIX_CHARS = 12
 GOOD_TITLE_SIM = 90.0
 MIN_SHORTLIST_SIM = 50.0
 DOI_MIN_TITLE_SIM = 80.0  # a DOI hit below this is a wrongly parsed DOI, not a match
-SHORTLIST = 5
+SHORTLIST = 10  # records fetched from REST for rescoring; one batched call
 
 SPARQL_PREFIXES = """\
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -57,12 +57,14 @@ class OpenCitationsError(RuntimeError):
 
 
 # ---------------------------------------------------------------------------
-# Pure helpers (also imported by benchmarks/citation_linking/opencitations_linking.py)
+# Pure helpers (also imported by benchmarks/citation_linking/pre_annotation/opencitations_linking.py)
 # ---------------------------------------------------------------------------
 def normalize_doi(value: Any) -> Optional[str]:
     if value is None or (isinstance(value, float) and value != value):
         return None
-    doi = re.sub(r"^(https?://(dx\.)?doi\.org/|doi:)", "", str(value).strip(), flags=re.I)
+    doi = re.sub(
+        r"^(https?://(dx\.)?doi\.org/|doi:)", "", str(value).strip(), flags=re.I
+    )
     return doi.lower() or None
 
 
@@ -76,12 +78,16 @@ def extract_year(*values: Any) -> Optional[int]:
 
 def _capitalise(token: str) -> str:
     """Upper-case the first letter of a token and of each hyphen/bracket-led part."""
-    return re.sub(r"(^|[-(\[\"“‘])([^\W\d_])", lambda m: m.group(1) + m.group(2).upper(), token)
+    return re.sub(
+        r"(^|[-(\[\"“‘])([^\W\d_])", lambda m: m.group(1) + m.group(2).upper(), token
+    )
 
 
 def title_prefix_variants(title: str, n_words: int) -> List[str]:
     """OC-cased prefixes of ``title``: rest-kept (``EZH2``), rest-lowered, and raw."""
-    words = title.split()[:n_words]
+    # A prefix that starts with an ASCII quote never returns from the endpoint (the
+    # filter is no longer a vocabulary range scan), so search from the first word.
+    words = title.lstrip('"').split()[:n_words]
     if not words:
         return []
 
@@ -93,11 +99,15 @@ def title_prefix_variants(title: str, n_words: int) -> List[str]:
         " ".join(_capitalise(w.lower()) for w in words),
         " ".join(words),
     )
-    return list(dict.fromkeys(strip(v) for v in variants if len(strip(v)) >= MIN_PREFIX_CHARS))
+    return list(
+        dict.fromkeys(strip(v) for v in variants if len(strip(v)) >= MIN_PREFIX_CHARS)
+    )
 
 
 def sparql_literal(value: str) -> str:
-    return '"' + value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ") + '"'
+    return (
+        '"' + value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ") + '"'
+    )
 
 
 def title_prefix_query(prefix: str, limit: int = 100) -> str:
@@ -150,7 +160,9 @@ def lookup_keys(tokens: Dict[str, str]) -> set:
 def normalize_record(record: Dict[str, Any]) -> Dict[str, Any]:
     """Flatten a Meta REST record into the fields used for scoring and benchmark rows."""
     tokens = record_tokens(record)
-    authors = [strip_brackets(a) for a in (record.get("author") or "").split(";") if a.strip()]
+    authors = [
+        strip_brackets(a) for a in (record.get("author") or "").split(";") if a.strip()
+    ]
     return {
         "omid": tokens.get("omid"),
         "doi": tokens.get("doi"),
@@ -191,7 +203,8 @@ class Query:
         return cls(
             title=(reference.full_title or "").strip(),
             family=family,
-            year=reference.publication_year or extract_year(reference.publication_date_raw),
+            year=reference.publication_year
+            or extract_year(reference.publication_date_raw),
             doi=doi,
         )
 
@@ -204,8 +217,14 @@ class Query:
 
 
 def score_candidate(query: Query, candidate: Dict[str, Any]) -> Dict[str, Any]:
-    title_sim = calculate_title_similarity(query.title, candidate["title"]) if query.title else 0.0
-    year_ok = bool(query.year and candidate["year"] and abs(query.year - candidate["year"]) <= 1)
+    title_sim = (
+        calculate_title_similarity(query.title, candidate["title"])
+        if query.title
+        else 0.0
+    )
+    year_ok = bool(
+        query.year and candidate["year"] and abs(query.year - candidate["year"]) <= 1
+    )
     family = (query.family or "").lower()
     author_ok = bool(family and any(family in a.lower() for a in candidate["authors"]))
     return {
@@ -213,7 +232,8 @@ def score_candidate(query: Query, candidate: Dict[str, Any]) -> Dict[str, Any]:
         "year_match": year_ok,
         "author_match": author_ok,
         "score": round(title_sim + 10 * year_ok + 10 * author_ok, 1),
-        "is_match_by_similarity": title_sim >= GOOD_TITLE_SIM and (year_ok or author_ok),
+        "is_match_by_similarity": title_sim >= GOOD_TITLE_SIM
+        and (year_ok or author_ok),
     }
 
 
@@ -253,7 +273,9 @@ class OpenCitationsConnector(BaseConnector):
             self.session.headers["authorization"] = self.api_key
 
     # -- HTTP ---------------------------------------------------------------
-    def _get(self, url: str, retries: Optional[int] = None, **kwargs: Any) -> requests.Response:
+    def _get(
+        self, url: str, retries: Optional[int] = None, **kwargs: Any
+    ) -> requests.Response:
         last: Optional[Exception] = None
         for attempt in range(retries or self.max_retries):
             try:
@@ -293,7 +315,9 @@ class OpenCitationsConnector(BaseConnector):
             raise OpenCitationsError(f"Unexpected SPARQL response: {exc}") from exc
 
     # -- search -------------------------------------------------------------
-    def search(self, reference: Reference, top_k: int = 10, **kwargs: Any) -> List[Dict[str, Any]]:
+    def search(
+        self, reference: Reference, top_k: int = 10, **kwargs: Any
+    ) -> List[Dict[str, Any]]:
         """DOI lookup, then SPARQL title / author search.
 
         Candidates are Meta REST records with ``id`` rewritten to the bare OMID
@@ -311,8 +335,13 @@ class OpenCitationsConnector(BaseConnector):
         if not ranked and errors:
             raise OpenCitationsError("; ".join(errors))
         if errors:
-            logger.warning("OpenCitations SPARQL partial failure: %s", "; ".join(errors))
-        return [self._candidate(record, scored, "sparql") for record, scored in ranked[: top_k or None]]
+            logger.warning(
+                "OpenCitations SPARQL partial failure: %s", "; ".join(errors)
+            )
+        return [
+            self._candidate(record, scored, "sparql")
+            for record, scored in ranked[: top_k or None]
+        ]
 
     def _lookup_doi(self, query: Query) -> Optional[Dict[str, Any]]:
         for record in self.fetch_metadata([f"doi:{query.doi}"]):
@@ -321,11 +350,17 @@ class OpenCitationsConnector(BaseConnector):
             # a DOI hit with an unrelated title means the parsed DOI was wrong
             if not query.title or scored["title_similarity"] >= DOI_MIN_TITLE_SIM:
                 return self._candidate(record, scored, "doi")
-            logger.info("OpenCitations DOI %s rejected: title similarity %.0f", query.doi, scored["title_similarity"])
+            logger.info(
+                "OpenCitations DOI %s rejected: title similarity %.0f",
+                query.doi,
+                scored["title_similarity"],
+            )
         return None
 
     @staticmethod
-    def _candidate(record: Dict[str, Any], scored: Dict[str, Any], route: str) -> Dict[str, Any]:
+    def _candidate(
+        record: Dict[str, Any], scored: Dict[str, Any], route: str
+    ) -> Dict[str, Any]:
         tokens = record_tokens(record)
         return {
             **record,
@@ -337,7 +372,9 @@ class OpenCitationsConnector(BaseConnector):
             "search_route": route,
         }
 
-    def sparql_candidates(self, query: Query) -> Tuple[List[Dict[str, Any]], str, List[str]]:
+    def sparql_candidates(
+        self, query: Query
+    ) -> Tuple[List[Dict[str, Any]], str, List[str]]:
         """Run the SPARQL strategies -> (``{omid, title, date}`` candidates, strategy, errors)."""
         seen: Dict[str, Dict[str, Any]] = {}
         errors: List[str] = []
@@ -353,7 +390,9 @@ class OpenCitationsConnector(BaseConnector):
                         {
                             "omid": br,
                             "title": binding["title"]["value"],
-                            "date": binding.get("date", {}).get("value"),  # absent for undated records
+                            "date": binding.get("date", {}).get(
+                                "value"
+                            ),  # absent for undated records
                         },
                     )
                     strategy = name if strategy == "none" else strategy
@@ -362,37 +401,58 @@ class OpenCitationsConnector(BaseConnector):
                 errors.append(f"{name}: {exc}")
 
         def best_title_sim() -> float:
-            return max((calculate_title_similarity(query.title, c["title"]) for c in seen.values()), default=0.0)
+            return max(
+                (
+                    calculate_title_similarity(query.title, c["title"])
+                    for c in seen.values()
+                ),
+                default=0.0,
+            )
 
         if not query.title:
             return [], strategy, errors
         for n_words in PREFIX_WORDS:
             for prefix in title_prefix_variants(query.title, n_words):
-                run(title_prefix_query(prefix), f"title_prefix_{n_words}w", self.sparql_timeout)
+                run(
+                    title_prefix_query(prefix),
+                    f"title_prefix_{n_words}w",
+                    self.sparql_timeout,
+                )
             if best_title_sim() >= GOOD_TITLE_SIM:
                 return list(seen.values()), strategy, errors
 
-        if query.family and query.year:  # ponytail: LIMIT 300 truncates very common surnames
+        if (
+            query.family and query.year
+        ):  # ponytail: LIMIT 300 truncates very common surnames
             years = (query.year - 1, query.year, query.year + 1)
             for family in dict.fromkeys((query.family, query.family.title())):
-                run(author_year_query(family, years), "author_year", self.author_timeout)
+                run(
+                    author_year_query(family, years), "author_year", self.author_timeout
+                )
         return list(seen.values()), strategy, errors
 
     def _rank_records(
         self, query: Query, raw: List[Dict[str, Any]]
     ) -> List[Tuple[Dict[str, Any], Dict[str, Any]]]:
         """Shortlist by title similarity, fetch metadata via REST, rescore, sort by score."""
-        sims = {c["omid"]: calculate_title_similarity(query.title, c["title"]) for c in raw}
+        sims = {
+            c["omid"]: calculate_title_similarity(query.title, c["title"]) for c in raw
+        }
         shortlist = sorted(
-            (c for c in raw if sims[c["omid"]] >= MIN_SHORTLIST_SIM), key=lambda c: -sims[c["omid"]]
+            (c for c in raw if sims[c["omid"]] >= MIN_SHORTLIST_SIM),
+            key=lambda c: -sims[c["omid"]],
         )[:SHORTLIST]
-        ranked = []
+        ranked = {}  # two shortlisted OMIDs can be one merged record: keep it once
         for record in self.fetch_metadata([f"omid:{c['omid']}" for c in shortlist]):
             flat = normalize_record(record)
-            ranked.append((record, {**flat, **score_candidate(query, flat)}))
-        return sorted(ranked, key=lambda pair: pair[1]["score"], reverse=True)
+            ranked.setdefault(
+                record.get("id"), (record, {**flat, **score_candidate(query, flat)})
+            )
+        return sorted(ranked.values(), key=lambda pair: pair[1]["score"], reverse=True)
 
-    def rank_candidates(self, query: Query, raw: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def rank_candidates(
+        self, query: Query, raw: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
         """Scored, flattened candidates (used by the benchmark script)."""
         return [scored for _, scored in self._rank_records(query, raw)]
 
@@ -408,7 +468,9 @@ class OpenCitationsConnector(BaseConnector):
         if identifier_type is None:
             if identifier.startswith(("10.", "DOI:", "doi:", "https://doi.org/")):
                 identifier_type = "doi"
-            elif identifier.startswith(("978", "979")) and len(identifier.replace("-", "")) in (10, 13):
+            elif identifier.startswith(("978", "979")) and len(
+                identifier.replace("-", "")
+            ) in (10, 13):
                 identifier_type = "isbn"
             elif len(identifier.replace("-", "")) == 8:
                 identifier_type = "issn"
@@ -420,7 +482,11 @@ class OpenCitationsConnector(BaseConnector):
         if identifier_type == "doi":
             clean = f"doi:{normalize_doi(identifier)}"
         else:
-            clean = identifier if identifier.startswith(f"{identifier_type}:") else f"{identifier_type}:{identifier}"
+            clean = (
+                identifier
+                if identifier.startswith(f"{identifier_type}:")
+                else f"{identifier_type}:{identifier}"
+            )
         return self.fetch_metadata([clean])
 
     # -- mapping ------------------------------------------------------------
@@ -439,7 +505,11 @@ class OpenCitationsConnector(BaseConnector):
         title = record.get("title") or record.get("title_str")
         if not title:
             return None
-        pub_date = record.get("pub_date") or record.get("year") or record.get("publication_date")
+        pub_date = (
+            record.get("pub_date")
+            or record.get("year")
+            or record.get("publication_date")
+        )
         venue = record.get("venue") or record.get("journal")
         publisher = record.get("publisher")
         doi = record.get("doi") or record_tokens(record).get("doi")
@@ -448,8 +518,14 @@ class OpenCitationsConnector(BaseConnector):
             identifiers=[{"scheme": "doi", "value": doi}] if doi else [],
             authors=self._normalise_people(record.get("author")) or None,
             editors=self._normalise_people(record.get("editor")) or None,
-            journal_title=self._strip_bracketed(venue) if isinstance(venue, str) else venue,
-            publisher=self._strip_bracketed(publisher) if isinstance(publisher, str) else publisher,
+            journal_title=(
+                self._strip_bracketed(venue) if isinstance(venue, str) else venue
+            ),
+            publisher=(
+                self._strip_bracketed(publisher)
+                if isinstance(publisher, str)
+                else publisher
+            ),
             publication_date_raw=str(pub_date) if pub_date else None,
             volume=record.get("volume") or None,
             issue=record.get("issue") or None,
@@ -476,9 +552,14 @@ class OpenCitationsConnector(BaseConnector):
         people: List[str] = []
         for entry in raw if isinstance(raw, list) else []:
             if isinstance(entry, dict):
-                name = entry.get("name") or " ".join(
-                    part for part in (entry.get("given"), entry.get("family")) if part
-                ).strip()
+                name = (
+                    entry.get("name")
+                    or " ".join(
+                        part
+                        for part in (entry.get("given"), entry.get("family"))
+                        if part
+                    ).strip()
+                )
             else:
                 name = entry if isinstance(entry, str) else None
             if name:

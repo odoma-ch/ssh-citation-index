@@ -1,11 +1,18 @@
-"""Build local Hugging Face release files from reviewed citation-linking annotations.
+"""Raw annotations -> reviewed gold dataset with candidates -> Hugging Face ``citation_linking``.
 
-Run from the repository root with the benchmark environment (pyarrow and
-scikit-learn installed):
+Second of the two dataset scripts (``annotation/export_argilla_annotations.py`` is the first). It
+reads the raw Argilla export, applies every reviewed correction, attaches the frozen
+search candidates and writes the release. Run from the repository root:
 
-    python benchmarks/citation_linking/build_annotation_dataset.py
+    python benchmarks/citation_linking/dataset/build_annotation_dataset.py --output-dir <new dir>
+    python benchmarks/citation_linking/dataset/build_annotation_dataset.py --output-dir <new dir> --push
 
-Outputs default to logs/citation_linking_release. No network calls or uploads.
+    # search an index again first (live, resumable; moves its cut-off date)
+    python benchmarks/citation_linking/dataset/build_annotation_dataset.py --search opencitations ...
+
+All corrections live in this file: ``ANNOTATION_FIXES`` (contradictory answers) and
+``REVIEW_OVERRIDES`` (gold targets and DOIs). ``CORRECTIONS.md`` explains each one.
+Splits are frozen to the published release unless ``--new-splits`` is given.
 """
 
 from __future__ import annotations
@@ -13,36 +20,87 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import random
+import logging
 import re
 import sys
-import warnings
-from collections import Counter, defaultdict
-from itertools import permutations
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 from uuid import UUID
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+DATA = HERE.parent / "data"
+ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(ROOT))
 
 from citation_index.core.models import Reference  # noqa: E402
 from citation_index.utils.identifier_parser import parse_identifier  # noqa: E402
-from export_argilla_annotations import load_local  # noqa: E402
+from benchmarks.citation_linking.dataset import candidate_pool  # noqa: E402
+from benchmarks.citation_linking.dataset.release_splits import (  # noqa: E402
+    CONFIGS,
+    INDEXES,
+    RATIOS,
+    SPLITS,
+    preserve_splits,
+    published_splits,
+    split_rows,
+    split_statistics,
+)
+from benchmarks.citation_linking.annotation.export_argilla_annotations import (  # noqa: E402
+    RAW,
+    align_schema,
+    flatten_to_row,
+)
 
-INDEXES = ("matilda", "openalex", "wikidata")
-SPLITS = ("train", "validation", "test")
-RATIOS = (0.6, 0.2, 0.2)
-CONFIGS = ("reference_disjoint", "reference_index_disjoint")
 SOURCE_FILES = (
     "api_search_test_set.jsonl",
     "brillkg_sample_200_parsed.jsonl",
     "legal_study_data_mpilhlt/legal_study_parsed.json",
 )
-# Reviewed corrections (2026-10) that override raw annotation evidence.
+HF_REPO = "yurui983/citation_linking"
+# Contradictory or incomplete answers, corrected after review. Each entry replaces one
+# answer of one (ref_id, index) annotation; the label is derived again from the answers.
+# (ref_id, index): (question, corrected answer, what changed and why)
+ANNOTATION_FIXES = {
+    ("brill_a15e3650-8e13-4550-8b67-2158fc2df786_634", "openalex"): (
+        "no_match",
+        "true",
+        "no_match: false -> true (no candidate returned and no_match was left false; the matilda and wikidata rows for this reference both read correctly-not-found, so this is a correct abstention)",
+    ),
+    ("10.1515_zfrs-1980-0104_instance-63", "openalex"): (
+        "no_match",
+        "true",
+        "no_match: false -> true (annotator marked the record as present in OpenAlex but gave no ID; OpenAlex holds 91 Marshall Clinard works, none on victimization, and no title match for 'Comparative Crime Victimization Surveys' 1978 -- the work is absent, so the returned candidate is a spurious link)",
+    ),
+    ("cex_COM-SCI_28_20", "matilda"): (
+        "is_match_correct",
+        "false",
+        "is_match_correct: true -> false (candidate 'Pixeldust Studios Reptopia Magic Leap Experience' is a different work from the reference 'Magic Leap. 2018'; matches how openalex was answered)",
+    ),
+    ("10.1111_1467-6478.00057_instance-71", "matilda"): (
+        "correct_id",
+        "[SKIP] multiple references packed in one single context (Harvard Law Review eds. 1990; Dean v. District of Columbia 1995; Overington, The Age 1997)",
+        "correct_id -> [SKIP] (reference text bundles three publications, the same class as the 18 references the openalex annotator marked; excluded from the analysis)",
+    ),
+    ("10.1515_zfrs-1980-0104_instance-7", "matilda"): (
+        "is_match_correct",
+        "false",
+        "is_match_correct: true -> false (candidate is an unrelated PSSRI volume on the China-Pakistan Economic Corridor)",
+    ),
+    ("cex_COM-SCI_28_20", "wikidata"): (
+        "is_match_correct",
+        "false",
+        "is_match_correct: true -> false (candidate Q18351488 is Magic Leap the company, not a publication record)",
+    ),
+    ("brill_7b98252c-c219-491b-8a44-3e4286c9ca47_2", "opencitations"): (
+        "is_match_correct",
+        "false",
+        "is_match_correct: true -> false (candidate br/06020233318 is Barco, a 2011 catalogue of the BnF Hebrew manuscripts 1-32, not the cited Latin manuscript 'ms lat. 8589'; annotator also marked no_match=true and the openalex/matilda/wikidata rows for this reference read correctly-not-found, so this is a spurious link)",
+    ),
+}
+# Reviewed corrections (2026-10, 2026-11) that override raw annotation evidence.
 # gold_id entries are keyed by target index. cex_ENV-SCI_54_63 needs no entry:
 # both DOIs are valid, so its gold_doi stays null and the conflict stays listed.
 REVIEW_OVERRIDES = {
@@ -63,14 +121,52 @@ REVIEW_OVERRIDES = {
         "gold_doi": "10.1515/9780691215983",
         "gold_id": {"matilda": "d6313d68-4fc7-4307-9b92-48b25363cdda"},
     },
-    # OpenAlex is right; the Matilda DOI belongs to a work with a different author.
+    # OpenAlex is right; the Matilda record is a review of the book by another author.
     "brill_20f2caaa-677a-42c1-8857-19e196f8c74e_331": {
         "gold_doi": "10.1017/cbo9780511583599",
+        "gold_id": {"matilda": None},
+    },
+    # The cited work is the 1996 book chapter (Matilda, OpenAlex W4299787999). The
+    # OpenCitations and Wikidata records are the 1994 journal version of the same text.
+    "excite_9543_36": {
+        "gold_doi": "10.1515/9781685853952-010",
+        "gold_id": {
+            "openalex": "W4299787999",
+            "opencitations": None,
+            "wikidata": None,
+        },
     },
     # The cited work is a book chapter; OpenAlex had matched the whole book.
     "excite_9543_10": {
         "gold_doi": "10.7560/720466-008",
         "gold_id": {"openalex": "W4408028697"},
+    },
+    # Cross-index review after the OpenCitations round (2026-11): references where
+    # annotators judged the same DOI differently. A gold record is the cited
+    # publication itself, not a review of it or another edition of the same text.
+    # Rejected candidates that the annotator's index does hold:
+    "excite_9543_33": {"gold_id": {"openalex": "W58313853"}},
+    "10.1515_zfrs-1980-0103_instance-30": {"gold_id": {"openalex": "W181794323"}},
+    # OpenAlex had accepted a different paper (Korhonen et al., Ecological Economics).
+    "cex_ENV-SCI_54_70": {
+        "gold_doi": "10.1016/j.resconrec.2017.08.027",
+        "gold_id": {"openalex": "W2769483102"},
+    },
+    # Book records that carry the DOI of a book review: the gold IDs stand, the DOI
+    # does not identify the cited book.
+    "excite_9543_34": {"gold_doi": None},
+    "10.1111_1467-6478.00057_instance-40": {"gold_doi": None},
+    # 1924 four-page article of the same title, not the 1926 book (Wikidata has it).
+    "linkedbook_85": {"gold_doi": None, "gold_id": {"opencitations": None}},
+    # Reviews of the cited book (by Drinan and by Foster), not the book.
+    "10.1515_zfrs-1980-0104_instance-43": {
+        "gold_doi": None,
+        "gold_id": {"opencitations": None, "wikidata": None},
+    },
+    # Harvey & Hill 2004: same title and journal, different co-author and year.
+    "cex_SOC-SCI_102_13": {
+        "gold_doi": None,
+        "gold_id": {"opencitations": None, "wikidata": None},
     },
 }
 PARSED_TEXT_FIELDS = (
@@ -112,6 +208,12 @@ def read_sources(directory: Path) -> dict[str, dict[str, Any]]:
 def normalize_id(value: str, index: str) -> str:
     """Validate a gold target and return the provider's short identifier."""
     value = value.strip()
+    if index == "opencitations":
+        # OMID of a bibliographic resource; also accepts omid:/URL forms ending in br/<digits>.
+        match = re.fullmatch(r"(?:.*[/:])?(br/0[1-9]\d*)", value.lower())
+        if not match:
+            raise ValueError(f"Invalid opencitations gold ID: {value!r}")
+        return match.group(1)
     if "://" in value:
         url = urlparse(value)
         domain = {
@@ -176,6 +278,26 @@ def normalize_parsed(raw: dict[str, Any] | None, source: str) -> dict[str, Any] 
     return parsed
 
 
+def read_raw_file(path: Path) -> list[dict[str, Any]]:
+    text = path.read_text(encoding="utf-8")
+    return [json.loads(line) for line in text.splitlines() if line.strip()]
+
+
+def corrected_annotations(raw: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Raw export rows with ``ANNOTATION_FIXES`` applied and labels derived again."""
+    pending = dict(ANNOTATION_FIXES)
+    rows = []
+    for row in raw:
+        fix = pending.pop((row["ref_id"], row["index"]), None)
+        if fix:
+            question, answer, reason = fix
+            row = {**row, question: answer, f"{question}.responses": [answer]}
+        rows.append({**flatten_to_row(row, row["index"]), "manual_fix": fix and reason})
+    if pending:
+        raise ValueError(f"Fixes for unknown annotations: {sorted(pending)}")
+    return align_schema(rows)
+
+
 def prepare_rows(
     annotations: list[dict[str, Any]], sources: dict[str, dict[str, Any]]
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -192,6 +314,12 @@ def prepare_rows(
         by_ref[row["ref_id"]].append(row)
 
     output, excluded, conflicts = [], [], []
+    # Corrections made to the working copy of the raw annotations after review.
+    manual_fixes = [
+        {"ref_id": row["ref_id"], "index": row["index"], "fix": row["manual_fix"]}
+        for row in annotations
+        if row.get("manual_fix")
+    ]
     for ref_id, group in sorted(by_ref.items()):
         if any(row["label"] == "multi_ref_context" for row in group):
             excluded.append({"ref_id": ref_id, "reason": "multi_ref_context"})
@@ -261,7 +389,7 @@ def prepare_rows(
         gold_doi = next(iter(dois)) if len(dois) == 1 else None
         fix = REVIEW_OVERRIDES.get(ref_id, {})
         if "gold_doi" in fix:
-            gold_doi = normalize_doi(fix["gold_doi"])
+            gold_doi = fix["gold_doi"] and normalize_doi(fix["gold_doi"])
         elif len(dois) > 1:
             conflicts.append({"ref_id": ref_id, "evidence": evidence})
         for row in sorted(group, key=lambda item: item["index"]):
@@ -298,125 +426,11 @@ def prepare_rows(
             )
     if not output:
         raise ValueError("No finalized annotations remain after exclusions")
-    return output, {"excluded_references": excluded, "doi_conflicts": conflicts}
-
-
-def reference_groups(rows: list[dict[str, Any]]) -> list[str]:
-    """Join references transitively by normalized text, gold DOI, or provider ID."""
-    parents = {row["ref_id"]: row["ref_id"] for row in rows}
-
-    def root(ref_id: str) -> str:
-        while parents[ref_id] != ref_id:
-            parents[ref_id] = parents[parents[ref_id]]
-            ref_id = parents[ref_id]
-        return ref_id
-
-    owners = {}
-    for row in rows:
-        ref_id = row["ref_id"]
-        identities = [("text", " ".join(row["reference"].casefold().split()))]
-        if row["gold_id"]:
-            identities.append((row["index"], row["gold_id"]))
-        if row["gold_doi"]:
-            identities.append(("doi", row["gold_doi"]))
-        for identity in identities:
-            other = owners.setdefault(identity, ref_id)
-            left, right = sorted((root(ref_id), root(other)))
-            parents[right] = left
-    return [root(row["ref_id"]) for row in rows]
-
-
-def split_rows(
-    rows: list[dict[str, Any]], config: str, seed: int
-) -> tuple[dict[str, list[int]], dict[str, Any]]:
-    """Choose a reproducible grouped, stratified 60/20/20 assignment."""
-    import numpy as np
-    from sklearn.model_selection import StratifiedGroupKFold
-
-    if config not in CONFIGS:
-        raise ValueError(f"Unknown configuration: {config}")
-    groups = reference_groups(rows) if config == CONFIGS[0] else list(range(len(rows)))
-    if len(set(groups)) < 5:
-        raise ValueError("At least five assignment groups are required")
-    strata = [
-        f"{row['source']}/{row['index']}/{row['gold_id'] is not None}" for row in rows
-    ]
-    split_info = {"seed": seed, "assignment_groups": len(set(groups))}
-    if config == "reference_index_disjoint":
-        rng = random.Random(seed)
-        buckets = defaultdict(list)
-        for position, stratum in enumerate(strata):
-            buckets[stratum].append(position)
-        partitions = {split: [] for split in SPLITS}
-        for _, bucket in sorted(buckets.items()):
-            rng.shuffle(bucket)
-            quotas = [divmod(len(bucket) * weight, 5) for weight in (3, 1, 1)]
-            sizes = [whole for whole, remainder in quotas]
-            order = list(range(3))
-            rng.shuffle(order)
-            order.sort(key=lambda i: quotas[i][1], reverse=True)
-            for i in order[: len(bucket) - sum(sizes)]:
-                sizes[i] += 1
-            offset = 0
-            for split, size in zip(SPLITS, sizes):
-                partitions[split].extend(bucket[offset : offset + size])
-                offset += size
-        partitions = {split: sorted(values) for split, values in partitions.items()}
-        split_info["method"] = (
-            "Seeded shuffle within source/index/gold-presence strata; largest-remainder 60/20/20 allocation with seeded tie breaking."
-        )
-    else:
-        _, labels = np.unique(strata, return_inverse=True)
-        totals = np.bincount(labels)
-        targets = np.asarray(RATIOS)[:, None] * totals
-        best = None
-        # ponytail: bounded heuristic search; use an exact solver if strict quotas are required.
-        with warnings.catch_warnings():
-            warnings.filterwarnings("ignore", message="The least populated class in y")
-            for trial in range(16):
-                splitter = StratifiedGroupKFold(
-                    n_splits=5, shuffle=True, random_state=seed + trial
-                )
-                folds = [
-                    heldout
-                    for _, heldout in splitter.split(
-                        np.zeros(len(rows)), labels, groups
-                    )
-                ]
-                counts = np.asarray(
-                    [np.bincount(labels[fold], minlength=len(totals)) for fold in folds]
-                )
-                for dev, test in permutations(range(5), 2):
-                    actual = np.asarray(
-                        [totals - counts[dev] - counts[test], counts[dev], counts[test]]
-                    )
-                    score = float(
-                        np.sum((actual - targets) ** 2 / np.maximum(targets, 1))
-                    )
-                    if best is None or score < best[0]:
-                        best = (score, seed + trial, dev, test, folds)
-        score, chosen_seed, dev, test, folds = best
-        partitions = {
-            "train": sorted(
-                i for fold in range(5) if fold not in (dev, test) for i in folds[fold]
-            ),
-            "validation": sorted(folds[dev].tolist()),
-            "test": sorted(folds[test].tolist()),
-        }
-        split_info.update(
-            method="Best of 16 seeded StratifiedGroupKFold assignments and all validation/test fold pairs; other three folds form training. Minimize normalized squared deviation from source/index/gold-presence stratum targets.",
-            selected_seed=chosen_seed,
-            validation_fold=dev,
-            test_fold=test,
-            stratification_score=score,
-        )
-    assigned = [i for partition in partitions.values() for i in partition]
-    if sorted(assigned) != list(range(len(rows))):
-        raise ValueError("Split partitions do not cover each row exactly once")
-    group_sets = [{groups[i] for i in partitions[split]} for split in SPLITS]
-    if any(group_sets[a] & group_sets[b] for a, b in ((0, 1), (0, 2), (1, 2))):
-        raise ValueError("Assignment group crosses split boundaries")
-    return partitions, split_info
+    return output, {
+        "excluded_references": excluded,
+        "doi_conflicts": conflicts,
+        "manual_fixes": manual_fixes,
+    }
 
 
 def arrow_table(rows: list[dict[str, Any]]) -> Any:
@@ -456,78 +470,6 @@ def arrow_table(rows: list[dict[str, Any]]) -> Any:
     return pa.Table.from_pylist(rows, schema=schema)
 
 
-def split_statistics(
-    rows: list[dict[str, Any]], partitions: dict[str, list[int]]
-) -> dict[str, Any]:
-    training_refs = {rows[i]["ref_id"] for i in partitions["train"]}
-    result = {}
-    for split, positions in partitions.items():
-        subset = [rows[i] for i in positions]
-        counts = Counter(
-            (r["source"], r["index"], r["gold_id"] is not None) for r in subset
-        )
-        result[split] = {
-            "rows": len(subset),
-            "references": len({r["ref_id"] for r in subset}),
-            "gold_ids": sum(r["gold_id"] is not None for r in subset),
-            "gold_dois": sum(r["gold_doi"] is not None for r in subset),
-            "missing_parsed_rows": sum(r["parsed_reference"] is None for r in subset),
-            "missing_document_rows": sum(r["document_id"] is None for r in subset),
-            "references_seen_in_train": len(
-                {r["ref_id"] for r in subset} & training_refs
-            ),
-            "strata": [
-                {
-                    "source": source,
-                    "index": index,
-                    "has_gold": present,
-                    "rows": counts[source, index, present],
-                }
-                for source in sorted({r["source"] for r in rows})
-                for index in INDEXES
-                for present in (False, True)
-            ],
-        }
-    return result
-
-
-def preserve_splits(
-    rows: list[dict[str, Any]], config: str, source: Path
-) -> tuple[dict[str, list[int]], dict[str, Any]]:
-    """Keep existing row order and assignments when correcting gold labels."""
-    import pyarrow.parquet as pq
-
-    positions = {(r["ref_id"], r["index"]): i for i, r in enumerate(rows)}
-    if len(positions) != len(rows):
-        raise ValueError("Duplicate current task keys")
-    partitions, seen, files = {}, set(), []
-    for split in SPLITS:
-        path = source / config / f"{split}.parquet"
-        keys = [(r["ref_id"], r["index"]) for r in pq.read_table(path).to_pylist()]
-        if len(set(keys)) != len(keys) or seen.intersection(keys):
-            raise ValueError("Duplicate parent task keys")
-        if any(key not in positions for key in keys):
-            raise ValueError("Parent and current task keys differ")
-        seen.update(keys)
-        partitions[split] = [positions[key] for key in keys]
-        files.append(
-            {
-                "file": f"{config}/{split}.parquet",
-                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-            }
-        )
-    if seen != set(positions):
-        raise ValueError("Parent and current task keys differ")
-    groups = reference_groups(rows) if config == CONFIGS[0] else list(range(len(rows)))
-    group_sets = [{groups[i] for i in partitions[s]} for s in SPLITS]
-    if any(group_sets[a] & group_sets[b] for a, b in ((0, 1), (0, 2), (1, 2))):
-        raise ValueError("Corrected identity crosses preserved split boundaries")
-    return partitions, {
-        "method": "Preserved parent release row order and split assignments",
-        "parent_files": files,
-    }
-
-
 def write_release(
     rows: list[dict[str, Any]],
     review: dict[str, Any],
@@ -536,7 +478,8 @@ def write_release(
     inputs: list[Path],
     card_path: Path,
     split_from: Path | None = None,
-) -> dict[str, Any]:
+    candidates: list[dict[str, Any]] | None = None,
+) -> tuple[dict[str, Any], dict[str, list[int]]]:
     import pyarrow
     import pyarrow.parquet as pq
     import sklearn
@@ -546,7 +489,7 @@ def write_release(
     table = arrow_table(rows)
     assignments = {
         config: (
-            preserve_splits(rows, config, split_from)
+            preserve_splits(rows, config, split_from, seed)
             if split_from is not None
             else split_rows(rows, config, seed)
         )
@@ -567,6 +510,10 @@ def write_release(
             for path in inputs
         ],
         "review": review,
+        "annotation_fixes": [
+            {"ref_id": ref_id, "index": index, "question": question, "answer": answer}
+            for (ref_id, index), (question, answer, _) in ANNOTATION_FIXES.items()
+        ],
         "target_overrides": REVIEW_OVERRIDES,
         "configurations": {},
     }
@@ -598,9 +545,57 @@ def write_release(
     stats_lines += [
         "",
         f"Seed: {seed}. Exact assignments, source hashes, library versions, and per-stratum counts are in `build_report.json`.",
-        f"Excluded references: {len(review['excluded_references'])}. References with conflicting DOI evidence: {len(review['doi_conflicts'])}; their `gold_doi` values are withheld pending review.",
+        f"Excluded references: {len(review['excluded_references'])}. References with two valid DOIs for the same work: {len(review['doi_conflicts'])}; their `gold_doi` is null.",
+        f"Annotation answers corrected after review: {len(review['manual_fixes'])}; references with a reviewed gold override: {len(REVIEW_OVERRIDES)}. `CORRECTIONS.md` lists every one with its reason.",
         "Gold DOIs come from metadata of human-confirmed matches, reconciled across indexes for each reference. DOI fields have not been independently adjudicated. Unknown values remain null; no live index lookups were performed.",
     ]
+    if candidates is not None:
+        (output / "candidates").mkdir()
+        pq.write_table(
+            candidate_pool.candidates_table(candidates),
+            output / "candidates/search.parquet",
+            compression="zstd",
+        )
+        yaml += [
+            "- config_name: candidates",
+            "  data_files:",
+            "  - split: search",
+            "    path: candidates/search.parquet",
+        ]
+        days: dict[str, list[str]] = defaultdict(list)
+        for row in candidates:
+            days[row["index"]].append(row["retrieved_on"])
+        summary["candidates"] = {
+            index: {
+                "tasks": len(found),
+                "searched_from": min(found),
+                "searched_until": max(found),
+                "candidates": sum(
+                    len(c["candidates"]) for c in candidates if c["index"] == index
+                ),
+                "oracle_candidates": sum(
+                    bool(c["oracle"]) for c in candidates if c["index"] == index
+                ),
+            }
+            for index, found in sorted(days.items())
+        }
+        stats_lines += [
+            "",
+            "| Index | Searched (cut-off) | Tasks | Candidates | Gold found by search | Oracle records |",
+            "|---|---|---:|---:|---:|---:|",
+        ]
+        for index, info in summary["candidates"].items():
+            gold = sum(r["index"] == index and r["gold_id"] is not None for r in rows)
+            when = " to ".join(
+                dict.fromkeys((info["searched_from"], info["searched_until"]))
+            )
+            stats_lines.append(
+                f"| {index} | {when} | {info['tasks']} | {info['candidates']} | "
+                f"{gold - info['oracle_candidates']} of {gold} | {info['oracle_candidates']} |"
+            )
+    (output / "CORRECTIONS.md").write_text(
+        (HERE / "CORRECTIONS.md").read_text(encoding="utf-8"), encoding="utf-8"
+    )
     yaml += ["---", ""]
     (output / "README.md").write_text(
         "\n".join(yaml) + card + "\n".join(stats_lines) + "\n", encoding="utf-8"
@@ -608,17 +603,17 @@ def write_release(
     (output / "build_report.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    return summary
+    return summary, assignments[CONFIGS[1]][0]
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--annotations",
-        type=Path,
-        default=HERE / "argilla_annotations/citation_linking_annotations.jsonl",
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    parser.add_argument("--source-dir", type=Path, default=HERE)
+    parser.add_argument(
+        "--annotations", type=Path, default=RAW / "annotations.jsonl", help="raw export"
+    )
+    parser.add_argument("--source-dir", type=Path, default=DATA / "sources")
     parser.add_argument(
         "--output-dir", type=Path, default=ROOT / "logs/citation_linking_release"
     )
@@ -626,26 +621,61 @@ def main() -> None:
     parser.add_argument(
         "--split-from",
         type=Path,
-        help="Parent release directory whose row order and splits must be preserved",
+        help="Release directory whose row order and splits are kept (default: published)",
     )
+    parser.add_argument(
+        "--new-splits", action="store_true", help="Assign splits from scratch"
+    )
+    parser.add_argument(
+        "--search",
+        nargs="+",
+        choices=list(candidate_pool.SEARCHES),
+        default=[],
+        help="Search these indexes again before building (live, resumable)",
+    )
+    parser.add_argument("--candidates", type=Path, default=candidate_pool.STORE)
+    parser.add_argument("--pool-dir", type=Path, default=candidate_pool.POOL_DIR)
+    parser.add_argument("--repo", default=HF_REPO)
+    parser.add_argument("--push", action="store_true", help="Publish to Hugging Face")
     args = parser.parse_args()
-    rows, review = prepare_rows(
-        load_local(args.annotations), read_sources(args.source_dir)
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+
+    annotations = corrected_annotations(read_raw_file(args.annotations))
+    # Corrected copy of the raw export: input of the analysis and the training export.
+    working = DATA / "annotations/corrected/annotations.jsonl"
+    working.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in annotations),
+        encoding="utf-8",
     )
+    rows, review = prepare_rows(annotations, read_sources(args.source_dir))
+
+    store = candidate_pool.read_store(args.candidates)
+    for index in args.search:
+        candidate_pool.search(rows, store, index)
+    candidates = candidate_pool.attach(rows, store)
+    candidate_pool.write_store(store, args.candidates)
+
+    split_from = args.split_from
+    if split_from is None and not args.new_splits:
+        split_from = published_splits(args.repo)
     inputs = [
         args.annotations,
         *(args.source_dir / name for name in SOURCE_FILES),
         Path(__file__),
+        HERE / "candidate_pool.py",
+        HERE / "release_splits.py",
         HERE / "DATASET_CARD.md",
+        HERE / "CORRECTIONS.md",
     ]
-    summary = write_release(
+    summary, partitions = write_release(
         rows,
         review,
         args.output_dir,
         args.seed,
         inputs,
         HERE / "DATASET_CARD.md",
-        args.split_from,
+        split_from,
+        candidates,
     )
     print(
         f"Built {summary['references']} references / {summary['rows']} rows in {args.output_dir}"
@@ -659,6 +689,26 @@ def main() -> None:
         )
     print(
         f"Excluded references: {len(review['excluded_references'])}; unresolved DOI conflicts: {len(review['doi_conflicts'])}"
+    )
+
+    revision = "local"
+    if args.push:
+        from huggingface_hub import HfApi
+
+        commit = HfApi().upload_folder(
+            folder_path=args.output_dir,
+            repo_id=args.repo,
+            repo_type="dataset",
+            commit_message=f"reviewed gold with search candidates ({summary['rows']} tasks)",
+        )
+        revision = commit.oid
+        print(f"Pushed {args.repo} at {revision}")
+    order = [(split, i) for split in SPLITS for i in partitions[split]]
+    candidate_pool.write_pools(
+        [{**rows[i], "split": split} for split, i in order],
+        [candidates[i] for _, i in order],
+        revision,
+        args.pool_dir,
     )
 
 
