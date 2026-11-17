@@ -20,6 +20,7 @@ from benchmarks.citation_linking.annotation.analyze_argilla_annotations import (
 )
 from benchmarks.citation_linking.dataset.build_annotation_dataset import (
     REVIEW_OVERRIDES,
+    VERIFIED_ABSENT,
     normalize_id,
 )
 from benchmarks.citation_linking.dataset.candidate_pool import (  # noqa: F401  (notebook imports)
@@ -117,15 +118,16 @@ class InferenceError(RuntimeError):
     """Adapter-generated diagnostic containing no request or response content."""
 
 
-# Tasks whose gold was cleared in review. The accepted record was wrong, but nobody
-# checked that the index holds no other record of the work, so they are neither
-# positives nor confirmed negatives and are left out of scoring and training.
+# Tasks whose gold was cleared in review and not searched for again. The accepted
+# record was wrong, but nobody checked that the index holds no other record of the
+# work, so they are neither positives nor confirmed negatives and are left out of
+# scoring and training. Empty while every cleared gold is in VERIFIED_ABSENT.
 UNRESOLVED = {
     (ref_id, index)
     for ref_id, fix in REVIEW_OVERRIDES.items()
     for index, gold in fix.get("gold_id", {}).items()
     if gold is None
-}
+} - set(VERIFIED_ABSENT)
 
 
 def unresolved(tasks: pd.DataFrame) -> pd.Series:

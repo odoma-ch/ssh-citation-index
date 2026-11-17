@@ -176,9 +176,16 @@ def split_statistics(
 
 
 def preserve_splits(
-    rows: list[dict[str, Any]], config: str, source: Path, seed: int
+    rows: list[dict[str, Any]],
+    config: str,
+    source: Path,
+    seed: int,
+    dropped: frozenset[str] = frozenset(),
 ) -> tuple[dict[str, list[int]], dict[str, Any]]:
     """Keep existing row order and assignments; append tasks the parent lacks.
+
+    Parent rows may disappear only for the references in ``dropped`` (excluded on
+    purpose); any other missing row is an error, never a silent loss.
 
     New tasks of a known reference (a newly annotated index) follow their
     reference's split in ``reference_disjoint``. Everything else, whole new
@@ -190,22 +197,24 @@ def preserve_splits(
     positions = {(r["ref_id"], r["index"]): i for i, r in enumerate(rows)}
     if len(positions) != len(rows):
         raise ValueError("Duplicate current task keys")
-    partitions, seen, files = {}, set(), []
+    partitions, seen, files, removed = {}, set(), [], set()
     for split in SPLITS:
         path = source / config / f"{split}.parquet"
         keys = [(r["ref_id"], r["index"]) for r in pq.read_table(path).to_pylist()]
         if len(set(keys)) != len(keys) or seen.intersection(keys):
             raise ValueError("Duplicate parent task keys")
-        if any(key not in positions for key in keys):
-            raise ValueError("Parent and current task keys differ")
+        removed.update(key for key in keys if key not in positions)
         seen.update(keys)
-        partitions[split] = [positions[key] for key in keys]
+        partitions[split] = [positions[key] for key in keys if key in positions]
         files.append(
             {
                 "file": f"{config}/{split}.parquet",
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             }
         )
+    lost = {ref_id for ref_id, _ in removed} - dropped
+    if lost:
+        raise ValueError(f"Parent rows missing from the build: {sorted(lost)}")
     added = [i for key, i in positions.items() if key not in seen]
     fresh = added
     if config == CONFIGS[0]:
@@ -238,6 +247,8 @@ def preserve_splits(
         + ("; appended new tasks" if added else ""),
         "parent_files": files,
         "added_rows": len(added),
+        "removed_rows": len(removed),
+        "removed_references": sorted({ref_id for ref_id, _ in removed}),
         "same_work_across_splits": crossing,
     }
 

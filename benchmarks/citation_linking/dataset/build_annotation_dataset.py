@@ -109,11 +109,36 @@ ANNOTATION_FIXES = {
 # Reviewed corrections (2026-10, 2026-11) that override raw annotation evidence.
 # gold_id entries are keyed by target index. cex_ENV-SCI_54_63 needs no entry:
 # both DOIs are valid, so its gold_doi stays null and the conflict stays listed.
+# References removed from the release after review, with the reason.
+EXCLUDED_REFERENCES = {
+    # Authors and year are Harvey & Rauch 1997 (Health & Social Work 22); title,
+    # journal and volume are Harvey & Hill 2004 (Social Work 49). The cited work
+    # cannot be told, and both papers are indexed.
+    "cex_SOC-SCI_102_13": "reference_blends_two_works",
+}
+# Cleared gold targets searched for again (2026-11): the index holds no record of
+# the cited work, so these null golds are confirmed negatives, not unknowns.
+VERIFIED_ABSENT = frozenset(
+    {
+        ("10.1111_1467-6478.00057_instance-38", "openalex"),
+        ("excite_32211_33", "openalex"),
+        ("linkedbook_26", "openalex"),
+        ("linkedbook_73", "openalex"),
+        ("brill_20f2caaa-677a-42c1-8857-19e196f8c74e_331", "matilda"),
+        ("10.1515_zfrs-1980-0104_instance-43", "opencitations"),
+        ("10.1515_zfrs-1980-0104_instance-43", "wikidata"),
+        ("dasi_Wellsted1837", "opencitations"),
+        ("excite_9543_36", "opencitations"),
+        ("excite_9543_36", "wikidata"),
+        ("linkedbook_85", "opencitations"),
+    }
+)
 REVIEW_OVERRIDES = {
     "10.1111_1467-6478.00057_instance-38": {"gold_id": {"openalex": None}},
     "excite_32211_33": {"gold_id": {"openalex": None}},
     "linkedbook_26": {"gold_id": {"openalex": None}},
-    "linkedbook_5": {"gold_id": {"openalex": None}},
+    # Dead ID; the Italian translation the reference cites was found again (2026-11).
+    "linkedbook_5": {"gold_id": {"openalex": "W618320456"}},
     "linkedbook_73": {"gold_id": {"openalex": None}},
     "linkedbook_94": {"gold_id": {"openalex": "W7019729045"}},
     "cex_PHY-AST_96_10": {
@@ -170,10 +195,6 @@ REVIEW_OVERRIDES = {
         "gold_id": {"opencitations": None, "wikidata": None},
     },
     # Harvey & Hill 2004: same title and journal, different co-author and year.
-    "cex_SOC-SCI_102_13": {
-        "gold_doi": None,
-        "gold_id": {"opencitations": None, "wikidata": None},
-    },
     # DASI/EBDA review (2026-11): these references print their DOI, which was looked
     # up in each index. OpenAlex merged the annotated record into another one.
     "dasi_Yule2002": {"gold_id": {"openalex": "W3112109909"}},
@@ -337,6 +358,9 @@ def prepare_rows(
         if row.get("manual_fix")
     ]
     for ref_id, group in sorted(by_ref.items()):
+        if ref_id in EXCLUDED_REFERENCES:
+            excluded.append({"ref_id": ref_id, "reason": EXCLUDED_REFERENCES[ref_id]})
+            continue
         if any(row["label"] == "multi_ref_context" for row in group):
             excluded.append({"ref_id": ref_id, "reason": "multi_ref_context"})
             continue
@@ -505,7 +529,9 @@ def write_release(
     table = arrow_table(rows)
     assignments = {
         config: (
-            preserve_splits(rows, config, split_from, seed)
+            preserve_splits(
+                rows, config, split_from, seed, frozenset(EXCLUDED_REFERENCES)
+            )
             if split_from is not None
             else split_rows(rows, config, seed)
         )

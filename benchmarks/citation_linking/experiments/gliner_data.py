@@ -18,6 +18,7 @@ import random
 from benchmarks.citation_linking.dataset.build_annotation_dataset import (
     normalize_id,
     REVIEW_OVERRIDES,
+    VERIFIED_ABSENT,
     SPLITS,
 )
 from benchmarks.citation_linking.experiments.linking_eval import (
@@ -88,6 +89,8 @@ def label_evidence(row: dict, annotation: dict | None) -> str:
         return "annotation_gold_mismatch"
     if gold is not None:
         return "approved_gold"
+    if (row["ref_id"], row["index"]) in VERIFIED_ABSENT:
+        return "verified_absent"
     if label == "no_record_in_index":
         return "annotated_no_record"
     return "unresolved_null_gold"
@@ -154,7 +157,7 @@ def build_examples(
             "empty_candidates": not row["candidates"],
         }
         audit.append(info)
-        if evidence not in {"approved_gold", "annotated_no_record"}:
+        if evidence not in {"approved_gold", "annotated_no_record", "verified_absent"}:
             continue
         if not row["candidates"]:
             info["reason"] = "empty_candidates"
@@ -172,7 +175,7 @@ def build_examples(
         reason = (
             "gold_retrieved"
             if target != "none"
-            else "gold_not_retrieved" if gold is not None else "annotated_no_record"
+            else "gold_not_retrieved" if gold is not None else evidence
         )
         info.update(eligible=True, target=target, reason=reason)
         examples[row["split"]].append(

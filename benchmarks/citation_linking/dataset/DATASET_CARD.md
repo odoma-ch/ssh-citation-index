@@ -19,7 +19,7 @@ none of the candidates matches. Candidate sets differ between indexes: an
 OpenAlex task and a Wikidata task for the same reference are separate examples.
 
 This dataset provides annotated gold targets for OpenAlex, Matilda, Wikidata, and
-OpenCitations Meta for 681 references from seven sources. It includes both
+OpenCitations Meta for 680 references from seven sources. It includes both
 references with a confirmed target and references for which no matching record was
 found during annotation. Each retained reference has an annotation for all four
 indexes.
@@ -38,9 +38,9 @@ indexes.
 
 | `source` | Searched pool | Annotated | Retained | Citing documents | References with a gold in some index | Publication years (median) |
 |---|---:|---:|---:|---:|---:|---|
-| `cex` | 459 | 100 | 98 | 12 | 84 | 1967–2019 (2013) |
+| `cex` | 459 | 100 | 97 | 12 | 84 | 1967–2019 (2013) |
 | `excite` | 193 | 100 | 100 | 6 | 84 | 1939–2014 (1998) |
-| `linkedbook` | 107 | 100 | 98 | | 21 | 1546–2009 (1962) |
+| `linkedbook` | 107 | 100 | 98 | | 22 | 1546–2009 (1962) |
 | `brill` | 200 | 100 | 99 | 89 | 59 | 1502–2015 (1989) |
 | `legal_study_mpilhlt` | 151 | 100 | 86 | 4 | 53 | 1873–1997 (1982) |
 | `dasi` | 100 | 100 | 100 | | 48 | 1837–2020 (2002) |
@@ -58,8 +58,9 @@ How the pools were drawn:
 - `dasi`, `ebda`: 100 entries from each project's BibTeX bibliography.
 
 Each pool was searched and 100 references per source were drawn at random (seed 42)
-for annotation. References whose string packs several publications, or whose
-annotation stayed contradictory, were then excluded; "Retained" counts what is left.
+for annotation. References whose string packs several publications, whose
+annotation stayed contradictory, or that blend two different works were then
+excluded; "Retained" counts what is left.
 Publication years come from the parsed references.
 
 The `dasi` and `ebda` references are not extracted from publications. Rendered from
@@ -86,11 +87,12 @@ appears in multiple rows with a shared `ref_id` and index-specific gold targets.
 | `reference` | string | Original reference text. |
 | `parsed_reference` | struct or null | Provided structured reference, such as title, authors, and year; parsing provenance is documented separately. |
 | `index` | string | Target index: `openalex`, `matilda`, `wikidata`, or `opencitations`. |
-| `gold_id` | string or null | Reviewed target ID in this index (OpenAlex `W…`, Wikidata `Q…`, Matilda work UUID, OpenCitations Meta OMID `br/…`). Null means no match was found during annotation, or an unavailable target was cleared during review. |
+| `gold_id` | string or null | Reviewed target ID in this index (OpenAlex `W…`, Wikidata `Q…`, Matilda work UUID, OpenCitations Meta OMID `br/…`). Null means that no record of the cited work was found in this index, during annotation or in the review that searched again for every cleared target (`CORRECTIONS.md`). |
 | `gold_doi` | string or null | DOI from metadata of a human-confirmed match, reconciled across indexes. Conflicting or unknown values are null; null does not imply that the work has no DOI. |
 
-`(ref_id, index)` uniquely identifies a row. Unresolved annotations and references
-containing multiple publications are excluded from the finalized benchmark.
+`(ref_id, index)` uniquely identifies a row. Unresolved annotations, references
+containing multiple publications, and a reference that blends two works are
+excluded from the finalized benchmark.
 The DOI identifies the cited work and may be known even when `gold_id` is null for
 a particular index. Provided parsed references are inputs, not necessarily
 human-verified metadata; experiments may use them or parse the original text.
