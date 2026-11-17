@@ -116,23 +116,6 @@ EXCLUDED_REFERENCES = {
     # cannot be told, and both papers are indexed.
     "cex_SOC-SCI_102_13": "reference_blends_two_works",
 }
-# Cleared gold targets searched for again (2026-11): the index holds no record of
-# the cited work, so these null golds are confirmed negatives, not unknowns.
-VERIFIED_ABSENT = frozenset(
-    {
-        ("10.1111_1467-6478.00057_instance-38", "openalex"),
-        ("excite_32211_33", "openalex"),
-        ("linkedbook_26", "openalex"),
-        ("linkedbook_73", "openalex"),
-        ("brill_20f2caaa-677a-42c1-8857-19e196f8c74e_331", "matilda"),
-        ("10.1515_zfrs-1980-0104_instance-43", "opencitations"),
-        ("10.1515_zfrs-1980-0104_instance-43", "wikidata"),
-        ("dasi_Wellsted1837", "opencitations"),
-        ("excite_9543_36", "opencitations"),
-        ("excite_9543_36", "wikidata"),
-        ("linkedbook_85", "opencitations"),
-    }
-)
 REVIEW_OVERRIDES = {
     "10.1111_1467-6478.00057_instance-38": {"gold_id": {"openalex": None}},
     "excite_32211_33": {"gold_id": {"openalex": None}},

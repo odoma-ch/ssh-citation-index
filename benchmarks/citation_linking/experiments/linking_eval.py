@@ -19,8 +19,6 @@ from benchmarks.citation_linking.annotation.analyze_argilla_annotations import (
     safe_div,
 )
 from benchmarks.citation_linking.dataset.build_annotation_dataset import (
-    REVIEW_OVERRIDES,
-    VERIFIED_ABSENT,
     normalize_id,
 )
 from benchmarks.citation_linking.dataset.candidate_pool import (  # noqa: F401  (notebook imports)
@@ -116,23 +114,6 @@ logger = logging.getLogger(__name__)
 
 class InferenceError(RuntimeError):
     """Adapter-generated diagnostic containing no request or response content."""
-
-
-# Tasks whose gold was cleared in review and not searched for again. The accepted
-# record was wrong, but nobody checked that the index holds no other record of the
-# work, so they are neither positives nor confirmed negatives and are left out of
-# scoring and training. Empty while every cleared gold is in VERIFIED_ABSENT.
-UNRESOLVED = {
-    (ref_id, index)
-    for ref_id, fix in REVIEW_OVERRIDES.items()
-    for index, gold in fix.get("gold_id", {}).items()
-    if gold is None
-} - set(VERIFIED_ABSENT)
-
-
-def unresolved(tasks: pd.DataFrame) -> pd.Series:
-    keys = zip(tasks.ref_id, tasks["index"])
-    return pd.Series([key in UNRESOLVED for key in keys], index=tasks.index)
 
 
 FIELDS = {
@@ -648,10 +629,8 @@ def evaluate_reranking(
         )
     predictions = pd.DataFrame(predictions)
     diagnostics = pd.DataFrame(diagnostics)
-    excluded = unresolved(tasks) & tasks.gold_id.isna()
-    eligible = tasks.loc[~excluded]
     scored_tasks = score_predictions(
-        eligible, predictions.merge(eligible[KEY], on=KEY, validate="one_to_one")
+        tasks, predictions.merge(tasks[KEY], on=KEY, validate="one_to_one")
     )
     tables = {"candidate_scores": ranked, "predictions": predictions}
     for scope, split in (("all", None), ("dev", "validation")):
@@ -668,19 +647,6 @@ def evaluate_reranking(
             ],
             ignore_index=True,
         )
-        excluded_counts = (
-            tasks.loc[excluded & tasks.index.isin(selected_tasks.index)]
-            .groupby("index")
-            .size()
-        )
-        summary["excluded_unresolved"] = [
-            (
-                int(excluded_counts.sum())
-                if idx == "all"
-                else int(excluded_counts.get(idx, 0))
-            )
-            for idx in summary["index"]
-        ]
         tables[f"scores_{scope}"] = summary
         positive = diagnostics.loc[
             diagnostics.has_gold & (diagnostics.split.eq(split) if split else True)

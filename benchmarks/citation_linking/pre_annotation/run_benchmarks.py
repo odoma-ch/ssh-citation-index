@@ -1088,9 +1088,7 @@ def api_search_main():
         if args.email:
             logger.info(f"Initialized OpenAlex connector with email: {args.email}")
         else:
-            logger.info(
-                "OpenAlex authentication uses OPENALEX_API"
-            )
+            logger.info("OpenAlex authentication uses OPENALEX_API")
         logger.info("Initialized OpenAlex connector")
 
     if "opencitations" not in skip_apis:
@@ -1418,7 +1416,11 @@ def build_output_path(
     limit_str = str(limit) if limit else "None"
     apis_str = "_".join(apis)
     filename = f"legal_study_results_{timestamp}_limit{limit_str}_{apis_str}.json"
-    return str(Path(__file__).resolve().parents[3] / "logs/citation_linking_pre_annotation" / filename)
+    return str(
+        Path(__file__).resolve().parents[3]
+        / "logs/citation_linking_pre_annotation"
+        / filename
+    )
 
 
 def save_parsed_instances(

@@ -18,14 +18,12 @@ import random
 from benchmarks.citation_linking.dataset.build_annotation_dataset import (
     normalize_id,
     REVIEW_OVERRIDES,
-    VERIFIED_ABSENT,
     SPLITS,
 )
 from benchmarks.citation_linking.experiments.linking_eval import (
     digest,
     KEY,
     prepare_pool,
-    UNRESOLVED,
 )
 from benchmarks.citation_linking.experiments.rerankers import gliner_listwise_request
 
@@ -48,8 +46,6 @@ def read_annotations(paths: list[Path]) -> dict[tuple[str, str], dict]:
 
 def label_evidence(row: dict, annotation: dict | None) -> str:
     """Require consistent submitted annotation evidence, including release overrides."""
-    if (row["ref_id"], row["index"]) in UNRESOLVED:
-        return "unresolved_override"
     if annotation is None:
         return "missing_annotation"
     if " ".join(annotation["original_ref_string"].split()) != " ".join(
@@ -89,11 +85,9 @@ def label_evidence(row: dict, annotation: dict | None) -> str:
         return "annotation_gold_mismatch"
     if gold is not None:
         return "approved_gold"
-    if (row["ref_id"], row["index"]) in VERIFIED_ABSENT:
-        return "verified_absent"
     if label == "no_record_in_index":
         return "annotated_no_record"
-    return "unresolved_null_gold"
+    return "cleared_in_review"
 
 
 def shuffle_training_example(
@@ -157,7 +151,11 @@ def build_examples(
             "empty_candidates": not row["candidates"],
         }
         audit.append(info)
-        if evidence not in {"approved_gold", "annotated_no_record", "verified_absent"}:
+        if evidence not in {
+            "approved_gold",
+            "annotated_no_record",
+            "cleared_in_review",
+        }:
             continue
         if not row["candidates"]:
             info["reason"] = "empty_candidates"
@@ -299,7 +297,7 @@ def export_training_data(
             for path in sorted(output_dir.glob("*.jsonl"))
         },
         "summary": summary,
-        "none_policy": "Nonempty pool with approved gold absent, or consistent submitted no_record_in_index annotation; unresolved nulls excluded.",
+        "none_policy": "Nonempty pool with approved gold absent, or consistent submitted no_record_in_index annotation, or gold cleared in review.",
         "negative_evidence_limit": "Historical human annotations, not a fresh manual review of every current candidate.",
         "split_policy": "Existing (reference, index) assignments; seen flags use only eligible train examples.",
         "training_status": "not_started",

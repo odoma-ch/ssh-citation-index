@@ -3,12 +3,12 @@
 Everything that separates the reviewed gold dataset (`yurui983/citation_linking`) from
 the raw annotations (`yurui983/citation_linking_annotations`), with the reason for each
 change. The raw annotations are never edited; all corrections are applied in
-`build_annotation_dataset.py` (`ANNOTATION_FIXES` and `REVIEW_OVERRIDES`).
+`build_annotation_dataset.py` (`ANNOTATION_FIXES`, `REVIEW_OVERRIDES` and
+`EXCLUDED_REFERENCES`).
 
 Sources: [issue #49](https://github.com/odoma-ch/ssh-citation-index/issues/49)
 (October 2026), the cross-index review that followed the OpenCitations annotation
-round, the DOI review of the DASI/EBDA references, and a new search for every cleared
-gold target (all November 2026).
+round, and the DOI review of the DASI/EBDA references (both November 2026).
 
 **Rule applied throughout.** A gold record is the cited publication itself. A review
 of it, another edition or version of the same text, or a record whose authors or year
@@ -22,7 +22,6 @@ publication, `gold_id` is null.
 | 3 | OpenAlex gold IDs that no longer resolve (issue #49) | 8 | 8 |
 | 4 | Same DOI judged differently across indexes (after OpenCitations) | 13 | 11 gold IDs, 6 DOIs |
 | 5 | DASI/EBDA references checked against their printed DOI | 3 | 3 gold IDs, 1 DOI |
-| 6 | Cleared gold targets searched for again | 13 | 1 gold ID, 11 confirmed absent, 1 reference excluded |
 
 ## 1. Contradictory annotation answers
 
@@ -63,7 +62,7 @@ The annotated OpenAlex ID returned 404. Each was looked up again.
 | `10.1111_1467-6478.00057_instance-38` (Contracts Review Act 1980) | `W2968428332` | null | Dead ID, no replacement found. |
 | `excite_32211_33` (Schröder & Blair, 1999) | `W7078628595` | null | Dead ID, no replacement found. |
 | `linkedbook_26` (Bovini, 1966) | `W6995930614` | null | Dead ID, no replacement found. |
-| `linkedbook_5` (Bouwsma, *Venezia e la difesa della libertà repubblicana*) | `W7053673584` | `W618320456` | Dead ID. Cleared in October; the cited Italian translation was found in round 6. |
+| `linkedbook_5` (Bouwsma, *Venezia e la difesa della libertà repubblicana*) | `W7053673584` | `W618320456` | Dead ID. Replaced by the 1977 Italian translation, as cited. |
 | `linkedbook_73` (Pullan, *La politica sociale della Repubblica di Venezia*, 1982) | `W7001511405` | null | Dead ID, no replacement found. |
 
 ## 4. Same DOI judged differently across indexes (November 2026)
@@ -83,7 +82,7 @@ are not listed.
 | `linkedbook_85` (Thomas-Stanford, *Early Editions of Euclid's Elements*, 1926) | Accepted in OpenCitations, rejected in OpenAlex and Matilda | OpenCitations gold `br/06701571050` → null; `gold_doi` → null | The record is a four-page 1924 article of the same title, not the 1926 book. Wikidata holds the book and keeps its gold. |
 | `10.1515_zfrs-1980-0104_instance-43` (Rheinstein, *Marriage Stability, Divorce, and the Law*, 1972) | Accepted in OpenCitations, rejected in OpenAlex and Matilda | OpenCitations gold `br/06140183106` → null; Wikidata gold `Q122678044` → null; `gold_doi` → null | Both records are reviews of the book (by Drinan and by Foster). |
 | `excite_9543_36` (Kratochwil, "Citizenship: On the Border of Order", 1996 chapter) | 1994 journal version accepted in OpenCitations and Wikidata, rejected in OpenAlex | OpenAlex gold → `W4299787999`; OpenCitations gold `br/062202391530` → null; Wikidata gold `Q139911205` → null | The reference cites the 1996 book chapter. OpenAlex holds the chapter record, which the annotator had not selected. OpenCitations has only the 1994 article. `gold_doi` was already the chapter's. |
-| `cex_SOC-SCI_102_13` (Harvey & Rauch, "Africentric youth and family rites of passage program", 1997) | Accepted in OpenCitations and Wikidata, rejected in OpenAlex and Matilda | Reference excluded in round 6 | The record is Harvey & Hill, 2004: same title and journal, different co-author and year. Round 6 found that the reference blends two papers. |
+| `cex_SOC-SCI_102_13` (Harvey & Rauch, "Africentric youth and family rites of passage program", 1997) | Accepted in OpenCitations and Wikidata, rejected in OpenAlex and Matilda | Reference excluded | Authors and year are Harvey & Rauch, *Health & Social Work* 22 (1997); title, journal and volume are Harvey & Hill, *Social Work* 49 (2004). The cited work cannot be told, and both papers are indexed. |
 | `excite_9543_10` (Bakhtin chapter) | Whole-book DOI accepted in OpenAlex, rejected in OpenCitations | No change | Already resolved in round 2; the OpenCitations annotator had selected the chapter record. |
 | `brill_7e8756fa-9241-4db4-98e1-c32ddcf154f6_1567` (Wallenfels, 1998) | Accepted in OpenAlex and Matilda, rejected in OpenCitations | No change | The OpenCitations record carries the DOI but no metadata, so it cannot be confirmed. |
 | `brill_e1cc5ffe-700b-439c-bd5c-33c91446abab_670` (Rius-Camps, "Le substrat grec…") | Accepted in OpenAlex and Matilda, rejected in OpenCitations | No change | Same: an OpenCitations record without metadata. |
@@ -106,32 +105,3 @@ was not checked this way. Every gold ID was also resolved again.
 The other lookups confirmed the annotations. Where a DOI resolved, it named the whole
 book for a cited chapter, another chapter, or an OpenCitations record without
 metadata; most found nothing.
-
-## 6. Cleared gold targets searched for again (November 2026)
-
-A gold cleared in review only shows that the accepted record was wrong, not that the
-index lacks the cited work. Until searched for, such a task is neither a positive nor
-a confirmed negative. Every task cleared in rounds 2 to 5 was therefore searched for
-again: a fresh top-20 search, a lookup of the cited DOI where there is one, and
-title and author queries in the index's own API.
-
-| Reference | Index | Decision | Evidence |
-|---|---|---|---|
-| `linkedbook_5` (Bouwsma, *Venezia e la difesa della libertà repubblicana*, Italian translation, 1977) | OpenAlex | Gold → `W618320456` | The 1977 Italian edition, as cited. |
-| `10.1111_1467-6478.00057_instance-38` (Contracts Review Act 1980, N.S.W.) | OpenAlex | Confirmed absent | A statute; OpenAlex holds only articles about it. |
-| `excite_32211_33` (Schröder & Blair, "Der Weg nach vorne für Europas Sozialdemokraten", 1999) | OpenAlex | Confirmed absent | A web manifesto; neither the German nor the English title is indexed. |
-| `linkedbook_26` (Bovini, "Principali restauri … Felice Kibel …", 1966) | OpenAlex | Confirmed absent | Other works by Bovini from 1964–1968, not this one. |
-| `linkedbook_73` (Pullan, *La politica sociale della Repubblica di Venezia*, Italian translation, 1982) | OpenAlex | Confirmed absent | Neither the translation nor the English original; only reviews of the original. |
-| `brill_20f2caaa-677a-42c1-8857-19e196f8c74e_331` (McKitterick, *The Carolingians and the Written Word*, 1989) | Matilda | Confirmed absent | Only reviews of the book; its DOI is not in Matilda. |
-| `10.1515_zfrs-1980-0104_instance-43` (Rheinstein, *Marriage Stability, Divorce, and the Law*, 1972) | OpenCitations | Confirmed absent | Two reviews of the book. |
-| `10.1515_zfrs-1980-0104_instance-43` | Wikidata | Confirmed absent | Seven items of that title, all reviews. |
-| `dasi_Wellsted1837` (Wellsted, "Narrative of a Journey from the Tower of Ba-'l-haff…", 1837) | OpenCitations | Confirmed absent | The DOI is not indexed; only the other Wellsted article of the volume. |
-| `excite_9543_36` (Kratochwil, "Citizenship: On the Border of Order", 1996 chapter) | OpenCitations | Confirmed absent | The chapter DOI is not indexed; only the 1994 journal version. |
-| `excite_9543_36` | Wikidata | Confirmed absent | The chapter DOI is not indexed; only the 1994 journal version. |
-| `linkedbook_85` (Thomas-Stanford, *Early Editions of Euclid's Elements*, 1926) | OpenCitations | Confirmed absent | Only the 1924 article and an unrelated 1966 article. |
-| `cex_SOC-SCI_102_13` (Harvey & Rauch, 1997) | all four | Reference excluded | Authors and year are Harvey & Rauch, "A Comprehensive Afrocentric Rites of Passage Program for Black Male Adolescents", *Health & Social Work* 22 (1997); title, journal and volume are Harvey & Hill, *Social Work* 49 (2004). The cited work cannot be told, and both papers are indexed, so no gold would be safe. |
-
-Confirmed-absent tasks are listed in `VERIFIED_ABSENT` and excluded references in
-`EXCLUDED_REFERENCES` (`build_annotation_dataset.py`). No cleared target is left
-unresolved: every null gold in the release now means that the index holds no record
-of the cited work, as far as the annotators and this review could find.

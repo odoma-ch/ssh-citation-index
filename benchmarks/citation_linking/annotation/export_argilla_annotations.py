@@ -141,7 +141,10 @@ def record_to_raw(record: Any) -> Dict[str, Any]:
     TypeError because these datasets carry ``ref_id`` / ``source`` in both. It also
     drops per-response status, which we need to tell submitted from draft.
     """
-    raw: Dict[str, Any] = {"id": str(record.id) if record.id else None, "status": record.status}
+    raw: Dict[str, Any] = {
+        "id": str(record.id) if record.id else None,
+        "status": record.status,
+    }
     raw.update(record.metadata.to_dict())
     raw.update(record.fields.to_dict())  # fields win: same values, canonical source
 
@@ -250,9 +253,15 @@ def flatten_to_row(raw: Dict[str, Any], index: str) -> Dict[str, Any]:
     row["record_id"] = row.get("id")
     for question in QUESTIONS:
         row[question] = _jsonable(_pick_response(raw, question))
-    row["n_responses"] = max((len(raw.get(f"{q}.responses") or []) for q in QUESTIONS), default=0)
+    row["n_responses"] = max(
+        (len(raw.get(f"{q}.responses") or []) for q in QUESTIONS), default=0
+    )
     row["annotators"] = sorted(
-        {str(user) for q in QUESTIONS for user in (raw.get(f"{q}.responses.users") or [])}
+        {
+            str(user)
+            for q in QUESTIONS
+            for user in (raw.get(f"{q}.responses.users") or [])
+        }
     )
     row.update(derive_label(row))
     return row
@@ -276,7 +285,9 @@ def fetch_dataset(client: Any, name: str, index: str) -> List[Dict[str, Any]]:
         for record in dataset.records(with_responses=True, with_suggestions=True)
     ]
     if not rows:
-        raise RuntimeError(f"Argilla dataset '{name}' has no records - nothing to export")
+        raise RuntimeError(
+            f"Argilla dataset '{name}' has no records - nothing to export"
+        )
     logger.info(
         "%s: %d records, %d with responses",
         name,
@@ -308,11 +319,15 @@ def fetch_splits(api_url: str, api_token: str) -> Dict[str, List[Dict[str, Any]]
 def load_local(path: Path) -> List[Dict[str, Any]]:
     """Re-read a previous export and re-derive labels — no Argilla, no credentials."""
     raw_rows = [
-        json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
     ]
     if not raw_rows:
         raise RuntimeError(f"{path} is empty")
-    return align_schema([flatten_to_row(row, row.get("index") or "unknown") for row in raw_rows])
+    return align_schema(
+        [flatten_to_row(row, row.get("index") or "unknown") for row in raw_rows]
+    )
 
 
 def log_summary(rows: List[Dict[str, Any]]) -> None:
@@ -362,7 +377,9 @@ def annotation_table(rows: List[Dict[str, Any]], published: Any) -> Any:
         schema = schema.append(pa.field("search_method", pa.string()))
     unknown = {key for row in rows for key in row} - set(schema.names)
     if unknown:
-        raise ValueError(f"Columns missing from the published schema: {sorted(unknown)}")
+        raise ValueError(
+            f"Columns missing from the published schema: {sorted(unknown)}"
+        )
     return pa.Table.from_pylist(
         [{name: row.get(name) for name in schema.names} for row in rows], schema=schema
     )
@@ -396,7 +413,9 @@ def publish(repo: str, push: bool) -> None:
         for name in ANALYSIS_FILES:
             csv = ANALYSIS_DIRS[split] / f"{name}.csv"
             if csv.exists():
-                operations.append(CommitOperationAdd(f"analysis/{split}/{name}.csv", str(csv)))
+                operations.append(
+                    CommitOperationAdd(f"analysis/{split}/{name}.csv", str(csv))
+                )
         logger.info("%s: %d -> %d rows %s", split, old.num_rows, table.num_rows, counts)
     readme = README.format(splits="\n".join(lines))
     operations.append(CommitOperationAdd("README.md", readme.encode()))
@@ -415,7 +434,9 @@ def publish(repo: str, push: bool) -> None:
 
 def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--no-fetch", action="store_true", help="reuse the files in raw/")
+    parser.add_argument(
+        "--no-fetch", action="store_true", help="reuse the files in raw/"
+    )
     parser.add_argument("--push", action="store_true", help="publish to Hugging Face")
     parser.add_argument("--hf-repo", default=HF_REPO)
     parser.add_argument("--argilla-url", default=ARGILLA_API_URL)

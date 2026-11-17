@@ -87,7 +87,7 @@ appears in multiple rows with a shared `ref_id` and index-specific gold targets.
 | `reference` | string | Original reference text. |
 | `parsed_reference` | struct or null | Provided structured reference, such as title, authors, and year; parsing provenance is documented separately. |
 | `index` | string | Target index: `openalex`, `matilda`, `wikidata`, or `opencitations`. |
-| `gold_id` | string or null | Reviewed target ID in this index (OpenAlex `W…`, Wikidata `Q…`, Matilda work UUID, OpenCitations Meta OMID `br/…`). Null means that no record of the cited work was found in this index, during annotation or in the review that searched again for every cleared target (`CORRECTIONS.md`). |
+| `gold_id` | string or null | Reviewed target ID in this index (OpenAlex `W…`, Wikidata `Q…`, Matilda work UUID, OpenCitations Meta OMID `br/…`). Null means that no record of the cited work was found in this index. |
 | `gold_doi` | string or null | DOI from metadata of a human-confirmed match, reconciled across indexes. Conflicting or unknown values are null; null does not imply that the work has no DOI. |
 
 `(ref_id, index)` uniquely identifies a row. Unresolved annotations, references

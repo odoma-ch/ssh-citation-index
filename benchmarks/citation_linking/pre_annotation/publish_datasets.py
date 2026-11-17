@@ -217,7 +217,9 @@ def opencitations_prep_main() -> None:
 HERE = Path(__file__).resolve().parent
 
 
-ARCHIVE = HERE.parents[2] / "logs/citation_linking_pre_annotation"  # baseline search results are kept out of the repo
+ARCHIVE = (
+    HERE.parents[2] / "logs/citation_linking_pre_annotation"
+)  # baseline search results are kept out of the repo
 
 
 ROWS = ARCHIVE / "opencitations_baseline/rows.jsonl"

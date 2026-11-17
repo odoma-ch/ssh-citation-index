@@ -18,7 +18,6 @@ from benchmarks.citation_linking.experiments.linking_eval import (
     normalize_id,
     score_predictions,
     summarize_scores,
-    unresolved,
 )
 from benchmarks.citation_linking.experiments.rerankers import (
     LABELS,
@@ -144,8 +143,8 @@ def baseline_predictions(tasks: pd.DataFrame, labels: dict) -> dict[str, pd.Data
 def evaluate_baselines(
     tasks: pd.DataFrame, labels: dict, pool_path: Path, run_dir: Path
 ) -> None:
-    """Save all/dev decision metrics with the same unresolved-gold exclusions as GTE."""
-    eligible = tasks.loc[~(unresolved(tasks) & tasks.gold_id.isna())]
+    """Save all/dev decision metrics."""
+
     source_paths = [
         Path(__file__),
         Path(citation_linking.__file__),
@@ -160,7 +159,7 @@ def evaluate_baselines(
         output.mkdir(parents=True, exist_ok=True)
         (output / "manifest.json").write_text(json.dumps({"status": "running"}))
         scored = score_predictions(
-            eligible, predictions.merge(eligible[KEY], on=KEY, validate="one_to_one")
+            tasks, predictions.merge(tasks[KEY], on=KEY, validate="one_to_one")
         )
         predictions.to_json(output / "predictions.jsonl", orient="records", lines=True)
         for scope in ("all", "dev"):
@@ -258,9 +257,8 @@ def evaluate_rejection(
     predictions["match_label_wins"] = predictions.match_label_wins.eq(True)
     predictions.loc[~predictions.match_label_wins, "predicted_id"] = None
     tables["predictions"] = predictions
-    eligible = tasks.loc[~(unresolved(tasks) & tasks.gold_id.isna())]
     scored = score_predictions(
-        eligible, predictions.merge(eligible[KEY], on=KEY, validate="one_to_one")
+        tasks, predictions.merge(tasks[KEY], on=KEY, validate="one_to_one")
     )
     for scope in ("all", "dev"):
         selected = (
@@ -273,11 +271,7 @@ def evaluate_rejection(
             ],
             ignore_index=True,
         )
-        tables[f"scores_{scope}"] = summary.merge(
-            tables[f"scores_{scope}"][["index", "excluded_unresolved"]],
-            on="index",
-            validate="one_to_one",
-        )
+        tables[f"scores_{scope}"] = summary
     return tables
 
 
@@ -346,9 +340,7 @@ def select_threshold(
     """Maximize dev F1; break ties by precision, then the stricter threshold."""
     if "listwise_selected" in scores:
         raise ValueError("This policy selects thresholds for pairwise scorers only")
-    dev = tasks.loc[
-        tasks.split.eq("validation") & ~(unresolved(tasks) & tasks.gold_id.isna())
-    ]
+    dev = tasks.loc[tasks.split.eq("validation")]
     if dev.empty or not dev.gold_id.notna().any():
         raise ValueError(
             "Threshold selection requires dev tasks with positive gold targets"
