@@ -421,6 +421,12 @@ class GlinerReranker:
         raw = self.model.batch_extract(
             texts, self.schema, batch_size=self.batch_size, include_confidence=True
         )
+        if self.info["device"] == "mps":
+            # ponytail: halves MPS driver-cache growth from varying input shapes; long
+            # runs can still OOM, and run_reranking resumes from per-task checkpoints.
+            import torch
+
+            torch.mps.empty_cache()
         results = []
         for item in raw:
             probabilities = {
