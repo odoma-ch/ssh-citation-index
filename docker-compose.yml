@@ -200,6 +200,8 @@ services:
       - MATILDA_PASSWORD=${MATILDA_PASSWORD}
       - OPENALEX_API=${OPENALEX_API:-}
       - OPENCITATIONS_API=${OPENCITATIONS_API:-}
+      - LINKING_DECIDER_ENDPOINT=${LINKING_DECIDER_DOCKER_ENDPOINT:-http://linking-decider:8000}
+      - LINKING_DECIDER_TIMEOUT=${LINKING_DECIDER_TIMEOUT:-60.0}
     volumes:
       - ./storage:/app/storage
     depends_on:
@@ -210,6 +212,22 @@ services:
     restart: unless-stopped
     deploy:
       replicas: 2
+
+  # Citation-linking decider for /link/references?method=model (CPU, ~3.5GB RAM).
+  # Start it by name: docker compose up -d linking-decider
+  linking-decider:
+    build:
+      context: .
+      dockerfile: deployment/linking-decider.Dockerfile
+    environment:
+      # Needed while the model repo is private (":?" would break every compose command)
+      - HF_TOKEN=${HF_TOKEN:-}
+      - OMP_NUM_THREADS=${DECIDER_THREADS:-4}
+    volumes:
+      - decider_hf_cache:/tmp/hf
+    networks:
+      - citation-net
+    restart: unless-stopped
 
   # RQ Dashboard - Web UI for monitoring queues
   rq-dashboard:
@@ -229,6 +247,8 @@ services:
 
 volumes:
   redis_data:
+    driver: local
+  decider_hf_cache:
     driver: local
 
 networks:

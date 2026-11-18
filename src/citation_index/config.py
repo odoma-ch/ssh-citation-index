@@ -128,6 +128,18 @@ class Settings(BaseSettings):
     )
 
     # ========================
+    # Citation linking decider (services/linking_decider)
+    # ========================
+    linking_decider_endpoint: str = Field(
+        default="http://localhost:8010",
+        description="Linking decider base URL, used by /link/references?method=model",
+    )
+    linking_decider_timeout: float = Field(
+        default=60.0,
+        description="Seconds per decider request (one reference, one index)",
+    )
+
+    # ========================
     # MinerU Configuration
     # ========================
     mineru_endpoint: str = Field(

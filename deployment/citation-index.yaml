@@ -47,6 +47,10 @@ data:
   CEC_ENDPOINT: "http://cec-classifier:5000"
   CEC_TIMEOUT: "800.0"
 
+  # Citation-linking decider (in-cluster Service from deployment/linking-decider.yaml)
+  LINKING_DECIDER_ENDPOINT: "http://linking-decider:8000"
+  LINKING_DECIDER_TIMEOUT: "60.0"
+
   # MinerU (internal ClusterIP service from deployment/mineru.yaml)
   MINERU_ENDPOINT: "http://mineru-api:8000"
   MINERU_TIMEOUT: "1200.0"

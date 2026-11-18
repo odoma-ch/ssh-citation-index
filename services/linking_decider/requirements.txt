@@ -1,0 +1,7 @@
+# Versions the decider was trained and validated with; torch comes from the
+# CPU wheel index in deployment/linking-decider.Dockerfile.
+gliner2==2.1.0
+transformers==4.56.1
+huggingface_hub>=0.34,<1
+fastapi>=0.110
+uvicorn>=0.30

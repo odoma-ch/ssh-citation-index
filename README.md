@@ -67,6 +67,21 @@ Each submission returns a `job_id`. Poll `GET /jobs/{job_id}/status` until
 `GET /jobs/{job_id}`. Failed jobs expose an error in their status. The combined
 `/process/references` route is not enabled.
 
+### Linking methods
+
+`POST /link/references` takes `method=match` (default) or `method=model`:
+
+- `match` keeps the best title match among candidates that also pass the
+  author or year check (`custom_match()`).
+- `model` sends each index's raw search results to the linking decider
+  service (`services/linking_decider`, `LINKING_DECIDER_ENDPOINT`), a
+  fine-tuned GLiNER2 model that picks one candidate or none. Every reference
+  needs `raw_reference`, the original citation string the model was trained
+  on: the string sent to `/parse/references`, or `references[i]` from
+  `/process/references/grobid`. Links carry the decision's `score`. Deploy the service with
+  `deployment/linking-decider.yaml` (CPU, about 4-6 GiB RAM, `HF_TOKEN` while
+  the model repo is private).
+
 ### Job retention
 
 A job's status and result are available through the API for **24 hours** after
@@ -152,6 +167,7 @@ citation_index/
 - [x] Wikidata search connector
 - [x] Matilda connector
 - [x] Parsed-reference API with shared title/author/year matching
+- [x] Model linking (`method=model`): fine-tuned GLiNER2 decider service picks the candidate or none
 - [ ] Advanced search and match pipeline
 - [ ] benchmark datasets(cex, excite, linkedbooks)
   - [x] creation

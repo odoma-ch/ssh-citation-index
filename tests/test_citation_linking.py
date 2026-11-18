@@ -158,7 +158,7 @@ def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
     monkeypatch.setattr(
         tasks,
         "link_references",
-        lambda references, targets: [
+        lambda references, targets, **options: [
             {
                 "reference": references[0],
                 "links": {"openalex": {"id": "W1", "doi": "10.1234/example"}},
@@ -185,6 +185,7 @@ def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
         ],
         "count": 1,
         "targets": ["openalex"],
+        "method": "match",
     }
     assert metadata_updates[-1]["status"] == "completed"
 
@@ -274,6 +275,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
         ],
         "count": 2,
         "targets": ["openalex"],
+        "method": "match",
     }
 
 
@@ -292,7 +294,7 @@ def test_linking_task_marks_failures_and_does_not_write_result(monkeypatch, tmp_
     monkeypatch.setattr(
         tasks,
         "link_references",
-        lambda references, targets: (_ for _ in ()).throw(
+        lambda references, targets, **options: (_ for _ in ()).throw(
             RuntimeError("OpenAlex unavailable")
         ),
     )
@@ -414,3 +416,175 @@ def test_link_references_keeps_other_sources_when_one_fails(monkeypatch):
     assert links["openalex"] == {"id": None, "doi": None, "error": "HTTP 504"}
     assert links["wikidata"] == {"id": "Q1", "doi": "10.1234/WIKIDATA"}
 
+
+
+RAW = "Smith. A linked paper. 2024."
+
+
+class TwoCandidateConnector(FakeOpenAlexConnector):
+    def search(self, reference, top_k=10, **kwargs):
+        return [
+            {"id": "W-other", "title": "Other paper"},
+            {"id": "W-chosen", "title": "A linked paper", "doi": "doi:10.1/chosen"},
+        ]
+
+
+def fake_decider(monkeypatch, choice, calls):
+    def decide(endpoint, reference, index, candidates, timeout):
+        calls.append((endpoint, reference, index, candidates))
+        return {"choice": choice, "score": 0.9}
+
+    monkeypatch.setattr(citation_linking, "decide_link", decide)
+    monkeypatch.setattr(
+        citation_linking, "CONNECTOR_TYPES", {"openalex": TwoCandidateConnector}
+    )
+
+
+@pytest.mark.parametrize(
+    "choice,expected",
+    [
+        (1, {"id": "W-chosen", "doi": "10.1/chosen", "score": 0.9}),
+        (None, {"id": None, "doi": None, "score": 0.9}),
+    ],
+)
+def test_model_method_uses_decider_choice(monkeypatch, choice, expected):
+    calls = []
+    fake_decider(monkeypatch, choice, calls)
+    reference = {**parsed("Unrelated title"), "raw_reference": RAW}
+
+    links = citation_linking.link_references(
+        [reference], ["openalex"], method="model", decider_endpoint="http://decider"
+    )[0]["links"]
+
+    assert links["openalex"] == expected
+    endpoint, sent, index, candidates = calls[0]
+    # The decider gets the raw search results and the request's reference fields.
+    assert (endpoint, sent, index) == ("http://decider", reference, "openalex")
+    assert [c["id"] for c in candidates] == ["W-other", "W-chosen"]
+
+
+def test_model_method_skips_decider_for_empty_pool(monkeypatch):
+    calls = []
+    fake_decider(monkeypatch, 0, calls)
+
+    class EmptyConnector(FakeOpenAlexConnector):
+        def search(self, reference, top_k=10, **kwargs):
+            return []
+
+    monkeypatch.setattr(citation_linking, "CONNECTOR_TYPES", {"openalex": EmptyConnector})
+    links = citation_linking.link_references(
+        [{**parsed(), "raw_reference": RAW}],
+        ["openalex"],
+        method="model",
+        decider_endpoint="http://decider",
+    )[0]["links"]
+
+    assert links["openalex"] == {"id": None, "doi": None} and calls == []
+
+
+def test_model_method_fails_job_when_decider_is_down(monkeypatch):
+    from citation_index.llm.linking_decider_client import LinkingDeciderError
+
+    fake_decider(monkeypatch, 0, [])
+
+    class EmptyConnector(FakeOpenAlexConnector):
+        def search(self, reference, top_k=10, **kwargs):
+            return []
+
+    def down(*args, **kwargs):
+        raise LinkingDeciderError("decider unavailable")
+
+    # An index with an empty pool succeeds without the decider; the job must
+    # still fail rather than report the other index as "no match".
+    monkeypatch.setattr(
+        citation_linking,
+        "CONNECTOR_TYPES",
+        {"openalex": TwoCandidateConnector, "wikidata": EmptyConnector},
+    )
+
+    monkeypatch.setattr(citation_linking, "decide_link", down)
+    with pytest.raises(LinkingDeciderError, match="decider unavailable"):
+        citation_linking.link_references(
+            [{**parsed(), "raw_reference": RAW}],
+            ["wikidata", "openalex"],
+            method="model",
+            decider_endpoint="http://decider",
+        )
+
+
+@pytest.mark.parametrize(
+    "options,message",
+    [
+        ({"method": "embedding"}, "method must be one of"),
+        ({"method": "model"}, "requires a decider endpoint"),
+    ],
+)
+def test_link_references_rejects_bad_method_options(options, message):
+    with pytest.raises(ValueError, match=message):
+        citation_linking.link_references([parsed()], ["openalex"], **options)
+
+
+@pytest.mark.parametrize("raw", [None, "  "])
+def test_api_model_method_requires_raw_reference(raw):
+    from citation_index import api
+
+    reference = parsed() if raw is None else {**parsed(), "raw_reference": raw}
+    response = TestClient(api.app).post(
+        "/link/references?method=model", json={"reference": reference}
+    )
+    assert response.status_code == 400
+    assert "raw_reference" in response.json()["detail"]
+
+
+def test_api_rejects_unknown_method():
+    from citation_index import api
+
+    response = TestClient(api.app).post(
+        "/link/references?method=embedding", json={"reference": parsed()}
+    )
+    assert response.status_code == 422
+
+
+def test_api_model_method_end_to_end(monkeypatch, tmp_path):
+    from citation_index import api, tasks
+
+    calls = []
+    fake_decider(monkeypatch, 1, calls)
+    test_storage = StorageManager(tmp_path)
+    metadata = {}
+
+    class ImmediateQueue:
+        def enqueue_call(self, function, kwargs, **options):
+            function(**kwargs)
+
+    monkeypatch.setattr(api, "storage", test_storage)
+    monkeypatch.setattr(tasks, "storage", test_storage)
+    monkeypatch.setattr(api, "create_job_id", lambda: "job-model")
+    monkeypatch.setattr(
+        api,
+        "initialize_job_metadata",
+        lambda job_id, job_type, **fields: metadata.update(
+            {"job_id": job_id, "status": "queued", "type": job_type,
+             "created_at": "2026-11-18T00:00:00", **fields}
+        ),
+    )
+    monkeypatch.setattr(api, "get_job_metadata", lambda job_id: metadata)
+    monkeypatch.setattr(api, "queue_linking", ImmediateQueue())
+    monkeypatch.setattr(tasks, "update_job_metadata", lambda job_id, **f: metadata.update(f))
+    monkeypatch.setattr(tasks, "log_job_event", lambda *args, **kwargs: None)
+    monkeypatch.setattr(tasks, "get_completed_stages", lambda job_id: [])
+    monkeypatch.setattr(tasks.settings, "linking_decider_endpoint", "http://decider")
+
+    client = TestClient(api.app)
+    submitted = client.post(
+        "/link/references?method=model&target=openalex",
+        json={"reference": {**parsed(), "raw_reference": RAW}},
+    )
+
+    assert submitted.status_code == 200
+    assert metadata["method"] == "model"
+    result = client.get("/jobs/job-model").json()
+    assert result["method"] == "model"
+    assert result["results"][0]["links"]["openalex"]["id"] == "W-chosen"
+    assert calls[0][0] == "http://decider"
+    assert calls[0][1]["raw_reference"] == RAW
