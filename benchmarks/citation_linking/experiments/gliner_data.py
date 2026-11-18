@@ -26,8 +26,25 @@ from benchmarks.citation_linking.experiments.linking_eval import (
     prepare_pool,
 )
 from benchmarks.citation_linking.experiments.rerankers import gliner_listwise_request
+from citation_index.pipelines.citation_linking import _candidate_doi
 
 ROOT = Path(__file__).resolve().parents[3]
+
+
+def gold_doi_in_pool(row: dict) -> bool:
+    """True if a candidate carries the reference's gold DOI.
+
+    ``gold_doi`` comes from another index's approved match. A ``none`` target next to
+    such a candidate is not evidence: "no record" was answered about the single
+    candidate shown at annotation time, not about this later top-10 pool.
+    """
+    doi = row.get("gold_doi")
+    if not isinstance(doi, str) or not doi.strip():
+        return False
+    return any(
+        (_candidate_doi(row["index"], c["metadata"]) or "").lower() == doi.lower()
+        for c in row["candidates"]
+    )
 
 
 def read_annotations(paths: list[Path]) -> dict[tuple[str, str], dict]:
@@ -170,6 +187,9 @@ def build_examples(
         }
         gold = normalize_id(row["gold_id"], row["index"]) if row["gold_id"] else None
         target = next((label for label, cid in mapping.items() if cid == gold), "none")
+        if target == "none" and gold_doi_in_pool(row):
+            info["reason"] = "gold_doi_candidate_needs_review"
+            continue
         reason = (
             "gold_retrieved"
             if target != "none"
