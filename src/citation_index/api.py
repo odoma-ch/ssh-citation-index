@@ -310,7 +310,11 @@ def get_job_status(job_id: str):
     metadata = get_job_metadata(job_id)
     if not metadata:
         raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
-    
+
+    # Terminal status is final; the RQ record may already have expired.
+    if metadata.get("status") in ("completed", "failed"):
+        return JobStatus(**metadata)
+
     # Check actual RQ job status to catch failed/killed jobs
     try:
         rq_job = Job.fetch(job_id, connection=redis_conn)
@@ -424,7 +428,7 @@ async def enqueue_text_extraction(
         extractor=extractor
     )
     
-    # Enqueue task (timeout and result_ttl must be set explicitly on enqueue_call)
+    # Enqueue task (timeout and TTLs must be set explicitly on enqueue_call)
     queue_default.enqueue_call(
         extract_text_task,
         args=(job_id,),
@@ -432,6 +436,7 @@ async def enqueue_text_extraction(
         job_id=job_id,
         timeout=settings.timeout_text_extraction,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
     
     logger.info(f"Enqueued text extraction job {job_id}")
@@ -467,6 +472,7 @@ async def _enqueue_grobid_extraction(
         job_id=job_id,
         timeout=settings.timeout_text_extraction,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
     logger.info("Enqueued GROBID reference extraction job %s (%s)", job_id, job_type)
     return format_job_response(job_id, message="GROBID reference extraction job enqueued")
@@ -570,6 +576,7 @@ async def enqueue_reference_extraction(
         job_id=job_id,
         timeout=settings.timeout_reference_extraction,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
 
     logger.info(f"Enqueued reference extraction job {job_id}")
@@ -611,6 +618,7 @@ def parse_reference_strings_endpoint(
         job_id=job_id,
         timeout=timeout,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
     
     logger.info(f"Enqueued reference parsing job {job_id}")
@@ -672,6 +680,7 @@ def enqueue_citation_linking(
         job_id=job_id,
         timeout=settings.timeout_citation_linking,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
 
     logger.info("Enqueued citation linking job %s", job_id)
@@ -722,6 +731,7 @@ def enqueue_citation_classification(
         job_id=job_id,
         timeout=settings.timeout_cec_classification,
         result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
     )
 
     logger.info("Enqueued citation classification job %s", job_id)

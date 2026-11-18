@@ -50,7 +50,7 @@ class Settings(BaseSettings):
         description="Root directory for file storage (use PV mount in K8s)",
     )
     storage_cleanup_age_hours: int = Field(
-        default=24, description="Delete job files older than this many hours"
+        default=72, description="Delete job files older than this many hours"
     )
 
     # ========================
@@ -143,8 +143,16 @@ class Settings(BaseSettings):
     # ========================
     # Worker Configuration
     # ========================
+    # RQ keeps its own job record (args, duration, worker, traceback) next to the
+    # job:{id} metadata hash. Keep finished records as long as the metadata so
+    # rq-dashboard and /jobs/{id}/status agree; keep failures longer for debugging.
     worker_result_ttl: int = Field(
-        default=3600, description="How long to keep job results in Redis (seconds)"
+        default=86400,
+        description="How long RQ keeps finished job records in Redis (seconds)",
+    )
+    worker_failure_ttl: int = Field(
+        default=604800,
+        description="How long RQ keeps failed job records in Redis (seconds)",
     )
     worker_default_timeout: int = Field(
         default=600, description="Default job timeout in seconds"
@@ -188,7 +196,7 @@ class Settings(BaseSettings):
     # Job Metadata Configuration
     # ========================
     job_metadata_ttl: int = Field(
-        default=7200, description="How long to keep job metadata in Redis (seconds)"
+        default=86400, description="How long to keep job metadata in Redis (seconds)"
     )
 
     # ========================

@@ -168,6 +168,7 @@ def get_completed_stages(job_id: str) -> list:
     connection=redis_conn,
     timeout=settings.timeout_text_extraction,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def extract_text_task(
     job_id: str, extractor: str = "pymupdf", markdown: bool = True
@@ -260,6 +261,7 @@ def extract_text_task(
     connection=redis_conn,
     timeout=settings.timeout_reference_extraction,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def extract_references_task(
     job_id: str,
@@ -375,6 +377,7 @@ def extract_references_task(
     connection=redis_conn,
     timeout=settings.timeout_text_extraction,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def extract_references_grobid_task(
     job_id: str,
@@ -439,6 +442,7 @@ def extract_references_grobid_task(
     connection=redis_conn,
     timeout=settings.timeout_reference_parsing,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def parse_references_task(
     job_id: str,
@@ -553,6 +557,7 @@ def parse_references_task(
     connection=redis_conn,
     timeout=settings.timeout_citation_linking,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def link_references_task(job_id: str) -> Dict[str, Any]:
     """Link parsed references through the requested external indexes."""
@@ -612,6 +617,7 @@ def link_references_task(job_id: str) -> Dict[str, Any]:
     connection=redis_conn,
     timeout=settings.timeout_cec_classification,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def classify_citations_task(job_id: str) -> Dict[str, Any]:
     """Classify citation intent with the external CEC classifier."""
@@ -662,6 +668,7 @@ def classify_citations_task(job_id: str) -> Dict[str, Any]:
     connection=redis_conn,
     timeout=settings.timeout_reference_extraction,
     result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
 )
 def extract_and_parse_references_task(
     job_id: str,
