@@ -12,7 +12,7 @@ SSH Citation Index modules are a collection of AI modules for extracting, parsin
 
 Current version: **v0.4.2**. See the [changelog](CHANGELOG.md) for release details.
 
-For local Python development, use Python 3.10+:
+For local Python development, use Python 3.11+:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -66,6 +66,24 @@ Each submission returns a `job_id`. Poll `GET /jobs/{job_id}/status` until
 `completed` or `failed`, then retrieve completed results with
 `GET /jobs/{job_id}`. Failed jobs expose an error in their status. The combined
 `/process/references` route is not enabled.
+
+### Job retention
+
+A job's status and result are available through the API for **24 hours** after
+its last update. Both `/jobs/{job_id}` endpoints read the Redis `job:{job_id}`
+hash and the result files; RQ's own record is only kept for operations
+(rq-dashboard, debugging).
+
+| Where | Content | Lifetime | Setting |
+|---|---|---|---|
+| Redis `job:{id}` | Status, error, current stage (read by the API) | 24h after last update | `JOB_METADATA_TTL=86400` |
+| Storage `uploads/`, `intermediate/`, `results/` | Input PDF, stage outputs, final result | 72h after last modification | `STORAGE_CLEANUP_AGE_HOURS=72` |
+| Redis `rq:job:{id}`, finished | RQ job record (args, duration, worker) | 24h | `WORKER_RESULT_TTL=86400` |
+| Redis `rq:job:{id}`, failed | RQ job record and traceback | 7 days | `WORKER_FAILURE_TTL=604800` |
+
+Files stay on disk for up to 48h after the API stops serving the job. This is
+intentional: it leaves a debugging buffer to inspect inputs and stage outputs
+of recent jobs directly on the storage volume.
 
 
 ## Tests

@@ -53,7 +53,8 @@ data:
   MINERU_BACKEND: "vlm-auto-engine"
 
   # Worker / Queue timeouts
-  WORKER_RESULT_TTL: "3600"
+  WORKER_RESULT_TTL: "86400"   # finished RQ records; match JOB_METADATA_TTL
+  WORKER_FAILURE_TTL: "604800" # failed RQ records + traceback (7 days)
   WORKER_DEFAULT_TIMEOUT: "600"
   TIMEOUT_TEXT_EXTRACTION: "1500"
   TIMEOUT_REFERENCE_EXTRACTION: "1500"

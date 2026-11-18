@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Changed
+- Docker image now uses Python 3.12 (`python_requires>=3.11`) and PyMuPDF 2.x. The PyMuPDF extractor calls `Document.to_markdown()`; the separate `pymupdf4llm` pin is gone (PyMuPDF 2 installs a matching version, plus `pymupdf_layout` and `onnxruntime`, so the image is larger). (#56)
+- Job retention aligned (#57): `WORKER_RESULT_TTL` default 3600 → 86400, new `WORKER_FAILURE_TTL` (default 604800) passed as `failure_ttl` on every task decorator and `enqueue_call` (failed RQ records previously kept for a year). Config defaults now match production: `JOB_METADATA_TTL=86400`, `STORAGE_CLEANUP_AGE_HOURS=72`. See "Job retention" in the README.
+
+### Fixed
+- `GET /jobs/{id}/status` no longer calls `Job.fetch` for completed or failed jobs, so it stops logging `Could not fetch RQ job ...` on every poll once the RQ record has expired.
+
 ## [0.4.2] - 2026-11-02
 
 ### Added
