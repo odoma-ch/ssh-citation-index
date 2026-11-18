@@ -2,13 +2,16 @@
 
 All notable changes to this project are documented here.
 
-## [Unreleased]
+## [0.5.0] - 2026-11-18
 
 ### Added
 - `POST /link/references?method=model` (#58): the fine-tuned GLiNER2 decider (`yurui983/gliner2.5-multi-decide-citation-linking`, none-logit bias +7.737) chooses among each index's search results, or none. References need `raw_reference`. Links gain a `score`; results and job metadata record `method`. The default `method=match` keeps the title/author/year rules.
 - Linking decider service (`services/linking_decider`, `deployment/linking-decider.Dockerfile`, `deployment/linking-decider.yaml`, compose `linking-decider`). CPU-only torch; refuses weights whose SHA-256 differs from the validated checkpoint. Model input formatting is copied from the training export and checked against exported examples. New settings `LINKING_DECIDER_ENDPOINT` and `LINKING_DECIDER_TIMEOUT`; the K8s secret needs `HF_TOKEN`.
 - Deploy order: roll out `worker-linking` before the API. An older worker ignores the stored `method` and would run `match` for a `method=model` job.
 - A decider failure fails the linking job instead of being recorded per index (it is not one source among several).
+
+### Changed
+- Version bumped to 0.5.0 (package, image tags; the decider image is tagged `linking-decider:0.5.0` alongside the app). OpenAPI spec regenerated as `api_0.5.0.yml`.
 
 ## [0.4.3] - 2026-11-18
 

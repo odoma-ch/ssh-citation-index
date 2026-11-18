@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Citation Index API
   description: Extract and parse citations from academic PDFs
-  version: 0.4.3
+  version: 0.5.0
 paths:
   /health:
     get:
@@ -333,6 +333,20 @@ paths:
           title: Target
         description: openalex, matilda, wikidata, opencitations, all, or a comma-separated
           list
+      - name: method
+        in: query
+        required: false
+        schema:
+          enum:
+          - match
+          - model
+          type: string
+          description: 'match: title/author/year rules. model: fine-tuned GLiNER2
+            decider picks among the search results; needs raw_reference on each reference'
+          default: match
+          title: Method
+        description: 'match: title/author/year rules. model: fine-tuned GLiNER2 decider
+          picks among the search results; needs raw_reference on each reference'
       requestBody:
         required: true
         content:
@@ -769,6 +783,12 @@ components:
           title: Refs
           description: Defines references to another location, possibly modified by
             additional text or comment.
+        raw_reference:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Raw Reference
+          description: Original citation string; required with method=model
       type: object
       required:
       - full_title
