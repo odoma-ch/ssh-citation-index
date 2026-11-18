@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Citation Index API
   description: Extract and parse citations from academic PDFs
-  version: 0.4.2
+  version: 0.4.3
 paths:
   /health:
     get:
@@ -723,7 +723,6 @@ components:
             book, book-chapter, proceedings-paper, preprint, etc. Only set when explicitly
             provided, not inferred.'
         raw:
-          additionalProperties: true
           type: object
           title: Raw
           description: Raw data preservation for provenance and debugging. Stores
