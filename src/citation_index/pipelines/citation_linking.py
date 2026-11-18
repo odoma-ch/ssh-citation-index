@@ -12,11 +12,14 @@ from ..core.connectors import (
 )
 from ..core.connectors.base import BaseConnector
 from ..core.models import Reference
+from ..llm.linking_decider_client import LinkingDeciderError, decide_link
 from ..utils.reference_matching import custom_match, reference_match_fields
 
 logger = logging.getLogger(__name__)
 
 SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata", "opencitations")
+# match: title/author/year rules; model: fine-tuned GLiNER2 decider service
+LINKING_METHODS = ("match", "model")
 CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
     "openalex": OpenAlexConnector,
     "matilda": MatildaConnector,
@@ -43,14 +46,27 @@ def parse_targets(value: str) -> List[str]:
 
 
 def link_references(
-    references: Iterable[Dict[str, Any]], targets: Iterable[str], top_k: int = 10
+    references: Iterable[Dict[str, Any]],
+    targets: Iterable[str],
+    top_k: int = 10,
+    method: str = "match",
+    decider_endpoint: str | None = None,
+    decider_timeout: float = 60.0,
 ) -> List[Dict[str, Any]]:
-    """Search parsed references and filter candidates using bibliographic fields.
+    """Search parsed references and pick the matching candidate per index.
+
+    ``method="match"`` filters candidates with title/author/year rules.
+    ``method="model"`` sends each (reference, index) pool to the decider
+    service at ``decider_endpoint``; references need ``raw_reference``.
 
     A failing source is reported per link as ``{"id": None, "doi": None,
     "error": ...}`` so the other sources' links survive. If every lookup
     fails, the first error is re-raised instead of returning an empty success.
     """
+    if method not in LINKING_METHODS:
+        raise ValueError(f"method must be one of {LINKING_METHODS}, got {method!r}")
+    if method == "model" and not decider_endpoint:
+        raise ValueError("method='model' requires a decider endpoint")
     connectors = {name: CONNECTOR_TYPES[name]() for name in targets}
     results = []
     errors: List[Exception] = []
@@ -59,7 +75,22 @@ def link_references(
         links = {}
         for name, connector in connectors.items():
             try:
-                links[name] = _link_one(reference, name, connector, top_k)
+                if method == "model":
+                    links[name] = _decide_one(
+                        reference,
+                        parsed_reference,
+                        name,
+                        connector,
+                        top_k,
+                        decider_endpoint,
+                        decider_timeout,
+                    )
+                else:
+                    links[name] = _link_one(reference, name, connector, top_k)
+            except LinkingDeciderError:
+                # The decider is shared by every index, not one source among
+                # several: an outage must fail the job, not read as "no match".
+                raise
             except Exception as exc:
                 logger.exception("Linking via %s failed", name)
                 errors.append(exc)
@@ -86,6 +117,30 @@ def _link_one(
         return {"id": None, "doi": None}
     candidate = max(matches, key=lambda item: item[0])[1]
     return {"id": _candidate_id(candidate), "doi": _candidate_doi(target, candidate)}
+
+
+def _decide_one(
+    reference: Reference,
+    parsed_reference: Dict[str, Any],
+    target: str,
+    connector: BaseConnector,
+    top_k: int,
+    endpoint: str,
+    timeout: float,
+) -> Dict[str, Any]:
+    # The decider was trained on raw search results, so send them unconverted.
+    candidates = connector.search(reference, top_k=top_k)[:top_k]
+    if not candidates:
+        return {"id": None, "doi": None}
+    result = decide_link(endpoint, parsed_reference, target, candidates, timeout)
+    if result["choice"] is None:
+        return {"id": None, "doi": None, "score": result["score"]}
+    candidate = candidates[result["choice"]]
+    return {
+        "id": _candidate_id(candidate),
+        "doi": _candidate_doi(target, candidate),
+        "score": result["score"],
+    }
 
 
 def _candidate_id(candidate: Dict[str, Any]) -> str | None:

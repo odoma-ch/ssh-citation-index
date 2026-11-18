@@ -168,6 +168,10 @@ class LinkingReference(Reference):
     full_title: str = Field(..., min_length=1)
     authors: list[Person | Organization | str] = Field(..., min_length=1)
     publication_year: int = Field(..., ge=1, le=9999)
+    raw_reference: Optional[str] = Field(
+        default=None,
+        description="Original citation string; required with method=model",
+    )
 
     @model_validator(mode="after")
     def require_linking_fields(self) -> "LinkingReference":
@@ -643,6 +647,13 @@ def enqueue_citation_linking(
             "openalex, matilda, wikidata, opencitations, all, or a comma-separated list"
         ),
     ),
+    method: Literal["match", "model"] = Query(
+        default="match",
+        description=(
+            "match: title/author/year rules. model: fine-tuned GLiNER2 decider "
+            "picks among the search results; needs raw_reference on each reference"
+        ),
+    ),
 ):
     """Queue citation linking for parsed reference objects."""
     try:
@@ -651,6 +662,10 @@ def enqueue_citation_linking(
         entries = body.reference if batched else [body.reference]
         if not entries:
             raise ValueError("At least one parsed reference is required")
+        if method == "model" and any(
+            not (entry.raw_reference or "").strip() for entry in entries
+        ):
+            raise ValueError("method=model requires raw_reference on every reference")
         references = [
             entry.model_dump(mode="json", exclude_none=True, exclude_unset=True)
             for entry in entries
@@ -663,6 +678,7 @@ def enqueue_citation_linking(
     input_data = {
         "references": references,
         "targets": targets,
+        "method": method,
         "count": len(references),
     }
     storage.save_intermediate(
@@ -673,6 +689,7 @@ def enqueue_citation_linking(
         job_type="citation_linking",
         reference_count=len(references),
         targets=json.dumps(targets),
+        method=method,
     )
     queue_linking.enqueue_call(
         link_references_task,

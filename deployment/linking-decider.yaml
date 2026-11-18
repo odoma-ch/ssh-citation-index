@@ -1,0 +1,109 @@
+# Citation-linking decider (services/linking_decider): fine-tuned GLiNER2
+# (yurui983/gliner2.5-multi-decide-citation-linking, mdeberta-v3-base, fp32) that
+# picks, for one parsed reference and one index's search results, the matching
+# record or none. The linking worker calls it for /link/references?method=model.
+#
+# Build and push (from the repo root):
+#   docker build --platform linux/amd64 -f deployment/linking-decider.Dockerfile \
+#     -t registry.paas.psnc.pl/graphia/linking-decider:0.1.0 .
+#   docker push registry.paas.psnc.pl/graphia/linking-decider:0.1.0
+#
+# While the model repo is private, add HF_TOKEN (read access) to the secret:
+#   oc patch secret citation-index-secret -p '{"stringData":{"HF_TOKEN":"<token>"}}'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linking-decider
+  labels:
+    app: linking-decider
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linking-decider
+  template:
+    metadata:
+      labels:
+        app: linking-decider
+    spec:
+      imagePullSecrets:
+        - name: reg-paas-cred
+      containers:
+        - name: linking-decider
+          image: registry.paas.psnc.pl/graphia/linking-decider:0.1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+              name: http
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: citation-index-secret
+                  key: HF_TOKEN
+                  # Not needed once the model repo is public
+                  optional: true
+            # Pin a Hub commit here for reproducible rollouts; the service also
+            # refuses weights whose SHA-256 differs from the validated checkpoint.
+            - name: DECIDER_MODEL_REVISION
+              value: "main"
+            # Selected on validation for these weights; change only with new
+            # weights (and DECIDER_MODEL_SHA256).
+            - name: DECIDER_NONE_LOGIT_BIAS
+              value: "7.737"
+            # Torch sizes its thread pool from the node's cores, not the cgroup
+            # quota; keep equal to the CPU limit to avoid CFS throttling.
+            - name: OMP_NUM_THREADS
+              value: "4"
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          # The Hub download (1.1 GB) and model load run before the app answers.
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            failureThreshold: 60
+          # /health does not wait for the inference lock, so it stays
+          # responsive while a request is being scored.
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 30
+            failureThreshold: 5
+          # One task is ~0.1-0.7s on 2 threads (Apple M-series bench); peak RSS
+          # ~3.5 GB. Re-measure on the cluster before scaling.
+          resources:
+            requests:
+              cpu: "2"
+              memory: "4Gi"
+            limits:
+              cpu: "4"
+              memory: "6Gi"
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 4Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: linking-decider
+  labels:
+    app: linking-decider
+spec:
+  selector:
+    app: linking-decider
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: http
+  type: ClusterIP
