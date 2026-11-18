@@ -51,8 +51,8 @@ characters.
 
 ### Fourth index and DASI/EbDA references
 
-The numbers above describe the three-index export `data_v2`, which the final model was
-trained on. `dataset/build_annotation_dataset.py` writes the pools of all four indexes
+The numbers above describe the three-index export `data_v2`, which the previous model
+`full_final_v1` was trained on. The current model `v4_select_v1` uses `data_v4_dasi_ebda`. `dataset/build_annotation_dataset.py` writes the pools of all four indexes
 and all 680 references to `logs/citation_link_tryings/four_index/` (at most ten
 candidates per task), and `export` reads that pool and both corrected annotation files
 by default:
@@ -74,9 +74,12 @@ is kept as `data_v3_4index` (1,249 tasks).
 
 ## Training
 
-The isolated runtime on psnc is `/mnt/data/yzhu/gliner-listwise/venv` and the run
-checkout is `/mnt/data/yzhu/gliner-listwise/run-20261028`; select a GPU explicitly
-and check `nvidia-smi` first. Library versions: `gliner2==2.1.0`, `torch==2.7.1`
+The isolated runtime on psnc is `/mnt/data/yzhu/gliner-listwise/venv` (no `activate`
+script; call `venv/bin/python` directly). Run checkouts are copies of the repository
+code, not git clones: `run-20261028` (`full_final_v1`) and `run-20261117`
+(`v4_select_v1`, commit in `GIT_COMMIT`). Run from the checkout with
+`HF_HOME=/mnt/data/yzhu/gliner-listwise/hf-cache HF_HUB_OFFLINE=1 PYTHONPATH=$PWD/src:$PWD`;
+select a GPU explicitly and check `nvidia-smi` first. Library versions: `gliner2==2.1.0`, `torch==2.7.1`
 (CUDA 12.6 build), `transformers==4.56.1`. The runner records resolved model/weight
 hashes and package versions.
 
@@ -98,7 +101,63 @@ Useful trainer flags (defaults are what the final model used):
 | `--freeze-encoder` | Trains the head only. |
 | `--smoke-size n` | Overfits `n` train examples as a plumbing check, not a score. |
 
-## Final model (all data)
+## Current model: `v4_select_v1` (four indexes, train split)
+
+Trained on the 987 train examples of `data_v4_dasi_ebda` with the default flags (up to 5
+epochs, patience 2, `recall_policy` selection on the 342 validation examples). Epoch 4 was
+selected with none-logit bias **+7.737**; validation loss was lowest at epoch 2. Training
+took about 10 minutes on one A100.
+
+```bash
+CUDA_VISIBLE_DEVICES=0 venv/bin/python -m benchmarks.citation_linking.experiments.finetune_gliner_listwise \
+  --data-dir logs/citation_link_tryings/finetuning/gliner_listwise/data_v4_dasi_ebda \
+  --output-dir logs/citation_link_tryings/finetuning/gliner_listwise/v4_select_v1 --device cuda:0
+venv/bin/python -m benchmarks.citation_linking.experiments.gliner_eval predict \
+  --data-dir .../data_v4_dasi_ebda --run-dir .../v4_select_v1 --device cuda:0
+venv/bin/python -m benchmarks.citation_linking.experiments.gliner_eval summarize \
+  --run-dirs .../v4_select_v1 --output-dir .../v4_select_v1/test_summary
+```
+
+Checkpoint: private Hub repo `yurui983/gliner2.5-multi-decide-citation-linking`, also on
+psnc in `run-20261117/.../v4_select_v1/best` and locally in `v4_select_v1/best/`;
+`model.safetensors` SHA-256
+`20deaed79508d22c1a65986d47ae319031596e53360f27b77ff057b953189406`.
+
+`checkpoint` must be a local directory, so download the snapshot first (needs `HF_TOKEN`
+while the repo is private):
+
+```python
+from huggingface_hub import snapshot_download
+
+path = snapshot_download("yurui983/gliner2.5-multi-decide-citation-linking")
+model = GlinerListwiseReranker(checkpoint=Path(path), device="cuda:0", none_logit_bias=7.737)
+```
+
+The Hub snapshot reproduces the psnc test predictions (first 20 examples on CPU: same
+choices, maximum probability difference 4e-5).
+
+Test split (`reference_index_disjoint`, 543 tasks including empty pools, 179 gold
+targets; bias frozen from validation):
+
+| Test policy | Precision | Recall | F1 | TP | FP | FN |
+|---|---:|---:|---:|---:|---:|---:|
+| Pretrained, native | 40.1% | 70.4% | 51.1% | 126 | 188 | 53 |
+| Fine-tuned, dev bias +7.74 | 81.6% | 67.0% | 73.6% | 120 | 27 | 59 |
+
+On the 179 gold tasks the fine-tuned model is correct on 120 vs 126 for pretrained (6
+only after, 12 only before, McNemar p=0.24). On the 364 no-gold tasks correct abstentions
+rise from 215 to 346. Per index F1: OpenAlex 80.0%, Matilda 75.4%, Wikidata 72.7%,
+OpenCitations 64.5%; OpenCitations misses 24 of its gold links.
+
+The notebook rescores every other saved method on the same 543 tasks
+(`v4_select_v1/held_out_comparison.csv`). The fine-tuned row ranks fifth: D3 listwise leads
+at 78.3% F1, then GLiDE listwise (75.9%), D3 pairwise (75.1%) and GLiDE pairwise (74.3%).
+
+This split keeps each `(reference, index)` task in one split, so 250 of 334 test examples
+have a reference seen in training under another index. Treat the scores as optimistic for
+unseen references; the bias also moved widely between epochs (−10.7 to +7.7).
+
+## Previous model: `full_final_v1` (three indexes, all data)
 
 `full_final_v1` trains on all 929 eligible tasks (441 references) for a fixed 3
 epochs and keeps the last epoch. Train loss was 1.236, 0.852, 0.656. Checkpoint
