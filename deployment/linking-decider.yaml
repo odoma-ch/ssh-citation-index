@@ -5,8 +5,8 @@
 #
 # Build and push (from the repo root):
 #   docker build --platform linux/amd64 -f deployment/linking-decider.Dockerfile \
-#     -t registry.paas.psnc.pl/graphia/linking-decider:0.1.0 .
-#   docker push registry.paas.psnc.pl/graphia/linking-decider:0.1.0
+#     -t registry.paas.psnc.pl/graphia/linking-decider:0.5.0 .
+#   docker push registry.paas.psnc.pl/graphia/linking-decider:0.5.0
 #
 # While the model repo is private, add HF_TOKEN (read access) to the secret:
 #   oc patch secret citation-index-secret -p '{"stringData":{"HF_TOKEN":"<token>"}}'
@@ -30,7 +30,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: linking-decider
-          image: registry.paas.psnc.pl/graphia/linking-decider:0.1.0
+          image: registry.paas.psnc.pl/graphia/linking-decider:0.5.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
