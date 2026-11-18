@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here.
 
-## [Unreleased]
+## [0.4.3] - 2026-11-18
 
 ### Changed
 - Docker image now uses Python 3.12 (`python_requires>=3.11`) and PyMuPDF 2.x. The PyMuPDF extractor calls `Document.to_markdown()`; the separate `pymupdf4llm` pin is gone (PyMuPDF 2 installs a matching version, plus `pymupdf_layout` and `onnxruntime`, so the image is larger). (#56)
