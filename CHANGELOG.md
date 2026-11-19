@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Added
+- `POST /link/references?filter_reviews_by_doi=true` drops candidates whose DOI only ever names a book review (Choice Reviews Online, `10.5860/choice.*`) before `match` or `model` chooses. Default `false`; results record the option.
+
+### Changed
+- Linking decider weights `v5_select_v1` (Hub revision `09135525`, SHA-256 `76520c56…`, none-logit bias −3.217), retrained on the reviewed citation-linking dataset (revision `ed992b5`). Held-out test F1 84.5% (P 90.1%, R 79.5%). The service defaults and `deployment/linking-decider.yaml` (now pinned to that revision) carry the new SHA and bias; a pod still on the 0.5.0 image needs the env values from the manifest.
+- Citation-linking dataset: every label checked against the frozen candidate pool (`CORRECTIONS.md`, round 6), duplicate candidates removed, corrections moved to `benchmarks/citation_linking/dataset/corrections.py`, a QA report written at build time.
+
 ## [0.5.0] - 2026-11-18
 
 ### Added

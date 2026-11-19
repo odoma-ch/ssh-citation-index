@@ -52,7 +52,7 @@ characters.
 ### Fourth index and DASI/EbDA references
 
 The numbers above describe the three-index export `data_v2`, which the previous model
-`full_final_v1` was trained on. The current model `v4_select_v1` uses `data_v4_dasi_ebda`. `dataset/build_annotation_dataset.py` writes the pools of all four indexes
+`full_final_v1` was trained on. The current model `v5_select_v1` uses `data_v5` (labels of dataset revision `ed992b5dacdb`, `reference_disjoint` split); the previous `v4_select_v1` used `data_v4_dasi_ebda`. `dataset/build_annotation_dataset.py` writes the pools of all four indexes
 and all 680 references to `logs/citation_link_tryings/four_index/` (at most ten
 candidates per task), and `export` reads that pool and both corrected annotation files
 by default:
@@ -101,7 +101,48 @@ Useful trainer flags (defaults are what the final model used):
 | `--freeze-encoder` | Trains the head only. |
 | `--smoke-size n` | Overfits `n` train examples as a plumbing check, not a score. |
 
-## Current model: `v4_select_v1` (four indexes, train split)
+## Current model: `v5_select_v1` (reviewed labels, `reference_disjoint`)
+
+Trained on `data_v5`, exported from the pool of dataset revision
+`ed992b5dacdb425784051dc5357bc1554631dd33` after every label was checked against the pool
+(`dataset/CORRECTIONS.md`, round 6) and duplicate candidates were removed. The pool follows
+`reference_disjoint`, so no reference is in two splits: train 992, validation 337, test 328
+examples (validation and test have no reference seen in training). Default flags, as for
+`v4_select_v1`; run checkout `run-20261118` (code: working tree of
+`fix/citation-linking-labels-v5`, see `GIT_COMMIT` and `WORKING_TREE.diff` there).
+Training stopped after epoch 4 (patience 2); epoch 2 was selected with none-logit bias
+**−3.217** (validation: precision 91.0%, recall 71.7%, F1 80.2%). Validation loss was lowest
+at epoch 1.
+
+```bash
+CUDA_VISIBLE_DEVICES=1 venv/bin/python -m benchmarks.citation_linking.experiments.finetune_gliner_listwise \
+  --data-dir logs/citation_link_tryings/finetuning/gliner_listwise/data_v5 \
+  --output-dir logs/citation_link_tryings/finetuning/gliner_listwise/v5_select_v1 --device cuda:0
+```
+
+followed by `gliner_eval predict` and `summarize` as below. Checkpoint on psnc in
+`run-20261118/.../v5_select_v1/best` and locally in `v5_select_v1/best/`;
+`model.safetensors` SHA-256
+`76520c5682ef86290a75c30d734aa1750ac42e15d1b711d80f6d1ed3561c8930`. On the Hub as revision
+`09135525ae27a5b8af80929521163a5688f47c7e` of `yurui983/gliner2.5-multi-decide-citation-linking`
+(the previous `v4_select_v1` is revision `fb898aaa3f04752d21e475b820223d24dba51f84`).
+
+Test split (`reference_disjoint`, 548 tasks including empty pools, 195 gold targets; bias
+frozen from validation):
+
+| Test policy | Precision | Recall | F1 | TP | FP | FN |
+|---|---:|---:|---:|---:|---:|---:|
+| Pretrained, native | 46.8% | 74.4% | 57.4% | 145 | 165 | 50 |
+| Fine-tuned, dev bias −3.22 | 90.1% | 79.5% | 84.5% | 155 | 17 | 40 |
+
+On the 195 gold tasks the fine-tuned model is correct on 155 vs 145 for pretrained (14 only
+after, 4 only before, McNemar p=0.03). On the 353 no-gold tasks correct abstentions rise from
+226 to 347. Per index F1: Matilda 90.5%, Wikidata 84.0%, OpenAlex 82.9%, OpenCitations 81.8%.
+
+The test sets of `v4_select_v1` and `v5_select_v1` differ (split, labels and candidates), so
+the two rows are not a paired comparison.
+
+## Previous model: `v4_select_v1` (four indexes, train split)
 
 Trained on the 987 train examples of `data_v4_dasi_ebda` with the default flags (up to 5
 epochs, patience 2, `recall_policy` selection on the 342 validation examples). Epoch 4 was

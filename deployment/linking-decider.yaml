@@ -46,11 +46,13 @@ spec:
             # Pin a Hub commit here for reproducible rollouts; the service also
             # refuses weights whose SHA-256 differs from the validated checkpoint.
             - name: DECIDER_MODEL_REVISION
-              value: "main"
+              value: "09135525ae27a5b8af80929521163a5688f47c7e"  # v5_select_v1
+            - name: DECIDER_MODEL_SHA256
+              value: "76520c5682ef86290a75c30d734aa1750ac42e15d1b711d80f6d1ed3561c8930"
             # Selected on validation for these weights; change only with new
             # weights (and DECIDER_MODEL_SHA256).
             - name: DECIDER_NONE_LOGIT_BIAS
-              value: "7.737"
+              value: "-3.217"
             # Torch sizes its thread pool from the node's cores, not the cgroup
             # quota; keep equal to the CPU limit to avoid CFS throttling.
             - name: OMP_NUM_THREADS
