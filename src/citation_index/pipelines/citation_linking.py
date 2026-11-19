@@ -20,6 +20,11 @@ logger = logging.getLogger(__name__)
 SUPPORTED_TARGETS = ("openalex", "matilda", "wikidata", "opencitations")
 # match: title/author/year rules; model: fine-tuned GLiNER2 decider service
 LINKING_METHODS = ("match", "model")
+# DOIs that only ever name a book review. Providers (OpenCitations most) attach them to
+# records whose title, author and year are the reviewed book's, so neither the rules
+# nor the decider can tell them apart. ponytail: Choice Reviews Online only; JSTOR
+# (10.2307) and most publishers mix reviews and articles under one prefix.
+REVIEW_DOI = re.compile(r"^10\.5860/choice\.", re.I)
 CONNECTOR_TYPES: Dict[str, Type[BaseConnector]] = {
     "openalex": OpenAlexConnector,
     "matilda": MatildaConnector,
@@ -52,12 +57,15 @@ def link_references(
     method: str = "match",
     decider_endpoint: str | None = None,
     decider_timeout: float = 60.0,
+    filter_reviews_by_doi: bool = False,
 ) -> List[Dict[str, Any]]:
     """Search parsed references and pick the matching candidate per index.
 
     ``method="match"`` filters candidates with title/author/year rules.
     ``method="model"`` sends each (reference, index) pool to the decider
     service at ``decider_endpoint``; references need ``raw_reference``.
+    ``filter_reviews_by_doi`` drops candidates with a review-only DOI
+    (``REVIEW_DOI``) before either method chooses.
 
     A failing source is reported per link as ``{"id": None, "doi": None,
     "error": ...}`` so the other sources' links survive. If every lookup
@@ -84,9 +92,12 @@ def link_references(
                         top_k,
                         decider_endpoint,
                         decider_timeout,
+                        filter_reviews_by_doi,
                     )
                 else:
-                    links[name] = _link_one(reference, name, connector, top_k)
+                    links[name] = _link_one(
+                        reference, name, connector, top_k, filter_reviews_by_doi
+                    )
             except LinkingDeciderError:
                 # The decider is shared by every index, not one source among
                 # several: an outage must fail the job, not read as "no match".
@@ -106,9 +117,13 @@ def _link_one(
     target: str,
     connector: BaseConnector,
     top_k: int,
+    filter_reviews: bool = False,
 ) -> Dict[str, Any]:
     matches = []
-    for candidate in connector.search(reference, top_k=top_k):
+    candidates = connector.search(reference, top_k=top_k)
+    for candidate in (
+        _drop_reviews(target, candidates) if filter_reviews else candidates
+    ):
         fields = reference_match_fields(connector._result_to_reference(candidate))
         is_match, details = custom_match(reference, fields)
         if is_match:
@@ -127,9 +142,12 @@ def _decide_one(
     top_k: int,
     endpoint: str,
     timeout: float,
+    filter_reviews: bool = False,
 ) -> Dict[str, Any]:
     # The decider was trained on raw search results, so send them unconverted.
     candidates = connector.search(reference, top_k=top_k)[:top_k]
+    if filter_reviews:
+        candidates = _drop_reviews(target, candidates)
     if not candidates:
         return {"id": None, "doi": None}
     result = decide_link(endpoint, parsed_reference, target, candidates, timeout)
@@ -141,6 +159,16 @@ def _decide_one(
         "doi": _candidate_doi(target, candidate),
         "score": result["score"],
     }
+
+
+def _drop_reviews(
+    target: str, candidates: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    return [
+        candidate
+        for candidate in candidates
+        if not REVIEW_DOI.match(_candidate_doi(target, candidate) or "")
+    ]
 
 
 def _candidate_id(candidate: Dict[str, Any]) -> str | None:

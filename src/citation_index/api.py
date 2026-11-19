@@ -654,6 +654,13 @@ def enqueue_citation_linking(
             "picks among the search results; needs raw_reference on each reference"
         ),
     ),
+    filter_reviews_by_doi: bool = Query(
+        default=False,
+        description=(
+            "Drop candidates whose DOI only ever names a book review "
+            "(Choice Reviews Online, 10.5860/choice.*) before choosing"
+        ),
+    ),
 ):
     """Queue citation linking for parsed reference objects."""
     try:
@@ -679,6 +686,7 @@ def enqueue_citation_linking(
         "references": references,
         "targets": targets,
         "method": method,
+        "filter_reviews_by_doi": filter_reviews_by_doi,
         "count": len(references),
     }
     storage.save_intermediate(

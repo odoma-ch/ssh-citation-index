@@ -573,19 +573,23 @@ def link_references_task(job_id: str) -> Dict[str, Any]:
         input_data = storage.load_intermediate(job_id, "citation_linking_input")
         references = input_data["references"]
         targets = input_data["targets"]
-        method = input_data.get("method", "match")  # jobs queued before the option existed
+        # .get: jobs queued before these options existed
+        method = input_data.get("method", "match")
+        filter_reviews = input_data.get("filter_reviews_by_doi", False)
         results = link_references(
             references,
             targets,
             method=method,
             decider_endpoint=settings.linking_decider_endpoint,
             decider_timeout=settings.linking_decider_timeout,
+            filter_reviews_by_doi=filter_reviews,
         )
         output = {
             "results": results,
             "count": len(results),
             "targets": targets,
             "method": method,
+            "filter_reviews_by_doi": filter_reviews,
         }
 
         result_path = storage.save_intermediate(job_id, stage, output, atomic=True)

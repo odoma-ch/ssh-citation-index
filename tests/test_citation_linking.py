@@ -186,6 +186,7 @@ def test_linking_task_persists_result_and_completes_job(monkeypatch, tmp_path):
         "count": 1,
         "targets": ["openalex"],
         "method": "match",
+        "filter_reviews_by_doi": False,
     }
     assert metadata_updates[-1]["status"] == "completed"
 
@@ -276,6 +277,7 @@ def test_api_queue_worker_and_result_end_to_end(monkeypatch, tmp_path):
         "count": 2,
         "targets": ["openalex"],
         "method": "match",
+        "filter_reviews_by_doi": False,
     }
 
 
@@ -588,3 +590,51 @@ def test_api_model_method_end_to_end(monkeypatch, tmp_path):
     assert result["results"][0]["links"]["openalex"]["id"] == "W-chosen"
     assert calls[0][0] == "http://decider"
     assert calls[0][1]["raw_reference"] == RAW
+
+
+class ReviewFirstConnector(FakeOpenAlexConnector):
+    def search(self, reference, top_k=10, **kwargs):
+        return [
+            {
+                "id": "W-review",
+                "title": "A linked paper",
+                "publication_year": 2024,
+                "doi": "10.5860/CHOICE.29-0573",
+            },
+            {
+                "id": "W-book",
+                "title": "A linked paper",
+                "publication_year": 2024,
+                "doi": "10.1234/book",
+            },
+        ]
+
+
+@pytest.mark.parametrize(
+    "filter_reviews,expected", [(False, "W-review"), (True, "W-book")]
+)
+def test_match_method_filters_review_dois(monkeypatch, filter_reviews, expected):
+    monkeypatch.setattr(
+        citation_linking, "CONNECTOR_TYPES", {"openalex": ReviewFirstConnector}
+    )
+    links = citation_linking.link_references(
+        [parsed()], ["openalex"], filter_reviews_by_doi=filter_reviews
+    )[0]["links"]
+    assert links["openalex"]["id"] == expected
+
+
+def test_model_method_never_sees_filtered_reviews(monkeypatch):
+    calls = []
+    fake_decider(monkeypatch, 0, calls)
+    monkeypatch.setattr(
+        citation_linking, "CONNECTOR_TYPES", {"openalex": ReviewFirstConnector}
+    )
+    links = citation_linking.link_references(
+        [{**parsed(), "raw_reference": RAW}],
+        ["openalex"],
+        method="model",
+        decider_endpoint="http://decider",
+        filter_reviews_by_doi=True,
+    )[0]["links"]
+    assert [c["id"] for c in calls[0][3]] == ["W-book"]
+    assert links["openalex"]["id"] == "W-book"
