@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Citation Index API
   description: Extract and parse citations from academic PDFs
-  version: 0.5.0
+  version: 0.5.1
 paths:
   /health:
     get:
@@ -347,6 +347,17 @@ paths:
           title: Method
         description: 'match: title/author/year rules. model: fine-tuned GLiNER2 decider
           picks among the search results; needs raw_reference on each reference'
+      - name: filter_reviews_by_doi
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Drop candidates whose DOI only ever names a book review (Choice
+            Reviews Online, 10.5860/choice.*) before choosing
+          default: false
+          title: Filter Reviews By Doi
+        description: Drop candidates whose DOI only ever names a book review (Choice
+          Reviews Online, 10.5860/choice.*) before choosing
       requestBody:
         required: true
         content:
@@ -457,7 +468,7 @@ components:
       properties:
         file:
           type: string
-          contentMediaType: application/octet-stream
+          format: binary
           title: File
       type: object
       required:
@@ -467,7 +478,7 @@ components:
       properties:
         file:
           type: string
-          contentMediaType: application/octet-stream
+          format: binary
           title: File
       type: object
       required:
@@ -881,11 +892,6 @@ components:
         type:
           type: string
           title: Error Type
-        input:
-          title: Input
-        ctx:
-          type: object
-          title: Context
       type: object
       required:
       - loc
