@@ -5,11 +5,15 @@
 #
 # Build and push (from the repo root):
 #   docker build --platform linux/amd64 -f deployment/linking-decider.Dockerfile \
-#     -t registry.paas.psnc.pl/graphia/linking-decider:0.5.0 .
-#   docker push registry.paas.psnc.pl/graphia/linking-decider:0.5.0
+#     -t registry.paas.psnc.pl/graphia/linking-decider:0.5.1 .
+#   docker push registry.paas.psnc.pl/graphia/linking-decider:0.5.1
 #
-# While the model repo is private, add HF_TOKEN (read access) to the secret:
-#   oc patch secret citation-index-secret -p '{"stringData":{"HF_TOKEN":"<token>"}}'
+# Weights are read from the shared PVC (citation-index-storage, models/), not the
+# Hub, so no HF_TOKEN is needed and a restart does not download 1.1 GB. Copy a new
+# checkpoint next to the old one, then point DECIDER_MODEL_PATH and the SHA/bias at it:
+#   oc rsync <local>/v5_select_v1/best/ <any pod with the PVC>:/app/storage/models/linking-decider/v5_select_v1/
+# To load from the Hub instead, drop DECIDER_MODEL_PATH (private repo: add HF_TOKEN
+# to citation-index-secret).
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -30,7 +34,7 @@ spec:
         - name: reg-paas-cred
       containers:
         - name: linking-decider
-          image: registry.paas.psnc.pl/graphia/linking-decider:0.5.0
+          image: registry.paas.psnc.pl/graphia/linking-decider:0.5.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
@@ -43,8 +47,10 @@ spec:
                   key: HF_TOKEN
                   # Not needed once the model repo is public
                   optional: true
-            # Pin a Hub commit here for reproducible rollouts; the service also
-            # refuses weights whose SHA-256 differs from the validated checkpoint.
+            # v5_select_v1, copied from the Hub revision below; the service refuses
+            # weights whose SHA-256 differs from the validated checkpoint.
+            - name: DECIDER_MODEL_PATH
+              value: "/models/linking-decider/v5_select_v1"
             - name: DECIDER_MODEL_REVISION
               value: "09135525ae27a5b8af80929521163a5688f47c7e"  # v5_select_v1
             - name: DECIDER_MODEL_SHA256
@@ -60,7 +66,11 @@ spec:
           volumeMounts:
             - name: tmp
               mountPath: /tmp
-          # The Hub download (1.1 GB) and model load run before the app answers.
+            - name: models
+              mountPath: /models
+              subPath: models
+              readOnly: true
+          # The model load (1.1 GB from the PVC) runs before the app answers.
           startupProbe:
             httpGet:
               path: /health
@@ -86,13 +96,19 @@ spec:
             requests:
               cpu: "2"
               memory: "4Gi"
+              ephemeral-storage: "128Mi"
             limits:
               cpu: "4"
               memory: "6Gi"
+              # The namespace quota counts ephemeral storage; weights live on the PVC.
+              ephemeral-storage: "512Mi"
       volumes:
         - name: tmp
           emptyDir:
-            sizeLimit: 4Gi
+            sizeLimit: 512Mi
+        - name: models
+          persistentVolumeClaim:
+            claimName: citation-index-storage
 ---
 apiVersion: v1
 kind: Service
