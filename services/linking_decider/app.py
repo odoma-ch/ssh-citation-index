@@ -40,9 +40,10 @@ from .formatting import (
 logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL_ID = "yurui983/gliner2.5-multi-decide-citation-linking"
-# v4_select_v1: bias +7.737 was selected on validation for exactly these weights.
-DEFAULT_SHA256 = "20deaed79508d22c1a65986d47ae319031596e53360f27b77ff057b953189406"
-DEFAULT_NONE_LOGIT_BIAS = 7.737
+# v5_select_v1 (Hub revision 09135525): bias -3.217 was selected on validation for
+# exactly these weights.
+DEFAULT_SHA256 = "76520c5682ef86290a75c30d734aa1750ac42e15d1b711d80f6d1ed3561c8930"
+DEFAULT_NONE_LOGIT_BIAS = -3.217
 
 Classify = Callable[[str, dict], dict]  # (text, labels) -> label probabilities
 

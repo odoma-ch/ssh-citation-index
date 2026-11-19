@@ -113,7 +113,7 @@ on `(ref_id, index)`; a candidate list belongs to the split of its task.
 | `retrieval_method` | string | Version of the search that produced the list. |
 | `retrieved_on` | string | Date of the search (UTC, `YYYY-MM-DD`). |
 | `n_candidates` | int | Length of `candidates`; 0 when the search returned nothing. |
-| `candidates` | list of struct | At most ten records in search order: `rank` (from 1), `candidate_id` (same form as `gold_id`), `metadata` (the provider's record as JSON text; its fields differ by index). |
+| `candidates` | list of struct | At most ten records in search order: `rank` (from 1), `candidate_id` (same form as `gold_id`), `metadata` (the provider's record as JSON text; its fields differ by index). Records of one task whose bibliographic fields read identically are kept once (the gold if among them); `build_report.json` lists the removed IDs. |
 | `oracle_candidate` | struct or null | The gold record's `candidate_id`, `metadata` and `metadata_source`, present only when the task has a gold that the search did not return. |
 
 The searches use reference metadata only (title, authors, year, venue). Identifiers

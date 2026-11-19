@@ -338,6 +338,54 @@ def attach(
     return output
 
 
+def deduplicate(
+    rows: list[dict[str, Any]], candidates: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
+    """Collapse candidates of one task whose model text is identical.
+
+    Providers (OpenCitations most) hold several records of one publication; the model
+    cannot tell them apart. The gold record survives if it is among them, otherwise the
+    higher-ranked one, at the best rank of the group. Ranks are renumbered 1..n. Returns
+    new rows (the store is not touched) and the removed IDs with the ID each duplicates.
+    """
+    from benchmarks.citation_linking.experiments.linking_eval import (
+        candidate_fields,
+        format_record,
+    )
+
+    output, removed = [], []
+    for row, found in zip(rows, candidates):
+        kept: dict[str, dict[str, Any]] = {}
+        for candidate in sorted(found["candidates"], key=lambda c: c["rank"]):
+            text, _ = format_record(
+                candidate_fields(row["index"], candidate["metadata"])
+            )
+            first = kept.get(text)
+            if first is None:
+                kept[text] = candidate
+                continue
+            keep, drop = first, candidate
+            if candidate["candidate_id"] == row["gold_id"]:
+                keep, drop = {**candidate, "rank": first["rank"]}, first
+            kept[text] = keep
+            removed.append(
+                {
+                    "ref_id": row["ref_id"],
+                    "index": row["index"],
+                    "removed": drop["candidate_id"],
+                    "duplicate_of": keep["candidate_id"],
+                }
+            )
+        ranked = sorted(kept.values(), key=lambda c: c["rank"])
+        output.append(
+            {
+                **found,
+                "candidates": [{**c, "rank": i} for i, c in enumerate(ranked, 1)],
+            }
+        )
+    return output, removed
+
+
 # Fields a search adds to a record and an ID lookup does not: the search's own scores
 # and our connector's ranking. Published, they would mark the oracle record
 # (relevance_score null, search_route "gold_injection"), so they are dropped from

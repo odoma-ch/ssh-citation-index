@@ -17,9 +17,9 @@ import random
 
 from benchmarks.citation_linking.dataset.build_annotation_dataset import (
     normalize_id,
-    REVIEW_OVERRIDES,
     SPLITS,
 )
+from benchmarks.citation_linking.dataset.corrections import REVIEW_OVERRIDES
 from benchmarks.citation_linking.experiments.linking_eval import (
     digest,
     KEY,
