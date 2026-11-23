@@ -68,7 +68,19 @@ class Reference(BaseModel):
         None,
         description="This title applies to any serial or periodical publication such as a journal, magazine, or newspaper.",
     )
-    
+
+    container_title: Optional[
+        Annotated[
+            str,
+            BeforeValidator(to_str),
+            AfterValidator(empty_to_none),
+            AfterValidator(normalize),
+        ]
+    ] = Field(
+        None,
+        description="Title of the book or proceedings volume that contains the referenced work, e.g. the edited book of a book chapter or the proceedings of a conference paper. Journals and other serials go in journal_title.",
+    )
+
     authors: Optional[
             Annotated[
                 List[Person | Organization | str],

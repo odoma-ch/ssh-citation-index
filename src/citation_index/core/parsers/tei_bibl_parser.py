@@ -111,7 +111,12 @@ class TeiBiblParser:
         
         # Set full_title from analytic or monographic
         full_title = analytic_title or monographic_title
-        
+        # A titled part (chapter, paper) sits inside the monographic item
+        container_title = monographic_title if analytic_title else None
+        ref_type = self._find_ref_type(
+            bibl_struct, has_analytic_title=bool(analytic_title)
+        )
+
         # Preserve original TEI title structure in raw dict
         raw = {}
         if analytic_title or monographic_title:
@@ -125,6 +130,8 @@ class TeiBiblParser:
             full_title=full_title,
             authors=authors,
             journal_title=journal_title,
+            container_title=container_title,
+            ref_type=ref_type,
             editors=editors,
             publisher=publisher,
             translator=translator,
@@ -148,6 +155,32 @@ class TeiBiblParser:
             raise ValueError("Empty Reference")
 
         return reference
+
+    def _find_ref_type(
+        self, bibl_struct: etree._Element, has_analytic_title: bool
+    ) -> Optional[str]:
+        """Derive a CSL/FaBiO reference type from the <biblStruct> structure.
+
+        GROBID files most places of publication as ``<meeting><address>``, so only a
+        <meeting> with its own text (the conference name) marks a proceedings paper:
+        23 of ~3,000 <meeting>s in the EXCITE GROBID output. GROBID also puts book
+        authors under an untitled <analytic>, so a part needs an analytic title.
+        """
+        ns = self._namespaces
+        monogr = bibl_struct.find("monogr", namespaces=ns)
+        if monogr is None:
+            return None
+        meeting = monogr.find("meeting", namespaces=ns)
+        if has_analytic_title and meeting is not None:
+            own_text = [meeting.text or ""] + [child.tail or "" for child in meeting]
+            if "".join(own_text).strip():
+                return "proceedings-paper"
+        has_analytic = bibl_struct.find("analytic", namespaces=ns) is not None
+        if has_analytic and monogr.find("title[@level='j']", namespaces=ns) is not None:
+            return "journal-article"
+        if monogr.find("title[@level='m']", namespaces=ns) is not None:
+            return "book-chapter" if has_analytic_title else "book"
+        return None
 
     def _find_and_join_all_refs(self, element: etree._Element) -> Optional[str]:
         refs = element.findall(".//ref", namespaces=self._namespaces)
@@ -375,9 +408,13 @@ class TeiBiblParser:
                 analytic_title = ref.raw.get("tei", {}).get("analytic_title") if ref.raw else None
                 monographic_title = ref.raw.get("tei", {}).get("monographic_title") if ref.raw else None
                 
-                # Fallback: if raw not available, use full_title as monographic
+                # Fallback without raw: a part inside its container, else a monograph
                 if not analytic_title and not monographic_title:
-                    monographic_title = ref.full_title
+                    if ref.container_title:
+                        analytic_title = ref.full_title
+                        monographic_title = ref.container_title
+                    else:
+                        monographic_title = ref.full_title
 
                 # Analytic (article in a journal or part of monograph)
                 if analytic_title:

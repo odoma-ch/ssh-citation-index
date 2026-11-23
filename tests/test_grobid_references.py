@@ -4,7 +4,10 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 import pytest
+from lxml import etree
 
+from citation_index.core.models import Reference
+from citation_index.core.parsers.tei_bibl_parser import TeiBiblParser
 from citation_index.llm.grobid_client import GrobidClient
 from citation_index.pipelines.grobid_references import parse_grobid_fulltext
 
@@ -116,6 +119,67 @@ def test_page_scope_text_or_from_to(scope, expected):
     parsed = parse_grobid_fulltext(tei, include_parsed=True)["parsed_references"]
 
     assert parsed[1]["pages"] == expected
+
+
+REF_TYPES = Path(__file__).parent / "data" / "grobid_ref_types.tei.xml"
+
+
+def _refs_by_xml_id() -> dict:
+    list_bibl = etree.parse(str(REF_TYPES)).find(".//{*}listBibl")
+    ids = [
+        b.get("{http://www.w3.org/XML/1998/namespace}id")
+        for b in list_bibl.iterfind("{*}biblStruct")
+    ]
+    return dict(zip(ids, TeiBiblParser().to_references(list_bibl)))
+
+
+@pytest.mark.parametrize(
+    "xml_id,expected",
+    [
+        ("journal-article", "journal-article"),
+        # <meeting> holding only an <address> is GROBID's place of publication
+        ("book-chapter", "book-chapter"),
+        ("book", "book"),
+        ("book-untitled-analytic", "book"),
+        ("proceedings-paper", "proceedings-paper"),
+        ("unknown", None),
+    ],
+)
+def test_ref_type_from_tei_structure(xml_id, expected):
+    assert _refs_by_xml_id()[xml_id].ref_type == expected
+
+
+def test_container_title_is_the_book_or_proceedings_title():
+    refs = _refs_by_xml_id()
+
+    chapter = refs["book-chapter"]
+    assert chapter.full_title.startswith("Testfall Äthiopien")
+    assert chapter.container_title.startswith("the Mediterranean, Asia")
+    assert chapter.raw["tei"]["monographic_title"] == chapter.container_title
+
+    proceedings = refs["proceedings-paper"]
+    assert proceedings.container_title.startswith("Proceedings of the 4th")
+    assert refs["journal-article"].container_title is None
+    assert refs["journal-article"].journal_title == "African Affairs"
+    # A book has no container: its own title is the monographic title
+    assert refs["book"].container_title is None
+    assert refs["book"].full_title.startswith("The Ethiopian election")
+    untitled = refs["book-untitled-analytic"]
+    assert untitled.container_title is None
+    assert untitled.full_title == "Kollektives Handeln und Ambiguität"
+
+
+def test_tei_export_without_raw_writes_container_as_monographic_title():
+    ref = Reference(full_title="Chapter title", container_title="Book title")
+
+    xml = TeiBiblParser().to_xml(ref)
+    bibl = etree.fromstring(xml.encode()).find(".//{*}biblStruct")
+
+    assert bibl.findtext("{*}analytic/{*}title[@level='a']") == "Chapter title"
+    assert bibl.findtext("{*}monogr/{*}title[@level='m']") == "Book title"
+    [round_trip] = TeiBiblParser().to_references(bibl)
+    assert round_trip.container_title == "Book title"
+    assert round_trip.ref_type == "book-chapter"
 
 
 def test_fulltext_request_uses_grobid_parameter_names():

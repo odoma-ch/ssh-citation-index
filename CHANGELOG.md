@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Added
+- `Reference.container_title` (#54): the book that contains a chapter, or the proceedings that contain a conference paper. `journal_title` keeps journals and other serials. The field is in the API output and, as a required key, in the guided-decoding schema; the parsing prompts describe it and show a book-chapter example.
+- GROBID / TEI parsing sets `ref_type` (`journal-article`, `book-chapter`, `book`, `proceedings-paper`, else none) and `container_title` from the `<biblStruct>` structure. Only a `<meeting>` with its own text counts as a conference: GROBID files most places of publication as `<meeting><address>`. TEI gold data gains both fields, so the CEX benchmark scores `container_title`.
+- `benchmarks/cex/run_cex_bench.py --include_schema --no_thinking` runs parsing as production does (guided decoding, Qwen thinking off).
+
 ## [0.5.1] - 2026-11-19
 
 ### Added

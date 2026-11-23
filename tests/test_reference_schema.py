@@ -22,8 +22,9 @@ def test_reference_schema_requires_every_concrete_field():
     ref_schema = _reference_schema()
     expected = set(ref_schema["properties"]) - set(Reference.OPTIONAL_SCHEMA_FIELDS)
     assert set(ref_schema["required"]) == expected
-    for field in ("full_title", "journal_title", "authors", "publisher"):
+    for field in ("full_title", "journal_title", "container_title", "authors"):
         assert field in ref_schema["required"]
+    assert "publisher" in ref_schema["required"]
 
 
 def test_reference_schema_keeps_free_form_fields_optional():
