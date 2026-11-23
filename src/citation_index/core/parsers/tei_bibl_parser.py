@@ -408,9 +408,9 @@ class TeiBiblParser:
                 analytic_title = ref.raw.get("tei", {}).get("analytic_title") if ref.raw else None
                 monographic_title = ref.raw.get("tei", {}).get("monographic_title") if ref.raw else None
                 
-                # Fallback without raw: a part inside its container, else a monograph
+                # Fallback without raw: a part inside its container or journal, else a monograph
                 if not analytic_title and not monographic_title:
-                    if ref.container_title:
+                    if ref.container_title or ref.journal_title:
                         analytic_title = ref.full_title
                         monographic_title = ref.container_title
                     else:

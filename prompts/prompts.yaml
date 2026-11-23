@@ -50,7 +50,7 @@ parsing.default:
     - input: |
         1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.  
         2. United Nations. (2018). World Urbanization Prospects. UN Publications.
-        3. Lee, K. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
+        3. Lee, K. J. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
       output: |
         {
             "references": [
@@ -73,14 +73,14 @@ parsing.default:
                     "reference": {
                         "organization": "United Nations",
                         "full_title": "World Urbanization Prospects",
-                        "journal_title": "UN Publications",
+                        "publisher": "UN Publications",
                         "publication_date": "2018"
                     }
                 },
                 {
                     "reference": {
                         "authors": [
-                            {"first_name": "K.", "middle_name": "", "surname": "Lee"}
+                            {"first_name": "K.", "middle_name": "J.", "surname": "Lee"}
                         ],
                         "editors": [
                             {"first_name": "M.", "middle_name": "", "surname": "Rossi"}
@@ -154,7 +154,7 @@ extraction_and_parsing.default:
         References:  
         1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.  
         2. United Nations. (2018). World Urbanization Prospects. UN Publications.
-        3. Lee, K. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
+        3. Lee, K. J. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
       output: |
         {
             "references": [
@@ -177,7 +177,7 @@ extraction_and_parsing.default:
                     "reference": {
                         "organization": "United Nations",
                         "full_title": "World Urbanization Prospects",
-                        "journal_title": "UN Publications",
+                        "publisher": "UN Publications",
                         "volume": "",
                         "issue": "",
                         "pages": "",
@@ -187,7 +187,7 @@ extraction_and_parsing.default:
                 {
                     "reference": {
                         "authors": [
-                            {"first_name": "K.", "middle_name": "", "surname": "Lee"}
+                            {"first_name": "K.", "middle_name": "J.", "surname": "Lee"}
                         ],
                         "editors": [
                             {"first_name": "M.", "middle_name": "", "surname": "Rossi"}

@@ -19,8 +19,8 @@ Given the provided text, parse all full reference entries and format them accord
                     // More authors as listed
                 ],
                 "full_title": "Title of the referenced work (e.g., 'Deep Learning for NLP')",
-                "journal_title": "Name of the journal or other serial (e.g., 'Nature')",
                 "container_title": "Title of the book or proceedings that contains a chapter or conference paper (e.g., 'Handbook of Scholarly Communication')",
+                "journal_title": "Name of the journal or other serial (e.g., 'Nature')",
                 "volume": "Volume number (e.g., '12')",
                 "issue": "Issue number (e.g., '3')",
                 "pages": "Page range (e.g., '123-130')",
@@ -53,7 +53,7 @@ Given the provided text, parse all full reference entries and format them accord
 
 1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.  
 2. United Nations. (2018). World Urbanization Prospects. UN Publications.
-3. Lee, K. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
+3. Lee, K. J. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
 
 #### Expected Output:
 {
@@ -77,14 +77,14 @@ Given the provided text, parse all full reference entries and format them accord
             "reference": {
                 "organization": "United Nations",
                 "full_title": "World Urbanization Prospects",
-                "journal_title": "UN Publications",
+                "publisher": "UN Publications",
                 "publication_date": "2018"
             }
         },
         {
             "reference": {
                 "authors": [
-                    {"first_name": "K.", "middle_name": "", "surname": "Lee"}
+                    {"first_name": "K.", "middle_name": "J.", "surname": "Lee"}
                 ],
                 "editors": [
                     {"first_name": "M.", "middle_name": "", "surname": "Rossi"}

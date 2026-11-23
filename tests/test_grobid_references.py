@@ -182,6 +182,19 @@ def test_tei_export_without_raw_writes_container_as_monographic_title():
     assert round_trip.ref_type == "book-chapter"
 
 
+def test_tei_export_without_raw_writes_journal_article_title_as_analytic():
+    ref = Reference(full_title="Article title", journal_title="Journal")
+
+    xml = TeiBiblParser().to_xml(ref)
+    bibl = etree.fromstring(xml.encode()).find(".//{*}biblStruct")
+
+    assert bibl.findtext("{*}analytic/{*}title[@level='a']") == "Article title"
+    assert bibl.find("{*}monogr/{*}title[@level='m']") is None
+    [round_trip] = TeiBiblParser().to_references(bibl)
+    assert round_trip.full_title == "Article title"
+    assert round_trip.ref_type == "journal-article"
+
+
 def test_fulltext_request_uses_grobid_parameter_names():
     client = GrobidClient(endpoint="http://grobid", max_retries=0)
     resp = Mock(status_code=200, text="<TEI/>")

@@ -47,7 +47,7 @@ References:
 ```toon
 references[2]{authors,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher}:
 	authors[3]{first_name,middle_name,surname}:J.,,Smith;A.,,Brown;C.,,Wilson	Machine learning approaches in natural language processing	Journal of AI Research		15	3	245-267	2020	
-	authors[1]{organization}:United Nations	World Urbanization Prospects	UN Publications					2018	
+	authors[1]{organization}:United Nations	World Urbanization Prospects						2018	UN Publications
 ```
 
 ### Input Text:
