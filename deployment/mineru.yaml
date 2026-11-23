@@ -21,11 +21,11 @@ spec:
         component: api
     spec:
       imagePullSecrets:
-        - name: registry-paas-psnc
+        - name: reg-paas-cred
       containers:
         - name: mineru-api
           image: registry.paas.psnc.pl/graphia/mineru:3.2.1
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           command:
             - mineru-api
           args:
@@ -63,12 +63,12 @@ spec:
           resources:
             requests:
               cpu: "2"
-              memory: 8Gi
+              memory: 16Gi
               ephemeral-storage: 2Gi
               nvidia.com/mig-1g.24gb: "1"
             limits:
               cpu: "2"
-              memory: 10Gi
+              memory: 20Gi
               ephemeral-storage: 7Gi
               nvidia.com/mig-1g.24gb: "1"
           volumeMounts:
