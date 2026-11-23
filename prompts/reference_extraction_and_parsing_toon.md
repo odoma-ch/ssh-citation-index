@@ -16,14 +16,14 @@ Given the provided text, extract all full reference entries and format them in T
 #### TOON Output Schema
 
 ```toon
-references[]{authors,full_title,journal_title,volume,issue,pages,publication_date,publisher}:
-	authors[]{first_name,middle_name,surname}	full_title	journal_title	volume	issue	pages	publication_date	publisher
+references[]{authors,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher}:
+	authors[]{first_name,middle_name,surname}	full_title	journal_title	container_title	volume	issue	pages	publication_date	publisher
 ```
 
 For organizational authors (no individual person names), use `organization` field:
 ```toon
-references[]{organization,full_title,journal_title,volume,issue,pages,publication_date,publisher}:
-	organization	full_title	journal_title	volume	issue	pages	publication_date	publisher
+references[]{organization,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher}:
+	organization	full_title	journal_title	container_title	volume	issue	pages	publication_date	publisher
 ```
 
 #### Guidelines:
@@ -45,9 +45,9 @@ References:
 
 #### Expected Output:
 ```toon
-references[2]{authors,full_title,journal_title,volume,issue,pages,publication_date,publisher}:
-	authors[3]{first_name,middle_name,surname}:J.,,Smith;A.,,Brown;C.,,Wilson	Machine learning approaches in natural language processing	Journal of AI Research	15	3	245-267	2020	
-	authors[1]{organization}:United Nations	World Urbanization Prospects	UN Publications				2018	
+references[2]{authors,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher}:
+	authors[3]{first_name,middle_name,surname}:J.,,Smith;A.,,Brown;C.,,Wilson	Machine learning approaches in natural language processing	Journal of AI Research		15	3	245-267	2020	
+	authors[1]{organization}:United Nations	World Urbanization Prospects	UN Publications					2018	
 ```
 
 ### Input Text:

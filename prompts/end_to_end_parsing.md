@@ -27,7 +27,8 @@ Given the provided text, extract all full reference entries and format them acco
                     // More authors as listed
                 ],
                 "full_title": "Title of the referenced work (e.g., 'Deep Learning for NLP')",
-                "journal_title": "Name of the journal or publication (e.g., 'Nature')",
+                "journal_title": "Name of the journal or other serial (e.g., 'Nature')",
+                "container_title": "Title of the book or proceedings that contains a chapter or conference paper (e.g., 'Handbook of Scholarly Communication')",
                 "volume": "Volume number (e.g., '12')",
                 "issue": "Issue number (e.g., '3')",
                 "pages": "Page range (e.g., '123-130')",
@@ -50,6 +51,7 @@ Given the provided text, extract all full reference entries and format them acco
    - "surname": string
 4. Ensure the output is valid JSON, with no trailing commas.
 5. If there are no references, return an empty list.
+6. For a chapter or conference paper ("In: ..."), put its own title in "full_title" and the title of the book or proceedings in "container_title". Journals and other serials go in "journal_title".
 
 ### Example
 
@@ -59,6 +61,7 @@ This paper builds on previous work (Smith et al., 2020; Jones, 2019).
 References:  
 1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.  
 2. United Nations. (2018). World Urbanization Prospects. UN Publications.
+3. Lee, K. (2017). Citation practices in the humanities. In M. Rossi (Ed.), Handbook of Scholarly Communication (pp. 45-67). Oxford University Press.
 
 #### Expected Output:
 {
@@ -87,6 +90,21 @@ References:
                 "issue": "",
                 "pages": "",
                 "publication_date": "2018"
+            }
+        },
+        {
+            "reference": {
+                "authors": [
+                    {"first_name": "K.", "middle_name": "", "surname": "Lee"}
+                ],
+                "editors": [
+                    {"first_name": "M.", "middle_name": "", "surname": "Rossi"}
+                ],
+                "full_title": "Citation practices in the humanities",
+                "container_title": "Handbook of Scholarly Communication",
+                "pages": "45-67",
+                "publication_date": "2017",
+                "publisher": "Oxford University Press"
             }
         }
     ]

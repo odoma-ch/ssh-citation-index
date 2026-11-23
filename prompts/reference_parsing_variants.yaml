@@ -12,6 +12,7 @@ variants:
             "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
             "full_title": "",
             "journal_title": "",
+            "container_title": "",
             "volume": "",
             "issue": "",
             "pages": "",
@@ -30,7 +31,7 @@ variants:
     system: |
       Extract bibliographic references into JSON. Output valid JSON only.
     user: |
-      Convert these references to JSON with fields: authors (first_name, middle_name, surname), full_title, journal_title, volume, issue, pages, publication_date, publisher.
+      Convert these references to JSON with fields: authors (first_name, middle_name, surname), full_title, journal_title, container_title, volume, issue, pages, publication_date, publisher.
       
       ### Input Text:
       [[input_text]]
@@ -41,7 +42,7 @@ variants:
       Task: Identify all complete references below and return JSON.
       Expected output structure:
       - references: array of reference objects
-      - Each reference contains: authors (with name parts), full_title, journal_title, volume, issue, pages, publication_date, publisher
+      - Each reference contains: authors (with name parts), full_title, journal_title, container_title, volume, issue, pages, publication_date, publisher
       - Empty string for missing values
 
       ### Input Text:

@@ -9,6 +9,7 @@ Parse all references from the text below into JSON format:
             "authors": [{"first_name": "", "middle_name": "", "surname": ""}],
             "full_title": "",
             "journal_title": "",
+            "container_title": "",
             "volume": "",
             "issue": "",
             "pages": "",
