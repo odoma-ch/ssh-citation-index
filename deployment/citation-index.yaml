@@ -40,7 +40,7 @@ data:
   LLM_TIMEOUT_REFERENCE_PARSING: "600.0"
 
   # GROBID
-  GROBID_ENDPOINT: "https://grobid-graphia-app1-staging.apps.bst2.paas.psnc.pl/"                      # <-- UPDATE if external
+  GROBID_ENDPOINT: "http://grobid:8070/"                      # in-cluster Service; public route adds 502/503 + write timeouts
   GROBID_TIMEOUT: "180.0"
 
   # CEC classifier (in-cluster Service from deployment/cec-classifier.yaml)
