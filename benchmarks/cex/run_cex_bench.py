@@ -192,6 +192,7 @@ class CEXBenchmarkRunner:
                 timeout=600,
                 first_token_timeout=60,
                 max_retries=1,
+                enable_thinking=False if self.args.no_thinking else None,
             )
         
         # Check for pre-saved responses (fast-path for evaluation-only runs)
@@ -519,7 +520,7 @@ class CEXBenchmarkRunner:
             return json.dumps(refs.model_dump())
         
         # Regular LLM-based extraction and parsing
-        include_schema = "pydantic" in self.args.prompt_name
+        include_schema = self.args.include_schema or "pydantic" in self.args.prompt_name
         refs = self._execute_extraction_and_parsing_method(
             task_info=task_info,
             llm_client=llm_client,
@@ -541,7 +542,7 @@ class CEXBenchmarkRunner:
                 batch_mode=True
             )
         else:
-            include_schema = "pydantic" in self.args.prompt_name
+            include_schema = self.args.include_schema or "pydantic" in self.args.prompt_name
             refs = parse_reference_strings(
                 reference_lines=reference_lines,
                 llm_client=llm_client,
@@ -1285,6 +1286,16 @@ Examples:
         default="",
         help="Path to a file containing IDs to skip (one per line), or a comma-separated list of IDs. "
              "If not specified, no IDs are skipped. Example: benchmarks/finetune/cex_skip_ids.txt",
+    )
+    parser.add_argument(
+        "--include_schema",
+        action="store_true",
+        help="Send the Reference JSON schema for guided decoding, as production does.",
+    )
+    parser.add_argument(
+        "--no_thinking",
+        action="store_true",
+        help="Disable Qwen thinking mode, as production does (LLM_ENABLE_THINKING=false).",
     )
 
     args = parser.parse_args()
