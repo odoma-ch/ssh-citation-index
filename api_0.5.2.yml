@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Citation Index API
   description: Extract and parse citations from academic PDFs
-  version: 0.5.1
+  version: 0.5.2
 paths:
   /health:
     get:
@@ -246,6 +246,48 @@ paths:
                   format: binary
               required:
               - file
+  /extract/metadata:
+    post:
+      summary: Enqueue Metadata Extraction
+      description: Extract the bibliographic metadata of the uploaded PDF itself (the
+        citing work).
+      operationId: enqueue_metadata_extraction_extract_metadata_post
+      security:
+      - APIKeyHeader: []
+      parameters:
+      - name: method
+        in: query
+        required: false
+        schema:
+          enum:
+          - grobid
+          - llm
+          type: string
+          description: '''grobid'': TEI header of the fulltext (shares GROBID''s per-PDF
+            cache with the reference endpoints); ''llm'': LLM on the first pages'
+          default: grobid
+          title: Method
+        description: '''grobid'': TEI header of the fulltext (shares GROBID''s per-PDF
+          cache with the reference endpoints); ''llm'': LLM on the first pages'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_enqueue_metadata_extraction_extract_metadata_post'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
   /parse/references:
     post:
       summary: Parse Reference Strings Endpoint
@@ -474,6 +516,16 @@ components:
       required:
       - file
       title: Body_enqueue_grobid_reference_pipeline_process_references_grobid_post
+    Body_enqueue_metadata_extraction_extract_metadata_post:
+      properties:
+        file:
+          type: string
+          format: binary
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_enqueue_metadata_extraction_extract_metadata_post
     Body_enqueue_text_extraction_extract_text_post:
       properties:
         file:
@@ -660,6 +712,14 @@ components:
           type: string
           minLength: 1
           title: Full Title
+        container_title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Container Title
+          description: Title of the book or proceedings volume that contains the referenced
+            work, e.g. the edited book of a book chapter or the proceedings of a conference
+            paper. Journals and other serials go in journal_title.
         journal_title:
           anyOf:
           - type: string
