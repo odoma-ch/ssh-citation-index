@@ -155,7 +155,8 @@ def _normalize_doi(doi: str) -> str:
         elif clean.lower().startswith(prefix.lower()):
             clean = clean[len(prefix):]
             break
-    return clean.strip()
+    # Sentence punctuation glued on by PDF text, e.g. "10.1037/apl0000399."
+    return clean.strip().rstrip(".,;")
 
 
 def _normalize_isbn(isbn: str) -> str:

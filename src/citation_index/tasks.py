@@ -31,6 +31,10 @@ from .pipelines.reference_parsing import (
 )
 from .pipelines.citation_linking import link_references
 from .pipelines.grobid_references import extract_references_grobid
+from .pipelines.metadata_extraction import (
+    extract_metadata_grobid,
+    extract_metadata_llm,
+)
 from .pipelines.text_extraction import extract_text
 from .utils.storage import StorageManager
 
@@ -391,7 +395,9 @@ def extract_references_grobid_task(
 
     try:
         grobid_client = GrobidClient(
-            endpoint=settings.grobid_endpoint, timeout=settings.grobid_timeout
+            endpoint=settings.grobid_endpoint,
+            timeout=settings.grobid_timeout,
+            cache_dir=storage.grobid_cache_dir,
         )
         output = extract_references_grobid(
             storage.get_upload_path(job_id),
@@ -419,6 +425,67 @@ def extract_references_grobid_task(
             "stage": stage,
             "reference_count": output["count"],
         }
+    except Exception as exc:
+        logger.exception("Task %s failed for job %s", stage, job_id)
+        update_job_metadata(
+            job_id,
+            status="failed",
+            error=str(exc),
+            failed_stage=stage,
+            failed_at=datetime.utcnow().isoformat(),
+        )
+        log_job_event(job_id, "stage_failed", stage=stage, error=str(exc))
+        raise
+
+
+@job(
+    "llm-tasks",
+    connection=redis_conn,
+    timeout=settings.timeout_reference_parsing,
+    result_ttl=settings.worker_result_ttl,
+    failure_ttl=settings.worker_failure_ttl,
+)
+def extract_metadata_task(job_id: str, method: str = "grobid") -> Dict[str, Any]:
+    """PDF -> metadata of the document itself (GROBID header or LLM on first pages).
+
+    The API enqueues method=grobid on 'default' and method=llm on 'llm-tasks'.
+    """
+    stage = "metadata_extraction"
+    update_job_metadata(job_id, status="processing", current_stage=stage)
+    log_job_event(job_id, "stage_started", stage=stage)
+
+    try:
+        pdf_path = storage.get_upload_path(job_id)
+        if method == "grobid":
+            grobid_client = GrobidClient(
+                endpoint=settings.grobid_endpoint,
+                timeout=settings.grobid_timeout,
+                cache_dir=storage.grobid_cache_dir,
+            )
+            output = extract_metadata_grobid(pdf_path, grobid_client)
+        else:
+            llm_client = LLMClient(
+                endpoint=settings.llm_endpoint,
+                model=settings.llm_model,
+                api_key=settings.llm_api_key,
+                timeout=settings.llm_timeout_reference_parsing,
+                max_retries=settings.llm_max_retries,
+                first_token_timeout=settings.llm_first_token_timeout_reference_parsing,
+                enable_thinking=settings.llm_enable_thinking,
+            )
+            output = extract_metadata_llm(pdf_path, llm_client)
+
+        result_path = storage.save_intermediate(job_id, stage, output, atomic=True)
+        storage.save_result(job_id, output)
+        update_job_metadata(
+            job_id,
+            status="completed",
+            completed_stages=json.dumps(get_completed_stages(job_id) + [stage]),
+            completed_at=datetime.utcnow().isoformat(),
+            **{f"stage_{stage}_completed_at": datetime.utcnow().isoformat()},
+        )
+        log_job_event(job_id, "stage_completed", stage=stage, method=method)
+        return {"result_path": str(result_path), "cached": False, "stage": stage}
     except Exception as exc:
         logger.exception("Task %s failed for job %s", stage, job_id)
         update_job_metadata(

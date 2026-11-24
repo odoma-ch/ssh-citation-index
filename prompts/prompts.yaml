@@ -119,7 +119,7 @@ extraction_and_parsing.default:
     ```
     
     #### Guidelines:
-    1. Only extract full references (not in-text citations).
+    1. Only extract full references (not in-text citations). Do not extract the citation of the document itself (e.g. a "Cite this article as ..." box or a title-page/running-head line describing this document).
     2. If a field is missing in a reference, use an empty string or empty list as appropriate.
     3. For authors, include as many as are listed, and structure each as:
        - "first_name": string
@@ -222,7 +222,7 @@ extraction.default:
     Extract all full reference entries from the provided text. Return each reference as it appears, one per line.
     
     #### Guidelines:
-    1. Only extract full references (not in-text citations).
+    1. Only extract full references (not in-text citations). Do not extract the citation of the document itself (e.g. a "Cite this article as ..." box or a title-page/running-head line describing this document).
     2. Preserve the original formatting of each reference.
     3. Return one reference per line.
     4. If there are no references, return an empty response.
@@ -255,3 +255,29 @@ extraction.default:
       output: |
         1. Smith, J., Brown, A., & Wilson, C. (2020). Machine learning approaches in natural language processing. Journal of AI Research, 15(3), 245-267.
         2. United Nations. (2018). World Urbanization Prospects. UN Publications.
+
+# Document Metadata Prompt (the citing document itself, from its first pages)
+metadata.default:
+  system: |
+    You are an expert in scholarly publishing. Your task is to identify the bibliographic metadata of a document from the text of its first pages and format it in a specific JSON structure.
+
+  user: |
+    ### Your Task
+
+    The text below is the beginning of one scholarly document. Describe THAT document (not the works it cites) as a single reference, following this JSON schema:
+
+    ```json
+    {{ json_schema }}
+    ```
+
+    #### Guidelines:
+    1. Return exactly one reference: the document itself. Ignore works cited in footnotes, epigraphs or the running text.
+    2. Use the title page, running heads and any citation line ("Cite this article as ...", "Published in ...") for title, authors, journal or book, volume, issue, pages, year and publisher.
+    3. For a chapter in an edited book, put the chapter title in "full_title", the book title in "container_title" and the book editors in "editors". Journals go in "journal_title".
+    4. Add a DOI, ISBN or ISSN only if it is printed in the text.
+    5. Parse people names as "first_name", "middle_name" (empty if not present), "surname".
+    6. If a field is not in the text, use an empty string or empty list. Do not guess.
+    7. Output only valid JSON, with no explanations, markdown, or extra text.
+
+    ### Input Text:
+    {{ input_text }}

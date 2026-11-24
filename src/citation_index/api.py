@@ -42,6 +42,7 @@ from .tasks import (
     link_references_task,
     classify_citations_task,
     extract_references_grobid_task,
+    extract_metadata_task,
 )
 from .llm.cec_client import CEC_MODES
 from .pipelines.citation_linking import parse_targets
@@ -585,6 +586,47 @@ async def enqueue_reference_extraction(
 
     logger.info(f"Enqueued reference extraction job {job_id}")
     return format_job_response(job_id, message="Reference extraction job enqueued")
+
+
+# ========================
+# Document Metadata
+# ========================
+
+@app.post("/extract/metadata", response_model=JobResponse)
+async def enqueue_metadata_extraction(
+    file: UploadFile = File(...),
+    method: Literal["grobid", "llm"] = Query(
+        default="grobid",
+        description=(
+            "'grobid': TEI header of the fulltext (shares GROBID's per-PDF cache "
+            "with the reference endpoints); 'llm': LLM on the first pages"
+        ),
+    ),
+):
+    """Extract the bibliographic metadata of the uploaded PDF itself (the citing work)."""
+    if not (file.filename or "").lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+
+    job_id = create_job_id()
+    storage.save_upload(job_id, await file.read(), "input.pdf")
+    initialize_job_metadata(
+        job_id, job_type="metadata_extraction", filename=file.filename, extractor=method
+    )
+    queue, timeout = (
+        (queue_default, settings.timeout_text_extraction)
+        if method == "grobid"
+        else (queue_llm, settings.timeout_reference_parsing)
+    )
+    queue.enqueue_call(
+        extract_metadata_task,
+        kwargs={"job_id": job_id, "method": method},
+        job_id=job_id,
+        timeout=timeout,
+        result_ttl=settings.worker_result_ttl,
+        failure_ttl=settings.worker_failure_ttl,
+    )
+    logger.info("Enqueued metadata extraction job %s (%s)", job_id, method)
+    return format_job_response(job_id, message="Metadata extraction job enqueued")
 
 
 # ========================

@@ -16,7 +16,7 @@ def test_task_decorators_set_failure_ttl():
     rq_tasks = [
         obj for obj in vars(tasks).values() if callable(obj) and hasattr(obj, "delay")
     ]
-    assert len(rq_tasks) == 7
+    assert len(rq_tasks) == 8
     for task in rq_tasks:
         with patch("rq.queue.Queue.enqueue_call") as enqueue_call:
             task.delay("job-1")

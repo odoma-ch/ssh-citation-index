@@ -43,7 +43,7 @@ Given the provided text, extract all full reference entries and format them acco
 ```
 
 #### Guidelines:
-1. Only extract full references (not in-text citations).
+1. Only extract full references (not in-text citations). Do not extract the citation of the document itself (e.g. a "Cite this article as ..." box or a title-page/running-head line describing this document).
 2. If a field is missing in a reference, use an empty string or empty list as appropriate.
 3. For authors, include as many as are listed, and structure each as:
    - "first_name": string
