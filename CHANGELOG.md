@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here.
 
-## [Unreleased]
+## [0.6.0] - 2026-11-24
 
 ### Added
 - `Reference.container_title` (#54): the book that contains a chapter, or the proceedings that contain a conference paper. `journal_title` keeps journals and other serials. The field is in the API output and, as a required key, in the guided-decoding schema, placed before `journal_title` so the model decides on a container first. The parsing prompts describe it and show a book-chapter example.
