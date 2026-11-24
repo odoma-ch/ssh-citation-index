@@ -2,7 +2,10 @@
 GROBID client for processing PDFs and extracting references.
 """
 
+import hashlib
+import json
 import logging
+import os
 import time
 from pathlib import Path
 from typing import List, Optional
@@ -18,17 +21,26 @@ class GrobidError(Exception):
 class GrobidClient:
     """Client for interacting with GROBID service."""
     
-    def __init__(self, endpoint: str, timeout: float = 180.0, max_retries: int = 3):
+    def __init__(
+        self,
+        endpoint: str,
+        timeout: float = 180.0,
+        max_retries: int = 3,
+        cache_dir: Optional[str | Path] = None,
+    ):
         """Initialize the GROBID client.
         
         Args:
             endpoint: GROBID server endpoint (e.g., "http://localhost:8070")
             timeout: Maximum time to wait for response (seconds)
             max_retries: Maximum number of retry attempts for failed calls
+            cache_dir: If set, successful PDF responses are cached here by
+                (PDF sha256, service, params), so repeat calls skip GROBID
         """
         self.endpoint = endpoint.rstrip('/')
         self.timeout = timeout
         self.max_retries = max_retries
+        self.cache_dir = Path(cache_dir) if cache_dir else None
         self.session = requests.Session()
         
         # Set common headers
@@ -61,17 +73,20 @@ class GrobidClient:
             raise FileNotFoundError(f"PDF file not found: {pdf_path}")
         
         url = f"{self.endpoint}/api/processReferences"
-        
+        data = {
+            'consolidateReferences': '1' if consolidate_references else '0',
+            'includeRawReferences': '1' if include_raw_references else '0',
+        }
+        cache_file = self._cache_file(pdf_path, "processReferences", data)
+        if cache_file and cache_file.exists():
+            logging.info(f"GROBID cache hit: {cache_file}")
+            return cache_file.read_text(encoding='utf-8')
+
         last_exception = None
         for attempt in range(self.max_retries + 1):
             try:
                 with open(pdf_path, 'rb') as pdf_file:
                     files = {'input': (pdf_path.name, pdf_file, 'application/pdf')}
-                    data = {
-                        'consolidateReferences': '1' if consolidate_references else '0',
-                        'includeRawReferences': '1' if include_raw_references else '0',
-                    }
-                    
                     response = self.session.post(
                         url, 
                         files=files, 
@@ -83,7 +98,7 @@ class GrobidClient:
                         xml_content = response.text
                         if not xml_content.strip():
                             raise GrobidError("GROBID returned empty response")
-                        return xml_content
+                        return self._cache_write(cache_file, xml_content)
                     elif response.status_code == 204:
                         # Process completed but no content could be extracted - don't retry
                         raise GrobidError(f"GROBID could not extract content (HTTP 204): Process completed but no content could be extracted and structured")
@@ -161,22 +176,25 @@ class GrobidClient:
             raise FileNotFoundError(f"PDF file not found: {pdf_path}")
         
         url = f"{self.endpoint}/api/processFulltextDocument"
-        
+        data = {
+            # processFulltextDocument ignores unknown form fields, so the
+            # names must be exactly these (not *References)
+            'consolidateCitations': '1' if consolidate_references else '0',
+            'includeRawCitations': '1' if include_raw_references else '0',
+            'teiCoordinates': '1' if tei_coordinates else '0',
+            'consolidateHeader': '1' if consolidate_header else '0',
+            'segmentSentences': '1' if segment_sentences else '0',
+        }
+        cache_file = self._cache_file(pdf_path, "processFulltextDocument", data)
+        if cache_file and cache_file.exists():
+            logging.info(f"GROBID cache hit: {cache_file}")
+            return cache_file.read_text(encoding='utf-8')
+
         last_exception = None
         for attempt in range(self.max_retries + 1):
             try:
                 with open(pdf_path, 'rb') as pdf_file:
                     files = {'input': (pdf_path.name, pdf_file, 'application/pdf')}
-                    data = {
-                        # processFulltextDocument ignores unknown form fields, so the
-                        # names must be exactly these (not *References)
-                        'consolidateCitations': '1' if consolidate_references else '0',
-                        'includeRawCitations': '1' if include_raw_references else '0',
-                        'teiCoordinates': '1' if tei_coordinates else '0',
-                        'consolidateHeader': '1' if consolidate_header else '0',
-                        'segmentSentences': '1' if segment_sentences else '0',
-                    }
-                    
                     response = self.session.post(
                         url, 
                         files=files, 
@@ -188,7 +206,7 @@ class GrobidClient:
                         xml_content = response.text
                         if not xml_content.strip():
                             raise GrobidError("GROBID returned empty response")
-                        return xml_content
+                        return self._cache_write(cache_file, xml_content)
                     elif response.status_code == 204:
                         # Process completed but no content could be extracted - don't retry
                         raise GrobidError(f"GROBID could not extract content (HTTP 204): Process completed but no content could be extracted and structured")
@@ -349,6 +367,25 @@ class GrobidClient:
         if last_exception:
             raise last_exception
     
+    def _cache_file(self, pdf_path: Path, service: str, params: dict) -> Optional[Path]:
+        """Cache path for one PDF + service + params, or None when caching is off."""
+        if self.cache_dir is None:
+            return None
+        # ponytail: key ignores the GROBID version; clear the cache dir after upgrading
+        digest = hashlib.sha256(pdf_path.read_bytes()).hexdigest()
+        key = hashlib.sha256(json.dumps(params, sort_keys=True).encode()).hexdigest()[:12]
+        return self.cache_dir / digest / f"{service}-{key}.tei.xml"
+
+    @staticmethod
+    def _cache_write(cache_file: Optional[Path], xml_content: str) -> str:
+        """Store a successful response atomically (workers share the volume)."""
+        if cache_file is not None:
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            tmp = cache_file.with_name(f"{cache_file.name}.{os.getpid()}.tmp")
+            tmp.write_text(xml_content, encoding='utf-8')
+            os.replace(tmp, cache_file)
+        return xml_content
+
     def health_check(self, max_retries: int = 2) -> bool:
         """Check if GROBID service is available and responding with retry logic.
         

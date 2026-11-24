@@ -108,11 +108,18 @@ def extract_references_grobid(
     include_context: bool = False,
 ) -> Dict[str, Any]:
     """Run GROBID fulltext on a PDF and extract references (+ parsed, + contexts)."""
-    tei_xml = client.process_full_text(
+    tei_xml = fetch_fulltext_tei(pdf_path, client)
+    return parse_grobid_fulltext(tei_xml, include_parsed, include_context)
+
+
+def fetch_fulltext_tei(pdf_path: str | Path, client: GrobidClient) -> str:
+    """Fulltext TEI with one fixed set of params, so every GROBID endpoint on the
+    same PDF (references, contexts, metadata) shares one cache entry."""
+    return client.process_full_text(
         pdf_path,
         # consolidation calls CrossRef/Glutton per reference; keep it off
         consolidate_references=False,
         include_raw_references=True,
-        segment_sentences=include_context,
+        # sentences only matter for contexts, but always asking keeps one cache key
+        segment_sentences=True,
     )
-    return parse_grobid_fulltext(tei_xml, include_parsed, include_context)

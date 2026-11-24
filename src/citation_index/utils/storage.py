@@ -20,7 +20,8 @@ class StorageManager:
         storage_root/
         ├── uploads/{job_id}/input.pdf
         ├── intermediate/{job_id}/{stage}/output.json
-        └── results/{job_id}/result.json
+        ├── results/{job_id}/result.json
+        └── grobid_cache/{pdf_sha256}/{service}-{params}.tei.xml
     """
     
     def __init__(self, storage_root: Path):
@@ -33,6 +34,8 @@ class StorageManager:
         self.uploads_dir = self.root / "uploads"
         self.intermediate_dir = self.root / "intermediate"
         self.results_dir = self.root / "results"
+        # Shared across jobs; pruned by cleanup_old_jobs like job dirs
+        self.grobid_cache_dir = self.root / "grobid_cache"
         
         # Create directories if they don't exist
         for dir_path in [self.uploads_dir, self.intermediate_dir, self.results_dir]:
@@ -254,7 +257,12 @@ class StorageManager:
         cutoff_time = datetime.now() - timedelta(hours=max_age_hours)
         cleaned_count = 0
         
-        for base_dir in [self.uploads_dir, self.intermediate_dir, self.results_dir]:
+        for base_dir in [
+            self.uploads_dir,
+            self.intermediate_dir,
+            self.results_dir,
+            self.grobid_cache_dir,
+        ]:
             if not base_dir.exists():
                 continue
                 
