@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Real GROBID 0.8 biblStructs from benchmarks/excite/all_grobid_xml (10454, 1219).
+     xml:id names the expected ref_type. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<text><back><div><listBibl>
+<biblStruct xml:id="journal-article">
+	<analytic>
+		<title level="a" type="main">Discomfiture of democracy? The 2005 election crisis in Ethiopia and its aftermath</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Abbink</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">African Affairs</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">419</biblScope>
+			<biblScope unit="page" from="173" to="199"/>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+<!-- GROBID files the place of publication as <meeting><address>: still a chapter. -->
+<biblStruct xml:id="book-chapter">
+	<analytic>
+		<title level="a" type="main">Testfall Äthiopien: Die neue Afrikastrategie der Europäischen Union</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Brüne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">the Mediterranean, Asia, Latin America, the Caribbean, Africa and Pacific in comparison</title>
+		<meeting><address><addrLine>Baden-Baden</addrLine></address></meeting>
+		<imprint>
+			<publisher>Nomos (im Erscheinen</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+<biblStruct xml:id="book">
+	<monogr>
+		<author>
+			<persName><forename type="first">Abdi</forename><surname>Ismail</surname></persName>
+		</author>
+		<title level="m">The Ethiopian election of 2005: A bombshell &amp; turning point? Review of African Political Economy</title>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+<!-- GROBID (11164) puts book authors under an <analytic> that has no title: still a book. -->
+<biblStruct xml:id="book-untitled-analytic">
+	<analytic>
+		<author>
+			<persName><forename type="first">Christoph</forename><surname>Rülcker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Kollektives Handeln und Ambiguität</title>
+		<title level="s">Die Regulierung atypischer Beschäftigungsverhältnisse in Frankreich und Deutschland</title>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<biblScope unit="volume">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+<biblStruct xml:id="proceedings-paper">
+	<analytic>
+		<title level="a" type="main">Negotiating Agents: From Full Autonomy to Degrees of Delegation</title>
+		<author>
+			<persName><forename type="first">Kay</forename><surname>Schröter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 4th International Joint Conference on Autonomous Agents and Multi Agent Systems (AAMAS 2005)</title>
+		<meeting>the 4th International Joint Conference on Autonomous Agents and Multi Agent Systems (AAMAS 2005)<address><addrLine>Utrecht</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-07-25">2005. July 25-29, 2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+<!-- Series title only: no rule applies. -->
+<biblStruct xml:id="unknown">
+	<analytic>
+		<title level="a" type="main">Ethiopia: Sensational election results</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pausewang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">International Journal of Ethiopian Studies</title>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+</listBibl></div></back></text>
+</TEI>

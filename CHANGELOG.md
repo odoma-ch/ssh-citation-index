@@ -2,6 +2,24 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Added
+- `Reference.container_title` (#54): the book that contains a chapter, or the proceedings that contain a conference paper. `journal_title` keeps journals and other serials. The field is in the API output and, as a required key, in the guided-decoding schema, placed before `journal_title` so the model decides on a container first. The parsing prompts describe it and show a book-chapter example.
+- GROBID / TEI parsing sets `ref_type` (`journal-article`, `book-chapter`, `book`, `proceedings-paper`, else none) and `container_title` from the `<biblStruct>` structure. Only a `<meeting>` with its own text counts as a conference: GROBID files most places of publication as `<meeting><address>`. 
+
+- `POST /extract/metadata?method=grobid|llm` (#54): bibliographic metadata of the uploaded PDF itself (the citing work), as one `Reference`. `grobid` reads the fulltext TEI header (`default` queue); `llm` reads the first two pages with the new `metadata.default` prompt (`llm-tasks` queue). GROBID's `md5` file hash is dropped from the identifiers.
+- GROBID PDF responses are cached under `STORAGE_ROOT/grobid_cache/{pdf_sha256}/`, keyed by service and params, so the same PDF sent to another GROBID endpoint skips GROBID. Only successful responses are cached; the storage cleanup CronJob prunes the cache like job folders. Clear it after a GROBID upgrade.
+
+### Changed
+- GROBID reference extraction always asks GROBID for sentence segmentation, so references, contexts and metadata share one cached TEI.
+- Reference extraction prompts (`reference_extraction.md`, `end_to_end_parsing.md`, `extraction.default`, `extraction_and_parsing.default`) say not to extract the citation of the document itself.
+- Parsing prompt few-shots: the book-chapter author has a middle initial (`Lee, K. J.`), which keeps Qwen splitting initials into `first_name` / `middle_name` once `container_title` is in the schema; "UN Publications" is a `publisher`, no longer a `journal_title`.
+
+### Fixed
+- DOI normalisation strips trailing `.`, `,` and `;` picked up from PDF text (`10.1037/apl0000399.`).
+- TEI export without `raw.tei` writes a journal article's title as `level="a"`, not as a monograph title.
+
 ## [0.5.1] - 2026-11-19
 
 ### Added

@@ -7,14 +7,14 @@ Given the provided text, parse all full reference entries and format them in TOO
 #### TOON Output Schema
 
 ```toon
-references[]{authors,full_title,journal_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
-	authors[]{first_name,middle_name,surname}	full_title	journal_title	volume	issue	pages	publication_date	publisher	publication_place	identifier
+references[]{authors,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
+	authors[]{first_name,middle_name,surname}	full_title	journal_title	container_title	volume	issue	pages	publication_date	publisher	publication_place	identifier
 ```
 
 For organizational authors, use:
 ```toon
-references[]{organization,full_title,journal_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
-	organization	full_title	journal_title	volume	issue	pages	publication_date	publisher	publication_place	identifier
+references[]{organization,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
+	organization	full_title	journal_title	container_title	volume	issue	pages	publication_date	publisher	publication_place	identifier
 ```
 
 #### Guidelines:
@@ -36,9 +36,9 @@ references[]{organization,full_title,journal_title,volume,issue,pages,publicatio
 
 #### Expected Output:
 ```toon
-references[2]{authors,full_title,journal_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
-	authors[3]{first_name,middle_name,surname}:J.,,Smith;A.,,Brown;C.,,Wilson	Machine learning approaches in natural language processing	Journal of AI Research	15	3	245-267	2020			
-	authors[1]{organization}:United Nations	World Urbanization Prospects	UN Publications				2018			
+references[2]{authors,full_title,journal_title,container_title,volume,issue,pages,publication_date,publisher,publication_place,identifier}:
+	authors[3]{first_name,middle_name,surname}:J.,,Smith;A.,,Brown;C.,,Wilson	Machine learning approaches in natural language processing	Journal of AI Research		15	3	245-267	2020			
+	authors[1]{organization}:United Nations	World Urbanization Prospects						2018	UN Publications		
 ```
 
 ### Input Text:
