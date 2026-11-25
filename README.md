@@ -58,14 +58,20 @@ for the complete PDF-to-linked-reference workflow, polling helpers, and validati
 | Stage | Endpoint | Input |
 |---|---|---|
 | Extract text | `POST /extract/text` | Multipart PDF; extractor `pymupdf`, `grobid`, or `mineru` |
-| Extract references | `POST /extract/references` | `{"text": "Markdown document text"}` |
-| Parse references | `POST /parse/references` | `{"references": ["Raw citation string"]}` |
-| Link references | `POST /link/references` | Parsed reference object or batch, shown below |
+| Extract references (LLM) | `POST /extract/references` | `{"text": "Markdown document text"}`; method `full_text` or `semantic` |
+| Extract references (GROBID) | `POST /extract/references` | Multipart PDF with `method=grobid`; optional `include_parsed`, `include_context` |
+| Parse references | `POST /parse/references` | `{"references": ["Raw citation string"]}`; parser `llm` or `grobid` |
+| Link references | `POST /link/references` | Parsed reference object, or an array with `batched=true`; `target`, `method=match\|model`, `filter_reviews_by_doi` (see below) |
+| GROBID one-call pipeline | `POST /process/references/grobid` | Multipart PDF; `include_context=true` adds the citing sentences |
+| Document metadata | `POST /extract/metadata` | Multipart PDF; method `grobid` or `llm`; returns the record of the PDF itself |
+| Classify citation intent | `POST /classify/citations` | `{"citations": [{"section": "...", "citation": "..."}]}`; mode `WS`, `WoS`, or `M` |
 
-Each submission returns a `job_id`. Poll `GET /jobs/{job_id}/status` until
-`completed` or `failed`, then retrieve completed results with
+Every route except `/health` needs an `X-API-Key` header when the server sets
+`API_KEY`. Each submission returns a `job_id`. Poll `GET /jobs/{job_id}/status`
+until `completed` or `failed`, then retrieve completed results with
 `GET /jobs/{job_id}`. Failed jobs expose an error in their status. The combined
-`/process/references` route is not enabled.
+LLM route `/process/references` is not enabled; `/process/references/grobid` is
+the one-call alternative.
 
 ### Linking methods
 
@@ -145,6 +151,11 @@ citation_index/
 
 ## Current Deployment Status
 
+**v1.0.0-beta.1** is deployed on OpenShift at
+`https://citation-index.graphia-ssh.eu` (`/health` reports the version; every
+other route needs `X-API-Key`). The API surface is treated as stable from this
+beta on; breaking changes before 1.0.0 are called out in the [changelog](CHANGELOG.md).
+
 ### Text Extraction
 
 - [x] Grobid integration
@@ -154,10 +165,13 @@ citation_index/
 
 ### Reference Extraction and Parsing
 
-- [x] TEI-XML parser (Grobid output)
-- [x] LLM-based parser
+- [x] TEI-XML parser (Grobid output), with `ref_type` and `container_title`
+- [x] LLM-based parser (Qwen3.6, guided JSON), with `container_title` for chapters and proceedings papers
 - [x] Prompt templates and variants
-- [x] Semantic reference locator/segmenter
+- [x] Semantic reference locator/segmenter (`method=semantic`)
+- [x] One-call GROBID pipeline: raw + parsed references + citing sentences (`/process/references/grobid`)
+- [x] GROBID response cache per PDF hash, shared across endpoints
+- [x] Metadata of the citing document (`/extract/metadata`, `method=grobid|llm`)
 - [x] Benchmarking: EXCITE, CEXgoldstandard, LinkedBooks
 
 ### Citation Linking
@@ -168,15 +182,18 @@ citation_index/
 - [x] Matilda connector
 - [x] Parsed-reference API with shared title/author/year matching
 - [x] Model linking (`method=model`): fine-tuned GLiNER2 decider service picks the candidate or none
+- [x] Optional book-review candidate filter (`filter_reviews_by_doi`)
 - [ ] Advanced search and match pipeline
-- [ ] benchmark datasets(cex, excite, linkedbooks)
+- [x] Benchmark dataset (680 references from seven sources, gold targets for all four indexes)
   - [x] creation
-  - [ ] annotation
-  - [ ] evaluation
+  - [x] annotation (reviewed against the frozen candidate pool)
+  - [x] evaluation (decider `v5_select_v1`: held-out F1 84.5%, P 90.1%, R 79.5%)
+  - [ ] public release (license information pending)
 
 ### Citation Intent Classification
 
-- TODO
+- [x] External CEC classifier integration (`/classify/citations`, method / background / result)
+- [x] Citing sentences from GROBID contexts, posted as-is to the classifier
 
 ### Entity Extraction (software, dataset, funding, entity mentions)
 
@@ -186,9 +203,9 @@ citation_index/
 
 - [x] Core data models (Reference, Person, Organization)
 - [x] LLM client with retry logic
-- [ ] CLI interface
+- [x] CLI interface (`extract`, `parse-xml`, `parse-text`, `run`, `benchmark`)
 - [x] Test suite
-- [x] REST API module
+- [x] REST API module with API-key authentication
 - [x] API documentation and executable notebook
 - [x] Deployment guides
 - [x] Docker containerization
