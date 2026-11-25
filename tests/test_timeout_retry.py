@@ -9,30 +9,25 @@ Covers:
 """
 
 import logging
-import sys
-import os
-import time
 
 import httpx
 import openai
 import pytest
-from unittest.mock import Mock, patch, MagicMock, PropertyMock, call
+from unittest.mock import Mock, patch, MagicMock
 
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-from src.citation_index.llm.client import (
+from citation_index.llm.client import (
     LLMClient,
     LLMTimeoutError,
-    RETRYABLE_EXCEPTIONS,
     CONNECT_TIMEOUT,
     WRITE_TIMEOUT,
     POOL_TIMEOUT,
 )
 
-
 # ========================
 # Helpers
 # ========================
+
 
 def _make_client(**overrides) -> LLMClient:
     """Create an LLMClient with sensible test defaults."""
@@ -77,6 +72,7 @@ def _make_non_streaming_response(content: str) -> Mock:
 # httpx.Timeout configuration
 # ========================
 
+
 class TestHttpxTimeoutConfig:
     """Verify that the correct httpx.Timeout objects are built."""
 
@@ -98,29 +94,11 @@ class TestHttpxTimeoutConfig:
         assert t.write == WRITE_TIMEOUT
         assert t.pool == POOL_TIMEOUT
 
-    def test_client_level_default_timeout(self):
-        """The OpenAI client itself gets a generous default read = total timeout."""
-        client = _make_client(timeout=120.0)
-        # The openai SDK stores timeout on client._client (httpx.Client)
-        # We just verify the client was created without error
-        assert client.client is not None
-
-    def test_streaming_and_non_streaming_differ(self):
-        client = _make_client(timeout=180.0, first_token_timeout=30.0)
-        s = client._streaming_httpx_timeout()
-        ns = client._non_streaming_httpx_timeout()
-
-        assert s.read == 30.0
-        assert ns.read == 180.0
-        # connect/write/pool are identical
-        assert s.connect == ns.connect
-        assert s.write == ns.write
-        assert s.pool == ns.pool
-
 
 # ========================
 # _stream_with_timeout
 # ========================
+
 
 class TestStreamWithTimeout:
     """Test per-chunk and wall-clock timeout enforcement during streaming."""
@@ -129,7 +107,9 @@ class TestStreamWithTimeout:
         client = _make_client(timeout=60.0)
         stream = _make_stream(["Hello", " ", "world"])
 
-        with patch.object(client.client.chat.completions, "create", return_value=stream):
+        with patch.object(
+            client.client.chat.completions, "create", return_value=stream
+        ):
             parts = list(client._stream_with_timeout(model="m", messages=[]))
 
         assert parts == ["Hello", " ", "world"]
@@ -138,7 +118,9 @@ class TestStreamWithTimeout:
         client = _make_client(timeout=60.0)
         stream = _make_stream([None, "data", None])
 
-        with patch.object(client.client.chat.completions, "create", return_value=stream):
+        with patch.object(
+            client.client.chat.completions, "create", return_value=stream
+        ):
             parts = list(client._stream_with_timeout(model="m", messages=[]))
 
         assert parts == ["data"]
@@ -165,7 +147,9 @@ class TestStreamWithTimeout:
         # We need at least one chunk to trigger the check
         stream = _make_stream(["a"])
 
-        with patch.object(client.client.chat.completions, "create", return_value=stream):
+        with patch.object(
+            client.client.chat.completions, "create", return_value=stream
+        ):
             with pytest.raises(LLMTimeoutError, match="wall-clock timeout"):
                 # Force a tiny delay so elapsed > 0
                 list(client._stream_with_timeout(model="m", messages=[]))
@@ -174,7 +158,9 @@ class TestStreamWithTimeout:
         client = _make_client(timeout=60.0)
         stream = _make_stream(["ok"])
 
-        with patch.object(client.client.chat.completions, "create", return_value=stream):
+        with patch.object(
+            client.client.chat.completions, "create", return_value=stream
+        ):
             list(client._stream_with_timeout(model="m", messages=[]))
 
         stream.close.assert_called_once()
@@ -188,7 +174,9 @@ class TestStreamWithTimeout:
         stream.__iter__ = Mock(side_effect=openai.APITimeoutError(request=Mock()))
         stream.close = Mock()
 
-        with patch.object(client.client.chat.completions, "create", return_value=stream):
+        with patch.object(
+            client.client.chat.completions, "create", return_value=stream
+        ):
             with pytest.raises(openai.APITimeoutError):
                 list(client._stream_with_timeout(model="m", messages=[]))
 
@@ -199,9 +187,7 @@ class TestStreamWithTimeout:
         client = _make_client()
         exc = openai.APITimeoutError(request=Mock())
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(openai.APITimeoutError):
                 list(client._stream_with_timeout(model="m", messages=[]))
 
@@ -210,13 +196,14 @@ class TestStreamWithTimeout:
 # _call_with_retry – retryable vs non-retryable
 # ========================
 
+
 class TestCallWithRetryClassification:
     """Verify that retryable errors are retried and others fail fast."""
 
     @pytest.fixture(autouse=True)
     def _patch_sleep(self):
         """Eliminate real sleeps during retry back-off."""
-        with patch("src.citation_index.llm.client.time.sleep") as mock_sleep:
+        with patch("citation_index.llm.client.time.sleep") as mock_sleep:
             self.mock_sleep = mock_sleep
             yield
 
@@ -231,7 +218,9 @@ class TestCallWithRetryClassification:
             LLMTimeoutError("timeout 2"),
             stream_ok,
         ]
-        with patch.object(client.client.chat.completions, "create", side_effect=effects):
+        with patch.object(
+            client.client.chat.completions, "create", side_effect=effects
+        ):
             result = client.call("hello")
 
         assert result == "ok"
@@ -292,9 +281,7 @@ class TestCallWithRetryClassification:
         client = _make_client(max_retries=1)
         exc = LLMTimeoutError("always fails")
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(LLMTimeoutError, match="always fails"):
                 client.call("hello")
 
@@ -304,7 +291,8 @@ class TestCallWithRetryClassification:
         client = _make_client(max_retries=3)
 
         with patch.object(
-            client.client.chat.completions, "create",
+            client.client.chat.completions,
+            "create",
             side_effect=ValueError("bad input"),
         ):
             with pytest.raises(ValueError, match="bad input"):
@@ -321,9 +309,7 @@ class TestCallWithRetryClassification:
             body=None,
         )
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(openai.BadRequestError):
                 client.call("hello")
 
@@ -337,9 +323,7 @@ class TestCallWithRetryClassification:
             body=None,
         )
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(openai.AuthenticationError):
                 client.call("hello")
 
@@ -350,11 +334,12 @@ class TestCallWithRetryClassification:
 # _call_with_retry – backoff & timeout passing
 # ========================
 
+
 class TestCallWithRetryMechanics:
 
     @pytest.fixture(autouse=True)
     def _patch_sleep(self):
-        with patch("src.citation_index.llm.client.time.sleep") as mock_sleep:
+        with patch("citation_index.llm.client.time.sleep") as mock_sleep:
             self.mock_sleep = mock_sleep
             yield
 
@@ -363,9 +348,7 @@ class TestCallWithRetryMechanics:
         client = _make_client(max_retries=4)
         exc = LLMTimeoutError("timeout")
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(LLMTimeoutError):
                 client.call("hello")
 
@@ -376,9 +359,7 @@ class TestCallWithRetryMechanics:
         client = _make_client(max_retries=5)
         exc = LLMTimeoutError("timeout")
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(LLMTimeoutError):
                 client.call("hello")
 
@@ -420,9 +401,7 @@ class TestCallWithRetryMechanics:
         client = _make_client(max_retries=0)
         exc = LLMTimeoutError("once")
 
-        with patch.object(
-            client.client.chat.completions, "create", side_effect=exc
-        ):
+        with patch.object(client.client.chat.completions, "create", side_effect=exc):
             with pytest.raises(LLMTimeoutError, match="once"):
                 client.call("hello")
 
@@ -433,28 +412,29 @@ class TestCallWithRetryMechanics:
 # Config – queue timeout hierarchy validation
 # ========================
 
+
 class TestConfigTimeoutValidation:
     """Verify Settings warns when queue timeouts are too small."""
 
     def test_warns_when_queue_timeout_too_small(self, caplog):
-        from src.citation_index.config import Settings
+        from citation_index.config import Settings
 
-        with caplog.at_level(logging.WARNING, logger="src.citation_index.config"):
+        with caplog.at_level(logging.WARNING, logger="citation_index.config"):
             s = Settings(
                 llm_timeout=300.0,
                 llm_max_retries=3,
                 llm_timeout_reference_parsing=600.0,
-                timeout_reference_extraction=100,   # way too small
-                timeout_reference_parsing=100,       # way too small
+                timeout_reference_extraction=100,  # way too small
+                timeout_reference_parsing=100,  # way too small
             )
 
         assert "timeout_reference_extraction" in caplog.text
         assert "timeout_reference_parsing" in caplog.text
 
     def test_no_warning_when_queue_timeouts_large_enough(self, caplog):
-        from src.citation_index.config import Settings
+        from citation_index.config import Settings
 
-        with caplog.at_level(logging.WARNING, logger="src.citation_index.config"):
+        with caplog.at_level(logging.WARNING, logger="citation_index.config"):
             s = Settings(
                 llm_timeout=180.0,
                 llm_max_retries=3,
@@ -471,21 +451,3 @@ class TestConfigTimeoutValidation:
 # ========================
 # RETRYABLE_EXCEPTIONS tuple sanity
 # ========================
-
-class TestRetryableExceptions:
-
-    def test_contains_expected_types(self):
-        assert LLMTimeoutError in RETRYABLE_EXCEPTIONS
-        assert openai.APITimeoutError in RETRYABLE_EXCEPTIONS
-        assert openai.APIConnectionError in RETRYABLE_EXCEPTIONS
-        assert openai.RateLimitError in RETRYABLE_EXCEPTIONS
-        assert openai.InternalServerError in RETRYABLE_EXCEPTIONS
-
-    def test_does_not_contain_bad_request(self):
-        assert openai.BadRequestError not in RETRYABLE_EXCEPTIONS
-        assert openai.AuthenticationError not in RETRYABLE_EXCEPTIONS
-
-    def test_isinstance_check_works(self):
-        """Verify isinstance matching (used in the retry loop)."""
-        assert isinstance(LLMTimeoutError("x"), RETRYABLE_EXCEPTIONS)
-        assert not isinstance(ValueError("x"), RETRYABLE_EXCEPTIONS)

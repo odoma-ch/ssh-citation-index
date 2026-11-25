@@ -59,3 +59,26 @@ def test_rejects_prompt_outside_prompts_dir(path, body, prompt_name):
 )
 def test_accepts_prompt_inside_prompts_dir(prompt_name):
     assert api.validate_prompt_name(prompt_name) == prompt_name
+
+
+def test_api_key_required_when_configured(monkeypatch):
+    monkeypatch.setattr(api.settings, "api_key", "secret")
+
+    assert client.post("/parse/references", json=REFS).status_code == 401
+    assert (
+        client.post(
+            "/parse/references", json=REFS, headers={"X-API-Key": "wrong"}
+        ).status_code
+        == 401
+    )
+    # Right key gets past auth (prompt validation then rejects with 400, no queue)
+    assert (
+        client.post(
+            "/parse/references",
+            json=REFS,
+            params={"prompt_name": "/etc/passwd"},
+            headers={"X-API-Key": "secret"},
+        ).status_code
+        == 400
+    )
+    assert client.get("/health").status_code != 401
