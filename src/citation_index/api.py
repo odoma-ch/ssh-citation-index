@@ -209,7 +209,7 @@ class ReferenceParsingOptions(BaseModel):
 
 class CombinedPipelineOptions(BaseModel):
     """Options for combined extraction and parsing."""
-    method: str = Field(default="one_step", description="Method (one_step or semantic_one_step)")
+    method: Literal["one_step"] = Field(default="one_step", description="Method (one_step)")
     prompt_name: str = Field(default="prompts/end_to_end_parsing.md", description="Prompt template")
     temperature: float = Field(default=0.3, description="LLM temperature")
 

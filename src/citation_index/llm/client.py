@@ -839,6 +839,9 @@ class EmbedClient(LLMClient):
             timeout: Request timeout in seconds
             max_retries: Maximum retry attempts
         """
+        # Configs (.env.example, k8s) give the full ".../v1/embeddings" URL, but
+        # the OpenAI SDK appends "/embeddings" to base_url itself.
+        endpoint = endpoint.rstrip("/").removesuffix("/embeddings")
         # Initialize parent to set up OpenAI client and retry configuration
         super().__init__(
             endpoint=endpoint,

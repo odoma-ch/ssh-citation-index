@@ -458,6 +458,14 @@ class TestEmbedClient:
         # Should have OpenAI client initialized
         assert client.client is not None
     
+    def test_embed_client_strips_embeddings_path(self):
+        """Full '/v1/embeddings' URL must not become '/v1/embeddings/embeddings'."""
+        client = EmbedClient(
+            endpoint="https://api.example.com/v1/embeddings/", model=self.mock_model
+        )
+        assert client.endpoint == "https://api.example.com/v1"
+        assert str(client.client.base_url).rstrip("/") == "https://api.example.com/v1"
+
     def test_embed_client_without_api_key(self):
         """Test EmbedClient works without API key (for local services)."""
         client = EmbedClient(

@@ -20,7 +20,7 @@ from .config import settings
 from .llm.client import LLMClient, EmbedClient
 from .llm.cec_client import classify_citations
 from .llm.grobid_client import GrobidClient
-from .pipelines.end_to_end_parsing import run_pdf_one_step, run_pdf_semantic_one_step
+from .pipelines.end_to_end_parsing import run_pdf_one_step
 from .pipelines.reference_extraction import (
     extract_text_references,
     extract_text_references_semantic_sections,
@@ -759,7 +759,7 @@ def extract_and_parse_references_task(
 
     Args:
         job_id: Unique job identifier
-        method: Method to use ('one_step' or 'semantic_one_step')
+        method: Method to use (only 'one_step')
         prompt_name: Prompt template
         temperature: LLM temperature
 
@@ -792,33 +792,15 @@ def extract_and_parse_references_task(
             enable_thinking=settings.llm_enable_thinking,
         )
 
-        # Initialize EmbedClient for semantic extraction
-        embed_client = EmbedClient(
-            endpoint=settings.embedding_endpoint,
-            model=settings.embedding_model,
-            api_key=settings.embedding_api_key or settings.llm_api_key,
-            timeout=settings.llm_timeout,
-            max_retries=settings.llm_max_retries,
-        )
-
+        if method != "one_step":
+            raise ValueError(f"Unsupported end-to-end method: {method!r}")
         # Semaphore removed – vLLM handles concurrency internally.
-        # with llm_semaphore.acquire():
-        if method == "semantic_one_step":
-            parsed_refs = run_pdf_semantic_one_step(
-                text_or_pdf=text,
-                llm_client=llm_client,
-                embed_client=embed_client,
-                embedding_model=settings.embedding_model,
-                prompt_name=prompt_name,
-                temperature=temperature,
-            )
-        else:
-            parsed_refs = run_pdf_one_step(
-                text_or_pdf=text,
-                llm_client=llm_client,
-                prompt_name=prompt_name,
-                temperature=temperature,
-            )
+        parsed_refs = run_pdf_one_step(
+            text_or_pdf=text,
+            llm_client=llm_client,
+            prompt_name=prompt_name,
+            temperature=temperature,
+        )
 
         # Save output
         output = {

@@ -12,82 +12,121 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from citation_index.pipelines.text_extraction import split_pages
 
-
 # Reference section queries for semantic matching
 REF_QUERIES = [
-    "### References", "References", "Bibliography", "Works Cited", "Literature Cited",
-    "Bibliographie", "Literaturverzeichnis", "Referencias", "参考文献",
-
+    "### References",
+    "References",
+    "Bibliography",
+    "Works Cited",
+    "Literature Cited",
+    "Bibliographie",
+    "Literaturverzeichnis",
+    "Referencias",
+    "参考文献",
     # APA-like
     "Smith, J., & Doe, A. (2018). Title of the paper. Journal of X, 12(3), 123–145. https://doi.org/10.1016/j.x.2018.01.001",
     "Lee, K. (2020). Book Title. Oxford University Press.",
-
     # IEEE-like
     "[12] J. Smith and A. Doe, 'Title of the paper' in Proc. ICASSP, 2019, pp. 123–128.",
-
     # Chicago-like
     "Miller, Thomas. 2015. The Example Study. Chicago: UChicago Press.",
-
     # Non-English
     "Klein, T.; Müller, A. (2020): Ein Beitrag. Zeitschrift für Y 45(2): 77–89. doi:10.1000/xyz",
     "王小明，李雷. 2021. 论文标题[J]. 某某学报, 45(2): 77–89. https://doi.org/10.1000/xyz",
-
     # Strong tokens
-    "doi: 10.1000/xyz", "https://doi.org/10.1000/xyz", "arXiv:2401.01234", "ISSN 1234-5678", "ISBN 978-3-16-148410-0"
+    "doi: 10.1000/xyz",
+    "https://doi.org/10.1000/xyz",
+    "arXiv:2401.01234",
+    "ISSN 1234-5678",
+    "ISBN 978-3-16-148410-0",
 ]
 
 # Lexical cues for reference sections
 CUE_RX = re.compile(
     r"(doi:|10\.\d{4,}/|arxiv:|journal of|vol\.|no\.|pp\.|\bet al\.|\(\d{4}\)|\b19\d{2}\b|\b20\d{2}\b|issn|isbn|edds|ed|transl)",
-    re.IGNORECASE
+    re.IGNORECASE,
 )
 
 
-def _get_embeddings(texts: List[str], embed_client, model: str, batch_size: int = 50, max_timeout: int = 120) -> np.ndarray:
+# chonkie "markdown"/"en" recipe, inlined: from_recipe() downloads it from the
+# Hugging Face hub at runtime (needs huggingface_hub + jsonschema + network).
+_MARKDOWN_LEVELS = [
+    (["######", "#####", "####", "###", "##", "#"], "next"),
+    (["\n\n", "\n\r"], "prev"),
+    (["\n", "\r"], "prev"),
+    ([". ", "! ", "? "], "prev"),
+    (None, "prev"),
+]
+# Benchmarks tuned the thresholds on LateChunker's 2048 (modernbert) tokens;
+# ~4 chars/token. The remote embedding model has a long context.
+_DEFAULT_CHUNK_CHARS = 8192
+
+
+def _default_chunker():
+    """Markdown-aware RecursiveChunker; same split rules as LateChunker's
+    markdown recipe, but without the local sentence-transformers model."""
+    from chonkie import RecursiveChunker, RecursiveLevel, RecursiveRules
+
+    rules = RecursiveRules(
+        levels=[
+            RecursiveLevel(delimiters=delims, include_delim=include)
+            for delims, include in _MARKDOWN_LEVELS
+        ]
+    )
+    return RecursiveChunker(chunk_size=_DEFAULT_CHUNK_CHARS, rules=rules)
+
+
+def _get_embeddings(
+    texts: List[str],
+    embed_client,
+    model: str,
+    batch_size: int = 50,
+    max_timeout: int = 120,
+) -> np.ndarray:
     """Get embeddings using EmbedClient with batching support."""
     if not texts:
         return np.array([])
-    
+
     # Calculate adaptive timeout based on number of texts
     # Base timeout of 30s + 2s per text, capped at max_timeout
     timeout = min(max_timeout, max(30, 30 + len(texts) * 2))
     logging.debug(f"Using timeout of {timeout}s for {len(texts)} texts")
-    
+
     try:
         # For large batches, process in smaller chunks to avoid timeouts
         if len(texts) > batch_size:
             logging.info(f"Processing {len(texts)} texts in batches of {batch_size}")
             all_embeddings = []
-            
+
             for i in range(0, len(texts), batch_size):
-                batch_texts = texts[i:i + batch_size]
-                logging.debug(f"Processing batch {i//batch_size + 1}/{(len(texts) + batch_size - 1)//batch_size}")
-                
+                batch_texts = texts[i : i + batch_size]
+                logging.debug(
+                    f"Processing batch {i//batch_size + 1}/{(len(texts) + batch_size - 1)//batch_size}"
+                )
+
                 batch_embeddings = embed_client.get_embeddings(
-                    texts=batch_texts,
-                    model=model,
-                    timeout=timeout
+                    texts=batch_texts, model=model, timeout=timeout
                 )
                 all_embeddings.append(batch_embeddings)
-                
+
                 # Small delay between batches to avoid overwhelming the service
                 if i + batch_size < len(texts):
                     time.sleep(0.1)
-            
+
             return np.vstack(all_embeddings)
         else:
             return embed_client.get_embeddings(
-                texts=texts,
-                model=model,
-                timeout=timeout
+                texts=texts, model=model, timeout=timeout
             )
-            
+
     except Exception as e:
         logging.error(f"Error getting embeddings for {len(texts)} texts: {e}")
         raise
 
 
-def _lexical_bonus(chunk_texts: List[str], bonus_per_hit: float = 0.02, max_bonus: float = 0.1) -> np.ndarray:
+def _lexical_bonus(
+    chunk_texts: List[str], bonus_per_hit: float = 0.02, max_bonus: float = 0.1
+) -> np.ndarray:
     """Calculate lexical bonus scores based on reference-specific cues."""
     bonuses = []
     for t in chunk_texts:
@@ -95,8 +134,9 @@ def _lexical_bonus(chunk_texts: List[str], bonus_per_hit: float = 0.02, max_bonu
         bonuses.append(min(max_bonus, hits * bonus_per_hit))
     return np.array(bonuses, dtype=float)
 
+
 # best
-# gap_size_threshold: float = 0.05,   
+# gap_size_threshold: float = 0.05,
 # drop_tolerance: float = 0.03,
 def locate_reference_sections_semantic(
     text_or_path: Union[str, Path],
@@ -105,18 +145,18 @@ def locate_reference_sections_semantic(
     chunker=None,
     chunks=None,
     fast_path: bool = False,
-    gap_size_threshold: float = 0.1,   
+    gap_size_threshold: float = 0.1,
     drop_tolerance: float = 0.03,
     greedy: bool = True,
     batch_size: int = 50,
-    max_timeout: int = 120
+    max_timeout: int = 120,
 ) -> str:
     """Locate reference sections using semantic similarity and lexical cues.
-    
+
     This function uses embedding-based semantic search combined with lexical cues
     to identify reference sections in academic documents. It's more robust than
     rule-based approaches and works across different document formats and languages.
-    
+
     Args:
         text_or_path: Input text string or path to markdown file
         embed_client: EmbedClient instance for getting embeddings
@@ -130,7 +170,7 @@ def locate_reference_sections_semantic(
         greedy: if true, use contiguous expansion to pick the best chunks
         batch_size: Maximum number of texts to process in a single embedding request (default: 50)
         max_timeout: Maximum timeout in seconds for embedding requests (default: 120)
-        
+
     Returns:
         String containing the identified reference sections
     """
@@ -147,8 +187,8 @@ def locate_reference_sections_semantic(
         if m:
             lvl = len(m.group(1).split()[0])  # number of '#'
             end_pattern = rf"(?m)^#{{1,{lvl}}}\s+\S"
-            end = re.search(end_pattern, txt[m.end():])
-            return txt[m.start(): m.end()+end.start()] if end else txt[m.start():]
+            end = re.search(end_pattern, txt[m.end() :])
+            return txt[m.start() : m.end() + end.start()] if end else txt[m.start() :]
 
     # 3) Chunk and embed
     if chunks is not None:
@@ -156,110 +196,101 @@ def locate_reference_sections_semantic(
         chunk_texts = [c.text for c in chunks]
     else:
         # Fallback: create chunker and chunk on-the-fly
-        if chunker is None:
-            from chonkie import LateChunker
-            chunker = LateChunker.from_recipe("markdown", lang="en")
-        chunks = chunker.chunk(txt)
+        chunks = (chunker or _default_chunker()).chunk(txt)
         chunk_texts = [c.text for c in chunks]
-    
+
     if not chunk_texts:
         return ""
-    
+
     # Log chunk information
     logging.info(f"Total chunks created: {len(chunk_texts)}")
     for i, chunk_text in enumerate(chunk_texts):
-        chunk_preview = chunk_text[:100].replace('\n', ' ') + ('...' if len(chunk_text) > 100 else '')
+        chunk_preview = chunk_text[:100].replace("\n", " ") + (
+            "..." if len(chunk_text) > 100 else ""
+        )
         logging.debug(f"Chunk {i}: {chunk_preview}")
-    
-    # Get embeddings for document chunks
-    logging.debug(f"Getting embeddings for {len(chunk_texts)} chunks...")
-    try:
-        doc_emb = _get_embeddings(chunk_texts, embed_client, embedding_model, batch_size, max_timeout)
-        logging.debug(f"Document embeddings shape: {doc_emb.shape}")
 
-        # 4) Create task-specific queries and get embeddings
-        task_prefix = 'Find in the document that follows the pattern of the query'
-        queries = [task_prefix + ': ' + q for q in REF_QUERIES]
-        q_emb = _get_embeddings(queries, embed_client, embedding_model, batch_size, max_timeout)
-        
-    except Exception as e:
-        logging.error(f"Failed to get embeddings after all retries: {e}")
-        logging.info("Falling back to lexical-only matching")
-        
-        # Fallback: use only lexical cues without embeddings
-        lexical_scores = _lexical_bonus(chunk_texts)
-        if lexical_scores.max() == 0:
-            # No lexical cues found, return empty
-            logging.warning("No reference sections found using lexical fallback")
-            return ""
-            
-        # Use lexical scores to find reference sections
-        threshold = lexical_scores.max() * 0.5
-        cand = np.where(lexical_scores >= threshold)[0]
-        
-        if len(cand) == 0:
-            return ""
-            
-        cand = sorted(cand)
-        logging.info(f"Selected chunks using lexical fallback: {cand} out of {len(chunks)} total chunks")
-        return "\n\n".join(chunks[i].text for i in cand)
+    # Get embeddings for document chunks. No lexical-only fallback: an
+    # embedding failure must fail the job, not return a degraded success.
+    logging.debug(f"Getting embeddings for {len(chunk_texts)} chunks...")
+    doc_emb = _get_embeddings(
+        chunk_texts, embed_client, embedding_model, batch_size, max_timeout
+    )
+    logging.debug(f"Document embeddings shape: {doc_emb.shape}")
+
+    # 4) Create task-specific queries and get embeddings
+    task_prefix = "Find in the document that follows the pattern of the query"
+    queries = [task_prefix + ": " + q for q in REF_QUERIES]
+    q_emb = _get_embeddings(
+        queries, embed_client, embedding_model, batch_size, max_timeout
+    )
 
     # 5) Calculate similarities and add lexical bonuses
-    logging.debug(f"Calculating similarities between {q_emb.shape[0]} queries and {doc_emb.shape[0]} chunks...")
-    
+    logging.debug(
+        f"Calculating similarities between {q_emb.shape[0]} queries and {doc_emb.shape[0]} chunks..."
+    )
+
     try:
         # Check for invalid values in embeddings
         if np.any(np.isnan(q_emb)) or np.any(np.isnan(doc_emb)):
             raise ValueError("NaN values detected in embeddings")
         if np.any(np.isinf(q_emb)) or np.any(np.isinf(doc_emb)):
             raise ValueError("Infinite values detected in embeddings")
-        
+
         # Normalize embeddings with better numerical stability
         q_norms = np.linalg.norm(q_emb, axis=1, keepdims=True)
         doc_norms = np.linalg.norm(doc_emb, axis=1, keepdims=True)
-        
+
         # Prevent division by zero
         q_norms = np.maximum(q_norms, 1e-12)
         doc_norms = np.maximum(doc_norms, 1e-12)
-        
+
         q_emb_norm = q_emb / q_norms
         doc_emb_norm = doc_emb / doc_norms
-        
+
         # Use numpy's safer matrix multiplication to avoid sklearn warnings
-        with np.errstate(divide='ignore', invalid='ignore'):
+        with np.errstate(divide="ignore", invalid="ignore"):
             similarity_matrix = np.dot(q_emb_norm, doc_emb_norm.T)
             sims = np.nanmax(similarity_matrix, axis=0)  # [n_chunks]
-            
+
         # Handle any remaining invalid values
         sims = np.nan_to_num(sims, nan=0.0, posinf=1.0, neginf=-1.0)
         sims = np.clip(sims, -1, 1)  # Ensure valid similarity range
-        
-        logging.debug(f"Similarity calculation successful, range: [{sims.min():.3f}, {sims.max():.3f}]")
-        
+
+        logging.debug(
+            f"Similarity calculation successful, range: [{sims.min():.3f}, {sims.max():.3f}]"
+        )
+
     except (ValueError, RuntimeWarning, np.linalg.LinAlgError) as e:
         logging.warning(f"Similarity calculation failed ({e}), using fallback method")
         # Fallback: use simple normalized dot product similarity
-        with np.errstate(all='ignore'):
-            sims = np.array([
-                np.max([
-                    np.dot(q_vec / (np.linalg.norm(q_vec) + 1e-12), 
-                          doc_vec / (np.linalg.norm(doc_vec) + 1e-12))
-                    for q_vec in q_emb
-                ])
-                for doc_vec in doc_emb
-            ])
+        with np.errstate(all="ignore"):
+            sims = np.array(
+                [
+                    np.max(
+                        [
+                            np.dot(
+                                q_vec / (np.linalg.norm(q_vec) + 1e-12),
+                                doc_vec / (np.linalg.norm(doc_vec) + 1e-12),
+                            )
+                            for q_vec in q_emb
+                        ]
+                    )
+                    for doc_vec in doc_emb
+                ]
+            )
         sims = np.nan_to_num(sims, nan=0.0, posinf=1.0, neginf=-1.0)
         sims = np.clip(sims, -1, 1)  # Ensure valid similarity range
-    
+
     sims = sims + _lexical_bonus(chunk_texts)  # small lexical boost
 
     # 6) Pick candidates using gap detection with adaptive fallback
     sorted_indices = np.argsort(sims)[::-1]  # Descending order
     sorted_scores = sims[sorted_indices]
-    
+
     min_candidates = max(1, min(1, len(chunks)))
     max_candidates = len(chunks) // 2
-    
+
     # Try gap detection first
     cand = []
     if len(sorted_scores) > 1:
@@ -268,18 +299,18 @@ def locate_reference_sections_semantic(
             # Find the biggest drop (most negative gap)
             biggest_gap_idx = np.argmin(gaps)
             gap_size = abs(gaps[biggest_gap_idx])
-            
+
             # Only use gap if it's significant
             if gap_size > gap_size_threshold:
                 threshold = sorted_scores[biggest_gap_idx + 1]
                 cand = np.where(sims >= threshold)[0]
-    
+
     # Fallback to adaptive threshold if gap detection fails or gives bad results
     if len(cand) == 0 or len(cand) > max_candidates:
         max_score = sims.max()
         threshold = max_score * 0.7
         cand = np.where(sims >= threshold)[0]
-        
+
         # Adjust if still outside bounds
         if len(cand) < min_candidates:
             threshold = max_score * 0.5
@@ -287,32 +318,34 @@ def locate_reference_sections_semantic(
         elif len(cand) > max_candidates:
             threshold = max_score * 0.85
             cand = np.where(sims >= threshold)[0]
-    
+
     # Final safety: cap at max_candidates
     if len(cand) > max_candidates:
         # Take the highest scoring candidates
         top_indices = np.argsort(sims)[::-1][:max_candidates]
         cand = top_indices
-    
+
     if len(cand) == 0:
         return ""
-       # sort by id
+    # sort by id
     cand = sorted(cand)
     cand = [int(c) for c in cand]
-    logging.info(f"Selected chunks: {cand} out of {len(chunks)} total chunks, best match: {cand[np.argmax(sims[cand])]}")
+    logging.info(
+        f"Selected chunks: {cand} out of {len(chunks)} total chunks, best match: {cand[np.argmax(sims[cand])]}"
+    )
     if not greedy:
         return "\n\n".join(chunks[i].text for i in cand)
     else:
         # 7) Contiguity growth: expand around best index while scores don't drop too much
         best = cand[np.argmax(sims[cand])]
         picked = {int(best)}
-    
+
         # Expand left
         i = best - 1
         while i >= 0 and sims[i] >= sims[best] - drop_tolerance:
             picked.add(int(i))
             i -= 1
-    
+
         # Expand right
         i = best + 1
         while i < len(sims) and sims[i] >= sims[best] - drop_tolerance:
@@ -322,33 +355,26 @@ def locate_reference_sections_semantic(
         # 8) Join selected chunks
         picked = picked.union(cand)
         selection = sorted(picked)
-        logging.info(f"Selected chunks after greedy expansion: {selection} out of {len(chunks)} total chunks, best match: {selection[np.argmax(sims[selection])]}")
-    
-        return "\n\n".join(chunks[i].text for i in selection)
-    
- 
+        logging.info(
+            f"Selected chunks after greedy expansion: {selection} out of {len(chunks)} total chunks, best match: {selection[np.argmax(sims[selection])]}"
+        )
 
-    
+        return "\n\n".join(chunks[i].text for i in selection)
 
 
 def pre_chunk_text(text: str, chunker=None) -> List:
     """
     Pre-chunk text using the provided chunker for later use in parallel processing.
-    
+
     This function allows chunking to be done sequentially (avoiding threading issues)
     before parallel LLM processing begins.
-    
+
     Args:
         text: Input text to chunk
-        chunker: Text chunker object with chunk() method. If None, creates a LateChunker.
-        
+        chunker: Text chunker object with chunk() method. If None, uses the
+            default markdown RecursiveChunker.
+
     Returns:
         List of chunks, each with a .text attribute
     """
-    if chunker is None:
-        from chonkie import LateChunker
-        chunker = LateChunker.from_recipe("markdown", lang="en")
-    
-    return chunker.chunk(text)
-
-
+    return (chunker or _default_chunker()).chunk(text)
