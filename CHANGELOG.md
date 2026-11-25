@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [1.0.0-beta.1] - 2026-11-25
+
+First 1.0 beta: the API surface is now treated as stable; breaking changes before 1.0.0 will be called out here.
+
+### Fixed
+- `POST /extract/references?method=semantic` failed in the worker with `No module named 'chonkie'`. `chonkie` is now a dependency, and the semantic locator chunks with `RecursiveChunker` using the markdown recipe rules inline, so it needs no torch / sentence-transformers and no Hugging Face hub download at runtime.
+- `EmbedClient` sent requests to `.../v1/embeddings/embeddings` (404) when `EMBEDDING_ENDPOINT` was the full `.../v1/embeddings` URL, as in `.env.example` and the k8s ConfigMap. A trailing `/embeddings` is now stripped; both forms work.
+
+### Changed
+- An embedding failure now fails the semantic extraction job instead of silently falling back to lexical-only matching and reporting success.
+
+### Removed
+- `semantic_one_step` from the end-to-end extraction-and-parsing task (no live endpoint exposed it). Other methods than `one_step` raise.
+
 ## [0.6.0] - 2026-11-24
 
 ### Added
