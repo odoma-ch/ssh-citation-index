@@ -237,6 +237,13 @@ def build_request(
     reference: dict, raw_reference: str, index: str, candidates: list[dict]
 ) -> tuple[str, dict]:
     """Format one (reference, index) task exactly as the training export did."""
+    # Training references carried a chapter's book in journal_title ("Container");
+    # since 0.6.0 the parser writes it to container_title instead.
+    reference = {
+        **reference,
+        "journal_title": reference.get("container_title")
+        or reference.get("journal_title"),
+    }
     citation, _ = format_record(reference, raw=raw_reference)
     if not citation:
         raise ValueError("Empty citation input")
