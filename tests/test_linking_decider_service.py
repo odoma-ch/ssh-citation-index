@@ -26,6 +26,23 @@ def test_request_matches_exported_training_example(row):
     assert labels == row["expected_labels"]
 
 
+@pytest.mark.parametrize(
+    "fields, container",
+    [
+        # Training put a chapter's book in journal_title; since 0.6.0 the parser
+        # writes it to container_title.
+        ({"container_title": "Cambridge History of Christianity"}, "Cambridge History of Christianity"),
+        ({"container_title": "The Book", "journal_title": "A Series"}, "The Book"),
+        ({"journal_title": "Hypatia"}, "Hypatia"),
+    ],
+)
+def test_container_title_is_sent_as_container(fields, container):
+    reference = {"full_title": "Gentile Christianity", **fields}
+    text, _ = build_request(reference, "Mitchell 2006", "openalex", [{"title": "X"}])
+    assert f"\nContainer: {container}\n" in text + "\n"
+    assert text.count("Container:") == 1
+
+
 def test_none_bias_keeps_candidate_ranking():
     biased = bias_none_probabilities(
         {"candidate_1": 0.6, "candidate_2": 0.3, "none": 0.1}, 3.0

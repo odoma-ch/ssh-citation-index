@@ -7,6 +7,7 @@ All notable changes to this project are documented here.
 First 1.0 beta: the API surface is now treated as stable; breaking changes before 1.0.0 will be called out here.
 
 ### Fixed
+- Linking decider (`method=model`) sends `container_title` as the reference's `Container`, falling back to `journal_title`. Training data held a chapter's book in `journal_title`; since 0.6.0 the parser writes it to `container_title`, so the decider had lost it for chapters. Only the decider changes: image `linking-decider:1.0.0-beta.1`; API and workers need no redeploy.
 - `POST /extract/references?method=semantic` failed in the worker with `No module named 'chonkie'`. `chonkie` is now a dependency, and the semantic locator chunks with `RecursiveChunker` using the markdown recipe rules inline, so it needs no torch / sentence-transformers and no Hugging Face hub download at runtime.
 - `EmbedClient` sent requests to `.../v1/embeddings/embeddings` (404) when `EMBEDDING_ENDPOINT` was the full `.../v1/embeddings` URL, as in `.env.example` and the k8s ConfigMap. A trailing `/embeddings` is now stripped; both forms work.
 
